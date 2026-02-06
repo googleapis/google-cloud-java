@@ -30,7 +30,51 @@ public interface CommonFeatureStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The "running state" of the Feature in this Hub.
+   * RBAC Role Binding Actuation feature state
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+   * </code>
+   *
+   * @return Whether the rbacrolebindingactuation field is set.
+   */
+  boolean hasRbacrolebindingactuation();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBAC Role Binding Actuation feature state
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+   * </code>
+   *
+   * @return The rbacrolebindingactuation.
+   */
+  com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState getRbacrolebindingactuation();
+
+  /**
+   *
+   *
+   * <pre>
+   * RBAC Role Binding Actuation feature state
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+   * </code>
+   */
+  com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureStateOrBuilder
+      getRbacrolebindingactuationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The "running state" of the Feature in this Fleet.
    * </pre>
    *
    * <code>
@@ -45,7 +89,7 @@ public interface CommonFeatureStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The "running state" of the Feature in this Hub.
+   * Output only. The "running state" of the Feature in this Fleet.
    * </pre>
    *
    * <code>
@@ -60,7 +104,7 @@ public interface CommonFeatureStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The "running state" of the Feature in this Hub.
+   * Output only. The "running state" of the Feature in this Fleet.
    * </pre>
    *
    * <code>
@@ -68,4 +112,6 @@ public interface CommonFeatureStateOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.v1.FeatureStateOrBuilder getStateOrBuilder();
+
+  com.google.cloud.gkehub.v1.CommonFeatureState.FeatureStateCase getFeatureStateCase();
 }

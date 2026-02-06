@@ -154,7 +154,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=602
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=606
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Deprecated
@@ -172,7 +172,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=602
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=606
    * @return The outputConfig.
    */
   @java.lang.Deprecated
@@ -289,10 +289,13 @@ public interface BatchProcessRequestOrBuilder
    * `false`.
    * </pre>
    *
-   * <code>bool skip_human_review = 4;</code>
+   * <code>bool skip_human_review = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.skip_human_review is
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=620
    * @return The skipHumanReview.
    */
+  @java.lang.Deprecated
   boolean getSkipHumanReview();
 
   /**

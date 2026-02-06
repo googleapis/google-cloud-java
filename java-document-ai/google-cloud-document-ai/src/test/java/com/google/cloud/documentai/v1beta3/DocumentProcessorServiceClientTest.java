@@ -1835,6 +1835,7 @@ public class DocumentProcessorServiceClientTest {
             .putAllEntityMetrics(new HashMap<String, Evaluation.MultiConfidenceMetrics>())
             .setKmsKeyName("kmsKeyName412586233")
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .addAllRevisions(new ArrayList<Evaluation.EvaluationRevision>())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -1890,6 +1891,7 @@ public class DocumentProcessorServiceClientTest {
             .putAllEntityMetrics(new HashMap<String, Evaluation.MultiConfidenceMetrics>())
             .setKmsKeyName("kmsKeyName412586233")
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .addAllRevisions(new ArrayList<Evaluation.EvaluationRevision>())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 

@@ -92,12 +92,12 @@ public final class ErrorProto extends com.google.protobuf.GeneratedFile {
           + "\022INVALID_REQUEST_ID\0200\0224\n0MULTIPLE_DESTIN"
           + "ATIONS_FOR_GOOGLE_ANALYTICS_EVENT\0201\022\030\n\024F"
           + "IELD_VALUE_TOO_LONG\0202\022\025\n\021TOO_MANY_ELEMEN"
-          + "TS\0203B\312\001\n\035com.google.ads.datamanager.v1B\n"
-          + "ErrorProtoP\001ZDgoogle.golang.org/genproto"
-          + "/googleapis/ads/datamanager/v1;datamanag"
-          + "er\252\002\031Google.Ads.DataManager.V1\312\002\031Google\\"
-          + "Ads\\DataManager\\V1\352\002\034Google::Ads::DataMa"
-          + "nager::V1b\006proto3"
+          + "TS\0203B\307\001\n\035com.google.ads.datamanager.v1B\n"
+          + "ErrorProtoP\001ZAcloud.google.com/go/datama"
+          + "nager/apiv1/datamanagerpb;datamanagerpb\252"
+          + "\002\031Google.Ads.DataManager.V1\312\002\031Google\\Ads"
+          + "\\DataManager\\V1\352\002\034Google::Ads::DataManag"
+          + "er::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

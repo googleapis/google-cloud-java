@@ -219,6 +219,19 @@ public class VectorSearchServiceSettings extends ClientSettings<VectorSearchServ
         .importDataObjectsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportDataObjects. */
+  public UnaryCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsSettings() {
+    return ((VectorSearchServiceStubSettings) getStubSettings()).exportDataObjectsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportDataObjects. */
+  public OperationCallSettings<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationSettings() {
+    return ((VectorSearchServiceStubSettings) getStubSettings())
+        .exportDataObjectsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -435,6 +448,19 @@ public class VectorSearchServiceSettings extends ClientSettings<VectorSearchServ
             ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
         importDataObjectsOperationSettings() {
       return getStubSettingsBuilder().importDataObjectsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportDataObjects. */
+    public UnaryCallSettings.Builder<ExportDataObjectsRequest, Operation>
+        exportDataObjectsSettings() {
+      return getStubSettingsBuilder().exportDataObjectsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportDataObjects. */
+    public OperationCallSettings.Builder<
+            ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+        exportDataObjectsOperationSettings() {
+      return getStubSettingsBuilder().exportDataObjectsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

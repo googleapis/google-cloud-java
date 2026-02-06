@@ -740,6 +740,7 @@ public class ParticipantsClientTest {
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 
@@ -776,6 +777,7 @@ public class ParticipantsClientTest {
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 

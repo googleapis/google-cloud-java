@@ -59,12 +59,12 @@ public final class MatchRateProto extends com.google.protobuf.GeneratedFile {
           + "TCH_RATE_RANGE_61_TO_70\020\007\022\035\n\031MATCH_RATE_"
           + "RANGE_71_TO_80\020\010\022\035\n\031MATCH_RATE_RANGE_81_"
           + "TO_90\020\t\022\036\n\032MATCH_RATE_RANGE_91_TO_100\020\nB"
-          + "\316\001\n\035com.google.ads.datamanager.v1B\016Match"
-          + "RateProtoP\001ZDgoogle.golang.org/genproto/"
-          + "googleapis/ads/datamanager/v1;datamanage"
-          + "r\252\002\031Google.Ads.DataManager.V1\312\002\031Google\\A"
-          + "ds\\DataManager\\V1\352\002\034Google::Ads::DataMan"
-          + "ager::V1b\006proto3"
+          + "\313\001\n\035com.google.ads.datamanager.v1B\016Match"
+          + "RateProtoP\001ZAcloud.google.com/go/dataman"
+          + "ager/apiv1/datamanagerpb;datamanagerpb\252\002"
+          + "\031Google.Ads.DataManager.V1\312\002\031Google\\Ads\\"
+          + "DataManager\\V1\352\002\034Google::Ads::DataManage"
+          + "r::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

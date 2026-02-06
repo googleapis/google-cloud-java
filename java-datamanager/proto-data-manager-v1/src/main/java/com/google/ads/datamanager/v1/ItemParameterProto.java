@@ -57,12 +57,12 @@ public final class ItemParameterProto extends com.google.protobuf.GeneratedFile 
           + "er.proto\022\031google.ads.datamanager.v1\032\037goo"
           + "gle/api/field_behavior.proto\"@\n\rItemPara"
           + "meter\022\033\n\016parameter_name\030\001 \001(\tB\003\340A\002\022\022\n\005va"
-          + "lue\030\002 \001(\tB\003\340A\002B\322\001\n\035com.google.ads.datama"
-          + "nager.v1B\022ItemParameterProtoP\001ZDgoogle.g"
-          + "olang.org/genproto/googleapis/ads/datama"
-          + "nager/v1;datamanager\252\002\031Google.Ads.DataMa"
-          + "nager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034G"
-          + "oogle::Ads::DataManager::V1b\006proto3"
+          + "lue\030\002 \001(\tB\003\340A\002B\317\001\n\035com.google.ads.datama"
+          + "nager.v1B\022ItemParameterProtoP\001ZAcloud.go"
+          + "ogle.com/go/datamanager/apiv1/datamanage"
+          + "rpb;datamanagerpb\252\002\031Google.Ads.DataManag"
+          + "er.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Goog"
+          + "le::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

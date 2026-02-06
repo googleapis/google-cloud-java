@@ -189,6 +189,54 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+     * are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+     * </code>
+     *
+     * @return Whether the vertexMultimodalDatasetSource field is set.
+     */
+    boolean hasVertexMultimodalDatasetSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+     * are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+     * </code>
+     *
+     * @return The vertexMultimodalDatasetSource.
+     */
+    com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+        getVertexMultimodalDatasetSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+     * are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceOrBuilder
+        getVertexMultimodalDatasetSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Required. The format in which instances are given, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats].
@@ -283,6 +331,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       GCS_SOURCE(2),
       BIGQUERY_SOURCE(3),
+      VERTEX_MULTIMODAL_DATASET_SOURCE(4),
       SOURCE_NOT_SET(0);
       private final int value;
 
@@ -306,6 +355,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             return GCS_SOURCE;
           case 3:
             return BIGQUERY_SOURCE;
+          case 4:
+            return VERTEX_MULTIMODAL_DATASET_SOURCE;
           case 0:
             return SOURCE_NOT_SET;
           default:
@@ -443,6 +494,71 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.aiplatform.v1beta1.BigQuerySource.getDefaultInstance();
     }
 
+    public static final int VERTEX_MULTIMODAL_DATASET_SOURCE_FIELD_NUMBER = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+     * are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+     * </code>
+     *
+     * @return Whether the vertexMultimodalDatasetSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexMultimodalDatasetSource() {
+      return sourceCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+     * are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+     * </code>
+     *
+     * @return The vertexMultimodalDatasetSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+        getVertexMultimodalDatasetSource() {
+      if (sourceCase_ == 4) {
+        return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+     * are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceOrBuilder
+        getVertexMultimodalDatasetSourceOrBuilder() {
+      if (sourceCase_ == 4) {
+        return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.getDefaultInstance();
+    }
+
     public static final int INSTANCES_FORMAT_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -523,6 +639,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       if (sourceCase_ == 3) {
         output.writeMessage(3, (com.google.cloud.aiplatform.v1beta1.BigQuerySource) source_);
       }
+      if (sourceCase_ == 4) {
+        output.writeMessage(
+            4, (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -544,6 +664,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, (com.google.cloud.aiplatform.v1beta1.BigQuerySource) source_);
+      }
+      if (sourceCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -570,6 +695,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         case 3:
           if (!getBigquerySource().equals(other.getBigquerySource())) return false;
           break;
+        case 4:
+          if (!getVertexMultimodalDatasetSource().equals(other.getVertexMultimodalDatasetSource()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -594,6 +723,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         case 3:
           hash = (37 * hash) + BIGQUERY_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getBigquerySource().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + VERTEX_MULTIMODAL_DATASET_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getVertexMultimodalDatasetSource().hashCode();
           break;
         case 0:
         default:
@@ -752,6 +885,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         if (bigquerySourceBuilder_ != null) {
           bigquerySourceBuilder_.clear();
         }
+        if (vertexMultimodalDatasetSourceBuilder_ != null) {
+          vertexMultimodalDatasetSourceBuilder_.clear();
+        }
         instancesFormat_ = "";
         sourceCase_ = 0;
         source_ = null;
@@ -795,7 +931,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.instancesFormat_ = instancesFormat_;
         }
       }
@@ -809,6 +945,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         if (sourceCase_ == 3 && bigquerySourceBuilder_ != null) {
           result.source_ = bigquerySourceBuilder_.build();
+        }
+        if (sourceCase_ == 4 && vertexMultimodalDatasetSourceBuilder_ != null) {
+          result.source_ = vertexMultimodalDatasetSourceBuilder_.build();
         }
       }
 
@@ -830,7 +969,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                 .getDefaultInstance()) return this;
         if (!other.getInstancesFormat().isEmpty()) {
           instancesFormat_ = other.instancesFormat_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         switch (other.getSourceCase()) {
@@ -842,6 +981,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           case BIGQUERY_SOURCE:
             {
               mergeBigquerySource(other.getBigquerySource());
+              break;
+            }
+          case VERTEX_MULTIMODAL_DATASET_SOURCE:
+            {
+              mergeVertexMultimodalDatasetSource(other.getVertexMultimodalDatasetSource());
               break;
             }
           case SOURCE_NOT_SET:
@@ -878,7 +1022,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   instancesFormat_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 10
               case 18:
@@ -895,6 +1039,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                   sourceCase_ = 3;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetVertexMultimodalDatasetSourceFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  sourceCase_ = 4;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1402,6 +1554,264 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return bigquerySourceBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.Builder,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceOrBuilder>
+          vertexMultimodalDatasetSourceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       *
+       * @return Whether the vertexMultimodalDatasetSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasVertexMultimodalDatasetSource() {
+        return sourceCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       *
+       * @return The vertexMultimodalDatasetSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+          getVertexMultimodalDatasetSource() {
+        if (vertexMultimodalDatasetSourceBuilder_ == null) {
+          if (sourceCase_ == 4) {
+            return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+              .getDefaultInstance();
+        } else {
+          if (sourceCase_ == 4) {
+            return vertexMultimodalDatasetSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      public Builder setVertexMultimodalDatasetSource(
+          com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource value) {
+        if (vertexMultimodalDatasetSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          vertexMultimodalDatasetSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      public Builder setVertexMultimodalDatasetSource(
+          com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.Builder
+              builderForValue) {
+        if (vertexMultimodalDatasetSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          vertexMultimodalDatasetSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      public Builder mergeVertexMultimodalDatasetSource(
+          com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource value) {
+        if (vertexMultimodalDatasetSourceBuilder_ == null) {
+          if (sourceCase_ == 4
+              && source_
+                  != com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+                      .getDefaultInstance()) {
+            source_ =
+                com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 4) {
+            vertexMultimodalDatasetSourceBuilder_.mergeFrom(value);
+          } else {
+            vertexMultimodalDatasetSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      public Builder clearVertexMultimodalDatasetSource() {
+        if (vertexMultimodalDatasetSourceBuilder_ == null) {
+          if (sourceCase_ == 4) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 4) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          vertexMultimodalDatasetSourceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.Builder
+          getVertexMultimodalDatasetSourceBuilder() {
+        return internalGetVertexMultimodalDatasetSourceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceOrBuilder
+          getVertexMultimodalDatasetSourceOrBuilder() {
+        if ((sourceCase_ == 4) && (vertexMultimodalDatasetSourceBuilder_ != null)) {
+          return vertexMultimodalDatasetSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 4) {
+            return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A Vertex Managed Dataset. Currently, only datasets of type Multimodal
+       * are supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource vertex_multimodal_dataset_source = 4;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.Builder,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceOrBuilder>
+          internalGetVertexMultimodalDatasetSourceFieldBuilder() {
+        if (vertexMultimodalDatasetSourceBuilder_ == null) {
+          if (!(sourceCase_ == 4)) {
+            source_ =
+                com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource
+                    .getDefaultInstance();
+          }
+          vertexMultimodalDatasetSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource,
+                  com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource.Builder,
+                  com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSource) source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 4;
+        onChanged();
+        return vertexMultimodalDatasetSourceBuilder_;
+      }
+
       private java.lang.Object instancesFormat_ = "";
 
       /**
@@ -1473,7 +1883,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         instancesFormat_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1493,7 +1903,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        */
       public Builder clearInstancesFormat() {
         instancesFormat_ = getDefaultInstance().getInstancesFormat();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1518,7 +1928,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         checkByteStringIsUtf8(value);
         instancesFormat_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4248,6 +4658,54 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * The details for a Vertex Multimodal Dataset that will be created for
+     * the output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+     * </code>
+     *
+     * @return Whether the vertexMultimodalDatasetDestination field is set.
+     */
+    boolean hasVertexMultimodalDatasetDestination();
+
+    /**
+     *
+     *
+     * <pre>
+     * The details for a Vertex Multimodal Dataset that will be created for
+     * the output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+     * </code>
+     *
+     * @return The vertexMultimodalDatasetDestination.
+     */
+    com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+        getVertexMultimodalDatasetDestination();
+
+    /**
+     *
+     *
+     * <pre>
+     * The details for a Vertex Multimodal Dataset that will be created for
+     * the output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationOrBuilder
+        getVertexMultimodalDatasetDestinationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Required. The format in which Vertex AI gives the predictions, must be
      * one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
@@ -4345,6 +4803,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       GCS_DESTINATION(2),
       BIGQUERY_DESTINATION(3),
+      VERTEX_MULTIMODAL_DATASET_DESTINATION(6),
       DESTINATION_NOT_SET(0);
       private final int value;
 
@@ -4368,6 +4827,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             return GCS_DESTINATION;
           case 3:
             return BIGQUERY_DESTINATION;
+          case 6:
+            return VERTEX_MULTIMODAL_DATASET_DESTINATION;
           case 0:
             return DESTINATION_NOT_SET;
           default:
@@ -4614,6 +5075,75 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
     }
 
+    public static final int VERTEX_MULTIMODAL_DATASET_DESTINATION_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * The details for a Vertex Multimodal Dataset that will be created for
+     * the output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+     * </code>
+     *
+     * @return Whether the vertexMultimodalDatasetDestination field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexMultimodalDatasetDestination() {
+      return destinationCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The details for a Vertex Multimodal Dataset that will be created for
+     * the output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+     * </code>
+     *
+     * @return The vertexMultimodalDatasetDestination.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+        getVertexMultimodalDatasetDestination() {
+      if (destinationCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+            destination_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The details for a Vertex Multimodal Dataset that will be created for
+     * the output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationOrBuilder
+        getVertexMultimodalDatasetDestinationOrBuilder() {
+      if (destinationCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+            destination_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+          .getDefaultInstance();
+    }
+
     public static final int PREDICTIONS_FORMAT_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -4697,6 +5227,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         output.writeMessage(
             3, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
       }
+      if (destinationCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination) destination_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4718,6 +5253,13 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
+      }
+      if (destinationCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+                    destination_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4744,6 +5286,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         case 3:
           if (!getBigqueryDestination().equals(other.getBigqueryDestination())) return false;
           break;
+        case 6:
+          if (!getVertexMultimodalDatasetDestination()
+              .equals(other.getVertexMultimodalDatasetDestination())) return false;
+          break;
         case 0:
         default:
       }
@@ -4768,6 +5314,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         case 3:
           hash = (37 * hash) + BIGQUERY_DESTINATION_FIELD_NUMBER;
           hash = (53 * hash) + getBigqueryDestination().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + VERTEX_MULTIMODAL_DATASET_DESTINATION_FIELD_NUMBER;
+          hash = (53 * hash) + getVertexMultimodalDatasetDestination().hashCode();
           break;
         case 0:
         default:
@@ -4926,6 +5476,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         if (bigqueryDestinationBuilder_ != null) {
           bigqueryDestinationBuilder_.clear();
         }
+        if (vertexMultimodalDatasetDestinationBuilder_ != null) {
+          vertexMultimodalDatasetDestinationBuilder_.clear();
+        }
         predictionsFormat_ = "";
         destinationCase_ = 0;
         destination_ = null;
@@ -4969,7 +5522,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.predictionsFormat_ = predictionsFormat_;
         }
       }
@@ -4983,6 +5536,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         if (destinationCase_ == 3 && bigqueryDestinationBuilder_ != null) {
           result.destination_ = bigqueryDestinationBuilder_.build();
+        }
+        if (destinationCase_ == 6 && vertexMultimodalDatasetDestinationBuilder_ != null) {
+          result.destination_ = vertexMultimodalDatasetDestinationBuilder_.build();
         }
       }
 
@@ -5004,7 +5560,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                 .getDefaultInstance()) return this;
         if (!other.getPredictionsFormat().isEmpty()) {
           predictionsFormat_ = other.predictionsFormat_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         switch (other.getDestinationCase()) {
@@ -5016,6 +5572,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           case BIGQUERY_DESTINATION:
             {
               mergeBigqueryDestination(other.getBigqueryDestination());
+              break;
+            }
+          case VERTEX_MULTIMODAL_DATASET_DESTINATION:
+            {
+              mergeVertexMultimodalDatasetDestination(
+                  other.getVertexMultimodalDatasetDestination());
               break;
             }
           case DESTINATION_NOT_SET:
@@ -5052,7 +5614,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   predictionsFormat_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 10
               case 18:
@@ -5069,6 +5631,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                   destinationCase_ = 3;
                   break;
                 } // case 26
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetVertexMultimodalDatasetDestinationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  destinationCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5906,6 +6476,268 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return bigqueryDestinationBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination.Builder,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationOrBuilder>
+          vertexMultimodalDatasetDestinationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       *
+       * @return Whether the vertexMultimodalDatasetDestination field is set.
+       */
+      @java.lang.Override
+      public boolean hasVertexMultimodalDatasetDestination() {
+        return destinationCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       *
+       * @return The vertexMultimodalDatasetDestination.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+          getVertexMultimodalDatasetDestination() {
+        if (vertexMultimodalDatasetDestinationBuilder_ == null) {
+          if (destinationCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+                destination_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+              .getDefaultInstance();
+        } else {
+          if (destinationCase_ == 6) {
+            return vertexMultimodalDatasetDestinationBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      public Builder setVertexMultimodalDatasetDestination(
+          com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination value) {
+        if (vertexMultimodalDatasetDestinationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          destination_ = value;
+          onChanged();
+        } else {
+          vertexMultimodalDatasetDestinationBuilder_.setMessage(value);
+        }
+        destinationCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      public Builder setVertexMultimodalDatasetDestination(
+          com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination.Builder
+              builderForValue) {
+        if (vertexMultimodalDatasetDestinationBuilder_ == null) {
+          destination_ = builderForValue.build();
+          onChanged();
+        } else {
+          vertexMultimodalDatasetDestinationBuilder_.setMessage(builderForValue.build());
+        }
+        destinationCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      public Builder mergeVertexMultimodalDatasetDestination(
+          com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination value) {
+        if (vertexMultimodalDatasetDestinationBuilder_ == null) {
+          if (destinationCase_ == 6
+              && destination_
+                  != com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+                      .getDefaultInstance()) {
+            destination_ =
+                com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination.newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+                            destination_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            destination_ = value;
+          }
+          onChanged();
+        } else {
+          if (destinationCase_ == 6) {
+            vertexMultimodalDatasetDestinationBuilder_.mergeFrom(value);
+          } else {
+            vertexMultimodalDatasetDestinationBuilder_.setMessage(value);
+          }
+        }
+        destinationCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      public Builder clearVertexMultimodalDatasetDestination() {
+        if (vertexMultimodalDatasetDestinationBuilder_ == null) {
+          if (destinationCase_ == 6) {
+            destinationCase_ = 0;
+            destination_ = null;
+            onChanged();
+          }
+        } else {
+          if (destinationCase_ == 6) {
+            destinationCase_ = 0;
+            destination_ = null;
+          }
+          vertexMultimodalDatasetDestinationBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination.Builder
+          getVertexMultimodalDatasetDestinationBuilder() {
+        return internalGetVertexMultimodalDatasetDestinationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationOrBuilder
+          getVertexMultimodalDatasetDestinationOrBuilder() {
+        if ((destinationCase_ == 6) && (vertexMultimodalDatasetDestinationBuilder_ != null)) {
+          return vertexMultimodalDatasetDestinationBuilder_.getMessageOrBuilder();
+        } else {
+          if (destinationCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+                destination_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details for a Vertex Multimodal Dataset that will be created for
+       * the output.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination vertex_multimodal_dataset_destination = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination.Builder,
+              com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationOrBuilder>
+          internalGetVertexMultimodalDatasetDestinationFieldBuilder() {
+        if (vertexMultimodalDatasetDestinationBuilder_ == null) {
+          if (!(destinationCase_ == 6)) {
+            destination_ =
+                com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination
+                    .getDefaultInstance();
+          }
+          vertexMultimodalDatasetDestinationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination,
+                  com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination.Builder,
+                  com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestination)
+                      destination_,
+                  getParentForChildren(),
+                  isClean());
+          destination_ = null;
+        }
+        destinationCase_ = 6;
+        onChanged();
+        return vertexMultimodalDatasetDestinationBuilder_;
+      }
+
       private java.lang.Object predictionsFormat_ = "";
 
       /**
@@ -5980,7 +6812,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         predictionsFormat_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6001,7 +6833,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        */
       public Builder clearPredictionsFormat() {
         predictionsFormat_ = getDefaultInstance().getPredictionsFormat();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -6027,7 +6859,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         checkByteStringIsUtf8(value);
         predictionsFormat_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6183,6 +7015,57 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Output only. The resource name of the Vertex Managed Dataset created,
+     * into which the prediction output is written. Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}`
+     * </pre>
+     *
+     * <code>
+     * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the vertexMultimodalDatasetName field is set.
+     */
+    boolean hasVertexMultimodalDatasetName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vertex Managed Dataset created,
+     * into which the prediction output is written. Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}`
+     * </pre>
+     *
+     * <code>
+     * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The vertexMultimodalDatasetName.
+     */
+    java.lang.String getVertexMultimodalDatasetName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vertex Managed Dataset created,
+     * into which the prediction output is written. Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}`
+     * </pre>
+     *
+     * <code>
+     * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for vertexMultimodalDatasetName.
+     */
+    com.google.protobuf.ByteString getVertexMultimodalDatasetNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Output only. The name of the BigQuery table created, in
      * `predictions_&lt;timestamp&gt;`
      * format, into which the prediction output is written.
@@ -6277,6 +7160,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       GCS_OUTPUT_DIRECTORY(1),
       BIGQUERY_OUTPUT_DATASET(2),
+      VERTEX_MULTIMODAL_DATASET_NAME(5),
       OUTPUTLOCATION_NOT_SET(0);
       private final int value;
 
@@ -6300,6 +7184,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
             return GCS_OUTPUT_DIRECTORY;
           case 2:
             return BIGQUERY_OUTPUT_DATASET;
+          case 5:
+            return VERTEX_MULTIMODAL_DATASET_NAME;
           case 0:
             return OUTPUTLOCATION_NOT_SET;
           default:
@@ -6471,6 +7357,91 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
     }
 
+    public static final int VERTEX_MULTIMODAL_DATASET_NAME_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vertex Managed Dataset created,
+     * into which the prediction output is written. Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}`
+     * </pre>
+     *
+     * <code>
+     * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the vertexMultimodalDatasetName field is set.
+     */
+    public boolean hasVertexMultimodalDatasetName() {
+      return outputLocationCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vertex Managed Dataset created,
+     * into which the prediction output is written. Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}`
+     * </pre>
+     *
+     * <code>
+     * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The vertexMultimodalDatasetName.
+     */
+    public java.lang.String getVertexMultimodalDatasetName() {
+      java.lang.Object ref = "";
+      if (outputLocationCase_ == 5) {
+        ref = outputLocation_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (outputLocationCase_ == 5) {
+          outputLocation_ = s;
+        }
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vertex Managed Dataset created,
+     * into which the prediction output is written. Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}`
+     * </pre>
+     *
+     * <code>
+     * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for vertexMultimodalDatasetName.
+     */
+    public com.google.protobuf.ByteString getVertexMultimodalDatasetNameBytes() {
+      java.lang.Object ref = "";
+      if (outputLocationCase_ == 5) {
+        ref = outputLocation_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (outputLocationCase_ == 5) {
+          outputLocation_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int BIGQUERY_OUTPUT_TABLE_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
@@ -6553,6 +7524,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bigqueryOutputTable_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, bigqueryOutputTable_);
       }
+      if (outputLocationCase_ == 5) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, outputLocation_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6570,6 +7544,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bigqueryOutputTable_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, bigqueryOutputTable_);
+      }
+      if (outputLocationCase_ == 5) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, outputLocation_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6596,6 +7573,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         case 2:
           if (!getBigqueryOutputDataset().equals(other.getBigqueryOutputDataset())) return false;
           break;
+        case 5:
+          if (!getVertexMultimodalDatasetName().equals(other.getVertexMultimodalDatasetName()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -6620,6 +7601,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         case 2:
           hash = (37 * hash) + BIGQUERY_OUTPUT_DATASET_FIELD_NUMBER;
           hash = (53 * hash) + getBigqueryOutputDataset().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + VERTEX_MULTIMODAL_DATASET_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getVertexMultimodalDatasetName().hashCode();
           break;
         case 0:
         default:
@@ -6812,7 +7797,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputInfo result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.bigqueryOutputTable_ = bigqueryOutputTable_;
         }
       }
@@ -6841,7 +7826,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                 .getDefaultInstance()) return this;
         if (!other.getBigqueryOutputTable().isEmpty()) {
           bigqueryOutputTable_ = other.bigqueryOutputTable_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         switch (other.getOutputLocationCase()) {
@@ -6855,6 +7840,13 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           case BIGQUERY_OUTPUT_DATASET:
             {
               outputLocationCase_ = 2;
+              outputLocation_ = other.outputLocation_;
+              onChanged();
+              break;
+            }
+          case VERTEX_MULTIMODAL_DATASET_NAME:
+            {
+              outputLocationCase_ = 5;
               outputLocation_ = other.outputLocation_;
               onChanged();
               break;
@@ -6907,9 +7899,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               case 34:
                 {
                   bigqueryOutputTable_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  outputLocationCase_ = 5;
+                  outputLocation_ = s;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7245,6 +8244,169 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vertex Managed Dataset created,
+       * into which the prediction output is written. Format:
+       * `projects/{project}/locations/{location}/datasets/{dataset}`
+       * </pre>
+       *
+       * <code>
+       * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return Whether the vertexMultimodalDatasetName field is set.
+       */
+      @java.lang.Override
+      public boolean hasVertexMultimodalDatasetName() {
+        return outputLocationCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vertex Managed Dataset created,
+       * into which the prediction output is written. Format:
+       * `projects/{project}/locations/{location}/datasets/{dataset}`
+       * </pre>
+       *
+       * <code>
+       * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The vertexMultimodalDatasetName.
+       */
+      @java.lang.Override
+      public java.lang.String getVertexMultimodalDatasetName() {
+        java.lang.Object ref = "";
+        if (outputLocationCase_ == 5) {
+          ref = outputLocation_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (outputLocationCase_ == 5) {
+            outputLocation_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vertex Managed Dataset created,
+       * into which the prediction output is written. Format:
+       * `projects/{project}/locations/{location}/datasets/{dataset}`
+       * </pre>
+       *
+       * <code>
+       * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for vertexMultimodalDatasetName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getVertexMultimodalDatasetNameBytes() {
+        java.lang.Object ref = "";
+        if (outputLocationCase_ == 5) {
+          ref = outputLocation_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (outputLocationCase_ == 5) {
+            outputLocation_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vertex Managed Dataset created,
+       * into which the prediction output is written. Format:
+       * `projects/{project}/locations/{location}/datasets/{dataset}`
+       * </pre>
+       *
+       * <code>
+       * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The vertexMultimodalDatasetName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVertexMultimodalDatasetName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputLocationCase_ = 5;
+        outputLocation_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vertex Managed Dataset created,
+       * into which the prediction output is written. Format:
+       * `projects/{project}/locations/{location}/datasets/{dataset}`
+       * </pre>
+       *
+       * <code>
+       * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVertexMultimodalDatasetName() {
+        if (outputLocationCase_ == 5) {
+          outputLocationCase_ = 0;
+          outputLocation_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vertex Managed Dataset created,
+       * into which the prediction output is written. Format:
+       * `projects/{project}/locations/{location}/datasets/{dataset}`
+       * </pre>
+       *
+       * <code>
+       * string vertex_multimodal_dataset_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for vertexMultimodalDatasetName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVertexMultimodalDatasetNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        outputLocationCase_ = 5;
+        outputLocation_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object bigqueryOutputTable_ = "";
 
       /**
@@ -7319,7 +8481,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         bigqueryOutputTable_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7340,7 +8502,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        */
       public Builder clearBigqueryOutputTable() {
         bigqueryOutputTable_ = getDefaultInstance().getBigqueryOutputTable();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -7366,7 +8528,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         checkByteStringIsUtf8(value);
         bigqueryOutputTable_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

@@ -261,7 +261,7 @@ public interface SearchIndexEndpointRequestOrBuilder
    * If negative, INVALID_ARGUMENT error will be returned.
    * If unspecified or 0, API will pick a default size, which is 10.
    * If the requested page size is larger than the maximum size, API will pick
-   * the maximum size, which is 100.
+   * the maximum size, which is 200.
    * </pre>
    *
    * <code>int32 page_size = 5;</code>

@@ -57,6 +57,14 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_Feature_MembershipStatesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_Feature_ScopeSpecsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_Feature_ScopeSpecsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_Feature_ScopeStatesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_Feature_ScopeStatesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_FeatureResourceState_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_FeatureResourceState_fieldAccessorTable;
@@ -72,6 +80,14 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_gkehub_v1_CommonFeatureState_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_CommonFeatureState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ScopeFeatureSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ScopeFeatureSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ScopeFeatureState_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ScopeFeatureState_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_MembershipFeatureSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -94,8 +110,9 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
           + "google.cloud.gkehub.v1\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032>google/cloud/gkehub/v1/configmanagement/configmanagement.proto\032Dgoogle/cloud"
-          + "/gkehub/v1/multiclusteringress/multiclus"
-          + "teringress.proto\032\037google/protobuf/timestamp.proto\"\317\007\n"
+          + "/gkehub/v1/multiclusteringress/multiclusteringress.proto\032Ngoogle/cloud/gkehub/v1"
+          + "/rbacrolebindingactuation/rbacrolebindin"
+          + "gactuation.proto\032\037google/protobuf/timestamp.proto\"\275\n\n"
           + "\007Feature\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022;\n"
           + "\006labels\030\002 \003(\0132+.google.cloud.gkehub.v1.Feature.LabelsEntry\022I\n"
@@ -112,20 +129,32 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
           + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013delete_time\030\n"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022I\n"
+          + "\013scope_specs\030\014"
+          + " \003(\0132/.google.cloud.gkehub.v1.Feature.ScopeSpecsEntryB\003\340A\001\022K\n"
+          + "\014scope_states\030\r"
+          + " \003(\01320.google.cloud.gkehub.v1.Feature.ScopeStatesEntryB\003\340A\003\022\030\n"
+          + "\013unreachable\030\017 \003(\tB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032e\n"
           + "\024MembershipSpecsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022<\n"
-          + "\005value\030\002"
-          + " \001(\0132-.google.cloud.gkehub.v1.MembershipFeatureSpec:\0028\001\032g\n"
+          + "\005value\030\002 \001(\0132-.goog"
+          + "le.cloud.gkehub.v1.MembershipFeatureSpec:\0028\001\032g\n"
           + "\025MembershipStatesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022=\n"
-          + "\005value\030\002 \001(\0132"
-          + "..google.cloud.gkehub.v1.MembershipFeatureState:\0028\001:^\352A[\n"
-          + "\035gkehub.googleapis.com/"
-          + "Feature\022:projects/{project}/locations/{location}/features/{feature}\"\306\001\n"
+          + "\005value\030\002"
+          + " \001(\0132..google.cloud.gkehub.v1.MembershipFeatureState:\0028\001\032[\n"
+          + "\017ScopeSpecsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0227\n"
+          + "\005value\030\002 \001(\0132(.google.cloud.gkehub.v1.ScopeFeatureSpec:\0028\001\032]\n"
+          + "\020ScopeStatesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0228\n"
+          + "\005value\030\002"
+          + " \001(\0132).google.cloud.gkehub.v1.ScopeFeatureState:\0028\001:^\352A[\n"
+          + "\035gkehub.googleapi"
+          + "s.com/Feature\022:projects/{project}/locations/{location}/features/{feature}\"\306\001\n"
           + "\024FeatureResourceState\022A\n"
           + "\005state\030\001 \001(\01622.google.cloud.gkehub.v1.FeatureResourceState.State\"k\n"
           + "\005State\022\025\n"
@@ -147,22 +176,29 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
           + "\021CommonFeatureSpec\022V\n"
           + "\023multiclusteringress\030f"
           + " \001(\01327.google.cloud.gkehub.multiclusteringress.v1.FeatureSpecH\000B\016\n"
-          + "\014feature_spec\"N\n"
-          + "\022CommonFeatureState\0228\n"
+          + "\014feature_spec\"\302\001\n"
+          + "\022CommonFeatureState\022a\n"
+          + "\030rbacrolebindingactuation\030x \001(\0132=.google.cloud.gk"
+          + "ehub.rbacrolebindingactuation.v1.FeatureStateH\000\0228\n"
+          + "\005state\030\001"
+          + " \001(\0132$.google.cloud.gkehub.v1.FeatureStateB\003\340A\003B\017\n\r"
+          + "feature_state\"\022\n"
+          + "\020ScopeFeatureSpec\"M\n"
+          + "\021ScopeFeatureState\0228\n"
           + "\005state\030\001 \001(\0132$.google.cloud.gkehub.v1.FeatureStateB\003\340A\003\"|\n"
           + "\025MembershipFeatureSpec\022S\n"
-          + "\020configmanagement\030j"
-          + " \001(\01327.google.cloud.gkehub.configmanagement.v1.MembershipSpecH\000B\016\n"
+          + "\020configmanagement\030j \001(\01327.googl"
+          + "e.cloud.gkehub.configmanagement.v1.MembershipSpecH\000B\016\n"
           + "\014feature_spec\"\264\001\n"
           + "\026MembershipFeatureState\022T\n"
-          + "\020configmanagement\030j \001(\01328.google.cloud.gkehub"
-          + ".configmanagement.v1.MembershipStateH\000\0223\n"
+          + "\020configmanagement\030j \001(\013"
+          + "28.google.cloud.gkehub.configmanagement.v1.MembershipStateH\000\0223\n"
           + "\005state\030\001 \001(\0132$.google.cloud.gkehub.v1.FeatureStateB\017\n\r"
           + "feature_stateB\256\001\n"
-          + "\032com.google.cloud.gkehub.v1B\014FeatureProtoP\001Z2clo"
-          + "ud.google.com/go/gkehub/apiv1/gkehubpb;g"
-          + "kehubpb\252\002\026Google.Cloud.GkeHub.V1\312\002\026Googl"
-          + "e\\Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub::V1b\006proto3"
+          + "\032com.google.cloud.gkehub.v1B\014FeatureProtoP\001Z2cloud.google.com/go/g"
+          + "kehub/apiv1/gkehubpb;gkehubpb\252\002\026Google.C"
+          + "loud.GkeHub.V1\312\002\026Google\\Cloud\\GkeHub\\V1\352"
+          + "\002\031Google::Cloud::GkeHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -172,6 +208,8 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.gkehub.configmanagement.v1.ConfigManagementProto.getDescriptor(),
               com.google.cloud.gkehub.multiclusteringress.v1.MultiClusterIngressProto
+                  .getDescriptor(),
+              com.google.cloud.gkehub.rbacrolebindingactuation.v1.RBACRoleBindingActuationProto
                   .getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -190,6 +228,9 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
               "CreateTime",
               "UpdateTime",
               "DeleteTime",
+              "ScopeSpecs",
+              "ScopeStates",
+              "Unreachable",
             });
     internal_static_google_cloud_gkehub_v1_Feature_LabelsEntry_descriptor =
         internal_static_google_cloud_gkehub_v1_Feature_descriptor.getNestedType(0);
@@ -212,6 +253,22 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
     internal_static_google_cloud_gkehub_v1_Feature_MembershipStatesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_Feature_MembershipStatesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_gkehub_v1_Feature_ScopeSpecsEntry_descriptor =
+        internal_static_google_cloud_gkehub_v1_Feature_descriptor.getNestedType(3);
+    internal_static_google_cloud_gkehub_v1_Feature_ScopeSpecsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_Feature_ScopeSpecsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_gkehub_v1_Feature_ScopeStatesEntry_descriptor =
+        internal_static_google_cloud_gkehub_v1_Feature_descriptor.getNestedType(4);
+    internal_static_google_cloud_gkehub_v1_Feature_ScopeStatesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_Feature_ScopeStatesEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -245,10 +302,24 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_CommonFeatureState_descriptor,
             new java.lang.String[] {
+              "Rbacrolebindingactuation", "State", "FeatureState",
+            });
+    internal_static_google_cloud_gkehub_v1_ScopeFeatureSpec_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_gkehub_v1_ScopeFeatureSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ScopeFeatureSpec_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_gkehub_v1_ScopeFeatureState_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_gkehub_v1_ScopeFeatureState_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ScopeFeatureState_descriptor,
+            new java.lang.String[] {
               "State",
             });
     internal_static_google_cloud_gkehub_v1_MembershipFeatureSpec_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_gkehub_v1_MembershipFeatureSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_MembershipFeatureSpec_descriptor,
@@ -256,7 +327,7 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
               "Configmanagement", "FeatureSpec",
             });
     internal_static_google_cloud_gkehub_v1_MembershipFeatureState_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_gkehub_v1_MembershipFeatureState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_MembershipFeatureState_descriptor,
@@ -268,6 +339,8 @@ public final class FeatureProto extends com.google.protobuf.GeneratedFile {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gkehub.configmanagement.v1.ConfigManagementProto.getDescriptor();
     com.google.cloud.gkehub.multiclusteringress.v1.MultiClusterIngressProto.getDescriptor();
+    com.google.cloud.gkehub.rbacrolebindingactuation.v1.RBACRoleBindingActuationProto
+        .getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

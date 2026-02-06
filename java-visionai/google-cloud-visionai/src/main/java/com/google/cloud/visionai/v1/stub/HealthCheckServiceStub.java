@@ -16,8 +16,14 @@
 
 package com.google.cloud.visionai.v1.stub;
 
+import static com.google.cloud.visionai.v1.HealthCheckServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.HealthCheckRequest;
 import com.google.cloud.visionai.v1.HealthCheckResponse;
 import javax.annotation.Generated;
@@ -33,6 +39,19 @@ public abstract class HealthCheckServiceStub implements BackgroundResource {
 
   public UnaryCallable<HealthCheckRequest, HealthCheckResponse> healthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: healthCheckCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

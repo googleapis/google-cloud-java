@@ -4694,7 +4694,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4709,7 +4709,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4723,7 +4723,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4737,7 +4737,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4753,7 +4753,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -5065,7 +5065,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=552
+     *     google/cloud/documentai/v1beta3/document.proto;l=553
      * @return Whether the provenance field is set.
      */
     @java.lang.Deprecated
@@ -5083,7 +5083,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=552
+     *     google/cloud/documentai/v1beta3/document.proto;l=553
      * @return The provenance.
      */
     @java.lang.Deprecated
@@ -9608,7 +9608,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=207
+       *     See google/cloud/documentai/v1beta3/document.proto;l=208
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -9626,7 +9626,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=207
+       *     See google/cloud/documentai/v1beta3/document.proto;l=208
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -9861,7 +9861,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=207
+       *     See google/cloud/documentai/v1beta3/document.proto;l=208
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -9882,7 +9882,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=207
+       *     See google/cloud/documentai/v1beta3/document.proto;l=208
        * @return The provenance.
        */
       @java.lang.Override
@@ -11018,7 +11018,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=207
+         *     See google/cloud/documentai/v1beta3/document.proto;l=208
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -11038,7 +11038,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=207
+         *     See google/cloud/documentai/v1beta3/document.proto;l=208
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -11409,7 +11409,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=220
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=221
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -11427,7 +11427,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=220
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=221
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -11661,7 +11661,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=220
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=221
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -11682,7 +11682,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=220
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=221
        * @return The provenance.
        */
       @java.lang.Override
@@ -12821,7 +12821,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=220
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=221
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -12841,7 +12841,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=220
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=221
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -13215,7 +13215,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=234
+       *     See google/cloud/documentai/v1beta3/document.proto;l=235
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -13233,7 +13233,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=234
+       *     See google/cloud/documentai/v1beta3/document.proto;l=235
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -13468,7 +13468,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=234
+       *     See google/cloud/documentai/v1beta3/document.proto;l=235
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -13489,7 +13489,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=234
+       *     See google/cloud/documentai/v1beta3/document.proto;l=235
        * @return The provenance.
        */
       @java.lang.Override
@@ -14625,7 +14625,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=234
+         *     See google/cloud/documentai/v1beta3/document.proto;l=235
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -14645,7 +14645,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=234
+         *     See google/cloud/documentai/v1beta3/document.proto;l=235
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -15063,7 +15063,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=326
+       *     See google/cloud/documentai/v1beta3/document.proto;l=327
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -15081,7 +15081,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=326
+       *     See google/cloud/documentai/v1beta3/document.proto;l=327
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -18871,7 +18871,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=326
+       *     See google/cloud/documentai/v1beta3/document.proto;l=327
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -18892,7 +18892,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=326
+       *     See google/cloud/documentai/v1beta3/document.proto;l=327
        * @return The provenance.
        */
       @java.lang.Override
@@ -20383,7 +20383,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=326
+         *     See google/cloud/documentai/v1beta3/document.proto;l=327
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -20403,7 +20403,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=326
+         *     See google/cloud/documentai/v1beta3/document.proto;l=327
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -22428,7 +22428,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Detected non-text visual elements, for example, checkbox, signature, etc.
+     * Detected non-text visual elements, for example, checkbox, signature etc.
      * on the page.
      * </pre>
      *
@@ -22874,7 +22874,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Detected non-text visual elements, for example, checkbox, signature, etc.
+       * Detected non-text visual elements, for example, checkbox, signature etc.
        * on the page.
        * </pre>
        *
@@ -24194,7 +24194,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Table.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=395
+       *     See google/cloud/documentai/v1beta3/document.proto;l=396
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -24212,7 +24212,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Table.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=395
+       *     See google/cloud/documentai/v1beta3/document.proto;l=396
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -27347,7 +27347,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Table.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=395
+       *     See google/cloud/documentai/v1beta3/document.proto;l=396
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -27368,7 +27368,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.Table.provenance is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=395
+       *     See google/cloud/documentai/v1beta3/document.proto;l=396
        * @return The provenance.
        */
       @java.lang.Override
@@ -29502,7 +29502,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Table.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=395
+         *     See google/cloud/documentai/v1beta3/document.proto;l=396
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -29522,7 +29522,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Page.Table.provenance is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=395
+         *     See google/cloud/documentai/v1beta3/document.proto;l=396
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -37961,7 +37961,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37979,7 +37979,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37998,7 +37998,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38015,7 +38015,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38033,7 +38033,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements for example, checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38458,7 +38458,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=552
+     *     google/cloud/documentai/v1beta3/document.proto;l=553
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
@@ -38479,7 +38479,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=552
+     *     google/cloud/documentai/v1beta3/document.proto;l=553
      * @return The provenance.
      */
     @java.lang.Override
@@ -42969,7 +42969,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42990,7 +42990,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43010,7 +43010,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43031,7 +43031,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43058,7 +43058,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43083,7 +43083,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43110,7 +43110,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43137,7 +43137,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43161,7 +43161,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43186,7 +43186,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43212,7 +43212,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43235,7 +43235,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43258,7 +43258,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43275,7 +43275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43296,7 +43296,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43318,7 +43318,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43338,7 +43338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43359,7 +43359,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements for example, checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -45233,7 +45233,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=552
+       *     google/cloud/documentai/v1beta3/document.proto;l=553
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -45253,7 +45253,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=552
+       *     google/cloud/documentai/v1beta3/document.proto;l=553
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -45553,7 +45553,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema for example, `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45566,7 +45566,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema for example, `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45579,7 +45579,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45592,7 +45593,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45690,7 +45692,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Canonical ID. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -45704,7 +45706,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Canonical ID. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -49134,7 +49136,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema for example, `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49158,7 +49160,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema for example, `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49187,7 +49189,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49211,7 +49214,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49375,7 +49379,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Canonical ID. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -49400,7 +49404,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Canonical ID. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -50627,7 +50631,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema for example, `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50650,7 +50654,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema for example, `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50673,7 +50677,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema for example, `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50695,7 +50699,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema for example, `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50713,7 +50717,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema for example, `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50738,7 +50742,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50761,7 +50766,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50784,7 +50790,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50806,7 +50813,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50824,7 +50832,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51242,7 +51251,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Canonical ID. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -51266,7 +51275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Canonical ID. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -51290,7 +51299,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Canonical ID. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -51313,7 +51322,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Canonical ID. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -51332,7 +51341,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Canonical ID. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -52477,7 +52486,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Subject entity ID.
+     * Subject entity id.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -52490,7 +52499,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Subject entity ID.
+     * Subject entity id.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -52503,7 +52512,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object entity ID.
+     * Object entity id.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -52516,7 +52525,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object entity ID.
+     * Object entity id.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -52613,7 +52622,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Subject entity ID.
+     * Subject entity id.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -52637,7 +52646,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Subject entity ID.
+     * Subject entity id.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -52666,7 +52675,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object entity ID.
+     * Object entity id.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -52690,7 +52699,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object entity ID.
+     * Object entity id.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -53132,7 +53141,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Subject entity ID.
+       * Subject entity id.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -53155,7 +53164,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Subject entity ID.
+       * Subject entity id.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -53178,7 +53187,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Subject entity ID.
+       * Subject entity id.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -53200,7 +53209,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Subject entity ID.
+       * Subject entity id.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -53218,7 +53227,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Subject entity ID.
+       * Subject entity id.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -53243,7 +53252,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Object entity ID.
+       * Object entity id.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -53266,7 +53275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Object entity ID.
+       * Object entity id.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -53289,7 +53298,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Object entity ID.
+       * Object entity id.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -53311,7 +53320,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Object entity ID.
+       * Object entity id.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -53329,7 +53338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Object entity ID.
+       * Object entity id.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -55684,7 +55693,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -55703,7 +55712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -56230,7 +56239,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
        * @return The layoutId.
        */
       @java.lang.Override
@@ -56260,7 +56269,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -57004,7 +57013,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -57033,7 +57042,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -57062,7 +57071,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -57090,7 +57099,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -57114,7 +57123,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=780
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -58398,7 +58407,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=846
+     *     google/cloud/documentai/v1beta3/document.proto;l=848
      * @return The revision.
      */
     @java.lang.Deprecated
@@ -58408,14 +58417,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of this operation.  Needs to be unique within the scope of the
+     * The Id of this operation.  Needs to be unique within the scope of the
      * revision.
      * </pre>
      *
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=850
+     *     google/cloud/documentai/v1beta3/document.proto;l=852
      * @return The id.
      */
     @java.lang.Deprecated
@@ -58901,13 +58910,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The ID of the parent provenance.
+       * The id of the parent provenance.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=809
+       *     See google/cloud/documentai/v1beta3/document.proto;l=811
        * @return The id.
        */
       @java.lang.Deprecated
@@ -59008,13 +59017,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The ID of the parent provenance.
+       * The id of the parent provenance.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=809
+       *     See google/cloud/documentai/v1beta3/document.proto;l=811
        * @return The id.
        */
       @java.lang.Override
@@ -59509,13 +59518,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The ID of the parent provenance.
+         * The id of the parent provenance.
          * </pre>
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=809
+         *     See google/cloud/documentai/v1beta3/document.proto;l=811
          * @return The id.
          */
         @java.lang.Override
@@ -59528,13 +59537,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The ID of the parent provenance.
+         * The id of the parent provenance.
          * </pre>
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=809
+         *     See google/cloud/documentai/v1beta3/document.proto;l=811
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -59551,13 +59560,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The ID of the parent provenance.
+         * The id of the parent provenance.
          * </pre>
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=809
+         *     See google/cloud/documentai/v1beta3/document.proto;l=811
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -59636,7 +59645,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=846
+     *     google/cloud/documentai/v1beta3/document.proto;l=848
      * @return The revision.
      */
     @java.lang.Override
@@ -59652,14 +59661,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of this operation.  Needs to be unique within the scope of the
+     * The Id of this operation.  Needs to be unique within the scope of the
      * revision.
      * </pre>
      *
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=850
+     *     google/cloud/documentai/v1beta3/document.proto;l=852
      * @return The id.
      */
     @java.lang.Override
@@ -60236,7 +60245,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=846
+       *     google/cloud/documentai/v1beta3/document.proto;l=848
        * @return The revision.
        */
       @java.lang.Override
@@ -60255,7 +60264,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=846
+       *     google/cloud/documentai/v1beta3/document.proto;l=848
        * @param value The revision to set.
        * @return This builder for chaining.
        */
@@ -60278,7 +60287,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=846
+       *     google/cloud/documentai/v1beta3/document.proto;l=848
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -60295,14 +60304,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The ID of this operation.  Needs to be unique within the scope of the
+       * The Id of this operation.  Needs to be unique within the scope of the
        * revision.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=850
+       *     google/cloud/documentai/v1beta3/document.proto;l=852
        * @return The id.
        */
       @java.lang.Override
@@ -60315,14 +60324,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The ID of this operation.  Needs to be unique within the scope of the
+       * The Id of this operation.  Needs to be unique within the scope of the
        * revision.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=850
+       *     google/cloud/documentai/v1beta3/document.proto;l=852
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -60339,14 +60348,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The ID of this operation.  Needs to be unique within the scope of the
+       * The Id of this operation.  Needs to be unique within the scope of the
        * revision.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=850
+       *     google/cloud/documentai/v1beta3/document.proto;l=852
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -60921,7 +60930,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or ID of that
+     * If the change was made by a person specify the name or id of that
      * person.
      * </pre>
      *
@@ -60935,7 +60944,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or ID of that
+     * If the change was made by a person specify the name or id of that
      * person.
      * </pre>
      *
@@ -60949,7 +60958,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or ID of that
+     * If the change was made by a person specify the name or id of that
      * person.
      * </pre>
      *
@@ -61005,7 +61014,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the revision, internally generated by doc proto storage.
+     * Id of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -61019,7 +61028,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the revision, internally generated by doc proto storage.
+     * Id of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -61041,7 +61050,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=889
+     *     google/cloud/documentai/v1beta3/document.proto;l=891
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -61059,7 +61068,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=889
+     *     google/cloud/documentai/v1beta3/document.proto;l=891
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -61077,7 +61086,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=889
+     *     google/cloud/documentai/v1beta3/document.proto;l=891
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -61088,7 +61097,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -61103,7 +61112,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -61118,7 +61127,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -61134,7 +61143,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62181,7 +62190,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or ID of that
+     * If the change was made by a person specify the name or id of that
      * person.
      * </pre>
      *
@@ -62197,7 +62206,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or ID of that
+     * If the change was made by a person specify the name or id of that
      * person.
      * </pre>
      *
@@ -62226,7 +62235,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or ID of that
+     * If the change was made by a person specify the name or id of that
      * person.
      * </pre>
      *
@@ -62336,7 +62345,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the revision, internally generated by doc proto storage.
+     * Id of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -62361,7 +62370,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the revision, internally generated by doc proto storage.
+     * Id of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -62399,7 +62408,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=889
+     *     google/cloud/documentai/v1beta3/document.proto;l=891
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -62420,7 +62429,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=889
+     *     google/cloud/documentai/v1beta3/document.proto;l=891
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -62440,7 +62449,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=889
+     *     google/cloud/documentai/v1beta3/document.proto;l=891
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -62461,7 +62470,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62478,7 +62487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62495,7 +62504,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62513,7 +62522,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the IDs
+     * The revisions that this revision is based on. Must include all the ids
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -63218,7 +63227,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or ID of that
+       * If the change was made by a person specify the name or id of that
        * person.
        * </pre>
        *
@@ -63235,7 +63244,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or ID of that
+       * If the change was made by a person specify the name or id of that
        * person.
        * </pre>
        *
@@ -63265,7 +63274,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or ID of that
+       * If the change was made by a person specify the name or id of that
        * person.
        * </pre>
        *
@@ -63295,7 +63304,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or ID of that
+       * If the change was made by a person specify the name or id of that
        * person.
        * </pre>
        *
@@ -63318,7 +63327,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or ID of that
+       * If the change was made by a person specify the name or id of that
        * person.
        * </pre>
        *
@@ -63339,7 +63348,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or ID of that
+       * If the change was made by a person specify the name or id of that
        * person.
        * </pre>
        *
@@ -63510,7 +63519,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * ID of the revision, internally generated by doc proto storage.
+       * Id of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -63534,7 +63543,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * ID of the revision, internally generated by doc proto storage.
+       * Id of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -63558,7 +63567,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * ID of the revision, internally generated by doc proto storage.
+       * Id of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -63581,7 +63590,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * ID of the revision, internally generated by doc proto storage.
+       * Id of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -63600,7 +63609,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * ID of the revision, internally generated by doc proto storage.
+       * Id of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -63641,7 +63650,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -63662,7 +63671,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -63682,7 +63691,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -63703,7 +63712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -63730,7 +63739,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -63756,7 +63765,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -63781,7 +63790,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=889
+       *     google/cloud/documentai/v1beta3/document.proto;l=891
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -63806,7 +63815,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63824,7 +63833,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63841,7 +63850,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63859,7 +63868,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63877,7 +63886,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63903,7 +63912,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63928,7 +63937,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63950,7 +63959,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -63971,7 +63980,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the IDs
+       * The revisions that this revision is based on. Must include all the ids
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -77600,7 +77609,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -77614,7 +77623,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -77628,7 +77637,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -77642,7 +77651,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77655,7 +77664,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77668,7 +77677,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77681,11 +77690,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77698,11 +77707,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77715,11 +77724,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77939,7 +77948,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -77955,7 +77964,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -77984,7 +77993,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -78015,7 +78024,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78030,7 +78039,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78058,7 +78067,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78088,11 +78097,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78107,11 +78116,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78139,11 +78148,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78899,7 +78908,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -78916,7 +78925,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -78946,7 +78955,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -78976,7 +78985,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -78999,7 +79008,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -79020,7 +79029,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -79044,7 +79053,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79060,7 +79069,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79089,7 +79098,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79118,7 +79127,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79140,7 +79149,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79160,7 +79169,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79183,11 +79192,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79203,11 +79212,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79236,11 +79245,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79269,11 +79278,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79295,11 +79304,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79319,11 +79328,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86978,7 +86987,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -86992,7 +87001,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -87006,7 +87015,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -87020,7 +87029,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87033,7 +87042,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87046,7 +87055,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87059,11 +87068,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87076,11 +87085,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87093,11 +87102,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87258,7 +87267,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -87274,7 +87283,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -87303,7 +87312,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Asset ID of the inline image. If set, find the image
+         * Optional. Asset id of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -87334,7 +87343,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87349,7 +87358,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87377,7 +87386,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage URI of the image.
+         * Optional. Google Cloud Storage uri of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87407,11 +87416,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87426,11 +87435,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87458,11 +87467,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Data URI of the image.
+         * Optional. Data uri of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88047,7 +88056,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -88064,7 +88073,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -88094,7 +88103,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -88124,7 +88133,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -88147,7 +88156,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -88168,7 +88177,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Asset ID of the inline image. If set, find the image
+           * Optional. Asset id of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -88192,7 +88201,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88208,7 +88217,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88237,7 +88246,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88266,7 +88275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88288,7 +88297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88308,7 +88317,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage URI of the image.
+           * Optional. Google Cloud Storage uri of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88331,11 +88340,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88351,11 +88360,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88384,11 +88393,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88417,11 +88426,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88443,11 +88452,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88467,11 +88476,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Optional. Data URI of the image.
+           * Optional. Data uri of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95075,7 +95084,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The ID of the blob asset.
+     * Optional. The id of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95088,7 +95097,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The ID of the blob asset.
+     * Optional. The id of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95203,7 +95212,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The ID of the blob asset.
+     * Optional. The id of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95227,7 +95236,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The ID of the blob asset.
+     * Optional. The id of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95688,7 +95697,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The ID of the blob asset.
+       * Optional. The id of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95711,7 +95720,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The ID of the blob asset.
+       * Optional. The id of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95734,7 +95743,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The ID of the blob asset.
+       * Optional. The id of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95756,7 +95765,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The ID of the blob asset.
+       * Optional. The id of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95774,7 +95783,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The ID of the blob asset.
+       * Optional. The id of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -96175,7 +96184,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of the validation rule.
+       * The display name of the validation rule.
        * </pre>
        *
        * <code>string rule_name = 1;</code>
@@ -96188,7 +96197,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of the validation rule.
+       * The display name of the validation rule.
        * </pre>
        *
        * <code>string rule_name = 1;</code>
@@ -96571,7 +96580,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of the validation rule.
+       * The display name of the validation rule.
        * </pre>
        *
        * <code>string rule_name = 1;</code>
@@ -96595,7 +96604,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of the validation rule.
+       * The display name of the validation rule.
        * </pre>
        *
        * <code>string rule_name = 1;</code>
@@ -97214,7 +97223,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The name of the validation rule.
+         * The display name of the validation rule.
          * </pre>
          *
          * <code>string rule_name = 1;</code>
@@ -97237,7 +97246,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The name of the validation rule.
+         * The display name of the validation rule.
          * </pre>
          *
          * <code>string rule_name = 1;</code>
@@ -97260,7 +97269,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The name of the validation rule.
+         * The display name of the validation rule.
          * </pre>
          *
          * <code>string rule_name = 1;</code>
@@ -97282,7 +97291,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The name of the validation rule.
+         * The display name of the validation rule.
          * </pre>
          *
          * <code>string rule_name = 1;</code>
@@ -97300,7 +97309,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The name of the validation rule.
+         * The display name of the validation rule.
          * </pre>
          *
          * <code>string rule_name = 1;</code>
@@ -98812,7 +98821,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revision ID.
+     * The revision id.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -98825,7 +98834,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revision ID.
+     * The revision id.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -98933,6 +98942,49 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.documentai.v1beta3.Document.EntityValidationOutputOrBuilder
         getEntityValidationOutputOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The history of this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the provenance field is set.
+     */
+    boolean hasProvenance();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The history of this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provenance.
+     */
+    com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The history of this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
   }
 
   /**
@@ -98995,7 +99047,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revision ID.
+     * The revision id.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -99019,7 +99071,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The revision ID.
+     * The revision id.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -99178,6 +99230,66 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           : entityValidationOutput_;
     }
 
+    public static final int PROVENANCE_FIELD_NUMBER = 4;
+    private com.google.cloud.documentai.v1beta3.Document.Provenance provenance_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The history of this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the provenance field is set.
+     */
+    @java.lang.Override
+    public boolean hasProvenance() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The history of this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provenance.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
+      return provenance_ == null
+          ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+          : provenance_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The history of this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
+        getProvenanceOrBuilder() {
+      return provenance_ == null
+          ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+          : provenance_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -99201,6 +99313,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getEntityValidationOutput());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getProvenance());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -99220,6 +99335,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, getEntityValidationOutput());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getProvenance());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -99243,6 +99361,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (hasEntityValidationOutput()) {
         if (!getEntityValidationOutput().equals(other.getEntityValidationOutput())) return false;
       }
+      if (hasProvenance() != other.hasProvenance()) return false;
+      if (hasProvenance()) {
+        if (!getProvenance().equals(other.getProvenance())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -99263,6 +99385,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (hasEntityValidationOutput()) {
         hash = (37 * hash) + ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER;
         hash = (53 * hash) + getEntityValidationOutput().hashCode();
+      }
+      if (hasProvenance()) {
+        hash = (37 * hash) + PROVENANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getProvenance().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -99408,6 +99534,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetEntitiesFieldBuilder();
           internalGetEntityValidationOutputFieldBuilder();
+          internalGetProvenanceFieldBuilder();
         }
       }
 
@@ -99427,6 +99554,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (entityValidationOutputBuilder_ != null) {
           entityValidationOutputBuilder_.dispose();
           entityValidationOutputBuilder_ = null;
+        }
+        provenance_ = null;
+        if (provenanceBuilder_ != null) {
+          provenanceBuilder_.dispose();
+          provenanceBuilder_ = null;
         }
         return this;
       }
@@ -99491,6 +99623,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                   : entityValidationOutputBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.provenance_ =
+              provenanceBuilder_ == null ? provenance_ : provenanceBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -99543,6 +99680,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasEntityValidationOutput()) {
           mergeEntityValidationOutput(other.getEntityValidationOutput());
+        }
+        if (other.hasProvenance()) {
+          mergeProvenance(other.getProvenance());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -99598,6 +99738,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -99623,7 +99770,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revision ID.
+       * The revision id.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -99646,7 +99793,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revision ID.
+       * The revision id.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -99669,7 +99816,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revision ID.
+       * The revision id.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -99691,7 +99838,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revision ID.
+       * The revision id.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -99709,7 +99856,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The revision ID.
+       * The revision id.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -100326,6 +100473,223 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           entityValidationOutput_ = null;
         }
         return entityValidationOutputBuilder_;
+      }
+
+      private com.google.cloud.documentai.v1beta3.Document.Provenance provenance_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.documentai.v1beta3.Document.Provenance,
+              com.google.cloud.documentai.v1beta3.Document.Provenance.Builder,
+              com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
+          provenanceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the provenance field is set.
+       */
+      public boolean hasProvenance() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The provenance.
+       */
+      public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
+        if (provenanceBuilder_ == null) {
+          return provenance_ == null
+              ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+              : provenance_;
+        } else {
+          return provenanceBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setProvenance(com.google.cloud.documentai.v1beta3.Document.Provenance value) {
+        if (provenanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          provenance_ = value;
+        } else {
+          provenanceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setProvenance(
+          com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
+        if (provenanceBuilder_ == null) {
+          provenance_ = builderForValue.build();
+        } else {
+          provenanceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeProvenance(
+          com.google.cloud.documentai.v1beta3.Document.Provenance value) {
+        if (provenanceBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && provenance_ != null
+              && provenance_
+                  != com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()) {
+            getProvenanceBuilder().mergeFrom(value);
+          } else {
+            provenance_ = value;
+          }
+        } else {
+          provenanceBuilder_.mergeFrom(value);
+        }
+        if (provenance_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearProvenance() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        provenance_ = null;
+        if (provenanceBuilder_ != null) {
+          provenanceBuilder_.dispose();
+          provenanceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
+          getProvenanceBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return internalGetProvenanceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
+          getProvenanceOrBuilder() {
+        if (provenanceBuilder_ != null) {
+          return provenanceBuilder_.getMessageOrBuilder();
+        } else {
+          return provenance_ == null
+              ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+              : provenance_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The history of this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.documentai.v1beta3.Document.Provenance,
+              com.google.cloud.documentai.v1beta3.Document.Provenance.Builder,
+              com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
+          internalGetProvenanceFieldBuilder() {
+        if (provenanceBuilder_ == null) {
+          provenanceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1beta3.Document.Provenance,
+                  com.google.cloud.documentai.v1beta3.Document.Provenance.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>(
+                  getProvenance(), getParentForChildren(), isClean());
+          provenance_ = null;
+        }
+        return provenanceBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.EntitiesRevision)
@@ -101737,7 +102101,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * ID and `document.entity_validation_output` field is the
+   * id and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -101765,7 +102129,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * ID and `document.entity_validation_output` field is the
+   * id and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -108020,7 +108384,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -108047,7 +108411,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -108074,7 +108438,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -108100,7 +108464,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -108122,7 +108486,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *

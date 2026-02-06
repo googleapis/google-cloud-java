@@ -24,7 +24,7 @@ package com.google.cloud.gkehub.v1;
  *
  *
  * <pre>
- * Feature represents the settings and status of any Hub Feature.
+ * Feature represents the settings and status of any Fleet Feature.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkehub.v1.Feature}
@@ -53,6 +53,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
 
   private Feature() {
     name_ = "";
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,6 +72,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
         return internalGetMembershipSpecs();
       case 7:
         return internalGetMembershipStates();
+      case 12:
+        return internalGetScopeSpecs();
+      case 13:
+        return internalGetScopeStates();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -173,7 +178,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -197,7 +202,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -211,7 +216,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -232,7 +237,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -315,8 +320,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Fleet-wide Feature configuration. If this Feature does not
+   * support any Fleet-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -334,8 +339,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Fleet-wide Feature configuration. If this Feature does not
+   * support any Fleet-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -355,8 +360,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Fleet-wide Feature configuration. If this Feature does not
+   * support any Fleet-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -410,12 +415,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -453,12 +459,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -486,12 +493,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -527,12 +535,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -571,7 +580,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Hub-wide Feature state.
+   * Output only. The Fleet-wide Feature state.
    * </pre>
    *
    * <code>
@@ -589,7 +598,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Hub-wide Feature state.
+   * Output only. The Fleet-wide Feature state.
    * </pre>
    *
    * <code>
@@ -609,7 +618,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Hub-wide Feature state.
+   * Output only. The Fleet-wide Feature state.
    * </pre>
    *
    * <code>
@@ -668,7 +677,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -704,7 +713,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -730,7 +739,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -764,7 +773,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -945,6 +954,422 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
+  public static final int SCOPE_SPECS_FIELD_NUMBER = 12;
+
+  private static final class ScopeSpecsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>newDefaultInstance(
+                    com.google.cloud.gkehub.v1.FeatureProto
+                        .internal_static_google_cloud_gkehub_v1_Feature_ScopeSpecsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.gkehub.v1.ScopeFeatureSpec.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+      scopeSpecs_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+      internalGetScopeSpecs() {
+    if (scopeSpecs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ScopeSpecsDefaultEntryHolder.defaultEntry);
+    }
+    return scopeSpecs_;
+  }
+
+  public int getScopeSpecsCount() {
+    return internalGetScopeSpecs().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsScopeSpecs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetScopeSpecs().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getScopeSpecsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+      getScopeSpecs() {
+    return getScopeSpecsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+      getScopeSpecsMap() {
+    return internalGetScopeSpecs().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.gkehub.v1.ScopeFeatureSpec getScopeSpecsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.gkehub.v1.ScopeFeatureSpec defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> map =
+        internalGetScopeSpecs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1.ScopeFeatureSpec getScopeSpecsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> map =
+        internalGetScopeSpecs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int SCOPE_STATES_FIELD_NUMBER = 13;
+
+  private static final class ScopeStatesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>newDefaultInstance(
+                    com.google.cloud.gkehub.v1.FeatureProto
+                        .internal_static_google_cloud_gkehub_v1_Feature_ScopeStatesEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.gkehub.v1.ScopeFeatureState.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+      scopeStates_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+      internalGetScopeStates() {
+    if (scopeStates_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ScopeStatesDefaultEntryHolder.defaultEntry);
+    }
+    return scopeStates_;
+  }
+
+  public int getScopeStatesCount() {
+    return internalGetScopeStates().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsScopeStates(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetScopeStates().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getScopeStatesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+      getScopeStates() {
+    return getScopeStatesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+      getScopeStatesMap() {
+    return internalGetScopeStates().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.gkehub.v1.ScopeFeatureState getScopeStatesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.gkehub.v1.ScopeFeatureState defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> map =
+        internalGetScopeStates().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1.ScopeFeatureState getScopeStatesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> map =
+        internalGetScopeStates().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int UNREACHABLE_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  public com.google.protobuf.ProtocolStringList getUnreachableList() {
+    return unreachable_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of unreachable.
+   */
+  public int getUnreachableCount() {
+    return unreachable_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  public java.lang.String getUnreachable(int index) {
+    return unreachable_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+    return unreachable_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -985,6 +1410,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(10, getDeleteTime());
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetScopeSpecs(), ScopeSpecsDefaultEntryHolder.defaultEntry, 12);
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetScopeStates(), ScopeStatesDefaultEntryHolder.defaultEntry, 13);
+    for (int i = 0; i < unreachable_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, unreachable_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1050,6 +1482,36 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDeleteTime());
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> entry :
+        internalGetScopeSpecs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+          scopeSpecs__ =
+              ScopeSpecsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, scopeSpecs__);
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> entry :
+        internalGetScopeStates().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+          scopeStates__ =
+              ScopeStatesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, scopeStates__);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < unreachable_.size(); i++) {
+        dataSize += computeStringSizeNoTag(unreachable_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUnreachableList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1093,6 +1555,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
     if (hasDeleteTime()) {
       if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
+    if (!internalGetScopeSpecs().equals(other.internalGetScopeSpecs())) return false;
+    if (!internalGetScopeStates().equals(other.internalGetScopeStates())) return false;
+    if (!getUnreachableList().equals(other.getUnreachableList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1141,6 +1606,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
     if (hasDeleteTime()) {
       hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDeleteTime().hashCode();
+    }
+    if (!internalGetScopeSpecs().getMap().isEmpty()) {
+      hash = (37 * hash) + SCOPE_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetScopeSpecs().hashCode();
+    }
+    if (!internalGetScopeStates().getMap().isEmpty()) {
+      hash = (37 * hash) + SCOPE_STATES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetScopeStates().hashCode();
+    }
+    if (getUnreachableCount() > 0) {
+      hash = (37 * hash) + UNREACHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreachableList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1246,7 +1723,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Feature represents the settings and status of any Hub Feature.
+   * Feature represents the settings and status of any Fleet Feature.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkehub.v1.Feature}
@@ -1270,6 +1747,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
           return internalGetMembershipSpecs();
         case 7:
           return internalGetMembershipStates();
+        case 12:
+          return internalGetScopeSpecs();
+        case 13:
+          return internalGetScopeStates();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1285,6 +1766,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
           return internalGetMutableMembershipSpecs();
         case 7:
           return internalGetMutableMembershipStates();
+        case 12:
+          return internalGetMutableScopeSpecs();
+        case 13:
+          return internalGetMutableScopeStates();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1359,6 +1844,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
         deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
+      internalGetMutableScopeSpecs().clear();
+      internalGetMutableScopeStates().clear();
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1435,6 +1923,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
         result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.scopeSpecs_ =
+            internalGetScopeSpecs().build(ScopeSpecsDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.scopeStates_ =
+            internalGetScopeStates().build(ScopeStatesDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1478,6 +1978,20 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDeleteTime()) {
         mergeDeleteTime(other.getDeleteTime());
+      }
+      internalGetMutableScopeSpecs().mergeFrom(other.internalGetScopeSpecs());
+      bitField0_ |= 0x00000400;
+      internalGetMutableScopeStates().mergeFrom(other.internalGetScopeStates());
+      bitField0_ |= 0x00000800;
+      if (!other.unreachable_.isEmpty()) {
+        if (unreachable_.isEmpty()) {
+          unreachable_ = other.unreachable_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureUnreachableIsMutable();
+          unreachable_.addAll(other.unreachable_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1591,6 +2105,41 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 98:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+                    scopeSpecs__ =
+                        input.readMessage(
+                            ScopeSpecsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableScopeSpecs()
+                    .ensureBuilderMap()
+                    .put(scopeSpecs__.getKey(), scopeSpecs__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
+            case 106:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+                    scopeStates__ =
+                        input.readMessage(
+                            ScopeStatesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableScopeStates()
+                    .ensureBuilderMap()
+                    .put(scopeStates__.getKey(), scopeStates__.getValue());
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 106
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUnreachableIsMutable();
+                unreachable_.add(s);
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1756,7 +2305,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1780,7 +2329,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1794,7 +2343,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1815,7 +2364,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1842,7 +2391,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1866,7 +2415,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -1887,7 +2436,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GCP labels for this Feature.
+     * Labels for this Feature.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -2123,8 +2672,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2141,8 +2690,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2165,8 +2714,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2191,8 +2740,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2214,8 +2763,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2245,8 +2794,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2268,8 +2817,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2286,8 +2835,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2308,8 +2857,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Hub-wide Feature configuration. If this Feature does not support any
-     * Hub-wide configuration, this field may be unused.
+     * Optional. Fleet-wide Feature configuration. If this Feature does not
+     * support any Fleet-wide configuration, this field may be unused.
      * </pre>
      *
      * <code>
@@ -2400,12 +2949,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2443,12 +2993,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2476,12 +3027,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2517,12 +3069,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2564,12 +3117,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2607,12 +3161,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2647,12 +3202,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2687,12 +3243,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Membership-specific configuration for this Feature. If this Feature does
-     * not support any per-Membership configuration, this field may be unused.
+     * Optional. Membership-specific configuration for this Feature. If this
+     * Feature does not support any per-Membership configuration, this field may
+     * be unused.
      *
      * The keys indicate which Membership the configuration is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
@@ -2737,7 +3294,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2754,7 +3311,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2777,7 +3334,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2802,7 +3359,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2824,7 +3381,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2854,7 +3411,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2876,7 +3433,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2893,7 +3450,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -2914,7 +3471,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Hub-wide Feature state.
+     * Output only. The Fleet-wide Feature state.
      * </pre>
      *
      * <code>
@@ -3010,7 +3567,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3046,7 +3603,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3072,7 +3629,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3106,7 +3663,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3146,7 +3703,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3182,7 +3739,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3215,7 +3772,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3248,7 +3805,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
      *
      * The keys indicate which Membership the state is for, in the form:
      *
-     * projects/{p}/locations/{l}/memberships/{m}
+     * `projects/{p}/locations/{l}/memberships/{m}`
      *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
@@ -3909,6 +4466,907 @@ public final class Feature extends com.google.protobuf.GeneratedMessage
         deleteTime_ = null;
       }
       return deleteTimeBuilder_;
+    }
+
+    private static final class ScopeSpecsConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec> {
+      @java.lang.Override
+      public com.google.cloud.gkehub.v1.ScopeFeatureSpec build(
+          com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder val) {
+        if (val instanceof com.google.cloud.gkehub.v1.ScopeFeatureSpec) {
+          return (com.google.cloud.gkehub.v1.ScopeFeatureSpec) val;
+        }
+        return ((com.google.cloud.gkehub.v1.ScopeFeatureSpec.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+          defaultEntry() {
+        return ScopeSpecsDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final ScopeSpecsConverter scopeSpecsConverter = new ScopeSpecsConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec.Builder>
+        scopeSpecs_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec.Builder>
+        internalGetScopeSpecs() {
+      if (scopeSpecs_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(scopeSpecsConverter);
+      }
+      return scopeSpecs_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec,
+            com.google.cloud.gkehub.v1.ScopeFeatureSpec.Builder>
+        internalGetMutableScopeSpecs() {
+      if (scopeSpecs_ == null) {
+        scopeSpecs_ = new com.google.protobuf.MapFieldBuilder<>(scopeSpecsConverter);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return scopeSpecs_;
+    }
+
+    public int getScopeSpecsCount() {
+      return internalGetScopeSpecs().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsScopeSpecs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetScopeSpecs().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getScopeSpecsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+        getScopeSpecs() {
+      return getScopeSpecsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+        getScopeSpecsMap() {
+      return internalGetScopeSpecs().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.gkehub.v1.ScopeFeatureSpec getScopeSpecsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.gkehub.v1.ScopeFeatureSpec defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder> map =
+          internalGetMutableScopeSpecs().ensureBuilderMap();
+      return map.containsKey(key) ? scopeSpecsConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1.ScopeFeatureSpec getScopeSpecsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder> map =
+          internalGetMutableScopeSpecs().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return scopeSpecsConverter.build(map.get(key));
+    }
+
+    public Builder clearScopeSpecs() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      internalGetMutableScopeSpecs().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeScopeSpecs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableScopeSpecs().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec>
+        getMutableScopeSpecs() {
+      bitField0_ |= 0x00000400;
+      return internalGetMutableScopeSpecs().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putScopeSpecs(
+        java.lang.String key, com.google.cloud.gkehub.v1.ScopeFeatureSpec value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableScopeSpecs().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllScopeSpecs(
+        java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableScopeSpecs().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Scope-specific configuration for this Feature. If this Feature
+     * does not support any per-Scope configuration, this field may be unused.
+     *
+     * The keys indicate which Scope the configuration is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     *
+     * {p} will always be returned as the project number, but the project ID is
+     * also accepted during input. If the same Scope is specified in the map
+     * twice (using the project ID form, and the project number form), exactly
+     * ONE of the entries will be saved, with no guarantees as to which. For this
+     * reason, it is recommended the same format be used for all entries when
+     * mutating a Feature.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1.ScopeFeatureSpec.Builder putScopeSpecsBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder>
+          builderMap = internalGetMutableScopeSpecs().ensureBuilderMap();
+      com.google.cloud.gkehub.v1.ScopeFeatureSpecOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.gkehub.v1.ScopeFeatureSpec.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.gkehub.v1.ScopeFeatureSpec) {
+        entry = ((com.google.cloud.gkehub.v1.ScopeFeatureSpec) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.gkehub.v1.ScopeFeatureSpec.Builder) entry;
+    }
+
+    private static final class ScopeStatesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureState> {
+      @java.lang.Override
+      public com.google.cloud.gkehub.v1.ScopeFeatureState build(
+          com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder val) {
+        if (val instanceof com.google.cloud.gkehub.v1.ScopeFeatureState) {
+          return (com.google.cloud.gkehub.v1.ScopeFeatureState) val;
+        }
+        return ((com.google.cloud.gkehub.v1.ScopeFeatureState.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+          defaultEntry() {
+        return ScopeStatesDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final ScopeStatesConverter scopeStatesConverter = new ScopeStatesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureState,
+            com.google.cloud.gkehub.v1.ScopeFeatureState.Builder>
+        scopeStates_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureState,
+            com.google.cloud.gkehub.v1.ScopeFeatureState.Builder>
+        internalGetScopeStates() {
+      if (scopeStates_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(scopeStatesConverter);
+      }
+      return scopeStates_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder,
+            com.google.cloud.gkehub.v1.ScopeFeatureState,
+            com.google.cloud.gkehub.v1.ScopeFeatureState.Builder>
+        internalGetMutableScopeStates() {
+      if (scopeStates_ == null) {
+        scopeStates_ = new com.google.protobuf.MapFieldBuilder<>(scopeStatesConverter);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return scopeStates_;
+    }
+
+    public int getScopeStatesCount() {
+      return internalGetScopeStates().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsScopeStates(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetScopeStates().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getScopeStatesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+        getScopeStates() {
+      return getScopeStatesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+        getScopeStatesMap() {
+      return internalGetScopeStates().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.gkehub.v1.ScopeFeatureState getScopeStatesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.gkehub.v1.ScopeFeatureState defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder> map =
+          internalGetMutableScopeStates().ensureBuilderMap();
+      return map.containsKey(key) ? scopeStatesConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1.ScopeFeatureState getScopeStatesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder> map =
+          internalGetMutableScopeStates().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return scopeStatesConverter.build(map.get(key));
+    }
+
+    public Builder clearScopeStates() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      internalGetMutableScopeStates().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeScopeStates(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableScopeStates().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState>
+        getMutableScopeStates() {
+      bitField0_ |= 0x00000800;
+      return internalGetMutableScopeStates().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putScopeStates(
+        java.lang.String key, com.google.cloud.gkehub.v1.ScopeFeatureState value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableScopeStates().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllScopeStates(
+        java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableScopeStates().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Scope-specific Feature status. If this Feature does
+     * report any per-Scope status, this field may be unused.
+     *
+     * The keys indicate which Scope the state is for, in the form:
+     *
+     * `projects/{p}/locations/global/scopes/{s}`
+     *
+     * Where {p} is the project, {s} is a valid Scope in this project.
+     * {p} WILL match the Feature's project.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1.ScopeFeatureState.Builder putScopeStatesBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder>
+          builderMap = internalGetMutableScopeStates().ensureBuilderMap();
+      com.google.cloud.gkehub.v1.ScopeFeatureStateOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.gkehub.v1.ScopeFeatureState.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.gkehub.v1.ScopeFeatureState) {
+        entry = ((com.google.cloud.gkehub.v1.ScopeFeatureState) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.gkehub.v1.ScopeFeatureState.Builder) entry;
+    }
+
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureUnreachableIsMutable() {
+      if (!unreachable_.isModifiable()) {
+        unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the unreachable.
+     */
+    public com.google.protobuf.ProtocolStringList getUnreachableList() {
+      unreachable_.makeImmutable();
+      return unreachable_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of unreachable.
+     */
+    public int getUnreachableCount() {
+      return unreachable_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unreachable at the given index.
+     */
+    public java.lang.String getUnreachable(int index) {
+      return unreachable_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
+     */
+    public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+      return unreachable_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The unreachable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnreachable(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
+      ensureUnreachableIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnreachable() {
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of locations that could not be reached while fetching
+     * this feature.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.gkehub.v1.Feature)

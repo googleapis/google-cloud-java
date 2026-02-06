@@ -19,6 +19,7 @@ package com.google.cloud.visionai.v1.stub;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListApplicationsPagedResponse;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListDraftsPagedResponse;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListInstancesPagedResponse;
+import static com.google.cloud.visionai.v1.AppPlatformClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListProcessorsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -51,6 +52,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AddApplicationStreamInputRequest;
 import com.google.cloud.visionai.v1.AddApplicationStreamInputResponse;
 import com.google.cloud.visionai.v1.Application;
@@ -274,6 +279,10 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
   private final UnaryCallSettings<DeleteProcessorRequest, Operation> deleteProcessorSettings;
   private final OperationCallSettings<DeleteProcessorRequest, Empty, OperationMetadata>
       deleteProcessorOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListApplicationsRequest, ListApplicationsResponse, Application>
@@ -416,6 +425,40 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
       LIST_APPLICATIONS_PAGE_STR_FACT =
@@ -483,6 +526,23 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
               PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> pageContext =
                   PageContext.create(callable, LIST_PROCESSORS_PAGE_STR_DESC, request, context);
               return ListProcessorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -742,6 +802,17 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
     return deleteProcessorOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public AppPlatformStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -912,6 +983,8 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
     updateProcessorOperationSettings = settingsBuilder.updateProcessorOperationSettings().build();
     deleteProcessorSettings = settingsBuilder.deleteProcessorSettings().build();
     deleteProcessorOperationSettings = settingsBuilder.deleteProcessorOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for AppPlatformStubSettings. */
@@ -1022,6 +1095,10 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
         deleteProcessorSettings;
     private final OperationCallSettings.Builder<DeleteProcessorRequest, Empty, OperationMetadata>
         deleteProcessorOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1092,6 +1169,8 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
       updateProcessorOperationSettings = OperationCallSettings.newBuilder();
       deleteProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteProcessorOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1120,7 +1199,9 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
               getProcessorSettings,
               createProcessorSettings,
               updateProcessorSettings,
-              deleteProcessorSettings);
+              deleteProcessorSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -1179,6 +1260,8 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
       updateProcessorOperationSettings = settings.updateProcessorOperationSettings.toBuilder();
       deleteProcessorSettings = settings.deleteProcessorSettings.toBuilder();
       deleteProcessorOperationSettings = settings.deleteProcessorOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1207,7 +1290,9 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
               getProcessorSettings,
               createProcessorSettings,
               updateProcessorSettings,
-              deleteProcessorSettings);
+              deleteProcessorSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -1362,6 +1447,16 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
 
       builder
           .deleteProcessorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2066,6 +2161,18 @@ public class AppPlatformStubSettings extends StubSettings<AppPlatformStubSetting
     public OperationCallSettings.Builder<DeleteProcessorRequest, Empty, OperationMetadata>
         deleteProcessorOperationSettings() {
       return deleteProcessorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

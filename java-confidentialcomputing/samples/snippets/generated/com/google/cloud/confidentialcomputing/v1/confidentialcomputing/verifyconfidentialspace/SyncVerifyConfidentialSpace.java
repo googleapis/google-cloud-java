@@ -21,6 +21,7 @@ import com.google.cloud.confidentialcomputing.v1.ChallengeName;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialComputingClient;
 import com.google.cloud.confidentialcomputing.v1.GceShieldedIdentity;
 import com.google.cloud.confidentialcomputing.v1.GcpCredentials;
+import com.google.cloud.confidentialcomputing.v1.NvidiaAttestation;
 import com.google.cloud.confidentialcomputing.v1.SignedEntity;
 import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse;
@@ -48,6 +49,7 @@ public class SyncVerifyConfidentialSpace {
               .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
               .setOptions(
                   VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+              .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
               .build();
       VerifyConfidentialSpaceResponse response =
           confidentialComputingClient.verifyConfidentialSpace(request);

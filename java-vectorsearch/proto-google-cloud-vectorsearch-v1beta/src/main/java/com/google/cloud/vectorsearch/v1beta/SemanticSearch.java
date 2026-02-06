@@ -370,6 +370,71 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
     return topK_;
   }
 
+  public static final int SEARCH_HINT_FIELD_NUMBER = 7;
+  private com.google.cloud.vectorsearch.v1beta.SearchHint searchHint_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets the search hint. If no strategy is specified, the service
+   * will use an index if one is available, and fall back to KNN search
+   * otherwise.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchHint field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchHint() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets the search hint. If no strategy is specified, the service
+   * will use an index if one is available, and fall back to KNN search
+   * otherwise.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchHint.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchHint getSearchHint() {
+    return searchHint_ == null
+        ? com.google.cloud.vectorsearch.v1beta.SearchHint.getDefaultInstance()
+        : searchHint_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets the search hint. If no strategy is specified, the service
+   * will use an index if one is available, and fall back to KNN search
+   * otherwise.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchHintOrBuilder getSearchHintOrBuilder() {
+    return searchHint_ == null
+        ? com.google.cloud.vectorsearch.v1beta.SearchHint.getDefaultInstance()
+        : searchHint_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -404,6 +469,9 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getFilter());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getSearchHint());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -432,6 +500,9 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFilter());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSearchHint());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -464,6 +535,10 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
     if (hasTopK()) {
       if (getTopK() != other.getTopK()) return false;
     }
+    if (hasSearchHint() != other.hasSearchHint()) return false;
+    if (hasSearchHint()) {
+      if (!getSearchHint().equals(other.getSearchHint())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -492,6 +567,10 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
     if (hasTopK()) {
       hash = (37 * hash) + TOP_K_FIELD_NUMBER;
       hash = (53 * hash) + getTopK();
+    }
+    if (hasSearchHint()) {
+      hash = (37 * hash) + SEARCH_HINT_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchHint().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -636,6 +715,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetOutputFieldsFieldBuilder();
         internalGetFilterFieldBuilder();
+        internalGetSearchHintFieldBuilder();
       }
     }
 
@@ -657,6 +737,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
         filterBuilder_ = null;
       }
       topK_ = 0;
+      searchHint_ = null;
+      if (searchHintBuilder_ != null) {
+        searchHintBuilder_.dispose();
+        searchHintBuilder_ = null;
+      }
       return this;
     }
 
@@ -716,6 +801,10 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
         result.topK_ = topK_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.searchHint_ = searchHintBuilder_ == null ? searchHint_ : searchHintBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -753,6 +842,9 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasTopK()) {
         setTopK(other.getTopK());
+      }
+      if (other.hasSearchHint()) {
+        mergeSearchHint(other.getSearchHint());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -817,6 +909,13 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetSearchHintFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1653,6 +1752,238 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
       topK_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.vectorsearch.v1beta.SearchHint searchHint_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchHint,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchHintOrBuilder>
+        searchHintBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchHint field is set.
+     */
+    public boolean hasSearchHint() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchHint.
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchHint getSearchHint() {
+      if (searchHintBuilder_ == null) {
+        return searchHint_ == null
+            ? com.google.cloud.vectorsearch.v1beta.SearchHint.getDefaultInstance()
+            : searchHint_;
+      } else {
+        return searchHintBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchHint(com.google.cloud.vectorsearch.v1beta.SearchHint value) {
+      if (searchHintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchHint_ = value;
+      } else {
+        searchHintBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchHint(
+        com.google.cloud.vectorsearch.v1beta.SearchHint.Builder builderForValue) {
+      if (searchHintBuilder_ == null) {
+        searchHint_ = builderForValue.build();
+      } else {
+        searchHintBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchHint(com.google.cloud.vectorsearch.v1beta.SearchHint value) {
+      if (searchHintBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && searchHint_ != null
+            && searchHint_
+                != com.google.cloud.vectorsearch.v1beta.SearchHint.getDefaultInstance()) {
+          getSearchHintBuilder().mergeFrom(value);
+        } else {
+          searchHint_ = value;
+        }
+      } else {
+        searchHintBuilder_.mergeFrom(value);
+      }
+      if (searchHint_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchHint() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      searchHint_ = null;
+      if (searchHintBuilder_ != null) {
+        searchHintBuilder_.dispose();
+        searchHintBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.Builder getSearchHintBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetSearchHintFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchHintOrBuilder getSearchHintOrBuilder() {
+      if (searchHintBuilder_ != null) {
+        return searchHintBuilder_.getMessageOrBuilder();
+      } else {
+        return searchHint_ == null
+            ? com.google.cloud.vectorsearch.v1beta.SearchHint.getDefaultInstance()
+            : searchHint_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets the search hint. If no strategy is specified, the service
+     * will use an index if one is available, and fall back to KNN search
+     * otherwise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchHint,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchHintOrBuilder>
+        internalGetSearchHintFieldBuilder() {
+      if (searchHintBuilder_ == null) {
+        searchHintBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.SearchHint,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.Builder,
+                com.google.cloud.vectorsearch.v1beta.SearchHintOrBuilder>(
+                getSearchHint(), getParentForChildren(), isClean());
+        searchHint_ = null;
+      }
+      return searchHintBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SemanticSearch)

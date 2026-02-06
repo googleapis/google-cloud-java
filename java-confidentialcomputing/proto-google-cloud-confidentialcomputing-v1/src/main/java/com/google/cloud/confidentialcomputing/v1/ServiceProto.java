@@ -53,6 +53,30 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_GpuInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_GpuInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SwitchInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SwitchInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SinglePassthroughAttestation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SinglePassthroughAttestation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_ProtectedPcieAttestation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_ProtectedPcieAttestation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_MultiGpuSecurePassthroughAttestation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_MultiGpuSecurePassthroughAttestation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_confidentialcomputing_v1_TdxCcelAttestation_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_TdxCcelAttestation_fieldAccessorTable;
@@ -129,6 +153,10 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_ConfidentialGkeOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_ConfidentialGkeOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeResponse_fieldAccessorTable;
@@ -160,24 +188,63 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022H\n"
           + "\tchallenge\030\002 \001(\01320.google.clou"
-          + "d.confidentialcomputing.v1.ChallengeB\003\340A\002\"\237\005\n"
+          + "d.confidentialcomputing.v1.ChallengeB\003\340A\002\"\222\006\n"
           + "\030VerifyAttestationRequest\022Q\n"
           + "\007td_ccel\030\006"
           + " \001(\01329.google.cloud.confidentialcomputing.v1.TdxCcelAttestationB\003\340A\001H\000\022\\\n"
           + "\023sev_snp_attestation\030\007 \001(\01328.google.cloud.co"
-          + "nfidentialcomputing.v1.SevSnpAttestationB\003\340A\001H\000\022I\n"
+          + "nfidentialcomputing.v1.SevSnpAttestationB\003\340A\001H\000\022[\n"
+          + "\022nvidia_attestation\030\t \001(\01328.go"
+          + "ogle.cloud.confidentialcomputing.v1.NvidiaAttestationB\003\340A\001H\001\022I\n"
           + "\tchallenge\030\001 \001(\tB6\340A\002\372A0\n"
           + ".confidentialcomputing.googleapis.com/Challenge\022S\n"
-          + "\017gcp_credentials\030\002 \001(\01325.google.clo"
-          + "ud.confidentialcomputing.v1.GcpCredentialsB\003\340A\001\022S\n"
-          + "\017tpm_attestation\030\003 \001(\01325.googl"
-          + "e.cloud.confidentialcomputing.v1.TpmAttestationB\003\340A\002\022b\n"
-          + "\027confidential_space_info\030\004"
-          + " \001(\0132<.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoB\003\340A\001\022O\n\r"
-          + "token_options\030\005"
-          + " \001(\01323.google.cloud.confidentialcomputing.v1.TokenOptionsB\003\340A\001\022\025\n"
+          + "\017gcp_credentials\030\002 \001(\013"
+          + "25.google.cloud.confidentialcomputing.v1.GcpCredentialsB\003\340A\001\022S\n"
+          + "\017tpm_attestation\030\003"
+          + " \001(\01325.google.cloud.confidentialcomputing.v1.TpmAttestationB\003\340A\002\022b\n"
+          + "\027confidential_space_info\030\004 \001(\0132<.google.cloud.confid"
+          + "entialcomputing.v1.ConfidentialSpaceInfoB\003\340A\001\022O\n\r"
+          + "token_options\030\005 \001(\01323.google.cl"
+          + "oud.confidentialcomputing.v1.TokenOptionsB\003\340A\001\022\025\n"
           + "\010attester\030\010 \001(\tB\003\340A\001B\021\n"
-          + "\017tee_attestation\"\203\001\n"
+          + "\017tee_attestationB\024\n"
+          + "\022device_attestation\"\273\n\n"
+          + "\021NvidiaAttestation\022d\n"
+          + "\003spt\030\001 \001(\0132U.google.cloud"
+          + ".confidentialcomputing.v1.NvidiaAttestation.SinglePassthroughAttestationH\000\022b\n"
+          + "\005ppcie\030\002 \001(\0132Q.google.cloud.confidentialcom"
+          + "puting.v1.NvidiaAttestation.ProtectedPcieAttestationH\000\022l\n"
+          + "\003mpt\030\003 \001(\0132].google.cloud.confidentialcomputing.v1.NvidiaAttest"
+          + "ation.MultiGpuSecurePassthroughAttestationH\000\032\224\002\n"
+          + "\007GpuInfo\022\021\n"
+          + "\004uuid\030\001 \001(\tB\003\340A\001\022\033\n"
+          + "\016driver_version\030\002 \001(\tB\003\340A\001\022\032\n\r"
+          + "vbios_version\030\003 \001(\tB\003\340A\001\022p\n"
+          + "\025gpu_architecture_type\030\004 \001(\0162L.google.cloud.confidentialcomputing"
+          + ".v1.NvidiaAttestation.GpuArchitectureTypeB\003\340A\001\022*\n"
+          + "\035attestation_certificate_chain\030\005 \001(\014B\003\340A\001\022\037\n"
+          + "\022attestation_report\030\006 \001(\014B\003\340A\001\032l\n\n"
+          + "SwitchInfo\022\021\n"
+          + "\004uuid\030\001 \001(\tB\003\340A\001\022*\n"
+          + "\035attestation_certificate_chain\030\002 \001(\014B\003\340A\001\022\037\n"
+          + "\022attestation_report\030\003 \001(\014B\003\340A\001\032x\n"
+          + "\034SinglePassthroughAttestation\022X\n"
+          + "\tgpu_quote\030\001"
+          + " \001(\0132@.google.cloud.confidentialcomputing.v1.NvidiaAttestation.GpuInfoB\003\340A\001\032\326\001\n"
+          + "\030ProtectedPcieAttestation\022Y\n\n"
+          + "gpu_quotes\030\001"
+          + " \003(\0132@.google.cloud.confidentialcomputing.v1.NvidiaAttestation.GpuInfoB\003\340A\001\022_\n\r"
+          + "switch_quotes\030\002 \003(\0132C.google.cloud.confid"
+          + "entialcomputing.v1.NvidiaAttestation.SwitchInfoB\003\340A\001\032\201\001\n"
+          + "$MultiGpuSecurePassthroughAttestation\022Y\n\n"
+          + "gpu_quotes\030\001 \003(\0132@.goog"
+          + "le.cloud.confidentialcomputing.v1.NvidiaAttestation.GpuInfoB\003\340A\001\"\203\001\n"
+          + "\023GpuArchitectureType\022%\n"
+          + "!GPU_ARCHITECTURE_TYPE_UNSPECIFIED\020\000\022 \n"
+          + "\034GPU_ARCHITECTURE_TYPE_HOPPER\020\010\022#\n"
+          + "\037GPU_ARCHITECTURE_TYPE_BLACKWELL\020\n"
+          + "B\014\n\n"
+          + "cc_feature\"\203\001\n"
           + "\022TdxCcelAttestation\022\034\n"
           + "\017ccel_acpi_table\030\001 \001(\014B\003\340A\001\022\026\n"
           + "\tccel_data\030\002 \001(\014B\003\340A\001\022 \n"
@@ -192,74 +259,77 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\016GcpCredentials\022!\n"
           + "\031service_account_id_tokens\030\002 \003(\t\"\205\002\n"
           + "\014TokenOptions\022i\n"
-          + "\032aws_principal_tags_options\030\004 \001(\0132>.google.cloud.confidentialco"
-          + "mputing.v1.AwsPrincipalTagsOptionsB\003\340A\001H\000\022\025\n"
+          + "\032aws_principal_tags_options\030\004 \001(\0132>.google.clo"
+          + "ud.confidentialcomputing.v1.AwsPrincipalTagsOptionsB\003\340A\001H\000\022\025\n"
           + "\010audience\030\001 \001(\tB\003\340A\001\022\022\n"
           + "\005nonce\030\002 \003(\tB\003\340A\001\022I\n\n"
-          + "token_type\030\003 \001(\01620.google.cloud."
-          + "confidentialcomputing.v1.TokenTypeB\003\340A\001B\024\n"
+          + "token_type\030\003 \001("
+          + "\01620.google.cloud.confidentialcomputing.v1.TokenTypeB\003\340A\001B\024\n"
           + "\022token_type_options\"\366\002\n"
           + "\027AwsPrincipalTagsOptions\022x\n"
-          + "\026allowed_principal_tags\030\001 \001(\0132S.google.cloud.confidentialcomputing.v"
-          + "1.AwsPrincipalTagsOptions.AllowedPrincipalTagsB\003\340A\001\032\340\001\n"
+          + "\026allowed_principal_tags\030\001 \001(\0132S.google.cloud.confid"
+          + "entialcomputing.v1.AwsPrincipalTagsOptions.AllowedPrincipalTagsB\003\340A\001\032\340\001\n"
           + "\024AllowedPrincipalTags\022\225\001\n"
-          + "\032container_image_signatures\030\001 \001(\0132l.goog"
-          + "le.cloud.confidentialcomputing.v1.AwsPri"
-          + "ncipalTagsOptions.AllowedPrincipalTags.ContainerImageSignaturesB\003\340A\001\0320\n"
+          + "\032container_image_signatures\030\001 \001(\0132l.google.cloud.confidentialco"
+          + "mputing.v1.AwsPrincipalTagsOptions.Allow"
+          + "edPrincipalTags.ContainerImageSignaturesB\003\340A\001\0320\n"
           + "\030ContainerImageSignatures\022\024\n"
           + "\007key_ids\030\001 \003(\tB\003\340A\001\"\217\003\n"
           + "\016TpmAttestation\022K\n"
-          + "\006quotes\030\001 \003(\0132;.goog"
-          + "le.cloud.confidentialcomputing.v1.TpmAttestation.Quote\022\025\n\r"
+          + "\006quotes\030\001"
+          + " \003(\0132;.google.cloud.confidentialcomputing.v1.TpmAttestation.Quote\022\025\n\r"
           + "tcg_event_log\030\002 \001(\014\022\033\n"
           + "\023canonical_event_log\030\003 \001(\014\022\017\n"
           + "\007ak_cert\030\004 \001(\014\022\022\n\n"
           + "cert_chain\030\005 \003(\014\032\326\001\n"
           + "\005Quote\022\021\n"
           + "\thash_algo\030\001 \001(\005\022^\n\n"
-          + "pcr_values\030\002 \003(\0132J.googl"
-          + "e.cloud.confidentialcomputing.v1.TpmAttestation.Quote.PcrValuesEntry\022\021\n"
+          + "pcr_values\030\002 \003(\0132J.google.cloud.confidentialcom"
+          + "puting.v1.TpmAttestation.Quote.PcrValuesEntry\022\021\n"
           + "\traw_quote\030\003 \001(\014\022\025\n\r"
           + "raw_signature\030\004 \001(\014\0320\n"
           + "\016PcrValuesEntry\022\013\n"
-          + "\003key\030\001 \001(\005\022\r\n"
+          + "\003key\030\001 \001(\005\022\r"
+          + "\n"
           + "\005value\030\002 \001(\014:\0028\001\"j\n"
           + "\025ConfidentialSpaceInfo\022Q\n"
-          + "\017signed_entities\030\001"
-          + " \003(\01323.google.cloud.confidentialcomputing.v1.SignedEntityB\003\340A\001\"w\n"
+          + "\017signed_entities\030\001 \003(\01323.google.clo"
+          + "ud.confidentialcomputing.v1.SignedEntityB\003\340A\001\"w\n"
           + "\014SignedEntity\022g\n"
-          + "\032container_image_signatures\030\001 \003(\013"
-          + "2>.google.cloud.confidentialcomputing.v1.ContainerImageSignatureB\003\340A\001\"\257\001\n"
+          + "\032container_image_signatures\030\001 \003(\0132>.google.cloud.confide"
+          + "ntialcomputing.v1.ContainerImageSignatureB\003\340A\001\"\257\001\n"
           + "\027ContainerImageSignature\022\024\n"
           + "\007payload\030\001 \001(\014B\003\340A\001\022\026\n"
           + "\tsignature\030\002 \001(\014B\003\340A\001\022\027\n\n"
           + "public_key\030\003 \001(\014B\003\340A\001\022M\n"
-          + "\007sig_alg\030\004 \001(\01627.google.cloud"
-          + ".confidentialcomputing.v1.SigningAlgorithmB\003\340A\001\"\226\010\n"
+          + "\007sig_alg\030\004 \001"
+          + "(\01627.google.cloud.confidentialcomputing.v1.SigningAlgorithmB\003\340A\001\"\361\010\n"
           + "\036VerifyConfidentialSpaceRequest\022Q\n"
-          + "\007td_ccel\030\003 \001(\01329.google.cloud.confi"
-          + "dentialcomputing.v1.TdxCcelAttestationB\003\340A\004H\000\022U\n"
-          + "\017tpm_attestation\030\004 \001(\01325.google."
-          + "cloud.confidentialcomputing.v1.TpmAttestationB\003\340A\004H\000\022I\n"
+          + "\007td_ccel\030\003 \001(\01329.g"
+          + "oogle.cloud.confidentialcomputing.v1.TdxCcelAttestationB\003\340A\004H\000\022U\n"
+          + "\017tpm_attestation\030\004"
+          + " \001(\01325.google.cloud.confidentialcomputing.v1.TpmAttestationB\003\340A\004H\000\022I\n"
           + "\tchallenge\030\001 \001(\tB6\340A\002\372A0\n"
           + ".confidentialcomputing.googleapis.com/Challenge\022S\n"
-          + "\017gcp_credentials\030\002 \001(\01325.googl"
-          + "e.cloud.confidentialcomputing.v1.GcpCredentialsB\003\340A\001\022Q\n"
-          + "\017signed_entities\030\005 \003(\01323."
-          + "google.cloud.confidentialcomputing.v1.SignedEntityB\003\340A\001\022^\n"
-          + "\025gce_shielded_identity\030\006"
-          + " \001(\0132:.google.cloud.confidentialcomputing.v1.GceShieldedIdentityB\003\340A\001\022t\n"
-          + "\007options\030\007 \001(\0132^.google.cloud.confidentialcomp"
-          + "uting.v1.VerifyConfidentialSpaceRequest.ConfidentialSpaceOptionsB\003\340A\001\032\355\002\n"
+          + "\017gcp_credentials\030\002"
+          + " \001(\01325.google.cloud.confidentialcomputing.v1.GcpCredentialsB\003\340A\001\022Q\n"
+          + "\017signed_entities\030\005"
+          + " \003(\01323.google.cloud.confidentialcomputing.v1.SignedEntityB\003\340A\001\022^\n"
+          + "\025gce_shielded_identity\030\006 \001(\0132:.google.cloud.c"
+          + "onfidentialcomputing.v1.GceShieldedIdentityB\003\340A\001\022t\n"
+          + "\007options\030\007 \001(\0132^.google.cloud.confidentialcomputing.v1.VerifyConfiden"
+          + "tialSpaceRequest.ConfidentialSpaceOptionsB\003\340A\001\022Y\n"
+          + "\022nvidia_attestation\030\010 \001(\01328.goo"
+          + "gle.cloud.confidentialcomputing.v1.NvidiaAttestationB\003\340A\001\032\355\002\n"
           + "\030ConfidentialSpaceOptions\022i\n"
-          + "\032aws_principal_tags_options\030\005 \001(\0132>.google.cloud.confidenti"
-          + "alcomputing.v1.AwsPrincipalTagsOptionsB\003\340A\001H\000\022\025\n"
+          + "\032aws_principal_tags_options\030\005 \001"
+          + "(\0132>.google.cloud.confidentialcomputing.v1.AwsPrincipalTagsOptionsB\003\340A\001H\000\022\025\n"
           + "\010audience\030\001 \001(\tB\003\340A\001\022O\n\r"
-          + "token_profile\030\002"
-          + " \001(\01623.google.cloud.confidentialcomputing.v1.TokenProfileB\003\340A\001\022\022\n"
+          + "token_profile\030\002 \001(\0162"
+          + "3.google.cloud.confidentialcomputing.v1.TokenProfileB\003\340A\001\022\022\n"
           + "\005nonce\030\003 \003(\tB\003\340A\001\022Q\n"
-          + "\016signature_type\030\004 \001(\01624.goog"
-          + "le.cloud.confidentialcomputing.v1.SignatureTypeB\003\340A\001B\027\n"
+          + "\016signature_type\030\004 \001(\01624.google.cloud.con"
+          + "fidentialcomputing.v1.SignatureTypeB\003\340A\001B\027\n"
           + "\025token_profile_optionsB\021\n"
           + "\017tee_attestation\"G\n"
           + "\023GceShieldedIdentity\022\024\n"
@@ -267,12 +337,19 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "ak_cert_chain\030\002 \003(\014B\003\340A\001\"r\n"
           + "\037VerifyConfidentialSpaceResponse\022\036\n"
           + "\021attestation_token\030\001 \001(\tB\003\340A\003\022/\n"
-          + "\016partial_errors\030\002 \003(\0132\022.google.rpc.StatusB\003\340A\003\"\316\001\n"
+          + "\016partial_errors\030\002 \003(\0132\022.google.rpc.StatusB\003\340A\003\"\331\003\n"
           + "\034VerifyConfidentialGkeRequest\022P\n"
-          + "\017tpm_attestation\030\002 \001(\01325.google.cloud.c"
-          + "onfidentialcomputing.v1.TpmAttestationH\000\022I\n"
+          + "\017tpm_attestation\030\002"
+          + " \001(\01325.google.cloud.confidentialcomputing.v1.TpmAttestationH\000\022I\n"
           + "\tchallenge\030\001 \001(\tB6\340A\002\372A0\n"
-          + ".confidentialcomputing.googleapis.com/ChallengeB\021\n"
+          + ".confidentialcomputing.googleapis.com/Challenge\022p\n"
+          + "\007options\030\003 \001(\0132Z.google.cloud.confidentialcomputing.v1"
+          + ".VerifyConfidentialGkeRequest.ConfidentialGkeOptionsB\003\340A\001\032\226\001\n"
+          + "\026ConfidentialGkeOptions\022\025\n"
+          + "\010audience\030\001 \001(\tB\003\340A\001\022\022\n"
+          + "\005nonce\030\003 \003(\tB\003\340A\001\022Q\n"
+          + "\016signature_type\030\004 \001(\01624.google"
+          + ".cloud.confidentialcomputing.v1.SignatureTypeB\003\340A\001B\021\n"
           + "\017tee_attestation\"?\n"
           + "\035VerifyConfidentialGkeResponse\022\036\n"
           + "\021attestation_token\030\001 \001(\tB\003\340A\003*\177\n"
@@ -296,32 +373,30 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\031TOKEN_PROFILE_DEFAULT_EAT\020\001\022\025\n"
           + "\021TOKEN_PROFILE_AWS\020\0022\265\010\n"
           + "\025ConfidentialComputing\022\330\001\n"
-          + "\017CreateChallenge\022=.google.cloud.confidentialcomputing.v1.C"
-          + "reateChallengeRequest\0320.google.cloud.con"
-          + "fidentialcomputing.v1.Challenge\"T\332A\020pare"
-          + "nt,challenge\202\323\344\223\002;\"./v1/{parent=projects/*/locations/*}/challenges:"
-          + "\tchallenge\022\350\001\n"
-          + "\021VerifyAttestation\022?.google.cloud.confidentialcomputing.v1.VerifyAttestationReq"
-          + "uest\032@.google.cloud.confidentialcomputin"
-          + "g.v1.VerifyAttestationResponse\"P\202\323\344\223\002J\"E"
-          + "/v1/{challenge=projects/*/locations/*/challenges/*}:verifyAttestation:\001*\022\200\002\n"
-          + "\027VerifyConfidentialSpace\022E.google.cloud.conf"
-          + "identialcomputing.v1.VerifyConfidentialSpaceRequest\032F.google.cloud.confidentialc"
-          + "omputing.v1.VerifyConfidentialSpaceRespo"
-          + "nse\"V\202\323\344\223\002P\"K/v1/{challenge=projects/*/l"
-          + "ocations/*/challenges/*}:verifyConfidentialSpace:\001*\022\370\001\n"
-          + "\025VerifyConfidentialGke\022C.google.cloud.confidentialcomputing.v1.Ve"
-          + "rifyConfidentialGkeRequest\032D.google.cloud.confidentialcomputing.v1.VerifyConfide"
-          + "ntialGkeResponse\"T\202\323\344\223\002N\"I/v1/{challenge"
-          + "=projects/*/locations/*/challenges/*}:ve"
-          + "rifyConfidentialGke:\001*\032X\312A$confidentialc"
-          + "omputing.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\227\002\n"
-          + ")com.google.cloud.confidentialcomputing.v1B\014"
-          + "ServiceProtoP\001Z_cloud.google.com/go/confidentialcomputing/apiv1/confidentialcomp"
-          + "utingpb;confidentialcomputingpb\252\002%Google"
-          + ".Cloud.ConfidentialComputing.V1\312\002%Google"
-          + "\\Cloud\\ConfidentialComputing\\V1\352\002(Google"
-          + "::Cloud::ConfidentialComputing::V1b\006proto3"
+          + "\017CreateChallenge\022=.google.cloud.confidentia"
+          + "lcomputing.v1.CreateChallengeRequest\0320.google.cloud.confidentialcomputing.v1.Cha"
+          + "llenge\"T\332A\020parent,challenge\202\323\344\223\002;\"./v1/{"
+          + "parent=projects/*/locations/*}/challenges:\tchallenge\022\350\001\n"
+          + "\021VerifyAttestation\022?.google.cloud.confidentialcomputing.v1.Verif"
+          + "yAttestationRequest\032@.google.cloud.confidentialcomputing.v1.VerifyAttestationRes"
+          + "ponse\"P\202\323\344\223\002J\"E/v1/{challenge=projects/*"
+          + "/locations/*/challenges/*}:verifyAttestation:\001*\022\200\002\n"
+          + "\027VerifyConfidentialSpace\022E.google.cloud.confidentialcomputing.v1.Veri"
+          + "fyConfidentialSpaceRequest\032F.google.cloud.confidentialcomputing.v1.VerifyConfide"
+          + "ntialSpaceResponse\"V\202\323\344\223\002P\"K/v1/{challen"
+          + "ge=projects/*/locations/*/challenges/*}:verifyConfidentialSpace:\001*\022\370\001\n"
+          + "\025VerifyConfidentialGke\022C.google.cloud.confidential"
+          + "computing.v1.VerifyConfidentialGkeRequest\032D.google.cloud.confidentialcomputing.v"
+          + "1.VerifyConfidentialGkeResponse\"T\202\323\344\223\002N\""
+          + "I/v1/{challenge=projects/*/locations/*/c"
+          + "hallenges/*}:verifyConfidentialGke:\001*\032X\312"
+          + "A$confidentialcomputing.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-platformB\227\002\n"
+          + ")com.google.cloud.confidentialcomputing.v1B\014ServiceProtoP\001Z_cloud.goo"
+          + "gle.com/go/confidentialcomputing/apiv1/confidentialcomputingpb;confidentialcompu"
+          + "tingpb\252\002%Google.Cloud.ConfidentialComput"
+          + "ing.V1\312\002%Google\\Cloud\\ConfidentialComput"
+          + "ing\\V1\352\002(Google::Cloud::ConfidentialComputing::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -358,6 +433,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "TdCcel",
               "SevSnpAttestation",
+              "NvidiaAttestation",
               "Challenge",
               "GcpCredentials",
               "TpmAttestation",
@@ -365,9 +441,68 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "TokenOptions",
               "Attester",
               "TeeAttestation",
+              "DeviceAttestation",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor,
+            new java.lang.String[] {
+              "Spt", "Ppcie", "Mpt", "CcFeature",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_GpuInfo_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_GpuInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_GpuInfo_descriptor,
+            new java.lang.String[] {
+              "Uuid",
+              "DriverVersion",
+              "VbiosVersion",
+              "GpuArchitectureType",
+              "AttestationCertificateChain",
+              "AttestationReport",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SwitchInfo_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SwitchInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SwitchInfo_descriptor,
+            new java.lang.String[] {
+              "Uuid", "AttestationCertificateChain", "AttestationReport",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SinglePassthroughAttestation_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SinglePassthroughAttestation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_SinglePassthroughAttestation_descriptor,
+            new java.lang.String[] {
+              "GpuQuote",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_ProtectedPcieAttestation_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor
+            .getNestedType(3);
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_ProtectedPcieAttestation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_ProtectedPcieAttestation_descriptor,
+            new java.lang.String[] {
+              "GpuQuotes", "SwitchQuotes",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_MultiGpuSecurePassthroughAttestation_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_descriptor
+            .getNestedType(4);
+    internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_MultiGpuSecurePassthroughAttestation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_NvidiaAttestation_MultiGpuSecurePassthroughAttestation_descriptor,
+            new java.lang.String[] {
+              "GpuQuotes",
             });
     internal_static_google_cloud_confidentialcomputing_v1_TdxCcelAttestation_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_confidentialcomputing_v1_TdxCcelAttestation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_TdxCcelAttestation_descriptor,
@@ -375,7 +510,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "CcelAcpiTable", "CcelData", "CanonicalEventLog", "TdQuote",
             });
     internal_static_google_cloud_confidentialcomputing_v1_SevSnpAttestation_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_confidentialcomputing_v1_SevSnpAttestation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_SevSnpAttestation_descriptor,
@@ -383,7 +518,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Report", "AuxBlob",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor,
@@ -391,7 +526,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "OidcClaimsToken", "PartialErrors",
             });
     internal_static_google_cloud_confidentialcomputing_v1_GcpCredentials_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_confidentialcomputing_v1_GcpCredentials_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_GcpCredentials_descriptor,
@@ -399,7 +534,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "ServiceAccountIdTokens",
             });
     internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor,
@@ -407,7 +542,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "AwsPrincipalTagsOptions", "Audience", "Nonce", "TokenType", "TokenTypeOptions",
             });
     internal_static_google_cloud_confidentialcomputing_v1_AwsPrincipalTagsOptions_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_confidentialcomputing_v1_AwsPrincipalTagsOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_AwsPrincipalTagsOptions_descriptor,
@@ -433,7 +568,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "KeyIds",
             });
     internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor,
@@ -459,7 +594,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_descriptor,
@@ -467,7 +602,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "SignedEntities",
             });
     internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_descriptor,
@@ -475,7 +610,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "ContainerImageSignatures",
             });
     internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_descriptor,
@@ -483,7 +618,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Payload", "Signature", "PublicKey", "SigAlg",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceRequest_descriptor,
@@ -495,6 +630,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "SignedEntities",
               "GceShieldedIdentity",
               "Options",
+              "NvidiaAttestation",
               "TeeAttestation",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceRequest_ConfidentialSpaceOptions_descriptor =
@@ -512,7 +648,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "TokenProfileOptions",
             });
     internal_static_google_cloud_confidentialcomputing_v1_GceShieldedIdentity_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_confidentialcomputing_v1_GceShieldedIdentity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_GceShieldedIdentity_descriptor,
@@ -520,7 +656,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "AkCert", "AkCertChain",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_descriptor,
@@ -528,15 +664,24 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "AttestationToken", "PartialErrors",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_descriptor,
             new java.lang.String[] {
-              "TpmAttestation", "Challenge", "TeeAttestation",
+              "TpmAttestation", "Challenge", "Options", "TeeAttestation",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_ConfidentialGkeOptions_descriptor =
+        internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_ConfidentialGkeOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeRequest_ConfidentialGkeOptions_descriptor,
+            new java.lang.String[] {
+              "Audience", "Nonce", "SignatureType",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeResponse_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialGkeResponse_descriptor,

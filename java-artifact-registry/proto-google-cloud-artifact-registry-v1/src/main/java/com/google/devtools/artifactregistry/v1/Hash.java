@@ -111,6 +111,16 @@ public final class Hash extends com.google.protobuf.GeneratedMessage
      * <code>MD5 = 2;</code>
      */
     MD5(2),
+    /**
+     *
+     *
+     * <pre>
+     * Dirsum SHA256 hash.
+     * </pre>
+     *
+     * <code>DIRSUM_SHA256 = 3;</code>
+     */
+    DIRSUM_SHA256(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -157,6 +167,17 @@ public final class Hash extends com.google.protobuf.GeneratedMessage
      */
     public static final int MD5_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Dirsum SHA256 hash.
+     * </pre>
+     *
+     * <code>DIRSUM_SHA256 = 3;</code>
+     */
+    public static final int DIRSUM_SHA256_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -187,6 +208,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessage
           return SHA256;
         case 2:
           return MD5;
+        case 3:
+          return DIRSUM_SHA256;
         default:
           return null;
       }

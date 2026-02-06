@@ -198,7 +198,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=473
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=477
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -217,7 +217,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=473
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=477
    * @return The document.
    */
   @java.lang.Deprecated
@@ -246,10 +246,13 @@ public interface ProcessRequestOrBuilder
    * `false`.
    * </pre>
    *
-   * <code>bool skip_human_review = 3;</code>
+   * <code>bool skip_human_review = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.skip_human_review is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=481
    * @return The skipHumanReview.
    */
+  @java.lang.Deprecated
   boolean getSkipHumanReview();
 
   /**
