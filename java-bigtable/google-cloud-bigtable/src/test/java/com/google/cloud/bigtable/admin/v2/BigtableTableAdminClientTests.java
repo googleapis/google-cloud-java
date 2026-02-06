@@ -1657,6 +1657,31 @@ public class BigtableTableAdminClientTests {
     assertThat(actualResult).containsExactly("bigtable.backups.get");
   }
 
+  @Test
+  public void testWaitForConsistencyWithToken() {
+    // Setup
+    Mockito.when(mockStub.awaitConsistencyCallable()).thenReturn(mockAwaitConsistencyCallable);
+
+    String token = "my-token";
+    ConsistencyRequest expectedRequest = ConsistencyRequest.forReplication(TABLE_ID, token);
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockAwaitConsistencyCallable.futureCall(expectedRequest))
+        .thenAnswer(
+            (Answer<ApiFuture<Void>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(null);
+                });
+
+    // Execute
+    adminClient.waitForConsistency(TABLE_ID, token);
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
   private <ReqT, RespT, MetaT> void mockOperationResult(
       OperationCallable<ReqT, RespT, MetaT> callable,
       ReqT request,

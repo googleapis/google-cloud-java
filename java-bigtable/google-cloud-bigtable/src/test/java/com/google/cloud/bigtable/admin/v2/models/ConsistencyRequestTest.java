@@ -79,4 +79,22 @@ public class ConsistencyRequestTest {
     assertThat(generateRequest.getName())
         .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
   }
+
+  @Test
+  public void testToCheckConsistencyProtoWithToken() {
+    ConsistencyRequest consistencyRequest =
+        ConsistencyRequest.forReplication(TABLE_ID, CONSISTENCY_TOKEN);
+
+    TableAdminRequestContext requestContext =
+        TableAdminRequestContext.create(PROJECT_ID, INSTANCE_ID);
+
+    CheckConsistencyRequest checkConsistencyRequest =
+        consistencyRequest.toCheckConsistencyProto(requestContext, CONSISTENCY_TOKEN);
+
+    assertThat(checkConsistencyRequest.getName())
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+    assertThat(checkConsistencyRequest.getConsistencyToken()).isEqualTo(CONSISTENCY_TOKEN);
+    assertThat(checkConsistencyRequest.getModeCase())
+        .isEqualTo(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES);
+  }
 }

@@ -42,6 +42,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
@@ -324,5 +325,38 @@ public class AwaitConsistencyCallableTest {
         awaitReplicationCallable.futureCall(TABLE_NAME, CALL_CONTEXT);
 
     consistentFuture.get(1, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testWithProvidedToken() throws Exception {
+    // 1. Setup: Request with a pre-existing token
+    String existingToken = "existing-token";
+    ConsistencyRequest consistencyRequest =
+        ConsistencyRequest.forReplication(TABLE_ID, existingToken);
+
+    // 2. Setup: Mock the check operation to succeed immediately
+    CheckConsistencyRequest expectedCheckRequest =
+        CheckConsistencyRequest.newBuilder()
+            .setName(TABLE_NAME.toString())
+            .setConsistencyToken(existingToken)
+            .setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build())
+            .build();
+    CheckConsistencyResponse expectedResponse =
+        CheckConsistencyResponse.newBuilder().setConsistent(true).build();
+
+    Mockito.when(mockCheckConsistencyCallable.futureCall(expectedCheckRequest, CALL_CONTEXT))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // 3. Execute
+    ApiFuture<Void> future = awaitConsistencyCallable.futureCall(consistencyRequest, CALL_CONTEXT);
+    future.get(1, TimeUnit.SECONDS);
+
+    // 4. Verify: Generate was NEVER called, Check WAS called
+    Mockito.verify(mockGenerateConsistencyTokenCallable, Mockito.never())
+        .futureCall(
+            ArgumentMatchers.any(GenerateConsistencyTokenRequest.class),
+            ArgumentMatchers.any(ApiCallContext.class));
+    Mockito.verify(mockCheckConsistencyCallable, Mockito.times(1))
+        .futureCall(expectedCheckRequest, CALL_CONTEXT);
   }
 }

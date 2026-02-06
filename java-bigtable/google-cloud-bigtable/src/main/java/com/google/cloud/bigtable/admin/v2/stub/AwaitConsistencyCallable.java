@@ -93,6 +93,15 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
   @Override
   public ApiFuture<Void> futureCall(
       final ConsistencyRequest consistencyRequest, final ApiCallContext apiCallContext) {
+
+    // If the token is already provided, skip generation and poll directly.
+    if (consistencyRequest.getConsistencyToken() != null) {
+      CheckConsistencyRequest request =
+          consistencyRequest.toCheckConsistencyProto(
+              requestContext, consistencyRequest.getConsistencyToken());
+      return pollToken(request, apiCallContext);
+    }
+
     ApiFuture<GenerateConsistencyTokenResponse> tokenFuture =
         generateToken(consistencyRequest.toGenerateTokenProto(requestContext), apiCallContext);
 
