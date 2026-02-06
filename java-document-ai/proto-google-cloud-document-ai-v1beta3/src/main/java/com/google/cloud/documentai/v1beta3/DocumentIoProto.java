@@ -41,6 +41,10 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_Documents_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_Documents_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1beta3_RawDocument_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_RawDocument_fieldAccessorTable;
@@ -56,6 +60,10 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_documentai_v1beta3_GcsPrefix_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_GcsPrefix_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_RawDocuments_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_RawDocuments_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1beta3_BatchDocumentsInputConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -95,56 +103,70 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/documentai/v1beta3/docume"
           + "nt_io.proto\022\037google.cloud.documentai.v1b"
-          + "eta3\032 google/protobuf/field_mask.proto\"G"
-          + "\n\013RawDocument\022\017\n\007content\030\001 \001(\014\022\021\n\tmime_t"
-          + "ype\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\"1\n\013GcsDo"
-          + "cument\022\017\n\007gcs_uri\030\001 \001(\t\022\021\n\tmime_type\030\002 \001"
-          + "(\t\"O\n\014GcsDocuments\022?\n\tdocuments\030\001 \003(\0132,."
-          + "google.cloud.documentai.v1beta3.GcsDocum"
-          + "ent\"#\n\tGcsPrefix\022\026\n\016gcs_uri_prefix\030\001 \001(\t"
-          + "\"\257\001\n\031BatchDocumentsInputConfig\022@\n\ngcs_pr"
-          + "efix\030\001 \001(\0132*.google.cloud.documentai.v1b"
-          + "eta3.GcsPrefixH\000\022F\n\rgcs_documents\030\002 \001(\0132"
-          + "-.google.cloud.documentai.v1beta3.GcsDoc"
-          + "umentsH\000B\010\n\006source\"\217\003\n\024DocumentOutputCon"
-          + "fig\022b\n\021gcs_output_config\030\001 \001(\0132E.google."
-          + "cloud.documentai.v1beta3.DocumentOutputC"
-          + "onfig.GcsOutputConfigH\000\032\203\002\n\017GcsOutputCon"
-          + "fig\022\017\n\007gcs_uri\030\001 \001(\t\022.\n\nfield_mask\030\002 \001(\013"
-          + "2\032.google.protobuf.FieldMask\022m\n\017sharding"
-          + "_config\030\003 \001(\0132T.google.cloud.documentai."
-          + "v1beta3.DocumentOutputConfig.GcsOutputCo"
-          + "nfig.ShardingConfig\032@\n\016ShardingConfig\022\027\n"
-          + "\017pages_per_shard\030\001 \001(\005\022\025\n\rpages_overlap\030"
-          + "\002 \001(\005B\r\n\013destination\"\374\003\n\tOcrConfig\022?\n\005hi"
-          + "nts\030\002 \001(\01320.google.cloud.documentai.v1be"
-          + "ta3.OcrConfig.Hints\022!\n\031enable_native_pdf"
-          + "_parsing\030\003 \001(\010\022#\n\033enable_image_quality_s"
-          + "cores\030\004 \001(\010\022\034\n\024advanced_ocr_options\030\005 \003("
-          + "\t\022\025\n\renable_symbol\030\006 \001(\010\022\036\n\022compute_styl"
-          + "e_info\030\010 \001(\010B\002\030\001\022)\n!disable_character_bo"
-          + "xes_detection\030\n \001(\010\022T\n\020premium_features\030"
-          + "\013 \001(\0132:.google.cloud.documentai.v1beta3."
-          + "OcrConfig.PremiumFeatures\032\037\n\005Hints\022\026\n\016la"
-          + "nguage_hints\030\001 \003(\t\032o\n\017PremiumFeatures\022\'\n"
-          + "\037enable_selection_mark_detection\030\003 \001(\010\022\032"
-          + "\n\022compute_style_info\030\004 \001(\010\022\027\n\017enable_mat"
-          + "h_ocr\030\005 \001(\010B\346\001\n#com.google.cloud.documen"
-          + "tai.v1beta3B\017DocumentIoProtoP\001ZCcloud.go"
-          + "ogle.com/go/documentai/apiv1beta3/docume"
-          + "ntaipb;documentaipb\252\002\037Google.Cloud.Docum"
-          + "entAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\"
-          + "V1beta3\352\002\"Google::Cloud::DocumentAI::V1b"
-          + "eta3b\006proto3"
+          + "eta3\032.google/cloud/documentai/v1beta3/do"
+          + "cument.proto\032 google/protobuf/field_mask"
+          + ".proto\"I\n\tDocuments\022<\n\tdocuments\030\001 \003(\0132)"
+          + ".google.cloud.documentai.v1beta3.Documen"
+          + "t\"G\n\013RawDocument\022\017\n\007content\030\001 \001(\014\022\021\n\tmim"
+          + "e_type\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\"1\n\013Gc"
+          + "sDocument\022\017\n\007gcs_uri\030\001 \001(\t\022\021\n\tmime_type\030"
+          + "\002 \001(\t\"O\n\014GcsDocuments\022?\n\tdocuments\030\001 \003(\013"
+          + "2,.google.cloud.documentai.v1beta3.GcsDo"
+          + "cument\"#\n\tGcsPrefix\022\026\n\016gcs_uri_prefix\030\001 "
+          + "\001(\t\"O\n\014RawDocuments\022?\n\tdocuments\030\001 \003(\0132,"
+          + ".google.cloud.documentai.v1beta3.RawDocu"
+          + "ment\"\257\001\n\031BatchDocumentsInputConfig\022@\n\ngc"
+          + "s_prefix\030\001 \001(\0132*.google.cloud.documentai"
+          + ".v1beta3.GcsPrefixH\000\022F\n\rgcs_documents\030\002 "
+          + "\001(\0132-.google.cloud.documentai.v1beta3.Gc"
+          + "sDocumentsH\000B\010\n\006source\"\217\003\n\024DocumentOutpu"
+          + "tConfig\022b\n\021gcs_output_config\030\001 \001(\0132E.goo"
+          + "gle.cloud.documentai.v1beta3.DocumentOut"
+          + "putConfig.GcsOutputConfigH\000\032\203\002\n\017GcsOutpu"
+          + "tConfig\022\017\n\007gcs_uri\030\001 \001(\t\022.\n\nfield_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMask\022m\n\017shar"
+          + "ding_config\030\003 \001(\0132T.google.cloud.documen"
+          + "tai.v1beta3.DocumentOutputConfig.GcsOutp"
+          + "utConfig.ShardingConfig\032@\n\016ShardingConfi"
+          + "g\022\027\n\017pages_per_shard\030\001 \001(\005\022\025\n\rpages_over"
+          + "lap\030\002 \001(\005B\r\n\013destination\"\374\003\n\tOcrConfig\022?"
+          + "\n\005hints\030\002 \001(\01320.google.cloud.documentai."
+          + "v1beta3.OcrConfig.Hints\022!\n\031enable_native"
+          + "_pdf_parsing\030\003 \001(\010\022#\n\033enable_image_quali"
+          + "ty_scores\030\004 \001(\010\022\034\n\024advanced_ocr_options\030"
+          + "\005 \003(\t\022\025\n\renable_symbol\030\006 \001(\010\022\036\n\022compute_"
+          + "style_info\030\010 \001(\010B\002\030\001\022)\n!disable_characte"
+          + "r_boxes_detection\030\n \001(\010\022T\n\020premium_featu"
+          + "res\030\013 \001(\0132:.google.cloud.documentai.v1be"
+          + "ta3.OcrConfig.PremiumFeatures\032\037\n\005Hints\022\026"
+          + "\n\016language_hints\030\001 \003(\t\032o\n\017PremiumFeature"
+          + "s\022\'\n\037enable_selection_mark_detection\030\003 \001"
+          + "(\010\022\032\n\022compute_style_info\030\004 \001(\010\022\027\n\017enable"
+          + "_math_ocr\030\005 \001(\010B\346\001\n#com.google.cloud.doc"
+          + "umentai.v1beta3B\017DocumentIoProtoP\001ZCclou"
+          + "d.google.com/go/documentai/apiv1beta3/do"
+          + "cumentaipb;documentaipb\252\002\037Google.Cloud.D"
+          + "ocumentAI.V1Beta3\312\002\037Google\\Cloud\\Documen"
+          + "tAI\\V1beta3\352\002\"Google::Cloud::DocumentAI:"
+          + ":V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.cloud.documentai.v1beta3.DocumentProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
-    internal_static_google_cloud_documentai_v1beta3_RawDocument_descriptor =
+    internal_static_google_cloud_documentai_v1beta3_Documents_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_cloud_documentai_v1beta3_Documents_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_Documents_descriptor,
+            new java.lang.String[] {
+              "Documents",
+            });
+    internal_static_google_cloud_documentai_v1beta3_RawDocument_descriptor =
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_documentai_v1beta3_RawDocument_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_RawDocument_descriptor,
@@ -152,7 +174,7 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
               "Content", "MimeType", "DisplayName",
             });
     internal_static_google_cloud_documentai_v1beta3_GcsDocument_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_documentai_v1beta3_GcsDocument_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_GcsDocument_descriptor,
@@ -160,7 +182,7 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
               "GcsUri", "MimeType",
             });
     internal_static_google_cloud_documentai_v1beta3_GcsDocuments_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_documentai_v1beta3_GcsDocuments_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_GcsDocuments_descriptor,
@@ -168,15 +190,23 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
               "Documents",
             });
     internal_static_google_cloud_documentai_v1beta3_GcsPrefix_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_documentai_v1beta3_GcsPrefix_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_GcsPrefix_descriptor,
             new java.lang.String[] {
               "GcsUriPrefix",
             });
+    internal_static_google_cloud_documentai_v1beta3_RawDocuments_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_documentai_v1beta3_RawDocuments_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_RawDocuments_descriptor,
+            new java.lang.String[] {
+              "Documents",
+            });
     internal_static_google_cloud_documentai_v1beta3_BatchDocumentsInputConfig_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_documentai_v1beta3_BatchDocumentsInputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_BatchDocumentsInputConfig_descriptor,
@@ -184,7 +214,7 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
               "GcsPrefix", "GcsDocuments", "Source",
             });
     internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_descriptor,
@@ -210,7 +240,7 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
               "PagesPerShard", "PagesOverlap",
             });
     internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_documentai_v1beta3_OcrConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor,
@@ -241,6 +271,7 @@ public final class DocumentIoProto extends com.google.protobuf.GeneratedFile {
               "EnableSelectionMarkDetection", "ComputeStyleInfo", "EnableMathOcr",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.cloud.documentai.v1beta3.DocumentProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 

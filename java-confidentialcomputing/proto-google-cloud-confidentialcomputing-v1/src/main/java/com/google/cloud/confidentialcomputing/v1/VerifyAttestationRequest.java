@@ -123,6 +123,53 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     return TeeAttestationCase.forNumber(teeAttestationCase_);
   }
 
+  private int deviceAttestationCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object deviceAttestation_;
+
+  public enum DeviceAttestationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    NVIDIA_ATTESTATION(9),
+    DEVICEATTESTATION_NOT_SET(0);
+    private final int value;
+
+    private DeviceAttestationCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DeviceAttestationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DeviceAttestationCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return NVIDIA_ATTESTATION;
+        case 0:
+          return DEVICEATTESTATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DeviceAttestationCase getDeviceAttestationCase() {
+    return DeviceAttestationCase.forNumber(deviceAttestationCase_);
+  }
+
   public static final int TD_CCEL_FIELD_NUMBER = 6;
 
   /**
@@ -243,6 +290,67 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       return (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_;
     }
     return com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+  }
+
+  public static final int NVIDIA_ATTESTATION_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nvidiaAttestation field is set.
+   */
+  @java.lang.Override
+  public boolean hasNvidiaAttestation() {
+    return deviceAttestationCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nvidiaAttestation.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.NvidiaAttestation getNvidiaAttestation() {
+    if (deviceAttestationCase_ == 9) {
+      return (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder
+      getNvidiaAttestationOrBuilder() {
+    if (deviceAttestationCase_ == 9) {
+      return (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance();
   }
 
   public static final int CHALLENGE_FIELD_NUMBER = 1;
@@ -651,6 +759,10 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(attester_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, attester_);
     }
+    if (deviceAttestationCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -688,6 +800,11 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(attester_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, attester_);
+    }
+    if (deviceAttestationCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -734,6 +851,14 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       case 0:
       default:
     }
+    if (!getDeviceAttestationCase().equals(other.getDeviceAttestationCase())) return false;
+    switch (deviceAttestationCase_) {
+      case 9:
+        if (!getNvidiaAttestation().equals(other.getNvidiaAttestation())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -773,6 +898,14 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       case 7:
         hash = (37 * hash) + SEV_SNP_ATTESTATION_FIELD_NUMBER;
         hash = (53 * hash) + getSevSnpAttestation().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (deviceAttestationCase_) {
+      case 9:
+        hash = (37 * hash) + NVIDIA_ATTESTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getNvidiaAttestation().hashCode();
         break;
       case 0:
       default:
@@ -939,6 +1072,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (sevSnpAttestationBuilder_ != null) {
         sevSnpAttestationBuilder_.clear();
       }
+      if (nvidiaAttestationBuilder_ != null) {
+        nvidiaAttestationBuilder_.clear();
+      }
       challenge_ = "";
       gcpCredentials_ = null;
       if (gcpCredentialsBuilder_ != null) {
@@ -963,6 +1099,8 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       attester_ = "";
       teeAttestationCase_ = 0;
       teeAttestation_ = null;
+      deviceAttestationCase_ = 0;
+      deviceAttestation_ = null;
       return this;
     }
 
@@ -1003,33 +1141,33 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.challenge_ = challenge_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.gcpCredentials_ =
             gcpCredentialsBuilder_ == null ? gcpCredentials_ : gcpCredentialsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.tpmAttestation_ =
             tpmAttestationBuilder_ == null ? tpmAttestation_ : tpmAttestationBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.confidentialSpaceInfo_ =
             confidentialSpaceInfoBuilder_ == null
                 ? confidentialSpaceInfo_
                 : confidentialSpaceInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.tokenOptions_ =
             tokenOptionsBuilder_ == null ? tokenOptions_ : tokenOptionsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.attester_ = attester_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1044,6 +1182,11 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       if (teeAttestationCase_ == 7 && sevSnpAttestationBuilder_ != null) {
         result.teeAttestation_ = sevSnpAttestationBuilder_.build();
+      }
+      result.deviceAttestationCase_ = deviceAttestationCase_;
+      result.deviceAttestation_ = this.deviceAttestation_;
+      if (deviceAttestationCase_ == 9 && nvidiaAttestationBuilder_ != null) {
+        result.deviceAttestation_ = nvidiaAttestationBuilder_.build();
       }
     }
 
@@ -1065,7 +1208,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
               .getDefaultInstance()) return this;
       if (!other.getChallenge().isEmpty()) {
         challenge_ = other.challenge_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasGcpCredentials()) {
@@ -1082,7 +1225,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       if (!other.getAttester().isEmpty()) {
         attester_ = other.attester_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getTeeAttestationCase()) {
@@ -1097,6 +1240,17 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             break;
           }
         case TEEATTESTATION_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getDeviceAttestationCase()) {
+        case NVIDIA_ATTESTATION:
+          {
+            mergeNvidiaAttestation(other.getNvidiaAttestation());
+            break;
+          }
+        case DEVICEATTESTATION_NOT_SET:
           {
             break;
           }
@@ -1130,35 +1284,35 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             case 10:
               {
                 challenge_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetGcpCredentialsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetTpmAttestationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetConfidentialSpaceInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     internalGetTokenOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
@@ -1177,9 +1331,16 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             case 66:
               {
                 attester_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetNvidiaAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                deviceAttestationCase_ = 9;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1207,6 +1368,20 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder clearTeeAttestation() {
       teeAttestationCase_ = 0;
       teeAttestation_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int deviceAttestationCase_ = 0;
+    private java.lang.Object deviceAttestation_;
+
+    public DeviceAttestationCase getDeviceAttestationCase() {
+      return DeviceAttestationCase.forNumber(deviceAttestationCase_);
+    }
+
+    public Builder clearDeviceAttestation() {
+      deviceAttestationCase_ = 0;
+      deviceAttestation_ = null;
       onChanged();
       return this;
     }
@@ -1697,6 +1872,250 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       return sevSnpAttestationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder>
+        nvidiaAttestationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nvidiaAttestation field is set.
+     */
+    @java.lang.Override
+    public boolean hasNvidiaAttestation() {
+      return deviceAttestationCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nvidiaAttestation.
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.NvidiaAttestation getNvidiaAttestation() {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (deviceAttestationCase_ == 9) {
+          return (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance();
+      } else {
+        if (deviceAttestationCase_ == 9) {
+          return nvidiaAttestationBuilder_.getMessage();
+        }
+        return com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNvidiaAttestation(
+        com.google.cloud.confidentialcomputing.v1.NvidiaAttestation value) {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deviceAttestation_ = value;
+        onChanged();
+      } else {
+        nvidiaAttestationBuilder_.setMessage(value);
+      }
+      deviceAttestationCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNvidiaAttestation(
+        com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder builderForValue) {
+      if (nvidiaAttestationBuilder_ == null) {
+        deviceAttestation_ = builderForValue.build();
+        onChanged();
+      } else {
+        nvidiaAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      deviceAttestationCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNvidiaAttestation(
+        com.google.cloud.confidentialcomputing.v1.NvidiaAttestation value) {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (deviceAttestationCase_ == 9
+            && deviceAttestation_
+                != com.google.cloud.confidentialcomputing.v1.NvidiaAttestation
+                    .getDefaultInstance()) {
+          deviceAttestation_ =
+              com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.newBuilder(
+                      (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation)
+                          deviceAttestation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deviceAttestation_ = value;
+        }
+        onChanged();
+      } else {
+        if (deviceAttestationCase_ == 9) {
+          nvidiaAttestationBuilder_.mergeFrom(value);
+        } else {
+          nvidiaAttestationBuilder_.setMessage(value);
+        }
+      }
+      deviceAttestationCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNvidiaAttestation() {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (deviceAttestationCase_ == 9) {
+          deviceAttestationCase_ = 0;
+          deviceAttestation_ = null;
+          onChanged();
+        }
+      } else {
+        if (deviceAttestationCase_ == 9) {
+          deviceAttestationCase_ = 0;
+          deviceAttestation_ = null;
+        }
+        nvidiaAttestationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder
+        getNvidiaAttestationBuilder() {
+      return internalGetNvidiaAttestationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder
+        getNvidiaAttestationOrBuilder() {
+      if ((deviceAttestationCase_ == 9) && (nvidiaAttestationBuilder_ != null)) {
+        return nvidiaAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        if (deviceAttestationCase_ == 9) {
+          return (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder>
+        internalGetNvidiaAttestationFieldBuilder() {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (!(deviceAttestationCase_ == 9)) {
+          deviceAttestation_ =
+              com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance();
+        }
+        nvidiaAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.confidentialcomputing.v1.NvidiaAttestation,
+                com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder,
+                com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder>(
+                (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_,
+                getParentForChildren(),
+                isClean());
+        deviceAttestation_ = null;
+      }
+      deviceAttestationCase_ = 9;
+      onChanged();
+      return nvidiaAttestationBuilder_;
+    }
+
     private java.lang.Object challenge_ = "";
 
     /**
@@ -1774,7 +2193,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       challenge_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1796,7 +2215,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public Builder clearChallenge() {
       challenge_ = getDefaultInstance().getChallenge();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1823,7 +2242,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       challenge_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1850,7 +2269,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the gcpCredentials field is set.
      */
     public boolean hasGcpCredentials() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1899,7 +2318,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         gcpCredentialsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1923,7 +2342,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         gcpCredentialsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1943,7 +2362,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder mergeGcpCredentials(
         com.google.cloud.confidentialcomputing.v1.GcpCredentials value) {
       if (gcpCredentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && gcpCredentials_ != null
             && gcpCredentials_
                 != com.google.cloud.confidentialcomputing.v1.GcpCredentials.getDefaultInstance()) {
@@ -1955,7 +2374,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         gcpCredentialsBuilder_.mergeFrom(value);
       }
       if (gcpCredentials_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1974,7 +2393,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearGcpCredentials() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       gcpCredentials_ = null;
       if (gcpCredentialsBuilder_ != null) {
         gcpCredentialsBuilder_.dispose();
@@ -1998,7 +2417,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.confidentialcomputing.v1.GcpCredentials.Builder
         getGcpCredentialsBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetGcpCredentialsFieldBuilder().getBuilder();
     }
@@ -2077,7 +2496,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the tpmAttestation field is set.
      */
     public boolean hasTpmAttestation() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2126,7 +2545,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tpmAttestationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2150,7 +2569,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tpmAttestationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2170,7 +2589,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder mergeTpmAttestation(
         com.google.cloud.confidentialcomputing.v1.TpmAttestation value) {
       if (tpmAttestationBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && tpmAttestation_ != null
             && tpmAttestation_
                 != com.google.cloud.confidentialcomputing.v1.TpmAttestation.getDefaultInstance()) {
@@ -2182,7 +2601,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tpmAttestationBuilder_.mergeFrom(value);
       }
       if (tpmAttestation_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2201,7 +2620,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTpmAttestation() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       tpmAttestation_ = null;
       if (tpmAttestationBuilder_ != null) {
         tpmAttestationBuilder_.dispose();
@@ -2225,7 +2644,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.confidentialcomputing.v1.TpmAttestation.Builder
         getTpmAttestationBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetTpmAttestationFieldBuilder().getBuilder();
     }
@@ -2303,7 +2722,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the confidentialSpaceInfo field is set.
      */
     public boolean hasConfidentialSpaceInfo() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2351,7 +2770,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         confidentialSpaceInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2374,7 +2793,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         confidentialSpaceInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2393,7 +2812,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder mergeConfidentialSpaceInfo(
         com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo value) {
       if (confidentialSpaceInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && confidentialSpaceInfo_ != null
             && confidentialSpaceInfo_
                 != com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo
@@ -2406,7 +2825,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         confidentialSpaceInfoBuilder_.mergeFrom(value);
       }
       if (confidentialSpaceInfo_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2424,7 +2843,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearConfidentialSpaceInfo() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       confidentialSpaceInfo_ = null;
       if (confidentialSpaceInfoBuilder_ != null) {
         confidentialSpaceInfoBuilder_.dispose();
@@ -2447,7 +2866,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder
         getConfidentialSpaceInfoBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetConfidentialSpaceInfoFieldBuilder().getBuilder();
     }
@@ -2524,7 +2943,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the tokenOptions field is set.
      */
     public boolean hasTokenOptions() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2572,7 +2991,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tokenOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2596,7 +3015,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tokenOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2615,7 +3034,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public Builder mergeTokenOptions(com.google.cloud.confidentialcomputing.v1.TokenOptions value) {
       if (tokenOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && tokenOptions_ != null
             && tokenOptions_
                 != com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()) {
@@ -2627,7 +3046,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tokenOptionsBuilder_.mergeFrom(value);
       }
       if (tokenOptions_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2646,7 +3065,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTokenOptions() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       tokenOptions_ = null;
       if (tokenOptionsBuilder_ != null) {
         tokenOptionsBuilder_.dispose();
@@ -2669,7 +3088,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder getTokenOptionsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetTokenOptionsFieldBuilder().getBuilder();
     }
@@ -2794,7 +3213,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       attester_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2813,7 +3232,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public Builder clearAttester() {
       attester_ = getDefaultInstance().getAttester();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2837,7 +3256,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       attester_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

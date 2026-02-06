@@ -208,6 +208,7 @@ public class ConfidentialComputingClientTest {
 
     Assert.assertEquals(request.getTdCcel(), actualRequest.getTdCcel());
     Assert.assertEquals(request.getSevSnpAttestation(), actualRequest.getSevSnpAttestation());
+    Assert.assertEquals(request.getNvidiaAttestation(), actualRequest.getNvidiaAttestation());
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
     Assert.assertEquals(request.getGcpCredentials(), actualRequest.getGcpCredentials());
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
@@ -260,6 +261,7 @@ public class ConfidentialComputingClientTest {
             .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
             .setOptions(
                 VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+            .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
             .build();
 
     VerifyConfidentialSpaceResponse actualResponse = client.verifyConfidentialSpace(request);
@@ -277,6 +279,7 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(request.getSignedEntitiesList(), actualRequest.getSignedEntitiesList());
     Assert.assertEquals(request.getGceShieldedIdentity(), actualRequest.getGceShieldedIdentity());
     Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertEquals(request.getNvidiaAttestation(), actualRequest.getNvidiaAttestation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -297,6 +300,7 @@ public class ConfidentialComputingClientTest {
               .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
               .setOptions(
                   VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+              .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
               .build();
       client.verifyConfidentialSpace(request);
       Assert.fail("No exception raised");
@@ -316,6 +320,7 @@ public class ConfidentialComputingClientTest {
     VerifyConfidentialGkeRequest request =
         VerifyConfidentialGkeRequest.newBuilder()
             .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+            .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
             .build();
 
     VerifyConfidentialGkeResponse actualResponse = client.verifyConfidentialGke(request);
@@ -328,6 +333,7 @@ public class ConfidentialComputingClientTest {
 
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -343,6 +349,7 @@ public class ConfidentialComputingClientTest {
       VerifyConfidentialGkeRequest request =
           VerifyConfidentialGkeRequest.newBuilder()
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
               .build();
       client.verifyConfidentialGke(request);
       Assert.fail("No exception raised");

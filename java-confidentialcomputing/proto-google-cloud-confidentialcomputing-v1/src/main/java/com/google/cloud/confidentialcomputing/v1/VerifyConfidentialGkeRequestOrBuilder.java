@@ -100,6 +100,52 @@ public interface VerifyConfidentialGkeRequestOrBuilder
    */
   com.google.protobuf.ByteString getChallengeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of fields that modify the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.ConfidentialGkeOptions options = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the options field is set.
+   */
+  boolean hasOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of fields that modify the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.ConfidentialGkeOptions options = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The options.
+   */
+  com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.ConfidentialGkeOptions
+      getOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of fields that modify the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.ConfidentialGkeOptions options = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest
+          .ConfidentialGkeOptionsOrBuilder
+      getOptionsOrBuilder();
+
   com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.TeeAttestationCase
       getTeeAttestationCase();
 }

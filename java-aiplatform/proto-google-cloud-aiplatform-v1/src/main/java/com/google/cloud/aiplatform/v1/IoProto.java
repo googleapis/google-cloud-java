@@ -65,6 +65,14 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_BigQueryDestination_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_CsvDestination_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_CsvDestination_fieldAccessorTable;
@@ -128,8 +136,9 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "#google/cloud/aiplatform/v1/io.proto\022\032g"
           + "oogle.cloud.aiplatform.v1\032\037google/api/fi"
-          + "eld_behavior.proto\032)google/cloud/aiplatf"
-          + "orm/v1/api_auth.proto\032\037google/protobuf/timestamp.proto\"L\n\n"
+          + "eld_behavior.proto\032\031google/api/resource."
+          + "proto\032)google/cloud/aiplatform/v1/api_au"
+          + "th.proto\032\037google/protobuf/timestamp.proto\"L\n\n"
           + "AvroSource\022>\n\n"
           + "gcs_source\030\001 \001(\0132%.google.cloud.aiplatform.v1.GcsSourceB\003\340A\002\"K\n"
           + "\tCsvSource\022>\n\n"
@@ -142,21 +151,29 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
           + "\016BigQuerySource\022\026\n"
           + "\tinput_uri\030\001 \001(\tB\003\340A\002\".\n"
           + "\023BigQueryDestination\022\027\n\n"
-          + "output_uri\030\001 \001(\tB\003\340A\002\"Z\n"
+          + "output_uri\030\001 \001(\tB\003\340A\002\"`\n"
+          + "\035VertexMultimodalDatasetSource\022?\n"
+          + "\014dataset_name\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!aiplatform.googleapis.com/Dataset\"\223\001\n"
+          + "\"VertexMultimodalDatasetDestination\022R\n"
+          + "\024bigquery_destination\030\001"
+          + " \001(\0132/.google.cloud.aiplatform.v1.BigQueryDestinationB\003\340A\001\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\"Z\n"
           + "\016CsvDestination\022H\n"
           + "\017gcs_destination\030\001"
           + " \001(\0132*.google.cloud.aiplatform.v1.GcsDestinationB\003\340A\002\"_\n"
           + "\023TFRecordDestination\022H\n"
-          + "\017gcs_destination\030\001 \001("
-          + "\0132*.google.cloud.aiplatform.v1.GcsDestinationB\003\340A\002\"7\n"
-          + "\034ContainerRegistryDestination\022\027\n\n"
+          + "\017gcs_destination\030\001 \001(\0132*.g"
+          + "oogle.cloud.aiplatform.v1.GcsDestinationB\003\340A\002\"7\n"
+          + "\034ContainerRegistryDestination\022\027\n"
+          + "\n"
           + "output_uri\030\001 \001(\tB\003\340A\002\"\325\002\n"
           + "\021GoogleDriveSource\022S\n"
-          + "\014resource_ids\030\001 \003(\01328.google"
-          + ".cloud.aiplatform.v1.GoogleDriveSource.ResourceIdB\003\340A\002\032\352\001\n\n"
+          + "\014resource_ids\030\001 \003(\01328.google.clou"
+          + "d.aiplatform.v1.GoogleDriveSource.ResourceIdB\003\340A\002\032\352\001\n\n"
           + "ResourceId\022a\n\r"
-          + "resource_type\030\001 \001(\0162E.google.cloud.aiplatform.v"
-          + "1.GoogleDriveSource.ResourceId.ResourceTypeB\003\340A\002\022\030\n"
+          + "resource_type\030\001 \001(\0162E.google.cloud.aiplatform.v1.Goo"
+          + "gleDriveSource.ResourceId.ResourceTypeB\003\340A\002\022\030\n"
           + "\013resource_id\030\002 \001(\tB\003\340A\002\"_\n"
           + "\014ResourceType\022\035\n"
           + "\031RESOURCE_TYPE_UNSPECIFIED\020\000\022\026\n"
@@ -164,16 +181,15 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
           + "\024RESOURCE_TYPE_FOLDER\020\002\"\024\n"
           + "\022DirectUploadSource\"\251\003\n"
           + "\013SlackSource\022L\n"
-          + "\010channels\030\001 \003(\01325.google.clo"
-          + "ud.aiplatform.v1.SlackSource.SlackChannelsB\003\340A\002\032\313\002\n\r"
+          + "\010channels\030\001 \003(\01325.google.cloud.ai"
+          + "platform.v1.SlackSource.SlackChannelsB\003\340A\002\032\313\002\n\r"
           + "SlackChannels\022Y\n"
-          + "\010channels\030\001 "
-          + "\003(\0132B.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannelB\003\340A\002\022M\n"
+          + "\010channels\030\001 \003(\0132B"
+          + ".google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannelB\003\340A\002\022M\n"
           + "\016api_key_config\030\003"
           + " \001(\01320.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfigB\003\340A\002\032\217\001\n"
           + "\014SlackChannel\022\027\n\n"
-          + "channel_id\030\001 \001(\tB\003\340A\002\0223\n"
-          + "\n"
+          + "channel_id\030\001 \001(\tB\003\340A\002\0223\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\0221\n"
           + "\010end_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"\221\002\n\n"
@@ -185,11 +201,11 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
           + "\016custom_queries\030\004 \003(\t\022\022\n"
           + "\005email\030\005 \001(\tB\003\340A\002\022\027\n\n"
           + "server_uri\030\006 \001(\tB\003\340A\002\022M\n"
-          + "\016api_key_config\030\007 \001"
-          + "(\01320.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfigB\003\340A\002\"\265\003\n"
+          + "\016api_key_config\030\007 \001(\01320."
+          + "google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfigB\003\340A\002\"\265\003\n"
           + "\021SharePointSources\022[\n"
-          + "\023share_point_sources\030\001 \003(\0132>.google.cl"
-          + "oud.aiplatform.v1.SharePointSources.SharePointSource\032\302\002\n"
+          + "\023share_point_sources\030\001 \003(\0132>.google.cloud.a"
+          + "iplatform.v1.SharePointSources.SharePointSource\032\302\002\n"
           + "\020SharePointSource\022 \n"
           + "\026sharepoint_folder_path\030\005 \001(\tH\000\022\036\n"
           + "\024sharepoint_folder_id\030\006 \001(\tH\000\022\024\n\n"
@@ -203,16 +219,17 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
           + "\007file_id\030\t \001(\tB\003\340A\003B\017\n\r"
           + "folder_sourceB\016\n"
           + "\014drive_sourceB\305\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\007IoProtoP\001Z>cloud.google.co"
-          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
-          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
-          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\007IoProtoP\001Z>cloud.google.com/go/"
+          + "aiplatform/apiv1/aiplatformpb;aiplatform"
+          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.ApiAuthProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -264,8 +281,24 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "OutputUri",
             });
-    internal_static_google_cloud_aiplatform_v1_CsvDestination_descriptor =
+    internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetSource_descriptor =
         getDescriptor().getMessageType(6);
+    internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetSource_descriptor,
+            new java.lang.String[] {
+              "DatasetName",
+            });
+    internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetDestination_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_VertexMultimodalDatasetDestination_descriptor,
+            new java.lang.String[] {
+              "BigqueryDestination", "DisplayName",
+            });
+    internal_static_google_cloud_aiplatform_v1_CsvDestination_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_aiplatform_v1_CsvDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_CsvDestination_descriptor,
@@ -273,7 +306,7 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
               "GcsDestination",
             });
     internal_static_google_cloud_aiplatform_v1_TFRecordDestination_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_aiplatform_v1_TFRecordDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_TFRecordDestination_descriptor,
@@ -281,7 +314,7 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
               "GcsDestination",
             });
     internal_static_google_cloud_aiplatform_v1_ContainerRegistryDestination_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_aiplatform_v1_ContainerRegistryDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ContainerRegistryDestination_descriptor,
@@ -289,7 +322,7 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
               "OutputUri",
             });
     internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_descriptor,
@@ -305,13 +338,13 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
               "ResourceType", "ResourceId",
             });
     internal_static_google_cloud_aiplatform_v1_DirectUploadSource_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_aiplatform_v1_DirectUploadSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DirectUploadSource_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1_SlackSource_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_aiplatform_v1_SlackSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SlackSource_descriptor,
@@ -336,7 +369,7 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
               "ChannelId", "StartTime", "EndTime",
             });
     internal_static_google_cloud_aiplatform_v1_JiraSource_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_aiplatform_v1_JiraSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_JiraSource_descriptor,
@@ -352,7 +385,7 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
               "Projects", "CustomQueries", "Email", "ServerUri", "ApiKeyConfig",
             });
     internal_static_google_cloud_aiplatform_v1_SharePointSources_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_aiplatform_v1_SharePointSources_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SharePointSources_descriptor,
@@ -379,11 +412,13 @@ public final class IoProto extends com.google.protobuf.GeneratedFile {
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.ApiAuthProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

@@ -173,6 +173,26 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
     return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
   }
 
+  public static final int FPS_FIELD_NUMBER = 3;
+  private double fps_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The frame rate of the video sent to the model. If not specified,
+   * the default value is 1.0. The valid range is (0.0, 24.0].
+   * </pre>
+   *
+   * <code>double fps = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fps.
+   */
+  @java.lang.Override
+  public double getFps() {
+    return fps_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -193,6 +213,9 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getEndOffset());
     }
+    if (java.lang.Double.doubleToRawLongBits(fps_) != 0) {
+      output.writeDouble(3, fps_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +230,9 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndOffset());
+    }
+    if (java.lang.Double.doubleToRawLongBits(fps_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, fps_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -232,6 +258,8 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
     if (hasEndOffset()) {
       if (!getEndOffset().equals(other.getEndOffset())) return false;
     }
+    if (java.lang.Double.doubleToLongBits(getFps())
+        != java.lang.Double.doubleToLongBits(other.getFps())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -251,6 +279,10 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + END_OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getEndOffset().hashCode();
     }
+    hash = (37 * hash) + FPS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getFps()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -411,6 +443,7 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
         endOffsetBuilder_.dispose();
         endOffsetBuilder_ = null;
       }
+      fps_ = 0D;
       return this;
     }
 
@@ -457,6 +490,9 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
         result.endOffset_ = endOffsetBuilder_ == null ? endOffset_ : endOffsetBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fps_ = fps_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -477,6 +513,9 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEndOffset()) {
         mergeEndOffset(other.getEndOffset());
+      }
+      if (java.lang.Double.doubleToRawLongBits(other.getFps()) != 0) {
+        setFps(other.getFps());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -518,6 +557,12 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 25:
+              {
+                fps_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -937,6 +982,65 @@ public final class VideoMetadata extends com.google.protobuf.GeneratedMessage
         endOffset_ = null;
       }
       return endOffsetBuilder_;
+    }
+
+    private double fps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The frame rate of the video sent to the model. If not specified,
+     * the default value is 1.0. The valid range is (0.0, 24.0].
+     * </pre>
+     *
+     * <code>double fps = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fps.
+     */
+    @java.lang.Override
+    public double getFps() {
+      return fps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The frame rate of the video sent to the model. If not specified,
+     * the default value is 1.0. The valid range is (0.0, 24.0].
+     * </pre>
+     *
+     * <code>double fps = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The fps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFps(double value) {
+
+      fps_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The frame rate of the video sent to the model. If not specified,
+     * the default value is 1.0. The valid range is (0.0, 24.0].
+     * </pre>
+     *
+     * <code>double fps = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFps() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      fps_ = 0D;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.VideoMetadata)

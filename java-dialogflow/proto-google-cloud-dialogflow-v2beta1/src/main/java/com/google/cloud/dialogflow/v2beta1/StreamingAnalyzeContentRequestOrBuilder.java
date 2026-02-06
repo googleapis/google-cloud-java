@@ -631,6 +631,21 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. If multiple utterances are detected in the audio stream, process
+   * them individually instead of stitching them together to form a single
+   * utterance.
+   * </pre>
+   *
+   * <code>bool output_multiple_utterances = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputMultipleUtterances.
+   */
+  boolean getOutputMultipleUtterances();
+
+  /**
+   *
+   *
+   * <pre>
    * if true, `StreamingAnalyzeContentResponse.debugging_info` will get
    * populated.
    * </pre>

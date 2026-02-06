@@ -198,6 +198,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
         getBatchInputConfigOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, determines the type of the documents to be imported in
+     * this batch. It can be used to auto-label the documents with a single
+     * entity of the provided type. This field can only be used with a
+     * classifier or splitter processor. Providing this field is mutually
+     * exclusive with `entities` and `auto_labeling_config`.
+     * </pre>
+     *
+     * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The documentType.
+     */
+    java.lang.String getDocumentType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, determines the type of the documents to be imported in
+     * this batch. It can be used to auto-label the documents with a single
+     * entity of the provided type. This field can only be used with a
+     * classifier or splitter processor. Providing this field is mutually
+     * exclusive with `entities` and `auto_labeling_config`.
+     * </pre>
+     *
+     * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for documentType.
+     */
+    com.google.protobuf.ByteString getDocumentTypeBytes();
+
     com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig
             .SplitTypeConfigCase
         getSplitTypeConfigCase();
@@ -235,7 +269,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       super(builder);
     }
 
-    private BatchDocumentsImportConfig() {}
+    private BatchDocumentsImportConfig() {
+      documentType_ = "";
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentAiDocumentService
@@ -1068,6 +1104,67 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           : batchInputConfig_;
     }
 
+    public static final int DOCUMENT_TYPE_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object documentType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, determines the type of the documents to be imported in
+     * this batch. It can be used to auto-label the documents with a single
+     * entity of the provided type. This field can only be used with a
+     * classifier or splitter processor. Providing this field is mutually
+     * exclusive with `entities` and `auto_labeling_config`.
+     * </pre>
+     *
+     * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The documentType.
+     */
+    @java.lang.Override
+    public java.lang.String getDocumentType() {
+      java.lang.Object ref = documentType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentType_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, determines the type of the documents to be imported in
+     * this batch. It can be used to auto-label the documents with a single
+     * entity of the provided type. This field can only be used with a
+     * classifier or splitter processor. Providing this field is mutually
+     * exclusive with `entities` and `auto_labeling_config`.
+     * </pre>
+     *
+     * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for documentType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDocumentTypeBytes() {
+      java.lang.Object ref = documentType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        documentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1095,6 +1192,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                     .AutoSplitConfig)
                 splitTypeConfig_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(documentType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, documentType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1120,6 +1220,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                         .BatchDocumentsImportConfig.AutoSplitConfig)
                     splitTypeConfig_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(documentType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, documentType_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1143,6 +1246,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (hasBatchInputConfig()) {
         if (!getBatchInputConfig().equals(other.getBatchInputConfig())) return false;
       }
+      if (!getDocumentType().equals(other.getDocumentType())) return false;
       if (!getSplitTypeConfigCase().equals(other.getSplitTypeConfigCase())) return false;
       switch (splitTypeConfigCase_) {
         case 2:
@@ -1169,6 +1273,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + BATCH_INPUT_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getBatchInputConfig().hashCode();
       }
+      hash = (37 * hash) + DOCUMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentType().hashCode();
       switch (splitTypeConfigCase_) {
         case 2:
           hash = (37 * hash) + DATASET_SPLIT_FIELD_NUMBER;
@@ -1364,6 +1470,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           batchInputConfigBuilder_.dispose();
           batchInputConfigBuilder_ = null;
         }
+        documentType_ = "";
         splitTypeConfigCase_ = 0;
         splitTypeConfig_ = null;
         return this;
@@ -1420,6 +1527,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                   : batchInputConfigBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.documentType_ = documentType_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1456,6 +1566,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (other.hasBatchInputConfig()) {
           mergeBatchInputConfig(other.getBatchInputConfig());
+        }
+        if (!other.getDocumentType().isEmpty()) {
+          documentType_ = other.documentType_;
+          bitField0_ |= 0x00000008;
+          onChanged();
         }
         switch (other.getSplitTypeConfigCase()) {
           case DATASET_SPLIT:
@@ -1520,6 +1635,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                   splitTypeConfigCase_ = 3;
                   break;
                 } // case 26
+              case 50:
+                {
+                  documentType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2165,6 +2286,137 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           batchInputConfig_ = null;
         }
         return batchInputConfigBuilder_;
+      }
+
+      private java.lang.Object documentType_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, determines the type of the documents to be imported in
+       * this batch. It can be used to auto-label the documents with a single
+       * entity of the provided type. This field can only be used with a
+       * classifier or splitter processor. Providing this field is mutually
+       * exclusive with `entities` and `auto_labeling_config`.
+       * </pre>
+       *
+       * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The documentType.
+       */
+      public java.lang.String getDocumentType() {
+        java.lang.Object ref = documentType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, determines the type of the documents to be imported in
+       * this batch. It can be used to auto-label the documents with a single
+       * entity of the provided type. This field can only be used with a
+       * classifier or splitter processor. Providing this field is mutually
+       * exclusive with `entities` and `auto_labeling_config`.
+       * </pre>
+       *
+       * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for documentType.
+       */
+      public com.google.protobuf.ByteString getDocumentTypeBytes() {
+        java.lang.Object ref = documentType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          documentType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, determines the type of the documents to be imported in
+       * this batch. It can be used to auto-label the documents with a single
+       * entity of the provided type. This field can only be used with a
+       * classifier or splitter processor. Providing this field is mutually
+       * exclusive with `entities` and `auto_labeling_config`.
+       * </pre>
+       *
+       * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The documentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentType_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, determines the type of the documents to be imported in
+       * this batch. It can be used to auto-label the documents with a single
+       * entity of the provided type. This field can only be used with a
+       * classifier or splitter processor. Providing this field is mutually
+       * exclusive with `entities` and `auto_labeling_config`.
+       * </pre>
+       *
+       * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentType() {
+        documentType_ = getDefaultInstance().getDocumentType();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, determines the type of the documents to be imported in
+       * this batch. It can be used to auto-label the documents with a single
+       * entity of the provided type. This field can only be used with a
+       * classifier or splitter processor. Providing this field is mutually
+       * exclusive with `entities` and `auto_labeling_config`.
+       * </pre>
+       *
+       * <code>string document_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for documentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        documentType_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.ImportDocumentsRequest.BatchDocumentsImportConfig)

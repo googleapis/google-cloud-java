@@ -26,7 +26,7 @@ package com.google.cloud.gkehub.v1;
  * <pre>
  * FeatureResourceState describes the state of a Feature *resource* in the
  * GkeHub API. See `FeatureState` for the "running state" of the Feature in the
- * Hub and across Memberships.
+ * Fleet and across Memberships.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkehub.v1.FeatureResourceState}
@@ -97,7 +97,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Feature is being enabled, and the Feature resource is being created.
-     * Once complete, the corresponding Feature will be enabled in this Hub.
+     * Once complete, the corresponding Feature will be enabled in this Fleet.
      * </pre>
      *
      * <code>ENABLING = 1;</code>
@@ -107,7 +107,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature is enabled in this Hub, and the Feature resource is fully
+     * The Feature is enabled in this Fleet, and the Feature resource is fully
      * available.
      * </pre>
      *
@@ -118,7 +118,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature is being disabled in this Hub, and the Feature resource
+     * The Feature is being disabled in this Fleet, and the Feature resource
      * is being deleted.
      * </pre>
      *
@@ -174,7 +174,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Feature is being enabled, and the Feature resource is being created.
-     * Once complete, the corresponding Feature will be enabled in this Hub.
+     * Once complete, the corresponding Feature will be enabled in this Fleet.
      * </pre>
      *
      * <code>ENABLING = 1;</code>
@@ -185,7 +185,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature is enabled in this Hub, and the Feature resource is fully
+     * The Feature is enabled in this Fleet, and the Feature resource is fully
      * available.
      * </pre>
      *
@@ -197,7 +197,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Feature is being disabled in this Hub, and the Feature resource
+     * The Feature is being disabled in this Fleet, and the Feature resource
      * is being deleted.
      * </pre>
      *
@@ -523,7 +523,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
    * <pre>
    * FeatureResourceState describes the state of a Feature *resource* in the
    * GkeHub API. See `FeatureState` for the "running state" of the Feature in the
-   * Hub and across Memberships.
+   * Fleet and across Memberships.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkehub.v1.FeatureResourceState}

@@ -1676,7 +1676,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Whether finetuning is allowed for this base processor version.
+       * Whether fine tuning is allowed for this base processor version.
        * </pre>
        *
        * <code>bool finetuning_allowed = 1;</code>
@@ -1690,7 +1690,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The minimum number of labeled documents in the training dataset
-       * required for finetuning.
+       * required for fine tuning.
        * </pre>
        *
        * <code>int32 min_train_labeled_documents = 2;</code>
@@ -1757,7 +1757,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Whether finetuning is allowed for this base processor version.
+       * Whether fine tuning is allowed for this base processor version.
        * </pre>
        *
        * <code>bool finetuning_allowed = 1;</code>
@@ -1777,7 +1777,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The minimum number of labeled documents in the training dataset
-       * required for finetuning.
+       * required for fine tuning.
        * </pre>
        *
        * <code>int32 min_train_labeled_documents = 2;</code>
@@ -2187,7 +2187,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Whether finetuning is allowed for this base processor version.
+         * Whether fine tuning is allowed for this base processor version.
          * </pre>
          *
          * <code>bool finetuning_allowed = 1;</code>
@@ -2203,7 +2203,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Whether finetuning is allowed for this base processor version.
+         * Whether fine tuning is allowed for this base processor version.
          * </pre>
          *
          * <code>bool finetuning_allowed = 1;</code>
@@ -2223,7 +2223,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Whether finetuning is allowed for this base processor version.
+         * Whether fine tuning is allowed for this base processor version.
          * </pre>
          *
          * <code>bool finetuning_allowed = 1;</code>
@@ -2244,7 +2244,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * The minimum number of labeled documents in the training dataset
-         * required for finetuning.
+         * required for fine tuning.
          * </pre>
          *
          * <code>int32 min_train_labeled_documents = 2;</code>
@@ -2261,7 +2261,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * The minimum number of labeled documents in the training dataset
-         * required for finetuning.
+         * required for fine tuning.
          * </pre>
          *
          * <code>int32 min_train_labeled_documents = 2;</code>
@@ -2282,7 +2282,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * The minimum number of labeled documents in the training dataset
-         * required for finetuning.
+         * required for fine tuning.
          * </pre>
          *
          * <code>int32 min_train_labeled_documents = 2;</code>

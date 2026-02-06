@@ -2299,397 +2299,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public interface SpannerIndexingConfigOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-      com.google.protobuf.MessageOrBuilder {}
-
-  /**
-   *
-   *
-   * <pre>
-   * Configuration specific to spanner-based indexing.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig}
-   */
-  public static final class SpannerIndexingConfig extends com.google.protobuf.GeneratedMessage
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-      SpannerIndexingConfigOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-          /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 2,
-          /* suffix= */ "",
-          "SpannerIndexingConfig");
-    }
-
-    // Use SpannerIndexingConfig.newBuilder() to construct.
-    private SpannerIndexingConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-
-    private SpannerIndexingConfig() {}
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.documentai.v1beta3.DatasetProto
-          .internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.documentai.v1beta3.DatasetProto
-          .internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.class,
-              com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig other =
-          (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) obj;
-
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Configuration specific to spanner-based indexing.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig}
-     */
-    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.documentai.v1beta3.DatasetProto
-            .internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.documentai.v1beta3.DatasetProto
-            .internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.class,
-                com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.documentai.v1beta3.DatasetProto
-            .internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-          getDefaultInstanceForType() {
-        return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig build() {
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig buildPartial() {
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig result =
-            new com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) {
-          return mergeFrom(
-              (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig other) {
-        if (other
-            == com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-                .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-    private static final com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig();
-    }
-
-    public static com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SpannerIndexingConfig> PARSER =
-        new com.google.protobuf.AbstractParser<SpannerIndexingConfig>() {
-          @java.lang.Override
-          public SpannerIndexingConfig parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<SpannerIndexingConfig> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SpannerIndexingConfig> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   private int storageSourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2742,53 +2351,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
 
   public StorageSourceCase getStorageSourceCase() {
     return StorageSourceCase.forNumber(storageSourceCase_);
-  }
-
-  private int indexingSourceCase_ = 0;
-
-  @SuppressWarnings("serial")
-  private java.lang.Object indexingSource_;
-
-  public enum IndexingSourceCase
-      implements
-          com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    SPANNER_INDEXING_CONFIG(4),
-    INDEXINGSOURCE_NOT_SET(0);
-    private final int value;
-
-    private IndexingSourceCase(int value) {
-      this.value = value;
-    }
-
-    /**
-     * @param value The number of the enum to look for.
-     * @return The enum associated with the given number.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static IndexingSourceCase valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static IndexingSourceCase forNumber(int value) {
-      switch (value) {
-        case 4:
-          return SPANNER_INDEXING_CONFIG;
-        case 0:
-          return INDEXINGSOURCE_NOT_SET;
-        default:
-          return null;
-      }
-    }
-
-    public int getNumber() {
-      return this.value;
-    }
-  };
-
-  public IndexingSourceCase getIndexingSourceCase() {
-    return IndexingSourceCase.forNumber(indexingSourceCase_);
   }
 
   public static final int GCS_MANAGED_CONFIG_FIELD_NUMBER = 3;
@@ -2873,7 +2435,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
+   *     See google/cloud/documentai/v1beta3/dataset.proto;l=95
    * @return Whether the documentWarehouseConfig field is set.
    */
   @java.lang.Override
@@ -2895,7 +2457,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
+   *     See google/cloud/documentai/v1beta3/dataset.proto;l=95
    * @return The documentWarehouseConfig.
    */
   @java.lang.Override
@@ -2996,74 +2558,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig) storageSource_;
     }
     return com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig.getDefaultInstance();
-  }
-
-  public static final int SPANNER_INDEXING_CONFIG_FIELD_NUMBER = 4;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A lightweight indexing source with low latency and high
-   * reliability, but lacking advanced features like CMEK and content-based
-   * search.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the spannerIndexingConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasSpannerIndexingConfig() {
-    return indexingSourceCase_ == 4;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A lightweight indexing source with low latency and high
-   * reliability, but lacking advanced features like CMEK and content-based
-   * search.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The spannerIndexingConfig.
-   */
-  @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-      getSpannerIndexingConfig() {
-    if (indexingSourceCase_ == 4) {
-      return (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) indexingSource_;
-    }
-    return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.getDefaultInstance();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A lightweight indexing source with low latency and high
-   * reliability, but lacking advanced features like CMEK and content-based
-   * search.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder
-      getSpannerIndexingConfigOrBuilder() {
-    if (indexingSourceCase_ == 4) {
-      return (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) indexingSource_;
-    }
-    return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -3226,10 +2720,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           3, (com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig) storageSource_);
     }
-    if (indexingSourceCase_ == 4) {
-      output.writeMessage(
-          4, (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) indexingSource_);
-    }
     if (storageSourceCase_ == 5) {
       output.writeMessage(
           5, (com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig) storageSource_);
@@ -3263,12 +2753,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig) storageSource_);
-    }
-    if (indexingSourceCase_ == 4) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              4,
-              (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) indexingSource_);
     }
     if (storageSourceCase_ == 5) {
       size +=
@@ -3322,14 +2806,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    if (!getIndexingSourceCase().equals(other.getIndexingSourceCase())) return false;
-    switch (indexingSourceCase_) {
-      case 4:
-        if (!getSpannerIndexingConfig().equals(other.getSpannerIndexingConfig())) return false;
-        break;
-      case 0:
-      default:
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3361,14 +2837,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       case 6:
         hash = (37 * hash) + UNMANAGED_DATASET_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getUnmanagedDatasetConfig().hashCode();
-        break;
-      case 0:
-      default:
-    }
-    switch (indexingSourceCase_) {
-      case 4:
-        hash = (37 * hash) + SPANNER_INDEXING_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getSpannerIndexingConfig().hashCode();
         break;
       case 0:
       default:
@@ -3524,17 +2992,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       if (unmanagedDatasetConfigBuilder_ != null) {
         unmanagedDatasetConfigBuilder_.clear();
       }
-      if (spannerIndexingConfigBuilder_ != null) {
-        spannerIndexingConfigBuilder_.clear();
-      }
       name_ = "";
       state_ = 0;
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
       storageSourceCase_ = 0;
       storageSource_ = null;
-      indexingSourceCase_ = 0;
-      indexingSource_ = null;
       return this;
     }
 
@@ -3572,16 +3035,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.documentai.v1beta3.Dataset result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
     }
@@ -3597,11 +3060,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       }
       if (storageSourceCase_ == 6 && unmanagedDatasetConfigBuilder_ != null) {
         result.storageSource_ = unmanagedDatasetConfigBuilder_.build();
-      }
-      result.indexingSourceCase_ = indexingSourceCase_;
-      result.indexingSource_ = this.indexingSource_;
-      if (indexingSourceCase_ == 4 && spannerIndexingConfigBuilder_ != null) {
-        result.indexingSource_ = spannerIndexingConfigBuilder_.build();
       }
     }
 
@@ -3619,7 +3077,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.documentai.v1beta3.Dataset.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -3648,17 +3106,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
             break;
           }
         case STORAGESOURCE_NOT_SET:
-          {
-            break;
-          }
-      }
-      switch (other.getIndexingSourceCase()) {
-        case SPANNER_INDEXING_CONFIG:
-          {
-            mergeSpannerIndexingConfig(other.getSpannerIndexingConfig());
-            break;
-          }
-        case INDEXINGSOURCE_NOT_SET:
           {
             break;
           }
@@ -3692,13 +3139,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 16
             case 26:
@@ -3708,13 +3155,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
                 storageSourceCase_ = 3;
                 break;
               } // case 26
-            case 34:
-              {
-                input.readMessage(
-                    internalGetSpannerIndexingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                indexingSourceCase_ = 4;
-                break;
-              } // case 34
             case 42:
               {
                 input.readMessage(
@@ -3734,13 +3174,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
             case 64:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 64
             case 72:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 72
             default:
@@ -3770,20 +3210,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
     public Builder clearStorageSource() {
       storageSourceCase_ = 0;
       storageSource_ = null;
-      onChanged();
-      return this;
-    }
-
-    private int indexingSourceCase_ = 0;
-    private java.lang.Object indexingSource_;
-
-    public IndexingSourceCase getIndexingSourceCase() {
-      return IndexingSourceCase.forNumber(indexingSourceCase_);
-    }
-
-    public Builder clearIndexingSource() {
-      indexingSourceCase_ = 0;
-      indexingSource_ = null;
       onChanged();
       return this;
     }
@@ -4070,7 +3496,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
+     *     See google/cloud/documentai/v1beta3/dataset.proto;l=95
      * @return Whether the documentWarehouseConfig field is set.
      */
     @java.lang.Override
@@ -4092,7 +3518,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
+     *     See google/cloud/documentai/v1beta3/dataset.proto;l=95
      * @return The documentWarehouseConfig.
      */
     @java.lang.Override
@@ -4595,275 +4021,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       return unmanagedDatasetConfigBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig,
-            com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder,
-            com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder>
-        spannerIndexingConfigBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the spannerIndexingConfig field is set.
-     */
-    @java.lang.Override
-    public boolean hasSpannerIndexingConfig() {
-      return indexingSourceCase_ == 4;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The spannerIndexingConfig.
-     */
-    @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-        getSpannerIndexingConfig() {
-      if (spannerIndexingConfigBuilder_ == null) {
-        if (indexingSourceCase_ == 4) {
-          return (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-              indexingSource_;
-        }
-        return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-            .getDefaultInstance();
-      } else {
-        if (indexingSourceCase_ == 4) {
-          return spannerIndexingConfigBuilder_.getMessage();
-        }
-        return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-            .getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setSpannerIndexingConfig(
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig value) {
-      if (spannerIndexingConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        indexingSource_ = value;
-        onChanged();
-      } else {
-        spannerIndexingConfigBuilder_.setMessage(value);
-      }
-      indexingSourceCase_ = 4;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setSpannerIndexingConfig(
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder builderForValue) {
-      if (spannerIndexingConfigBuilder_ == null) {
-        indexingSource_ = builderForValue.build();
-        onChanged();
-      } else {
-        spannerIndexingConfigBuilder_.setMessage(builderForValue.build());
-      }
-      indexingSourceCase_ = 4;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder mergeSpannerIndexingConfig(
-        com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig value) {
-      if (spannerIndexingConfigBuilder_ == null) {
-        if (indexingSourceCase_ == 4
-            && indexingSource_
-                != com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-                    .getDefaultInstance()) {
-          indexingSource_ =
-              com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.newBuilder(
-                      (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-                          indexingSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          indexingSource_ = value;
-        }
-        onChanged();
-      } else {
-        if (indexingSourceCase_ == 4) {
-          spannerIndexingConfigBuilder_.mergeFrom(value);
-        } else {
-          spannerIndexingConfigBuilder_.setMessage(value);
-        }
-      }
-      indexingSourceCase_ = 4;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearSpannerIndexingConfig() {
-      if (spannerIndexingConfigBuilder_ == null) {
-        if (indexingSourceCase_ == 4) {
-          indexingSourceCase_ = 0;
-          indexingSource_ = null;
-          onChanged();
-        }
-      } else {
-        if (indexingSourceCase_ == 4) {
-          indexingSourceCase_ = 0;
-          indexingSource_ = null;
-        }
-        spannerIndexingConfigBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder
-        getSpannerIndexingConfigBuilder() {
-      return internalGetSpannerIndexingConfigFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder
-        getSpannerIndexingConfigOrBuilder() {
-      if ((indexingSourceCase_ == 4) && (spannerIndexingConfigBuilder_ != null)) {
-        return spannerIndexingConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (indexingSourceCase_ == 4) {
-          return (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
-              indexingSource_;
-        }
-        return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-            .getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A lightweight indexing source with low latency and high
-     * reliability, but lacking advanced features like CMEK and content-based
-     * search.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig,
-            com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder,
-            com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder>
-        internalGetSpannerIndexingConfigFieldBuilder() {
-      if (spannerIndexingConfigBuilder_ == null) {
-        if (!(indexingSourceCase_ == 4)) {
-          indexingSource_ =
-              com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig
-                  .getDefaultInstance();
-        }
-        spannerIndexingConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilder<
-                com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig,
-                com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder,
-                com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder>(
-                (com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig) indexingSource_,
-                getParentForChildren(),
-                isClean());
-        indexingSource_ = null;
-      }
-      indexingSourceCase_ = 4;
-      onChanged();
-      return spannerIndexingConfigBuilder_;
-    }
-
     private java.lang.Object name_ = "";
 
     /**
@@ -4935,7 +4092,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4955,7 +4112,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -4980,7 +4137,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5021,7 +4178,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5066,7 +4223,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5086,7 +4243,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -5125,7 +4282,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5142,7 +4299,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -5181,7 +4338,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5198,7 +4355,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       satisfiesPzi_ = false;
       onChanged();
       return this;

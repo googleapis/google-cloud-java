@@ -24,7 +24,8 @@ package com.google.cloud.vectorsearch.v1beta;
  *
  *
  * <pre>
- * Request message for [DataObjectService.ImportDataObjects][].
+ * Request message for
+ * [VectorSearchService.ImportDataObjects][google.cloud.vectorsearch.v1beta.VectorSearchService.ImportDataObjects].
  * </pre>
  *
  * Protobuf type {@code google.cloud.vectorsearch.v1beta.ImportDataObjectsRequest}
@@ -128,6 +129,38 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
      * @return The bytes for errorUri.
      */
     com.google.protobuf.ByteString getErrorUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URI prefix of the Cloud Storage location to write DataObject
+     * `IDs` and `etags` of DataObjects that were successfully imported. The
+     * service will write the successfully imported DataObjects to sharded files
+     * under this prefix. If this field is empty, no output will be written.
+     * </pre>
+     *
+     * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The outputUri.
+     */
+    java.lang.String getOutputUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URI prefix of the Cloud Storage location to write DataObject
+     * `IDs` and `etags` of DataObjects that were successfully imported. The
+     * service will write the successfully imported DataObjects to sharded files
+     * under this prefix. If this field is empty, no output will be written.
+     * </pre>
+     *
+     * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for outputUri.
+     */
+    com.google.protobuf.ByteString getOutputUriBytes();
   }
 
   /**
@@ -163,6 +196,7 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
     private GcsImportConfig() {
       contentsUri_ = "";
       errorUri_ = "";
+      outputUri_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -289,6 +323,65 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
       }
     }
 
+    public static final int OUTPUT_URI_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object outputUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URI prefix of the Cloud Storage location to write DataObject
+     * `IDs` and `etags` of DataObjects that were successfully imported. The
+     * service will write the successfully imported DataObjects to sharded files
+     * under this prefix. If this field is empty, no output will be written.
+     * </pre>
+     *
+     * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The outputUri.
+     */
+    @java.lang.Override
+    public java.lang.String getOutputUri() {
+      java.lang.Object ref = outputUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URI prefix of the Cloud Storage location to write DataObject
+     * `IDs` and `etags` of DataObjects that were successfully imported. The
+     * service will write the successfully imported DataObjects to sharded files
+     * under this prefix. If this field is empty, no output will be written.
+     * </pre>
+     *
+     * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for outputUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOutputUriBytes() {
+      java.lang.Object ref = outputUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        outputUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -309,6 +402,9 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(errorUri_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, errorUri_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(outputUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, outputUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -323,6 +419,9 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(errorUri_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, errorUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(outputUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, outputUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -344,6 +443,7 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
 
       if (!getContentsUri().equals(other.getContentsUri())) return false;
       if (!getErrorUri().equals(other.getErrorUri())) return false;
+      if (!getOutputUri().equals(other.getOutputUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -359,6 +459,8 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
       hash = (53 * hash) + getContentsUri().hashCode();
       hash = (37 * hash) + ERROR_URI_FIELD_NUMBER;
       hash = (53 * hash) + getErrorUri().hashCode();
+      hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -511,6 +613,7 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
         bitField0_ = 0;
         contentsUri_ = "";
         errorUri_ = "";
+        outputUri_ = "";
         return this;
       }
 
@@ -558,6 +661,9 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.errorUri_ = errorUri_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.outputUri_ = outputUri_;
+        }
       }
 
       @java.lang.Override
@@ -587,6 +693,11 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
         if (!other.getErrorUri().isEmpty()) {
           errorUri_ = other.errorUri_;
           bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getOutputUri().isEmpty()) {
+          outputUri_ = other.outputUri_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -627,6 +738,12 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  outputUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -869,6 +986,132 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
         checkByteStringIsUtf8(value);
         errorUri_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object outputUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URI prefix of the Cloud Storage location to write DataObject
+       * `IDs` and `etags` of DataObjects that were successfully imported. The
+       * service will write the successfully imported DataObjects to sharded files
+       * under this prefix. If this field is empty, no output will be written.
+       * </pre>
+       *
+       * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The outputUri.
+       */
+      public java.lang.String getOutputUri() {
+        java.lang.Object ref = outputUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URI prefix of the Cloud Storage location to write DataObject
+       * `IDs` and `etags` of DataObjects that were successfully imported. The
+       * service will write the successfully imported DataObjects to sharded files
+       * under this prefix. If this field is empty, no output will be written.
+       * </pre>
+       *
+       * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for outputUri.
+       */
+      public com.google.protobuf.ByteString getOutputUriBytes() {
+        java.lang.Object ref = outputUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          outputUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URI prefix of the Cloud Storage location to write DataObject
+       * `IDs` and `etags` of DataObjects that were successfully imported. The
+       * service will write the successfully imported DataObjects to sharded files
+       * under this prefix. If this field is empty, no output will be written.
+       * </pre>
+       *
+       * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The outputUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputUri_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URI prefix of the Cloud Storage location to write DataObject
+       * `IDs` and `etags` of DataObjects that were successfully imported. The
+       * service will write the successfully imported DataObjects to sharded files
+       * under this prefix. If this field is empty, no output will be written.
+       * </pre>
+       *
+       * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOutputUri() {
+        outputUri_ = getDefaultInstance().getOutputUri();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. URI prefix of the Cloud Storage location to write DataObject
+       * `IDs` and `etags` of DataObjects that were successfully imported. The
+       * service will write the successfully imported DataObjects to sharded files
+       * under this prefix. If this field is empty, no output will be written.
+       * </pre>
+       *
+       * <code>string output_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for outputUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        outputUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1295,7 +1538,8 @@ public final class ImportDataObjectsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [DataObjectService.ImportDataObjects][].
+   * Request message for
+   * [VectorSearchService.ImportDataObjects][google.cloud.vectorsearch.v1beta.VectorSearchService.ImportDataObjects].
    * </pre>
    *
    * Protobuf type {@code google.cloud.vectorsearch.v1beta.ImportDataObjectsRequest}

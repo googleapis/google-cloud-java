@@ -363,6 +363,53 @@ public interface VerifyConfidentialSpaceRequestOrBuilder
           .ConfidentialSpaceOptionsOrBuilder
       getOptionsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional Nvidia attestation report, used to populate hardware
+   * rooted claims for Nvidia devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nvidiaAttestation field is set.
+   */
+  boolean hasNvidiaAttestation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional Nvidia attestation report, used to populate hardware
+   * rooted claims for Nvidia devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nvidiaAttestation.
+   */
+  com.google.cloud.confidentialcomputing.v1.NvidiaAttestation getNvidiaAttestation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional Nvidia attestation report, used to populate hardware
+   * rooted claims for Nvidia devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder
+      getNvidiaAttestationOrBuilder();
+
   com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest.TeeAttestationCase
       getTeeAttestationCase();
 }

@@ -24,7 +24,8 @@ package com.google.cloud.vectorsearch.v1beta;
  *
  *
  * <pre>
- * Response for [DataObjectService.ImportDataObjects][].
+ * Response for
+ * [VectorSearchService.ImportDataObjects][google.cloud.vectorsearch.v1beta.VectorSearchService.ImportDataObjects].
  * </pre>
  *
  * Protobuf type {@code google.cloud.vectorsearch.v1beta.ImportDataObjectsResponse}
@@ -288,7 +289,8 @@ public final class ImportDataObjectsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Response for [DataObjectService.ImportDataObjects][].
+   * Response for
+   * [VectorSearchService.ImportDataObjects][google.cloud.vectorsearch.v1beta.VectorSearchService.ImportDataObjects].
    * </pre>
    *
    * Protobuf type {@code google.cloud.vectorsearch.v1beta.ImportDataObjectsResponse}

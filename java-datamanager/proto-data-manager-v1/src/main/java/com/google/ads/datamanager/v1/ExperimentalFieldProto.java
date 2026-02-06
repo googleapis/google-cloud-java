@@ -57,12 +57,12 @@ public final class ExperimentalFieldProto extends com.google.protobuf.GeneratedF
           + "_field.proto\022\031google.ads.datamanager.v1\032"
           + "\037google/api/field_behavior.proto\";\n\021Expe"
           + "rimentalField\022\022\n\005field\030\001 \001(\tB\003\340A\001\022\022\n\005val"
-          + "ue\030\002 \001(\tB\003\340A\001B\326\001\n\035com.google.ads.dataman"
-          + "ager.v1B\026ExperimentalFieldProtoP\001ZDgoogl"
-          + "e.golang.org/genproto/googleapis/ads/dat"
-          + "amanager/v1;datamanager\252\002\031Google.Ads.Dat"
-          + "aManager.V1\312\002\031Google\\Ads\\DataManager\\V1\352"
-          + "\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "ue\030\002 \001(\tB\003\340A\001B\323\001\n\035com.google.ads.dataman"
+          + "ager.v1B\026ExperimentalFieldProtoP\001ZAcloud"
+          + ".google.com/go/datamanager/apiv1/dataman"
+          + "agerpb;datamanagerpb\252\002\031Google.Ads.DataMa"
+          + "nager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034G"
+          + "oogle::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

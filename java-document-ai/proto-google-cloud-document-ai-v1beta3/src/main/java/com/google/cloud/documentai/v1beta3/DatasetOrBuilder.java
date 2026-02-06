@@ -89,7 +89,7 @@ public interface DatasetOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
+   *     See google/cloud/documentai/v1beta3/dataset.proto;l=95
    * @return Whether the documentWarehouseConfig field is set.
    */
   @java.lang.Deprecated
@@ -108,7 +108,7 @@ public interface DatasetOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.Dataset.document_warehouse_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/dataset.proto;l=98
+   *     See google/cloud/documentai/v1beta3/dataset.proto;l=95
    * @return The documentWarehouseConfig.
    */
   @java.lang.Deprecated
@@ -179,56 +179,6 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfigOrBuilder
       getUnmanagedDatasetConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A lightweight indexing source with low latency and high
-   * reliability, but lacking advanced features like CMEK and content-based
-   * search.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the spannerIndexingConfig field is set.
-   */
-  boolean hasSpannerIndexingConfig();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A lightweight indexing source with low latency and high
-   * reliability, but lacking advanced features like CMEK and content-based
-   * search.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The spannerIndexingConfig.
-   */
-  com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig getSpannerIndexingConfig();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A lightweight indexing source with low latency and high
-   * reliability, but lacking advanced features like CMEK and content-based
-   * search.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig spanner_indexing_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder
-      getSpannerIndexingConfigOrBuilder();
 
   /**
    *
@@ -317,6 +267,4 @@ public interface DatasetOrBuilder
   boolean getSatisfiesPzi();
 
   com.google.cloud.documentai.v1beta3.Dataset.StorageSourceCase getStorageSourceCase();
-
-  com.google.cloud.documentai.v1beta3.Dataset.IndexingSourceCase getIndexingSourceCase();
 }

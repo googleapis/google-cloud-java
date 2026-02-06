@@ -93,7 +93,9 @@ public interface GcpWrappedKeyInfoOrBuilder
    * Required. Google Cloud Platform [Cloud Key Management Service resource
    * ID](//cloud.google.com/kms/docs/getting-resource-ids).  Should be in the
    * format of
-   * "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}".
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}`
+   * or
+   * `gcp-kms://projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}`
    * </pre>
    *
    * <code>string kek_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -109,7 +111,9 @@ public interface GcpWrappedKeyInfoOrBuilder
    * Required. Google Cloud Platform [Cloud Key Management Service resource
    * ID](//cloud.google.com/kms/docs/getting-resource-ids).  Should be in the
    * format of
-   * "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}".
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}`
+   * or
+   * `gcp-kms://projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}`
    * </pre>
    *
    * <code>string kek_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -24,7 +24,7 @@ package com.google.cloud.gkehub.v1;
  *
  *
  * <pre>
- * CommonFeatureState contains Hub-wide Feature status information.
+ * CommonFeatureState contains Fleet-wide Feature status information.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkehub.v1.CommonFeatureState}
@@ -69,6 +69,115 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
   }
 
   private int bitField0_;
+  private int featureStateCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object featureState_;
+
+  public enum FeatureStateCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    RBACROLEBINDINGACTUATION(120),
+    FEATURESTATE_NOT_SET(0);
+    private final int value;
+
+    private FeatureStateCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FeatureStateCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static FeatureStateCase forNumber(int value) {
+      switch (value) {
+        case 120:
+          return RBACROLEBINDINGACTUATION;
+        case 0:
+          return FEATURESTATE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public FeatureStateCase getFeatureStateCase() {
+    return FeatureStateCase.forNumber(featureStateCase_);
+  }
+
+  public static final int RBACROLEBINDINGACTUATION_FIELD_NUMBER = 120;
+
+  /**
+   *
+   *
+   * <pre>
+   * RBAC Role Binding Actuation feature state
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+   * </code>
+   *
+   * @return Whether the rbacrolebindingactuation field is set.
+   */
+  @java.lang.Override
+  public boolean hasRbacrolebindingactuation() {
+    return featureStateCase_ == 120;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * RBAC Role Binding Actuation feature state
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+   * </code>
+   *
+   * @return The rbacrolebindingactuation.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState
+      getRbacrolebindingactuation() {
+    if (featureStateCase_ == 120) {
+      return (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_;
+    }
+    return com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * RBAC Role Binding Actuation feature state
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureStateOrBuilder
+      getRbacrolebindingactuationOrBuilder() {
+    if (featureStateCase_ == 120) {
+      return (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_;
+    }
+    return com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.getDefaultInstance();
+  }
+
   public static final int STATE_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.v1.FeatureState state_;
 
@@ -76,7 +185,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The "running state" of the Feature in this Hub.
+   * Output only. The "running state" of the Feature in this Fleet.
    * </pre>
    *
    * <code>
@@ -94,7 +203,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The "running state" of the Feature in this Hub.
+   * Output only. The "running state" of the Feature in this Fleet.
    * </pre>
    *
    * <code>
@@ -112,7 +221,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The "running state" of the Feature in this Hub.
+   * Output only. The "running state" of the Feature in this Fleet.
    * </pre>
    *
    * <code>
@@ -141,6 +250,10 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getState());
     }
+    if (featureStateCase_ == 120) {
+      output.writeMessage(
+          120, (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +265,12 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getState());
+    }
+    if (featureStateCase_ == 120) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              120,
+              (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -173,6 +292,15 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
     }
+    if (!getFeatureStateCase().equals(other.getFeatureStateCase())) return false;
+    switch (featureStateCase_) {
+      case 120:
+        if (!getRbacrolebindingactuation().equals(other.getRbacrolebindingactuation()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,6 +315,14 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
+    }
+    switch (featureStateCase_) {
+      case 120:
+        hash = (37 * hash) + RBACROLEBINDINGACTUATION_FIELD_NUMBER;
+        hash = (53 * hash) + getRbacrolebindingactuation().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -293,7 +429,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * CommonFeatureState contains Hub-wide Feature status information.
+   * CommonFeatureState contains Fleet-wide Feature status information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkehub.v1.CommonFeatureState}
@@ -337,11 +473,16 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (rbacrolebindingactuationBuilder_ != null) {
+        rbacrolebindingactuationBuilder_.clear();
+      }
       state_ = null;
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
         stateBuilder_ = null;
       }
+      featureStateCase_ = 0;
+      featureState_ = null;
       return this;
     }
 
@@ -372,6 +513,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -379,11 +521,19 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     private void buildPartial0(com.google.cloud.gkehub.v1.CommonFeatureState result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.gkehub.v1.CommonFeatureState result) {
+      result.featureStateCase_ = featureStateCase_;
+      result.featureState_ = this.featureState_;
+      if (featureStateCase_ == 120 && rbacrolebindingactuationBuilder_ != null) {
+        result.featureState_ = rbacrolebindingactuationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -400,6 +550,17 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.gkehub.v1.CommonFeatureState.getDefaultInstance()) return this;
       if (other.hasState()) {
         mergeState(other.getState());
+      }
+      switch (other.getFeatureStateCase()) {
+        case RBACROLEBINDINGACTUATION:
+          {
+            mergeRbacrolebindingactuation(other.getRbacrolebindingactuation());
+            break;
+          }
+        case FEATURESTATE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -430,9 +591,17 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(internalGetStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
+            case 962:
+              {
+                input.readMessage(
+                    internalGetRbacrolebindingactuationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                featureStateCase_ = 120;
+                break;
+              } // case 962
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -450,7 +619,269 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int featureStateCase_ = 0;
+    private java.lang.Object featureState_;
+
+    public FeatureStateCase getFeatureStateCase() {
+      return FeatureStateCase.forNumber(featureStateCase_);
+    }
+
+    public Builder clearFeatureState() {
+      featureStateCase_ = 0;
+      featureState_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState,
+            com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.Builder,
+            com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureStateOrBuilder>
+        rbacrolebindingactuationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     *
+     * @return Whether the rbacrolebindingactuation field is set.
+     */
+    @java.lang.Override
+    public boolean hasRbacrolebindingactuation() {
+      return featureStateCase_ == 120;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     *
+     * @return The rbacrolebindingactuation.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState
+        getRbacrolebindingactuation() {
+      if (rbacrolebindingactuationBuilder_ == null) {
+        if (featureStateCase_ == 120) {
+          return (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_;
+        }
+        return com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState
+            .getDefaultInstance();
+      } else {
+        if (featureStateCase_ == 120) {
+          return rbacrolebindingactuationBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    public Builder setRbacrolebindingactuation(
+        com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState value) {
+      if (rbacrolebindingactuationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        featureState_ = value;
+        onChanged();
+      } else {
+        rbacrolebindingactuationBuilder_.setMessage(value);
+      }
+      featureStateCase_ = 120;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    public Builder setRbacrolebindingactuation(
+        com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.Builder builderForValue) {
+      if (rbacrolebindingactuationBuilder_ == null) {
+        featureState_ = builderForValue.build();
+        onChanged();
+      } else {
+        rbacrolebindingactuationBuilder_.setMessage(builderForValue.build());
+      }
+      featureStateCase_ = 120;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    public Builder mergeRbacrolebindingactuation(
+        com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState value) {
+      if (rbacrolebindingactuationBuilder_ == null) {
+        if (featureStateCase_ == 120
+            && featureState_
+                != com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState
+                    .getDefaultInstance()) {
+          featureState_ =
+              com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.newBuilder(
+                      (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState)
+                          featureState_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          featureState_ = value;
+        }
+        onChanged();
+      } else {
+        if (featureStateCase_ == 120) {
+          rbacrolebindingactuationBuilder_.mergeFrom(value);
+        } else {
+          rbacrolebindingactuationBuilder_.setMessage(value);
+        }
+      }
+      featureStateCase_ = 120;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    public Builder clearRbacrolebindingactuation() {
+      if (rbacrolebindingactuationBuilder_ == null) {
+        if (featureStateCase_ == 120) {
+          featureStateCase_ = 0;
+          featureState_ = null;
+          onChanged();
+        }
+      } else {
+        if (featureStateCase_ == 120) {
+          featureStateCase_ = 0;
+          featureState_ = null;
+        }
+        rbacrolebindingactuationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    public com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.Builder
+        getRbacrolebindingactuationBuilder() {
+      return internalGetRbacrolebindingactuationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureStateOrBuilder
+        getRbacrolebindingactuationOrBuilder() {
+      if ((featureStateCase_ == 120) && (rbacrolebindingactuationBuilder_ != null)) {
+        return rbacrolebindingactuationBuilder_.getMessageOrBuilder();
+      } else {
+        if (featureStateCase_ == 120) {
+          return (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_;
+        }
+        return com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RBAC Role Binding Actuation feature state
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState rbacrolebindingactuation = 120;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState,
+            com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.Builder,
+            com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureStateOrBuilder>
+        internalGetRbacrolebindingactuationFieldBuilder() {
+      if (rbacrolebindingactuationBuilder_ == null) {
+        if (!(featureStateCase_ == 120)) {
+          featureState_ =
+              com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.getDefaultInstance();
+        }
+        rbacrolebindingactuationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState,
+                com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState.Builder,
+                com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureStateOrBuilder>(
+                (com.google.cloud.gkehub.rbacrolebindingactuation.v1.FeatureState) featureState_,
+                getParentForChildren(),
+                isClean());
+        featureState_ = null;
+      }
+      featureStateCase_ = 120;
+      onChanged();
+      return rbacrolebindingactuationBuilder_;
+    }
 
     private com.google.cloud.gkehub.v1.FeatureState state_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -463,7 +894,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -473,14 +904,14 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -503,7 +934,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -519,7 +950,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       } else {
         stateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -528,7 +959,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -541,7 +972,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -550,7 +981,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -559,7 +990,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeState(com.google.cloud.gkehub.v1.FeatureState value) {
       if (stateBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && state_ != null
             && state_ != com.google.cloud.gkehub.v1.FeatureState.getDefaultInstance()) {
           getStateBuilder().mergeFrom(value);
@@ -570,7 +1001,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
         stateBuilder_.mergeFrom(value);
       }
       if (state_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -580,7 +1011,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -588,7 +1019,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = null;
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
@@ -602,7 +1033,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -610,7 +1041,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.gkehub.v1.FeatureState.Builder getStateBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return internalGetStateFieldBuilder().getBuilder();
     }
@@ -619,7 +1050,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>
@@ -640,7 +1071,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The "running state" of the Feature in this Hub.
+     * Output only. The "running state" of the Feature in this Fleet.
      * </pre>
      *
      * <code>

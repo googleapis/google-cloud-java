@@ -30,10 +30,12 @@ public interface SearchHintOrBuilder
    *
    *
    * <pre>
-   * Specifies that the search should use a particular index.
+   * Optional. Specifies that the search should use a particular index.
    * </pre>
    *
-   * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the useIndex field is set.
    */
@@ -43,10 +45,12 @@ public interface SearchHintOrBuilder
    *
    *
    * <pre>
-   * Specifies that the search should use a particular index.
+   * Optional. Specifies that the search should use a particular index.
    * </pre>
    *
-   * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The useIndex.
    */
@@ -56,10 +60,12 @@ public interface SearchHintOrBuilder
    *
    *
    * <pre>
-   * Specifies that the search should use a particular index.
+   * Optional. Specifies that the search should use a particular index.
    * </pre>
    *
-   * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder getUseIndexOrBuilder();
 
@@ -67,11 +73,11 @@ public interface SearchHintOrBuilder
    *
    *
    * <pre>
-   * If set to true, the search will use the system's default
+   * Optional. If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2;</code>
+   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the useKnn field is set.
    */
@@ -81,11 +87,11 @@ public interface SearchHintOrBuilder
    *
    *
    * <pre>
-   * If set to true, the search will use the system's default
+   * Optional. If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2;</code>
+   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useKnn.
    */

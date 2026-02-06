@@ -124,12 +124,12 @@ public final class ProcessingErrorsProto extends com.google.protobuf.GeneratedFi
           + "SER_IDENTIFIER_DECRYPTION_ERROR\020\007\022,\n(PRO"
           + "CESSING_WARNING_REASON_INTERNAL_ERROR\020\010\022"
           + "-\n)PROCESSING_WARNING_REASON_AWS_AUTH_FA"
-          + "ILED\020\tB\325\001\n\035com.google.ads.datamanager.v1"
-          + "B\025ProcessingErrorsProtoP\001ZDgoogle.golang"
-          + ".org/genproto/googleapis/ads/datamanager"
-          + "/v1;datamanager\252\002\031Google.Ads.DataManager"
-          + ".V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google"
-          + "::Ads::DataManager::V1b\006proto3"
+          + "ILED\020\tB\322\001\n\035com.google.ads.datamanager.v1"
+          + "B\025ProcessingErrorsProtoP\001ZAcloud.google."
+          + "com/go/datamanager/apiv1/datamanagerpb;d"
+          + "atamanagerpb\252\002\031Google.Ads.DataManager.V1"
+          + "\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::A"
+          + "ds::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -17,6 +17,7 @@
 package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListOperatorsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListProcessesPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListPublicOperatorsPagedResponse;
@@ -24,6 +25,10 @@ import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListPublicOp
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Analysis;
 import com.google.cloud.visionai.v1.BatchRunProcessRequest;
 import com.google.cloud.visionai.v1.BatchRunProcessResponse;
@@ -215,6 +220,19 @@ public abstract class LiveVideoAnalyticsStub implements BackgroundResource {
 
   public UnaryCallable<BatchRunProcessRequest, Operation> batchRunProcessCallable() {
     throw new UnsupportedOperationException("Not implemented: batchRunProcessCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override
