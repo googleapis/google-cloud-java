@@ -2230,6 +2230,30 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
     return maxConcurrentRunCount_;
   }
 
+  public static final int MAX_CONCURRENT_ACTIVE_RUN_COUNT_FIELD_NUMBER = 21;
+  private long maxConcurrentActiveRunCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maximum number of active runs that can be executed
+   * concurrently for this Schedule. This limits the number of runs that can be
+   * in a non-terminal state at the same time.
+   * Currently, this field is only supported for requests of type
+   * CreatePipelineJobRequest.
+   * </pre>
+   *
+   * <code>int64 max_concurrent_active_run_count = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxConcurrentActiveRunCount.
+   */
+  @java.lang.Override
+  public long getMaxConcurrentActiveRunCount() {
+    return maxConcurrentActiveRunCount_;
+  }
+
   public static final int ALLOW_QUEUEING_FIELD_NUMBER = 12;
   private boolean allowQueueing_ = false;
 
@@ -2419,6 +2443,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           20, (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_);
     }
+    if (maxConcurrentActiveRunCount_ != 0L) {
+      output.writeInt64(21, maxConcurrentActiveRunCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2497,6 +2524,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_);
     }
+    if (maxConcurrentActiveRunCount_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(21, maxConcurrentActiveRunCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2547,6 +2578,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
       if (!getLastResumeTime().equals(other.getLastResumeTime())) return false;
     }
     if (getMaxConcurrentRunCount() != other.getMaxConcurrentRunCount()) return false;
+    if (getMaxConcurrentActiveRunCount() != other.getMaxConcurrentActiveRunCount()) return false;
     if (getAllowQueueing() != other.getAllowQueueing()) return false;
     if (getCatchUp() != other.getCatchUp()) return false;
     if (hasLastScheduledRunResponse() != other.hasLastScheduledRunResponse()) return false;
@@ -2629,6 +2661,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + MAX_CONCURRENT_RUN_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxConcurrentRunCount());
+    hash = (37 * hash) + MAX_CONCURRENT_ACTIVE_RUN_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxConcurrentActiveRunCount());
     hash = (37 * hash) + ALLOW_QUEUEING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowQueueing());
     hash = (37 * hash) + CATCH_UP_FIELD_NUMBER;
@@ -2868,6 +2902,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
         lastResumeTimeBuilder_ = null;
       }
       maxConcurrentRunCount_ = 0L;
+      maxConcurrentActiveRunCount_ = 0L;
       allowQueueing_ = false;
       catchUp_ = false;
       lastScheduledRunResponse_ = null;
@@ -2967,12 +3002,15 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
         result.maxConcurrentRunCount_ = maxConcurrentRunCount_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.allowQueueing_ = allowQueueing_;
+        result.maxConcurrentActiveRunCount_ = maxConcurrentActiveRunCount_;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.catchUp_ = catchUp_;
+        result.allowQueueing_ = allowQueueing_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.catchUp_ = catchUp_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.lastScheduledRunResponse_ =
             lastScheduledRunResponseBuilder_ == null
                 ? lastScheduledRunResponse_
@@ -3052,6 +3090,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
       }
       if (other.getMaxConcurrentRunCount() != 0L) {
         setMaxConcurrentRunCount(other.getMaxConcurrentRunCount());
+      }
+      if (other.getMaxConcurrentActiveRunCount() != 0L) {
+        setMaxConcurrentActiveRunCount(other.getMaxConcurrentActiveRunCount());
       }
       if (other.getAllowQueueing() != false) {
         setAllowQueueing(other.getAllowQueueing());
@@ -3197,13 +3238,13 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
             case 96:
               {
                 allowQueueing_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 96
             case 104:
               {
                 catchUp_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 104
             case 114:
@@ -3239,7 +3280,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetLastScheduledRunResponseFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 146
             case 154:
@@ -3257,6 +3298,12 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
                 requestCase_ = 20;
                 break;
               } // case 162
+            case 168:
+              {
+                maxConcurrentActiveRunCount_ = input.readInt64();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 168
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6338,6 +6385,77 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private long maxConcurrentActiveRunCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of active runs that can be executed
+     * concurrently for this Schedule. This limits the number of runs that can be
+     * in a non-terminal state at the same time.
+     * Currently, this field is only supported for requests of type
+     * CreatePipelineJobRequest.
+     * </pre>
+     *
+     * <code>int64 max_concurrent_active_run_count = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxConcurrentActiveRunCount.
+     */
+    @java.lang.Override
+    public long getMaxConcurrentActiveRunCount() {
+      return maxConcurrentActiveRunCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of active runs that can be executed
+     * concurrently for this Schedule. This limits the number of runs that can be
+     * in a non-terminal state at the same time.
+     * Currently, this field is only supported for requests of type
+     * CreatePipelineJobRequest.
+     * </pre>
+     *
+     * <code>int64 max_concurrent_active_run_count = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The maxConcurrentActiveRunCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxConcurrentActiveRunCount(long value) {
+
+      maxConcurrentActiveRunCount_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of active runs that can be executed
+     * concurrently for this Schedule. This limits the number of runs that can be
+     * in a non-terminal state at the same time.
+     * Currently, this field is only supported for requests of type
+     * CreatePipelineJobRequest.
+     * </pre>
+     *
+     * <code>int64 max_concurrent_active_run_count = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxConcurrentActiveRunCount() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      maxConcurrentActiveRunCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private boolean allowQueueing_;
 
     /**
@@ -6375,7 +6493,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
     public Builder setAllowQueueing(boolean value) {
 
       allowQueueing_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6394,7 +6512,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowQueueing() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       allowQueueing_ = false;
       onChanged();
       return this;
@@ -6437,7 +6555,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
     public Builder setCatchUp(boolean value) {
 
       catchUp_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6456,7 +6574,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCatchUp() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       catchUp_ = false;
       onChanged();
       return this;
@@ -6486,7 +6604,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
      * @return Whether the lastScheduledRunResponse field is set.
      */
     public boolean hasLastScheduledRunResponse() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6539,7 +6657,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
       } else {
         lastScheduledRunResponseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6565,7 +6683,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
       } else {
         lastScheduledRunResponseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6587,7 +6705,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
     public Builder mergeLastScheduledRunResponse(
         com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse value) {
       if (lastScheduledRunResponseBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && lastScheduledRunResponse_ != null
             && lastScheduledRunResponse_
                 != com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()) {
@@ -6599,7 +6717,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
         lastScheduledRunResponseBuilder_.mergeFrom(value);
       }
       if (lastScheduledRunResponse_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6620,7 +6738,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLastScheduledRunResponse() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       lastScheduledRunResponse_ = null;
       if (lastScheduledRunResponseBuilder_ != null) {
         lastScheduledRunResponseBuilder_.dispose();
@@ -6646,7 +6764,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder
         getLastScheduledRunResponseBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetLastScheduledRunResponseFieldBuilder().getBuilder();
     }

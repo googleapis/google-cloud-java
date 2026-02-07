@@ -25,6 +25,15 @@ package com.google.maps.solar.v1;
  *
  * <pre>
  * Specifies pre-GA experiments that can be enabled in the API.
+ *
+ * Requests using this field are classified as a pre-GA offering
+ * under the [Google Maps Platform Service Specific
+ * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms). See
+ * [launch stage
+ * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages) for
+ * more details.
+ *
+ * New values may be added to this enum in the future.
  * </pre>
  *
  * Protobuf enum {@code google.maps.solar.v1.Experiment}
