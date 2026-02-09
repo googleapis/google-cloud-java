@@ -58,7 +58,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -69,7 +69,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -84,7 +84,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -95,7 +95,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -110,7 +110,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -164,8 +164,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Fleet-wide Feature configuration. If this Feature does not
+   * support any Fleet-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -180,8 +180,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Fleet-wide Feature configuration. If this Feature does not
+   * support any Fleet-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -196,8 +196,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Fleet-wide Feature configuration. If this Feature does not
+   * support any Fleet-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -210,12 +210,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -239,12 +240,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -273,12 +275,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -303,12 +306,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -336,12 +340,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -365,7 +370,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The Hub-wide Feature state.
+   * Output only. The Fleet-wide Feature state.
    * </pre>
    *
    * <code>
@@ -380,7 +385,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The Hub-wide Feature state.
+   * Output only. The Fleet-wide Feature state.
    * </pre>
    *
    * <code>
@@ -395,7 +400,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The Hub-wide Feature state.
+   * Output only. The Fleet-wide Feature state.
    * </pre>
    *
    * <code>
@@ -413,7 +418,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -435,7 +440,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -462,7 +467,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -485,7 +490,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -511,7 +516,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   * projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -644,4 +649,323 @@ public interface FeatureOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getScopeSpecsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsScopeSpecs(java.lang.String key);
+
+  /** Use {@link #getScopeSpecsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> getScopeSpecs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureSpec> getScopeSpecsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.gkehub.v1.ScopeFeatureSpec getScopeSpecsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.gkehub.v1.ScopeFeatureSpec defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Scope-specific configuration for this Feature. If this Feature
+   * does not support any per-Scope configuration, this field may be unused.
+   *
+   * The keys indicate which Scope the configuration is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   *
+   * {p} will always be returned as the project number, but the project ID is
+   * also accepted during input. If the same Scope is specified in the map
+   * twice (using the project ID form, and the project number form), exactly
+   * ONE of the entries will be saved, with no guarantees as to which. For this
+   * reason, it is recommended the same format be used for all entries when
+   * mutating a Feature.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureSpec&gt; scope_specs = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1.ScopeFeatureSpec getScopeSpecsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getScopeStatesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsScopeStates(java.lang.String key);
+
+  /** Use {@link #getScopeStatesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> getScopeStates();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.gkehub.v1.ScopeFeatureState> getScopeStatesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.gkehub.v1.ScopeFeatureState getScopeStatesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.gkehub.v1.ScopeFeatureState defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Scope-specific Feature status. If this Feature does
+   * report any per-Scope status, this field may be unused.
+   *
+   * The keys indicate which Scope the state is for, in the form:
+   *
+   * `projects/{p}/locations/global/scopes/{s}`
+   *
+   * Where {p} is the project, {s} is a valid Scope in this project.
+   * {p} WILL match the Feature's project.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.gkehub.v1.ScopeFeatureState&gt; scope_states = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1.ScopeFeatureState getScopeStatesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of unreachable.
+   */
+  int getUnreachableCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  java.lang.String getUnreachable(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of locations that could not be reached while fetching
+   * this feature.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

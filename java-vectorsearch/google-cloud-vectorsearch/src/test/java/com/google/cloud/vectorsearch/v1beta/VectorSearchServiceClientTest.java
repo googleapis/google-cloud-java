@@ -981,6 +981,56 @@ public class VectorSearchServiceClientTest {
   }
 
   @Test
+  public void exportDataObjectsTest() throws Exception {
+    ExportDataObjectsResponse expectedResponse = ExportDataObjectsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataObjectsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVectorSearchService.addResponse(resultOperation);
+
+    ExportDataObjectsRequest request =
+        ExportDataObjectsRequest.newBuilder()
+            .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+            .build();
+
+    ExportDataObjectsResponse actualResponse = client.exportDataObjectsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVectorSearchService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportDataObjectsRequest actualRequest = ((ExportDataObjectsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getGcsDestination(), actualRequest.getGcsDestination());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportDataObjectsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVectorSearchService.addException(exception);
+
+    try {
+      ExportDataObjectsRequest request =
+          ExportDataObjectsRequest.newBuilder()
+              .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .build();
+      client.exportDataObjectsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

@@ -147,13 +147,13 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
           + "cord_count\030\001 \001(\003\022\025\n\rpair_id_count\030\002 \001(\003\""
           + "i\n\rRequestStatus\022\032\n\026REQUEST_STATUS_UNKNO"
           + "WN\020\000\022\013\n\007SUCCESS\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006FAI"
-          + "LED\020\003\022\023\n\017PARTIAL_SUCCESS\020\004B\010\n\006statusB\340\001\n"
+          + "LED\020\003\022\023\n\017PARTIAL_SUCCESS\020\004B\010\n\006statusB\335\001\n"
           + "\035com.google.ads.datamanager.v1B RequestS"
-          + "tatusPerDestinationProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/ads/datamanage"
-          + "r/v1;datamanager\252\002\031Google.Ads.DataManage"
-          + "r.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Googl"
-          + "e::Ads::DataManager::V1b\006proto3"
+          + "tatusPerDestinationProtoP\001ZAcloud.google"
+          + ".com/go/datamanager/apiv1/datamanagerpb;"
+          + "datamanagerpb\252\002\031Google.Ads.DataManager.V"
+          + "1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::"
+          + "Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

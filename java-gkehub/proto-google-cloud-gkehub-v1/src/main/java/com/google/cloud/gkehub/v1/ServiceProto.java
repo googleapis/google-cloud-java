@@ -41,9 +41,145 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GetScopeNamespaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GetScopeNamespaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_CreateScopeNamespaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_CreateScopeNamespaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_UpdateScopeNamespaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_UpdateScopeNamespaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_DeleteScopeNamespaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_DeleteScopeNamespaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListScopeNamespacesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListScopeNamespacesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListScopeNamespacesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListScopeNamespacesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GetScopeRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GetScopeRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_CreateScopeRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_CreateScopeRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_UpdateScopeRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_UpdateScopeRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_DeleteScopeRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_DeleteScopeRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GetScopeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GetScopeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_CreateScopeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_CreateScopeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_UpdateScopeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_UpdateScopeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_DeleteScopeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_DeleteScopeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListScopesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListScopesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListScopesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListScopesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListPermittedScopesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListPermittedScopesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListPermittedScopesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListPermittedScopesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GetMembershipBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GetMembershipBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_CreateMembershipBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_CreateMembershipBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_UpdateMembershipBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_UpdateMembershipBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_DeleteMembershipBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_DeleteMembershipBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListMembershipBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListMembershipBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListMembershipBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListMembershipBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_ListMembershipsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_ListMembershipsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GetMembershipRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GetMembershipRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_CreateMembershipRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_CreateMembershipRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_UpdateMembershipRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_UpdateMembershipRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_DeleteMembershipRBACRoleBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_DeleteMembershipRBACRoleBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_ListMembershipsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -52,6 +188,14 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_gkehub_v1_GetMembershipRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_GetMembershipRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListBoundMembershipsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListBoundMembershipsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListBoundMembershipsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListBoundMembershipsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_CreateMembershipRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -105,6 +249,30 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_UpdateFeatureRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_CreateFleetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_CreateFleetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_GetFleetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_GetFleetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_UpdateFleetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_UpdateFleetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_DeleteFleetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_DeleteFleetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListFleetsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListFleetsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_ListFleetsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_ListFleetsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_OperationMetadata_fieldAccessorTable;
@@ -123,29 +291,180 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "ations.proto\032\027google/api/client.proto\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
           + "pi/resource.proto\032$google/cloud/gkehub/v"
-          + "1/feature.proto\032\'google/cloud/gkehub/v1/"
-          + "membership.proto\032#google/longrunning/operations.proto\032 google/protobuf/field_mas"
-          + "k.proto\032\037google/protobuf/timestamp.proto\"\257\001\n"
+          + "1/feature.proto\032\"google/cloud/gkehub/v1/"
+          + "fleet.proto\032\'google/cloud/gkehub/v1/memb"
+          + "ership.proto\032#google/longrunning/operations.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"Q\n"
+          + "\030GetScopeNamespaceRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037gkehub.googleapis.com/Namespace\"\270\001\n"
+          + "\033CreateScopeNamespaceRequest\0227\n"
+          + "\006parent\030\001 \001("
+          + "\tB\'\340A\002\372A!\022\037gkehub.googleapis.com/Namespace\022\037\n"
+          + "\022scope_namespace_id\030\002 \001(\tB\003\340A\002\022?\n"
+          + "\017scope_namespace\030\003"
+          + " \001(\0132!.google.cloud.gkehub.v1.NamespaceB\003\340A\002\"\224\001\n"
+          + "\033UpdateScopeNamespaceRequest\022?\n"
+          + "\017scope_namespace\030\001 "
+          + "\001(\0132!.google.cloud.gkehub.v1.NamespaceB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"T\n"
+          + "\033DeleteScopeNamespaceRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037gkehub.googleapis.com/Namespace\"\206\001\n"
+          + "\032ListScopeNamespacesRequest\0227\n"
+          + "\006parent\030\001 \001("
+          + "\tB\'\340A\002\372A!\022\037gkehub.googleapis.com/Namespace\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"s\n"
+          + "\033ListScopeNamespacesResponse\022;\n"
+          + "\020scope_namespaces\030\001 \003(\0132!.google.cloud.gkehub.v1.Namespace\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"]\n"
+          + "\036GetScopeRBACRoleBindingRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%gkehub.googleapis.com/RBACRoleBinding\"\312\001\n"
+          + "!CreateScopeRBACRoleBindingRequest\022=\n"
+          + "\006parent\030\001 \001("
+          + "\tB-\340A\002\372A\'\022%gkehub.googleapis.com/RBACRoleBinding\022\037\n"
+          + "\022rbacrolebinding_id\030\002 \001(\tB\003\340A\002\022E\n"
+          + "\017rbacrolebinding\030\003"
+          + " \001(\0132\'.google.cloud.gkehub.v1.RBACRoleBindingB\003\340A\002\"\240\001\n"
+          + "!UpdateScopeRBACRoleBindingRequest\022E\n"
+          + "\017rbacrolebinding\030\001 \001(\013"
+          + "2\'.google.cloud.gkehub.v1.RBACRoleBindingB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"`\n"
+          + "!DeleteScopeRBACRoleBindingRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%gkehub.googleapis.com/RBACRoleBinding\"\222\001\n"
+          + " ListScopeRBACRoleBindingsRequest\022=\n"
+          + "\006parent\030\001 \001("
+          + "\tB-\340A\002\372A\'\022%gkehub.googleapis.com/RBACRoleBinding\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\177\n"
+          + "!ListScopeRBACRoleBindingsResponse\022A\n"
+          + "\020rbacrolebindings\030\001"
+          + " \003(\0132\'.google.cloud.gkehub.v1.RBACRoleBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"D\n"
+          + "\017GetScopeRequest\0221\n"
+          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
+          + "\033gkehub.googleapis.com/Scope\"\223\001\n"
+          + "\022CreateScopeRequest\0223\n"
+          + "\006parent\030\001 \001("
+          + "\tB#\340A\002\372A\035\022\033gkehub.googleapis.com/Scope\022\025\n"
+          + "\010scope_id\030\002 \001(\tB\003\340A\002\0221\n"
+          + "\005scope\030\003 \001(\0132\035.google.cloud.gkehub.v1.ScopeB\003\340A\002\"}\n"
+          + "\022UpdateScopeRequest\0221\n"
+          + "\005scope\030\001 \001(\0132\035.google.cloud.gkehub.v1.ScopeB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"G\n"
+          + "\022DeleteScopeRequest\0221\n"
+          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
+          + "\033gkehub.googleapis.com/Scope\"y\n"
+          + "\021ListScopesRequest\0223\n"
+          + "\006parent\030\001 \001("
+          + "\tB#\340A\002\372A\035\022\033gkehub.googleapis.com/Scope\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\\\n"
+          + "\022ListScopesResponse\022-\n"
+          + "\006scopes\030\001 \003(\0132\035.google.cloud.gkehub.v1.Scope\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\202\001\n"
+          + "\032ListPermittedScopesRequest\0223\n"
+          + "\006parent\030\001 \001("
+          + "\tB#\340A\002\372A\035\022\033gkehub.googleapis.com/Scope\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"e\n"
+          + "\033ListPermittedScopesResponse\022-\n"
+          + "\006scopes\030\001 \003(\0132\035.google.cloud.gkehub.v1.Scope\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\\\n"
+          + "\033GetMembershipBindingRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'gkehub.googleapis.com/MembershipBinding\"\321\001\n"
+          + "\036CreateMembershipBindingRequest\022?\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\340A\002\372A)\022\'gkehub.googleapis.com/MembershipBinding\022J\n"
+          + "\022membership_binding\030\002"
+          + " \001(\0132).google.cloud.gkehub.v1.MembershipBindingB\003\340A\002\022\"\n"
+          + "\025membership_binding_id\030\003 \001(\tB\003\340A\002\"\242\001\n"
+          + "\036UpdateMembershipBindingRequest\022J\n"
+          + "\022membership_binding\030\001 \001(\0132)"
+          + ".google.cloud.gkehub.v1.MembershipBindingB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"_\n"
+          + "\036DeleteMembershipBindingRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'gkehub.googleapis.com/MembershipBinding\"\246\001\n"
+          + "\035ListMembershipBindingsRequest\022?\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\340A\002\372A)\022\'gkehub.googleapis.com/MembershipBinding\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"\226\001\n"
+          + "\036ListMembershipBindingsResponse\022F\n"
+          + "\023membership_bindings\030\001"
+          + " \003(\0132).google.cloud.gkehub.v1.MembershipBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\257\001\n"
           + "\026ListMembershipsRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\022"
           + " gkehub.googleapis.com/Membership\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\"~\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"b\n"
+          + "#GetMembershipRBACRoleBindingRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%gkehub.googleapis.com/RBACRoleBinding\"\317\001\n"
+          + "&CreateMembershipRBACRoleBindingRequest\022=\n"
+          + "\006parent\030\001 \001("
+          + "\tB-\340A\002\372A\'\022%gkehub.googleapis.com/RBACRoleBinding\022\037\n"
+          + "\022rbacrolebinding_id\030\002 \001(\tB\003\340A\002\022E\n"
+          + "\017rbacrolebinding\030\003 \001("
+          + "\0132\'.google.cloud.gkehub.v1.RBACRoleBindingB\003\340A\002\"\245\001\n"
+          + "&UpdateMembershipRBACRoleBindingRequest\022E\n"
+          + "\017rbacrolebinding\030\001 \001(\0132\'.go"
+          + "ogle.cloud.gkehub.v1.RBACRoleBindingB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"e\n"
+          + "&DeleteMembershipRBACRoleBindingRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%gkehub.googleapis.com/RBACRoleBinding\"\227\001\n"
+          + "%ListMembershipRBACRoleBindingsRequest\022=\n"
+          + "\006parent\030\001 \001("
+          + "\tB-\340A\002\372A\'\022%gkehub.googleapis.com/RBACRoleBinding\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\231\001\n"
+          + "&ListMembershipRBACRoleBindingsResponse\022A\n"
+          + "\020rbacrolebindings\030\001"
+          + " \003(\0132\'.google.cloud.gkehub.v1.RBACRoleBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\320\001\n"
+          + ",GenerateMembershipRBACRoleBindingYAMLRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " gkehub.googleapis.com/Membership\022\037\n"
+          + "\022rbacrolebinding_id\030\002 \001(\tB\003\340A\002\022E\n"
+          + "\017rbacrolebinding\030\003 \001(\0132\'.goog"
+          + "le.cloud.gkehub.v1.RBACRoleBindingB\003\340A\002\"K\n"
+          + "-GenerateMembershipRBACRoleBindingYAMLResponse\022\032\n"
+          + "\022role_bindings_yaml\030\001 \001(\t\"~\n"
           + "\027ListMembershipsResponse\0225\n"
           + "\tresources\030\001 \003(\0132\".google.cloud.gkehub.v1.Membership\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"N\n"
           + "\024GetMembershipRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " gkehub.googleapis.com/Membership\"\303\001\n"
+          + " gkehub.googleapis.com/Membership\"\234\001\n"
+          + "\033ListBoundMembershipsRequest\0227\n\n"
+          + "scope_name\030\001 \001(\tB#\340A\002\372A\035\n"
+          + "\033gkehub.googleapis.com/Scope\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\"\205\001\n"
+          + "\034ListBoundMembershipsResponse\0227\n"
+          + "\013memberships\030\001 \003(\0132\".google.cloud.gkehub.v1.Membership\022\023\n"
+          + "\013unreachable\030\002 \003(\t\022\027\n"
+          + "\017next_page_token\030\003 \001(\t\"\303\001\n"
           + "\027CreateMembershipRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\022"
           + " gkehub.googleapis.com/Membership\022\032\n\r"
           + "membership_id\030\002 \001(\tB\003\340A\002\0229\n"
-          + "\010resource\030\003 \001(\0132\""
-          + ".google.cloud.gkehub.v1.MembershipB\003\340A\002\022\027\n\n"
+          + "\010resource\030\003"
+          + " \001(\0132\".google.cloud.gkehub.v1.MembershipB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\"~\n"
           + "\027DeleteMembershipRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
@@ -175,19 +494,21 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\010manifest\030\002 \001(\t\"-\n"
           + "\010TypeMeta\022\014\n"
           + "\004kind\030\001 \001(\t\022\023\n"
-          + "\013api_version\030\002 \001(\t\"\222\001\n"
+          + "\013api_version\030\002 \001(\t\"\267\001\n"
           + "\023ListFeaturesRequest\0222\n"
           + "\006parent\030\001 \001(\tB\"\372A\037\022\035gkehub.googleapis.com/Feature\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022\016\n"
           + "\006filter\030\004 \001(\t\022\020\n"
-          + "\010order_by\030\005 \001(\t\"c\n"
+          + "\010order_by\030\005 \001(\t\022#\n"
+          + "\026return_partial_success\030\006 \001(\010B\003\340A\001\"c\n"
           + "\024ListFeaturesResponse\0222\n"
           + "\tresources\030\001 \003(\0132\037.google.cloud.gkehub.v1.Feature\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"E\n"
+          + "\017next_page_token\030\002 \001(\t\"j\n"
           + "\021GetFeatureRequest\0220\n"
           + "\004name\030\001 \001(\tB\"\372A\037\n"
-          + "\035gkehub.googleapis.com/Feature\"\245\001\n"
+          + "\035gkehub.googleapis.com/Feature\022#\n"
+          + "\026return_partial_success\030\002 \001(\010B\003\340A\001\"\245\001\n"
           + "\024CreateFeatureRequest\0222\n"
           + "\006parent\030\001 \001("
           + "\tB\"\372A\037\022\035gkehub.googleapis.com/Feature\022\022\n\n"
@@ -204,7 +525,28 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\035gkehub.googleapis.com/Feature\022/\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\0221\n"
           + "\010resource\030\003 \001(\0132\037.google.cloud.gkehub.v1.Feature\022\022\n\n"
-          + "request_id\030\004 \001(\t\"\371\001\n"
+          + "request_id\030\004 \001(\t\"\202\001\n"
+          + "\022CreateFleetRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\0221\n"
+          + "\005fleet\030\002 \001(\0132\035.google.cloud.gkehub.v1.FleetB\003\340A\002\"D\n"
+          + "\017GetFleetRequest\0221\n"
+          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
+          + "\033gkehub.googleapis.com/Fleet\"}\n"
+          + "\022UpdateFleetRequest\0221\n"
+          + "\005fleet\030\001 \001(\0132\035.google.cloud.gkehub.v1.FleetB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"G\n"
+          + "\022DeleteFleetRequest\0221\n"
+          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
+          + "\033gkehub.googleapis.com/Fleet\"\177\n"
+          + "\021ListFleetsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\027\n\n"
+          + "page_token\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\"\\\n"
+          + "\022ListFleetsResponse\022-\n"
+          + "\006fleets\030\001 \003(\0132\035.google.cloud.gkehub.v1.Fleet\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\371\001\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
@@ -212,57 +554,221 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\004verb\030\004 \001(\tB\003\340A\003\022\032\n\r"
           + "status_detail\030\005 \001(\tB\003\340A\003\022\035\n"
           + "\020cancel_requested\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\0032\360\021\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\0032\226M\n"
           + "\006GkeHub\022\264\001\n"
-          + "\017ListMemberships\022..google.cloud.gkehub.v"
-          + "1.ListMembershipsRequest\032/.google.cloud."
-          + "gkehub.v1.ListMembershipsResponse\"@\332A\006pa"
-          + "rent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/memberships\022\250\001\n"
-          + "\014ListFeatures\022+.google.cloud.gkehub.v1.ListFeaturesReques"
-          + "t\032,.google.cloud.gkehub.v1.ListFeaturesR"
-          + "esponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/features\022\241\001\n\r"
-          + "GetMembership\022,.google.cloud.gkehub.v1.GetMem"
-          + "bershipRequest\032\".google.cloud.gkehub.v1."
-          + "Membership\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/memberships/*}\022\225\001\n\n"
-          + "GetFeature\022).google.cloud.gkehub.v1.GetFe"
-          + "atureRequest\032\037.google.cloud.gkehub.v1.Fe"
-          + "ature\";\332A\004name\202\323\344\223\002.\022,/v1/{name=projects/*/locations/*/features/*}\022\350\001\n"
-          + "\020CreateMembership\022/.google.cloud.gkehub.v1.CreateM"
-          + "embershipRequest\032\035.google.longrunning.Operation\"\203\001\312A\037\n\n"
-          + "Membership\022\021OperationMeta"
-          + "data\332A\035parent,resource,membership_id\202\323\344\223"
-          + "\002;\"//v1/{parent=projects/*/locations/*}/memberships:\010resource\022\330\001\n\r"
-          + "CreateFeature\022,.google.cloud.gkehub.v1.CreateFeatureRe"
-          + "quest\032\035.google.longrunning.Operation\"z\312A\034\n"
-          + "\007Feature\022\021OperationMetadata\332A\032parent,r"
-          + "esource,feature_id\202\323\344\223\0028\",/v1/{parent=pr"
-          + "ojects/*/locations/*}/features:\010resource\022\317\001\n"
-          + "\020DeleteMembership\022/.google.cloud.gke"
-          + "hub.v1.DeleteMembershipRequest\032\035.google.longrunning.Operation\"k\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
-          + "1*//v1/{name=projects/*/locations/*/memberships/*}\022\306\001\n\r"
-          + "DeleteFeature\022,.google.cl"
-          + "oud.gkehub.v1.DeleteFeatureRequest\032\035.google.longrunning.Operation\"h\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202"
-          + "\323\344\223\002.*,/v1/{name=projects/*/locations/*/features/*}\022\343\001\n"
-          + "\020UpdateMembership\022/.googl"
-          + "e.cloud.gkehub.v1.UpdateMembershipRequest\032\035.google.longrunning.Operation\"\177\312A\037\n\n"
-          + "Membership\022\021OperationMetadata\332A\031name,reso"
-          + "urce,update_mask\202\323\344\223\002;2//v1/{name=projec"
-          + "ts/*/locations/*/memberships/*}:\010resource\022\327\001\n\r"
-          + "UpdateFeature\022,.google.cloud.gkehu"
-          + "b.v1.UpdateFeatureRequest\032\035.google.longrunning.Operation\"y\312A\034\n"
-          + "\007Feature\022\021OperationMetadata\332A\031name,resource,update_mask\202\323\344"
-          + "\223\00282,/v1/{name=projects/*/locations/*/features/*}:\010resource\022\333\001\n"
-          + "\027GenerateConnectManifest\0226.google.cloud.gkehub.v1.Generat"
-          + "eConnectManifestRequest\0327.google.cloud.gkehub.v1.GenerateConnectManifestResponse"
-          + "\"O\202\323\344\223\002I\022G/v1/{name=projects/*/locations"
-          + "/*/memberships/*}:generateConnectManifes"
-          + "t\032I\312A\025gkehub.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\256\001\n"
-          + "\032com.google.cloud.gkehub.v1B\014ServiceProt"
-          + "oP\001Z2cloud.google.com/go/gkehub/apiv1/gk"
-          + "ehubpb;gkehubpb\252\002\026Google.Cloud.GkeHub.V1"
-          + "\312\002\026Google\\Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub::V1b\006proto3"
+          + "\017ListMemberships\022..google.cloud.gkehub.v1.ListMembershipsRequest\032/."
+          + "google.cloud.gkehub.v1.ListMembershipsRe"
+          + "sponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/memberships\022\330\001\n"
+          + "\024ListBoundMemberships\0223.google.cloud.gkehub."
+          + "v1.ListBoundMembershipsRequest\0324.google."
+          + "cloud.gkehub.v1.ListBoundMembershipsResponse\"U\332A\n"
+          + "scope_name\202\323\344\223\002B\022@/v1/{scope_na"
+          + "me=projects/*/locations/*/scopes/*}:listMemberships\022\250\001\n"
+          + "\014ListFeatures\022+.google.cloud.gkehub.v1.ListFeaturesRequest\032,.goog"
+          + "le.cloud.gkehub.v1.ListFeaturesResponse\""
+          + "=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/features\022\241\001\n\r"
+          + "GetMembership\022,.google.cloud.gkehub.v1.GetMembershipR"
+          + "equest\032\".google.cloud.gkehub.v1.Membersh"
+          + "ip\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/memberships/*}\022\225\001\n\n"
+          + "GetFeature\022).google.cloud.gkehub.v1.GetFeatureReq"
+          + "uest\032\037.google.cloud.gkehub.v1.Feature\";\332"
+          + "A\004name\202\323\344\223\002.\022,/v1/{name=projects/*/locations/*/features/*}\022\350\001\n"
+          + "\020CreateMembership\022/.google.cloud.gkehub.v1.CreateMembershi"
+          + "pRequest\032\035.google.longrunning.Operation\"\203\001\312A\037\n\n"
+          + "Membership\022\021OperationMetadata\332A\035p"
+          + "arent,resource,membership_id\202\323\344\223\002;\"//v1/"
+          + "{parent=projects/*/locations/*}/memberships:\010resource\022\330\001\n\r"
+          + "CreateFeature\022,.google"
+          + ".cloud.gkehub.v1.CreateFeatureRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
+          + "\007Feature\022\021OperationMetadata\332A\032parent,resource,"
+          + "feature_id\202\323\344\223\0028\",/v1/{parent=projects/*/locations/*}/features:\010resource\022\317\001\n"
+          + "\020DeleteMembership\022/.google.cloud.gkehub.v1.D"
+          + "eleteMembershipRequest\032\035.google.longrunning.Operation\"k\312A*\n"
+          + "\025google.protobuf.Empt"
+          + "y\022\021OperationMetadata\332A\004name\202\323\344\223\0021*//v1/{"
+          + "name=projects/*/locations/*/memberships/*}\022\306\001\n\r"
+          + "DeleteFeature\022,.google.cloud.gkeh"
+          + "ub.v1.DeleteFeatureRequest\032\035.google.longrunning.Operation\"h\312A*\n"
+          + "\025google.protobuf."
+          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002.*,/"
+          + "v1/{name=projects/*/locations/*/features/*}\022\343\001\n"
+          + "\020UpdateMembership\022/.google.cloud."
+          + "gkehub.v1.UpdateMembershipRequest\032\035.google.longrunning.Operation\"\177\312A\037\n\n"
+          + "Membership\022\021OperationMetadata\332A\031name,resource,upd"
+          + "ate_mask\202\323\344\223\002;2//v1/{name=projects/*/locations/*/memberships/*}:\010resource\022\327\001\n\r"
+          + "UpdateFeature\022,.google.cloud.gkehub.v1.Upd"
+          + "ateFeatureRequest\032\035.google.longrunning.Operation\"y\312A\034\n"
+          + "\007Feature\022\021OperationMetadat"
+          + "a\332A\031name,resource,update_mask\202\323\344\223\00282,/v1"
+          + "/{name=projects/*/locations/*/features/*}:\010resource\022\333\001\n"
+          + "\027GenerateConnectManifest\0226.google.cloud.gkehub.v1.GenerateConnect"
+          + "ManifestRequest\0327.google.cloud.gkehub.v1"
+          + ".GenerateConnectManifestResponse\"O\202\323\344\223\002I"
+          + "\022G/v1/{name=projects/*/locations/*/memberships/*}:generateConnectManifest\022\277\001\n"
+          + "\013CreateFleet\022*.google.cloud.gkehub.v1.Creat"
+          + "eFleetRequest\032\035.google.longrunning.Operation\"e\312A\032\n"
+          + "\005Fleet\022\021OperationMetadata\332A\014pa"
+          + "rent,fleet\202\323\344\223\0023\"*/v1/{parent=projects/*/locations/*}/fleets:\005fleet\022\215\001\n"
+          + "\010GetFleet\022\'.google.cloud.gkehub.v1.GetFleetReques"
+          + "t\032\035.google.cloud.gkehub.v1.Fleet\"9\332A\004nam"
+          + "e\202\323\344\223\002,\022*/v1/{name=projects/*/locations/*/fleets/*}\022\312\001\n"
+          + "\013UpdateFleet\022*.google.clo"
+          + "ud.gkehub.v1.UpdateFleetRequest\032\035.google.longrunning.Operation\"p\312A\032\n"
+          + "\005Fleet\022\021OperationMetadata\332A\021fleet,update_mask\202\323\344\223\00292"
+          + "0/v1/{fleet.name=projects/*/locations/*/fleets/*}:\005fleet\022\300\001\n"
+          + "\013DeleteFleet\022*.googl"
+          + "e.cloud.gkehub.v1.DeleteFleetRequest\032\035.google.longrunning.Operation\"f\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004nam"
+          + "e\202\323\344\223\002,**/v1/{name=projects/*/locations/*/fleets/*}\022\323\001\n\n"
+          + "ListFleets\022).google.cloud.gkehub.v1.ListFleetsRequest\032*.google.c"
+          + "loud.gkehub.v1.ListFleetsResponse\"n\332A\006pa"
+          + "rent\202\323\344\223\002_\022*/v1/{parent=projects/*/locat"
+          + "ions/*}/fleetsZ1\022//v1/{parent=organizations/*/locations/*}/fleets\022\260\001\n"
+          + "\021GetScopeNamespace\0220.google.cloud.gkehub.v1.GetScop"
+          + "eNamespaceRequest\032!.google.cloud.gkehub."
+          + "v1.Namespace\"F\332A\004name\202\323\344\223\0029\0227/v1/{name=p"
+          + "rojects/*/locations/*/scopes/*/namespaces/*}\022\212\002\n"
+          + "\024CreateScopeNamespace\0223.google.c"
+          + "loud.gkehub.v1.CreateScopeNamespaceRequest\032\035.google.longrunning.Operation\"\235\001\312A\036\n"
+          + "\tNamespace\022\021OperationMetadata\332A)parent,s"
+          + "cope_namespace,scope_namespace_id\202\323\344\223\002J\""
+          + "7/v1/{parent=projects/*/locations/*/scopes/*}/namespaces:\017scope_namespace\022\214\002\n"
+          + "\024UpdateScopeNamespace\0223.google.cloud.gkehub"
+          + ".v1.UpdateScopeNamespaceRequest\032\035.google.longrunning.Operation\"\237\001\312A\036\n"
+          + "\tNamespace\022\021OperationMetadata\332A\033scope_namespace,upd"
+          + "ate_mask\202\323\344\223\002Z2G/v1/{scope_namespace.nam"
+          + "e=projects/*/locations/*/scopes/*/namespaces/*}:\017scope_namespace\022\337\001\n"
+          + "\024DeleteScopeNamespace\0223.google.cloud.gkehub.v1.Delet"
+          + "eScopeNamespaceRequest\032\035.google.longrunning.Operation\"s\312A*\n"
+          + "\025google.protobuf.Empt"
+          + "y\022\021OperationMetadata\332A\004name\202\323\344\223\0029*7/v1/{"
+          + "name=projects/*/locations/*/scopes/*/namespaces/*}\022\310\001\n"
+          + "\023ListScopeNamespaces\0222.google.cloud.gkehub.v1.ListScopeNamespacesR"
+          + "equest\0323.google.cloud.gkehub.v1.ListScop"
+          + "eNamespacesResponse\"H\332A\006parent\202\323\344\223\0029\0227/v"
+          + "1/{parent=projects/*/locations/*/scopes/*}/namespaces\022\310\001\n"
+          + "\027GetScopeRBACRoleBinding\0226.google.cloud.gkehub.v1.GetScopeRBACR"
+          + "oleBindingRequest\032\'.google.cloud.gkehub."
+          + "v1.RBACRoleBinding\"L\332A\004name\202\323\344\223\002?\022=/v1/{"
+          + "name=projects/*/locations/*/scopes/*/rbacrolebindings/*}\022\242\002\n"
+          + "\032CreateScopeRBACRoleBinding\0229.google.cloud.gkehub.v1.CreateS"
+          + "copeRBACRoleBindingRequest\032\035.google.longrunning.Operation\"\251\001\312A$\n"
+          + "\017RBACRoleBinding\022\021OperationMetadata\332A)parent,rbacrolebin"
+          + "ding,rbacrolebinding_id\202\323\344\223\002P\"=/v1/{pare"
+          + "nt=projects/*/locations/*/scopes/*}/rbacrolebindings:\017rbacrolebinding\022\244\002\n"
+          + "\032UpdateScopeRBACRoleBinding\0229.google.cloud.gkeh"
+          + "ub.v1.UpdateScopeRBACRoleBindingRequest\032\035.google.longrunning.Operation\"\253\001\312A$\n"
+          + "\017RBACRoleBinding\022\021OperationMetadata\332A\033rbacr"
+          + "olebinding,update_mask\202\323\344\223\002`2M/v1/{rbacr"
+          + "olebinding.name=projects/*/locations/*/s"
+          + "copes/*/rbacrolebindings/*}:\017rbacrolebinding\022\361\001\n"
+          + "\032DeleteScopeRBACRoleBinding\0229.google.cloud.gkehub.v1.DeleteScopeRBACRole"
+          + "BindingRequest\032\035.google.longrunning.Operation\"y\312A*\n"
+          + "\025google.protobuf.Empty\022\021Opera"
+          + "tionMetadata\332A\004name\202\323\344\223\002?*=/v1/{name=pro"
+          + "jects/*/locations/*/scopes/*/rbacrolebindings/*}\022\340\001\n"
+          + "\031ListScopeRBACRoleBindings\0228.google.cloud.gkehub.v1.ListScopeRBACRol"
+          + "eBindingsRequest\0329.google.cloud.gkehub.v"
+          + "1.ListScopeRBACRoleBindingsResponse\"N\332A\006"
+          + "parent\202\323\344\223\002?\022=/v1/{parent=projects/*/locations/*/scopes/*}/rbacrolebindings\022\215\001\n"
+          + "\010GetScope\022\'.google.cloud.gkehub.v1.GetSco"
+          + "peRequest\032\035.google.cloud.gkehub.v1.Scope"
+          + "\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects/*/locations/*/scopes/*}\022\310\001\n"
+          + "\013CreateScope\022*.go"
+          + "ogle.cloud.gkehub.v1.CreateScopeRequest\032\035.google.longrunning.Operation\"n\312A\032\n"
+          + "\005Scope\022\021OperationMetadata\332A\025parent,scope,sco"
+          + "pe_id\202\323\344\223\0023\"*/v1/{parent=projects/*/locations/*}/scopes:\005scope\022\312\001\n"
+          + "\013UpdateScope\022*"
+          + ".google.cloud.gkehub.v1.UpdateScopeRequest\032\035.google.longrunning.Operation\"p\312A\032\n"
+          + "\005Scope\022\021OperationMetadata\332A\021scope,update_"
+          + "mask\202\323\344\223\002920/v1/{scope.name=projects/*/locations/*/scopes/*}:\005scope\022\300\001\n"
+          + "\013DeleteScope\022*.google.cloud.gkehub.v1.DeleteScope"
+          + "Request\032\035.google.longrunning.Operation\"f\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMet"
+          + "adata\332A\004name\202\323\344\223\002,**/v1/{name=projects/*/locations/*/scopes/*}\022\240\001\n\n"
+          + "ListScopes\022).google.cloud.gkehub.v1.ListScopesRequest"
+          + "\032*.google.cloud.gkehub.v1.ListScopesResp"
+          + "onse\";\332A\006parent\202\323\344\223\002,\022*/v1/{parent=projects/*/locations/*}/scopes\022\311\001\n"
+          + "\023ListPermittedScopes\0222.google.cloud.gkehub.v1.ListP"
+          + "ermittedScopesRequest\0323.google.cloud.gke"
+          + "hub.v1.ListPermittedScopesResponse\"I\332A\006p"
+          + "arent\202\323\344\223\002:\0228/v1/{parent=projects/*/locations/*}/scopes:listPermitted\022\301\001\n"
+          + "\024GetMembershipBinding\0223.google.cloud.gkehub.v1."
+          + "GetMembershipBindingRequest\032).google.clo"
+          + "ud.gkehub.v1.MembershipBinding\"I\332A\004name\202"
+          + "\323\344\223\002<\022:/v1/{name=projects/*/locations/*/memberships/*/bindings/*}\022\244\002\n"
+          + "\027CreateMembershipBinding\0226.google.cloud.gkehub.v1.C"
+          + "reateMembershipBindingRequest\032\035.google.longrunning.Operation\"\261\001\312A&\n"
+          + "\021MembershipBinding\022\021OperationMetadata\332A/parent,member"
+          + "ship_binding,membership_binding_id\202\323\344\223\002P"
+          + "\":/v1/{parent=projects/*/locations/*/mem"
+          + "berships/*}/bindings:\022membership_binding\022\246\002\n"
+          + "\027UpdateMembershipBinding\0226.google.cloud.gkehub.v1.UpdateMembershipBindingReq"
+          + "uest\032\035.google.longrunning.Operation\"\263\001\312A&\n"
+          + "\021MembershipBinding\022\021OperationMetadata\332"
+          + "A\036membership_binding,update_mask\202\323\344\223\002c2M",
+      "/v1/{membership_binding.name=projects/*/"
+          + "locations/*/memberships/*/bindings/*}:\022m"
+          + "embership_binding\022\350\001\n\027DeleteMembershipBi"
+          + "nding\0226.google.cloud.gkehub.v1.DeleteMem"
+          + "bershipBindingRequest\032\035.google.longrunni"
+          + "ng.Operation\"v\312A*\n\025google.protobuf.Empty"
+          + "\022\021OperationMetadata\332A\004name\202\323\344\223\002<*:/v1/{n"
+          + "ame=projects/*/locations/*/memberships/*"
+          + "/bindings/*}\022\324\001\n\026ListMembershipBindings\022"
+          + "5.google.cloud.gkehub.v1.ListMembershipB"
+          + "indingsRequest\0326.google.cloud.gkehub.v1."
+          + "ListMembershipBindingsResponse\"K\332A\006paren"
+          + "t\202\323\344\223\002<\022:/v1/{parent=projects/*/location"
+          + "s/*/memberships/*}/bindings\022\327\001\n\034GetMembe"
+          + "rshipRBACRoleBinding\022;.google.cloud.gkeh"
+          + "ub.v1.GetMembershipRBACRoleBindingReques"
+          + "t\032\'.google.cloud.gkehub.v1.RBACRoleBindi"
+          + "ng\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=projects/*/"
+          + "locations/*/memberships/*/rbacrolebindin"
+          + "gs/*}\022\261\002\n\037CreateMembershipRBACRoleBindin"
+          + "g\022>.google.cloud.gkehub.v1.CreateMembers"
+          + "hipRBACRoleBindingRequest\032\035.google.longr"
+          + "unning.Operation\"\256\001\312A$\n\017RBACRoleBinding\022"
+          + "\021OperationMetadata\332A)parent,rbacrolebind"
+          + "ing,rbacrolebinding_id\202\323\344\223\002U\"B/v1/{paren"
+          + "t=projects/*/locations/*/memberships/*}/"
+          + "rbacrolebindings:\017rbacrolebinding\022\263\002\n\037Up"
+          + "dateMembershipRBACRoleBinding\022>.google.c"
+          + "loud.gkehub.v1.UpdateMembershipRBACRoleB"
+          + "indingRequest\032\035.google.longrunning.Opera"
+          + "tion\"\260\001\312A$\n\017RBACRoleBinding\022\021OperationMe"
+          + "tadata\332A\033rbacrolebinding,update_mask\202\323\344\223"
+          + "\002e2R/v1/{rbacrolebinding.name=projects/*"
+          + "/locations/*/memberships/*/rbacrolebindi"
+          + "ngs/*}:\017rbacrolebinding\022\200\002\n\037DeleteMember"
+          + "shipRBACRoleBinding\022>.google.cloud.gkehu"
+          + "b.v1.DeleteMembershipRBACRoleBindingRequ"
+          + "est\032\035.google.longrunning.Operation\"~\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadat"
+          + "a\332A\004name\202\323\344\223\002D*B/v1/{name=projects/*/loc"
+          + "ations/*/memberships/*/rbacrolebindings/"
+          + "*}\022\364\001\n\036ListMembershipRBACRoleBindings\022=."
+          + "google.cloud.gkehub.v1.ListMembershipRBA"
+          + "CRoleBindingsRequest\032>.google.cloud.gkeh"
+          + "ub.v1.ListMembershipRBACRoleBindingsResp"
+          + "onse\"S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=proje"
+          + "cts/*/locations/*/memberships/*}/rbacrol"
+          + "ebindings\022\270\002\n%GenerateMembershipRBACRole"
+          + "BindingYAML\022D.google.cloud.gkehub.v1.Gen"
+          + "erateMembershipRBACRoleBindingYAMLReques"
+          + "t\032E.google.cloud.gkehub.v1.GenerateMembe"
+          + "rshipRBACRoleBindingYAMLResponse\"\201\001\202\323\344\223\002"
+          + "{\"h/v1/{parent=projects/*/locations/*/me"
+          + "mberships/*}/rbacrolebindings:generateMe"
+          + "mbershipRBACRoleBindingYAML:\017rbacrolebin"
+          + "ding\032I\312A\025gkehub.googleapis.com\322A.https:/"
+          + "/www.googleapis.com/auth/cloud-platformB"
+          + "\256\001\n\032com.google.cloud.gkehub.v1B\014ServiceP"
+          + "rotoP\001Z2cloud.google.com/go/gkehub/apiv1"
+          + "/gkehubpb;gkehubpb\252\002\026Google.Cloud.GkeHub"
+          + ".V1\312\002\026Google\\Cloud\\GkeHub\\V1\352\002\031Google::C"
+          + "loud::GkeHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -273,21 +779,294 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.gkehub.v1.FeatureProto.getDescriptor(),
+              com.google.cloud.gkehub.v1.FleetProto.getDescriptor(),
               com.google.cloud.gkehub.v1.MembershipProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
-    internal_static_google_cloud_gkehub_v1_ListMembershipsRequest_descriptor =
+    internal_static_google_cloud_gkehub_v1_GetScopeNamespaceRequest_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_cloud_gkehub_v1_GetScopeNamespaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GetScopeNamespaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_CreateScopeNamespaceRequest_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_gkehub_v1_CreateScopeNamespaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_CreateScopeNamespaceRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ScopeNamespaceId", "ScopeNamespace",
+            });
+    internal_static_google_cloud_gkehub_v1_UpdateScopeNamespaceRequest_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_gkehub_v1_UpdateScopeNamespaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_UpdateScopeNamespaceRequest_descriptor,
+            new java.lang.String[] {
+              "ScopeNamespace", "UpdateMask",
+            });
+    internal_static_google_cloud_gkehub_v1_DeleteScopeNamespaceRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_gkehub_v1_DeleteScopeNamespaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_DeleteScopeNamespaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_ListScopeNamespacesRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_gkehub_v1_ListScopeNamespacesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListScopeNamespacesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListScopeNamespacesResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_gkehub_v1_ListScopeNamespacesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListScopeNamespacesResponse_descriptor,
+            new java.lang.String[] {
+              "ScopeNamespaces", "NextPageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_GetScopeRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_gkehub_v1_GetScopeRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GetScopeRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_CreateScopeRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_gkehub_v1_CreateScopeRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_CreateScopeRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "RbacrolebindingId", "Rbacrolebinding",
+            });
+    internal_static_google_cloud_gkehub_v1_UpdateScopeRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_gkehub_v1_UpdateScopeRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_UpdateScopeRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Rbacrolebinding", "UpdateMask",
+            });
+    internal_static_google_cloud_gkehub_v1_DeleteScopeRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_gkehub_v1_DeleteScopeRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_DeleteScopeRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListScopeRBACRoleBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "Rbacrolebindings", "NextPageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_GetScopeRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_gkehub_v1_GetScopeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GetScopeRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_CreateScopeRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_cloud_gkehub_v1_CreateScopeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_CreateScopeRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ScopeId", "Scope",
+            });
+    internal_static_google_cloud_gkehub_v1_UpdateScopeRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_gkehub_v1_UpdateScopeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_UpdateScopeRequest_descriptor,
+            new java.lang.String[] {
+              "Scope", "UpdateMask",
+            });
+    internal_static_google_cloud_gkehub_v1_DeleteScopeRequest_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_cloud_gkehub_v1_DeleteScopeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_DeleteScopeRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_ListScopesRequest_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_cloud_gkehub_v1_ListScopesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListScopesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListScopesResponse_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_cloud_gkehub_v1_ListScopesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListScopesResponse_descriptor,
+            new java.lang.String[] {
+              "Scopes", "NextPageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListPermittedScopesRequest_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_cloud_gkehub_v1_ListPermittedScopesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListPermittedScopesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListPermittedScopesResponse_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_cloud_gkehub_v1_ListPermittedScopesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListPermittedScopesResponse_descriptor,
+            new java.lang.String[] {
+              "Scopes", "NextPageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_GetMembershipBindingRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_cloud_gkehub_v1_GetMembershipBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GetMembershipBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_CreateMembershipBindingRequest_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_cloud_gkehub_v1_CreateMembershipBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_CreateMembershipBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "MembershipBinding", "MembershipBindingId",
+            });
+    internal_static_google_cloud_gkehub_v1_UpdateMembershipBindingRequest_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_cloud_gkehub_v1_UpdateMembershipBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_UpdateMembershipBindingRequest_descriptor,
+            new java.lang.String[] {
+              "MembershipBinding", "UpdateMask",
+            });
+    internal_static_google_cloud_gkehub_v1_DeleteMembershipBindingRequest_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_cloud_gkehub_v1_DeleteMembershipBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_DeleteMembershipBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_ListMembershipBindingsRequest_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_cloud_gkehub_v1_ListMembershipBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListMembershipBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_gkehub_v1_ListMembershipBindingsResponse_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_cloud_gkehub_v1_ListMembershipBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListMembershipBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "MembershipBindings", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_gkehub_v1_ListMembershipsRequest_descriptor =
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_gkehub_v1_ListMembershipsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_ListMembershipsRequest_descriptor,
             new java.lang.String[] {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
+    internal_static_google_cloud_gkehub_v1_GetMembershipRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_cloud_gkehub_v1_GetMembershipRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GetMembershipRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_CreateMembershipRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_cloud_gkehub_v1_CreateMembershipRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_CreateMembershipRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "RbacrolebindingId", "Rbacrolebinding",
+            });
+    internal_static_google_cloud_gkehub_v1_UpdateMembershipRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(29);
+    internal_static_google_cloud_gkehub_v1_UpdateMembershipRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_UpdateMembershipRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Rbacrolebinding", "UpdateMask",
+            });
+    internal_static_google_cloud_gkehub_v1_DeleteMembershipRBACRoleBindingRequest_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_cloud_gkehub_v1_DeleteMembershipRBACRoleBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_DeleteMembershipRBACRoleBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsRequest_descriptor =
+        getDescriptor().getMessageType(31);
+    internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsResponse_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListMembershipRBACRoleBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "Rbacrolebindings", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLRequest_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "RbacrolebindingId", "Rbacrolebinding",
+            });
+    internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLResponse_descriptor =
+        getDescriptor().getMessageType(34);
+    internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GenerateMembershipRBACRoleBindingYAMLResponse_descriptor,
+            new java.lang.String[] {
+              "RoleBindingsYaml",
+            });
     internal_static_google_cloud_gkehub_v1_ListMembershipsResponse_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_gkehub_v1_ListMembershipsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_ListMembershipsResponse_descriptor,
@@ -295,15 +1074,31 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Resources", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gkehub_v1_GetMembershipRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_gkehub_v1_GetMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_GetMembershipRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_gkehub_v1_ListBoundMembershipsRequest_descriptor =
+        getDescriptor().getMessageType(37);
+    internal_static_google_cloud_gkehub_v1_ListBoundMembershipsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListBoundMembershipsRequest_descriptor,
+            new java.lang.String[] {
+              "ScopeName", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_gkehub_v1_ListBoundMembershipsResponse_descriptor =
+        getDescriptor().getMessageType(38);
+    internal_static_google_cloud_gkehub_v1_ListBoundMembershipsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListBoundMembershipsResponse_descriptor,
+            new java.lang.String[] {
+              "Memberships", "Unreachable", "NextPageToken",
+            });
     internal_static_google_cloud_gkehub_v1_CreateMembershipRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_gkehub_v1_CreateMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_CreateMembershipRequest_descriptor,
@@ -311,7 +1106,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "MembershipId", "Resource", "RequestId",
             });
     internal_static_google_cloud_gkehub_v1_DeleteMembershipRequest_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(40);
     internal_static_google_cloud_gkehub_v1_DeleteMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_DeleteMembershipRequest_descriptor,
@@ -319,7 +1114,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "RequestId", "Force",
             });
     internal_static_google_cloud_gkehub_v1_UpdateMembershipRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(41);
     internal_static_google_cloud_gkehub_v1_UpdateMembershipRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_UpdateMembershipRequest_descriptor,
@@ -327,7 +1122,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "UpdateMask", "Resource", "RequestId",
             });
     internal_static_google_cloud_gkehub_v1_GenerateConnectManifestRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(42);
     internal_static_google_cloud_gkehub_v1_GenerateConnectManifestRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_GenerateConnectManifestRequest_descriptor,
@@ -341,7 +1136,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "ImagePullSecretContent",
             });
     internal_static_google_cloud_gkehub_v1_GenerateConnectManifestResponse_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(43);
     internal_static_google_cloud_gkehub_v1_GenerateConnectManifestResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_GenerateConnectManifestResponse_descriptor,
@@ -349,14 +1144,14 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Manifest",
             });
     internal_static_google_cloud_gkehub_v1_ConnectAgentResource_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(44);
     internal_static_google_cloud_gkehub_v1_ConnectAgentResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_ConnectAgentResource_descriptor,
             new java.lang.String[] {
               "Type", "Manifest",
             });
-    internal_static_google_cloud_gkehub_v1_TypeMeta_descriptor = getDescriptor().getMessageType(9);
+    internal_static_google_cloud_gkehub_v1_TypeMeta_descriptor = getDescriptor().getMessageType(45);
     internal_static_google_cloud_gkehub_v1_TypeMeta_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_TypeMeta_descriptor,
@@ -364,15 +1159,15 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Kind", "ApiVersion",
             });
     internal_static_google_cloud_gkehub_v1_ListFeaturesRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(46);
     internal_static_google_cloud_gkehub_v1_ListFeaturesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_ListFeaturesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_gkehub_v1_ListFeaturesResponse_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(47);
     internal_static_google_cloud_gkehub_v1_ListFeaturesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_ListFeaturesResponse_descriptor,
@@ -380,15 +1175,15 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Resources", "NextPageToken",
             });
     internal_static_google_cloud_gkehub_v1_GetFeatureRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(48);
     internal_static_google_cloud_gkehub_v1_GetFeatureRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_GetFeatureRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_gkehub_v1_CreateFeatureRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(49);
     internal_static_google_cloud_gkehub_v1_CreateFeatureRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_CreateFeatureRequest_descriptor,
@@ -396,7 +1191,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "FeatureId", "Resource", "RequestId",
             });
     internal_static_google_cloud_gkehub_v1_DeleteFeatureRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(50);
     internal_static_google_cloud_gkehub_v1_DeleteFeatureRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_DeleteFeatureRequest_descriptor,
@@ -404,15 +1199,63 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "Force", "RequestId",
             });
     internal_static_google_cloud_gkehub_v1_UpdateFeatureRequest_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(51);
     internal_static_google_cloud_gkehub_v1_UpdateFeatureRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_UpdateFeatureRequest_descriptor,
             new java.lang.String[] {
               "Name", "UpdateMask", "Resource", "RequestId",
             });
+    internal_static_google_cloud_gkehub_v1_CreateFleetRequest_descriptor =
+        getDescriptor().getMessageType(52);
+    internal_static_google_cloud_gkehub_v1_CreateFleetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_CreateFleetRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Fleet",
+            });
+    internal_static_google_cloud_gkehub_v1_GetFleetRequest_descriptor =
+        getDescriptor().getMessageType(53);
+    internal_static_google_cloud_gkehub_v1_GetFleetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_GetFleetRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_UpdateFleetRequest_descriptor =
+        getDescriptor().getMessageType(54);
+    internal_static_google_cloud_gkehub_v1_UpdateFleetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_UpdateFleetRequest_descriptor,
+            new java.lang.String[] {
+              "Fleet", "UpdateMask",
+            });
+    internal_static_google_cloud_gkehub_v1_DeleteFleetRequest_descriptor =
+        getDescriptor().getMessageType(55);
+    internal_static_google_cloud_gkehub_v1_DeleteFleetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_DeleteFleetRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkehub_v1_ListFleetsRequest_descriptor =
+        getDescriptor().getMessageType(56);
+    internal_static_google_cloud_gkehub_v1_ListFleetsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListFleetsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageToken", "PageSize",
+            });
+    internal_static_google_cloud_gkehub_v1_ListFleetsResponse_descriptor =
+        getDescriptor().getMessageType(57);
+    internal_static_google_cloud_gkehub_v1_ListFleetsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_ListFleetsResponse_descriptor,
+            new java.lang.String[] {
+              "Fleets", "NextPageToken",
+            });
     internal_static_google_cloud_gkehub_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(58);
     internal_static_google_cloud_gkehub_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_OperationMetadata_descriptor,
@@ -431,6 +1274,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gkehub.v1.FeatureProto.getDescriptor();
+    com.google.cloud.gkehub.v1.FleetProto.getDescriptor();
     com.google.cloud.gkehub.v1.MembershipProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

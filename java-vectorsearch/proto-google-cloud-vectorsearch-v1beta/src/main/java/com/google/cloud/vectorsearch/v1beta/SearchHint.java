@@ -759,10 +759,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies that the search should use a particular index.
+   * Optional. Specifies that the search should use a particular index.
    * </pre>
    *
-   * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the useIndex field is set.
    */
@@ -775,10 +777,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies that the search should use a particular index.
+   * Optional. Specifies that the search should use a particular index.
    * </pre>
    *
-   * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The useIndex.
    */
@@ -794,10 +798,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies that the search should use a particular index.
+   * Optional. Specifies that the search should use a particular index.
    * </pre>
    *
-   * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder getUseIndexOrBuilder() {
@@ -813,11 +819,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set to true, the search will use the system's default
+   * Optional. If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2;</code>
+   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the useKnn field is set.
    */
@@ -830,11 +836,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set to true, the search will use the system's default
+   * Optional. If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2;</code>
+   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useKnn.
    */
@@ -1239,10 +1245,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the useIndex field is set.
      */
@@ -1255,10 +1263,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The useIndex.
      */
@@ -1281,10 +1291,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUseIndex(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint value) {
       if (useIndexBuilder_ == null) {
@@ -1304,10 +1316,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUseIndex(
         com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder builderForValue) {
@@ -1325,10 +1339,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUseIndex(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint value) {
       if (useIndexBuilder_ == null) {
@@ -1359,10 +1375,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUseIndex() {
       if (useIndexBuilder_ == null) {
@@ -1385,10 +1403,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder getUseIndexBuilder() {
       return internalGetUseIndexFieldBuilder().getBuilder();
@@ -1398,10 +1418,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder
@@ -1420,10 +1442,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies that the search should use a particular index.
+     * Optional. Specifies that the search should use a particular index.
      * </pre>
      *
-     * <code>.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1;</code>
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint,
@@ -1454,11 +1478,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true, the search will use the system's default
+     * Optional. If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2;</code>
+     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the useKnn field is set.
      */
@@ -1470,11 +1494,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true, the search will use the system's default
+     * Optional. If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2;</code>
+     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The useKnn.
      */
@@ -1489,11 +1513,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true, the search will use the system's default
+     * Optional. If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2;</code>
+     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The useKnn to set.
      * @return This builder for chaining.
@@ -1510,11 +1534,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true, the search will use the system's default
+     * Optional. If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2;</code>
+     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

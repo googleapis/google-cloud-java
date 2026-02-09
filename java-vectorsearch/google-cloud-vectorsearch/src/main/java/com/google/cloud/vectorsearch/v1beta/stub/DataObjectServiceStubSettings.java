@@ -391,9 +391,11 @@ public class DataObjectServiceStubSettings extends StubSettings<DataObjectServic
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -408,20 +410,26 @@ public class DataObjectServiceStubSettings extends StubSettings<DataObjectServic
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
               .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
               .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("retry_policy_3_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -522,13 +530,13 @@ public class DataObjectServiceStubSettings extends StubSettings<DataObjectServic
     private static Builder initDefaults(Builder builder) {
       builder
           .createDataObjectSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .batchCreateDataObjectsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .getDataObjectSettings()
@@ -537,23 +545,23 @@ public class DataObjectServiceStubSettings extends StubSettings<DataObjectServic
 
       builder
           .updateDataObjectSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .batchUpdateDataObjectsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .deleteDataObjectSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .batchDeleteDataObjectsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .listLocationsSettings()

@@ -61,13 +61,12 @@ public final class ConsentProto extends com.google.protobuf.GeneratedFile {
           + "tion\030\002 \001(\0162(.google.ads.datamanager.v1.C"
           + "onsentStatusB\003\340A\001*X\n\rConsentStatus\022\036\n\032CO"
           + "NSENT_STATUS_UNSPECIFIED\020\000\022\023\n\017CONSENT_GR"
-          + "ANTED\020\001\022\022\n\016CONSENT_DENIED\020\002B\314\001\n\035com.goog"
-          + "le.ads.datamanager.v1B\014ConsentProtoP\001ZDg"
-          + "oogle.golang.org/genproto/googleapis/ads"
-          + "/datamanager/v1;datamanager\252\002\031Google.Ads"
-          + ".DataManager.V1\312\002\031Google\\Ads\\DataManager"
-          + "\\V1\352\002\034Google::Ads::DataManager::V1b\006prot"
-          + "o3"
+          + "ANTED\020\001\022\022\n\016CONSENT_DENIED\020\002B\311\001\n\035com.goog"
+          + "le.ads.datamanager.v1B\014ConsentProtoP\001ZAc"
+          + "loud.google.com/go/datamanager/apiv1/dat"
+          + "amanagerpb;datamanagerpb\252\002\031Google.Ads.Da"
+          + "taManager.V1\312\002\031Google\\Ads\\DataManager\\V1"
+          + "\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

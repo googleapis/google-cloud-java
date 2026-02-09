@@ -123,4 +123,125 @@ public interface QuotedMessageMetadataOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+   * message read/write path for backward compatibility.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for quoteType.
+   */
+  int getQuoteTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+   * message read/write path for backward compatibility.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The quoteType.
+   */
+  com.google.chat.v1.QuotedMessageMetadata.QuoteType getQuoteType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A snapshot of the quoted message's content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the quotedMessageSnapshot field is set.
+   */
+  boolean hasQuotedMessageSnapshot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A snapshot of the quoted message's content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The quotedMessageSnapshot.
+   */
+  com.google.chat.v1.QuotedMessageSnapshot getQuotedMessageSnapshot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A snapshot of the quoted message's content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.chat.v1.QuotedMessageSnapshotOrBuilder getQuotedMessageSnapshotOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the source space of the quoted message.
+   * Populated only for FORWARD quote type.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the forwardedMetadata field is set.
+   */
+  boolean hasForwardedMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the source space of the quoted message.
+   * Populated only for FORWARD quote type.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The forwardedMetadata.
+   */
+  com.google.chat.v1.ForwardedMetadata getForwardedMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the source space of the quoted message.
+   * Populated only for FORWARD quote type.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.chat.v1.ForwardedMetadataOrBuilder getForwardedMetadataOrBuilder();
 }

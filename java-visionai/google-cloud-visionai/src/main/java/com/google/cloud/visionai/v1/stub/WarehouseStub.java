@@ -23,6 +23,7 @@ import static com.google.cloud.visionai.v1.WarehouseClient.ListCorporaPagedRespo
 import static com.google.cloud.visionai.v1.WarehouseClient.ListDataSchemasPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexEndpointsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexesPagedResponse;
+import static com.google.cloud.visionai.v1.WarehouseClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchConfigsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchHypernymsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.SearchAssetsPagedResponse;
@@ -34,6 +35,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AddCollectionItemRequest;
 import com.google.cloud.visionai.v1.AddCollectionItemResponse;
 import com.google.cloud.visionai.v1.AnalyzeAssetMetadata;
@@ -587,6 +592,19 @@ public abstract class WarehouseStub implements BackgroundResource {
   public UnaryCallable<ViewCollectionItemsRequest, ViewCollectionItemsResponse>
       viewCollectionItemsCallable() {
     throw new UnsupportedOperationException("Not implemented: viewCollectionItemsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

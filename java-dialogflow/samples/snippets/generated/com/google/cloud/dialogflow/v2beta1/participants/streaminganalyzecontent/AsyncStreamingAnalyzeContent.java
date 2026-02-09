@@ -55,6 +55,7 @@ public class AsyncStreamingAnalyzeContent {
               .setCxCurrentPage("cxCurrentPage1596907507")
               .setEnableExtendedStreaming(true)
               .setEnablePartialAutomatedAgentReply(true)
+              .setOutputMultipleUtterances(true)
               .setEnableDebuggingInfo(true)
               .build();
       bidiStream.send(request);

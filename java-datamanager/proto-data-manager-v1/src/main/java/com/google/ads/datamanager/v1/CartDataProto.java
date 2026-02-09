@@ -70,13 +70,13 @@ public final class CartDataProto extends com.google.protobuf.GeneratedFile {
           + "\010quantity\030\002 \001(\003B\003\340A\001\022\027\n\nunit_price\030\003 \001(\001"
           + "B\003\340A\001\022\024\n\007item_id\030\004 \001(\tB\003\340A\001\022Q\n\032additiona"
           + "l_item_parameters\030\005 \003(\0132(.google.ads.dat"
-          + "amanager.v1.ItemParameterB\003\340A\001B\315\001\n\035com.g"
+          + "amanager.v1.ItemParameterB\003\340A\001B\312\001\n\035com.g"
           + "oogle.ads.datamanager.v1B\rCartDataProtoP"
-          + "\001ZDgoogle.golang.org/genproto/googleapis"
-          + "/ads/datamanager/v1;datamanager\252\002\031Google"
-          + ".Ads.DataManager.V1\312\002\031Google\\Ads\\DataMan"
-          + "ager\\V1\352\002\034Google::Ads::DataManager::V1b\006"
-          + "proto3"
+          + "\001ZAcloud.google.com/go/datamanager/apiv1"
+          + "/datamanagerpb;datamanagerpb\252\002\031Google.Ad"
+          + "s.DataManager.V1\312\002\031Google\\Ads\\DataManage"
+          + "r\\V1\352\002\034Google::Ads::DataManager::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -53,6 +53,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
 
   private ImageConfig() {
     aspectRatio_ = "";
+    personGeneration_ = 0;
+    imageSize_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +72,1102 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1.ImageConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Enum for controlling the generation of people in images.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1.ImageConfig.PersonGeneration}
+   */
+  public enum PersonGeneration implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default behavior is unspecified. The model will decide whether to
+     * generate images of people.
+     * </pre>
+     *
+     * <code>PERSON_GENERATION_UNSPECIFIED = 0;</code>
+     */
+    PERSON_GENERATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Allows the model to generate images of people, including adults and
+     * children.
+     * </pre>
+     *
+     * <code>ALLOW_ALL = 1;</code>
+     */
+    ALLOW_ALL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Allows the model to generate images of adults, but not children.
+     * </pre>
+     *
+     * <code>ALLOW_ADULT = 2;</code>
+     */
+    ALLOW_ADULT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Prevents the model from generating images of people.
+     * </pre>
+     *
+     * <code>ALLOW_NONE = 3;</code>
+     */
+    ALLOW_NONE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "PersonGeneration");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The default behavior is unspecified. The model will decide whether to
+     * generate images of people.
+     * </pre>
+     *
+     * <code>PERSON_GENERATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int PERSON_GENERATION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows the model to generate images of people, including adults and
+     * children.
+     * </pre>
+     *
+     * <code>ALLOW_ALL = 1;</code>
+     */
+    public static final int ALLOW_ALL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows the model to generate images of adults, but not children.
+     * </pre>
+     *
+     * <code>ALLOW_ADULT = 2;</code>
+     */
+    public static final int ALLOW_ADULT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Prevents the model from generating images of people.
+     * </pre>
+     *
+     * <code>ALLOW_NONE = 3;</code>
+     */
+    public static final int ALLOW_NONE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PersonGeneration valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PersonGeneration forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PERSON_GENERATION_UNSPECIFIED;
+        case 1:
+          return ALLOW_ALL;
+        case 2:
+          return ALLOW_ADULT;
+        case 3:
+          return ALLOW_NONE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PersonGeneration> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PersonGeneration>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PersonGeneration>() {
+              public PersonGeneration findValueByNumber(int number) {
+                return PersonGeneration.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ImageConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PersonGeneration[] VALUES = values();
+
+    public static PersonGeneration valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PersonGeneration(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.ImageConfig.PersonGeneration)
+  }
+
+  public interface ImageOutputOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image format that the output should be saved as.
+     * </pre>
+     *
+     * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the mimeType field is set.
+     */
+    boolean hasMimeType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image format that the output should be saved as.
+     * </pre>
+     *
+     * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mimeType.
+     */
+    java.lang.String getMimeType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image format that the output should be saved as.
+     * </pre>
+     *
+     * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    com.google.protobuf.ByteString getMimeTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The compression quality of the output image.
+     * </pre>
+     *
+     * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the compressionQuality field is set.
+     */
+    boolean hasCompressionQuality();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The compression quality of the output image.
+     * </pre>
+     *
+     * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The compressionQuality.
+     */
+    int getCompressionQuality();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The image output format for generated images.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions}
+   */
+  public static final class ImageOutputOptions extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions)
+      ImageOutputOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ImageOutputOptions");
+    }
+
+    // Use ImageOutputOptions.newBuilder() to construct.
+    private ImageOutputOptions(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ImageOutputOptions() {
+      mimeType_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1_ImageConfig_ImageOutputOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1_ImageConfig_ImageOutputOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.class,
+              com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MIME_TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mimeType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image format that the output should be saved as.
+     * </pre>
+     *
+     * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the mimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasMimeType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image format that the output should be saved as.
+     * </pre>
+     *
+     * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mimeType.
+     */
+    @java.lang.Override
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image format that the output should be saved as.
+     * </pre>
+     *
+     * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPRESSION_QUALITY_FIELD_NUMBER = 2;
+    private int compressionQuality_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The compression quality of the output image.
+     * </pre>
+     *
+     * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the compressionQuality field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompressionQuality() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The compression quality of the output image.
+     * </pre>
+     *
+     * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The compressionQuality.
+     */
+    @java.lang.Override
+    public int getCompressionQuality() {
+      return compressionQuality_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, mimeType_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(2, compressionQuality_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, mimeType_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, compressionQuality_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions other =
+          (com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions) obj;
+
+      if (hasMimeType() != other.hasMimeType()) return false;
+      if (hasMimeType()) {
+        if (!getMimeType().equals(other.getMimeType())) return false;
+      }
+      if (hasCompressionQuality() != other.hasCompressionQuality()) return false;
+      if (hasCompressionQuality()) {
+        if (getCompressionQuality() != other.getCompressionQuality()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMimeType()) {
+        hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getMimeType().hashCode();
+      }
+      if (hasCompressionQuality()) {
+        hash = (37 * hash) + COMPRESSION_QUALITY_FIELD_NUMBER;
+        hash = (53 * hash) + getCompressionQuality();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The image output format for generated images.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions)
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_ImageConfig_ImageOutputOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_ImageConfig_ImageOutputOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.class,
+                com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        mimeType_ = "";
+        compressionQuality_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_ImageConfig_ImageOutputOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions build() {
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions buildPartial() {
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions result =
+            new com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mimeType_ = mimeType_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.compressionQuality_ = compressionQuality_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.getDefaultInstance())
+          return this;
+        if (other.hasMimeType()) {
+          mimeType_ = other.mimeType_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasCompressionQuality()) {
+          setCompressionQuality(other.getCompressionQuality());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  mimeType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  compressionQuality_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object mimeType_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The image format that the output should be saved as.
+       * </pre>
+       *
+       * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the mimeType field is set.
+       */
+      public boolean hasMimeType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The image format that the output should be saved as.
+       * </pre>
+       *
+       * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The mimeType.
+       */
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The image format that the output should be saved as.
+       * </pre>
+       *
+       * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for mimeType.
+       */
+      public com.google.protobuf.ByteString getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The image format that the output should be saved as.
+       * </pre>
+       *
+       * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mimeType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The image format that the output should be saved as.
+       * </pre>
+       *
+       * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMimeType() {
+        mimeType_ = getDefaultInstance().getMimeType();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The image format that the output should be saved as.
+       * </pre>
+       *
+       * <code>optional string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        mimeType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int compressionQuality_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The compression quality of the output image.
+       * </pre>
+       *
+       * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the compressionQuality field is set.
+       */
+      @java.lang.Override
+      public boolean hasCompressionQuality() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The compression quality of the output image.
+       * </pre>
+       *
+       * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The compressionQuality.
+       */
+      @java.lang.Override
+      public int getCompressionQuality() {
+        return compressionQuality_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The compression quality of the output image.
+       * </pre>
+       *
+       * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The compressionQuality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompressionQuality(int value) {
+
+        compressionQuality_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The compression quality of the output image.
+       * </pre>
+       *
+       * <code>optional int32 compression_quality = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCompressionQuality() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        compressionQuality_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions)
+    private static final com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions();
+    }
+
+    public static com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ImageOutputOptions> PARSER =
+        new com.google.protobuf.AbstractParser<ImageOutputOptions>() {
+          @java.lang.Override
+          public ImageOutputOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ImageOutputOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ImageOutputOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  public static final int IMAGE_OUTPUT_OPTIONS_FIELD_NUMBER = 1;
+  private com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions imageOutputOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The image output format for generated images.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageOutputOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageOutputOptions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The image output format for generated images.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageOutputOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions getImageOutputOptions() {
+    return imageOutputOptions_ == null
+        ? com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.getDefaultInstance()
+        : imageOutputOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The image output format for generated images.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder
+      getImageOutputOptionsOrBuilder() {
+    return imageOutputOptions_ == null
+        ? com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.getDefaultInstance()
+        : imageOutputOptions_;
+  }
+
   public static final int ASPECT_RATIO_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -97,7 +1194,7 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAspectRatio() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -164,6 +1261,139 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PERSON_GENERATION_FIELD_NUMBER = 3;
+  private int personGeneration_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether the model can generate people.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the personGeneration field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersonGeneration() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether the model can generate people.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for personGeneration.
+   */
+  @java.lang.Override
+  public int getPersonGenerationValue() {
+    return personGeneration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether the model can generate people.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The personGeneration.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration getPersonGeneration() {
+    com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration result =
+        com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration.forNumber(personGeneration_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int IMAGE_SIZE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageSize_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the size of generated images. Supported values are
+   * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+   * </pre>
+   *
+   * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the imageSize field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageSize() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the size of generated images. Supported values are
+   * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+   * </pre>
+   *
+   * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imageSize.
+   */
+  @java.lang.Override
+  public java.lang.String getImageSize() {
+    java.lang.Object ref = imageSize_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageSize_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the size of generated images. Supported values are
+   * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+   * </pre>
+   *
+   * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for imageSize.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImageSizeBytes() {
+    java.lang.Object ref = imageSize_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      imageSize_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -179,7 +1409,16 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getImageOutputOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, aspectRatio_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(3, personGeneration_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, imageSize_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -191,7 +1430,16 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getImageOutputOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, aspectRatio_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, personGeneration_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, imageSize_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -209,9 +1457,21 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.aiplatform.v1.ImageConfig other =
         (com.google.cloud.aiplatform.v1.ImageConfig) obj;
 
+    if (hasImageOutputOptions() != other.hasImageOutputOptions()) return false;
+    if (hasImageOutputOptions()) {
+      if (!getImageOutputOptions().equals(other.getImageOutputOptions())) return false;
+    }
     if (hasAspectRatio() != other.hasAspectRatio()) return false;
     if (hasAspectRatio()) {
       if (!getAspectRatio().equals(other.getAspectRatio())) return false;
+    }
+    if (hasPersonGeneration() != other.hasPersonGeneration()) return false;
+    if (hasPersonGeneration()) {
+      if (personGeneration_ != other.personGeneration_) return false;
+    }
+    if (hasImageSize() != other.hasImageSize()) return false;
+    if (hasImageSize()) {
+      if (!getImageSize().equals(other.getImageSize())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -224,9 +1484,21 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasImageOutputOptions()) {
+      hash = (37 * hash) + IMAGE_OUTPUT_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getImageOutputOptions().hashCode();
+    }
     if (hasAspectRatio()) {
       hash = (37 * hash) + ASPECT_RATIO_FIELD_NUMBER;
       hash = (53 * hash) + getAspectRatio().hashCode();
+    }
+    if (hasPersonGeneration()) {
+      hash = (37 * hash) + PERSON_GENERATION_FIELD_NUMBER;
+      hash = (53 * hash) + personGeneration_;
+    }
+    if (hasImageSize()) {
+      hash = (37 * hash) + IMAGE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getImageSize().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -358,17 +1630,33 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.aiplatform.v1.ImageConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetImageOutputOptionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      imageOutputOptions_ = null;
+      if (imageOutputOptionsBuilder_ != null) {
+        imageOutputOptionsBuilder_.dispose();
+        imageOutputOptionsBuilder_ = null;
+      }
       aspectRatio_ = "";
+      personGeneration_ = 0;
+      imageSize_ = "";
       return this;
     }
 
@@ -407,8 +1695,23 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.aspectRatio_ = aspectRatio_;
+        result.imageOutputOptions_ =
+            imageOutputOptionsBuilder_ == null
+                ? imageOutputOptions_
+                : imageOutputOptionsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.aspectRatio_ = aspectRatio_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.personGeneration_ = personGeneration_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.imageSize_ = imageSize_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -425,9 +1728,20 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1.ImageConfig other) {
       if (other == com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()) return this;
+      if (other.hasImageOutputOptions()) {
+        mergeImageOutputOptions(other.getImageOutputOptions());
+      }
       if (other.hasAspectRatio()) {
         aspectRatio_ = other.aspectRatio_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasPersonGeneration()) {
+        setPersonGenerationValue(other.getPersonGenerationValue());
+      }
+      if (other.hasImageSize()) {
+        imageSize_ = other.imageSize_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -456,12 +1770,31 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(
+                    internalGetImageOutputOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 aspectRatio_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                personGeneration_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 34:
+              {
+                imageSize_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -480,6 +1813,225 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions imageOutputOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions,
+            com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder,
+            com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder>
+        imageOutputOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageOutputOptions field is set.
+     */
+    public boolean hasImageOutputOptions() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageOutputOptions.
+     */
+    public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions getImageOutputOptions() {
+      if (imageOutputOptionsBuilder_ == null) {
+        return imageOutputOptions_ == null
+            ? com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.getDefaultInstance()
+            : imageOutputOptions_;
+      } else {
+        return imageOutputOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageOutputOptions(
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions value) {
+      if (imageOutputOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageOutputOptions_ = value;
+      } else {
+        imageOutputOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageOutputOptions(
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder builderForValue) {
+      if (imageOutputOptionsBuilder_ == null) {
+        imageOutputOptions_ = builderForValue.build();
+      } else {
+        imageOutputOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeImageOutputOptions(
+        com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions value) {
+      if (imageOutputOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && imageOutputOptions_ != null
+            && imageOutputOptions_
+                != com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions
+                    .getDefaultInstance()) {
+          getImageOutputOptionsBuilder().mergeFrom(value);
+        } else {
+          imageOutputOptions_ = value;
+        }
+      } else {
+        imageOutputOptionsBuilder_.mergeFrom(value);
+      }
+      if (imageOutputOptions_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageOutputOptions() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      imageOutputOptions_ = null;
+      if (imageOutputOptionsBuilder_ != null) {
+        imageOutputOptionsBuilder_.dispose();
+        imageOutputOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder
+        getImageOutputOptionsBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetImageOutputOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder
+        getImageOutputOptionsOrBuilder() {
+      if (imageOutputOptionsBuilder_ != null) {
+        return imageOutputOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return imageOutputOptions_ == null
+            ? com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.getDefaultInstance()
+            : imageOutputOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The image output format for generated images.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions,
+            com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder,
+            com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder>
+        internalGetImageOutputOptionsFieldBuilder() {
+      if (imageOutputOptionsBuilder_ == null) {
+        imageOutputOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions,
+                com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions.Builder,
+                com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder>(
+                getImageOutputOptions(), getParentForChildren(), isClean());
+        imageOutputOptions_ = null;
+      }
+      return imageOutputOptionsBuilder_;
+    }
 
     private java.lang.Object aspectRatio_ = "";
 
@@ -503,7 +2055,7 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the aspectRatio field is set.
      */
     public boolean hasAspectRatio() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -593,7 +2145,7 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       aspectRatio_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -619,7 +2171,7 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAspectRatio() {
       aspectRatio_ = getDefaultInstance().getAspectRatio();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -650,7 +2202,265 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       aspectRatio_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int personGeneration_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether the model can generate people.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the personGeneration field is set.
+     */
+    @java.lang.Override
+    public boolean hasPersonGeneration() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether the model can generate people.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for personGeneration.
+     */
+    @java.lang.Override
+    public int getPersonGenerationValue() {
+      return personGeneration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether the model can generate people.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for personGeneration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPersonGenerationValue(int value) {
+      personGeneration_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether the model can generate people.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The personGeneration.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration getPersonGeneration() {
+      com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration result =
+          com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration.forNumber(personGeneration_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether the model can generate people.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The personGeneration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPersonGeneration(
+        com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      personGeneration_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether the model can generate people.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPersonGeneration() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      personGeneration_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageSize_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the size of generated images. Supported values are
+     * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+     * </pre>
+     *
+     * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the imageSize field is set.
+     */
+    public boolean hasImageSize() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the size of generated images. Supported values are
+     * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+     * </pre>
+     *
+     * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The imageSize.
+     */
+    public java.lang.String getImageSize() {
+      java.lang.Object ref = imageSize_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageSize_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the size of generated images. Supported values are
+     * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+     * </pre>
+     *
+     * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for imageSize.
+     */
+    public com.google.protobuf.ByteString getImageSizeBytes() {
+      java.lang.Object ref = imageSize_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        imageSize_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the size of generated images. Supported values are
+     * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+     * </pre>
+     *
+     * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The imageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageSize(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      imageSize_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the size of generated images. Supported values are
+     * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+     * </pre>
+     *
+     * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImageSize() {
+      imageSize_ = getDefaultInstance().getImageSize();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the size of generated images. Supported values are
+     * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+     * </pre>
+     *
+     * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for imageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageSizeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      imageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

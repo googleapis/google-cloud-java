@@ -79,12 +79,12 @@ public final class DestinationProto extends com.google.protobuf.GeneratedFile {
           + "uct\022\027\n\023PRODUCT_UNSPECIFIED\020\000\022\016\n\nGOOGLE_A"
           + "DS\020\001\022\031\n\025DISPLAY_VIDEO_PARTNER\020\002\022\034\n\030DISPL"
           + "AY_VIDEO_ADVERTISER\020\003\022\020\n\014DATA_PARTNER\020\004\032"
-          + "\002\030\001B\320\001\n\035com.google.ads.datamanager.v1B\020D"
-          + "estinationProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/ads/datamanager/v1;data"
-          + "manager\252\002\031Google.Ads.DataManager.V1\312\002\031Go"
-          + "ogle\\Ads\\DataManager\\V1\352\002\034Google::Ads::D"
-          + "ataManager::V1b\006proto3"
+          + "\002\030\001B\315\001\n\035com.google.ads.datamanager.v1B\020D"
+          + "estinationProtoP\001ZAcloud.google.com/go/d"
+          + "atamanager/apiv1/datamanagerpb;datamanag"
+          + "erpb\252\002\031Google.Ads.DataManager.V1\312\002\031Googl"
+          + "e\\Ads\\DataManager\\V1\352\002\034Google::Ads::Data"
+          + "Manager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -196,6 +196,19 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
      * @return The enableTableAnnotation.
      */
     boolean getEnableTableAnnotation();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to split table.
+     * </pre>
+     *
+     * <code>bool enable_table_split = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableSplit.
+     */
+    boolean getEnableTableSplit();
   }
 
   /**
@@ -1347,6 +1360,25 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       return enableTableAnnotation_;
     }
 
+    public static final int ENABLE_TABLE_SPLIT_FIELD_NUMBER = 8;
+    private boolean enableTableSplit_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to split table.
+     * </pre>
+     *
+     * <code>bool enable_table_split = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableSplit.
+     */
+    @java.lang.Override
+    public boolean getEnableTableSplit() {
+      return enableTableSplit_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1382,6 +1414,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       if (enableImageExtraction_ != false) {
         output.writeBool(7, enableImageExtraction_);
       }
+      if (enableTableSplit_ != false) {
+        output.writeBool(8, enableTableSplit_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1412,6 +1447,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       if (enableImageExtraction_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, enableImageExtraction_);
       }
+      if (enableTableSplit_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableTableSplit_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1438,6 +1476,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       if (getEnableImageExtraction() != other.getEnableImageExtraction()) return false;
       if (getEnableLlmLayoutParsing() != other.getEnableLlmLayoutParsing()) return false;
       if (getEnableTableAnnotation() != other.getEnableTableAnnotation()) return false;
+      if (getEnableTableSplit() != other.getEnableTableSplit()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1465,6 +1504,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLlmLayoutParsing());
       hash = (37 * hash) + ENABLE_TABLE_ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableAnnotation());
+      hash = (37 * hash) + ENABLE_TABLE_SPLIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableSplit());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1628,6 +1669,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
         enableImageExtraction_ = false;
         enableLlmLayoutParsing_ = false;
         enableTableAnnotation_ = false;
+        enableTableSplit_ = false;
         return this;
       }
 
@@ -1690,6 +1732,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.enableTableAnnotation_ = enableTableAnnotation_;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.enableTableSplit_ = enableTableSplit_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1728,6 +1773,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
         }
         if (other.getEnableTableAnnotation() != false) {
           setEnableTableAnnotation(other.getEnableTableAnnotation());
+        }
+        if (other.getEnableTableSplit() != false) {
+          setEnableTableSplit(other.getEnableTableSplit());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1798,6 +1846,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 56
+              case 64:
+                {
+                  enableTableSplit_ = input.readBool();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2382,6 +2436,62 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       public Builder clearEnableTableAnnotation() {
         bitField0_ = (bitField0_ & ~0x00000040);
         enableTableAnnotation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableTableSplit_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to split table.
+       * </pre>
+       *
+       * <code>bool enable_table_split = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableTableSplit.
+       */
+      @java.lang.Override
+      public boolean getEnableTableSplit() {
+        return enableTableSplit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to split table.
+       * </pre>
+       *
+       * <code>bool enable_table_split = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableTableSplit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableTableSplit(boolean value) {
+
+        enableTableSplit_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to split table.
+       * </pre>
+       *
+       * <code>bool enable_table_split = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableTableSplit() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        enableTableSplit_ = false;
         onChanged();
         return this;
       }

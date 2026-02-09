@@ -178,8 +178,8 @@ public interface SearchResultItemOrBuilder
    * image query).
    * By default this represents cosine similarity between the query and the
    * retrieved media content. The value is in the range of [-1, 1].
-   * Note that search ranking is not only decided by this relevance score,
-   * but also other factors such as the match of annotations.
+   * Note that search ranking is not only decided by this relevance score, but
+   * also other factors such as the match of annotations.
    * </pre>
    *
    * <code>double relevance = 6;</code>
