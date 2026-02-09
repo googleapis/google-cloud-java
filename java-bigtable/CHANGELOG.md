@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.73.0](https://github.com/googleapis/java-bigtable/compare/v2.72.0...v2.73.0) (2026-02-06)
+
+
+### Features
+
+* Add methods to wait for consistency with a token ([#2762](https://github.com/googleapis/java-bigtable/issues/2762)) ([b4a90b2](https://github.com/googleapis/java-bigtable/commit/b4a90b2d0fa2db34067577c2b56d815163dc7282))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2773](https://github.com/googleapis/java-bigtable/issues/2773)) ([33a6d8a](https://github.com/googleapis/java-bigtable/commit/33a6d8ad8a0051550998724f5833a1e803315b47))
+
 ## [2.72.0](https://github.com/googleapis/java-bigtable/compare/v2.71.0...v2.72.0) (2026-01-30)
 
 
