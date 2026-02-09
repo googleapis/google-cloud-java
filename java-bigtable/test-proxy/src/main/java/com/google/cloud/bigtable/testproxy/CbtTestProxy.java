@@ -828,6 +828,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
               public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
                 NettyChannelBuilder channelBuilder = (NettyChannelBuilder) input;
 
+                // The default replaces long (several KiB) error messages with "http2 exception"
+                channelBuilder.maxInboundMetadataSize(Integer.MAX_VALUE);
+
                 if (sslContext != null) {
                   channelBuilder.sslContext(sslContext);
                 }
