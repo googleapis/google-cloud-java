@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-auditmanager</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-auditmanager:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-auditmanager:current} -->
   <packaging>jar</packaging>
   <name>Google Audit Manager API</name>
   <description>Audit Manager API Lists information about the supported locations for this service.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-auditmanager-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-auditmanager:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-auditmanager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-auditmanager</site.installationModule>
