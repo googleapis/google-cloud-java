@@ -24,7 +24,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * The metric used for dataset level evaluation.
+ * The metric used for running evaluations.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.Metric}
@@ -74,7 +74,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The aggregation metrics supported by EvaluationService.EvaluateDataset.
+   * The per-metric statistics on evaluation results supported by
+   * `EvaluationService.EvaluateDataset`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.aiplatform.v1beta1.Metric.AggregationMetric}
@@ -435,6 +436,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PREDEFINED_METRIC_SPEC(8),
+    COMPUTATION_BASED_METRIC_SPEC(9),
+    LLM_BASED_METRIC_SPEC(10),
     POINTWISE_METRIC_SPEC(2),
     PAIRWISE_METRIC_SPEC(3),
     EXACT_MATCH_SPEC(4),
@@ -459,6 +463,12 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
 
     public static MetricSpecCase forNumber(int value) {
       switch (value) {
+        case 8:
+          return PREDEFINED_METRIC_SPEC;
+        case 9:
+          return COMPUTATION_BASED_METRIC_SPEC;
+        case 10:
+          return LLM_BASED_METRIC_SPEC;
         case 2:
           return POINTWISE_METRIC_SPEC;
         case 3:
@@ -483,6 +493,178 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
 
   public MetricSpecCase getMetricSpecCase() {
     return MetricSpecCase.forNumber(metricSpecCase_);
+  }
+
+  public static final int PREDEFINED_METRIC_SPEC_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * The spec for a pre-defined metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;</code>
+   *
+   * @return Whether the predefinedMetricSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredefinedMetricSpec() {
+    return metricSpecCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The spec for a pre-defined metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;</code>
+   *
+   * @return The predefinedMetricSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec getPredefinedMetricSpec() {
+    if (metricSpecCase_ == 8) {
+      return (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The spec for a pre-defined metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpecOrBuilder
+      getPredefinedMetricSpecOrBuilder() {
+    if (metricSpecCase_ == 8) {
+      return (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance();
+  }
+
+  public static final int COMPUTATION_BASED_METRIC_SPEC_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for a computation based metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+   * </code>
+   *
+   * @return Whether the computationBasedMetricSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasComputationBasedMetricSpec() {
+    return metricSpecCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for a computation based metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+   * </code>
+   *
+   * @return The computationBasedMetricSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec
+      getComputationBasedMetricSpec() {
+    if (metricSpecCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for a computation based metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpecOrBuilder
+      getComputationBasedMetricSpecOrBuilder() {
+    if (metricSpecCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.getDefaultInstance();
+  }
+
+  public static final int LLM_BASED_METRIC_SPEC_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for an LLM based metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+   *
+   * @return Whether the llmBasedMetricSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasLlmBasedMetricSpec() {
+    return metricSpecCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for an LLM based metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+   *
+   * @return The llmBasedMetricSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec getLlmBasedMetricSpec() {
+    if (metricSpecCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for an LLM based metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpecOrBuilder
+      getLlmBasedMetricSpecOrBuilder() {
+    if (metricSpecCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
   }
 
   public static final int POINTWISE_METRIC_SPEC_FIELD_NUMBER = 2;
@@ -911,6 +1093,17 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     if (metricSpecCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.aiplatform.v1beta1.RougeSpec) metricSpec_);
     }
+    if (metricSpecCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_);
+    }
+    if (metricSpecCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_);
+    }
+    if (metricSpecCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -959,6 +1152,21 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.aiplatform.v1beta1.RougeSpec) metricSpec_);
     }
+    if (metricSpecCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_);
+    }
+    if (metricSpecCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_);
+    }
+    if (metricSpecCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -978,6 +1186,16 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     if (!aggregationMetrics_.equals(other.aggregationMetrics_)) return false;
     if (!getMetricSpecCase().equals(other.getMetricSpecCase())) return false;
     switch (metricSpecCase_) {
+      case 8:
+        if (!getPredefinedMetricSpec().equals(other.getPredefinedMetricSpec())) return false;
+        break;
+      case 9:
+        if (!getComputationBasedMetricSpec().equals(other.getComputationBasedMetricSpec()))
+          return false;
+        break;
+      case 10:
+        if (!getLlmBasedMetricSpec().equals(other.getLlmBasedMetricSpec())) return false;
+        break;
       case 2:
         if (!getPointwiseMetricSpec().equals(other.getPointwiseMetricSpec())) return false;
         break;
@@ -1012,6 +1230,18 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + aggregationMetrics_.hashCode();
     }
     switch (metricSpecCase_) {
+      case 8:
+        hash = (37 * hash) + PREDEFINED_METRIC_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getPredefinedMetricSpec().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + COMPUTATION_BASED_METRIC_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getComputationBasedMetricSpec().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + LLM_BASED_METRIC_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getLlmBasedMetricSpec().hashCode();
+        break;
       case 2:
         hash = (37 * hash) + POINTWISE_METRIC_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getPointwiseMetricSpec().hashCode();
@@ -1140,7 +1370,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metric used for dataset level evaluation.
+   * The metric used for running evaluations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.Metric}
@@ -1175,6 +1405,15 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (predefinedMetricSpecBuilder_ != null) {
+        predefinedMetricSpecBuilder_.clear();
+      }
+      if (computationBasedMetricSpecBuilder_ != null) {
+        computationBasedMetricSpecBuilder_.clear();
+      }
+      if (llmBasedMetricSpecBuilder_ != null) {
+        llmBasedMetricSpecBuilder_.clear();
+      }
       if (pointwiseMetricSpecBuilder_ != null) {
         pointwiseMetricSpecBuilder_.clear();
       }
@@ -1230,7 +1469,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Metric result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         aggregationMetrics_.makeImmutable();
         result.aggregationMetrics_ = aggregationMetrics_;
       }
@@ -1239,6 +1478,15 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.Metric result) {
       result.metricSpecCase_ = metricSpecCase_;
       result.metricSpec_ = this.metricSpec_;
+      if (metricSpecCase_ == 8 && predefinedMetricSpecBuilder_ != null) {
+        result.metricSpec_ = predefinedMetricSpecBuilder_.build();
+      }
+      if (metricSpecCase_ == 9 && computationBasedMetricSpecBuilder_ != null) {
+        result.metricSpec_ = computationBasedMetricSpecBuilder_.build();
+      }
+      if (metricSpecCase_ == 10 && llmBasedMetricSpecBuilder_ != null) {
+        result.metricSpec_ = llmBasedMetricSpecBuilder_.build();
+      }
       if (metricSpecCase_ == 2 && pointwiseMetricSpecBuilder_ != null) {
         result.metricSpec_ = pointwiseMetricSpecBuilder_.build();
       }
@@ -1272,7 +1520,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         if (aggregationMetrics_.isEmpty()) {
           aggregationMetrics_ = other.aggregationMetrics_;
           aggregationMetrics_.makeImmutable();
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000100;
         } else {
           ensureAggregationMetricsIsMutable();
           aggregationMetrics_.addAll(other.aggregationMetrics_);
@@ -1280,6 +1528,21 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       switch (other.getMetricSpecCase()) {
+        case PREDEFINED_METRIC_SPEC:
+          {
+            mergePredefinedMetricSpec(other.getPredefinedMetricSpec());
+            break;
+          }
+        case COMPUTATION_BASED_METRIC_SPEC:
+          {
+            mergeComputationBasedMetricSpec(other.getComputationBasedMetricSpec());
+            break;
+          }
+        case LLM_BASED_METRIC_SPEC:
+          {
+            mergeLlmBasedMetricSpec(other.getLlmBasedMetricSpec());
+            break;
+          }
         case POINTWISE_METRIC_SPEC:
           {
             mergePointwiseMetricSpec(other.getPointwiseMetricSpec());
@@ -1389,6 +1652,28 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
                 metricSpecCase_ = 6;
                 break;
               } // case 50
+            case 66:
+              {
+                input.readMessage(
+                    internalGetPredefinedMetricSpecFieldBuilder().getBuilder(), extensionRegistry);
+                metricSpecCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetComputationBasedMetricSpecFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                metricSpecCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetLlmBasedMetricSpecFieldBuilder().getBuilder(), extensionRegistry);
+                metricSpecCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1421,6 +1706,706 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpecOrBuilder>
+        predefinedMetricSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     *
+     * @return Whether the predefinedMetricSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasPredefinedMetricSpec() {
+      return metricSpecCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     *
+     * @return The predefinedMetricSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec getPredefinedMetricSpec() {
+      if (predefinedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 8) {
+          return (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance();
+      } else {
+        if (metricSpecCase_ == 8) {
+          return predefinedMetricSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    public Builder setPredefinedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec value) {
+      if (predefinedMetricSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricSpec_ = value;
+        onChanged();
+      } else {
+        predefinedMetricSpecBuilder_.setMessage(value);
+      }
+      metricSpecCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    public Builder setPredefinedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.Builder builderForValue) {
+      if (predefinedMetricSpecBuilder_ == null) {
+        metricSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        predefinedMetricSpecBuilder_.setMessage(builderForValue.build());
+      }
+      metricSpecCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    public Builder mergePredefinedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec value) {
+      if (predefinedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 8
+            && metricSpec_
+                != com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance()) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricSpecCase_ == 8) {
+          predefinedMetricSpecBuilder_.mergeFrom(value);
+        } else {
+          predefinedMetricSpecBuilder_.setMessage(value);
+        }
+      }
+      metricSpecCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    public Builder clearPredefinedMetricSpec() {
+      if (predefinedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 8) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricSpecCase_ == 8) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+        }
+        predefinedMetricSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.Builder
+        getPredefinedMetricSpecBuilder() {
+      return internalGetPredefinedMetricSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpecOrBuilder
+        getPredefinedMetricSpecOrBuilder() {
+      if ((metricSpecCase_ == 8) && (predefinedMetricSpecBuilder_ != null)) {
+        return predefinedMetricSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricSpecCase_ == 8) {
+          return (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The spec for a pre-defined metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpecOrBuilder>
+        internalGetPredefinedMetricSpecFieldBuilder() {
+      if (predefinedMetricSpecBuilder_ == null) {
+        if (!(metricSpecCase_ == 8)) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.getDefaultInstance();
+        }
+        predefinedMetricSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec,
+                com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) metricSpec_,
+                getParentForChildren(),
+                isClean());
+        metricSpec_ = null;
+      }
+      metricSpecCase_ = 8;
+      onChanged();
+      return predefinedMetricSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpecOrBuilder>
+        computationBasedMetricSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     *
+     * @return Whether the computationBasedMetricSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasComputationBasedMetricSpec() {
+      return metricSpecCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     *
+     * @return The computationBasedMetricSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec
+        getComputationBasedMetricSpec() {
+      if (computationBasedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.getDefaultInstance();
+      } else {
+        if (metricSpecCase_ == 9) {
+          return computationBasedMetricSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    public Builder setComputationBasedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec value) {
+      if (computationBasedMetricSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricSpec_ = value;
+        onChanged();
+      } else {
+        computationBasedMetricSpecBuilder_.setMessage(value);
+      }
+      metricSpecCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    public Builder setComputationBasedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.Builder builderForValue) {
+      if (computationBasedMetricSpecBuilder_ == null) {
+        metricSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        computationBasedMetricSpecBuilder_.setMessage(builderForValue.build());
+      }
+      metricSpecCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    public Builder mergeComputationBasedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec value) {
+      if (computationBasedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 9
+            && metricSpec_
+                != com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec
+                    .getDefaultInstance()) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricSpecCase_ == 9) {
+          computationBasedMetricSpecBuilder_.mergeFrom(value);
+        } else {
+          computationBasedMetricSpecBuilder_.setMessage(value);
+        }
+      }
+      metricSpecCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    public Builder clearComputationBasedMetricSpec() {
+      if (computationBasedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 9) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricSpecCase_ == 9) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+        }
+        computationBasedMetricSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.Builder
+        getComputationBasedMetricSpecBuilder() {
+      return internalGetComputationBasedMetricSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpecOrBuilder
+        getComputationBasedMetricSpecOrBuilder() {
+      if ((metricSpecCase_ == 9) && (computationBasedMetricSpecBuilder_ != null)) {
+        return computationBasedMetricSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricSpecCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for a computation based metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpecOrBuilder>
+        internalGetComputationBasedMetricSpecFieldBuilder() {
+      if (computationBasedMetricSpecBuilder_ == null) {
+        if (!(metricSpecCase_ == 9)) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.getDefaultInstance();
+        }
+        computationBasedMetricSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec,
+                com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec) metricSpec_,
+                getParentForChildren(),
+                isClean());
+        metricSpec_ = null;
+      }
+      metricSpecCase_ = 9;
+      onChanged();
+      return computationBasedMetricSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpecOrBuilder>
+        llmBasedMetricSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     *
+     * @return Whether the llmBasedMetricSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasLlmBasedMetricSpec() {
+      return metricSpecCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     *
+     * @return The llmBasedMetricSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec getLlmBasedMetricSpec() {
+      if (llmBasedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
+      } else {
+        if (metricSpecCase_ == 10) {
+          return llmBasedMetricSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    public Builder setLlmBasedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec value) {
+      if (llmBasedMetricSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricSpec_ = value;
+        onChanged();
+      } else {
+        llmBasedMetricSpecBuilder_.setMessage(value);
+      }
+      metricSpecCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    public Builder setLlmBasedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.Builder builderForValue) {
+      if (llmBasedMetricSpecBuilder_ == null) {
+        metricSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        llmBasedMetricSpecBuilder_.setMessage(builderForValue.build());
+      }
+      metricSpecCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    public Builder mergeLlmBasedMetricSpec(
+        com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec value) {
+      if (llmBasedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 10
+            && metricSpec_
+                != com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance()) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricSpecCase_ == 10) {
+          llmBasedMetricSpecBuilder_.mergeFrom(value);
+        } else {
+          llmBasedMetricSpecBuilder_.setMessage(value);
+        }
+      }
+      metricSpecCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    public Builder clearLlmBasedMetricSpec() {
+      if (llmBasedMetricSpecBuilder_ == null) {
+        if (metricSpecCase_ == 10) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricSpecCase_ == 10) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+        }
+        llmBasedMetricSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.Builder
+        getLlmBasedMetricSpecBuilder() {
+      return internalGetLlmBasedMetricSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpecOrBuilder
+        getLlmBasedMetricSpecOrBuilder() {
+      if ((metricSpecCase_ == 10) && (llmBasedMetricSpecBuilder_ != null)) {
+        return llmBasedMetricSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricSpecCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for an LLM based metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec,
+            com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpecOrBuilder>
+        internalGetLlmBasedMetricSpecFieldBuilder() {
+      if (llmBasedMetricSpecBuilder_ == null) {
+        if (!(metricSpecCase_ == 10)) {
+          metricSpec_ = com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
+        }
+        llmBasedMetricSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec,
+                com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_,
+                getParentForChildren(),
+                isClean());
+        metricSpec_ = null;
+      }
+      metricSpecCase_ = 10;
+      onChanged();
+      return llmBasedMetricSpecBuilder_;
+    }
 
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpec,
@@ -2531,7 +3516,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       if (!aggregationMetrics_.isModifiable()) {
         aggregationMetrics_ = makeMutableCopy(aggregationMetrics_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
     }
 
     /**
@@ -2681,7 +3666,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAggregationMetrics() {
       aggregationMetrics_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
