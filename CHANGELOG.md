@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.78.0](https://github.com/googleapis/google-cloud-java/compare/v1.77.0...v1.78.0) (2026-02-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* The `SpannerIndexingConfig` message and the `spanner_indexing_config` field within the `Dataset` message have been removed. Client code referencing these will need to stop referencing these in case of an error docs: [document-ai] Updated comments for various fields and messages
+* [visionai] An existing default host `visionai.googleapis.com` is changed to `warehouse-visionai.googleapis.com` in service `Warehouse`
+
+### Features
+
+* [aiplatform] Add `fps` to message `VideoMetadata` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] add Vertex Multimodal Datasets as input and output types in `google.cloud.aiplatform.v1beta1.BatchPredictionJob` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] add Vertex Multimodal Datasets as input and output types in `google.cloud.aiplatform.v1beta1.BatchPredictionJob` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] Force-delete for RagCorpora, ignoring any external errors and ensuring deletion of the RagCorpus ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [artifact-registry] add DIRSUM_SHA256 hash type ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [chat] Addition of QuoteType enum, QuotedMessageSnapshot & ForwardMetadata in the QuotedMessageMetadata proto ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [cloudquotas] Hierarchical Quota Adjuster ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [confidentialcomputing] add Nvidia Attestation proto message with its relevant fields and ConfidentialGke options ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [dialogflow] added a new field StreamingAnalyzeContentRequest.output_multiple_utterances ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [document-ai] A new field `revisions` is added to message `.google.cloud.documentai.v1beta3.Evaluation` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [geminidataanalytics] add ClarificationMessage, thought-signature, formatted-data ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [gkehub] Add GKE Hub teams scope and RBAC GAPIC ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [vectorsearch] add SearchHint to SemanticSearch requests ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+
+
+### Bug Fixes
+
+* [visionai] An existing default host `visionai.googleapis.com` is changed to `warehouse-visionai.googleapis.com` in service `Warehouse` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.66.1 ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.1 ([#11916](https://github.com/googleapis/google-cloud-java/issues/11916)) ([6127aa6](https://github.com/googleapis/google-cloud-java/commit/6127aa6a9c366dfc907a2e85dc9b896d2c31f16d))
+
+
+### Documentation
+
+* [aiplatform] update documentation of `.google.cloud.aiplatform.v1.DatasetService`, `.google.cloud.aiplatform.v1.Dataset`, and `.google.cloud.aiplatform.v1.DatasetVersion` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] update documentation of `.google.cloud.aiplatform.v1beta1.Dataset` and `.google.cloud.aiplatform.v1beta1.DatasetVersion` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [datamanager] describe additional URI format for kek_uri in GcpEncryptionInfo and AwsKmsEncryptionInfo ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+
 ## [1.77.0](https://github.com/googleapis/google-cloud-java/compare/v1.76.0...v1.77.0) (2026-01-29)
 
 
