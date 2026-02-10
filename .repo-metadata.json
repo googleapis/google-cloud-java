@@ -13,7 +13,6 @@
   "api_id": "datastore.googleapis.com",
   "library_type": "GAPIC_COMBO",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/cloud-sdk-java-team",
   "excluded_dependencies": "grpc-google-cloud-datastore-v1",
   "excluded_poms": "grpc-google-cloud-datastore-v1",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559768",
