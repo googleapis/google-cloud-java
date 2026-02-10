@@ -2,6 +2,10 @@ bumpMinorPreMajor: true
 handleGHRelease: true
 releaseType: java-yoshi
 branches:
-    - branch: java7
-    - branch: protobuf-4.x-rc
-      manifest: true
+  - branch: java7
+  - branch: protobuf-4.x-rc
+    manifest: true
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    branch: 3.36.x
