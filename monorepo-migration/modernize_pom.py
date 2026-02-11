@@ -15,6 +15,56 @@
 import sys
 import re
 import os
+import subprocess
+import tempfile
+import xml.etree.ElementTree as ET
+
+def get_managed_dependencies(pom_path):
+    """Runs mvn help:effective-pom and extracts non-snapshot managed dependencies."""
+    managed_deps = {}
+    if not os.path.exists(pom_path):
+        return managed_deps
+
+    with tempfile.NamedTemporaryFile(suffix='.xml', delete=True) as tmp:
+        try:
+            # We use -Doutput to write to the temp file
+            # We use -DskipTests for speed, and -B for batch mode
+            cmd = [
+                'mvn', 'help:effective-pom',
+                '-f', pom_path,
+                '-Doutput=' + tmp.name,
+                '-DskipTests',
+                '-B',
+                '-q'
+            ]
+            print(f"Resolving managed dependencies from {pom_path}...")
+            subprocess.run(cmd, check=True)
+            
+            tree = ET.parse(tmp.name)
+            root = tree.getroot()
+            
+            # Namespace handling for Maven POM
+            ns = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
+            
+            # Use XPath to find managed dependencies
+            deps_selection = root.findall('.//mvn:dependencyManagement/mvn:dependencies/mvn:dependency', ns)
+            for dep in deps_selection:
+                gid_node = dep.find('mvn:groupId', ns)
+                aid_node = dep.find('mvn:artifactId', ns)
+                ver_node = dep.find('mvn:version', ns)
+                
+                if gid_node is not None and aid_node is not None and ver_node is not None:
+                    group_id = gid_node.text.strip()
+                    artifact_id = aid_node.text.strip()
+                    version = ver_node.text.strip()
+                    
+                    if version and '-SNAPSHOT' not in version:
+                        managed_deps[(group_id, artifact_id)] = version
+        except Exception as e:
+            print(f"Warning: Failed to get managed dependencies from {pom_path}: {e}")
+            
+    return managed_deps
+
 
 def parse_pom_for_version(file_path):
     """Extracts artifactId and version from a pom.xml file."""
@@ -94,7 +144,7 @@ def get_monorepo_versions(monorepo_root='.'):
                 versions[artifactId] = version
     return versions
 
-def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None):
+def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None, parent_managed_deps=None):
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -190,6 +240,22 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                     if current_artifact_id == 'google-cloud-shared-dependencies':
                         continue
 
+                    # Prune if already managed by parent mit same version
+                    if parent_managed_deps and (current_group_id, current_artifact_id) in parent_managed_deps:
+                        managed_version = parent_managed_deps[(current_group_id, current_artifact_id)]
+                        
+                        # Extract current version to compare
+                        current_version = None
+                        for d_line in current_dependency_lines:
+                            v_match = re.search(r'<version>(.*?)</version>', d_line)
+                            if v_match:
+                                current_version = v_match.group(1).strip()
+                                break
+                        
+                        if current_version == managed_version:
+                            continue
+
+
                     # Preservation logic:
                     # 1. Has x-version-update comment
                     # 2. Is NOT com.google group AND has a version tag
@@ -266,7 +332,12 @@ if __name__ == "__main__":
         source_repo = sys.argv[3] if len(sys.argv) > 3 else None
         parent_artifactId = sys.argv[4] if len(sys.argv) > 4 else 'google-cloud-jar-parent'
         relative_path = sys.argv[5] if len(sys.argv) > 5 else '../google-cloud-jar-parent/pom.xml'
-        modernize_pom(sys.argv[1], sys.argv[2], source_repo, parent_artifactId, relative_path, monorepo_versions)
+        
+        parent_pom_path = os.path.join(monorepo_root, 'google-cloud-jar-parent', 'pom.xml')
+        parent_managed_deps = get_managed_dependencies(parent_pom_path)
+        print(f"Loaded {len(parent_managed_deps)} managed dependencies from parent.")
+
+        modernize_pom(sys.argv[1], sys.argv[2], source_repo, parent_artifactId, relative_path, monorepo_versions, parent_managed_deps)
     else:
         print("Usage: python3 modernize_pom.py <file_path> <parent_version> [source_repo_name] [parent_artifactId] [relative_path]")
         sys.exit(1)
