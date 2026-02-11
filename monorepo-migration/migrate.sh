@@ -56,6 +56,7 @@ FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
+EXTRACT_SM_KEYS_SCRIPT="$TRANSFORM_SCRIPT_DIR/extract_sm_keys.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -181,6 +182,71 @@ rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
 rm -rf "$SOURCE_REPO_NAME/.kokoro"
 # rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
+
+# 6.6 Create split integration config if needed
+SOURCE_INTEGRATION_CFG="$SOURCE_DIR/.kokoro/presubmit/integration.cfg"
+if [ -f "$SOURCE_INTEGRATION_CFG" ]; then
+    echo "Creating split integration config for $SOURCE_REPO_NAME..."
+    SHORT_NAME="${SOURCE_REPO_NAME#java-}"
+    TARGET_INTEGRATION_CFG=".kokoro/presubmit/${SHORT_NAME}-integration.cfg"
+    
+    # Extract SECRET_MANAGER_KEYS from source config
+    SM_KEYS=$(python3 "$EXTRACT_SM_KEYS_SCRIPT" "$SOURCE_INTEGRATION_CFG")
+
+    cat <<EOF > "$TARGET_INTEGRATION_CFG"
+# Format: //devtools/kokoro/config/proto/build.proto
+
+# Configure the docker image for kokoro-trampoline.
+env_vars: {
+  key: "TRAMPOLINE_IMAGE"
+  value: "gcr.io/cloud-devrel-kokoro-resources/java11"
+}
+
+env_vars: {
+  key: "JOB_TYPE"
+  value: "integration-single"
+}
+
+# TODO: remove this after we've migrated all tests and scripts
+env_vars: {
+  key: "GCLOUD_PROJECT"
+  value: "cloud-java-ci-test"
+}
+
+env_vars: {
+  key: "GOOGLE_CLOUD_PROJECT"
+  value: "cloud-java-ci-test"
+}
+
+env_vars: {
+  key: "GOOGLE_APPLICATION_CREDENTIALS"
+  value: "secret_manager/cloud-java-ci-it-service-account"
+}
+EOF
+
+    if [ -n "$SM_KEYS" ]; then
+        cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "SECRET_MANAGER_KEYS"
+  value: "$SM_KEYS"
+}
+EOF
+    fi
+
+    cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "BUILD_SUBDIR"
+  value: "$SOURCE_REPO_NAME"
+}
+EOF
+
+    echo "Committing split integration config..."
+    git add "$TARGET_INTEGRATION_CFG"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split integration config"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
 rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
