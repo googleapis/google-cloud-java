@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.148.0](https://github.com/googleapis/java-pubsub/compare/v1.147.0...v1.148.0) (2026-02-11)
+
+
+### Features
+
+* Next release from main branch is 1.148.0 ([#2686](https://github.com/googleapis/java-pubsub/issues/2686)) ([6b133e8](https://github.com/googleapis/java-pubsub/commit/6b133e8277bba25ab8f91d970d8d79e8bdaaa7e7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.56.1 ([#2682](https://github.com/googleapis/java-pubsub/issues/2682)) ([1a94be9](https://github.com/googleapis/java-pubsub/commit/1a94be982e291c8cbf1ac2ec4aa6a84a4dabd17d))
+
 ## [1.147.0](https://github.com/googleapis/java-pubsub/compare/v1.146.0...v1.147.0) (2026-01-27)
 
 
