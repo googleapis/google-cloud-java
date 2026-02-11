@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-datastore'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datastore:2.33.3'
+implementation 'com.google.cloud:google-cloud-datastore:2.34.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.33.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.34.0"
 ```
 
 ## Authentication
@@ -474,7 +474,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datastore.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-datastore/2.33.3
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-datastore/2.34.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.34.0](https://github.com/googleapis/java-datastore/compare/v2.33.3...v2.34.0) (2026-02-11)
+
+
+### Features
+
+* Next release from main branch is 2.34.0 ([#2046](https://github.com/googleapis/java-datastore/issues/2046)) ([686967e](https://github.com/googleapis/java-datastore/commit/686967e00c7e2972b1a99c747147a8fc2a4b6a43))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.56.1 ([#2044](https://github.com/googleapis/java-datastore/issues/2044)) ([47d995d](https://github.com/googleapis/java-datastore/commit/47d995d723bced1a2660fed80e80657eabfb35fc))
+
 ## [2.33.3](https://github.com/googleapis/java-datastore/compare/v2.33.2...v2.33.3) (2026-01-24)
 
 
