@@ -130,6 +130,124 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The categories associated with a category page. Must be set for
+   * category navigation queries to achieve good search quality. The format
+   * should be the same as
+   * [PageInfo.page_category][google.cloud.discoveryengine.v1.PageInfo.page_category].
+   * This field is the equivalent of the query for browse (navigation) queries.
+   * It's used by the browse model when the query is empty.
+   *
+   * If the field is empty, it will not be used by the browse model.
+   * If the field contains more than one element, only the first element will
+   * be used.
+   *
+   * To represent full path of a category, use '&gt;' character to separate
+   * different hierarchies. If '&gt;' is part of the category name, replace it with
+   * other character(s).
+   * For example, `Graphics Cards &gt; RTX&gt;4090 &gt; Founders Edition` where "RTX &gt;
+   * 4090" represents one level, can be rewritten as `Graphics Cards &gt; RTX_4090
+   * &gt; Founders Edition`
+   * </pre>
+   *
+   * <code>repeated string page_categories = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the pageCategories.
+   */
+  java.util.List<java.lang.String> getPageCategoriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The categories associated with a category page. Must be set for
+   * category navigation queries to achieve good search quality. The format
+   * should be the same as
+   * [PageInfo.page_category][google.cloud.discoveryengine.v1.PageInfo.page_category].
+   * This field is the equivalent of the query for browse (navigation) queries.
+   * It's used by the browse model when the query is empty.
+   *
+   * If the field is empty, it will not be used by the browse model.
+   * If the field contains more than one element, only the first element will
+   * be used.
+   *
+   * To represent full path of a category, use '&gt;' character to separate
+   * different hierarchies. If '&gt;' is part of the category name, replace it with
+   * other character(s).
+   * For example, `Graphics Cards &gt; RTX&gt;4090 &gt; Founders Edition` where "RTX &gt;
+   * 4090" represents one level, can be rewritten as `Graphics Cards &gt; RTX_4090
+   * &gt; Founders Edition`
+   * </pre>
+   *
+   * <code>repeated string page_categories = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of pageCategories.
+   */
+  int getPageCategoriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The categories associated with a category page. Must be set for
+   * category navigation queries to achieve good search quality. The format
+   * should be the same as
+   * [PageInfo.page_category][google.cloud.discoveryengine.v1.PageInfo.page_category].
+   * This field is the equivalent of the query for browse (navigation) queries.
+   * It's used by the browse model when the query is empty.
+   *
+   * If the field is empty, it will not be used by the browse model.
+   * If the field contains more than one element, only the first element will
+   * be used.
+   *
+   * To represent full path of a category, use '&gt;' character to separate
+   * different hierarchies. If '&gt;' is part of the category name, replace it with
+   * other character(s).
+   * For example, `Graphics Cards &gt; RTX&gt;4090 &gt; Founders Edition` where "RTX &gt;
+   * 4090" represents one level, can be rewritten as `Graphics Cards &gt; RTX_4090
+   * &gt; Founders Edition`
+   * </pre>
+   *
+   * <code>repeated string page_categories = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The pageCategories at the given index.
+   */
+  java.lang.String getPageCategories(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The categories associated with a category page. Must be set for
+   * category navigation queries to achieve good search quality. The format
+   * should be the same as
+   * [PageInfo.page_category][google.cloud.discoveryengine.v1.PageInfo.page_category].
+   * This field is the equivalent of the query for browse (navigation) queries.
+   * It's used by the browse model when the query is empty.
+   *
+   * If the field is empty, it will not be used by the browse model.
+   * If the field contains more than one element, only the first element will
+   * be used.
+   *
+   * To represent full path of a category, use '&gt;' character to separate
+   * different hierarchies. If '&gt;' is part of the category name, replace it with
+   * other character(s).
+   * For example, `Graphics Cards &gt; RTX&gt;4090 &gt; Founders Edition` where "RTX &gt;
+   * 4090" represents one level, can be rewritten as `Graphics Cards &gt; RTX_4090
+   * &gt; Founders Edition`
+   * </pre>
+   *
+   * <code>repeated string page_categories = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the pageCategories at the given index.
+   */
+  com.google.protobuf.ByteString getPageCategoriesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Raw image query.
    * </pre>
    *
@@ -236,6 +354,8 @@ public interface SearchRequestOrBuilder
    * unset.
    *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * A large offset may be capped to a reasonable threshold.
    * </pre>
    *
    * <code>int32 offset = 6;</code>
@@ -933,10 +1053,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -949,7 +1069,7 @@ public interface SearchRequestOrBuilder
    * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
    * </pre>
    *
-   * <code>string user_pseudo_id = 15;</code>
+   * <code>string user_pseudo_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The userPseudoId.
    */
@@ -959,10 +1079,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -975,7 +1095,7 @@ public interface SearchRequestOrBuilder
    * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
    * </pre>
    *
-   * <code>string user_pseudo_id = 15;</code>
+   * <code>string user_pseudo_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for userPseudoId.
    */
@@ -1024,6 +1144,241 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpecOrBuilder
       getContentSearchSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ranking expression controls the customized ranking on
+   * retrieval documents. This overrides
+   * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+   * The syntax and supported features depend on the
+   * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+   * provided, it defaults to `RANK_BY_EMBEDDING`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+   * function or multiple functions that are joined by "+".
+   *
+   * * ranking_expression = function, { " + ", function };
+   *
+   * Supported functions:
+   *
+   * * double * relevance_score
+   * * double * dotProduct(embedding_field_path)
+   *
+   * Function variables:
+   *
+   * * `relevance_score`: pre-defined keywords, used for measure relevance
+   * between query and document.
+   * * `embedding_field_path`: the document embedding field
+   * used with query embedding vector.
+   * * `dotProduct`: embedding function between `embedding_field_path` and
+   * query embedding vector.
+   *
+   * Example ranking expression:
+   *
+   * If document has an embedding field doc_embedding, the ranking expression
+   * could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is set to `RANK_BY_FORMULA`, the following expression types (and
+   * combinations of those chained using + or
+   * * operators) are supported:
+   *
+   * * `double`
+   * * `signal`
+   * * `log(signal)`
+   * * `exp(signal)`
+   * * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+   * argument being a denominator constant.
+   * * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+   * * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+   * signal2 | double, else returns signal1.
+   *
+   * Here are a few examples of ranking formulas that use the supported
+   * ranking expression types:
+   *
+   * - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+   * -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+   * `semantic_smilarity_score` adjustment.
+   * - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+   * is_nan(keyword_similarity_score)` -- rank by the exponent of
+   * `semantic_similarity_score` filling the value with 0 if it's NaN, also
+   * add constant 0.3 adjustment to the final score if
+   * `semantic_similarity_score` is NaN.
+   * - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+   * rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+   * of `keyword_similarity_score` with slight adjustment of reciprocal rank
+   * of `semantic_smilarity_score`.
+   *
+   * The following signals are supported:
+   *
+   * * `semantic_similarity_score`: semantic similarity adjustment that is
+   * calculated using the embeddings generated by a proprietary Google model.
+   * This score determines how semantically similar a search query is to a
+   * document.
+   * * `keyword_similarity_score`: keyword match adjustment uses the Best
+   * Match 25 (BM25) ranking function. This score is calculated using a
+   * probabilistic model to estimate the probability that a document is
+   * relevant to a given query.
+   * * `relevance_score`: semantic relevance adjustment that uses a
+   * proprietary Google model to determine the meaning and intent behind a
+   * user's query in context with the content in the documents.
+   * * `pctr_rank`: predicted conversion rate adjustment as a rank use
+   * predicted Click-through rate (pCTR) to gauge the relevance and
+   * attractiveness of a search result from a user's perspective. A higher
+   * pCTR suggests that the result is more likely to satisfy the user's query
+   * and intent, making it a valuable signal for ranking.
+   * * `freshness_rank`: freshness adjustment as a rank
+   * * `document_age`: The time in hours elapsed since the document was last
+   * updated, a floating-point number (e.g., 0.25 means 15 minutes).
+   * * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+   * Google model to determine the keyword-based overlap between the query and
+   * the document.
+   * * `base_rank`: the default rank of the result
+   * </pre>
+   *
+   * <code>string ranking_expression = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The rankingExpression.
+   */
+  java.lang.String getRankingExpression();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ranking expression controls the customized ranking on
+   * retrieval documents. This overrides
+   * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+   * The syntax and supported features depend on the
+   * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+   * provided, it defaults to `RANK_BY_EMBEDDING`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+   * function or multiple functions that are joined by "+".
+   *
+   * * ranking_expression = function, { " + ", function };
+   *
+   * Supported functions:
+   *
+   * * double * relevance_score
+   * * double * dotProduct(embedding_field_path)
+   *
+   * Function variables:
+   *
+   * * `relevance_score`: pre-defined keywords, used for measure relevance
+   * between query and document.
+   * * `embedding_field_path`: the document embedding field
+   * used with query embedding vector.
+   * * `dotProduct`: embedding function between `embedding_field_path` and
+   * query embedding vector.
+   *
+   * Example ranking expression:
+   *
+   * If document has an embedding field doc_embedding, the ranking expression
+   * could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is set to `RANK_BY_FORMULA`, the following expression types (and
+   * combinations of those chained using + or
+   * * operators) are supported:
+   *
+   * * `double`
+   * * `signal`
+   * * `log(signal)`
+   * * `exp(signal)`
+   * * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+   * argument being a denominator constant.
+   * * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+   * * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+   * signal2 | double, else returns signal1.
+   *
+   * Here are a few examples of ranking formulas that use the supported
+   * ranking expression types:
+   *
+   * - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+   * -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+   * `semantic_smilarity_score` adjustment.
+   * - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+   * is_nan(keyword_similarity_score)` -- rank by the exponent of
+   * `semantic_similarity_score` filling the value with 0 if it's NaN, also
+   * add constant 0.3 adjustment to the final score if
+   * `semantic_similarity_score` is NaN.
+   * - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+   * rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+   * of `keyword_similarity_score` with slight adjustment of reciprocal rank
+   * of `semantic_smilarity_score`.
+   *
+   * The following signals are supported:
+   *
+   * * `semantic_similarity_score`: semantic similarity adjustment that is
+   * calculated using the embeddings generated by a proprietary Google model.
+   * This score determines how semantically similar a search query is to a
+   * document.
+   * * `keyword_similarity_score`: keyword match adjustment uses the Best
+   * Match 25 (BM25) ranking function. This score is calculated using a
+   * probabilistic model to estimate the probability that a document is
+   * relevant to a given query.
+   * * `relevance_score`: semantic relevance adjustment that uses a
+   * proprietary Google model to determine the meaning and intent behind a
+   * user's query in context with the content in the documents.
+   * * `pctr_rank`: predicted conversion rate adjustment as a rank use
+   * predicted Click-through rate (pCTR) to gauge the relevance and
+   * attractiveness of a search result from a user's perspective. A higher
+   * pCTR suggests that the result is more likely to satisfy the user's query
+   * and intent, making it a valuable signal for ranking.
+   * * `freshness_rank`: freshness adjustment as a rank
+   * * `document_age`: The time in hours elapsed since the document was last
+   * updated, a floating-point number (e.g., 0.25 means 15 minutes).
+   * * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+   * Google model to determine the keyword-based overlap between the query and
+   * the document.
+   * * `base_rank`: the default rank of the result
+   * </pre>
+   *
+   * <code>string ranking_expression = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for rankingExpression.
+   */
+  com.google.protobuf.ByteString getRankingExpressionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backend to use for the ranking expression evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for rankingExpressionBackend.
+   */
+  int getRankingExpressionBackendValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backend to use for the ranking expression evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rankingExpressionBackend.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend
+      getRankingExpressionBackend();
 
   /**
    *
@@ -1186,6 +1541,66 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Config for natural language query understanding capabilities,
+   * such as extracting structured field filters from the query. Refer to [this
+   * documentation](https://cloud.google.com/generative-ai-app-builder/docs/natural-language-queries)
+   * for more information.
+   * If `naturalLanguageQueryUnderstandingSpec` is not specified, no additional
+   * natural language query understanding will be done.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingSpec field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for natural language query understanding capabilities,
+   * such as extracting structured field filters from the query. Refer to [this
+   * documentation](https://cloud.google.com/generative-ai-app-builder/docs/natural-language-queries)
+   * for more information.
+   * If `naturalLanguageQueryUnderstandingSpec` is not specified, no additional
+   * natural language query understanding will be done.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingSpec.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.NaturalLanguageQueryUnderstandingSpec
+      getNaturalLanguageQueryUnderstandingSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for natural language query understanding capabilities,
+   * such as extracting structured field filters from the query. Refer to [this
+   * documentation](https://cloud.google.com/generative-ai-app-builder/docs/natural-language-queries)
+   * for more information.
+   * If `naturalLanguageQueryUnderstandingSpec` is not specified, no additional
+   * natural language query understanding will be done.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.NaturalLanguageQueryUnderstandingSpecOrBuilder
+      getNaturalLanguageQueryUnderstandingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Search as you type configuration. Only supported for the
    * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
    * vertical.
@@ -1277,6 +1692,114 @@ public interface SearchRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.DisplaySpecOrBuilder getDisplaySpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Crowding specifications for improving result diversity.
+   * If multiple CrowdingSpecs are specified, crowding will be evaluated on
+   * each unique combination of the `field` values, and max_count will be the
+   * maximum value of `max_count` across all CrowdingSpecs.
+   * For example, if the first CrowdingSpec has `field` = "color" and
+   * `max_count` = 3, and the second CrowdingSpec has `field` = "size" and
+   * `max_count` = 2, then after 3 documents that share the same color AND size
+   * have been returned, subsequent ones should be
+   * removed or demoted.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec crowding_specs = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec>
+      getCrowdingSpecsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Crowding specifications for improving result diversity.
+   * If multiple CrowdingSpecs are specified, crowding will be evaluated on
+   * each unique combination of the `field` values, and max_count will be the
+   * maximum value of `max_count` across all CrowdingSpecs.
+   * For example, if the first CrowdingSpec has `field` = "color" and
+   * `max_count` = 3, and the second CrowdingSpec has `field` = "size" and
+   * `max_count` = 2, then after 3 documents that share the same color AND size
+   * have been returned, subsequent ones should be
+   * removed or demoted.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec crowding_specs = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec getCrowdingSpecs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Crowding specifications for improving result diversity.
+   * If multiple CrowdingSpecs are specified, crowding will be evaluated on
+   * each unique combination of the `field` values, and max_count will be the
+   * maximum value of `max_count` across all CrowdingSpecs.
+   * For example, if the first CrowdingSpec has `field` = "color" and
+   * `max_count` = 3, and the second CrowdingSpec has `field` = "size" and
+   * `max_count` = 2, then after 3 documents that share the same color AND size
+   * have been returned, subsequent ones should be
+   * removed or demoted.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec crowding_specs = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCrowdingSpecsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Crowding specifications for improving result diversity.
+   * If multiple CrowdingSpecs are specified, crowding will be evaluated on
+   * each unique combination of the `field` values, and max_count will be the
+   * maximum value of `max_count` across all CrowdingSpecs.
+   * For example, if the first CrowdingSpec has `field` = "color" and
+   * `max_count` = 3, and the second CrowdingSpec has `field` = "size" and
+   * `max_count` = 2, then after 3 documents that share the same color AND size
+   * have been returned, subsequent ones should be
+   * removed or demoted.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec crowding_specs = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpecOrBuilder>
+      getCrowdingSpecsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Crowding specifications for improving result diversity.
+   * If multiple CrowdingSpecs are specified, crowding will be evaluated on
+   * each unique combination of the `field` values, and max_count will be the
+   * maximum value of `max_count` across all CrowdingSpecs.
+   * For example, if the first CrowdingSpec has `field` = "color" and
+   * `max_count` = 3, and the second CrowdingSpec has `field` = "size" and
+   * `max_count` = 2, then after 3 documents that share the same color AND size
+   * have been returned, subsequent ones should be
+   * removed or demoted.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpec crowding_specs = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.CrowdingSpecOrBuilder getCrowdingSpecsOrBuilder(
+      int index);
 
   /**
    *
@@ -1389,11 +1912,14 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The relevance threshold of the search results.
+   * The global relevance threshold of the search results.
    *
-   * Default to Google defined threshold, leveraging a balance of
+   * Defaults to Google defined threshold, leveraging a balance of
    * precision and recall to deliver both highly accurate results and
    * comprehensive coverage of relevant information.
+   *
+   * If more granular relevance filtering is required, use the
+   * `relevance_filter_spec` instead.
    *
    * This feature is not supported for healthcare search.
    * </pre>
@@ -1410,11 +1936,14 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The relevance threshold of the search results.
+   * The global relevance threshold of the search results.
    *
-   * Default to Google defined threshold, leveraging a balance of
+   * Defaults to Google defined threshold, leveraging a balance of
    * precision and recall to deliver both highly accurate results and
    * comprehensive coverage of relevant information.
+   *
+   * If more granular relevance filtering is required, use the
+   * `relevance_filter_spec` instead.
    *
    * This feature is not supported for healthcare search.
    * </pre>
@@ -1470,239 +1999,4 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpecOrBuilder
       getRelevanceScoreSpecOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The ranking expression controls the customized ranking on retrieval
-   * documents. This overrides
-   * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
-   * The syntax and supported features depend on the
-   * `ranking_expression_backend` value. If `ranking_expression_backend` is not
-   * provided, it defaults to `RANK_BY_EMBEDDING`.
-   *
-   * If
-   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
-   * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
-   * function or multiple functions that are joined by "+".
-   *
-   * * ranking_expression = function, { " + ", function };
-   *
-   * Supported functions:
-   *
-   * * double * relevance_score
-   * * double * dotProduct(embedding_field_path)
-   *
-   * Function variables:
-   *
-   * * `relevance_score`: pre-defined keywords, used for measure relevance
-   * between query and document.
-   * * `embedding_field_path`: the document embedding field
-   * used with query embedding vector.
-   * * `dotProduct`: embedding function between `embedding_field_path` and
-   * query embedding vector.
-   *
-   * Example ranking expression:
-   *
-   * If document has an embedding field doc_embedding, the ranking expression
-   * could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
-   *
-   * If
-   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
-   * is set to `RANK_BY_FORMULA`, the following expression types (and
-   * combinations of those chained using + or
-   * * operators) are supported:
-   *
-   * * `double`
-   * * `signal`
-   * * `log(signal)`
-   * * `exp(signal)`
-   * * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
-   * argument being a denominator constant.
-   * * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
-   * * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
-   * signal2 | double, else returns signal1.
-   *
-   * Here are a few examples of ranking formulas that use the supported
-   * ranking expression types:
-   *
-   * - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
-   * -- mostly rank by the logarithm of `keyword_similarity_score` with slight
-   * `semantic_smilarity_score` adjustment.
-   * - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
-   * is_nan(keyword_similarity_score)` -- rank by the exponent of
-   * `semantic_similarity_score` filling the value with 0 if it's NaN, also
-   * add constant 0.3 adjustment to the final score if
-   * `semantic_similarity_score` is NaN.
-   * - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
-   * rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
-   * of `keyword_similarity_score` with slight adjustment of reciprocal rank
-   * of `semantic_smilarity_score`.
-   *
-   * The following signals are supported:
-   *
-   * * `semantic_similarity_score`: semantic similarity adjustment that is
-   * calculated using the embeddings generated by a proprietary Google model.
-   * This score determines how semantically similar a search query is to a
-   * document.
-   * * `keyword_similarity_score`: keyword match adjustment uses the Best
-   * Match 25 (BM25) ranking function. This score is calculated using a
-   * probabilistic model to estimate the probability that a document is
-   * relevant to a given query.
-   * * `relevance_score`: semantic relevance adjustment that uses a
-   * proprietary Google model to determine the meaning and intent behind a
-   * user's query in context with the content in the documents.
-   * * `pctr_rank`: predicted conversion rate adjustment as a rank use
-   * predicted Click-through rate (pCTR) to gauge the relevance and
-   * attractiveness of a search result from a user's perspective. A higher
-   * pCTR suggests that the result is more likely to satisfy the user's query
-   * and intent, making it a valuable signal for ranking.
-   * * `freshness_rank`: freshness adjustment as a rank
-   * * `document_age`: The time in hours elapsed since the document was last
-   * updated, a floating-point number (e.g., 0.25 means 15 minutes).
-   * * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
-   * Google model to determine the keyword-based overlap between the query and
-   * the document.
-   * * `base_rank`: the default rank of the result
-   * </pre>
-   *
-   * <code>string ranking_expression = 26;</code>
-   *
-   * @return The rankingExpression.
-   */
-  java.lang.String getRankingExpression();
-
-  /**
-   *
-   *
-   * <pre>
-   * The ranking expression controls the customized ranking on retrieval
-   * documents. This overrides
-   * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
-   * The syntax and supported features depend on the
-   * `ranking_expression_backend` value. If `ranking_expression_backend` is not
-   * provided, it defaults to `RANK_BY_EMBEDDING`.
-   *
-   * If
-   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
-   * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
-   * function or multiple functions that are joined by "+".
-   *
-   * * ranking_expression = function, { " + ", function };
-   *
-   * Supported functions:
-   *
-   * * double * relevance_score
-   * * double * dotProduct(embedding_field_path)
-   *
-   * Function variables:
-   *
-   * * `relevance_score`: pre-defined keywords, used for measure relevance
-   * between query and document.
-   * * `embedding_field_path`: the document embedding field
-   * used with query embedding vector.
-   * * `dotProduct`: embedding function between `embedding_field_path` and
-   * query embedding vector.
-   *
-   * Example ranking expression:
-   *
-   * If document has an embedding field doc_embedding, the ranking expression
-   * could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
-   *
-   * If
-   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
-   * is set to `RANK_BY_FORMULA`, the following expression types (and
-   * combinations of those chained using + or
-   * * operators) are supported:
-   *
-   * * `double`
-   * * `signal`
-   * * `log(signal)`
-   * * `exp(signal)`
-   * * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
-   * argument being a denominator constant.
-   * * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
-   * * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
-   * signal2 | double, else returns signal1.
-   *
-   * Here are a few examples of ranking formulas that use the supported
-   * ranking expression types:
-   *
-   * - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
-   * -- mostly rank by the logarithm of `keyword_similarity_score` with slight
-   * `semantic_smilarity_score` adjustment.
-   * - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
-   * is_nan(keyword_similarity_score)` -- rank by the exponent of
-   * `semantic_similarity_score` filling the value with 0 if it's NaN, also
-   * add constant 0.3 adjustment to the final score if
-   * `semantic_similarity_score` is NaN.
-   * - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
-   * rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
-   * of `keyword_similarity_score` with slight adjustment of reciprocal rank
-   * of `semantic_smilarity_score`.
-   *
-   * The following signals are supported:
-   *
-   * * `semantic_similarity_score`: semantic similarity adjustment that is
-   * calculated using the embeddings generated by a proprietary Google model.
-   * This score determines how semantically similar a search query is to a
-   * document.
-   * * `keyword_similarity_score`: keyword match adjustment uses the Best
-   * Match 25 (BM25) ranking function. This score is calculated using a
-   * probabilistic model to estimate the probability that a document is
-   * relevant to a given query.
-   * * `relevance_score`: semantic relevance adjustment that uses a
-   * proprietary Google model to determine the meaning and intent behind a
-   * user's query in context with the content in the documents.
-   * * `pctr_rank`: predicted conversion rate adjustment as a rank use
-   * predicted Click-through rate (pCTR) to gauge the relevance and
-   * attractiveness of a search result from a user's perspective. A higher
-   * pCTR suggests that the result is more likely to satisfy the user's query
-   * and intent, making it a valuable signal for ranking.
-   * * `freshness_rank`: freshness adjustment as a rank
-   * * `document_age`: The time in hours elapsed since the document was last
-   * updated, a floating-point number (e.g., 0.25 means 15 minutes).
-   * * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
-   * Google model to determine the keyword-based overlap between the query and
-   * the document.
-   * * `base_rank`: the default rank of the result
-   * </pre>
-   *
-   * <code>string ranking_expression = 26;</code>
-   *
-   * @return The bytes for rankingExpression.
-   */
-  com.google.protobuf.ByteString getRankingExpressionBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The backend to use for the ranking expression evaluation.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for rankingExpressionBackend.
-   */
-  int getRankingExpressionBackendValue();
-
-  /**
-   *
-   *
-   * <pre>
-   * The backend to use for the ranking expression evaluation.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The rankingExpressionBackend.
-   */
-  com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend
-      getRankingExpressionBackend();
 }

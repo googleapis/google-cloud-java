@@ -26,9 +26,13 @@ import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowInvoc
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryFolderContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryTeamFolderContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryUserRootContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchTeamFoldersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -37,6 +41,8 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -45,11 +51,11 @@ import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -64,6 +70,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -113,6 +120,1038 @@ public class DataformClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  public void getTeamFolderTest() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+
+    TeamFolder actualResponse = client.getTeamFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTeamFolderRequest actualRequest = ((GetTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTeamFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      client.getTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTeamFolderTest2() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TeamFolder actualResponse = client.getTeamFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTeamFolderRequest actualRequest = ((GetTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTeamFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTeamFolderTest() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    TeamFolder teamFolder = TeamFolder.newBuilder().build();
+
+    TeamFolder actualResponse = client.createTeamFolder(parent, teamFolder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTeamFolderRequest actualRequest = ((CreateTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(teamFolder, actualRequest.getTeamFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createTeamFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      TeamFolder teamFolder = TeamFolder.newBuilder().build();
+      client.createTeamFolder(parent, teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTeamFolderTest2() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    TeamFolder teamFolder = TeamFolder.newBuilder().build();
+
+    TeamFolder actualResponse = client.createTeamFolder(parent, teamFolder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTeamFolderRequest actualRequest = ((CreateTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(teamFolder, actualRequest.getTeamFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createTeamFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      TeamFolder teamFolder = TeamFolder.newBuilder().build();
+      client.createTeamFolder(parent, teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateTeamFolderTest() throws Exception {
+    TeamFolder expectedResponse =
+        TeamFolder.newBuilder()
+            .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    TeamFolder teamFolder = TeamFolder.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    TeamFolder actualResponse = client.updateTeamFolder(teamFolder, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateTeamFolderRequest actualRequest = ((UpdateTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(teamFolder, actualRequest.getTeamFolder());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateTeamFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      TeamFolder teamFolder = TeamFolder.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTeamFolder(teamFolder, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+
+    client.deleteTeamFolder(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTeamFolderRequest actualRequest = ((DeleteTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTeamFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      client.deleteTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteTeamFolder(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTeamFolderRequest actualRequest = ((DeleteTeamFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTeamFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteTeamFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryTeamFolderContentsTest() throws Exception {
+    QueryTeamFolderContentsResponse.TeamFolderContentsEntry responsesElement =
+        QueryTeamFolderContentsResponse.TeamFolderContentsEntry.newBuilder().build();
+    QueryTeamFolderContentsResponse expectedResponse =
+        QueryTeamFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    TeamFolderName teamFolder = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+
+    QueryTeamFolderContentsPagedResponse pagedListResponse =
+        client.queryTeamFolderContents(teamFolder);
+
+    List<QueryTeamFolderContentsResponse.TeamFolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryTeamFolderContentsRequest actualRequest =
+        ((QueryTeamFolderContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(teamFolder.toString(), actualRequest.getTeamFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryTeamFolderContentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      TeamFolderName teamFolder = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      client.queryTeamFolderContents(teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryTeamFolderContentsTest2() throws Exception {
+    QueryTeamFolderContentsResponse.TeamFolderContentsEntry responsesElement =
+        QueryTeamFolderContentsResponse.TeamFolderContentsEntry.newBuilder().build();
+    QueryTeamFolderContentsResponse expectedResponse =
+        QueryTeamFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String teamFolder = "teamFolder-1872604885";
+
+    QueryTeamFolderContentsPagedResponse pagedListResponse =
+        client.queryTeamFolderContents(teamFolder);
+
+    List<QueryTeamFolderContentsResponse.TeamFolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryTeamFolderContentsRequest actualRequest =
+        ((QueryTeamFolderContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(teamFolder, actualRequest.getTeamFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryTeamFolderContentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String teamFolder = "teamFolder-1872604885";
+      client.queryTeamFolderContents(teamFolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchTeamFoldersTest() throws Exception {
+    SearchTeamFoldersResponse.TeamFolderSearchResult responsesElement =
+        SearchTeamFoldersResponse.TeamFolderSearchResult.newBuilder().build();
+    SearchTeamFoldersResponse expectedResponse =
+        SearchTeamFoldersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    SearchTeamFoldersRequest request =
+        SearchTeamFoldersRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setOrderBy("orderBy-1207110587")
+            .setFilter("filter-1274492040")
+            .build();
+
+    SearchTeamFoldersPagedResponse pagedListResponse = client.searchTeamFolders(request);
+
+    List<SearchTeamFoldersResponse.TeamFolderSearchResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchTeamFoldersRequest actualRequest = ((SearchTeamFoldersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchTeamFoldersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      SearchTeamFoldersRequest request =
+          SearchTeamFoldersRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
+              .build();
+      client.searchTeamFolders(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    Folder actualResponse = client.getFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFolderRequest actualRequest = ((GetFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.getFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Folder actualResponse = client.getFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFolderRequest actualRequest = ((GetFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Folder folder = Folder.newBuilder().build();
+
+    Folder actualResponse = client.createFolder(parent, folder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFolderRequest actualRequest = ((CreateFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(folder, actualRequest.getFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Folder folder = Folder.newBuilder().build();
+      client.createFolder(parent, folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Folder folder = Folder.newBuilder().build();
+
+    Folder actualResponse = client.createFolder(parent, folder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFolderRequest actualRequest = ((CreateFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(folder, actualRequest.getFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Folder folder = Folder.newBuilder().build();
+      client.createFolder(parent, folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setCreatorIamPrincipal("creatorIamPrincipal-451331163")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    Folder folder = Folder.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Folder actualResponse = client.updateFolder(folder, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFolderRequest actualRequest = ((UpdateFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(folder, actualRequest.getFolder());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      Folder folder = Folder.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFolder(folder, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    client.deleteFolder(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFolderRequest actualRequest = ((DeleteFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.deleteFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFolder(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFolderRequest actualRequest = ((DeleteFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryFolderContentsTest() throws Exception {
+    QueryFolderContentsResponse.FolderContentsEntry responsesElement =
+        QueryFolderContentsResponse.FolderContentsEntry.newBuilder().build();
+    QueryFolderContentsResponse expectedResponse =
+        QueryFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    FolderName folder = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    QueryFolderContentsPagedResponse pagedListResponse = client.queryFolderContents(folder);
+
+    List<QueryFolderContentsResponse.FolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryFolderContentsRequest actualRequest = ((QueryFolderContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(folder.toString(), actualRequest.getFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryFolderContentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FolderName folder = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.queryFolderContents(folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryFolderContentsTest2() throws Exception {
+    QueryFolderContentsResponse.FolderContentsEntry responsesElement =
+        QueryFolderContentsResponse.FolderContentsEntry.newBuilder().build();
+    QueryFolderContentsResponse expectedResponse =
+        QueryFolderContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String folder = "folder-1268966290";
+
+    QueryFolderContentsPagedResponse pagedListResponse = client.queryFolderContents(folder);
+
+    List<QueryFolderContentsResponse.FolderContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryFolderContentsRequest actualRequest = ((QueryFolderContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(folder, actualRequest.getFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryFolderContentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String folder = "folder-1268966290";
+      client.queryFolderContents(folder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryUserRootContentsTest() throws Exception {
+    QueryUserRootContentsResponse.RootContentsEntry responsesElement =
+        QueryUserRootContentsResponse.RootContentsEntry.newBuilder().build();
+    QueryUserRootContentsResponse expectedResponse =
+        QueryUserRootContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    QueryUserRootContentsPagedResponse pagedListResponse = client.queryUserRootContents(location);
+
+    List<QueryUserRootContentsResponse.RootContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryUserRootContentsRequest actualRequest =
+        ((QueryUserRootContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location.toString(), actualRequest.getLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryUserRootContentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.queryUserRootContents(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryUserRootContentsTest2() throws Exception {
+    QueryUserRootContentsResponse.RootContentsEntry responsesElement =
+        QueryUserRootContentsResponse.RootContentsEntry.newBuilder().build();
+    QueryUserRootContentsResponse expectedResponse =
+        QueryUserRootContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String location = "location1901043637";
+
+    QueryUserRootContentsPagedResponse pagedListResponse = client.queryUserRootContents(location);
+
+    List<QueryUserRootContentsResponse.RootContentsEntry> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryUserRootContentsRequest actualRequest =
+        ((QueryUserRootContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location, actualRequest.getLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryUserRootContentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String location = "location1901043637";
+      client.queryUserRootContents(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveFolderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveFolderAsync(name, destinationContainingFolder).get();
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveFolderRequest actualRequest = ((MoveFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(
+        destinationContainingFolder, actualRequest.getDestinationContainingFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveFolderAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void moveFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveFolderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveFolderAsync(name, destinationContainingFolder).get();
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveFolderRequest actualRequest = ((MoveFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(
+        destinationContainingFolder, actualRequest.getDestinationContainingFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveFolderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveFolderAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
   }
 
   @Test
@@ -208,6 +1247,8 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
@@ -259,6 +1300,8 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
@@ -310,6 +1353,8 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
@@ -367,6 +1412,8 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
@@ -424,6 +1471,8 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setContainingFolder("containingFolder2132392092")
+            .setTeamFolderName("teamFolderName122991190")
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
@@ -538,6 +1587,98 @@ public class DataformClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveRepositoryTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveRepositoryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveRepositoryAsync(name, destinationContainingFolder).get();
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveRepositoryRequest actualRequest = ((MoveRepositoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(
+        destinationContainingFolder, actualRequest.getDestinationContainingFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveRepositoryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveRepositoryAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void moveRepositoryTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveRepositoryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String destinationContainingFolder = "destinationContainingFolder870737098";
+
+    client.moveRepositoryAsync(name, destinationContainingFolder).get();
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveRepositoryRequest actualRequest = ((MoveRepositoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(
+        destinationContainingFolder, actualRequest.getDestinationContainingFolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveRepositoryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String destinationContainingFolder = "destinationContainingFolder870737098";
+      client.moveRepositoryAsync(name, destinationContainingFolder).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -949,6 +2090,8 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -993,6 +2136,8 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -1036,6 +2181,8 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -1085,6 +2232,8 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2615,6 +3764,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2667,6 +3817,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2716,6 +3867,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2768,6 +3920,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3426,6 +4579,7 @@ public class DataformClientTest {
                     .toString())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3480,6 +4634,7 @@ public class DataformClientTest {
                     .toString())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3530,6 +4685,7 @@ public class DataformClientTest {
                     .toString())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3583,6 +4739,7 @@ public class DataformClientTest {
                     .toString())
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3814,6 +4971,7 @@ public class DataformClientTest {
         Config.newBuilder()
             .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3853,6 +5011,7 @@ public class DataformClientTest {
         Config.newBuilder()
             .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3892,6 +5051,7 @@ public class DataformClientTest {
         Config.newBuilder()
             .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3922,6 +5082,186 @@ public class DataformClientTest {
       Config config = Config.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateConfig(config, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    ResourceName resource = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource.toString(), actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ResourceName resource = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String resource = "resource-341064690";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String resource = "resource-341064690";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockDataform.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -4023,154 +5363,6 @@ public class DataformClientTest {
     try {
       GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
       client.getLocation(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void setIamPolicyTest() throws Exception {
-    Policy expectedResponse =
-        Policy.newBuilder()
-            .setVersion(351608024)
-            .addAllBindings(new ArrayList<Binding>())
-            .addAllAuditConfigs(new ArrayList<AuditConfig>())
-            .setEtag(ByteString.EMPTY)
-            .build();
-    mockIAMPolicy.addResponse(expectedResponse);
-
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-            .setPolicy(Policy.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
-
-    Policy actualResponse = client.setIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
-
-    try {
-      SetIamPolicyRequest request =
-          SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-              .setPolicy(Policy.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.setIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getIamPolicyTest() throws Exception {
-    Policy expectedResponse =
-        Policy.newBuilder()
-            .setVersion(351608024)
-            .addAllBindings(new ArrayList<Binding>())
-            .addAllAuditConfigs(new ArrayList<AuditConfig>())
-            .setEtag(ByteString.EMPTY)
-            .build();
-    mockIAMPolicy.addResponse(expectedResponse);
-
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-            .setOptions(GetPolicyOptions.newBuilder().build())
-            .build();
-
-    Policy actualResponse = client.getIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
-
-    try {
-      GetIamPolicyRequest request =
-          GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-              .setOptions(GetPolicyOptions.newBuilder().build())
-              .build();
-      client.getIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void testIamPermissionsTest() throws Exception {
-    TestIamPermissionsResponse expectedResponse =
-        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
-    mockIAMPolicy.addResponse(expectedResponse);
-
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-            .addAllPermissions(new ArrayList<String>())
-            .build();
-
-    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
-
-    try {
-      TestIamPermissionsRequest request =
-          TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-              .addAllPermissions(new ArrayList<String>())
-              .build();
-      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

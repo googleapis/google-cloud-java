@@ -57,6 +57,7 @@ import javax.annotation.Generated;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
  *                   .toString())
  *           .setQuery("query107944136")
+ *           .addAllPageCategories(new ArrayList<String>())
  *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
@@ -75,17 +76,20 @@ import javax.annotation.Generated;
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setUserPseudoId("userPseudoId-1155274652")
  *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+ *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setNaturalLanguageQueryUnderstandingSpec(
+ *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
  *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
  *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+ *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
  *           .setSession(
  *               SessionName.ofProjectLocationDataStoreSessionName(
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
- *           .setRankingExpression("rankingExpression2110320494")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -264,6 +268,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -282,17 +287,20 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
    *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
-   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -331,6 +339,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -349,17 +358,20 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
    *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
-   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -398,6 +410,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -416,17 +429,20 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
    *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
-   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
@@ -481,6 +497,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -499,17 +516,20 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
    *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
-   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   for (SearchResponse.SearchResult element :
    *       searchServiceClient.searchLite(request).iterateAll()) {
@@ -559,6 +579,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -577,17 +598,20 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
    *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
-   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchLitePagedCallable().futureCall(request);
@@ -636,6 +660,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -654,17 +679,20 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
    *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
-   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchLiteCallable().call(request);

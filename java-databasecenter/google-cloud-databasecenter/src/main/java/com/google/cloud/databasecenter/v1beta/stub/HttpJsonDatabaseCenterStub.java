@@ -18,6 +18,7 @@ package com.google.cloud.databasecenter.v1beta.stub;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -38,6 +39,8 @@ import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -215,6 +218,42 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<QueryIssuesRequest, QueryIssuesResponse>
+      queryIssuesMethodDescriptor =
+          ApiMethodDescriptor.<QueryIssuesRequest, QueryIssuesResponse>newBuilder()
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/QueryIssues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryIssuesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:queryIssues",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryIssuesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryIssuesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryIssuesResponse>newBuilder()
+                      .setDefaultInstance(QueryIssuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
   private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable;
@@ -229,6 +268,9 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
       queryDatabaseResourceGroupsPagedCallable;
   private final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable;
+  private final UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable;
+  private final UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse>
+      queryIssuesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -299,6 +341,11 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                 .setMethodDescriptor(aggregateIssueStatsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<QueryIssuesRequest, QueryIssuesResponse> queryIssuesTransportSettings =
+        HttpJsonCallSettings.<QueryIssuesRequest, QueryIssuesResponse>newBuilder()
+            .setMethodDescriptor(queryIssuesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.queryProductsCallable =
         callableFactory.createUnaryCallable(
@@ -327,6 +374,12 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
             aggregateIssueStatsTransportSettings,
             settings.aggregateIssueStatsSettings(),
             clientContext);
+    this.queryIssuesCallable =
+        callableFactory.createUnaryCallable(
+            queryIssuesTransportSettings, settings.queryIssuesSettings(), clientContext);
+    this.queryIssuesPagedCallable =
+        callableFactory.createPagedCallable(
+            queryIssuesTransportSettings, settings.queryIssuesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -339,6 +392,7 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
     methodDescriptors.add(aggregateFleetMethodDescriptor);
     methodDescriptors.add(queryDatabaseResourceGroupsMethodDescriptor);
     methodDescriptors.add(aggregateIssueStatsMethodDescriptor);
+    methodDescriptors.add(queryIssuesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -380,6 +434,16 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable() {
     return aggregateIssueStatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable() {
+    return queryIssuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse> queryIssuesPagedCallable() {
+    return queryIssuesPagedCallable;
   }
 
   @Override

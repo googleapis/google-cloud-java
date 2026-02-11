@@ -318,6 +318,106 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DISABLE_MOVES_FIELD_NUMBER = 6;
+  private boolean disableMoves_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, workspaces will not be moved if its linked
+   * Repository is moved. Instead, it will be deleted.
+   * </pre>
+   *
+   * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the disableMoves field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableMoves() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, workspaces will not be moved if its linked
+   * Repository is moved. Instead, it will be deleted.
+   * </pre>
+   *
+   * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableMoves.
+   */
+  @java.lang.Override
+  public boolean getDisableMoves() {
+    return disableMoves_;
+  }
+
+  public static final int PRIVATE_RESOURCE_METADATA_FIELD_NUMBER = 8;
+  private com.google.cloud.dataform.v1beta1.PrivateResourceMetadata privateResourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped. For
+   * `Workspace` resources, the `user_scoped` field is always `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateResourceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateResourceMetadata() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped. For
+   * `Workspace` resources, the `user_scoped` field is always `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateResourceMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata() {
+    return privateResourceMetadata_ == null
+        ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+        : privateResourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped. For
+   * `Workspace` resources, the `user_scoped` field is always `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+      getPrivateResourceMetadataOrBuilder() {
+    return privateResourceMetadata_ == null
+        ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+        : privateResourceMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -344,6 +444,12 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, internalMetadata_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(6, disableMoves_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(8, getPrivateResourceMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -364,6 +470,13 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, internalMetadata_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, disableMoves_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPrivateResourceMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -394,6 +507,14 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     if (hasInternalMetadata()) {
       if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
     }
+    if (hasDisableMoves() != other.hasDisableMoves()) return false;
+    if (hasDisableMoves()) {
+      if (getDisableMoves() != other.getDisableMoves()) return false;
+    }
+    if (hasPrivateResourceMetadata() != other.hasPrivateResourceMetadata()) return false;
+    if (hasPrivateResourceMetadata()) {
+      if (!getPrivateResourceMetadata().equals(other.getPrivateResourceMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -418,6 +539,14 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     if (hasInternalMetadata()) {
       hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
+    if (hasDisableMoves()) {
+      hash = (37 * hash) + DISABLE_MOVES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableMoves());
+    }
+    if (hasPrivateResourceMetadata()) {
+      hash = (37 * hash) + PRIVATE_RESOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateResourceMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -562,6 +691,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetDataEncryptionStateFieldBuilder();
+        internalGetPrivateResourceMetadataFieldBuilder();
       }
     }
 
@@ -581,6 +711,12 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         dataEncryptionStateBuilder_ = null;
       }
       internalMetadata_ = "";
+      disableMoves_ = false;
+      privateResourceMetadata_ = null;
+      if (privateResourceMetadataBuilder_ != null) {
+        privateResourceMetadataBuilder_.dispose();
+        privateResourceMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -636,6 +772,17 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         result.internalMetadata_ = internalMetadata_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.disableMoves_ = disableMoves_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.privateResourceMetadata_ =
+            privateResourceMetadataBuilder_ == null
+                ? privateResourceMetadata_
+                : privateResourceMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -666,6 +813,12 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         internalMetadata_ = other.internalMetadata_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasDisableMoves()) {
+        setDisableMoves(other.getDisableMoves());
+      }
+      if (other.hasPrivateResourceMetadata()) {
+        mergePrivateResourceMetadata(other.getPrivateResourceMetadata());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -719,6 +872,20 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 48:
+              {
+                disableMoves_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+            case 66:
+              {
+                input.readMessage(
+                    internalGetPrivateResourceMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1430,6 +1597,309 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private boolean disableMoves_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, workspaces will not be moved if its linked
+     * Repository is moved. Instead, it will be deleted.
+     * </pre>
+     *
+     * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the disableMoves field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisableMoves() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, workspaces will not be moved if its linked
+     * Repository is moved. Instead, it will be deleted.
+     * </pre>
+     *
+     * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableMoves.
+     */
+    @java.lang.Override
+    public boolean getDisableMoves() {
+      return disableMoves_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, workspaces will not be moved if its linked
+     * Repository is moved. Instead, it will be deleted.
+     * </pre>
+     *
+     * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disableMoves to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableMoves(boolean value) {
+
+      disableMoves_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, workspaces will not be moved if its linked
+     * Repository is moved. Instead, it will be deleted.
+     * </pre>
+     *
+     * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableMoves() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      disableMoves_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataform.v1beta1.PrivateResourceMetadata privateResourceMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder>
+        privateResourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the privateResourceMetadata field is set.
+     */
+    public boolean hasPrivateResourceMetadata() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The privateResourceMetadata.
+     */
+    public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata() {
+      if (privateResourceMetadataBuilder_ == null) {
+        return privateResourceMetadata_ == null
+            ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+            : privateResourceMetadata_;
+      } else {
+        return privateResourceMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPrivateResourceMetadata(
+        com.google.cloud.dataform.v1beta1.PrivateResourceMetadata value) {
+      if (privateResourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateResourceMetadata_ = value;
+      } else {
+        privateResourceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPrivateResourceMetadata(
+        com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder builderForValue) {
+      if (privateResourceMetadataBuilder_ == null) {
+        privateResourceMetadata_ = builderForValue.build();
+      } else {
+        privateResourceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePrivateResourceMetadata(
+        com.google.cloud.dataform.v1beta1.PrivateResourceMetadata value) {
+      if (privateResourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && privateResourceMetadata_ != null
+            && privateResourceMetadata_
+                != com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()) {
+          getPrivateResourceMetadataBuilder().mergeFrom(value);
+        } else {
+          privateResourceMetadata_ = value;
+        }
+      } else {
+        privateResourceMetadataBuilder_.mergeFrom(value);
+      }
+      if (privateResourceMetadata_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPrivateResourceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      privateResourceMetadata_ = null;
+      if (privateResourceMetadataBuilder_ != null) {
+        privateResourceMetadataBuilder_.dispose();
+        privateResourceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder
+        getPrivateResourceMetadataBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetPrivateResourceMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+        getPrivateResourceMetadataOrBuilder() {
+      if (privateResourceMetadataBuilder_ != null) {
+        return privateResourceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return privateResourceMetadata_ == null
+            ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+            : privateResourceMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped. For
+     * `Workspace` resources, the `user_scoped` field is always `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder>
+        internalGetPrivateResourceMetadataFieldBuilder() {
+      if (privateResourceMetadataBuilder_ == null) {
+        privateResourceMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
+                com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder,
+                com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder>(
+                getPrivateResourceMetadata(), getParentForChildren(), isClean());
+        privateResourceMetadata_ = null;
+      }
+      return privateResourceMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.Workspace)
