@@ -400,6 +400,30 @@ libraries:
   release_level: stable
   GAPICs:
   - proto_path: google/cloud/bigquery/reservation/v1
+- api_shortname: bigquerystorage
+  name_pretty: BigQuery Storage
+  product_documentation: https://cloud.google.com/bigquery/docs/reference/storage/
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/history
+  api_description: is an API for reading data stored in BigQuery. This API provides
+    direct, high-throughput read access to existing BigQuery tables, supports parallel
+    access with automatic liquid sharding, and allows fine-grained control over what
+    data is returned.
+  issue_tracker: https://issuetracker.google.com/savedsearches/559654
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-bigquerystorage
+  codeowner_team: '@googleapis/api-bigquery'
+  api_id: bigquerystorage.googleapis.com
+  transport: grpc
+  requires_billing: true
+  library_type: GAPIC_COMBO
+  recommended_package: com.google.cloud.bigquery.storage.v1
+  GAPICs:
+  - proto_path: google/cloud/bigquery/storage/v1
+  - proto_path: google/cloud/bigquery/storage/v1alpha
+  - proto_path: google/cloud/bigquery/storage/v1beta1
+  - proto_path: google/cloud/bigquery/storage/v1beta2
+  - proto_path: google/cloud/bigquery/storage/v1beta
 - api_shortname: cloudbilling
   name_pretty: Cloud Billing
   product_documentation: https://cloud.google.com/billing/docs
