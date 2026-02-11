@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides natural language translation operations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/translate/v3/translation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TranslationServiceGrpc {
 
@@ -3128,8 +3125,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.TranslateTextResponse translateText(
-        com.google.cloud.translate.v3.TranslateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.TranslateTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTranslateTextMethod(), getCallOptions(), request);
     }
 
@@ -3141,8 +3138,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.RomanizeTextResponse romanizeText(
-        com.google.cloud.translate.v3.RomanizeTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.RomanizeTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRomanizeTextMethod(), getCallOptions(), request);
     }
 
@@ -3154,8 +3151,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.DetectLanguageResponse detectLanguage(
-        com.google.cloud.translate.v3.DetectLanguageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DetectLanguageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetectLanguageMethod(), getCallOptions(), request);
     }
 
@@ -3167,8 +3165,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.SupportedLanguages getSupportedLanguages(
-        com.google.cloud.translate.v3.GetSupportedLanguagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetSupportedLanguagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSupportedLanguagesMethod(), getCallOptions(), request);
     }
 
@@ -3180,8 +3179,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.TranslateDocumentResponse translateDocument(
-        com.google.cloud.translate.v3.TranslateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.TranslateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTranslateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -3198,8 +3198,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchTranslateText(
-        com.google.cloud.translate.v3.BatchTranslateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.BatchTranslateTextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchTranslateTextMethod(), getCallOptions(), request);
     }
 
@@ -3216,8 +3217,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchTranslateDocument(
-        com.google.cloud.translate.v3.BatchTranslateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.BatchTranslateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchTranslateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -3230,8 +3232,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGlossary(
-        com.google.cloud.translate.v3.CreateGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.CreateGlossaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -3244,8 +3247,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGlossary(
-        com.google.cloud.translate.v3.UpdateGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.UpdateGlossaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -3258,8 +3262,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListGlossariesResponse listGlossaries(
-        com.google.cloud.translate.v3.ListGlossariesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListGlossariesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGlossariesMethod(), getCallOptions(), request);
     }
 
@@ -3272,8 +3277,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.Glossary getGlossary(
-        com.google.cloud.translate.v3.GetGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetGlossaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -3287,8 +3292,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGlossary(
-        com.google.cloud.translate.v3.DeleteGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DeleteGlossaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -3300,8 +3306,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.GlossaryEntry getGlossaryEntry(
-        com.google.cloud.translate.v3.GetGlossaryEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetGlossaryEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGlossaryEntryMethod(), getCallOptions(), request);
     }
 
@@ -3313,8 +3320,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListGlossaryEntriesResponse listGlossaryEntries(
-        com.google.cloud.translate.v3.ListGlossaryEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListGlossaryEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGlossaryEntriesMethod(), getCallOptions(), request);
     }
 
@@ -3326,8 +3334,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.GlossaryEntry createGlossaryEntry(
-        com.google.cloud.translate.v3.CreateGlossaryEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.CreateGlossaryEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGlossaryEntryMethod(), getCallOptions(), request);
     }
 
@@ -3339,8 +3348,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.GlossaryEntry updateGlossaryEntry(
-        com.google.cloud.translate.v3.UpdateGlossaryEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.UpdateGlossaryEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGlossaryEntryMethod(), getCallOptions(), request);
     }
 
@@ -3352,8 +3362,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGlossaryEntry(
-        com.google.cloud.translate.v3.DeleteGlossaryEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DeleteGlossaryEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGlossaryEntryMethod(), getCallOptions(), request);
     }
 
@@ -3365,8 +3376,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataset(
-        com.google.cloud.translate.v3.CreateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.CreateDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3378,8 +3389,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.Dataset getDataset(
-        com.google.cloud.translate.v3.GetDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3391,8 +3402,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListDatasetsResponse listDatasets(
-        com.google.cloud.translate.v3.ListDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListDatasetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -3404,8 +3415,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataset(
-        com.google.cloud.translate.v3.DeleteDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DeleteDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3417,8 +3428,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.AdaptiveMtDataset createAdaptiveMtDataset(
-        com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAdaptiveMtDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3431,8 +3443,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAdaptiveMtDataset(
-        com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAdaptiveMtDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3444,8 +3457,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.AdaptiveMtDataset getAdaptiveMtDataset(
-        com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAdaptiveMtDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3457,8 +3471,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse listAdaptiveMtDatasets(
-        com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAdaptiveMtDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -3470,8 +3485,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.AdaptiveMtTranslateResponse adaptiveMtTranslate(
-        com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAdaptiveMtTranslateMethod(), getCallOptions(), request);
     }
 
@@ -3483,8 +3499,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.AdaptiveMtFile getAdaptiveMtFile(
-        com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAdaptiveMtFileMethod(), getCallOptions(), request);
     }
 
@@ -3496,8 +3513,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAdaptiveMtFile(
-        com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAdaptiveMtFileMethod(), getCallOptions(), request);
     }
 
@@ -3510,8 +3528,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse importAdaptiveMtFile(
-        com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportAdaptiveMtFileMethod(), getCallOptions(), request);
     }
 
@@ -3523,8 +3542,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse listAdaptiveMtFiles(
-        com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAdaptiveMtFilesMethod(), getCallOptions(), request);
     }
 
@@ -3536,8 +3556,9 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse listAdaptiveMtSentences(
-        com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAdaptiveMtSentencesMethod(), getCallOptions(), request);
     }
 
@@ -3549,8 +3570,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importData(
-        com.google.cloud.translate.v3.ImportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ImportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
@@ -3562,8 +3583,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportData(
-        com.google.cloud.translate.v3.ExportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ExportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
 
@@ -3575,8 +3596,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListExamplesResponse listExamples(
-        com.google.cloud.translate.v3.ListExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListExamplesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExamplesMethod(), getCallOptions(), request);
     }
 
@@ -3588,8 +3609,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createModel(
-        com.google.cloud.translate.v3.CreateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.CreateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelMethod(), getCallOptions(), request);
     }
 
@@ -3601,8 +3622,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.ListModelsResponse listModels(
-        com.google.cloud.translate.v3.ListModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.ListModelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
@@ -3614,8 +3635,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.translate.v3.Model getModel(
-        com.google.cloud.translate.v3.GetModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.GetModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
@@ -3627,8 +3648,8 @@ public final class TranslationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModel(
-        com.google.cloud.translate.v3.DeleteModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.translate.v3.DeleteModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
   }

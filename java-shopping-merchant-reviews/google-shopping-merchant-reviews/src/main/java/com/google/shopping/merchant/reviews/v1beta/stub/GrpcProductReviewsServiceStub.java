@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProductReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductReview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductReviewsRequest, ListProductReviewsResponse>
@@ -70,6 +71,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
                   ProtoUtils.marshaller(ListProductReviewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductReviewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertProductReviewRequest, ProductReview>
@@ -81,6 +83,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertProductReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductReview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductReviewRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProductReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProductReviewRequest, ProductReview> getProductReviewCallable;

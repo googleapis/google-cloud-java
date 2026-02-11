@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,8 +97,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -288,6 +288,11 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).listModelEvaluationSlicesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to recommendSpec. */
+  public UnaryCallSettings<RecommendSpecRequest, RecommendSpecResponse> recommendSpecSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).recommendSpecSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -573,6 +578,12 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings() {
       return getStubSettingsBuilder().listModelEvaluationSlicesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to recommendSpec. */
+    public UnaryCallSettings.Builder<RecommendSpecRequest, RecommendSpecResponse>
+        recommendSpecSettings() {
+      return getStubSettingsBuilder().recommendSpecSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

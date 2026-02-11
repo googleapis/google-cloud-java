@@ -1,5 +1,148 @@
 # Changelog
 
+## 2.84.0 (2026-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+## 2.83.0 (2026-01-15)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+## 2.82.0 (2025-12-16)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
+## 2.79.0 (2025-10-21)
+
+### Features
+
+* add `relax_safety_filters` proto field for Gemini TTS ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+* add `relax_safety_filters` proto field for Gemini TTS ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#11776](https://github.com/googleapis/google-cloud-java/issues/11776)) ([e4a2892](https://github.com/googleapis/google-cloud-java/commit/e4a2892c8f7d51e3c3bec551f922b42f70a880d8))
+
+
+## 2.78.0 (2025-10-13)
+
+* No change
+
+
+## 2.77.0 (2025-10-07)
+
+### Features
+
+* add Gemini TTS Multispeaker API fields ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.3 ([#11755](https://github.com/googleapis/google-cloud-java/issues/11755)) ([b117bc3](https://github.com/googleapis/google-cloud-java/commit/b117bc3d8d04ccc3c1f5586b73e1718ff46b23e6))
+
+
+## 2.76.0 (2025-09-22)
+
+### Features
+
+* add Gemini TTS Multispeaker API fields ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.2 ([#11747](https://github.com/googleapis/google-cloud-java/issues/11747)) ([deb0ed9](https://github.com/googleapis/google-cloud-java/commit/deb0ed92d7c3279e0e26ba8b22463cb77131fa10))
+
+
+## 2.75.0 (2025-09-11)
+
+### Features
+
+* Add prompt to SynthesisInput ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* Add string value prompt to SynthesisInput ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* Support promptable voices by specifying a model name and a prompt ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* Support promptable voices by specifying a model name and a prompt ([cea98dc](https://github.com/googleapis/google-cloud-java/commit/cea98dc249c7932bb176d31da2a4b13af0567049))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#11738](https://github.com/googleapis/google-cloud-java/issues/11738)) ([b17cf6d](https://github.com/googleapis/google-cloud-java/commit/b17cf6de63b9cabcd44b6fc21b57c187b321ae8f))
+
+
+## 2.74.0 (2025-08-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+## 2.73.0 (2025-08-13)
+
+* No change
+
+
+## 2.72.0 (2025-08-08)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
+## 2.71.0 (2025-07-30)
+
+* No change
+
+
+## 2.70.0 (2025-07-28)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
+## 2.69.0 (2025-07-11)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+## 2.68.0 (2025-06-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+## 2.66.0 (2025-06-16)
+
+* No change
+
+
+## 2.65.0 (2025-06-04)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.49.0 ([#11603](https://github.com/googleapis/google-cloud-java/issues/11603)) ([3ea506d](https://github.com/googleapis/google-cloud-java/commit/3ea506d86a54fae209e9971af7b4a8aa1f5997b9))
+
+
+## 2.63.0 (2025-05-06)
+
+### Features
+
+* Support markup input for Cloud TTS Chirp 3: HD voice synthesis ([e811d3f](https://github.com/googleapis/google-cloud-java/commit/e811d3f1ccd592fe1cc1844761249aeb827742a4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#11531](https://github.com/googleapis/google-cloud-java/issues/11531)) ([5f9a9e7](https://github.com/googleapis/google-cloud-java/commit/5f9a9e73df5e44ae38a8d18780873b7896d31c04))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#11561](https://github.com/googleapis/google-cloud-java/issues/11561)) ([9e84230](https://github.com/googleapis/google-cloud-java/commit/9e842300aa2e3e654785cc929aef0d6bb9a1a0a9))
+
+
 ## 2.60.0 (2025-02-26)
 
 ### Dependencies

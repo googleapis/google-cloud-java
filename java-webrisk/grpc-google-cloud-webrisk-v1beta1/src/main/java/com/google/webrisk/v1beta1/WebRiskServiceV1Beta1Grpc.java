@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * website and in client applications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/webrisk/v1beta1/webrisk.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WebRiskServiceV1Beta1Grpc {
 
@@ -412,8 +409,9 @@ public final class WebRiskServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.webrisk.v1beta1.ComputeThreatListDiffResponse computeThreatListDiff(
-        com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeThreatListDiffMethod(), getCallOptions(), request);
     }
 
@@ -425,8 +423,8 @@ public final class WebRiskServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.webrisk.v1beta1.SearchUrisResponse searchUris(
-        com.google.webrisk.v1beta1.SearchUrisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.webrisk.v1beta1.SearchUrisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchUrisMethod(), getCallOptions(), request);
     }
 
@@ -442,8 +440,8 @@ public final class WebRiskServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.webrisk.v1beta1.SearchHashesResponse searchHashes(
-        com.google.webrisk.v1beta1.SearchHashesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.webrisk.v1beta1.SearchHashesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchHashesMethod(), getCallOptions(), request);
     }
   }

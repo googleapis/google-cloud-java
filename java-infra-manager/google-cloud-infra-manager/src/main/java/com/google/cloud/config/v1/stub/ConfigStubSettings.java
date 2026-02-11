@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.config.v1.stub;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -53,6 +55,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.config.v1.AutoMigrationConfig;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
@@ -64,8 +67,11 @@ import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
+import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
+import com.google.cloud.config.v1.GetResourceChangeRequest;
+import com.google.cloud.config.v1.GetResourceDriftRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
@@ -74,6 +80,10 @@ import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
 import com.google.cloud.config.v1.ListPreviewsResponse;
+import com.google.cloud.config.v1.ListResourceChangesRequest;
+import com.google.cloud.config.v1.ListResourceChangesResponse;
+import com.google.cloud.config.v1.ListResourceDriftsRequest;
+import com.google.cloud.config.v1.ListResourceDriftsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -85,10 +95,13 @@ import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
+import com.google.cloud.config.v1.ResourceChange;
+import com.google.cloud.config.v1.ResourceDrift;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
+import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -156,8 +169,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -243,6 +256,22 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       listTerraformVersionsSettings;
   private final UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
       getTerraformVersionSettings;
+  private final PagedCallSettings<
+          ListResourceChangesRequest, ListResourceChangesResponse, ListResourceChangesPagedResponse>
+      listResourceChangesSettings;
+  private final UnaryCallSettings<GetResourceChangeRequest, ResourceChange>
+      getResourceChangeSettings;
+  private final PagedCallSettings<
+          ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+      listResourceDriftsSettings;
+  private final UnaryCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftSettings;
+  private final UnaryCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigSettings;
+  private final UnaryCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigSettings;
+  private final OperationCallSettings<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -430,6 +459,82 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+      LIST_RESOURCE_CHANGES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListResourceChangesRequest injectToken(
+                ListResourceChangesRequest payload, String token) {
+              return ListResourceChangesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListResourceChangesRequest injectPageSize(
+                ListResourceChangesRequest payload, int pageSize) {
+              return ListResourceChangesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListResourceChangesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListResourceChangesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ResourceChange> extractResources(ListResourceChangesResponse payload) {
+              return payload.getResourceChangesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift>
+      LIST_RESOURCE_DRIFTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListResourceDriftsRequest injectToken(
+                ListResourceDriftsRequest payload, String token) {
+              return ListResourceDriftsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListResourceDriftsRequest injectPageSize(
+                ListResourceDriftsRequest payload, int pageSize) {
+              return ListResourceDriftsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListResourceDriftsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListResourceDriftsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ResourceDrift> extractResources(ListResourceDriftsResponse payload) {
+              return payload.getResourceDriftsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -553,6 +658,48 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
                       PageContext.create(
                           callable, LIST_TERRAFORM_VERSIONS_PAGE_STR_DESC, request, context);
               return ListTerraformVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListResourceChangesRequest, ListResourceChangesResponse, ListResourceChangesPagedResponse>
+      LIST_RESOURCE_CHANGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListResourceChangesRequest,
+              ListResourceChangesResponse,
+              ListResourceChangesPagedResponse>() {
+            @Override
+            public ApiFuture<ListResourceChangesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse> callable,
+                ListResourceChangesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListResourceChangesResponse> futureResponse) {
+              PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESOURCE_CHANGES_PAGE_STR_DESC, request, context);
+              return ListResourceChangesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+      LIST_RESOURCE_DRIFTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListResourceDriftsRequest,
+              ListResourceDriftsResponse,
+              ListResourceDriftsPagedResponse>() {
+            @Override
+            public ApiFuture<ListResourceDriftsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse> callable,
+                ListResourceDriftsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListResourceDriftsResponse> futureResponse) {
+              PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESOURCE_DRIFTS_PAGE_STR_DESC, request, context);
+              return ListResourceDriftsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -743,6 +890,49 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return getTerraformVersionSettings;
   }
 
+  /** Returns the object with the settings used for calls to listResourceChanges. */
+  public PagedCallSettings<
+          ListResourceChangesRequest, ListResourceChangesResponse, ListResourceChangesPagedResponse>
+      listResourceChangesSettings() {
+    return listResourceChangesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getResourceChange. */
+  public UnaryCallSettings<GetResourceChangeRequest, ResourceChange> getResourceChangeSettings() {
+    return getResourceChangeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listResourceDrifts. */
+  public PagedCallSettings<
+          ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+      listResourceDriftsSettings() {
+    return listResourceDriftsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getResourceDrift. */
+  public UnaryCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftSettings() {
+    return getResourceDriftSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAutoMigrationConfig. */
+  public UnaryCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigSettings() {
+    return getAutoMigrationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoMigrationConfig. */
+  public UnaryCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigSettings() {
+    return updateAutoMigrationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoMigrationConfig. */
+  public OperationCallSettings<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationSettings() {
+    return updateAutoMigrationConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -909,6 +1099,14 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     exportPreviewResultSettings = settingsBuilder.exportPreviewResultSettings().build();
     listTerraformVersionsSettings = settingsBuilder.listTerraformVersionsSettings().build();
     getTerraformVersionSettings = settingsBuilder.getTerraformVersionSettings().build();
+    listResourceChangesSettings = settingsBuilder.listResourceChangesSettings().build();
+    getResourceChangeSettings = settingsBuilder.getResourceChangeSettings().build();
+    listResourceDriftsSettings = settingsBuilder.listResourceDriftsSettings().build();
+    getResourceDriftSettings = settingsBuilder.getResourceDriftSettings().build();
+    getAutoMigrationConfigSettings = settingsBuilder.getAutoMigrationConfigSettings().build();
+    updateAutoMigrationConfigSettings = settingsBuilder.updateAutoMigrationConfigSettings().build();
+    updateAutoMigrationConfigOperationSettings =
+        settingsBuilder.updateAutoMigrationConfigOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -983,6 +1181,25 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
         listTerraformVersionsSettings;
     private final UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionSettings;
+    private final PagedCallSettings.Builder<
+            ListResourceChangesRequest,
+            ListResourceChangesResponse,
+            ListResourceChangesPagedResponse>
+        listResourceChangesSettings;
+    private final UnaryCallSettings.Builder<GetResourceChangeRequest, ResourceChange>
+        getResourceChangeSettings;
+    private final PagedCallSettings.Builder<
+            ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+        listResourceDriftsSettings;
+    private final UnaryCallSettings.Builder<GetResourceDriftRequest, ResourceDrift>
+        getResourceDriftSettings;
+    private final UnaryCallSettings.Builder<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+        updateAutoMigrationConfigOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1060,6 +1277,14 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       listTerraformVersionsSettings =
           PagedCallSettings.newBuilder(LIST_TERRAFORM_VERSIONS_PAGE_STR_FACT);
       getTerraformVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listResourceChangesSettings =
+          PagedCallSettings.newBuilder(LIST_RESOURCE_CHANGES_PAGE_STR_FACT);
+      getResourceChangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listResourceDriftsSettings = PagedCallSettings.newBuilder(LIST_RESOURCE_DRIFTS_PAGE_STR_FACT);
+      getResourceDriftSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAutoMigrationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutoMigrationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutoMigrationConfigOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1091,6 +1316,12 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               exportPreviewResultSettings,
               listTerraformVersionsSettings,
               getTerraformVersionSettings,
+              listResourceChangesSettings,
+              getResourceChangeSettings,
+              listResourceDriftsSettings,
+              getResourceDriftSettings,
+              getAutoMigrationConfigSettings,
+              updateAutoMigrationConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1132,6 +1363,14 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       exportPreviewResultSettings = settings.exportPreviewResultSettings.toBuilder();
       listTerraformVersionsSettings = settings.listTerraformVersionsSettings.toBuilder();
       getTerraformVersionSettings = settings.getTerraformVersionSettings.toBuilder();
+      listResourceChangesSettings = settings.listResourceChangesSettings.toBuilder();
+      getResourceChangeSettings = settings.getResourceChangeSettings.toBuilder();
+      listResourceDriftsSettings = settings.listResourceDriftsSettings.toBuilder();
+      getResourceDriftSettings = settings.getResourceDriftSettings.toBuilder();
+      getAutoMigrationConfigSettings = settings.getAutoMigrationConfigSettings.toBuilder();
+      updateAutoMigrationConfigSettings = settings.updateAutoMigrationConfigSettings.toBuilder();
+      updateAutoMigrationConfigOperationSettings =
+          settings.updateAutoMigrationConfigOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1163,6 +1402,12 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               exportPreviewResultSettings,
               listTerraformVersionsSettings,
               getTerraformVersionSettings,
+              listResourceChangesSettings,
+              getResourceChangeSettings,
+              listResourceDriftsSettings,
+              getResourceDriftSettings,
+              getAutoMigrationConfigSettings,
+              updateAutoMigrationConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1307,6 +1552,36 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
       builder
           .getTerraformVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listResourceChangesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getResourceChangeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listResourceDriftsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getResourceDriftSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAutoMigrationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAutoMigrationConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1503,6 +1778,31 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
                       .build()));
 
+      builder
+          .updateAutoMigrationConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAutoMigrationConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutoMigrationConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1696,6 +1996,53 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionSettings() {
       return getTerraformVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceChanges. */
+    public PagedCallSettings.Builder<
+            ListResourceChangesRequest,
+            ListResourceChangesResponse,
+            ListResourceChangesPagedResponse>
+        listResourceChangesSettings() {
+      return listResourceChangesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceChange. */
+    public UnaryCallSettings.Builder<GetResourceChangeRequest, ResourceChange>
+        getResourceChangeSettings() {
+      return getResourceChangeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceDrifts. */
+    public PagedCallSettings.Builder<
+            ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+        listResourceDriftsSettings() {
+      return listResourceDriftsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceDrift. */
+    public UnaryCallSettings.Builder<GetResourceDriftRequest, ResourceDrift>
+        getResourceDriftSettings() {
+      return getResourceDriftSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoMigrationConfig. */
+    public UnaryCallSettings.Builder<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigSettings() {
+      return getAutoMigrationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoMigrationConfig. */
+    public UnaryCallSettings.Builder<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigSettings() {
+      return updateAutoMigrationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoMigrationConfig. */
+    public OperationCallSettings.Builder<
+            UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+        updateAutoMigrationConfigOperationSettings() {
+      return updateAutoMigrationConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

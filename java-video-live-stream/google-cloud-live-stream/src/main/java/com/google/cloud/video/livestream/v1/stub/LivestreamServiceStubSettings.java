@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1.stub;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -64,17 +65,21 @@ import com.google.cloud.video.livestream.v1.Clip;
 import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateClipRequest;
+import com.google.cloud.video.livestream.v1.CreateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
 import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteClipRequest;
+import com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
+import com.google.cloud.video.livestream.v1.DvrSession;
 import com.google.cloud.video.livestream.v1.Event;
 import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetClipRequest;
+import com.google.cloud.video.livestream.v1.GetDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
 import com.google.cloud.video.livestream.v1.GetPoolRequest;
@@ -85,15 +90,22 @@ import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListClipsRequest;
 import com.google.cloud.video.livestream.v1.ListClipsResponse;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsRequest;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
 import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
 import com.google.cloud.video.livestream.v1.Pool;
+import com.google.cloud.video.livestream.v1.PreviewInputRequest;
+import com.google.cloud.video.livestream.v1.PreviewInputResponse;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
+import com.google.cloud.video.livestream.v1.StartDistributionRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
+import com.google.cloud.video.livestream.v1.StopDistributionRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
+import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
 import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.common.collect.ImmutableList;
@@ -155,8 +167,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -211,6 +223,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   private final OperationCallSettings<
           StopChannelRequest, ChannelOperationResponse, OperationMetadata>
       stopChannelOperationSettings;
+  private final UnaryCallSettings<StartDistributionRequest, Operation> startDistributionSettings;
+  private final OperationCallSettings<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationSettings;
+  private final UnaryCallSettings<StopDistributionRequest, Operation> stopDistributionSettings;
+  private final OperationCallSettings<
+          StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationSettings;
   private final UnaryCallSettings<CreateInputRequest, Operation> createInputSettings;
   private final OperationCallSettings<CreateInputRequest, Input, OperationMetadata>
       createInputOperationSettings;
@@ -223,6 +243,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   private final UnaryCallSettings<UpdateInputRequest, Operation> updateInputSettings;
   private final OperationCallSettings<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationSettings;
+  private final UnaryCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputSettings;
   private final UnaryCallSettings<CreateEventRequest, Event> createEventSettings;
   private final PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings;
@@ -237,6 +258,19 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   private final UnaryCallSettings<DeleteClipRequest, Operation> deleteClipSettings;
   private final OperationCallSettings<DeleteClipRequest, Empty, OperationMetadata>
       deleteClipOperationSettings;
+  private final UnaryCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionSettings;
+  private final OperationCallSettings<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationSettings;
+  private final PagedCallSettings<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+      listDvrSessionsSettings;
+  private final UnaryCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionSettings;
+  private final UnaryCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionSettings;
+  private final OperationCallSettings<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationSettings;
+  private final UnaryCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionSettings;
+  private final OperationCallSettings<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationSettings;
   private final UnaryCallSettings<CreateAssetRequest, Operation> createAssetSettings;
   private final OperationCallSettings<CreateAssetRequest, Asset, OperationMetadata>
       createAssetOperationSettings;
@@ -391,6 +425,43 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
             }
           };
 
+  private static final PagedListDescriptor<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession>
+      LIST_DVR_SESSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDvrSessionsRequest injectToken(
+                ListDvrSessionsRequest payload, String token) {
+              return ListDvrSessionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDvrSessionsRequest injectPageSize(
+                ListDvrSessionsRequest payload, int pageSize) {
+              return ListDvrSessionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDvrSessionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDvrSessionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DvrSession> extractResources(ListDvrSessionsResponse payload) {
+              return payload.getDvrSessionsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>
       LIST_ASSETS_PAGE_STR_DESC =
           new PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>() {
@@ -528,6 +599,23 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           };
 
   private static final PagedListResponseFactory<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+      LIST_DVR_SESSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDvrSessionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse> callable,
+                ListDvrSessionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDvrSessionsResponse> futureResponse) {
+              PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> pageContext =
+                  PageContext.create(callable, LIST_DVR_SESSIONS_PAGE_STR_DESC, request, context);
+              return ListDvrSessionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       LIST_ASSETS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -627,6 +715,29 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     return stopChannelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public UnaryCallSettings<StartDistributionRequest, Operation> startDistributionSettings() {
+    return startDistributionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public OperationCallSettings<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationSettings() {
+    return startDistributionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public UnaryCallSettings<StopDistributionRequest, Operation> stopDistributionSettings() {
+    return stopDistributionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public OperationCallSettings<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationSettings() {
+    return stopDistributionOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createInput. */
   public UnaryCallSettings<CreateInputRequest, Operation> createInputSettings() {
     return createInputSettings;
@@ -669,6 +780,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   public OperationCallSettings<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationSettings() {
     return updateInputOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewInput. */
+  public UnaryCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputSettings() {
+    return previewInputSettings;
   }
 
   /** Returns the object with the settings used for calls to createEvent. */
@@ -723,6 +839,51 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   public OperationCallSettings<DeleteClipRequest, Empty, OperationMetadata>
       deleteClipOperationSettings() {
     return deleteClipOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDvrSession. */
+  public UnaryCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionSettings() {
+    return createDvrSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDvrSession. */
+  public OperationCallSettings<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationSettings() {
+    return createDvrSessionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDvrSessions. */
+  public PagedCallSettings<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+      listDvrSessionsSettings() {
+    return listDvrSessionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDvrSession. */
+  public UnaryCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionSettings() {
+    return getDvrSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDvrSession. */
+  public UnaryCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionSettings() {
+    return deleteDvrSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDvrSession. */
+  public OperationCallSettings<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationSettings() {
+    return deleteDvrSessionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDvrSession. */
+  public UnaryCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionSettings() {
+    return updateDvrSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDvrSession. */
+  public OperationCallSettings<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationSettings() {
+    return updateDvrSessionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createAsset. */
@@ -908,6 +1069,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     startChannelOperationSettings = settingsBuilder.startChannelOperationSettings().build();
     stopChannelSettings = settingsBuilder.stopChannelSettings().build();
     stopChannelOperationSettings = settingsBuilder.stopChannelOperationSettings().build();
+    startDistributionSettings = settingsBuilder.startDistributionSettings().build();
+    startDistributionOperationSettings =
+        settingsBuilder.startDistributionOperationSettings().build();
+    stopDistributionSettings = settingsBuilder.stopDistributionSettings().build();
+    stopDistributionOperationSettings = settingsBuilder.stopDistributionOperationSettings().build();
     createInputSettings = settingsBuilder.createInputSettings().build();
     createInputOperationSettings = settingsBuilder.createInputOperationSettings().build();
     listInputsSettings = settingsBuilder.listInputsSettings().build();
@@ -916,6 +1082,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     deleteInputOperationSettings = settingsBuilder.deleteInputOperationSettings().build();
     updateInputSettings = settingsBuilder.updateInputSettings().build();
     updateInputOperationSettings = settingsBuilder.updateInputOperationSettings().build();
+    previewInputSettings = settingsBuilder.previewInputSettings().build();
     createEventSettings = settingsBuilder.createEventSettings().build();
     listEventsSettings = settingsBuilder.listEventsSettings().build();
     getEventSettings = settingsBuilder.getEventSettings().build();
@@ -926,6 +1093,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     createClipOperationSettings = settingsBuilder.createClipOperationSettings().build();
     deleteClipSettings = settingsBuilder.deleteClipSettings().build();
     deleteClipOperationSettings = settingsBuilder.deleteClipOperationSettings().build();
+    createDvrSessionSettings = settingsBuilder.createDvrSessionSettings().build();
+    createDvrSessionOperationSettings = settingsBuilder.createDvrSessionOperationSettings().build();
+    listDvrSessionsSettings = settingsBuilder.listDvrSessionsSettings().build();
+    getDvrSessionSettings = settingsBuilder.getDvrSessionSettings().build();
+    deleteDvrSessionSettings = settingsBuilder.deleteDvrSessionSettings().build();
+    deleteDvrSessionOperationSettings = settingsBuilder.deleteDvrSessionOperationSettings().build();
+    updateDvrSessionSettings = settingsBuilder.updateDvrSessionSettings().build();
+    updateDvrSessionOperationSettings = settingsBuilder.updateDvrSessionOperationSettings().build();
     createAssetSettings = settingsBuilder.createAssetSettings().build();
     createAssetOperationSettings = settingsBuilder.createAssetOperationSettings().build();
     deleteAssetSettings = settingsBuilder.deleteAssetSettings().build();
@@ -963,6 +1138,16 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     private final OperationCallSettings.Builder<
             StopChannelRequest, ChannelOperationResponse, OperationMetadata>
         stopChannelOperationSettings;
+    private final UnaryCallSettings.Builder<StartDistributionRequest, Operation>
+        startDistributionSettings;
+    private final OperationCallSettings.Builder<
+            StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        startDistributionOperationSettings;
+    private final UnaryCallSettings.Builder<StopDistributionRequest, Operation>
+        stopDistributionSettings;
+    private final OperationCallSettings.Builder<
+            StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        stopDistributionOperationSettings;
     private final UnaryCallSettings.Builder<CreateInputRequest, Operation> createInputSettings;
     private final OperationCallSettings.Builder<CreateInputRequest, Input, OperationMetadata>
         createInputOperationSettings;
@@ -976,6 +1161,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     private final UnaryCallSettings.Builder<UpdateInputRequest, Operation> updateInputSettings;
     private final OperationCallSettings.Builder<UpdateInputRequest, Input, OperationMetadata>
         updateInputOperationSettings;
+    private final UnaryCallSettings.Builder<PreviewInputRequest, PreviewInputResponse>
+        previewInputSettings;
     private final UnaryCallSettings.Builder<CreateEventRequest, Event> createEventSettings;
     private final PagedCallSettings.Builder<
             ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
@@ -992,6 +1179,24 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     private final UnaryCallSettings.Builder<DeleteClipRequest, Operation> deleteClipSettings;
     private final OperationCallSettings.Builder<DeleteClipRequest, Empty, OperationMetadata>
         deleteClipOperationSettings;
+    private final UnaryCallSettings.Builder<CreateDvrSessionRequest, Operation>
+        createDvrSessionSettings;
+    private final OperationCallSettings.Builder<
+            CreateDvrSessionRequest, DvrSession, OperationMetadata>
+        createDvrSessionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+        listDvrSessionsSettings;
+    private final UnaryCallSettings.Builder<GetDvrSessionRequest, DvrSession> getDvrSessionSettings;
+    private final UnaryCallSettings.Builder<DeleteDvrSessionRequest, Operation>
+        deleteDvrSessionSettings;
+    private final OperationCallSettings.Builder<DeleteDvrSessionRequest, Empty, OperationMetadata>
+        deleteDvrSessionOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDvrSessionRequest, Operation>
+        updateDvrSessionSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+        updateDvrSessionOperationSettings;
     private final UnaryCallSettings.Builder<CreateAssetRequest, Operation> createAssetSettings;
     private final OperationCallSettings.Builder<CreateAssetRequest, Asset, OperationMetadata>
         createAssetOperationSettings;
@@ -1073,6 +1278,10 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       startChannelOperationSettings = OperationCallSettings.newBuilder();
       stopChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stopChannelOperationSettings = OperationCallSettings.newBuilder();
+      startDistributionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startDistributionOperationSettings = OperationCallSettings.newBuilder();
+      stopDistributionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopDistributionOperationSettings = OperationCallSettings.newBuilder();
       createInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInputOperationSettings = OperationCallSettings.newBuilder();
       listInputsSettings = PagedCallSettings.newBuilder(LIST_INPUTS_PAGE_STR_FACT);
@@ -1081,6 +1290,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       deleteInputOperationSettings = OperationCallSettings.newBuilder();
       updateInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateInputOperationSettings = OperationCallSettings.newBuilder();
+      previewInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEventsSettings = PagedCallSettings.newBuilder(LIST_EVENTS_PAGE_STR_FACT);
       getEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1091,6 +1301,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       createClipOperationSettings = OperationCallSettings.newBuilder();
       deleteClipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClipOperationSettings = OperationCallSettings.newBuilder();
+      createDvrSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDvrSessionOperationSettings = OperationCallSettings.newBuilder();
+      listDvrSessionsSettings = PagedCallSettings.newBuilder(LIST_DVR_SESSIONS_PAGE_STR_FACT);
+      getDvrSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDvrSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDvrSessionOperationSettings = OperationCallSettings.newBuilder();
+      updateDvrSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDvrSessionOperationSettings = OperationCallSettings.newBuilder();
       createAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAssetOperationSettings = OperationCallSettings.newBuilder();
       deleteAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1112,11 +1330,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               updateChannelSettings,
               startChannelSettings,
               stopChannelSettings,
+              startDistributionSettings,
+              stopDistributionSettings,
               createInputSettings,
               listInputsSettings,
               getInputSettings,
               deleteInputSettings,
               updateInputSettings,
+              previewInputSettings,
               createEventSettings,
               listEventsSettings,
               getEventSettings,
@@ -1125,6 +1346,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               getClipSettings,
               createClipSettings,
               deleteClipSettings,
+              createDvrSessionSettings,
+              listDvrSessionsSettings,
+              getDvrSessionSettings,
+              deleteDvrSessionSettings,
+              updateDvrSessionSettings,
               createAssetSettings,
               deleteAssetSettings,
               getAssetSettings,
@@ -1151,6 +1377,10 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       startChannelOperationSettings = settings.startChannelOperationSettings.toBuilder();
       stopChannelSettings = settings.stopChannelSettings.toBuilder();
       stopChannelOperationSettings = settings.stopChannelOperationSettings.toBuilder();
+      startDistributionSettings = settings.startDistributionSettings.toBuilder();
+      startDistributionOperationSettings = settings.startDistributionOperationSettings.toBuilder();
+      stopDistributionSettings = settings.stopDistributionSettings.toBuilder();
+      stopDistributionOperationSettings = settings.stopDistributionOperationSettings.toBuilder();
       createInputSettings = settings.createInputSettings.toBuilder();
       createInputOperationSettings = settings.createInputOperationSettings.toBuilder();
       listInputsSettings = settings.listInputsSettings.toBuilder();
@@ -1159,6 +1389,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       deleteInputOperationSettings = settings.deleteInputOperationSettings.toBuilder();
       updateInputSettings = settings.updateInputSettings.toBuilder();
       updateInputOperationSettings = settings.updateInputOperationSettings.toBuilder();
+      previewInputSettings = settings.previewInputSettings.toBuilder();
       createEventSettings = settings.createEventSettings.toBuilder();
       listEventsSettings = settings.listEventsSettings.toBuilder();
       getEventSettings = settings.getEventSettings.toBuilder();
@@ -1169,6 +1400,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       createClipOperationSettings = settings.createClipOperationSettings.toBuilder();
       deleteClipSettings = settings.deleteClipSettings.toBuilder();
       deleteClipOperationSettings = settings.deleteClipOperationSettings.toBuilder();
+      createDvrSessionSettings = settings.createDvrSessionSettings.toBuilder();
+      createDvrSessionOperationSettings = settings.createDvrSessionOperationSettings.toBuilder();
+      listDvrSessionsSettings = settings.listDvrSessionsSettings.toBuilder();
+      getDvrSessionSettings = settings.getDvrSessionSettings.toBuilder();
+      deleteDvrSessionSettings = settings.deleteDvrSessionSettings.toBuilder();
+      deleteDvrSessionOperationSettings = settings.deleteDvrSessionOperationSettings.toBuilder();
+      updateDvrSessionSettings = settings.updateDvrSessionSettings.toBuilder();
+      updateDvrSessionOperationSettings = settings.updateDvrSessionOperationSettings.toBuilder();
       createAssetSettings = settings.createAssetSettings.toBuilder();
       createAssetOperationSettings = settings.createAssetOperationSettings.toBuilder();
       deleteAssetSettings = settings.deleteAssetSettings.toBuilder();
@@ -1190,11 +1429,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               updateChannelSettings,
               startChannelSettings,
               stopChannelSettings,
+              startDistributionSettings,
+              stopDistributionSettings,
               createInputSettings,
               listInputsSettings,
               getInputSettings,
               deleteInputSettings,
               updateInputSettings,
+              previewInputSettings,
               createEventSettings,
               listEventsSettings,
               getEventSettings,
@@ -1203,6 +1445,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               getClipSettings,
               createClipSettings,
               deleteClipSettings,
+              createDvrSessionSettings,
+              listDvrSessionsSettings,
+              getDvrSessionSettings,
+              deleteDvrSessionSettings,
+              updateDvrSessionSettings,
               createAssetSettings,
               deleteAssetSettings,
               getAssetSettings,
@@ -1274,6 +1521,16 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .startDistributionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .stopDistributionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .createInputSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1299,6 +1556,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .previewInputSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .createEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1320,53 +1582,78 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
 
       builder
           .listClipsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getClipSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createClipSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteClipSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createDvrSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDvrSessionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDvrSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDvrSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDvrSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createAssetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteAssetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getAssetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAssetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updatePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1498,6 +1785,54 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
                       .build()));
 
       builder
+          .startDistributionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartDistributionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ChannelOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .stopDistributionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopDistributionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ChannelOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createInputOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateInputRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -1570,8 +1905,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .createClipOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateClipRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Clip.class))
           .setMetadataTransformer(
@@ -1592,8 +1927,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .deleteClipOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteClipRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1612,11 +1947,83 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
                       .build()));
 
       builder
+          .createDvrSessionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDvrSessionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DvrSession.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDvrSessionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDvrSessionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDvrSessionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDvrSessionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DvrSession.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createAssetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateAssetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Asset.class))
@@ -1638,8 +2045,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .deleteAssetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteAssetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1661,8 +2068,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .updatePoolOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<UpdatePoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Pool.class))
           .setMetadataTransformer(
@@ -1766,6 +2173,32 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       return stopChannelOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public UnaryCallSettings.Builder<StartDistributionRequest, Operation>
+        startDistributionSettings() {
+      return startDistributionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public OperationCallSettings.Builder<
+            StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        startDistributionOperationSettings() {
+      return startDistributionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public UnaryCallSettings.Builder<StopDistributionRequest, Operation>
+        stopDistributionSettings() {
+      return stopDistributionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public OperationCallSettings.Builder<
+            StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        stopDistributionOperationSettings() {
+      return stopDistributionOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createInput. */
     public UnaryCallSettings.Builder<CreateInputRequest, Operation> createInputSettings() {
       return createInputSettings;
@@ -1808,6 +2241,12 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     public OperationCallSettings.Builder<UpdateInputRequest, Input, OperationMetadata>
         updateInputOperationSettings() {
       return updateInputOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to previewInput. */
+    public UnaryCallSettings.Builder<PreviewInputRequest, PreviewInputResponse>
+        previewInputSettings() {
+      return previewInputSettings;
     }
 
     /** Returns the builder for the settings used for calls to createEvent. */
@@ -1862,6 +2301,54 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     public OperationCallSettings.Builder<DeleteClipRequest, Empty, OperationMetadata>
         deleteClipOperationSettings() {
       return deleteClipOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDvrSession. */
+    public UnaryCallSettings.Builder<CreateDvrSessionRequest, Operation>
+        createDvrSessionSettings() {
+      return createDvrSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDvrSession. */
+    public OperationCallSettings.Builder<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+        createDvrSessionOperationSettings() {
+      return createDvrSessionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDvrSessions. */
+    public PagedCallSettings.Builder<
+            ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+        listDvrSessionsSettings() {
+      return listDvrSessionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDvrSession. */
+    public UnaryCallSettings.Builder<GetDvrSessionRequest, DvrSession> getDvrSessionSettings() {
+      return getDvrSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDvrSession. */
+    public UnaryCallSettings.Builder<DeleteDvrSessionRequest, Operation>
+        deleteDvrSessionSettings() {
+      return deleteDvrSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDvrSession. */
+    public OperationCallSettings.Builder<DeleteDvrSessionRequest, Empty, OperationMetadata>
+        deleteDvrSessionOperationSettings() {
+      return deleteDvrSessionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDvrSession. */
+    public UnaryCallSettings.Builder<UpdateDvrSessionRequest, Operation>
+        updateDvrSessionSettings() {
+      return updateDvrSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDvrSession. */
+    public OperationCallSettings.Builder<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+        updateDvrSessionOperationSettings() {
+      return updateDvrSessionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createAsset. */

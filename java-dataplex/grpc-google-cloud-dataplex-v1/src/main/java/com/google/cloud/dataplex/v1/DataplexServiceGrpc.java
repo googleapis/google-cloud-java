@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * systems including Cloud Storage and BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataplexServiceGrpc {
 
@@ -2561,8 +2558,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLake(
-        com.google.cloud.dataplex.v1.CreateLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLakeMethod(), getCallOptions(), request);
     }
 
@@ -2574,8 +2571,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLake(
-        com.google.cloud.dataplex.v1.UpdateLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLakeMethod(), getCallOptions(), request);
     }
 
@@ -2588,8 +2585,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLake(
-        com.google.cloud.dataplex.v1.DeleteLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLakeMethod(), getCallOptions(), request);
     }
 
@@ -2601,8 +2598,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListLakesResponse listLakes(
-        com.google.cloud.dataplex.v1.ListLakesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListLakesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLakesMethod(), getCallOptions(), request);
     }
 
@@ -2614,8 +2611,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Lake getLake(
-        com.google.cloud.dataplex.v1.GetLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLakeMethod(), getCallOptions(), request);
     }
 
@@ -2627,8 +2624,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListActionsResponse listLakeActions(
-        com.google.cloud.dataplex.v1.ListLakeActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListLakeActionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLakeActionsMethod(), getCallOptions(), request);
     }
 
@@ -2640,8 +2638,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createZone(
-        com.google.cloud.dataplex.v1.CreateZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateZoneMethod(), getCallOptions(), request);
     }
 
@@ -2653,8 +2651,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateZone(
-        com.google.cloud.dataplex.v1.UpdateZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateZoneMethod(), getCallOptions(), request);
     }
 
@@ -2667,8 +2665,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteZone(
-        com.google.cloud.dataplex.v1.DeleteZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteZoneMethod(), getCallOptions(), request);
     }
 
@@ -2680,8 +2678,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListZonesResponse listZones(
-        com.google.cloud.dataplex.v1.ListZonesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListZonesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListZonesMethod(), getCallOptions(), request);
     }
 
@@ -2693,8 +2691,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Zone getZone(
-        com.google.cloud.dataplex.v1.GetZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetZoneMethod(), getCallOptions(), request);
     }
 
@@ -2706,8 +2704,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListActionsResponse listZoneActions(
-        com.google.cloud.dataplex.v1.ListZoneActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListZoneActionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListZoneActionsMethod(), getCallOptions(), request);
     }
 
@@ -2719,8 +2718,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAsset(
-        com.google.cloud.dataplex.v1.CreateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssetMethod(), getCallOptions(), request);
     }
 
@@ -2732,8 +2731,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAsset(
-        com.google.cloud.dataplex.v1.UpdateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAssetMethod(), getCallOptions(), request);
     }
 
@@ -2746,8 +2745,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAsset(
-        com.google.cloud.dataplex.v1.DeleteAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
     }
 
@@ -2759,8 +2758,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListAssetsResponse listAssets(
-        com.google.cloud.dataplex.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -2772,8 +2771,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Asset getAsset(
-        com.google.cloud.dataplex.v1.GetAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAssetMethod(), getCallOptions(), request);
     }
 
@@ -2785,8 +2784,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListActionsResponse listAssetActions(
-        com.google.cloud.dataplex.v1.ListAssetActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListAssetActionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetActionsMethod(), getCallOptions(), request);
     }
 
@@ -2798,8 +2798,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTask(
-        com.google.cloud.dataplex.v1.CreateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTaskMethod(), getCallOptions(), request);
     }
 
@@ -2811,8 +2811,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTask(
-        com.google.cloud.dataplex.v1.UpdateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTaskMethod(), getCallOptions(), request);
     }
 
@@ -2824,8 +2824,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTask(
-        com.google.cloud.dataplex.v1.DeleteTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
@@ -2837,8 +2837,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListTasksResponse listTasks(
-        com.google.cloud.dataplex.v1.ListTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
@@ -2850,8 +2850,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Task getTask(
-        com.google.cloud.dataplex.v1.GetTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -2863,8 +2863,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListJobsResponse listJobs(
-        com.google.cloud.dataplex.v1.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -2876,8 +2876,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.RunTaskResponse runTask(
-        com.google.cloud.dataplex.v1.RunTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.RunTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
 
@@ -2889,8 +2889,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Job getJob(
-        com.google.cloud.dataplex.v1.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -2902,8 +2902,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelJob(
-        com.google.cloud.dataplex.v1.CancelJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CancelJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
     }
 
@@ -2915,8 +2915,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEnvironment(
-        com.google.cloud.dataplex.v1.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2928,8 +2929,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEnvironment(
-        com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2942,8 +2944,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEnvironment(
-        com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2955,8 +2958,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEnvironmentsResponse listEnvironments(
-        com.google.cloud.dataplex.v1.ListEnvironmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEnvironmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
 
@@ -2968,8 +2972,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Environment getEnvironment(
-        com.google.cloud.dataplex.v1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEnvironmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2981,8 +2985,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListSessionsResponse listSessions(
-        com.google.cloud.dataplex.v1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListSessionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
   }

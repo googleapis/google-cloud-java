@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,8 +82,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -130,6 +130,31 @@ public class RouteOptimizationSettings extends ClientSettings<RouteOptimizationS
       batchOptimizeToursOperationSettings() {
     return ((RouteOptimizationStubSettings) getStubSettings())
         .batchOptimizeToursOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursLongRunning. */
+  public UnaryCallSettings<OptimizeToursRequest, Operation> optimizeToursLongRunningSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings()).optimizeToursLongRunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursLongRunning. */
+  public OperationCallSettings<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings())
+        .optimizeToursLongRunningOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursUri. */
+  public UnaryCallSettings<OptimizeToursUriRequest, Operation> optimizeToursUriSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings()).optimizeToursUriSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursUri. */
+  public OperationCallSettings<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings()).optimizeToursUriOperationSettings();
   }
 
   public static final RouteOptimizationSettings create(RouteOptimizationStubSettings stub)
@@ -261,6 +286,32 @@ public class RouteOptimizationSettings extends ClientSettings<RouteOptimizationS
             BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
         batchOptimizeToursOperationSettings() {
       return getStubSettingsBuilder().batchOptimizeToursOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursLongRunning. */
+    public UnaryCallSettings.Builder<OptimizeToursRequest, Operation>
+        optimizeToursLongRunningSettings() {
+      return getStubSettingsBuilder().optimizeToursLongRunningSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursLongRunning. */
+    public OperationCallSettings.Builder<
+            OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+        optimizeToursLongRunningOperationSettings() {
+      return getStubSettingsBuilder().optimizeToursLongRunningOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursUri. */
+    public UnaryCallSettings.Builder<OptimizeToursUriRequest, Operation>
+        optimizeToursUriSettings() {
+      return getStubSettingsBuilder().optimizeToursUriSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursUri. */
+    public OperationCallSettings.Builder<
+            OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+        optimizeToursUriOperationSettings() {
+      return getStubSettingsBuilder().optimizeToursUriOperationSettings();
     }
 
     @Override

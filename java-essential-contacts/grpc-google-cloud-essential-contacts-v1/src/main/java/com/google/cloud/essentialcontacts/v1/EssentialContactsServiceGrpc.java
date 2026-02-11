@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages contacts for important Google Cloud notifications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/essentialcontacts/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EssentialContactsServiceGrpc {
 
@@ -714,8 +711,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.essentialcontacts.v1.Contact createContact(
-        com.google.cloud.essentialcontacts.v1.CreateContactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.CreateContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateContactMethod(), getCallOptions(), request);
     }
 
@@ -728,8 +726,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.essentialcontacts.v1.Contact updateContact(
-        com.google.cloud.essentialcontacts.v1.UpdateContactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.UpdateContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateContactMethod(), getCallOptions(), request);
     }
 
@@ -741,8 +740,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.essentialcontacts.v1.ListContactsResponse listContacts(
-        com.google.cloud.essentialcontacts.v1.ListContactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.ListContactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListContactsMethod(), getCallOptions(), request);
     }
 
@@ -754,8 +754,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.essentialcontacts.v1.Contact getContact(
-        com.google.cloud.essentialcontacts.v1.GetContactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.GetContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetContactMethod(), getCallOptions(), request);
     }
 
@@ -767,8 +768,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteContact(
-        com.google.cloud.essentialcontacts.v1.DeleteContactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.DeleteContactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteContactMethod(), getCallOptions(), request);
     }
 
@@ -782,8 +784,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.essentialcontacts.v1.ComputeContactsResponse computeContacts(
-        com.google.cloud.essentialcontacts.v1.ComputeContactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.ComputeContactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeContactsMethod(), getCallOptions(), request);
     }
 
@@ -796,8 +799,9 @@ public final class EssentialContactsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty sendTestMessage(
-        com.google.cloud.essentialcontacts.v1.SendTestMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.essentialcontacts.v1.SendTestMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSendTestMessageMethod(), getCallOptions(), request);
     }
   }

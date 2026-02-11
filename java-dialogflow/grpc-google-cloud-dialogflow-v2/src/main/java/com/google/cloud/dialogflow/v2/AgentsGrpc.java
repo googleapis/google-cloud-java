@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/agent.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AgentsGrpc {
 
@@ -939,8 +936,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Agent getAgent(
-        com.google.cloud.dialogflow.v2.GetAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAgentMethod(), getCallOptions(), request);
     }
 
@@ -955,8 +952,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Agent setAgent(
-        com.google.cloud.dialogflow.v2.SetAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.SetAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetAgentMethod(), getCallOptions(), request);
     }
 
@@ -968,8 +965,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAgent(
-        com.google.cloud.dialogflow.v2.DeleteAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
     }
 
@@ -986,8 +983,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.SearchAgentsResponse searchAgents(
-        com.google.cloud.dialogflow.v2.SearchAgentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.SearchAgentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAgentsMethod(), getCallOptions(), request);
     }
 
@@ -1009,8 +1006,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation trainAgent(
-        com.google.cloud.dialogflow.v2.TrainAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.TrainAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTrainAgentMethod(), getCallOptions(), request);
     }
 
@@ -1029,8 +1026,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportAgent(
-        com.google.cloud.dialogflow.v2.ExportAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ExportAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportAgentMethod(), getCallOptions(), request);
     }
 
@@ -1063,8 +1060,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importAgent(
-        com.google.cloud.dialogflow.v2.ImportAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ImportAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportAgentMethod(), getCallOptions(), request);
     }
 
@@ -1095,8 +1092,8 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreAgent(
-        com.google.cloud.dialogflow.v2.RestoreAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.RestoreAgentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
     }
 
@@ -1109,8 +1106,9 @@ public final class AgentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ValidationResult getValidationResult(
-        com.google.cloud.dialogflow.v2.GetValidationResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetValidationResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetValidationResultMethod(), getCallOptions(), request);
     }
   }

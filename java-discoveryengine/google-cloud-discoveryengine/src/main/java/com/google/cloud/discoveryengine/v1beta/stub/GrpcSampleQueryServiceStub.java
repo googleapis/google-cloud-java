@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public class GrpcSampleQueryServiceStub extends SampleQueryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSampleQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SampleQuery.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSampleQueriesRequest, ListSampleQueriesResponse>
@@ -76,6 +77,7 @@ public class GrpcSampleQueryServiceStub extends SampleQueryServiceStub {
                   ProtoUtils.marshaller(ListSampleQueriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSampleQueriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSampleQueryRequest, SampleQuery>
@@ -87,6 +89,7 @@ public class GrpcSampleQueryServiceStub extends SampleQueryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSampleQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SampleQuery.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSampleQueryRequest, SampleQuery>
@@ -98,6 +101,7 @@ public class GrpcSampleQueryServiceStub extends SampleQueryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSampleQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SampleQuery.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSampleQueryRequest, Empty>
@@ -109,6 +113,7 @@ public class GrpcSampleQueryServiceStub extends SampleQueryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSampleQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportSampleQueriesRequest, Operation>
@@ -120,6 +125,7 @@ public class GrpcSampleQueryServiceStub extends SampleQueryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportSampleQueriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSampleQueryRequest, SampleQuery> getSampleQueryCallable;

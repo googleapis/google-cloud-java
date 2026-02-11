@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.oracledatabase.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,11 +33,17 @@ public class DbNodeName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}/dbNodes/{db_node}");
+  private static final PathTemplate PROJECT_LOCATION_EXADB_VM_CLUSTER_DB_NODE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}/dbNodes/{db_node}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String cloudVmCluster;
   private final String dbNode;
+  private final String exadbVmCluster;
 
   @Deprecated
   protected DbNodeName() {
@@ -44,6 +51,7 @@ public class DbNodeName implements ResourceName {
     location = null;
     cloudVmCluster = null;
     dbNode = null;
+    exadbVmCluster = null;
   }
 
   private DbNodeName(Builder builder) {
@@ -51,6 +59,17 @@ public class DbNodeName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     cloudVmCluster = Preconditions.checkNotNull(builder.getCloudVmCluster());
     dbNode = Preconditions.checkNotNull(builder.getDbNode());
+    exadbVmCluster = null;
+    pathTemplate = PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE;
+  }
+
+  private DbNodeName(ProjectLocationExadbVmClusterDbNodeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    exadbVmCluster = Preconditions.checkNotNull(builder.getExadbVmCluster());
+    dbNode = Preconditions.checkNotNull(builder.getDbNode());
+    cloudVmCluster = null;
+    pathTemplate = PROJECT_LOCATION_EXADB_VM_CLUSTER_DB_NODE;
   }
 
   public String getProject() {
@@ -69,8 +88,21 @@ public class DbNodeName implements ResourceName {
     return dbNode;
   }
 
+  public String getExadbVmCluster() {
+    return exadbVmCluster;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationCloudVmClusterDbNodeBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationExadbVmClusterDbNodeBuilder
+      newProjectLocationExadbVmClusterDbNodeBuilder() {
+    return new ProjectLocationExadbVmClusterDbNodeBuilder();
   }
 
   public Builder toBuilder() {
@@ -87,6 +119,26 @@ public class DbNodeName implements ResourceName {
         .build();
   }
 
+  public static DbNodeName ofProjectLocationCloudVmClusterDbNodeName(
+      String project, String location, String cloudVmCluster, String dbNode) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCloudVmCluster(cloudVmCluster)
+        .setDbNode(dbNode)
+        .build();
+  }
+
+  public static DbNodeName ofProjectLocationExadbVmClusterDbNodeName(
+      String project, String location, String exadbVmCluster, String dbNode) {
+    return newProjectLocationExadbVmClusterDbNodeBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setExadbVmCluster(exadbVmCluster)
+        .setDbNode(dbNode)
+        .build();
+  }
+
   public static String format(
       String project, String location, String cloudVmCluster, String dbNode) {
     return newBuilder()
@@ -98,18 +150,50 @@ public class DbNodeName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationCloudVmClusterDbNodeName(
+      String project, String location, String cloudVmCluster, String dbNode) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCloudVmCluster(cloudVmCluster)
+        .setDbNode(dbNode)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationExadbVmClusterDbNodeName(
+      String project, String location, String exadbVmCluster, String dbNode) {
+    return newProjectLocationExadbVmClusterDbNodeBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setExadbVmCluster(exadbVmCluster)
+        .setDbNode(dbNode)
+        .build()
+        .toString();
+  }
+
   public static DbNodeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE.validatedMatch(
-            formattedString, "DbNodeName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("cloud_vm_cluster"),
-        matchMap.get("db_node"));
+    if (PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE.match(formattedString);
+      return ofProjectLocationCloudVmClusterDbNodeName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("cloud_vm_cluster"),
+          matchMap.get("db_node"));
+    } else if (PROJECT_LOCATION_EXADB_VM_CLUSTER_DB_NODE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_EXADB_VM_CLUSTER_DB_NODE.match(formattedString);
+      return ofProjectLocationExadbVmClusterDbNodeName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("exadb_vm_cluster"),
+          matchMap.get("db_node"));
+    }
+    throw new ValidationException("DbNodeName.parse: formattedString not in valid format");
   }
 
   public static List<DbNodeName> parseList(List<String> formattedStrings) {
@@ -133,7 +217,8 @@ public class DbNodeName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE.matches(formattedString);
+    return PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE.matches(formattedString)
+        || PROJECT_LOCATION_EXADB_VM_CLUSTER_DB_NODE.matches(formattedString);
   }
 
   @Override
@@ -154,6 +239,9 @@ public class DbNodeName implements ResourceName {
           if (dbNode != null) {
             fieldMapBuilder.put("db_node", dbNode);
           }
+          if (exadbVmCluster != null) {
+            fieldMapBuilder.put("exadb_vm_cluster", exadbVmCluster);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -167,15 +255,7 @@ public class DbNodeName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "cloud_vm_cluster",
-        cloudVmCluster,
-        "db_node",
-        dbNode);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -188,7 +268,8 @@ public class DbNodeName implements ResourceName {
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.cloudVmCluster, that.cloudVmCluster)
-          && Objects.equals(this.dbNode, that.dbNode);
+          && Objects.equals(this.dbNode, that.dbNode)
+          && Objects.equals(this.exadbVmCluster, that.exadbVmCluster);
     }
     return false;
   }
@@ -197,6 +278,8 @@ public class DbNodeName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
@@ -204,6 +287,8 @@ public class DbNodeName implements ResourceName {
     h ^= Objects.hashCode(cloudVmCluster);
     h *= 1000003;
     h ^= Objects.hashCode(dbNode);
+    h *= 1000003;
+    h ^= Objects.hashCode(exadbVmCluster);
     return h;
   }
 
@@ -256,10 +341,67 @@ public class DbNodeName implements ResourceName {
     }
 
     private Builder(DbNodeName dbNodeName) {
+      Preconditions.checkArgument(
+          Objects.equals(dbNodeName.pathTemplate, PROJECT_LOCATION_CLOUD_VM_CLUSTER_DB_NODE),
+          "toBuilder is only supported when DbNodeName has the pattern of"
+              + " projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}/dbNodes/{db_node}");
       this.project = dbNodeName.project;
       this.location = dbNodeName.location;
       this.cloudVmCluster = dbNodeName.cloudVmCluster;
       this.dbNode = dbNodeName.dbNode;
+    }
+
+    public DbNodeName build() {
+      return new DbNodeName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}/dbNodes/{db_node}.
+   */
+  public static class ProjectLocationExadbVmClusterDbNodeBuilder {
+    private String project;
+    private String location;
+    private String exadbVmCluster;
+    private String dbNode;
+
+    protected ProjectLocationExadbVmClusterDbNodeBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getExadbVmCluster() {
+      return exadbVmCluster;
+    }
+
+    public String getDbNode() {
+      return dbNode;
+    }
+
+    public ProjectLocationExadbVmClusterDbNodeBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationExadbVmClusterDbNodeBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationExadbVmClusterDbNodeBuilder setExadbVmCluster(String exadbVmCluster) {
+      this.exadbVmCluster = exadbVmCluster;
+      return this;
+    }
+
+    public ProjectLocationExadbVmClusterDbNodeBuilder setDbNode(String dbNode) {
+      this.dbNode = dbNode;
+      return this;
     }
 
     public DbNodeName build() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataStoreRequest, DataStore>
@@ -69,6 +70,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.DataStoreService/GetDataStore")
               .setRequestMarshaller(ProtoUtils.marshaller(GetDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataStoresRequest, ListDataStoresResponse>
@@ -80,6 +82,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   ProtoUtils.marshaller(ListDataStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataStoreRequest, Operation>
@@ -90,6 +93,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataStoreRequest, DataStore>
@@ -100,6 +104,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDataStoreRequest, Operation> createDataStoreCallable;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * resources created using this service are global.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkmanagement/v1/vpc_flow_logs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VpcFlowLogsServiceGrpc {
 
@@ -289,6 +286,114 @@ public final class VpcFlowLogsServiceGrpc {
     return getDeleteVpcFlowLogsConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest,
+          com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+      getQueryOrgVpcFlowLogsConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryOrgVpcFlowLogsConfigs",
+      requestType = com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest.class,
+      responseType = com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest,
+          com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+      getQueryOrgVpcFlowLogsConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest,
+            com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+        getQueryOrgVpcFlowLogsConfigsMethod;
+    if ((getQueryOrgVpcFlowLogsConfigsMethod =
+            VpcFlowLogsServiceGrpc.getQueryOrgVpcFlowLogsConfigsMethod)
+        == null) {
+      synchronized (VpcFlowLogsServiceGrpc.class) {
+        if ((getQueryOrgVpcFlowLogsConfigsMethod =
+                VpcFlowLogsServiceGrpc.getQueryOrgVpcFlowLogsConfigsMethod)
+            == null) {
+          VpcFlowLogsServiceGrpc.getQueryOrgVpcFlowLogsConfigsMethod =
+              getQueryOrgVpcFlowLogsConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest,
+                          com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "QueryOrgVpcFlowLogsConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkmanagement.v1
+                                  .QueryOrgVpcFlowLogsConfigsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkmanagement.v1
+                                  .QueryOrgVpcFlowLogsConfigsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VpcFlowLogsServiceMethodDescriptorSupplier(
+                              "QueryOrgVpcFlowLogsConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getQueryOrgVpcFlowLogsConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest,
+          com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>
+      getShowEffectiveFlowLogsConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ShowEffectiveFlowLogsConfigs",
+      requestType = com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest.class,
+      responseType =
+          com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest,
+          com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>
+      getShowEffectiveFlowLogsConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest,
+            com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>
+        getShowEffectiveFlowLogsConfigsMethod;
+    if ((getShowEffectiveFlowLogsConfigsMethod =
+            VpcFlowLogsServiceGrpc.getShowEffectiveFlowLogsConfigsMethod)
+        == null) {
+      synchronized (VpcFlowLogsServiceGrpc.class) {
+        if ((getShowEffectiveFlowLogsConfigsMethod =
+                VpcFlowLogsServiceGrpc.getShowEffectiveFlowLogsConfigsMethod)
+            == null) {
+          VpcFlowLogsServiceGrpc.getShowEffectiveFlowLogsConfigsMethod =
+              getShowEffectiveFlowLogsConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest,
+                          com.google.cloud.networkmanagement.v1
+                              .ShowEffectiveFlowLogsConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ShowEffectiveFlowLogsConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkmanagement.v1
+                                  .ShowEffectiveFlowLogsConfigsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkmanagement.v1
+                                  .ShowEffectiveFlowLogsConfigsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VpcFlowLogsServiceMethodDescriptorSupplier(
+                              "ShowEffectiveFlowLogsConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getShowEffectiveFlowLogsConfigsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VpcFlowLogsServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VpcFlowLogsServiceStub> factory =
@@ -393,8 +498,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Creating a configuration with state=DISABLED will fail
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Creating a configuration with `state=DISABLED` will fail
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - creating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -420,8 +525,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Updating a configuration with state=DISABLED will fail.
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Updating a configuration with `state=DISABLED` will fail.
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - updating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -451,6 +556,40 @@ public final class VpcFlowLogsServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteVpcFlowLogsConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC
+     * Flow Logs configurations applicable to the specified project.
+     * </pre>
+     */
+    default void queryOrgVpcFlowLogsConfigs(
+        com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryOrgVpcFlowLogsConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    default void showEffectiveFlowLogsConfigs(
+        com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getShowEffectiveFlowLogsConfigsMethod(), responseObserver);
     }
   }
 
@@ -536,8 +675,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Creating a configuration with state=DISABLED will fail
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Creating a configuration with `state=DISABLED` will fail
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - creating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -565,8 +704,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Updating a configuration with state=DISABLED will fail.
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Updating a configuration with `state=DISABLED` will fail.
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - updating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -598,6 +737,44 @@ public final class VpcFlowLogsServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteVpcFlowLogsConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC
+     * Flow Logs configurations applicable to the specified project.
+     * </pre>
+     */
+    public void queryOrgVpcFlowLogsConfigs(
+        com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public void showEffectiveFlowLogsConfigs(
+        com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getShowEffectiveFlowLogsConfigsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -634,8 +811,9 @@ public final class VpcFlowLogsServiceGrpc {
      */
     public com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsResponse
         listVpcFlowLogsConfigs(
-            com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVpcFlowLogsConfigsMethod(), getCallOptions(), request);
     }
 
@@ -647,8 +825,9 @@ public final class VpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig getVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1.GetVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1.GetVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
 
@@ -660,8 +839,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Creating a configuration with state=DISABLED will fail
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Creating a configuration with `state=DISABLED` will fail
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - creating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -673,8 +852,9 @@ public final class VpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1.CreateVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1.CreateVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
 
@@ -686,8 +866,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Updating a configuration with state=DISABLED will fail.
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Updating a configuration with `state=DISABLED` will fail.
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - updating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -699,8 +879,9 @@ public final class VpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1.UpdateVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1.UpdateVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
 
@@ -712,9 +893,42 @@ public final class VpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1.DeleteVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1.DeleteVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVpcFlowLogsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC
+     * Flow Logs configurations applicable to the specified project.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse
+        queryOrgVpcFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse
+        showEffectiveFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getShowEffectiveFlowLogsConfigsMethod(), getCallOptions(), request);
     }
   }
 
@@ -775,8 +989,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Creating a configuration with state=DISABLED will fail
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Creating a configuration with `state=DISABLED` will fail
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - creating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -801,8 +1015,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Updating a configuration with state=DISABLED will fail.
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Updating a configuration with `state=DISABLED` will fail.
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - updating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -830,6 +1044,36 @@ public final class VpcFlowLogsServiceGrpc {
         com.google.cloud.networkmanagement.v1.DeleteVpcFlowLogsConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteVpcFlowLogsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC
+     * Flow Logs configurations applicable to the specified project.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse
+        queryOrgVpcFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse
+        showEffectiveFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getShowEffectiveFlowLogsConfigsMethod(), getCallOptions(), request);
     }
   }
 
@@ -892,8 +1136,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Creating a configuration with state=DISABLED will fail
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Creating a configuration with `state=DISABLED` will fail
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - creating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -919,8 +1163,8 @@ public final class VpcFlowLogsServiceGrpc {
      * If a configuration with the exact same settings already exists (even if the
      * ID is different), the creation fails.
      * Notes:
-     *   1. Updating a configuration with state=DISABLED will fail.
-     *   2. The following fields are not considered as `settings` for the purpose
+     *   1. Updating a configuration with `state=DISABLED` will fail.
+     *   2. The following fields are not considered as settings for the purpose
      *   of the check mentioned above, therefore - updating another configuration
      *   with the same fields but different values for the following fields will
      *   fail as well:
@@ -951,6 +1195,38 @@ public final class VpcFlowLogsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteVpcFlowLogsConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryOrgVpcFlowLogsConfigs returns a list of all organization-level VPC
+     * Flow Logs configurations applicable to the specified project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>
+        queryOrgVpcFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>
+        showEffectiveFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getShowEffectiveFlowLogsConfigsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_VPC_FLOW_LOGS_CONFIGS = 0;
@@ -958,6 +1234,8 @@ public final class VpcFlowLogsServiceGrpc {
   private static final int METHODID_CREATE_VPC_FLOW_LOGS_CONFIG = 2;
   private static final int METHODID_UPDATE_VPC_FLOW_LOGS_CONFIG = 3;
   private static final int METHODID_DELETE_VPC_FLOW_LOGS_CONFIG = 4;
+  private static final int METHODID_QUERY_ORG_VPC_FLOW_LOGS_CONFIGS = 5;
+  private static final int METHODID_SHOW_EFFECTIVE_FLOW_LOGS_CONFIGS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1003,6 +1281,20 @@ public final class VpcFlowLogsServiceGrpc {
           serviceImpl.deleteVpcFlowLogsConfig(
               (com.google.cloud.networkmanagement.v1.DeleteVpcFlowLogsConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_QUERY_ORG_VPC_FLOW_LOGS_CONFIGS:
+          serviceImpl.queryOrgVpcFlowLogsConfigs(
+              (com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SHOW_EFFECTIVE_FLOW_LOGS_CONFIGS:
+          serviceImpl.showEffectiveFlowLogsConfigs(
+              (com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1057,6 +1349,20 @@ public final class VpcFlowLogsServiceGrpc {
                     com.google.cloud.networkmanagement.v1.DeleteVpcFlowLogsConfigRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_VPC_FLOW_LOGS_CONFIG)))
+        .addMethod(
+            getQueryOrgVpcFlowLogsConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest,
+                    com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse>(
+                    service, METHODID_QUERY_ORG_VPC_FLOW_LOGS_CONFIGS)))
+        .addMethod(
+            getShowEffectiveFlowLogsConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest,
+                    com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse>(
+                    service, METHODID_SHOW_EFFECTIVE_FLOW_LOGS_CONFIGS)))
         .build();
   }
 
@@ -1113,6 +1419,8 @@ public final class VpcFlowLogsServiceGrpc {
                       .addMethod(getCreateVpcFlowLogsConfigMethod())
                       .addMethod(getUpdateVpcFlowLogsConfigMethod())
                       .addMethod(getDeleteVpcFlowLogsConfigMethod())
+                      .addMethod(getQueryOrgVpcFlowLogsConfigsMethod())
+                      .addMethod(getShowEffectiveFlowLogsConfigsMethod())
                       .build();
         }
       }

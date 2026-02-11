@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,7 @@ public class SyncGetCustomTargetingValue {
       GetCustomTargetingValueRequest request =
           GetCustomTargetingValueRequest.newBuilder()
               .setName(
-                  CustomTargetingValueName.of(
-                          "[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]", "[CUSTOM_TARGETING_VALUE]")
+                  CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
                       .toString())
               .build();
       CustomTargetingValue response =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,9 +38,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   taken back after the requested duration is over.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/privilegedaccessmanager/v1/privilegedaccessmanager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PrivilegedAccessManagerGrpc {
 
@@ -1406,8 +1403,9 @@ public final class PrivilegedAccessManagerGrpc {
      */
     public com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusResponse
         checkOnboardingStatus(
-            com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckOnboardingStatusMethod(), getCallOptions(), request);
     }
 
@@ -1419,8 +1417,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.ListEntitlementsResponse listEntitlements(
-        com.google.cloud.privilegedaccessmanager.v1.ListEntitlementsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.ListEntitlementsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntitlementsMethod(), getCallOptions(), request);
     }
 
@@ -1434,8 +1433,9 @@ public final class PrivilegedAccessManagerGrpc {
      */
     public com.google.cloud.privilegedaccessmanager.v1.SearchEntitlementsResponse
         searchEntitlements(
-            com.google.cloud.privilegedaccessmanager.v1.SearchEntitlementsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.privilegedaccessmanager.v1.SearchEntitlementsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchEntitlementsMethod(), getCallOptions(), request);
     }
 
@@ -1447,8 +1447,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlement(
-        com.google.cloud.privilegedaccessmanager.v1.GetEntitlementRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.GetEntitlementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -1461,8 +1462,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntitlement(
-        com.google.cloud.privilegedaccessmanager.v1.CreateEntitlementRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.CreateEntitlementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -1476,8 +1478,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntitlement(
-        com.google.cloud.privilegedaccessmanager.v1.DeleteEntitlementRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.DeleteEntitlementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -1505,8 +1508,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEntitlement(
-        com.google.cloud.privilegedaccessmanager.v1.UpdateEntitlementRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.UpdateEntitlementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -1518,8 +1522,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.ListGrantsResponse listGrants(
-        com.google.cloud.privilegedaccessmanager.v1.ListGrantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.ListGrantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGrantsMethod(), getCallOptions(), request);
     }
 
@@ -1532,8 +1537,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.SearchGrantsResponse searchGrants(
-        com.google.cloud.privilegedaccessmanager.v1.SearchGrantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.SearchGrantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchGrantsMethod(), getCallOptions(), request);
     }
 
@@ -1545,8 +1551,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.Grant getGrant(
-        com.google.cloud.privilegedaccessmanager.v1.GetGrantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.GetGrantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGrantMethod(), getCallOptions(), request);
     }
 
@@ -1559,8 +1566,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.Grant createGrant(
-        com.google.cloud.privilegedaccessmanager.v1.CreateGrantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.CreateGrantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGrantMethod(), getCallOptions(), request);
     }
 
@@ -1574,8 +1582,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.Grant approveGrant(
-        com.google.cloud.privilegedaccessmanager.v1.ApproveGrantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.ApproveGrantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApproveGrantMethod(), getCallOptions(), request);
     }
 
@@ -1589,8 +1598,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.Grant denyGrant(
-        com.google.cloud.privilegedaccessmanager.v1.DenyGrantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.DenyGrantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDenyGrantMethod(), getCallOptions(), request);
     }
 
@@ -1603,8 +1613,9 @@ public final class PrivilegedAccessManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation revokeGrant(
-        com.google.cloud.privilegedaccessmanager.v1.RevokeGrantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privilegedaccessmanager.v1.RevokeGrantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRevokeGrantMethod(), getCallOptions(), request);
     }
   }

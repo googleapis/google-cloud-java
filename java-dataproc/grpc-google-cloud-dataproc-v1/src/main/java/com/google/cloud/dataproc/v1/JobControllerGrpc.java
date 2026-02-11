@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The JobController provides methods to manage jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/jobs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobControllerGrpc {
 
@@ -657,8 +654,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Job submitJob(
-        com.google.cloud.dataproc.v1.SubmitJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitJobMethod(), getCallOptions(), request);
     }
 
@@ -670,8 +667,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation submitJobAsOperation(
-        com.google.cloud.dataproc.v1.SubmitJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitJobAsOperationMethod(), getCallOptions(), request);
     }
 
@@ -683,8 +680,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Job getJob(
-        com.google.cloud.dataproc.v1.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -696,8 +693,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListJobsResponse listJobs(
-        com.google.cloud.dataproc.v1.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -709,8 +706,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Job updateJob(
-        com.google.cloud.dataproc.v1.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -726,8 +723,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Job cancelJob(
-        com.google.cloud.dataproc.v1.CancelJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CancelJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
     }
 
@@ -740,8 +737,8 @@ public final class JobControllerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteJob(
-        com.google.cloud.dataproc.v1.DeleteJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
   }

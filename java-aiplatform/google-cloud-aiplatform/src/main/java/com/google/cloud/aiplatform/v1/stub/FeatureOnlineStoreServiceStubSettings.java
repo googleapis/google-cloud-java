@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,12 +36,17 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest;
+import com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -109,8 +114,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class FeatureOnlineStoreServiceStubSettings
@@ -123,6 +128,10 @@ public class FeatureOnlineStoreServiceStubSettings
       fetchFeatureValuesSettings;
   private final UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings;
+  private final StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings;
+  private final UnaryCallSettings<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -193,6 +202,18 @@ public class FeatureOnlineStoreServiceStubSettings
   public UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings() {
     return searchNearestEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to featureViewDirectWrite. */
+  public StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings() {
+    return featureViewDirectWriteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateFetchAccessToken. */
+  public UnaryCallSettings<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenSettings() {
+    return generateFetchAccessTokenSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -305,6 +326,8 @@ public class FeatureOnlineStoreServiceStubSettings
 
     fetchFeatureValuesSettings = settingsBuilder.fetchFeatureValuesSettings().build();
     searchNearestEntitiesSettings = settingsBuilder.searchNearestEntitiesSettings().build();
+    featureViewDirectWriteSettings = settingsBuilder.featureViewDirectWriteSettings().build();
+    generateFetchAccessTokenSettings = settingsBuilder.generateFetchAccessTokenSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -321,6 +344,12 @@ public class FeatureOnlineStoreServiceStubSettings
     private final UnaryCallSettings.Builder<
             SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings;
+    private final StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+        generateFetchAccessTokenSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -358,6 +387,8 @@ public class FeatureOnlineStoreServiceStubSettings
 
       fetchFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchNearestEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      featureViewDirectWriteSettings = StreamingCallSettings.newBuilder();
+      generateFetchAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -368,6 +399,7 @@ public class FeatureOnlineStoreServiceStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               fetchFeatureValuesSettings,
               searchNearestEntitiesSettings,
+              generateFetchAccessTokenSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -381,6 +413,8 @@ public class FeatureOnlineStoreServiceStubSettings
 
       fetchFeatureValuesSettings = settings.fetchFeatureValuesSettings.toBuilder();
       searchNearestEntitiesSettings = settings.searchNearestEntitiesSettings.toBuilder();
+      featureViewDirectWriteSettings = settings.featureViewDirectWriteSettings.toBuilder();
+      generateFetchAccessTokenSettings = settings.generateFetchAccessTokenSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -391,6 +425,7 @@ public class FeatureOnlineStoreServiceStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               fetchFeatureValuesSettings,
               searchNearestEntitiesSettings,
+              generateFetchAccessTokenSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -418,6 +453,11 @@ public class FeatureOnlineStoreServiceStubSettings
 
       builder
           .searchNearestEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .generateFetchAccessTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -474,6 +514,20 @@ public class FeatureOnlineStoreServiceStubSettings
     public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings() {
       return searchNearestEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to featureViewDirectWrite. */
+    public StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings() {
+      return featureViewDirectWriteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateFetchAccessToken. */
+    public UnaryCallSettings.Builder<
+            GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+        generateFetchAccessTokenSettings() {
+      return generateFetchAccessTokenSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

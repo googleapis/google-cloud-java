@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbEdgeExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -40,19 +42,33 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AuthzExtension;
+import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.CreateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.GetLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.LbEdgeExtension;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
+import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.UpdateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.common.collect.ImmutableMap;
@@ -86,6 +102,8 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
           .add(LbRouteExtension.getDescriptor())
           .add(LbTrafficExtension.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(AuthzExtension.getDescriptor())
+          .add(LbEdgeExtension.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<
@@ -497,6 +515,404 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListLbEdgeExtensions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLbEdgeExtensionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/lbEdgeExtensions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLbEdgeExtensionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLbEdgeExtensionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLbEdgeExtensionsResponse>newBuilder()
+                      .setDefaultInstance(ListLbEdgeExtensionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionMethodDescriptor =
+          ApiMethodDescriptor.<GetLbEdgeExtensionRequest, LbEdgeExtension>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetLbEdgeExtension")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLbEdgeExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/lbEdgeExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<LbEdgeExtension>newBuilder()
+                      .setDefaultInstance(LbEdgeExtension.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionMethodDescriptor =
+          ApiMethodDescriptor.<CreateLbEdgeExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateLbEdgeExtension")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateLbEdgeExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/lbEdgeExtensions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "lbEdgeExtensionId", request.getLbEdgeExtensionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("lbEdgeExtension", request.getLbEdgeExtension(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateLbEdgeExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateLbEdgeExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateLbEdgeExtension")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateLbEdgeExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{lbEdgeExtension.name=projects/*/locations/*/lbEdgeExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "lbEdgeExtension.name",
+                                request.getLbEdgeExtension().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("lbEdgeExtension", request.getLbEdgeExtension(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateLbEdgeExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteLbEdgeExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteLbEdgeExtension")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteLbEdgeExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/lbEdgeExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteLbEdgeExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteLbEdgeExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsMethodDescriptor =
+          ApiMethodDescriptor.<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListAuthzExtensions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAuthzExtensionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/authzExtensions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthzExtensionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthzExtensionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAuthzExtensionsResponse>newBuilder()
+                      .setDefaultInstance(ListAuthzExtensionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAuthzExtensionRequest, AuthzExtension>
+      getAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetAuthzExtension")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/authzExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuthzExtension>newBuilder()
+                      .setDefaultInstance(AuthzExtension.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAuthzExtensionRequest, Operation>
+      createAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<CreateAuthzExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateAuthzExtension")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/authzExtensions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "authzExtensionId", request.getAuthzExtensionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("authzExtension", request.getAuthzExtension(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAuthzExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAuthzExtensionRequest, Operation>
+      updateAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateAuthzExtension")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{authzExtension.name=projects/*/locations/*/authzExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "authzExtension.name",
+                                request.getAuthzExtension().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("authzExtension", request.getAuthzExtension(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAuthzExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAuthzExtensionRequest, Operation>
+      deleteAuthzExtensionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteAuthzExtension")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAuthzExtensionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/authzExtensions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthzExtensionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAuthzExtensionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -734,6 +1150,38 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
       deleteLbRouteExtensionCallable;
   private final OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable;
+  private final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable;
+  private final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable;
+  private final UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionCallable;
+  private final UnaryCallable<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionCallable;
+  private final OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionCallable;
+  private final OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionCallable;
+  private final OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable;
+  private final UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable;
+  private final UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable;
+  private final OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable;
+  private final UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable;
+  private final OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable;
+  private final UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable;
+  private final OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -939,6 +1387,132 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+        listLbEdgeExtensionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listLbEdgeExtensionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
+        getLbEdgeExtensionTransportSettings =
+            HttpJsonCallSettings.<GetLbEdgeExtensionRequest, LbEdgeExtension>newBuilder()
+                .setMethodDescriptor(getLbEdgeExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateLbEdgeExtensionRequest, Operation>
+        createLbEdgeExtensionTransportSettings =
+            HttpJsonCallSettings.<CreateLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createLbEdgeExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateLbEdgeExtensionRequest, Operation>
+        updateLbEdgeExtensionTransportSettings =
+            HttpJsonCallSettings.<UpdateLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateLbEdgeExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "lb_edge_extension.name",
+                          String.valueOf(request.getLbEdgeExtension().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteLbEdgeExtensionRequest, Operation>
+        deleteLbEdgeExtensionTransportSettings =
+            HttpJsonCallSettings.<DeleteLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteLbEdgeExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+        listAuthzExtensionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listAuthzExtensionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAuthzExtensionRequest, AuthzExtension>
+        getAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+                .setMethodDescriptor(getAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateAuthzExtensionRequest, Operation>
+        createAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<CreateAuthzExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateAuthzExtensionRequest, Operation>
+        updateAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "authz_extension.name",
+                          String.valueOf(request.getAuthzExtension().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAuthzExtensionRequest, Operation>
+        deleteAuthzExtensionTransportSettings =
+            HttpJsonCallSettings.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteAuthzExtensionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1093,6 +1667,102 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
             settings.deleteLbRouteExtensionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listLbEdgeExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listLbEdgeExtensionsTransportSettings,
+            settings.listLbEdgeExtensionsSettings(),
+            clientContext);
+    this.listLbEdgeExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLbEdgeExtensionsTransportSettings,
+            settings.listLbEdgeExtensionsSettings(),
+            clientContext);
+    this.getLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getLbEdgeExtensionTransportSettings,
+            settings.getLbEdgeExtensionSettings(),
+            clientContext);
+    this.createLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createLbEdgeExtensionTransportSettings,
+            settings.createLbEdgeExtensionSettings(),
+            clientContext);
+    this.createLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createLbEdgeExtensionTransportSettings,
+            settings.createLbEdgeExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateLbEdgeExtensionTransportSettings,
+            settings.updateLbEdgeExtensionSettings(),
+            clientContext);
+    this.updateLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateLbEdgeExtensionTransportSettings,
+            settings.updateLbEdgeExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteLbEdgeExtensionTransportSettings,
+            settings.deleteLbEdgeExtensionSettings(),
+            clientContext);
+    this.deleteLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteLbEdgeExtensionTransportSettings,
+            settings.deleteLbEdgeExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listAuthzExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.listAuthzExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.getAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getAuthzExtensionTransportSettings,
+            settings.getAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionSettings(),
+            clientContext);
+    this.updateAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionSettings(),
+            clientContext);
+    this.deleteAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1131,6 +1801,16 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
     methodDescriptors.add(createLbRouteExtensionMethodDescriptor);
     methodDescriptors.add(updateLbRouteExtensionMethodDescriptor);
     methodDescriptors.add(deleteLbRouteExtensionMethodDescriptor);
+    methodDescriptors.add(listLbEdgeExtensionsMethodDescriptor);
+    methodDescriptors.add(getLbEdgeExtensionMethodDescriptor);
+    methodDescriptors.add(createLbEdgeExtensionMethodDescriptor);
+    methodDescriptors.add(updateLbEdgeExtensionMethodDescriptor);
+    methodDescriptors.add(deleteLbEdgeExtensionMethodDescriptor);
+    methodDescriptors.add(listAuthzExtensionsMethodDescriptor);
+    methodDescriptors.add(getAuthzExtensionMethodDescriptor);
+    methodDescriptors.add(createAuthzExtensionMethodDescriptor);
+    methodDescriptors.add(updateAuthzExtensionMethodDescriptor);
+    methodDescriptors.add(deleteAuthzExtensionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1245,6 +1925,106 @@ public class HttpJsonDepServiceStub extends DepServiceStub {
   public OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable() {
     return deleteLbRouteExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable() {
+    return listLbEdgeExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable() {
+    return listLbEdgeExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension> getLbEdgeExtensionCallable() {
+    return getLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLbEdgeExtensionRequest, Operation> createLbEdgeExtensionCallable() {
+    return createLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable() {
+    return createLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLbEdgeExtensionRequest, Operation> updateLbEdgeExtensionCallable() {
+    return updateLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable() {
+    return updateLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLbEdgeExtensionRequest, Operation> deleteLbEdgeExtensionCallable() {
+    return deleteLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable() {
+    return deleteLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable() {
+    return listAuthzExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable() {
+    return listAuthzExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable() {
+    return getAuthzExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable() {
+    return createAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable() {
+    return createAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable() {
+    return updateAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable() {
+    return updateAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable() {
+    return deleteAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable() {
+    return deleteAuthzExtensionOperationCallable;
   }
 
   @Override

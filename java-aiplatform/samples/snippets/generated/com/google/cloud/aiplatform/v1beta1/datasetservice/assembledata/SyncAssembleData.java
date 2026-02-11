@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.cloud.aiplatform.v1beta1.AssembleDataRequest;
 import com.google.cloud.aiplatform.v1beta1.AssembleDataResponse;
 import com.google.cloud.aiplatform.v1beta1.DatasetName;
 import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig;
 
 public class SyncAssembleData {
 
@@ -38,6 +39,7 @@ public class SyncAssembleData {
       AssembleDataRequest request =
           AssembleDataRequest.newBuilder()
               .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
               .build();
       AssembleDataResponse response = datasetServiceClient.assembleDataAsync(request).get();
     }

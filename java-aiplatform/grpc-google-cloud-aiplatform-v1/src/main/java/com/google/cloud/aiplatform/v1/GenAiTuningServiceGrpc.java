@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for creating and managing GenAI Tuning Jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/genai_tuning_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GenAiTuningServiceGrpc {
 
@@ -568,8 +565,9 @@ public final class GenAiTuningServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TuningJob createTuningJob(
-        com.google.cloud.aiplatform.v1.CreateTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -581,8 +579,8 @@ public final class GenAiTuningServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TuningJob getTuningJob(
-        com.google.cloud.aiplatform.v1.GetTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetTuningJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -594,8 +592,9 @@ public final class GenAiTuningServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListTuningJobsResponse listTuningJobs(
-        com.google.cloud.aiplatform.v1.ListTuningJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListTuningJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTuningJobsMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +617,9 @@ public final class GenAiTuningServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelTuningJob(
-        com.google.cloud.aiplatform.v1.CancelTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CancelTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -631,8 +631,9 @@ public final class GenAiTuningServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rebaseTunedModel(
-        com.google.cloud.aiplatform.v1.RebaseTunedModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.RebaseTunedModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRebaseTunedModelMethod(), getCallOptions(), request);
     }
   }

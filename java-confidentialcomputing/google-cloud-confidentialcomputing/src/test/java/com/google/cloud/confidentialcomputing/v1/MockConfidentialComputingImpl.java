@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,52 @@ public class MockConfidentialComputingImpl extends ConfidentialComputingImplBase
                   "Unrecognized response type %s for method VerifyAttestation, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VerifyAttestationResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void verifyConfidentialSpace(
+      VerifyConfidentialSpaceRequest request,
+      StreamObserver<VerifyConfidentialSpaceResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VerifyConfidentialSpaceResponse) {
+      requests.add(request);
+      responseObserver.onNext(((VerifyConfidentialSpaceResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method VerifyConfidentialSpace, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VerifyConfidentialSpaceResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void verifyConfidentialGke(
+      VerifyConfidentialGkeRequest request,
+      StreamObserver<VerifyConfidentialGkeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VerifyConfidentialGkeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((VerifyConfidentialGkeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method VerifyConfidentialGke, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VerifyConfidentialGkeResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

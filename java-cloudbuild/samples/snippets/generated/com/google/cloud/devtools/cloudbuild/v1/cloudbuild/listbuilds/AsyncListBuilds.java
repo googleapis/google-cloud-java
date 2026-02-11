@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.ListBuildsRequest;
-import com.google.cloudbuild.v1.LocationName;
+import com.google.cloudbuild.v1.ProjectName;
 
 public class AsyncListBuilds {
 
@@ -38,7 +38,7 @@ public class AsyncListBuilds {
     try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
       ListBuildsRequest request =
           ListBuildsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setProjectId("projectId-894832108")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

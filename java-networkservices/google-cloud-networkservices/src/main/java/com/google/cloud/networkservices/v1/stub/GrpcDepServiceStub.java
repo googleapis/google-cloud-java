@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbEdgeExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -32,19 +34,33 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AuthzExtension;
+import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.CreateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.GetLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.LbEdgeExtension;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
+import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.UpdateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -81,6 +97,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListLbTrafficExtensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLbTrafficExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLbTrafficExtensionRequest, LbTrafficExtension>
@@ -91,6 +108,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LbTrafficExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLbTrafficExtensionRequest, Operation>
@@ -102,6 +120,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLbTrafficExtensionRequest, Operation>
@@ -113,6 +132,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLbTrafficExtensionRequest, Operation>
@@ -124,6 +144,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLbTrafficExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse>
@@ -135,6 +156,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListLbRouteExtensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLbRouteExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLbRouteExtensionRequest, LbRouteExtension>
@@ -145,6 +167,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LbRouteExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLbRouteExtensionRequest, Operation>
@@ -156,6 +179,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLbRouteExtensionRequest, Operation>
@@ -167,6 +191,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLbRouteExtensionRequest, Operation>
@@ -178,6 +203,119 @@ public class GrpcDepServiceStub extends DepServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLbRouteExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsMethodDescriptor =
+          MethodDescriptor.<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListLbEdgeExtensions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLbEdgeExtensionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLbEdgeExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<GetLbEdgeExtensionRequest, LbEdgeExtension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LbEdgeExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<CreateLbEdgeExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<UpdateLbEdgeExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<DeleteLbEdgeExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsMethodDescriptor =
+          MethodDescriptor.<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListAuthzExtensions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAuthzExtensionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAuthzExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAuthzExtensionRequest, AuthzExtension>
+      getAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuthzExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateAuthzExtensionRequest, Operation>
+      createAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<CreateAuthzExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAuthzExtensionRequest, Operation>
+      updateAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteAuthzExtensionRequest, Operation>
+      deleteAuthzExtensionMethodDescriptor =
+          MethodDescriptor.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteAuthzExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAuthzExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -189,6 +327,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -197,6 +336,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -205,6 +345,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -213,6 +354,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -224,6 +366,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListLbTrafficExtensionsRequest, ListLbTrafficExtensionsResponse>
@@ -266,6 +409,38 @@ public class GrpcDepServiceStub extends DepServiceStub {
       deleteLbRouteExtensionCallable;
   private final OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable;
+  private final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable;
+  private final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable;
+  private final UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionCallable;
+  private final UnaryCallable<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionCallable;
+  private final OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionCallable;
+  private final OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionCallable;
+  private final OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable;
+  private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable;
+  private final UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable;
+  private final UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable;
+  private final OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable;
+  private final UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable;
+  private final OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable;
+  private final UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable;
+  private final OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -433,6 +608,116 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+        listLbEdgeExtensionsTransportSettings =
+            GrpcCallSettings.<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listLbEdgeExtensionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
+        getLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<GetLbEdgeExtensionRequest, LbEdgeExtension>newBuilder()
+                .setMethodDescriptor(getLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateLbEdgeExtensionRequest, Operation>
+        createLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<CreateLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateLbEdgeExtensionRequest, Operation>
+        updateLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<UpdateLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "lb_edge_extension.name",
+                          String.valueOf(request.getLbEdgeExtension().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteLbEdgeExtensionRequest, Operation>
+        deleteLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<DeleteLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+        listAuthzExtensionsTransportSettings =
+            GrpcCallSettings.<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listAuthzExtensionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionTransportSettings =
+        GrpcCallSettings.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
+            .setMethodDescriptor(getAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAuthzExtensionRequest, Operation> createAuthzExtensionTransportSettings =
+        GrpcCallSettings.<CreateAuthzExtensionRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionTransportSettings =
+        GrpcCallSettings.<UpdateAuthzExtensionRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "authz_extension.name",
+                      String.valueOf(request.getAuthzExtension().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionTransportSettings =
+        GrpcCallSettings.<DeleteAuthzExtensionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAuthzExtensionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -581,6 +866,102 @@ public class GrpcDepServiceStub extends DepServiceStub {
             settings.deleteLbRouteExtensionOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLbEdgeExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listLbEdgeExtensionsTransportSettings,
+            settings.listLbEdgeExtensionsSettings(),
+            clientContext);
+    this.listLbEdgeExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLbEdgeExtensionsTransportSettings,
+            settings.listLbEdgeExtensionsSettings(),
+            clientContext);
+    this.getLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getLbEdgeExtensionTransportSettings,
+            settings.getLbEdgeExtensionSettings(),
+            clientContext);
+    this.createLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createLbEdgeExtensionTransportSettings,
+            settings.createLbEdgeExtensionSettings(),
+            clientContext);
+    this.createLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createLbEdgeExtensionTransportSettings,
+            settings.createLbEdgeExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateLbEdgeExtensionTransportSettings,
+            settings.updateLbEdgeExtensionSettings(),
+            clientContext);
+    this.updateLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateLbEdgeExtensionTransportSettings,
+            settings.updateLbEdgeExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteLbEdgeExtensionTransportSettings,
+            settings.deleteLbEdgeExtensionSettings(),
+            clientContext);
+    this.deleteLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteLbEdgeExtensionTransportSettings,
+            settings.deleteLbEdgeExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listAuthzExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.listAuthzExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthzExtensionsTransportSettings,
+            settings.listAuthzExtensionsSettings(),
+            clientContext);
+    this.getAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getAuthzExtensionTransportSettings,
+            settings.getAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionSettings(),
+            clientContext);
+    this.createAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createAuthzExtensionTransportSettings,
+            settings.createAuthzExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionSettings(),
+            clientContext);
+    this.updateAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAuthzExtensionTransportSettings,
+            settings.updateAuthzExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAuthzExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionSettings(),
+            clientContext);
+    this.deleteAuthzExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthzExtensionTransportSettings,
+            settings.deleteAuthzExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -712,6 +1093,106 @@ public class GrpcDepServiceStub extends DepServiceStub {
   public OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable() {
     return deleteLbRouteExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable() {
+    return listLbEdgeExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable() {
+    return listLbEdgeExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension> getLbEdgeExtensionCallable() {
+    return getLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLbEdgeExtensionRequest, Operation> createLbEdgeExtensionCallable() {
+    return createLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable() {
+    return createLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLbEdgeExtensionRequest, Operation> updateLbEdgeExtensionCallable() {
+    return updateLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable() {
+    return updateLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLbEdgeExtensionRequest, Operation> deleteLbEdgeExtensionCallable() {
+    return deleteLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable() {
+    return deleteLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable() {
+    return listAuthzExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable() {
+    return listAuthzExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable() {
+    return getAuthzExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable() {
+    return createAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable() {
+    return createAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable() {
+    return updateAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable() {
+    return updateAuthzExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable() {
+    return deleteAuthzExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable() {
+    return deleteAuthzExtensionOperationCallable;
   }
 
   @Override

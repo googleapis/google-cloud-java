@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,16 @@ import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
+import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
 import com.google.container.v1beta1.GetJSONWebKeysResponse;
@@ -53,6 +57,7 @@ import com.google.container.v1beta1.ListOperationsResponse;
 import com.google.container.v1beta1.ListUsableSubnetworksRequest;
 import com.google.container.v1beta1.ListUsableSubnetworksResponse;
 import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.NodePoolUpgradeInfo;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1beta1.ServerConfig;
@@ -97,6 +102,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -105,6 +111,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
           .setFullMethodName("google.container.v1beta1.ClusterManager/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -115,6 +122,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -125,6 +133,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNodePoolRequest, Operation>
@@ -135,6 +144,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetNodePoolAutoscalingRequest, Operation>
@@ -145,6 +155,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNodePoolAutoscalingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetLoggingServiceRequest, Operation>
@@ -155,6 +166,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetLoggingServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetMonitoringServiceRequest, Operation>
@@ -165,6 +177,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetMonitoringServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetAddonsConfigRequest, Operation>
@@ -175,6 +188,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetAddonsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetLocationsRequest, Operation>
@@ -184,6 +198,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setFullMethodName("google.container.v1beta1.ClusterManager/SetLocations")
               .setRequestMarshaller(ProtoUtils.marshaller(SetLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMasterRequest, Operation>
@@ -193,6 +208,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setFullMethodName("google.container.v1beta1.ClusterManager/UpdateMaster")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateMasterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetMasterAuthRequest, Operation>
@@ -203,6 +219,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetMasterAuthRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -213,6 +230,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOperationsRequest, ListOperationsResponse>
@@ -224,6 +242,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(ListOperationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOperationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOperationRequest, Operation>
@@ -233,6 +252,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setFullMethodName("google.container.v1beta1.ClusterManager/GetOperation")
               .setRequestMarshaller(ProtoUtils.marshaller(GetOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelOperationRequest, Empty>
@@ -243,6 +263,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServerConfigRequest, ServerConfig>
@@ -253,6 +274,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
@@ -264,6 +286,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(GetJSONWebKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetJSONWebKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNodePoolsRequest, ListNodePoolsResponse>
@@ -275,6 +298,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(ListNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNodePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodePoolRequest, NodePool> getNodePoolMethodDescriptor =
@@ -283,6 +307,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
           .setFullMethodName("google.container.v1beta1.ClusterManager/GetNodePool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodePoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NodePool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNodePoolRequest, Operation>
@@ -293,6 +318,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNodePoolRequest, Operation>
@@ -303,6 +329,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CompleteNodePoolUpgradeRequest, Empty>
@@ -313,6 +340,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CompleteNodePoolUpgradeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackNodePoolUpgradeRequest, Operation>
@@ -323,6 +351,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackNodePoolUpgradeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetNodePoolManagementRequest, Operation>
@@ -333,6 +362,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNodePoolManagementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetLabelsRequest, Operation> setLabelsMethodDescriptor =
@@ -341,6 +371,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
           .setFullMethodName("google.container.v1beta1.ClusterManager/SetLabels")
           .setRequestMarshaller(ProtoUtils.marshaller(SetLabelsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetLegacyAbacRequest, Operation>
@@ -351,6 +382,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetLegacyAbacRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartIPRotationRequest, Operation>
@@ -361,6 +393,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartIPRotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CompleteIPRotationRequest, Operation>
@@ -371,6 +404,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CompleteIPRotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetNodePoolSizeRequest, Operation>
@@ -381,6 +415,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNodePoolSizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetNetworkPolicyRequest, Operation>
@@ -391,6 +426,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetNetworkPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetMaintenancePolicyRequest, Operation>
@@ -401,6 +437,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetMaintenancePolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
@@ -412,6 +449,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(ListUsableSubnetworksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUsableSubnetworksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -426,6 +464,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(CheckAutopilotCompatibilityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckAutopilotCompatibilityResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -437,6 +476,42 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoMethodDescriptor =
+          MethodDescriptor.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/FetchClusterUpgradeInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchClusterUpgradeInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ClusterUpgradeInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoMethodDescriptor =
+          MethodDescriptor.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/FetchNodePoolUpgradeInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchNodePoolUpgradeInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(NodePoolUpgradeInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeMethodDescriptor =
+          MethodDescriptor.<CompleteControlPlaneUpgradeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.container.v1beta1.ClusterManager/CompleteControlPlaneUpgrade")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CompleteControlPlaneUpgradeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
@@ -483,6 +558,12 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable;
+  private final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable;
+  private final UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -982,6 +1063,39 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+        fetchClusterUpgradeInfoTransportSettings =
+            GrpcCallSettings.<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchClusterUpgradeInfoMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfoTransportSettings =
+            GrpcCallSettings.<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>newBuilder()
+                .setMethodDescriptor(fetchNodePoolUpgradeInfoMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeTransportSettings =
+            GrpcCallSettings.<CompleteControlPlaneUpgradeRequest, Operation>newBuilder()
+                .setMethodDescriptor(completeControlPlaneUpgradeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -1113,6 +1227,21 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.fetchClusterUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchClusterUpgradeInfoTransportSettings,
+            settings.fetchClusterUpgradeInfoSettings(),
+            clientContext);
+    this.fetchNodePoolUpgradeInfoCallable =
+        callableFactory.createUnaryCallable(
+            fetchNodePoolUpgradeInfoTransportSettings,
+            settings.fetchNodePoolUpgradeInfoSettings(),
+            clientContext);
+    this.completeControlPlaneUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            completeControlPlaneUpgradeTransportSettings,
+            settings.completeControlPlaneUpgradeSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1304,6 +1433,24 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable() {
+    return fetchClusterUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable() {
+    return fetchNodePoolUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable() {
+    return completeControlPlaneUpgradeCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * widgets in a specific layout.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/dashboard/v1/dashboards_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DashboardsServiceGrpc {
 
@@ -594,8 +591,9 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard createDashboard(
-        com.google.monitoring.dashboard.v1.CreateDashboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.dashboard.v1.CreateDashboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDashboardMethod(), getCallOptions(), request);
     }
 
@@ -610,8 +608,9 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.ListDashboardsResponse listDashboards(
-        com.google.monitoring.dashboard.v1.ListDashboardsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.dashboard.v1.ListDashboardsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDashboardsMethod(), getCallOptions(), request);
     }
 
@@ -626,8 +625,9 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard getDashboard(
-        com.google.monitoring.dashboard.v1.GetDashboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.dashboard.v1.GetDashboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDashboardMethod(), getCallOptions(), request);
     }
 
@@ -642,8 +642,9 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDashboard(
-        com.google.monitoring.dashboard.v1.DeleteDashboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.dashboard.v1.DeleteDashboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDashboardMethod(), getCallOptions(), request);
     }
 
@@ -658,8 +659,9 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard updateDashboard(
-        com.google.monitoring.dashboard.v1.UpdateDashboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.dashboard.v1.UpdateDashboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDashboardMethod(), getCallOptions(), request);
     }
   }

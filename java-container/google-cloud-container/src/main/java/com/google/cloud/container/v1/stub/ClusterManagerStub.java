@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,15 @@ import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -45,6 +48,7 @@ import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -221,6 +225,16 @@ public abstract class ClusterManagerStub implements BackgroundResource {
       checkAutopilotCompatibilityCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: checkAutopilotCompatibilityCallable()");
+  }
+
+  public UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchClusterUpgradeInfoCallable()");
+  }
+
+  public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchNodePoolUpgradeInfoCallable()");
   }
 
   @Override

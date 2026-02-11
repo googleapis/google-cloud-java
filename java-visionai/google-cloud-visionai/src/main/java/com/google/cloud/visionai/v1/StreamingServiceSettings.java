@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.visionai.v1;
 
+import static com.google.cloud.visionai.v1.StreamingServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,9 +27,14 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.stub.StreamingServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
@@ -80,8 +87,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class StreamingServiceSettings extends ClientSettings<StreamingServiceSettings> {
@@ -116,6 +123,17 @@ public class StreamingServiceSettings extends ClientSettings<StreamingServiceSet
   /** Returns the object with the settings used for calls to releaseLease. */
   public UnaryCallSettings<ReleaseLeaseRequest, ReleaseLeaseResponse> releaseLeaseSettings() {
     return ((StreamingServiceStubSettings) getStubSettings()).releaseLeaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((StreamingServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((StreamingServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final StreamingServiceSettings create(StreamingServiceStubSettings stub)
@@ -262,6 +280,18 @@ public class StreamingServiceSettings extends ClientSettings<StreamingServiceSet
     public UnaryCallSettings.Builder<ReleaseLeaseRequest, ReleaseLeaseResponse>
         releaseLeaseSettings() {
       return getStubSettingsBuilder().releaseLeaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

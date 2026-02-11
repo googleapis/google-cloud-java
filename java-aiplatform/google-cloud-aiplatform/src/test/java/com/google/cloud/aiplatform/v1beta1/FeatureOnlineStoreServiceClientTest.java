@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -382,6 +383,58 @@ public class FeatureOnlineStoreServiceClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void generateFetchAccessTokenTest() throws Exception {
+    GenerateFetchAccessTokenResponse expectedResponse =
+        GenerateFetchAccessTokenResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+
+    GenerateFetchAccessTokenRequest request =
+        GenerateFetchAccessTokenRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .build();
+
+    GenerateFetchAccessTokenResponse actualResponse = client.generateFetchAccessToken(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateFetchAccessTokenRequest actualRequest =
+        ((GenerateFetchAccessTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getFeatureView(), actualRequest.getFeatureView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateFetchAccessTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+
+    try {
+      GenerateFetchAccessTokenRequest request =
+          GenerateFetchAccessTokenRequest.newBuilder()
+              .setFeatureView(
+                  FeatureViewName.of(
+                          "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                      .toString())
+              .build();
+      client.generateFetchAccessToken(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

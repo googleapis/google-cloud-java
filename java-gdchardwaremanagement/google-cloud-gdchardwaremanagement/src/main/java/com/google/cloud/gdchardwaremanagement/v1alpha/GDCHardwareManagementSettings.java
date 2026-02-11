@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,8 +99,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -185,6 +185,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
   public OperationCallSettings<SubmitOrderRequest, Order, OperationMetadata>
       submitOrderOperationSettings() {
     return ((GDCHardwareManagementStubSettings) getStubSettings()).submitOrderOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).cancelOrderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public OperationCallSettings<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).cancelOrderOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listSites. */
@@ -434,6 +445,19 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
         .signalZoneStateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to requestOrderDateChange. */
+  public UnaryCallSettings<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).requestOrderDateChangeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to requestOrderDateChange. */
+  public OperationCallSettings<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings())
+        .requestOrderDateChangeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -611,6 +635,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<SubmitOrderRequest, Order, OperationMetadata>
         submitOrderOperationSettings() {
       return getStubSettingsBuilder().submitOrderOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings() {
+      return getStubSettingsBuilder().cancelOrderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public OperationCallSettings.Builder<CancelOrderRequest, Order, OperationMetadata>
+        cancelOrderOperationSettings() {
+      return getStubSettingsBuilder().cancelOrderOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSites. */
@@ -861,6 +896,18 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<SignalZoneStateRequest, Zone, OperationMetadata>
         signalZoneStateOperationSettings() {
       return getStubSettingsBuilder().signalZoneStateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestOrderDateChange. */
+    public UnaryCallSettings.Builder<RequestOrderDateChangeRequest, Operation>
+        requestOrderDateChangeSettings() {
+      return getStubSettingsBuilder().requestOrderDateChangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestOrderDateChange. */
+    public OperationCallSettings.Builder<RequestOrderDateChangeRequest, Order, OperationMetadata>
+        requestOrderDateChangeOperationSettings() {
+      return getStubSettingsBuilder().requestOrderDateChangeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

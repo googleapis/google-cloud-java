@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
@@ -43,6 +44,7 @@ import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
+import com.google.cloud.netapp.v1.CreateHostGroupRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
 import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
@@ -53,6 +55,7 @@ import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
+import com.google.cloud.netapp.v1.DeleteHostGroupRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
 import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
@@ -65,12 +68,14 @@ import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
+import com.google.cloud.netapp.v1.GetHostGroupRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
+import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
@@ -80,6 +85,8 @@ import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
 import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
 import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
+import com.google.cloud.netapp.v1.ListHostGroupsRequest;
+import com.google.cloud.netapp.v1.ListHostGroupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
 import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
@@ -95,6 +102,8 @@ import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
 import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
+import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
+import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
@@ -107,6 +116,7 @@ import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
+import com.google.cloud.netapp.v1.UpdateHostGroupRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
 import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
@@ -649,6 +659,56 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteQuotaRuleCallable()");
+  }
+
+  public OperationCallable<RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: restoreBackupFilesOperationCallable()");
+  }
+
+  public UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreBackupFilesCallable()");
+  }
+
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listHostGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listHostGroupsCallable()");
+  }
+
+  public UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getHostGroupCallable()");
+  }
+
+  public OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createHostGroupOperationCallable()");
+  }
+
+  public UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createHostGroupCallable()");
+  }
+
+  public OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateHostGroupOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateHostGroupCallable()");
+  }
+
+  public OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteHostGroupOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteHostGroupCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,8 +95,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -325,6 +325,21 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   /** Returns the object with the settings used for calls to cancelMetadataJob. */
   public UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).cancelMetadataJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEntryLink. */
+  public UnaryCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntryLink. */
+  public UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEntryLink. */
+  public UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getEntryLinkSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -657,6 +672,21 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to cancelMetadataJob. */
     public UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
       return getStubSettingsBuilder().cancelMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEntryLink. */
+    public UnaryCallSettings.Builder<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+      return getStubSettingsBuilder().createEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntryLink. */
+    public UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+      return getStubSettingsBuilder().deleteEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEntryLink. */
+    public UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+      return getStubSettingsBuilder().getEntryLinkSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

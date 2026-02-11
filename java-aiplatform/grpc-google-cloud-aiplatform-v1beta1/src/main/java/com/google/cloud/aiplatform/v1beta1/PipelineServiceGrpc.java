@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `PipelineJob` resources (used for Vertex AI Pipelines).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/pipeline_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PipelineServiceGrpc {
 
@@ -1191,8 +1188,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline createTrainingPipeline(
-        com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -1204,8 +1202,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline getTrainingPipeline(
-        com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -1217,8 +1216,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse listTrainingPipelines(
-        com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTrainingPipelinesMethod(), getCallOptions(), request);
     }
 
@@ -1230,8 +1230,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTrainingPipeline(
-        com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -1256,8 +1257,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelTrainingPipeline(
-        com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -1269,8 +1271,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.PipelineJob createPipelineJob(
-        com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePipelineJobMethod(), getCallOptions(), request);
     }
 
@@ -1282,8 +1285,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.PipelineJob getPipelineJob(
-        com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPipelineJobMethod(), getCallOptions(), request);
     }
 
@@ -1295,8 +1299,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse listPipelineJobs(
-        com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPipelineJobsMethod(), getCallOptions(), request);
     }
 
@@ -1308,8 +1313,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePipelineJob(
-        com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePipelineJobMethod(), getCallOptions(), request);
     }
 
@@ -1323,8 +1329,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchDeletePipelineJobs(
-        com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeletePipelineJobsMethod(), getCallOptions(), request);
     }
 
@@ -1348,8 +1355,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelPipelineJob(
-        com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelPipelineJobMethod(), getCallOptions(), request);
     }
 
@@ -1367,8 +1375,9 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCancelPipelineJobs(
-        com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCancelPipelineJobsMethod(), getCallOptions(), request);
     }
   }

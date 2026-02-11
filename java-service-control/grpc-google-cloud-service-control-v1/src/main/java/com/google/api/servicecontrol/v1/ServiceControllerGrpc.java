@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/servicecontrol/v1/service_controller.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceControllerGrpc {
 
@@ -381,8 +378,8 @@ public final class ServiceControllerGrpc {
      * </pre>
      */
     public com.google.api.servicecontrol.v1.CheckResponse check(
-        com.google.api.servicecontrol.v1.CheckRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicecontrol.v1.CheckRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckMethod(), getCallOptions(), request);
     }
 
@@ -405,8 +402,8 @@ public final class ServiceControllerGrpc {
      * </pre>
      */
     public com.google.api.servicecontrol.v1.ReportResponse report(
-        com.google.api.servicecontrol.v1.ReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicecontrol.v1.ReportRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportMethod(), getCallOptions(), request);
     }
   }

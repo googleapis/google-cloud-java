@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * principals' access might change under the proposed policy.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/policysimulator/v1/simulator.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SimulatorGrpc {
 
@@ -434,8 +431,9 @@ public final class SimulatorGrpc {
      * </pre>
      */
     public com.google.cloud.policysimulator.v1.Replay getReplay(
-        com.google.cloud.policysimulator.v1.GetReplayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.policysimulator.v1.GetReplayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReplayMethod(), getCallOptions(), request);
     }
 
@@ -448,8 +446,9 @@ public final class SimulatorGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createReplay(
-        com.google.cloud.policysimulator.v1.CreateReplayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.policysimulator.v1.CreateReplayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReplayMethod(), getCallOptions(), request);
     }
 
@@ -462,8 +461,9 @@ public final class SimulatorGrpc {
      * </pre>
      */
     public com.google.cloud.policysimulator.v1.ListReplayResultsResponse listReplayResults(
-        com.google.cloud.policysimulator.v1.ListReplayResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.policysimulator.v1.ListReplayResultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReplayResultsMethod(), getCallOptions(), request);
     }
   }

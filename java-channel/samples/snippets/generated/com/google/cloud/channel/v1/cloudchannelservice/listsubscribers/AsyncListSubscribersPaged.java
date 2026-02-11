@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.channel.v1.samples;
 
 // [START cloudchannel_v1_generated_CloudChannelService_ListSubscribers_Paged_async]
+import com.google.cloud.channel.v1.AccountName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
 import com.google.cloud.channel.v1.ListSubscribersResponse;
@@ -37,9 +38,10 @@ public class AsyncListSubscribersPaged {
     try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
       ListSubscribersRequest request =
           ListSubscribersRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setIntegrator("integrator-1902360937")
               .build();
       while (true) {
         ListSubscribersResponse response =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.visionai.v1.stub;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListApplicationsPagedResponse;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListDraftsPagedResponse;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListInstancesPagedResponse;
+import static com.google.cloud.visionai.v1.AppPlatformClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.AppPlatformClient.ListProcessorsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AddApplicationStreamInputRequest;
 import com.google.cloud.visionai.v1.AddApplicationStreamInputResponse;
 import com.google.cloud.visionai.v1.Application;
@@ -98,6 +103,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   ProtoUtils.marshaller(ListApplicationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApplicationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApplicationRequest, Application>
@@ -108,6 +114,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApplicationRequest, Operation>
@@ -118,6 +125,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApplicationRequest, Operation>
@@ -128,6 +136,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApplicationRequest, Operation>
@@ -138,6 +147,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployApplicationRequest, Operation>
@@ -148,6 +158,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeployApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeployApplicationRequest, Operation>
@@ -158,6 +169,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddApplicationStreamInputRequest, Operation>
@@ -168,6 +180,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddApplicationStreamInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveApplicationStreamInputRequest, Operation>
@@ -179,6 +192,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveApplicationStreamInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApplicationStreamInputRequest, Operation>
@@ -190,6 +204,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApplicationStreamInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
@@ -201,6 +216,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -209,6 +225,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
           .setFullMethodName("google.cloud.visionai.v1.AppPlatform/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateApplicationInstancesRequest, Operation>
@@ -219,6 +236,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApplicationInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApplicationInstancesRequest, Operation>
@@ -229,6 +247,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApplicationInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApplicationInstancesRequest, Operation>
@@ -239,6 +258,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApplicationInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDraftsRequest, ListDraftsResponse>
@@ -248,6 +268,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setFullMethodName("google.cloud.visionai.v1.AppPlatform/ListDrafts")
               .setRequestMarshaller(ProtoUtils.marshaller(ListDraftsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListDraftsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDraftRequest, Draft> getDraftMethodDescriptor =
@@ -256,6 +277,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
           .setFullMethodName("google.cloud.visionai.v1.AppPlatform/GetDraft")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDraftRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Draft.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateDraftRequest, Operation> createDraftMethodDescriptor =
@@ -264,6 +286,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
           .setFullMethodName("google.cloud.visionai.v1.AppPlatform/CreateDraft")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateDraftRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateDraftRequest, Operation> updateDraftMethodDescriptor =
@@ -272,6 +295,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
           .setFullMethodName("google.cloud.visionai.v1.AppPlatform/UpdateDraft")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateDraftRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteDraftRequest, Operation> deleteDraftMethodDescriptor =
@@ -280,6 +304,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
           .setFullMethodName("google.cloud.visionai.v1.AppPlatform/DeleteDraft")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDraftRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProcessorsRequest, ListProcessorsResponse>
@@ -291,6 +316,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   ProtoUtils.marshaller(ListProcessorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -304,6 +330,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   ProtoUtils.marshaller(ListPrebuiltProcessorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPrebuiltProcessorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorRequest, Processor>
@@ -313,6 +340,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setFullMethodName("google.cloud.visionai.v1.AppPlatform/GetProcessor")
               .setRequestMarshaller(ProtoUtils.marshaller(GetProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Processor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProcessorRequest, Operation>
@@ -323,6 +351,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProcessorRequest, Operation>
@@ -333,6 +362,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessorRequest, Operation>
@@ -343,7 +373,29 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private final UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable;
@@ -431,6 +483,10 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
   private final UnaryCallable<DeleteProcessorRequest, Operation> deleteProcessorCallable;
   private final OperationCallable<DeleteProcessorRequest, Empty, OperationMetadata>
       deleteProcessorOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -745,6 +801,26 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listApplicationsCallable =
         callableFactory.createUnaryCallable(
@@ -962,6 +1038,15 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
             settings.deleteProcessorOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1242,6 +1327,22 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
   public OperationCallable<DeleteProcessorRequest, Empty, OperationMetadata>
       deleteProcessorOperationCallable() {
     return deleteProcessorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * explicitly enabling or disabling participation in each program.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/programs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProgramsServiceGrpc {
 
@@ -522,8 +519,9 @@ public final class ProgramsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Program getProgram(
-        com.google.shopping.merchant.accounts.v1beta.GetProgramRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetProgramRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProgramMethod(), getCallOptions(), request);
     }
 
@@ -535,8 +533,9 @@ public final class ProgramsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListProgramsResponse listPrograms(
-        com.google.shopping.merchant.accounts.v1beta.ListProgramsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.ListProgramsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProgramsMethod(), getCallOptions(), request);
     }
 
@@ -549,8 +548,9 @@ public final class ProgramsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Program enableProgram(
-        com.google.shopping.merchant.accounts.v1beta.EnableProgramRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.EnableProgramRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableProgramMethod(), getCallOptions(), request);
     }
 
@@ -563,8 +563,9 @@ public final class ProgramsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Program disableProgram(
-        com.google.shopping.merchant.accounts.v1beta.DisableProgramRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.DisableProgramRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableProgramMethod(), getCallOptions(), request);
     }
   }

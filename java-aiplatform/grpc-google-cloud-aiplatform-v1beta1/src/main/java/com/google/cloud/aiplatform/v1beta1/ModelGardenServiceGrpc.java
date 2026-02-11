@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The interface of Model Garden Service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/model_garden_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelGardenServiceGrpc {
 
@@ -731,8 +728,9 @@ public final class ModelGardenServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.PublisherModel getPublisherModel(
-        com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPublisherModelMethod(), getCallOptions(), request);
     }
 
@@ -744,8 +742,9 @@ public final class ModelGardenServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse listPublisherModels(
-        com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPublisherModelsMethod(), getCallOptions(), request);
     }
 
@@ -757,8 +756,8 @@ public final class ModelGardenServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deploy(
-        com.google.cloud.aiplatform.v1beta1.DeployRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeployRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployMethod(), getCallOptions(), request);
     }
 
@@ -771,8 +770,9 @@ public final class ModelGardenServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation deployPublisherModel(
-        com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployPublisherModelMethod(), getCallOptions(), request);
     }
 
@@ -784,8 +784,9 @@ public final class ModelGardenServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportPublisherModel(
-        com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportPublisherModelMethod(), getCallOptions(), request);
     }
 
@@ -798,8 +799,9 @@ public final class ModelGardenServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance
         checkPublisherModelEulaAcceptance(
-            com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckPublisherModelEulaAcceptanceMethod(), getCallOptions(), request);
     }
 
@@ -812,8 +814,9 @@ public final class ModelGardenServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance
         acceptPublisherModelEula(
-            com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcceptPublisherModelEulaMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * content with any standard VMAP compliant ad server.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/video/stitcher/v1/video_stitcher_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VideoStitcherServiceGrpc {
 
@@ -2531,8 +2528,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCdnKey(
-        com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCdnKeyMethod(), getCallOptions(), request);
     }
 
@@ -2544,8 +2542,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListCdnKeysResponse listCdnKeys(
-        com.google.cloud.video.stitcher.v1.ListCdnKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListCdnKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCdnKeysMethod(), getCallOptions(), request);
     }
 
@@ -2557,8 +2556,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.CdnKey getCdnKey(
-        com.google.cloud.video.stitcher.v1.GetCdnKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetCdnKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCdnKeyMethod(), getCallOptions(), request);
     }
 
@@ -2570,8 +2570,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCdnKey(
-        com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCdnKeyMethod(), getCallOptions(), request);
     }
 
@@ -2584,8 +2585,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCdnKey(
-        com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCdnKeyMethod(), getCallOptions(), request);
     }
 
@@ -2598,8 +2600,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.VodSession createVodSession(
-        com.google.cloud.video.stitcher.v1.CreateVodSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.CreateVodSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVodSessionMethod(), getCallOptions(), request);
     }
 
@@ -2612,8 +2615,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.VodSession getVodSession(
-        com.google.cloud.video.stitcher.v1.GetVodSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetVodSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVodSessionMethod(), getCallOptions(), request);
     }
 
@@ -2626,8 +2630,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse listVodStitchDetails(
-        com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVodStitchDetailsMethod(), getCallOptions(), request);
     }
 
@@ -2639,8 +2644,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.VodStitchDetail getVodStitchDetail(
-        com.google.cloud.video.stitcher.v1.GetVodStitchDetailRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetVodStitchDetailRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVodStitchDetailMethod(), getCallOptions(), request);
     }
 
@@ -2652,8 +2658,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse listVodAdTagDetails(
-        com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVodAdTagDetailsMethod(), getCallOptions(), request);
     }
 
@@ -2665,8 +2672,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.VodAdTagDetail getVodAdTagDetail(
-        com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVodAdTagDetailMethod(), getCallOptions(), request);
     }
 
@@ -2678,8 +2686,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsResponse listLiveAdTagDetails(
-        com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLiveAdTagDetailsMethod(), getCallOptions(), request);
     }
 
@@ -2691,8 +2700,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.LiveAdTagDetail getLiveAdTagDetail(
-        com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLiveAdTagDetailMethod(), getCallOptions(), request);
     }
 
@@ -2704,8 +2714,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSlate(
-        com.google.cloud.video.stitcher.v1.CreateSlateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.CreateSlateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSlateMethod(), getCallOptions(), request);
     }
 
@@ -2717,8 +2728,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListSlatesResponse listSlates(
-        com.google.cloud.video.stitcher.v1.ListSlatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListSlatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSlatesMethod(), getCallOptions(), request);
     }
 
@@ -2730,8 +2742,8 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.Slate getSlate(
-        com.google.cloud.video.stitcher.v1.GetSlateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetSlateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSlateMethod(), getCallOptions(), request);
     }
 
@@ -2743,8 +2755,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSlate(
-        com.google.cloud.video.stitcher.v1.UpdateSlateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.UpdateSlateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSlateMethod(), getCallOptions(), request);
     }
 
@@ -2756,8 +2769,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSlate(
-        com.google.cloud.video.stitcher.v1.DeleteSlateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.DeleteSlateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSlateMethod(), getCallOptions(), request);
     }
 
@@ -2769,8 +2783,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.LiveSession createLiveSession(
-        com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLiveSessionMethod(), getCallOptions(), request);
     }
 
@@ -2782,8 +2797,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.LiveSession getLiveSession(
-        com.google.cloud.video.stitcher.v1.GetLiveSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetLiveSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLiveSessionMethod(), getCallOptions(), request);
     }
 
@@ -2796,8 +2812,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLiveConfig(
-        com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLiveConfigMethod(), getCallOptions(), request);
     }
 
@@ -2810,8 +2827,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListLiveConfigsResponse listLiveConfigs(
-        com.google.cloud.video.stitcher.v1.ListLiveConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListLiveConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLiveConfigsMethod(), getCallOptions(), request);
     }
 
@@ -2824,8 +2842,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.LiveConfig getLiveConfig(
-        com.google.cloud.video.stitcher.v1.GetLiveConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetLiveConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLiveConfigMethod(), getCallOptions(), request);
     }
 
@@ -2837,8 +2856,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLiveConfig(
-        com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLiveConfigMethod(), getCallOptions(), request);
     }
 
@@ -2851,8 +2871,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLiveConfig(
-        com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLiveConfigMethod(), getCallOptions(), request);
     }
 
@@ -2865,8 +2886,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVodConfig(
-        com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVodConfigMethod(), getCallOptions(), request);
     }
 
@@ -2879,8 +2901,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.ListVodConfigsResponse listVodConfigs(
-        com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVodConfigsMethod(), getCallOptions(), request);
     }
 
@@ -2893,8 +2916,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.stitcher.v1.VodConfig getVodConfig(
-        com.google.cloud.video.stitcher.v1.GetVodConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.GetVodConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVodConfigMethod(), getCallOptions(), request);
     }
 
@@ -2906,8 +2930,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVodConfig(
-        com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVodConfigMethod(), getCallOptions(), request);
     }
 
@@ -2920,8 +2945,9 @@ public final class VideoStitcherServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVodConfig(
-        com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVodConfigMethod(), getCallOptions(), request);
     }
   }

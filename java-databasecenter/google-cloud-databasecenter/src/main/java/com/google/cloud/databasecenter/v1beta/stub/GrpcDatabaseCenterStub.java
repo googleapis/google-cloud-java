@@ -1,0 +1,298 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.databasecenter.v1beta.stub;
+
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the DatabaseCenter service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
+  private static final MethodDescriptor<QueryProductsRequest, QueryProductsResponse>
+      queryProductsMethodDescriptor =
+          MethodDescriptor.<QueryProductsRequest, QueryProductsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/QueryProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AggregateFleetRequest, AggregateFleetResponse>
+      aggregateFleetMethodDescriptor =
+          MethodDescriptor.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateFleet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AggregateFleetRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AggregateFleetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsMethodDescriptor =
+          MethodDescriptor
+              .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/QueryDatabaseResourceGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryDatabaseResourceGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryDatabaseResourceGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsMethodDescriptor =
+          MethodDescriptor.<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateIssueStats")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AggregateIssueStatsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AggregateIssueStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
+  private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
+      queryProductsPagedCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable;
+  private final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcDatabaseCenterStub create(DatabaseCenterStubSettings settings)
+      throws IOException {
+    return new GrpcDatabaseCenterStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcDatabaseCenterStub create(ClientContext clientContext)
+      throws IOException {
+    return new GrpcDatabaseCenterStub(
+        DatabaseCenterStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcDatabaseCenterStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcDatabaseCenterStub(
+        DatabaseCenterStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcDatabaseCenterStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcDatabaseCenterStub(DatabaseCenterStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcDatabaseCenterCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcDatabaseCenterStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcDatabaseCenterStub(
+      DatabaseCenterStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<QueryProductsRequest, QueryProductsResponse> queryProductsTransportSettings =
+        GrpcCallSettings.<QueryProductsRequest, QueryProductsResponse>newBuilder()
+            .setMethodDescriptor(queryProductsMethodDescriptor)
+            .build();
+    GrpcCallSettings<AggregateFleetRequest, AggregateFleetResponse>
+        aggregateFleetTransportSettings =
+            GrpcCallSettings.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+                .setMethodDescriptor(aggregateFleetMethodDescriptor)
+                .build();
+    GrpcCallSettings<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+        queryDatabaseResourceGroupsTransportSettings =
+            GrpcCallSettings
+                .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryDatabaseResourceGroupsMethodDescriptor)
+                .build();
+    GrpcCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsTransportSettings =
+            GrpcCallSettings.<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
+                .setMethodDescriptor(aggregateIssueStatsMethodDescriptor)
+                .build();
+
+    this.queryProductsCallable =
+        callableFactory.createUnaryCallable(
+            queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.queryProductsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.aggregateFleetCallable =
+        callableFactory.createUnaryCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.aggregateFleetPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.queryDatabaseResourceGroupsCallable =
+        callableFactory.createUnaryCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
+    this.queryDatabaseResourceGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
+    this.aggregateIssueStatsCallable =
+        callableFactory.createUnaryCallable(
+            aggregateIssueStatsTransportSettings,
+            settings.aggregateIssueStatsSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable() {
+    return queryProductsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
+      queryProductsPagedCallable() {
+    return queryProductsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable() {
+    return aggregateFleetCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    return aggregateFleetPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    return queryDatabaseResourceGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    return queryDatabaseResourceGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    return aggregateIssueStatsCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

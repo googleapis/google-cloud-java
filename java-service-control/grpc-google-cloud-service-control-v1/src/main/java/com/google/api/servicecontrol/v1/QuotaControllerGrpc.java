@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/servicecontrol/v1/quota_controller.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class QuotaControllerGrpc {
 
@@ -276,8 +273,9 @@ public final class QuotaControllerGrpc {
      * </pre>
      */
     public com.google.api.servicecontrol.v1.AllocateQuotaResponse allocateQuota(
-        com.google.api.servicecontrol.v1.AllocateQuotaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicecontrol.v1.AllocateQuotaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAllocateQuotaMethod(), getCallOptions(), request);
     }
   }

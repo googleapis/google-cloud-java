@@ -88,7 +88,8 @@ enum SsmlVoiceGender {
 // Configuration to set up audio encoder. The encoding determines the output
 // audio format that we'd like.
 enum AudioEncoding {
-  // Not specified. Will return result
+  // Not specified. Only used by GenerateVoiceCloningKey. Otherwise, will return
+  // result
   // [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
   AUDIO_ENCODING_UNSPECIFIED = 0;
 
@@ -117,6 +118,9 @@ enum AudioEncoding {
   // Note that as opposed to LINEAR16, audio won't be wrapped in a WAV (or
   // any other) header.
   PCM = 7;
+
+  // M4A audio.
+  M4A = 8;
 }
 
 // The top-level message sent by the client for the `ListVoices` method.
@@ -160,6 +164,15 @@ message AdvancedVoiceOptions {
   // Only for Journey voices. If false, the synthesis is context aware
   // and has a higher latency.
   optional bool low_latency_journey_synthesis = 1;
+
+  // Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
+  // supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
+  // Otherwise, will return result
+  // [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+  bool relax_safety_filters = 8 [
+    (google.api.field_behavior) = INPUT_ONLY,
+    (google.api.field_behavior) = OPTIONAL
+  ];
 }
 
 // The top-level message sent by the client for the `SynthesizeSpeech` method.
@@ -191,6 +204,29 @@ message CustomPronunciationParams {
     // X-SAMPA, such as apple -> "{p@l".
     // https://en.wikipedia.org/wiki/X-SAMPA
     PHONETIC_ENCODING_X_SAMPA = 2;
+
+    // For reading-to-pron conversion to work well, the `pronunciation` field
+    //  should only contain Kanji, Hiragana, and Katakana.
+    //
+    // The pronunciation can also contain pitch accents.
+    // The start of a pitch phrase is specified with `^` and the down-pitch
+    // position is specified with `!`, for example:
+    //
+    //     phrase:端  pronunciation:^はし
+    //     phrase:箸  pronunciation:^は!し
+    //     phrase:橋  pronunciation:^はし!
+    //
+    // We currently only support the Tokyo dialect, which allows at most one
+    // down-pitch per phrase (i.e. at most one `!` between `^`).
+    PHONETIC_ENCODING_JAPANESE_YOMIGANA = 3;
+
+    // Used to specify pronunciations for Mandarin words. See
+    // https://en.wikipedia.org/wiki/Pinyin.
+    //
+    // For example: 朝阳, the pronunciation is "chao2 yang2". The number
+    // represents the tone, and there is a space between syllables. Neutral
+    // tones are represented by 5, for example 孩子 "hai2 zi5".
+    PHONETIC_ENCODING_PINYIN = 4;
   }
 
   // The phrase to which the customization is applied.
@@ -228,6 +264,28 @@ message MultiSpeakerMarkup {
   repeated Turn turns = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Configuration for a single speaker in a Gemini TTS multi-speaker setup.
+// Enables dialogue between two speakers.
+message MultispeakerPrebuiltVoice {
+  // Required. The speaker alias of the voice. This is the user-chosen speaker
+  // name that is used in the multispeaker text input, such as "Speaker1".
+  string speaker_alias = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The speaker ID of the voice. See
+  // https://cloud.google.com/text-to-speech/docs/gemini-tts#voice_options
+  // for available values.
+  string speaker_id = 2 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Configuration for a multi-speaker text-to-speech setup. Enables the use of up
+// to two distinct voices in a single synthesis request.
+message MultiSpeakerVoiceConfig {
+  // Required. A list of configurations for the voices of the speakers. Exactly
+  // two speaker voice configurations must be provided.
+  repeated MultispeakerPrebuiltVoice speaker_voice_configs = 2
+      [(google.api.field_behavior) = REQUIRED];
+}
+
 // Contains text input to be synthesized. Either `text` or `ssml` must be
 // supplied. Supplying both or neither returns
 // [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. The
@@ -237,6 +295,10 @@ message SynthesisInput {
   oneof input_source {
     // The raw text to be synthesized.
     string text = 1;
+
+    // Markup for HD voices specifically. This field may not be used with any
+    // other voices.
+    string markup = 5;
 
     // The SSML document to be synthesized. The SSML document must be valid
     // and well-formed. Otherwise the RPC will fail and return
@@ -249,6 +311,12 @@ message SynthesisInput {
     // multi-speaker synthesis.
     MultiSpeakerMarkup multi_speaker_markup = 4;
   }
+
+  // This system instruction is supported only for controllable/promptable voice
+  // models. If this system instruction is used, we pass the unedited text to
+  // Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+  // calls this system instruction, Style Instructions.
+  optional string prompt = 6;
 
   // Optional. The pronunciation customizations are applied to the input. If
   // this is set, the input is synthesized using the given pronunciation
@@ -300,6 +368,16 @@ message VoiceSelectionParams {
   // [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
   // clone matching the specified configuration.
   VoiceCloneParams voice_clone = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The name of the model. If set, the service will choose the model
+  // matching the specified configuration.
+  string model_name = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The configuration for a Gemini multi-speaker text-to-speech
+  // setup. Enables the use of two distinct voices in a single synthesis
+  // request.
+  MultiSpeakerVoiceConfig multi_speaker_voice_config = 7
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Description of audio data to be synthesized.
@@ -453,7 +531,18 @@ message StreamingSynthesisInput {
     // contains complete, terminating sentences, which results in better prosody
     // in the output audio.
     string text = 1;
+
+    // Markup for HD voices specifically. This field may not be used with any
+    // other voices.
+    string markup = 5;
+
+    // Multi-speaker markup for Gemini TTS. This field may not
+    // be used with any other voices.
+    MultiSpeakerMarkup multi_speaker_markup = 7;
   }
+
+  // This is system instruction supported only for controllable voice models.
+  optional string prompt = 6;
 }
 
 // Request message for the `StreamingSynthesize` method. Multiple

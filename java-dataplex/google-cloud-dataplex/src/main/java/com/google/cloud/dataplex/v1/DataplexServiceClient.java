@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -906,8 +906,8 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the lake location, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
    * @param lake Required. Lake resource
    * @param lakeId Required. Lake identifier. This ID will be used to generate names such as
    *     database and dataset names when publishing metadata to Hive Metastore and BigQuery.
@@ -953,8 +953,8 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the lake location, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
    * @param lake Required. Lake resource
    * @param lakeId Required. Lake identifier. This ID will be used to generate names such as
    *     database and dataset names when publishing metadata to Hive Metastore and BigQuery.
@@ -1354,8 +1354,8 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the lake location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLakesPagedResponse listLakes(LocationName parent) {
@@ -1385,8 +1385,8 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the lake location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLakesPagedResponse listLakes(String parent) {

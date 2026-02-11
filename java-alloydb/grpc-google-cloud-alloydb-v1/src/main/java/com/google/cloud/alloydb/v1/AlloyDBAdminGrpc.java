@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/alloydb/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AlloyDBAdminGrpc {
 
@@ -205,6 +202,135 @@ public final class AlloyDBAdminGrpc {
       }
     }
     return getUpdateClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.ExportClusterRequest, com.google.longrunning.Operation>
+      getExportClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportCluster",
+      requestType = com.google.cloud.alloydb.v1.ExportClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.ExportClusterRequest, com.google.longrunning.Operation>
+      getExportClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.ExportClusterRequest, com.google.longrunning.Operation>
+        getExportClusterMethod;
+    if ((getExportClusterMethod = AlloyDBAdminGrpc.getExportClusterMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getExportClusterMethod = AlloyDBAdminGrpc.getExportClusterMethod) == null) {
+          AlloyDBAdminGrpc.getExportClusterMethod =
+              getExportClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.ExportClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.ExportClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("ExportCluster"))
+                      .build();
+        }
+      }
+    }
+    return getExportClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.ImportClusterRequest, com.google.longrunning.Operation>
+      getImportClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportCluster",
+      requestType = com.google.cloud.alloydb.v1.ImportClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.ImportClusterRequest, com.google.longrunning.Operation>
+      getImportClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.ImportClusterRequest, com.google.longrunning.Operation>
+        getImportClusterMethod;
+    if ((getImportClusterMethod = AlloyDBAdminGrpc.getImportClusterMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getImportClusterMethod = AlloyDBAdminGrpc.getImportClusterMethod) == null) {
+          AlloyDBAdminGrpc.getImportClusterMethod =
+              getImportClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.ImportClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.ImportClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("ImportCluster"))
+                      .build();
+        }
+      }
+    }
+    return getImportClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.UpgradeClusterRequest, com.google.longrunning.Operation>
+      getUpgradeClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpgradeCluster",
+      requestType = com.google.cloud.alloydb.v1.UpgradeClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.UpgradeClusterRequest, com.google.longrunning.Operation>
+      getUpgradeClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.UpgradeClusterRequest, com.google.longrunning.Operation>
+        getUpgradeClusterMethod;
+    if ((getUpgradeClusterMethod = AlloyDBAdminGrpc.getUpgradeClusterMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getUpgradeClusterMethod = AlloyDBAdminGrpc.getUpgradeClusterMethod) == null) {
+          AlloyDBAdminGrpc.getUpgradeClusterMethod =
+              getUpgradeClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.UpgradeClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpgradeCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.UpgradeClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("UpgradeCluster"))
+                      .build();
+        }
+      }
+    }
+    return getUpgradeClusterMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1644,6 +1770,51 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Exports data from the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    default void exportCluster(
+        com.google.cloud.alloydb.v1.ExportClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data to the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    default void importCluster(
+        com.google.cloud.alloydb.v1.ImportClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single Cluster.
+     * Imperative only.
+     * </pre>
+     */
+    default void upgradeCluster(
+        com.google.cloud.alloydb.v1.UpgradeClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpgradeClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -2187,6 +2358,57 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Exports data from the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public void exportCluster(
+        com.google.cloud.alloydb.v1.ExportClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data to the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public void importCluster(
+        com.google.cloud.alloydb.v1.ImportClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single Cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public void upgradeCluster(
+        com.google.cloud.alloydb.v1.UpgradeClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpgradeClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -2709,8 +2931,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ListClustersResponse listClusters(
-        com.google.cloud.alloydb.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.ListClustersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -2722,8 +2944,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.Cluster getCluster(
-        com.google.cloud.alloydb.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -2735,8 +2957,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.alloydb.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.CreateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -2748,9 +2970,51 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.alloydb.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.UpdateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports data from the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportCluster(
+        com.google.cloud.alloydb.v1.ExportClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data to the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importCluster(
+        com.google.cloud.alloydb.v1.ImportClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single Cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeCluster(
+        com.google.cloud.alloydb.v1.UpgradeClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpgradeClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2761,8 +3025,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.alloydb.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.DeleteClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -2777,8 +3041,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation promoteCluster(
-        com.google.cloud.alloydb.v1.PromoteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.PromoteClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPromoteClusterMethod(), getCallOptions(), request);
     }
 
@@ -2792,8 +3056,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation switchoverCluster(
-        com.google.cloud.alloydb.v1.SwitchoverClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.SwitchoverClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSwitchoverClusterMethod(), getCallOptions(), request);
     }
 
@@ -2807,8 +3072,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreCluster(
-        com.google.cloud.alloydb.v1.RestoreClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.RestoreClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreClusterMethod(), getCallOptions(), request);
     }
 
@@ -2821,8 +3086,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSecondaryCluster(
-        com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSecondaryClusterMethod(), getCallOptions(), request);
     }
 
@@ -2834,8 +3100,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ListInstancesResponse listInstances(
-        com.google.cloud.alloydb.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2847,8 +3113,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.Instance getInstance(
-        com.google.cloud.alloydb.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2860,8 +3126,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.alloydb.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.CreateInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2873,8 +3139,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSecondaryInstance(
-        com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSecondaryInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2895,8 +3162,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCreateInstances(
-        com.google.cloud.alloydb.v1.BatchCreateInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.BatchCreateInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2908,8 +3176,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.alloydb.v1.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.UpdateInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2921,8 +3189,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.alloydb.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.DeleteInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2936,8 +3204,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation failoverInstance(
-        com.google.cloud.alloydb.v1.FailoverInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.FailoverInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFailoverInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2950,8 +3219,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation injectFault(
-        com.google.cloud.alloydb.v1.InjectFaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.InjectFaultRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInjectFaultMethod(), getCallOptions(), request);
     }
 
@@ -2964,8 +3233,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restartInstance(
-        com.google.cloud.alloydb.v1.RestartInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.RestartInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestartInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2977,8 +3246,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ExecuteSqlResponse executeSql(
-        com.google.cloud.alloydb.v1.ExecuteSqlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.ExecuteSqlRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExecuteSqlMethod(), getCallOptions(), request);
     }
 
@@ -2990,8 +3259,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ListBackupsResponse listBackups(
-        com.google.cloud.alloydb.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.ListBackupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -3003,8 +3272,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.Backup getBackup(
-        com.google.cloud.alloydb.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -3016,8 +3285,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
-        com.google.cloud.alloydb.v1.CreateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.CreateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupMethod(), getCallOptions(), request);
     }
 
@@ -3029,8 +3298,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackup(
-        com.google.cloud.alloydb.v1.UpdateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.UpdateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
     }
 
@@ -3042,8 +3311,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.alloydb.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.DeleteBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -3056,8 +3325,9 @@ public final class AlloyDBAdminGrpc {
      */
     public com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsResponse
         listSupportedDatabaseFlags(
-            com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSupportedDatabaseFlagsMethod(), getCallOptions(), request);
     }
 
@@ -3073,8 +3343,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.GenerateClientCertificateResponse generateClientCertificate(
-        com.google.cloud.alloydb.v1.GenerateClientCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.GenerateClientCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateClientCertificateMethod(), getCallOptions(), request);
     }
 
@@ -3086,8 +3357,9 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ConnectionInfo getConnectionInfo(
-        com.google.cloud.alloydb.v1.GetConnectionInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.GetConnectionInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionInfoMethod(), getCallOptions(), request);
     }
 
@@ -3099,8 +3371,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ListUsersResponse listUsers(
-        com.google.cloud.alloydb.v1.ListUsersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.ListUsersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsersMethod(), getCallOptions(), request);
     }
 
@@ -3112,8 +3384,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.User getUser(
-        com.google.cloud.alloydb.v1.GetUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.GetUserRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUserMethod(), getCallOptions(), request);
     }
 
@@ -3125,8 +3397,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.User createUser(
-        com.google.cloud.alloydb.v1.CreateUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.CreateUserRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUserMethod(), getCallOptions(), request);
     }
 
@@ -3138,8 +3410,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.User updateUser(
-        com.google.cloud.alloydb.v1.UpdateUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.UpdateUserRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUserMethod(), getCallOptions(), request);
     }
 
@@ -3151,8 +3423,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUser(
-        com.google.cloud.alloydb.v1.DeleteUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.DeleteUserRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
     }
 
@@ -3164,8 +3436,8 @@ public final class AlloyDBAdminGrpc {
      * </pre>
      */
     public com.google.cloud.alloydb.v1.ListDatabasesResponse listDatabases(
-        com.google.cloud.alloydb.v1.ListDatabasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.ListDatabasesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatabasesMethod(), getCallOptions(), request);
     }
   }
@@ -3239,6 +3511,48 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1.UpdateClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports data from the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportCluster(
+        com.google.cloud.alloydb.v1.ExportClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data to the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importCluster(
+        com.google.cloud.alloydb.v1.ImportClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single Cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeCluster(
+        com.google.cloud.alloydb.v1.UpgradeClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3734,6 +4048,48 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Exports data from the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportCluster(com.google.cloud.alloydb.v1.ExportClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data to the cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importCluster(com.google.cloud.alloydb.v1.ImportClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single Cluster.
+     * Imperative only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        upgradeCluster(com.google.cloud.alloydb.v1.UpgradeClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpgradeClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -4161,36 +4517,39 @@ public final class AlloyDBAdminGrpc {
   private static final int METHODID_GET_CLUSTER = 1;
   private static final int METHODID_CREATE_CLUSTER = 2;
   private static final int METHODID_UPDATE_CLUSTER = 3;
-  private static final int METHODID_DELETE_CLUSTER = 4;
-  private static final int METHODID_PROMOTE_CLUSTER = 5;
-  private static final int METHODID_SWITCHOVER_CLUSTER = 6;
-  private static final int METHODID_RESTORE_CLUSTER = 7;
-  private static final int METHODID_CREATE_SECONDARY_CLUSTER = 8;
-  private static final int METHODID_LIST_INSTANCES = 9;
-  private static final int METHODID_GET_INSTANCE = 10;
-  private static final int METHODID_CREATE_INSTANCE = 11;
-  private static final int METHODID_CREATE_SECONDARY_INSTANCE = 12;
-  private static final int METHODID_BATCH_CREATE_INSTANCES = 13;
-  private static final int METHODID_UPDATE_INSTANCE = 14;
-  private static final int METHODID_DELETE_INSTANCE = 15;
-  private static final int METHODID_FAILOVER_INSTANCE = 16;
-  private static final int METHODID_INJECT_FAULT = 17;
-  private static final int METHODID_RESTART_INSTANCE = 18;
-  private static final int METHODID_EXECUTE_SQL = 19;
-  private static final int METHODID_LIST_BACKUPS = 20;
-  private static final int METHODID_GET_BACKUP = 21;
-  private static final int METHODID_CREATE_BACKUP = 22;
-  private static final int METHODID_UPDATE_BACKUP = 23;
-  private static final int METHODID_DELETE_BACKUP = 24;
-  private static final int METHODID_LIST_SUPPORTED_DATABASE_FLAGS = 25;
-  private static final int METHODID_GENERATE_CLIENT_CERTIFICATE = 26;
-  private static final int METHODID_GET_CONNECTION_INFO = 27;
-  private static final int METHODID_LIST_USERS = 28;
-  private static final int METHODID_GET_USER = 29;
-  private static final int METHODID_CREATE_USER = 30;
-  private static final int METHODID_UPDATE_USER = 31;
-  private static final int METHODID_DELETE_USER = 32;
-  private static final int METHODID_LIST_DATABASES = 33;
+  private static final int METHODID_EXPORT_CLUSTER = 4;
+  private static final int METHODID_IMPORT_CLUSTER = 5;
+  private static final int METHODID_UPGRADE_CLUSTER = 6;
+  private static final int METHODID_DELETE_CLUSTER = 7;
+  private static final int METHODID_PROMOTE_CLUSTER = 8;
+  private static final int METHODID_SWITCHOVER_CLUSTER = 9;
+  private static final int METHODID_RESTORE_CLUSTER = 10;
+  private static final int METHODID_CREATE_SECONDARY_CLUSTER = 11;
+  private static final int METHODID_LIST_INSTANCES = 12;
+  private static final int METHODID_GET_INSTANCE = 13;
+  private static final int METHODID_CREATE_INSTANCE = 14;
+  private static final int METHODID_CREATE_SECONDARY_INSTANCE = 15;
+  private static final int METHODID_BATCH_CREATE_INSTANCES = 16;
+  private static final int METHODID_UPDATE_INSTANCE = 17;
+  private static final int METHODID_DELETE_INSTANCE = 18;
+  private static final int METHODID_FAILOVER_INSTANCE = 19;
+  private static final int METHODID_INJECT_FAULT = 20;
+  private static final int METHODID_RESTART_INSTANCE = 21;
+  private static final int METHODID_EXECUTE_SQL = 22;
+  private static final int METHODID_LIST_BACKUPS = 23;
+  private static final int METHODID_GET_BACKUP = 24;
+  private static final int METHODID_CREATE_BACKUP = 25;
+  private static final int METHODID_UPDATE_BACKUP = 26;
+  private static final int METHODID_DELETE_BACKUP = 27;
+  private static final int METHODID_LIST_SUPPORTED_DATABASE_FLAGS = 28;
+  private static final int METHODID_GENERATE_CLIENT_CERTIFICATE = 29;
+  private static final int METHODID_GET_CONNECTION_INFO = 30;
+  private static final int METHODID_LIST_USERS = 31;
+  private static final int METHODID_GET_USER = 32;
+  private static final int METHODID_CREATE_USER = 33;
+  private static final int METHODID_UPDATE_USER = 34;
+  private static final int METHODID_DELETE_USER = 35;
+  private static final int METHODID_LIST_DATABASES = 36;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4228,6 +4587,21 @@ public final class AlloyDBAdminGrpc {
         case METHODID_UPDATE_CLUSTER:
           serviceImpl.updateCluster(
               (com.google.cloud.alloydb.v1.UpdateClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_CLUSTER:
+          serviceImpl.exportCluster(
+              (com.google.cloud.alloydb.v1.ExportClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_CLUSTER:
+          serviceImpl.importCluster(
+              (com.google.cloud.alloydb.v1.ImportClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPGRADE_CLUSTER:
+          serviceImpl.upgradeCluster(
+              (com.google.cloud.alloydb.v1.UpgradeClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_CLUSTER:
@@ -4433,6 +4807,24 @@ public final class AlloyDBAdminGrpc {
                 new MethodHandlers<
                     com.google.cloud.alloydb.v1.UpdateClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_CLUSTER)))
+        .addMethod(
+            getExportClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.ExportClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_CLUSTER)))
+        .addMethod(
+            getImportClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.ImportClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_CLUSTER)))
+        .addMethod(
+            getUpgradeClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.UpgradeClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPGRADE_CLUSTER)))
         .addMethod(
             getDeleteClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4674,6 +5066,9 @@ public final class AlloyDBAdminGrpc {
                       .addMethod(getGetClusterMethod())
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getUpdateClusterMethod())
+                      .addMethod(getExportClusterMethod())
+                      .addMethod(getImportClusterMethod())
+                      .addMethod(getUpgradeClusterMethod())
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getPromoteClusterMethod())
                       .addMethod(getSwitchoverClusterMethod())

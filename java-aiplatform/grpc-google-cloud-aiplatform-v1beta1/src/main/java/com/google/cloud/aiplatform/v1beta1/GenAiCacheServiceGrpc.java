@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing Vertex AI's CachedContent resource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/gen_ai_cache_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GenAiCacheServiceGrpc {
 
@@ -567,8 +564,9 @@ public final class GenAiCacheServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.CachedContent createCachedContent(
-        com.google.cloud.aiplatform.v1beta1.CreateCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateCachedContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCachedContentMethod(), getCallOptions(), request);
     }
 
@@ -580,8 +578,9 @@ public final class GenAiCacheServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.CachedContent getCachedContent(
-        com.google.cloud.aiplatform.v1beta1.GetCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetCachedContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCachedContentMethod(), getCallOptions(), request);
     }
 
@@ -593,8 +592,9 @@ public final class GenAiCacheServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.CachedContent updateCachedContent(
-        com.google.cloud.aiplatform.v1beta1.UpdateCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateCachedContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCachedContentMethod(), getCallOptions(), request);
     }
 
@@ -606,8 +606,9 @@ public final class GenAiCacheServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCachedContent(
-        com.google.cloud.aiplatform.v1beta1.DeleteCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteCachedContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCachedContentMethod(), getCallOptions(), request);
     }
 
@@ -619,8 +620,9 @@ public final class GenAiCacheServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListCachedContentsResponse listCachedContents(
-        com.google.cloud.aiplatform.v1beta1.ListCachedContentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListCachedContentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCachedContentsMethod(), getCallOptions(), request);
     }
   }

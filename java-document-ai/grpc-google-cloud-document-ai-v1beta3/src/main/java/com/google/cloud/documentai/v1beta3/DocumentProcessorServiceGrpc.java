@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * structured information from unstructured or semi-structured documents.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/documentai/v1beta3/document_processor_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentProcessorServiceGrpc {
 
@@ -1540,6 +1537,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     default void reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1971,6 +1969,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public void reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -2079,8 +2078,8 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ProcessResponse processDocument(
-        com.google.cloud.documentai.v1beta3.ProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProcessDocumentMethod(), getCallOptions(), request);
     }
 
@@ -2093,8 +2092,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchProcessDocuments(
-        com.google.cloud.documentai.v1beta3.BatchProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.BatchProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchProcessDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -2108,8 +2108,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse fetchProcessorTypes(
-        com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchProcessorTypesMethod(), getCallOptions(), request);
     }
 
@@ -2121,8 +2122,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ListProcessorTypesResponse listProcessorTypes(
-        com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProcessorTypesMethod(), getCallOptions(), request);
     }
 
@@ -2134,8 +2136,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ProcessorType getProcessorType(
-        com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessorTypeMethod(), getCallOptions(), request);
     }
 
@@ -2147,8 +2150,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ListProcessorsResponse listProcessors(
-        com.google.cloud.documentai.v1beta3.ListProcessorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ListProcessorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProcessorsMethod(), getCallOptions(), request);
     }
 
@@ -2160,8 +2164,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.Processor getProcessor(
-        com.google.cloud.documentai.v1beta3.GetProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.GetProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2175,8 +2180,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation trainProcessorVersion(
-        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTrainProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2188,8 +2194,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ProcessorVersion getProcessorVersion(
-        com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2201,8 +2208,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ListProcessorVersionsResponse listProcessorVersions(
-        com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProcessorVersionsMethod(), getCallOptions(), request);
     }
 
@@ -2215,8 +2223,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteProcessorVersion(
-        com.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2228,8 +2237,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployProcessorVersion(
-        com.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2241,8 +2251,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployProcessorVersion(
-        com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2260,8 +2271,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.Processor createProcessor(
-        com.google.cloud.documentai.v1beta3.CreateProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.CreateProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2274,8 +2286,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteProcessor(
-        com.google.cloud.documentai.v1beta3.DeleteProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.DeleteProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2287,8 +2300,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation enableProcessor(
-        com.google.cloud.documentai.v1beta3.EnableProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.EnableProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2300,8 +2314,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation disableProcessor(
-        com.google.cloud.documentai.v1beta3.DisableProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.DisableProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2317,8 +2332,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation setDefaultProcessorVersion(
-        com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetDefaultProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2330,9 +2346,11 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reviewDocument(
-        com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReviewDocumentMethod(), getCallOptions(), request);
     }
 
@@ -2345,8 +2363,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation evaluateProcessorVersion(
-        com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvaluateProcessorVersionMethod(), getCallOptions(), request);
     }
 
@@ -2358,8 +2377,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.Evaluation getEvaluation(
-        com.google.cloud.documentai.v1beta3.GetEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.GetEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -2371,8 +2391,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ListEvaluationsResponse listEvaluations(
-        com.google.cloud.documentai.v1beta3.ListEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ListEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEvaluationsMethod(), getCallOptions(), request);
     }
 
@@ -2384,8 +2405,9 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importProcessorVersion(
-        com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportProcessorVersionMethod(), getCallOptions(), request);
     }
   }
@@ -2673,6 +2695,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3033,6 +3056,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         reviewDocument(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(

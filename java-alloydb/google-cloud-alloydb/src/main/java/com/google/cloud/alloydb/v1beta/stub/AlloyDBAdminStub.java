@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,10 +35,12 @@ import com.google.cloud.alloydb.v1beta.Cluster;
 import com.google.cloud.alloydb.v1beta.ConnectionInfo;
 import com.google.cloud.alloydb.v1beta.CreateBackupRequest;
 import com.google.cloud.alloydb.v1beta.CreateClusterRequest;
+import com.google.cloud.alloydb.v1beta.CreateDatabaseRequest;
 import com.google.cloud.alloydb.v1beta.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1beta.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1beta.CreateSecondaryInstanceRequest;
 import com.google.cloud.alloydb.v1beta.CreateUserRequest;
+import com.google.cloud.alloydb.v1beta.Database;
 import com.google.cloud.alloydb.v1beta.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1beta.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1beta.DeleteInstanceRequest;
@@ -55,6 +57,8 @@ import com.google.cloud.alloydb.v1beta.GetClusterRequest;
 import com.google.cloud.alloydb.v1beta.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1beta.GetInstanceRequest;
 import com.google.cloud.alloydb.v1beta.GetUserRequest;
+import com.google.cloud.alloydb.v1beta.ImportClusterRequest;
+import com.google.cloud.alloydb.v1beta.ImportClusterResponse;
 import com.google.cloud.alloydb.v1beta.InjectFaultRequest;
 import com.google.cloud.alloydb.v1beta.Instance;
 import com.google.cloud.alloydb.v1beta.ListBackupsRequest;
@@ -145,6 +149,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: exportClusterCallable()");
+  }
+
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterCallable()");
   }
 
   public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
@@ -387,6 +400,10 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
     throw new UnsupportedOperationException("Not implemented: listDatabasesCallable()");
+  }
+
+  public UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatabaseCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

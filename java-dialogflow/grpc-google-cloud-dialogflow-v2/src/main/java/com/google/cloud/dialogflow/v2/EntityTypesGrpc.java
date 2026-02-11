@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [EntityTypes][google.cloud.dialogflow.v2.EntityType].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/entity_type.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EntityTypesGrpc {
 
@@ -1050,8 +1047,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListEntityTypesResponse listEntityTypes(
-        com.google.cloud.dialogflow.v2.ListEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -1063,8 +1061,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.EntityType getEntityType(
-        com.google.cloud.dialogflow.v2.GetEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1079,8 +1078,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.EntityType createEntityType(
-        com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1095,8 +1095,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.EntityType updateEntityType(
-        com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1111,8 +1112,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntityType(
-        com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1134,8 +1136,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateEntityTypes(
-        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -1157,8 +1160,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteEntityTypes(
-        com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -1180,8 +1184,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCreateEntities(
-        com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -1205,8 +1210,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateEntities(
-        com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -1228,8 +1234,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteEntities(
-        com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteEntitiesMethod(), getCallOptions(), request);
     }
   }

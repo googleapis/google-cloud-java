@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -44,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -102,6 +104,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -162,6 +166,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -404,6 +410,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -462,6 +470,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -507,6 +517,121 @@ public class PlaybooksClientHttpJsonTest {
   }
 
   @Test
+  public void exportPlaybookTest() throws Exception {
+    ExportPlaybookResponse expectedResponse = ExportPlaybookResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportPlaybookTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportPlaybookRequest request =
+        ExportPlaybookRequest.newBuilder()
+            .setName(PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+            .setPlaybookUri("playbookUri2118184975")
+            .build();
+
+    ExportPlaybookResponse actualResponse = client.exportPlaybookAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportPlaybookExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportPlaybookRequest request =
+          ExportPlaybookRequest.newBuilder()
+              .setName(
+                  PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+              .setPlaybookUri("playbookUri2118184975")
+              .build();
+      client.exportPlaybookAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importPlaybookTest() throws Exception {
+    ImportPlaybookResponse expectedResponse =
+        ImportPlaybookResponse.newBuilder()
+            .setPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+            .setConflictingResources(
+                ImportPlaybookResponse.ConflictingResources.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importPlaybookTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImportPlaybookRequest request =
+        ImportPlaybookRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+            .build();
+
+    ImportPlaybookResponse actualResponse = client.importPlaybookAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importPlaybookExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImportPlaybookRequest request =
+          ImportPlaybookRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+              .build();
+      client.importPlaybookAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void updatePlaybookTest() throws Exception {
     Playbook expectedResponse =
         Playbook.newBuilder()
@@ -522,6 +647,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -542,6 +669,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -589,6 +718,8 @@ public class PlaybooksClientHttpJsonTest {
               .addAllReferencedPlaybooks(new ArrayList<String>())
               .addAllReferencedFlows(new ArrayList<String>())
               .addAllReferencedTools(new ArrayList<String>())
+              .addAllInlineActions(new ArrayList<String>())
+              .setCodeBlock(CodeBlock.newBuilder().build())
               .setLlmModelSettings(LlmModelSettings.newBuilder().build())
               .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
               .addAllHandlers(new ArrayList<Handler>())
@@ -809,6 +940,98 @@ public class PlaybooksClientHttpJsonTest {
       String name =
           "projects/project-5797/locations/location-5797/agents/agent-5797/playbooks/playbook-5797/versions/version-5797";
       client.getPlaybookVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restorePlaybookVersionTest() throws Exception {
+    RestorePlaybookVersionResponse expectedResponse =
+        RestorePlaybookVersionResponse.newBuilder()
+            .setPlaybook(Playbook.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PlaybookVersionName name =
+        PlaybookVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]");
+
+    RestorePlaybookVersionResponse actualResponse = client.restorePlaybookVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restorePlaybookVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PlaybookVersionName name =
+          PlaybookVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]");
+      client.restorePlaybookVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restorePlaybookVersionTest2() throws Exception {
+    RestorePlaybookVersionResponse expectedResponse =
+        RestorePlaybookVersionResponse.newBuilder()
+            .setPlaybook(Playbook.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5797/locations/location-5797/agents/agent-5797/playbooks/playbook-5797/versions/version-5797";
+
+    RestorePlaybookVersionResponse actualResponse = client.restorePlaybookVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restorePlaybookVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5797/locations/location-5797/agents/agent-5797/playbooks/playbook-5797/versions/version-5797";
+      client.restorePlaybookVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

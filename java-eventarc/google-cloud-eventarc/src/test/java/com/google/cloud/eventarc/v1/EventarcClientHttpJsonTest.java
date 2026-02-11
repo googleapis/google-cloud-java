@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -177,6 +178,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -334,6 +336,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -400,6 +403,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -466,6 +470,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -491,6 +496,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -537,6 +543,7 @@ public class EventarcClientHttpJsonTest {
               .putAllConditions(new HashMap<String, StateCondition>())
               .setEventDataContentType("eventDataContentType1497299791")
               .setSatisfiesPzs(true)
+              .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
               .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -564,6 +571,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -628,6 +636,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -687,6 +696,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -738,6 +748,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -889,6 +900,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -949,6 +961,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1009,6 +1022,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1028,6 +1042,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1067,6 +1082,7 @@ public class EventarcClientHttpJsonTest {
               .setActivationToken("activationToken1276937859")
               .setCryptoKeyName("cryptoKeyName1447084425")
               .setSatisfiesPzs(true)
+              .putAllLabels(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateChannelAsync(channel, updateMask).get();
@@ -1087,6 +1103,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1143,6 +1160,7 @@ public class EventarcClientHttpJsonTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1391,6 +1409,7 @@ public class EventarcClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1444,6 +1463,7 @@ public class EventarcClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1597,6 +1617,7 @@ public class EventarcClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1658,6 +1679,7 @@ public class EventarcClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1719,6 +1741,7 @@ public class EventarcClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1777,6 +1800,7 @@ public class EventarcClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1830,6 +1854,7 @@ public class EventarcClientHttpJsonTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1876,6 +1901,7 @@ public class EventarcClientHttpJsonTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1922,6 +1948,7 @@ public class EventarcClientHttpJsonTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1930,6 +1957,7 @@ public class EventarcClientHttpJsonTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1965,6 +1993,7 @@ public class EventarcClientHttpJsonTest {
               .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setCryptoKeyName("cryptoKeyName1447084425")
+              .putAllLabels(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGoogleChannelConfig(googleChannelConfig, updateMask);
@@ -3176,6 +3205,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3233,6 +3263,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3390,6 +3421,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3456,6 +3488,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3522,6 +3555,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3547,6 +3581,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3592,6 +3627,7 @@ public class EventarcClientHttpJsonTest {
               .setLoggingConfig(LoggingConfig.newBuilder().build())
               .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
               .setEtag("etag3123477")
+              .setSatisfiesPzs(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePipelineAsync(pipeline, updateMask).get();
@@ -3618,6 +3654,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3682,6 +3719,7 @@ public class EventarcClientHttpJsonTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

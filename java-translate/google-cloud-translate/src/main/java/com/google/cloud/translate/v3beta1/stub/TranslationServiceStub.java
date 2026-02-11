@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.ListGlossariesRequest;
 import com.google.cloud.translate.v3beta1.ListGlossariesResponse;
+import com.google.cloud.translate.v3beta1.RefineTextRequest;
+import com.google.cloud.translate.v3beta1.RefineTextResponse;
 import com.google.cloud.translate.v3beta1.SupportedLanguages;
 import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
@@ -138,6 +140,10 @@ public abstract class TranslationServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteGlossaryCallable()");
+  }
+
+  public UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable() {
+    throw new UnsupportedOperationException("Not implemented: refineTextCallable()");
   }
 
   @Override

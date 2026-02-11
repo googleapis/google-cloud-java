@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public class GrpcChunkServiceStub extends ChunkServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.ChunkService/GetChunk")
           .setRequestMarshaller(ProtoUtils.marshaller(GetChunkRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Chunk.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListChunksRequest, ListChunksResponse>
@@ -61,6 +62,7 @@ public class GrpcChunkServiceStub extends ChunkServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1alpha.ChunkService/ListChunks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListChunksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListChunksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetChunkRequest, Chunk> getChunkCallable;

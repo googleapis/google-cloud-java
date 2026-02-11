@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,7 @@ public class GlobalAddressesClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setId(3355)
+            .setIpCollection("ipCollection1525846821")
             .setIpVersion("ipVersion-1161634383")
             .setIpv6EndpointType("ipv6EndpointType399011318")
             .setKind("kind3292052")
@@ -489,6 +490,55 @@ public class GlobalAddressesClientTest {
       client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestPermissionsResponse expectedResponse =
+        TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String resource = "resource-756";
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissions(project, resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String resource = "resource-756";
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+      client.testIamPermissions(project, resource, testPermissionsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

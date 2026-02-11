@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * clusters and connectors.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/managedkafka/v1/managed_kafka_connect.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ManagedKafkaConnectGrpc {
 
@@ -1264,8 +1261,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ListConnectClustersResponse listConnectClusters(
-        com.google.cloud.managedkafka.v1.ListConnectClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ListConnectClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectClustersMethod(), getCallOptions(), request);
     }
 
@@ -1277,8 +1275,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ConnectCluster getConnectCluster(
-        com.google.cloud.managedkafka.v1.GetConnectClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.GetConnectClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectClusterMethod(), getCallOptions(), request);
     }
 
@@ -1290,8 +1289,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnectCluster(
-        com.google.cloud.managedkafka.v1.CreateConnectClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.CreateConnectClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectClusterMethod(), getCallOptions(), request);
     }
 
@@ -1303,8 +1303,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnectCluster(
-        com.google.cloud.managedkafka.v1.UpdateConnectClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.UpdateConnectClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectClusterMethod(), getCallOptions(), request);
     }
 
@@ -1316,8 +1317,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnectCluster(
-        com.google.cloud.managedkafka.v1.DeleteConnectClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.DeleteConnectClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectClusterMethod(), getCallOptions(), request);
     }
 
@@ -1329,8 +1331,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ListConnectorsResponse listConnectors(
-        com.google.cloud.managedkafka.v1.ListConnectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ListConnectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectorsMethod(), getCallOptions(), request);
     }
 
@@ -1342,8 +1345,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Connector getConnector(
-        com.google.cloud.managedkafka.v1.GetConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.GetConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1355,8 +1359,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Connector createConnector(
-        com.google.cloud.managedkafka.v1.CreateConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.CreateConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1368,8 +1373,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Connector updateConnector(
-        com.google.cloud.managedkafka.v1.UpdateConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.UpdateConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1381,8 +1387,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConnector(
-        com.google.cloud.managedkafka.v1.DeleteConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.DeleteConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1394,8 +1401,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.PauseConnectorResponse pauseConnector(
-        com.google.cloud.managedkafka.v1.PauseConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.PauseConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1407,8 +1415,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ResumeConnectorResponse resumeConnector(
-        com.google.cloud.managedkafka.v1.ResumeConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ResumeConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1420,8 +1429,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.RestartConnectorResponse restartConnector(
-        com.google.cloud.managedkafka.v1.RestartConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.RestartConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestartConnectorMethod(), getCallOptions(), request);
     }
 
@@ -1433,8 +1443,9 @@ public final class ManagedKafkaConnectGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.StopConnectorResponse stopConnector(
-        com.google.cloud.managedkafka.v1.StopConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.StopConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopConnectorMethod(), getCallOptions(), request);
     }
   }

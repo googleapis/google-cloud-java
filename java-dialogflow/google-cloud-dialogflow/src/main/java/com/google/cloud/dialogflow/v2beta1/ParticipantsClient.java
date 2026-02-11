@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,6 +180,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> streamingAnalyzeContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BidiStreamingAnalyzeContent</td>
+ *      <td><p> Bidirectional endless streaming version of [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bidiStreamingAnalyzeContentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1310,6 +1320,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setCxCurrentPage("cxCurrentPage1596907507")
    *           .setEnableExtendedStreaming(true)
    *           .setEnablePartialAutomatedAgentReply(true)
+   *           .setOutputMultipleUtterances(true)
    *           .setEnableDebuggingInfo(true)
    *           .build();
    *   bidiStream.send(request);
@@ -1323,6 +1334,37 @@ public class ParticipantsClient implements BackgroundResource {
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return stub.streamingAnalyzeContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional endless streaming version of
+   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   BidiStream<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+   *       bidiStream = participantsClient.bidiStreamingAnalyzeContentCallable().call();
+   *   BidiStreamingAnalyzeContentRequest request =
+   *       BidiStreamingAnalyzeContentRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (BidiStreamingAnalyzeContentResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return stub.bidiStreamingAnalyzeContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

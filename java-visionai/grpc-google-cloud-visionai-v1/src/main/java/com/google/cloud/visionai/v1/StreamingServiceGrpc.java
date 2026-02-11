@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Streaming service for receiving and sending packets.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/visionai/v1/streaming_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class StreamingServiceGrpc {
 
@@ -660,8 +657,8 @@ public final class StreamingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Lease acquireLease(
-        com.google.cloud.visionai.v1.AcquireLeaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.AcquireLeaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcquireLeaseMethod(), getCallOptions(), request);
     }
 
@@ -673,8 +670,8 @@ public final class StreamingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Lease renewLease(
-        com.google.cloud.visionai.v1.RenewLeaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.RenewLeaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenewLeaseMethod(), getCallOptions(), request);
     }
 
@@ -686,8 +683,8 @@ public final class StreamingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ReleaseLeaseResponse releaseLease(
-        com.google.cloud.visionai.v1.ReleaseLeaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ReleaseLeaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReleaseLeaseMethod(), getCallOptions(), request);
     }
   }

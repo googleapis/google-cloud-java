@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(WriteUserEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CollectUserEventRequest, HttpBody>
@@ -76,6 +77,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CollectUserEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUserEventsRequest, ListUserEventsResponse>
@@ -88,6 +90,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   ProtoUtils.marshaller(ListUserEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeUserEventsRequest, Operation>
@@ -99,6 +102,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeUserEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportUserEventsRequest, Operation>
@@ -110,6 +114,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportUserEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,6 +173,7 @@ public class SnapshotsClientTest {
             .addAllLicenses(new ArrayList<String>())
             .setLocationHint("locationHint-58650660")
             .setName("name3373707")
+            .setParams(SnapshotParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")

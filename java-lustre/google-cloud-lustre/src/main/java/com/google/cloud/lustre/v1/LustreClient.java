@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1114,7 +1114,8 @@ public class LustreClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource.
+   * @param name Required. The name of the Managed Lustre instance in the format
+   *     `projects/{project}/locations/{location}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataMetadata> importDataAsync(
@@ -1142,7 +1143,8 @@ public class LustreClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource.
+   * @param name Required. The name of the Managed Lustre instance in the format
+   *     `projects/{project}/locations/{location}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataMetadata> importDataAsync(

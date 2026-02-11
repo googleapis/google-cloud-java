@@ -5,6 +5,108 @@
   "protoPackage": "google.cloud.networksecurity.v1",
   "libraryPackage": "com.google.cloud.networksecurity.v1",
   "services": {
+    "AddressGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AddressGroupServiceClient",
+          "rpcs": {
+            "AddAddressGroupItems": {
+              "methods": ["addAddressGroupItemsAsync", "addAddressGroupItemsAsync", "addAddressGroupItemsAsync", "addAddressGroupItemsOperationCallable", "addAddressGroupItemsCallable"]
+            },
+            "CloneAddressGroupItems": {
+              "methods": ["cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsOperationCallable", "cloneAddressGroupItemsCallable"]
+            },
+            "CreateAddressGroup": {
+              "methods": ["createAddressGroupAsync", "createAddressGroupAsync", "createAddressGroupAsync", "createAddressGroupAsync", "createAddressGroupOperationCallable", "createAddressGroupCallable"]
+            },
+            "DeleteAddressGroup": {
+              "methods": ["deleteAddressGroupAsync", "deleteAddressGroupAsync", "deleteAddressGroupAsync", "deleteAddressGroupOperationCallable", "deleteAddressGroupCallable"]
+            },
+            "GetAddressGroup": {
+              "methods": ["getAddressGroup", "getAddressGroup", "getAddressGroup", "getAddressGroupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAddressGroupReferences": {
+              "methods": ["listAddressGroupReferences", "listAddressGroupReferences", "listAddressGroupReferences", "listAddressGroupReferencesPagedCallable", "listAddressGroupReferencesCallable"]
+            },
+            "ListAddressGroups": {
+              "methods": ["listAddressGroups", "listAddressGroups", "listAddressGroups", "listAddressGroupsPagedCallable", "listAddressGroupsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RemoveAddressGroupItems": {
+              "methods": ["removeAddressGroupItemsAsync", "removeAddressGroupItemsAsync", "removeAddressGroupItemsAsync", "removeAddressGroupItemsOperationCallable", "removeAddressGroupItemsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAddressGroup": {
+              "methods": ["updateAddressGroupAsync", "updateAddressGroupAsync", "updateAddressGroupOperationCallable", "updateAddressGroupCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OrganizationAddressGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrganizationAddressGroupServiceClient",
+          "rpcs": {
+            "AddAddressGroupItems": {
+              "methods": ["addAddressGroupItemsAsync", "addAddressGroupItemsAsync", "addAddressGroupItemsAsync", "addAddressGroupItemsOperationCallable", "addAddressGroupItemsCallable"]
+            },
+            "CloneAddressGroupItems": {
+              "methods": ["cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsAsync", "cloneAddressGroupItemsOperationCallable", "cloneAddressGroupItemsCallable"]
+            },
+            "CreateAddressGroup": {
+              "methods": ["createAddressGroupAsync", "createAddressGroupAsync", "createAddressGroupAsync", "createAddressGroupAsync", "createAddressGroupOperationCallable", "createAddressGroupCallable"]
+            },
+            "DeleteAddressGroup": {
+              "methods": ["deleteAddressGroupAsync", "deleteAddressGroupAsync", "deleteAddressGroupAsync", "deleteAddressGroupOperationCallable", "deleteAddressGroupCallable"]
+            },
+            "GetAddressGroup": {
+              "methods": ["getAddressGroup", "getAddressGroup", "getAddressGroup", "getAddressGroupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAddressGroupReferences": {
+              "methods": ["listAddressGroupReferences", "listAddressGroupReferences", "listAddressGroupReferences", "listAddressGroupReferencesPagedCallable", "listAddressGroupReferencesCallable"]
+            },
+            "ListAddressGroups": {
+              "methods": ["listAddressGroups", "listAddressGroups", "listAddressGroups", "listAddressGroupsPagedCallable", "listAddressGroupsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RemoveAddressGroupItems": {
+              "methods": ["removeAddressGroupItemsAsync", "removeAddressGroupItemsAsync", "removeAddressGroupItemsAsync", "removeAddressGroupItemsOperationCallable", "removeAddressGroupItemsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAddressGroup": {
+              "methods": ["updateAddressGroupAsync", "updateAddressGroupAsync", "updateAddressGroupOperationCallable", "updateAddressGroupCallable"]
+            }
+          }
+        }
+      }
+    },
     "NetworkSecurity": {
       "clients": {
         "grpc": {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,8 +94,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -168,6 +168,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   public OperationCallSettings<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
       exportClusterOperationSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).exportClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importCluster. */
+  public UnaryCallSettings<ImportClusterRequest, Operation> importClusterSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).importClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importCluster. */
+  public OperationCallSettings<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).importClusterOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to upgradeCluster. */
@@ -440,6 +451,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).listDatabasesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createDatabase. */
+  public UnaryCallSettings<CreateDatabaseRequest, Database> createDatabaseSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).createDatabaseSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -607,6 +623,18 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
             ExportClusterRequest, ExportClusterResponse, OperationMetadata>
         exportClusterOperationSettings() {
       return getStubSettingsBuilder().exportClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCluster. */
+    public UnaryCallSettings.Builder<ImportClusterRequest, Operation> importClusterSettings() {
+      return getStubSettingsBuilder().importClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCluster. */
+    public OperationCallSettings.Builder<
+            ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+        importClusterOperationSettings() {
+      return getStubSettingsBuilder().importClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to upgradeCluster. */
@@ -886,6 +914,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
             ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
         listDatabasesSettings() {
       return getStubSettingsBuilder().listDatabasesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabase. */
+    public UnaryCallSettings.Builder<CreateDatabaseRequest, Database> createDatabaseSettings() {
+      return getStubSettingsBuilder().createDatabaseSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

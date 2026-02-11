@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomTargetingKeyServiceClient.ListCustomTargetingKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.CreateCustomTargetingKeyRequest;
 import com.google.ads.admanager.v1.CustomTargetingKey;
 import com.google.ads.admanager.v1.GetCustomTargetingKeyRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingKeysRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.UpdateCustomTargetingKeyRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -100,15 +110,15 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class CustomTargetingKeyServiceStubSettings
     extends StubSettings<CustomTargetingKeyServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
 
   private final UnaryCallSettings<GetCustomTargetingKeyRequest, CustomTargetingKey>
       getCustomTargetingKeySettings;
@@ -117,6 +127,22 @@ public class CustomTargetingKeyServiceStubSettings
           ListCustomTargetingKeysResponse,
           ListCustomTargetingKeysPagedResponse>
       listCustomTargetingKeysSettings;
+  private final UnaryCallSettings<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeySettings;
+  private final UnaryCallSettings<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysSettings;
+  private final UnaryCallSettings<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeySettings;
+  private final UnaryCallSettings<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysSettings;
+  private final UnaryCallSettings<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysSettings;
 
   private static final PagedListDescriptor<
           ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse, CustomTargetingKey>
@@ -203,6 +229,46 @@ public class CustomTargetingKeyServiceStubSettings
     return listCustomTargetingKeysSettings;
   }
 
+  /** Returns the object with the settings used for calls to createCustomTargetingKey. */
+  public UnaryCallSettings<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeySettings() {
+    return createCustomTargetingKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysSettings() {
+    return batchCreateCustomTargetingKeysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetingKey. */
+  public UnaryCallSettings<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeySettings() {
+    return updateCustomTargetingKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysSettings() {
+    return batchUpdateCustomTargetingKeysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysSettings() {
+    return batchActivateCustomTargetingKeysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysSettings() {
+    return batchDeactivateCustomTargetingKeysSettings;
+  }
+
   public CustomTargetingKeyServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -287,6 +353,16 @@ public class CustomTargetingKeyServiceStubSettings
 
     getCustomTargetingKeySettings = settingsBuilder.getCustomTargetingKeySettings().build();
     listCustomTargetingKeysSettings = settingsBuilder.listCustomTargetingKeysSettings().build();
+    createCustomTargetingKeySettings = settingsBuilder.createCustomTargetingKeySettings().build();
+    batchCreateCustomTargetingKeysSettings =
+        settingsBuilder.batchCreateCustomTargetingKeysSettings().build();
+    updateCustomTargetingKeySettings = settingsBuilder.updateCustomTargetingKeySettings().build();
+    batchUpdateCustomTargetingKeysSettings =
+        settingsBuilder.batchUpdateCustomTargetingKeysSettings().build();
+    batchActivateCustomTargetingKeysSettings =
+        settingsBuilder.batchActivateCustomTargetingKeysSettings().build();
+    batchDeactivateCustomTargetingKeysSettings =
+        settingsBuilder.batchDeactivateCustomTargetingKeysSettings().build();
   }
 
   /** Builder for CustomTargetingKeyServiceStubSettings. */
@@ -300,6 +376,22 @@ public class CustomTargetingKeyServiceStubSettings
             ListCustomTargetingKeysResponse,
             ListCustomTargetingKeysPagedResponse>
         listCustomTargetingKeysSettings;
+    private final UnaryCallSettings.Builder<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+        createCustomTargetingKeySettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+        batchCreateCustomTargetingKeysSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+        updateCustomTargetingKeySettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+        batchUpdateCustomTargetingKeysSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+        batchActivateCustomTargetingKeysSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+        batchDeactivateCustomTargetingKeysSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -330,10 +422,23 @@ public class CustomTargetingKeyServiceStubSettings
       getCustomTargetingKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomTargetingKeysSettings =
           PagedCallSettings.newBuilder(LIST_CUSTOM_TARGETING_KEYS_PAGE_STR_FACT);
+      createCustomTargetingKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateCustomTargetingKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomTargetingKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateCustomTargetingKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateCustomTargetingKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateCustomTargetingKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCustomTargetingKeySettings, listCustomTargetingKeysSettings);
+              getCustomTargetingKeySettings,
+              listCustomTargetingKeysSettings,
+              createCustomTargetingKeySettings,
+              batchCreateCustomTargetingKeysSettings,
+              updateCustomTargetingKeySettings,
+              batchUpdateCustomTargetingKeysSettings,
+              batchActivateCustomTargetingKeysSettings,
+              batchDeactivateCustomTargetingKeysSettings);
       initDefaults(this);
     }
 
@@ -342,10 +447,27 @@ public class CustomTargetingKeyServiceStubSettings
 
       getCustomTargetingKeySettings = settings.getCustomTargetingKeySettings.toBuilder();
       listCustomTargetingKeysSettings = settings.listCustomTargetingKeysSettings.toBuilder();
+      createCustomTargetingKeySettings = settings.createCustomTargetingKeySettings.toBuilder();
+      batchCreateCustomTargetingKeysSettings =
+          settings.batchCreateCustomTargetingKeysSettings.toBuilder();
+      updateCustomTargetingKeySettings = settings.updateCustomTargetingKeySettings.toBuilder();
+      batchUpdateCustomTargetingKeysSettings =
+          settings.batchUpdateCustomTargetingKeysSettings.toBuilder();
+      batchActivateCustomTargetingKeysSettings =
+          settings.batchActivateCustomTargetingKeysSettings.toBuilder();
+      batchDeactivateCustomTargetingKeysSettings =
+          settings.batchDeactivateCustomTargetingKeysSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCustomTargetingKeySettings, listCustomTargetingKeysSettings);
+              getCustomTargetingKeySettings,
+              listCustomTargetingKeysSettings,
+              createCustomTargetingKeySettings,
+              batchCreateCustomTargetingKeysSettings,
+              updateCustomTargetingKeySettings,
+              batchUpdateCustomTargetingKeysSettings,
+              batchActivateCustomTargetingKeysSettings,
+              batchDeactivateCustomTargetingKeysSettings);
     }
 
     private static Builder createDefault() {
@@ -368,6 +490,36 @@ public class CustomTargetingKeyServiceStubSettings
 
       builder
           .listCustomTargetingKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createCustomTargetingKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateCustomTargetingKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateCustomTargetingKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateCustomTargetingKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateCustomTargetingKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateCustomTargetingKeysSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -402,6 +554,48 @@ public class CustomTargetingKeyServiceStubSettings
             ListCustomTargetingKeysPagedResponse>
         listCustomTargetingKeysSettings() {
       return listCustomTargetingKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetingKey. */
+    public UnaryCallSettings.Builder<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+        createCustomTargetingKeySettings() {
+      return createCustomTargetingKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCustomTargetingKeys. */
+    public UnaryCallSettings.Builder<
+            BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+        batchCreateCustomTargetingKeysSettings() {
+      return batchCreateCustomTargetingKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetingKey. */
+    public UnaryCallSettings.Builder<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+        updateCustomTargetingKeySettings() {
+      return updateCustomTargetingKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCustomTargetingKeys. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+        batchUpdateCustomTargetingKeysSettings() {
+      return batchUpdateCustomTargetingKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCustomTargetingKeys. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+        batchActivateCustomTargetingKeysSettings() {
+      return batchActivateCustomTargetingKeysSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchDeactivateCustomTargetingKeys.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+        batchDeactivateCustomTargetingKeysSettings() {
+      return batchDeactivateCustomTargetingKeysSettings;
     }
 
     @Override

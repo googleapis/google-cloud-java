@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/servicedirectory/v1/registration_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegistrationServiceGrpc {
 
@@ -1593,8 +1590,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Namespace createNamespace(
-        com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -1606,8 +1604,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.ListNamespacesResponse listNamespaces(
-        com.google.cloud.servicedirectory.v1.ListNamespacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.ListNamespacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNamespacesMethod(), getCallOptions(), request);
     }
 
@@ -1619,8 +1618,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Namespace getNamespace(
-        com.google.cloud.servicedirectory.v1.GetNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.GetNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -1632,8 +1632,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Namespace updateNamespace(
-        com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -1646,8 +1647,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteNamespace(
-        com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -1659,8 +1661,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Service createService(
-        com.google.cloud.servicedirectory.v1.CreateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.CreateServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
@@ -1672,8 +1675,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.ListServicesResponse listServices(
-        com.google.cloud.servicedirectory.v1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.ListServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -1685,8 +1689,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Service getService(
-        com.google.cloud.servicedirectory.v1.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.GetServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -1698,8 +1703,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Service updateService(
-        com.google.cloud.servicedirectory.v1.UpdateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.UpdateServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
@@ -1712,8 +1718,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteService(
-        com.google.cloud.servicedirectory.v1.DeleteServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.DeleteServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -1725,8 +1732,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Endpoint createEndpoint(
-        com.google.cloud.servicedirectory.v1.CreateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.CreateEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -1738,8 +1746,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.ListEndpointsResponse listEndpoints(
-        com.google.cloud.servicedirectory.v1.ListEndpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.ListEndpointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
@@ -1751,8 +1760,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Endpoint getEndpoint(
-        com.google.cloud.servicedirectory.v1.GetEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.GetEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
@@ -1764,8 +1774,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Endpoint updateEndpoint(
-        com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -1777,8 +1788,9 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEndpoint(
-        com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
 
@@ -1789,8 +1801,9 @@ public final class RegistrationServiceGrpc {
      * Gets the IAM Policy for a resource (namespace or service only).
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1801,8 +1814,9 @@ public final class RegistrationServiceGrpc {
      * Sets the IAM Policy for a resource (namespace or service only).
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1814,8 +1828,8 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

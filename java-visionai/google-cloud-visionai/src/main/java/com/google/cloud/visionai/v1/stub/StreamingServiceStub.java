@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,15 @@
 
 package com.google.cloud.visionai.v1.stub;
 
+import static com.google.cloud.visionai.v1.StreamingServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AcquireLeaseRequest;
 import com.google.cloud.visionai.v1.Lease;
 import com.google.cloud.visionai.v1.ReceiveEventsRequest;
@@ -65,6 +71,19 @@ public abstract class StreamingServiceStub implements BackgroundResource {
 
   public UnaryCallable<ReleaseLeaseRequest, ReleaseLeaseResponse> releaseLeaseCallable() {
     throw new UnsupportedOperationException("Not implemented: releaseLeaseCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

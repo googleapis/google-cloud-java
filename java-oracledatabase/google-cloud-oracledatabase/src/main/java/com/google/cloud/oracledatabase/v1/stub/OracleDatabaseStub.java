@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,25 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutonomousDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -43,14 +53,36 @@ import com.google.cloud.oracledatabase.v1.CloudVmCluster;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.Database;
+import com.google.cloud.oracledatabase.v1.DbSystem;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
+import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -63,22 +95,52 @@ import com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest
 import com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresResponse;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemsRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemsResponse;
+import com.google.cloud.oracledatabase.v1.ListDbVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDbVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListEntitlementsRequest;
 import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
+import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
+import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
+import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
+import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
+import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
+import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
+import com.google.cloud.oracledatabase.v1.OdbNetwork;
+import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
 import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -91,8 +153,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class OracleDatabaseStub implements BackgroundResource {
 
-  public OperationsStub getHttpJsonOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getHttpJsonOperationsStub()");
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public UnaryCallable<
@@ -210,6 +276,16 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listGiVersionsCallable()");
   }
 
+  public UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsPagedResponse>
+      listMinorVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMinorVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsResponse>
+      listMinorVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMinorVersionsCallable()");
+  }
+
   public UnaryCallable<ListDbSystemShapesRequest, ListDbSystemShapesPagedResponse>
       listDbSystemShapesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listDbSystemShapesPagedCallable()");
@@ -245,6 +321,17 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
   public UnaryCallable<CreateAutonomousDatabaseRequest, Operation>
       createAutonomousDatabaseCallable() {
     throw new UnsupportedOperationException("Not implemented: createAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      updateAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAutonomousDatabaseCallable()");
   }
 
   public OperationCallable<DeleteAutonomousDatabaseRequest, Empty, OperationMetadata>
@@ -345,6 +432,286 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
   public UnaryCallable<RestartAutonomousDatabaseRequest, Operation>
       restartAutonomousDatabaseCallable() {
     throw new UnsupportedOperationException("Not implemented: restartAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<
+          SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      switchoverAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: switchoverAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: switchoverAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      failoverAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: failoverAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: failoverAutonomousDatabaseCallable()");
+  }
+
+  public UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>
+      listOdbNetworksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOdbNetworksPagedCallable()");
+  }
+
+  public UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse> listOdbNetworksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOdbNetworksCallable()");
+  }
+
+  public UnaryCallable<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: getOdbNetworkCallable()");
+  }
+
+  public OperationCallable<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      createOdbNetworkOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOdbNetworkOperationCallable()");
+  }
+
+  public UnaryCallable<CreateOdbNetworkRequest, Operation> createOdbNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOdbNetworkCallable()");
+  }
+
+  public OperationCallable<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+      deleteOdbNetworkOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOdbNetworkOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOdbNetworkCallable()");
+  }
+
+  public UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsPagedResponse>
+      listOdbSubnetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOdbSubnetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsResponse> listOdbSubnetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOdbSubnetsCallable()");
+  }
+
+  public UnaryCallable<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getOdbSubnetCallable()");
+  }
+
+  public OperationCallable<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      createOdbSubnetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOdbSubnetOperationCallable()");
+  }
+
+  public UnaryCallable<CreateOdbSubnetRequest, Operation> createOdbSubnetCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOdbSubnetCallable()");
+  }
+
+  public OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+      deleteOdbSubnetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOdbSubnetOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOdbSubnetCallable()");
+  }
+
+  public UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersPagedResponse>
+      listExadbVmClustersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExadbVmClustersPagedCallable()");
+  }
+
+  public UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+      listExadbVmClustersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExadbVmClustersCallable()");
+  }
+
+  public UnaryCallable<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExadbVmClusterCallable()");
+  }
+
+  public OperationCallable<CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      createExadbVmClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createExadbVmClusterOperationCallable()");
+  }
+
+  public UnaryCallable<CreateExadbVmClusterRequest, Operation> createExadbVmClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: createExadbVmClusterCallable()");
+  }
+
+  public OperationCallable<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+      deleteExadbVmClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteExadbVmClusterOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExadbVmClusterCallable()");
+  }
+
+  public OperationCallable<UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      updateExadbVmClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateExadbVmClusterOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateExadbVmClusterCallable()");
+  }
+
+  public OperationCallable<
+          RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      removeVirtualMachineExadbVmClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeVirtualMachineExadbVmClusterOperationCallable()");
+  }
+
+  public UnaryCallable<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeVirtualMachineExadbVmClusterCallable()");
+  }
+
+  public UnaryCallable<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsPagedResponse>
+      listExascaleDbStorageVaultsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listExascaleDbStorageVaultsPagedCallable()");
+  }
+
+  public UnaryCallable<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+      listExascaleDbStorageVaultsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listExascaleDbStorageVaultsCallable()");
+  }
+
+  public UnaryCallable<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExascaleDbStorageVaultCallable()");
+  }
+
+  public OperationCallable<
+          CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      createExascaleDbStorageVaultOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createExascaleDbStorageVaultOperationCallable()");
+  }
+
+  public UnaryCallable<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createExascaleDbStorageVaultCallable()");
+  }
+
+  public OperationCallable<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+      deleteExascaleDbStorageVaultOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteExascaleDbStorageVaultOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteExascaleDbStorageVaultCallable()");
+  }
+
+  public UnaryCallable<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
+      listDbSystemInitialStorageSizesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDbSystemInitialStorageSizesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+      listDbSystemInitialStorageSizesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDbSystemInitialStorageSizesCallable()");
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabasesPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabasesCallable()");
+  }
+
+  public UnaryCallable<GetDatabaseRequest, Database> getDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDatabaseCallable()");
+  }
+
+  public UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesPagedResponse>
+      listPluggableDatabasesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPluggableDatabasesPagedCallable()");
+  }
+
+  public UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+      listPluggableDatabasesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPluggableDatabasesCallable()");
+  }
+
+  public UnaryCallable<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPluggableDatabaseCallable()");
+  }
+
+  public UnaryCallable<ListDbSystemsRequest, ListDbSystemsPagedResponse>
+      listDbSystemsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDbSystemsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDbSystemsRequest, ListDbSystemsResponse> listDbSystemsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDbSystemsCallable()");
+  }
+
+  public UnaryCallable<GetDbSystemRequest, DbSystem> getDbSystemCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDbSystemCallable()");
+  }
+
+  public OperationCallable<CreateDbSystemRequest, DbSystem, OperationMetadata>
+      createDbSystemOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDbSystemOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDbSystemRequest, Operation> createDbSystemCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDbSystemCallable()");
+  }
+
+  public OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
+      deleteDbSystemOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDbSystemOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDbSystemCallable()");
+  }
+
+  public UnaryCallable<ListDbVersionsRequest, ListDbVersionsPagedResponse>
+      listDbVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDbVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDbVersionsCallable()");
+  }
+
+  public UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
+      listDatabaseCharacterSetsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDatabaseCharacterSetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
+      listDatabaseCharacterSetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabaseCharacterSetsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

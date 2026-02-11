@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -597,6 +597,69 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
                   "Unrecognized response type %s for method CancelMetadataJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createEntryLink(
+      CreateEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEntryLink(
+      DeleteEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEntryLink(
+      GetEntryLinkRequest request, StreamObserver<EntryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EntryLink) {
+      requests.add(request);
+      responseObserver.onNext(((EntryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEntryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EntryLink.class.getName(),
                   Exception.class.getName())));
     }
   }

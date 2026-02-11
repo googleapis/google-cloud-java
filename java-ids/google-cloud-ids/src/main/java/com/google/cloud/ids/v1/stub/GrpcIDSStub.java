@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public class GrpcIDSStub extends IDSStub {
                   ProtoUtils.marshaller(ListEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
@@ -67,6 +68,7 @@ public class GrpcIDSStub extends IDSStub {
           .setFullMethodName("google.cloud.ids.v1.IDS/GetEndpoint")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEndpointRequest, Operation>
@@ -77,6 +79,7 @@ public class GrpcIDSStub extends IDSStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEndpointRequest, Operation>
@@ -87,6 +90,7 @@ public class GrpcIDSStub extends IDSStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable;

@@ -37,6 +37,15 @@
             "DeleteManagementServer": {
               "methods": ["deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerOperationCallable", "deleteManagementServerCallable"]
             },
+            "FetchBackupPlanAssociationsForResourceType": {
+              "methods": ["fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceTypePagedCallable", "fetchBackupPlanAssociationsForResourceTypeCallable"]
+            },
+            "FetchBackupsForResourceType": {
+              "methods": ["fetchBackupsForResourceType", "fetchBackupsForResourceType", "fetchBackupsForResourceType", "fetchBackupsForResourceTypePagedCallable", "fetchBackupsForResourceTypeCallable"]
+            },
+            "FetchDataSourceReferencesForResourceType": {
+              "methods": ["fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceTypePagedCallable", "fetchDataSourceReferencesForResourceTypeCallable"]
+            },
             "FetchUsableBackupVaults": {
               "methods": ["fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaultsPagedCallable", "fetchUsableBackupVaultsCallable"]
             },
@@ -49,11 +58,17 @@
             "GetBackupPlanAssociation": {
               "methods": ["getBackupPlanAssociation", "getBackupPlanAssociation", "getBackupPlanAssociation", "getBackupPlanAssociationCallable"]
             },
+            "GetBackupPlanRevision": {
+              "methods": ["getBackupPlanRevision", "getBackupPlanRevision", "getBackupPlanRevision", "getBackupPlanRevisionCallable"]
+            },
             "GetBackupVault": {
               "methods": ["getBackupVault", "getBackupVault", "getBackupVault", "getBackupVaultCallable"]
             },
             "GetDataSource": {
               "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
+            },
+            "GetDataSourceReference": {
+              "methods": ["getDataSourceReference", "getDataSourceReference", "getDataSourceReference", "getDataSourceReferenceCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -70,6 +85,9 @@
             "ListBackupPlanAssociations": {
               "methods": ["listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociationsPagedCallable", "listBackupPlanAssociationsCallable"]
             },
+            "ListBackupPlanRevisions": {
+              "methods": ["listBackupPlanRevisions", "listBackupPlanRevisions", "listBackupPlanRevisions", "listBackupPlanRevisionsPagedCallable", "listBackupPlanRevisionsCallable"]
+            },
             "ListBackupPlans": {
               "methods": ["listBackupPlans", "listBackupPlans", "listBackupPlans", "listBackupPlansPagedCallable", "listBackupPlansCallable"]
             },
@@ -78,6 +96,9 @@
             },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListDataSourceReferences": {
+              "methods": ["listDataSourceReferences", "listDataSourceReferences", "listDataSourceReferences", "listDataSourceReferencesPagedCallable", "listDataSourceReferencesCallable"]
             },
             "ListDataSources": {
               "methods": ["listDataSources", "listDataSources", "listDataSources", "listDataSourcesPagedCallable", "listDataSourcesCallable"]
@@ -103,11 +124,44 @@
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
             },
+            "UpdateBackupPlan": {
+              "methods": ["updateBackupPlanAsync", "updateBackupPlanAsync", "updateBackupPlanOperationCallable", "updateBackupPlanCallable"]
+            },
+            "UpdateBackupPlanAssociation": {
+              "methods": ["updateBackupPlanAssociationAsync", "updateBackupPlanAssociationAsync", "updateBackupPlanAssociationOperationCallable", "updateBackupPlanAssociationCallable"]
+            },
             "UpdateBackupVault": {
               "methods": ["updateBackupVaultAsync", "updateBackupVaultAsync", "updateBackupVaultOperationCallable", "updateBackupVaultCallable"]
             },
             "UpdateDataSource": {
               "methods": ["updateDataSourceAsync", "updateDataSourceAsync", "updateDataSourceOperationCallable", "updateDataSourceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BackupDrProtectionSummary": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BackupDrProtectionSummaryClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListResourceBackupConfigs": {
+              "methods": ["listResourceBackupConfigs", "listResourceBackupConfigs", "listResourceBackupConfigs", "listResourceBackupConfigsPagedCallable", "listResourceBackupConfigsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

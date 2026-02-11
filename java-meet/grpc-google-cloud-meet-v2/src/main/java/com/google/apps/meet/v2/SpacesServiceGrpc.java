@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * REST API for services dealing with spaces.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/apps/meet/v2/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpacesServiceGrpc {
 
@@ -454,8 +451,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.Space createSpace(
-        com.google.apps.meet.v2.CreateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.CreateSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -468,8 +465,9 @@ public final class SpacesServiceGrpc {
      * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
-    public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceMethod(), getCallOptions(), request);
     }
 
@@ -483,8 +481,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.Space updateSpace(
-        com.google.apps.meet.v2.UpdateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.UpdateSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -498,8 +496,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty endActiveConference(
-        com.google.apps.meet.v2.EndActiveConferenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.EndActiveConferenceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEndActiveConferenceMethod(), getCallOptions(), request);
     }
   }

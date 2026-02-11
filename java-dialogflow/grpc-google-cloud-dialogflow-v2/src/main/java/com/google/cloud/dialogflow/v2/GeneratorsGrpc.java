@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * answers.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/generator.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GeneratorsGrpc {
 
@@ -556,8 +553,9 @@ public final class GeneratorsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Generator createGenerator(
-        com.google.cloud.dialogflow.v2.CreateGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateGeneratorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGeneratorMethod(), getCallOptions(), request);
     }
 
@@ -569,8 +567,8 @@ public final class GeneratorsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Generator getGenerator(
-        com.google.cloud.dialogflow.v2.GetGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetGeneratorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGeneratorMethod(), getCallOptions(), request);
     }
 
@@ -582,8 +580,9 @@ public final class GeneratorsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListGeneratorsResponse listGenerators(
-        com.google.cloud.dialogflow.v2.ListGeneratorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListGeneratorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGeneratorsMethod(), getCallOptions(), request);
     }
 
@@ -595,8 +594,9 @@ public final class GeneratorsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGenerator(
-        com.google.cloud.dialogflow.v2.DeleteGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteGeneratorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGeneratorMethod(), getCallOptions(), request);
     }
 
@@ -608,8 +608,9 @@ public final class GeneratorsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Generator updateGenerator(
-        com.google.cloud.dialogflow.v2.UpdateGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateGeneratorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGeneratorMethod(), getCallOptions(), request);
     }
   }

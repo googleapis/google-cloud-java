@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * operations on aml.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/financialservices/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AMLGrpc {
 
@@ -3111,8 +3108,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.ListInstancesResponse listInstances(
-        com.google.cloud.financialservices.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -3124,8 +3122,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.Instance getInstance(
-        com.google.cloud.financialservices.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3137,8 +3136,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.financialservices.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3150,8 +3150,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.financialservices.v1.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3163,8 +3164,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.financialservices.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3179,8 +3181,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importRegisteredParties(
-        com.google.cloud.financialservices.v1.ImportRegisteredPartiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ImportRegisteredPartiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportRegisteredPartiesMethod(), getCallOptions(), request);
     }
 
@@ -3195,8 +3198,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportRegisteredParties(
-        com.google.cloud.financialservices.v1.ExportRegisteredPartiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ExportRegisteredPartiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportRegisteredPartiesMethod(), getCallOptions(), request);
     }
 
@@ -3208,8 +3212,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.ListDatasetsResponse listDatasets(
-        com.google.cloud.financialservices.v1.ListDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ListDatasetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -3221,8 +3226,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.Dataset getDataset(
-        com.google.cloud.financialservices.v1.GetDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3234,8 +3240,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataset(
-        com.google.cloud.financialservices.v1.CreateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.CreateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3247,8 +3254,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDataset(
-        com.google.cloud.financialservices.v1.UpdateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.UpdateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3260,8 +3268,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataset(
-        com.google.cloud.financialservices.v1.DeleteDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.DeleteDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
@@ -3273,8 +3282,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.ListModelsResponse listModels(
-        com.google.cloud.financialservices.v1.ListModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ListModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
@@ -3286,8 +3296,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.Model getModel(
-        com.google.cloud.financialservices.v1.GetModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
@@ -3299,8 +3310,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createModel(
-        com.google.cloud.financialservices.v1.CreateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.CreateModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelMethod(), getCallOptions(), request);
     }
 
@@ -3312,8 +3324,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateModel(
-        com.google.cloud.financialservices.v1.UpdateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.UpdateModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
@@ -3328,8 +3341,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportModelMetadata(
-        com.google.cloud.financialservices.v1.ExportModelMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ExportModelMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportModelMetadataMethod(), getCallOptions(), request);
     }
 
@@ -3341,8 +3355,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModel(
-        com.google.cloud.financialservices.v1.DeleteModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.DeleteModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
@@ -3354,8 +3369,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.ListEngineConfigsResponse listEngineConfigs(
-        com.google.cloud.financialservices.v1.ListEngineConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ListEngineConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEngineConfigsMethod(), getCallOptions(), request);
     }
 
@@ -3367,8 +3383,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.EngineConfig getEngineConfig(
-        com.google.cloud.financialservices.v1.GetEngineConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetEngineConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEngineConfigMethod(), getCallOptions(), request);
     }
 
@@ -3380,8 +3397,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEngineConfig(
-        com.google.cloud.financialservices.v1.CreateEngineConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.CreateEngineConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEngineConfigMethod(), getCallOptions(), request);
     }
 
@@ -3393,8 +3411,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEngineConfig(
-        com.google.cloud.financialservices.v1.UpdateEngineConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.UpdateEngineConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEngineConfigMethod(), getCallOptions(), request);
     }
 
@@ -3409,8 +3428,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportEngineConfigMetadata(
-        com.google.cloud.financialservices.v1.ExportEngineConfigMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ExportEngineConfigMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportEngineConfigMetadataMethod(), getCallOptions(), request);
     }
 
@@ -3422,8 +3442,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEngineConfig(
-        com.google.cloud.financialservices.v1.DeleteEngineConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.DeleteEngineConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEngineConfigMethod(), getCallOptions(), request);
     }
 
@@ -3435,8 +3456,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.EngineVersion getEngineVersion(
-        com.google.cloud.financialservices.v1.GetEngineVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetEngineVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEngineVersionMethod(), getCallOptions(), request);
     }
 
@@ -3448,8 +3470,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.ListEngineVersionsResponse listEngineVersions(
-        com.google.cloud.financialservices.v1.ListEngineVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ListEngineVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEngineVersionsMethod(), getCallOptions(), request);
     }
 
@@ -3462,8 +3485,9 @@ public final class AMLGrpc {
      */
     public com.google.cloud.financialservices.v1.ListPredictionResultsResponse
         listPredictionResults(
-            com.google.cloud.financialservices.v1.ListPredictionResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.financialservices.v1.ListPredictionResultsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPredictionResultsMethod(), getCallOptions(), request);
     }
 
@@ -3475,8 +3499,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.PredictionResult getPredictionResult(
-        com.google.cloud.financialservices.v1.GetPredictionResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetPredictionResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPredictionResultMethod(), getCallOptions(), request);
     }
 
@@ -3488,8 +3513,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPredictionResult(
-        com.google.cloud.financialservices.v1.CreatePredictionResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.CreatePredictionResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePredictionResultMethod(), getCallOptions(), request);
     }
 
@@ -3501,8 +3527,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePredictionResult(
-        com.google.cloud.financialservices.v1.UpdatePredictionResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.UpdatePredictionResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePredictionResultMethod(), getCallOptions(), request);
     }
 
@@ -3517,8 +3544,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportPredictionResultMetadata(
-        com.google.cloud.financialservices.v1.ExportPredictionResultMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ExportPredictionResultMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportPredictionResultMetadataMethod(), getCallOptions(), request);
     }
 
@@ -3530,8 +3558,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePredictionResult(
-        com.google.cloud.financialservices.v1.DeletePredictionResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.DeletePredictionResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePredictionResultMethod(), getCallOptions(), request);
     }
 
@@ -3543,8 +3572,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.ListBacktestResultsResponse listBacktestResults(
-        com.google.cloud.financialservices.v1.ListBacktestResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ListBacktestResultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBacktestResultsMethod(), getCallOptions(), request);
     }
 
@@ -3556,8 +3586,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.cloud.financialservices.v1.BacktestResult getBacktestResult(
-        com.google.cloud.financialservices.v1.GetBacktestResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.GetBacktestResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBacktestResultMethod(), getCallOptions(), request);
     }
 
@@ -3569,8 +3600,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBacktestResult(
-        com.google.cloud.financialservices.v1.CreateBacktestResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.CreateBacktestResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBacktestResultMethod(), getCallOptions(), request);
     }
 
@@ -3582,8 +3614,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBacktestResult(
-        com.google.cloud.financialservices.v1.UpdateBacktestResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.UpdateBacktestResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBacktestResultMethod(), getCallOptions(), request);
     }
 
@@ -3598,8 +3631,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportBacktestResultMetadata(
-        com.google.cloud.financialservices.v1.ExportBacktestResultMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.ExportBacktestResultMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportBacktestResultMetadataMethod(), getCallOptions(), request);
     }
 
@@ -3611,8 +3645,9 @@ public final class AMLGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBacktestResult(
-        com.google.cloud.financialservices.v1.DeleteBacktestResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.financialservices.v1.DeleteBacktestResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBacktestResultMethod(), getCallOptions(), request);
     }
   }

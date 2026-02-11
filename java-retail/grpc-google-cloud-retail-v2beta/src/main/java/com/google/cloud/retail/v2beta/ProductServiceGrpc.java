@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * information of the customer's website.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/product_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProductServiceGrpc {
 
@@ -1453,8 +1450,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Product createProduct(
-        com.google.cloud.retail.v2beta.CreateProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.CreateProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProductMethod(), getCallOptions(), request);
     }
 
@@ -1466,8 +1464,8 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Product getProduct(
-        com.google.cloud.retail.v2beta.GetProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.GetProductRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
 
@@ -1479,8 +1477,8 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.ListProductsResponse listProducts(
-        com.google.cloud.retail.v2beta.ListProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ListProductsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProductsMethod(), getCallOptions(), request);
     }
 
@@ -1492,8 +1490,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Product updateProduct(
-        com.google.cloud.retail.v2beta.UpdateProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.UpdateProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProductMethod(), getCallOptions(), request);
     }
 
@@ -1505,8 +1504,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProduct(
-        com.google.cloud.retail.v2beta.DeleteProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.DeleteProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductMethod(), getCallOptions(), request);
     }
 
@@ -1532,8 +1532,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeProducts(
-        com.google.cloud.retail.v2beta.PurgeProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.PurgeProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeProductsMethod(), getCallOptions(), request);
     }
 
@@ -1549,8 +1550,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importProducts(
-        com.google.cloud.retail.v2beta.ImportProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ImportProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportProductsMethod(), getCallOptions(), request);
     }
 
@@ -1562,8 +1564,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportProducts(
-        com.google.cloud.retail.v2beta.ExportProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ExportProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportProductsMethod(), getCallOptions(), request);
     }
 
@@ -1616,8 +1619,8 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation setInventory(
-        com.google.cloud.retail.v2beta.SetInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.SetInventoryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetInventoryMethod(), getCallOptions(), request);
     }
 
@@ -1654,8 +1657,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addFulfillmentPlaces(
-        com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddFulfillmentPlacesMethod(), getCallOptions(), request);
     }
 
@@ -1692,8 +1696,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeFulfillmentPlaces(
-        com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveFulfillmentPlacesMethod(), getCallOptions(), request);
     }
 
@@ -1728,8 +1733,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addLocalInventories(
-        com.google.cloud.retail.v2beta.AddLocalInventoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.AddLocalInventoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddLocalInventoriesMethod(), getCallOptions(), request);
     }
 
@@ -1762,8 +1768,9 @@ public final class ProductServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeLocalInventories(
-        com.google.cloud.retail.v2beta.RemoveLocalInventoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.RemoveLocalInventoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveLocalInventoriesMethod(), getCallOptions(), request);
     }
   }

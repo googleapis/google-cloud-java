@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Data Profile, Data Quality) for the data source.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/datascans.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataScanServiceGrpc {
 
@@ -862,8 +859,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataScan(
-        com.google.cloud.dataplex.v1.CreateDataScanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateDataScanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataScanMethod(), getCallOptions(), request);
     }
 
@@ -875,8 +872,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDataScan(
-        com.google.cloud.dataplex.v1.UpdateDataScanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateDataScanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataScanMethod(), getCallOptions(), request);
     }
 
@@ -888,8 +885,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataScan(
-        com.google.cloud.dataplex.v1.DeleteDataScanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteDataScanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataScanMethod(), getCallOptions(), request);
     }
 
@@ -901,8 +898,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.DataScan getDataScan(
-        com.google.cloud.dataplex.v1.GetDataScanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetDataScanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataScanMethod(), getCallOptions(), request);
     }
 
@@ -914,8 +911,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListDataScansResponse listDataScans(
-        com.google.cloud.dataplex.v1.ListDataScansRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListDataScansRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataScansMethod(), getCallOptions(), request);
     }
 
@@ -927,8 +924,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.RunDataScanResponse runDataScan(
-        com.google.cloud.dataplex.v1.RunDataScanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.RunDataScanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunDataScanMethod(), getCallOptions(), request);
     }
 
@@ -940,8 +937,8 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.DataScanJob getDataScanJob(
-        com.google.cloud.dataplex.v1.GetDataScanJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetDataScanJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataScanJobMethod(), getCallOptions(), request);
     }
 
@@ -953,8 +950,9 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListDataScanJobsResponse listDataScanJobs(
-        com.google.cloud.dataplex.v1.ListDataScanJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListDataScanJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataScanJobsMethod(), getCallOptions(), request);
     }
 
@@ -968,8 +966,9 @@ public final class DataScanServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse generateDataQualityRules(
-        com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateDataQualityRulesMethod(), getCallOptions(), request);
     }
   }

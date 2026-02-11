@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API for working with the system policy.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/binaryauthorization/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SystemPolicyV1Grpc {
 
@@ -249,8 +246,9 @@ public final class SystemPolicyV1Grpc {
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy getSystemPolicy(
         com.google.protos.google.cloud.binaryauthorization.v1.Service.GetSystemPolicyRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSystemPolicyMethod(), getCallOptions(), request);
     }
   }

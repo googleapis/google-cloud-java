@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,8 +47,12 @@ import com.google.longrunning.Operation;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursMetadata;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata;
 import com.google.maps.routeoptimization.v1.OptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.OptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriMetadata;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriRequest;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriResponse;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -103,8 +107,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -144,6 +148,14 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
   private final OperationCallSettings<
           BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
       batchOptimizeToursOperationSettings;
+  private final UnaryCallSettings<OptimizeToursRequest, Operation> optimizeToursLongRunningSettings;
+  private final OperationCallSettings<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationSettings;
+  private final UnaryCallSettings<OptimizeToursUriRequest, Operation> optimizeToursUriSettings;
+  private final OperationCallSettings<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationSettings;
 
   /** Returns the object with the settings used for calls to optimizeTours. */
   public UnaryCallSettings<OptimizeToursRequest, OptimizeToursResponse> optimizeToursSettings() {
@@ -160,6 +172,30 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
           BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
       batchOptimizeToursOperationSettings() {
     return batchOptimizeToursOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursLongRunning. */
+  public UnaryCallSettings<OptimizeToursRequest, Operation> optimizeToursLongRunningSettings() {
+    return optimizeToursLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursLongRunning. */
+  public OperationCallSettings<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationSettings() {
+    return optimizeToursLongRunningOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursUri. */
+  public UnaryCallSettings<OptimizeToursUriRequest, Operation> optimizeToursUriSettings() {
+    return optimizeToursUriSettings;
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursUri. */
+  public OperationCallSettings<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationSettings() {
+    return optimizeToursUriOperationSettings;
   }
 
   public RouteOptimizationStub createStub() throws IOException {
@@ -277,6 +313,11 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
     batchOptimizeToursSettings = settingsBuilder.batchOptimizeToursSettings().build();
     batchOptimizeToursOperationSettings =
         settingsBuilder.batchOptimizeToursOperationSettings().build();
+    optimizeToursLongRunningSettings = settingsBuilder.optimizeToursLongRunningSettings().build();
+    optimizeToursLongRunningOperationSettings =
+        settingsBuilder.optimizeToursLongRunningOperationSettings().build();
+    optimizeToursUriSettings = settingsBuilder.optimizeToursUriSettings().build();
+    optimizeToursUriOperationSettings = settingsBuilder.optimizeToursUriOperationSettings().build();
   }
 
   /** Builder for RouteOptimizationStubSettings. */
@@ -289,6 +330,16 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
     private final OperationCallSettings.Builder<
             BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
         batchOptimizeToursOperationSettings;
+    private final UnaryCallSettings.Builder<OptimizeToursRequest, Operation>
+        optimizeToursLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+        optimizeToursLongRunningOperationSettings;
+    private final UnaryCallSettings.Builder<OptimizeToursUriRequest, Operation>
+        optimizeToursUriSettings;
+    private final OperationCallSettings.Builder<
+            OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+        optimizeToursUriOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -333,10 +384,17 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
       optimizeToursSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchOptimizeToursSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchOptimizeToursOperationSettings = OperationCallSettings.newBuilder();
+      optimizeToursLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      optimizeToursLongRunningOperationSettings = OperationCallSettings.newBuilder();
+      optimizeToursUriSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      optimizeToursUriOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              optimizeToursSettings, batchOptimizeToursSettings);
+              optimizeToursSettings,
+              batchOptimizeToursSettings,
+              optimizeToursLongRunningSettings,
+              optimizeToursUriSettings);
       initDefaults(this);
     }
 
@@ -347,10 +405,18 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
       batchOptimizeToursSettings = settings.batchOptimizeToursSettings.toBuilder();
       batchOptimizeToursOperationSettings =
           settings.batchOptimizeToursOperationSettings.toBuilder();
+      optimizeToursLongRunningSettings = settings.optimizeToursLongRunningSettings.toBuilder();
+      optimizeToursLongRunningOperationSettings =
+          settings.optimizeToursLongRunningOperationSettings.toBuilder();
+      optimizeToursUriSettings = settings.optimizeToursUriSettings.toBuilder();
+      optimizeToursUriOperationSettings = settings.optimizeToursUriOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              optimizeToursSettings, batchOptimizeToursSettings);
+              optimizeToursSettings,
+              batchOptimizeToursSettings,
+              optimizeToursLongRunningSettings,
+              optimizeToursUriSettings);
     }
 
     private static Builder createDefault() {
@@ -389,6 +455,16 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .optimizeToursLongRunningSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .optimizeToursUriSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .batchOptimizeToursOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -402,6 +478,55 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   BatchOptimizeToursMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .optimizeToursLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<OptimizeToursRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OptimizeToursResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  OptimizeToursLongRunningMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .optimizeToursUriOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<OptimizeToursUriRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OptimizeToursUriResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OptimizeToursUriMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -449,6 +574,32 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
             BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
         batchOptimizeToursOperationSettings() {
       return batchOptimizeToursOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursLongRunning. */
+    public UnaryCallSettings.Builder<OptimizeToursRequest, Operation>
+        optimizeToursLongRunningSettings() {
+      return optimizeToursLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursLongRunning. */
+    public OperationCallSettings.Builder<
+            OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+        optimizeToursLongRunningOperationSettings() {
+      return optimizeToursLongRunningOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursUri. */
+    public UnaryCallSettings.Builder<OptimizeToursUriRequest, Operation>
+        optimizeToursUriSettings() {
+      return optimizeToursUriSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursUri. */
+    public OperationCallSettings.Builder<
+            OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+        optimizeToursUriOperationSettings() {
+      return optimizeToursUriOperationSettings;
     }
 
     @Override

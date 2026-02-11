@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Google Kubernetes Engine Cluster Manager v1
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/container/v1/cluster_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClusterManagerGrpc {
 
@@ -1515,6 +1512,105 @@ public final class ClusterManagerGrpc {
     return getCheckAutopilotCompatibilityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchClusterUpgradeInfoRequest,
+          com.google.container.v1.ClusterUpgradeInfo>
+      getFetchClusterUpgradeInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchClusterUpgradeInfo",
+      requestType = com.google.container.v1.FetchClusterUpgradeInfoRequest.class,
+      responseType = com.google.container.v1.ClusterUpgradeInfo.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchClusterUpgradeInfoRequest,
+          com.google.container.v1.ClusterUpgradeInfo>
+      getFetchClusterUpgradeInfoMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.FetchClusterUpgradeInfoRequest,
+            com.google.container.v1.ClusterUpgradeInfo>
+        getFetchClusterUpgradeInfoMethod;
+    if ((getFetchClusterUpgradeInfoMethod = ClusterManagerGrpc.getFetchClusterUpgradeInfoMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getFetchClusterUpgradeInfoMethod = ClusterManagerGrpc.getFetchClusterUpgradeInfoMethod)
+            == null) {
+          ClusterManagerGrpc.getFetchClusterUpgradeInfoMethod =
+              getFetchClusterUpgradeInfoMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.FetchClusterUpgradeInfoRequest,
+                          com.google.container.v1.ClusterUpgradeInfo>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchClusterUpgradeInfo"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.FetchClusterUpgradeInfoRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.ClusterUpgradeInfo.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("FetchClusterUpgradeInfo"))
+                      .build();
+        }
+      }
+    }
+    return getFetchClusterUpgradeInfoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+          com.google.container.v1.NodePoolUpgradeInfo>
+      getFetchNodePoolUpgradeInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchNodePoolUpgradeInfo",
+      requestType = com.google.container.v1.FetchNodePoolUpgradeInfoRequest.class,
+      responseType = com.google.container.v1.NodePoolUpgradeInfo.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+          com.google.container.v1.NodePoolUpgradeInfo>
+      getFetchNodePoolUpgradeInfoMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+            com.google.container.v1.NodePoolUpgradeInfo>
+        getFetchNodePoolUpgradeInfoMethod;
+    if ((getFetchNodePoolUpgradeInfoMethod = ClusterManagerGrpc.getFetchNodePoolUpgradeInfoMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getFetchNodePoolUpgradeInfoMethod =
+                ClusterManagerGrpc.getFetchNodePoolUpgradeInfoMethod)
+            == null) {
+          ClusterManagerGrpc.getFetchNodePoolUpgradeInfoMethod =
+              getFetchNodePoolUpgradeInfoMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+                          com.google.container.v1.NodePoolUpgradeInfo>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchNodePoolUpgradeInfo"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.FetchNodePoolUpgradeInfoRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.NodePoolUpgradeInfo.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("FetchNodePoolUpgradeInfo"))
+                      .build();
+        }
+      }
+    }
+    return getFetchNodePoolUpgradeInfoMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ClusterManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ClusterManagerStub> factory =
@@ -1617,7 +1713,7 @@ public final class ClusterManagerGrpc {
      * [default
      * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the Kubelet creates routes for each node to allow the containers
+     * the kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
@@ -2086,6 +2182,34 @@ public final class ClusterManagerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCheckAutopilotCompatibilityMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    default void fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.ClusterUpgradeInfo> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchClusterUpgradeInfoMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    default void fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.NodePoolUpgradeInfo> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchNodePoolUpgradeInfoMethod(), responseObserver);
+    }
   }
 
   /**
@@ -2164,7 +2288,7 @@ public final class ClusterManagerGrpc {
      * [default
      * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the Kubelet creates routes for each node to allow the containers
+     * the kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
@@ -2696,6 +2820,38 @@ public final class ClusterManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public void fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.ClusterUpgradeInfo> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchClusterUpgradeInfoMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public void fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.NodePoolUpgradeInfo> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchNodePoolUpgradeInfoMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2726,8 +2882,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.ListClustersResponse listClusters(
-        com.google.container.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.ListClustersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -2739,8 +2895,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Cluster getCluster(
-        com.google.container.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -2754,7 +2910,7 @@ public final class ClusterManagerGrpc {
      * [default
      * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the Kubelet creates routes for each node to allow the containers
+     * the kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
@@ -2762,8 +2918,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation createCluster(
-        com.google.container.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.CreateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -2775,8 +2931,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation updateCluster(
-        com.google.container.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.UpdateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -2788,8 +2944,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation updateNodePool(
-        com.google.container.v1.UpdateNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.UpdateNodePoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -2801,8 +2957,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setNodePoolAutoscaling(
-        com.google.container.v1.SetNodePoolAutoscalingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetNodePoolAutoscalingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetNodePoolAutoscalingMethod(), getCallOptions(), request);
     }
 
@@ -2814,8 +2971,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setLoggingService(
-        com.google.container.v1.SetLoggingServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetLoggingServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetLoggingServiceMethod(), getCallOptions(), request);
     }
 
@@ -2827,8 +2984,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setMonitoringService(
-        com.google.container.v1.SetMonitoringServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetMonitoringServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetMonitoringServiceMethod(), getCallOptions(), request);
     }
 
@@ -2840,8 +2998,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setAddonsConfig(
-        com.google.container.v1.SetAddonsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetAddonsConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetAddonsConfigMethod(), getCallOptions(), request);
     }
 
@@ -2857,8 +3015,8 @@ public final class ClusterManagerGrpc {
      */
     @java.lang.Deprecated
     public com.google.container.v1.Operation setLocations(
-        com.google.container.v1.SetLocationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetLocationsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetLocationsMethod(), getCallOptions(), request);
     }
 
@@ -2870,8 +3028,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation updateMaster(
-        com.google.container.v1.UpdateMasterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.UpdateMasterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMasterMethod(), getCallOptions(), request);
     }
 
@@ -2885,8 +3043,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setMasterAuth(
-        com.google.container.v1.SetMasterAuthRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetMasterAuthRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetMasterAuthMethod(), getCallOptions(), request);
     }
 
@@ -2904,8 +3062,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation deleteCluster(
-        com.google.container.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.DeleteClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -2917,8 +3075,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.ListOperationsResponse listOperations(
-        com.google.container.v1.ListOperationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.ListOperationsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOperationsMethod(), getCallOptions(), request);
     }
 
@@ -2930,8 +3088,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation getOperation(
-        com.google.container.v1.GetOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.GetOperationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOperationMethod(), getCallOptions(), request);
     }
 
@@ -2943,8 +3101,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelOperation(
-        com.google.container.v1.CancelOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.CancelOperationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelOperationMethod(), getCallOptions(), request);
     }
 
@@ -2956,8 +3114,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.ServerConfig getServerConfig(
-        com.google.container.v1.GetServerConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.GetServerConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
     }
 
@@ -2970,8 +3128,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.GetJSONWebKeysResponse getJSONWebKeys(
-        com.google.container.v1.GetJSONWebKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.GetJSONWebKeysRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJSONWebKeysMethod(), getCallOptions(), request);
     }
 
@@ -2983,8 +3141,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.ListNodePoolsResponse listNodePools(
-        com.google.container.v1.ListNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.ListNodePoolsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
     }
 
@@ -2996,8 +3154,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.NodePool getNodePool(
-        com.google.container.v1.GetNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.GetNodePoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -3009,8 +3167,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation createNodePool(
-        com.google.container.v1.CreateNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.CreateNodePoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -3022,8 +3180,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation deleteNodePool(
-        com.google.container.v1.DeleteNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.DeleteNodePoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -3036,8 +3194,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty completeNodePoolUpgrade(
-        com.google.container.v1.CompleteNodePoolUpgradeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.CompleteNodePoolUpgradeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteNodePoolUpgradeMethod(), getCallOptions(), request);
     }
 
@@ -3050,8 +3209,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation rollbackNodePoolUpgrade(
-        com.google.container.v1.RollbackNodePoolUpgradeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.RollbackNodePoolUpgradeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackNodePoolUpgradeMethod(), getCallOptions(), request);
     }
 
@@ -3063,8 +3223,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setNodePoolManagement(
-        com.google.container.v1.SetNodePoolManagementRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetNodePoolManagementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetNodePoolManagementMethod(), getCallOptions(), request);
     }
 
@@ -3076,8 +3237,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setLabels(
-        com.google.container.v1.SetLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetLabelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetLabelsMethod(), getCallOptions(), request);
     }
 
@@ -3089,8 +3250,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setLegacyAbac(
-        com.google.container.v1.SetLegacyAbacRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetLegacyAbacRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetLegacyAbacMethod(), getCallOptions(), request);
     }
 
@@ -3102,8 +3263,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation startIPRotation(
-        com.google.container.v1.StartIPRotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.StartIPRotationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartIPRotationMethod(), getCallOptions(), request);
     }
 
@@ -3115,8 +3276,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation completeIPRotation(
-        com.google.container.v1.CompleteIPRotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.CompleteIPRotationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteIPRotationMethod(), getCallOptions(), request);
     }
 
@@ -3130,8 +3291,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setNodePoolSize(
-        com.google.container.v1.SetNodePoolSizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetNodePoolSizeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetNodePoolSizeMethod(), getCallOptions(), request);
     }
 
@@ -3143,8 +3304,8 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setNetworkPolicy(
-        com.google.container.v1.SetNetworkPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetNetworkPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetNetworkPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3156,8 +3317,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.Operation setMaintenancePolicy(
-        com.google.container.v1.SetMaintenancePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.SetMaintenancePolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetMaintenancePolicyMethod(), getCallOptions(), request);
     }
 
@@ -3169,8 +3331,9 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.ListUsableSubnetworksResponse listUsableSubnetworks(
-        com.google.container.v1.ListUsableSubnetworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.ListUsableSubnetworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsableSubnetworksMethod(), getCallOptions(), request);
     }
 
@@ -3183,9 +3346,38 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     public com.google.container.v1.CheckAutopilotCompatibilityResponse checkAutopilotCompatibility(
-        com.google.container.v1.CheckAutopilotCompatibilityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.container.v1.CheckAutopilotCompatibilityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckAutopilotCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1.ClusterUpgradeInfo fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchClusterUpgradeInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public com.google.container.v1.NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchNodePoolUpgradeInfoMethod(), getCallOptions(), request);
     }
   }
 
@@ -3245,7 +3437,7 @@ public final class ClusterManagerGrpc {
      * [default
      * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the Kubelet creates routes for each node to allow the containers
+     * the kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
@@ -3677,6 +3869,32 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.CheckAutopilotCompatibilityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckAutopilotCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1.ClusterUpgradeInfo fetchClusterUpgradeInfo(
+        com.google.container.v1.FetchClusterUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchClusterUpgradeInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public com.google.container.v1.NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
+        com.google.container.v1.FetchNodePoolUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchNodePoolUpgradeInfoMethod(), getCallOptions(), request);
     }
   }
 
@@ -3737,7 +3955,7 @@ public final class ClusterManagerGrpc {
      * [default
      * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
-     * the Kubelet creates routes for each node to allow the containers
+     * the kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
      * cluster.
      * Finally, an entry is added to the project's global metadata indicating
@@ -4176,6 +4394,34 @@ public final class ClusterManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckAutopilotCompatibilityMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.ClusterUpgradeInfo>
+        fetchClusterUpgradeInfo(com.google.container.v1.FetchClusterUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchClusterUpgradeInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch upgrade information of a specific nodepool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.NodePoolUpgradeInfo>
+        fetchNodePoolUpgradeInfo(com.google.container.v1.FetchNodePoolUpgradeInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchNodePoolUpgradeInfoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -4212,6 +4458,8 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_SET_MAINTENANCE_POLICY = 31;
   private static final int METHODID_LIST_USABLE_SUBNETWORKS = 32;
   private static final int METHODID_CHECK_AUTOPILOT_COMPATIBILITY = 33;
+  private static final int METHODID_FETCH_CLUSTER_UPGRADE_INFO = 34;
+  private static final int METHODID_FETCH_NODE_POOL_UPGRADE_INFO = 35;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4405,6 +4653,18 @@ public final class ClusterManagerGrpc {
               (com.google.container.v1.CheckAutopilotCompatibilityRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.container.v1.CheckAutopilotCompatibilityResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_CLUSTER_UPGRADE_INFO:
+          serviceImpl.fetchClusterUpgradeInfo(
+              (com.google.container.v1.FetchClusterUpgradeInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1.ClusterUpgradeInfo>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_NODE_POOL_UPGRADE_INFO:
+          serviceImpl.fetchNodePoolUpgradeInfo(
+              (com.google.container.v1.FetchNodePoolUpgradeInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1.NodePoolUpgradeInfo>)
                   responseObserver);
           break;
         default:
@@ -4636,6 +4896,20 @@ public final class ClusterManagerGrpc {
                     com.google.container.v1.CheckAutopilotCompatibilityRequest,
                     com.google.container.v1.CheckAutopilotCompatibilityResponse>(
                     service, METHODID_CHECK_AUTOPILOT_COMPATIBILITY)))
+        .addMethod(
+            getFetchClusterUpgradeInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.FetchClusterUpgradeInfoRequest,
+                    com.google.container.v1.ClusterUpgradeInfo>(
+                    service, METHODID_FETCH_CLUSTER_UPGRADE_INFO)))
+        .addMethod(
+            getFetchNodePoolUpgradeInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.FetchNodePoolUpgradeInfoRequest,
+                    com.google.container.v1.NodePoolUpgradeInfo>(
+                    service, METHODID_FETCH_NODE_POOL_UPGRADE_INFO)))
         .build();
   }
 
@@ -4721,6 +4995,8 @@ public final class ClusterManagerGrpc {
                       .addMethod(getSetMaintenancePolicyMethod())
                       .addMethod(getListUsableSubnetworksMethod())
                       .addMethod(getCheckAutopilotCompatibilityMethod())
+                      .addMethod(getFetchClusterUpgradeInfoMethod())
+                      .addMethod(getFetchNodePoolUpgradeInfoMethod())
                       .build();
         }
       }

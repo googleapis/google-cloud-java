@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * agents only.__
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudprofiler/v2/profiler.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProfilerServiceGrpc {
 
@@ -483,8 +480,9 @@ public final class ProfilerServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudprofiler.v2.Profile createProfile(
-        com.google.devtools.cloudprofiler.v2.CreateProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudprofiler.v2.CreateProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProfileMethod(), getCallOptions(), request);
     }
 
@@ -502,8 +500,9 @@ public final class ProfilerServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudprofiler.v2.Profile createOfflineProfile(
-        com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOfflineProfileMethod(), getCallOptions(), request);
     }
 
@@ -522,8 +521,9 @@ public final class ProfilerServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudprofiler.v2.Profile updateProfile(
-        com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
     }
   }

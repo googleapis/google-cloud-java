@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * your data.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datacatalog/v1/datacatalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 @java.lang.Deprecated
 public final class DataCatalogGrpc {
@@ -3388,8 +3385,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.SearchCatalogResponse searchCatalog(
-        com.google.cloud.datacatalog.v1.SearchCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.SearchCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchCatalogMethod(), getCallOptions(), request);
     }
 
@@ -3421,8 +3419,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryGroup createEntryGroup(
-        com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -3435,8 +3434,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryGroup getEntryGroup(
-        com.google.cloud.datacatalog.v1.GetEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.GetEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -3453,8 +3453,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryGroup updateEntryGroup(
-        com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -3471,8 +3472,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.protobuf.Empty deleteEntryGroup(
-        com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -3485,8 +3487,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.ListEntryGroupsResponse listEntryGroups(
-        com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
     }
 
@@ -3506,8 +3509,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry createEntry(
-        com.google.cloud.datacatalog.v1.CreateEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryMethod(), getCallOptions(), request);
     }
 
@@ -3524,8 +3527,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry updateEntry(
-        com.google.cloud.datacatalog.v1.UpdateEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
     }
 
@@ -3545,8 +3548,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.protobuf.Empty deleteEntry(
-        com.google.cloud.datacatalog.v1.DeleteEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeleteEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
     }
 
@@ -3559,8 +3562,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry getEntry(
-        com.google.cloud.datacatalog.v1.GetEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.GetEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryMethod(), getCallOptions(), request);
     }
 
@@ -3574,8 +3577,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry lookupEntry(
-        com.google.cloud.datacatalog.v1.LookupEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.LookupEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupEntryMethod(), getCallOptions(), request);
     }
 
@@ -3591,8 +3594,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.ListEntriesResponse listEntries(
-        com.google.cloud.datacatalog.v1.ListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ListEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -3608,8 +3611,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryOverview modifyEntryOverview(
-        com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getModifyEntryOverviewMethod(), getCallOptions(), request);
     }
 
@@ -3625,8 +3629,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Contacts modifyEntryContacts(
-        com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getModifyEntryContactsMethod(), getCallOptions(), request);
     }
 
@@ -3643,8 +3648,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplate createTagTemplate(
-        com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -3657,8 +3663,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplate getTagTemplate(
-        com.google.cloud.datacatalog.v1.GetTagTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.GetTagTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -3677,8 +3684,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplate updateTagTemplate(
-        com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -3694,8 +3702,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.protobuf.Empty deleteTagTemplate(
-        com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -3711,8 +3720,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField createTagTemplateField(
-        com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -3730,8 +3740,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField updateTagTemplateField(
-        com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -3747,8 +3758,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateField(
-        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -3762,8 +3774,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateFieldEnumValue(
-        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameTagTemplateFieldEnumValueMethod(), getCallOptions(), request);
     }
 
@@ -3780,8 +3793,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.protobuf.Empty deleteTagTemplateField(
-        com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -3803,8 +3817,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Tag createTag(
-        com.google.cloud.datacatalog.v1.CreateTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreateTagRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagMethod(), getCallOptions(), request);
     }
 
@@ -3817,8 +3831,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Tag updateTag(
-        com.google.cloud.datacatalog.v1.UpdateTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdateTagRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTagMethod(), getCallOptions(), request);
     }
 
@@ -3831,8 +3845,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.protobuf.Empty deleteTag(
-        com.google.cloud.datacatalog.v1.DeleteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeleteTagRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagMethod(), getCallOptions(), request);
     }
 
@@ -3847,8 +3861,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.ListTagsResponse listTags(
-        com.google.cloud.datacatalog.v1.ListTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ListTagsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTagsMethod(), getCallOptions(), request);
     }
 
@@ -3872,8 +3886,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation reconcileTags(
-        com.google.cloud.datacatalog.v1.ReconcileTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ReconcileTagsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReconcileTagsMethod(), getCallOptions(), request);
     }
 
@@ -3887,8 +3902,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.StarEntryResponse starEntry(
-        com.google.cloud.datacatalog.v1.StarEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.StarEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStarEntryMethod(), getCallOptions(), request);
     }
 
@@ -3902,8 +3917,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.UnstarEntryResponse unstarEntry(
-        com.google.cloud.datacatalog.v1.UnstarEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UnstarEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnstarEntryMethod(), getCallOptions(), request);
     }
 
@@ -3926,8 +3941,9 @@ public final class DataCatalogGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3952,8 +3968,9 @@ public final class DataCatalogGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3974,8 +3991,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -4003,8 +4020,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation importEntries(
-        com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ImportEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportEntriesMethod(), getCallOptions(), request);
     }
 
@@ -4018,8 +4036,8 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.MigrationConfig setConfig(
-        com.google.cloud.datacatalog.v1.SetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.SetConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetConfigMethod(), getCallOptions(), request);
     }
 
@@ -4034,8 +4052,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.OrganizationConfig retrieveConfig(
-        com.google.cloud.datacatalog.v1.RetrieveConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.RetrieveConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveConfigMethod(), getCallOptions(), request);
     }
 
@@ -4052,8 +4071,9 @@ public final class DataCatalogGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.MigrationConfig retrieveEffectiveConfig(
-        com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveEffectiveConfigMethod(), getCallOptions(), request);
     }
   }

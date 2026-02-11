@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/12345/locations/us-central1-c/instances/my-parallelstore-share`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/parallelstore/v1/parallelstore.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ParallelstoreGrpc {
 
@@ -730,8 +727,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.cloud.parallelstore.v1.ListInstancesResponse listInstances(
-        com.google.cloud.parallelstore.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -743,8 +741,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.cloud.parallelstore.v1.Instance getInstance(
-        com.google.cloud.parallelstore.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -756,8 +755,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.parallelstore.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -769,8 +769,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.parallelstore.v1.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -782,8 +783,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.parallelstore.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -795,8 +797,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importData(
-        com.google.cloud.parallelstore.v1.ImportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.ImportDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
@@ -808,8 +811,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportData(
-        com.google.cloud.parallelstore.v1.ExportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1.ExportDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
   }

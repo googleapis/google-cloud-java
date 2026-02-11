@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * upon specific servers in your Bare Metal Solution environment.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/baremetalsolution/v2/baremetalsolution.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BareMetalSolutionGrpc {
 
@@ -3665,8 +3662,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListInstancesResponse listInstances(
-        com.google.cloud.baremetalsolution.v2.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -3678,8 +3676,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Instance getInstance(
-        com.google.cloud.baremetalsolution.v2.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3691,8 +3690,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3705,8 +3705,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Instance renameInstance(
-        com.google.cloud.baremetalsolution.v2.RenameInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.RenameInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3719,8 +3720,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resetInstance(
-        com.google.cloud.baremetalsolution.v2.ResetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ResetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3732,8 +3734,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startInstance(
-        com.google.cloud.baremetalsolution.v2.StartInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.StartInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3745,8 +3748,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopInstance(
-        com.google.cloud.baremetalsolution.v2.StopInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.StopInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopInstanceMethod(), getCallOptions(), request);
     }
 
@@ -3758,8 +3762,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation enableInteractiveSerialConsole(
-        com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableInteractiveSerialConsoleMethod(), getCallOptions(), request);
     }
 
@@ -3771,8 +3776,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation disableInteractiveSerialConsole(
-        com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableInteractiveSerialConsoleMethod(), getCallOptions(), request);
     }
 
@@ -3784,8 +3790,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation detachLun(
-        com.google.cloud.baremetalsolution.v2.DetachLunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.DetachLunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetachLunMethod(), getCallOptions(), request);
     }
 
@@ -3798,8 +3805,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse listSSHKeys(
-        com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSSHKeysMethod(), getCallOptions(), request);
     }
 
@@ -3812,8 +3820,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.SSHKey createSSHKey(
-        com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSSHKeyMethod(), getCallOptions(), request);
     }
 
@@ -3825,8 +3834,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSSHKey(
-        com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSSHKeyMethod(), getCallOptions(), request);
     }
 
@@ -3838,8 +3848,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListVolumesResponse listVolumes(
-        com.google.cloud.baremetalsolution.v2.ListVolumesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListVolumesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVolumesMethod(), getCallOptions(), request);
     }
 
@@ -3851,8 +3862,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Volume getVolume(
-        com.google.cloud.baremetalsolution.v2.GetVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetVolumeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVolumeMethod(), getCallOptions(), request);
     }
 
@@ -3864,8 +3876,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVolume(
-        com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVolumeMethod(), getCallOptions(), request);
     }
 
@@ -3878,8 +3891,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Volume renameVolume(
-        com.google.cloud.baremetalsolution.v2.RenameVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.RenameVolumeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameVolumeMethod(), getCallOptions(), request);
     }
 
@@ -3892,8 +3906,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation evictVolume(
-        com.google.cloud.baremetalsolution.v2.EvictVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.EvictVolumeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvictVolumeMethod(), getCallOptions(), request);
     }
 
@@ -3905,8 +3920,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resizeVolume(
-        com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResizeVolumeMethod(), getCallOptions(), request);
     }
 
@@ -3918,8 +3934,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListNetworksResponse listNetworks(
-        com.google.cloud.baremetalsolution.v2.ListNetworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListNetworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNetworksMethod(), getCallOptions(), request);
     }
 
@@ -3932,8 +3949,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse listNetworkUsage(
-        com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNetworkUsageMethod(), getCallOptions(), request);
     }
 
@@ -3945,8 +3963,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Network getNetwork(
-        com.google.cloud.baremetalsolution.v2.GetNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNetworkMethod(), getCallOptions(), request);
     }
 
@@ -3958,8 +3977,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateNetwork(
-        com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNetworkMethod(), getCallOptions(), request);
     }
 
@@ -3972,8 +3992,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.VolumeSnapshot createVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVolumeSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -3986,8 +4007,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreVolumeSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4000,8 +4022,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVolumeSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4014,8 +4037,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.VolumeSnapshot getVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVolumeSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4029,8 +4053,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse listVolumeSnapshots(
-        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVolumeSnapshotsMethod(), getCallOptions(), request);
     }
 
@@ -4042,8 +4067,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Lun getLun(
-        com.google.cloud.baremetalsolution.v2.GetLunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetLunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLunMethod(), getCallOptions(), request);
     }
 
@@ -4055,8 +4081,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListLunsResponse listLuns(
-        com.google.cloud.baremetalsolution.v2.ListLunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListLunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLunsMethod(), getCallOptions(), request);
     }
 
@@ -4069,8 +4096,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation evictLun(
-        com.google.cloud.baremetalsolution.v2.EvictLunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.EvictLunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvictLunMethod(), getCallOptions(), request);
     }
 
@@ -4082,8 +4110,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.NfsShare getNfsShare(
-        com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNfsShareMethod(), getCallOptions(), request);
     }
 
@@ -4095,8 +4124,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse listNfsShares(
-        com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNfsSharesMethod(), getCallOptions(), request);
     }
 
@@ -4108,8 +4138,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateNfsShare(
-        com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNfsShareMethod(), getCallOptions(), request);
     }
 
@@ -4121,8 +4152,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNfsShare(
-        com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNfsShareMethod(), getCallOptions(), request);
     }
 
@@ -4135,8 +4167,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.NfsShare renameNfsShare(
-        com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameNfsShareMethod(), getCallOptions(), request);
     }
 
@@ -4148,8 +4181,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNfsShare(
-        com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNfsShareMethod(), getCallOptions(), request);
     }
 
@@ -4162,8 +4196,9 @@ public final class BareMetalSolutionGrpc {
      */
     public com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse
         listProvisioningQuotas(
-            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProvisioningQuotasMethod(), getCallOptions(), request);
     }
 
@@ -4176,8 +4211,9 @@ public final class BareMetalSolutionGrpc {
      */
     public com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse
         submitProvisioningConfig(
-            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitProvisioningConfigMethod(), getCallOptions(), request);
     }
 
@@ -4189,8 +4225,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ProvisioningConfig getProvisioningConfig(
-        com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProvisioningConfigMethod(), getCallOptions(), request);
     }
 
@@ -4202,8 +4239,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ProvisioningConfig createProvisioningConfig(
-        com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProvisioningConfigMethod(), getCallOptions(), request);
     }
 
@@ -4215,8 +4253,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ProvisioningConfig updateProvisioningConfig(
-        com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProvisioningConfigMethod(), getCallOptions(), request);
     }
 
@@ -4229,8 +4268,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.Network renameNetwork(
-        com.google.cloud.baremetalsolution.v2.RenameNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.RenameNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameNetworkMethod(), getCallOptions(), request);
     }
 
@@ -4242,8 +4282,9 @@ public final class BareMetalSolutionGrpc {
      * </pre>
      */
     public com.google.cloud.baremetalsolution.v2.ListOSImagesResponse listOSImages(
-        com.google.cloud.baremetalsolution.v2.ListOSImagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.baremetalsolution.v2.ListOSImagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOSImagesMethod(), getCallOptions(), request);
     }
   }

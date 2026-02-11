@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/redis/cluster/v1/cloud_redis_cluster.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudRedisClusterGrpc {
 
@@ -1359,8 +1356,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.ListClustersResponse listClusters(
-        com.google.cloud.redis.cluster.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ListClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -1372,8 +1370,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.Cluster getCluster(
-        com.google.cloud.redis.cluster.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -1388,8 +1387,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.redis.cluster.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.UpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1402,8 +1402,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.redis.cluster.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.DeleteClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -1421,8 +1422,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.redis.cluster.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.CreateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1434,8 +1436,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.CertificateAuthority getClusterCertificateAuthority(
-        com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -1447,8 +1450,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rescheduleClusterMaintenance(
-        com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRescheduleClusterMaintenanceMethod(), getCallOptions(), request);
     }
 
@@ -1463,8 +1467,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse listBackupCollections(
-        com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupCollectionsMethod(), getCallOptions(), request);
     }
 
@@ -1476,8 +1481,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.BackupCollection getBackupCollection(
-        com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupCollectionMethod(), getCallOptions(), request);
     }
 
@@ -1489,8 +1495,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.ListBackupsResponse listBackups(
-        com.google.cloud.redis.cluster.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ListBackupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -1502,8 +1509,8 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.Backup getBackup(
-        com.google.cloud.redis.cluster.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -1515,8 +1522,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.redis.cluster.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.DeleteBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -1528,8 +1536,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportBackup(
-        com.google.cloud.redis.cluster.v1.ExportBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ExportBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportBackupMethod(), getCallOptions(), request);
     }
 
@@ -1552,8 +1561,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation backupCluster(
-        com.google.cloud.redis.cluster.v1.BackupClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.BackupClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBackupClusterMethod(), getCallOptions(), request);
     }
   }

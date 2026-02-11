@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,8 @@ import com.google.cloud.kms.v1.CreateImportJobRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
+import com.google.cloud.kms.v1.DecapsulateRequest;
+import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
@@ -225,6 +227,10 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
 
   public UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
     throw new UnsupportedOperationException("Not implemented: macVerifyCallable()");
+  }
+
+  public UnaryCallable<DecapsulateRequest, DecapsulateResponse> decapsulateCallable() {
+    throw new UnsupportedOperationException("Not implemented: decapsulateCallable()");
   }
 
   public UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>

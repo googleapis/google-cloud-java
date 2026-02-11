@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,10 @@ import com.google.cloud.confidentialcomputing.v1.Challenge;
 import com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -57,6 +61,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChallengeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Challenge.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyAttestationRequest, VerifyAttestationResponse>
@@ -69,6 +74,35 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   ProtoUtils.marshaller(VerifyAttestationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VerifyAttestationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceMethodDescriptor =
+          MethodDescriptor
+              .<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.confidentialcomputing.v1.ConfidentialComputing/VerifyConfidentialSpace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyConfidentialSpaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VerifyConfidentialSpaceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeMethodDescriptor =
+          MethodDescriptor.<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.confidentialcomputing.v1.ConfidentialComputing/VerifyConfidentialGke")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyConfidentialGkeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VerifyConfidentialGkeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -80,6 +114,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -88,11 +123,16 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateChallengeRequest, Challenge> createChallengeCallable;
   private final UnaryCallable<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationCallable;
+  private final UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable;
+  private final UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -163,6 +203,30 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+        verifyConfidentialSpaceTransportSettings =
+            GrpcCallSettings
+                .<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>newBuilder()
+                .setMethodDescriptor(verifyConfidentialSpaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("challenge", String.valueOf(request.getChallenge()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+        verifyConfidentialGkeTransportSettings =
+            GrpcCallSettings
+                .<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>newBuilder()
+                .setMethodDescriptor(verifyConfidentialGkeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("challenge", String.valueOf(request.getChallenge()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -192,6 +256,16 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
             verifyAttestationTransportSettings,
             settings.verifyAttestationSettings(),
             clientContext);
+    this.verifyConfidentialSpaceCallable =
+        callableFactory.createUnaryCallable(
+            verifyConfidentialSpaceTransportSettings,
+            settings.verifyConfidentialSpaceSettings(),
+            clientContext);
+    this.verifyConfidentialGkeCallable =
+        callableFactory.createUnaryCallable(
+            verifyConfidentialGkeTransportSettings,
+            settings.verifyConfidentialGkeSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -219,6 +293,18 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
   public UnaryCallable<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationCallable() {
     return verifyAttestationCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable() {
+    return verifyConfidentialSpaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable() {
+    return verifyConfidentialGkeCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.ApiHubInstance;
 import com.google.cloud.apihub.v1.CreateApiHubInstanceRequest;
+import com.google.cloud.apihub.v1.DeleteApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.GetApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceResponse;
@@ -59,6 +60,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -111,8 +113,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -151,6 +153,10 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
   private final OperationCallSettings<
           CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
       createApiHubInstanceOperationSettings;
+  private final UnaryCallSettings<DeleteApiHubInstanceRequest, Operation>
+      deleteApiHubInstanceSettings;
+  private final OperationCallSettings<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationSettings;
   private final UnaryCallSettings<GetApiHubInstanceRequest, ApiHubInstance>
       getApiHubInstanceSettings;
   private final UnaryCallSettings<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
@@ -220,6 +226,17 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
   public OperationCallSettings<CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
       createApiHubInstanceOperationSettings() {
     return createApiHubInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteApiHubInstance. */
+  public UnaryCallSettings<DeleteApiHubInstanceRequest, Operation> deleteApiHubInstanceSettings() {
+    return deleteApiHubInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteApiHubInstance. */
+  public OperationCallSettings<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationSettings() {
+    return deleteApiHubInstanceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getApiHubInstance. */
@@ -329,6 +346,9 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
     createApiHubInstanceSettings = settingsBuilder.createApiHubInstanceSettings().build();
     createApiHubInstanceOperationSettings =
         settingsBuilder.createApiHubInstanceOperationSettings().build();
+    deleteApiHubInstanceSettings = settingsBuilder.deleteApiHubInstanceSettings().build();
+    deleteApiHubInstanceOperationSettings =
+        settingsBuilder.deleteApiHubInstanceOperationSettings().build();
     getApiHubInstanceSettings = settingsBuilder.getApiHubInstanceSettings().build();
     lookupApiHubInstanceSettings = settingsBuilder.lookupApiHubInstanceSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -343,6 +363,11 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
     private final OperationCallSettings.Builder<
             CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
         createApiHubInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteApiHubInstanceRequest, Operation>
+        deleteApiHubInstanceSettings;
+    private final OperationCallSettings.Builder<
+            DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+        deleteApiHubInstanceOperationSettings;
     private final UnaryCallSettings.Builder<GetApiHubInstanceRequest, ApiHubInstance>
         getApiHubInstanceSettings;
     private final UnaryCallSettings.Builder<
@@ -360,10 +385,10 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -380,6 +405,8 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -391,8 +418,6 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -405,6 +430,8 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
 
       createApiHubInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createApiHubInstanceOperationSettings = OperationCallSettings.newBuilder();
+      deleteApiHubInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteApiHubInstanceOperationSettings = OperationCallSettings.newBuilder();
       getApiHubInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupApiHubInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -413,6 +440,7 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createApiHubInstanceSettings,
+              deleteApiHubInstanceSettings,
               getApiHubInstanceSettings,
               lookupApiHubInstanceSettings,
               listLocationsSettings,
@@ -426,6 +454,9 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
       createApiHubInstanceSettings = settings.createApiHubInstanceSettings.toBuilder();
       createApiHubInstanceOperationSettings =
           settings.createApiHubInstanceOperationSettings.toBuilder();
+      deleteApiHubInstanceSettings = settings.deleteApiHubInstanceSettings.toBuilder();
+      deleteApiHubInstanceOperationSettings =
+          settings.deleteApiHubInstanceOperationSettings.toBuilder();
       getApiHubInstanceSettings = settings.getApiHubInstanceSettings.toBuilder();
       lookupApiHubInstanceSettings = settings.lookupApiHubInstanceSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -434,6 +465,7 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createApiHubInstanceSettings,
+              deleteApiHubInstanceSettings,
               getApiHubInstanceSettings,
               lookupApiHubInstanceSettings,
               listLocationsSettings,
@@ -457,6 +489,11 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
           .createApiHubInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteApiHubInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getApiHubInstanceSettings()
@@ -502,6 +539,30 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .deleteApiHubInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteApiHubInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -531,6 +592,18 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
             CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
         createApiHubInstanceOperationSettings() {
       return createApiHubInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApiHubInstance. */
+    public UnaryCallSettings.Builder<DeleteApiHubInstanceRequest, Operation>
+        deleteApiHubInstanceSettings() {
+      return deleteApiHubInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApiHubInstance. */
+    public OperationCallSettings.Builder<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+        deleteApiHubInstanceOperationSettings() {
+      return deleteApiHubInstanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getApiHubInstance. */

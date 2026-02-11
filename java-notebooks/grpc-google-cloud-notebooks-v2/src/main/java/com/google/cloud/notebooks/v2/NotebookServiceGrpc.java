@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API v2 service for Workbench Notebooks Instances.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/notebooks/v2/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NotebookServiceGrpc {
 
@@ -1058,8 +1055,8 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.cloud.notebooks.v2.ListInstancesResponse listInstances(
-        com.google.cloud.notebooks.v2.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -1071,8 +1068,8 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.cloud.notebooks.v2.Instance getInstance(
-        com.google.cloud.notebooks.v2.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1084,8 +1081,9 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.notebooks.v2.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1097,8 +1095,9 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.notebooks.v2.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1110,8 +1109,9 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.notebooks.v2.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1123,8 +1123,8 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startInstance(
-        com.google.cloud.notebooks.v2.StartInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.StartInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1136,8 +1136,8 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopInstance(
-        com.google.cloud.notebooks.v2.StopInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.StopInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1149,8 +1149,8 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resetInstance(
-        com.google.cloud.notebooks.v2.ResetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.ResetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1163,8 +1163,9 @@ public final class NotebookServiceGrpc {
      */
     public com.google.cloud.notebooks.v2.CheckInstanceUpgradabilityResponse
         checkInstanceUpgradability(
-            com.google.cloud.notebooks.v2.CheckInstanceUpgradabilityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.notebooks.v2.CheckInstanceUpgradabilityRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckInstanceUpgradabilityMethod(), getCallOptions(), request);
     }
 
@@ -1176,8 +1177,9 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation upgradeInstance(
-        com.google.cloud.notebooks.v2.UpgradeInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.UpgradeInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpgradeInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1189,8 +1191,9 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rollbackInstance(
-        com.google.cloud.notebooks.v2.RollbackInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.RollbackInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1202,8 +1205,9 @@ public final class NotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation diagnoseInstance(
-        com.google.cloud.notebooks.v2.DiagnoseInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v2.DiagnoseInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiagnoseInstanceMethod(), getCallOptions(), request);
     }
   }

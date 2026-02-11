@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * set to "allow" if not otherwise specified by the user.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FirewallGrpc {
 
@@ -667,8 +664,8 @@ public final class FirewallGrpc {
      * </pre>
      */
     public com.google.appengine.v1.ListIngressRulesResponse listIngressRules(
-        com.google.appengine.v1.ListIngressRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.ListIngressRulesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIngressRulesMethod(), getCallOptions(), request);
     }
 
@@ -683,8 +680,9 @@ public final class FirewallGrpc {
      * </pre>
      */
     public com.google.appengine.v1.BatchUpdateIngressRulesResponse batchUpdateIngressRules(
-        com.google.appengine.v1.BatchUpdateIngressRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.BatchUpdateIngressRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateIngressRulesMethod(), getCallOptions(), request);
     }
 
@@ -696,8 +694,8 @@ public final class FirewallGrpc {
      * </pre>
      */
     public com.google.appengine.v1.firewall.FirewallRule createIngressRule(
-        com.google.appengine.v1.CreateIngressRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.CreateIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIngressRuleMethod(), getCallOptions(), request);
     }
 
@@ -709,8 +707,8 @@ public final class FirewallGrpc {
      * </pre>
      */
     public com.google.appengine.v1.firewall.FirewallRule getIngressRule(
-        com.google.appengine.v1.GetIngressRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIngressRuleMethod(), getCallOptions(), request);
     }
 
@@ -722,8 +720,8 @@ public final class FirewallGrpc {
      * </pre>
      */
     public com.google.appengine.v1.firewall.FirewallRule updateIngressRule(
-        com.google.appengine.v1.UpdateIngressRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.UpdateIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIngressRuleMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +733,8 @@ public final class FirewallGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIngressRule(
-        com.google.appengine.v1.DeleteIngressRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DeleteIngressRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIngressRuleMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * manage backup and restore operations for their GKE clusters.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkebackup/v1/gkebackup.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BackupForGKEGrpc {
 
@@ -3145,8 +3142,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupPlan(
-        com.google.cloud.gkebackup.v1.CreateBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.CreateBackupPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupPlanMethod(), getCallOptions(), request);
     }
 
@@ -3158,8 +3156,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListBackupPlansResponse listBackupPlans(
-        com.google.cloud.gkebackup.v1.ListBackupPlansRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListBackupPlansRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupPlansMethod(), getCallOptions(), request);
     }
 
@@ -3171,8 +3170,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan getBackupPlan(
-        com.google.cloud.gkebackup.v1.GetBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetBackupPlanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupPlanMethod(), getCallOptions(), request);
     }
 
@@ -3184,8 +3183,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackupPlan(
-        com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupPlanMethod(), getCallOptions(), request);
     }
 
@@ -3197,8 +3197,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupPlan(
-        com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupPlanMethod(), getCallOptions(), request);
     }
 
@@ -3210,8 +3211,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupChannel(
-        com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupChannelMethod(), getCallOptions(), request);
     }
 
@@ -3223,8 +3225,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListBackupChannelsResponse listBackupChannels(
-        com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupChannelsMethod(), getCallOptions(), request);
     }
 
@@ -3236,8 +3239,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.BackupChannel getBackupChannel(
-        com.google.cloud.gkebackup.v1.GetBackupChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetBackupChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupChannelMethod(), getCallOptions(), request);
     }
 
@@ -3249,8 +3253,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackupChannel(
-        com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupChannelMethod(), getCallOptions(), request);
     }
 
@@ -3262,8 +3267,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupChannel(
-        com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupChannelMethod(), getCallOptions(), request);
     }
 
@@ -3275,8 +3281,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse listBackupPlanBindings(
-        com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupPlanBindingsMethod(), getCallOptions(), request);
     }
 
@@ -3288,8 +3295,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.BackupPlanBinding getBackupPlanBinding(
-        com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupPlanBindingMethod(), getCallOptions(), request);
     }
 
@@ -3301,8 +3309,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
-        com.google.cloud.gkebackup.v1.CreateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.CreateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupMethod(), getCallOptions(), request);
     }
 
@@ -3314,8 +3322,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListBackupsResponse listBackups(
-        com.google.cloud.gkebackup.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListBackupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -3327,8 +3335,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.Backup getBackup(
-        com.google.cloud.gkebackup.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -3340,8 +3348,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackup(
-        com.google.cloud.gkebackup.v1.UpdateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.UpdateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
     }
 
@@ -3353,8 +3361,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.gkebackup.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.DeleteBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -3366,8 +3374,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListVolumeBackupsResponse listVolumeBackups(
-        com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVolumeBackupsMethod(), getCallOptions(), request);
     }
 
@@ -3379,8 +3388,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.VolumeBackup getVolumeBackup(
-        com.google.cloud.gkebackup.v1.GetVolumeBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetVolumeBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVolumeBackupMethod(), getCallOptions(), request);
     }
 
@@ -3392,8 +3402,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRestorePlan(
-        com.google.cloud.gkebackup.v1.CreateRestorePlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.CreateRestorePlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRestorePlanMethod(), getCallOptions(), request);
     }
 
@@ -3405,8 +3416,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListRestorePlansResponse listRestorePlans(
-        com.google.cloud.gkebackup.v1.ListRestorePlansRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListRestorePlansRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRestorePlansMethod(), getCallOptions(), request);
     }
 
@@ -3418,8 +3430,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.RestorePlan getRestorePlan(
-        com.google.cloud.gkebackup.v1.GetRestorePlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetRestorePlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRestorePlanMethod(), getCallOptions(), request);
     }
 
@@ -3431,8 +3444,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRestorePlan(
-        com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRestorePlanMethod(), getCallOptions(), request);
     }
 
@@ -3444,8 +3458,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRestorePlan(
-        com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRestorePlanMethod(), getCallOptions(), request);
     }
 
@@ -3457,8 +3472,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRestoreChannel(
-        com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRestoreChannelMethod(), getCallOptions(), request);
     }
 
@@ -3470,8 +3486,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse listRestoreChannels(
-        com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRestoreChannelsMethod(), getCallOptions(), request);
     }
 
@@ -3483,8 +3500,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.RestoreChannel getRestoreChannel(
-        com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRestoreChannelMethod(), getCallOptions(), request);
     }
 
@@ -3496,8 +3514,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRestoreChannel(
-        com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRestoreChannelMethod(), getCallOptions(), request);
     }
 
@@ -3509,8 +3528,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRestoreChannel(
-        com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRestoreChannelMethod(), getCallOptions(), request);
     }
 
@@ -3522,8 +3542,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse listRestorePlanBindings(
-        com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRestorePlanBindingsMethod(), getCallOptions(), request);
     }
 
@@ -3535,8 +3556,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.RestorePlanBinding getRestorePlanBinding(
-        com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRestorePlanBindingMethod(), getCallOptions(), request);
     }
 
@@ -3548,8 +3570,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRestore(
-        com.google.cloud.gkebackup.v1.CreateRestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.CreateRestoreRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRestoreMethod(), getCallOptions(), request);
     }
 
@@ -3561,8 +3583,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListRestoresResponse listRestores(
-        com.google.cloud.gkebackup.v1.ListRestoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListRestoresRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRestoresMethod(), getCallOptions(), request);
     }
 
@@ -3574,8 +3596,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.Restore getRestore(
-        com.google.cloud.gkebackup.v1.GetRestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetRestoreRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRestoreMethod(), getCallOptions(), request);
     }
 
@@ -3587,8 +3609,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRestore(
-        com.google.cloud.gkebackup.v1.UpdateRestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.UpdateRestoreRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRestoreMethod(), getCallOptions(), request);
     }
 
@@ -3600,8 +3622,8 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRestore(
-        com.google.cloud.gkebackup.v1.DeleteRestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.DeleteRestoreRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRestoreMethod(), getCallOptions(), request);
     }
 
@@ -3613,8 +3635,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse listVolumeRestores(
-        com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVolumeRestoresMethod(), getCallOptions(), request);
     }
 
@@ -3626,8 +3649,9 @@ public final class BackupForGKEGrpc {
      * </pre>
      */
     public com.google.cloud.gkebackup.v1.VolumeRestore getVolumeRestore(
-        com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVolumeRestoreMethod(), getCallOptions(), request);
     }
 
@@ -3640,8 +3664,9 @@ public final class BackupForGKEGrpc {
      */
     public com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
         getBackupIndexDownloadUrl(
-            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupIndexDownloadUrlMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -1140,6 +1141,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1198,6 +1200,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1256,6 +1259,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1314,6 +1318,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1382,6 +1387,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1402,6 +1408,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1448,6 +1455,7 @@ public class ChatServiceClientHttpJsonTest {
               .setAdminInstalled(true)
               .setMembershipCount(Space.MembershipCount.newBuilder().build())
               .setAccessSettings(Space.AccessSettings.newBuilder().build())
+              .setCustomer("customer606175198")
               .setSpaceUri("spaceUri2047440518")
               .setImportModeExpireTime(Timestamp.newBuilder().build())
               .build();
@@ -1602,6 +1610,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -2161,6 +2170,283 @@ public class ChatServiceClientHttpJsonTest {
     try {
       String name = "spaces/space-9479/messages/message-9479/reactions/reaction-9479";
       client.deleteReaction(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomEmojiTest() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+
+    CustomEmoji actualResponse = client.createCustomEmoji(customEmoji);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomEmojiExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+      client.createCustomEmoji(customEmoji);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomEmojiTest() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+
+    CustomEmoji actualResponse = client.getCustomEmoji(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomEmojiExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+      client.getCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomEmojiTest2() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "customEmojis/customEmoji-6372";
+
+    CustomEmoji actualResponse = client.getCustomEmoji(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomEmojiExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "customEmojis/customEmoji-6372";
+      client.getCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomEmojisTest() throws Exception {
+    CustomEmoji responsesElement = CustomEmoji.newBuilder().build();
+    ListCustomEmojisResponse expectedResponse =
+        ListCustomEmojisResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomEmojis(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListCustomEmojisPagedResponse pagedListResponse = client.listCustomEmojis();
+
+    List<CustomEmoji> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomEmojisList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomEmojisExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListCustomEmojisRequest request =
+          ListCustomEmojisRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.listCustomEmojis(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomEmojiTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+
+    client.deleteCustomEmoji(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomEmojiExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+      client.deleteCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomEmojiTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "customEmojis/customEmoji-6372";
+
+    client.deleteCustomEmoji(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomEmojiExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "customEmojis/customEmoji-6372";
+      client.deleteCustomEmoji(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

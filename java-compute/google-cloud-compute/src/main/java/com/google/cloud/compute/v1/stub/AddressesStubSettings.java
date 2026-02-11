@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,8 @@ import com.google.cloud.compute.v1.ListAddressesRequest;
 import com.google.cloud.compute.v1.MoveAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetLabelsAddressRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAddressRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -113,8 +115,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -168,6 +170,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
   private final UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings;
   private final OperationCallSettings<SetLabelsAddressRequest, Operation, Operation>
       setLabelsOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           AggregatedListAddressesRequest,
@@ -347,6 +351,12 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     return setLabelsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public AddressesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -439,6 +449,7 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     moveOperationSettings = settingsBuilder.moveOperationSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for AddressesStubSettings. */
@@ -462,6 +473,9 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     private final UnaryCallSettings.Builder<SetLabelsAddressRequest, Operation> setLabelsSettings;
     private final OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
         setLabelsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsAddressRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -523,6 +537,7 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       moveOperationSettings = OperationCallSettings.newBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -532,7 +547,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
               insertSettings,
               listSettings,
               moveSettings,
-              setLabelsSettings);
+              setLabelsSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -550,6 +566,7 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       moveOperationSettings = settings.moveOperationSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -559,7 +576,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
               insertSettings,
               listSettings,
               moveSettings,
-              setLabelsSettings);
+              setLabelsSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -607,6 +625,11 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
 
       builder
           .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -783,6 +806,12 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     public OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

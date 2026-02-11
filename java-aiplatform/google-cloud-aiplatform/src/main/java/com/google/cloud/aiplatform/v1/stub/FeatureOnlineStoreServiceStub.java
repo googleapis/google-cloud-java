@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,14 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.FeatureOnlineStoreServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest;
+import com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -52,6 +57,16 @@ public abstract class FeatureOnlineStoreServiceStub implements BackgroundResourc
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchNearestEntitiesCallable()");
+  }
+
+  public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    throw new UnsupportedOperationException("Not implemented: featureViewDirectWriteCallable()");
+  }
+
+  public UnaryCallable<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateFetchAccessTokenCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Environments][google.cloud.dialogflow.v2beta1.Environment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/environment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnvironmentsGrpc {
 
@@ -655,8 +652,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse listEnvironments(
-        com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
 
@@ -668,8 +666,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Environment getEnvironment(
-        com.google.cloud.dialogflow.v2beta1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -681,8 +680,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Environment createEnvironment(
-        com.google.cloud.dialogflow.v2beta1.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -704,8 +704,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Environment updateEnvironment(
-        com.google.cloud.dialogflow.v2beta1.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -717,8 +718,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEnvironment(
-        com.google.cloud.dialogflow.v2beta1.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -730,8 +732,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.EnvironmentHistory getEnvironmentHistory(
-        com.google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnvironmentHistoryMethod(), getCallOptions(), request);
     }
   }

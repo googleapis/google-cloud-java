@@ -1,0 +1,420 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.databasecenter.v1beta.stub;
+
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
+
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the DatabaseCenter service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<QueryProductsRequest, QueryProductsResponse>
+      queryProductsMethodDescriptor =
+          ApiMethodDescriptor.<QueryProductsRequest, QueryProductsResponse>newBuilder()
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/QueryProducts")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryProductsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:queryProducts",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryProductsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryProductsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "parent", request.getParent());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryProductsResponse>newBuilder()
+                      .setDefaultInstance(QueryProductsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AggregateFleetRequest, AggregateFleetResponse>
+      aggregateFleetMethodDescriptor =
+          ApiMethodDescriptor.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateFleet")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregateFleetRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:aggregateFleet",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateFleetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateFleetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasBaselineDate()) {
+                              serializer.putQueryParam(
+                                  fields, "baselineDate", request.getBaselineDate());
+                            }
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "groupBy", request.getGroupBy());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "parent", request.getParent());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AggregateFleetResponse>newBuilder()
+                      .setDefaultInstance(AggregateFleetResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/QueryDatabaseResourceGroups")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryDatabaseResourceGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:queryDatabaseResourceGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDatabaseResourceGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDatabaseResourceGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryDatabaseResourceGroupsResponse>newBuilder()
+                      .setDefaultInstance(QueryDatabaseResourceGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsMethodDescriptor =
+          ApiMethodDescriptor.<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateIssueStats")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregateIssueStatsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:aggregateIssueStats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateIssueStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateIssueStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AggregateIssueStatsResponse>newBuilder()
+                      .setDefaultInstance(AggregateIssueStatsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
+  private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
+      queryProductsPagedCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable;
+  private final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonDatabaseCenterStub create(DatabaseCenterStubSettings settings)
+      throws IOException {
+    return new HttpJsonDatabaseCenterStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonDatabaseCenterStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonDatabaseCenterStub(
+        DatabaseCenterStubSettings.newHttpJsonBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonDatabaseCenterStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonDatabaseCenterStub(
+        DatabaseCenterStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonDatabaseCenterStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonDatabaseCenterStub(
+      DatabaseCenterStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new HttpJsonDatabaseCenterCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonDatabaseCenterStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonDatabaseCenterStub(
+      DatabaseCenterStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<QueryProductsRequest, QueryProductsResponse>
+        queryProductsTransportSettings =
+            HttpJsonCallSettings.<QueryProductsRequest, QueryProductsResponse>newBuilder()
+                .setMethodDescriptor(queryProductsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<AggregateFleetRequest, AggregateFleetResponse>
+        aggregateFleetTransportSettings =
+            HttpJsonCallSettings.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+                .setMethodDescriptor(aggregateFleetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+        queryDatabaseResourceGroupsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryDatabaseResourceGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsTransportSettings =
+            HttpJsonCallSettings
+                .<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
+                .setMethodDescriptor(aggregateIssueStatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+
+    this.queryProductsCallable =
+        callableFactory.createUnaryCallable(
+            queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.queryProductsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.aggregateFleetCallable =
+        callableFactory.createUnaryCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.aggregateFleetPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.queryDatabaseResourceGroupsCallable =
+        callableFactory.createUnaryCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
+    this.queryDatabaseResourceGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
+    this.aggregateIssueStatsCallable =
+        callableFactory.createUnaryCallable(
+            aggregateIssueStatsTransportSettings,
+            settings.aggregateIssueStatsSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(queryProductsMethodDescriptor);
+    methodDescriptors.add(aggregateFleetMethodDescriptor);
+    methodDescriptors.add(queryDatabaseResourceGroupsMethodDescriptor);
+    methodDescriptors.add(aggregateIssueStatsMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable() {
+    return queryProductsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
+      queryProductsPagedCallable() {
+    return queryProductsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable() {
+    return aggregateFleetCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    return aggregateFleetPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    return queryDatabaseResourceGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    return queryDatabaseResourceGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    return aggregateIssueStatsCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

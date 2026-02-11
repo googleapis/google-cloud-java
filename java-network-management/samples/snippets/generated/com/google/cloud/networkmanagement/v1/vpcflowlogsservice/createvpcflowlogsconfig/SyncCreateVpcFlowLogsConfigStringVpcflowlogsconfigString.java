@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ public class SyncCreateVpcFlowLogsConfigStringVpcflowlogsconfigString {
       String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
       String vpcFlowLogsConfigId =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                  "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+              .toString();
       VpcFlowLogsConfig response =
           vpcFlowLogsServiceClient
               .createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId)

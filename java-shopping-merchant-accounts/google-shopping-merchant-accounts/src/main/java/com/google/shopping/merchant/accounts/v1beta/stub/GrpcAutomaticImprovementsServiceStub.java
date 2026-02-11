@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public class GrpcAutomaticImprovementsServiceStub extends AutomaticImprovementsS
                   ProtoUtils.marshaller(GetAutomaticImprovementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AutomaticImprovements.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAutomaticImprovementsRequest, AutomaticImprovements>
@@ -65,6 +66,7 @@ public class GrpcAutomaticImprovementsServiceStub extends AutomaticImprovementsS
                   ProtoUtils.marshaller(UpdateAutomaticImprovementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AutomaticImprovements.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAutomaticImprovementsRequest, AutomaticImprovements>

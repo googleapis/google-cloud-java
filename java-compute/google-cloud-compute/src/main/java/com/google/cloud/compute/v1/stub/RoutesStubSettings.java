@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ import com.google.cloud.compute.v1.ListRoutesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Route;
 import com.google.cloud.compute.v1.RouteList;
+import com.google.cloud.compute.v1.TestIamPermissionsRouteRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -106,8 +108,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -151,6 +153,8 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
   private final OperationCallSettings<InsertRouteRequest, Operation, Operation>
       insertOperationSettings;
   private final PagedCallSettings<ListRoutesRequest, RouteList, ListPagedResponse> listSettings;
+  private final UnaryCallSettings<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListRoutesRequest, RouteList, Route> LIST_PAGE_STR_DESC =
       new PagedListDescriptor<ListRoutesRequest, RouteList, Route>() {
@@ -228,6 +232,12 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListRoutesRequest, RouteList, ListPagedResponse> listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public RoutesStub createStub() throws IOException {
@@ -317,6 +327,7 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for RoutesStubSettings. */
@@ -331,6 +342,8 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
         insertOperationSettings;
     private final PagedCallSettings.Builder<ListRoutesRequest, RouteList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -387,10 +400,15 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -403,10 +421,15 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -441,6 +464,11 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteOperationSettings()
@@ -537,6 +565,12 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
     public PagedCallSettings.Builder<ListRoutesRequest, RouteList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

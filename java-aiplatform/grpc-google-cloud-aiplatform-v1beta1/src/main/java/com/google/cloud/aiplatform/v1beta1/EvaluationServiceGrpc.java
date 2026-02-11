@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Vertex AI Online Evaluation Service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/evaluation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EvaluationServiceGrpc {
 
@@ -320,8 +317,9 @@ public final class EvaluationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse evaluateInstances(
-        com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvaluateInstancesMethod(), getCallOptions(), request);
     }
 
@@ -333,8 +331,9 @@ public final class EvaluationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation evaluateDataset(
-        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvaluateDatasetMethod(), getCallOptions(), request);
     }
   }

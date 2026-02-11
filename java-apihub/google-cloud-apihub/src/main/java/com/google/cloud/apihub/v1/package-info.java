@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,67 @@
  *   String dependencyId = "dependencyId503788998";
  *   Dependency response =
  *       apiHubDependenciesClient.createDependency(parent, dependency, dependencyId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ApiHubCollectClient =======================
+ *
+ * <p>Service Description: This service exposes methods used for collecting various types of data
+ * from different first party and third party sources and push it to Hub's collect layer.
+ *
+ * <p>Sample for ApiHubCollectClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ApiHubCollectClient apiHubCollectClient = ApiHubCollectClient.create()) {
+ *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+ *   Location response = apiHubCollectClient.getLocation(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ApiHubCurateClient =======================
+ *
+ * <p>Service Description: This service is used for managing curations for processing API data
+ * consumed from collect layer.
+ *
+ * <p>Sample for ApiHubCurateClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ApiHubCurateClient apiHubCurateClient = ApiHubCurateClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Curation curation = Curation.newBuilder().build();
+ *   String curationId = "curationId1428017328";
+ *   Curation response = apiHubCurateClient.createCuration(parent, curation, curationId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ApiHubDiscoveryClient =======================
+ *
+ * <p>Service Description: This service exposes methods used to manage DiscoveredApiObservations and
+ * DiscoveredApiOperations.
+ *
+ * <p>Sample for ApiHubDiscoveryClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ApiHubDiscoveryClient apiHubDiscoveryClient = ApiHubDiscoveryClient.create()) {
+ *   DiscoveredApiObservationName name =
+ *       DiscoveredApiObservationName.of(
+ *           "[PROJECT]", "[LOCATION]", "[DISCOVERED_API_OBSERVATION]");
+ *   DiscoveredApiObservation response = apiHubDiscoveryClient.getDiscoveredApiObservation(name);
  * }
  * }</pre>
  *

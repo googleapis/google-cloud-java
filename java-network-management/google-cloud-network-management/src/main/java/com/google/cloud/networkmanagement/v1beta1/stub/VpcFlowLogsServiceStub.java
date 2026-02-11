@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -33,6 +35,10 @@ import com.google.cloud.networkmanagement.v1beta1.GetVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse;
+import com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -110,6 +116,31 @@ public abstract class VpcFlowLogsServiceStub implements BackgroundResource {
   public UnaryCallable<DeleteVpcFlowLogsConfigRequest, Operation>
       deleteVpcFlowLogsConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteVpcFlowLogsConfigCallable()");
+  }
+
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryOrgVpcFlowLogsConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryOrgVpcFlowLogsConfigsCallable()");
+  }
+
+  public UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: showEffectiveFlowLogsConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: showEffectiveFlowLogsConfigsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

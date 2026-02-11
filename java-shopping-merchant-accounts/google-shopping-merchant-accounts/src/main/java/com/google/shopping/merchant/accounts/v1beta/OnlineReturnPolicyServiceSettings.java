@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1beta.stub.OnlineReturnPolicyServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
@@ -83,8 +84,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -106,6 +107,27 @@ public class OnlineReturnPolicyServiceSettings
       listOnlineReturnPoliciesSettings() {
     return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
         .listOnlineReturnPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOnlineReturnPolicy. */
+  public UnaryCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicySettings() {
+    return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
+        .createOnlineReturnPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOnlineReturnPolicy. */
+  public UnaryCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicySettings() {
+    return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
+        .updateOnlineReturnPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOnlineReturnPolicy. */
+  public UnaryCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicySettings() {
+    return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
+        .deleteOnlineReturnPolicySettings();
   }
 
   public static final OnlineReturnPolicyServiceSettings create(
@@ -234,6 +256,24 @@ public class OnlineReturnPolicyServiceSettings
             ListOnlineReturnPoliciesPagedResponse>
         listOnlineReturnPoliciesSettings() {
       return getStubSettingsBuilder().listOnlineReturnPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        createOnlineReturnPolicySettings() {
+      return getStubSettingsBuilder().createOnlineReturnPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        updateOnlineReturnPolicySettings() {
+      return getStubSettingsBuilder().updateOnlineReturnPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<DeleteOnlineReturnPolicyRequest, Empty>
+        deleteOnlineReturnPolicySettings() {
+      return getStubSettingsBuilder().deleteOnlineReturnPolicySettings();
     }
 
     @Override

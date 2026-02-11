@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= AdviceClient =======================
+ *
+ * <p>Service Description: The Advice API.
+ *
+ * <p>Sample for AdviceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AdviceClient adviceClient = AdviceClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   CalendarModeAdviceRequest calendarModeAdviceRequestResource =
+ *       CalendarModeAdviceRequest.newBuilder().build();
+ *   CalendarModeAdviceResponse response =
+ *       adviceClient.calendarMode(project, region, calendarModeAdviceRequestResource);
+ * }
+ * }</pre>
+ *
  * <p>======================= AutoscalersClient =======================
  *
  * <p>Service Description: The Autoscalers API.
@@ -116,6 +138,25 @@
  *   String project = "project-309310695";
  *   String backendService = "backendService-1884714623";
  *   BackendService response = backendServicesClient.get(project, backendService);
+ * }
+ * }</pre>
+ *
+ * <p>======================= CrossSiteNetworksClient =======================
+ *
+ * <p>Service Description: The CrossSiteNetworks API.
+ *
+ * <p>Sample for CrossSiteNetworksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CrossSiteNetworksClient crossSiteNetworksClient = CrossSiteNetworksClient.create()) {
+ *   String project = "project-309310695";
+ *   String crossSiteNetwork = "crossSiteNetwork1009388679";
+ *   CrossSiteNetwork response = crossSiteNetworksClient.get(project, crossSiteNetwork);
  * }
  * }</pre>
  *
@@ -232,6 +273,26 @@
  *   String region = "region-934795532";
  *   String forwardingRule = "forwardingRule-1429104743";
  *   ForwardingRule response = forwardingRulesClient.get(project, region, forwardingRule);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FutureReservationsClient =======================
+ *
+ * <p>Service Description: The FutureReservations API.
+ *
+ * <p>Sample for FutureReservationsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FutureReservationsClient futureReservationsClient = FutureReservationsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String futureReservation = "futureReservation1926247945";
+ *   FutureReservation response = futureReservationsClient.get(project, zone, futureReservation);
  * }
  * }</pre>
  *
@@ -558,6 +619,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= InterconnectAttachmentGroupsClient =======================
+ *
+ * <p>Service Description: The InterconnectAttachmentGroups API.
+ *
+ * <p>Sample for InterconnectAttachmentGroupsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InterconnectAttachmentGroupsClient interconnectAttachmentGroupsClient =
+ *     InterconnectAttachmentGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String interconnectAttachmentGroup = "interconnectAttachmentGroup-1652813650";
+ *   InterconnectAttachmentGroup response =
+ *       interconnectAttachmentGroupsClient.get(project, interconnectAttachmentGroup);
+ * }
+ * }</pre>
+ *
  * <p>======================= InterconnectAttachmentsClient =======================
  *
  * <p>Service Description: The InterconnectAttachments API.
@@ -577,6 +659,25 @@
  *   String interconnectAttachment = "interconnectAttachment1869250641";
  *   InterconnectAttachment response =
  *       interconnectAttachmentsClient.get(project, region, interconnectAttachment);
+ * }
+ * }</pre>
+ *
+ * <p>======================= InterconnectGroupsClient =======================
+ *
+ * <p>Service Description: The InterconnectGroups API.
+ *
+ * <p>Sample for InterconnectGroupsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InterconnectGroupsClient interconnectGroupsClient = InterconnectGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String interconnectGroup = "interconnectGroup2103544465";
+ *   InterconnectGroup response = interconnectGroupsClient.get(project, interconnectGroup);
  * }
  * }</pre>
  *
@@ -900,6 +1001,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= OrganizationSecurityPoliciesClient =======================
+ *
+ * <p>Service Description: The OrganizationSecurityPolicies API.
+ *
+ * <p>Sample for OrganizationSecurityPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OrganizationSecurityPoliciesClient organizationSecurityPoliciesClient =
+ *     OrganizationSecurityPoliciesClient.create()) {
+ *   String securityPolicy = "securityPolicy-788621166";
+ *   SecurityPolicy response = organizationSecurityPoliciesClient.get(securityPolicy);
+ * }
+ * }</pre>
+ *
  * <p>======================= PacketMirroringsClient =======================
  *
  * <p>Service Description: The PacketMirrorings API.
@@ -917,6 +1037,25 @@
  *   String region = "region-934795532";
  *   String packetMirroring = "packetMirroring1405520923";
  *   PacketMirroring response = packetMirroringsClient.get(project, region, packetMirroring);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PreviewFeaturesClient =======================
+ *
+ * <p>Service Description: The PreviewFeatures API.
+ *
+ * <p>Sample for PreviewFeaturesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PreviewFeaturesClient previewFeaturesClient = PreviewFeaturesClient.create()) {
+ *   String project = "project-309310695";
+ *   String previewFeature = "previewFeature-712516082";
+ *   PreviewFeature response = previewFeaturesClient.get(project, previewFeature);
  * }
  * }</pre>
  *
@@ -1530,6 +1669,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= ReservationSubBlocksClient =======================
+ *
+ * <p>Service Description: The ReservationSubBlocks API.
+ *
+ * <p>Sample for ReservationSubBlocksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReservationSubBlocksClient reservationSubBlocksClient =
+ *     ReservationSubBlocksClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String parentName = "parentName-244870571";
+ *   String reservationSubBlock = "reservationSubBlock-1816847847";
+ *   ReservationSubBlocksGetResponse response =
+ *       reservationSubBlocksClient.get(project, zone, parentName, reservationSubBlock);
+ * }
+ * }</pre>
+ *
  * <p>======================= ReservationsClient =======================
  *
  * <p>Service Description: The Reservations API.
@@ -1995,6 +2157,26 @@
  *   String region = "region-934795532";
  *   String vpnTunnel = "vpnTunnel452443772";
  *   VpnTunnel response = vpnTunnelsClient.get(project, region, vpnTunnel);
+ * }
+ * }</pre>
+ *
+ * <p>======================= WireGroupsClient =======================
+ *
+ * <p>Service Description: The WireGroups API.
+ *
+ * <p>Sample for WireGroupsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (WireGroupsClient wireGroupsClient = WireGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String crossSiteNetwork = "crossSiteNetwork1009388679";
+ *   String wireGroup = "wireGroup-970399494";
+ *   WireGroup response = wireGroupsClient.get(project, crossSiteNetwork, wireGroup);
  * }
  * }</pre>
  *

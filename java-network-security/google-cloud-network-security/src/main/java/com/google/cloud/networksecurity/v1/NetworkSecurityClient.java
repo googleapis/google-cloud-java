@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2990,7 +2990,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *               AddressGroupName.ofProjectLocationAddressGroupName(
+   *                       "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -3024,7 +3025,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *               AddressGroupName.ofProjectLocationAddressGroupName(
+   *                       "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -3056,7 +3058,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *               AddressGroupName.ofProjectLocationAddressGroupName(
+   *                       "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -3088,7 +3091,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *               AddressGroupName.ofProjectLocationAddressGroupName(
+   *                       "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -3123,7 +3127,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *               AddressGroupName.ofProjectLocationAddressGroupName(
+   *                       "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
@@ -3159,7 +3164,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *               AddressGroupName.ofProjectLocationAddressGroupName(
+   *                       "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();

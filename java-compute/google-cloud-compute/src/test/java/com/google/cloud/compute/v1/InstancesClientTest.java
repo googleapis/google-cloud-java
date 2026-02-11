@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,83 @@ public class InstancesClientTest {
       client
           .addAccessConfigAsync(project, zone, instance, networkInterface, accessConfigResource)
           .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addNetworkInterfaceTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
+    NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+
+    Operation actualResponse =
+        client.addNetworkInterfaceAsync(project, zone, instance, networkInterfaceResource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addNetworkInterfaceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
+      NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+      client.addNetworkInterfaceAsync(project, zone, instance, networkInterfaceResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -612,6 +689,83 @@ public class InstancesClientTest {
   }
 
   @Test
+  public void deleteNetworkInterfaceTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instance = "instance-7525";
+    String networkInterfaceName = "networkInterfaceName-992385066";
+
+    Operation actualResponse =
+        client.deleteNetworkInterfaceAsync(project, zone, instance, networkInterfaceName).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteNetworkInterfaceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instance = "instance-7525";
+      String networkInterfaceName = "networkInterfaceName-992385066";
+      client.deleteNetworkInterfaceAsync(project, zone, instance, networkInterfaceName).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void detachDiskTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -1041,6 +1195,8 @@ public class InstancesClientTest {
   public void getShieldedInstanceIdentityTest() throws Exception {
     ShieldedInstanceIdentity expectedResponse =
         ShieldedInstanceIdentity.newBuilder()
+            .setEccP256EncryptionKey(ShieldedInstanceIdentityEntry.newBuilder().build())
+            .setEccP256SigningKey(ShieldedInstanceIdentityEntry.newBuilder().build())
             .setEncryptionKey(ShieldedInstanceIdentityEntry.newBuilder().build())
             .setKind("kind3292052")
             .setSigningKey(ShieldedInstanceIdentityEntry.newBuilder().build())

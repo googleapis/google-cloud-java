@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,19 +212,25 @@ public class ReservationsClientTest {
   public void getTest() throws Exception {
     Reservation expectedResponse =
         Reservation.newBuilder()
+            .setAdvancedDeploymentControl(ReservationAdvancedDeploymentControl.newBuilder().build())
             .setAggregateReservation(AllocationAggregateReservation.newBuilder().build())
             .setCommitment("commitment1019005717")
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDeleteAfterDuration(Duration.newBuilder().build())
+            .setDeleteAtTime("deleteAtTime-1276262613")
             .setDeploymentType("deploymentType1588450207")
             .setDescription("description-1724546052")
+            .setEnableEmergentMaintenance(true)
             .setId(3355)
             .setKind("kind3292052")
             .addAllLinkedCommitments(new ArrayList<String>())
             .setName("name3373707")
+            .setProtectionTier("protectionTier344968283")
             .setReservationSharingPolicy(AllocationReservationSharingPolicy.newBuilder().build())
             .putAllResourcePolicies(new HashMap<String, String>())
             .setResourceStatus(AllocationResourceStatus.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSchedulingType("schedulingType144670446")
             .setSelfLink("selfLink1191800166")
             .setShareSettings(ShareSettings.newBuilder().build())
             .setSpecificReservation(AllocationSpecificSKUReservation.newBuilder().build())

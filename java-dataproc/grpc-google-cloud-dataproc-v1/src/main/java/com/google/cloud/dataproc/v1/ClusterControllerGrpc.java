@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * of Compute Engine instances.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/clusters.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClusterControllerGrpc {
 
@@ -785,8 +782,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.dataproc.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +800,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.dataproc.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.UpdateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -816,8 +813,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopCluster(
-        com.google.cloud.dataproc.v1.StopClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.StopClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopClusterMethod(), getCallOptions(), request);
     }
 
@@ -829,8 +826,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startCluster(
-        com.google.cloud.dataproc.v1.StartClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.StartClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartClusterMethod(), getCallOptions(), request);
     }
 
@@ -844,8 +841,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.dataproc.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -857,8 +854,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Cluster getCluster(
-        com.google.cloud.dataproc.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -870,8 +867,8 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListClustersResponse listClusters(
-        com.google.cloud.dataproc.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListClustersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -889,8 +886,9 @@ public final class ClusterControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation diagnoseCluster(
-        com.google.cloud.dataproc.v1.DiagnoseClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DiagnoseClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiagnoseClusterMethod(), getCallOptions(), request);
     }
   }

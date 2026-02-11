@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for creating and managing Vertex AI's Index resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/index_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IndexServiceGrpc {
 
@@ -122,6 +119,49 @@ public final class IndexServiceGrpc {
       }
     }
     return getGetIndexMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ImportIndexRequest, com.google.longrunning.Operation>
+      getImportIndexMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportIndex",
+      requestType = com.google.cloud.aiplatform.v1beta1.ImportIndexRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ImportIndexRequest, com.google.longrunning.Operation>
+      getImportIndexMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ImportIndexRequest,
+            com.google.longrunning.Operation>
+        getImportIndexMethod;
+    if ((getImportIndexMethod = IndexServiceGrpc.getImportIndexMethod) == null) {
+      synchronized (IndexServiceGrpc.class) {
+        if ((getImportIndexMethod = IndexServiceGrpc.getImportIndexMethod) == null) {
+          IndexServiceGrpc.getImportIndexMethod =
+              getImportIndexMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ImportIndexRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportIndex"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ImportIndexRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new IndexServiceMethodDescriptorSupplier("ImportIndex"))
+                      .build();
+        }
+      }
+    }
+    return getImportIndexMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -444,6 +484,20 @@ public final class IndexServiceGrpc {
      *
      *
      * <pre>
+     * Imports an Index from an external source (e.g., BigQuery).
+     * </pre>
+     */
+    default void importIndex(
+        com.google.cloud.aiplatform.v1beta1.ImportIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportIndexMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Indexes in a Location.
      * </pre>
      */
@@ -585,6 +639,22 @@ public final class IndexServiceGrpc {
      *
      *
      * <pre>
+     * Imports an Index from an external source (e.g., BigQuery).
+     * </pre>
+     */
+    public void importIndex(
+        com.google.cloud.aiplatform.v1beta1.ImportIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportIndexMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Indexes in a Location.
      * </pre>
      */
@@ -695,8 +765,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIndex(
-        com.google.cloud.aiplatform.v1beta1.CreateIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIndexMethod(), getCallOptions(), request);
     }
 
@@ -708,9 +779,24 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Index getIndex(
-        com.google.cloud.aiplatform.v1beta1.GetIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an Index from an external source (e.g., BigQuery).
+     * </pre>
+     */
+    public com.google.longrunning.Operation importIndex(
+        com.google.cloud.aiplatform.v1beta1.ImportIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getImportIndexMethod(), getCallOptions(), request);
     }
 
     /**
@@ -721,8 +807,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListIndexesResponse listIndexes(
-        com.google.cloud.aiplatform.v1beta1.ListIndexesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListIndexesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIndexesMethod(), getCallOptions(), request);
     }
 
@@ -734,8 +821,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateIndex(
-        com.google.cloud.aiplatform.v1beta1.UpdateIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIndexMethod(), getCallOptions(), request);
     }
 
@@ -750,8 +838,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndex(
-        com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
     }
 
@@ -763,8 +852,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.UpsertDatapointsResponse upsertDatapoints(
-        com.google.cloud.aiplatform.v1beta1.UpsertDatapointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpsertDatapointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpsertDatapointsMethod(), getCallOptions(), request);
     }
 
@@ -776,8 +866,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse removeDatapoints(
-        com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveDatapointsMethod(), getCallOptions(), request);
     }
   }
@@ -825,6 +916,19 @@ public final class IndexServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.GetIndexRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an Index from an external source (e.g., BigQuery).
+     * </pre>
+     */
+    public com.google.longrunning.Operation importIndex(
+        com.google.cloud.aiplatform.v1beta1.ImportIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportIndexMethod(), getCallOptions(), request);
     }
 
     /**
@@ -946,6 +1050,19 @@ public final class IndexServiceGrpc {
      *
      *
      * <pre>
+     * Imports an Index from an external source (e.g., BigQuery).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importIndex(com.google.cloud.aiplatform.v1beta1.ImportIndexRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportIndexMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Indexes in a Location.
      * </pre>
      */
@@ -1016,11 +1133,12 @@ public final class IndexServiceGrpc {
 
   private static final int METHODID_CREATE_INDEX = 0;
   private static final int METHODID_GET_INDEX = 1;
-  private static final int METHODID_LIST_INDEXES = 2;
-  private static final int METHODID_UPDATE_INDEX = 3;
-  private static final int METHODID_DELETE_INDEX = 4;
-  private static final int METHODID_UPSERT_DATAPOINTS = 5;
-  private static final int METHODID_REMOVE_DATAPOINTS = 6;
+  private static final int METHODID_IMPORT_INDEX = 2;
+  private static final int METHODID_LIST_INDEXES = 3;
+  private static final int METHODID_UPDATE_INDEX = 4;
+  private static final int METHODID_DELETE_INDEX = 5;
+  private static final int METHODID_UPSERT_DATAPOINTS = 6;
+  private static final int METHODID_REMOVE_DATAPOINTS = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1049,6 +1167,11 @@ public final class IndexServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.GetIndexRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Index>)
                   responseObserver);
+          break;
+        case METHODID_IMPORT_INDEX:
+          serviceImpl.importIndex(
+              (com.google.cloud.aiplatform.v1beta1.ImportIndexRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_INDEXES:
           serviceImpl.listIndexes(
@@ -1110,6 +1233,12 @@ public final class IndexServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.GetIndexRequest,
                     com.google.cloud.aiplatform.v1beta1.Index>(service, METHODID_GET_INDEX)))
+        .addMethod(
+            getImportIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ImportIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_INDEX)))
         .addMethod(
             getListIndexesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1196,6 +1325,7 @@ public final class IndexServiceGrpc {
                       .setSchemaDescriptor(new IndexServiceFileDescriptorSupplier())
                       .addMethod(getCreateIndexMethod())
                       .addMethod(getGetIndexMethod())
+                      .addMethod(getImportIndexMethod())
                       .addMethod(getListIndexesMethod())
                       .addMethod(getUpdateIndexMethod())
                       .addMethod(getDeleteIndexMethod())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomTargetingKeyServiceClient.ListCustomTargetingKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.CreateCustomTargetingKeyRequest;
 import com.google.ads.admanager.v1.CustomTargetingKey;
 import com.google.ads.admanager.v1.GetCustomTargetingKeyRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingKeysRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.UpdateCustomTargetingKeyRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -130,12 +140,281 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeyMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomTargetingKeyRequest, CustomTargetingKey>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingKeyService/CreateCustomTargetingKey")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomTargetingKeyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingKeys",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetingKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetingKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "customTargetingKey", request.getCustomTargetingKey(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomTargetingKey>newBuilder()
+                      .setDefaultInstance(CustomTargetingKey.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingKeyService/BatchCreateCustomTargetingKeys")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateCustomTargetingKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingKeys:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCustomTargetingKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCustomTargetingKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateCustomTargetingKeysResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchCreateCustomTargetingKeysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomTargetingKeyRequest, CustomTargetingKey>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingKeyService/UpdateCustomTargetingKey")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomTargetingKeyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customTargetingKey.name=networks/*/customTargetingKeys/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetingKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "customTargetingKey.name",
+                                request.getCustomTargetingKey().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetingKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "customTargetingKey", request.getCustomTargetingKey(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomTargetingKey>newBuilder()
+                      .setDefaultInstance(CustomTargetingKey.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingKeyService/BatchUpdateCustomTargetingKeys")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateCustomTargetingKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingKeys:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCustomTargetingKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCustomTargetingKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateCustomTargetingKeysResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchUpdateCustomTargetingKeysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingKeyService/BatchActivateCustomTargetingKeys")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchActivateCustomTargetingKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingKeys:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCustomTargetingKeysRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCustomTargetingKeysRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchActivateCustomTargetingKeysResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchActivateCustomTargetingKeysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateCustomTargetingKeysRequest,
+                  BatchDeactivateCustomTargetingKeysResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingKeyService/BatchDeactivateCustomTargetingKeys")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<BatchDeactivateCustomTargetingKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingKeys:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCustomTargetingKeysRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCustomTargetingKeysRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<BatchDeactivateCustomTargetingKeysResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchDeactivateCustomTargetingKeysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetCustomTargetingKeyRequest, CustomTargetingKey>
       getCustomTargetingKeyCallable;
   private final UnaryCallable<ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse>
       listCustomTargetingKeysCallable;
   private final UnaryCallable<ListCustomTargetingKeysRequest, ListCustomTargetingKeysPagedResponse>
       listCustomTargetingKeysPagedCallable;
+  private final UnaryCallable<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeyCallable;
+  private final UnaryCallable<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysCallable;
+  private final UnaryCallable<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeyCallable;
+  private final UnaryCallable<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysCallable;
+  private final UnaryCallable<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysCallable;
+  private final UnaryCallable<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -205,6 +484,93 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+        createCustomTargetingKeyTransportSettings =
+            HttpJsonCallSettings.<CreateCustomTargetingKeyRequest, CustomTargetingKey>newBuilder()
+                .setMethodDescriptor(createCustomTargetingKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+        batchCreateCustomTargetingKeysTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchCreateCustomTargetingKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+        updateCustomTargetingKeyTransportSettings =
+            HttpJsonCallSettings.<UpdateCustomTargetingKeyRequest, CustomTargetingKey>newBuilder()
+                .setMethodDescriptor(updateCustomTargetingKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_targeting_key.name",
+                          String.valueOf(request.getCustomTargetingKey().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+        batchUpdateCustomTargetingKeysTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchUpdateCustomTargetingKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+        batchActivateCustomTargetingKeysTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchActivateCustomTargetingKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+        batchDeactivateCustomTargetingKeysTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateCustomTargetingKeysRequest,
+                    BatchDeactivateCustomTargetingKeysResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchDeactivateCustomTargetingKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getCustomTargetingKeyCallable =
         callableFactory.createUnaryCallable(
@@ -221,6 +587,36 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
             listCustomTargetingKeysTransportSettings,
             settings.listCustomTargetingKeysSettings(),
             clientContext);
+    this.createCustomTargetingKeyCallable =
+        callableFactory.createUnaryCallable(
+            createCustomTargetingKeyTransportSettings,
+            settings.createCustomTargetingKeySettings(),
+            clientContext);
+    this.batchCreateCustomTargetingKeysCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateCustomTargetingKeysTransportSettings,
+            settings.batchCreateCustomTargetingKeysSettings(),
+            clientContext);
+    this.updateCustomTargetingKeyCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomTargetingKeyTransportSettings,
+            settings.updateCustomTargetingKeySettings(),
+            clientContext);
+    this.batchUpdateCustomTargetingKeysCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateCustomTargetingKeysTransportSettings,
+            settings.batchUpdateCustomTargetingKeysSettings(),
+            clientContext);
+    this.batchActivateCustomTargetingKeysCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateCustomTargetingKeysTransportSettings,
+            settings.batchActivateCustomTargetingKeysSettings(),
+            clientContext);
+    this.batchDeactivateCustomTargetingKeysCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateCustomTargetingKeysTransportSettings,
+            settings.batchDeactivateCustomTargetingKeysSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -231,6 +627,12 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCustomTargetingKeyMethodDescriptor);
     methodDescriptors.add(listCustomTargetingKeysMethodDescriptor);
+    methodDescriptors.add(createCustomTargetingKeyMethodDescriptor);
+    methodDescriptors.add(batchCreateCustomTargetingKeysMethodDescriptor);
+    methodDescriptors.add(updateCustomTargetingKeyMethodDescriptor);
+    methodDescriptors.add(batchUpdateCustomTargetingKeysMethodDescriptor);
+    methodDescriptors.add(batchActivateCustomTargetingKeysMethodDescriptor);
+    methodDescriptors.add(batchDeactivateCustomTargetingKeysMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -250,6 +652,46 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
   public UnaryCallable<ListCustomTargetingKeysRequest, ListCustomTargetingKeysPagedResponse>
       listCustomTargetingKeysPagedCallable() {
     return listCustomTargetingKeysPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeyCallable() {
+    return createCustomTargetingKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysCallable() {
+    return batchCreateCustomTargetingKeysCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeyCallable() {
+    return updateCustomTargetingKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysCallable() {
+    return batchUpdateCustomTargetingKeysCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysCallable() {
+    return batchActivateCustomTargetingKeysCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysCallable() {
+    return batchDeactivateCustomTargetingKeysCallable;
   }
 
   @Override

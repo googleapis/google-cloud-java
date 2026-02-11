@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -396,6 +396,24 @@
  *           .setReturnFullDatapoint(true)
  *           .build();
  *   FindNeighborsResponse response = matchServiceClient.findNeighbors(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= MemoryBankServiceClient =======================
+ *
+ * <p>Service Description: A service for managing memories for LLM applications.
+ *
+ * <p>Sample for MemoryBankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
+ *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+ *   Memory response = memoryBankServiceClient.getMemory(name);
  * }
  * }</pre>
  *

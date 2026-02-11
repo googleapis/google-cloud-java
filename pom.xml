@@ -35,6 +35,7 @@
     <module>java-artifact-registry</module>
     <module>java-asset</module>
     <module>java-assured-workloads</module>
+    <module>java-auditmanager</module>
     <module>java-automl</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
@@ -54,28 +55,34 @@
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
+    <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
     <module>java-channel</module>
     <module>java-chat</module>
     <module>java-chronicle</module>
+    <module>java-cloudapiregistry</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
     <module>java-cloudquotas</module>
+    <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
+    <module>java-configdelivery</module>
     <module>java-connectgateway</module>
     <module>java-contact-center-insights</module>
     <module>java-container</module>
     <module>java-containeranalysis</module>
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
+    <module>java-databasecenter</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-datalineage</module>
+    <module>java-datamanager</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
@@ -102,12 +109,15 @@
     <module>java-financialservices</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
+    <module>java-geminidataanalytics</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
     <module>java-gkehub</module>
+    <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
+    <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>
     <module>java-iamcredentials</module>
@@ -120,8 +130,12 @@
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
+    <module>java-licensemanager</module>
     <module>java-life-sciences</module>
+    <module>java-locationfinder</module>
+    <module>java-logging</module>
     <module>java-lustre</module>
+    <module>java-maintenance</module>
     <module>java-managed-identities</module>
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
@@ -173,6 +187,7 @@
     <module>java-resourcemanager</module>
     <module>java-retail</module>
     <module>java-run</module>
+    <module>java-saasservicemgmt</module>
     <module>java-samples</module>
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
@@ -201,6 +216,7 @@
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-shopping-merchant-reviews</module>
+    <module>java-spanneradapter</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>
@@ -213,6 +229,7 @@
     <module>java-trace</module>
     <module>java-translate</module>
     <module>java-valkey</module>
+    <module>java-vectorsearch</module>
     <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>

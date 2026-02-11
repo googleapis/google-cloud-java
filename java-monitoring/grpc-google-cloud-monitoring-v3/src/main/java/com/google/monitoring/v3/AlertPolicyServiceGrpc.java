@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Cloud console](https://console.cloud.google.com/).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/alert_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AlertPolicyServiceGrpc {
 
@@ -601,8 +598,8 @@ public final class AlertPolicyServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListAlertPoliciesResponse listAlertPolicies(
-        com.google.monitoring.v3.ListAlertPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListAlertPoliciesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAlertPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -614,8 +611,8 @@ public final class AlertPolicyServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.AlertPolicy getAlertPolicy(
-        com.google.monitoring.v3.GetAlertPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetAlertPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAlertPolicyMethod(), getCallOptions(), request);
     }
 
@@ -630,8 +627,8 @@ public final class AlertPolicyServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.AlertPolicy createAlertPolicy(
-        com.google.monitoring.v3.CreateAlertPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateAlertPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAlertPolicyMethod(), getCallOptions(), request);
     }
 
@@ -646,8 +643,8 @@ public final class AlertPolicyServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAlertPolicy(
-        com.google.monitoring.v3.DeleteAlertPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteAlertPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAlertPolicyMethod(), getCallOptions(), request);
     }
 
@@ -665,8 +662,8 @@ public final class AlertPolicyServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.AlertPolicy updateAlertPolicy(
-        com.google.monitoring.v3.UpdateAlertPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateAlertPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAlertPolicyMethod(), getCallOptions(), request);
     }
   }

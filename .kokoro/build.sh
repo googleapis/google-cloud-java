@@ -33,10 +33,27 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+  mvn clean install \
+    -DskipTests \
+    -Dclirr.skip \
+    -Dflatten.skip \
+    -Dcheckstyle.skip \
+    -Djacoco.skip \
+    -Denforcer.skip \
+    --also-make \
+    --projects "${BUILD_SUBDIR}"
+  echo "Running in subdir: ${BUILD_SUBDIR}"
+  pushd "${BUILD_SUBDIR}"
+fi
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
       mvn test \
         -B -ntp \
@@ -48,7 +65,7 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C
+        -T 1C ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
@@ -92,9 +109,44 @@ case ${JOB_TYPE} in
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
     ;;
+  lint)
+    if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
+        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
+        echo "${changed_file_list}"
+        
+        has_code_change="false"
+        
+        while IFS= read -r changed_file; do
+            # Checks if the line is not empty AND if it matches a .java file
+            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+                echo "Matched: ${changed_file}"
+                has_code_change="true"
+                break
+            fi
+        done <<< "${changed_file_list}"
+        
+        if [ "${has_code_change}" == "false" ]; then
+            echo "No java modules affected. Skipping linter check."
+            exit 0
+        fi
+    else
+        echo "BASE_SHA or HEAD_SHA is empty. Skipping file difference check."
+    fi
+    
+    mvn -B -ntp \
+      -T 1.5C \
+      com.spotify.fmt:fmt-maven-plugin:check
+    mvn -B -ntp checkstyle:check@checkstyle
+    ;;
   *) ;;
 
 esac
+
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "restoring directory"
+  popd
+fi
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then
   bash ${KOKORO_GFILE_DIR}/codecov.sh

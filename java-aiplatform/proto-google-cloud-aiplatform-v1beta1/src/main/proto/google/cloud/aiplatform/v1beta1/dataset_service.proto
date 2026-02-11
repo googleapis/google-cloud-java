@@ -983,18 +983,6 @@ message AssessDataRequest {
         [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // The read config for the dataset.
-  oneof read_config {
-    // Optional. Config for assembling templates with a Gemini API structure to
-    // assess assembled data.
-    GeminiTemplateConfig gemini_template_config = 4
-        [(google.api.field_behavior) = OPTIONAL];
-
-    // Optional. The column name in the underlying table that contains already
-    // fully assembled requests.
-    string request_column_name = 5 [(google.api.field_behavior) = OPTIONAL];
-  }
-
   // Required. The name of the Dataset resource. Used only for MULTIMODAL
   // datasets. Format:
   // `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -1004,6 +992,10 @@ message AssessDataRequest {
       type: "aiplatform.googleapis.com/Dataset"
     }
   ];
+
+  // Optional. The Gemini request read config for the dataset.
+  GeminiRequestReadConfig gemini_request_read_config = 8
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Response message for
@@ -1072,9 +1064,23 @@ message GeminiTemplateConfig {
   // for downstream applications.
   GeminiExample gemini_example = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. Map of template params to the columns in the dataset table.
+  // Required. Map of template parameters to the columns in the dataset table.
   map<string, string> field_mapping = 2
       [(google.api.field_behavior) = REQUIRED];
+}
+
+// Configuration for how to read Gemini requests from a multimodal dataset.
+message GeminiRequestReadConfig {
+  // The read config for the dataset.
+  oneof read_config {
+    // Gemini request template with placeholders.
+    GeminiTemplateConfig template_config = 1;
+
+    // Optional. Column name in the dataset table that contains already fully
+    // assembled Gemini requests.
+    string assembled_request_column_name = 4
+        [(google.api.field_behavior) = OPTIONAL];
+  }
 }
 
 // Format for Gemini examples used for Vertex Multimodal datasets.
@@ -1154,18 +1160,6 @@ message GeminiExample {
 // [DatasetService.AssembleData][google.cloud.aiplatform.v1beta1.DatasetService.AssembleData].
 // Used only for MULTIMODAL datasets.
 message AssembleDataRequest {
-  // The read config for the dataset.
-  oneof read_config {
-    // Optional. Config for assembling templates with a Gemini API structure.
-    GeminiTemplateConfig gemini_template_config = 2
-        [(google.api.field_behavior) = OPTIONAL];
-
-    // Optional. The column name in the underlying table that contains already
-    // fully assembled requests. If this field is set, the original request will
-    // be copied to the output table.
-    string request_column_name = 5 [(google.api.field_behavior) = OPTIONAL];
-  }
-
   // Required. The name of the Dataset resource (used only for MULTIMODAL
   // datasets). Format:
   // `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -1175,6 +1169,10 @@ message AssembleDataRequest {
       type: "aiplatform.googleapis.com/Dataset"
     }
   ];
+
+  // Optional. The read config for the dataset.
+  GeminiRequestReadConfig gemini_request_read_config = 6
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Response message for

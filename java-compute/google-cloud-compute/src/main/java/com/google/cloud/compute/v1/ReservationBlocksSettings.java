@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,8 +81,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -118,6 +118,11 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
     return ((ReservationBlocksStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyReservationBlockRequest, Policy> getIamPolicySettings() {
+    return ((ReservationBlocksStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<
           ListReservationBlocksRequest, ReservationBlocksListResponse, ListPagedResponse>
@@ -136,6 +141,17 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
       performMaintenanceOperationSettings() {
     return ((ReservationBlocksStubSettings) getStubSettings())
         .performMaintenanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyReservationBlockRequest, Policy> setIamPolicySettings() {
+    return ((ReservationBlocksStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsReservationBlockRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((ReservationBlocksStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final ReservationBlocksSettings create(ReservationBlocksStubSettings stub)
@@ -241,6 +257,12 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
       return getStubSettingsBuilder().getSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyReservationBlockRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<
             ListReservationBlocksRequest, ReservationBlocksListResponse, ListPagedResponse>
@@ -259,6 +281,19 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
             PerformMaintenanceReservationBlockRequest, Operation, Operation>
         performMaintenanceOperationSettings() {
       return getStubSettingsBuilder().performMaintenanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyReservationBlockRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsReservationBlockRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

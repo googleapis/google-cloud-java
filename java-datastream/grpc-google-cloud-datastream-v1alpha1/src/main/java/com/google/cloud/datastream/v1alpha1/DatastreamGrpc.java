@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Datastream service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datastream/v1alpha1/datastream.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DatastreamGrpc {
 
@@ -1806,8 +1803,9 @@ public final class DatastreamGrpc {
      */
     public com.google.cloud.datastream.v1alpha1.ListConnectionProfilesResponse
         listConnectionProfiles(
-            com.google.cloud.datastream.v1alpha1.ListConnectionProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.datastream.v1alpha1.ListConnectionProfilesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionProfilesMethod(), getCallOptions(), request);
     }
 
@@ -1819,8 +1817,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.ConnectionProfile getConnectionProfile(
-        com.google.cloud.datastream.v1alpha1.GetConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.GetConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -1832,8 +1831,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnectionProfile(
-        com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -1845,8 +1845,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnectionProfile(
-        com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -1858,8 +1859,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnectionProfile(
-        com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -1875,8 +1877,9 @@ public final class DatastreamGrpc {
      */
     public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse
         discoverConnectionProfile(
-            com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiscoverConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -1888,8 +1891,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.ListStreamsResponse listStreams(
-        com.google.cloud.datastream.v1alpha1.ListStreamsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.ListStreamsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListStreamsMethod(), getCallOptions(), request);
     }
 
@@ -1901,8 +1905,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.Stream getStream(
-        com.google.cloud.datastream.v1alpha1.GetStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.GetStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetStreamMethod(), getCallOptions(), request);
     }
 
@@ -1914,8 +1919,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createStream(
-        com.google.cloud.datastream.v1alpha1.CreateStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.CreateStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateStreamMethod(), getCallOptions(), request);
     }
 
@@ -1927,8 +1933,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateStream(
-        com.google.cloud.datastream.v1alpha1.UpdateStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.UpdateStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateStreamMethod(), getCallOptions(), request);
     }
 
@@ -1940,8 +1947,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteStream(
-        com.google.cloud.datastream.v1alpha1.DeleteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.DeleteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteStreamMethod(), getCallOptions(), request);
     }
 
@@ -1953,8 +1961,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation fetchErrors(
-        com.google.cloud.datastream.v1alpha1.FetchErrorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.FetchErrorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchErrorsMethod(), getCallOptions(), request);
     }
 
@@ -1968,8 +1977,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse fetchStaticIps(
-        com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchStaticIpsMethod(), getCallOptions(), request);
     }
 
@@ -1981,8 +1991,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPrivateConnection(
-        com.google.cloud.datastream.v1alpha1.CreatePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.CreatePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1994,8 +2005,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.PrivateConnection getPrivateConnection(
-        com.google.cloud.datastream.v1alpha1.GetPrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.GetPrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -2009,8 +2021,9 @@ public final class DatastreamGrpc {
      */
     public com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsResponse
         listPrivateConnections(
-            com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPrivateConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -2022,8 +2035,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePrivateConnection(
-        com.google.cloud.datastream.v1alpha1.DeletePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.DeletePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -2036,8 +2050,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRoute(
-        com.google.cloud.datastream.v1alpha1.CreateRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.CreateRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRouteMethod(), getCallOptions(), request);
     }
 
@@ -2049,8 +2064,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.Route getRoute(
-        com.google.cloud.datastream.v1alpha1.GetRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.GetRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRouteMethod(), getCallOptions(), request);
     }
 
@@ -2063,8 +2079,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.ListRoutesResponse listRoutes(
-        com.google.cloud.datastream.v1alpha1.ListRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.ListRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRoutesMethod(), getCallOptions(), request);
     }
 
@@ -2076,8 +2093,9 @@ public final class DatastreamGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRoute(
-        com.google.cloud.datastream.v1alpha1.DeleteRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datastream.v1alpha1.DeleteRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRouteMethod(), getCallOptions(), request);
     }
   }

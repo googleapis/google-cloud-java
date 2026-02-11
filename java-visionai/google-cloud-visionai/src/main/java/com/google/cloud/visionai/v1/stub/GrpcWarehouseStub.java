@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.visionai.v1.WarehouseClient.ListCorporaPagedRespo
 import static com.google.cloud.visionai.v1.WarehouseClient.ListDataSchemasPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexEndpointsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexesPagedResponse;
+import static com.google.cloud.visionai.v1.WarehouseClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchConfigsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchHypernymsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.SearchAssetsPagedResponse;
@@ -39,6 +40,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AddCollectionItemRequest;
 import com.google.cloud.visionai.v1.AddCollectionItemResponse;
 import com.google.cloud.visionai.v1.AnalyzeAssetMetadata;
@@ -179,6 +184,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/CreateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAssetRequest, Asset> updateAssetMethodDescriptor =
@@ -187,6 +193,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/UpdateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
@@ -195,6 +202,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/GetAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -204,6 +212,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setFullMethodName("google.cloud.visionai.v1.Warehouse/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAssetRequest, Operation> deleteAssetMethodDescriptor =
@@ -212,6 +221,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/DeleteAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UploadAssetRequest, Operation> uploadAssetMethodDescriptor =
@@ -220,6 +230,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/UploadAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(UploadAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GenerateRetrievalUrlRequest, GenerateRetrievalUrlResponse>
@@ -231,6 +242,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(GenerateRetrievalUrlRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateRetrievalUrlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeAssetRequest, Operation>
@@ -240,6 +252,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setFullMethodName("google.cloud.visionai.v1.Warehouse/AnalyzeAsset")
               .setRequestMarshaller(ProtoUtils.marshaller(AnalyzeAssetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<IndexAssetRequest, Operation> indexAssetMethodDescriptor =
@@ -248,6 +261,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/IndexAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(IndexAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RemoveIndexAssetRequest, Operation>
@@ -258,6 +272,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveIndexAssetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse>
@@ -269,6 +284,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ViewIndexedAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ViewIndexedAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIndexRequest, Operation> createIndexMethodDescriptor =
@@ -277,6 +293,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/CreateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateIndexRequest, Operation> updateIndexMethodDescriptor =
@@ -285,6 +302,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/UpdateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIndexRequest, Index> getIndexMethodDescriptor =
@@ -293,6 +311,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/GetIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Index.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIndexesRequest, ListIndexesResponse>
@@ -303,6 +322,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIndexesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
@@ -311,6 +331,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/DeleteIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCorpusRequest, Operation>
@@ -320,6 +341,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setFullMethodName("google.cloud.visionai.v1.Warehouse/CreateCorpus")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCorpusRequest, Corpus> getCorpusMethodDescriptor =
@@ -328,6 +350,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/GetCorpus")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCorpusRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Corpus.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateCorpusRequest, Corpus> updateCorpusMethodDescriptor =
@@ -336,6 +359,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/UpdateCorpus")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateCorpusRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Corpus.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCorporaRequest, ListCorporaResponse>
@@ -346,6 +370,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCorporaRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCorporaResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCorpusRequest, Empty> deleteCorpusMethodDescriptor =
@@ -354,6 +379,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/DeleteCorpus")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteCorpusRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AnalyzeCorpusRequest, Operation>
@@ -364,6 +390,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AnalyzeCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataSchemaRequest, DataSchema>
@@ -374,6 +401,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataSchemaRequest, DataSchema>
@@ -384,6 +412,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataSchemaRequest, DataSchema>
@@ -394,6 +423,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataSchemaRequest, Empty>
@@ -404,6 +434,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataSchemasRequest, ListDataSchemasResponse>
@@ -415,6 +446,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ListDataSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnnotationRequest, Annotation>
@@ -425,6 +457,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Annotation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnnotationRequest, Annotation>
@@ -435,6 +468,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Annotation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAnnotationsRequest, ListAnnotationsResponse>
@@ -446,6 +480,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ListAnnotationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAnnotationRequest, Annotation>
@@ -456,6 +491,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Annotation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnnotationRequest, Empty>
@@ -466,6 +502,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<IngestAssetRequest, IngestAssetResponse>
@@ -476,6 +513,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(ProtoUtils.marshaller(IngestAssetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IngestAssetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ClipAssetRequest, ClipAssetResponse>
@@ -485,6 +523,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setFullMethodName("google.cloud.visionai.v1.Warehouse/ClipAsset")
               .setRequestMarshaller(ProtoUtils.marshaller(ClipAssetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ClipAssetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateHlsUriRequest, GenerateHlsUriResponse>
@@ -496,6 +535,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(GenerateHlsUriRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateHlsUriResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportAssetsRequest, Operation>
@@ -505,6 +545,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setFullMethodName("google.cloud.visionai.v1.Warehouse/ImportAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ImportAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSearchConfigRequest, SearchConfig>
@@ -515,6 +556,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSearchConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSearchConfigRequest, SearchConfig>
@@ -525,6 +567,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSearchConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSearchConfigRequest, SearchConfig>
@@ -535,6 +578,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSearchConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSearchConfigRequest, Empty>
@@ -545,6 +589,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSearchConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSearchConfigsRequest, ListSearchConfigsResponse>
@@ -556,6 +601,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ListSearchConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSearchConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSearchHypernymRequest, SearchHypernym>
@@ -566,6 +612,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSearchHypernymRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchHypernym.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSearchHypernymRequest, SearchHypernym>
@@ -576,6 +623,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSearchHypernymRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchHypernym.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSearchHypernymRequest, SearchHypernym>
@@ -586,6 +634,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSearchHypernymRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchHypernym.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSearchHypernymRequest, Empty>
@@ -596,6 +645,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSearchHypernymRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSearchHypernymsRequest, ListSearchHypernymsResponse>
@@ -607,6 +657,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ListSearchHypernymsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSearchHypernymsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchAssetsRequest, SearchAssetsResponse>
@@ -617,6 +668,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchIndexEndpointRequest, SearchIndexEndpointResponse>
@@ -628,6 +680,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(SearchIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchIndexEndpointResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIndexEndpointRequest, Operation>
@@ -638,6 +691,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIndexEndpointRequest, IndexEndpoint>
@@ -648,6 +702,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IndexEndpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
@@ -659,6 +714,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ListIndexEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIndexEndpointRequest, Operation>
@@ -669,6 +725,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIndexEndpointRequest, Operation>
@@ -679,6 +736,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIndexEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployIndexRequest, Operation> deployIndexMethodDescriptor =
@@ -687,6 +745,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
           .setFullMethodName("google.cloud.visionai.v1.Warehouse/DeployIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeployIndexRequest, Operation>
@@ -697,6 +756,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployIndexRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCollectionRequest, Operation>
@@ -707,6 +767,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCollectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCollectionRequest, Operation>
@@ -717,6 +778,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCollectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCollectionRequest, Collection>
@@ -727,6 +789,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCollectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Collection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCollectionRequest, Collection>
@@ -737,6 +800,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCollectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Collection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCollectionsRequest, ListCollectionsResponse>
@@ -748,6 +812,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ListCollectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCollectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddCollectionItemRequest, AddCollectionItemResponse>
@@ -759,6 +824,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(AddCollectionItemRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddCollectionItemResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveCollectionItemRequest, RemoveCollectionItemResponse>
@@ -770,6 +836,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(RemoveCollectionItemRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveCollectionItemResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ViewCollectionItemsRequest, ViewCollectionItemsResponse>
@@ -781,7 +848,29 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   ProtoUtils.marshaller(ViewCollectionItemsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ViewCollectionItemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private final UnaryCallable<CreateAssetRequest, Asset> createAssetCallable;
   private final UnaryCallable<UpdateAssetRequest, Asset> updateAssetCallable;
@@ -926,6 +1015,10 @@ public class GrpcWarehouseStub extends WarehouseStub {
       viewCollectionItemsCallable;
   private final UnaryCallable<ViewCollectionItemsRequest, ViewCollectionItemsPagedResponse>
       viewCollectionItemsPagedCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1614,6 +1707,26 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createAssetCallable =
         callableFactory.createUnaryCallable(
@@ -2001,6 +2114,15 @@ public class GrpcWarehouseStub extends WarehouseStub {
             viewCollectionItemsTransportSettings,
             settings.viewCollectionItemsSettings(),
             clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2515,6 +2637,22 @@ public class GrpcWarehouseStub extends WarehouseStub {
   public UnaryCallable<ViewCollectionItemsRequest, ViewCollectionItemsPagedResponse>
       viewCollectionItemsPagedCallable() {
     return viewCollectionItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

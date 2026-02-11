@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.google.cloud.container.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.container.v1beta1.ClusterManagerClient;
 import com.google.container.v1beta1.AcceleratorConfig;
+import com.google.container.v1beta1.BootDisk;
 import com.google.container.v1beta1.ConfidentialNodes;
 import com.google.container.v1beta1.ContainerdConfig;
 import com.google.container.v1beta1.FastSocket;
@@ -39,6 +40,7 @@ import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.container.v1beta1.VirtualNIC;
 import com.google.container.v1beta1.WindowsNodeConfig;
 import com.google.container.v1beta1.WorkloadMetadataConfig;
+import com.google.protobuf.Duration;
 import java.util.ArrayList;
 
 public class AsyncUpdateNodePool {
@@ -87,6 +89,12 @@ public class AsyncUpdateNodePool {
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+              .addAllStoragePools(new ArrayList<String>())
+              .setMaxRunDuration(Duration.newBuilder().build())
+              .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

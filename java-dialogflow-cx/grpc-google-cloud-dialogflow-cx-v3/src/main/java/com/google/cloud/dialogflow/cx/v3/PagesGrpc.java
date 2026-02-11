@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Pages][google.cloud.dialogflow.cx.v3.Page].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/page.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PagesGrpc {
 
@@ -532,8 +529,8 @@ public final class PagesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListPagesResponse listPages(
-        com.google.cloud.dialogflow.cx.v3.ListPagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListPagesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPagesMethod(), getCallOptions(), request);
     }
 
@@ -545,8 +542,8 @@ public final class PagesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Page getPage(
-        com.google.cloud.dialogflow.cx.v3.GetPageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetPageRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPageMethod(), getCallOptions(), request);
     }
 
@@ -561,8 +558,9 @@ public final class PagesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Page createPage(
-        com.google.cloud.dialogflow.cx.v3.CreatePageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CreatePageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePageMethod(), getCallOptions(), request);
     }
 
@@ -577,8 +575,9 @@ public final class PagesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Page updatePage(
-        com.google.cloud.dialogflow.cx.v3.UpdatePageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.UpdatePageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePageMethod(), getCallOptions(), request);
     }
 
@@ -593,8 +592,9 @@ public final class PagesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePage(
-        com.google.cloud.dialogflow.cx.v3.DeletePageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.DeletePageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePageMethod(), getCallOptions(), request);
     }
   }

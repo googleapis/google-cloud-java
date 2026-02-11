@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcWorkflowsServiceV2BetaStub extends WorkflowsServiceV2BetaStub {
           .setFullMethodName("google.cloud.lifesciences.v2beta.WorkflowsServiceV2Beta/RunPipeline")
           .setRequestMarshaller(ProtoUtils.marshaller(RunPipelineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -68,6 +69,7 @@ public class GrpcWorkflowsServiceV2BetaStub extends WorkflowsServiceV2BetaStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -76,6 +78,7 @@ public class GrpcWorkflowsServiceV2BetaStub extends WorkflowsServiceV2BetaStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<RunPipelineRequest, Operation> runPipelineCallable;

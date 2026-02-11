@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerationConfig;
+import com.google.cloud.aiplatform.v1beta1.ModelArmorConfig;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.SafetySetting;
 import com.google.cloud.aiplatform.v1beta1.Tool;
@@ -54,6 +55,7 @@ public class AsyncStreamGenerateContent {
               .setToolConfig(ToolConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .addAllSafetySettings(new ArrayList<SafetySetting>())
+              .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
               .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();
       ServerStream<GenerateContentResponse> stream =

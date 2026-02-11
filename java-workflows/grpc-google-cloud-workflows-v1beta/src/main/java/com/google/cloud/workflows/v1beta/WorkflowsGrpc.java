@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * networking interruptions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/workflows/v1beta/workflows.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WorkflowsGrpc {
 
@@ -559,8 +556,9 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.v1beta.ListWorkflowsResponse listWorkflows(
-        com.google.cloud.workflows.v1beta.ListWorkflowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.v1beta.ListWorkflowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkflowsMethod(), getCallOptions(), request);
     }
 
@@ -572,8 +570,9 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.v1beta.Workflow getWorkflow(
-        com.google.cloud.workflows.v1beta.GetWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.v1beta.GetWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -587,8 +586,9 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkflow(
-        com.google.cloud.workflows.v1beta.CreateWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.v1beta.CreateWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -602,8 +602,9 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkflow(
-        com.google.cloud.workflows.v1beta.DeleteWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.v1beta.DeleteWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -619,8 +620,9 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkflow(
-        com.google.cloud.workflows.v1beta.UpdateWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.v1beta.UpdateWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkflowMethod(), getCallOptions(), request);
     }
   }

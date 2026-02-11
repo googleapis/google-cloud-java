@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,8 @@ import com.google.cloud.compute.v1.InsertHealthCheckRequest;
 import com.google.cloud.compute.v1.ListHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateHealthCheckRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -114,8 +116,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -169,6 +171,8 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
   private final UnaryCallSettings<PatchHealthCheckRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchHealthCheckRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateHealthCheckRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateHealthCheckRequest, Operation, Operation>
       updateOperationSettings;
@@ -352,6 +356,12 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateHealthCheckRequest, Operation> updateSettings() {
     return updateSettings;
@@ -454,6 +464,7 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -479,6 +490,9 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
     private final UnaryCallSettings.Builder<PatchHealthCheckRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchHealthCheckRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateHealthCheckRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateHealthCheckRequest, Operation, Operation>
         updateOperationSettings;
@@ -541,6 +555,7 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -552,6 +567,7 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -568,6 +584,7 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -579,6 +596,7 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -622,6 +640,11 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -795,6 +818,12 @@ public class HealthChecksStubSettings extends StubSettings<HealthChecksStubSetti
     public OperationCallSettings.Builder<PatchHealthCheckRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

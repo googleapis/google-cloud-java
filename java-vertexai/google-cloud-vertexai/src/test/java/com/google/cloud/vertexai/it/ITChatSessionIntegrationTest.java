@@ -46,7 +46,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITChatSessionIntegrationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_NAME_TEXT = "gemini-pro";
+  private static final String MODEL_NAME_TEXT = "gemini-1.5-pro-002";
   private static final String LOCATION = "us-central1";
   private static final Logger logger =
       Logger.getLogger(ITGenerativeModelIntegrationTest.class.getName());

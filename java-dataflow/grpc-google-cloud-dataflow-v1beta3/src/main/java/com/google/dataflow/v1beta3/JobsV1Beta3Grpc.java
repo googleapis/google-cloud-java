@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/jobs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobsV1Beta3Grpc {
 
@@ -404,6 +401,8 @@ public final class JobsV1Beta3Grpc {
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
      * `projects.jobs.create` is not recommended, as your job will always start
      * in `us-central1`.
+     * Do not enter confidential information when you supply string values using
+     * the API.
      * </pre>
      */
     default void createJob(
@@ -457,8 +456,11 @@ public final class JobsV1Beta3Grpc {
      * `projects.locations.jobs.list` with a [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
      * list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-     * `projects.jobs.list` is not recommended, as you can only get the list of
-     * jobs that are running in `us-central1`.
+     * `projects.jobs.list` is not recommended, because you can only get the list
+     * of jobs that are running in `us-central1`.
+     * `projects.locations.jobs.list` and `projects.jobs.list` support filtering
+     * the list of jobs by name. Filtering by name isn't supported by
+     * `projects.jobs.aggregated`.
      * </pre>
      */
     default void listJobs(
@@ -473,6 +475,8 @@ public final class JobsV1Beta3Grpc {
      *
      * <pre>
      * List the jobs of a project across all regions.
+     * **Note:** This method doesn't support filtering the list of
+     * jobs by name.
      * </pre>
      */
     default void aggregatedListJobs(
@@ -559,6 +563,8 @@ public final class JobsV1Beta3Grpc {
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
      * `projects.jobs.create` is not recommended, as your job will always start
      * in `us-central1`.
+     * Do not enter confidential information when you supply string values using
+     * the API.
      * </pre>
      */
     public void createJob(
@@ -615,8 +621,11 @@ public final class JobsV1Beta3Grpc {
      * `projects.locations.jobs.list` with a [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
      * list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-     * `projects.jobs.list` is not recommended, as you can only get the list of
-     * jobs that are running in `us-central1`.
+     * `projects.jobs.list` is not recommended, because you can only get the list
+     * of jobs that are running in `us-central1`.
+     * `projects.locations.jobs.list` and `projects.jobs.list` support filtering
+     * the list of jobs by name. Filtering by name isn't supported by
+     * `projects.jobs.aggregated`.
      * </pre>
      */
     public void listJobs(
@@ -632,6 +641,8 @@ public final class JobsV1Beta3Grpc {
      *
      * <pre>
      * List the jobs of a project across all regions.
+     * **Note:** This method doesn't support filtering the list of
+     * jobs by name.
      * </pre>
      */
     public void aggregatedListJobs(
@@ -708,11 +719,13 @@ public final class JobsV1Beta3Grpc {
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
      * `projects.jobs.create` is not recommended, as your job will always start
      * in `us-central1`.
+     * Do not enter confidential information when you supply string values using
+     * the API.
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job createJob(
-        com.google.dataflow.v1beta3.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -728,9 +741,9 @@ public final class JobsV1Beta3Grpc {
      * jobs that are running in `us-central1`.
      * </pre>
      */
-    public com.google.dataflow.v1beta3.Job getJob(
-        com.google.dataflow.v1beta3.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.dataflow.v1beta3.Job getJob(com.google.dataflow.v1beta3.GetJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -747,8 +760,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job updateJob(
-        com.google.dataflow.v1beta3.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -761,13 +774,16 @@ public final class JobsV1Beta3Grpc {
      * `projects.locations.jobs.list` with a [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
      * list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-     * `projects.jobs.list` is not recommended, as you can only get the list of
-     * jobs that are running in `us-central1`.
+     * `projects.jobs.list` is not recommended, because you can only get the list
+     * of jobs that are running in `us-central1`.
+     * `projects.locations.jobs.list` and `projects.jobs.list` support filtering
+     * the list of jobs by name. Filtering by name isn't supported by
+     * `projects.jobs.aggregated`.
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse listJobs(
-        com.google.dataflow.v1beta3.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -776,11 +792,13 @@ public final class JobsV1Beta3Grpc {
      *
      * <pre>
      * List the jobs of a project across all regions.
+     * **Note:** This method doesn't support filtering the list of
+     * jobs by name.
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse aggregatedListJobs(
-        com.google.dataflow.v1beta3.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregatedListJobsMethod(), getCallOptions(), request);
     }
 
@@ -792,8 +810,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.CheckActiveJobsResponse checkActiveJobs(
-        com.google.dataflow.v1beta3.CheckActiveJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CheckActiveJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckActiveJobsMethod(), getCallOptions(), request);
     }
 
@@ -805,8 +823,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Snapshot snapshotJob(
-        com.google.dataflow.v1beta3.SnapshotJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.SnapshotJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSnapshotJobMethod(), getCallOptions(), request);
     }
   }
@@ -841,6 +859,8 @@ public final class JobsV1Beta3Grpc {
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
      * `projects.jobs.create` is not recommended, as your job will always start
      * in `us-central1`.
+     * Do not enter confidential information when you supply string values using
+     * the API.
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job createJob(
@@ -894,8 +914,11 @@ public final class JobsV1Beta3Grpc {
      * `projects.locations.jobs.list` with a [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
      * list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-     * `projects.jobs.list` is not recommended, as you can only get the list of
-     * jobs that are running in `us-central1`.
+     * `projects.jobs.list` is not recommended, because you can only get the list
+     * of jobs that are running in `us-central1`.
+     * `projects.locations.jobs.list` and `projects.jobs.list` support filtering
+     * the list of jobs by name. Filtering by name isn't supported by
+     * `projects.jobs.aggregated`.
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse listJobs(
@@ -909,6 +932,8 @@ public final class JobsV1Beta3Grpc {
      *
      * <pre>
      * List the jobs of a project across all regions.
+     * **Note:** This method doesn't support filtering the list of
+     * jobs by name.
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse aggregatedListJobs(
@@ -974,6 +999,8 @@ public final class JobsV1Beta3Grpc {
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
      * `projects.jobs.create` is not recommended, as your job will always start
      * in `us-central1`.
+     * Do not enter confidential information when you supply string values using
+     * the API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.dataflow.v1beta3.Job>
@@ -1027,8 +1054,11 @@ public final class JobsV1Beta3Grpc {
      * `projects.locations.jobs.list` with a [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
      * list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-     * `projects.jobs.list` is not recommended, as you can only get the list of
-     * jobs that are running in `us-central1`.
+     * `projects.jobs.list` is not recommended, because you can only get the list
+     * of jobs that are running in `us-central1`.
+     * `projects.locations.jobs.list` and `projects.jobs.list` support filtering
+     * the list of jobs by name. Filtering by name isn't supported by
+     * `projects.jobs.aggregated`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1043,6 +1073,8 @@ public final class JobsV1Beta3Grpc {
      *
      * <pre>
      * List the jobs of a project across all regions.
+     * **Note:** This method doesn't support filtering the list of
+     * jobs by name.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

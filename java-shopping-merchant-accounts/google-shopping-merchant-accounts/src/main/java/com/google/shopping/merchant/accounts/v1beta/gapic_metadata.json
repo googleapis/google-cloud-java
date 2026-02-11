@@ -122,6 +122,27 @@
         }
       }
     },
+    "CheckoutSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CheckoutSettingsServiceClient",
+          "rpcs": {
+            "CreateCheckoutSettings": {
+              "methods": ["createCheckoutSettings", "createCheckoutSettings", "createCheckoutSettings", "createCheckoutSettingsCallable"]
+            },
+            "DeleteCheckoutSettings": {
+              "methods": ["deleteCheckoutSettings", "deleteCheckoutSettings", "deleteCheckoutSettings", "deleteCheckoutSettingsCallable"]
+            },
+            "GetCheckoutSettings": {
+              "methods": ["getCheckoutSettings", "getCheckoutSettings", "getCheckoutSettings", "getCheckoutSettingsCallable"]
+            },
+            "UpdateCheckoutSettings": {
+              "methods": ["updateCheckoutSettings", "updateCheckoutSettings", "updateCheckoutSettingsCallable"]
+            }
+          }
+        }
+      }
+    },
     "EmailPreferencesService": {
       "clients": {
         "grpc": {
@@ -132,6 +153,21 @@
             },
             "UpdateEmailPreferences": {
               "methods": ["updateEmailPreferences", "updateEmailPreferences", "updateEmailPreferencesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GbpAccountsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GbpAccountsServiceClient",
+          "rpcs": {
+            "LinkGbpAccount": {
+              "methods": ["linkGbpAccount", "linkGbpAccount", "linkGbpAccount", "linkGbpAccountCallable"]
+            },
+            "ListGbpAccounts": {
+              "methods": ["listGbpAccounts", "listGbpAccounts", "listGbpAccounts", "listGbpAccountsPagedCallable", "listGbpAccountsCallable"]
             }
           }
         }
@@ -158,16 +194,64 @@
         }
       }
     },
+    "LfpProvidersService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LfpProvidersServiceClient",
+          "rpcs": {
+            "FindLfpProviders": {
+              "methods": ["findLfpProviders", "findLfpProviders", "findLfpProviders", "findLfpProvidersPagedCallable", "findLfpProvidersCallable"]
+            },
+            "LinkLfpProvider": {
+              "methods": ["linkLfpProvider", "linkLfpProvider", "linkLfpProvider", "linkLfpProviderCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OmnichannelSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OmnichannelSettingsServiceClient",
+          "rpcs": {
+            "CreateOmnichannelSetting": {
+              "methods": ["createOmnichannelSetting", "createOmnichannelSetting", "createOmnichannelSetting", "createOmnichannelSettingCallable"]
+            },
+            "GetOmnichannelSetting": {
+              "methods": ["getOmnichannelSetting", "getOmnichannelSetting", "getOmnichannelSetting", "getOmnichannelSettingCallable"]
+            },
+            "ListOmnichannelSettings": {
+              "methods": ["listOmnichannelSettings", "listOmnichannelSettings", "listOmnichannelSettings", "listOmnichannelSettingsPagedCallable", "listOmnichannelSettingsCallable"]
+            },
+            "RequestInventoryVerification": {
+              "methods": ["requestInventoryVerification", "requestInventoryVerification", "requestInventoryVerification", "requestInventoryVerificationCallable"]
+            },
+            "UpdateOmnichannelSetting": {
+              "methods": ["updateOmnichannelSetting", "updateOmnichannelSetting", "updateOmnichannelSettingCallable"]
+            }
+          }
+        }
+      }
+    },
     "OnlineReturnPolicyService": {
       "clients": {
         "grpc": {
           "libraryClient": "OnlineReturnPolicyServiceClient",
           "rpcs": {
+            "CreateOnlineReturnPolicy": {
+              "methods": ["createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicyCallable"]
+            },
+            "DeleteOnlineReturnPolicy": {
+              "methods": ["deleteOnlineReturnPolicy", "deleteOnlineReturnPolicy", "deleteOnlineReturnPolicy", "deleteOnlineReturnPolicyCallable"]
+            },
             "GetOnlineReturnPolicy": {
               "methods": ["getOnlineReturnPolicy", "getOnlineReturnPolicy", "getOnlineReturnPolicy", "getOnlineReturnPolicyCallable"]
             },
             "ListOnlineReturnPolicies": {
               "methods": ["listOnlineReturnPolicies", "listOnlineReturnPolicies", "listOnlineReturnPolicies", "listOnlineReturnPoliciesPagedCallable", "listOnlineReturnPoliciesCallable"]
+            },
+            "UpdateOnlineReturnPolicy": {
+              "methods": ["updateOnlineReturnPolicy", "updateOnlineReturnPolicy", "updateOnlineReturnPolicyCallable"]
             }
           }
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,6 +80,7 @@ import javax.annotation.Generated;
  *           .setLanguageCode("languageCode-2092349083")
  *           .setRegionCode("regionCode-1991004415")
  *           .setPlaceId("placeId-494224254")
+ *           .putAllUserAttributes(new HashMap<String, StringList>())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -265,6 +266,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
    *           .setPlaceId("placeId-494224254")
+   *           .putAllUserAttributes(new HashMap<String, StringList>())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -325,6 +327,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
    *           .setPlaceId("placeId-494224254")
+   *           .putAllUserAttributes(new HashMap<String, StringList>())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -385,6 +388,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
    *           .setPlaceId("placeId-494224254")
+   *           .putAllUserAttributes(new HashMap<String, StringList>())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);

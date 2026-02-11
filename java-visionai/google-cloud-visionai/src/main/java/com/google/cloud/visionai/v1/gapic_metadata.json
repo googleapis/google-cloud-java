@@ -10,8 +10,14 @@
         "grpc": {
           "libraryClient": "HealthCheckServiceClient",
           "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "HealthCheck": {
               "methods": ["healthCheck", "healthCheckCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             }
           }
         }
@@ -46,6 +52,9 @@
             "GetAnalysis": {
               "methods": ["getAnalysis", "getAnalysis", "getAnalysis", "getAnalysisCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetOperator": {
               "methods": ["getOperator", "getOperator", "getOperator", "getOperatorCallable"]
             },
@@ -54,6 +63,9 @@
             },
             "ListAnalyses": {
               "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListOperators": {
               "methods": ["listOperators", "listOperators", "listOperators", "listOperatorsPagedCallable", "listOperatorsCallable"]
@@ -124,6 +136,9 @@
             "GetInstance": {
               "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetProcessor": {
               "methods": ["getProcessor", "getProcessor", "getProcessor", "getProcessorCallable"]
             },
@@ -135,6 +150,9 @@
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListPrebuiltProcessors": {
               "methods": ["listPrebuiltProcessors", "listPrebuiltProcessors", "listPrebuiltProcessors", "listPrebuiltProcessorsCallable"]
@@ -174,6 +192,12 @@
           "rpcs": {
             "AcquireLease": {
               "methods": ["acquireLease", "acquireLeaseCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ReceiveEvents": {
               "methods": ["receiveEventsCallable"]
@@ -232,6 +256,9 @@
             "GetEvent": {
               "methods": ["getEvent", "getEvent", "getEvent", "getEventCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetSeries": {
               "methods": ["getSeries", "getSeries", "getSeries", "getSeriesCallable"]
             },
@@ -246,6 +273,9 @@
             },
             "ListEvents": {
               "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSeries": {
               "methods": ["listSeries", "listSeries", "listSeries", "listSeriesPagedCallable", "listSeriesCallable"]
@@ -373,6 +403,9 @@
             "GetIndexEndpoint": {
               "methods": ["getIndexEndpoint", "getIndexEndpoint", "getIndexEndpoint", "getIndexEndpointCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetSearchConfig": {
               "methods": ["getSearchConfig", "getSearchConfig", "getSearchConfig", "getSearchConfigCallable"]
             },
@@ -408,6 +441,9 @@
             },
             "ListIndexes": {
               "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSearchConfigs": {
               "methods": ["listSearchConfigs", "listSearchConfigs", "listSearchConfigs", "listSearchConfigsPagedCallable", "listSearchConfigsCallable"]

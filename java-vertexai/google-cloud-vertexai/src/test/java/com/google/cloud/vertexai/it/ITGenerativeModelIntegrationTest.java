@@ -51,9 +51,9 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITGenerativeModelIntegrationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_NAME_TEXT = "gemini-pro";
-  private static final String MODEL_NAME_MULTIMODAL = "gemini-pro-vision";
-  private static final String MODEL_NAME_LATEST_GEMINI = "gemini-1.5-pro-preview-0409";
+  private static final String MODEL_NAME_TEXT = "gemini-1.5-pro-002";
+  private static final String MODEL_NAME_MULTIMODAL = "gemini-1.5-pro-002";
+  private static final String MODEL_NAME_LATEST_GEMINI = "gemini-1.5-pro-002";
   private static final String LOCATION = "us-central1";
 
   // Tested content

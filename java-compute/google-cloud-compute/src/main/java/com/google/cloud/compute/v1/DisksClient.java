@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of persistent disks.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,6 +125,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BulkSetLabels</td>
+ *      <td><p> Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources documentation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> bulkSetLabelsAsync(BulkSetLabelsDiskRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> bulkSetLabelsAsync(String project, String zone, BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bulkSetLabelsOperationCallable()
+ *           <li><p> bulkSetLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateSnapshot</td>
  *      <td><p> Creates a snapshot of a specified persistent disk. For regular snapshot creation, consider using snapshots.insert instead, as that method supports more features, such as creating snapshots in a project different from the source disk project.</td>
  *      <td>
@@ -144,7 +164,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.</td>
+ *      <td><p> Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separatelydelete snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -199,7 +219,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a persistent disk in the specified project using the data in the request. You can create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.</td>
+ *      <td><p> Creates a persistent disk in the specified project using the data in the request. You can create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -293,7 +313,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on a disk. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -646,8 +666,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -677,8 +699,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -716,8 +740,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -755,8 +781,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -932,6 +960,145 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource =
+   *       BulkZoneSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       disksClient.bulkSetLabelsAsync(project, zone, bulkZoneSetLabelsRequestResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param bulkZoneSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> bulkSetLabelsAsync(
+      String project, String zone, BulkZoneSetLabelsRequest bulkZoneSetLabelsRequestResource) {
+    BulkSetLabelsDiskRequest request =
+        BulkSetLabelsDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setBulkZoneSetLabelsRequestResource(bulkZoneSetLabelsRequestResource)
+            .build();
+    return bulkSetLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkSetLabelsDiskRequest request =
+   *       BulkSetLabelsDiskRequest.newBuilder()
+   *           .setBulkZoneSetLabelsRequestResource(BulkZoneSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.bulkSetLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> bulkSetLabelsAsync(
+      BulkSetLabelsDiskRequest request) {
+    return bulkSetLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkSetLabelsDiskRequest request =
+   *       BulkSetLabelsDiskRequest.newBuilder()
+   *           .setBulkZoneSetLabelsRequestResource(BulkZoneSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.bulkSetLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BulkSetLabelsDiskRequest, Operation, Operation>
+      bulkSetLabelsOperationCallable() {
+    return stub.bulkSetLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkSetLabelsDiskRequest request =
+   *       BulkSetLabelsDiskRequest.newBuilder()
+   *           .setBulkZoneSetLabelsRequestResource(BulkZoneSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.bulkSetLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsCallable() {
+    return stub.bulkSetLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a snapshot of a specified persistent disk. For regular snapshot creation, consider
    * using snapshots.insert instead, as that method supports more features, such as creating
    * snapshots in a project different from the source disk project.
@@ -1082,7 +1249,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1116,7 +1283,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1149,7 +1316,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1183,7 +1350,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1403,7 +1570,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -1442,7 +1609,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -1477,7 +1644,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -1513,7 +1680,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -2080,7 +2247,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -2124,7 +2291,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -2157,7 +2324,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -2191,7 +2358,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:

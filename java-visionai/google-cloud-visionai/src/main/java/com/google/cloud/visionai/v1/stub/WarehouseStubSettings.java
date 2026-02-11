@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.visionai.v1.WarehouseClient.ListCorporaPagedRespo
 import static com.google.cloud.visionai.v1.WarehouseClient.ListDataSchemasPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexEndpointsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexesPagedResponse;
+import static com.google.cloud.visionai.v1.WarehouseClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchConfigsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchHypernymsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.SearchAssetsPagedResponse;
@@ -61,6 +62,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AddCollectionItemRequest;
 import com.google.cloud.visionai.v1.AddCollectionItemResponse;
 import com.google.cloud.visionai.v1.AnalyzeAssetMetadata;
@@ -199,7 +204,8 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (visionai.googleapis.com) and default port (443) are used.
+ *   <li>The default service address (warehouse-visionai.googleapis.com) and default port (443) are
+ *       used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
@@ -238,8 +244,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -414,6 +420,10 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
   private final PagedCallSettings<
           ViewCollectionItemsRequest, ViewCollectionItemsResponse, ViewCollectionItemsPagedResponse>
       viewCollectionItemsSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>
       LIST_ASSETS_PAGE_STR_DESC =
@@ -892,6 +902,40 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       LIST_ASSETS_PAGE_STR_FACT =
@@ -1134,6 +1178,23 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
                       PageContext.create(
                           callable, VIEW_COLLECTION_ITEMS_PAGE_STR_DESC, request, context);
               return ViewCollectionItemsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1590,6 +1651,17 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
     return viewCollectionItemsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public WarehouseStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1609,7 +1681,7 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
-    return "visionai";
+    return "warehouse-visionai";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -1620,12 +1692,12 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
   /** Returns the default service endpoint. */
   @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
-    return "visionai.googleapis.com:443";
+    return "warehouse-visionai.googleapis.com:443";
   }
 
   /** Returns the default mTLS service endpoint. */
   public static String getDefaultMtlsEndpoint() {
-    return "visionai.mtls.googleapis.com:443";
+    return "warehouse-visionai.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -1783,6 +1855,8 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
     addCollectionItemSettings = settingsBuilder.addCollectionItemSettings().build();
     removeCollectionItemSettings = settingsBuilder.removeCollectionItemSettings().build();
     viewCollectionItemsSettings = settingsBuilder.viewCollectionItemsSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for WarehouseStubSettings. */
@@ -1961,6 +2035,10 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
             ViewCollectionItemsResponse,
             ViewCollectionItemsPagedResponse>
         viewCollectionItemsSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -2097,6 +2175,8 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
       removeCollectionItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       viewCollectionItemsSettings =
           PagedCallSettings.newBuilder(VIEW_COLLECTION_ITEMS_PAGE_STR_FACT);
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2161,7 +2241,9 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
               listCollectionsSettings,
               addCollectionItemSettings,
               removeCollectionItemSettings,
-              viewCollectionItemsSettings);
+              viewCollectionItemsSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -2252,6 +2334,8 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
       addCollectionItemSettings = settings.addCollectionItemSettings.toBuilder();
       removeCollectionItemSettings = settings.removeCollectionItemSettings.toBuilder();
       viewCollectionItemsSettings = settings.viewCollectionItemsSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2316,7 +2400,9 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
               listCollectionsSettings,
               addCollectionItemSettings,
               removeCollectionItemSettings,
-              viewCollectionItemsSettings);
+              viewCollectionItemsSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -2651,6 +2737,16 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
 
       builder
           .viewCollectionItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3588,6 +3684,18 @@ public class WarehouseStubSettings extends StubSettings<WarehouseStubSettings> {
             ViewCollectionItemsPagedResponse>
         viewCollectionItemsSettings() {
       return viewCollectionItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

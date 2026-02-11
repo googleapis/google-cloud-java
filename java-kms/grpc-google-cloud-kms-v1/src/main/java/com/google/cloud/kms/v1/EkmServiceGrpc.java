@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * [EkmConnection][google.cloud.kms.v1.EkmConnection]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/v1/ekm_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EkmServiceGrpc {
 
@@ -712,8 +709,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ListEkmConnectionsResponse listEkmConnections(
-        com.google.cloud.kms.v1.ListEkmConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ListEkmConnectionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEkmConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -726,8 +723,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.EkmConnection getEkmConnection(
-        com.google.cloud.kms.v1.GetEkmConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetEkmConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEkmConnectionMethod(), getCallOptions(), request);
     }
 
@@ -740,8 +737,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.EkmConnection createEkmConnection(
-        com.google.cloud.kms.v1.CreateEkmConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.CreateEkmConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEkmConnectionMethod(), getCallOptions(), request);
     }
 
@@ -753,8 +750,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.EkmConnection updateEkmConnection(
-        com.google.cloud.kms.v1.UpdateEkmConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateEkmConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEkmConnectionMethod(), getCallOptions(), request);
     }
 
@@ -767,8 +764,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.EkmConfig getEkmConfig(
-        com.google.cloud.kms.v1.GetEkmConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetEkmConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEkmConfigMethod(), getCallOptions(), request);
     }
 
@@ -781,8 +778,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.EkmConfig updateEkmConfig(
-        com.google.cloud.kms.v1.UpdateEkmConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateEkmConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEkmConfigMethod(), getCallOptions(), request);
     }
 
@@ -798,8 +795,8 @@ public final class EkmServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.VerifyConnectivityResponse verifyConnectivity(
-        com.google.cloud.kms.v1.VerifyConnectivityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.VerifyConnectivityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyConnectivityMethod(), getCallOptions(), request);
     }
   }

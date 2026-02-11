@@ -1,0 +1,17 @@
+{
+  "api_shortname": "saasservicemgmt",
+  "name_pretty": "SaaS Runtime API",
+  "product_documentation": "https://cloud.google.com/saas-runtime/docs/overview",
+  "api_description": "Model, deploy, and operate your SaaS at scale.\t",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-saasservicemgmt/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-saasservicemgmt",
+  "distribution_name": "com.google.cloud:google-cloud-saasservicemgmt",
+  "api_id": "saasservicemgmt.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rpc_documentation": "https://cloud.google.com/saas-runtime/docs/apis"
+}

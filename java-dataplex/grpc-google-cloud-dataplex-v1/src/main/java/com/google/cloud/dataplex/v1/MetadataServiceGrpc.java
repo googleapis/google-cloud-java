@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * partitions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/metadata.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetadataServiceGrpc {
 
@@ -834,8 +831,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entity createEntity(
-        com.google.cloud.dataplex.v1.CreateEntityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntityMethod(), getCallOptions(), request);
     }
 
@@ -847,8 +844,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entity updateEntity(
-        com.google.cloud.dataplex.v1.UpdateEntityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntityMethod(), getCallOptions(), request);
     }
 
@@ -860,8 +857,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntity(
-        com.google.cloud.dataplex.v1.DeleteEntityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntityMethod(), getCallOptions(), request);
     }
 
@@ -873,8 +870,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entity getEntity(
-        com.google.cloud.dataplex.v1.GetEntityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntityMethod(), getCallOptions(), request);
     }
 
@@ -886,8 +883,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntitiesResponse listEntities(
-        com.google.cloud.dataplex.v1.ListEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntitiesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -899,8 +896,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Partition createPartition(
-        com.google.cloud.dataplex.v1.CreatePartitionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreatePartitionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePartitionMethod(), getCallOptions(), request);
     }
 
@@ -912,8 +910,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePartition(
-        com.google.cloud.dataplex.v1.DeletePartitionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeletePartitionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePartitionMethod(), getCallOptions(), request);
     }
 
@@ -925,8 +924,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Partition getPartition(
-        com.google.cloud.dataplex.v1.GetPartitionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetPartitionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPartitionMethod(), getCallOptions(), request);
     }
 
@@ -938,8 +937,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListPartitionsResponse listPartitions(
-        com.google.cloud.dataplex.v1.ListPartitionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListPartitionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPartitionsMethod(), getCallOptions(), request);
     }
   }

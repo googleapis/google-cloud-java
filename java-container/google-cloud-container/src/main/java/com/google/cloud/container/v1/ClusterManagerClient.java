@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +33,15 @@ import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterUpdate;
+import com.google.container.v1.ClusterUpgradeInfo;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FetchClusterUpgradeInfoRequest;
+import com.google.container.v1.FetchNodePoolUpgradeInfoRequest;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
@@ -56,6 +59,7 @@ import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.MaintenancePolicy;
 import com.google.container.v1.NetworkPolicy;
 import com.google.container.v1.NodePool;
+import com.google.container.v1.NodePoolUpgradeInfo;
 import com.google.container.v1.Operation;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -153,7 +157,7 @@ import javax.annotation.Generated;
  *      <td><p> CreateCluster</td>
  *      <td><p> Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.
  * <p>  By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
- * <p>  One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.
+ * <p>  One firewall is added for the cluster. After cluster creation, the kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.
  * <p>  Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -713,6 +717,42 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> FetchClusterUpgradeInfo</td>
+ *      <td><p> Fetch upgrade information of a specific cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchClusterUpgradeInfo(FetchClusterUpgradeInfoRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchClusterUpgradeInfo(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchClusterUpgradeInfoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchNodePoolUpgradeInfo</td>
+ *      <td><p> Fetch upgrade information of a specific nodepool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchNodePoolUpgradeInfo(FetchNodePoolUpgradeInfoRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchNodePoolUpgradeInfo(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchNodePoolUpgradeInfoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1075,7 +1115,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *
@@ -1117,7 +1157,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *
@@ -1168,7 +1208,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *
@@ -1210,7 +1250,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *
@@ -1429,6 +1469,11 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setContainerdConfig(ContainerdConfig.newBuilder().build())
    *           .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
    *           .addAllStoragePools(new ArrayList<String>())
+   *           .setMaxRunDuration(Duration.newBuilder().build())
+   *           .setFlexStart(true)
+   *           .setBootDisk(BootDisk.newBuilder().build())
+   *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+   *           .setConsolidationDelay(Duration.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1488,6 +1533,11 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setContainerdConfig(ContainerdConfig.newBuilder().build())
    *           .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
    *           .addAllStoragePools(new ArrayList<String>())
+   *           .setMaxRunDuration(Duration.newBuilder().build())
+   *           .setFlexStart(true)
+   *           .setBootDisk(BootDisk.newBuilder().build())
+   *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+   *           .setConsolidationDelay(Duration.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -1753,7 +1803,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
    *     <ul>
-   *       <li>"monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
+   *       <li>`monitoring.googleapis.com/kubernetes` - The Cloud Monitoring service with a
    *           Kubernetes-native resource model
    *       <li>`monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer
    *           available as of GKE 1.15).
@@ -1805,7 +1855,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
    *     <ul>
-   *       <li>"monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
+   *       <li>`monitoring.googleapis.com/kubernetes` - The Cloud Monitoring service with a
    *           Kubernetes-native resource model
    *       <li>`monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer
    *           available as of GKE 1.15).
@@ -4906,6 +4956,183 @@ public class ClusterManagerClient implements BackgroundResource {
           CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
       checkAutopilotCompatibilityCallable() {
     return stub.checkAutopilotCompatibilityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch upgrade information of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   ClusterUpgradeInfo response = clusterManagerClient.fetchClusterUpgradeInfo(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name (project, location, cluster) of the cluster to get. Specified in
+   *     the format `projects/&#42;/locations/&#42;/clusters/&#42;` or
+   *     `projects/&#42;/zones/&#42;/clusters/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClusterUpgradeInfo fetchClusterUpgradeInfo(String name) {
+    FetchClusterUpgradeInfoRequest request =
+        FetchClusterUpgradeInfoRequest.newBuilder().setName(name).build();
+    return fetchClusterUpgradeInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch upgrade information of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   FetchClusterUpgradeInfoRequest request =
+   *       FetchClusterUpgradeInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersion("version351608024")
+   *           .build();
+   *   ClusterUpgradeInfo response = clusterManagerClient.fetchClusterUpgradeInfo(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ClusterUpgradeInfo fetchClusterUpgradeInfo(FetchClusterUpgradeInfoRequest request) {
+    return fetchClusterUpgradeInfoCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch upgrade information of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   FetchClusterUpgradeInfoRequest request =
+   *       FetchClusterUpgradeInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersion("version351608024")
+   *           .build();
+   *   ApiFuture<ClusterUpgradeInfo> future =
+   *       clusterManagerClient.fetchClusterUpgradeInfoCallable().futureCall(request);
+   *   // Do something.
+   *   ClusterUpgradeInfo response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchClusterUpgradeInfoRequest, ClusterUpgradeInfo>
+      fetchClusterUpgradeInfoCallable() {
+    return stub.fetchClusterUpgradeInfoCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch upgrade information of a specific nodepool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   NodePoolUpgradeInfo response = clusterManagerClient.fetchNodePoolUpgradeInfo(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name (project, location, cluster, nodepool) of the nodepool to get.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;` or
+   *     `projects/&#42;/zones/&#42;/clusters/&#42;/nodePools/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(String name) {
+    FetchNodePoolUpgradeInfoRequest request =
+        FetchNodePoolUpgradeInfoRequest.newBuilder().setName(name).build();
+    return fetchNodePoolUpgradeInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch upgrade information of a specific nodepool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   FetchNodePoolUpgradeInfoRequest request =
+   *       FetchNodePoolUpgradeInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersion("version351608024")
+   *           .build();
+   *   NodePoolUpgradeInfo response = clusterManagerClient.fetchNodePoolUpgradeInfo(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
+      FetchNodePoolUpgradeInfoRequest request) {
+    return fetchNodePoolUpgradeInfoCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch upgrade information of a specific nodepool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   FetchNodePoolUpgradeInfoRequest request =
+   *       FetchNodePoolUpgradeInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersion("version351608024")
+   *           .build();
+   *   ApiFuture<NodePoolUpgradeInfo> future =
+   *       clusterManagerClient.fetchNodePoolUpgradeInfoCallable().futureCall(request);
+   *   // Do something.
+   *   NodePoolUpgradeInfo response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
+      fetchNodePoolUpgradeInfoCallable() {
+    return stub.fetchNodePoolUpgradeInfoCallable();
   }
 
   @Override

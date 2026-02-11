@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EngineServiceGrpc {
 
@@ -790,8 +787,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEngine(
-        com.google.cloud.discoveryengine.v1alpha.CreateEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEngineMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +801,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEngine(
-        com.google.cloud.discoveryengine.v1alpha.DeleteEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.DeleteEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEngineMethod(), getCallOptions(), request);
     }
 
@@ -816,8 +815,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Engine updateEngine(
-        com.google.cloud.discoveryengine.v1alpha.UpdateEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEngineMethod(), getCallOptions(), request);
     }
 
@@ -829,8 +829,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Engine getEngine(
-        com.google.cloud.discoveryengine.v1alpha.GetEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEngineMethod(), getCallOptions(), request);
     }
 
@@ -843,8 +844,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListEnginesResponse listEngines(
-        com.google.cloud.discoveryengine.v1alpha.ListEnginesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListEnginesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnginesMethod(), getCallOptions(), request);
     }
 
@@ -858,8 +860,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Engine pauseEngine(
-        com.google.cloud.discoveryengine.v1alpha.PauseEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.PauseEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseEngineMethod(), getCallOptions(), request);
     }
 
@@ -873,8 +876,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Engine resumeEngine(
-        com.google.cloud.discoveryengine.v1alpha.ResumeEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ResumeEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeEngineMethod(), getCallOptions(), request);
     }
 
@@ -888,8 +892,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation tuneEngine(
-        com.google.cloud.discoveryengine.v1alpha.TuneEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.TuneEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTuneEngineMethod(), getCallOptions(), request);
     }
   }

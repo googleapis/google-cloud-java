@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The BackupDR Service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/backupdr/v1/backupdr.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BackupDRGrpc {
 
@@ -676,6 +673,57 @@ public final class BackupDRGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest,
+          com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+      getFetchBackupsForResourceTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchBackupsForResourceType",
+      requestType = com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest.class,
+      responseType = com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest,
+          com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+      getFetchBackupsForResourceTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest,
+            com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+        getFetchBackupsForResourceTypeMethod;
+    if ((getFetchBackupsForResourceTypeMethod = BackupDRGrpc.getFetchBackupsForResourceTypeMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getFetchBackupsForResourceTypeMethod =
+                BackupDRGrpc.getFetchBackupsForResourceTypeMethod)
+            == null) {
+          BackupDRGrpc.getFetchBackupsForResourceTypeMethod =
+              getFetchBackupsForResourceTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest,
+                          com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchBackupsForResourceType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("FetchBackupsForResourceType"))
+                      .build();
+        }
+      }
+    }
+    return getFetchBackupsForResourceTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.backupdr.v1.GetBackupRequest, com.google.cloud.backupdr.v1.Backup>
       getGetBackupMethod;
 
@@ -885,6 +933,48 @@ public final class BackupDRGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.UpdateBackupPlanRequest, com.google.longrunning.Operation>
+      getUpdateBackupPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackupPlan",
+      requestType = com.google.cloud.backupdr.v1.UpdateBackupPlanRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.UpdateBackupPlanRequest, com.google.longrunning.Operation>
+      getUpdateBackupPlanMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.UpdateBackupPlanRequest, com.google.longrunning.Operation>
+        getUpdateBackupPlanMethod;
+    if ((getUpdateBackupPlanMethod = BackupDRGrpc.getUpdateBackupPlanMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getUpdateBackupPlanMethod = BackupDRGrpc.getUpdateBackupPlanMethod) == null) {
+          BackupDRGrpc.getUpdateBackupPlanMethod =
+              getUpdateBackupPlanMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.UpdateBackupPlanRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBackupPlan"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.UpdateBackupPlanRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new BackupDRMethodDescriptorSupplier("UpdateBackupPlan"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.backupdr.v1.GetBackupPlanRequest,
           com.google.cloud.backupdr.v1.BackupPlan>
       getGetBackupPlanMethod;
@@ -1018,6 +1108,104 @@ public final class BackupDRGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest,
+          com.google.cloud.backupdr.v1.BackupPlanRevision>
+      getGetBackupPlanRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupPlanRevision",
+      requestType = com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest.class,
+      responseType = com.google.cloud.backupdr.v1.BackupPlanRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest,
+          com.google.cloud.backupdr.v1.BackupPlanRevision>
+      getGetBackupPlanRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest,
+            com.google.cloud.backupdr.v1.BackupPlanRevision>
+        getGetBackupPlanRevisionMethod;
+    if ((getGetBackupPlanRevisionMethod = BackupDRGrpc.getGetBackupPlanRevisionMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetBackupPlanRevisionMethod = BackupDRGrpc.getGetBackupPlanRevisionMethod)
+            == null) {
+          BackupDRGrpc.getGetBackupPlanRevisionMethod =
+              getGetBackupPlanRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest,
+                          com.google.cloud.backupdr.v1.BackupPlanRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetBackupPlanRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.BackupPlanRevision.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetBackupPlanRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupPlanRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest,
+          com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+      getListBackupPlanRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupPlanRevisions",
+      requestType = com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest.class,
+      responseType = com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest,
+          com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+      getListBackupPlanRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest,
+            com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+        getListBackupPlanRevisionsMethod;
+    if ((getListBackupPlanRevisionsMethod = BackupDRGrpc.getListBackupPlanRevisionsMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListBackupPlanRevisionsMethod = BackupDRGrpc.getListBackupPlanRevisionsMethod)
+            == null) {
+          BackupDRGrpc.getListBackupPlanRevisionsMethod =
+              getListBackupPlanRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest,
+                          com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBackupPlanRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListBackupPlanRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupPlanRevisionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest,
           com.google.longrunning.Operation>
       getCreateBackupPlanAssociationMethod;
@@ -1065,6 +1253,56 @@ public final class BackupDRGrpc {
       }
     }
     return getCreateBackupPlanAssociationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest,
+          com.google.longrunning.Operation>
+      getUpdateBackupPlanAssociationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackupPlanAssociation",
+      requestType = com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest,
+          com.google.longrunning.Operation>
+      getUpdateBackupPlanAssociationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest,
+            com.google.longrunning.Operation>
+        getUpdateBackupPlanAssociationMethod;
+    if ((getUpdateBackupPlanAssociationMethod = BackupDRGrpc.getUpdateBackupPlanAssociationMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getUpdateBackupPlanAssociationMethod =
+                BackupDRGrpc.getUpdateBackupPlanAssociationMethod)
+            == null) {
+          BackupDRGrpc.getUpdateBackupPlanAssociationMethod =
+              getUpdateBackupPlanAssociationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateBackupPlanAssociation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("UpdateBackupPlanAssociation"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupPlanAssociationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1168,6 +1406,66 @@ public final class BackupDRGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest,
+          com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse>
+      getFetchBackupPlanAssociationsForResourceTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchBackupPlanAssociationsForResourceType",
+      requestType =
+          com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest.class,
+      responseType =
+          com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest,
+          com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse>
+      getFetchBackupPlanAssociationsForResourceTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest,
+            com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse>
+        getFetchBackupPlanAssociationsForResourceTypeMethod;
+    if ((getFetchBackupPlanAssociationsForResourceTypeMethod =
+            BackupDRGrpc.getFetchBackupPlanAssociationsForResourceTypeMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getFetchBackupPlanAssociationsForResourceTypeMethod =
+                BackupDRGrpc.getFetchBackupPlanAssociationsForResourceTypeMethod)
+            == null) {
+          BackupDRGrpc.getFetchBackupPlanAssociationsForResourceTypeMethod =
+              getFetchBackupPlanAssociationsForResourceTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1
+                              .FetchBackupPlanAssociationsForResourceTypeRequest,
+                          com.google.cloud.backupdr.v1
+                              .FetchBackupPlanAssociationsForResourceTypeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "FetchBackupPlanAssociationsForResourceType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1
+                                  .FetchBackupPlanAssociationsForResourceTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1
+                                  .FetchBackupPlanAssociationsForResourceTypeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "FetchBackupPlanAssociationsForResourceType"))
+                      .build();
+        }
+      }
+    }
+    return getFetchBackupPlanAssociationsForResourceTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest,
           com.google.longrunning.Operation>
       getDeleteBackupPlanAssociationMethod;
@@ -1257,6 +1555,165 @@ public final class BackupDRGrpc {
       }
     }
     return getTriggerBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest,
+          com.google.cloud.backupdr.v1.DataSourceReference>
+      getGetDataSourceReferenceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDataSourceReference",
+      requestType = com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest.class,
+      responseType = com.google.cloud.backupdr.v1.DataSourceReference.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest,
+          com.google.cloud.backupdr.v1.DataSourceReference>
+      getGetDataSourceReferenceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest,
+            com.google.cloud.backupdr.v1.DataSourceReference>
+        getGetDataSourceReferenceMethod;
+    if ((getGetDataSourceReferenceMethod = BackupDRGrpc.getGetDataSourceReferenceMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetDataSourceReferenceMethod = BackupDRGrpc.getGetDataSourceReferenceMethod)
+            == null) {
+          BackupDRGrpc.getGetDataSourceReferenceMethod =
+              getGetDataSourceReferenceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest,
+                          com.google.cloud.backupdr.v1.DataSourceReference>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDataSourceReference"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.DataSourceReference
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetDataSourceReference"))
+                      .build();
+        }
+      }
+    }
+    return getGetDataSourceReferenceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest,
+          com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+      getListDataSourceReferencesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDataSourceReferences",
+      requestType = com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest.class,
+      responseType = com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest,
+          com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+      getListDataSourceReferencesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest,
+            com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+        getListDataSourceReferencesMethod;
+    if ((getListDataSourceReferencesMethod = BackupDRGrpc.getListDataSourceReferencesMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListDataSourceReferencesMethod = BackupDRGrpc.getListDataSourceReferencesMethod)
+            == null) {
+          BackupDRGrpc.getListDataSourceReferencesMethod =
+              getListDataSourceReferencesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest,
+                          com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDataSourceReferences"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListDataSourceReferences"))
+                      .build();
+        }
+      }
+    }
+    return getListDataSourceReferencesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest,
+          com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>
+      getFetchDataSourceReferencesForResourceTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchDataSourceReferencesForResourceType",
+      requestType =
+          com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest.class,
+      responseType =
+          com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest,
+          com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>
+      getFetchDataSourceReferencesForResourceTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest,
+            com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>
+        getFetchDataSourceReferencesForResourceTypeMethod;
+    if ((getFetchDataSourceReferencesForResourceTypeMethod =
+            BackupDRGrpc.getFetchDataSourceReferencesForResourceTypeMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getFetchDataSourceReferencesForResourceTypeMethod =
+                BackupDRGrpc.getFetchDataSourceReferencesForResourceTypeMethod)
+            == null) {
+          BackupDRGrpc.getFetchDataSourceReferencesForResourceTypeMethod =
+              getFetchDataSourceReferencesForResourceTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1
+                              .FetchDataSourceReferencesForResourceTypeRequest,
+                          com.google.cloud.backupdr.v1
+                              .FetchDataSourceReferencesForResourceTypeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "FetchDataSourceReferencesForResourceType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1
+                                  .FetchDataSourceReferencesForResourceTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1
+                                  .FetchDataSourceReferencesForResourceTypeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "FetchDataSourceReferencesForResourceType"))
+                      .build();
+        }
+      }
+    }
+    return getFetchDataSourceReferencesForResourceTypeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1572,6 +2029,22 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Fetch Backups for a given resource type.
+     * </pre>
+     */
+    default void fetchBackupsForResourceType(
+        com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchBackupsForResourceTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a Backup.
      * </pre>
      */
@@ -1641,6 +2114,20 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    default void updateBackupPlan(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupPlanMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single BackupPlan.
      * </pre>
      */
@@ -1684,6 +2171,36 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Gets details of a single BackupPlanRevision.
+     * </pre>
+     */
+    default void getBackupPlanRevision(
+        com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.BackupPlanRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupPlanRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanRevisions in a given project and location.
+     * </pre>
+     */
+    default void listBackupPlanRevisions(
+        com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupPlanRevisionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a BackupPlanAssociation
      * </pre>
      */
@@ -1692,6 +2209,20 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateBackupPlanAssociationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlanAssociation.
+     * </pre>
+     */
+    default void updateBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupPlanAssociationMethod(), responseObserver);
     }
 
     /**
@@ -1728,6 +2259,22 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * List BackupPlanAssociations for a given resource type.
+     * </pre>
+     */
+    default void fetchBackupPlanAssociationsForResourceType(
+        com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchBackupPlanAssociationsForResourceTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single BackupPlanAssociation.
      * </pre>
      */
@@ -1750,6 +2297,52 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTriggerBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DataSourceReference.
+     * </pre>
+     */
+    default void getDataSourceReference(
+        com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.DataSourceReference>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDataSourceReferenceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataSourceReferences for a given project and location.
+     * </pre>
+     */
+    default void listDataSourceReferences(
+        com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDataSourceReferencesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch DataSourceReferences for a given project, location and resource type.
+     * </pre>
+     */
+    default void fetchDataSourceReferencesForResourceType(
+        com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchDataSourceReferencesForResourceTypeMethod(), responseObserver);
     }
 
     /**
@@ -2035,6 +2628,24 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Fetch Backups for a given resource type.
+     * </pre>
+     */
+    public void fetchBackupsForResourceType(
+        com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchBackupsForResourceTypeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a Backup.
      * </pre>
      */
@@ -2113,6 +2724,22 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    public void updateBackupPlan(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupPlanMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single BackupPlan.
      * </pre>
      */
@@ -2162,6 +2789,40 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Gets details of a single BackupPlanRevision.
+     * </pre>
+     */
+    public void getBackupPlanRevision(
+        com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.BackupPlanRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupPlanRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanRevisions in a given project and location.
+     * </pre>
+     */
+    public void listBackupPlanRevisions(
+        com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupPlanRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a BackupPlanAssociation
      * </pre>
      */
@@ -2170,6 +2831,22 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateBackupPlanAssociationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlanAssociation.
+     * </pre>
+     */
+    public void updateBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupPlanAssociationMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2212,6 +2889,25 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * List BackupPlanAssociations for a given resource type.
+     * </pre>
+     */
+    public void fetchBackupPlanAssociationsForResourceType(
+        com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getFetchBackupPlanAssociationsForResourceTypeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single BackupPlanAssociation.
      * </pre>
      */
@@ -2236,6 +2932,59 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTriggerBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DataSourceReference.
+     * </pre>
+     */
+    public void getDataSourceReference(
+        com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.DataSourceReference>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDataSourceReferenceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataSourceReferences for a given project and location.
+     * </pre>
+     */
+    public void listDataSourceReferences(
+        com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDataSourceReferencesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch DataSourceReferences for a given project, location and resource type.
+     * </pre>
+     */
+    public void fetchDataSourceReferencesForResourceType(
+        com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getFetchDataSourceReferencesForResourceTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2284,8 +3033,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.ListManagementServersResponse listManagementServers(
-        com.google.cloud.backupdr.v1.ListManagementServersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.ListManagementServersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListManagementServersMethod(), getCallOptions(), request);
     }
 
@@ -2297,8 +3047,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.ManagementServer getManagementServer(
-        com.google.cloud.backupdr.v1.GetManagementServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.GetManagementServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetManagementServerMethod(), getCallOptions(), request);
     }
 
@@ -2310,8 +3061,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createManagementServer(
-        com.google.cloud.backupdr.v1.CreateManagementServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.CreateManagementServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateManagementServerMethod(), getCallOptions(), request);
     }
 
@@ -2323,8 +3075,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteManagementServer(
-        com.google.cloud.backupdr.v1.DeleteManagementServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.DeleteManagementServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteManagementServerMethod(), getCallOptions(), request);
     }
 
@@ -2336,8 +3089,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupVault(
-        com.google.cloud.backupdr.v1.CreateBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.CreateBackupVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -2349,8 +3103,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.ListBackupVaultsResponse listBackupVaults(
-        com.google.cloud.backupdr.v1.ListBackupVaultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.ListBackupVaultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupVaultsMethod(), getCallOptions(), request);
     }
 
@@ -2364,8 +3119,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse fetchUsableBackupVaults(
-        com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchUsableBackupVaultsMethod(), getCallOptions(), request);
     }
 
@@ -2377,8 +3133,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.BackupVault getBackupVault(
-        com.google.cloud.backupdr.v1.GetBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.GetBackupVaultRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -2390,8 +3146,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackupVault(
-        com.google.cloud.backupdr.v1.UpdateBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.UpdateBackupVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -2403,8 +3160,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupVault(
-        com.google.cloud.backupdr.v1.DeleteBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.DeleteBackupVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -2416,8 +3174,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.ListDataSourcesResponse listDataSources(
-        com.google.cloud.backupdr.v1.ListDataSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.ListDataSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
     }
 
@@ -2429,8 +3188,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.DataSource getDataSource(
-        com.google.cloud.backupdr.v1.GetDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.GetDataSourceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -2442,8 +3201,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDataSource(
-        com.google.cloud.backupdr.v1.UpdateDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.UpdateDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -2455,9 +3215,24 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.ListBackupsResponse listBackups(
-        com.google.cloud.backupdr.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.ListBackupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Backups for a given resource type.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse
+        fetchBackupsForResourceType(
+            com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchBackupsForResourceTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2468,8 +3243,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.Backup getBackup(
-        com.google.cloud.backupdr.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -2481,8 +3256,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackup(
-        com.google.cloud.backupdr.v1.UpdateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.UpdateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
     }
 
@@ -2494,8 +3269,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.backupdr.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.DeleteBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -2507,8 +3282,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreBackup(
-        com.google.cloud.backupdr.v1.RestoreBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.RestoreBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreBackupMethod(), getCallOptions(), request);
     }
 
@@ -2520,9 +3295,24 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupPlan(
-        com.google.cloud.backupdr.v1.CreateBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.CreateBackupPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPlan(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateBackupPlanMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2533,8 +3323,8 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.BackupPlan getBackupPlan(
-        com.google.cloud.backupdr.v1.GetBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.GetBackupPlanRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupPlanMethod(), getCallOptions(), request);
     }
 
@@ -2546,8 +3336,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.ListBackupPlansResponse listBackupPlans(
-        com.google.cloud.backupdr.v1.ListBackupPlansRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.ListBackupPlansRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupPlansMethod(), getCallOptions(), request);
     }
 
@@ -2559,9 +3350,38 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupPlan(
-        com.google.cloud.backupdr.v1.DeleteBackupPlanRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.DeleteBackupPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single BackupPlanRevision.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.BackupPlanRevision getBackupPlanRevision(
+        com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBackupPlanRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanRevisions in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse listBackupPlanRevisions(
+        com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBackupPlanRevisionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2572,9 +3392,24 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupPlanAssociation(
-        com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupPlanAssociationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlanAssociation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateBackupPlanAssociationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2585,8 +3420,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.cloud.backupdr.v1.BackupPlanAssociation getBackupPlanAssociation(
-        com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupPlanAssociationMethod(), getCallOptions(), request);
     }
 
@@ -2599,9 +3435,28 @@ public final class BackupDRGrpc {
      */
     public com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse
         listBackupPlanAssociations(
-            com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupPlanAssociationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List BackupPlanAssociations for a given resource type.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse
+        fetchBackupPlanAssociationsForResourceType(
+            com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getFetchBackupPlanAssociationsForResourceTypeMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -2612,8 +3467,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupPlanAssociation(
-        com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupPlanAssociationMethod(), getCallOptions(), request);
     }
 
@@ -2625,9 +3481,55 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation triggerBackup(
-        com.google.cloud.backupdr.v1.TriggerBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.TriggerBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTriggerBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DataSourceReference.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.DataSourceReference getDataSourceReference(
+        com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDataSourceReferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataSourceReferences for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse listDataSourceReferences(
+        com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDataSourceReferencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch DataSourceReferences for a given project, location and resource type.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse
+        fetchDataSourceReferencesForResourceType(
+            com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getFetchDataSourceReferencesForResourceTypeMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -2638,8 +3540,9 @@ public final class BackupDRGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation initializeService(
-        com.google.cloud.backupdr.v1.InitializeServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.backupdr.v1.InitializeServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInitializeServiceMethod(), getCallOptions(), request);
     }
   }
@@ -2850,6 +3753,20 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Fetch Backups for a given resource type.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse
+        fetchBackupsForResourceType(
+            com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchBackupsForResourceTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a Backup.
      * </pre>
      */
@@ -2915,6 +3832,19 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPlan(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single BackupPlan.
      * </pre>
      */
@@ -2954,6 +3884,32 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Gets details of a single BackupPlanRevision.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.BackupPlanRevision getBackupPlanRevision(
+        com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanRevisions in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse listBackupPlanRevisions(
+        com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlanRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a BackupPlanAssociation
      * </pre>
      */
@@ -2961,6 +3917,19 @@ public final class BackupDRGrpc {
         com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBackupPlanAssociationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlanAssociation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPlanAssociationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2994,6 +3963,24 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * List BackupPlanAssociations for a given resource type.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse
+        fetchBackupPlanAssociationsForResourceType(
+            com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getFetchBackupPlanAssociationsForResourceTypeMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single BackupPlanAssociation.
      * </pre>
      */
@@ -3014,6 +4001,49 @@ public final class BackupDRGrpc {
         com.google.cloud.backupdr.v1.TriggerBackupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTriggerBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DataSourceReference.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.DataSourceReference getDataSourceReference(
+        com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataSourceReferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataSourceReferences for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse listDataSourceReferences(
+        com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataSourceReferencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch DataSourceReferences for a given project, location and resource type.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse
+        fetchDataSourceReferencesForResourceType(
+            com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getFetchDataSourceReferencesForResourceTypeMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -3245,6 +4275,21 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Fetch Backups for a given resource type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>
+        fetchBackupsForResourceType(
+            com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchBackupsForResourceTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a Backup.
      * </pre>
      */
@@ -3310,6 +4355,19 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackupPlan(com.google.cloud.backupdr.v1.UpdateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single BackupPlan.
      * </pre>
      */
@@ -3351,6 +4409,35 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Gets details of a single BackupPlanRevision.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.BackupPlanRevision>
+        getBackupPlanRevision(com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupPlanRevisionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanRevisions in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>
+        listBackupPlanRevisions(
+            com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupPlanRevisionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a BackupPlanAssociation
      * </pre>
      */
@@ -3359,6 +4446,20 @@ public final class BackupDRGrpc {
             com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateBackupPlanAssociationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlanAssociation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackupPlanAssociation(
+            com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupPlanAssociationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3395,6 +4496,24 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * List BackupPlanAssociations for a given resource type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse>
+        fetchBackupPlanAssociationsForResourceType(
+            com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getFetchBackupPlanAssociationsForResourceTypeMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single BackupPlanAssociation.
      * </pre>
      */
@@ -3416,6 +4535,52 @@ public final class BackupDRGrpc {
         triggerBackup(com.google.cloud.backupdr.v1.TriggerBackupRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTriggerBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DataSourceReference.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.DataSourceReference>
+        getDataSourceReference(com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDataSourceReferenceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataSourceReferences for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>
+        listDataSourceReferences(
+            com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDataSourceReferencesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch DataSourceReferences for a given project, location and resource type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>
+        fetchDataSourceReferencesForResourceType(
+            com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getFetchDataSourceReferencesForResourceTypeMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -3446,20 +4611,29 @@ public final class BackupDRGrpc {
   private static final int METHODID_GET_DATA_SOURCE = 11;
   private static final int METHODID_UPDATE_DATA_SOURCE = 12;
   private static final int METHODID_LIST_BACKUPS = 13;
-  private static final int METHODID_GET_BACKUP = 14;
-  private static final int METHODID_UPDATE_BACKUP = 15;
-  private static final int METHODID_DELETE_BACKUP = 16;
-  private static final int METHODID_RESTORE_BACKUP = 17;
-  private static final int METHODID_CREATE_BACKUP_PLAN = 18;
-  private static final int METHODID_GET_BACKUP_PLAN = 19;
-  private static final int METHODID_LIST_BACKUP_PLANS = 20;
-  private static final int METHODID_DELETE_BACKUP_PLAN = 21;
-  private static final int METHODID_CREATE_BACKUP_PLAN_ASSOCIATION = 22;
-  private static final int METHODID_GET_BACKUP_PLAN_ASSOCIATION = 23;
-  private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 24;
-  private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 25;
-  private static final int METHODID_TRIGGER_BACKUP = 26;
-  private static final int METHODID_INITIALIZE_SERVICE = 27;
+  private static final int METHODID_FETCH_BACKUPS_FOR_RESOURCE_TYPE = 14;
+  private static final int METHODID_GET_BACKUP = 15;
+  private static final int METHODID_UPDATE_BACKUP = 16;
+  private static final int METHODID_DELETE_BACKUP = 17;
+  private static final int METHODID_RESTORE_BACKUP = 18;
+  private static final int METHODID_CREATE_BACKUP_PLAN = 19;
+  private static final int METHODID_UPDATE_BACKUP_PLAN = 20;
+  private static final int METHODID_GET_BACKUP_PLAN = 21;
+  private static final int METHODID_LIST_BACKUP_PLANS = 22;
+  private static final int METHODID_DELETE_BACKUP_PLAN = 23;
+  private static final int METHODID_GET_BACKUP_PLAN_REVISION = 24;
+  private static final int METHODID_LIST_BACKUP_PLAN_REVISIONS = 25;
+  private static final int METHODID_CREATE_BACKUP_PLAN_ASSOCIATION = 26;
+  private static final int METHODID_UPDATE_BACKUP_PLAN_ASSOCIATION = 27;
+  private static final int METHODID_GET_BACKUP_PLAN_ASSOCIATION = 28;
+  private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 29;
+  private static final int METHODID_FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE = 30;
+  private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 31;
+  private static final int METHODID_TRIGGER_BACKUP = 32;
+  private static final int METHODID_GET_DATA_SOURCE_REFERENCE = 33;
+  private static final int METHODID_LIST_DATA_SOURCE_REFERENCES = 34;
+  private static final int METHODID_FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE = 35;
+  private static final int METHODID_INITIALIZE_SERVICE = 36;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3558,6 +4732,13 @@ public final class BackupDRGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListBackupsResponse>)
                   responseObserver);
           break;
+        case METHODID_FETCH_BACKUPS_FOR_RESOURCE_TYPE:
+          serviceImpl.fetchBackupsForResourceType(
+              (com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_BACKUP:
           serviceImpl.getBackup(
               (com.google.cloud.backupdr.v1.GetBackupRequest) request,
@@ -3583,6 +4764,11 @@ public final class BackupDRGrpc {
               (com.google.cloud.backupdr.v1.CreateBackupPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_BACKUP_PLAN:
+          serviceImpl.updateBackupPlan(
+              (com.google.cloud.backupdr.v1.UpdateBackupPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_GET_BACKUP_PLAN:
           serviceImpl.getBackupPlan(
               (com.google.cloud.backupdr.v1.GetBackupPlanRequest) request,
@@ -3600,9 +4786,27 @@ public final class BackupDRGrpc {
               (com.google.cloud.backupdr.v1.DeleteBackupPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GET_BACKUP_PLAN_REVISION:
+          serviceImpl.getBackupPlanRevision(
+              (com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.BackupPlanRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_PLAN_REVISIONS:
+          serviceImpl.listBackupPlanRevisions(
+              (com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_BACKUP_PLAN_ASSOCIATION:
           serviceImpl.createBackupPlanAssociation(
               (com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP_PLAN_ASSOCIATION:
+          serviceImpl.updateBackupPlanAssociation(
+              (com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_BACKUP_PLAN_ASSOCIATION:
@@ -3618,6 +4822,15 @@ public final class BackupDRGrpc {
                       com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse>)
                   responseObserver);
           break;
+        case METHODID_FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE:
+          serviceImpl.fetchBackupPlanAssociationsForResourceType(
+              (com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1
+                          .FetchBackupPlanAssociationsForResourceTypeResponse>)
+                  responseObserver);
+          break;
         case METHODID_DELETE_BACKUP_PLAN_ASSOCIATION:
           serviceImpl.deleteBackupPlanAssociation(
               (com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest) request,
@@ -3627,6 +4840,28 @@ public final class BackupDRGrpc {
           serviceImpl.triggerBackup(
               (com.google.cloud.backupdr.v1.TriggerBackupRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DATA_SOURCE_REFERENCE:
+          serviceImpl.getDataSourceReference(
+              (com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.DataSourceReference>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DATA_SOURCE_REFERENCES:
+          serviceImpl.listDataSourceReferences(
+              (com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE:
+          serviceImpl.fetchDataSourceReferencesForResourceType(
+              (com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1
+                          .FetchDataSourceReferencesForResourceTypeResponse>)
+                  responseObserver);
           break;
         case METHODID_INITIALIZE_SERVICE:
           serviceImpl.initializeService(
@@ -3742,6 +4977,13 @@ public final class BackupDRGrpc {
                     com.google.cloud.backupdr.v1.ListBackupsResponse>(
                     service, METHODID_LIST_BACKUPS)))
         .addMethod(
+            getFetchBackupsForResourceTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest,
+                    com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse>(
+                    service, METHODID_FETCH_BACKUPS_FOR_RESOURCE_TYPE)))
+        .addMethod(
             getGetBackupMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3772,6 +5014,12 @@ public final class BackupDRGrpc {
                     com.google.cloud.backupdr.v1.CreateBackupPlanRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP_PLAN)))
         .addMethod(
+            getUpdateBackupPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.UpdateBackupPlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP_PLAN)))
+        .addMethod(
             getGetBackupPlanMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3791,12 +5039,33 @@ public final class BackupDRGrpc {
                     com.google.cloud.backupdr.v1.DeleteBackupPlanRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_PLAN)))
         .addMethod(
+            getGetBackupPlanRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest,
+                    com.google.cloud.backupdr.v1.BackupPlanRevision>(
+                    service, METHODID_GET_BACKUP_PLAN_REVISION)))
+        .addMethod(
+            getListBackupPlanRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest,
+                    com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse>(
+                    service, METHODID_LIST_BACKUP_PLAN_REVISIONS)))
+        .addMethod(
             getCreateBackupPlanAssociationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_CREATE_BACKUP_PLAN_ASSOCIATION)))
+        .addMethod(
+            getUpdateBackupPlanAssociationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_BACKUP_PLAN_ASSOCIATION)))
         .addMethod(
             getGetBackupPlanAssociationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3812,6 +5081,14 @@ public final class BackupDRGrpc {
                     com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse>(
                     service, METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS)))
         .addMethod(
+            getFetchBackupPlanAssociationsForResourceTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest,
+                    com.google.cloud.backupdr.v1
+                        .FetchBackupPlanAssociationsForResourceTypeResponse>(
+                    service, METHODID_FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE)))
+        .addMethod(
             getDeleteBackupPlanAssociationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3824,6 +5101,27 @@ public final class BackupDRGrpc {
                 new MethodHandlers<
                     com.google.cloud.backupdr.v1.TriggerBackupRequest,
                     com.google.longrunning.Operation>(service, METHODID_TRIGGER_BACKUP)))
+        .addMethod(
+            getGetDataSourceReferenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest,
+                    com.google.cloud.backupdr.v1.DataSourceReference>(
+                    service, METHODID_GET_DATA_SOURCE_REFERENCE)))
+        .addMethod(
+            getListDataSourceReferencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest,
+                    com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse>(
+                    service, METHODID_LIST_DATA_SOURCE_REFERENCES)))
+        .addMethod(
+            getFetchDataSourceReferencesForResourceTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest,
+                    com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse>(
+                    service, METHODID_FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE)))
         .addMethod(
             getInitializeServiceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3893,19 +5191,28 @@ public final class BackupDRGrpc {
                       .addMethod(getGetDataSourceMethod())
                       .addMethod(getUpdateDataSourceMethod())
                       .addMethod(getListBackupsMethod())
+                      .addMethod(getFetchBackupsForResourceTypeMethod())
                       .addMethod(getGetBackupMethod())
                       .addMethod(getUpdateBackupMethod())
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getRestoreBackupMethod())
                       .addMethod(getCreateBackupPlanMethod())
+                      .addMethod(getUpdateBackupPlanMethod())
                       .addMethod(getGetBackupPlanMethod())
                       .addMethod(getListBackupPlansMethod())
                       .addMethod(getDeleteBackupPlanMethod())
+                      .addMethod(getGetBackupPlanRevisionMethod())
+                      .addMethod(getListBackupPlanRevisionsMethod())
                       .addMethod(getCreateBackupPlanAssociationMethod())
+                      .addMethod(getUpdateBackupPlanAssociationMethod())
                       .addMethod(getGetBackupPlanAssociationMethod())
                       .addMethod(getListBackupPlanAssociationsMethod())
+                      .addMethod(getFetchBackupPlanAssociationsForResourceTypeMethod())
                       .addMethod(getDeleteBackupPlanAssociationMethod())
                       .addMethod(getTriggerBackupMethod())
+                      .addMethod(getGetDataSourceReferenceMethod())
+                      .addMethod(getListDataSourceReferencesMethod())
+                      .addMethod(getFetchDataSourceReferencesForResourceTypeMethod())
                       .addMethod(getInitializeServiceMethod())
                       .build();
         }

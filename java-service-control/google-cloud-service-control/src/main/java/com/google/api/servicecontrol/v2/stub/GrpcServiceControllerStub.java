@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
           .setFullMethodName("google.api.servicecontrol.v2.ServiceController/Check")
           .setRequestMarshaller(ProtoUtils.marshaller(CheckRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CheckResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ReportRequest, ReportResponse> reportMethodDescriptor =
@@ -56,6 +57,7 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
           .setFullMethodName("google.api.servicecontrol.v2.ServiceController/Report")
           .setRequestMarshaller(ProtoUtils.marshaller(ReportRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ReportResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CheckRequest, CheckResponse> checkCallable;

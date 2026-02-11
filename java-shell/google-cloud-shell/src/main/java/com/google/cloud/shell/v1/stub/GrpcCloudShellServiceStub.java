@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartEnvironmentRequest, Operation>
@@ -72,6 +73,7 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AuthorizeEnvironmentRequest, Operation>
@@ -82,6 +84,7 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AuthorizeEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddPublicKeyRequest, Operation>
@@ -91,6 +94,7 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
               .setFullMethodName("google.cloud.shell.v1.CloudShellService/AddPublicKey")
               .setRequestMarshaller(ProtoUtils.marshaller(AddPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemovePublicKeyRequest, Operation>
@@ -101,6 +105,7 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemovePublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable;

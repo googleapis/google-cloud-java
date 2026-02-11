@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,21 @@
 package com.google.ads.marketingplatform.admin.v1alpha.stub;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink;
 import com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.Organization;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse;
 import com.google.api.core.BetaApi;
@@ -92,6 +99,86 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
               .setResponseParser(
                   ProtoMessageResponseParser.<Organization>newBuilder()
                       .setDefaultInstance(Organization.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsMethodDescriptor =
+          ApiMethodDescriptor.<ListOrganizationsRequest, ListOrganizationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ListOrganizations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListOrganizationsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/organizations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListOrganizationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListOrganizationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListOrganizationsResponse>newBuilder()
+                      .setDefaultInstance(ListOrganizationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsMethodDescriptor =
+          ApiMethodDescriptor
+              .<FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/FindSalesPartnerManagedClients")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FindSalesPartnerManagedClientsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{organization=organizations/*}:findSalesPartnerManagedClients",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FindSalesPartnerManagedClientsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "organization", request.getOrganization());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FindSalesPartnerManagedClientsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearOrganization().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FindSalesPartnerManagedClientsResponse>newBuilder()
+                      .setDefaultInstance(
+                          FindSalesPartnerManagedClientsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -255,7 +342,54 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageMethodDescriptor =
+          ApiMethodDescriptor.<ReportPropertyUsageRequest, ReportPropertyUsageResponse>newBuilder()
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ReportPropertyUsage")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReportPropertyUsageRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{organization=organizations/*}:reportPropertyUsage",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportPropertyUsageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "organization", request.getOrganization());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportPropertyUsageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearOrganization().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReportPropertyUsageResponse>newBuilder()
+                      .setDefaultInstance(ReportPropertyUsageResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable;
+  private final UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsCallable;
+  private final UnaryCallable<ListOrganizationsRequest, ListOrganizationsPagedResponse>
+      listOrganizationsPagedCallable;
+  private final UnaryCallable<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsCallable;
   private final UnaryCallable<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse>
       listAnalyticsAccountLinksCallable;
   private final UnaryCallable<
@@ -267,6 +401,8 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
       deleteAnalyticsAccountLinkCallable;
   private final UnaryCallable<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelCallable;
+  private final UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -324,6 +460,27 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListOrganizationsRequest, ListOrganizationsResponse>
+        listOrganizationsTransportSettings =
+            HttpJsonCallSettings.<ListOrganizationsRequest, ListOrganizationsResponse>newBuilder()
+                .setMethodDescriptor(listOrganizationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+        findSalesPartnerManagedClientsTransportSettings =
+            HttpJsonCallSettings
+                .<FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+                    newBuilder()
+                .setMethodDescriptor(findSalesPartnerManagedClientsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("organization", String.valueOf(request.getOrganization()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse>
         listAnalyticsAccountLinksTransportSettings =
             HttpJsonCallSettings
@@ -377,10 +534,38 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+        reportPropertyUsageTransportSettings =
+            HttpJsonCallSettings
+                .<ReportPropertyUsageRequest, ReportPropertyUsageResponse>newBuilder()
+                .setMethodDescriptor(reportPropertyUsageMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("organization", String.valueOf(request.getOrganization()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getOrganizationCallable =
         callableFactory.createUnaryCallable(
             getOrganizationTransportSettings, settings.getOrganizationSettings(), clientContext);
+    this.listOrganizationsCallable =
+        callableFactory.createUnaryCallable(
+            listOrganizationsTransportSettings,
+            settings.listOrganizationsSettings(),
+            clientContext);
+    this.listOrganizationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOrganizationsTransportSettings,
+            settings.listOrganizationsSettings(),
+            clientContext);
+    this.findSalesPartnerManagedClientsCallable =
+        callableFactory.createUnaryCallable(
+            findSalesPartnerManagedClientsTransportSettings,
+            settings.findSalesPartnerManagedClientsSettings(),
+            clientContext);
     this.listAnalyticsAccountLinksCallable =
         callableFactory.createUnaryCallable(
             listAnalyticsAccountLinksTransportSettings,
@@ -406,6 +591,11 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
             setPropertyServiceLevelTransportSettings,
             settings.setPropertyServiceLevelSettings(),
             clientContext);
+    this.reportPropertyUsageCallable =
+        callableFactory.createUnaryCallable(
+            reportPropertyUsageTransportSettings,
+            settings.reportPropertyUsageSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -415,16 +605,38 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getOrganizationMethodDescriptor);
+    methodDescriptors.add(listOrganizationsMethodDescriptor);
+    methodDescriptors.add(findSalesPartnerManagedClientsMethodDescriptor);
     methodDescriptors.add(listAnalyticsAccountLinksMethodDescriptor);
     methodDescriptors.add(createAnalyticsAccountLinkMethodDescriptor);
     methodDescriptors.add(deleteAnalyticsAccountLinkMethodDescriptor);
     methodDescriptors.add(setPropertyServiceLevelMethodDescriptor);
+    methodDescriptors.add(reportPropertyUsageMethodDescriptor);
     return methodDescriptors;
   }
 
   @Override
   public UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable() {
     return getOrganizationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsCallable() {
+    return listOrganizationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOrganizationsRequest, ListOrganizationsPagedResponse>
+      listOrganizationsPagedCallable() {
+    return listOrganizationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsCallable() {
+    return findSalesPartnerManagedClientsCallable;
   }
 
   @Override
@@ -455,6 +667,12 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
   public UnaryCallable<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelCallable() {
     return setPropertyServiceLevelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageCallable() {
+    return reportPropertyUsageCallable;
   }
 
   @Override

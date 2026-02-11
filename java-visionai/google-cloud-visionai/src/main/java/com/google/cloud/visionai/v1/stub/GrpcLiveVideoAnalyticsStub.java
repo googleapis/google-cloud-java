@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListOperatorsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListProcessesPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListPublicOperatorsPagedResponse;
@@ -29,6 +30,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Analysis;
 import com.google.cloud.visionai.v1.BatchRunProcessRequest;
 import com.google.cloud.visionai.v1.BatchRunProcessResponse;
@@ -83,6 +88,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   ProtoUtils.marshaller(ListPublicOperatorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPublicOperatorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResolveOperatorInfoRequest, ResolveOperatorInfoResponse>
@@ -94,6 +100,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   ProtoUtils.marshaller(ResolveOperatorInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResolveOperatorInfoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOperatorsRequest, ListOperatorsResponse>
@@ -105,6 +112,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   ProtoUtils.marshaller(ListOperatorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOperatorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOperatorRequest, Operator> getOperatorMethodDescriptor =
@@ -113,6 +121,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
           .setFullMethodName("google.cloud.visionai.v1.LiveVideoAnalytics/GetOperator")
           .setRequestMarshaller(ProtoUtils.marshaller(GetOperatorRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operator.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateOperatorRequest, Operation>
@@ -123,6 +132,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOperatorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOperatorRequest, Operation>
@@ -133,6 +143,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateOperatorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOperatorRequest, Operation>
@@ -143,6 +154,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOperatorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAnalysesRequest, ListAnalysesResponse>
@@ -153,6 +165,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListAnalysesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnalysesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnalysisRequest, Analysis> getAnalysisMethodDescriptor =
@@ -161,6 +174,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
           .setFullMethodName("google.cloud.visionai.v1.LiveVideoAnalytics/GetAnalysis")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAnalysisRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Analysis.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAnalysisRequest, Operation>
@@ -171,6 +185,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnalysisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAnalysisRequest, Operation>
@@ -181,6 +196,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAnalysisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnalysisRequest, Operation>
@@ -191,6 +207,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnalysisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessesRequest, ListProcessesResponse>
@@ -202,6 +219,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   ProtoUtils.marshaller(ListProcessesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessRequest, Process> getProcessMethodDescriptor =
@@ -210,6 +228,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
           .setFullMethodName("google.cloud.visionai.v1.LiveVideoAnalytics/GetProcess")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProcessRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateProcessRequest, Operation>
@@ -220,6 +239,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProcessRequest, Operation>
@@ -230,6 +250,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessRequest, Operation>
@@ -240,6 +261,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchRunProcessRequest, Operation>
@@ -250,7 +272,29 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchRunProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private final UnaryCallable<ListPublicOperatorsRequest, ListPublicOperatorsResponse>
       listPublicOperatorsCallable;
@@ -301,6 +345,10 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
   private final OperationCallable<
           BatchRunProcessRequest, BatchRunProcessResponse, OperationMetadata>
       batchRunProcessOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -528,6 +576,26 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listPublicOperatorsCallable =
         callableFactory.createUnaryCallable(
@@ -661,6 +729,15 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
             settings.batchRunProcessOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -843,6 +920,22 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
   public OperationCallable<BatchRunProcessRequest, BatchRunProcessResponse, OperationMetadata>
       batchRunProcessOperationCallable() {
     return batchRunProcessOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

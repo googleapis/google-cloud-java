@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2683,6 +2683,322 @@ public class CatalogServiceClientHttpJsonTest {
     try {
       String name = "projects/project-9573/locations/location-9573/metadataJobs/metadataJob-9573";
       client.cancelMetadataJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+    EntryLink entryLink = EntryLink.newBuilder().build();
+    String entryLinkId = "entryLinkId-1349584441";
+
+    EntryLink actualResponse = client.createEntryLink(parent, entryLink, entryLinkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEntryLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      String entryLinkId = "entryLinkId-1349584441";
+      client.createEntryLink(parent, entryLink, entryLinkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3515/locations/location-3515/entryGroups/entryGroup-3515";
+    EntryLink entryLink = EntryLink.newBuilder().build();
+    String entryLinkId = "entryLinkId-1349584441";
+
+    EntryLink actualResponse = client.createEntryLink(parent, entryLink, entryLinkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEntryLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3515/locations/location-3515/entryGroups/entryGroup-3515";
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      String entryLinkId = "entryLinkId-1349584441";
+      client.createEntryLink(parent, entryLink, entryLinkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EntryLinkName name =
+        EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+
+    EntryLink actualResponse = client.deleteEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEntryLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EntryLinkName name =
+          EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+      client.deleteEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9349/locations/location-9349/entryGroups/entryGroup-9349/entryLinks/entryLink-9349";
+
+    EntryLink actualResponse = client.deleteEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEntryLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9349/locations/location-9349/entryGroups/entryGroup-9349/entryLinks/entryLink-9349";
+      client.deleteEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EntryLinkName name =
+        EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+
+    EntryLink actualResponse = client.getEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEntryLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EntryLinkName name =
+          EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+      client.getEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9349/locations/location-9349/entryGroups/entryGroup-9349/entryLinks/entryLink-9349";
+
+    EntryLink actualResponse = client.getEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEntryLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9349/locations/location-9349/entryGroups/entryGroup-9349/entryLinks/entryLink-9349";
+      client.getEntryLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

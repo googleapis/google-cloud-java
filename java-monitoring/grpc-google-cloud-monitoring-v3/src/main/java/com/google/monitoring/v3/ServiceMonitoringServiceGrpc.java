@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * taxonomy of categorized Health Metrics.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/service_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceMonitoringServiceGrpc {
 
@@ -959,8 +956,8 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Service createService(
-        com.google.monitoring.v3.CreateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
@@ -972,8 +969,8 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Service getService(
-        com.google.monitoring.v3.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -985,8 +982,8 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListServicesResponse listServices(
-        com.google.monitoring.v3.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -998,8 +995,8 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Service updateService(
-        com.google.monitoring.v3.UpdateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
@@ -1011,8 +1008,8 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteService(
-        com.google.monitoring.v3.DeleteServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -1024,8 +1021,9 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ServiceLevelObjective createServiceLevelObjective(
-        com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
 
@@ -1037,8 +1035,9 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective(
-        com.google.monitoring.v3.GetServiceLevelObjectiveRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
 
@@ -1050,8 +1049,9 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListServiceLevelObjectivesResponse listServiceLevelObjectives(
-        com.google.monitoring.v3.ListServiceLevelObjectivesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListServiceLevelObjectivesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceLevelObjectivesMethod(), getCallOptions(), request);
     }
 
@@ -1063,8 +1063,9 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ServiceLevelObjective updateServiceLevelObjective(
-        com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
 
@@ -1076,8 +1077,9 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteServiceLevelObjective(
-        com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
   }

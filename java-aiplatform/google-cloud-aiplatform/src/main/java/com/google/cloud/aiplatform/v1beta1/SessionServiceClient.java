@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1165,6 +1165,8 @@ public class SessionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (SessionEvent element : sessionServiceClient.listEvents(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1199,6 +1201,8 @@ public class SessionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<SessionEvent> future =
    *       sessionServiceClient.listEventsPagedCallable().futureCall(request);
@@ -1233,6 +1237,8 @@ public class SessionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListEventsResponse response = sessionServiceClient.listEventsCallable().call(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,17 @@ package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListClustersPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.visionai.v1.StreamsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListSeriesPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListStreamsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Channel;
 import com.google.cloud.visionai.v1.Cluster;
 import com.google.cloud.visionai.v1.CreateClusterRequest;
@@ -260,6 +265,19 @@ public abstract class StreamsServiceStub implements BackgroundResource {
 
   public UnaryCallable<MaterializeChannelRequest, Operation> materializeChannelCallable() {
     throw new UnsupportedOperationException("Not implemented: materializeChannelCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

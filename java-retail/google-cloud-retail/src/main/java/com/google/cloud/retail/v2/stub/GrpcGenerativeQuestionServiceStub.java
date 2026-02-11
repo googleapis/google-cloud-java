@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       UpdateGenerativeQuestionsFeatureConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerativeQuestionsFeatureConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -77,6 +78,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       GetGenerativeQuestionsFeatureConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerativeQuestionsFeatureConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -92,6 +94,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                   ProtoUtils.marshaller(ListGenerativeQuestionConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGenerativeQuestionConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -106,6 +109,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                   ProtoUtils.marshaller(UpdateGenerativeQuestionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerativeQuestionConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -124,6 +128,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchUpdateGenerativeQuestionConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

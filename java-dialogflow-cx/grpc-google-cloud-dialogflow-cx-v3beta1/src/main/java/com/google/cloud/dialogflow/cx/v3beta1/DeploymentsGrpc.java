@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Deployments][google.cloud.dialogflow.cx.v3beta1.Deployment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/deployment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeploymentsGrpc {
 
@@ -328,8 +325,9 @@ public final class DeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsResponse listDeployments(
-        com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -342,8 +340,9 @@ public final class DeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Deployment getDeployment(
-        com.google.cloud.dialogflow.cx.v3beta1.GetDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
     }
   }

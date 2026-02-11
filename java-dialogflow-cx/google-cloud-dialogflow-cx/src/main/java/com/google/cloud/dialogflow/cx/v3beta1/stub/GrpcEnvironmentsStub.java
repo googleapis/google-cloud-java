@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,6 +79,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListEnvironmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEnvironmentRequest, Environment>
@@ -89,6 +90,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEnvironmentRequest, Operation>
@@ -100,6 +102,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEnvironmentRequest, Operation>
@@ -111,6 +114,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEnvironmentRequest, Empty>
@@ -122,6 +126,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -136,6 +141,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(LookupEnvironmentHistoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LookupEnvironmentHistoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunContinuousTestRequest, Operation>
@@ -147,6 +153,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunContinuousTestRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -161,6 +168,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListContinuousTestResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContinuousTestResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployFlowRequest, Operation> deployFlowMethodDescriptor =
@@ -169,6 +177,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Environments/DeployFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -180,6 +189,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -188,6 +198,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>

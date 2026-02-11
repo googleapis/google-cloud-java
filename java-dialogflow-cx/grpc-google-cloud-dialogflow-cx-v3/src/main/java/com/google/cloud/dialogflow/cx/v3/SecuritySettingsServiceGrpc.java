@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing security settings for Dialogflow.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/security_settings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecuritySettingsServiceGrpc {
 
@@ -592,8 +589,9 @@ public final class SecuritySettingsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings createSecuritySettings(
-        com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -607,8 +605,9 @@ public final class SecuritySettingsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings(
-        com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -621,8 +620,9 @@ public final class SecuritySettingsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings updateSecuritySettings(
-        com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -634,8 +634,9 @@ public final class SecuritySettingsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse listSecuritySettings(
-        com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -648,8 +649,9 @@ public final class SecuritySettingsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSecuritySettings(
-        com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSecuritySettingsMethod(), getCallOptions(), request);
     }
   }

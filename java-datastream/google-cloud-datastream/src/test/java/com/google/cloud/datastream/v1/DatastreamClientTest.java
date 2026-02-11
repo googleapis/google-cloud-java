@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -588,6 +588,8 @@ public class DatastreamClientTest {
     Assert.assertEquals(request.getMysqlRdbms(), actualRequest.getMysqlRdbms());
     Assert.assertEquals(request.getPostgresqlRdbms(), actualRequest.getPostgresqlRdbms());
     Assert.assertEquals(request.getSqlServerRdbms(), actualRequest.getSqlServerRdbms());
+    Assert.assertEquals(request.getSalesforceOrg(), actualRequest.getSalesforceOrg());
+    Assert.assertEquals(request.getMongodbCluster(), actualRequest.getMongodbCluster());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1621,6 +1623,7 @@ public class DatastreamClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1685,6 +1688,7 @@ public class DatastreamClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1749,6 +1753,7 @@ public class DatastreamClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -1800,6 +1805,7 @@ public class DatastreamClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
 

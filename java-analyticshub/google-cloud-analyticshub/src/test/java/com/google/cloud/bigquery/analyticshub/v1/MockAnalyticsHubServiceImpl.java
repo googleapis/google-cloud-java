@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -528,6 +528,155 @@ public class MockAnalyticsHubServiceImpl extends AnalyticsHubServiceImplBase {
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createQueryTemplate(
+      CreateQueryTemplateRequest request, StreamObserver<QueryTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((QueryTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQueryTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryTemplate.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getQueryTemplate(
+      GetQueryTemplateRequest request, StreamObserver<QueryTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((QueryTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQueryTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryTemplate.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listQueryTemplates(
+      ListQueryTemplatesRequest request,
+      StreamObserver<ListQueryTemplatesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListQueryTemplatesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListQueryTemplatesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListQueryTemplates, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListQueryTemplatesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateQueryTemplate(
+      UpdateQueryTemplateRequest request, StreamObserver<QueryTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((QueryTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateQueryTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryTemplate.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteQueryTemplate(
+      DeleteQueryTemplateRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteQueryTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void submitQueryTemplate(
+      SubmitQueryTemplateRequest request, StreamObserver<QueryTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((QueryTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitQueryTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryTemplate.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void approveQueryTemplate(
+      ApproveQueryTemplateRequest request, StreamObserver<QueryTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((QueryTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ApproveQueryTemplate, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryTemplate.class.getName(),
                   Exception.class.getName())));
     }
   }

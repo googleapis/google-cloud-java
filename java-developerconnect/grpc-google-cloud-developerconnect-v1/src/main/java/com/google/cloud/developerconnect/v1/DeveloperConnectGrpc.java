@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/developerconnect/v1/developer_connect.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeveloperConnectGrpc {
 
@@ -716,6 +713,481 @@ public final class DeveloperConnectGrpc {
     return getFetchGitRefsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest,
+          com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+      getListAccountConnectorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAccountConnectors",
+      requestType = com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest,
+          com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+      getListAccountConnectorsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest,
+            com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+        getListAccountConnectorsMethod;
+    if ((getListAccountConnectorsMethod = DeveloperConnectGrpc.getListAccountConnectorsMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getListAccountConnectorsMethod = DeveloperConnectGrpc.getListAccountConnectorsMethod)
+            == null) {
+          DeveloperConnectGrpc.getListAccountConnectorsMethod =
+              getListAccountConnectorsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest,
+                          com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAccountConnectors"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("ListAccountConnectors"))
+                      .build();
+        }
+      }
+    }
+    return getListAccountConnectorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.GetAccountConnectorRequest,
+          com.google.cloud.developerconnect.v1.AccountConnector>
+      getGetAccountConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAccountConnector",
+      requestType = com.google.cloud.developerconnect.v1.GetAccountConnectorRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.AccountConnector.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.GetAccountConnectorRequest,
+          com.google.cloud.developerconnect.v1.AccountConnector>
+      getGetAccountConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.GetAccountConnectorRequest,
+            com.google.cloud.developerconnect.v1.AccountConnector>
+        getGetAccountConnectorMethod;
+    if ((getGetAccountConnectorMethod = DeveloperConnectGrpc.getGetAccountConnectorMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getGetAccountConnectorMethod = DeveloperConnectGrpc.getGetAccountConnectorMethod)
+            == null) {
+          DeveloperConnectGrpc.getGetAccountConnectorMethod =
+              getGetAccountConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.GetAccountConnectorRequest,
+                          com.google.cloud.developerconnect.v1.AccountConnector>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAccountConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.GetAccountConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.AccountConnector
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("GetAccountConnector"))
+                      .build();
+        }
+      }
+    }
+    return getGetAccountConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest,
+          com.google.longrunning.Operation>
+      getCreateAccountConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAccountConnector",
+      requestType = com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest,
+          com.google.longrunning.Operation>
+      getCreateAccountConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest,
+            com.google.longrunning.Operation>
+        getCreateAccountConnectorMethod;
+    if ((getCreateAccountConnectorMethod = DeveloperConnectGrpc.getCreateAccountConnectorMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getCreateAccountConnectorMethod = DeveloperConnectGrpc.getCreateAccountConnectorMethod)
+            == null) {
+          DeveloperConnectGrpc.getCreateAccountConnectorMethod =
+              getCreateAccountConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAccountConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("CreateAccountConnector"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAccountConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest,
+          com.google.longrunning.Operation>
+      getUpdateAccountConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAccountConnector",
+      requestType = com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest,
+          com.google.longrunning.Operation>
+      getUpdateAccountConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest,
+            com.google.longrunning.Operation>
+        getUpdateAccountConnectorMethod;
+    if ((getUpdateAccountConnectorMethod = DeveloperConnectGrpc.getUpdateAccountConnectorMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getUpdateAccountConnectorMethod = DeveloperConnectGrpc.getUpdateAccountConnectorMethod)
+            == null) {
+          DeveloperConnectGrpc.getUpdateAccountConnectorMethod =
+              getUpdateAccountConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAccountConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("UpdateAccountConnector"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAccountConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest,
+          com.google.longrunning.Operation>
+      getDeleteAccountConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAccountConnector",
+      requestType = com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest,
+          com.google.longrunning.Operation>
+      getDeleteAccountConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest,
+            com.google.longrunning.Operation>
+        getDeleteAccountConnectorMethod;
+    if ((getDeleteAccountConnectorMethod = DeveloperConnectGrpc.getDeleteAccountConnectorMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getDeleteAccountConnectorMethod = DeveloperConnectGrpc.getDeleteAccountConnectorMethod)
+            == null) {
+          DeveloperConnectGrpc.getDeleteAccountConnectorMethod =
+              getDeleteAccountConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAccountConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("DeleteAccountConnector"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAccountConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchAccessTokenRequest,
+          com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+      getFetchAccessTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchAccessToken",
+      requestType = com.google.cloud.developerconnect.v1.FetchAccessTokenRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.FetchAccessTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchAccessTokenRequest,
+          com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+      getFetchAccessTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchAccessTokenRequest,
+            com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+        getFetchAccessTokenMethod;
+    if ((getFetchAccessTokenMethod = DeveloperConnectGrpc.getFetchAccessTokenMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchAccessTokenMethod = DeveloperConnectGrpc.getFetchAccessTokenMethod) == null) {
+          DeveloperConnectGrpc.getFetchAccessTokenMethod =
+              getFetchAccessTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.FetchAccessTokenRequest,
+                          com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchAccessToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.FetchAccessTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.FetchAccessTokenResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("FetchAccessToken"))
+                      .build();
+        }
+      }
+    }
+    return getFetchAccessTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ListUsersRequest,
+          com.google.cloud.developerconnect.v1.ListUsersResponse>
+      getListUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUsers",
+      requestType = com.google.cloud.developerconnect.v1.ListUsersRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.ListUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ListUsersRequest,
+          com.google.cloud.developerconnect.v1.ListUsersResponse>
+      getListUsersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.ListUsersRequest,
+            com.google.cloud.developerconnect.v1.ListUsersResponse>
+        getListUsersMethod;
+    if ((getListUsersMethod = DeveloperConnectGrpc.getListUsersMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getListUsersMethod = DeveloperConnectGrpc.getListUsersMethod) == null) {
+          DeveloperConnectGrpc.getListUsersMethod =
+              getListUsersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.ListUsersRequest,
+                          com.google.cloud.developerconnect.v1.ListUsersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUsers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.ListUsersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.ListUsersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("ListUsers"))
+                      .build();
+        }
+      }
+    }
+    return getListUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DeleteUserRequest, com.google.longrunning.Operation>
+      getDeleteUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUser",
+      requestType = com.google.cloud.developerconnect.v1.DeleteUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DeleteUserRequest, com.google.longrunning.Operation>
+      getDeleteUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.DeleteUserRequest,
+            com.google.longrunning.Operation>
+        getDeleteUserMethod;
+    if ((getDeleteUserMethod = DeveloperConnectGrpc.getDeleteUserMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getDeleteUserMethod = DeveloperConnectGrpc.getDeleteUserMethod) == null) {
+          DeveloperConnectGrpc.getDeleteUserMethod =
+              getDeleteUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.DeleteUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.DeleteUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("DeleteUser"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchSelfRequest,
+          com.google.cloud.developerconnect.v1.User>
+      getFetchSelfMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchSelf",
+      requestType = com.google.cloud.developerconnect.v1.FetchSelfRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchSelfRequest,
+          com.google.cloud.developerconnect.v1.User>
+      getFetchSelfMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchSelfRequest,
+            com.google.cloud.developerconnect.v1.User>
+        getFetchSelfMethod;
+    if ((getFetchSelfMethod = DeveloperConnectGrpc.getFetchSelfMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchSelfMethod = DeveloperConnectGrpc.getFetchSelfMethod) == null) {
+          DeveloperConnectGrpc.getFetchSelfMethod =
+              getFetchSelfMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.FetchSelfRequest,
+                          com.google.cloud.developerconnect.v1.User>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchSelf"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.FetchSelfRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.User.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("FetchSelf"))
+                      .build();
+        }
+      }
+    }
+    return getFetchSelfMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DeleteSelfRequest, com.google.longrunning.Operation>
+      getDeleteSelfMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSelf",
+      requestType = com.google.cloud.developerconnect.v1.DeleteSelfRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DeleteSelfRequest, com.google.longrunning.Operation>
+      getDeleteSelfMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.DeleteSelfRequest,
+            com.google.longrunning.Operation>
+        getDeleteSelfMethod;
+    if ((getDeleteSelfMethod = DeveloperConnectGrpc.getDeleteSelfMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getDeleteSelfMethod = DeveloperConnectGrpc.getDeleteSelfMethod) == null) {
+          DeveloperConnectGrpc.getDeleteSelfMethod =
+              getDeleteSelfMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.DeleteSelfRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSelf"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.DeleteSelfRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("DeleteSelf"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSelfMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DeveloperConnectStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DeveloperConnectStub> factory =
@@ -994,6 +1466,147 @@ public final class DeveloperConnectGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchGitRefsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AccountConnectors in a given project and location.
+     * </pre>
+     */
+    default void listAccountConnectors(
+        com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAccountConnectorsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AccountConnector.
+     * </pre>
+     */
+    default void getAccountConnector(
+        com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.AccountConnector>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAccountConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AccountConnector in a given project and location.
+     * </pre>
+     */
+    default void createAccountConnector(
+        com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAccountConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AccountConnector.
+     * </pre>
+     */
+    default void updateAccountConnector(
+        com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAccountConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AccountConnector.
+     * </pre>
+     */
+    default void deleteAccountConnector(
+        com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAccountConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches OAuth access token based on end user credentials.
+     * </pre>
+     */
+    default void fetchAccessToken(
+        com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchAccessTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project, location, and account_connector.
+     * </pre>
+     */
+    default void listUsers(
+        com.google.cloud.developerconnect.v1.ListUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.ListUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUsersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    default void deleteUser(
+        com.google.cloud.developerconnect.v1.DeleteUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the User based on the user credentials.
+     * </pre>
+     */
+    default void fetchSelf(
+        com.google.cloud.developerconnect.v1.FetchSelfRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.User> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFetchSelfMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the User based on the user credentials.
+     * </pre>
+     */
+    default void deleteSelf(
+        com.google.cloud.developerconnect.v1.DeleteSelfRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSelfMethod(), responseObserver);
     }
   }
 
@@ -1275,6 +1888,163 @@ public final class DeveloperConnectGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AccountConnectors in a given project and location.
+     * </pre>
+     */
+    public void listAccountConnectors(
+        com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAccountConnectorsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AccountConnector.
+     * </pre>
+     */
+    public void getAccountConnector(
+        com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.AccountConnector>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAccountConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AccountConnector in a given project and location.
+     * </pre>
+     */
+    public void createAccountConnector(
+        com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAccountConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AccountConnector.
+     * </pre>
+     */
+    public void updateAccountConnector(
+        com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAccountConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AccountConnector.
+     * </pre>
+     */
+    public void deleteAccountConnector(
+        com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAccountConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches OAuth access token based on end user credentials.
+     * </pre>
+     */
+    public void fetchAccessToken(
+        com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchAccessTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project, location, and account_connector.
+     * </pre>
+     */
+    public void listUsers(
+        com.google.cloud.developerconnect.v1.ListUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.ListUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUsersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public void deleteUser(
+        com.google.cloud.developerconnect.v1.DeleteUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the User based on the user credentials.
+     * </pre>
+     */
+    public void fetchSelf(
+        com.google.cloud.developerconnect.v1.FetchSelfRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.User> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchSelfMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the User based on the user credentials.
+     * </pre>
+     */
+    public void deleteSelf(
+        com.google.cloud.developerconnect.v1.DeleteSelfRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSelfMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1305,8 +2075,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.ListConnectionsResponse listConnections(
-        com.google.cloud.developerconnect.v1.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.ListConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -1318,8 +2089,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.Connection getConnection(
-        com.google.cloud.developerconnect.v1.GetConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1331,8 +2103,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnection(
-        com.google.cloud.developerconnect.v1.CreateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1344,8 +2117,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnection(
-        com.google.cloud.developerconnect.v1.UpdateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.UpdateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1357,8 +2131,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnection(
-        com.google.cloud.developerconnect.v1.DeleteConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1374,8 +2149,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGitRepositoryLink(
-        com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGitRepositoryLinkMethod(), getCallOptions(), request);
     }
 
@@ -1387,8 +2163,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGitRepositoryLink(
-        com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGitRepositoryLinkMethod(), getCallOptions(), request);
     }
 
@@ -1401,8 +2178,9 @@ public final class DeveloperConnectGrpc {
      */
     public com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse
         listGitRepositoryLinks(
-            com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGitRepositoryLinksMethod(), getCallOptions(), request);
     }
 
@@ -1414,8 +2192,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.GitRepositoryLink getGitRepositoryLink(
-        com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGitRepositoryLinkMethod(), getCallOptions(), request);
     }
 
@@ -1427,8 +2206,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse fetchReadWriteToken(
-        com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReadWriteTokenMethod(), getCallOptions(), request);
     }
 
@@ -1440,8 +2220,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchReadTokenResponse fetchReadToken(
-        com.google.cloud.developerconnect.v1.FetchReadTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchReadTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReadTokenMethod(), getCallOptions(), request);
     }
 
@@ -1455,8 +2236,9 @@ public final class DeveloperConnectGrpc {
      */
     public com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse
         fetchLinkableGitRepositories(
-            com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchLinkableGitRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -1472,8 +2254,9 @@ public final class DeveloperConnectGrpc {
      */
     public com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse
         fetchGitHubInstallations(
-            com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitHubInstallationsMethod(), getCallOptions(), request);
     }
 
@@ -1485,9 +2268,150 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchGitRefsResponse fetchGitRefs(
-        com.google.cloud.developerconnect.v1.FetchGitRefsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchGitRefsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AccountConnectors in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse listAccountConnectors(
+        com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAccountConnectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AccountConnector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.AccountConnector getAccountConnector(
+        com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AccountConnector in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAccountConnector(
+        com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AccountConnector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAccountConnector(
+        com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AccountConnector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAccountConnector(
+        com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches OAuth access token based on end user credentials.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchAccessTokenResponse fetchAccessToken(
+        com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project, location, and account_connector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.ListUsersResponse listUsers(
+        com.google.cloud.developerconnect.v1.ListUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteUser(
+        com.google.cloud.developerconnect.v1.DeleteUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the User based on the user credentials.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.User fetchSelf(
+        com.google.cloud.developerconnect.v1.FetchSelfRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchSelfMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the User based on the user credentials.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSelf(
+        com.google.cloud.developerconnect.v1.DeleteSelfRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSelfMethod(), getCallOptions(), request);
     }
   }
 
@@ -1701,6 +2625,136 @@ public final class DeveloperConnectGrpc {
         com.google.cloud.developerconnect.v1.FetchGitRefsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AccountConnectors in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse listAccountConnectors(
+        com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccountConnectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AccountConnector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.AccountConnector getAccountConnector(
+        com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AccountConnector in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAccountConnector(
+        com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AccountConnector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAccountConnector(
+        com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AccountConnector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAccountConnector(
+        com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccountConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches OAuth access token based on end user credentials.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchAccessTokenResponse fetchAccessToken(
+        com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project, location, and account_connector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.ListUsersResponse listUsers(
+        com.google.cloud.developerconnect.v1.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteUser(
+        com.google.cloud.developerconnect.v1.DeleteUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the User based on the user credentials.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.User fetchSelf(
+        com.google.cloud.developerconnect.v1.FetchSelfRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchSelfMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the User based on the user credentials.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSelf(
+        com.google.cloud.developerconnect.v1.DeleteSelfRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSelfMethod(), getCallOptions(), request);
     }
   }
 
@@ -1928,6 +2982,146 @@ public final class DeveloperConnectGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchGitRefsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AccountConnectors in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>
+        listAccountConnectors(
+            com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAccountConnectorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AccountConnector.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.AccountConnector>
+        getAccountConnector(
+            com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAccountConnectorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AccountConnector in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAccountConnector(
+            com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAccountConnectorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AccountConnector.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAccountConnector(
+            com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAccountConnectorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AccountConnector.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAccountConnector(
+            com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAccountConnectorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches OAuth access token based on end user credentials.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>
+        fetchAccessToken(com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchAccessTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Users in a given project, location, and account_connector.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.ListUsersResponse>
+        listUsers(com.google.cloud.developerconnect.v1.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single User.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteUser(com.google.cloud.developerconnect.v1.DeleteUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the User based on the user credentials.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.User>
+        fetchSelf(com.google.cloud.developerconnect.v1.FetchSelfRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchSelfMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the User based on the user credentials.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSelf(com.google.cloud.developerconnect.v1.DeleteSelfRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSelfMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONNECTIONS = 0;
@@ -1944,6 +3138,16 @@ public final class DeveloperConnectGrpc {
   private static final int METHODID_FETCH_LINKABLE_GIT_REPOSITORIES = 11;
   private static final int METHODID_FETCH_GIT_HUB_INSTALLATIONS = 12;
   private static final int METHODID_FETCH_GIT_REFS = 13;
+  private static final int METHODID_LIST_ACCOUNT_CONNECTORS = 14;
+  private static final int METHODID_GET_ACCOUNT_CONNECTOR = 15;
+  private static final int METHODID_CREATE_ACCOUNT_CONNECTOR = 16;
+  private static final int METHODID_UPDATE_ACCOUNT_CONNECTOR = 17;
+  private static final int METHODID_DELETE_ACCOUNT_CONNECTOR = 18;
+  private static final int METHODID_FETCH_ACCESS_TOKEN = 19;
+  private static final int METHODID_LIST_USERS = 20;
+  private static final int METHODID_DELETE_USER = 21;
+  private static final int METHODID_FETCH_SELF = 22;
+  private static final int METHODID_DELETE_SELF = 23;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2047,6 +3251,63 @@ public final class DeveloperConnectGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.developerconnect.v1.FetchGitRefsResponse>)
                   responseObserver);
+          break;
+        case METHODID_LIST_ACCOUNT_CONNECTORS:
+          serviceImpl.listAccountConnectors(
+              (com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ACCOUNT_CONNECTOR:
+          serviceImpl.getAccountConnector(
+              (com.google.cloud.developerconnect.v1.GetAccountConnectorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.AccountConnector>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ACCOUNT_CONNECTOR:
+          serviceImpl.createAccountConnector(
+              (com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_ACCOUNT_CONNECTOR:
+          serviceImpl.updateAccountConnector(
+              (com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ACCOUNT_CONNECTOR:
+          serviceImpl.deleteAccountConnector(
+              (com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FETCH_ACCESS_TOKEN:
+          serviceImpl.fetchAccessToken(
+              (com.google.cloud.developerconnect.v1.FetchAccessTokenRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_USERS:
+          serviceImpl.listUsers(
+              (com.google.cloud.developerconnect.v1.ListUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.ListUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_USER:
+          serviceImpl.deleteUser(
+              (com.google.cloud.developerconnect.v1.DeleteUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FETCH_SELF:
+          serviceImpl.fetchSelf(
+              (com.google.cloud.developerconnect.v1.FetchSelfRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.User>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SELF:
+          serviceImpl.deleteSelf(
+              (com.google.cloud.developerconnect.v1.DeleteSelfRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2161,6 +3422,70 @@ public final class DeveloperConnectGrpc {
                     com.google.cloud.developerconnect.v1.FetchGitRefsRequest,
                     com.google.cloud.developerconnect.v1.FetchGitRefsResponse>(
                     service, METHODID_FETCH_GIT_REFS)))
+        .addMethod(
+            getListAccountConnectorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest,
+                    com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse>(
+                    service, METHODID_LIST_ACCOUNT_CONNECTORS)))
+        .addMethod(
+            getGetAccountConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.GetAccountConnectorRequest,
+                    com.google.cloud.developerconnect.v1.AccountConnector>(
+                    service, METHODID_GET_ACCOUNT_CONNECTOR)))
+        .addMethod(
+            getCreateAccountConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ACCOUNT_CONNECTOR)))
+        .addMethod(
+            getUpdateAccountConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ACCOUNT_CONNECTOR)))
+        .addMethod(
+            getDeleteAccountConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ACCOUNT_CONNECTOR)))
+        .addMethod(
+            getFetchAccessTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FetchAccessTokenRequest,
+                    com.google.cloud.developerconnect.v1.FetchAccessTokenResponse>(
+                    service, METHODID_FETCH_ACCESS_TOKEN)))
+        .addMethod(
+            getListUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.ListUsersRequest,
+                    com.google.cloud.developerconnect.v1.ListUsersResponse>(
+                    service, METHODID_LIST_USERS)))
+        .addMethod(
+            getDeleteUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.DeleteUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_USER)))
+        .addMethod(
+            getFetchSelfMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FetchSelfRequest,
+                    com.google.cloud.developerconnect.v1.User>(service, METHODID_FETCH_SELF)))
+        .addMethod(
+            getDeleteSelfMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.DeleteSelfRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SELF)))
         .build();
   }
 
@@ -2226,6 +3551,16 @@ public final class DeveloperConnectGrpc {
                       .addMethod(getFetchLinkableGitRepositoriesMethod())
                       .addMethod(getFetchGitHubInstallationsMethod())
                       .addMethod(getFetchGitRefsMethod())
+                      .addMethod(getListAccountConnectorsMethod())
+                      .addMethod(getGetAccountConnectorMethod())
+                      .addMethod(getCreateAccountConnectorMethod())
+                      .addMethod(getUpdateAccountConnectorMethod())
+                      .addMethod(getDeleteAccountConnectorMethod())
+                      .addMethod(getFetchAccessTokenMethod())
+                      .addMethod(getListUsersMethod())
+                      .addMethod(getDeleteUserMethod())
+                      .addMethod(getFetchSelfMethod())
+                      .addMethod(getDeleteSelfMethod())
                       .build();
         }
       }

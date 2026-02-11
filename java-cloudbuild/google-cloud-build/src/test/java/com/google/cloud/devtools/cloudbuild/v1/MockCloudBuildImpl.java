@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,12 @@ import com.google.cloudbuild.v1.CloudBuildGrpc.CloudBuildImplBase;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -458,6 +460,29 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
                   "Unrecognized response type %s for method ListWorkerPools, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkerPoolsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDefaultServiceAccount(
+      GetDefaultServiceAccountRequest request,
+      StreamObserver<DefaultServiceAccount> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DefaultServiceAccount) {
+      requests.add(request);
+      responseObserver.onNext(((DefaultServiceAccount) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDefaultServiceAccount, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DefaultServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
   }

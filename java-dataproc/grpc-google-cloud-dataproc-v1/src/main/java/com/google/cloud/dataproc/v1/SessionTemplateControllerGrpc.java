@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The SessionTemplateController provides methods to manage session templates.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/session_templates.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionTemplateControllerGrpc {
 
@@ -579,8 +576,9 @@ public final class SessionTemplateControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.SessionTemplate createSessionTemplate(
-        com.google.cloud.dataproc.v1.CreateSessionTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateSessionTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionTemplateMethod(), getCallOptions(), request);
     }
 
@@ -592,8 +590,9 @@ public final class SessionTemplateControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.SessionTemplate updateSessionTemplate(
-        com.google.cloud.dataproc.v1.UpdateSessionTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.UpdateSessionTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSessionTemplateMethod(), getCallOptions(), request);
     }
 
@@ -605,8 +604,9 @@ public final class SessionTemplateControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.SessionTemplate getSessionTemplate(
-        com.google.cloud.dataproc.v1.GetSessionTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetSessionTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSessionTemplateMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +618,9 @@ public final class SessionTemplateControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListSessionTemplatesResponse listSessionTemplates(
-        com.google.cloud.dataproc.v1.ListSessionTemplatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListSessionTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -631,8 +632,9 @@ public final class SessionTemplateControllerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSessionTemplate(
-        com.google.cloud.dataproc.v1.DeleteSessionTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteSessionTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSessionTemplateMethod(), getCallOptions(), request);
     }
   }

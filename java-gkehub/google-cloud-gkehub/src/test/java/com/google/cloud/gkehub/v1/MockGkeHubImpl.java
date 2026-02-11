@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,29 @@ public class MockGkeHubImpl extends GkeHubImplBase {
                   "Unrecognized response type %s for method ListMemberships, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMembershipsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBoundMemberships(
+      ListBoundMembershipsRequest request,
+      StreamObserver<ListBoundMembershipsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBoundMembershipsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBoundMembershipsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBoundMemberships, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBoundMembershipsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -287,6 +310,696 @@ public class MockGkeHubImpl extends GkeHubImplBase {
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConnectManifestResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createFleet(CreateFleetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFleet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFleet(GetFleetRequest request, StreamObserver<Fleet> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Fleet) {
+      requests.add(request);
+      responseObserver.onNext(((Fleet) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFleet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Fleet.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateFleet(UpdateFleetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFleet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFleet(DeleteFleetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFleet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFleets(
+      ListFleetsRequest request, StreamObserver<ListFleetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFleetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFleetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFleets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFleetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getScopeNamespace(
+      GetScopeNamespaceRequest request, StreamObserver<Namespace> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Namespace) {
+      requests.add(request);
+      responseObserver.onNext(((Namespace) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetScopeNamespace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Namespace.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createScopeNamespace(
+      CreateScopeNamespaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateScopeNamespace, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateScopeNamespace(
+      UpdateScopeNamespaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateScopeNamespace, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteScopeNamespace(
+      DeleteScopeNamespaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteScopeNamespace, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listScopeNamespaces(
+      ListScopeNamespacesRequest request,
+      StreamObserver<ListScopeNamespacesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListScopeNamespacesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListScopeNamespacesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListScopeNamespaces, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListScopeNamespacesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getScopeRBACRoleBinding(
+      GetScopeRBACRoleBindingRequest request, StreamObserver<RBACRoleBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RBACRoleBinding) {
+      requests.add(request);
+      responseObserver.onNext(((RBACRoleBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetScopeRBACRoleBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RBACRoleBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createScopeRBACRoleBinding(
+      CreateScopeRBACRoleBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateScopeRBACRoleBinding, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateScopeRBACRoleBinding(
+      UpdateScopeRBACRoleBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateScopeRBACRoleBinding, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteScopeRBACRoleBinding(
+      DeleteScopeRBACRoleBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteScopeRBACRoleBinding, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listScopeRBACRoleBindings(
+      ListScopeRBACRoleBindingsRequest request,
+      StreamObserver<ListScopeRBACRoleBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListScopeRBACRoleBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListScopeRBACRoleBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListScopeRBACRoleBindings, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListScopeRBACRoleBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getScope(GetScopeRequest request, StreamObserver<Scope> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Scope) {
+      requests.add(request);
+      responseObserver.onNext(((Scope) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetScope, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Scope.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createScope(CreateScopeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateScope, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateScope(UpdateScopeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateScope, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteScope(DeleteScopeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteScope, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listScopes(
+      ListScopesRequest request, StreamObserver<ListScopesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListScopesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListScopesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListScopes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListScopesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPermittedScopes(
+      ListPermittedScopesRequest request,
+      StreamObserver<ListPermittedScopesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPermittedScopesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPermittedScopesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPermittedScopes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPermittedScopesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMembershipBinding(
+      GetMembershipBindingRequest request, StreamObserver<MembershipBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MembershipBinding) {
+      requests.add(request);
+      responseObserver.onNext(((MembershipBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMembershipBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MembershipBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMembershipBinding(
+      CreateMembershipBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMembershipBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMembershipBinding(
+      UpdateMembershipBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMembershipBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMembershipBinding(
+      DeleteMembershipBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMembershipBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMembershipBindings(
+      ListMembershipBindingsRequest request,
+      StreamObserver<ListMembershipBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMembershipBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMembershipBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMembershipBindings, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMembershipBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMembershipRBACRoleBinding(
+      GetMembershipRBACRoleBindingRequest request,
+      StreamObserver<RBACRoleBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RBACRoleBinding) {
+      requests.add(request);
+      responseObserver.onNext(((RBACRoleBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMembershipRBACRoleBinding, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RBACRoleBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMembershipRBACRoleBinding(
+      CreateMembershipRBACRoleBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMembershipRBACRoleBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMembershipRBACRoleBinding(
+      UpdateMembershipRBACRoleBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMembershipRBACRoleBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMembershipRBACRoleBinding(
+      DeleteMembershipRBACRoleBindingRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMembershipRBACRoleBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMembershipRBACRoleBindings(
+      ListMembershipRBACRoleBindingsRequest request,
+      StreamObserver<ListMembershipRBACRoleBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMembershipRBACRoleBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMembershipRBACRoleBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMembershipRBACRoleBindings,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMembershipRBACRoleBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateMembershipRBACRoleBindingYAML(
+      GenerateMembershipRBACRoleBindingYAMLRequest request,
+      StreamObserver<GenerateMembershipRBACRoleBindingYAMLResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateMembershipRBACRoleBindingYAMLResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateMembershipRBACRoleBindingYAMLResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateMembershipRBACRoleBindingYAML,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateMembershipRBACRoleBindingYAMLResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

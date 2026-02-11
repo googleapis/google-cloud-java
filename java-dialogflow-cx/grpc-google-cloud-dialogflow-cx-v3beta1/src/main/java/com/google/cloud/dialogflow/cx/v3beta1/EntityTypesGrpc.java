@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/entity_type.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EntityTypesGrpc {
 
@@ -719,8 +716,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.EntityType getEntityType(
-        com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -732,8 +730,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.EntityType createEntityType(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -748,8 +747,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.EntityType updateEntityType(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -764,8 +764,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntityType(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -777,8 +778,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse listEntityTypes(
-        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -790,8 +792,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportEntityTypes(
-        com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +806,9 @@ public final class EntityTypesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importEntityTypes(
-        com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportEntityTypesMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.cx.v3.samples;
 
 // [START dialogflow_v3_generated_Sessions_StreamingDetectIntent_async]
 import com.google.api.gax.rpc.BidiStream;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentResponseView;
 import com.google.cloud.dialogflow.cx.v3.OutputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3.QueryInput;
 import com.google.cloud.dialogflow.cx.v3.QueryParameters;
@@ -52,6 +53,7 @@ public class AsyncStreamingDetectIntent {
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
               .setEnablePartialResponse(true)
               .setEnableDebuggingInfo(true)
+              .setResponseView(DetectIntentResponseView.forNumber(0))
               .build();
       bidiStream.send(request);
       for (StreamingDetectIntentResponse response : bidiStream) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,16 @@
 
 package com.google.cloud.backupdr.v1.stub;
 
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
@@ -58,35 +63,49 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
+import com.google.cloud.backupdr.v1.BackupPlanRevision;
 import com.google.cloud.backupdr.v1.BackupVault;
 import com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.CreateManagementServerRequest;
 import com.google.cloud.backupdr.v1.DataSource;
+import com.google.cloud.backupdr.v1.DataSourceReference;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
+import com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest;
 import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
+import com.google.cloud.backupdr.v1.GetDataSourceReferenceRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest;
+import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlansResponse;
 import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.ListBackupsRequest;
 import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1.ListManagementServersRequest;
@@ -96,6 +115,8 @@ import com.google.cloud.backupdr.v1.OperationMetadata;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest;
+import com.google.cloud.backupdr.v1.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.UpdateDataSourceRequest;
@@ -165,8 +186,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -242,6 +263,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       updateDataSourceOperationSettings;
   private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
       listBackupsSettings;
+  private final PagedCallSettings<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypeSettings;
   private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
   private final UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings;
   private final OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
@@ -256,6 +282,9 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   private final UnaryCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanSettings;
   private final OperationCallSettings<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
       createBackupPlanOperationSettings;
+  private final UnaryCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanSettings;
+  private final OperationCallSettings<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationSettings;
   private final UnaryCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings;
   private final PagedCallSettings<
           ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
@@ -263,11 +292,23 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   private final UnaryCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanSettings;
   private final OperationCallSettings<DeleteBackupPlanRequest, Empty, OperationMetadata>
       deleteBackupPlanOperationSettings;
+  private final UnaryCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionSettings;
+  private final PagedCallSettings<
+          ListBackupPlanRevisionsRequest,
+          ListBackupPlanRevisionsResponse,
+          ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsSettings;
   private final UnaryCallSettings<CreateBackupPlanAssociationRequest, Operation>
       createBackupPlanAssociationSettings;
   private final OperationCallSettings<
           CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
       createBackupPlanAssociationOperationSettings;
+  private final UnaryCallSettings<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationSettings;
+  private final OperationCallSettings<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationSettings;
   private final UnaryCallSettings<GetBackupPlanAssociationRequest, BackupPlanAssociation>
       getBackupPlanAssociationSettings;
   private final PagedCallSettings<
@@ -275,6 +316,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           ListBackupPlanAssociationsResponse,
           ListBackupPlanAssociationsPagedResponse>
       listBackupPlanAssociationsSettings;
+  private final PagedCallSettings<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypeSettings;
   private final UnaryCallSettings<DeleteBackupPlanAssociationRequest, Operation>
       deleteBackupPlanAssociationSettings;
   private final OperationCallSettings<DeleteBackupPlanAssociationRequest, Empty, OperationMetadata>
@@ -283,6 +329,18 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   private final OperationCallSettings<
           TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationSettings;
+  private final UnaryCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceSettings;
+  private final PagedCallSettings<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesSettings;
+  private final PagedCallSettings<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypeSettings;
   private final UnaryCallSettings<InitializeServiceRequest, Operation> initializeServiceSettings;
   private final OperationCallSettings<
           InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
@@ -485,6 +543,48 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           };
 
   private static final PagedListDescriptor<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+      FETCH_BACKUPS_FOR_RESOURCE_TYPE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchBackupsForResourceTypeRequest injectToken(
+                FetchBackupsForResourceTypeRequest payload, String token) {
+              return FetchBackupsForResourceTypeRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public FetchBackupsForResourceTypeRequest injectPageSize(
+                FetchBackupsForResourceTypeRequest payload, int pageSize) {
+              return FetchBackupsForResourceTypeRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchBackupsForResourceTypeRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchBackupsForResourceTypeResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(FetchBackupsForResourceTypeResponse payload) {
+              return payload.getBackupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan>
       LIST_BACKUP_PLANS_PAGE_STR_DESC =
           new PagedListDescriptor<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan>() {
@@ -518,6 +618,49 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             @Override
             public Iterable<BackupPlan> extractResources(ListBackupPlansResponse payload) {
               return payload.getBackupPlansList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse, BackupPlanRevision>
+      LIST_BACKUP_PLAN_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupPlanRevisionsRequest,
+              ListBackupPlanRevisionsResponse,
+              BackupPlanRevision>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupPlanRevisionsRequest injectToken(
+                ListBackupPlanRevisionsRequest payload, String token) {
+              return ListBackupPlanRevisionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupPlanRevisionsRequest injectPageSize(
+                ListBackupPlanRevisionsRequest payload, int pageSize) {
+              return ListBackupPlanRevisionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupPlanRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupPlanRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupPlanRevision> extractResources(
+                ListBackupPlanRevisionsResponse payload) {
+              return payload.getBackupPlanRevisionsList();
             }
           };
 
@@ -565,6 +708,149 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             public Iterable<BackupPlanAssociation> extractResources(
                 ListBackupPlanAssociationsResponse payload) {
               return payload.getBackupPlanAssociationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse,
+          BackupPlanAssociation>
+      FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchBackupPlanAssociationsForResourceTypeRequest,
+              FetchBackupPlanAssociationsForResourceTypeResponse,
+              BackupPlanAssociation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchBackupPlanAssociationsForResourceTypeRequest injectToken(
+                FetchBackupPlanAssociationsForResourceTypeRequest payload, String token) {
+              return FetchBackupPlanAssociationsForResourceTypeRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public FetchBackupPlanAssociationsForResourceTypeRequest injectPageSize(
+                FetchBackupPlanAssociationsForResourceTypeRequest payload, int pageSize) {
+              return FetchBackupPlanAssociationsForResourceTypeRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                FetchBackupPlanAssociationsForResourceTypeRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                FetchBackupPlanAssociationsForResourceTypeResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupPlanAssociation> extractResources(
+                FetchBackupPlanAssociationsForResourceTypeResponse payload) {
+              return payload.getBackupPlanAssociationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesResponse, DataSourceReference>
+      LIST_DATA_SOURCE_REFERENCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDataSourceReferencesRequest,
+              ListDataSourceReferencesResponse,
+              DataSourceReference>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDataSourceReferencesRequest injectToken(
+                ListDataSourceReferencesRequest payload, String token) {
+              return ListDataSourceReferencesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDataSourceReferencesRequest injectPageSize(
+                ListDataSourceReferencesRequest payload, int pageSize) {
+              return ListDataSourceReferencesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDataSourceReferencesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDataSourceReferencesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataSourceReference> extractResources(
+                ListDataSourceReferencesResponse payload) {
+              return payload.getDataSourceReferencesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse,
+          DataSourceReference>
+      FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchDataSourceReferencesForResourceTypeRequest,
+              FetchDataSourceReferencesForResourceTypeResponse,
+              DataSourceReference>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchDataSourceReferencesForResourceTypeRequest injectToken(
+                FetchDataSourceReferencesForResourceTypeRequest payload, String token) {
+              return FetchDataSourceReferencesForResourceTypeRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public FetchDataSourceReferencesForResourceTypeRequest injectPageSize(
+                FetchDataSourceReferencesForResourceTypeRequest payload, int pageSize) {
+              return FetchDataSourceReferencesForResourceTypeRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                FetchDataSourceReferencesForResourceTypeRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                FetchDataSourceReferencesForResourceTypeResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataSourceReference> extractResources(
+                FetchDataSourceReferencesForResourceTypeResponse payload) {
+              return payload.getDataSourceReferencesList();
             }
           };
 
@@ -705,6 +991,38 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          FetchBackupsForResourceTypePagedResponse>
+      FETCH_BACKUPS_FOR_RESOURCE_TYPE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchBackupsForResourceTypeRequest,
+              FetchBackupsForResourceTypeResponse,
+              FetchBackupsForResourceTypePagedResponse>() {
+            @Override
+            public ApiFuture<FetchBackupsForResourceTypePagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+                    callable,
+                FetchBackupsForResourceTypeRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchBackupsForResourceTypeResponse> futureResponse) {
+              PageContext<
+                      FetchBackupsForResourceTypeRequest,
+                      FetchBackupsForResourceTypeResponse,
+                      Backup>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          FETCH_BACKUPS_FOR_RESOURCE_TYPE_PAGE_STR_DESC,
+                          request,
+                          context);
+              return FetchBackupsForResourceTypePagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
       LIST_BACKUP_PLANS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -718,6 +1036,33 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> pageContext =
                   PageContext.create(callable, LIST_BACKUP_PLANS_PAGE_STR_DESC, request, context);
               return ListBackupPlansPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupPlanRevisionsRequest,
+          ListBackupPlanRevisionsResponse,
+          ListBackupPlanRevisionsPagedResponse>
+      LIST_BACKUP_PLAN_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupPlanRevisionsRequest,
+              ListBackupPlanRevisionsResponse,
+              ListBackupPlanRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupPlanRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
+                    callable,
+                ListBackupPlanRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupPlanRevisionsResponse> futureResponse) {
+              PageContext<
+                      ListBackupPlanRevisionsRequest,
+                      ListBackupPlanRevisionsResponse,
+                      BackupPlanRevision>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_PLAN_REVISIONS_PAGE_STR_DESC, request, context);
+              return ListBackupPlanRevisionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -745,6 +1090,101 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
                       PageContext.create(
                           callable, LIST_BACKUP_PLAN_ASSOCIATIONS_PAGE_STR_DESC, request, context);
               return ListBackupPlanAssociationsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchBackupPlanAssociationsForResourceTypeRequest,
+              FetchBackupPlanAssociationsForResourceTypeResponse,
+              FetchBackupPlanAssociationsForResourceTypePagedResponse>() {
+            @Override
+            public ApiFuture<FetchBackupPlanAssociationsForResourceTypePagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            FetchBackupPlanAssociationsForResourceTypeRequest,
+                            FetchBackupPlanAssociationsForResourceTypeResponse>
+                        callable,
+                    FetchBackupPlanAssociationsForResourceTypeRequest request,
+                    ApiCallContext context,
+                    ApiFuture<FetchBackupPlanAssociationsForResourceTypeResponse> futureResponse) {
+              PageContext<
+                      FetchBackupPlanAssociationsForResourceTypeRequest,
+                      FetchBackupPlanAssociationsForResourceTypeResponse,
+                      BackupPlanAssociation>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE_PAGE_STR_DESC,
+                          request,
+                          context);
+              return FetchBackupPlanAssociationsForResourceTypePagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          ListDataSourceReferencesPagedResponse>
+      LIST_DATA_SOURCE_REFERENCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDataSourceReferencesRequest,
+              ListDataSourceReferencesResponse,
+              ListDataSourceReferencesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDataSourceReferencesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+                    callable,
+                ListDataSourceReferencesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDataSourceReferencesResponse> futureResponse) {
+              PageContext<
+                      ListDataSourceReferencesRequest,
+                      ListDataSourceReferencesResponse,
+                      DataSourceReference>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DATA_SOURCE_REFERENCES_PAGE_STR_DESC, request, context);
+              return ListDataSourceReferencesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchDataSourceReferencesForResourceTypeRequest,
+              FetchDataSourceReferencesForResourceTypeResponse,
+              FetchDataSourceReferencesForResourceTypePagedResponse>() {
+            @Override
+            public ApiFuture<FetchDataSourceReferencesForResourceTypePagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            FetchDataSourceReferencesForResourceTypeRequest,
+                            FetchDataSourceReferencesForResourceTypeResponse>
+                        callable,
+                    FetchDataSourceReferencesForResourceTypeRequest request,
+                    ApiCallContext context,
+                    ApiFuture<FetchDataSourceReferencesForResourceTypeResponse> futureResponse) {
+              PageContext<
+                      FetchDataSourceReferencesForResourceTypeRequest,
+                      FetchDataSourceReferencesForResourceTypeResponse,
+                      DataSourceReference>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE_PAGE_STR_DESC,
+                          request,
+                          context);
+              return FetchDataSourceReferencesForResourceTypePagedResponse.createAsync(
                   pageContext, futureResponse);
             }
           };
@@ -888,6 +1328,15 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return listBackupsSettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchBackupsForResourceType. */
+  public PagedCallSettings<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypeSettings() {
+    return fetchBackupsForResourceTypeSettings;
+  }
+
   /** Returns the object with the settings used for calls to getBackup. */
   public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
     return getBackupSettings;
@@ -937,6 +1386,17 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return createBackupPlanOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateBackupPlan. */
+  public UnaryCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanSettings() {
+    return updateBackupPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPlan. */
+  public OperationCallSettings<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationSettings() {
+    return updateBackupPlanOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getBackupPlan. */
   public UnaryCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings() {
     return getBackupPlanSettings;
@@ -960,6 +1420,21 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return deleteBackupPlanOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getBackupPlanRevision. */
+  public UnaryCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionSettings() {
+    return getBackupPlanRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPlanRevisions. */
+  public PagedCallSettings<
+          ListBackupPlanRevisionsRequest,
+          ListBackupPlanRevisionsResponse,
+          ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsSettings() {
+    return listBackupPlanRevisionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to createBackupPlanAssociation. */
   public UnaryCallSettings<CreateBackupPlanAssociationRequest, Operation>
       createBackupPlanAssociationSettings() {
@@ -971,6 +1446,19 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
       createBackupPlanAssociationOperationSettings() {
     return createBackupPlanAssociationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPlanAssociation. */
+  public UnaryCallSettings<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationSettings() {
+    return updateBackupPlanAssociationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPlanAssociation. */
+  public OperationCallSettings<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationSettings() {
+    return updateBackupPlanAssociationOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getBackupPlanAssociation. */
@@ -986,6 +1474,18 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           ListBackupPlanAssociationsPagedResponse>
       listBackupPlanAssociationsSettings() {
     return listBackupPlanAssociationsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * fetchBackupPlanAssociationsForResourceType.
+   */
+  public PagedCallSettings<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypeSettings() {
+    return fetchBackupPlanAssociationsForResourceTypeSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteBackupPlanAssociation. */
@@ -1009,6 +1509,33 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   public OperationCallSettings<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationSettings() {
     return triggerBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataSourceReference. */
+  public UnaryCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceSettings() {
+    return getDataSourceReferenceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDataSourceReferences. */
+  public PagedCallSettings<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesSettings() {
+    return listDataSourceReferencesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * fetchDataSourceReferencesForResourceType.
+   */
+  public PagedCallSettings<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypeSettings() {
+    return fetchDataSourceReferencesForResourceTypeSettings;
   }
 
   /** Returns the object with the settings used for calls to initializeService. */
@@ -1184,6 +1711,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     updateDataSourceSettings = settingsBuilder.updateDataSourceSettings().build();
     updateDataSourceOperationSettings = settingsBuilder.updateDataSourceOperationSettings().build();
     listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    fetchBackupsForResourceTypeSettings =
+        settingsBuilder.fetchBackupsForResourceTypeSettings().build();
     getBackupSettings = settingsBuilder.getBackupSettings().build();
     updateBackupSettings = settingsBuilder.updateBackupSettings().build();
     updateBackupOperationSettings = settingsBuilder.updateBackupOperationSettings().build();
@@ -1193,23 +1722,37 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     restoreBackupOperationSettings = settingsBuilder.restoreBackupOperationSettings().build();
     createBackupPlanSettings = settingsBuilder.createBackupPlanSettings().build();
     createBackupPlanOperationSettings = settingsBuilder.createBackupPlanOperationSettings().build();
+    updateBackupPlanSettings = settingsBuilder.updateBackupPlanSettings().build();
+    updateBackupPlanOperationSettings = settingsBuilder.updateBackupPlanOperationSettings().build();
     getBackupPlanSettings = settingsBuilder.getBackupPlanSettings().build();
     listBackupPlansSettings = settingsBuilder.listBackupPlansSettings().build();
     deleteBackupPlanSettings = settingsBuilder.deleteBackupPlanSettings().build();
     deleteBackupPlanOperationSettings = settingsBuilder.deleteBackupPlanOperationSettings().build();
+    getBackupPlanRevisionSettings = settingsBuilder.getBackupPlanRevisionSettings().build();
+    listBackupPlanRevisionsSettings = settingsBuilder.listBackupPlanRevisionsSettings().build();
     createBackupPlanAssociationSettings =
         settingsBuilder.createBackupPlanAssociationSettings().build();
     createBackupPlanAssociationOperationSettings =
         settingsBuilder.createBackupPlanAssociationOperationSettings().build();
+    updateBackupPlanAssociationSettings =
+        settingsBuilder.updateBackupPlanAssociationSettings().build();
+    updateBackupPlanAssociationOperationSettings =
+        settingsBuilder.updateBackupPlanAssociationOperationSettings().build();
     getBackupPlanAssociationSettings = settingsBuilder.getBackupPlanAssociationSettings().build();
     listBackupPlanAssociationsSettings =
         settingsBuilder.listBackupPlanAssociationsSettings().build();
+    fetchBackupPlanAssociationsForResourceTypeSettings =
+        settingsBuilder.fetchBackupPlanAssociationsForResourceTypeSettings().build();
     deleteBackupPlanAssociationSettings =
         settingsBuilder.deleteBackupPlanAssociationSettings().build();
     deleteBackupPlanAssociationOperationSettings =
         settingsBuilder.deleteBackupPlanAssociationOperationSettings().build();
     triggerBackupSettings = settingsBuilder.triggerBackupSettings().build();
     triggerBackupOperationSettings = settingsBuilder.triggerBackupOperationSettings().build();
+    getDataSourceReferenceSettings = settingsBuilder.getDataSourceReferenceSettings().build();
+    listDataSourceReferencesSettings = settingsBuilder.listDataSourceReferencesSettings().build();
+    fetchDataSourceReferencesForResourceTypeSettings =
+        settingsBuilder.fetchDataSourceReferencesForResourceTypeSettings().build();
     initializeServiceSettings = settingsBuilder.initializeServiceSettings().build();
     initializeServiceOperationSettings =
         settingsBuilder.initializeServiceOperationSettings().build();
@@ -1276,6 +1819,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final PagedCallSettings.Builder<
             ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
         listBackupsSettings;
+    private final PagedCallSettings.Builder<
+            FetchBackupsForResourceTypeRequest,
+            FetchBackupsForResourceTypeResponse,
+            FetchBackupsForResourceTypePagedResponse>
+        fetchBackupsForResourceTypeSettings;
     private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
     private final UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings;
     private final OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
@@ -1292,6 +1840,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final OperationCallSettings.Builder<
             CreateBackupPlanRequest, BackupPlan, OperationMetadata>
         createBackupPlanOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupPlanRequest, Operation>
+        updateBackupPlanSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+        updateBackupPlanOperationSettings;
     private final UnaryCallSettings.Builder<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings;
     private final PagedCallSettings.Builder<
             ListBackupPlansRequest, ListBackupPlansResponse, ListBackupPlansPagedResponse>
@@ -1300,11 +1853,23 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
         deleteBackupPlanSettings;
     private final OperationCallSettings.Builder<DeleteBackupPlanRequest, Empty, OperationMetadata>
         deleteBackupPlanOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupPlanRevisionRequest, BackupPlanRevision>
+        getBackupPlanRevisionSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupPlanRevisionsRequest,
+            ListBackupPlanRevisionsResponse,
+            ListBackupPlanRevisionsPagedResponse>
+        listBackupPlanRevisionsSettings;
     private final UnaryCallSettings.Builder<CreateBackupPlanAssociationRequest, Operation>
         createBackupPlanAssociationSettings;
     private final OperationCallSettings.Builder<
             CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
         createBackupPlanAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupPlanAssociationRequest, Operation>
+        updateBackupPlanAssociationSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+        updateBackupPlanAssociationOperationSettings;
     private final UnaryCallSettings.Builder<GetBackupPlanAssociationRequest, BackupPlanAssociation>
         getBackupPlanAssociationSettings;
     private final PagedCallSettings.Builder<
@@ -1312,6 +1877,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             ListBackupPlanAssociationsResponse,
             ListBackupPlanAssociationsPagedResponse>
         listBackupPlanAssociationsSettings;
+    private final PagedCallSettings.Builder<
+            FetchBackupPlanAssociationsForResourceTypeRequest,
+            FetchBackupPlanAssociationsForResourceTypeResponse,
+            FetchBackupPlanAssociationsForResourceTypePagedResponse>
+        fetchBackupPlanAssociationsForResourceTypeSettings;
     private final UnaryCallSettings.Builder<DeleteBackupPlanAssociationRequest, Operation>
         deleteBackupPlanAssociationSettings;
     private final OperationCallSettings.Builder<
@@ -1321,6 +1891,18 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final OperationCallSettings.Builder<
             TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
         triggerBackupOperationSettings;
+    private final UnaryCallSettings.Builder<GetDataSourceReferenceRequest, DataSourceReference>
+        getDataSourceReferenceSettings;
+    private final PagedCallSettings.Builder<
+            ListDataSourceReferencesRequest,
+            ListDataSourceReferencesResponse,
+            ListDataSourceReferencesPagedResponse>
+        listDataSourceReferencesSettings;
+    private final PagedCallSettings.Builder<
+            FetchDataSourceReferencesForResourceTypeRequest,
+            FetchDataSourceReferencesForResourceTypeResponse,
+            FetchDataSourceReferencesForResourceTypePagedResponse>
+        fetchDataSourceReferencesForResourceTypeSettings;
     private final UnaryCallSettings.Builder<InitializeServiceRequest, Operation>
         initializeServiceSettings;
     private final OperationCallSettings.Builder<
@@ -1407,6 +1989,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       updateDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDataSourceOperationSettings = OperationCallSettings.newBuilder();
       listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      fetchBackupsForResourceTypeSettings =
+          PagedCallSettings.newBuilder(FETCH_BACKUPS_FOR_RESOURCE_TYPE_PAGE_STR_FACT);
       getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBackupOperationSettings = OperationCallSettings.newBuilder();
@@ -1416,19 +2000,35 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       restoreBackupOperationSettings = OperationCallSettings.newBuilder();
       createBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupPlanOperationSettings = OperationCallSettings.newBuilder();
+      updateBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupPlanOperationSettings = OperationCallSettings.newBuilder();
       getBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBackupPlansSettings = PagedCallSettings.newBuilder(LIST_BACKUP_PLANS_PAGE_STR_FACT);
       deleteBackupPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBackupPlanOperationSettings = OperationCallSettings.newBuilder();
+      getBackupPlanRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupPlanRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_PLAN_REVISIONS_PAGE_STR_FACT);
       createBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupPlanAssociationOperationSettings = OperationCallSettings.newBuilder();
+      updateBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupPlanAssociationOperationSettings = OperationCallSettings.newBuilder();
       getBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBackupPlanAssociationsSettings =
           PagedCallSettings.newBuilder(LIST_BACKUP_PLAN_ASSOCIATIONS_PAGE_STR_FACT);
+      fetchBackupPlanAssociationsForResourceTypeSettings =
+          PagedCallSettings.newBuilder(
+              FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE_PAGE_STR_FACT);
       deleteBackupPlanAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBackupPlanAssociationOperationSettings = OperationCallSettings.newBuilder();
       triggerBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       triggerBackupOperationSettings = OperationCallSettings.newBuilder();
+      getDataSourceReferenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDataSourceReferencesSettings =
+          PagedCallSettings.newBuilder(LIST_DATA_SOURCE_REFERENCES_PAGE_STR_FACT);
+      fetchDataSourceReferencesForResourceTypeSettings =
+          PagedCallSettings.newBuilder(
+              FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE_PAGE_STR_FACT);
       initializeServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       initializeServiceOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -1453,19 +2053,28 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               getDataSourceSettings,
               updateDataSourceSettings,
               listBackupsSettings,
+              fetchBackupsForResourceTypeSettings,
               getBackupSettings,
               updateBackupSettings,
               deleteBackupSettings,
               restoreBackupSettings,
               createBackupPlanSettings,
+              updateBackupPlanSettings,
               getBackupPlanSettings,
               listBackupPlansSettings,
               deleteBackupPlanSettings,
+              getBackupPlanRevisionSettings,
+              listBackupPlanRevisionsSettings,
               createBackupPlanAssociationSettings,
+              updateBackupPlanAssociationSettings,
               getBackupPlanAssociationSettings,
               listBackupPlanAssociationsSettings,
+              fetchBackupPlanAssociationsForResourceTypeSettings,
               deleteBackupPlanAssociationSettings,
               triggerBackupSettings,
+              getDataSourceReferenceSettings,
+              listDataSourceReferencesSettings,
+              fetchDataSourceReferencesForResourceTypeSettings,
               initializeServiceSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1500,6 +2109,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       updateDataSourceSettings = settings.updateDataSourceSettings.toBuilder();
       updateDataSourceOperationSettings = settings.updateDataSourceOperationSettings.toBuilder();
       listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      fetchBackupsForResourceTypeSettings =
+          settings.fetchBackupsForResourceTypeSettings.toBuilder();
       getBackupSettings = settings.getBackupSettings.toBuilder();
       updateBackupSettings = settings.updateBackupSettings.toBuilder();
       updateBackupOperationSettings = settings.updateBackupOperationSettings.toBuilder();
@@ -1509,22 +2120,36 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       restoreBackupOperationSettings = settings.restoreBackupOperationSettings.toBuilder();
       createBackupPlanSettings = settings.createBackupPlanSettings.toBuilder();
       createBackupPlanOperationSettings = settings.createBackupPlanOperationSettings.toBuilder();
+      updateBackupPlanSettings = settings.updateBackupPlanSettings.toBuilder();
+      updateBackupPlanOperationSettings = settings.updateBackupPlanOperationSettings.toBuilder();
       getBackupPlanSettings = settings.getBackupPlanSettings.toBuilder();
       listBackupPlansSettings = settings.listBackupPlansSettings.toBuilder();
       deleteBackupPlanSettings = settings.deleteBackupPlanSettings.toBuilder();
       deleteBackupPlanOperationSettings = settings.deleteBackupPlanOperationSettings.toBuilder();
+      getBackupPlanRevisionSettings = settings.getBackupPlanRevisionSettings.toBuilder();
+      listBackupPlanRevisionsSettings = settings.listBackupPlanRevisionsSettings.toBuilder();
       createBackupPlanAssociationSettings =
           settings.createBackupPlanAssociationSettings.toBuilder();
       createBackupPlanAssociationOperationSettings =
           settings.createBackupPlanAssociationOperationSettings.toBuilder();
+      updateBackupPlanAssociationSettings =
+          settings.updateBackupPlanAssociationSettings.toBuilder();
+      updateBackupPlanAssociationOperationSettings =
+          settings.updateBackupPlanAssociationOperationSettings.toBuilder();
       getBackupPlanAssociationSettings = settings.getBackupPlanAssociationSettings.toBuilder();
       listBackupPlanAssociationsSettings = settings.listBackupPlanAssociationsSettings.toBuilder();
+      fetchBackupPlanAssociationsForResourceTypeSettings =
+          settings.fetchBackupPlanAssociationsForResourceTypeSettings.toBuilder();
       deleteBackupPlanAssociationSettings =
           settings.deleteBackupPlanAssociationSettings.toBuilder();
       deleteBackupPlanAssociationOperationSettings =
           settings.deleteBackupPlanAssociationOperationSettings.toBuilder();
       triggerBackupSettings = settings.triggerBackupSettings.toBuilder();
       triggerBackupOperationSettings = settings.triggerBackupOperationSettings.toBuilder();
+      getDataSourceReferenceSettings = settings.getDataSourceReferenceSettings.toBuilder();
+      listDataSourceReferencesSettings = settings.listDataSourceReferencesSettings.toBuilder();
+      fetchDataSourceReferencesForResourceTypeSettings =
+          settings.fetchDataSourceReferencesForResourceTypeSettings.toBuilder();
       initializeServiceSettings = settings.initializeServiceSettings.toBuilder();
       initializeServiceOperationSettings = settings.initializeServiceOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -1549,19 +2174,28 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               getDataSourceSettings,
               updateDataSourceSettings,
               listBackupsSettings,
+              fetchBackupsForResourceTypeSettings,
               getBackupSettings,
               updateBackupSettings,
               deleteBackupSettings,
               restoreBackupSettings,
               createBackupPlanSettings,
+              updateBackupPlanSettings,
               getBackupPlanSettings,
               listBackupPlansSettings,
               deleteBackupPlanSettings,
+              getBackupPlanRevisionSettings,
+              listBackupPlanRevisionsSettings,
               createBackupPlanAssociationSettings,
+              updateBackupPlanAssociationSettings,
               getBackupPlanAssociationSettings,
               listBackupPlanAssociationsSettings,
+              fetchBackupPlanAssociationsForResourceTypeSettings,
               deleteBackupPlanAssociationSettings,
               triggerBackupSettings,
+              getDataSourceReferenceSettings,
+              listDataSourceReferencesSettings,
+              fetchDataSourceReferencesForResourceTypeSettings,
               initializeServiceSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1666,6 +2300,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .fetchBackupsForResourceTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1691,6 +2330,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .updateBackupPlanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getBackupPlanSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1706,7 +2350,22 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .getBackupPlanRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupPlanRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createBackupPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateBackupPlanAssociationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1721,12 +2380,32 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .fetchBackupPlanAssociationsForResourceTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteBackupPlanAssociationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .triggerBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getDataSourceReferenceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDataSourceReferencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchDataSourceReferencesForResourceTypeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2001,6 +2680,30 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
                       .build()));
 
       builder
+          .updateBackupPlanOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupPlanRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPlan.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteBackupPlanOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2029,6 +2732,31 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateBackupPlanAssociationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BackupPlanAssociation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupPlanAssociationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupPlanAssociationRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
@@ -2269,6 +2997,15 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       return listBackupsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to fetchBackupsForResourceType. */
+    public PagedCallSettings.Builder<
+            FetchBackupsForResourceTypeRequest,
+            FetchBackupsForResourceTypeResponse,
+            FetchBackupsForResourceTypePagedResponse>
+        fetchBackupsForResourceTypeSettings() {
+      return fetchBackupsForResourceTypeSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getBackup. */
     public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
       return getBackupSettings;
@@ -2320,6 +3057,18 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       return createBackupPlanOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateBackupPlan. */
+    public UnaryCallSettings.Builder<UpdateBackupPlanRequest, Operation>
+        updateBackupPlanSettings() {
+      return updateBackupPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPlan. */
+    public OperationCallSettings.Builder<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+        updateBackupPlanOperationSettings() {
+      return updateBackupPlanOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getBackupPlan. */
     public UnaryCallSettings.Builder<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings() {
       return getBackupPlanSettings;
@@ -2344,6 +3093,21 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       return deleteBackupPlanOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getBackupPlanRevision. */
+    public UnaryCallSettings.Builder<GetBackupPlanRevisionRequest, BackupPlanRevision>
+        getBackupPlanRevisionSettings() {
+      return getBackupPlanRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPlanRevisions. */
+    public PagedCallSettings.Builder<
+            ListBackupPlanRevisionsRequest,
+            ListBackupPlanRevisionsResponse,
+            ListBackupPlanRevisionsPagedResponse>
+        listBackupPlanRevisionsSettings() {
+      return listBackupPlanRevisionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createBackupPlanAssociation. */
     public UnaryCallSettings.Builder<CreateBackupPlanAssociationRequest, Operation>
         createBackupPlanAssociationSettings() {
@@ -2355,6 +3119,19 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
         createBackupPlanAssociationOperationSettings() {
       return createBackupPlanAssociationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPlanAssociation. */
+    public UnaryCallSettings.Builder<UpdateBackupPlanAssociationRequest, Operation>
+        updateBackupPlanAssociationSettings() {
+      return updateBackupPlanAssociationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPlanAssociation. */
+    public OperationCallSettings.Builder<
+            UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+        updateBackupPlanAssociationOperationSettings() {
+      return updateBackupPlanAssociationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getBackupPlanAssociation. */
@@ -2370,6 +3147,18 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             ListBackupPlanAssociationsPagedResponse>
         listBackupPlanAssociationsSettings() {
       return listBackupPlanAssociationsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * fetchBackupPlanAssociationsForResourceType.
+     */
+    public PagedCallSettings.Builder<
+            FetchBackupPlanAssociationsForResourceTypeRequest,
+            FetchBackupPlanAssociationsForResourceTypeResponse,
+            FetchBackupPlanAssociationsForResourceTypePagedResponse>
+        fetchBackupPlanAssociationsForResourceTypeSettings() {
+      return fetchBackupPlanAssociationsForResourceTypeSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteBackupPlanAssociation. */
@@ -2395,6 +3184,33 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
         triggerBackupOperationSettings() {
       return triggerBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataSourceReference. */
+    public UnaryCallSettings.Builder<GetDataSourceReferenceRequest, DataSourceReference>
+        getDataSourceReferenceSettings() {
+      return getDataSourceReferenceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDataSourceReferences. */
+    public PagedCallSettings.Builder<
+            ListDataSourceReferencesRequest,
+            ListDataSourceReferencesResponse,
+            ListDataSourceReferencesPagedResponse>
+        listDataSourceReferencesSettings() {
+      return listDataSourceReferencesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * fetchDataSourceReferencesForResourceType.
+     */
+    public PagedCallSettings.Builder<
+            FetchDataSourceReferencesForResourceTypeRequest,
+            FetchDataSourceReferencesForResourceTypeResponse,
+            FetchDataSourceReferencesForResourceTypePagedResponse>
+        fetchDataSourceReferencesForResourceTypeSettings() {
+      return fetchDataSourceReferencesForResourceTypeSettings;
     }
 
     /** Returns the builder for the settings used for calls to initializeService. */

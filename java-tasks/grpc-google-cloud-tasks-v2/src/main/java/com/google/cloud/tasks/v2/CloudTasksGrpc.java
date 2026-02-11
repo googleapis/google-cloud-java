@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * work in their applications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/tasks/v2/cloudtasks.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudTasksGrpc {
 
@@ -1467,8 +1464,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.ListQueuesResponse listQueues(
-        com.google.cloud.tasks.v2.ListQueuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.ListQueuesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQueuesMethod(), getCallOptions(), request);
     }
 
@@ -1480,8 +1477,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue getQueue(
-        com.google.cloud.tasks.v2.GetQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.GetQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQueueMethod(), getCallOptions(), request);
     }
 
@@ -1502,8 +1499,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue createQueue(
-        com.google.cloud.tasks.v2.CreateQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.CreateQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateQueueMethod(), getCallOptions(), request);
     }
 
@@ -1526,8 +1523,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue updateQueue(
-        com.google.cloud.tasks.v2.UpdateQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.UpdateQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateQueueMethod(), getCallOptions(), request);
     }
 
@@ -1548,8 +1545,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteQueue(
-        com.google.cloud.tasks.v2.DeleteQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.DeleteQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteQueueMethod(), getCallOptions(), request);
     }
 
@@ -1564,8 +1561,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue purgeQueue(
-        com.google.cloud.tasks.v2.PurgeQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.PurgeQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeQueueMethod(), getCallOptions(), request);
     }
 
@@ -1583,8 +1580,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue pauseQueue(
-        com.google.cloud.tasks.v2.PauseQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.PauseQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseQueueMethod(), getCallOptions(), request);
     }
 
@@ -1607,8 +1604,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue resumeQueue(
-        com.google.cloud.tasks.v2.ResumeQueueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.ResumeQueueRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeQueueMethod(), getCallOptions(), request);
     }
 
@@ -1625,8 +1622,9 @@ public final class CloudTasksGrpc {
      * * `cloudtasks.queues.getIamPolicy`
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1644,8 +1642,9 @@ public final class CloudTasksGrpc {
      * * `cloudtasks.queues.setIamPolicy`
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1663,8 +1662,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -1682,8 +1681,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.ListTasksResponse listTasks(
-        com.google.cloud.tasks.v2.ListTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.ListTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
@@ -1694,9 +1693,9 @@ public final class CloudTasksGrpc {
      * Gets a task.
      * </pre>
      */
-    public com.google.cloud.tasks.v2.Task getTask(
-        com.google.cloud.tasks.v2.GetTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.tasks.v2.Task getTask(com.google.cloud.tasks.v2.GetTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -1710,8 +1709,8 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2.Task createTask(
-        com.google.cloud.tasks.v2.CreateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tasks.v2.CreateTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTaskMethod(), getCallOptions(), request);
     }
 
@@ -1725,9 +1724,9 @@ public final class CloudTasksGrpc {
      * failed.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteTask(
-        com.google.cloud.tasks.v2.DeleteTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteTask(com.google.cloud.tasks.v2.DeleteTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
@@ -1758,9 +1757,9 @@ public final class CloudTasksGrpc {
      * task that has already succeeded or permanently failed.
      * </pre>
      */
-    public com.google.cloud.tasks.v2.Task runTask(
-        com.google.cloud.tasks.v2.RunTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.tasks.v2.Task runTask(com.google.cloud.tasks.v2.RunTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Google Analytics reporting data service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/analytics/data/v1beta/analytics_data_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BetaAnalyticsDataGrpc {
 
@@ -1233,8 +1230,8 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.RunReportResponse runReport(
-        com.google.analytics.data.v1beta.RunReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.RunReportRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunReportMethod(), getCallOptions(), request);
     }
 
@@ -1250,8 +1247,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.RunPivotReportResponse runPivotReport(
-        com.google.analytics.data.v1beta.RunPivotReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.RunPivotReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunPivotReportMethod(), getCallOptions(), request);
     }
 
@@ -1264,8 +1262,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(
-        com.google.analytics.data.v1beta.BatchRunReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.BatchRunReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchRunReportsMethod(), getCallOptions(), request);
     }
 
@@ -1278,8 +1277,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(
-        com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchRunPivotReportsMethod(), getCallOptions(), request);
     }
 
@@ -1299,8 +1299,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.Metadata getMetadata(
-        com.google.analytics.data.v1beta.GetMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.GetMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetadataMethod(), getCallOptions(), request);
     }
 
@@ -1319,8 +1320,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.RunRealtimeReportResponse runRealtimeReport(
-        com.google.analytics.data.v1beta.RunRealtimeReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.RunRealtimeReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunRealtimeReportMethod(), getCallOptions(), request);
     }
 
@@ -1339,8 +1341,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.CheckCompatibilityResponse checkCompatibility(
-        com.google.analytics.data.v1beta.CheckCompatibilityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.CheckCompatibilityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckCompatibilityMethod(), getCallOptions(), request);
     }
 
@@ -1372,8 +1375,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAudienceExport(
-        com.google.analytics.data.v1beta.CreateAudienceExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.CreateAudienceExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAudienceExportMethod(), getCallOptions(), request);
     }
 
@@ -1400,8 +1404,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.QueryAudienceExportResponse queryAudienceExport(
-        com.google.analytics.data.v1beta.QueryAudienceExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.QueryAudienceExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryAudienceExportMethod(), getCallOptions(), request);
     }
 
@@ -1422,8 +1427,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.AudienceExport getAudienceExport(
-        com.google.analytics.data.v1beta.GetAudienceExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.GetAudienceExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAudienceExportMethod(), getCallOptions(), request);
     }
 
@@ -1447,8 +1453,9 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.ListAudienceExportsResponse listAudienceExports(
-        com.google.analytics.data.v1beta.ListAudienceExportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1beta.ListAudienceExportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAudienceExportsMethod(), getCallOptions(), request);
     }
   }

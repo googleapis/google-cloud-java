@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * image with the vulnerability referring to that note.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: grafeas/v1/grafeas.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GrafeasGrpc {
 
@@ -1168,8 +1165,9 @@ public final class GrafeasGrpc {
      * Gets the specified occurrence.
      * </pre>
      */
-    public io.grafeas.v1.Occurrence getOccurrence(io.grafeas.v1.GetOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Occurrence getOccurrence(io.grafeas.v1.GetOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1181,8 +1179,8 @@ public final class GrafeasGrpc {
      * </pre>
      */
     public io.grafeas.v1.ListOccurrencesResponse listOccurrences(
-        io.grafeas.v1.ListOccurrencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1.ListOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOccurrencesMethod(), getCallOptions(), request);
     }
 
@@ -1195,9 +1193,9 @@ public final class GrafeasGrpc {
      * resource.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteOccurrence(
-        io.grafeas.v1.DeleteOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteOccurrence(io.grafeas.v1.DeleteOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1208,9 +1206,9 @@ public final class GrafeasGrpc {
      * Creates a new occurrence.
      * </pre>
      */
-    public io.grafeas.v1.Occurrence createOccurrence(
-        io.grafeas.v1.CreateOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Occurrence createOccurrence(io.grafeas.v1.CreateOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1222,8 +1220,8 @@ public final class GrafeasGrpc {
      * </pre>
      */
     public io.grafeas.v1.BatchCreateOccurrencesResponse batchCreateOccurrences(
-        io.grafeas.v1.BatchCreateOccurrencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1.BatchCreateOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateOccurrencesMethod(), getCallOptions(), request);
     }
 
@@ -1234,9 +1232,9 @@ public final class GrafeasGrpc {
      * Updates the specified occurrence.
      * </pre>
      */
-    public io.grafeas.v1.Occurrence updateOccurrence(
-        io.grafeas.v1.UpdateOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Occurrence updateOccurrence(io.grafeas.v1.UpdateOccurrenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1248,8 +1246,9 @@ public final class GrafeasGrpc {
      * use this method to get a note that belongs to a provider project.
      * </pre>
      */
-    public io.grafeas.v1.Note getOccurrenceNote(io.grafeas.v1.GetOccurrenceNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Note getOccurrenceNote(io.grafeas.v1.GetOccurrenceNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOccurrenceNoteMethod(), getCallOptions(), request);
     }
 
@@ -1260,8 +1259,9 @@ public final class GrafeasGrpc {
      * Gets the specified note.
      * </pre>
      */
-    public io.grafeas.v1.Note getNote(io.grafeas.v1.GetNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Note getNote(io.grafeas.v1.GetNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNoteMethod(), getCallOptions(), request);
     }
 
@@ -1272,8 +1272,9 @@ public final class GrafeasGrpc {
      * Lists notes for the specified project.
      * </pre>
      */
-    public io.grafeas.v1.ListNotesResponse listNotes(io.grafeas.v1.ListNotesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.ListNotesResponse listNotes(io.grafeas.v1.ListNotesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotesMethod(), getCallOptions(), request);
     }
 
@@ -1284,8 +1285,9 @@ public final class GrafeasGrpc {
      * Deletes the specified note.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteNote(io.grafeas.v1.DeleteNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteNote(io.grafeas.v1.DeleteNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNoteMethod(), getCallOptions(), request);
     }
 
@@ -1296,8 +1298,9 @@ public final class GrafeasGrpc {
      * Creates a new note.
      * </pre>
      */
-    public io.grafeas.v1.Note createNote(io.grafeas.v1.CreateNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Note createNote(io.grafeas.v1.CreateNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNoteMethod(), getCallOptions(), request);
     }
 
@@ -1309,8 +1312,8 @@ public final class GrafeasGrpc {
      * </pre>
      */
     public io.grafeas.v1.BatchCreateNotesResponse batchCreateNotes(
-        io.grafeas.v1.BatchCreateNotesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1.BatchCreateNotesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateNotesMethod(), getCallOptions(), request);
     }
 
@@ -1321,8 +1324,9 @@ public final class GrafeasGrpc {
      * Updates the specified note.
      * </pre>
      */
-    public io.grafeas.v1.Note updateNote(io.grafeas.v1.UpdateNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1.Note updateNote(io.grafeas.v1.UpdateNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNoteMethod(), getCallOptions(), request);
     }
 
@@ -1336,8 +1340,8 @@ public final class GrafeasGrpc {
      * </pre>
      */
     public io.grafeas.v1.ListNoteOccurrencesResponse listNoteOccurrences(
-        io.grafeas.v1.ListNoteOccurrencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1.ListNoteOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNoteOccurrencesMethod(), getCallOptions(), request);
     }
   }

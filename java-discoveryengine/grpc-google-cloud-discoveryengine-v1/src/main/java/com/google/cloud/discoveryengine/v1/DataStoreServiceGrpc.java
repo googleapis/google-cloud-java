@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/data_store_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataStoreServiceGrpc {
 
@@ -572,8 +569,9 @@ public final class DataStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataStore(
-        com.google.cloud.discoveryengine.v1.CreateDataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.CreateDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataStoreMethod(), getCallOptions(), request);
     }
 
@@ -585,8 +583,9 @@ public final class DataStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.DataStore getDataStore(
-        com.google.cloud.discoveryengine.v1.GetDataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.GetDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataStoreMethod(), getCallOptions(), request);
     }
 
@@ -599,8 +598,9 @@ public final class DataStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.ListDataStoresResponse listDataStores(
-        com.google.cloud.discoveryengine.v1.ListDataStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ListDataStoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataStoresMethod(), getCallOptions(), request);
     }
 
@@ -612,8 +612,9 @@ public final class DataStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataStore(
-        com.google.cloud.discoveryengine.v1.DeleteDataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.DeleteDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataStoreMethod(), getCallOptions(), request);
     }
 
@@ -625,8 +626,9 @@ public final class DataStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.DataStore updateDataStore(
-        com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataStoreMethod(), getCallOptions(), request);
     }
   }

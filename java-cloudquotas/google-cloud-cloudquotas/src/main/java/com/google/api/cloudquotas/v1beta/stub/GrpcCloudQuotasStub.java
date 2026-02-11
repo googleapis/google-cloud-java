@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                   ProtoUtils.marshaller(ListQuotaInfosRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQuotaInfosResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQuotaInfoRequest, QuotaInfo>
@@ -71,6 +72,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
               .setFullMethodName("google.api.cloudquotas.v1beta.CloudQuotas/GetQuotaInfo")
               .setRequestMarshaller(ProtoUtils.marshaller(GetQuotaInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QuotaInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse>
@@ -82,6 +84,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                   ProtoUtils.marshaller(ListQuotaPreferencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQuotaPreferencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQuotaPreferenceRequest, QuotaPreference>
@@ -92,6 +95,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetQuotaPreferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QuotaPreference.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateQuotaPreferenceRequest, QuotaPreference>
@@ -102,6 +106,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateQuotaPreferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QuotaPreference.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateQuotaPreferenceRequest, QuotaPreference>
@@ -112,6 +117,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateQuotaPreferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QuotaPreference.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListQuotaInfosRequest, ListQuotaInfosResponse> listQuotaInfosCallable;

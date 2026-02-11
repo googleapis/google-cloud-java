@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,7 +208,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1277,7 +1278,13 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1310,7 +1317,13 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1344,7 +1357,13 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

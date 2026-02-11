@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Documents][google.cloud.dialogflow.v2beta1.Document].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/document.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentsGrpc {
 
@@ -799,8 +796,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse listDocuments(
-        com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -814,8 +812,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Document getDocument(
-        com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -835,8 +834,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDocument(
-        com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -857,8 +857,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(
-        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -879,8 +880,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDocument(
-        com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
@@ -900,8 +902,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDocument(
-        com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -927,8 +930,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reloadDocument(
-        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReloadDocumentMethod(), getCallOptions(), request);
     }
   }

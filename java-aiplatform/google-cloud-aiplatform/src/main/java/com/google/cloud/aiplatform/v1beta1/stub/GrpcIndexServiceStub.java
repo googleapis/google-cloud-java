@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import com.google.cloud.aiplatform.v1beta1.CreateIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.GetIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.Index;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesResponse;
@@ -75,6 +77,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/CreateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIndexRequest, Index> getIndexMethodDescriptor =
@@ -83,6 +86,16 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/GetIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Index.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ImportIndexRequest, Operation> importIndexMethodDescriptor =
+      MethodDescriptor.<ImportIndexRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/ImportIndex")
+          .setRequestMarshaller(ProtoUtils.marshaller(ImportIndexRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIndexesRequest, ListIndexesResponse>
@@ -93,6 +106,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIndexesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIndexRequest, Operation> updateIndexMethodDescriptor =
@@ -101,6 +115,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/UpdateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
@@ -109,6 +124,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/DeleteIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpsertDatapointsRequest, UpsertDatapointsResponse>
@@ -120,6 +136,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(UpsertDatapointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UpsertDatapointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveDatapointsRequest, RemoveDatapointsResponse>
@@ -131,6 +148,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(RemoveDatapointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveDatapointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -142,6 +160,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -150,6 +169,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -158,6 +178,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -166,6 +187,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -177,12 +199,16 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
   private final OperationCallable<CreateIndexRequest, Index, CreateIndexOperationMetadata>
       createIndexOperationCallable;
   private final UnaryCallable<GetIndexRequest, Index> getIndexCallable;
+  private final UnaryCallable<ImportIndexRequest, Operation> importIndexCallable;
+  private final OperationCallable<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationCallable;
   private final UnaryCallable<ListIndexesRequest, ListIndexesResponse> listIndexesCallable;
   private final UnaryCallable<ListIndexesRequest, ListIndexesPagedResponse>
       listIndexesPagedCallable;
@@ -260,6 +286,16 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
             .setMethodDescriptor(getIndexMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportIndexRequest, Operation> importIndexTransportSettings =
+        GrpcCallSettings.<ImportIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(importIndexMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -383,6 +419,15 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
     this.getIndexCallable =
         callableFactory.createUnaryCallable(
             getIndexTransportSettings, settings.getIndexSettings(), clientContext);
+    this.importIndexCallable =
+        callableFactory.createUnaryCallable(
+            importIndexTransportSettings, settings.importIndexSettings(), clientContext);
+    this.importIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            importIndexTransportSettings,
+            settings.importIndexOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listIndexesCallable =
         callableFactory.createUnaryCallable(
             listIndexesTransportSettings, settings.listIndexesSettings(), clientContext);
@@ -456,6 +501,17 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
   @Override
   public UnaryCallable<GetIndexRequest, Index> getIndexCallable() {
     return getIndexCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportIndexRequest, Operation> importIndexCallable() {
+    return importIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationCallable() {
+    return importIndexOperationCallable;
   }
 
   @Override

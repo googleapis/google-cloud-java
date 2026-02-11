@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,6 +184,44 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
                               + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingAnalyzeContentResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
+  public StreamObserver<BidiStreamingAnalyzeContentRequest> bidiStreamingAnalyzeContent(
+      final StreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver) {
+    StreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        new StreamObserver<BidiStreamingAnalyzeContentRequest>() {
+          @Override
+          public void onNext(BidiStreamingAnalyzeContentRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof BidiStreamingAnalyzeContentResponse) {
+              responseObserver.onNext(((BidiStreamingAnalyzeContentResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method BidiStreamingAnalyzeContent,"
+                              + " expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          BidiStreamingAnalyzeContentResponse.class.getName(),
                           Exception.class.getName())));
             }
           }

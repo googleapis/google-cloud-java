@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * dataset in your project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/analyticshub/v1/analyticshub.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AnalyticsHubServiceGrpc {
 
@@ -1083,6 +1080,352 @@ public final class AnalyticsHubServiceGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getCreateQueryTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateQueryTemplate",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.QueryTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getCreateQueryTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest,
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        getCreateQueryTemplateMethod;
+    if ((getCreateQueryTemplateMethod = AnalyticsHubServiceGrpc.getCreateQueryTemplateMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getCreateQueryTemplateMethod = AnalyticsHubServiceGrpc.getCreateQueryTemplateMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getCreateQueryTemplateMethod =
+              getCreateQueryTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateQueryTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.QueryTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("CreateQueryTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getCreateQueryTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getGetQueryTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetQueryTemplate",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.QueryTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getGetQueryTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest,
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        getGetQueryTemplateMethod;
+    if ((getGetQueryTemplateMethod = AnalyticsHubServiceGrpc.getGetQueryTemplateMethod) == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getGetQueryTemplateMethod = AnalyticsHubServiceGrpc.getGetQueryTemplateMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getGetQueryTemplateMethod =
+              getGetQueryTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetQueryTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.QueryTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("GetQueryTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getGetQueryTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest,
+          com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+      getListQueryTemplatesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListQueryTemplates",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest,
+          com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+      getListQueryTemplatesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest,
+            com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+        getListQueryTemplatesMethod;
+    if ((getListQueryTemplatesMethod = AnalyticsHubServiceGrpc.getListQueryTemplatesMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getListQueryTemplatesMethod = AnalyticsHubServiceGrpc.getListQueryTemplatesMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getListQueryTemplatesMethod =
+              getListQueryTemplatesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListQueryTemplates"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("ListQueryTemplates"))
+                      .build();
+        }
+      }
+    }
+    return getListQueryTemplatesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getUpdateQueryTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateQueryTemplate",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.QueryTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getUpdateQueryTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest,
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        getUpdateQueryTemplateMethod;
+    if ((getUpdateQueryTemplateMethod = AnalyticsHubServiceGrpc.getUpdateQueryTemplateMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getUpdateQueryTemplateMethod = AnalyticsHubServiceGrpc.getUpdateQueryTemplateMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getUpdateQueryTemplateMethod =
+              getUpdateQueryTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateQueryTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.QueryTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("UpdateQueryTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateQueryTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest,
+          com.google.protobuf.Empty>
+      getDeleteQueryTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteQueryTemplate",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest,
+          com.google.protobuf.Empty>
+      getDeleteQueryTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest,
+            com.google.protobuf.Empty>
+        getDeleteQueryTemplateMethod;
+    if ((getDeleteQueryTemplateMethod = AnalyticsHubServiceGrpc.getDeleteQueryTemplateMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getDeleteQueryTemplateMethod = AnalyticsHubServiceGrpc.getDeleteQueryTemplateMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getDeleteQueryTemplateMethod =
+              getDeleteQueryTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteQueryTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("DeleteQueryTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteQueryTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getSubmitQueryTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitQueryTemplate",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.QueryTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getSubmitQueryTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest,
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        getSubmitQueryTemplateMethod;
+    if ((getSubmitQueryTemplateMethod = AnalyticsHubServiceGrpc.getSubmitQueryTemplateMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getSubmitQueryTemplateMethod = AnalyticsHubServiceGrpc.getSubmitQueryTemplateMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getSubmitQueryTemplateMethod =
+              getSubmitQueryTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SubmitQueryTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.QueryTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("SubmitQueryTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitQueryTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getApproveQueryTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ApproveQueryTemplate",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.QueryTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest,
+          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+      getApproveQueryTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest,
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        getApproveQueryTemplateMethod;
+    if ((getApproveQueryTemplateMethod = AnalyticsHubServiceGrpc.getApproveQueryTemplateMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getApproveQueryTemplateMethod = AnalyticsHubServiceGrpc.getApproveQueryTemplateMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getApproveQueryTemplateMethod =
+              getApproveQueryTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ApproveQueryTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.QueryTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("ApproveQueryTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getApproveQueryTemplateMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsHubServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsHubServiceStub> factory =
@@ -1340,8 +1683,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     default void subscribeDataExchange(
@@ -1485,6 +1830,111 @@ public final class AnalyticsHubServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new QueryTemplate
+     * </pre>
+     */
+    default void createQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateQueryTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QueryTemplate
+     * </pre>
+     */
+    default void getQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetQueryTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all QueryTemplates in a given project and location.
+     * </pre>
+     */
+    default void listQueryTemplates(
+        com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListQueryTemplatesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing QueryTemplate
+     * </pre>
+     */
+    default void updateQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateQueryTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a query template.
+     * </pre>
+     */
+    default void deleteQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteQueryTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a query template for approval.
+     * </pre>
+     */
+    default void submitQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubmitQueryTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a query template.
+     * </pre>
+     */
+    default void approveQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getApproveQueryTemplateMethod(), responseObserver);
     }
   }
 
@@ -1745,8 +2195,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public void subscribeDataExchange(
@@ -1911,6 +2363,125 @@ public final class AnalyticsHubServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new QueryTemplate
+     * </pre>
+     */
+    public void createQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateQueryTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QueryTemplate
+     * </pre>
+     */
+    public void getQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetQueryTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all QueryTemplates in a given project and location.
+     * </pre>
+     */
+    public void listQueryTemplates(
+        com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListQueryTemplatesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing QueryTemplate
+     * </pre>
+     */
+    public void updateQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateQueryTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a query template.
+     * </pre>
+     */
+    public void deleteQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteQueryTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a query template for approval.
+     * </pre>
+     */
+    public void submitQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitQueryTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a query template.
+     * </pre>
+     */
+    public void approveQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getApproveQueryTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1946,8 +2517,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse listDataExchanges(
-        com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataExchangesMethod(), getCallOptions(), request);
     }
 
@@ -1961,8 +2533,9 @@ public final class AnalyticsHubServiceGrpc {
      */
     public com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse
         listOrgDataExchanges(
-            com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrgDataExchangesMethod(), getCallOptions(), request);
     }
 
@@ -1974,8 +2547,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.DataExchange getDataExchange(
-        com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -1987,8 +2561,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.DataExchange createDataExchange(
-        com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -2000,8 +2575,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.DataExchange updateDataExchange(
-        com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -2013,8 +2589,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataExchange(
-        com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -2026,8 +2603,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse listListings(
-        com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListListingsMethod(), getCallOptions(), request);
     }
 
@@ -2039,8 +2617,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.Listing getListing(
-        com.google.cloud.bigquery.analyticshub.v1.GetListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.GetListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetListingMethod(), getCallOptions(), request);
     }
 
@@ -2052,8 +2631,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.Listing createListing(
-        com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateListingMethod(), getCallOptions(), request);
     }
 
@@ -2065,8 +2645,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.Listing updateListing(
-        com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateListingMethod(), getCallOptions(), request);
     }
 
@@ -2078,8 +2659,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteListing(
-        com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteListingMethod(), getCallOptions(), request);
     }
 
@@ -2095,8 +2677,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse subscribeListing(
-        com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubscribeListingMethod(), getCallOptions(), request);
     }
 
@@ -2104,13 +2687,16 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public com.google.longrunning.Operation subscribeDataExchange(
-        com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubscribeDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -2124,8 +2710,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation refreshSubscription(
-        com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRefreshSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -2137,8 +2724,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription(
-        com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -2150,8 +2738,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse listSubscriptions(
-        com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -2165,8 +2754,9 @@ public final class AnalyticsHubServiceGrpc {
     public com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse
         listSharedResourceSubscriptions(
             com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSharedResourceSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -2178,8 +2768,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse revokeSubscription(
-        com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRevokeSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -2191,8 +2782,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSubscription(
-        com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -2203,8 +2795,9 @@ public final class AnalyticsHubServiceGrpc {
      * Gets the IAM policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2215,8 +2808,9 @@ public final class AnalyticsHubServiceGrpc {
      * Sets the IAM policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2228,9 +2822,107 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new QueryTemplate
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate createQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QueryTemplate
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate getQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all QueryTemplates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse listQueryTemplates(
+        com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListQueryTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing QueryTemplate
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate updateQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a query template.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a query template for approval.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate submitQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSubmitQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a query template.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate approveQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getApproveQueryTemplateMethod(), getCallOptions(), request);
     }
   }
 
@@ -2425,8 +3117,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public com.google.longrunning.Operation subscribeDataExchange(
@@ -2552,6 +3246,97 @@ public final class AnalyticsHubServiceGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new QueryTemplate
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate createQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QueryTemplate
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate getQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all QueryTemplates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse listQueryTemplates(
+        com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQueryTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing QueryTemplate
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate updateQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a query template.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a query template for approval.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate submitQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitQueryTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a query template.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.QueryTemplate approveQueryTemplate(
+        com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApproveQueryTemplateMethod(), getCallOptions(), request);
     }
   }
 
@@ -2761,8 +3546,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2902,6 +3689,110 @@ public final class AnalyticsHubServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new QueryTemplate
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        createQueryTemplate(
+            com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateQueryTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QueryTemplate
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        getQueryTemplate(
+            com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetQueryTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all QueryTemplates in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>
+        listQueryTemplates(
+            com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListQueryTemplatesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing QueryTemplate
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        updateQueryTemplate(
+            com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateQueryTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a query template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteQueryTemplate(
+            com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteQueryTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a query template for approval.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        submitQueryTemplate(
+            com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitQueryTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a query template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>
+        approveQueryTemplate(
+            com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getApproveQueryTemplateMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DATA_EXCHANGES = 0;
@@ -2926,6 +3817,13 @@ public final class AnalyticsHubServiceGrpc {
   private static final int METHODID_GET_IAM_POLICY = 19;
   private static final int METHODID_SET_IAM_POLICY = 20;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 21;
+  private static final int METHODID_CREATE_QUERY_TEMPLATE = 22;
+  private static final int METHODID_GET_QUERY_TEMPLATE = 23;
+  private static final int METHODID_LIST_QUERY_TEMPLATES = 24;
+  private static final int METHODID_UPDATE_QUERY_TEMPLATE = 25;
+  private static final int METHODID_DELETE_QUERY_TEMPLATE = 26;
+  private static final int METHODID_SUBMIT_QUERY_TEMPLATE = 27;
+  private static final int METHODID_APPROVE_QUERY_TEMPLATE = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3076,6 +3974,48 @@ public final class AnalyticsHubServiceGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_QUERY_TEMPLATE:
+          serviceImpl.createQueryTemplate(
+              (com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>)
+                  responseObserver);
+          break;
+        case METHODID_GET_QUERY_TEMPLATE:
+          serviceImpl.getQueryTemplate(
+              (com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_QUERY_TEMPLATES:
+          serviceImpl.listQueryTemplates(
+              (com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_QUERY_TEMPLATE:
+          serviceImpl.updateQueryTemplate(
+              (com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_QUERY_TEMPLATE:
+          serviceImpl.deleteQueryTemplate(
+              (com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SUBMIT_QUERY_TEMPLATE:
+          serviceImpl.submitQueryTemplate(
+              (com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>)
+                  responseObserver);
+          break;
+        case METHODID_APPROVE_QUERY_TEMPLATE:
+          serviceImpl.approveQueryTemplate(
+              (com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>)
                   responseObserver);
           break;
         default:
@@ -3243,6 +4183,54 @@ public final class AnalyticsHubServiceGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getCreateQueryTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>(
+                    service, METHODID_CREATE_QUERY_TEMPLATE)))
+        .addMethod(
+            getGetQueryTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>(
+                    service, METHODID_GET_QUERY_TEMPLATE)))
+        .addMethod(
+            getListQueryTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse>(
+                    service, METHODID_LIST_QUERY_TEMPLATES)))
+        .addMethod(
+            getUpdateQueryTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>(
+                    service, METHODID_UPDATE_QUERY_TEMPLATE)))
+        .addMethod(
+            getDeleteQueryTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_QUERY_TEMPLATE)))
+        .addMethod(
+            getSubmitQueryTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>(
+                    service, METHODID_SUBMIT_QUERY_TEMPLATE)))
+        .addMethod(
+            getApproveQueryTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.QueryTemplate>(
+                    service, METHODID_APPROVE_QUERY_TEMPLATE)))
         .build();
   }
 
@@ -3316,6 +4304,13 @@ public final class AnalyticsHubServiceGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getCreateQueryTemplateMethod())
+                      .addMethod(getGetQueryTemplateMethod())
+                      .addMethod(getListQueryTemplatesMethod())
+                      .addMethod(getUpdateQueryTemplateMethod())
+                      .addMethod(getDeleteQueryTemplateMethod())
+                      .addMethod(getSubmitQueryTemplateMethod())
+                      .addMethod(getApproveQueryTemplateMethod())
                       .build();
         }
       }

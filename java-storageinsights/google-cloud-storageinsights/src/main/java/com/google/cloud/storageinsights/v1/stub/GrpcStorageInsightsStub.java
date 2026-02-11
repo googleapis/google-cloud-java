@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storageinsights.v1.stub;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
@@ -25,23 +26,36 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storageinsights.v1.CreateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.CreateReportConfigRequest;
+import com.google.cloud.storageinsights.v1.DatasetConfig;
+import com.google.cloud.storageinsights.v1.DeleteDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.DeleteReportConfigRequest;
+import com.google.cloud.storageinsights.v1.GetDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportDetailRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetResponse;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsRequest;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportConfigsRequest;
 import com.google.cloud.storageinsights.v1.ListReportConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportDetailsRequest;
 import com.google.cloud.storageinsights.v1.ListReportDetailsResponse;
+import com.google.cloud.storageinsights.v1.OperationMetadata;
 import com.google.cloud.storageinsights.v1.ReportConfig;
 import com.google.cloud.storageinsights.v1.ReportDetail;
+import com.google.cloud.storageinsights.v1.UnlinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.UpdateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.UpdateReportConfigRequest;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -68,6 +82,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListReportConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportConfigRequest, ReportConfig>
@@ -78,6 +93,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReportConfigRequest, ReportConfig>
@@ -89,6 +105,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReportConfigRequest, ReportConfig>
@@ -100,6 +117,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReportConfigRequest, Empty>
@@ -111,6 +129,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReportDetailsRequest, ListReportDetailsResponse>
@@ -123,6 +142,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListReportDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportDetailRequest, ReportDetail>
@@ -133,6 +153,87 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReportDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsMethodDescriptor =
+          MethodDescriptor.<ListDatasetConfigsRequest, ListDatasetConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/ListDatasetConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatasetConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatasetConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDatasetConfigRequest, DatasetConfig>
+      getDatasetConfigMethodDescriptor =
+          MethodDescriptor.<GetDatasetConfigRequest, DatasetConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/GetDatasetConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDatasetConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DatasetConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateDatasetConfigRequest, Operation>
+      createDatasetConfigMethodDescriptor =
+          MethodDescriptor.<CreateDatasetConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/CreateDatasetConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDatasetConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateDatasetConfigRequest, Operation>
+      updateDatasetConfigMethodDescriptor =
+          MethodDescriptor.<UpdateDatasetConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/UpdateDatasetConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDatasetConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDatasetConfigRequest, Operation>
+      deleteDatasetConfigMethodDescriptor =
+          MethodDescriptor.<DeleteDatasetConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.storageinsights.v1.StorageInsights/DeleteDatasetConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDatasetConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<LinkDatasetRequest, Operation> linkDatasetMethodDescriptor =
+      MethodDescriptor.<LinkDatasetRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/LinkDataset")
+          .setRequestMarshaller(ProtoUtils.marshaller(LinkDatasetRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<UnlinkDatasetRequest, Operation>
+      unlinkDatasetMethodDescriptor =
+          MethodDescriptor.<UnlinkDatasetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/UnlinkDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UnlinkDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -144,6 +245,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -152,6 +254,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListReportConfigsRequest, ListReportConfigsResponse>
@@ -167,6 +270,26 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
   private final UnaryCallable<ListReportDetailsRequest, ListReportDetailsPagedResponse>
       listReportDetailsPagedCallable;
   private final UnaryCallable<GetReportDetailRequest, ReportDetail> getReportDetailCallable;
+  private final UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsCallable;
+  private final UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsPagedCallable;
+  private final UnaryCallable<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigCallable;
+  private final UnaryCallable<CreateDatasetConfigRequest, Operation> createDatasetConfigCallable;
+  private final OperationCallable<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationCallable;
+  private final UnaryCallable<UpdateDatasetConfigRequest, Operation> updateDatasetConfigCallable;
+  private final OperationCallable<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationCallable;
+  private final UnaryCallable<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigCallable;
+  private final OperationCallable<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationCallable;
+  private final UnaryCallable<LinkDatasetRequest, Operation> linkDatasetCallable;
+  private final OperationCallable<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationCallable;
+  private final UnaryCallable<UnlinkDatasetRequest, Operation> unlinkDatasetCallable;
+  private final OperationCallable<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -289,6 +412,78 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+        listDatasetConfigsTransportSettings =
+            GrpcCallSettings.<ListDatasetConfigsRequest, ListDatasetConfigsResponse>newBuilder()
+                .setMethodDescriptor(listDatasetConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigTransportSettings =
+        GrpcCallSettings.<GetDatasetConfigRequest, DatasetConfig>newBuilder()
+            .setMethodDescriptor(getDatasetConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateDatasetConfigRequest, Operation> createDatasetConfigTransportSettings =
+        GrpcCallSettings.<CreateDatasetConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDatasetConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateDatasetConfigRequest, Operation> updateDatasetConfigTransportSettings =
+        GrpcCallSettings.<UpdateDatasetConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDatasetConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "dataset_config.name", String.valueOf(request.getDatasetConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigTransportSettings =
+        GrpcCallSettings.<DeleteDatasetConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDatasetConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<LinkDatasetRequest, Operation> linkDatasetTransportSettings =
+        GrpcCallSettings.<LinkDatasetRequest, Operation>newBuilder()
+            .setMethodDescriptor(linkDatasetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetTransportSettings =
+        GrpcCallSettings.<UnlinkDatasetRequest, Operation>newBuilder()
+            .setMethodDescriptor(unlinkDatasetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -351,6 +546,70 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
     this.getReportDetailCallable =
         callableFactory.createUnaryCallable(
             getReportDetailTransportSettings, settings.getReportDetailSettings(), clientContext);
+    this.listDatasetConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listDatasetConfigsTransportSettings,
+            settings.listDatasetConfigsSettings(),
+            clientContext);
+    this.listDatasetConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatasetConfigsTransportSettings,
+            settings.listDatasetConfigsSettings(),
+            clientContext);
+    this.getDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDatasetConfigTransportSettings, settings.getDatasetConfigSettings(), clientContext);
+    this.createDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            createDatasetConfigTransportSettings,
+            settings.createDatasetConfigSettings(),
+            clientContext);
+    this.createDatasetConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createDatasetConfigTransportSettings,
+            settings.createDatasetConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDatasetConfigTransportSettings,
+            settings.updateDatasetConfigSettings(),
+            clientContext);
+    this.updateDatasetConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDatasetConfigTransportSettings,
+            settings.updateDatasetConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDatasetConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatasetConfigTransportSettings,
+            settings.deleteDatasetConfigSettings(),
+            clientContext);
+    this.deleteDatasetConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDatasetConfigTransportSettings,
+            settings.deleteDatasetConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.linkDatasetCallable =
+        callableFactory.createUnaryCallable(
+            linkDatasetTransportSettings, settings.linkDatasetSettings(), clientContext);
+    this.linkDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            linkDatasetTransportSettings,
+            settings.linkDatasetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.unlinkDatasetCallable =
+        callableFactory.createUnaryCallable(
+            unlinkDatasetTransportSettings, settings.unlinkDatasetSettings(), clientContext);
+    this.unlinkDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            unlinkDatasetTransportSettings,
+            settings.unlinkDatasetOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -416,6 +675,78 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
   @Override
   public UnaryCallable<GetReportDetailRequest, ReportDetail> getReportDetailCallable() {
     return getReportDetailCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsCallable() {
+    return listDatasetConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsPagedCallable() {
+    return listDatasetConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigCallable() {
+    return getDatasetConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDatasetConfigRequest, Operation> createDatasetConfigCallable() {
+    return createDatasetConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationCallable() {
+    return createDatasetConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDatasetConfigRequest, Operation> updateDatasetConfigCallable() {
+    return updateDatasetConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationCallable() {
+    return updateDatasetConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigCallable() {
+    return deleteDatasetConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationCallable() {
+    return deleteDatasetConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<LinkDatasetRequest, Operation> linkDatasetCallable() {
+    return linkDatasetCallable;
+  }
+
+  @Override
+  public OperationCallable<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationCallable() {
+    return linkDatasetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UnlinkDatasetRequest, Operation> unlinkDatasetCallable() {
+    return unlinkDatasetCallable;
+  }
+
+  @Override
+  public OperationCallable<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationCallable() {
+    return unlinkDatasetOperationCallable;
   }
 
   @Override

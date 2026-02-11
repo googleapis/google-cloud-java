@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -401,6 +402,688 @@ public class AdUnitServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listAdUnitSizes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAdUnitTest() throws Exception {
+    AdUnit expectedResponse =
+        AdUnit.newBuilder()
+            .setName(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setAdUnitId(-167061094)
+            .setParentAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .addAllParentPath(new ArrayList<AdUnitParent>())
+            .setDisplayName("displayName1714148973")
+            .setAdUnitCode("adUnitCode1827682004")
+            .addAllAppliedTeams(new ArrayList<String>())
+            .addAllTeams(new ArrayList<String>())
+            .setDescription("description-1724546052")
+            .setExplicitlyTargeted(true)
+            .setHasChildren(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
+            .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
+            .setRefreshDelay(Duration.newBuilder().build())
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .setAppliedAdsenseEnabled(true)
+            .setEffectiveAdsenseEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    AdUnit adUnit = AdUnit.newBuilder().build();
+
+    AdUnit actualResponse = client.createAdUnit(parent, adUnit);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAdUnitExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      AdUnit adUnit = AdUnit.newBuilder().build();
+      client.createAdUnit(parent, adUnit);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAdUnitTest2() throws Exception {
+    AdUnit expectedResponse =
+        AdUnit.newBuilder()
+            .setName(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setAdUnitId(-167061094)
+            .setParentAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .addAllParentPath(new ArrayList<AdUnitParent>())
+            .setDisplayName("displayName1714148973")
+            .setAdUnitCode("adUnitCode1827682004")
+            .addAllAppliedTeams(new ArrayList<String>())
+            .addAllTeams(new ArrayList<String>())
+            .setDescription("description-1724546052")
+            .setExplicitlyTargeted(true)
+            .setHasChildren(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
+            .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
+            .setRefreshDelay(Duration.newBuilder().build())
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .setAppliedAdsenseEnabled(true)
+            .setEffectiveAdsenseEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    AdUnit adUnit = AdUnit.newBuilder().build();
+
+    AdUnit actualResponse = client.createAdUnit(parent, adUnit);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAdUnitExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      AdUnit adUnit = AdUnit.newBuilder().build();
+      client.createAdUnit(parent, adUnit);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAdUnitTest() throws Exception {
+    AdUnit expectedResponse =
+        AdUnit.newBuilder()
+            .setName(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setAdUnitId(-167061094)
+            .setParentAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .addAllParentPath(new ArrayList<AdUnitParent>())
+            .setDisplayName("displayName1714148973")
+            .setAdUnitCode("adUnitCode1827682004")
+            .addAllAppliedTeams(new ArrayList<String>())
+            .addAllTeams(new ArrayList<String>())
+            .setDescription("description-1724546052")
+            .setExplicitlyTargeted(true)
+            .setHasChildren(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
+            .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
+            .setRefreshDelay(Duration.newBuilder().build())
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .setAppliedAdsenseEnabled(true)
+            .setEffectiveAdsenseEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdUnit adUnit =
+        AdUnit.newBuilder()
+            .setName(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setAdUnitId(-167061094)
+            .setParentAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .addAllParentPath(new ArrayList<AdUnitParent>())
+            .setDisplayName("displayName1714148973")
+            .setAdUnitCode("adUnitCode1827682004")
+            .addAllAppliedTeams(new ArrayList<String>())
+            .addAllTeams(new ArrayList<String>())
+            .setDescription("description-1724546052")
+            .setExplicitlyTargeted(true)
+            .setHasChildren(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
+            .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
+            .setRefreshDelay(Duration.newBuilder().build())
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+            .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+            .setAppliedAdsenseEnabled(true)
+            .setEffectiveAdsenseEnabled(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AdUnit actualResponse = client.updateAdUnit(adUnit, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAdUnitExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdUnit adUnit =
+          AdUnit.newBuilder()
+              .setName(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+              .setAdUnitId(-167061094)
+              .setParentAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+              .addAllParentPath(new ArrayList<AdUnitParent>())
+              .setDisplayName("displayName1714148973")
+              .setAdUnitCode("adUnitCode1827682004")
+              .addAllAppliedTeams(new ArrayList<String>())
+              .addAllTeams(new ArrayList<String>())
+              .setDescription("description-1724546052")
+              .setExplicitlyTargeted(true)
+              .setHasChildren(true)
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllAdUnitSizes(new ArrayList<AdUnitSize>())
+              .setExternalSetTopBoxChannelId("externalSetTopBoxChannelId1711101009")
+              .setRefreshDelay(Duration.newBuilder().build())
+              .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+              .addAllEffectiveAppliedLabels(new ArrayList<AppliedLabel>())
+              .addAllAppliedLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+              .addAllEffectiveLabelFrequencyCaps(new ArrayList<LabelFrequencyCap>())
+              .setAppliedAdsenseEnabled(true)
+              .setEffectiveAdsenseEnabled(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAdUnit(adUnit, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateAdUnitsTest() throws Exception {
+    BatchCreateAdUnitsResponse expectedResponse =
+        BatchCreateAdUnitsResponse.newBuilder().addAllAdUnits(new ArrayList<AdUnit>()).build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<CreateAdUnitRequest> requests = new ArrayList<>();
+
+    BatchCreateAdUnitsResponse actualResponse = client.batchCreateAdUnits(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateAdUnitsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<CreateAdUnitRequest> requests = new ArrayList<>();
+      client.batchCreateAdUnits(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateAdUnitsTest2() throws Exception {
+    BatchCreateAdUnitsResponse expectedResponse =
+        BatchCreateAdUnitsResponse.newBuilder().addAllAdUnits(new ArrayList<AdUnit>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<CreateAdUnitRequest> requests = new ArrayList<>();
+
+    BatchCreateAdUnitsResponse actualResponse = client.batchCreateAdUnits(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateAdUnitsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<CreateAdUnitRequest> requests = new ArrayList<>();
+      client.batchCreateAdUnits(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateAdUnitsTest() throws Exception {
+    BatchUpdateAdUnitsResponse expectedResponse =
+        BatchUpdateAdUnitsResponse.newBuilder().addAllAdUnits(new ArrayList<AdUnit>()).build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateAdUnitRequest> requests = new ArrayList<>();
+
+    BatchUpdateAdUnitsResponse actualResponse = client.batchUpdateAdUnits(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateAdUnitsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateAdUnitRequest> requests = new ArrayList<>();
+      client.batchUpdateAdUnits(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateAdUnitsTest2() throws Exception {
+    BatchUpdateAdUnitsResponse expectedResponse =
+        BatchUpdateAdUnitsResponse.newBuilder().addAllAdUnits(new ArrayList<AdUnit>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateAdUnitRequest> requests = new ArrayList<>();
+
+    BatchUpdateAdUnitsResponse actualResponse = client.batchUpdateAdUnits(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateAdUnitsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateAdUnitRequest> requests = new ArrayList<>();
+      client.batchUpdateAdUnits(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateAdUnitsTest() throws Exception {
+    BatchActivateAdUnitsResponse expectedResponse =
+        BatchActivateAdUnitsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchActivateAdUnitsResponse actualResponse = client.batchActivateAdUnits(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateAdUnitsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchActivateAdUnits(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateAdUnitsTest2() throws Exception {
+    BatchActivateAdUnitsResponse expectedResponse =
+        BatchActivateAdUnitsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchActivateAdUnitsResponse actualResponse = client.batchActivateAdUnits(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateAdUnitsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchActivateAdUnits(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateAdUnitsTest() throws Exception {
+    BatchDeactivateAdUnitsResponse expectedResponse =
+        BatchDeactivateAdUnitsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateAdUnitsResponse actualResponse = client.batchDeactivateAdUnits(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateAdUnitsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateAdUnits(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateAdUnitsTest2() throws Exception {
+    BatchDeactivateAdUnitsResponse expectedResponse =
+        BatchDeactivateAdUnitsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateAdUnitsResponse actualResponse = client.batchDeactivateAdUnits(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateAdUnitsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateAdUnits(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchArchiveAdUnitsTest() throws Exception {
+    BatchArchiveAdUnitsResponse expectedResponse = BatchArchiveAdUnitsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchArchiveAdUnitsResponse actualResponse = client.batchArchiveAdUnits(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchArchiveAdUnitsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchArchiveAdUnits(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchArchiveAdUnitsTest2() throws Exception {
+    BatchArchiveAdUnitsResponse expectedResponse = BatchArchiveAdUnitsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchArchiveAdUnitsResponse actualResponse = client.batchArchiveAdUnits(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchArchiveAdUnitsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchArchiveAdUnits(parent, names);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

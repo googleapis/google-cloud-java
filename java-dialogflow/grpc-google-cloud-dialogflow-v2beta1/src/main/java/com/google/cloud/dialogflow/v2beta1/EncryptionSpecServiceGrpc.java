@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages encryption spec settings for Dialogflow and Agent Assist.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/encryption_spec.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EncryptionSpecServiceGrpc {
 
@@ -335,8 +332,9 @@ public final class EncryptionSpecServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.EncryptionSpec getEncryptionSpec(
-        com.google.cloud.dialogflow.v2beta1.GetEncryptionSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetEncryptionSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEncryptionSpecMethod(), getCallOptions(), request);
     }
 
@@ -352,8 +350,9 @@ public final class EncryptionSpecServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation initializeEncryptionSpec(
-        com.google.cloud.dialogflow.v2beta1.InitializeEncryptionSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.InitializeEncryptionSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInitializeEncryptionSpecMethod(), getCallOptions(), request);
     }
   }

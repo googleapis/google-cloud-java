@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,14 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
+import com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest;
+import com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse;
 import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy;
+import com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -55,6 +59,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOnlineReturnPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OnlineReturnPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -69,6 +74,43 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                   ProtoUtils.marshaller(ListOnlineReturnPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOnlineReturnPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyMethodDescriptor =
+          MethodDescriptor.<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyService/CreateOnlineReturnPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateOnlineReturnPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OnlineReturnPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyService/UpdateOnlineReturnPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateOnlineReturnPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OnlineReturnPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteOnlineReturnPolicyRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyService/DeleteOnlineReturnPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteOnlineReturnPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOnlineReturnPolicyRequest, OnlineReturnPolicy>
@@ -78,6 +120,12 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
   private final UnaryCallable<
           ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesPagedResponse>
       listOnlineReturnPoliciesPagedCallable;
+  private final UnaryCallable<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyCallable;
+  private final UnaryCallable<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyCallable;
+  private final UnaryCallable<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -147,6 +195,41 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        createOnlineReturnPolicyTransportSettings =
+            GrpcCallSettings.<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+                .setMethodDescriptor(createOnlineReturnPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        updateOnlineReturnPolicyTransportSettings =
+            GrpcCallSettings.<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+                .setMethodDescriptor(updateOnlineReturnPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "online_return_policy.name",
+                          String.valueOf(request.getOnlineReturnPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
+        deleteOnlineReturnPolicyTransportSettings =
+            GrpcCallSettings.<DeleteOnlineReturnPolicyRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteOnlineReturnPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getOnlineReturnPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -162,6 +245,21 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
         callableFactory.createPagedCallable(
             listOnlineReturnPoliciesTransportSettings,
             settings.listOnlineReturnPoliciesSettings(),
+            clientContext);
+    this.createOnlineReturnPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createOnlineReturnPolicyTransportSettings,
+            settings.createOnlineReturnPolicySettings(),
+            clientContext);
+    this.updateOnlineReturnPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateOnlineReturnPolicyTransportSettings,
+            settings.updateOnlineReturnPolicySettings(),
+            clientContext);
+    this.deleteOnlineReturnPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteOnlineReturnPolicyTransportSettings,
+            settings.deleteOnlineReturnPolicySettings(),
             clientContext);
 
     this.backgroundResources =
@@ -188,6 +286,23 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
   public UnaryCallable<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesPagedResponse>
       listOnlineReturnPoliciesPagedCallable() {
     return listOnlineReturnPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyCallable() {
+    return createOnlineReturnPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyCallable() {
+    return updateOnlineReturnPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOnlineReturnPolicyRequest, Empty> deleteOnlineReturnPolicyCallable() {
+    return deleteOnlineReturnPolicyCallable;
   }
 
   @Override

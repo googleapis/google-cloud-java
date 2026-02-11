@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,6 +173,8 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
     Assert.assertEquals(request.getEmbeddingSpec(), actualRequest.getEmbeddingSpec());
     Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertEquals(

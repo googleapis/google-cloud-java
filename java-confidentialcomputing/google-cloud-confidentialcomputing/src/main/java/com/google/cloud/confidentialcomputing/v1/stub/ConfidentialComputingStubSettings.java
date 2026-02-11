@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,10 @@ import com.google.cloud.confidentialcomputing.v1.Challenge;
 import com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -110,8 +114,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class ConfidentialComputingStubSettings
@@ -123,6 +127,10 @@ public class ConfidentialComputingStubSettings
   private final UnaryCallSettings<CreateChallengeRequest, Challenge> createChallengeSettings;
   private final UnaryCallSettings<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationSettings;
+  private final UnaryCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceSettings;
+  private final UnaryCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -188,6 +196,18 @@ public class ConfidentialComputingStubSettings
   public UnaryCallSettings<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationSettings() {
     return verifyAttestationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to verifyConfidentialSpace. */
+  public UnaryCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceSettings() {
+    return verifyConfidentialSpaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to verifyConfidentialGke. */
+  public UnaryCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeSettings() {
+    return verifyConfidentialGkeSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -314,6 +334,8 @@ public class ConfidentialComputingStubSettings
 
     createChallengeSettings = settingsBuilder.createChallengeSettings().build();
     verifyAttestationSettings = settingsBuilder.verifyAttestationSettings().build();
+    verifyConfidentialSpaceSettings = settingsBuilder.verifyConfidentialSpaceSettings().build();
+    verifyConfidentialGkeSettings = settingsBuilder.verifyConfidentialGkeSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -326,6 +348,12 @@ public class ConfidentialComputingStubSettings
         createChallengeSettings;
     private final UnaryCallSettings.Builder<VerifyAttestationRequest, VerifyAttestationResponse>
         verifyAttestationSettings;
+    private final UnaryCallSettings.Builder<
+            VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+        verifyConfidentialSpaceSettings;
+    private final UnaryCallSettings.Builder<
+            VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+        verifyConfidentialGkeSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -380,6 +408,8 @@ public class ConfidentialComputingStubSettings
 
       createChallengeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       verifyAttestationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      verifyConfidentialSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      verifyConfidentialGkeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -387,6 +417,8 @@ public class ConfidentialComputingStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createChallengeSettings,
               verifyAttestationSettings,
+              verifyConfidentialSpaceSettings,
+              verifyConfidentialGkeSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -397,6 +429,8 @@ public class ConfidentialComputingStubSettings
 
       createChallengeSettings = settings.createChallengeSettings.toBuilder();
       verifyAttestationSettings = settings.verifyAttestationSettings.toBuilder();
+      verifyConfidentialSpaceSettings = settings.verifyConfidentialSpaceSettings.toBuilder();
+      verifyConfidentialGkeSettings = settings.verifyConfidentialGkeSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -404,6 +438,8 @@ public class ConfidentialComputingStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createChallengeSettings,
               verifyAttestationSettings,
+              verifyConfidentialSpaceSettings,
+              verifyConfidentialGkeSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -444,6 +480,16 @@ public class ConfidentialComputingStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .verifyConfidentialSpaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .verifyConfidentialGkeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -480,6 +526,19 @@ public class ConfidentialComputingStubSettings
     public UnaryCallSettings.Builder<VerifyAttestationRequest, VerifyAttestationResponse>
         verifyAttestationSettings() {
       return verifyAttestationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConfidentialSpace. */
+    public UnaryCallSettings.Builder<
+            VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+        verifyConfidentialSpaceSettings() {
+      return verifyConfidentialSpaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConfidentialGke. */
+    public UnaryCallSettings.Builder<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+        verifyConfidentialGkeSettings() {
+      return verifyConfidentialGkeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

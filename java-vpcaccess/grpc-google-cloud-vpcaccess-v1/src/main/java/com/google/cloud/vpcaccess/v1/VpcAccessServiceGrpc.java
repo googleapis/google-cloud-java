@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Virtual Private Cloud networks.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vpcaccess/v1/vpc_access.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VpcAccessServiceGrpc {
 
@@ -477,8 +474,9 @@ public final class VpcAccessServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnector(
-        com.google.cloud.vpcaccess.v1.CreateConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vpcaccess.v1.CreateConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectorMethod(), getCallOptions(), request);
     }
 
@@ -491,8 +489,8 @@ public final class VpcAccessServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vpcaccess.v1.Connector getConnector(
-        com.google.cloud.vpcaccess.v1.GetConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vpcaccess.v1.GetConnectorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectorMethod(), getCallOptions(), request);
     }
 
@@ -504,8 +502,9 @@ public final class VpcAccessServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vpcaccess.v1.ListConnectorsResponse listConnectors(
-        com.google.cloud.vpcaccess.v1.ListConnectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vpcaccess.v1.ListConnectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectorsMethod(), getCallOptions(), request);
     }
 
@@ -518,8 +517,9 @@ public final class VpcAccessServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnector(
-        com.google.cloud.vpcaccess.v1.DeleteConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vpcaccess.v1.DeleteConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectorMethod(), getCallOptions(), request);
     }
   }

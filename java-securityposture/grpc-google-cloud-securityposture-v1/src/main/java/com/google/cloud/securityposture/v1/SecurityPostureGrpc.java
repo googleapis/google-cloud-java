@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/securityposture/v1/securityposture.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecurityPostureGrpc {
 
@@ -1351,8 +1348,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.cloud.securityposture.v1.ListPosturesResponse listPostures(
-        com.google.cloud.securityposture.v1.ListPosturesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.ListPosturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPosturesMethod(), getCallOptions(), request);
     }
 
@@ -1364,8 +1362,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.cloud.securityposture.v1.ListPostureRevisionsResponse listPostureRevisions(
-        com.google.cloud.securityposture.v1.ListPostureRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.ListPostureRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPostureRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -1382,8 +1381,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.cloud.securityposture.v1.Posture getPosture(
-        com.google.cloud.securityposture.v1.GetPostureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.GetPostureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPostureMethod(), getCallOptions(), request);
     }
 
@@ -1398,8 +1398,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPosture(
-        com.google.cloud.securityposture.v1.CreatePostureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.CreatePostureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePostureMethod(), getCallOptions(), request);
     }
 
@@ -1422,8 +1423,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePosture(
-        com.google.cloud.securityposture.v1.UpdatePostureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.UpdatePostureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePostureMethod(), getCallOptions(), request);
     }
 
@@ -1437,8 +1439,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePosture(
-        com.google.cloud.securityposture.v1.DeletePostureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.DeletePostureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePostureMethod(), getCallOptions(), request);
     }
 
@@ -1452,8 +1455,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation extractPosture(
-        com.google.cloud.securityposture.v1.ExtractPostureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.ExtractPostureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExtractPostureMethod(), getCallOptions(), request);
     }
 
@@ -1467,8 +1471,9 @@ public final class SecurityPostureGrpc {
      */
     public com.google.cloud.securityposture.v1.ListPostureDeploymentsResponse
         listPostureDeployments(
-            com.google.cloud.securityposture.v1.ListPostureDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securityposture.v1.ListPostureDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPostureDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -1480,8 +1485,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.cloud.securityposture.v1.PostureDeployment getPostureDeployment(
-        com.google.cloud.securityposture.v1.GetPostureDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.GetPostureDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPostureDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1493,8 +1499,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPostureDeployment(
-        com.google.cloud.securityposture.v1.CreatePostureDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.CreatePostureDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePostureDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1506,8 +1513,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePostureDeployment(
-        com.google.cloud.securityposture.v1.UpdatePostureDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.UpdatePostureDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePostureDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1519,8 +1527,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePostureDeployment(
-        com.google.cloud.securityposture.v1.DeletePostureDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.DeletePostureDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePostureDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1533,8 +1542,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.cloud.securityposture.v1.ListPostureTemplatesResponse listPostureTemplates(
-        com.google.cloud.securityposture.v1.ListPostureTemplatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.ListPostureTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPostureTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -1551,8 +1561,9 @@ public final class SecurityPostureGrpc {
      * </pre>
      */
     public com.google.cloud.securityposture.v1.PostureTemplate getPostureTemplate(
-        com.google.cloud.securityposture.v1.GetPostureTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securityposture.v1.GetPostureTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPostureTemplateMethod(), getCallOptions(), request);
     }
   }

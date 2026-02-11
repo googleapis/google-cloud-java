@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * https://cloud.google.com/sensitive-data-protection/docs/.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/privacy/dlp/v2/dlp.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DlpServiceGrpc {
 
@@ -4677,8 +4674,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectContentResponse inspectContent(
-        com.google.privacy.dlp.v2.InspectContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.InspectContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInspectContentMethod(), getCallOptions(), request);
     }
 
@@ -4699,8 +4696,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.RedactImageResponse redactImage(
-        com.google.privacy.dlp.v2.RedactImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.RedactImageRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRedactImageMethod(), getCallOptions(), request);
     }
 
@@ -4719,8 +4716,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyContentResponse deidentifyContent(
-        com.google.privacy.dlp.v2.DeidentifyContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeidentifyContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeidentifyContentMethod(), getCallOptions(), request);
     }
 
@@ -4735,8 +4732,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ReidentifyContentResponse reidentifyContent(
-        com.google.privacy.dlp.v2.ReidentifyContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ReidentifyContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReidentifyContentMethod(), getCallOptions(), request);
     }
 
@@ -4751,8 +4748,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListInfoTypesResponse listInfoTypes(
-        com.google.privacy.dlp.v2.ListInfoTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListInfoTypesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInfoTypesMethod(), getCallOptions(), request);
     }
 
@@ -4768,8 +4765,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectTemplate createInspectTemplate(
-        com.google.privacy.dlp.v2.CreateInspectTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateInspectTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInspectTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4784,8 +4782,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectTemplate updateInspectTemplate(
-        com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInspectTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4800,8 +4799,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate(
-        com.google.privacy.dlp.v2.GetInspectTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetInspectTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInspectTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4816,8 +4816,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListInspectTemplatesResponse listInspectTemplates(
-        com.google.privacy.dlp.v2.ListInspectTemplatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListInspectTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInspectTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -4832,8 +4833,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteInspectTemplate(
-        com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInspectTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4849,8 +4851,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate createDeidentifyTemplate(
-        com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeidentifyTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4865,8 +4868,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate updateDeidentifyTemplate(
-        com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeidentifyTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4881,8 +4885,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate(
-        com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeidentifyTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4897,8 +4902,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse listDeidentifyTemplates(
-        com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeidentifyTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -4913,8 +4919,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDeidentifyTemplate(
-        com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeidentifyTemplateMethod(), getCallOptions(), request);
     }
 
@@ -4930,8 +4937,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.JobTrigger createJobTrigger(
-        com.google.privacy.dlp.v2.CreateJobTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateJobTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobTriggerMethod(), getCallOptions(), request);
     }
 
@@ -4946,8 +4953,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.JobTrigger updateJobTrigger(
-        com.google.privacy.dlp.v2.UpdateJobTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.UpdateJobTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobTriggerMethod(), getCallOptions(), request);
     }
 
@@ -4961,8 +4968,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectJobTrigger(
-        com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getHybridInspectJobTriggerMethod(), getCallOptions(), request);
     }
 
@@ -4977,8 +4985,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.JobTrigger getJobTrigger(
-        com.google.privacy.dlp.v2.GetJobTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetJobTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobTriggerMethod(), getCallOptions(), request);
     }
 
@@ -4993,8 +5001,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListJobTriggersResponse listJobTriggers(
-        com.google.privacy.dlp.v2.ListJobTriggersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListJobTriggersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobTriggersMethod(), getCallOptions(), request);
     }
 
@@ -5009,8 +5017,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteJobTrigger(
-        com.google.privacy.dlp.v2.DeleteJobTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteJobTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteJobTriggerMethod(), getCallOptions(), request);
     }
 
@@ -5023,8 +5031,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DlpJob activateJobTrigger(
-        com.google.privacy.dlp.v2.ActivateJobTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ActivateJobTriggerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getActivateJobTriggerMethod(), getCallOptions(), request);
     }
 
@@ -5036,8 +5045,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DiscoveryConfig createDiscoveryConfig(
-        com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDiscoveryConfigMethod(), getCallOptions(), request);
     }
 
@@ -5049,8 +5059,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DiscoveryConfig updateDiscoveryConfig(
-        com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDiscoveryConfigMethod(), getCallOptions(), request);
     }
 
@@ -5062,8 +5073,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig(
-        com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDiscoveryConfigMethod(), getCallOptions(), request);
     }
 
@@ -5075,8 +5087,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse listDiscoveryConfigs(
-        com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDiscoveryConfigsMethod(), getCallOptions(), request);
     }
 
@@ -5088,8 +5101,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDiscoveryConfig(
-        com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDiscoveryConfigMethod(), getCallOptions(), request);
     }
 
@@ -5109,8 +5123,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DlpJob createDlpJob(
-        com.google.privacy.dlp.v2.CreateDlpJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateDlpJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDlpJobMethod(), getCallOptions(), request);
     }
 
@@ -5127,8 +5141,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListDlpJobsResponse listDlpJobs(
-        com.google.privacy.dlp.v2.ListDlpJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListDlpJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDlpJobsMethod(), getCallOptions(), request);
     }
 
@@ -5145,8 +5159,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.DlpJob getDlpJob(
-        com.google.privacy.dlp.v2.GetDlpJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetDlpJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDlpJobMethod(), getCallOptions(), request);
     }
 
@@ -5165,8 +5179,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDlpJob(
-        com.google.privacy.dlp.v2.DeleteDlpJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteDlpJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDlpJobMethod(), getCallOptions(), request);
     }
 
@@ -5185,8 +5199,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelDlpJob(
-        com.google.privacy.dlp.v2.CancelDlpJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CancelDlpJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelDlpJobMethod(), getCallOptions(), request);
     }
 
@@ -5201,8 +5215,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.StoredInfoType createStoredInfoType(
-        com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateStoredInfoTypeMethod(), getCallOptions(), request);
     }
 
@@ -5218,8 +5233,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.StoredInfoType updateStoredInfoType(
-        com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateStoredInfoTypeMethod(), getCallOptions(), request);
     }
 
@@ -5234,8 +5250,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.StoredInfoType getStoredInfoType(
-        com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetStoredInfoTypeMethod(), getCallOptions(), request);
     }
 
@@ -5250,8 +5266,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListStoredInfoTypesResponse listStoredInfoTypes(
-        com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListStoredInfoTypesMethod(), getCallOptions(), request);
     }
 
@@ -5266,8 +5283,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteStoredInfoType(
-        com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteStoredInfoTypeMethod(), getCallOptions(), request);
     }
 
@@ -5279,8 +5297,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListProjectDataProfilesResponse listProjectDataProfiles(
-        com.google.privacy.dlp.v2.ListProjectDataProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListProjectDataProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProjectDataProfilesMethod(), getCallOptions(), request);
     }
 
@@ -5292,8 +5311,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListTableDataProfilesResponse listTableDataProfiles(
-        com.google.privacy.dlp.v2.ListTableDataProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListTableDataProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTableDataProfilesMethod(), getCallOptions(), request);
     }
 
@@ -5305,8 +5325,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListColumnDataProfilesResponse listColumnDataProfiles(
-        com.google.privacy.dlp.v2.ListColumnDataProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListColumnDataProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListColumnDataProfilesMethod(), getCallOptions(), request);
     }
 
@@ -5318,8 +5339,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ProjectDataProfile getProjectDataProfile(
-        com.google.privacy.dlp.v2.GetProjectDataProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetProjectDataProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProjectDataProfileMethod(), getCallOptions(), request);
     }
 
@@ -5331,8 +5353,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse listFileStoreDataProfiles(
-        com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFileStoreDataProfilesMethod(), getCallOptions(), request);
     }
 
@@ -5344,8 +5367,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreDataProfile(
-        com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFileStoreDataProfileMethod(), getCallOptions(), request);
     }
 
@@ -5358,8 +5382,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFileStoreDataProfile(
-        com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFileStoreDataProfileMethod(), getCallOptions(), request);
     }
 
@@ -5371,8 +5396,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.TableDataProfile getTableDataProfile(
-        com.google.privacy.dlp.v2.GetTableDataProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetTableDataProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTableDataProfileMethod(), getCallOptions(), request);
     }
 
@@ -5384,8 +5410,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ColumnDataProfile getColumnDataProfile(
-        com.google.privacy.dlp.v2.GetColumnDataProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetColumnDataProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetColumnDataProfileMethod(), getCallOptions(), request);
     }
 
@@ -5398,8 +5425,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTableDataProfile(
-        com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTableDataProfileMethod(), getCallOptions(), request);
     }
 
@@ -5413,8 +5441,9 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectDlpJob(
-        com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getHybridInspectDlpJobMethod(), getCallOptions(), request);
     }
 
@@ -5427,8 +5456,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty finishDlpJob(
-        com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.FinishDlpJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFinishDlpJobMethod(), getCallOptions(), request);
     }
 
@@ -5440,8 +5469,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.Connection createConnection(
-        com.google.privacy.dlp.v2.CreateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.CreateConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -5453,8 +5482,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.Connection getConnection(
-        com.google.privacy.dlp.v2.GetConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.GetConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
@@ -5467,8 +5496,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListConnectionsResponse listConnections(
-        com.google.privacy.dlp.v2.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.ListConnectionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -5480,8 +5509,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.SearchConnectionsResponse searchConnections(
-        com.google.privacy.dlp.v2.SearchConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.SearchConnectionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -5493,8 +5522,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConnection(
-        com.google.privacy.dlp.v2.DeleteConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.DeleteConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
@@ -5506,8 +5535,8 @@ public final class DlpServiceGrpc {
      * </pre>
      */
     public com.google.privacy.dlp.v2.Connection updateConnection(
-        com.google.privacy.dlp.v2.UpdateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.privacy.dlp.v2.UpdateConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
   }

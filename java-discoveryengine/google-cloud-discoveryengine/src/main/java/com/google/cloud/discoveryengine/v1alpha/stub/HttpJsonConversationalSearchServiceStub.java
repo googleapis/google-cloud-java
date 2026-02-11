@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -545,6 +545,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSessionRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "includeAnswerDetails", request.getIncludeAnswerDetails());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })

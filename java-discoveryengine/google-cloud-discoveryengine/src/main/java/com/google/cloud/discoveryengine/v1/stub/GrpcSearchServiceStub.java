@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.SearchService/Search")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SearchRequest, SearchResponse> searchLiteMethodDescriptor =
@@ -57,6 +58,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.SearchService/SearchLite")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;

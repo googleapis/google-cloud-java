@@ -37,6 +37,9 @@
             "ExportRevisionStatefile": {
               "methods": ["exportRevisionStatefile", "exportRevisionStatefileCallable"]
             },
+            "GetAutoMigrationConfig": {
+              "methods": ["getAutoMigrationConfig", "getAutoMigrationConfig", "getAutoMigrationConfig", "getAutoMigrationConfigCallable"]
+            },
             "GetDeployment": {
               "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
             },
@@ -51,6 +54,12 @@
             },
             "GetResource": {
               "methods": ["getResource", "getResource", "getResource", "getResourceCallable"]
+            },
+            "GetResourceChange": {
+              "methods": ["getResourceChange", "getResourceChange", "getResourceChange", "getResourceChangeCallable"]
+            },
+            "GetResourceDrift": {
+              "methods": ["getResourceDrift", "getResourceDrift", "getResourceDrift", "getResourceDriftCallable"]
             },
             "GetRevision": {
               "methods": ["getRevision", "getRevision", "getRevision", "getRevisionCallable"]
@@ -69,6 +78,12 @@
             },
             "ListPreviews": {
               "methods": ["listPreviews", "listPreviews", "listPreviews", "listPreviewsPagedCallable", "listPreviewsCallable"]
+            },
+            "ListResourceChanges": {
+              "methods": ["listResourceChanges", "listResourceChanges", "listResourceChanges", "listResourceChangesPagedCallable", "listResourceChangesCallable"]
+            },
+            "ListResourceDrifts": {
+              "methods": ["listResourceDrifts", "listResourceDrifts", "listResourceDrifts", "listResourceDriftsPagedCallable", "listResourceDriftsCallable"]
             },
             "ListResources": {
               "methods": ["listResources", "listResources", "listResources", "listResourcesPagedCallable", "listResourcesCallable"]
@@ -90,6 +105,9 @@
             },
             "UnlockDeployment": {
               "methods": ["unlockDeploymentAsync", "unlockDeploymentAsync", "unlockDeploymentAsync", "unlockDeploymentOperationCallable", "unlockDeploymentCallable"]
+            },
+            "UpdateAutoMigrationConfig": {
+              "methods": ["updateAutoMigrationConfigAsync", "updateAutoMigrationConfigAsync", "updateAutoMigrationConfigOperationCallable", "updateAutoMigrationConfigCallable"]
             },
             "UpdateDeployment": {
               "methods": ["updateDeploymentAsync", "updateDeploymentAsync", "updateDeploymentOperationCallable", "updateDeploymentCallable"]

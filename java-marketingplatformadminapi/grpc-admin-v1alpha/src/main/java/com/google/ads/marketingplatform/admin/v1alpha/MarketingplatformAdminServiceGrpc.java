@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service Interface for the Google Marketing Platform Admin API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/marketingplatform/admin/v1alpha/marketingplatform_admin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MarketingplatformAdminServiceGrpc {
 
@@ -84,6 +81,116 @@ public final class MarketingplatformAdminServiceGrpc {
       }
     }
     return getGetOrganizationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+      getListOrganizationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOrganizations",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+      getListOrganizationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+        getListOrganizationsMethod;
+    if ((getListOrganizationsMethod = MarketingplatformAdminServiceGrpc.getListOrganizationsMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getListOrganizationsMethod =
+                MarketingplatformAdminServiceGrpc.getListOrganizationsMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getListOrganizationsMethod =
+              getListOrganizationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOrganizations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ListOrganizationsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ListOrganizationsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "ListOrganizations"))
+                      .build();
+        }
+      }
+    }
+    return getListOrganizationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse>
+      getFindSalesPartnerManagedClientsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindSalesPartnerManagedClients",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
+              .class,
+      responseType =
+          com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse>
+      getFindSalesPartnerManagedClientsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse>
+        getFindSalesPartnerManagedClientsMethod;
+    if ((getFindSalesPartnerManagedClientsMethod =
+            MarketingplatformAdminServiceGrpc.getFindSalesPartnerManagedClientsMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getFindSalesPartnerManagedClientsMethod =
+                MarketingplatformAdminServiceGrpc.getFindSalesPartnerManagedClientsMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getFindSalesPartnerManagedClientsMethod =
+              getFindSalesPartnerManagedClientsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha
+                              .FindSalesPartnerManagedClientsRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha
+                              .FindSalesPartnerManagedClientsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FindSalesPartnerManagedClients"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .FindSalesPartnerManagedClientsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .FindSalesPartnerManagedClientsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "FindSalesPartnerManagedClients"))
+                      .build();
+        }
+      }
+    }
+    return getFindSalesPartnerManagedClientsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -309,6 +416,61 @@ public final class MarketingplatformAdminServiceGrpc {
     return getSetPropertyServiceLevelMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>
+      getReportPropertyUsageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReportPropertyUsage",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest.class,
+      responseType =
+          com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>
+      getReportPropertyUsageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>
+        getReportPropertyUsageMethod;
+    if ((getReportPropertyUsageMethod =
+            MarketingplatformAdminServiceGrpc.getReportPropertyUsageMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getReportPropertyUsageMethod =
+                MarketingplatformAdminServiceGrpc.getReportPropertyUsageMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getReportPropertyUsageMethod =
+              getReportPropertyUsageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha
+                              .ReportPropertyUsageResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReportPropertyUsage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ReportPropertyUsageRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ReportPropertyUsageResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "ReportPropertyUsage"))
+                      .build();
+        }
+      }
+    }
+    return getReportPropertyUsageMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static MarketingplatformAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MarketingplatformAdminServiceStub> factory =
@@ -392,6 +554,42 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of organizations that the user has access to.
+     * </pre>
+     */
+    default void listOrganizations(
+        com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOrganizationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of clients managed by the sales partner organization.
+     * User needs to be an OrgAdmin/BillingAdmin on the sales partner organization
+     * in order to view the end clients.
+     * </pre>
+     */
+    default void findSalesPartnerManagedClients(
+        com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha
+                    .FindSalesPartnerManagedClientsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFindSalesPartnerManagedClientsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the Google Analytics accounts link to the specified Google Marketing
      * Platform organization.
      * </pre>
@@ -457,6 +655,29 @@ public final class MarketingplatformAdminServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSetPropertyServiceLevelMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the usage and billing data for properties within the organization for
+     * the specified month.
+     * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
+     * organization in order to view the billing and usage data.
+     * Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on
+     * the sales partner org in order to view the billing and usage data, or
+     * OrgAdmin/BillingAdmin on the sales partner client org in order to view the
+     * usage data only.
+     * </pre>
+     */
+    default void reportPropertyUsage(
+        com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReportPropertyUsageMethod(), responseObserver);
+    }
   }
 
   /**
@@ -508,6 +729,46 @@ public final class MarketingplatformAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetOrganizationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of organizations that the user has access to.
+     * </pre>
+     */
+    public void listOrganizations(
+        com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOrganizationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of clients managed by the sales partner organization.
+     * User needs to be an OrgAdmin/BillingAdmin on the sales partner organization
+     * in order to view the end clients.
+     * </pre>
+     */
+    public void findSalesPartnerManagedClients(
+        com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha
+                    .FindSalesPartnerManagedClientsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindSalesPartnerManagedClientsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -589,6 +850,31 @@ public final class MarketingplatformAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the usage and billing data for properties within the organization for
+     * the specified month.
+     * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
+     * organization in order to view the billing and usage data.
+     * Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on
+     * the sales partner org in order to view the billing and usage data, or
+     * OrgAdmin/BillingAdmin on the sales partner client org in order to view the
+     * usage data only.
+     * </pre>
+     */
+    public void reportPropertyUsage(
+        com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReportPropertyUsageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -619,9 +905,43 @@ public final class MarketingplatformAdminServiceGrpc {
      * </pre>
      */
     public com.google.ads.marketingplatform.admin.v1alpha.Organization getOrganization(
-        com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrganizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of organizations that the user has access to.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse
+        listOrganizations(
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListOrganizationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of clients managed by the sales partner organization.
+     * User needs to be an OrgAdmin/BillingAdmin on the sales partner organization
+     * in order to view the end clients.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse
+        findSalesPartnerManagedClients(
+            com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFindSalesPartnerManagedClientsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -634,9 +954,9 @@ public final class MarketingplatformAdminServiceGrpc {
      */
     public com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse
         listAnalyticsAccountLinks(
-            com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnalyticsAccountLinksMethod(), getCallOptions(), request);
     }
 
@@ -654,8 +974,9 @@ public final class MarketingplatformAdminServiceGrpc {
     public com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink
         createAnalyticsAccountLink(
             com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnalyticsAccountLinkMethod(), getCallOptions(), request);
     }
 
@@ -670,8 +991,9 @@ public final class MarketingplatformAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAnalyticsAccountLink(
-        com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAnalyticsAccountLinkMethod(), getCallOptions(), request);
     }
 
@@ -684,9 +1006,32 @@ public final class MarketingplatformAdminServiceGrpc {
      */
     public com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse
         setPropertyServiceLevel(
-            com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetPropertyServiceLevelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the usage and billing data for properties within the organization for
+     * the specified month.
+     * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
+     * organization in order to view the billing and usage data.
+     * Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on
+     * the sales partner org in order to view the billing and usage data, or
+     * OrgAdmin/BillingAdmin on the sales partner client org in order to view the
+     * usage data only.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse
+        reportPropertyUsage(
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReportPropertyUsageMethod(), getCallOptions(), request);
     }
   }
 
@@ -728,6 +1073,37 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of organizations that the user has access to.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse
+        listOrganizations(
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrganizationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of clients managed by the sales partner organization.
+     * User needs to be an OrgAdmin/BillingAdmin on the sales partner organization
+     * in order to view the end clients.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse
+        findSalesPartnerManagedClients(
+            com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindSalesPartnerManagedClientsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the Google Analytics accounts link to the specified Google Marketing
      * Platform organization.
      * </pre>
@@ -788,6 +1164,27 @@ public final class MarketingplatformAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetPropertyServiceLevelMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the usage and billing data for properties within the organization for
+     * the specified month.
+     * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
+     * organization in order to view the billing and usage data.
+     * Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on
+     * the sales partner org in order to view the billing and usage data, or
+     * OrgAdmin/BillingAdmin on the sales partner client org in order to view the
+     * usage data only.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse
+        reportPropertyUsage(
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReportPropertyUsageMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -824,6 +1221,40 @@ public final class MarketingplatformAdminServiceGrpc {
             com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetOrganizationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of organizations that the user has access to.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>
+        listOrganizations(
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOrganizationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of clients managed by the sales partner organization.
+     * User needs to be an OrgAdmin/BillingAdmin on the sales partner organization
+     * in order to view the end clients.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse>
+        findSalesPartnerManagedClients(
+            com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindSalesPartnerManagedClientsMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -895,13 +1326,38 @@ public final class MarketingplatformAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetPropertyServiceLevelMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the usage and billing data for properties within the organization for
+     * the specified month.
+     * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
+     * organization in order to view the billing and usage data.
+     * Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on
+     * the sales partner org in order to view the billing and usage data, or
+     * OrgAdmin/BillingAdmin on the sales partner client org in order to view the
+     * usage data only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>
+        reportPropertyUsage(
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReportPropertyUsageMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ORGANIZATION = 0;
-  private static final int METHODID_LIST_ANALYTICS_ACCOUNT_LINKS = 1;
-  private static final int METHODID_CREATE_ANALYTICS_ACCOUNT_LINK = 2;
-  private static final int METHODID_DELETE_ANALYTICS_ACCOUNT_LINK = 3;
-  private static final int METHODID_SET_PROPERTY_SERVICE_LEVEL = 4;
+  private static final int METHODID_LIST_ORGANIZATIONS = 1;
+  private static final int METHODID_FIND_SALES_PARTNER_MANAGED_CLIENTS = 2;
+  private static final int METHODID_LIST_ANALYTICS_ACCOUNT_LINKS = 3;
+  private static final int METHODID_CREATE_ANALYTICS_ACCOUNT_LINK = 4;
+  private static final int METHODID_DELETE_ANALYTICS_ACCOUNT_LINK = 5;
+  private static final int METHODID_SET_PROPERTY_SERVICE_LEVEL = 6;
+  private static final int METHODID_REPORT_PROPERTY_USAGE = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -925,6 +1381,22 @@ public final class MarketingplatformAdminServiceGrpc {
               (com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.ads.marketingplatform.admin.v1alpha.Organization>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ORGANIZATIONS:
+          serviceImpl.listOrganizations(
+              (com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FIND_SALES_PARTNER_MANAGED_CLIENTS:
+          serviceImpl.findSalesPartnerManagedClients(
+              (com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha
+                          .FindSalesPartnerManagedClientsResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_ANALYTICS_ACCOUNT_LINKS:
@@ -959,6 +1431,13 @@ public final class MarketingplatformAdminServiceGrpc {
                           .SetPropertyServiceLevelResponse>)
                   responseObserver);
           break;
+        case METHODID_REPORT_PROPERTY_USAGE:
+          serviceImpl.reportPropertyUsage(
+              (com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -984,6 +1463,22 @@ public final class MarketingplatformAdminServiceGrpc {
                     com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest,
                     com.google.ads.marketingplatform.admin.v1alpha.Organization>(
                     service, METHODID_GET_ORGANIZATION)))
+        .addMethod(
+            getListOrganizationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse>(
+                    service, METHODID_LIST_ORGANIZATIONS)))
+        .addMethod(
+            getFindSalesPartnerManagedClientsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha
+                        .FindSalesPartnerManagedClientsRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha
+                        .FindSalesPartnerManagedClientsResponse>(
+                    service, METHODID_FIND_SALES_PARTNER_MANAGED_CLIENTS)))
         .addMethod(
             getListAnalyticsAccountLinksMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1014,6 +1509,13 @@ public final class MarketingplatformAdminServiceGrpc {
                     com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest,
                     com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse>(
                     service, METHODID_SET_PROPERTY_SERVICE_LEVEL)))
+        .addMethod(
+            getReportPropertyUsageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>(
+                    service, METHODID_REPORT_PROPERTY_USAGE)))
         .build();
   }
 
@@ -1068,10 +1570,13 @@ public final class MarketingplatformAdminServiceGrpc {
                       .setSchemaDescriptor(
                           new MarketingplatformAdminServiceFileDescriptorSupplier())
                       .addMethod(getGetOrganizationMethod())
+                      .addMethod(getListOrganizationsMethod())
+                      .addMethod(getFindSalesPartnerManagedClientsMethod())
                       .addMethod(getListAnalyticsAccountLinksMethod())
                       .addMethod(getCreateAnalyticsAccountLinkMethod())
                       .addMethod(getDeleteAnalyticsAccountLinkMethod())
                       .addMethod(getSetPropertyServiceLevelMethod())
+                      .addMethod(getReportPropertyUsageMethod())
                       .build();
         }
       }

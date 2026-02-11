@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.cloudcontrolspartner.v1.stub.CloudControlsPartnerCoreStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -86,8 +87,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class CloudControlsPartnerCoreSettings
@@ -145,6 +146,21 @@ public class CloudControlsPartnerCoreSettings
   /** Returns the object with the settings used for calls to getPartner. */
   public UnaryCallSettings<GetPartnerRequest, Partner> getPartnerSettings() {
     return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).getPartnerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomer. */
+  public UnaryCallSettings<CreateCustomerRequest, Customer> createCustomerSettings() {
+    return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).createCustomerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomer. */
+  public UnaryCallSettings<UpdateCustomerRequest, Customer> updateCustomerSettings() {
+    return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).updateCustomerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomer. */
+  public UnaryCallSettings<DeleteCustomerRequest, Empty> deleteCustomerSettings() {
+    return ((CloudControlsPartnerCoreStubSettings) getStubSettings()).deleteCustomerSettings();
   }
 
   public static final CloudControlsPartnerCoreSettings create(
@@ -313,6 +329,21 @@ public class CloudControlsPartnerCoreSettings
     /** Returns the builder for the settings used for calls to getPartner. */
     public UnaryCallSettings.Builder<GetPartnerRequest, Partner> getPartnerSettings() {
       return getStubSettingsBuilder().getPartnerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomer. */
+    public UnaryCallSettings.Builder<CreateCustomerRequest, Customer> createCustomerSettings() {
+      return getStubSettingsBuilder().createCustomerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomer. */
+    public UnaryCallSettings.Builder<UpdateCustomerRequest, Customer> updateCustomerSettings() {
+      return getStubSettingsBuilder().updateCustomerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomer. */
+    public UnaryCallSettings.Builder<DeleteCustomerRequest, Empty> deleteCustomerSettings() {
+      return getStubSettingsBuilder().deleteCustomerSettings();
     }
 
     @Override

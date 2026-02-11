@@ -1,0 +1,35 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+deep-remove-regex:
+- "/java-maintenance/grpc-google-.*/src"
+- "/java-maintenance/proto-google-.*/src"
+- "/java-maintenance/google-.*/src"
+- "/java-maintenance/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-maintenance/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
+deep-copy-regex:
+- source: "/google/cloud/maintenance/api/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-maintenance/$1/proto-google-cloud-maintenance-$1/src"
+- source: "/google/cloud/maintenance/api/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-maintenance/$1/grpc-google-cloud-maintenance-$1/src"
+- source: "/google/cloud/maintenance/api/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-maintenance/$1/google-cloud-maintenance/src"
+- source: "/google/cloud/maintenance/api/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-maintenance/$1/samples/snippets/generated"
+
+api-name: maintenance

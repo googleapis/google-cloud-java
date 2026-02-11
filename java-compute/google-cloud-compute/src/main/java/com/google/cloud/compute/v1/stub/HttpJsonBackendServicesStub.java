@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceResponse;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
@@ -331,6 +333,50 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendService>newBuilder()
                       .setDefaultInstance(BackendService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEffectiveSecurityPoliciesBackendServiceRequest,
+                  GetEffectiveSecurityPoliciesBackendServiceResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.BackendServices/GetEffectiveSecurityPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetEffectiveSecurityPoliciesBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendServices/{backendService}/getEffectiveSecurityPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveSecurityPoliciesBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backendService", request.getBackendService());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveSecurityPoliciesBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<GetEffectiveSecurityPoliciesBackendServiceResponse>newBuilder()
+                      .setDefaultInstance(
+                          GetEffectiveSecurityPoliciesBackendServiceResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -901,6 +947,10 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   private final OperationCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
       deleteSignedUrlKeyOperationCallable;
   private final UnaryCallable<GetBackendServiceRequest, BackendService> getCallable;
+  private final UnaryCallable<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesCallable;
   private final UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable;
   private final UnaryCallable<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyCallable;
@@ -1039,6 +1089,24 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<
+            GetEffectiveSecurityPoliciesBackendServiceRequest,
+            GetEffectiveSecurityPoliciesBackendServiceResponse>
+        getEffectiveSecurityPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<GetEffectiveSecurityPoliciesBackendServiceRequest,
+                    GetEffectiveSecurityPoliciesBackendServiceResponse>
+                    newBuilder()
+                .setMethodDescriptor(getEffectiveSecurityPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
         getHealthTransportSettings =
             HttpJsonCallSettings
@@ -1215,6 +1283,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getEffectiveSecurityPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveSecurityPoliciesTransportSettings,
+            settings.getEffectiveSecurityPoliciesSettings(),
+            clientContext);
     this.getHealthCallable =
         callableFactory.createUnaryCallable(
             getHealthTransportSettings, settings.getHealthSettings(), clientContext);
@@ -1303,6 +1376,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(deleteSignedUrlKeyMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getEffectiveSecurityPoliciesMethodDescriptor);
     methodDescriptors.add(getHealthMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
@@ -1366,6 +1440,14 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   @Override
   public UnaryCallable<GetBackendServiceRequest, BackendService> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesCallable() {
+    return getEffectiveSecurityPoliciesCallable;
   }
 
   @Override

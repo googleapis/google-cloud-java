@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/inventory/v1/key_dashboard_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class KeyDashboardServiceGrpc {
 
@@ -249,8 +246,9 @@ public final class KeyDashboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.inventory.v1.ListCryptoKeysResponse listCryptoKeys(
-        com.google.cloud.kms.inventory.v1.ListCryptoKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.inventory.v1.ListCryptoKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCryptoKeysMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
@@ -156,6 +157,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
@@ -296,6 +298,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
@@ -354,6 +357,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();
@@ -408,6 +412,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexStatus(Document.IndexStatus.newBuilder().build())
             .build();

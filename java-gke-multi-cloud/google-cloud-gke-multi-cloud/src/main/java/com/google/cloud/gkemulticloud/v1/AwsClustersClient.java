@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -418,7 +418,10 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AwsClustersClient implements BackgroundResource {
   private final AwsClustersSettings settings;
@@ -533,7 +536,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsCluster, OperationMetadata> createAwsClusterAsync(
       LocationName parent, AwsCluster awsCluster, String awsClusterId) {
     CreateAwsClusterRequest request =
@@ -585,7 +590,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsCluster, OperationMetadata> createAwsClusterAsync(
       String parent, AwsCluster awsCluster, String awsClusterId) {
     CreateAwsClusterRequest request =
@@ -628,7 +635,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsCluster, OperationMetadata> createAwsClusterAsync(
       CreateAwsClusterRequest request) {
     return createAwsClusterOperationCallable().futureCall(request);
@@ -665,7 +674,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsCluster response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateAwsClusterRequest, AwsCluster, OperationMetadata>
       createAwsClusterOperationCallable() {
     return stub.createAwsClusterOperationCallable();
@@ -702,7 +714,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAwsClusterRequest, Operation> createAwsClusterCallable() {
     return stub.createAwsClusterCallable();
   }
@@ -748,7 +763,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     `monitoring_config.managed_prometheus_config.enabled`. &#42;
    *     `networking.per_node_pool_sg_rules_disabled`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsCluster, OperationMetadata> updateAwsClusterAsync(
       AwsCluster awsCluster, FieldMask updateMask) {
     UpdateAwsClusterRequest request =
@@ -784,7 +801,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsCluster, OperationMetadata> updateAwsClusterAsync(
       UpdateAwsClusterRequest request) {
     return updateAwsClusterOperationCallable().futureCall(request);
@@ -815,7 +834,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsCluster response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<UpdateAwsClusterRequest, AwsCluster, OperationMetadata>
       updateAwsClusterOperationCallable() {
     return stub.updateAwsClusterOperationCallable();
@@ -846,7 +868,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateAwsClusterRequest, Operation> updateAwsClusterCallable() {
     return stub.updateAwsClusterCallable();
   }
@@ -876,7 +901,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsCluster getAwsCluster(AwsClusterName name) {
     GetAwsClusterRequest request =
         GetAwsClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -908,7 +935,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsCluster getAwsCluster(String name) {
     GetAwsClusterRequest request = GetAwsClusterRequest.newBuilder().setName(name).build();
     return getAwsCluster(request);
@@ -937,7 +966,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsCluster getAwsCluster(GetAwsClusterRequest request) {
     return getAwsClusterCallable().call(request);
   }
@@ -964,7 +995,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsCluster response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAwsClusterRequest, AwsCluster> getAwsClusterCallable() {
     return stub.getAwsClusterCallable();
   }
@@ -996,7 +1030,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAwsClustersPagedResponse listAwsClusters(LocationName parent) {
     ListAwsClustersRequest request =
         ListAwsClustersRequest.newBuilder()
@@ -1032,7 +1068,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAwsClustersPagedResponse listAwsClusters(String parent) {
     ListAwsClustersRequest request = ListAwsClustersRequest.newBuilder().setParent(parent).build();
     return listAwsClusters(request);
@@ -1066,7 +1104,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAwsClustersPagedResponse listAwsClusters(ListAwsClustersRequest request) {
     return listAwsClustersPagedCallable().call(request);
   }
@@ -1099,7 +1139,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAwsClustersRequest, ListAwsClustersPagedResponse>
       listAwsClustersPagedCallable() {
     return stub.listAwsClustersPagedCallable();
@@ -1140,7 +1183,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAwsClustersRequest, ListAwsClustersResponse>
       listAwsClustersCallable() {
     return stub.listAwsClustersCallable();
@@ -1178,7 +1224,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsClusterAsync(
       AwsClusterName name) {
     DeleteAwsClusterRequest request =
@@ -1218,7 +1266,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsClusterAsync(String name) {
     DeleteAwsClusterRequest request = DeleteAwsClusterRequest.newBuilder().setName(name).build();
     return deleteAwsClusterAsync(request);
@@ -1258,7 +1308,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsClusterAsync(
       DeleteAwsClusterRequest request) {
     return deleteAwsClusterOperationCallable().futureCall(request);
@@ -1298,7 +1350,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAwsClusterRequest, Empty, OperationMetadata>
       deleteAwsClusterOperationCallable() {
     return stub.deleteAwsClusterOperationCallable();
@@ -1338,7 +1393,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAwsClusterRequest, Operation> deleteAwsClusterCallable() {
     return stub.deleteAwsClusterCallable();
   }
@@ -1377,7 +1435,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final GenerateAwsClusterAgentTokenResponse generateAwsClusterAgentToken(
       GenerateAwsClusterAgentTokenRequest request) {
     return generateAwsClusterAgentTokenCallable().call(request);
@@ -1416,7 +1476,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   GenerateAwsClusterAgentTokenResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
       generateAwsClusterAgentTokenCallable() {
@@ -1448,7 +1511,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final GenerateAwsAccessTokenResponse generateAwsAccessToken(
       GenerateAwsAccessTokenRequest request) {
     return generateAwsAccessTokenCallable().call(request);
@@ -1479,7 +1544,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   GenerateAwsAccessTokenResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenCallable() {
     return stub.generateAwsAccessTokenCallable();
@@ -1526,7 +1594,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> createAwsNodePoolAsync(
       AwsClusterName parent, AwsNodePool awsNodePool, String awsNodePoolId) {
     CreateAwsNodePoolRequest request =
@@ -1579,7 +1649,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> createAwsNodePoolAsync(
       String parent, AwsNodePool awsNodePool, String awsNodePoolId) {
     CreateAwsNodePoolRequest request =
@@ -1622,7 +1694,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> createAwsNodePoolAsync(
       CreateAwsNodePoolRequest request) {
     return createAwsNodePoolOperationCallable().futureCall(request);
@@ -1659,7 +1733,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       createAwsNodePoolOperationCallable() {
     return stub.createAwsNodePoolOperationCallable();
@@ -1696,7 +1773,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAwsNodePoolRequest, Operation> createAwsNodePoolCallable() {
     return stub.createAwsNodePoolCallable();
   }
@@ -1742,7 +1822,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     `update_settings.surge_settings`. &#42; `update_settings.surge_settings.max_surge`. &#42;
    *     `update_settings.surge_settings.max_unavailable`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> updateAwsNodePoolAsync(
       AwsNodePool awsNodePool, FieldMask updateMask) {
     UpdateAwsNodePoolRequest request =
@@ -1778,7 +1860,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> updateAwsNodePoolAsync(
       UpdateAwsNodePoolRequest request) {
     return updateAwsNodePoolOperationCallable().futureCall(request);
@@ -1809,7 +1893,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       updateAwsNodePoolOperationCallable() {
     return stub.updateAwsNodePoolOperationCallable();
@@ -1840,7 +1927,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolCallable() {
     return stub.updateAwsNodePoolCallable();
   }
@@ -1875,7 +1965,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
       AwsNodePoolName name) {
     RollbackAwsNodePoolUpdateRequest request =
@@ -1916,7 +2008,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
       String name) {
     RollbackAwsNodePoolUpdateRequest request =
@@ -1954,7 +2048,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
       RollbackAwsNodePoolUpdateRequest request) {
     return rollbackAwsNodePoolUpdateOperationCallable().futureCall(request);
@@ -1990,7 +2086,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
       rollbackAwsNodePoolUpdateOperationCallable() {
     return stub.rollbackAwsNodePoolUpdateOperationCallable();
@@ -2026,7 +2125,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
       rollbackAwsNodePoolUpdateCallable() {
     return stub.rollbackAwsNodePoolUpdateCallable();
@@ -2058,7 +2160,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsNodePool getAwsNodePool(AwsNodePoolName name) {
     GetAwsNodePoolRequest request =
         GetAwsNodePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -2092,7 +2196,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsNodePool getAwsNodePool(String name) {
     GetAwsNodePoolRequest request = GetAwsNodePoolRequest.newBuilder().setName(name).build();
     return getAwsNodePool(request);
@@ -2123,7 +2229,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsNodePool getAwsNodePool(GetAwsNodePoolRequest request) {
     return getAwsNodePoolCallable().call(request);
   }
@@ -2153,7 +2261,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolCallable() {
     return stub.getAwsNodePoolCallable();
   }
@@ -2186,7 +2297,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAwsNodePoolsPagedResponse listAwsNodePools(AwsClusterName parent) {
     ListAwsNodePoolsRequest request =
         ListAwsNodePoolsRequest.newBuilder()
@@ -2223,7 +2336,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAwsNodePoolsPagedResponse listAwsNodePools(String parent) {
     ListAwsNodePoolsRequest request =
         ListAwsNodePoolsRequest.newBuilder().setParent(parent).build();
@@ -2258,7 +2373,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAwsNodePoolsPagedResponse listAwsNodePools(ListAwsNodePoolsRequest request) {
     return listAwsNodePoolsPagedCallable().call(request);
   }
@@ -2291,7 +2408,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAwsNodePoolsRequest, ListAwsNodePoolsPagedResponse>
       listAwsNodePoolsPagedCallable() {
     return stub.listAwsNodePoolsPagedCallable();
@@ -2332,7 +2452,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
       listAwsNodePoolsCallable() {
     return stub.listAwsNodePoolsCallable();
@@ -2368,7 +2491,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsNodePoolAsync(
       AwsNodePoolName name) {
     DeleteAwsNodePoolRequest request =
@@ -2409,7 +2534,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsNodePoolAsync(String name) {
     DeleteAwsNodePoolRequest request = DeleteAwsNodePoolRequest.newBuilder().setName(name).build();
     return deleteAwsNodePoolAsync(request);
@@ -2448,7 +2575,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsNodePoolAsync(
       DeleteAwsNodePoolRequest request) {
     return deleteAwsNodePoolOperationCallable().futureCall(request);
@@ -2487,7 +2616,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationCallable() {
     return stub.deleteAwsNodePoolOperationCallable();
@@ -2526,7 +2658,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolCallable() {
     return stub.deleteAwsNodePoolCallable();
   }
@@ -2556,7 +2691,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsOpenIdConfig getAwsOpenIdConfig(GetAwsOpenIdConfigRequest request) {
     return getAwsOpenIdConfigCallable().call(request);
   }
@@ -2586,7 +2723,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsOpenIdConfig response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
       getAwsOpenIdConfigCallable() {
     return stub.getAwsOpenIdConfigCallable();
@@ -2616,7 +2756,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsJsonWebKeys getAwsJsonWebKeys(GetAwsJsonWebKeysRequest request) {
     return getAwsJsonWebKeysCallable().call(request);
   }
@@ -2645,7 +2787,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsJsonWebKeys response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable() {
     return stub.getAwsJsonWebKeysCallable();
   }
@@ -2676,7 +2821,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsServerConfig getAwsServerConfig(AwsServerConfigName name) {
     GetAwsServerConfigRequest request =
         GetAwsServerConfigRequest.newBuilder()
@@ -2711,7 +2858,9 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsServerConfig getAwsServerConfig(String name) {
     GetAwsServerConfigRequest request =
         GetAwsServerConfigRequest.newBuilder().setName(name).build();
@@ -2742,7 +2891,9 @@ public class AwsClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AwsServerConfig getAwsServerConfig(GetAwsServerConfigRequest request) {
     return getAwsServerConfigCallable().call(request);
   }
@@ -2771,7 +2922,10 @@ public class AwsClustersClient implements BackgroundResource {
    *   AwsServerConfig response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigCallable() {
     return stub.getAwsServerConfigCallable();

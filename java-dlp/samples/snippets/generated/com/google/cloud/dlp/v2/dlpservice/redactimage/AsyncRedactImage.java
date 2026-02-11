@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ public class AsyncRedactImage {
               .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
               .setIncludeFindings(true)
               .setByteItem(ByteContentItem.newBuilder().build())
+              .setInspectTemplate("inspectTemplate-2053620050")
+              .setDeidentifyTemplate("deidentifyTemplate-2141929945")
               .build();
       ApiFuture<RedactImageResponse> future =
           dlpServiceClient.redactImageCallable().futureCall(request);

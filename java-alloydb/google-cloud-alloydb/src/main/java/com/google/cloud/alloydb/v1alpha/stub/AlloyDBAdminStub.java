@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,16 +35,20 @@ import com.google.cloud.alloydb.v1alpha.Cluster;
 import com.google.cloud.alloydb.v1alpha.ConnectionInfo;
 import com.google.cloud.alloydb.v1alpha.CreateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.CreateClusterRequest;
+import com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest;
 import com.google.cloud.alloydb.v1alpha.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateUserRequest;
+import com.google.cloud.alloydb.v1alpha.Database;
 import com.google.cloud.alloydb.v1alpha.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
 import com.google.cloud.alloydb.v1alpha.ExecuteSqlRequest;
 import com.google.cloud.alloydb.v1alpha.ExecuteSqlResponse;
+import com.google.cloud.alloydb.v1alpha.ExportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ExportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -53,6 +57,8 @@ import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 import com.google.cloud.alloydb.v1alpha.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1alpha.GetInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GetUserRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.InjectFaultRequest;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
@@ -134,6 +140,24 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
+  }
+
+  public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterCallable()");
+  }
+
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterCallable()");
   }
 
   public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
@@ -376,6 +400,10 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
     throw new UnsupportedOperationException("Not implemented: listDatabasesCallable()");
+  }
+
+  public UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatabaseCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -161,6 +161,9 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<UpdateJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        if (request.hasUpdateMask()) {
+                          serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        }
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -199,6 +202,9 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             ProtoRestSerializer<ListJobsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilterValue());
+                            if (request.hasName()) {
+                              serializer.putQueryParam(fields, "name", request.getName());
+                            }
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
@@ -238,6 +244,9 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilterValue());
                             serializer.putQueryParam(fields, "location", request.getLocation());
+                            if (request.hasName()) {
+                              serializer.putQueryParam(fields, "name", request.getName());
+                            }
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());

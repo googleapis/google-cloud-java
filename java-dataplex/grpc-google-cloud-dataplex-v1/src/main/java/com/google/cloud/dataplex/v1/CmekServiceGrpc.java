@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Dataplex Cmek Service
+ * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/cmek.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CmekServiceGrpc {
 
@@ -335,7 +332,7 @@ public final class CmekServiceGrpc {
    *
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public interface AsyncService {
@@ -417,7 +414,7 @@ public final class CmekServiceGrpc {
    * Base class for the server implementation of the service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public abstract static class CmekServiceImplBase
@@ -433,7 +430,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceStub
@@ -534,7 +531,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceBlockingV2Stub
@@ -557,8 +554,9 @@ public final class CmekServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEncryptionConfig(
-        com.google.cloud.dataplex.v1.CreateEncryptionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEncryptionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEncryptionConfigMethod(), getCallOptions(), request);
     }
 
@@ -570,8 +568,9 @@ public final class CmekServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEncryptionConfig(
-        com.google.cloud.dataplex.v1.UpdateEncryptionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEncryptionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEncryptionConfigMethod(), getCallOptions(), request);
     }
 
@@ -583,8 +582,9 @@ public final class CmekServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEncryptionConfig(
-        com.google.cloud.dataplex.v1.DeleteEncryptionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEncryptionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEncryptionConfigMethod(), getCallOptions(), request);
     }
 
@@ -596,8 +596,9 @@ public final class CmekServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEncryptionConfigsResponse listEncryptionConfigs(
-        com.google.cloud.dataplex.v1.ListEncryptionConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEncryptionConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEncryptionConfigsMethod(), getCallOptions(), request);
     }
 
@@ -609,8 +610,9 @@ public final class CmekServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EncryptionConfig getEncryptionConfig(
-        com.google.cloud.dataplex.v1.GetEncryptionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEncryptionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEncryptionConfigMethod(), getCallOptions(), request);
     }
   }
@@ -619,7 +621,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceBlockingStub
@@ -704,7 +706,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceFutureStub

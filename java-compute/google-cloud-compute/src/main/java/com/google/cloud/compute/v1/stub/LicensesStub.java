@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyLicenseRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateLicenseRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -83,6 +84,14 @@ public abstract class LicensesStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<UpdateLicenseRequest, Operation, Operation> updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateLicenseRequest, Operation> updateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCallable()");
   }
 
   @Override

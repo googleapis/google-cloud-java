@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,7 @@ public class AutokeyAdminClientHttpJsonTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -105,6 +106,7 @@ public class AutokeyAdminClientHttpJsonTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -138,6 +140,7 @@ public class AutokeyAdminClientHttpJsonTest {
           AutokeyConfig.newBuilder()
               .setName(AutokeyConfigName.of("[FOLDER]").toString())
               .setKeyProject("keyProject65612730")
+              .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAutokeyConfig(autokeyConfig, updateMask);
@@ -153,6 +156,7 @@ public class AutokeyAdminClientHttpJsonTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -198,6 +202,7 @@ public class AutokeyAdminClientHttpJsonTest {
         AutokeyConfig.newBuilder()
             .setName(AutokeyConfigName.of("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 

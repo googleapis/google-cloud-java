@@ -10,11 +10,26 @@
         "grpc": {
           "libraryClient": "MemorystoreClient",
           "rpcs": {
+            "BackupInstance": {
+              "methods": ["backupInstanceAsync", "backupInstanceAsync", "backupInstanceAsync", "backupInstanceOperationCallable", "backupInstanceCallable"]
+            },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
             },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "ExportBackup": {
+              "methods": ["exportBackupAsync", "exportBackupOperationCallable", "exportBackupCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupCollection": {
+              "methods": ["getBackupCollection", "getBackupCollection", "getBackupCollection", "getBackupCollectionCallable"]
             },
             "GetCertificateAuthority": {
               "methods": ["getCertificateAuthority", "getCertificateAuthority", "getCertificateAuthority", "getCertificateAuthorityCallable"]
@@ -25,11 +40,20 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "ListBackupCollections": {
+              "methods": ["listBackupCollections", "listBackupCollections", "listBackupCollections", "listBackupCollectionsPagedCallable", "listBackupCollectionsCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RescheduleMaintenance": {
+              "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]
             },
             "UpdateInstance": {
               "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]

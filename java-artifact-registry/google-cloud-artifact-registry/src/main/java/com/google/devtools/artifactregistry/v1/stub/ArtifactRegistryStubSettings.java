@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,9 @@ import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
+import com.google.devtools.artifactregistry.v1.ExportArtifactMetadata;
+import com.google.devtools.artifactregistry.v1.ExportArtifactRequest;
+import com.google.devtools.artifactregistry.v1.ExportArtifactResponse;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
@@ -203,8 +206,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -336,6 +339,10 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   private final UnaryCallSettings<DeleteAttachmentRequest, Operation> deleteAttachmentSettings;
   private final OperationCallSettings<DeleteAttachmentRequest, Empty, OperationMetadata>
       deleteAttachmentOperationSettings;
+  private final UnaryCallSettings<ExportArtifactRequest, Operation> exportArtifactSettings;
+  private final OperationCallSettings<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -1312,6 +1319,18 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return deleteAttachmentOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportArtifact. */
+  public UnaryCallSettings<ExportArtifactRequest, Operation> exportArtifactSettings() {
+    return exportArtifactSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportArtifact. */
+  public OperationCallSettings<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationSettings() {
+    return exportArtifactOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1496,6 +1515,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     createAttachmentOperationSettings = settingsBuilder.createAttachmentOperationSettings().build();
     deleteAttachmentSettings = settingsBuilder.deleteAttachmentSettings().build();
     deleteAttachmentOperationSettings = settingsBuilder.deleteAttachmentOperationSettings().build();
+    exportArtifactSettings = settingsBuilder.exportArtifactSettings().build();
+    exportArtifactOperationSettings = settingsBuilder.exportArtifactOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1615,6 +1636,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
         deleteAttachmentSettings;
     private final OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
         deleteAttachmentOperationSettings;
+    private final UnaryCallSettings.Builder<ExportArtifactRequest, Operation>
+        exportArtifactSettings;
+    private final OperationCallSettings.Builder<
+            ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+        exportArtifactOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1712,6 +1738,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       createAttachmentOperationSettings = OperationCallSettings.newBuilder();
       deleteAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAttachmentOperationSettings = OperationCallSettings.newBuilder();
+      exportArtifactSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportArtifactOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1766,6 +1794,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               getAttachmentSettings,
               createAttachmentSettings,
               deleteAttachmentSettings,
+              exportArtifactSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1836,6 +1865,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       createAttachmentOperationSettings = settings.createAttachmentOperationSettings.toBuilder();
       deleteAttachmentSettings = settings.deleteAttachmentSettings.toBuilder();
       deleteAttachmentOperationSettings = settings.deleteAttachmentOperationSettings.toBuilder();
+      exportArtifactSettings = settings.exportArtifactSettings.toBuilder();
+      exportArtifactOperationSettings = settings.exportArtifactOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1890,6 +1921,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               getAttachmentSettings,
               createAttachmentSettings,
               deleteAttachmentSettings,
+              exportArtifactSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2165,6 +2197,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .exportArtifactSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -2406,6 +2443,30 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportArtifactOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportArtifactRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportArtifactResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ExportArtifactMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -2775,6 +2836,18 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     public OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
         deleteAttachmentOperationSettings() {
       return deleteAttachmentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportArtifact. */
+    public UnaryCallSettings.Builder<ExportArtifactRequest, Operation> exportArtifactSettings() {
+      return exportArtifactSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportArtifact. */
+    public OperationCallSettings.Builder<
+            ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+        exportArtifactOperationSettings() {
+      return exportArtifactOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

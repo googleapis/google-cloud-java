@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Schema][google.cloud.discoveryengine.v1alpha.Schema]s.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/schema_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SchemaServiceGrpc {
 
@@ -542,8 +539,9 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Schema getSchema(
-        com.google.cloud.discoveryengine.v1alpha.GetSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSchemaMethod(), getCallOptions(), request);
     }
 
@@ -555,8 +553,9 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListSchemasResponse listSchemas(
-        com.google.cloud.discoveryengine.v1alpha.ListSchemasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSchemasMethod(), getCallOptions(), request);
     }
 
@@ -568,8 +567,9 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSchema(
-        com.google.cloud.discoveryengine.v1alpha.CreateSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSchemaMethod(), getCallOptions(), request);
     }
 
@@ -581,8 +581,9 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSchema(
-        com.google.cloud.discoveryengine.v1alpha.UpdateSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSchemaMethod(), getCallOptions(), request);
     }
 
@@ -594,8 +595,9 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSchema(
-        com.google.cloud.discoveryengine.v1alpha.DeleteSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.DeleteSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSchemaMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The primary resources offered by this service are EntryGroups, EntryTypes,
- * AspectTypes, and Entries. They collectively let data administrators organize,
- * manage, secure, and catalog data located across cloud projects in their
- * organization in a variety of storage systems, including Cloud Storage and
- * BigQuery.
+ * AspectTypes, Entries and EntryLinks. They collectively let data
+ * administrators organize, manage, secure, and catalog data located across
+ * cloud projects in their organization in a variety of storage systems,
+ * including Cloud Storage and BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CatalogServiceGrpc {
 
@@ -1184,6 +1181,142 @@ public final class CatalogServiceGrpc {
     return getCancelMetadataJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getCreateEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEntryLink",
+      requestType = com.google.cloud.dataplex.v1.CreateEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getCreateEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getCreateEntryLinkMethod;
+    if ((getCreateEntryLinkMethod = CatalogServiceGrpc.getCreateEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getCreateEntryLinkMethod = CatalogServiceGrpc.getCreateEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getCreateEntryLinkMethod =
+              getCreateEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CreateEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("CreateEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEntryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getDeleteEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEntryLink",
+      requestType = com.google.cloud.dataplex.v1.DeleteEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+          com.google.cloud.dataplex.v1.EntryLink>
+      getDeleteEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getDeleteEntryLinkMethod;
+    if ((getDeleteEntryLinkMethod = CatalogServiceGrpc.getDeleteEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getDeleteEntryLinkMethod = CatalogServiceGrpc.getDeleteEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getDeleteEntryLinkMethod =
+              getDeleteEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.DeleteEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("DeleteEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEntryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetEntryLinkRequest, com.google.cloud.dataplex.v1.EntryLink>
+      getGetEntryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEntryLink",
+      requestType = com.google.cloud.dataplex.v1.GetEntryLinkRequest.class,
+      responseType = com.google.cloud.dataplex.v1.EntryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GetEntryLinkRequest, com.google.cloud.dataplex.v1.EntryLink>
+      getGetEntryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.GetEntryLinkRequest,
+            com.google.cloud.dataplex.v1.EntryLink>
+        getGetEntryLinkMethod;
+    if ((getGetEntryLinkMethod = CatalogServiceGrpc.getGetEntryLinkMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getGetEntryLinkMethod = CatalogServiceGrpc.getGetEntryLinkMethod) == null) {
+          CatalogServiceGrpc.getGetEntryLinkMethod =
+              getGetEntryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.GetEntryLinkRequest,
+                          com.google.cloud.dataplex.v1.EntryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEntryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GetEntryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("GetEntryLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetEntryLinkMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CatalogServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CatalogServiceStub> factory =
@@ -1243,10 +1376,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, and Entries. They collectively let data administrators organize,
-   * manage, secure, and catalog data located across cloud projects in their
-   * organization in a variety of storage systems, including Cloud Storage and
-   * BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public interface AsyncService {
@@ -1511,6 +1644,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     default void listEntries(
@@ -1526,6 +1664,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     default void getEntry(
@@ -1539,6 +1682,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     default void lookupEntry(
@@ -1567,8 +1715,8 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates a metadata job. For example, use a metadata job to import Dataplex
-     * Catalog entries and aspects from a third-party system into Dataplex.
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
      * </pre>
      */
     default void createMetadataJob(
@@ -1624,6 +1772,48 @@ public final class CatalogServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCancelMetadataJobMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    default void createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEntryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    default void deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEntryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    default void getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEntryLinkMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1631,10 +1821,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, and Entries. They collectively let data administrators organize,
-   * manage, secure, and catalog data located across cloud projects in their
-   * organization in a variety of storage systems, including Cloud Storage and
-   * BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public abstract static class CatalogServiceImplBase
@@ -1651,10 +1841,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, and Entries. They collectively let data administrators organize,
-   * manage, secure, and catalog data located across cloud projects in their
-   * organization in a variety of storage systems, including Cloud Storage and
-   * BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceStub
@@ -1964,6 +2154,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public void listEntries(
@@ -1981,6 +2176,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public void getEntry(
@@ -1995,6 +2195,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public void lookupEntry(
@@ -2027,8 +2232,8 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates a metadata job. For example, use a metadata job to import Dataplex
-     * Catalog entries and aspects from a third-party system into Dataplex.
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
      * </pre>
      */
     public void createMetadataJob(
@@ -2092,6 +2297,54 @@ public final class CatalogServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public void createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public void deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public void getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEntryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2099,10 +2352,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, and Entries. They collectively let data administrators organize,
-   * manage, secure, and catalog data located across cloud projects in their
-   * organization in a variety of storage systems, including Cloud Storage and
-   * BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceBlockingV2Stub
@@ -2125,8 +2378,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntryType(
-        com.google.cloud.dataplex.v1.CreateEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2138,8 +2392,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryType(
-        com.google.cloud.dataplex.v1.UpdateEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2151,8 +2406,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryType(
-        com.google.cloud.dataplex.v1.DeleteEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2164,8 +2420,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntryTypesResponse listEntryTypes(
-        com.google.cloud.dataplex.v1.ListEntryTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntryTypesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntryTypesMethod(), getCallOptions(), request);
     }
 
@@ -2177,8 +2433,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryType getEntryType(
-        com.google.cloud.dataplex.v1.GetEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2190,8 +2446,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAspectType(
-        com.google.cloud.dataplex.v1.CreateAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2203,8 +2460,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAspectType(
-        com.google.cloud.dataplex.v1.UpdateAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2216,8 +2474,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAspectType(
-        com.google.cloud.dataplex.v1.DeleteAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2229,8 +2488,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListAspectTypesResponse listAspectTypes(
-        com.google.cloud.dataplex.v1.ListAspectTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListAspectTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAspectTypesMethod(), getCallOptions(), request);
     }
 
@@ -2242,8 +2502,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.AspectType getAspectType(
-        com.google.cloud.dataplex.v1.GetAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetAspectTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2255,8 +2515,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntryGroup(
-        com.google.cloud.dataplex.v1.CreateEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2268,8 +2529,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryGroup(
-        com.google.cloud.dataplex.v1.UpdateEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2281,8 +2543,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryGroup(
-        com.google.cloud.dataplex.v1.DeleteEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2294,8 +2557,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntryGroupsResponse listEntryGroups(
-        com.google.cloud.dataplex.v1.ListEntryGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntryGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
     }
 
@@ -2307,8 +2571,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryGroup getEntryGroup(
-        com.google.cloud.dataplex.v1.GetEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2320,8 +2584,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry createEntry(
-        com.google.cloud.dataplex.v1.CreateEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryMethod(), getCallOptions(), request);
     }
 
@@ -2333,8 +2597,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry updateEntry(
-        com.google.cloud.dataplex.v1.UpdateEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
     }
 
@@ -2346,8 +2610,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry deleteEntry(
-        com.google.cloud.dataplex.v1.DeleteEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
     }
 
@@ -2356,11 +2620,16 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
-        com.google.cloud.dataplex.v1.ListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -2369,11 +2638,16 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
-        com.google.cloud.dataplex.v1.GetEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryMethod(), getCallOptions(), request);
     }
 
@@ -2382,11 +2656,16 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
-        com.google.cloud.dataplex.v1.LookupEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.LookupEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupEntryMethod(), getCallOptions(), request);
     }
 
@@ -2398,8 +2677,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.SearchEntriesResponse searchEntries(
-        com.google.cloud.dataplex.v1.SearchEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.SearchEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchEntriesMethod(), getCallOptions(), request);
     }
 
@@ -2407,13 +2686,14 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates a metadata job. For example, use a metadata job to import Dataplex
-     * Catalog entries and aspects from a third-party system into Dataplex.
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
      * </pre>
      */
     public com.google.longrunning.Operation createMetadataJob(
-        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMetadataJobMethod(), getCallOptions(), request);
     }
 
@@ -2425,8 +2705,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.MetadataJob getMetadataJob(
-        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetadataJobMethod(), getCallOptions(), request);
     }
 
@@ -2438,8 +2718,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListMetadataJobsResponse listMetadataJobs(
-        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetadataJobsMethod(), getCallOptions(), request);
     }
 
@@ -2455,9 +2736,51 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelMetadataJob(
-        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelMetadataJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetEntryLinkMethod(), getCallOptions(), request);
     }
   }
 
@@ -2466,10 +2789,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, and Entries. They collectively let data administrators organize,
-   * manage, secure, and catalog data located across cloud projects in their
-   * organization in a variety of storage systems, including Cloud Storage and
-   * BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceBlockingStub
@@ -2723,6 +3046,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
@@ -2736,6 +3064,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
@@ -2749,6 +3082,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
@@ -2774,8 +3112,8 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates a metadata job. For example, use a metadata job to import Dataplex
-     * Catalog entries and aspects from a third-party system into Dataplex.
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
      * </pre>
      */
     public com.google.longrunning.Operation createMetadataJob(
@@ -2826,6 +3164,45 @@ public final class CatalogServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelMetadataJobMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink createEntryLink(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink deleteEntryLink(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink getEntryLink(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntryLinkMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2833,10 +3210,10 @@ public final class CatalogServiceGrpc {
    *
    * <pre>
    * The primary resources offered by this service are EntryGroups, EntryTypes,
-   * AspectTypes, and Entries. They collectively let data administrators organize,
-   * manage, secure, and catalog data located across cloud projects in their
-   * organization in a variety of storage systems, including Cloud Storage and
-   * BigQuery.
+   * AspectTypes, Entries and EntryLinks. They collectively let data
+   * administrators organize, manage, secure, and catalog data located across
+   * cloud projects in their organization in a variety of storage systems,
+   * including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class CatalogServiceFutureStub
@@ -3096,6 +3473,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3110,6 +3492,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -3123,6 +3510,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -3149,8 +3541,8 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Creates a metadata job. For example, use a metadata job to import Dataplex
-     * Catalog entries and aspects from a third-party system into Dataplex.
+     * Creates a metadata job. For example, use a metadata job to import metadata
+     * from a third-party system into Dataplex Universal Catalog.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3203,6 +3595,48 @@ public final class CatalogServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelMetadataJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        createEntryLink(com.google.cloud.dataplex.v1.CreateEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEntryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        deleteEntryLink(com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEntryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Entry Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.EntryLink>
+        getEntryLink(com.google.cloud.dataplex.v1.GetEntryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEntryLinkMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENTRY_TYPE = 0;
@@ -3231,6 +3665,9 @@ public final class CatalogServiceGrpc {
   private static final int METHODID_GET_METADATA_JOB = 23;
   private static final int METHODID_LIST_METADATA_JOBS = 24;
   private static final int METHODID_CANCEL_METADATA_JOB = 25;
+  private static final int METHODID_CREATE_ENTRY_LINK = 26;
+  private static final int METHODID_DELETE_ENTRY_LINK = 27;
+  private static final int METHODID_GET_ENTRY_LINK = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3388,6 +3825,24 @@ public final class CatalogServiceGrpc {
           serviceImpl.cancelMetadataJob(
               (com.google.cloud.dataplex.v1.CancelMetadataJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_ENTRY_LINK:
+          serviceImpl.createEntryLink(
+              (com.google.cloud.dataplex.v1.CreateEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ENTRY_LINK:
+          serviceImpl.deleteEntryLink(
+              (com.google.cloud.dataplex.v1.DeleteEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ENTRY_LINK:
+          serviceImpl.getEntryLink(
+              (com.google.cloud.dataplex.v1.GetEntryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.EntryLink>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3569,6 +4024,24 @@ public final class CatalogServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.dataplex.v1.CancelMetadataJobRequest,
                     com.google.protobuf.Empty>(service, METHODID_CANCEL_METADATA_JOB)))
+        .addMethod(
+            getCreateEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_CREATE_ENTRY_LINK)))
+        .addMethod(
+            getDeleteEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_DELETE_ENTRY_LINK)))
+        .addMethod(
+            getGetEntryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetEntryLinkRequest,
+                    com.google.cloud.dataplex.v1.EntryLink>(service, METHODID_GET_ENTRY_LINK)))
         .build();
   }
 
@@ -3646,6 +4119,9 @@ public final class CatalogServiceGrpc {
                       .addMethod(getGetMetadataJobMethod())
                       .addMethod(getListMetadataJobsMethod())
                       .addMethod(getCancelMetadataJobMethod())
+                      .addMethod(getCreateEntryLinkMethod())
+                      .addMethod(getDeleteEntryLinkMethod())
+                      .addMethod(getGetEntryLinkMethod())
                       .build();
         }
       }

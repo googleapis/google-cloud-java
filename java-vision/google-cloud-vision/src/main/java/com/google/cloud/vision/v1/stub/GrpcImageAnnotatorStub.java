@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
                   ProtoUtils.marshaller(BatchAnnotateImagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchAnnotateImagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
@@ -69,6 +70,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
                   ProtoUtils.marshaller(BatchAnnotateFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchAnnotateFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AsyncBatchAnnotateImagesRequest, Operation>
@@ -79,6 +81,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AsyncBatchAnnotateImagesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AsyncBatchAnnotateFilesRequest, Operation>
@@ -89,6 +92,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AsyncBatchAnnotateFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>

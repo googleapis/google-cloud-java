@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for retrieving relevant contexts.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/vertex_rag_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VertexRagServiceGrpc {
 
@@ -406,8 +403,9 @@ public final class VertexRagServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.RetrieveContextsResponse retrieveContexts(
-        com.google.cloud.aiplatform.v1.RetrieveContextsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.RetrieveContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveContextsMethod(), getCallOptions(), request);
     }
 
@@ -420,8 +418,9 @@ public final class VertexRagServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.AugmentPromptResponse augmentPrompt(
-        com.google.cloud.aiplatform.v1.AugmentPromptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.AugmentPromptRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAugmentPromptMethod(), getCallOptions(), request);
     }
 
@@ -435,8 +434,9 @@ public final class VertexRagServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.CorroborateContentResponse corroborateContent(
-        com.google.cloud.aiplatform.v1.CorroborateContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CorroborateContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCorroborateContentMethod(), getCallOptions(), request);
     }
   }

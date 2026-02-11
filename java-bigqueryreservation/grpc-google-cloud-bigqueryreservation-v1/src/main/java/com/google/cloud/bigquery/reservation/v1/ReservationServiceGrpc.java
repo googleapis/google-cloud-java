@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,9 +36,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/myproject/locations/US/capacityCommitments/id`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/reservation/v1/reservation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReservationServiceGrpc {
 
@@ -1132,6 +1129,330 @@ public final class ReservationServiceGrpc {
     return getUpdateBiReservationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = ReservationServiceGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getGetIamPolicyMethod = ReservationServiceGrpc.getGetIamPolicyMethod) == null) {
+          ReservationServiceGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = ReservationServiceGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getSetIamPolicyMethod = ReservationServiceGrpc.getSetIamPolicyMethod) == null) {
+          ReservationServiceGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
+      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
+      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.iam.v1.TestIamPermissionsRequest,
+            com.google.iam.v1.TestIamPermissionsResponse>
+        getTestIamPermissionsMethod;
+    if ((getTestIamPermissionsMethod = ReservationServiceGrpc.getTestIamPermissionsMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getTestIamPermissionsMethod = ReservationServiceGrpc.getTestIamPermissionsMethod)
+            == null) {
+          ReservationServiceGrpc.getTestIamPermissionsMethod =
+              getTestIamPermissionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.TestIamPermissionsRequest,
+                          com.google.iam.v1.TestIamPermissionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("TestIamPermissions"))
+                      .build();
+        }
+      }
+    }
+    return getTestIamPermissionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest,
+          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+      getCreateReservationGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReservationGroup",
+      requestType = com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.ReservationGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest,
+          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+      getCreateReservationGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest,
+            com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+        getCreateReservationGroupMethod;
+    if ((getCreateReservationGroupMethod = ReservationServiceGrpc.getCreateReservationGroupMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getCreateReservationGroupMethod =
+                ReservationServiceGrpc.getCreateReservationGroupMethod)
+            == null) {
+          ReservationServiceGrpc.getCreateReservationGroupMethod =
+              getCreateReservationGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest,
+                          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateReservationGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.ReservationGroup
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("CreateReservationGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateReservationGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest,
+          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+      getGetReservationGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReservationGroup",
+      requestType = com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.ReservationGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest,
+          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+      getGetReservationGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest,
+            com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+        getGetReservationGroupMethod;
+    if ((getGetReservationGroupMethod = ReservationServiceGrpc.getGetReservationGroupMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getGetReservationGroupMethod = ReservationServiceGrpc.getGetReservationGroupMethod)
+            == null) {
+          ReservationServiceGrpc.getGetReservationGroupMethod =
+              getGetReservationGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest,
+                          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetReservationGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.ReservationGroup
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("GetReservationGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetReservationGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest,
+          com.google.protobuf.Empty>
+      getDeleteReservationGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteReservationGroup",
+      requestType = com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest,
+          com.google.protobuf.Empty>
+      getDeleteReservationGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest,
+            com.google.protobuf.Empty>
+        getDeleteReservationGroupMethod;
+    if ((getDeleteReservationGroupMethod = ReservationServiceGrpc.getDeleteReservationGroupMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getDeleteReservationGroupMethod =
+                ReservationServiceGrpc.getDeleteReservationGroupMethod)
+            == null) {
+          ReservationServiceGrpc.getDeleteReservationGroupMethod =
+              getDeleteReservationGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteReservationGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("DeleteReservationGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteReservationGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest,
+          com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+      getListReservationGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReservationGroups",
+      requestType = com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest,
+          com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+      getListReservationGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest,
+            com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+        getListReservationGroupsMethod;
+    if ((getListReservationGroupsMethod = ReservationServiceGrpc.getListReservationGroupsMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getListReservationGroupsMethod = ReservationServiceGrpc.getListReservationGroupsMethod)
+            == null) {
+          ReservationServiceGrpc.getListReservationGroupsMethod =
+              getListReservationGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest,
+                          com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListReservationGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("ListReservationGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListReservationGroupsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ReservationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ReservationServiceStub> factory =
@@ -1650,6 +1971,131 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateBiReservationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
+     * Supported resources are:
+     * - Reservations
+     * - ReservationAssignments
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.getIamPolicy` to get policies on
+     * reservations.
+     * </pre>
+     */
+    default void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets an access control policy for a resource. Replaces any existing
+     * policy.
+     * Supported resources are:
+     * - Reservations
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.setIamPolicy` to set policies on
+     * reservations.
+     * </pre>
+     */
+    default void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets your permissions on a resource. Returns an empty set of permissions if
+     * the resource doesn't exist.
+     * Supported resources are:
+     * - Reservations
+     * No Google IAM permissions are required to call this method.
+     * </pre>
+     */
+    default void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation group.
+     * </pre>
+     */
+    default void createReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReservationGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation group.
+     * </pre>
+     */
+    default void getReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReservationGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
+    default void deleteReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteReservationGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservation groups for the project in the specified location.
+     * </pre>
+     */
+    default void listReservationGroups(
+        com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReservationGroupsMethod(), responseObserver);
     }
   }
 
@@ -2200,6 +2646,145 @@ public final class ReservationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
+     * Supported resources are:
+     * - Reservations
+     * - ReservationAssignments
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.getIamPolicy` to get policies on
+     * reservations.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets an access control policy for a resource. Replaces any existing
+     * policy.
+     * Supported resources are:
+     * - Reservations
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.setIamPolicy` to set policies on
+     * reservations.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets your permissions on a resource. Returns an empty set of permissions if
+     * the resource doesn't exist.
+     * Supported resources are:
+     * - Reservations
+     * No Google IAM permissions are required to call this method.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation group.
+     * </pre>
+     */
+    public void createReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReservationGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation group.
+     * </pre>
+     */
+    public void getReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReservationGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
+    public void deleteReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteReservationGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservation groups for the project in the specified location.
+     * </pre>
+     */
+    public void listReservationGroups(
+        com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReservationGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2242,8 +2827,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation createReservation(
-        com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReservationMethod(), getCallOptions(), request);
     }
 
@@ -2255,8 +2841,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.ListReservationsResponse listReservations(
-        com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReservationsMethod(), getCallOptions(), request);
     }
 
@@ -2268,8 +2855,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation getReservation(
-        com.google.cloud.bigquery.reservation.v1.GetReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.GetReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReservationMethod(), getCallOptions(), request);
     }
 
@@ -2283,8 +2871,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReservation(
-        com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReservationMethod(), getCallOptions(), request);
     }
 
@@ -2296,8 +2885,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation updateReservation(
-        com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReservationMethod(), getCallOptions(), request);
     }
 
@@ -2313,8 +2903,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation failoverReservation(
-        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFailoverReservationMethod(), getCallOptions(), request);
     }
 
@@ -2326,8 +2917,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment createCapacityCommitment(
-        com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2340,8 +2932,9 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse
         listCapacityCommitments(
-            com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCapacityCommitmentsMethod(), getCallOptions(), request);
     }
 
@@ -2353,8 +2946,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment(
-        com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2368,8 +2962,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCapacityCommitment(
-        com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2385,8 +2980,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment updateCapacityCommitment(
-        com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2404,8 +3000,9 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse
         splitCapacityCommitment(
-            com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSplitCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2421,8 +3018,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment mergeCapacityCommitments(
-        com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMergeCapacityCommitmentsMethod(), getCallOptions(), request);
     }
 
@@ -2460,8 +3058,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment createAssignment(
-        com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -2487,8 +3086,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse listAssignments(
-        com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssignmentsMethod(), getCallOptions(), request);
     }
 
@@ -2511,8 +3111,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAssignment(
-        com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -2541,8 +3142,9 @@ public final class ReservationServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse searchAssignments(
-        com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAssignmentsMethod(), getCallOptions(), request);
     }
 
@@ -2569,8 +3171,9 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse
         searchAllAssignments(
-            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAllAssignmentsMethod(), getCallOptions(), request);
     }
 
@@ -2585,8 +3188,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment moveAssignment(
-        com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -2599,8 +3203,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment updateAssignment(
-        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -2612,8 +3217,9 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.BiReservation getBiReservation(
-        com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBiReservationMethod(), getCallOptions(), request);
     }
 
@@ -2630,9 +3236,128 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.BiReservation updateBiReservation(
-        com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBiReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
+     * Supported resources are:
+     * - Reservations
+     * - ReservationAssignments
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.getIamPolicy` to get policies on
+     * reservations.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets an access control policy for a resource. Replaces any existing
+     * policy.
+     * Supported resources are:
+     * - Reservations
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.setIamPolicy` to set policies on
+     * reservations.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets your permissions on a resource. Returns an empty set of permissions if
+     * the resource doesn't exist.
+     * Supported resources are:
+     * - Reservations
+     * No Google IAM permissions are required to call this method.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation group.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ReservationGroup createReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateReservationGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation group.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ReservationGroup getReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetReservationGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteReservationGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservation groups for the project in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse
+        listReservationGroups(
+            com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListReservationGroupsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3067,6 +3792,118 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBiReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
+     * Supported resources are:
+     * - Reservations
+     * - ReservationAssignments
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.getIamPolicy` to get policies on
+     * reservations.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets an access control policy for a resource. Replaces any existing
+     * policy.
+     * Supported resources are:
+     * - Reservations
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.setIamPolicy` to set policies on
+     * reservations.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets your permissions on a resource. Returns an empty set of permissions if
+     * the resource doesn't exist.
+     * Supported resources are:
+     * - Reservations
+     * No Google IAM permissions are required to call this method.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation group.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ReservationGroup createReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReservationGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation group.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ReservationGroup getReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReservationGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReservationGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservation groups for the project in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse
+        listReservationGroups(
+            com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReservationGroupsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3531,6 +4368,127 @@ public final class ReservationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBiReservationMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
+     * Supported resources are:
+     * - Reservations
+     * - ReservationAssignments
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.getIamPolicy` to get policies on
+     * reservations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets an access control policy for a resource. Replaces any existing
+     * policy.
+     * Supported resources are:
+     * - Reservations
+     * To call this method, you must have the following Google IAM permissions:
+     * - `bigqueryreservation.reservations.setIamPolicy` to set policies on
+     * reservations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets your permissions on a resource. Returns an empty set of permissions if
+     * the resource doesn't exist.
+     * Supported resources are:
+     * - Reservations
+     * No Google IAM permissions are required to call this method.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.iam.v1.TestIamPermissionsResponse>
+        testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+        createReservationGroup(
+            com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReservationGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+        getReservationGroup(
+            com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReservationGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteReservationGroup(
+            com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteReservationGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservation groups for the project in the specified location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>
+        listReservationGroups(
+            com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReservationGroupsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_RESERVATION = 0;
@@ -3555,6 +4513,13 @@ public final class ReservationServiceGrpc {
   private static final int METHODID_UPDATE_ASSIGNMENT = 19;
   private static final int METHODID_GET_BI_RESERVATION = 20;
   private static final int METHODID_UPDATE_BI_RESERVATION = 21;
+  private static final int METHODID_GET_IAM_POLICY = 22;
+  private static final int METHODID_SET_IAM_POLICY = 23;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 24;
+  private static final int METHODID_CREATE_RESERVATION_GROUP = 25;
+  private static final int METHODID_GET_RESERVATION_GROUP = 26;
+  private static final int METHODID_DELETE_RESERVATION_GROUP = 27;
+  private static final int METHODID_LIST_RESERVATION_GROUPS = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3710,6 +4675,48 @@ public final class ReservationServiceGrpc {
           serviceImpl.updateBiReservation(
               (com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>)
+                  responseObserver);
+          break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_TEST_IAM_PERMISSIONS:
+          serviceImpl.testIamPermissions(
+              (com.google.iam.v1.TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_RESERVATION_GROUP:
+          serviceImpl.createReservationGroup(
+              (com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.reservation.v1.ReservationGroup>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESERVATION_GROUP:
+          serviceImpl.getReservationGroup(
+              (com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.reservation.v1.ReservationGroup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RESERVATION_GROUP:
+          serviceImpl.deleteReservationGroup(
+              (com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_RESERVATION_GROUPS:
+          serviceImpl.listReservationGroups(
+              (com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>)
                   responseObserver);
           break;
         default:
@@ -3881,6 +4888,50 @@ public final class ReservationServiceGrpc {
                     com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest,
                     com.google.cloud.bigquery.reservation.v1.BiReservation>(
                     service, METHODID_UPDATE_BI_RESERVATION)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getCreateReservationGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest,
+                    com.google.cloud.bigquery.reservation.v1.ReservationGroup>(
+                    service, METHODID_CREATE_RESERVATION_GROUP)))
+        .addMethod(
+            getGetReservationGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest,
+                    com.google.cloud.bigquery.reservation.v1.ReservationGroup>(
+                    service, METHODID_GET_RESERVATION_GROUP)))
+        .addMethod(
+            getDeleteReservationGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RESERVATION_GROUP)))
+        .addMethod(
+            getListReservationGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest,
+                    com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>(
+                    service, METHODID_LIST_RESERVATION_GROUPS)))
         .build();
   }
 
@@ -3954,6 +5005,13 @@ public final class ReservationServiceGrpc {
                       .addMethod(getUpdateAssignmentMethod())
                       .addMethod(getGetBiReservationMethod())
                       .addMethod(getUpdateBiReservationMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getCreateReservationGroupMethod())
+                      .addMethod(getGetReservationGroupMethod())
+                      .addMethod(getDeleteReservationGroupMethod())
+                      .addMethod(getListReservationGroupsMethod())
                       .build();
         }
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The App Hub API allows you to manage App Hub resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apphub/v1/apphub_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AppHubGrpc {
 
@@ -2245,8 +2242,9 @@ public final class AppHubGrpc {
      */
     public com.google.cloud.apphub.v1.LookupServiceProjectAttachmentResponse
         lookupServiceProjectAttachment(
-            com.google.cloud.apphub.v1.LookupServiceProjectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.apphub.v1.LookupServiceProjectAttachmentRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupServiceProjectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2259,8 +2257,9 @@ public final class AppHubGrpc {
      */
     public com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse
         listServiceProjectAttachments(
-            com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceProjectAttachmentsMethod(), getCallOptions(), request);
     }
 
@@ -2272,8 +2271,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceProjectAttachment(
-        com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceProjectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2285,8 +2285,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.ServiceProjectAttachment getServiceProjectAttachment(
-        com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceProjectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2298,8 +2299,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceProjectAttachment(
-        com.google.cloud.apphub.v1.DeleteServiceProjectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.DeleteServiceProjectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceProjectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2314,8 +2316,9 @@ public final class AppHubGrpc {
      */
     public com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse
         detachServiceProjectAttachment(
-            com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetachServiceProjectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2328,8 +2331,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListDiscoveredServicesResponse listDiscoveredServices(
-        com.google.cloud.apphub.v1.ListDiscoveredServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.ListDiscoveredServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDiscoveredServicesMethod(), getCallOptions(), request);
     }
 
@@ -2341,8 +2345,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.DiscoveredService getDiscoveredService(
-        com.google.cloud.apphub.v1.GetDiscoveredServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.GetDiscoveredServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDiscoveredServiceMethod(), getCallOptions(), request);
     }
 
@@ -2355,8 +2360,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.LookupDiscoveredServiceResponse lookupDiscoveredService(
-        com.google.cloud.apphub.v1.LookupDiscoveredServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.LookupDiscoveredServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupDiscoveredServiceMethod(), getCallOptions(), request);
     }
 
@@ -2368,8 +2374,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListServicesResponse listServices(
-        com.google.cloud.apphub.v1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -2381,8 +2387,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createService(
-        com.google.cloud.apphub.v1.CreateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.CreateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
@@ -2394,8 +2400,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.Service getService(
-        com.google.cloud.apphub.v1.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.GetServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -2407,8 +2413,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateService(
-        com.google.cloud.apphub.v1.UpdateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.UpdateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
@@ -2420,8 +2426,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteService(
-        com.google.cloud.apphub.v1.DeleteServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.DeleteServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -2434,8 +2440,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse listDiscoveredWorkloads(
-        com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDiscoveredWorkloadsMethod(), getCallOptions(), request);
     }
 
@@ -2447,8 +2454,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.DiscoveredWorkload getDiscoveredWorkload(
-        com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDiscoveredWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -2461,8 +2469,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.LookupDiscoveredWorkloadResponse lookupDiscoveredWorkload(
-        com.google.cloud.apphub.v1.LookupDiscoveredWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.LookupDiscoveredWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupDiscoveredWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -2474,8 +2483,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListWorkloadsResponse listWorkloads(
-        com.google.cloud.apphub.v1.ListWorkloadsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.ListWorkloadsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
     }
 
@@ -2487,8 +2496,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkload(
-        com.google.cloud.apphub.v1.CreateWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.CreateWorkloadRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -2500,8 +2509,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.Workload getWorkload(
-        com.google.cloud.apphub.v1.GetWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.GetWorkloadRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -2513,8 +2522,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkload(
-        com.google.cloud.apphub.v1.UpdateWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.UpdateWorkloadRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -2526,8 +2535,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkload(
-        com.google.cloud.apphub.v1.DeleteWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.DeleteWorkloadRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -2539,8 +2548,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListApplicationsResponse listApplications(
-        com.google.cloud.apphub.v1.ListApplicationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.ListApplicationsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApplicationsMethod(), getCallOptions(), request);
     }
 
@@ -2552,8 +2561,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createApplication(
-        com.google.cloud.apphub.v1.CreateApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.CreateApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2565,8 +2575,8 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.cloud.apphub.v1.Application getApplication(
-        com.google.cloud.apphub.v1.GetApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.GetApplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2578,8 +2588,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApplication(
-        com.google.cloud.apphub.v1.UpdateApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.UpdateApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2591,8 +2602,9 @@ public final class AppHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteApplication(
-        com.google.cloud.apphub.v1.DeleteApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apphub.v1.DeleteApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
     }
   }

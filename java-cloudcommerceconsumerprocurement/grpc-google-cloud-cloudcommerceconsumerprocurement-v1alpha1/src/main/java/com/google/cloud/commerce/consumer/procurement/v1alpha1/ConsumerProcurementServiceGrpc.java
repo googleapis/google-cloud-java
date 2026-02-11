@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,10 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * for charging for the procured item.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source: google/cloud/commerce/consumer/procurement/v1alpha1/procurement_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConsumerProcurementServiceGrpc {
 
@@ -458,8 +454,9 @@ public final class ConsumerProcurementServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation placeOrder(
-        com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPlaceOrderMethod(), getCallOptions(), request);
     }
 
@@ -473,8 +470,9 @@ public final class ConsumerProcurementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1alpha1.Order getOrder(
-        com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrderMethod(), getCallOptions(), request);
     }
 
@@ -488,8 +486,9 @@ public final class ConsumerProcurementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersResponse listOrders(
-        com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrdersMethod(), getCallOptions(), request);
     }
   }

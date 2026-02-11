@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -849,6 +849,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 
@@ -904,6 +905,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -973,6 +975,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1045,6 +1048,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1115,6 +1119,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1132,6 +1137,7 @@ public class CloudChannelServiceClientTest {
             .setPurchaseOrderId("purchaseOrderId2029917384")
             .setRequestId("requestId693933066")
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
 
     Entitlement actualResponse = client.changeOfferAsync(request).get();
@@ -1147,6 +1153,7 @@ public class CloudChannelServiceClientTest {
     Assert.assertEquals(request.getPurchaseOrderId(), actualRequest.getPurchaseOrderId());
     Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
     Assert.assertEquals(request.getBillingAccount(), actualRequest.getBillingAccount());
+    Assert.assertEquals(request.getPriceReferenceId(), actualRequest.getPriceReferenceId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1167,6 +1174,7 @@ public class CloudChannelServiceClientTest {
               .setPurchaseOrderId("purchaseOrderId2029917384")
               .setRequestId("requestId693933066")
               .setBillingAccount("billingAccount708726578")
+              .setPriceReferenceId("priceReferenceId-5103427")
               .build();
       client.changeOfferAsync(request).get();
       Assert.fail("No exception raised");
@@ -1193,6 +1201,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1259,6 +1268,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1376,6 +1386,7 @@ public class CloudChannelServiceClientTest {
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
             .setBillingAccount("billingAccount708726578")
+            .setPriceReferenceId("priceReferenceId-5103427")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3149,8 +3160,9 @@ public class CloudChannelServiceClientTest {
 
     RegisterSubscriberRequest request =
         RegisterSubscriberRequest.newBuilder()
-            .setAccount("account-1177318867")
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .setServiceAccount("serviceAccount1079137720")
+            .setIntegrator("integrator-1902360937")
             .build();
 
     RegisterSubscriberResponse actualResponse = client.registerSubscriber(request);
@@ -3162,6 +3174,7 @@ public class CloudChannelServiceClientTest {
 
     Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
     Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
+    Assert.assertEquals(request.getIntegrator(), actualRequest.getIntegrator());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3176,8 +3189,9 @@ public class CloudChannelServiceClientTest {
     try {
       RegisterSubscriberRequest request =
           RegisterSubscriberRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setServiceAccount("serviceAccount1079137720")
+              .setIntegrator("integrator-1902360937")
               .build();
       client.registerSubscriber(request);
       Assert.fail("No exception raised");
@@ -3194,8 +3208,9 @@ public class CloudChannelServiceClientTest {
 
     UnregisterSubscriberRequest request =
         UnregisterSubscriberRequest.newBuilder()
-            .setAccount("account-1177318867")
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .setServiceAccount("serviceAccount1079137720")
+            .setIntegrator("integrator-1902360937")
             .build();
 
     UnregisterSubscriberResponse actualResponse = client.unregisterSubscriber(request);
@@ -3208,6 +3223,7 @@ public class CloudChannelServiceClientTest {
 
     Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
     Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
+    Assert.assertEquals(request.getIntegrator(), actualRequest.getIntegrator());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3222,8 +3238,9 @@ public class CloudChannelServiceClientTest {
     try {
       UnregisterSubscriberRequest request =
           UnregisterSubscriberRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setServiceAccount("serviceAccount1079137720")
+              .setIntegrator("integrator-1902360937")
               .build();
       client.unregisterSubscriber(request);
       Assert.fail("No exception raised");
@@ -3244,9 +3261,10 @@ public class CloudChannelServiceClientTest {
 
     ListSubscribersRequest request =
         ListSubscribersRequest.newBuilder()
-            .setAccount("account-1177318867")
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setIntegrator("integrator-1902360937")
             .build();
 
     ListSubscribersPagedResponse pagedListResponse = client.listSubscribers(request);
@@ -3263,6 +3281,7 @@ public class CloudChannelServiceClientTest {
     Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getIntegrator(), actualRequest.getIntegrator());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3277,9 +3296,10 @@ public class CloudChannelServiceClientTest {
     try {
       ListSubscribersRequest request =
           ListSubscribersRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setIntegrator("integrator-1902360937")
               .build();
       client.listSubscribers(request);
       Assert.fail("No exception raised");

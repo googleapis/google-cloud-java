@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,9 +38,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *     * at least one of latitude and longitude must be non-zero.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/routeoptimization/v1/route_optimization_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RouteOptimizationGrpc {
 
@@ -142,6 +139,103 @@ public final class RouteOptimizationGrpc {
       }
     }
     return getBatchOptimizeToursMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+          com.google.longrunning.Operation>
+      getOptimizeToursLongRunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OptimizeToursLongRunning",
+      requestType = com.google.maps.routeoptimization.v1.OptimizeToursRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+          com.google.longrunning.Operation>
+      getOptimizeToursLongRunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+            com.google.longrunning.Operation>
+        getOptimizeToursLongRunningMethod;
+    if ((getOptimizeToursLongRunningMethod =
+            RouteOptimizationGrpc.getOptimizeToursLongRunningMethod)
+        == null) {
+      synchronized (RouteOptimizationGrpc.class) {
+        if ((getOptimizeToursLongRunningMethod =
+                RouteOptimizationGrpc.getOptimizeToursLongRunningMethod)
+            == null) {
+          RouteOptimizationGrpc.getOptimizeToursLongRunningMethod =
+              getOptimizeToursLongRunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "OptimizeToursLongRunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.routeoptimization.v1.OptimizeToursRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RouteOptimizationMethodDescriptorSupplier("OptimizeToursLongRunning"))
+                      .build();
+        }
+      }
+    }
+    return getOptimizeToursLongRunningMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.routeoptimization.v1.OptimizeToursUriRequest,
+          com.google.longrunning.Operation>
+      getOptimizeToursUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OptimizeToursUri",
+      requestType = com.google.maps.routeoptimization.v1.OptimizeToursUriRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.routeoptimization.v1.OptimizeToursUriRequest,
+          com.google.longrunning.Operation>
+      getOptimizeToursUriMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.routeoptimization.v1.OptimizeToursUriRequest,
+            com.google.longrunning.Operation>
+        getOptimizeToursUriMethod;
+    if ((getOptimizeToursUriMethod = RouteOptimizationGrpc.getOptimizeToursUriMethod) == null) {
+      synchronized (RouteOptimizationGrpc.class) {
+        if ((getOptimizeToursUriMethod = RouteOptimizationGrpc.getOptimizeToursUriMethod) == null) {
+          RouteOptimizationGrpc.getOptimizeToursUriMethod =
+              getOptimizeToursUriMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.routeoptimization.v1.OptimizeToursUriRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OptimizeToursUri"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.routeoptimization.v1.OptimizeToursUriRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RouteOptimizationMethodDescriptorSupplier("OptimizeToursUri"))
+                      .build();
+        }
+      }
+    }
+    return getOptimizeToursUriMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -277,6 +371,73 @@ public final class RouteOptimizationGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchOptimizeToursMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours]
+     * method designed for
+     * optimizations with large timeout values. It should be preferred over the
+     * `OptimizeTours` method for optimizations that take longer than
+     * a few minutes.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    default void optimizeToursLongRunning(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getOptimizeToursLongRunningMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+     * method designed for optimizations with large timeout values and large
+     * input/output sizes.
+     * The client specifies the URI of the `OptimizeToursRequest` stored
+     * in Google Cloud Storage and the server writes the `OptimizeToursResponse`
+     * to a client-specified Google Cloud Storage URI.
+     * This method should be preferred over the `OptimizeTours` method for
+     * optimizations that take longer than a few minutes and input/output sizes
+     * that are larger than 8MB, though it can be used for shorter and smaller
+     * optimizations as well.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    default void optimizeToursUri(
+        com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getOptimizeToursUriMethod(), responseObserver);
+    }
   }
 
   /**
@@ -402,6 +563,77 @@ public final class RouteOptimizationGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours]
+     * method designed for
+     * optimizations with large timeout values. It should be preferred over the
+     * `OptimizeTours` method for optimizations that take longer than
+     * a few minutes.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public void optimizeToursLongRunning(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getOptimizeToursLongRunningMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+     * method designed for optimizations with large timeout values and large
+     * input/output sizes.
+     * The client specifies the URI of the `OptimizeToursRequest` stored
+     * in Google Cloud Storage and the server writes the `OptimizeToursResponse`
+     * to a client-specified Google Cloud Storage URI.
+     * This method should be preferred over the `OptimizeTours` method for
+     * optimizations that take longer than a few minutes and input/output sizes
+     * that are larger than 8MB, though it can be used for shorter and smaller
+     * optimizations as well.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public void optimizeToursUri(
+        com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getOptimizeToursUriMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -457,8 +689,9 @@ public final class RouteOptimizationGrpc {
      * </pre>
      */
     public com.google.maps.routeoptimization.v1.OptimizeToursResponse optimizeTours(
-        com.google.maps.routeoptimization.v1.OptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOptimizeToursMethod(), getCallOptions(), request);
     }
 
@@ -487,9 +720,77 @@ public final class RouteOptimizationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchOptimizeTours(
-        com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchOptimizeToursMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours]
+     * method designed for
+     * optimizations with large timeout values. It should be preferred over the
+     * `OptimizeTours` method for optimizations that take longer than
+     * a few minutes.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public com.google.longrunning.Operation optimizeToursLongRunning(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getOptimizeToursLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+     * method designed for optimizations with large timeout values and large
+     * input/output sizes.
+     * The client specifies the URI of the `OptimizeToursRequest` stored
+     * in Google Cloud Storage and the server writes the `OptimizeToursResponse`
+     * to a client-specified Google Cloud Storage URI.
+     * This method should be preferred over the `OptimizeTours` method for
+     * optimizations that take longer than a few minutes and input/output sizes
+     * that are larger than 8MB, though it can be used for shorter and smaller
+     * optimizations as well.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public com.google.longrunning.Operation optimizeToursUri(
+        com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getOptimizeToursUriMethod(), getCallOptions(), request);
     }
   }
 
@@ -580,6 +881,71 @@ public final class RouteOptimizationGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchOptimizeToursMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours]
+     * method designed for
+     * optimizations with large timeout values. It should be preferred over the
+     * `OptimizeTours` method for optimizations that take longer than
+     * a few minutes.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public com.google.longrunning.Operation optimizeToursLongRunning(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOptimizeToursLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+     * method designed for optimizations with large timeout values and large
+     * input/output sizes.
+     * The client specifies the URI of the `OptimizeToursRequest` stored
+     * in Google Cloud Storage and the server writes the `OptimizeToursResponse`
+     * to a client-specified Google Cloud Storage URI.
+     * This method should be preferred over the `OptimizeTours` method for
+     * optimizations that take longer than a few minutes and input/output sizes
+     * that are larger than 8MB, though it can be used for shorter and smaller
+     * optimizations as well.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public com.google.longrunning.Operation optimizeToursUri(
+        com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOptimizeToursUriMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -669,10 +1035,78 @@ public final class RouteOptimizationGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchOptimizeToursMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours]
+     * method designed for
+     * optimizations with large timeout values. It should be preferred over the
+     * `OptimizeTours` method for optimizations that take longer than
+     * a few minutes.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        optimizeToursLongRunning(
+            com.google.maps.routeoptimization.v1.OptimizeToursRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getOptimizeToursLongRunningMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a variant of the
+     * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+     * method designed for optimizations with large timeout values and large
+     * input/output sizes.
+     * The client specifies the URI of the `OptimizeToursRequest` stored
+     * in Google Cloud Storage and the server writes the `OptimizeToursResponse`
+     * to a client-specified Google Cloud Storage URI.
+     * This method should be preferred over the `OptimizeTours` method for
+     * optimizations that take longer than a few minutes and input/output sizes
+     * that are larger than 8MB, though it can be used for shorter and smaller
+     * optimizations as well.
+     * The returned [long-running operation][google.longrunning.Operation] (LRO)
+     * will have a name of the format
+     * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+     * progress of the computation. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
+     * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
+     * if successful.
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
+     * for more details.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        optimizeToursUri(com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getOptimizeToursUriMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_OPTIMIZE_TOURS = 0;
   private static final int METHODID_BATCH_OPTIMIZE_TOURS = 1;
+  private static final int METHODID_OPTIMIZE_TOURS_LONG_RUNNING = 2;
+  private static final int METHODID_OPTIMIZE_TOURS_URI = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -701,6 +1135,16 @@ public final class RouteOptimizationGrpc {
         case METHODID_BATCH_OPTIMIZE_TOURS:
           serviceImpl.batchOptimizeTours(
               (com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_OPTIMIZE_TOURS_LONG_RUNNING:
+          serviceImpl.optimizeToursLongRunning(
+              (com.google.maps.routeoptimization.v1.OptimizeToursRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_OPTIMIZE_TOURS_URI:
+          serviceImpl.optimizeToursUri(
+              (com.google.maps.routeoptimization.v1.OptimizeToursUriRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -734,6 +1178,19 @@ public final class RouteOptimizationGrpc {
                 new MethodHandlers<
                     com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest,
                     com.google.longrunning.Operation>(service, METHODID_BATCH_OPTIMIZE_TOURS)))
+        .addMethod(
+            getOptimizeToursLongRunningMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_OPTIMIZE_TOURS_LONG_RUNNING)))
+        .addMethod(
+            getOptimizeToursUriMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.routeoptimization.v1.OptimizeToursUriRequest,
+                    com.google.longrunning.Operation>(service, METHODID_OPTIMIZE_TOURS_URI)))
         .build();
   }
 
@@ -787,6 +1244,8 @@ public final class RouteOptimizationGrpc {
                       .setSchemaDescriptor(new RouteOptimizationFileDescriptorSupplier())
                       .addMethod(getOptimizeToursMethod())
                       .addMethod(getBatchOptimizeToursMethod())
+                      .addMethod(getOptimizeToursLongRunningMethod())
+                      .addMethod(getOptimizeToursUriMethod())
                       .build();
         }
       }

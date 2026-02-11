@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,7 @@ public class MerchantReviewsServiceClientHttpJsonTest {
         MerchantReview.newBuilder()
             .setName(MerchantReviewName.of("[ACCOUNT]", "[NAME]").toString())
             .setMerchantReviewId("merchantReviewId-171413381")
-            .setAttributes(MerchantReviewAttributes.newBuilder().build())
+            .setMerchantReviewAttributes(MerchantReviewAttributes.newBuilder().build())
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setDataSource("dataSource1272470629")
             .setMerchantReviewStatus(MerchantReviewStatus.newBuilder().build())
@@ -133,7 +133,7 @@ public class MerchantReviewsServiceClientHttpJsonTest {
         MerchantReview.newBuilder()
             .setName(MerchantReviewName.of("[ACCOUNT]", "[NAME]").toString())
             .setMerchantReviewId("merchantReviewId-171413381")
-            .setAttributes(MerchantReviewAttributes.newBuilder().build())
+            .setMerchantReviewAttributes(MerchantReviewAttributes.newBuilder().build())
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setDataSource("dataSource1272470629")
             .setMerchantReviewStatus(MerchantReviewStatus.newBuilder().build())
@@ -282,7 +282,7 @@ public class MerchantReviewsServiceClientHttpJsonTest {
         MerchantReview.newBuilder()
             .setName(MerchantReviewName.of("[ACCOUNT]", "[NAME]").toString())
             .setMerchantReviewId("merchantReviewId-171413381")
-            .setAttributes(MerchantReviewAttributes.newBuilder().build())
+            .setMerchantReviewAttributes(MerchantReviewAttributes.newBuilder().build())
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setDataSource("dataSource1272470629")
             .setMerchantReviewStatus(MerchantReviewStatus.newBuilder().build())

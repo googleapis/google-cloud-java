@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.cloud.retail.v2alpha.BranchName;
 import com.google.cloud.retail.v2alpha.SearchRequest;
 import com.google.cloud.retail.v2alpha.SearchResponse;
 import com.google.cloud.retail.v2alpha.SearchServiceClient;
+import com.google.cloud.retail.v2alpha.StringList;
 import com.google.cloud.retail.v2alpha.UserInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +58,7 @@ public class SyncSearch {
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .addAllVariantRollupKeys(new ArrayList<String>())
+              .setExperimentId("experimentId-404563464")
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
@@ -68,6 +70,7 @@ public class SyncSearch {
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
               .setPlaceId("placeId-494224254")
+              .putAllUserAttributes(new HashMap<String, StringList>())
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

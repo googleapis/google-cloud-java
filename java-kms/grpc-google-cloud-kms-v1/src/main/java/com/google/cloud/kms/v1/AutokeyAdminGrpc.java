@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,9 +31,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Managed Encryption Key (CMEK) use, on-demand.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/v1/autokey_admin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutokeyAdminGrpc {
 
@@ -447,8 +444,8 @@ public final class AutokeyAdminGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.AutokeyConfig updateAutokeyConfig(
-        com.google.cloud.kms.v1.UpdateAutokeyConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateAutokeyConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutokeyConfigMethod(), getCallOptions(), request);
     }
 
@@ -461,8 +458,8 @@ public final class AutokeyAdminGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.AutokeyConfig getAutokeyConfig(
-        com.google.cloud.kms.v1.GetAutokeyConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetAutokeyConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutokeyConfigMethod(), getCallOptions(), request);
     }
 
@@ -474,8 +471,9 @@ public final class AutokeyAdminGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigResponse showEffectiveAutokeyConfig(
-        com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getShowEffectiveAutokeyConfigMethod(), getCallOptions(), request);
     }
   }

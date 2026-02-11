@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
                   ProtoUtils.marshaller(ListTagBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTagBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagBindingRequest, Operation>
@@ -72,6 +73,7 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTagBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagBindingRequest, Operation>
@@ -82,6 +84,7 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTagBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
@@ -93,6 +96,7 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
                   ProtoUtils.marshaller(ListEffectiveTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEffectiveTagsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListTagBindingsRequest, ListTagBindingsResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,9 +31,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * Each database has a collection of tables: `/tables/&#42;`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/biglake/v1alpha1/metastore.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetastoreServiceGrpc {
 
@@ -1671,8 +1668,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Catalog createCatalog(
-        com.google.cloud.bigquery.biglake.v1alpha1.CreateCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.CreateCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCatalogMethod(), getCallOptions(), request);
     }
 
@@ -1684,8 +1682,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Catalog deleteCatalog(
-        com.google.cloud.bigquery.biglake.v1alpha1.DeleteCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.DeleteCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCatalogMethod(), getCallOptions(), request);
     }
 
@@ -1697,8 +1696,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Catalog getCatalog(
-        com.google.cloud.bigquery.biglake.v1alpha1.GetCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.GetCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCatalogMethod(), getCallOptions(), request);
     }
 
@@ -1710,8 +1710,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsResponse listCatalogs(
-        com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCatalogsMethod(), getCallOptions(), request);
     }
 
@@ -1723,8 +1724,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Database createDatabase(
-        com.google.cloud.bigquery.biglake.v1alpha1.CreateDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.CreateDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -1736,8 +1738,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Database deleteDatabase(
-        com.google.cloud.bigquery.biglake.v1alpha1.DeleteDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.DeleteDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -1749,8 +1752,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Database updateDatabase(
-        com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -1762,8 +1766,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Database getDatabase(
-        com.google.cloud.bigquery.biglake.v1alpha1.GetDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.GetDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -1775,8 +1780,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesResponse listDatabases(
-        com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatabasesMethod(), getCallOptions(), request);
     }
 
@@ -1788,8 +1794,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Table createTable(
-        com.google.cloud.bigquery.biglake.v1alpha1.CreateTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.CreateTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTableMethod(), getCallOptions(), request);
     }
 
@@ -1801,8 +1808,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Table deleteTable(
-        com.google.cloud.bigquery.biglake.v1alpha1.DeleteTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.DeleteTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTableMethod(), getCallOptions(), request);
     }
 
@@ -1814,8 +1822,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Table updateTable(
-        com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTableMethod(), getCallOptions(), request);
     }
 
@@ -1827,8 +1836,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Table renameTable(
-        com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenameTableMethod(), getCallOptions(), request);
     }
 
@@ -1840,8 +1850,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Table getTable(
-        com.google.cloud.bigquery.biglake.v1alpha1.GetTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.GetTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTableMethod(), getCallOptions(), request);
     }
 
@@ -1853,8 +1864,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse listTables(
-        com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTablesMethod(), getCallOptions(), request);
     }
 
@@ -1866,8 +1878,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Lock createLock(
-        com.google.cloud.bigquery.biglake.v1alpha1.CreateLockRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.CreateLockRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLockMethod(), getCallOptions(), request);
     }
 
@@ -1879,8 +1892,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteLock(
-        com.google.cloud.bigquery.biglake.v1alpha1.DeleteLockRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.DeleteLockRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLockMethod(), getCallOptions(), request);
     }
 
@@ -1892,8 +1906,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.Lock checkLock(
-        com.google.cloud.bigquery.biglake.v1alpha1.CheckLockRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.CheckLockRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckLockMethod(), getCallOptions(), request);
     }
 
@@ -1905,8 +1920,9 @@ public final class MetastoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse listLocks(
-        com.google.cloud.bigquery.biglake.v1alpha1.ListLocksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.biglake.v1alpha1.ListLocksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLocksMethod(), getCallOptions(), request);
     }
   }

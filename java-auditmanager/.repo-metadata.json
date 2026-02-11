@@ -1,0 +1,16 @@
+{
+  "api_shortname": "auditmanager",
+  "name_pretty": "Audit Manager API",
+  "product_documentation": "https://cloud.google.com/audit-manager/docs",
+  "api_description": "Lists information about the supported locations for this service.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-auditmanager/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-auditmanager",
+  "distribution_name": "com.google.cloud:google-cloud-auditmanager",
+  "api_id": "auditmanager.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

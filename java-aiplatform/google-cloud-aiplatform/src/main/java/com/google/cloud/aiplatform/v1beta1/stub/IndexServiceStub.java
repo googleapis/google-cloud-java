@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@ import com.google.cloud.aiplatform.v1beta1.CreateIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.GetIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ImportIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.Index;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesResponse;
@@ -76,6 +78,15 @@ public abstract class IndexServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetIndexRequest, Index> getIndexCallable() {
     throw new UnsupportedOperationException("Not implemented: getIndexCallable()");
+  }
+
+  public OperationCallable<ImportIndexRequest, Index, ImportIndexOperationMetadata>
+      importIndexOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importIndexOperationCallable()");
+  }
+
+  public UnaryCallable<ImportIndexRequest, Operation> importIndexCallable() {
+    throw new UnsupportedOperationException("Not implemented: importIndexCallable()");
   }
 
   public UnaryCallable<ListIndexesRequest, ListIndexesPagedResponse> listIndexesPagedCallable() {

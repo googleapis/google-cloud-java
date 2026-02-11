@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,8 +95,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -212,6 +212,26 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
   public OperationCallSettings<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationSettings() {
     return ((VertexRagDataServiceStubSettings) getStubSettings()).deleteRagFileOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public UnaryCallSettings<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).updateRagEngineConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public OperationCallSettings<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .updateRagEngineConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRagEngineConfig. */
+  public UnaryCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).getRagEngineConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -424,6 +444,25 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
     public OperationCallSettings.Builder<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
         deleteRagFileOperationSettings() {
       return getStubSettingsBuilder().deleteRagFileOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public UnaryCallSettings.Builder<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigSettings() {
+      return getStubSettingsBuilder().updateRagEngineConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public OperationCallSettings.Builder<
+            UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+        updateRagEngineConfigOperationSettings() {
+      return getStubSettingsBuilder().updateRagEngineConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRagEngineConfig. */
+    public UnaryCallSettings.Builder<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigSettings() {
+      return getStubSettingsBuilder().getRagEngineConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

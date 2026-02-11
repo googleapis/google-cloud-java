@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [SipTrunks][google.cloud.dialogflow.v2beta1.SipTrunk].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/sip_trunk.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SipTrunksGrpc {
 
@@ -539,8 +536,9 @@ public final class SipTrunksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SipTrunk createSipTrunk(
-        com.google.cloud.dialogflow.v2beta1.CreateSipTrunkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateSipTrunkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSipTrunkMethod(), getCallOptions(), request);
     }
 
@@ -552,8 +550,9 @@ public final class SipTrunksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSipTrunk(
-        com.google.cloud.dialogflow.v2beta1.DeleteSipTrunkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteSipTrunkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSipTrunkMethod(), getCallOptions(), request);
     }
 
@@ -565,8 +564,9 @@ public final class SipTrunksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListSipTrunksResponse listSipTrunks(
-        com.google.cloud.dialogflow.v2beta1.ListSipTrunksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListSipTrunksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSipTrunksMethod(), getCallOptions(), request);
     }
 
@@ -578,8 +578,9 @@ public final class SipTrunksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SipTrunk getSipTrunk(
-        com.google.cloud.dialogflow.v2beta1.GetSipTrunkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetSipTrunkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSipTrunkMethod(), getCallOptions(), request);
     }
 
@@ -591,8 +592,9 @@ public final class SipTrunksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SipTrunk updateSipTrunk(
-        com.google.cloud.dialogflow.v2beta1.UpdateSipTrunkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateSipTrunkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSipTrunkMethod(), getCallOptions(), request);
     }
   }

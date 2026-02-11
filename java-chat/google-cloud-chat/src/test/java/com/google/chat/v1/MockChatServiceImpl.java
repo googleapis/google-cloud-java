@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -551,6 +551,90 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteReaction, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCustomEmoji(
+      CreateCustomEmojiRequest request, StreamObserver<CustomEmoji> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomEmoji) {
+      requests.add(request);
+      responseObserver.onNext(((CustomEmoji) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomEmoji, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomEmoji.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCustomEmoji(
+      GetCustomEmojiRequest request, StreamObserver<CustomEmoji> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomEmoji) {
+      requests.add(request);
+      responseObserver.onNext(((CustomEmoji) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomEmoji, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomEmoji.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCustomEmojis(
+      ListCustomEmojisRequest request, StreamObserver<ListCustomEmojisResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomEmojisResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomEmojisResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomEmojis, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomEmojisResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCustomEmoji(
+      DeleteCustomEmojiRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCustomEmoji, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

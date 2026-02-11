@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -290,9 +290,11 @@ public class PublicDelegatedPrefixesClientTest {
             .setByoipApiVersion("byoipApiVersion-693290787")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setEnableEnhancedIpv4Allocation(true)
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpv6AccessType("ipv6AccessType606780421")
             .setIsLiveMigration(true)
             .setKind("kind3292052")
             .setMode("mode3357091")

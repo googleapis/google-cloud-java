@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
           .setFullMethodName("google.shopping.merchant.lfp.v1beta.LfpStoreService/GetLfpStore")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLfpStoreRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(LfpStore.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<InsertLfpStoreRequest, LfpStore>
@@ -66,6 +67,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertLfpStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LfpStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLfpStoreRequest, Empty>
@@ -77,6 +79,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLfpStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLfpStoresRequest, ListLfpStoresResponse>
@@ -89,6 +92,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
                   ProtoUtils.marshaller(ListLfpStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLfpStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetLfpStoreRequest, LfpStore> getLfpStoreCallable;

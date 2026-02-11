@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,6 +215,46 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StartDistribution</td>
+ *      <td><p> Starts distribution which delivers outputs to the destination indicated by the Distribution configuration.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startDistributionAsync(StartDistributionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> startDistributionAsync(ChannelName name, List&lt;String&gt; distributionKeys)
+ *           <li><p> startDistributionAsync(String name, List&lt;String&gt; distributionKeys)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startDistributionOperationCallable()
+ *           <li><p> startDistributionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopDistribution</td>
+ *      <td><p> Stops the specified distribution.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopDistributionAsync(StopDistributionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> stopDistributionAsync(ChannelName name, List&lt;String&gt; distributionKeys)
+ *           <li><p> stopDistributionAsync(String name, List&lt;String&gt; distributionKeys)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopDistributionOperationCallable()
+ *           <li><p> stopDistributionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateInput</td>
  *      <td><p> Creates an input with the provided unique ID in the specified region.</td>
  *      <td>
@@ -309,6 +349,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> updateInputOperationCallable()
  *           <li><p> updateInputCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PreviewInput</td>
+ *      <td><p> Preview the streaming content of the specified input.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> previewInput(PreviewInputRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> previewInput(InputName name)
+ *           <li><p> previewInput(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> previewInputCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -450,7 +509,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteClip</td>
- *      <td><p> Deletes the specified clip job resource. This method only deletes the clip job and does not delete the VOD clip stored in the GCS.</td>
+ *      <td><p> Deletes the specified clip job resource. This method only deletes the clip job and does not delete the VOD clip stored in Cloud Storage.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -465,6 +524,104 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteClipOperationCallable()
  *           <li><p> deleteClipCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDvrSession</td>
+ *      <td><p> Creates a DVR session with the provided unique ID in the specified channel.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDvrSessionAsync(CreateDvrSessionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDvrSessionAsync(ChannelName parent, DvrSession dvrSession, String dvrSessionId)
+ *           <li><p> createDvrSessionAsync(String parent, DvrSession dvrSession, String dvrSessionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDvrSessionOperationCallable()
+ *           <li><p> createDvrSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDvrSessions</td>
+ *      <td><p> Returns a list of all DVR sessions in the specified channel.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDvrSessions(ListDvrSessionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDvrSessions(ChannelName parent)
+ *           <li><p> listDvrSessions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDvrSessionsPagedCallable()
+ *           <li><p> listDvrSessionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDvrSession</td>
+ *      <td><p> Returns the specified DVR session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDvrSession(GetDvrSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDvrSession(DvrSessionName name)
+ *           <li><p> getDvrSession(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDvrSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDvrSession</td>
+ *      <td><p> Deletes the specified DVR session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDvrSessionAsync(DeleteDvrSessionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDvrSessionAsync(DvrSessionName name)
+ *           <li><p> deleteDvrSessionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDvrSessionOperationCallable()
+ *           <li><p> deleteDvrSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDvrSession</td>
+ *      <td><p> Updates the specified DVR session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDvrSessionAsync(UpdateDvrSessionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDvrSessionAsync(DvrSession dvrSession, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDvrSessionOperationCallable()
+ *           <li><p> updateDvrSessionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -771,8 +928,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent location for the resource, in the form of:
    *     `projects/{project}/locations/{location}`.
    * @param channel Required. The channel resource to be created.
-   * @param channelId Required. The ID of the channel resource to be created. This value must be
-   *     1-63 characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param channelId Required. The ID of the channel resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
@@ -810,8 +969,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent location for the resource, in the form of:
    *     `projects/{project}/locations/{location}`.
    * @param channel Required. The channel resource to be created.
-   * @param channelId Required. The ID of the channel resource to be created. This value must be
-   *     1-63 characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param channelId Required. The ID of the channel resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
@@ -1792,6 +1953,347 @@ public class LivestreamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Starts distribution which delivers outputs to the destination indicated by the Distribution
+   * configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   List<String> distributionKeys = new ArrayList<>();
+   *   ChannelOperationResponse response =
+   *       livestreamServiceClient.startDistributionAsync(name, distributionKeys).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}`.
+   * @param distributionKeys Optional. A list of keys to identify the distribution configuration in
+   *     the channel resource. If left empty, all the distributions in the channel specification
+   *     will be started.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelOperationResponse, OperationMetadata> startDistributionAsync(
+      ChannelName name, List<String> distributionKeys) {
+    StartDistributionRequest request =
+        StartDistributionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllDistributionKeys(distributionKeys)
+            .build();
+    return startDistributionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts distribution which delivers outputs to the destination indicated by the Distribution
+   * configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   List<String> distributionKeys = new ArrayList<>();
+   *   ChannelOperationResponse response =
+   *       livestreamServiceClient.startDistributionAsync(name, distributionKeys).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}`.
+   * @param distributionKeys Optional. A list of keys to identify the distribution configuration in
+   *     the channel resource. If left empty, all the distributions in the channel specification
+   *     will be started.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelOperationResponse, OperationMetadata> startDistributionAsync(
+      String name, List<String> distributionKeys) {
+    StartDistributionRequest request =
+        StartDistributionRequest.newBuilder()
+            .setName(name)
+            .addAllDistributionKeys(distributionKeys)
+            .build();
+    return startDistributionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts distribution which delivers outputs to the destination indicated by the Distribution
+   * configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   StartDistributionRequest request =
+   *       StartDistributionRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllDistributionKeys(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ChannelOperationResponse response =
+   *       livestreamServiceClient.startDistributionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelOperationResponse, OperationMetadata> startDistributionAsync(
+      StartDistributionRequest request) {
+    return startDistributionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts distribution which delivers outputs to the destination indicated by the Distribution
+   * configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   StartDistributionRequest request =
+   *       StartDistributionRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllDistributionKeys(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ChannelOperationResponse, OperationMetadata> future =
+   *       livestreamServiceClient.startDistributionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelOperationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable() {
+    return stub.startDistributionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts distribution which delivers outputs to the destination indicated by the Distribution
+   * configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   StartDistributionRequest request =
+   *       StartDistributionRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllDistributionKeys(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.startDistributionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable() {
+    return stub.startDistributionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops the specified distribution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   List<String> distributionKeys = new ArrayList<>();
+   *   ChannelOperationResponse response =
+   *       livestreamServiceClient.stopDistributionAsync(name, distributionKeys).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}`.
+   * @param distributionKeys Optional. A list of key to identify the distribution configuration in
+   *     the channel resource. If left empty, all the distributions in the channel specification
+   *     will be stopped.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelOperationResponse, OperationMetadata> stopDistributionAsync(
+      ChannelName name, List<String> distributionKeys) {
+    StopDistributionRequest request =
+        StopDistributionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllDistributionKeys(distributionKeys)
+            .build();
+    return stopDistributionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops the specified distribution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   List<String> distributionKeys = new ArrayList<>();
+   *   ChannelOperationResponse response =
+   *       livestreamServiceClient.stopDistributionAsync(name, distributionKeys).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the channel resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}`.
+   * @param distributionKeys Optional. A list of key to identify the distribution configuration in
+   *     the channel resource. If left empty, all the distributions in the channel specification
+   *     will be stopped.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelOperationResponse, OperationMetadata> stopDistributionAsync(
+      String name, List<String> distributionKeys) {
+    StopDistributionRequest request =
+        StopDistributionRequest.newBuilder()
+            .setName(name)
+            .addAllDistributionKeys(distributionKeys)
+            .build();
+    return stopDistributionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops the specified distribution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   StopDistributionRequest request =
+   *       StopDistributionRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllDistributionKeys(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ChannelOperationResponse response =
+   *       livestreamServiceClient.stopDistributionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ChannelOperationResponse, OperationMetadata> stopDistributionAsync(
+      StopDistributionRequest request) {
+    return stopDistributionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops the specified distribution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   StopDistributionRequest request =
+   *       StopDistributionRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllDistributionKeys(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ChannelOperationResponse, OperationMetadata> future =
+   *       livestreamServiceClient.stopDistributionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelOperationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable() {
+    return stub.stopDistributionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops the specified distribution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   StopDistributionRequest request =
+   *       StopDistributionRequest.newBuilder()
+   *           .setName(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllDistributionKeys(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.stopDistributionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable() {
+    return stub.stopDistributionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates an input with the provided unique ID in the specified region.
    *
    * <p>Sample code:
@@ -1813,8 +2315,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent location for the resource, in the form of:
    *     `projects/{project}/locations/{location}`.
    * @param input Required. The input resource to be created.
-   * @param inputId Required. The ID of the input resource to be created. This value must be 1-63
-   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param inputId Required. The ID of the input resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Input, OperationMetadata> createInputAsync(
@@ -1851,8 +2355,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent location for the resource, in the form of:
    *     `projects/{project}/locations/{location}`.
    * @param input Required. The input resource to be created.
-   * @param inputId Required. The ID of the input resource to be created. This value must be 1-63
-   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param inputId Required. The ID of the input resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Input, OperationMetadata> createInputAsync(
@@ -2405,6 +2911,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param updateMask Field mask is used to specify the fields to be overwritten in the Input
    *     resource by the update. You can only update the following fields:
    *     <ul>
+   *       <li>[`tier`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#Tier)
    *       <li>[`preprocessingConfig`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#PreprocessingConfig)
    *       <li>[`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    *     </ul>
@@ -2516,6 +3023,117 @@ public class LivestreamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Preview the streaming content of the specified input.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+   *   PreviewInputResponse response = livestreamServiceClient.previewInput(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the input resource, in the form of:
+   *     `projects/{project}/locations/{location}/inputs/{inputId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewInputResponse previewInput(InputName name) {
+    PreviewInputRequest request =
+        PreviewInputRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return previewInput(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Preview the streaming content of the specified input.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]").toString();
+   *   PreviewInputResponse response = livestreamServiceClient.previewInput(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the input resource, in the form of:
+   *     `projects/{project}/locations/{location}/inputs/{inputId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewInputResponse previewInput(String name) {
+    PreviewInputRequest request = PreviewInputRequest.newBuilder().setName(name).build();
+    return previewInput(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Preview the streaming content of the specified input.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   PreviewInputRequest request =
+   *       PreviewInputRequest.newBuilder()
+   *           .setName(InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]").toString())
+   *           .build();
+   *   PreviewInputResponse response = livestreamServiceClient.previewInput(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewInputResponse previewInput(PreviewInputRequest request) {
+    return previewInputCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Preview the streaming content of the specified input.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   PreviewInputRequest request =
+   *       PreviewInputRequest.newBuilder()
+   *           .setName(InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]").toString())
+   *           .build();
+   *   ApiFuture<PreviewInputResponse> future =
+   *       livestreamServiceClient.previewInputCallable().futureCall(request);
+   *   // Do something.
+   *   PreviewInputResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable() {
+    return stub.previewInputCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates an event with the provided unique ID in the specified channel.
    *
    * <p>Sample code:
@@ -2537,8 +3155,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent channel for the resource, in the form of:
    *     `projects/{project}/locations/{location}/channels/{channelId}`.
    * @param event Required. The event resource to be created.
-   * @param eventId Required. The ID of the event resource to be created. This value must be 1-63
-   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param eventId Required. The ID of the event resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Event createEvent(ChannelName parent, Event event, String eventId) {
@@ -2574,8 +3194,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent channel for the resource, in the form of:
    *     `projects/{project}/locations/{location}/channels/{channelId}`.
    * @param event Required. The event resource to be created.
-   * @param eventId Required. The ID of the event resource to be created. This value must be 1-63
-   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param eventId Required. The ID of the event resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Event createEvent(String parent, Event event, String eventId) {
@@ -3335,9 +3957,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}/channels/{channel}`.
    * @param clip Required. The resource being created
-   * @param clipId Required. Id of the requesting object in the following form:
-   *     <p>1. 1 character minimum, 63 characters maximum 2. Only contains letters, digits,
-   *     underscores, and hyphens
+   * @param clipId Required. The ID of the clip resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Clip, OperationMetadata> createClipAsync(
@@ -3374,9 +3997,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource name, in the following form:
    *     `projects/{project}/locations/{location}/channels/{channel}`.
    * @param clip Required. The resource being created
-   * @param clipId Required. Id of the requesting object in the following form:
-   *     <p>1. 1 character minimum, 63 characters maximum 2. Only contains letters, digits,
-   *     underscores, and hyphens
+   * @param clipId Required. The ID of the clip resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Clip, OperationMetadata> createClipAsync(
@@ -3483,7 +4107,7 @@ public class LivestreamServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified clip job resource. This method only deletes the clip job and does not
-   * delete the VOD clip stored in the GCS.
+   * delete the VOD clip stored in Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -3512,7 +4136,7 @@ public class LivestreamServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified clip job resource. This method only deletes the clip job and does not
-   * delete the VOD clip stored in the GCS.
+   * delete the VOD clip stored in Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -3540,7 +4164,7 @@ public class LivestreamServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified clip job resource. This method only deletes the clip job and does not
-   * delete the VOD clip stored in the GCS.
+   * delete the VOD clip stored in Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -3571,7 +4195,7 @@ public class LivestreamServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified clip job resource. This method only deletes the clip job and does not
-   * delete the VOD clip stored in the GCS.
+   * delete the VOD clip stored in Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -3602,7 +4226,7 @@ public class LivestreamServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified clip job resource. This method only deletes the clip job and does not
-   * delete the VOD clip stored in the GCS.
+   * delete the VOD clip stored in Cloud Storage.
    *
    * <p>Sample code:
    *
@@ -3631,6 +4255,755 @@ public class LivestreamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a DVR session with the provided unique ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   DvrSession dvrSession = DvrSession.newBuilder().build();
+   *   String dvrSessionId = "dvrSessionId120568849";
+   *   DvrSession response =
+   *       livestreamServiceClient.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channelId}`.
+   * @param dvrSession Required. The resource being created
+   * @param dvrSessionId Required. The ID of the DVR session resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DvrSession, OperationMetadata> createDvrSessionAsync(
+      ChannelName parent, DvrSession dvrSession, String dvrSessionId) {
+    CreateDvrSessionRequest request =
+        CreateDvrSessionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDvrSession(dvrSession)
+            .setDvrSessionId(dvrSessionId)
+            .build();
+    return createDvrSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DVR session with the provided unique ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   DvrSession dvrSession = DvrSession.newBuilder().build();
+   *   String dvrSessionId = "dvrSessionId120568849";
+   *   DvrSession response =
+   *       livestreamServiceClient.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channelId}`.
+   * @param dvrSession Required. The resource being created
+   * @param dvrSessionId Required. The ID of the DVR session resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DvrSession, OperationMetadata> createDvrSessionAsync(
+      String parent, DvrSession dvrSession, String dvrSessionId) {
+    CreateDvrSessionRequest request =
+        CreateDvrSessionRequest.newBuilder()
+            .setParent(parent)
+            .setDvrSession(dvrSession)
+            .setDvrSessionId(dvrSessionId)
+            .build();
+    return createDvrSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DVR session with the provided unique ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateDvrSessionRequest request =
+   *       CreateDvrSessionRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setDvrSessionId("dvrSessionId120568849")
+   *           .setDvrSession(DvrSession.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DvrSession response = livestreamServiceClient.createDvrSessionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DvrSession, OperationMetadata> createDvrSessionAsync(
+      CreateDvrSessionRequest request) {
+    return createDvrSessionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DVR session with the provided unique ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateDvrSessionRequest request =
+   *       CreateDvrSessionRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setDvrSessionId("dvrSessionId120568849")
+   *           .setDvrSession(DvrSession.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DvrSession, OperationMetadata> future =
+   *       livestreamServiceClient.createDvrSessionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DvrSession response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationCallable() {
+    return stub.createDvrSessionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a DVR session with the provided unique ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateDvrSessionRequest request =
+   *       CreateDvrSessionRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setDvrSessionId("dvrSessionId120568849")
+   *           .setDvrSession(DvrSession.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.createDvrSessionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDvrSessionRequest, Operation> createDvrSessionCallable() {
+    return stub.createDvrSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all DVR sessions in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   for (DvrSession element : livestreamServiceClient.listDvrSessions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDvrSessionsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDvrSessionsPagedResponse listDvrSessions(ChannelName parent) {
+    ListDvrSessionsRequest request =
+        ListDvrSessionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDvrSessions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all DVR sessions in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   for (DvrSession element : livestreamServiceClient.listDvrSessions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDvrSessionsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDvrSessionsPagedResponse listDvrSessions(String parent) {
+    ListDvrSessionsRequest request = ListDvrSessionsRequest.newBuilder().setParent(parent).build();
+    return listDvrSessions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all DVR sessions in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListDvrSessionsRequest request =
+   *       ListDvrSessionsRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DvrSession element : livestreamServiceClient.listDvrSessions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDvrSessionsPagedResponse listDvrSessions(ListDvrSessionsRequest request) {
+    return listDvrSessionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all DVR sessions in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListDvrSessionsRequest request =
+   *       ListDvrSessionsRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DvrSession> future =
+   *       livestreamServiceClient.listDvrSessionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DvrSession element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsPagedResponse>
+      listDvrSessionsPagedCallable() {
+    return stub.listDvrSessionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all DVR sessions in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListDvrSessionsRequest request =
+   *       ListDvrSessionsRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDvrSessionsResponse response =
+   *         livestreamServiceClient.listDvrSessionsCallable().call(request);
+   *     for (DvrSession element : response.getDvrSessionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse>
+      listDvrSessionsCallable() {
+    return stub.listDvrSessionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DvrSessionName name =
+   *       DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+   *   DvrSession response = livestreamServiceClient.getDvrSession(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channelId}/dvrSessions/{dvrSessionId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DvrSession getDvrSession(DvrSessionName name) {
+    GetDvrSessionRequest request =
+        GetDvrSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDvrSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name =
+   *       DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]").toString();
+   *   DvrSession response = livestreamServiceClient.getDvrSession(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channelId}/dvrSessions/{dvrSessionId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DvrSession getDvrSession(String name) {
+    GetDvrSessionRequest request = GetDvrSessionRequest.newBuilder().setName(name).build();
+    return getDvrSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetDvrSessionRequest request =
+   *       GetDvrSessionRequest.newBuilder()
+   *           .setName(
+   *               DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+   *                   .toString())
+   *           .build();
+   *   DvrSession response = livestreamServiceClient.getDvrSession(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DvrSession getDvrSession(GetDvrSessionRequest request) {
+    return getDvrSessionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetDvrSessionRequest request =
+   *       GetDvrSessionRequest.newBuilder()
+   *           .setName(
+   *               DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DvrSession> future =
+   *       livestreamServiceClient.getDvrSessionCallable().futureCall(request);
+   *   // Do something.
+   *   DvrSession response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDvrSessionRequest, DvrSession> getDvrSessionCallable() {
+    return stub.getDvrSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DvrSessionName name =
+   *       DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+   *   livestreamServiceClient.deleteDvrSessionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the event resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}/dvrSessions/{dvrSessionId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDvrSessionAsync(
+      DvrSessionName name) {
+    DeleteDvrSessionRequest request =
+        DeleteDvrSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteDvrSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name =
+   *       DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]").toString();
+   *   livestreamServiceClient.deleteDvrSessionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the event resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}/dvrSessions/{dvrSessionId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDvrSessionAsync(String name) {
+    DeleteDvrSessionRequest request = DeleteDvrSessionRequest.newBuilder().setName(name).build();
+    return deleteDvrSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteDvrSessionRequest request =
+   *       DeleteDvrSessionRequest.newBuilder()
+   *           .setName(
+   *               DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   livestreamServiceClient.deleteDvrSessionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDvrSessionAsync(
+      DeleteDvrSessionRequest request) {
+    return deleteDvrSessionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteDvrSessionRequest request =
+   *       DeleteDvrSessionRequest.newBuilder()
+   *           .setName(
+   *               DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       livestreamServiceClient.deleteDvrSessionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationCallable() {
+    return stub.deleteDvrSessionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteDvrSessionRequest request =
+   *       DeleteDvrSessionRequest.newBuilder()
+   *           .setName(
+   *               DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.deleteDvrSessionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDvrSessionRequest, Operation> deleteDvrSessionCallable() {
+    return stub.deleteDvrSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DvrSession dvrSession = DvrSession.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DvrSession response =
+   *       livestreamServiceClient.updateDvrSessionAsync(dvrSession, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param dvrSession Required. The DVR session resource to be updated.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     DvrSession resource by the update. You can only update the following fields:
+   *     <ul>
+   *       <li>`dvrWindows`
+   *     </ul>
+   *     <p>The fields specified in the update_mask are relative to the resource, not the full
+   *     request. A field will be overwritten if it is in the mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DvrSession, OperationMetadata> updateDvrSessionAsync(
+      DvrSession dvrSession, FieldMask updateMask) {
+    UpdateDvrSessionRequest request =
+        UpdateDvrSessionRequest.newBuilder()
+            .setDvrSession(dvrSession)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDvrSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   UpdateDvrSessionRequest request =
+   *       UpdateDvrSessionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDvrSession(DvrSession.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DvrSession response = livestreamServiceClient.updateDvrSessionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DvrSession, OperationMetadata> updateDvrSessionAsync(
+      UpdateDvrSessionRequest request) {
+    return updateDvrSessionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   UpdateDvrSessionRequest request =
+   *       UpdateDvrSessionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDvrSession(DvrSession.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DvrSession, OperationMetadata> future =
+   *       livestreamServiceClient.updateDvrSessionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DvrSession response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationCallable() {
+    return stub.updateDvrSessionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified DVR session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   UpdateDvrSessionRequest request =
+   *       UpdateDvrSessionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDvrSession(DvrSession.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.updateDvrSessionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDvrSessionRequest, Operation> updateDvrSessionCallable() {
+    return stub.updateDvrSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a Asset with the provided unique ID in the specified region.
    *
    * <p>Sample code:
@@ -3652,8 +5025,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent location for the resource, in the form of:
    *     `projects/{project}/locations/{location}`.
    * @param asset Required. The asset resource to be created.
-   * @param assetId Required. The ID of the asset resource to be created. This value must be 1-63
-   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param assetId Required. The ID of the asset resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
@@ -3690,8 +5065,10 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. The parent location for the resource, in the form of:
    *     `projects/{project}/locations/{location}`.
    * @param asset Required. The asset resource to be created.
-   * @param assetId Required. The ID of the asset resource to be created. This value must be 1-63
-   *     characters, begin and end with `[a-z0-9]`, could contain dashes (-) in between.
+   * @param assetId Required. The ID of the asset resource to be created.
+   *     <p>This value must be 1-63 characters, begin and end with a lower-case letter or a number,
+   *     and consist of only lower-case letters, numbers, and hyphens. In other words, it must match
+   *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
@@ -4928,6 +6305,83 @@ public class LivestreamServiceClient implements BackgroundResource {
     protected ListClipsFixedSizeCollection createCollection(
         List<ListClipsPage> pages, int collectionSize) {
       return new ListClipsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDvrSessionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDvrSessionsRequest,
+          ListDvrSessionsResponse,
+          DvrSession,
+          ListDvrSessionsPage,
+          ListDvrSessionsFixedSizeCollection> {
+
+    public static ApiFuture<ListDvrSessionsPagedResponse> createAsync(
+        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        ApiFuture<ListDvrSessionsResponse> futureResponse) {
+      ApiFuture<ListDvrSessionsPage> futurePage =
+          ListDvrSessionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDvrSessionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDvrSessionsPagedResponse(ListDvrSessionsPage page) {
+      super(page, ListDvrSessionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDvrSessionsPage
+      extends AbstractPage<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession, ListDvrSessionsPage> {
+
+    private ListDvrSessionsPage(
+        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        ListDvrSessionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDvrSessionsPage createEmptyPage() {
+      return new ListDvrSessionsPage(null, null);
+    }
+
+    @Override
+    protected ListDvrSessionsPage createPage(
+        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        ListDvrSessionsResponse response) {
+      return new ListDvrSessionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDvrSessionsPage> createPageAsync(
+        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        ApiFuture<ListDvrSessionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDvrSessionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDvrSessionsRequest,
+          ListDvrSessionsResponse,
+          DvrSession,
+          ListDvrSessionsPage,
+          ListDvrSessionsFixedSizeCollection> {
+
+    private ListDvrSessionsFixedSizeCollection(
+        List<ListDvrSessionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDvrSessionsFixedSizeCollection createEmptyCollection() {
+      return new ListDvrSessionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDvrSessionsFixedSizeCollection createCollection(
+        List<ListDvrSessionsPage> pages, int collectionSize) {
+      return new ListDvrSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for LLM related utility functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/llm_utility_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LlmUtilityServiceGrpc {
 
@@ -322,8 +319,8 @@ public final class LlmUtilityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.CountTokensResponse countTokens(
-        com.google.cloud.aiplatform.v1.CountTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CountTokensRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCountTokensMethod(), getCallOptions(), request);
     }
 
@@ -335,8 +332,9 @@ public final class LlmUtilityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ComputeTokensResponse computeTokens(
-        com.google.cloud.aiplatform.v1.ComputeTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ComputeTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeTokensMethod(), getCallOptions(), request);
     }
   }
