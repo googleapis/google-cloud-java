@@ -17,7 +17,7 @@ excluded_modules=(
   'gapic-libraries-bom'
   'google-cloud-jar-parent'
   'google-cloud-pom-parent'
-  'java-vertexai',
+  'java-vertexai'
   'java-logging'
 )
 
