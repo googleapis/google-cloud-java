@@ -945,3 +945,14 @@ grpc-google-cloud-cloudapiregistry-v1:0.3.0:0.4.0-SNAPSHOT
 google-cloud-logging:3.25.0:3.26.0-SNAPSHOT
 grpc-google-cloud-logging-v2:0.114.0:0.115.0-SNAPSHOT
 proto-google-cloud-logging-v2:0.114.0:0.115.0-SNAPSHOT
+google-cloud-bigquerystorage:3.20.0:3.20.1-SNAPSHOT
+grpc-google-cloud-bigquerystorage-v1beta1:0.192.0:0.192.1-SNAPSHOT
+grpc-google-cloud-bigquerystorage-v1beta2:0.192.0:0.192.1-SNAPSHOT
+grpc-google-cloud-bigquerystorage-v1:3.20.0:3.20.1-SNAPSHOT
+proto-google-cloud-bigquerystorage-v1beta1:0.192.0:0.192.1-SNAPSHOT
+proto-google-cloud-bigquerystorage-v1beta2:0.192.0:0.192.1-SNAPSHOT
+proto-google-cloud-bigquerystorage-v1:3.20.0:3.20.1-SNAPSHOT
+grpc-google-cloud-bigquerystorage-v1alpha:3.20.0:3.20.1-SNAPSHOT
+proto-google-cloud-bigquerystorage-v1alpha:3.20.0:3.20.1-SNAPSHOT
+proto-google-cloud-bigquerystorage-v1beta:3.20.0:3.20.1-SNAPSHOT
+grpc-google-cloud-bigquerystorage-v1beta:3.20.0:3.20.1-SNAPSHOT
