@@ -247,6 +247,19 @@ EOF
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split integration config"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
+
+# 6.7 Update excluded_modules in .kokoro/common.sh
+COMMON_SH=".kokoro/common.sh"
+if [ -f "$COMMON_SH" ]; then
+    echo "Updating excluded_modules in $COMMON_SH..."
+    # Insert the new module name before the closing parenthesis of the excluded_modules array
+    sed -i "/^excluded_modules=(/,/^)/ s/^)/  '$SOURCE_REPO_NAME'\n)/" "$COMMON_SH"
+
+    echo "Committing excluded_modules update..."
+    git add "$COMMON_SH"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add to excluded_modules in .kokoro/common.sh"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
 rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
