@@ -1,0 +1,265 @@
+syntax = "proto2";
+
+package com.google.cloud.bigquery.storage.test;
+
+message ComplexRoot {
+  optional int64 test_int = 1;
+  repeated string test_string = 2;
+  required bytes test_bytes = 3;
+  optional bool test_bool = 4;
+  repeated double test_double = 5;
+  required int32 test_date = 6;
+  optional int64 test_datetime = 7;
+  repeated int64 test_datetime_str = 8;
+  required ComplexLvl1 complex_lvl1 = 9;
+  required
+      ComplexLvl2 complex_lvl2 = 10;
+  optional bytes test_numeric = 11;
+  optional string test_geo = 12;
+  optional int64 test_timestamp = 13;
+  optional int64 test_time = 14;
+  optional int64 test_time_str = 15;
+  repeated bytes test_numeric_repeated = 16;
+  optional bytes test_numeric_str = 17;
+  optional bytes test_numeric_short = 18;
+  optional bytes test_numeric_int = 19;
+  optional bytes test_numeric_long = 20;
+  optional bytes test_numeric_float = 21;
+  optional bytes test_numeric_double = 22;
+  optional bytes test_bignumeric = 23;
+  repeated bytes test_bignumeric_str = 24;
+  optional bytes test_bignumeric_short = 25;
+  optional bytes test_bignumeric_int = 26;
+  optional bytes test_bignumeric_long = 27;
+  optional bytes test_bignumeric_float = 28;
+  optional bytes test_bignumeric_double = 29;
+  optional string test_interval = 30;
+  repeated string test_json = 31;
+  optional string test_timestamp_higher_precision = 32;
+  repeated string test_timestamp_higher_precision_repeated = 33;
+}
+
+message CasingComplex {
+  optional int64 test_int = 1;
+  repeated string test_string = 2;
+  required bytes test_bytes = 3;
+  optional bool test_bool = 4;
+  repeated double test_double = 5;
+  required int32 test_date = 6;
+  required OptionTest option_test = 7;
+}
+
+message ComplexLvl1 {
+  optional int64 test_int = 1;
+  required ComplexLvl2 complex_lvl2 = 2;
+}
+
+message ComplexLvl2 {
+  optional int64 test_int = 1;
+}
+
+message ObjectType {
+  optional ComplexLvl2 test_field_type = 1;
+}
+
+message RepeatedType {
+  repeated int64 test_field_type = 1;
+}
+
+message OptionTest {
+  optional int64 test_optional = 1;
+  required int64 test_required = 2;
+  repeated int64 test_repeated = 3;
+}
+
+message ReuseRoot {
+  optional ReuseLvl1 reuse_lvl1 = 1;
+  optional ReuseLvl1 reuse_lvl1_1 = 2;
+  optional ReuseLvl1 reuse_lvl1_2 = 3;
+}
+
+message ReuseLvl1 {
+  optional int64 test_int = 1;
+  optional ReuseLvl2 reuse_lvl2 = 2;
+}
+
+message ReuseLvl2 {
+  optional int64 test_int = 1;
+}
+
+message RepeatedInt64 {
+  repeated int64 test_repeated = 1;
+}
+
+message RepeatedInt32 {
+  repeated int32 test_repeated = 1;
+  optional int32 test_non_repeated = 2;
+}
+
+message RepeatedDouble {
+  repeated double test_repeated = 1;
+}
+
+message RepeatedString {
+  repeated string test_repeated = 1;
+}
+
+message RepeatedBool {
+  repeated bool test_repeated = 1;
+}
+
+message RepeatedBytes {
+  repeated bytes test_repeated = 1;
+}
+
+message RepeatedObject {
+  repeated ComplexLvl2 test_repeated = 1;
+}
+
+message TestBool {
+  optional bool bool = 1;
+  optional bool lowercase = 2;
+  optional bool uppercase = 3;
+}
+
+message TestInt64 {
+  optional int64 byte = 1;
+  optional int64 short = 2;
+  optional int64 int = 3;
+  optional int64 long = 4;
+  optional int64 string = 5;
+}
+
+message TestInt32 {
+  optional int32 byte = 1;
+  optional int32 short = 2;
+  optional int32 int = 3;
+  optional int32 string = 4;
+}
+
+message TestDouble {
+  optional double double = 1;
+  optional double float = 2;
+  optional double byte = 3;
+  optional double short = 4;
+  optional double int = 5;
+  optional double long = 6;
+  optional double string = 7;
+}
+
+message TestTimestamp {
+  optional int64 test_string = 1;
+  optional int64 test_string_t_z = 2;
+  optional int64 test_long = 3;
+  optional int64 test_int = 4;
+  optional int64 test_float = 5;
+  optional int64 test_offset = 6;
+  optional int64 test_zero_offset = 7;
+  optional int64 test_timezone = 8;
+  optional int64 test_saformat = 9;
+}
+
+message TestTimestampHigherPrecision {
+  optional string test_string = 1;
+  optional string test_string_t_z = 2;
+  optional string test_long = 3;
+  optional string test_int = 4;
+  optional string test_float = 5;
+  optional string test_offset = 6;
+  optional string test_zero_offset = 7;
+  optional string test_timezone = 8;
+  optional string test_saformat = 9;
+}
+
+message TestRepeatedTimestamp {
+  repeated int64 test_string_repeated = 1;
+  repeated int64 test_string_t_z_repeated = 2;
+  repeated int64 test_long_repeated = 3;
+  repeated int64 test_int_repeated = 4;
+  repeated int64 test_float_repeated = 5;
+  repeated int64 test_offset_repeated = 6;
+  repeated int64 test_zero_offset_repeated = 7;
+  repeated int64 test_timezone_repeated = 8;
+  repeated int64 test_saformat_repeated = 9;
+}
+
+message TestRepeatedTimestampHigherPrecision {
+  repeated string test_string_repeated = 1;
+  repeated string test_string_t_z_repeated = 2;
+  repeated string test_long_repeated = 3;
+  repeated string test_int_repeated = 4;
+  repeated string test_float_repeated = 5;
+  repeated string test_offset_repeated = 6;
+  repeated string test_zero_offset_repeated = 7;
+  repeated string test_timezone_repeated = 8;
+  repeated string test_saformat_repeated = 9;
+}
+
+message TestDate {
+  optional int32 test_string = 1;
+  optional int32 test_long = 2;
+}
+
+message NestedRepeated {
+  repeated int64 int = 1;
+  repeated double double = 2;
+  optional RepeatedString repeated_string = 3;
+}
+
+message TestRequired {
+  optional double optional_double = 1;
+  required double required_double = 2;
+}
+
+message TestRepeatedIsOptional {
+  optional double required_double = 1;
+  repeated double repeated_double = 2;
+}
+
+message TopLevelMismatch {
+  optional double mismatch_double = 1;
+}
+
+message TestDatetime {
+  optional int64 datetime = 1;
+}
+
+message TestTime {
+  repeated int64 time = 1;
+}
+
+message TestNumeric {
+  optional bytes numeric = 1;
+}
+
+message TestBignumeric {
+  repeated bytes bignumeric = 1;
+}
+
+message TestMixedCaseFieldNames {
+  required string foobar = 1;
+}
+
+message TestRange {
+  optional TestRangeDate range_date = 1;
+  optional TestRangeDatetime range_datetime = 2;
+  optional TestRangeTimestamp range_timestamp = 3;
+  optional TestRangeDate range_date_mixed_case = 4;
+  optional TestRangeDatetime range_datetime_mixed_case = 5;
+  optional TestRangeTimestamp range_timestamp_mixed_case = 6;
+}
+
+message TestRangeDate {
+  optional int32 start = 1;
+  optional int32 end = 2;
+}
+
+message TestRangeDatetime {
+  optional int64 start = 1;
+  optional int64 end = 2;
+}
+
+message TestRangeTimestamp {
+  optional int64 start = 1;
+  optional int64 end = 2;
+}
