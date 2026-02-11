@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2026 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,31 +15,20 @@
 import synthtool as s
 from synthtool.languages import java
 
-
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     s.move(library)
-
 s.remove_staging_dirs()
-java.common_templates(
-    excludes=[
-        "renovate.json",
-        ".kokoro/build.sh",
-        ".kokoro/nightly/retry_non_quota.cfg",
-        ".kokoro/nightly/retry_quota.cfg",
-        ".kokoro/nightly/samples.cfg",
-        ".kokoro/presubmit/samples.cfg",
-        ".kokoro/presubmit/graalvm-native-17.cfg",
-        ".kokoro/presubmit/graalvm-native.cfg",
-        ".kokoro/presubmit/graalvm-native-a.cfg",
-        ".kokoro/presubmit/graalvm-native-b.cfg",
-        ".kokoro/presubmit/graalvm-native-c.cfg",
-        ".kokoro/dependencies.sh",
-        ".github/workflows/approve-readme.yaml",
-        ".github/workflows/auto-release.yaml",
-        ".github/workflows/ci.yaml",
-        ".github/workflows/samples.yaml"
-        ".kokoro/requirements.in",
-        ".kokoro/requirements.txt"
-    ]
-)
+java.common_templates(monorepo=True, excludes=[
+    ".github/*",
+    ".kokoro/*",
+    "samples/*",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "java.header",
+    "license-checks.xml",
+    "renovate.json",
+    ".gitignore"
+])
