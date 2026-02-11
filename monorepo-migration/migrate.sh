@@ -429,8 +429,9 @@ done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep 
 
 # 7.11 Verify compilation
 echo "Verifying compilation..."
-BUILD_SUBDIR="${SOURCE_REPO_NAME}" JOB_TYPE=test .kokoro/build.sh
-# (cd "$SOURCE_REPO_NAME" && mvn compile -DskipTests -T 1C)
+if [[ "${SKIP_TESTS:-false}" != "true" ]]; then
+    BUILD_SUBDIR="${SOURCE_REPO_NAME}" JOB_TYPE=test .kokoro/build.sh
+fi
 
 # 7.13 Squash commits
 if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
