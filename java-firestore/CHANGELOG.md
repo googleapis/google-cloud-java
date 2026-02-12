@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.37.0](https://github.com/googleapis/java-firestore/compare/v3.36.0...v3.37.0) (2026-02-12)
+
+
+### Features
+
+* Expose the `Database.firestore_data_access_mode` parameter ([01290af](https://github.com/googleapis/java-firestore/commit/01290afaf2f7d9333b30c1a9fc84663393a8ff4d))
+* Next release from main branch is 3.37.0 ([#2314](https://github.com/googleapis/java-firestore/issues/2314)) ([3eed2e8](https://github.com/googleapis/java-firestore/commit/3eed2e8038efc54faa13e3d072169f6d8b2caf2f))
+
+
+### Bug Fixes
+
+* Correct FirestoreAdminClient source link in documentation ([#2304](https://github.com/googleapis/java-firestore/issues/2304)) ([1f66dca](https://github.com/googleapis/java-firestore/commit/1f66dcaa3e936d77505383173ec2c2a1821bcce5))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.66.1 ([01290af](https://github.com/googleapis/java-firestore/commit/01290afaf2f7d9333b30c1a9fc84663393a8ff4d))
+* Set max retry at 5 for executePipeline ([#2307](https://github.com/googleapis/java-firestore/issues/2307)) ([acb37fe](https://github.com/googleapis/java-firestore/commit/acb37fe918cd9c6ef1a671551c1d1789bfa36934))
+* Setup CI against enterprise ([#2299](https://github.com/googleapis/java-firestore/issues/2299)) ([510ff73](https://github.com/googleapis/java-firestore/commit/510ff732d471f07f39d3d7074de2e7317663d556))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.56.1 ([#2316](https://github.com/googleapis/java-firestore/issues/2316)) ([5f2f826](https://github.com/googleapis/java-firestore/commit/5f2f826e65e651c5728b459e5cbe6c7f35c5fc77))
+
 ## [3.36.0](https://github.com/googleapis/java-firestore/compare/v3.35.1...v3.36.0) (2026-01-27)
 
 
