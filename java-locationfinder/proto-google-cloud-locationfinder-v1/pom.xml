@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-locationfinder-v1</artifactId>
-  <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-locationfinder-v1:current} -->
+  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-locationfinder-v1:current} -->
   <name>proto-google-cloud-locationfinder-v1</name>
   <description>Proto library for google-cloud-locationfinder</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-locationfinder-parent</artifactId>
-    <version>0.9.0</version><!-- {x-version-update:google-cloud-locationfinder:current} -->
+    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-locationfinder:current} -->
   </parent>
   <dependencies>
     <dependency>
