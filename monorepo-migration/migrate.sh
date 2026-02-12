@@ -56,7 +56,6 @@ FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
-EXTRACT_SM_KEYS_SCRIPT="$TRANSFORM_SCRIPT_DIR/extract_sm_keys.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -191,56 +190,18 @@ if [ -f "$SOURCE_INTEGRATION_CFG" ]; then
     SHORT_NAME="${SOURCE_REPO_NAME#java-}"
     TARGET_INTEGRATION_CFG=".kokoro/presubmit/${SHORT_NAME}-integration.cfg"
     
-    # Extract SECRET_MANAGER_KEYS from source config
-    SM_KEYS=$(python3 "$EXTRACT_SM_KEYS_SCRIPT" "$SOURCE_INTEGRATION_CFG")
+    cp "$SOURCE_INTEGRATION_CFG" "$TARGET_INTEGRATION_CFG"
 
-    cat <<EOF > "$TARGET_INTEGRATION_CFG"
-# Format: //devtools/kokoro/config/proto/build.proto
+    # Replace JOB_TYPE with integration-single. Robustly handle multi-line or single-line.
+    perl -0777 -i -pe 's/(key:\s*"JOB_TYPE"\s*value:\s*")[^"]*(")/$1integration-single$2/g' "$TARGET_INTEGRATION_CFG"
 
-# Configure the docker image for kokoro-trampoline.
-env_vars: {
-  key: "TRAMPOLINE_IMAGE"
-  value: "gcr.io/cloud-devrel-kokoro-resources/java11"
-}
-
-env_vars: {
-  key: "JOB_TYPE"
-  value: "integration-single"
-}
-
-# TODO: remove this after we've migrated all tests and scripts
-env_vars: {
-  key: "GCLOUD_PROJECT"
-  value: "cloud-java-ci-test"
-}
-
-env_vars: {
-  key: "GOOGLE_CLOUD_PROJECT"
-  value: "cloud-java-ci-test"
-}
-
-env_vars: {
-  key: "GOOGLE_APPLICATION_CREDENTIALS"
-  value: "secret_manager/cloud-java-ci-it-service-account"
-}
-EOF
-
-    if [ -n "$SM_KEYS" ]; then
-        cat <<EOF >> "$TARGET_INTEGRATION_CFG"
-
-env_vars: {
-  key: "SECRET_MANAGER_KEYS"
-  value: "$SM_KEYS"
-}
-EOF
-    fi
-
+    # Append BUILD_SUBDIR
     cat <<EOF >> "$TARGET_INTEGRATION_CFG"
-
 env_vars: {
   key: "BUILD_SUBDIR"
   value: "$SOURCE_REPO_NAME"
 }
+
 EOF
 
     echo "Committing split integration config..."
