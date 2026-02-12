@@ -21,6 +21,7 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListRetiredResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -32,13 +33,17 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -62,6 +67,10 @@ import com.google.cloud.kms.v1.DecapsulateRequest;
 import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
+import com.google.cloud.kms.v1.DeleteCryptoKeyMetadata;
+import com.google.cloud.kms.v1.DeleteCryptoKeyRequest;
+import com.google.cloud.kms.v1.DeleteCryptoKeyVersionMetadata;
+import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
@@ -72,6 +81,7 @@ import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
+import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
 import com.google.cloud.kms.v1.KeyRing;
@@ -83,6 +93,8 @@ import com.google.cloud.kms.v1.ListImportJobsRequest;
 import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.ListRetiredResourcesRequest;
+import com.google.cloud.kms.v1.ListRetiredResourcesResponse;
 import com.google.cloud.kms.v1.MacSignRequest;
 import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
@@ -93,6 +105,7 @@ import com.google.cloud.kms.v1.RawDecryptResponse;
 import com.google.cloud.kms.v1.RawEncryptRequest;
 import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.RetiredResource;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest;
@@ -109,6 +122,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -164,6 +179,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deleteCryptoKey:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * KeyManagementServiceStubSettings.Builder keyManagementServiceSettingsBuilder =
+ *     KeyManagementServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * keyManagementServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class KeyManagementServiceStubSettings
@@ -189,16 +230,31 @@ public class KeyManagementServiceStubSettings
   private final PagedCallSettings<
           ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
       listImportJobsSettings;
+  private final PagedCallSettings<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          ListRetiredResourcesPagedResponse>
+      listRetiredResourcesSettings;
   private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
   private final UnaryCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
   private final UnaryCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionSettings;
   private final UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
   private final UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings;
+  private final UnaryCallSettings<GetRetiredResourceRequest, RetiredResource>
+      getRetiredResourceSettings;
   private final UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings;
   private final UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings;
   private final UnaryCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionSettings;
+  private final UnaryCallSettings<DeleteCryptoKeyRequest, Operation> deleteCryptoKeySettings;
+  private final OperationCallSettings<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationSettings;
+  private final UnaryCallSettings<DeleteCryptoKeyVersionRequest, Operation>
+      deleteCryptoKeyVersionSettings;
+  private final OperationCallSettings<
+          DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationSettings;
   private final UnaryCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionSettings;
   private final UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings;
@@ -376,6 +432,45 @@ public class KeyManagementServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+      LIST_RETIRED_RESOURCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRetiredResourcesRequest injectToken(
+                ListRetiredResourcesRequest payload, String token) {
+              return ListRetiredResourcesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRetiredResourcesRequest injectPageSize(
+                ListRetiredResourcesRequest payload, int pageSize) {
+              return ListRetiredResourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRetiredResourcesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRetiredResourcesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RetiredResource> extractResources(
+                ListRetiredResourcesResponse payload) {
+              return payload.getRetiredResourcesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -486,6 +581,30 @@ public class KeyManagementServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          ListRetiredResourcesPagedResponse>
+      LIST_RETIRED_RESOURCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRetiredResourcesRequest,
+              ListRetiredResourcesResponse,
+              ListRetiredResourcesPagedResponse>() {
+            @Override
+            public ApiFuture<ListRetiredResourcesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesResponse> callable,
+                ListRetiredResourcesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRetiredResourcesResponse> futureResponse) {
+              PageContext<
+                      ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RETIRED_RESOURCES_PAGE_STR_DESC, request, context);
+              return ListRetiredResourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -531,6 +650,15 @@ public class KeyManagementServiceStubSettings
     return listImportJobsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listRetiredResources. */
+  public PagedCallSettings<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          ListRetiredResourcesPagedResponse>
+      listRetiredResourcesSettings() {
+    return listRetiredResourcesSettings;
+  }
+
   /** Returns the object with the settings used for calls to getKeyRing. */
   public UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
     return getKeyRingSettings;
@@ -557,6 +685,12 @@ public class KeyManagementServiceStubSettings
     return getImportJobSettings;
   }
 
+  /** Returns the object with the settings used for calls to getRetiredResource. */
+  public UnaryCallSettings<GetRetiredResourceRequest, RetiredResource>
+      getRetiredResourceSettings() {
+    return getRetiredResourceSettings;
+  }
+
   /** Returns the object with the settings used for calls to createKeyRing. */
   public UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
     return createKeyRingSettings;
@@ -571,6 +705,29 @@ public class KeyManagementServiceStubSettings
   public UnaryCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionSettings() {
     return createCryptoKeyVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKey. */
+  public UnaryCallSettings<DeleteCryptoKeyRequest, Operation> deleteCryptoKeySettings() {
+    return deleteCryptoKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKey. */
+  public OperationCallSettings<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationSettings() {
+    return deleteCryptoKeyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKeyVersion. */
+  public UnaryCallSettings<DeleteCryptoKeyVersionRequest, Operation>
+      deleteCryptoKeyVersionSettings() {
+    return deleteCryptoKeyVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCryptoKeyVersion. */
+  public OperationCallSettings<DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationSettings() {
+    return deleteCryptoKeyVersionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to importCryptoKeyVersion. */
@@ -807,14 +964,21 @@ public class KeyManagementServiceStubSettings
     listCryptoKeysSettings = settingsBuilder.listCryptoKeysSettings().build();
     listCryptoKeyVersionsSettings = settingsBuilder.listCryptoKeyVersionsSettings().build();
     listImportJobsSettings = settingsBuilder.listImportJobsSettings().build();
+    listRetiredResourcesSettings = settingsBuilder.listRetiredResourcesSettings().build();
     getKeyRingSettings = settingsBuilder.getKeyRingSettings().build();
     getCryptoKeySettings = settingsBuilder.getCryptoKeySettings().build();
     getCryptoKeyVersionSettings = settingsBuilder.getCryptoKeyVersionSettings().build();
     getPublicKeySettings = settingsBuilder.getPublicKeySettings().build();
     getImportJobSettings = settingsBuilder.getImportJobSettings().build();
+    getRetiredResourceSettings = settingsBuilder.getRetiredResourceSettings().build();
     createKeyRingSettings = settingsBuilder.createKeyRingSettings().build();
     createCryptoKeySettings = settingsBuilder.createCryptoKeySettings().build();
     createCryptoKeyVersionSettings = settingsBuilder.createCryptoKeyVersionSettings().build();
+    deleteCryptoKeySettings = settingsBuilder.deleteCryptoKeySettings().build();
+    deleteCryptoKeyOperationSettings = settingsBuilder.deleteCryptoKeyOperationSettings().build();
+    deleteCryptoKeyVersionSettings = settingsBuilder.deleteCryptoKeyVersionSettings().build();
+    deleteCryptoKeyVersionOperationSettings =
+        settingsBuilder.deleteCryptoKeyVersionOperationSettings().build();
     importCryptoKeyVersionSettings = settingsBuilder.importCryptoKeyVersionSettings().build();
     createImportJobSettings = settingsBuilder.createImportJobSettings().build();
     updateCryptoKeySettings = settingsBuilder.updateCryptoKeySettings().build();
@@ -858,17 +1022,34 @@ public class KeyManagementServiceStubSettings
     private final PagedCallSettings.Builder<
             ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
         listImportJobsSettings;
+    private final PagedCallSettings.Builder<
+            ListRetiredResourcesRequest,
+            ListRetiredResourcesResponse,
+            ListRetiredResourcesPagedResponse>
+        listRetiredResourcesSettings;
     private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
     private final UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings;
+    private final UnaryCallSettings.Builder<GetRetiredResourceRequest, RetiredResource>
+        getRetiredResourceSettings;
     private final UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings;
     private final UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey>
         createCryptoKeySettings;
     private final UnaryCallSettings.Builder<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<DeleteCryptoKeyRequest, Operation>
+        deleteCryptoKeySettings;
+    private final OperationCallSettings.Builder<
+            DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+        deleteCryptoKeyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteCryptoKeyVersionRequest, Operation>
+        deleteCryptoKeyVersionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+        deleteCryptoKeyVersionOperationSettings;
     private final UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob>
@@ -965,14 +1146,21 @@ public class KeyManagementServiceStubSettings
       listCryptoKeyVersionsSettings =
           PagedCallSettings.newBuilder(LIST_CRYPTO_KEY_VERSIONS_PAGE_STR_FACT);
       listImportJobsSettings = PagedCallSettings.newBuilder(LIST_IMPORT_JOBS_PAGE_STR_FACT);
+      listRetiredResourcesSettings =
+          PagedCallSettings.newBuilder(LIST_RETIRED_RESOURCES_PAGE_STR_FACT);
       getKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getRetiredResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCryptoKeyOperationSettings = OperationCallSettings.newBuilder();
+      deleteCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCryptoKeyVersionOperationSettings = OperationCallSettings.newBuilder();
       importCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1002,14 +1190,18 @@ public class KeyManagementServiceStubSettings
               listCryptoKeysSettings,
               listCryptoKeyVersionsSettings,
               listImportJobsSettings,
+              listRetiredResourcesSettings,
               getKeyRingSettings,
               getCryptoKeySettings,
               getCryptoKeyVersionSettings,
               getPublicKeySettings,
               getImportJobSettings,
+              getRetiredResourceSettings,
               createKeyRingSettings,
               createCryptoKeySettings,
               createCryptoKeyVersionSettings,
+              deleteCryptoKeySettings,
+              deleteCryptoKeyVersionSettings,
               importCryptoKeyVersionSettings,
               createImportJobSettings,
               updateCryptoKeySettings,
@@ -1042,14 +1234,21 @@ public class KeyManagementServiceStubSettings
       listCryptoKeysSettings = settings.listCryptoKeysSettings.toBuilder();
       listCryptoKeyVersionsSettings = settings.listCryptoKeyVersionsSettings.toBuilder();
       listImportJobsSettings = settings.listImportJobsSettings.toBuilder();
+      listRetiredResourcesSettings = settings.listRetiredResourcesSettings.toBuilder();
       getKeyRingSettings = settings.getKeyRingSettings.toBuilder();
       getCryptoKeySettings = settings.getCryptoKeySettings.toBuilder();
       getCryptoKeyVersionSettings = settings.getCryptoKeyVersionSettings.toBuilder();
       getPublicKeySettings = settings.getPublicKeySettings.toBuilder();
       getImportJobSettings = settings.getImportJobSettings.toBuilder();
+      getRetiredResourceSettings = settings.getRetiredResourceSettings.toBuilder();
       createKeyRingSettings = settings.createKeyRingSettings.toBuilder();
       createCryptoKeySettings = settings.createCryptoKeySettings.toBuilder();
       createCryptoKeyVersionSettings = settings.createCryptoKeyVersionSettings.toBuilder();
+      deleteCryptoKeySettings = settings.deleteCryptoKeySettings.toBuilder();
+      deleteCryptoKeyOperationSettings = settings.deleteCryptoKeyOperationSettings.toBuilder();
+      deleteCryptoKeyVersionSettings = settings.deleteCryptoKeyVersionSettings.toBuilder();
+      deleteCryptoKeyVersionOperationSettings =
+          settings.deleteCryptoKeyVersionOperationSettings.toBuilder();
       importCryptoKeyVersionSettings = settings.importCryptoKeyVersionSettings.toBuilder();
       createImportJobSettings = settings.createImportJobSettings.toBuilder();
       updateCryptoKeySettings = settings.updateCryptoKeySettings.toBuilder();
@@ -1080,14 +1279,18 @@ public class KeyManagementServiceStubSettings
               listCryptoKeysSettings,
               listCryptoKeyVersionsSettings,
               listImportJobsSettings,
+              listRetiredResourcesSettings,
               getKeyRingSettings,
               getCryptoKeySettings,
               getCryptoKeyVersionSettings,
               getPublicKeySettings,
               getImportJobSettings,
+              getRetiredResourceSettings,
               createKeyRingSettings,
               createCryptoKeySettings,
               createCryptoKeyVersionSettings,
+              deleteCryptoKeySettings,
+              deleteCryptoKeyVersionSettings,
               importCryptoKeyVersionSettings,
               createImportJobSettings,
               updateCryptoKeySettings,
@@ -1158,6 +1361,11 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .listRetiredResourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .getKeyRingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -1183,6 +1391,11 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .getRetiredResourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .createKeyRingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -1196,6 +1409,16 @@ public class KeyManagementServiceStubSettings
           .createCryptoKeyVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteCryptoKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .importCryptoKeyVersionSettings()
@@ -1307,6 +1530,55 @@ public class KeyManagementServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
+      builder
+          .deleteCryptoKeyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteCryptoKeyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteCryptoKeyMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteCryptoKeyVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteCryptoKeyVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeleteCryptoKeyVersionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1355,6 +1627,15 @@ public class KeyManagementServiceStubSettings
       return listImportJobsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listRetiredResources. */
+    public PagedCallSettings.Builder<
+            ListRetiredResourcesRequest,
+            ListRetiredResourcesResponse,
+            ListRetiredResourcesPagedResponse>
+        listRetiredResourcesSettings() {
+      return listRetiredResourcesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getKeyRing. */
     public UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
       return getKeyRingSettings;
@@ -1381,6 +1662,12 @@ public class KeyManagementServiceStubSettings
       return getImportJobSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getRetiredResource. */
+    public UnaryCallSettings.Builder<GetRetiredResourceRequest, RetiredResource>
+        getRetiredResourceSettings() {
+      return getRetiredResourceSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createKeyRing. */
     public UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
       return createKeyRingSettings;
@@ -1395,6 +1682,30 @@ public class KeyManagementServiceStubSettings
     public UnaryCallSettings.Builder<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionSettings() {
       return createCryptoKeyVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKey. */
+    public UnaryCallSettings.Builder<DeleteCryptoKeyRequest, Operation> deleteCryptoKeySettings() {
+      return deleteCryptoKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKey. */
+    public OperationCallSettings.Builder<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+        deleteCryptoKeyOperationSettings() {
+      return deleteCryptoKeyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKeyVersion. */
+    public UnaryCallSettings.Builder<DeleteCryptoKeyVersionRequest, Operation>
+        deleteCryptoKeyVersionSettings() {
+      return deleteCryptoKeyVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCryptoKeyVersion. */
+    public OperationCallSettings.Builder<
+            DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+        deleteCryptoKeyVersionOperationSettings() {
+      return deleteCryptoKeyVersionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to importCryptoKeyVersion. */

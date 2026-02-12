@@ -18,10 +18,14 @@ package com.google.cloud.kms.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
@@ -37,7 +41,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -169,6 +175,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListRetiredResources</td>
+ *      <td><p> Lists the [RetiredResources][google.cloud.kms.v1.RetiredResource] which are the records of deleted [CryptoKeys][google.cloud.kms.v1.CryptoKey]. RetiredResources prevent the reuse of these resource names after deletion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRetiredResources(ListRetiredResourcesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRetiredResources(LocationName parent)
+ *           <li><p> listRetiredResources(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRetiredResourcesPagedCallable()
+ *           <li><p> listRetiredResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetKeyRing</td>
  *      <td><p> Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].</td>
  *      <td>
@@ -264,6 +290,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetRetiredResource</td>
+ *      <td><p> Retrieves a specific [RetiredResource][google.cloud.kms.v1.RetiredResource] resource, which represents the record of a deleted [CryptoKey][google.cloud.kms.v1.CryptoKey].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRetiredResource(GetRetiredResourceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRetiredResource(RetiredResourceName name)
+ *           <li><p> getRetiredResource(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRetiredResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateKeyRing</td>
  *      <td><p> Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.</td>
  *      <td>
@@ -319,6 +364,46 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> createCryptoKeyVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCryptoKey</td>
+ *      <td><p> Permanently deletes the given [CryptoKey][google.cloud.kms.v1.CryptoKey]. All child [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] must have been previously deleted using [KeyManagementService.DeleteCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DeleteCryptoKeyVersion]. The specified crypto key will be immediately and permanently deleted upon calling this method. This action cannot be undone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCryptoKeyAsync(DeleteCryptoKeyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteCryptoKeyAsync(CryptoKeyName name)
+ *           <li><p> deleteCryptoKeyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCryptoKeyOperationCallable()
+ *           <li><p> deleteCryptoKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCryptoKeyVersion</td>
+ *      <td><p> Permanently deletes the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only possible if the version has not been previously imported and if its [state][google.cloud.kms.v1.CryptoKeyVersion.state] is one of [DESTROYED][CryptoKeyVersionState.DESTROYED], [IMPORT_FAILED][CryptoKeyVersionState.IMPORT_FAILED], or [GENERATION_FAILED][CryptoKeyVersionState.GENERATION_FAILED]. Successfully imported [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] cannot be deleted at this time. The specified version will be immediately and permanently deleted upon calling this method. This action cannot be undone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCryptoKeyVersionAsync(DeleteCryptoKeyVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteCryptoKeyVersionAsync(CryptoKeyVersionName name)
+ *           <li><p> deleteCryptoKeyVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCryptoKeyVersionOperationCallable()
+ *           <li><p> deleteCryptoKeyVersionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -764,6 +849,8 @@ import javax.annotation.Generated;
 public class KeyManagementServiceClient implements BackgroundResource {
   private final KeyManagementServiceSettings settings;
   private final KeyManagementServiceStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of KeyManagementServiceClient with default settings. */
   public static final KeyManagementServiceClient create() throws IOException {
@@ -795,11 +882,17 @@ public class KeyManagementServiceClient implements BackgroundResource {
   protected KeyManagementServiceClient(KeyManagementServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((KeyManagementServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected KeyManagementServiceClient(KeyManagementServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final KeyManagementServiceSettings getSettings() {
@@ -808,6 +901,23 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public KeyManagementServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1532,6 +1642,194 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists the [RetiredResources][google.cloud.kms.v1.RetiredResource] which are the records of
+   * deleted [CryptoKeys][google.cloud.kms.v1.CryptoKey]. RetiredResources prevent the reuse of
+   * these resource names after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (RetiredResource element :
+   *       keyManagementServiceClient.listRetiredResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project-specific location holding the
+   *     [RetiredResources][google.cloud.kms.v1.RetiredResource], in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRetiredResourcesPagedResponse listRetiredResources(LocationName parent) {
+    ListRetiredResourcesRequest request =
+        ListRetiredResourcesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRetiredResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the [RetiredResources][google.cloud.kms.v1.RetiredResource] which are the records of
+   * deleted [CryptoKeys][google.cloud.kms.v1.CryptoKey]. RetiredResources prevent the reuse of
+   * these resource names after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (RetiredResource element :
+   *       keyManagementServiceClient.listRetiredResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project-specific location holding the
+   *     [RetiredResources][google.cloud.kms.v1.RetiredResource], in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRetiredResourcesPagedResponse listRetiredResources(String parent) {
+    ListRetiredResourcesRequest request =
+        ListRetiredResourcesRequest.newBuilder().setParent(parent).build();
+    return listRetiredResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the [RetiredResources][google.cloud.kms.v1.RetiredResource] which are the records of
+   * deleted [CryptoKeys][google.cloud.kms.v1.CryptoKey]. RetiredResources prevent the reuse of
+   * these resource names after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ListRetiredResourcesRequest request =
+   *       ListRetiredResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RetiredResource element :
+   *       keyManagementServiceClient.listRetiredResources(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRetiredResourcesPagedResponse listRetiredResources(
+      ListRetiredResourcesRequest request) {
+    return listRetiredResourcesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the [RetiredResources][google.cloud.kms.v1.RetiredResource] which are the records of
+   * deleted [CryptoKeys][google.cloud.kms.v1.CryptoKey]. RetiredResources prevent the reuse of
+   * these resource names after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ListRetiredResourcesRequest request =
+   *       ListRetiredResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RetiredResource> future =
+   *       keyManagementServiceClient.listRetiredResourcesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RetiredResource element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesPagedResponse>
+      listRetiredResourcesPagedCallable() {
+    return stub.listRetiredResourcesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the [RetiredResources][google.cloud.kms.v1.RetiredResource] which are the records of
+   * deleted [CryptoKeys][google.cloud.kms.v1.CryptoKey]. RetiredResources prevent the reuse of
+   * these resource names after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ListRetiredResourcesRequest request =
+   *       ListRetiredResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRetiredResourcesResponse response =
+   *         keyManagementServiceClient.listRetiredResourcesCallable().call(request);
+   *     for (RetiredResource element : response.getRetiredResourcesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesResponse>
+      listRetiredResourcesCallable() {
+    return stub.listRetiredResourcesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
    *
    * <p>Sample code:
@@ -2181,6 +2479,135 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves a specific [RetiredResource][google.cloud.kms.v1.RetiredResource] resource, which
+   * represents the record of a deleted [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RetiredResourceName name =
+   *       RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]");
+   *   RetiredResource response = keyManagementServiceClient.getRetiredResource(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.RetiredResource.name] of the
+   *     [RetiredResource][google.cloud.kms.v1.RetiredResource] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetiredResource getRetiredResource(RetiredResourceName name) {
+    GetRetiredResourceRequest request =
+        GetRetiredResourceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRetiredResource(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific [RetiredResource][google.cloud.kms.v1.RetiredResource] resource, which
+   * represents the record of a deleted [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String name =
+   *       RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]").toString();
+   *   RetiredResource response = keyManagementServiceClient.getRetiredResource(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.RetiredResource.name] of the
+   *     [RetiredResource][google.cloud.kms.v1.RetiredResource] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetiredResource getRetiredResource(String name) {
+    GetRetiredResourceRequest request =
+        GetRetiredResourceRequest.newBuilder().setName(name).build();
+    return getRetiredResource(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific [RetiredResource][google.cloud.kms.v1.RetiredResource] resource, which
+   * represents the record of a deleted [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   GetRetiredResourceRequest request =
+   *       GetRetiredResourceRequest.newBuilder()
+   *           .setName(
+   *               RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]")
+   *                   .toString())
+   *           .build();
+   *   RetiredResource response = keyManagementServiceClient.getRetiredResource(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetiredResource getRetiredResource(GetRetiredResourceRequest request) {
+    return getRetiredResourceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific [RetiredResource][google.cloud.kms.v1.RetiredResource] resource, which
+   * represents the record of a deleted [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   GetRetiredResourceRequest request =
+   *       GetRetiredResourceRequest.newBuilder()
+   *           .setName(
+   *               RetiredResourceName.of("[PROJECT]", "[LOCATION]", "[RETIRED_RESOURCE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RetiredResource> future =
+   *       keyManagementServiceClient.getRetiredResourceCallable().futureCall(request);
+   *   // Do something.
+   *   RetiredResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRetiredResourceRequest, RetiredResource>
+      getRetiredResourceCallable() {
+    return stub.getRetiredResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
    *
    * <p>Sample code:
@@ -2643,6 +3070,405 @@ public class KeyManagementServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable() {
     return stub.createCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKey][google.cloud.kms.v1.CryptoKey]. All child
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] must have been previously deleted
+   * using
+   * [KeyManagementService.DeleteCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DeleteCryptoKeyVersion].
+   * The specified crypto key will be immediately and permanently deleted upon calling this method.
+   * This action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   CryptoKeyName name =
+   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   keyManagementServiceClient.deleteCryptoKeyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteCryptoKeyMetadata> deleteCryptoKeyAsync(
+      CryptoKeyName name) {
+    DeleteCryptoKeyRequest request =
+        DeleteCryptoKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteCryptoKeyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKey][google.cloud.kms.v1.CryptoKey]. All child
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] must have been previously deleted
+   * using
+   * [KeyManagementService.DeleteCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DeleteCryptoKeyVersion].
+   * The specified crypto key will be immediately and permanently deleted upon calling this method.
+   * This action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String name =
+   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]").toString();
+   *   keyManagementServiceClient.deleteCryptoKeyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteCryptoKeyMetadata> deleteCryptoKeyAsync(String name) {
+    DeleteCryptoKeyRequest request = DeleteCryptoKeyRequest.newBuilder().setName(name).build();
+    return deleteCryptoKeyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKey][google.cloud.kms.v1.CryptoKey]. All child
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] must have been previously deleted
+   * using
+   * [KeyManagementService.DeleteCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DeleteCryptoKeyVersion].
+   * The specified crypto key will be immediately and permanently deleted upon calling this method.
+   * This action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DeleteCryptoKeyRequest request =
+   *       DeleteCryptoKeyRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .build();
+   *   keyManagementServiceClient.deleteCryptoKeyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteCryptoKeyMetadata> deleteCryptoKeyAsync(
+      DeleteCryptoKeyRequest request) {
+    return deleteCryptoKeyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKey][google.cloud.kms.v1.CryptoKey]. All child
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] must have been previously deleted
+   * using
+   * [KeyManagementService.DeleteCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DeleteCryptoKeyVersion].
+   * The specified crypto key will be immediately and permanently deleted upon calling this method.
+   * This action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DeleteCryptoKeyRequest request =
+   *       DeleteCryptoKeyRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteCryptoKeyMetadata> future =
+   *       keyManagementServiceClient.deleteCryptoKeyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationCallable() {
+    return stub.deleteCryptoKeyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKey][google.cloud.kms.v1.CryptoKey]. All child
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] must have been previously deleted
+   * using
+   * [KeyManagementService.DeleteCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DeleteCryptoKeyVersion].
+   * The specified crypto key will be immediately and permanently deleted upon calling this method.
+   * This action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DeleteCryptoKeyRequest request =
+   *       DeleteCryptoKeyRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       keyManagementServiceClient.deleteCryptoKeyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCryptoKeyRequest, Operation> deleteCryptoKeyCallable() {
+    return stub.deleteCryptoKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only
+   * possible if the version has not been previously imported and if its
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is one of
+   * [DESTROYED][CryptoKeyVersionState.DESTROYED],
+   * [IMPORT_FAILED][CryptoKeyVersionState.IMPORT_FAILED], or
+   * [GENERATION_FAILED][CryptoKeyVersionState.GENERATION_FAILED]. Successfully imported
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] cannot be deleted at this time. The
+   * specified version will be immediately and permanently deleted upon calling this method. This
+   * action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name =
+   *       CryptoKeyVersionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   keyManagementServiceClient.deleteCryptoKeyVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteCryptoKeyVersionMetadata> deleteCryptoKeyVersionAsync(
+      CryptoKeyVersionName name) {
+    DeleteCryptoKeyVersionRequest request =
+        DeleteCryptoKeyVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteCryptoKeyVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only
+   * possible if the version has not been previously imported and if its
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is one of
+   * [DESTROYED][CryptoKeyVersionState.DESTROYED],
+   * [IMPORT_FAILED][CryptoKeyVersionState.IMPORT_FAILED], or
+   * [GENERATION_FAILED][CryptoKeyVersionState.GENERATION_FAILED]. Successfully imported
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] cannot be deleted at this time. The
+   * specified version will be immediately and permanently deleted upon calling this method. This
+   * action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   String name =
+   *       CryptoKeyVersionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
+   *           .toString();
+   *   keyManagementServiceClient.deleteCryptoKeyVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteCryptoKeyVersionMetadata> deleteCryptoKeyVersionAsync(
+      String name) {
+    DeleteCryptoKeyVersionRequest request =
+        DeleteCryptoKeyVersionRequest.newBuilder().setName(name).build();
+    return deleteCryptoKeyVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only
+   * possible if the version has not been previously imported and if its
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is one of
+   * [DESTROYED][CryptoKeyVersionState.DESTROYED],
+   * [IMPORT_FAILED][CryptoKeyVersionState.IMPORT_FAILED], or
+   * [GENERATION_FAILED][CryptoKeyVersionState.GENERATION_FAILED]. Successfully imported
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] cannot be deleted at this time. The
+   * specified version will be immediately and permanently deleted upon calling this method. This
+   * action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DeleteCryptoKeyVersionRequest request =
+   *       DeleteCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   keyManagementServiceClient.deleteCryptoKeyVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteCryptoKeyVersionMetadata> deleteCryptoKeyVersionAsync(
+      DeleteCryptoKeyVersionRequest request) {
+    return deleteCryptoKeyVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only
+   * possible if the version has not been previously imported and if its
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is one of
+   * [DESTROYED][CryptoKeyVersionState.DESTROYED],
+   * [IMPORT_FAILED][CryptoKeyVersionState.IMPORT_FAILED], or
+   * [GENERATION_FAILED][CryptoKeyVersionState.GENERATION_FAILED]. Successfully imported
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] cannot be deleted at this time. The
+   * specified version will be immediately and permanently deleted upon calling this method. This
+   * action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DeleteCryptoKeyVersionRequest request =
+   *       DeleteCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteCryptoKeyVersionMetadata> future =
+   *       keyManagementServiceClient.deleteCryptoKeyVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationCallable() {
+    return stub.deleteCryptoKeyVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Only
+   * possible if the version has not been previously imported and if its
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is one of
+   * [DESTROYED][CryptoKeyVersionState.DESTROYED],
+   * [IMPORT_FAILED][CryptoKeyVersionState.IMPORT_FAILED], or
+   * [GENERATION_FAILED][CryptoKeyVersionState.GENERATION_FAILED]. Successfully imported
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] cannot be deleted at this time. The
+   * specified version will be immediately and permanently deleted upon calling this method. This
+   * action cannot be undone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DeleteCryptoKeyVersionRequest request =
+   *       DeleteCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       keyManagementServiceClient.deleteCryptoKeyVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCryptoKeyVersionRequest, Operation>
+      deleteCryptoKeyVersionCallable() {
+    return stub.deleteCryptoKeyVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5876,6 +6702,90 @@ public class KeyManagementServiceClient implements BackgroundResource {
     protected ListImportJobsFixedSizeCollection createCollection(
         List<ListImportJobsPage> pages, int collectionSize) {
       return new ListImportJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRetiredResourcesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          RetiredResource,
+          ListRetiredResourcesPage,
+          ListRetiredResourcesFixedSizeCollection> {
+
+    public static ApiFuture<ListRetiredResourcesPagedResponse> createAsync(
+        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+            context,
+        ApiFuture<ListRetiredResourcesResponse> futureResponse) {
+      ApiFuture<ListRetiredResourcesPage> futurePage =
+          ListRetiredResourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRetiredResourcesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRetiredResourcesPagedResponse(ListRetiredResourcesPage page) {
+      super(page, ListRetiredResourcesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRetiredResourcesPage
+      extends AbstractPage<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          RetiredResource,
+          ListRetiredResourcesPage> {
+
+    private ListRetiredResourcesPage(
+        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+            context,
+        ListRetiredResourcesResponse response) {
+      super(context, response);
+    }
+
+    private static ListRetiredResourcesPage createEmptyPage() {
+      return new ListRetiredResourcesPage(null, null);
+    }
+
+    @Override
+    protected ListRetiredResourcesPage createPage(
+        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+            context,
+        ListRetiredResourcesResponse response) {
+      return new ListRetiredResourcesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRetiredResourcesPage> createPageAsync(
+        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+            context,
+        ApiFuture<ListRetiredResourcesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRetiredResourcesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRetiredResourcesRequest,
+          ListRetiredResourcesResponse,
+          RetiredResource,
+          ListRetiredResourcesPage,
+          ListRetiredResourcesFixedSizeCollection> {
+
+    private ListRetiredResourcesFixedSizeCollection(
+        List<ListRetiredResourcesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRetiredResourcesFixedSizeCollection createEmptyCollection() {
+      return new ListRetiredResourcesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRetiredResourcesFixedSizeCollection createCollection(
+        List<ListRetiredResourcesPage> pages, int collectionSize) {
+      return new ListRetiredResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
 
