@@ -284,21 +284,13 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return;
     }
 
-    // TODO(developer): evaluate if we want to manually unpack the proto into a model, instead of
-    // using fromProto. Same for the other methods.
     RowMutation mutation = RowMutation.fromProto(request.getRequest());
     try {
       // This response is empty.
       client.dataClient().mutateRow(mutation);
     } catch (ApiException e) {
       responseObserver.onNext(
-          MutateRowResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          MutateRowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -351,13 +343,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return;
     } catch (ApiException e) {
       responseObserver.onNext(
-          MutateRowsResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          MutateRowsResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -410,13 +396,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       }
     } catch (ApiException e) {
       responseObserver.onNext(
-          RowResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          RowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -461,13 +441,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
           resultBuilder.setStatus(com.google.rpc.Status.getDefaultInstance()).build());
     } catch (ApiException e) {
       responseObserver.onNext(
-          RowsResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          RowsResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -585,13 +559,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       keyOffsets = client.dataClient().sampleRowKeys(tableId);
     } catch (ApiException e) {
       responseObserver.onNext(
-          SampleRowKeysResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          SampleRowKeysResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -631,13 +599,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       matched = client.dataClient().checkAndMutateRow(mutation);
     } catch (ApiException e) {
       responseObserver.onNext(
-          CheckAndMutateRowResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          CheckAndMutateRowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -682,13 +644,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       }
     } catch (ApiException e) {
       responseObserver.onNext(
-          RowResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          RowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -745,13 +701,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return;
     } catch (ApiException e) {
       responseObserver.onNext(
-          ExecuteQueryResult.newBuilder()
-              .setStatus(
-                  com.google.rpc.Status.newBuilder()
-                      .setCode(e.getStatusCode().getCode().ordinal())
-                      .setMessage(e.getMessage())
-                      .build())
-              .build());
+          ExecuteQueryResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -842,6 +792,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                 return channelBuilder;
               }
             })
+        .build();
+  }
+
+  // Cleanly forwards server errors through the test proxy. Internal client errors
+  // are wrapped in an UNKNOWN status.
+  private static com.google.rpc.Status convertStatus(ApiException e) {
+    com.google.rpc.Status status = StatusProto.fromThrowable(e);
+    if (status != null) {
+      return status;
+    }
+
+    return com.google.rpc.Status.newBuilder().setCode(e.getStatusCode().getCode().ordinal()).setMessage(e.getMessage())
         .build();
   }
 
