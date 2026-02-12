@@ -148,7 +148,8 @@ fi
 
 
 # 2.5 Create a new feature branch for the migration
-BRANCH_NAME="migrate-$SOURCE_REPO_NAME"
+BRANCH_NAME_SUFFIX="${BRANCH_NAME_SUFFIX:-}"
+BRANCH_NAME="migrate-${SOURCE_REPO_NAME}${BRANCH_NAME_SUFFIX}"
 echo "Creating feature branch: $BRANCH_NAME"
 if git rev-parse --verify "$BRANCH_NAME" >/dev/null 2>&1; then
     git branch -D "$BRANCH_NAME"
@@ -405,7 +406,7 @@ fi
 # 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
-python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$SOURCE_REPO_NAME"
+python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME"
 
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
@@ -419,13 +420,24 @@ echo "Modernizing BOM pom.xml..."
 while read -r bom_pom; do
     echo "Modernizing BOM: $bom_pom"
     # BOMs should inherit from google-cloud-pom-parent
-    python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" "$SOURCE_REPO_NAME" "google-cloud-pom-parent" "../../google-cloud-pom-parent/pom.xml"
+    python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --parent-artifactId "google-cloud-pom-parent" --relative-path "../../google-cloud-pom-parent/pom.xml"
     
     echo "Committing BOM pom.xml modernization for $bom_pom..."
     git add "$bom_pom"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize BOM pom.xml"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples")
+
+# 7.12b Modernize other pom.xml files
+echo "Modernizing other pom.xml files..."
+while read -r other_pom; do
+    echo "Modernizing submodule POM: $other_pom"
+    # Preserve the existing parent, but update everything else
+    python3 "$MODERNIZE_POM_SCRIPT" "$other_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --keep-parent
+    
+    echo "Committing submodule pom.xml modernization for $other_pom..."
+    git add "$other_pom" && git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize submodule pom.xml" && COMMIT_COUNT=$((COMMIT_COUNT + 1)) || true
+done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep -v "\-bom/pom.xml" | grep -v "samples" | grep -v "test_data")
 
 # 7.11 Verify compilation
 echo "Verifying compilation..."

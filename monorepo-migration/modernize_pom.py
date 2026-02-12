@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import argparse
 import sys
 import re
 import os
@@ -144,7 +145,7 @@ def get_monorepo_versions(monorepo_root='.'):
                 versions[artifactId] = version
     return versions
 
-def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None, parent_managed_deps=None):
+def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None, parent_managed_deps=None, keep_parent=False):
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -188,21 +189,22 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                 )
 
         # Parent section modernization
-        if '<parent>' in line and not in_parent:
-            in_parent = True
-            indent = line[:line.find('<')]
-            new_lines.append(f"{indent}<parent>\n")
-            new_lines.append(f"{indent}  <groupId>com.google.cloud</groupId>\n")
-            new_lines.append(f"{indent}  <artifactId>{parent_artifactId}</artifactId>\n")
-            new_lines.append(f"{indent}  <version>{parent_version}</version><!-- {{x-version-update:google-cloud-java:current}} -->\n")
-            new_lines.append(f"{indent}  <relativePath>{relative_path}</relativePath>\n")
-            continue
-        if '</parent>' in line and in_parent:
-            in_parent = False
-            new_lines.append(line)
-            continue
-        if in_parent:
-            continue # skip original parent content
+        if not keep_parent:
+            if '<parent>' in line and not in_parent:
+                in_parent = True
+                indent = line[:line.find('<')]
+                new_lines.append(f"{indent}<parent>\n")
+                new_lines.append(f"{indent}  <groupId>com.google.cloud</groupId>\n")
+                new_lines.append(f"{indent}  <artifactId>{parent_artifactId}</artifactId>\n")
+                new_lines.append(f"{indent}  <version>{parent_version}</version><!-- {{x-version-update:google-cloud-java:current}} -->\n")
+                new_lines.append(f"{indent}  <relativePath>{relative_path}</relativePath>\n")
+                continue
+            if '</parent>' in line and in_parent:
+                in_parent = False
+                new_lines.append(line)
+                continue
+            if in_parent:
+                continue # skip original parent content
 
         # Dependency Management pruning
         if '<dependencyManagement>' in line:
@@ -320,25 +322,36 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
         f.write(content)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 2:
-        # Monorepo root is likely the parent of the directory containing this script
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        monorepo_root = os.path.dirname(script_dir)
-        
-        print(f"Scanning monorepo at {monorepo_root} for versions...")
-        monorepo_versions = get_monorepo_versions(monorepo_root)
-        print(f"Found {len(monorepo_versions)} artifacts.")
-        
-        source_repo = sys.argv[3] if len(sys.argv) > 3 else None
-        parent_artifactId = sys.argv[4] if len(sys.argv) > 4 else 'google-cloud-jar-parent'
-        relative_path = sys.argv[5] if len(sys.argv) > 5 else '../google-cloud-jar-parent/pom.xml'
-        
-        parent_pom_path = os.path.join(monorepo_root, 'google-cloud-jar-parent', 'pom.xml')
-        parent_managed_deps = get_managed_dependencies(parent_pom_path)
-        print(f"Loaded {len(parent_managed_deps)} managed dependencies from parent.")
+    parser = argparse.ArgumentParser(description="Modernize a pom.xml file for the monorepo.")
+    parser.add_argument("file_path", help="Path to the pom.xml file to modernize.")
+    parser.add_argument("parent_version", help="Version of the parent POM.")
+    parser.add_argument("--source-repo", help="Name of the source repository (e.g., java-logging).")
+    parser.add_argument("--parent-artifactId", default="google-cloud-jar-parent", help="Artifact ID of the parent POM.")
+    parser.add_argument("--relative-path", default="../google-cloud-jar-parent/pom.xml", help="Relative path to the parent POM.")
+    parser.add_argument("--keep-parent", action="store_true", help="Keep the existing parent section.")
 
-        modernize_pom(sys.argv[1], sys.argv[2], source_repo, parent_artifactId, relative_path, monorepo_versions, parent_managed_deps)
-    else:
-        print("Usage: python3 modernize_pom.py <file_path> <parent_version> [source_repo_name] [parent_artifactId] [relative_path]")
-        sys.exit(1)
+    args = parser.parse_args()
+
+    # Monorepo root is likely the parent of the directory containing this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    monorepo_root = os.path.dirname(script_dir)
+    
+    print(f"Scanning monorepo at {monorepo_root} for versions...")
+    monorepo_versions = get_monorepo_versions(monorepo_root)
+    print(f"Found {len(monorepo_versions)} artifacts.")
+    
+    parent_pom_path = os.path.join(monorepo_root, 'google-cloud-jar-parent', 'pom.xml')
+    parent_managed_deps = get_managed_dependencies(parent_pom_path)
+    print(f"Loaded {len(parent_managed_deps)} managed dependencies from parent.")
+
+    modernize_pom(
+        args.file_path,
+        args.parent_version,
+        args.source_repo,
+        args.parent_artifactId,
+        args.relative_path,
+        monorepo_versions,
+        parent_managed_deps,
+        args.keep_parent
+    )
 
