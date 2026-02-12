@@ -64,6 +64,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     previousId_ = "";
     etag_ = "";
     databaseEdition_ = 0;
+    realtimeUpdatesMode_ = 0;
+    firestoreDataAccessMode_ = 0;
+    mongodbCompatibleDataAccessMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -292,6 +295,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Use optimistic concurrency control by default. This mode is available
      * for Cloud Firestore databases.
+     *
+     * This is the default setting for Cloud Firestore Enterprise Edition
+     * databases.
      * </pre>
      *
      * <code>OPTIMISTIC = 1;</code>
@@ -304,7 +310,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * Use pessimistic concurrency control by default. This mode is available
      * for Cloud Firestore databases.
      *
-     * This is the default setting for Cloud Firestore.
+     * This is the default setting for Cloud Firestore Standard Edition
+     * databases.
      * </pre>
      *
      * <code>PESSIMISTIC = 2;</code>
@@ -316,10 +323,11 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Use optimistic concurrency control with entity groups by default.
      *
-     * This is the only available mode for Cloud Datastore.
+     * This mode is enabled for some databases that were automatically upgraded
+     * from Cloud Datastore to Cloud Firestore with Datastore Mode.
      *
-     * This mode is also available for Cloud Firestore with Datastore Mode but
-     * is not recommended.
+     * It is not recommended for any new databases, and not supported for
+     * Firestore Native databases.
      * </pre>
      *
      * <code>OPTIMISTIC_WITH_ENTITY_GROUPS = 3;</code>
@@ -355,6 +363,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Use optimistic concurrency control by default. This mode is available
      * for Cloud Firestore databases.
+     *
+     * This is the default setting for Cloud Firestore Enterprise Edition
+     * databases.
      * </pre>
      *
      * <code>OPTIMISTIC = 1;</code>
@@ -368,7 +379,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * Use pessimistic concurrency control by default. This mode is available
      * for Cloud Firestore databases.
      *
-     * This is the default setting for Cloud Firestore.
+     * This is the default setting for Cloud Firestore Standard Edition
+     * databases.
      * </pre>
      *
      * <code>PESSIMISTIC = 2;</code>
@@ -381,10 +393,11 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Use optimistic concurrency control with entity groups by default.
      *
-     * This is the only available mode for Cloud Datastore.
+     * This mode is enabled for some databases that were automatically upgraded
+     * from Cloud Datastore to Cloud Firestore with Datastore Mode.
      *
-     * This mode is also available for Cloud Firestore with Datastore Mode but
-     * is not recommended.
+     * It is not recommended for any new databases, and not supported for
+     * Firestore Native databases.
      * </pre>
      *
      * <code>OPTIMISTIC_WITH_ENTITY_GROUPS = 3;</code>
@@ -1195,6 +1208,175 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Database.DatabaseEdition)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The data access mode.
+   * </pre>
+   *
+   * Protobuf enum {@code google.firestore.admin.v1.Database.DataAccessMode}
+   */
+  public enum DataAccessMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not Used.
+     * </pre>
+     *
+     * <code>DATA_ACCESS_MODE_UNSPECIFIED = 0;</code>
+     */
+    DATA_ACCESS_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Accessing the database through the API is allowed.
+     * </pre>
+     *
+     * <code>DATA_ACCESS_MODE_ENABLED = 1;</code>
+     */
+    DATA_ACCESS_MODE_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Accessing the database through the API is disallowed.
+     * </pre>
+     *
+     * <code>DATA_ACCESS_MODE_DISABLED = 2;</code>
+     */
+    DATA_ACCESS_MODE_DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DataAccessMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Not Used.
+     * </pre>
+     *
+     * <code>DATA_ACCESS_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATA_ACCESS_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Accessing the database through the API is allowed.
+     * </pre>
+     *
+     * <code>DATA_ACCESS_MODE_ENABLED = 1;</code>
+     */
+    public static final int DATA_ACCESS_MODE_ENABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Accessing the database through the API is disallowed.
+     * </pre>
+     *
+     * <code>DATA_ACCESS_MODE_DISABLED = 2;</code>
+     */
+    public static final int DATA_ACCESS_MODE_DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DataAccessMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DataAccessMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATA_ACCESS_MODE_UNSPECIFIED;
+        case 1:
+          return DATA_ACCESS_MODE_ENABLED;
+        case 2:
+          return DATA_ACCESS_MODE_DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DataAccessMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DataAccessMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DataAccessMode>() {
+          public DataAccessMode findValueByNumber(int number) {
+            return DataAccessMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.firestore.admin.v1.Database.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final DataAccessMode[] VALUES = values();
+
+    public static DataAccessMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DataAccessMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Database.DataAccessMode)
   }
 
   public interface CmekConfigOrBuilder
@@ -4224,7 +4406,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    * Encryption configuration for a new database being created from another
    * source.
    *
-   * The source could be a [Backup][google.firestore.admin.v1.Backup] .
+   * The source could be a [Backup][google.firestore.admin.v1.Backup] or a
+   * [PitrSnapshot][google.firestore.admin.v1.PitrSnapshot].
    * </pre>
    *
    * Protobuf type {@code google.firestore.admin.v1.Database.EncryptionConfig}
@@ -6382,7 +6565,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * Encryption configuration for a new database being created from another
      * source.
      *
-     * The source could be a [Backup][google.firestore.admin.v1.Backup] .
+     * The source could be a [Backup][google.firestore.admin.v1.Backup] or a
+     * [PitrSnapshot][google.firestore.admin.v1.PitrSnapshot].
      * </pre>
      *
      * Protobuf type {@code google.firestore.admin.v1.Database.EncryptionConfig}
@@ -7840,6 +8024,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The concurrency control mode to use for this database.
+   *
+   * If unspecified in a CreateDatabase request, this will default based on the
+   * database edition: Optimistic for Enterprise and Pessimistic for all other
+   * databases.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -7856,6 +8044,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The concurrency control mode to use for this database.
+   *
+   * If unspecified in a CreateDatabase request, this will default based on the
+   * database edition: Optimistic for Enterprise and Pessimistic for all other
+   * databases.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -8689,6 +8881,147 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int REALTIME_UPDATES_MODE_FIELD_NUMBER = 31;
+  private int realtimeUpdatesMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The default Realtime Updates mode to use for this database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for realtimeUpdatesMode.
+   */
+  @java.lang.Override
+  public int getRealtimeUpdatesModeValue() {
+    return realtimeUpdatesMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The default Realtime Updates mode to use for this database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The realtimeUpdatesMode.
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.RealtimeUpdatesMode getRealtimeUpdatesMode() {
+    com.google.firestore.admin.v1.RealtimeUpdatesMode result =
+        com.google.firestore.admin.v1.RealtimeUpdatesMode.forNumber(realtimeUpdatesMode_);
+    return result == null ? com.google.firestore.admin.v1.RealtimeUpdatesMode.UNRECOGNIZED : result;
+  }
+
+  public static final int FIRESTORE_DATA_ACCESS_MODE_FIELD_NUMBER = 33;
+  private int firestoreDataAccessMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Firestore API data access mode to use for this database. If
+   * not set on write:
+   * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+   * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for firestoreDataAccessMode.
+   */
+  @java.lang.Override
+  public int getFirestoreDataAccessModeValue() {
+    return firestoreDataAccessMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Firestore API data access mode to use for this database. If
+   * not set on write:
+   * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+   * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The firestoreDataAccessMode.
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.Database.DataAccessMode getFirestoreDataAccessMode() {
+    com.google.firestore.admin.v1.Database.DataAccessMode result =
+        com.google.firestore.admin.v1.Database.DataAccessMode.forNumber(firestoreDataAccessMode_);
+    return result == null
+        ? com.google.firestore.admin.v1.Database.DataAccessMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int MONGODB_COMPATIBLE_DATA_ACCESS_MODE_FIELD_NUMBER = 34;
+  private int mongodbCompatibleDataAccessMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The MongoDB compatible API data access mode to use for this
+   * database. If not set on write, the default value is
+   * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+   * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mongodbCompatibleDataAccessMode.
+   */
+  @java.lang.Override
+  public int getMongodbCompatibleDataAccessModeValue() {
+    return mongodbCompatibleDataAccessMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The MongoDB compatible API data access mode to use for this
+   * database. If not set on write, the default value is
+   * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+   * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mongodbCompatibleDataAccessMode.
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.Database.DataAccessMode
+      getMongodbCompatibleDataAccessMode() {
+    com.google.firestore.admin.v1.Database.DataAccessMode result =
+        com.google.firestore.admin.v1.Database.DataAccessMode.forNumber(
+            mongodbCompatibleDataAccessMode_);
+    return result == null
+        ? com.google.firestore.admin.v1.Database.DataAccessMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8776,6 +9109,21 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 29);
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(30, freeTier_);
+    }
+    if (realtimeUpdatesMode_
+        != com.google.firestore.admin.v1.RealtimeUpdatesMode.REALTIME_UPDATES_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(31, realtimeUpdatesMode_);
+    }
+    if (firestoreDataAccessMode_
+        != com.google.firestore.admin.v1.Database.DataAccessMode.DATA_ACCESS_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(33, firestoreDataAccessMode_);
+    }
+    if (mongodbCompatibleDataAccessMode_
+        != com.google.firestore.admin.v1.Database.DataAccessMode.DATA_ACCESS_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(34, mongodbCompatibleDataAccessMode_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 99, etag_);
@@ -8874,6 +9222,23 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, freeTier_);
     }
+    if (realtimeUpdatesMode_
+        != com.google.firestore.admin.v1.RealtimeUpdatesMode.REALTIME_UPDATES_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, realtimeUpdatesMode_);
+    }
+    if (firestoreDataAccessMode_
+        != com.google.firestore.admin.v1.Database.DataAccessMode.DATA_ACCESS_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(33, firestoreDataAccessMode_);
+    }
+    if (mongodbCompatibleDataAccessMode_
+        != com.google.firestore.admin.v1.Database.DataAccessMode.DATA_ACCESS_MODE_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              34, mongodbCompatibleDataAccessMode_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(99, etag_);
     }
@@ -8937,6 +9302,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (databaseEdition_ != other.databaseEdition_) return false;
+    if (realtimeUpdatesMode_ != other.realtimeUpdatesMode_) return false;
+    if (firestoreDataAccessMode_ != other.firestoreDataAccessMode_) return false;
+    if (mongodbCompatibleDataAccessMode_ != other.mongodbCompatibleDataAccessMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -9008,6 +9376,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getEtag().hashCode();
     hash = (37 * hash) + DATABASE_EDITION_FIELD_NUMBER;
     hash = (53 * hash) + databaseEdition_;
+    hash = (37 * hash) + REALTIME_UPDATES_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + realtimeUpdatesMode_;
+    hash = (37 * hash) + FIRESTORE_DATA_ACCESS_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + firestoreDataAccessMode_;
+    hash = (37 * hash) + MONGODB_COMPATIBLE_DATA_ACCESS_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + mongodbCompatibleDataAccessMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -9234,6 +9608,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       freeTier_ = false;
       etag_ = "";
       databaseEdition_ = 0;
+      realtimeUpdatesMode_ = 0;
+      firestoreDataAccessMode_ = 0;
+      mongodbCompatibleDataAccessMode_ = 0;
       return this;
     }
 
@@ -9349,6 +9726,15 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.databaseEdition_ = databaseEdition_;
       }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.realtimeUpdatesMode_ = realtimeUpdatesMode_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.firestoreDataAccessMode_ = firestoreDataAccessMode_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.mongodbCompatibleDataAccessMode_ = mongodbCompatibleDataAccessMode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -9437,6 +9823,15 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       if (other.databaseEdition_ != 0) {
         setDatabaseEditionValue(other.getDatabaseEditionValue());
+      }
+      if (other.realtimeUpdatesMode_ != 0) {
+        setRealtimeUpdatesModeValue(other.getRealtimeUpdatesModeValue());
+      }
+      if (other.firestoreDataAccessMode_ != 0) {
+        setFirestoreDataAccessModeValue(other.getFirestoreDataAccessModeValue());
+      }
+      if (other.mongodbCompatibleDataAccessMode_ != 0) {
+        setMongodbCompatibleDataAccessModeValue(other.getMongodbCompatibleDataAccessModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -9595,6 +9990,24 @@ public final class Database extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00040000;
                 break;
               } // case 240
+            case 248:
+              {
+                realtimeUpdatesMode_ = input.readEnum();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 248
+            case 264:
+              {
+                firestoreDataAccessMode_ = input.readEnum();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 264
+            case 272:
+              {
+                mongodbCompatibleDataAccessMode_ = input.readEnum();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 272
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
@@ -10749,6 +11162,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The concurrency control mode to use for this database.
+     *
+     * If unspecified in a CreateDatabase request, this will default based on the
+     * database edition: Optimistic for Enterprise and Pessimistic for all other
+     * databases.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -10765,6 +11182,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The concurrency control mode to use for this database.
+     *
+     * If unspecified in a CreateDatabase request, this will default based on the
+     * database edition: Optimistic for Enterprise and Pessimistic for all other
+     * databases.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -10784,6 +11205,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The concurrency control mode to use for this database.
+     *
+     * If unspecified in a CreateDatabase request, this will default based on the
+     * database edition: Optimistic for Enterprise and Pessimistic for all other
+     * databases.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -10804,6 +11229,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The concurrency control mode to use for this database.
+     *
+     * If unspecified in a CreateDatabase request, this will default based on the
+     * database edition: Optimistic for Enterprise and Pessimistic for all other
+     * databases.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -10827,6 +11256,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The concurrency control mode to use for this database.
+     *
+     * If unspecified in a CreateDatabase request, this will default based on the
+     * database edition: Optimistic for Enterprise and Pessimistic for all other
+     * databases.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -12961,6 +13394,361 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     public Builder clearDatabaseEdition() {
       bitField0_ = (bitField0_ & ~0x00100000);
       databaseEdition_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int realtimeUpdatesMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The default Realtime Updates mode to use for this database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for realtimeUpdatesMode.
+     */
+    @java.lang.Override
+    public int getRealtimeUpdatesModeValue() {
+      return realtimeUpdatesMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The default Realtime Updates mode to use for this database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for realtimeUpdatesMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRealtimeUpdatesModeValue(int value) {
+      realtimeUpdatesMode_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The default Realtime Updates mode to use for this database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The realtimeUpdatesMode.
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.RealtimeUpdatesMode getRealtimeUpdatesMode() {
+      com.google.firestore.admin.v1.RealtimeUpdatesMode result =
+          com.google.firestore.admin.v1.RealtimeUpdatesMode.forNumber(realtimeUpdatesMode_);
+      return result == null
+          ? com.google.firestore.admin.v1.RealtimeUpdatesMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The default Realtime Updates mode to use for this database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The realtimeUpdatesMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRealtimeUpdatesMode(com.google.firestore.admin.v1.RealtimeUpdatesMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      realtimeUpdatesMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The default Realtime Updates mode to use for this database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRealtimeUpdatesMode() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      realtimeUpdatesMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int firestoreDataAccessMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Firestore API data access mode to use for this database. If
+     * not set on write:
+     * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+     * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for firestoreDataAccessMode.
+     */
+    @java.lang.Override
+    public int getFirestoreDataAccessModeValue() {
+      return firestoreDataAccessMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Firestore API data access mode to use for this database. If
+     * not set on write:
+     * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+     * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for firestoreDataAccessMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFirestoreDataAccessModeValue(int value) {
+      firestoreDataAccessMode_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Firestore API data access mode to use for this database. If
+     * not set on write:
+     * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+     * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The firestoreDataAccessMode.
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Database.DataAccessMode getFirestoreDataAccessMode() {
+      com.google.firestore.admin.v1.Database.DataAccessMode result =
+          com.google.firestore.admin.v1.Database.DataAccessMode.forNumber(firestoreDataAccessMode_);
+      return result == null
+          ? com.google.firestore.admin.v1.Database.DataAccessMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Firestore API data access mode to use for this database. If
+     * not set on write:
+     * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+     * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The firestoreDataAccessMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFirestoreDataAccessMode(
+        com.google.firestore.admin.v1.Database.DataAccessMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00400000;
+      firestoreDataAccessMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Firestore API data access mode to use for this database. If
+     * not set on write:
+     * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+     * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFirestoreDataAccessMode() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      firestoreDataAccessMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int mongodbCompatibleDataAccessMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The MongoDB compatible API data access mode to use for this
+     * database. If not set on write, the default value is
+     * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+     * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mongodbCompatibleDataAccessMode.
+     */
+    @java.lang.Override
+    public int getMongodbCompatibleDataAccessModeValue() {
+      return mongodbCompatibleDataAccessMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The MongoDB compatible API data access mode to use for this
+     * database. If not set on write, the default value is
+     * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+     * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for mongodbCompatibleDataAccessMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMongodbCompatibleDataAccessModeValue(int value) {
+      mongodbCompatibleDataAccessMode_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The MongoDB compatible API data access mode to use for this
+     * database. If not set on write, the default value is
+     * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+     * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mongodbCompatibleDataAccessMode.
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Database.DataAccessMode
+        getMongodbCompatibleDataAccessMode() {
+      com.google.firestore.admin.v1.Database.DataAccessMode result =
+          com.google.firestore.admin.v1.Database.DataAccessMode.forNumber(
+              mongodbCompatibleDataAccessMode_);
+      return result == null
+          ? com.google.firestore.admin.v1.Database.DataAccessMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The MongoDB compatible API data access mode to use for this
+     * database. If not set on write, the default value is
+     * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+     * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The mongodbCompatibleDataAccessMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMongodbCompatibleDataAccessMode(
+        com.google.firestore.admin.v1.Database.DataAccessMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00800000;
+      mongodbCompatibleDataAccessMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The MongoDB compatible API data access mode to use for this
+     * database. If not set on write, the default value is
+     * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+     * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMongodbCompatibleDataAccessMode() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      mongodbCompatibleDataAccessMode_ = 0;
       onChanged();
       return this;
     }

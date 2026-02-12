@@ -837,6 +837,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.firestore.admin.v1.Database$DataAccessMode",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.firestore.admin.v1.Database$DatabaseEdition",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1873,6 +1882,15 @@
   },
   {
     "name": "com.google.firestore.admin.v1.Progress$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.firestore.admin.v1.RealtimeUpdatesMode",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

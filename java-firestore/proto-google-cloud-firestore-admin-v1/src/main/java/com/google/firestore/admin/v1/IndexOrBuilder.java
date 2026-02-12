@@ -316,4 +316,18 @@ public interface IndexOrBuilder
    * @return The shardCount.
    */
   int getShardCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether it is an unique index. Unique index ensures all values
+   * for the indexed field(s) are unique across documents.
+   * </pre>
+   *
+   * <code>bool unique = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The unique.
+   */
+  boolean getUnique();
 }

@@ -695,11 +695,31 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * In order for an index entry to be added, the document must
-     * contain all fields specified in the index.
+     * An index entry will only exist if ALL fields are present in the document.
      *
-     * This is the only allowed value for indexes having ApiScope `ANY_API` and
-     * `DATASTORE_MODE_API`.
+     * This is both the default and only allowed value for Standard Edition
+     * databases (for both Cloud Firestore `ANY_API` and Cloud Datastore
+     * `DATASTORE_MODE_API`).
+     *
+     * Take for example the following document:
+     *
+     * ```
+     * {
+     * "__name__": "...",
+     * "a": 1,
+     * "b": 2,
+     * "c": 3
+     * }
+     * ```
+     *
+     * an index on `(a ASC, b ASC, c ASC, __name__ ASC)` will generate an index
+     * entry for this document since `a`, 'b', `c`, and `__name__` are all
+     * present but an index of `(a ASC, d ASC, __name__ ASC)` will not generate
+     * an index entry for this document since `d` is missing.
+     *
+     * This means that such indexes can only be used to serve a query when the
+     * query has either implicit or explicit requirements that all fields from
+     * the index are present.
      * </pre>
      *
      * <code>SPARSE_ALL = 1;</code>
@@ -709,10 +729,30 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * In order for an index entry to be added, the document must
-     * contain at least one of the fields specified in the index.
-     * Non-existent fields are treated as having a NULL value when generating
-     * index entries.
+     * An index entry will exist if ANY field are present in the document.
+     *
+     * This is used as the definition of a sparse index for Enterprise Edition
+     * databases.
+     *
+     * Take for example the following document:
+     *
+     * ```
+     * {
+     * "__name__": "...",
+     * "a": 1,
+     * "b": 2,
+     * "c": 3
+     * }
+     * ```
+     *
+     * an index on `(a ASC, d ASC)` will generate an index entry for this
+     * document since `a` is present, and will fill in an `unset` value for `d`.
+     * An index on `(d ASC, e ASC)` will not generate any index entry as neither
+     * `d` nor `e` are present.
+     *
+     * An index that contains `__name__` will generate an index entry for all
+     * documents since Firestore guarantees that all documents have a `__name__`
+     * field.
      * </pre>
      *
      * <code>SPARSE_ANY = 2;</code>
@@ -722,10 +762,12 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An index entry will be added regardless of whether the
-     * document contains any of the fields specified in the index.
-     * Non-existent fields are treated as having a NULL value when generating
-     * index entries.
+     * An index entry will exist regardless of if the fields are present or not.
+     *
+     * This is the default density for an Enterprise Edition database.
+     *
+     * The index will store `unset` values for fields that are not present in
+     * the document.
      * </pre>
      *
      * <code>DENSE = 3;</code>
@@ -760,11 +802,31 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * In order for an index entry to be added, the document must
-     * contain all fields specified in the index.
+     * An index entry will only exist if ALL fields are present in the document.
      *
-     * This is the only allowed value for indexes having ApiScope `ANY_API` and
-     * `DATASTORE_MODE_API`.
+     * This is both the default and only allowed value for Standard Edition
+     * databases (for both Cloud Firestore `ANY_API` and Cloud Datastore
+     * `DATASTORE_MODE_API`).
+     *
+     * Take for example the following document:
+     *
+     * ```
+     * {
+     * "__name__": "...",
+     * "a": 1,
+     * "b": 2,
+     * "c": 3
+     * }
+     * ```
+     *
+     * an index on `(a ASC, b ASC, c ASC, __name__ ASC)` will generate an index
+     * entry for this document since `a`, 'b', `c`, and `__name__` are all
+     * present but an index of `(a ASC, d ASC, __name__ ASC)` will not generate
+     * an index entry for this document since `d` is missing.
+     *
+     * This means that such indexes can only be used to serve a query when the
+     * query has either implicit or explicit requirements that all fields from
+     * the index are present.
      * </pre>
      *
      * <code>SPARSE_ALL = 1;</code>
@@ -775,10 +837,30 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * In order for an index entry to be added, the document must
-     * contain at least one of the fields specified in the index.
-     * Non-existent fields are treated as having a NULL value when generating
-     * index entries.
+     * An index entry will exist if ANY field are present in the document.
+     *
+     * This is used as the definition of a sparse index for Enterprise Edition
+     * databases.
+     *
+     * Take for example the following document:
+     *
+     * ```
+     * {
+     * "__name__": "...",
+     * "a": 1,
+     * "b": 2,
+     * "c": 3
+     * }
+     * ```
+     *
+     * an index on `(a ASC, d ASC)` will generate an index entry for this
+     * document since `a` is present, and will fill in an `unset` value for `d`.
+     * An index on `(d ASC, e ASC)` will not generate any index entry as neither
+     * `d` nor `e` are present.
+     *
+     * An index that contains `__name__` will generate an index entry for all
+     * documents since Firestore guarantees that all documents have a `__name__`
+     * field.
      * </pre>
      *
      * <code>SPARSE_ANY = 2;</code>
@@ -789,10 +871,12 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An index entry will be added regardless of whether the
-     * document contains any of the fields specified in the index.
-     * Non-existent fields are treated as having a NULL value when generating
-     * index entries.
+     * An index entry will exist regardless of if the fields are present or not.
+     *
+     * This is the default density for an Enterprise Edition database.
+     *
+     * The index will store `unset` values for fields that are not present in
+     * the document.
      * </pre>
      *
      * <code>DENSE = 3;</code>
@@ -4565,6 +4649,26 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     return shardCount_;
   }
 
+  public static final int UNIQUE_FIELD_NUMBER = 10;
+  private boolean unique_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether it is an unique index. Unique index ensures all values
+   * for the indexed field(s) are unique across documents.
+   * </pre>
+   *
+   * <code>bool unique = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The unique.
+   */
+  @java.lang.Override
+  public boolean getUnique() {
+    return unique_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4604,6 +4708,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (shardCount_ != 0) {
       output.writeInt32(8, shardCount_);
     }
+    if (unique_ != false) {
+      output.writeBool(10, unique_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4638,6 +4745,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (shardCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, shardCount_);
     }
+    if (unique_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, unique_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4661,6 +4771,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (density_ != other.density_) return false;
     if (getMultikey() != other.getMultikey()) return false;
     if (getShardCount() != other.getShardCount()) return false;
+    if (getUnique() != other.getUnique()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4690,6 +4801,8 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultikey());
     hash = (37 * hash) + SHARD_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getShardCount();
+    hash = (37 * hash) + UNIQUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnique());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4844,6 +4957,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       density_ = 0;
       multikey_ = false;
       shardCount_ = 0;
+      unique_ = false;
       return this;
     }
 
@@ -4913,6 +5027,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.shardCount_ = shardCount_;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.unique_ = unique_;
+      }
     }
 
     @java.lang.Override
@@ -4976,6 +5093,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       if (other.getShardCount() != 0) {
         setShardCount(other.getShardCount());
+      }
+      if (other.getUnique() != false) {
+        setUnique(other.getUnique());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5058,6 +5178,12 @@ public final class Index extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 80:
+              {
+                unique_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6299,6 +6425,65 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     public Builder clearShardCount() {
       bitField0_ = (bitField0_ & ~0x00000080);
       shardCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean unique_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether it is an unique index. Unique index ensures all values
+     * for the indexed field(s) are unique across documents.
+     * </pre>
+     *
+     * <code>bool unique = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The unique.
+     */
+    @java.lang.Override
+    public boolean getUnique() {
+      return unique_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether it is an unique index. Unique index ensures all values
+     * for the indexed field(s) are unique across documents.
+     * </pre>
+     *
+     * <code>bool unique = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The unique to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnique(boolean value) {
+
+      unique_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether it is an unique index. Unique index ensures all values
+     * for the indexed field(s) are unique across documents.
+     * </pre>
+     *
+     * <code>bool unique = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnique() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      unique_ = false;
       onChanged();
       return this;
     }

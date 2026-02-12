@@ -275,6 +275,10 @@ public interface DatabaseOrBuilder
    *
    * <pre>
    * The concurrency control mode to use for this database.
+   *
+   * If unspecified in a CreateDatabase request, this will default based on the
+   * database edition: Optimistic for Enterprise and Pessimistic for all other
+   * databases.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -288,6 +292,10 @@ public interface DatabaseOrBuilder
    *
    * <pre>
    * The concurrency control mode to use for this database.
+   *
+   * If unspecified in a CreateDatabase request, this will default based on the
+   * database edition: Optimistic for Enterprise and Pessimistic for all other
+   * databases.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Database.ConcurrencyMode concurrency_mode = 15;</code>
@@ -864,4 +872,106 @@ public interface DatabaseOrBuilder
    * @return The databaseEdition.
    */
   com.google.firestore.admin.v1.Database.DatabaseEdition getDatabaseEdition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The default Realtime Updates mode to use for this database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for realtimeUpdatesMode.
+   */
+  int getRealtimeUpdatesModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The default Realtime Updates mode to use for this database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.RealtimeUpdatesMode realtime_updates_mode = 31 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The realtimeUpdatesMode.
+   */
+  com.google.firestore.admin.v1.RealtimeUpdatesMode getRealtimeUpdatesMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Firestore API data access mode to use for this database. If
+   * not set on write:
+   * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+   * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for firestoreDataAccessMode.
+   */
+  int getFirestoreDataAccessModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Firestore API data access mode to use for this database. If
+   * not set on write:
+   * - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise Edition.
+   * - the default value is DATA_ACCESS_MODE_ENABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode firestore_data_access_mode = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The firestoreDataAccessMode.
+   */
+  com.google.firestore.admin.v1.Database.DataAccessMode getFirestoreDataAccessMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The MongoDB compatible API data access mode to use for this
+   * database. If not set on write, the default value is
+   * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+   * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mongodbCompatibleDataAccessMode.
+   */
+  int getMongodbCompatibleDataAccessModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The MongoDB compatible API data access mode to use for this
+   * database. If not set on write, the default value is
+   * DATA_ACCESS_MODE_ENABLED for Enterprise Edition. The value is always
+   * DATA_ACCESS_MODE_DISABLED for Standard Edition.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DataAccessMode mongodb_compatible_data_access_mode = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mongodbCompatibleDataAccessMode.
+   */
+  com.google.firestore.admin.v1.Database.DataAccessMode getMongodbCompatibleDataAccessMode();
 }

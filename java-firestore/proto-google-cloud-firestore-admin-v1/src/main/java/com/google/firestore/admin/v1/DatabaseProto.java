@@ -89,7 +89,9 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "(google/firestore/admin/v1/database.pro"
           + "to\022\031google.firestore.admin.v1\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\243\026\n"
+          + "rce.proto\0320google/firestore/admin/v1/rea"
+          + "ltime_updates.proto\032\036google/protobuf/dur"
+          + "ation.proto\032\037google/protobuf/timestamp.proto\"\253\031\n"
           + "\010Database\022\014\n"
           + "\004name\030\001 \001(\t\022\020\n"
           + "\003uid\030\003 \001(\tB\003\340A\003\0224\n"
@@ -100,36 +102,42 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\013location_id\030\t \001(\t\022>\n"
           + "\004type\030\n"
           + " \001(\01620.google.firestore.admin.v1.Database.DatabaseType\022M\n"
-          + "\020concurrency_mode\030\017 \001(\01623.googl"
-          + "e.firestore.admin.v1.Database.ConcurrencyMode\022@\n"
+          + "\020concurrency_mode\030\017 \001"
+          + "(\01623.google.firestore.admin.v1.Database.ConcurrencyMode\022@\n"
           + "\030version_retention_period\030\021"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\003\022>\n"
           + "\025earliest_version_time\030\022"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022l\n"
-          + "!point_in_time_recovery_enablement\030\025 \001(\0162A.google.firestore.ad"
-          + "min.v1.Database.PointInTimeRecoveryEnablement\022a\n"
-          + "\033app_engine_integration_mode\030\023 \001"
-          + "(\0162<.google.firestore.admin.v1.Database.AppEngineIntegrationMode\022\027\n\n"
+          + "!point_in_time_recovery_enablement\030\025 \001(\0162A.google.fi"
+          + "restore.admin.v1.Database.PointInTimeRecoveryEnablement\022a\n"
+          + "\033app_engine_integration_mode\030\023"
+          + " \001(\0162<.google.firestore.admin.v1.Database.AppEngineIntegrationMode\022\027\n\n"
           + "key_prefix\030\024 \001(\tB\003\340A\003\022Z\n"
-          + "\027delete_protection_state\030\026 \001"
-          + "(\01629.google.firestore.admin.v1.Database.DeleteProtectionState\022H\n"
-          + "\013cmek_config\030\027 \001"
-          + "(\0132..google.firestore.admin.v1.Database.CmekConfigB\003\340A\001\022\030\n"
+          + "\027delete_protection_state\030\026"
+          + " \001(\01629.google.firestore.admin.v1.Database.DeleteProtectionState\022H\n"
+          + "\013cmek_config\030\027"
+          + " \001(\0132..google.firestore.admin.v1.Database.CmekConfigB\003\340A\001\022\030\n"
           + "\013previous_id\030\031 \001(\tB\003\340A\003\022H\n"
-          + "\013source_info\030\032"
-          + " \001(\0132..google.firestore.admin.v1.Database.SourceInfoB\003\340A\003\022F\n"
+          + "\013source_info\030\032 \001(\0132..googl"
+          + "e.firestore.admin.v1.Database.SourceInfoB\003\340A\003\022F\n"
           + "\004tags\030\035 \003(\0132-.google.firestore.admin.v1.Database.TagsEntryB"
           + "\t\340A\004\340A\005\340A\001\022\033\n"
           + "\tfree_tier\030\036 \001(\010B\003\340A\003H\000\210\001\001\022\014\n"
           + "\004etag\030c \001(\t\022R\n"
-          + "\020database_edition\030\034"
-          + " \001(\01623.google.firestore.admin.v1.Database.DatabaseEditionB\003\340A\005\032H\n\n"
+          + "\020database_edition\030\034 \001(\01623.google.fire"
+          + "store.admin.v1.Database.DatabaseEditionB\003\340A\005\022R\n"
+          + "\025realtime_updates_mode\030\037 \001(\0162..go"
+          + "ogle.firestore.admin.v1.RealtimeUpdatesModeB\003\340A\005\022[\n"
+          + "\032firestore_data_access_mode\030!"
+          + " \001(\01622.google.firestore.admin.v1.Database.DataAccessModeB\003\340A\001\022d\n"
+          + "#mongodb_compatible_data_access_mode\030\" \001(\01622.google.fire"
+          + "store.admin.v1.Database.DataAccessModeB\003\340A\001\032H\n\n"
           + "CmekConfig\022\031\n"
           + "\014kms_key_name\030\001 \001(\tB\003\340A\002\022\037\n"
           + "\022active_key_version\030\002 \003(\tB\003\340A\003\032\347\001\n\n"
           + "SourceInfo\022M\n"
-          + "\006backup\030\001 \001(\0132;.google.firestore.a"
-          + "dmin.v1.Database.SourceInfo.BackupSourceH\000\022:\n"
+          + "\006backup\030\001 \001(\0132;.google.fi"
+          + "restore.admin.v1.Database.SourceInfo.BackupSourceH\000\022:\n"
           + "\toperation\030\003 \001(\tB\'\372A$\n"
           + "\"firestore.googleapis.com/Operation\032D\n"
           + "\014BackupSource\0224\n"
@@ -137,14 +145,13 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\037firestore.googleapis.com/BackupB\010\n"
           + "\006source\032\210\004\n"
           + "\020EncryptionConfig\022x\n"
-          + "\031google_default_encryption\030\001 \001(\0132S"
-          + ".google.firestore.admin.v1.Database.Encr"
-          + "yptionConfig.GoogleDefaultEncryptionOptionsH\000\022m\n"
-          + "\025use_source_encryption\030\002 \001(\0132L.g"
-          + "oogle.firestore.admin.v1.Database.EncryptionConfig.SourceEncryptionOptionsH\000\022|\n"
-          + "\033customer_managed_encryption\030\003 \001(\0132U.goog"
-          + "le.firestore.admin.v1.Database.Encryptio"
-          + "nConfig.CustomerManagedEncryptionOptionsH\000\032 \n"
+          + "\031google_default_encryption\030\001 \001(\0132S.google.firestore.admin.v1.Data"
+          + "base.EncryptionConfig.GoogleDefaultEncryptionOptionsH\000\022m\n"
+          + "\025use_source_encryption\030\002 \001(\0132L.google.firestore.admin.v1.Databa"
+          + "se.EncryptionConfig.SourceEncryptionOptionsH\000\022|\n"
+          + "\033customer_managed_encryption\030\003 \001"
+          + "(\0132U.google.firestore.admin.v1.Database."
+          + "EncryptionConfig.CustomerManagedEncryptionOptionsH\000\032 \n"
           + "\036GoogleDefaultEncryptionOptions\032\031\n"
           + "\027SourceEncryptionOptions\032=\n"
           + " CustomerManagedEncryptionOptions\022\031\n"
@@ -177,15 +184,19 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\017DatabaseEdition\022 \n"
           + "\034DATABASE_EDITION_UNSPECIFIED\020\000\022\014\n"
           + "\010STANDARD\020\001\022\016\n\n"
-          + "ENTERPRISE\020\002:R\352AO\n"
+          + "ENTERPRISE\020\002\"o\n"
+          + "\016DataAccessMode\022 \n"
+          + "\034DATA_ACCESS_MODE_UNSPECIFIED\020\000\022\034\n"
+          + "\030DATA_ACCESS_MODE_ENABLED\020\001\022\035\n"
+          + "\031DATA_ACCESS_MODE_DISABLED\020\002:R\352AO\n"
           + "!firestore.googleapis.com/Database\022\'projects/{project}/databases/{database}R\001\001B\014\n\n"
           + "_free_tierB\303\002\n"
           + "\035com.google.firestore.admin.v1B\r"
-          + "DatabaseProtoP\001Z9cloud.google.com/go/firestore/apiv1/admin/adminpb;adminpb\242\002"
-          + "\004GCFS\252\002\037Google.Cloud.Firestore.Admin.V1\312"
-          + "\002\037Google\\Cloud\\Firestore\\Admin\\V1\352\002#Google::Cloud::Firestore::Admin::V1\352Ad\n"
-          + "\"firestore.googleapis.com/Operation\022>projects"
-          + "/{project}/databases/{database}/operations/{operation}b\006proto3"
+          + "DatabaseProtoP\001Z9cloud.google.com/go/firestore/apiv1/admin/adminpb;adminpb"
+          + "\242\002\004GCFS\252\002\037Google.Cloud.Firestore.Admin.V"
+          + "1\312\002\037Google\\Cloud\\Firestore\\Admin\\V1\352\002#Google::Cloud::Firestore::Admin::V1\352Ad\n"
+          + "\"firestore.googleapis.com/Operation\022>projec"
+          + "ts/{project}/databases/{database}/operations/{operation}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,6 +204,7 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.firestore.admin.v1.RealtimeUpdatesProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -223,6 +235,9 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
               "FreeTier",
               "Etag",
               "DatabaseEdition",
+              "RealtimeUpdatesMode",
+              "FirestoreDataAccessMode",
+              "MongodbCompatibleDataAccessMode",
             });
     internal_static_google_firestore_admin_v1_Database_CmekConfig_descriptor =
         internal_static_google_firestore_admin_v1_Database_descriptor.getNestedType(0);
@@ -293,6 +308,7 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.firestore.admin.v1.RealtimeUpdatesProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

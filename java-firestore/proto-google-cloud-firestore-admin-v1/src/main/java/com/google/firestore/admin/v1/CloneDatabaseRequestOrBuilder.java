@@ -70,7 +70,7 @@ public interface CloneDatabaseRequestOrBuilder
    * with first character a letter and the last a letter or a number. Must not
    * be UUID-like /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/.
    *
-   * "(default)" database ID is also valid.
+   * "(default)" database ID is also valid if the database is Standard edition.
    * </pre>
    *
    * <code>string database_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,7 +91,7 @@ public interface CloneDatabaseRequestOrBuilder
    * with first character a letter and the last a letter or a number. Must not
    * be UUID-like /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/.
    *
-   * "(default)" database ID is also valid.
+   * "(default)" database ID is also valid if the database is Standard edition.
    * </pre>
    *
    * <code>string database_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

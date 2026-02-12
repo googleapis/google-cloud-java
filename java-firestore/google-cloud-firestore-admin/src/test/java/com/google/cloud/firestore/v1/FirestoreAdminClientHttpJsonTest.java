@@ -53,6 +53,7 @@ import com.google.firestore.admin.v1.ListUserCredsResponse;
 import com.google.firestore.admin.v1.LocationName;
 import com.google.firestore.admin.v1.PitrSnapshot;
 import com.google.firestore.admin.v1.ProjectName;
+import com.google.firestore.admin.v1.RealtimeUpdatesMode;
 import com.google.firestore.admin.v1.RestoreDatabaseRequest;
 import com.google.firestore.admin.v1.UserCreds;
 import com.google.firestore.admin.v1.UserCredsName;
@@ -119,6 +120,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .addAllFields(new ArrayList<Index.IndexField>())
             .setMultikey(true)
             .setShardCount(-495377042)
+            .setUnique(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -174,6 +176,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .addAllFields(new ArrayList<Index.IndexField>())
             .setMultikey(true)
             .setShardCount(-495377042)
+            .setUnique(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -333,6 +336,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .addAllFields(new ArrayList<Index.IndexField>())
             .setMultikey(true)
             .setShardCount(-495377042)
+            .setUnique(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -380,6 +384,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .addAllFields(new ArrayList<Index.IndexField>())
             .setMultikey(true)
             .setShardCount(-495377042)
+            .setUnique(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1057,6 +1062,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1124,6 +1130,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1191,6 +1198,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1249,6 +1257,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1397,6 +1406,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1423,6 +1433,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1469,6 +1480,7 @@ public class FirestoreAdminClientHttpJsonTest {
               .putAllTags(new HashMap<String, String>())
               .setFreeTier(true)
               .setEtag("etag3123477")
+              .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDatabaseAsync(database, updateMask).get();
@@ -1496,6 +1508,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1559,6 +1572,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2532,6 +2546,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3043,6 +3058,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .putAllTags(new HashMap<String, String>())
             .setFreeTier(true)
             .setEtag("etag3123477")
+            .setRealtimeUpdatesMode(RealtimeUpdatesMode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
