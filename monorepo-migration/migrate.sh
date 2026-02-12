@@ -346,6 +346,19 @@ if [ -f "$SOURCE_CONFIG" ]; then
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
+# 7.6b Update generation/check_non_release_please_versions.sh
+CHECK_VERSIONS_SCRIPT="generation/check_non_release_please_versions.sh"
+if [ -f "$CHECK_VERSIONS_SCRIPT" ]; then
+    echo "Updating exclusions in $CHECK_VERSIONS_SCRIPT..."
+    # Insert the new module name before the .github exclusion
+    sed -i "/\.github\*\./ i \      [[ \"\${pomFile}\" =~ .*$SOURCE_REPO_NAME.* ]] || \\\\" "$CHECK_VERSIONS_SCRIPT"
+
+    echo "Committing $CHECK_VERSIONS_SCRIPT update..."
+    git add "$CHECK_VERSIONS_SCRIPT"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add to exclusions in $CHECK_VERSIONS_SCRIPT"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
 # 7.7 Consolidate versions.txt
 echo "Consolidating versions.txt..."
 SOURCE_VERSIONS="$SOURCE_REPO_NAME/versions.txt"
