@@ -94,6 +94,7 @@ import java.util.logging.Logger;
  */
 public class Publisher implements PublisherInterface {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
+  private LoggingUtil loggingUtil = new LoggingUtil();
 
   private static final String GZIP_COMPRESSION = "gzip";
 
@@ -509,6 +510,13 @@ public class Publisher implements PublisherInterface {
       logger.log(Level.WARNING, "Attempted to publish batch with zero messages.");
       return;
     }
+
+    loggingUtil.logPublisher(
+        LoggingUtil.SubSystem.PUBLISH_BATCH,
+        Level.FINE,
+        String.format("Attempting to batch publish %d messages", outstandingBatch.size()),
+        outstandingBatch.getMessageWrappers().get(0));
+
     final ApiFutureCallback<PublishResponse> futureCallback =
         new ApiFutureCallback<PublishResponse>() {
           @Override

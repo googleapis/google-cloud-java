@@ -59,6 +59,7 @@ import java.util.logging.Logger;
  */
 class MessageDispatcher {
   private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
+  private LoggingUtil loggingUtil = new LoggingUtil();
 
   @InternalApi static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
@@ -112,6 +113,8 @@ class MessageDispatcher {
   private final SubscriberShutdownSettings subscriberShutdownSettings;
   private final AtomicBoolean nackImmediatelyShutdownInProgress = new AtomicBoolean(false);
 
+  private final double slowAckPercentile = 99.0;
+
   /** Internal representation of a reply to a Pubsub message, to be sent back to the service. */
   public enum AckReply {
     ACK,
@@ -157,11 +160,13 @@ class MessageDispatcher {
 
     @Override
     public void onFailure(Throwable t) {
-      logger.log(
+      loggingUtil.logSubscriberWithThrowable(
+          LoggingUtil.SubSystem.CALLBACK_EXCEPTIONS,
           Level.WARNING,
-          "MessageReceiver failed to process ack ID: "
-              + this.ackRequestData.getAckId()
-              + ", the message will be nacked.",
+          "MessageReceiver exception.",
+          this.ackRequestData.getMessageWrapper(),
+          this.ackRequestData.getAckId(),
+          exactlyOnceDeliveryEnabled.get(),
           t);
       this.ackRequestData.setResponse(AckResponse.OTHER, false);
       pendingNacks.add(this.ackRequestData);
@@ -171,6 +176,19 @@ class MessageDispatcher {
 
     @Override
     public void onSuccess(AckReply reply) {
+      int ackLatency =
+          Ints.saturatedCast((long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D));
+      if (ackLatency >= ackLatencyDistribution.getPercentile(slowAckPercentile)) {
+        loggingUtil.logSubscriber(
+            LoggingUtil.SubSystem.SLOW_ACK,
+            Level.FINE,
+            String.format(
+                "Message ack duration of %d is higher than the p99 ack duration", ackLatency),
+            this.ackRequestData.getMessageWrapper(),
+            this.ackRequestData.getAckId(),
+            exactlyOnceDeliveryEnabled.get());
+      }
+
       switch (reply) {
         case ACK:
           if (nackImmediatelyShutdownInProgress.get() && exactlyOnceDeliveryEnabled.get()) {
@@ -180,15 +198,27 @@ class MessageDispatcher {
           } else {
             pendingAcks.add(this.ackRequestData);
             // Record the latency rounded to the next closest integer.
-            ackLatencyDistribution.record(
-                Ints.saturatedCast(
-                    (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
+            ackLatencyDistribution.record(ackLatency);
             tracer.endSubscribeProcessSpan(this.ackRequestData.getMessageWrapper(), "ack");
           }
+          loggingUtil.logSubscriber(
+              LoggingUtil.SubSystem.ACK_NACK,
+              Level.FINE,
+              "Ack called on message.",
+              this.ackRequestData.getMessageWrapper(),
+              this.ackRequestData.getAckId(),
+              exactlyOnceDeliveryEnabled.get());
           break;
         case NACK:
           pendingNacks.add(this.ackRequestData);
           tracer.endSubscribeProcessSpan(this.ackRequestData.getMessageWrapper(), "nack");
+          loggingUtil.logSubscriber(
+              LoggingUtil.SubSystem.ACK_NACK,
+              Level.FINE,
+              "Nack called on message.",
+              this.ackRequestData.getMessageWrapper(),
+              this.ackRequestData.getAckId(),
+              exactlyOnceDeliveryEnabled.get());
           break;
         default:
           throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
@@ -568,10 +598,32 @@ class MessageDispatcher {
       // shutdown will block on processing of all these messages anyway.
       tracer.startSubscribeConcurrencyControlSpan(message.messageWrapper());
       try {
+        loggingUtil.logSubscriber(
+            LoggingUtil.SubSystem.SUBSCRIBER_FLOW_CONTROL,
+            Level.FINE,
+            "Flow controller is blocking.",
+            message.messageWrapper(),
+            message.messageWrapper().getAckId(),
+            exactlyOnceDeliveryEnabled.get());
         flowController.reserve(1, message.messageWrapper().getPubsubMessage().getSerializedSize());
+        loggingUtil.logSubscriber(
+            LoggingUtil.SubSystem.SUBSCRIBER_FLOW_CONTROL,
+            Level.FINE,
+            "Flow controller is done blocking.",
+            message.messageWrapper(),
+            message.messageWrapper().getAckId(),
+            exactlyOnceDeliveryEnabled.get());
         tracer.endSubscribeConcurrencyControlSpan(message.messageWrapper());
       } catch (FlowControlException unexpectedException) {
         // This should be a blocking flow controller and never throw an exception.
+        loggingUtil.logSubscriberWithThrowable(
+            LoggingUtil.SubSystem.SUBSCRIBER_FLOW_CONTROL,
+            Level.FINE,
+            "Flow controller unexpected exception.",
+            message.messageWrapper(),
+            message.messageWrapper().getAckId(),
+            exactlyOnceDeliveryEnabled.get(),
+            unexpectedException);
         tracer.setSubscribeConcurrencyControlSpanException(
             message.messageWrapper(), unexpectedException);
         throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
@@ -619,9 +671,23 @@ class MessageDispatcher {
                 // Don't nack it either, because we'd be nacking someone else's message.
                 ackHandler.forget();
                 tracer.setSubscriberSpanExpirationResult(messageWrapper);
+                loggingUtil.logSubscriber(
+                    LoggingUtil.SubSystem.EXPIRY,
+                    Level.FINE,
+                    "Message expired.",
+                    messageWrapper,
+                    ackHandler.ackRequestData.getAckId(),
+                    exactlyOnceDeliveryEnabled.get());
                 return;
               }
               tracer.startSubscribeProcessSpan(messageWrapper);
+              loggingUtil.logSubscriber(
+                  LoggingUtil.SubSystem.CALLBACK_DELIVERY,
+                  Level.FINE,
+                  "Message delivered.",
+                  messageWrapper,
+                  ackHandler.ackRequestData.getAckId(),
+                  exactlyOnceDeliveryEnabled.get());
               if (shouldSetMessageFuture()) {
                 // This is the message future that is propagated to the user
                 SettableApiFuture<AckResponse> messageFuture =
@@ -725,7 +791,6 @@ class MessageDispatcher {
     if (!nackRequestDataList.isEmpty()) {
       modackRequestData.add(new ModackRequestData(0, nackRequestDataList));
     }
-    logger.log(Level.FINER, "Sending {0} nacks", nackRequestDataList.size());
 
     List<AckRequestData> ackRequestDataReceipts = new ArrayList<AckRequestData>();
     pendingReceipts.drainTo(ackRequestDataReceipts);
@@ -735,13 +800,21 @@ class MessageDispatcher {
       receiptModack.setIsReceiptModack(true);
       modackRequestData.add(receiptModack);
     }
-    logger.log(Level.FINER, "Sending {0} receipts", ackRequestDataReceipts.size());
 
     ackProcessor.sendModackOperations(modackRequestData);
 
     List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
     pendingAcks.drainTo(ackRequestDataList);
-    logger.log(Level.FINER, "Sending {0} acks", ackRequestDataList.size());
+    loggingUtil.logEvent(
+        LoggingUtil.SubSystem.ACK_BATCH,
+        Level.FINE,
+        "Sending {0} ACKs, {1} NACKs, {2} receipts. Exactly Once Delivery: {3}",
+        new Object[] {
+          ackRequestDataList.size(),
+          nackRequestDataList.size(),
+          ackRequestDataReceipts.size(),
+          exactlyOnceDeliveryEnabled.get()
+        });
 
     ackProcessor.sendAckOperations(ackRequestDataList);
   }
