@@ -6,7 +6,7 @@
     <version>2.34.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
     <packaging>jar</packaging>
     <name>Google Cloud Datastore Utilities</name>
-    <url>https://github.com/googleapis/java-datastore</url>
+    <url>https://github.com/googleapis/google-cloud-java</url>
     <description>
         Java datastore client utility library.
     </description>
@@ -67,7 +67,6 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
         </dependency>
-        <!-- Test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
