@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/datastore/v1/*OrBuilder</className>
+    <method>* has*(*)</method>
+  </difference>
+   <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/datastore/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+   <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/datastore/v1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+
+<!-- These are interfaces not meant to be implemented by library users. See https://github.com/googleapis/java-datastore/pull/1304 for more details-->
+    <difference>
+        <className>com/google/datastore/v1/QueryMode</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/QueryPlan*</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/QueryProfileProto</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/ResultSetStats*</className>
+        <method>*</method>
+        <differenceType>8001</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <method>*Mode*</method>
+        <differenceType>7002</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <method>*Stats*</method>
+        <differenceType>7002</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <field>MODE_FIELD_NUMBER</field>
+        <differenceType>6011</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/datastore/v1/*</className>
+        <field>STATS_FIELD_NUMBER</field>
+        <differenceType>6011</differenceType>
+    </difference>
+
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4+ runtime upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/datastore/v1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+</differences>

@@ -1,0 +1,48 @@
+# Copyright 2023 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# one time index creation is required to run ITDatastoreConceptsTest
+# see https://cloud.google.com/sdk/gcloud/reference/datastore/indexes/create for more details
+indexes:
+  - kind: TaskConcepts
+    properties:
+      - name: done
+      - name: priority
+        direction: desc
+  - kind: TaskConcepts
+    properties:
+      - name: tag
+      - name: tag
+  - kind: TaskConcepts
+    properties:
+      - name: priority
+      - name: created
+  - kind: TaskConcepts
+    properties:
+      - name: category
+      - name: priority
+  - kind: TaskConcepts
+    properties:
+      - name: priority
+        direction: desc
+      - name: created
+  - kind: TaskConcepts
+    properties:
+      - name: percent_complete
+      - name: priority
+  - kind: TaskConcepts
+    properties:
+      - name: done
+      - name: priority
+        direction: desc
