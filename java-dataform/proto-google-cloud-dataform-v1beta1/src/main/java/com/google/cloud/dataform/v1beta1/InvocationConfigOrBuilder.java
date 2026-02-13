@@ -215,4 +215,55 @@ public interface InvocationConfigOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority for query execution in BigQuery.
+   * More information can be found at
+   * https://cloud.google.com/bigquery/docs/running-queries#queries.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the queryPriority field is set.
+   */
+  boolean hasQueryPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority for query execution in BigQuery.
+   * More information can be found at
+   * https://cloud.google.com/bigquery/docs/running-queries#queries.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for queryPriority.
+   */
+  int getQueryPriorityValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority for query execution in BigQuery.
+   * More information can be found at
+   * https://cloud.google.com/bigquery/docs/running-queries#queries.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The queryPriority.
+   */
+  com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority getQueryPriority();
 }

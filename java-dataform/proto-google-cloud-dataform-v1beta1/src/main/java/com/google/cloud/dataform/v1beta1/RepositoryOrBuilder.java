@@ -56,6 +56,108 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
+   * Optional. The name of the containing folder of the repository.
+   * The field is immutable and it can be modified via a MoveRepository
+   * operation.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+   * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+   * </pre>
+   *
+   * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the containingFolder field is set.
+   */
+  boolean hasContainingFolder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the containing folder of the repository.
+   * The field is immutable and it can be modified via a MoveRepository
+   * operation.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+   * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+   * </pre>
+   *
+   * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The containingFolder.
+   */
+  java.lang.String getContainingFolder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the containing folder of the repository.
+   * The field is immutable and it can be modified via a MoveRepository
+   * operation.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+   * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+   * </pre>
+   *
+   * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for containingFolder.
+   */
+  com.google.protobuf.ByteString getContainingFolderBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the TeamFolder that this Repository is
+   * associated with. This should take the format:
+   * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+   * is not set, the Repository is not associated with a TeamFolder.
+   * </pre>
+   *
+   * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the teamFolderName field is set.
+   */
+  boolean hasTeamFolderName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the TeamFolder that this Repository is
+   * associated with. This should take the format:
+   * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+   * is not set, the Repository is not associated with a TeamFolder.
+   * </pre>
+   *
+   * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The teamFolderName.
+   */
+  java.lang.String getTeamFolderName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the TeamFolder that this Repository is
+   * associated with. This should take the format:
+   * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+   * is not set, the Repository is not associated with a TeamFolder.
+   * </pre>
+   *
+   * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for teamFolderName.
+   */
+  com.google.protobuf.ByteString getTeamFolderNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The timestamp of when the repository was created.
    * </pre>
    *

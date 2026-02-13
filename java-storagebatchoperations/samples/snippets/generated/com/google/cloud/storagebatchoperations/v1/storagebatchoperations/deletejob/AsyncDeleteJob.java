@@ -41,6 +41,7 @@ public class AsyncDeleteJob {
           DeleteJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       ApiFuture<Empty> future =
           storageBatchOperationsClient.deleteJobCallable().futureCall(request);

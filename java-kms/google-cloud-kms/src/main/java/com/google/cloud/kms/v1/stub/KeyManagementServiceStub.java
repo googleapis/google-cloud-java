@@ -21,8 +21,10 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListRetiredResourcesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
 import com.google.cloud.kms.v1.AsymmetricDecryptResponse;
@@ -38,6 +40,10 @@ import com.google.cloud.kms.v1.DecapsulateRequest;
 import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
+import com.google.cloud.kms.v1.DeleteCryptoKeyMetadata;
+import com.google.cloud.kms.v1.DeleteCryptoKeyRequest;
+import com.google.cloud.kms.v1.DeleteCryptoKeyVersionMetadata;
+import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
@@ -48,6 +54,7 @@ import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
+import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
 import com.google.cloud.kms.v1.KeyRing;
@@ -59,6 +66,8 @@ import com.google.cloud.kms.v1.ListImportJobsRequest;
 import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.ListRetiredResourcesRequest;
+import com.google.cloud.kms.v1.ListRetiredResourcesResponse;
 import com.google.cloud.kms.v1.MacSignRequest;
 import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
@@ -69,6 +78,7 @@ import com.google.cloud.kms.v1.RawDecryptResponse;
 import com.google.cloud.kms.v1.RawEncryptRequest;
 import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.RetiredResource;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest;
@@ -81,6 +91,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -91,6 +104,14 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class KeyManagementServiceStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
 
   public UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse> listKeyRingsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listKeyRingsPagedCallable()");
@@ -129,6 +150,16 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listImportJobsCallable()");
   }
 
+  public UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesPagedResponse>
+      listRetiredResourcesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRetiredResourcesPagedCallable()");
+  }
+
+  public UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesResponse>
+      listRetiredResourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRetiredResourcesCallable()");
+  }
+
   public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
     throw new UnsupportedOperationException("Not implemented: getKeyRingCallable()");
   }
@@ -149,6 +180,10 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getImportJobCallable()");
   }
 
+  public UnaryCallable<GetRetiredResourceRequest, RetiredResource> getRetiredResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRetiredResourceCallable()");
+  }
+
   public UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
     throw new UnsupportedOperationException("Not implemented: createKeyRingCallable()");
   }
@@ -160,6 +195,25 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
   public UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: createCryptoKeyVersionCallable()");
+  }
+
+  public OperationCallable<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCryptoKeyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteCryptoKeyRequest, Operation> deleteCryptoKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCryptoKeyCallable()");
+  }
+
+  public OperationCallable<DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteCryptoKeyVersionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteCryptoKeyVersionRequest, Operation> deleteCryptoKeyVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCryptoKeyVersionCallable()");
   }
 
   public UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>

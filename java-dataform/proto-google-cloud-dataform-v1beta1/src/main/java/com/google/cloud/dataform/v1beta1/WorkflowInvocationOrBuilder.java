@@ -389,6 +389,56 @@ public interface WorkflowInvocationOrBuilder
    */
   com.google.protobuf.ByteString getInternalMetadataBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+   * from a compilation result and the compilation result is user-scoped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateResourceMetadata field is set.
+   */
+  boolean hasPrivateResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+   * from a compilation result and the compilation result is user-scoped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateResourceMetadata.
+   */
+  com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+   * from a compilation result and the compilation result is user-scoped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+      getPrivateResourceMetadataOrBuilder();
+
   com.google.cloud.dataform.v1beta1.WorkflowInvocation.CompilationSourceCase
       getCompilationSourceCase();
 }

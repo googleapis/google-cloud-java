@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-solar</artifactId>
-  <version>0.42.0</version>
+  <version>0.43.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-solar:0.42.0'
+implementation 'com.google.maps:google-maps-solar:0.43.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-solar" % "0.42.0"
+libraryDependencies += "com.google.maps" % "google-maps-solar" % "0.43.0"
 ```
 
 ## Authentication
@@ -158,7 +158,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.maps/google-maps-solar.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-solar/0.42.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-solar/0.43.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

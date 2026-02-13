@@ -51,6 +51,8 @@ export MAVEN_OPTS=$(determineMavenOpts)
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then
+  echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+  install_modules "${BUILD_SUBDIR}"
   echo "Running in subdir: ${BUILD_SUBDIR}"
   pushd "${BUILD_SUBDIR}"
 fi

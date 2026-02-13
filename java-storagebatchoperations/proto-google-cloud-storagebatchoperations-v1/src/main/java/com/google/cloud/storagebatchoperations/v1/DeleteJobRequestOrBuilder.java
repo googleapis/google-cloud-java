@@ -95,4 +95,20 @@ public interface DeleteJobRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, any child bucket operations of the job will also
+   * be deleted. Highly recommended to be set to true by all clients. Users
+   * cannot mutate bucket operations directly, so only the jobs.delete
+   * permission is required to delete a job (and its child bucket operations).
+   * </pre>
+   *
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

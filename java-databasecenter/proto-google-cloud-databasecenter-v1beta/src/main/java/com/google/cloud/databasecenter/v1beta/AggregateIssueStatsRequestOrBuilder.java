@@ -84,10 +84,10 @@ public interface AggregateIssueStatsRequestOrBuilder
    * expression, parentheses must be appropriately used to group the
    * combinations.
    *
-   * Example: location="us-east1"
-   * Example: container="projects/123" OR container="projects/456"
-   * Example: (container="projects/123" OR
-   * container="projects/456") AND location="us-east1"
+   * Example: `location="us-east1"`
+   * Example: `container="projects/123" OR container="projects/456"`
+   * Example: `(container="projects/123" OR
+   * container="projects/456") AND location="us-east1"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -112,10 +112,10 @@ public interface AggregateIssueStatsRequestOrBuilder
    * expression, parentheses must be appropriately used to group the
    * combinations.
    *
-   * Example: location="us-east1"
-   * Example: container="projects/123" OR container="projects/456"
-   * Example: (container="projects/123" OR
-   * container="projects/456") AND location="us-east1"
+   * Example: `location="us-east1"`
+   * Example: `container="projects/123" OR container="projects/456"`
+   * Example: `(container="projects/123" OR
+   * container="projects/456") AND location="us-east1"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

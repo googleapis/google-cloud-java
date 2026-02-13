@@ -51,7 +51,9 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     super(builder);
   }
 
-  private EvaluateInstancesResponse() {}
+  private EvaluateInstancesResponse() {
+    metricResults_ = java.util.Collections.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.EvaluationServiceProto
@@ -2149,6 +2151,93 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         .getDefaultInstance();
   }
 
+  public static final int METRIC_RESULTS_FIELD_NUMBER = 43;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.MetricResult> metricResults_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.MetricResult> getMetricResultsList() {
+    return metricResults_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder>
+      getMetricResultsOrBuilderList() {
+    return metricResults_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  @java.lang.Override
+  public int getMetricResultsCount() {
+    return metricResults_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricResult getMetricResults(int index) {
+    return metricResults_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder getMetricResultsOrBuilder(
+      int index) {
+    return metricResults_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2305,6 +2394,9 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           38,
           (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
               evaluationResults_);
+    }
+    for (int i = 0; i < metricResults_.size(); i++) {
+      output.writeMessage(43, metricResults_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2505,6 +2597,9 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
               (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
                   evaluationResults_);
     }
+    for (int i = 0; i < metricResults_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, metricResults_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2521,6 +2616,7 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse other =
         (com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse) obj;
 
+    if (!getMetricResultsList().equals(other.getMetricResultsList())) return false;
     if (!getEvaluationResultsCase().equals(other.getEvaluationResultsCase())) return false;
     switch (evaluationResultsCase_) {
       case 1:
@@ -2650,6 +2746,10 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getMetricResultsCount() > 0) {
+      hash = (37 * hash) + METRIC_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricResultsList().hashCode();
+    }
     switch (evaluationResultsCase_) {
       case 1:
         hash = (37 * hash) + EXACT_MATCH_RESULTS_FIELD_NUMBER;
@@ -2923,6 +3023,7 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       if (exactMatchResultsBuilder_ != null) {
         exactMatchResultsBuilder_.clear();
       }
@@ -3019,6 +3120,13 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       if (rubricBasedInstructionFollowingResultBuilder_ != null) {
         rubricBasedInstructionFollowingResultBuilder_.clear();
       }
+      if (metricResultsBuilder_ == null) {
+        metricResults_ = java.util.Collections.emptyList();
+      } else {
+        metricResults_ = null;
+        metricResultsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000001);
       evaluationResultsCase_ = 0;
       evaluationResults_ = null;
       return this;
@@ -3049,17 +3157,39 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse result =
           new com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse result) {
+      if (metricResultsBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) != 0)) {
+          metricResults_ = java.util.Collections.unmodifiableList(metricResults_);
+          bitField1_ = (bitField1_ & ~0x00000001);
+        }
+        result.metricResults_ = metricResults_;
+      } else {
+        result.metricResults_ = metricResultsBuilder_.build();
+      }
+    }
+
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse result) {
       int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartial1(
+        com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse result) {
+      int from_bitField1_ = bitField1_;
     }
 
     private void buildPartialOneofs(
@@ -3178,6 +3308,33 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       if (other
           == com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse.getDefaultInstance())
         return this;
+      if (metricResultsBuilder_ == null) {
+        if (!other.metricResults_.isEmpty()) {
+          if (metricResults_.isEmpty()) {
+            metricResults_ = other.metricResults_;
+            bitField1_ = (bitField1_ & ~0x00000001);
+          } else {
+            ensureMetricResultsIsMutable();
+            metricResults_.addAll(other.metricResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.metricResults_.isEmpty()) {
+          if (metricResultsBuilder_.isEmpty()) {
+            metricResultsBuilder_.dispose();
+            metricResultsBuilder_ = null;
+            metricResults_ = other.metricResults_;
+            bitField1_ = (bitField1_ & ~0x00000001);
+            metricResultsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetMetricResultsFieldBuilder()
+                    : null;
+          } else {
+            metricResultsBuilder_.addAllMessages(other.metricResults_);
+          }
+        }
+      }
       switch (other.getEvaluationResultsCase()) {
         case EXACT_MATCH_RESULTS:
           {
@@ -3614,6 +3771,20 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
                 evaluationResultsCase_ = 38;
                 break;
               } // case 306
+            case 346:
+              {
+                com.google.cloud.aiplatform.v1beta1.MetricResult m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.MetricResult.parser(),
+                        extensionRegistry);
+                if (metricResultsBuilder_ == null) {
+                  ensureMetricResultsIsMutable();
+                  metricResults_.add(m);
+                } else {
+                  metricResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3646,6 +3817,7 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.ExactMatchResults,
@@ -11383,6 +11555,419 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       evaluationResultsCase_ = 38;
       onChanged();
       return rubricBasedInstructionFollowingResultBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.MetricResult> metricResults_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMetricResultsIsMutable() {
+      if (!((bitField1_ & 0x00000001) != 0)) {
+        metricResults_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.MetricResult>(
+                metricResults_);
+        bitField1_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MetricResult,
+            com.google.cloud.aiplatform.v1beta1.MetricResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder>
+        metricResultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.MetricResult> getMetricResultsList() {
+      if (metricResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(metricResults_);
+      } else {
+        return metricResultsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public int getMetricResultsCount() {
+      if (metricResultsBuilder_ == null) {
+        return metricResults_.size();
+      } else {
+        return metricResultsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricResult getMetricResults(int index) {
+      if (metricResultsBuilder_ == null) {
+        return metricResults_.get(index);
+      } else {
+        return metricResultsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder setMetricResults(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricResult value) {
+      if (metricResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricResultsIsMutable();
+        metricResults_.set(index, value);
+        onChanged();
+      } else {
+        metricResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder setMetricResults(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricResult.Builder builderForValue) {
+      if (metricResultsBuilder_ == null) {
+        ensureMetricResultsIsMutable();
+        metricResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder addMetricResults(com.google.cloud.aiplatform.v1beta1.MetricResult value) {
+      if (metricResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricResultsIsMutable();
+        metricResults_.add(value);
+        onChanged();
+      } else {
+        metricResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder addMetricResults(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricResult value) {
+      if (metricResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricResultsIsMutable();
+        metricResults_.add(index, value);
+        onChanged();
+      } else {
+        metricResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder addMetricResults(
+        com.google.cloud.aiplatform.v1beta1.MetricResult.Builder builderForValue) {
+      if (metricResultsBuilder_ == null) {
+        ensureMetricResultsIsMutable();
+        metricResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        metricResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder addMetricResults(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricResult.Builder builderForValue) {
+      if (metricResultsBuilder_ == null) {
+        ensureMetricResultsIsMutable();
+        metricResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder addAllMetricResults(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.MetricResult> values) {
+      if (metricResultsBuilder_ == null) {
+        ensureMetricResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metricResults_);
+        onChanged();
+      } else {
+        metricResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder clearMetricResults() {
+      if (metricResultsBuilder_ == null) {
+        metricResults_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000001);
+        onChanged();
+      } else {
+        metricResultsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public Builder removeMetricResults(int index) {
+      if (metricResultsBuilder_ == null) {
+        ensureMetricResultsIsMutable();
+        metricResults_.remove(index);
+        onChanged();
+      } else {
+        metricResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricResult.Builder getMetricResultsBuilder(
+        int index) {
+      return internalGetMetricResultsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder getMetricResultsOrBuilder(
+        int index) {
+      if (metricResultsBuilder_ == null) {
+        return metricResults_.get(index);
+      } else {
+        return metricResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder>
+        getMetricResultsOrBuilderList() {
+      if (metricResultsBuilder_ != null) {
+        return metricResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(metricResults_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricResult.Builder addMetricResultsBuilder() {
+      return internalGetMetricResultsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.MetricResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricResult.Builder addMetricResultsBuilder(
+        int index) {
+      return internalGetMetricResultsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.MetricResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metric results for each instance.
+     * The order of the metric results is guaranteed to be the same as the order
+     * of the instances in the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.MetricResult.Builder>
+        getMetricResultsBuilderList() {
+      return internalGetMetricResultsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MetricResult,
+            com.google.cloud.aiplatform.v1beta1.MetricResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder>
+        internalGetMetricResultsFieldBuilder() {
+      if (metricResultsBuilder_ == null) {
+        metricResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.MetricResult,
+                com.google.cloud.aiplatform.v1beta1.MetricResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder>(
+                metricResults_,
+                ((bitField1_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        metricResults_ = null;
+      }
+      return metricResultsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse)

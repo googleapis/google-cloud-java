@@ -18,6 +18,7 @@ package com.google.cloud.databasecenter.v1beta.stub;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -29,6 +30,8 @@ import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import javax.annotation.Generated;
@@ -76,6 +79,14 @@ public abstract class DatabaseCenterStub implements BackgroundResource {
   public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregateIssueStatsCallable()");
+  }
+
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse> queryIssuesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryIssuesPagedCallable()");
+  }
+
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryIssuesCallable()");
   }
 
   @Override

@@ -53,6 +53,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
 
   private Repository() {
     name_ = "";
+    containingFolder_ = "";
+    teamFolderName_ = "";
     displayName_ = "";
     npmrcEnvironmentVariablesSecretVersion_ = "";
     serviceAccount_ = "";
@@ -237,7 +239,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Deprecated
@@ -257,7 +259,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
      * @return The tokenStatus.
      */
     @java.lang.Deprecated
@@ -1698,7 +1700,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Override
@@ -1721,7 +1723,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
      * @return The tokenStatus.
      */
     @java.lang.Override
@@ -2790,7 +2792,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
        * @return The enum numeric value on the wire for tokenStatus.
        */
       @java.lang.Override
@@ -2813,7 +2815,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
        * @param value The enum numeric value on the wire for tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2839,7 +2841,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
        * @return The tokenStatus.
        */
       @java.lang.Override
@@ -2869,7 +2871,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
        * @param value The tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2899,7 +2901,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -4104,6 +4106,168 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CONTAINING_FOLDER_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containingFolder_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the containing folder of the repository.
+   * The field is immutable and it can be modified via a MoveRepository
+   * operation.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+   * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+   * </pre>
+   *
+   * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the containingFolder field is set.
+   */
+  @java.lang.Override
+  public boolean hasContainingFolder() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the containing folder of the repository.
+   * The field is immutable and it can be modified via a MoveRepository
+   * operation.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+   * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+   * </pre>
+   *
+   * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The containingFolder.
+   */
+  @java.lang.Override
+  public java.lang.String getContainingFolder() {
+    java.lang.Object ref = containingFolder_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      containingFolder_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the containing folder of the repository.
+   * The field is immutable and it can be modified via a MoveRepository
+   * operation.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+   * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+   * </pre>
+   *
+   * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for containingFolder.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getContainingFolderBytes() {
+    java.lang.Object ref = containingFolder_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      containingFolder_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEAM_FOLDER_NAME_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object teamFolderName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the TeamFolder that this Repository is
+   * associated with. This should take the format:
+   * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+   * is not set, the Repository is not associated with a TeamFolder.
+   * </pre>
+   *
+   * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the teamFolderName field is set.
+   */
+  @java.lang.Override
+  public boolean hasTeamFolderName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the TeamFolder that this Repository is
+   * associated with. This should take the format:
+   * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+   * is not set, the Repository is not associated with a TeamFolder.
+   * </pre>
+   *
+   * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The teamFolderName.
+   */
+  @java.lang.Override
+  public java.lang.String getTeamFolderName() {
+    java.lang.Object ref = teamFolderName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      teamFolderName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the TeamFolder that this Repository is
+   * associated with. This should take the format:
+   * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+   * is not set, the Repository is not associated with a TeamFolder.
+   * </pre>
+   *
+   * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for teamFolderName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTeamFolderNameBytes() {
+    java.lang.Object ref = teamFolderName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      teamFolderName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -4121,7 +4285,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -4227,7 +4391,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGitRemoteSettings() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -4354,7 +4518,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasWorkspaceCompilationOverrides() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -4673,7 +4837,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDataEncryptionState() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -4738,7 +4902,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasInternalMetadata() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -4812,7 +4976,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(2, getGitRemoteSettings());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(
@@ -4820,7 +4984,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(
           output, 3, npmrcEnvironmentVariablesSecretVersion_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(4, getWorkspaceCompilationOverrides());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -4837,14 +5001,20 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, kmsKeyName_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(12, getDataEncryptionState());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getCreateTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 15, internalMetadata_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, containingFolder_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 18, teamFolderName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4858,7 +5028,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGitRemoteSettings());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(
@@ -4867,7 +5037,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.GeneratedMessage.computeStringSize(
               3, npmrcEnvironmentVariablesSecretVersion_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getWorkspaceCompilationOverrides());
@@ -4894,15 +5064,21 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, kmsKeyName_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDataEncryptionState());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCreateTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(15, internalMetadata_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, containingFolder_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(18, teamFolderName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4921,6 +5097,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.dataform.v1beta1.Repository) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasContainingFolder() != other.hasContainingFolder()) return false;
+    if (hasContainingFolder()) {
+      if (!getContainingFolder().equals(other.getContainingFolder())) return false;
+    }
+    if (hasTeamFolderName() != other.hasTeamFolderName()) return false;
+    if (hasTeamFolderName()) {
+      if (!getTeamFolderName().equals(other.getTeamFolderName())) return false;
+    }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -4963,6 +5147,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasContainingFolder()) {
+      hash = (37 * hash) + CONTAINING_FOLDER_FIELD_NUMBER;
+      hash = (53 * hash) + getContainingFolder().hashCode();
+    }
+    if (hasTeamFolderName()) {
+      hash = (37 * hash) + TEAM_FOLDER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTeamFolderName().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -5172,6 +5364,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      containingFolder_ = "";
+      teamFolderName_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5240,52 +5434,60 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.containingFolder_ = containingFolder_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.displayName_ = displayName_;
+        result.teamFolderName_ = teamFolderName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.gitRemoteSettings_ =
             gitRemoteSettingsBuilder_ == null
                 ? gitRemoteSettings_
                 : gitRemoteSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.npmrcEnvironmentVariablesSecretVersion_ = npmrcEnvironmentVariablesSecretVersion_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.workspaceCompilationOverrides_ =
             workspaceCompilationOverridesBuilder_ == null
                 ? workspaceCompilationOverrides_
                 : workspaceCompilationOverridesBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.setAuthenticatedUserAdmin_ = setAuthenticatedUserAdmin_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.dataEncryptionState_ =
             dataEncryptionStateBuilder_ == null
                 ? dataEncryptionState_
                 : dataEncryptionStateBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.internalMetadata_ = internalMetadata_;
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5307,12 +5509,22 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasContainingFolder()) {
+        containingFolder_ = other.containingFolder_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasTeamFolderName()) {
+        teamFolderName_ = other.teamFolderName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasGitRemoteSettings()) {
@@ -5320,25 +5532,25 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getNpmrcEnvironmentVariablesSecretVersion().isEmpty()) {
         npmrcEnvironmentVariablesSecretVersion_ = other.npmrcEnvironmentVariablesSecretVersion_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasWorkspaceCompilationOverrides()) {
         mergeWorkspaceCompilationOverrides(other.getWorkspaceCompilationOverrides());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       if (other.getSetAuthenticatedUserAdmin() != false) {
         setSetAuthenticatedUserAdmin(other.getSetAuthenticatedUserAdmin());
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasDataEncryptionState()) {
@@ -5346,7 +5558,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasInternalMetadata()) {
         internalMetadata_ = other.internalMetadata_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5385,13 +5597,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetGitRemoteSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 26:
               {
                 npmrcEnvironmentVariablesSecretVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
@@ -5399,7 +5611,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetWorkspaceCompilationOverridesFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 42:
@@ -5411,53 +5623,65 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 42
             case 66:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 72:
               {
                 setAuthenticatedUserAdmin_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
             case 82:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetDataEncryptionStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 106
             case 122:
               {
                 internalMetadata_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
+            case 130:
+              {
+                containingFolder_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 130
+            case 146:
+              {
+                teamFolderName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5588,6 +5812,312 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object containingFolder_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the containing folder of the repository.
+     * The field is immutable and it can be modified via a MoveRepository
+     * operation.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+     * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+     * </pre>
+     *
+     * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the containingFolder field is set.
+     */
+    public boolean hasContainingFolder() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the containing folder of the repository.
+     * The field is immutable and it can be modified via a MoveRepository
+     * operation.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+     * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+     * </pre>
+     *
+     * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The containingFolder.
+     */
+    public java.lang.String getContainingFolder() {
+      java.lang.Object ref = containingFolder_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        containingFolder_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the containing folder of the repository.
+     * The field is immutable and it can be modified via a MoveRepository
+     * operation.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+     * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+     * </pre>
+     *
+     * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for containingFolder.
+     */
+    public com.google.protobuf.ByteString getContainingFolderBytes() {
+      java.lang.Object ref = containingFolder_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        containingFolder_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the containing folder of the repository.
+     * The field is immutable and it can be modified via a MoveRepository
+     * operation.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+     * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+     * </pre>
+     *
+     * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The containingFolder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContainingFolder(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      containingFolder_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the containing folder of the repository.
+     * The field is immutable and it can be modified via a MoveRepository
+     * operation.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+     * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+     * </pre>
+     *
+     * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContainingFolder() {
+      containingFolder_ = getDefaultInstance().getContainingFolder();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the containing folder of the repository.
+     * The field is immutable and it can be modified via a MoveRepository
+     * operation.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;folders/&#42;`. or
+     * `projects/&#42;&#47;locations/&#42;&#47;teamFolders/&#42;`.
+     * </pre>
+     *
+     * <code>optional string containing_folder = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for containingFolder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContainingFolderBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      containingFolder_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object teamFolderName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the TeamFolder that this Repository is
+     * associated with. This should take the format:
+     * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+     * is not set, the Repository is not associated with a TeamFolder.
+     * </pre>
+     *
+     * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the teamFolderName field is set.
+     */
+    public boolean hasTeamFolderName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the TeamFolder that this Repository is
+     * associated with. This should take the format:
+     * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+     * is not set, the Repository is not associated with a TeamFolder.
+     * </pre>
+     *
+     * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The teamFolderName.
+     */
+    public java.lang.String getTeamFolderName() {
+      java.lang.Object ref = teamFolderName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        teamFolderName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the TeamFolder that this Repository is
+     * associated with. This should take the format:
+     * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+     * is not set, the Repository is not associated with a TeamFolder.
+     * </pre>
+     *
+     * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for teamFolderName.
+     */
+    public com.google.protobuf.ByteString getTeamFolderNameBytes() {
+      java.lang.Object ref = teamFolderName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        teamFolderName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the TeamFolder that this Repository is
+     * associated with. This should take the format:
+     * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+     * is not set, the Repository is not associated with a TeamFolder.
+     * </pre>
+     *
+     * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The teamFolderName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeamFolderName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      teamFolderName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the TeamFolder that this Repository is
+     * associated with. This should take the format:
+     * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+     * is not set, the Repository is not associated with a TeamFolder.
+     * </pre>
+     *
+     * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTeamFolderName() {
+      teamFolderName_ = getDefaultInstance().getTeamFolderName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the TeamFolder that this Repository is
+     * associated with. This should take the format:
+     * projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this
+     * is not set, the Repository is not associated with a TeamFolder.
+     * </pre>
+     *
+     * <code>optional string team_folder_name = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for teamFolderName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeamFolderNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      teamFolderName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -5609,7 +6139,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -5655,7 +6185,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5677,7 +6207,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5695,7 +6225,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -5706,7 +6236,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -5724,7 +6254,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5746,7 +6276,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5865,7 +6395,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5883,7 +6413,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5906,7 +6436,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5932,7 +6462,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * @return Whether the gitRemoteSettings field is set.
      */
     public boolean hasGitRemoteSettings() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -5979,7 +6509,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         gitRemoteSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6002,7 +6532,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         gitRemoteSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6021,7 +6551,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     public Builder mergeGitRemoteSettings(
         com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings value) {
       if (gitRemoteSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && gitRemoteSettings_ != null
             && gitRemoteSettings_
                 != com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings
@@ -6034,7 +6564,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         gitRemoteSettingsBuilder_.mergeFrom(value);
       }
       if (gitRemoteSettings_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -6052,7 +6582,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGitRemoteSettings() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       gitRemoteSettings_ = null;
       if (gitRemoteSettingsBuilder_ != null) {
         gitRemoteSettingsBuilder_.dispose();
@@ -6075,7 +6605,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.Builder
         getGitRemoteSettingsBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetGitRemoteSettingsFieldBuilder().getBuilder();
     }
@@ -6210,7 +6740,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       npmrcEnvironmentVariablesSecretVersion_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6234,7 +6764,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     public Builder clearNpmrcEnvironmentVariablesSecretVersion() {
       npmrcEnvironmentVariablesSecretVersion_ =
           getDefaultInstance().getNpmrcEnvironmentVariablesSecretVersion();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -6263,7 +6793,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       npmrcEnvironmentVariablesSecretVersion_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6293,7 +6823,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * @return Whether the workspaceCompilationOverrides field is set.
      */
     public boolean hasWorkspaceCompilationOverrides() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -6348,7 +6878,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         workspaceCompilationOverridesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6375,7 +6905,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         workspaceCompilationOverridesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6397,7 +6927,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     public Builder mergeWorkspaceCompilationOverrides(
         com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides value) {
       if (workspaceCompilationOverridesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && workspaceCompilationOverrides_ != null
             && workspaceCompilationOverrides_
                 != com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides
@@ -6410,7 +6940,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         workspaceCompilationOverridesBuilder_.mergeFrom(value);
       }
       if (workspaceCompilationOverrides_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -6431,7 +6961,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearWorkspaceCompilationOverrides() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       workspaceCompilationOverrides_ = null;
       if (workspaceCompilationOverridesBuilder_ != null) {
         workspaceCompilationOverridesBuilder_.dispose();
@@ -6457,7 +6987,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides.Builder
         getWorkspaceCompilationOverridesBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetWorkspaceCompilationOverridesFieldBuilder().getBuilder();
     }
@@ -6537,7 +7067,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return labels_;
     }
@@ -6627,7 +7157,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6652,7 +7182,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -6673,7 +7203,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -6688,7 +7218,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -6735,7 +7265,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     public Builder setSetAuthenticatedUserAdmin(boolean value) {
 
       setAuthenticatedUserAdmin_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6757,7 +7287,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSetAuthenticatedUserAdmin() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       setAuthenticatedUserAdmin_ = false;
       onChanged();
       return this;
@@ -6828,7 +7358,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6846,7 +7376,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -6869,7 +7399,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6957,7 +7487,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6981,7 +7511,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -7010,7 +7540,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -7037,7 +7567,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * @return Whether the dataEncryptionState field is set.
      */
     public boolean hasDataEncryptionState() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -7086,7 +7616,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         dataEncryptionStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7110,7 +7640,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       } else {
         dataEncryptionStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7130,7 +7660,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     public Builder mergeDataEncryptionState(
         com.google.cloud.dataform.v1beta1.DataEncryptionState value) {
       if (dataEncryptionStateBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && dataEncryptionState_ != null
             && dataEncryptionState_
                 != com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()) {
@@ -7142,7 +7672,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         dataEncryptionStateBuilder_.mergeFrom(value);
       }
       if (dataEncryptionState_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -7161,7 +7691,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDataEncryptionState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       dataEncryptionState_ = null;
       if (dataEncryptionStateBuilder_ != null) {
         dataEncryptionStateBuilder_.dispose();
@@ -7185,7 +7715,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder
         getDataEncryptionStateBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetDataEncryptionStateFieldBuilder().getBuilder();
     }
@@ -7259,7 +7789,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * @return Whether the internalMetadata field is set.
      */
     public boolean hasInternalMetadata() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -7334,7 +7864,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       internalMetadata_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7355,7 +7885,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearInternalMetadata() {
       internalMetadata_ = getDefaultInstance().getInternalMetadata();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -7381,7 +7911,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       internalMetadata_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
