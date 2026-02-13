@@ -241,7 +241,8 @@ libraries:
   name_pretty: Audit Manager API
   product_documentation: https://cloud.google.com/audit-manager/docs
   api_description: Lists information about the supported locations for this service.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-auditmanager/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-auditmanager/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-auditmanager
   api_id: auditmanager.googleapis.com
@@ -271,7 +272,8 @@ libraries:
   product_documentation: https://cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr
   api_description: 'Backup and DR Service is a powerful, centralized, cloud-first
     backup and disaster recovery solution for cloud-based and hybrid workloads. '
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview
   release_level: stable
   distribution_name: com.google.cloud:google-cloud-backupdr
   api_id: backupdr.googleapis.com
@@ -363,7 +365,8 @@ libraries:
   product_documentation: https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest
   api_description: allows users to manage BigQuery connections to external data sources.
   release_level: stable
-  client_documentation: https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1
+  client_documentation: 
+    https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1
   GAPICs:
   - proto_path: google/cloud/bigquery/connection/v1
   - proto_path: google/cloud/bigquery/connection/v1beta1
@@ -440,7 +443,8 @@ libraries:
   name_pretty: Capacity Planner API
   product_documentation: https://cloud.google.com/capacity-planner/docs
   api_description: Provides programmatic access to Capacity Planner features.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-capacityplanner/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-capacityplanner/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-capacityplanner
   api_id: capacityplanner.googleapis.com
@@ -487,7 +491,8 @@ libraries:
   api_description: The Google Cloud Security Operations API, popularly known as the
     Chronicle API, serves endpoints that enable security analysts to analyze and mitigate
     a security threat throughout its lifecycle
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-chronicle/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-chronicle/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-chronicle
   api_id: chronicle.googleapis.com
@@ -503,7 +508,8 @@ libraries:
   api_description: Cloud API Registry lets you discover, govern, use, and monitor
     Model Context Protocol (MCP) servers and tools provided by Google, or by your
     organization through Apigee API hub.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-cloudapiregistry/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-cloudapiregistry/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-cloudapiregistry
   api_id: cloudapiregistry.googleapis.com
@@ -549,8 +555,8 @@ libraries:
 - api_shortname: cloudquotas
   name_pretty: Cloud Quotas API
   product_documentation: https://cloud.google.com/cloudquotas/docs/
-  api_description: "Cloud Quotas API provides GCP service consumers with management\
-    \ and\n    observability for resource usage, quotas, and restrictions of the services\n\
+  api_description: "Cloud Quotas API provides GCP service consumers with management
+    and\n    observability for resource usage, quotas, and restrictions of the services\n\
     \    they consume."
   release_level: stable
   GAPICs:
@@ -558,11 +564,13 @@ libraries:
   - proto_path: google/api/cloudquotas/v1beta
 - api_shortname: cloudsecuritycompliance
   name_pretty: Cloud Security Compliance API
-  product_documentation: https://cloud.google.com/security-command-center/docs/compliance-manager-overview
+  product_documentation: 
+    https://cloud.google.com/security-command-center/docs/compliance-manager-overview
   api_description: Compliance Manager uses software-defined controls that let you
     assess support for multiple compliance programs and security requirements within
     a Google Cloud organization
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-cloudsecuritycompliance/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-cloudsecuritycompliance/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-cloudsecuritycompliance
   api_id: cloudsecuritycompliance.googleapis.com
@@ -583,11 +591,11 @@ libraries:
 - api_shortname: compute
   name_pretty: Compute Engine
   product_documentation: https://cloud.google.com/compute/
-  api_description: 'delivers virtual machines running in Google''s innovative data
-    centers and worldwide fiber network. Compute Engine''s tooling and workflow support
+  api_description: "delivers virtual machines running in Google's innovative data
+    centers and worldwide fiber network. Compute Engine's tooling and workflow support
     enable scaling from single instances to global, load-balanced cloud computing.
-    Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver
-    consistent performance and are available in many configurations. '
+    Compute Engine's VMs boot quickly, come with persistent disk storage, deliver
+    consistent performance and are available in many configurations. "
   release_level: stable
   excluded_poms: grpc-google-cloud-compute-v1
   excluded_dependencies: grpc-google-cloud-compute-v1
@@ -603,10 +611,12 @@ libraries:
   - proto_path: google/cloud/confidentialcomputing/v1alpha1
 - api_shortname: configdelivery
   name_pretty: Config Delivery API
-  product_documentation: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
   api_description: ConfigDelivery service manages the deployment of kubernetes configuration
     to a fleet of kubernetes clusters.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-configdelivery
   api_id: configdelivery.googleapis.com
@@ -614,16 +624,19 @@ libraries:
   group_id: com.google.cloud
   cloud_api: true
   requires_billing: true
-  rest_documentation: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
+  rest_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
   GAPICs:
   - proto_path: google/cloud/configdelivery/v1beta
   - proto_path: google/cloud/configdelivery/v1
 - api_shortname: connectgateway
   name_pretty: Connect Gateway API
-  product_documentation: https://cloud.google.com/kubernetes-engine/enterprise/multicluster-management/gateway
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/multicluster-management/gateway
   api_description: The Connect Gateway service allows connectivity from external parties
     to     connected Kubernetes clusters.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-connectgateway/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-connectgateway/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-connectgateway
   api_id: connectgateway.googleapis.com
@@ -695,14 +708,15 @@ libraries:
 - api_shortname: databasecenter
   name_pretty: Database Center API
   product_documentation: https://cloud.google.com/database-center/docs/overview
-  api_description: "Database Center provides an organization-wide, cross-product fleet\
-    \ health platform to eliminate the overhead, complexity, and risk associated with\
-    \ aggregating and summarizing health signals through custom dashboards. Through\
-    \ Database Center\u2019s fleet health dashboard and API, database platform teams\
-    \ that are responsible for reliability, compliance, security, cost, and administration\
-    \ of database fleets will now have a single pane of glass that pinpoints issues\
-    \ relevant to each team."
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview
+  api_description: Database Center provides an organization-wide, cross-product fleet
+    health platform to eliminate the overhead, complexity, and risk associated with
+    aggregating and summarizing health signals through custom dashboards. Through
+    Database Center’s fleet health dashboard and API, database platform teams that
+    are responsible for reliability, compliance, security, cost, and administration
+    of database fleets will now have a single pane of glass that pinpoints issues
+    relevant to each team.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-databasecenter
   api_id: databasecenter.googleapis.com
@@ -837,7 +851,8 @@ libraries:
   name_pretty: Developer Connect API
   product_documentation: https://cloud.google.com/developer-connect/docs/overview
   api_description: Connect third-party source code management to Google
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-developerconnect/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-developerconnect/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-developerconnect
   api_id: developerconnect.googleapis.com
@@ -851,7 +866,8 @@ libraries:
   name_pretty: Device Streaming API
   product_documentation: https://cloud.google.com/device-streaming/docs
   api_description: The Cloud API for device streaming usage.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-devicestreaming/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-devicestreaming/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-devicestreaming
   api_id: devicestreaming.googleapis.com
@@ -1027,11 +1043,13 @@ libraries:
   - proto_path: google/cloud/filestore/v1beta1
 - api_shortname: financialservices
   name_pretty: Financial Services API
-  product_documentation: https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
+  product_documentation: 
+    https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
   api_description: Google Cloud's Anti Money Laundering AI (AML AI) product is an
     API that scores AML risk. Use it to identify more risk, more defensibly, with
     fewer false positives and reduced time per review.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-financialservices/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-financialservices/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-financialservices
   api_id: financialservices.googleapis.com
@@ -1062,7 +1080,8 @@ libraries:
   api_description: Google Distributed Cloud connected allows you to run Kubernetes
     clusters on dedicated hardware provided and maintained by Google that is separate
     from the Google Cloud data center.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-gdchardwaremanagement/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-gdchardwaremanagement/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-gdchardwaremanagement
   api_id: gdchardwaremanagement.googleapis.com
@@ -1072,14 +1091,16 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/gdchardwaremanagement/v1alpha
   requires_billing: true
-  rpc_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
+  rpc_documentation: 
+    https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
 - api_shortname: geminidataanalytics
   name_pretty: Data Analytics API with Gemini
   product_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/overview
   api_description: Use Conversational Analytics API to build an artificial intelligence
     (AI)-powered chat interface, or data agent, that answers questions about structured
     data using natural language.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-geminidataanalytics
   api_id: geminidataanalytics.googleapis.com
@@ -1135,11 +1156,13 @@ libraries:
   - proto_path: google/cloud/gkehub/servicemesh/v1beta
 - api_shortname: gkerecommender
   name_pretty: GKE Recommender API
-  product_documentation: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   api_description: lets you analyze the performance and cost-efficiency of your inference
     workloads, and make data-driven decisions about resource allocation and model
     deployment strategies.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-gkerecommender/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-gkerecommender/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-gkerecommender
   api_id: gkerecommender.googleapis.com
@@ -1177,9 +1200,11 @@ libraries:
   - proto_path: google/apps/script/type/slides
 - api_shortname: hypercomputecluster
   name_pretty: Cluster Director API
-  product_documentation: https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements
+  product_documentation: 
+    https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements
   api_description: simplifies cluster management across compute, network, and storage
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-hypercomputecluster/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-hypercomputecluster/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-hypercomputecluster
   api_id: hypercomputecluster.googleapis.com
@@ -1270,7 +1295,8 @@ libraries:
   name_pretty: Merchant Issue Resolution API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programatically manage your Merchant Issues
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-issue-resolution
   api_id: merchantapi.googleapis.com
@@ -1286,7 +1312,8 @@ libraries:
   name_pretty: Merchant Order Tracking API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center Accounts
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-order-tracking
   api_id: merchantapi.googleapis.com
@@ -1341,7 +1368,8 @@ libraries:
   product_documentation: https://cloud.google.com/compute/docs/instances/windows/ms-licensing
   api_description: License Manager is a tool to manage and track third-party licenses
     on Google Cloud.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-licensemanager
   api_id: licensemanager.googleapis.com
@@ -1367,7 +1395,8 @@ libraries:
   api_description: Cloud Location Finder is a public API that offers a repository
     of all Google Cloud and Google Distributed Cloud locations, as well as cloud locations
     for other cloud providers.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-locationfinder/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-locationfinder/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-locationfinder
   api_id: locationfinder.googleapis.com
@@ -1418,7 +1447,8 @@ libraries:
   product_documentation: https://cloud.google.com/unified-maintenance/docs/overview
   api_description: The Maintenance API provides a centralized view of planned disruptive
     maintenance events across supported Google Cloud products.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-maintenance
   api_id: maintenance.googleapis.com
@@ -1447,7 +1477,8 @@ libraries:
   name_pretty: Managed Service for Apache Kafka
   product_documentation: https://cloud.google.com/managed-kafka
   api_description: Manage Apache Kafka clusters and resources.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-managedkafka
   api_id: managedkafka.googleapis.com
@@ -1473,7 +1504,8 @@ libraries:
   name_pretty: Places Insights API
   product_documentation: https://developers.google.com/maps/documentation/places-insights
   api_description: Places Insights API.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
   release_level: preview
   distribution_name: com.google.maps:google-maps-area-insights
   api_id: maps-area-insights.googleapis.com
@@ -1485,12 +1517,14 @@ libraries:
   requires_billing: true
 - api_shortname: maps-fleetengine
   name_pretty: Local Rides and Deliveries API
-  product_documentation: https://developers.google.com/maps/documentation/transportation-logistics/mobility
+  product_documentation: 
+    https://developers.google.com/maps/documentation/transportation-logistics/mobility
   api_description: Enables Fleet Engine for access to the On Demand Rides and Deliveries
     and Last Mile Fleet Solution APIs.  Customer's use of Google Maps Content in the
     Cloud Logging Services is subject to the Google Maps Platform Terms of Service
     located at https://cloud.google.com/maps-platform/terms.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview
   release_level: preview
   distribution_name: com.google.maps:google-maps-fleetengine
   api_id: maps-fleetengine.googleapis.com
@@ -1502,12 +1536,14 @@ libraries:
   requires_billing: true
 - api_shortname: maps-fleetengine-delivery
   name_pretty: Last Mile Fleet Solution Delivery API
-  product_documentation: https://developers.google.com/maps/documentation/transportation-logistics/mobility
+  product_documentation: 
+    https://developers.google.com/maps/documentation/transportation-logistics/mobility
   api_description: Enables Fleet Engine for access to the On Demand Rides and Deliveries
     and Last Mile Fleet Solution APIs.  Customer's use of Google Maps Content in the
     Cloud Logging Services is subject to the Google Maps Platform Terms of Service
     located at https://cloud.google.com/maps-platform/terms.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-fleetengine-delivery/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-fleetengine-delivery/latest/overview
   release_level: preview
   distribution_name: com.google.maps:google-maps-fleetengine-delivery
   api_id: maps-fleetengine-delivery.googleapis.com
@@ -1520,9 +1556,9 @@ libraries:
 - api_shortname: maps-mapsplatformdatasets
   name_pretty: Maps Platform Datasets API
   product_documentation: https://developers.google.com/maps/documentation
-  api_description: "The Maps Platform Datasets API enables developers to ingest geospatially-tied\
-    \ datasets\n    that they can use to enrich their experience of Maps Platform\
-    \ solutions (e.g. styling, routing)."
+  api_description: "The Maps Platform Datasets API enables developers to ingest geospatially-tied
+    datasets\n    that they can use to enrich their experience of Maps Platform solutions
+    (e.g. styling, routing)."
   api_id: mapsplatformdatasets.googleapis.com
   distribution_name: com.google.maps:google-maps-mapsplatformdatasets
   cloud_api: false
@@ -1544,7 +1580,8 @@ libraries:
   api_description: The Route Optimization API assigns tasks and routes to a vehicle
     fleet, optimizing against the objectives and constraints that you supply for your
     transportation goals.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
   release_level: preview
   distribution_name: com.google.maps:google-maps-routeoptimization
   api_id: routeoptimization.googleapis.com
@@ -1555,8 +1592,10 @@ libraries:
   - proto_path: google/maps/routeoptimization/v1
   library_name: maps-routeoptimization
   requires_billing: true
-  rest_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rest/
-  rpc_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rpc
+  rest_documentation: 
+    https://developers.google.com/maps/documentation/route-optimization/reference/rest/
+  rpc_documentation: 
+    https://developers.google.com/maps/documentation/route-optimization/reference/rpc
 - api_shortname: maps-routing
   name_pretty: Routes API
   product_documentation: https://developers.google.com/maps/documentation/routes
@@ -1644,7 +1683,8 @@ libraries:
   api_description: Model Armor helps you protect against risks like prompt injection,
     harmful content, and data leakage in generative AI applications by letting you
     define policies that filter user prompts and model responses.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-modelarmor/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-modelarmor/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-modelarmor
   api_id: modelarmor.googleapis.com
@@ -1682,7 +1722,8 @@ libraries:
   - proto_path: google/monitoring/dashboard/v1
 - api_shortname: monitoring-metricsscope
   name_pretty: Monitoring Metrics Scopes
-  product_documentation: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
+  product_documentation: 
+    https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
   api_description: The metrics scope defines the set of Google Cloud projects whose
     metrics the current Google Cloud project can access.
   api_id: monitoring.googleapis.com
@@ -1699,7 +1740,8 @@ libraries:
   - proto_path: google/cloud/netapp/v1
 - api_shortname: networkmanagement
   name_pretty: Network Management API
-  product_documentation: https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
+  product_documentation: 
+    https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
   api_description: provides a collection of network performance monitoring and diagnostic
     capabilities.
   library_name: network-management
@@ -1733,7 +1775,8 @@ libraries:
     on top of planet-scale infrastructure that leverages automation, advanced AI,
     and programmability, enabling enterprises to connect, scale, secure, modernize
     and optimize their infrastructure.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-networkservices
   api_id: networkservices.googleapis.com
@@ -1773,7 +1816,8 @@ libraries:
   product_documentation: https://cloud.google.com/oracle/database/docs
   api_description: The Oracle Database@Google Cloud API provides a set of APIs to
     manage   Oracle database services, such as Exadata and Autonomous Databases.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-oracledatabase/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-oracledatabase/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-oracledatabase
   api_id: oracledatabase.googleapis.com
@@ -1803,7 +1847,8 @@ libraries:
   product_documentation: n/a
   api_description: n/a
   release_level: stable
-  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-cloud-orgpolicy-v1/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/proto-google-cloud-orgpolicy-v1/latest/overview
   GAPICs:
   - proto_path: google/cloud/orgpolicy/v1
   - proto_path: google/cloud/orgpolicy/v2
@@ -1835,7 +1880,8 @@ libraries:
   product_documentation: https://cloud/parallelstore?hl=en
   api_description: 'Parallelstore is based on Intel DAOS and delivers up to 6.3x greater
     read throughput performance compared to competitive Lustre scratch offerings. '
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-parallelstore/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-parallelstore/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-parallelstore
   api_id: parallelstore.googleapis.com
@@ -1853,7 +1899,8 @@ libraries:
     to store,     access and manage the lifecycle of your workload parameters. Parameter     Manager
     aims to make management of sensitive application parameters     effortless for
     customers without diminishing focus on security.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-parametermanager/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-parametermanager/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-parametermanager
   api_id: parametermanager.googleapis.com
@@ -1909,7 +1956,8 @@ libraries:
   - proto_path: google/cloud/privatecatalog/v1beta1
 - api_shortname: privilegedaccessmanager
   name_pretty: Privileged Access Manager API
-  product_documentation: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
+  product_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
   api_description: Privileged Access Manager (PAM) helps you on your journey towards
     least privilege and helps mitigate risks tied to privileged access misuse orabuse.
     PAM allows you to shift from always-on standing privileges towards on-demand access
@@ -1922,7 +1970,8 @@ libraries:
     access for developers for critical deployment or maintenance, temporary access
     for operators for data ingestion and audits, JIT access to service accounts for
     automated tasks, and more.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-privilegedaccessmanager
   api_id: privilegedaccessmanager.googleapis.com
@@ -2043,7 +2092,8 @@ libraries:
   name_pretty: SaaS Runtime API
   product_documentation: https://cloud.google.com/saas-runtime/docs/overview
   api_description: "Model, deploy, and operate your SaaS at scale.\t"
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-saasservicemgmt/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-saasservicemgmt/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-saasservicemgmt
   api_id: saasservicemgmt.googleapis.com
@@ -2085,8 +2135,8 @@ libraries:
 - api_shortname: securesourcemanager
   name_pretty: Secure Source Manager API
   product_documentation: https://cloud.google.com/secure-source-manager/docs/overview
-  api_description: "Regionally deployed, single-tenant managed source code repository\
-    \ hosted on\n    Google Cloud."
+  api_description: "Regionally deployed, single-tenant managed source code repository
+    hosted on\n    Google Cloud."
   release_level: stable
   GAPICs:
   - proto_path: google/cloud/securesourcemanager/v1
@@ -2231,7 +2281,8 @@ libraries:
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-accounts
   api_id: merchantapi.googleapis.com
@@ -2247,7 +2298,8 @@ libraries:
   name_pretty: Merchant Conversions API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-conversions
   api_id: shopping-merchant-conversions.googleapis.com
@@ -2262,7 +2314,8 @@ libraries:
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-datasources
   api_id: merchantapi.googleapis.com
@@ -2289,7 +2342,8 @@ libraries:
   name_pretty: Merchant LFP API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-lfp
   api_id: shopping-merchant-lfp.googleapis.com
@@ -2304,7 +2358,8 @@ libraries:
   name_pretty: Merchant Notifications API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-notifications
   api_id: shopping-merchant-notifications.googleapis.com
@@ -2319,7 +2374,8 @@ libraries:
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your products.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-productstudio/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-productstudio/latest/overview
   release_level: preview
   distribution_name: com.google.shopping:google-shopping-merchant-productstudio
   api_id: merchantapi.googleapis.com
@@ -2334,7 +2390,8 @@ libraries:
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-products
   api_id: merchantapi.googleapis.com
@@ -2349,7 +2406,8 @@ libraries:
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-promotions
   api_id: merchantapi.googleapis.com
@@ -2365,7 +2423,8 @@ libraries:
   name_pretty: Merchant Quota API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
   release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-quota
   api_id: shopping-merchant-quota.googleapis.com
@@ -2392,7 +2451,8 @@ libraries:
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center Accounts.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
   release_level: preview
   distribution_name: com.google.shopping:google-shopping-merchant-reviews
   library_type: GAPIC_AUTO
@@ -2404,11 +2464,13 @@ libraries:
   library_name: shopping-merchant-reviews
 - api_shortname: spanneradapter
   name_pretty: Cloud Spanner Adapter API
-  product_documentation: https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
+  product_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
   api_description: The Cloud Spanner Adapter service allows native drivers of supported     database
     dialects to interact directly with Cloud Spanner by wrapping the underlying     wire
     protocol used by the driver in a gRPC stream.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-spanneradapter
   api_id: spanneradapter.googleapis.com
@@ -2448,7 +2510,8 @@ libraries:
   api_description: Storage batch operations is a Cloud Storage management feature
     that performs operations on billions of Cloud Storage objects in a serverless
     manner.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-storagebatchoperations/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-storagebatchoperations/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-storagebatchoperations
   api_id: storagebatchoperations.googleapis.com
@@ -2562,7 +2625,8 @@ libraries:
   product_documentation: https://cloud.google.com/memorystore/docs/valkey
   api_description: Memorystore for Valkey is a fully managed Valkey Cluster service
     for Google Cloud.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-memorystore/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-memorystore/latest/overview
   release_level: stable
   api_id: memorystore.googleapis.com
   library_type: GAPIC_AUTO
@@ -2585,7 +2649,8 @@ libraries:
     with associated metadata, automatically generate embeddings from your data, and
     perform fast approximate nearest neighbor (ANN) searches to find semantically
     similar items at scale.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-vectorsearch/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-vectorsearch/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-vectorsearch
   api_id: vectorsearch.googleapis.com
@@ -2664,7 +2729,8 @@ libraries:
   product_documentation: https://cloud.google.com/vision-ai/docs
   api_description: Vertex AI Vision is an AI-powered platform to ingest, analyze and
     store video data.
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-visionai/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-visionai/latest/overview
   release_level: preview
   distribution_name: com.google.cloud:google-cloud-visionai
   api_id: visionai.googleapis.com
@@ -2705,14 +2771,14 @@ libraries:
 - api_shortname: webrisk
   name_pretty: Web Risk
   product_documentation: https://cloud.google.com/web-risk/docs/
-  api_description: "is a Google Cloud service that lets client applications check\
-    \ URLs against Google's constantly updated lists of unsafe web resources. Unsafe\
-    \ web resources include social engineering sites\u2014such as phishing and deceptive\
-    \ sites\u2014and sites that host malware or unwanted software. With the Web Risk\
-    \ API, you can quickly identify known bad sites, warn users before they click\
-    \ infected links, and prevent users from posting links to known infected pages\
-    \ from your site. The Web Risk API includes data on more than a million unsafe\
-    \ URLs and stays up to date by examining billions of URLs each day."
+  api_description: is a Google Cloud service that lets client applications check URLs
+    against Google's constantly updated lists of unsafe web resources. Unsafe web
+    resources include social engineering sites—such as phishing and deceptive sites—and
+    sites that host malware or unwanted software. With the Web Risk API, you can quickly
+    identify known bad sites, warn users before they click infected links, and prevent
+    users from posting links to known infected pages from your site. The Web Risk
+    API includes data on more than a million unsafe URLs and stays up to date by examining
+    billions of URLs each day.
   release_level: stable
   requires_billing: false
   issue_tracker: ''
@@ -2758,6 +2824,24 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workflows/v1
   - proto_path: google/cloud/workflows/v1beta
+- api_shortname: workloadmanager
+  name_pretty: Workload Manager API
+  product_documentation: https://docs.cloud.google.com/workload-manager/docs
+  api_description: Workload Manager is a service that provides tooling for enterprise
+    workloads to automate the deployment and validation of your workloads against
+    best practices and recommendations.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-workloadmanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-workloadmanager
+  api_id: workloadmanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/workloadmanager/v1
+  requires_billing: true
+  rpc_documentation: https://docs.cloud.google.com/workload-manager/docs/reference/rest
 - api_shortname: workspaceevents
   name_pretty: Google Workspace Events API
   product_documentation: https://developers.google.com/workspace/events
