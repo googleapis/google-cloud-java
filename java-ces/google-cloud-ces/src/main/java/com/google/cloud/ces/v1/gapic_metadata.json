@@ -1,0 +1,231 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.ces.v1",
+  "libraryPackage": "com.google.cloud.ces.v1",
+  "services": {
+    "AgentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentServiceClient",
+          "rpcs": {
+            "BatchDeleteConversations": {
+              "methods": ["batchDeleteConversationsAsync", "batchDeleteConversationsAsync", "batchDeleteConversationsAsync", "batchDeleteConversationsOperationCallable", "batchDeleteConversationsCallable"]
+            },
+            "CreateAgent": {
+              "methods": ["createAgent", "createAgent", "createAgent", "createAgent", "createAgent", "createAgentCallable"]
+            },
+            "CreateApp": {
+              "methods": ["createAppAsync", "createAppAsync", "createAppAsync", "createAppAsync", "createAppAsync", "createAppOperationCallable", "createAppCallable"]
+            },
+            "CreateAppVersion": {
+              "methods": ["createAppVersion", "createAppVersion", "createAppVersion", "createAppVersion", "createAppVersion", "createAppVersionCallable"]
+            },
+            "CreateDeployment": {
+              "methods": ["createDeployment", "createDeployment", "createDeployment", "createDeployment", "createDeployment", "createDeploymentCallable"]
+            },
+            "CreateExample": {
+              "methods": ["createExample", "createExample", "createExample", "createExample", "createExample", "createExampleCallable"]
+            },
+            "CreateGuardrail": {
+              "methods": ["createGuardrail", "createGuardrail", "createGuardrail", "createGuardrail", "createGuardrail", "createGuardrailCallable"]
+            },
+            "CreateTool": {
+              "methods": ["createTool", "createTool", "createTool", "createTool", "createTool", "createToolCallable"]
+            },
+            "CreateToolset": {
+              "methods": ["createToolset", "createToolset", "createToolset", "createToolset", "createToolset", "createToolsetCallable"]
+            },
+            "DeleteAgent": {
+              "methods": ["deleteAgent", "deleteAgent", "deleteAgent", "deleteAgentCallable"]
+            },
+            "DeleteApp": {
+              "methods": ["deleteAppAsync", "deleteAppAsync", "deleteAppAsync", "deleteAppOperationCallable", "deleteAppCallable"]
+            },
+            "DeleteAppVersion": {
+              "methods": ["deleteAppVersion", "deleteAppVersion", "deleteAppVersion", "deleteAppVersionCallable"]
+            },
+            "DeleteConversation": {
+              "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteDeployment": {
+              "methods": ["deleteDeployment", "deleteDeployment", "deleteDeployment", "deleteDeploymentCallable"]
+            },
+            "DeleteExample": {
+              "methods": ["deleteExample", "deleteExample", "deleteExample", "deleteExampleCallable"]
+            },
+            "DeleteGuardrail": {
+              "methods": ["deleteGuardrail", "deleteGuardrail", "deleteGuardrail", "deleteGuardrailCallable"]
+            },
+            "DeleteTool": {
+              "methods": ["deleteTool", "deleteTool", "deleteTool", "deleteToolCallable"]
+            },
+            "DeleteToolset": {
+              "methods": ["deleteToolset", "deleteToolset", "deleteToolset", "deleteToolsetCallable"]
+            },
+            "ExportApp": {
+              "methods": ["exportAppAsync", "exportAppAsync", "exportAppAsync", "exportAppOperationCallable", "exportAppCallable"]
+            },
+            "GetAgent": {
+              "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
+            },
+            "GetApp": {
+              "methods": ["getApp", "getApp", "getApp", "getAppCallable"]
+            },
+            "GetAppVersion": {
+              "methods": ["getAppVersion", "getAppVersion", "getAppVersion", "getAppVersionCallable"]
+            },
+            "GetChangelog": {
+              "methods": ["getChangelog", "getChangelog", "getChangelog", "getChangelogCallable"]
+            },
+            "GetConversation": {
+              "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "GetDeployment": {
+              "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
+            },
+            "GetExample": {
+              "methods": ["getExample", "getExample", "getExample", "getExampleCallable"]
+            },
+            "GetGuardrail": {
+              "methods": ["getGuardrail", "getGuardrail", "getGuardrail", "getGuardrailCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTool": {
+              "methods": ["getTool", "getTool", "getTool", "getToolCallable"]
+            },
+            "GetToolset": {
+              "methods": ["getToolset", "getToolset", "getToolset", "getToolsetCallable"]
+            },
+            "ImportApp": {
+              "methods": ["importAppAsync", "importAppAsync", "importAppAsync", "importAppOperationCallable", "importAppCallable"]
+            },
+            "ListAgents": {
+              "methods": ["listAgents", "listAgents", "listAgents", "listAgentsPagedCallable", "listAgentsCallable"]
+            },
+            "ListAppVersions": {
+              "methods": ["listAppVersions", "listAppVersions", "listAppVersions", "listAppVersionsPagedCallable", "listAppVersionsCallable"]
+            },
+            "ListApps": {
+              "methods": ["listApps", "listApps", "listApps", "listAppsPagedCallable", "listAppsCallable"]
+            },
+            "ListChangelogs": {
+              "methods": ["listChangelogs", "listChangelogs", "listChangelogs", "listChangelogsPagedCallable", "listChangelogsCallable"]
+            },
+            "ListConversations": {
+              "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
+            },
+            "ListDeployments": {
+              "methods": ["listDeployments", "listDeployments", "listDeployments", "listDeploymentsPagedCallable", "listDeploymentsCallable"]
+            },
+            "ListExamples": {
+              "methods": ["listExamples", "listExamples", "listExamples", "listExamplesPagedCallable", "listExamplesCallable"]
+            },
+            "ListGuardrails": {
+              "methods": ["listGuardrails", "listGuardrails", "listGuardrails", "listGuardrailsPagedCallable", "listGuardrailsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTools": {
+              "methods": ["listTools", "listTools", "listTools", "listToolsPagedCallable", "listToolsCallable"]
+            },
+            "ListToolsets": {
+              "methods": ["listToolsets", "listToolsets", "listToolsets", "listToolsetsPagedCallable", "listToolsetsCallable"]
+            },
+            "RestoreAppVersion": {
+              "methods": ["restoreAppVersionAsync", "restoreAppVersionAsync", "restoreAppVersionAsync", "restoreAppVersionOperationCallable", "restoreAppVersionCallable"]
+            },
+            "UpdateAgent": {
+              "methods": ["updateAgent", "updateAgent", "updateAgentCallable"]
+            },
+            "UpdateApp": {
+              "methods": ["updateApp", "updateApp", "updateAppCallable"]
+            },
+            "UpdateDeployment": {
+              "methods": ["updateDeployment", "updateDeployment", "updateDeploymentCallable"]
+            },
+            "UpdateExample": {
+              "methods": ["updateExample", "updateExample", "updateExampleCallable"]
+            },
+            "UpdateGuardrail": {
+              "methods": ["updateGuardrail", "updateGuardrail", "updateGuardrailCallable"]
+            },
+            "UpdateTool": {
+              "methods": ["updateTool", "updateTool", "updateToolCallable"]
+            },
+            "UpdateToolset": {
+              "methods": ["updateToolset", "updateToolset", "updateToolsetCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SessionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionServiceClient",
+          "rpcs": {
+            "BidiRunSession": {
+              "methods": ["bidiRunSessionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RunSession": {
+              "methods": ["runSession", "runSessionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ToolService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ToolServiceClient",
+          "rpcs": {
+            "ExecuteTool": {
+              "methods": ["executeTool", "executeToolCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RetrieveToolSchema": {
+              "methods": ["retrieveToolSchema", "retrieveToolSchemaCallable"]
+            },
+            "RetrieveTools": {
+              "methods": ["retrieveTools", "retrieveToolsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "WidgetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WidgetServiceClient",
+          "rpcs": {
+            "GenerateChatToken": {
+              "methods": ["generateChatToken", "generateChatTokenCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
