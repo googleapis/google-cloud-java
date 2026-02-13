@@ -6,7 +6,7 @@
   <version>3.21.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   <packaging>jar</packaging>
   <name>BigQuery Storage</name>
-  <url>https://github.com/googleapis/java-bigquerystorage</url>
+  <url>https://github.com/googleapis/google-cloud-java</url>
   <description>BigQuery Storage</description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -18,16 +18,6 @@
   </properties>
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>org.apache.arrow</groupId>
-        <artifactId>arrow-vector</artifactId>
-        <version>17.0.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.arrow</groupId>
-        <artifactId>arrow-memory-core</artifactId>
-        <version>17.0.0</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
@@ -186,7 +176,6 @@
       <artifactId>arrow-vector</artifactId>
     </dependency>
 
-    <!-- Test dependencies -->
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk</artifactId>
@@ -217,8 +206,6 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- The generated tests from gapic-generator are still generated with JUnit4. -->
-    <!-- Remove once they are migrated to JUnit 5.x+ -->
     <dependency>
       <groupId>org.junit.vintage</groupId>
       <artifactId>junit-vintage-engine</artifactId>
@@ -311,7 +298,6 @@
       <artifactId>grpc-google-cloud-bigquerystorage-v1</artifactId>
     </dependency>
 
-    <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
@@ -347,7 +333,6 @@
       <!-- This profile is used to enable GraalVM native image testing in BQ storage-->
       <id>customNative</id>
       <dependencies>
-        <!-- Add this dependency to resolve class org.opentest4j.TestAbortedException -->
         <dependency>
           <groupId>org.opentest4j</groupId>
           <artifactId>opentest4j</artifactId>
