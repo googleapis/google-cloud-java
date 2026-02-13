@@ -33,26 +33,17 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
-if [[ -n "${BUILD_SUBDIR}" ]]
-then
-  echo "Compiling and building all modules for ${BUILD_SUBDIR}"
-  mvn clean install \
-    -DskipTests \
-    -Dclirr.skip \
-    -Dflatten.skip \
-    -Dcheckstyle.skip \
-    -Djacoco.skip \
-    -Denforcer.skip \
-    --also-make \
-    --projects "${BUILD_SUBDIR}"
-  echo "Running in subdir: ${BUILD_SUBDIR}"
-  pushd "${BUILD_SUBDIR}"
-fi
-
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+    fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
       mvn test \
@@ -67,6 +58,12 @@ case ${JOB_TYPE} in
         -Dmaven.wagon.http.retryHandler.count=5 \
         -T 1C ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
+
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
     echo "Finished running unit tests"
     ;;
   integration)
@@ -83,6 +80,41 @@ case ${JOB_TYPE} in
       run_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
+    fi
+    ;;
+  integration-single)
+    generate_modified_modules_list false
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running integration checks -- this is Release Please SNAPSHOT pull request."
+    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
+      echo "${BUILD_SUBDIR} not modified, skipping split integration test"
+    else
+      echo "${BUILD_SUBDIR} modified, running split integration test"
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
+      echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
+      mvn verify -Penable-integration-tests \
+        ${INTEGRATION_TEST_ARGS} \
+        -B -ntp -fae \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Djacoco.skip=true \
+        -DskipUnitTests=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -T 1C ${SUREFIRE_JVM_OPT}
+
+      RETURN_CODE=$?
+      popd
+      printf "Finished integration tests for modules:\n%s\n" "${BUILD_SUBDIR}"
     fi
     ;;
   graalvm-presubmit)
@@ -109,7 +141,44 @@ case ${JOB_TYPE} in
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
     ;;
+  graalvm-single)
+    generate_modified_modules_list false    
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
+      echo "${BUILD_SUBDIR} not modified, skipping split GraalVM test"
+    else
+      echo "${BUILD_SUBDIR} modified, running split GraalVM test"
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
+      mvn test -Pnative \
+        ${INTEGRATION_TEST_ARGS} \
+        -B -ntp -fae \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true
+
+      RETURN_CODE=$?
+      popd
+      printf "Finished GraalVM ITs for modules:\n%s\n" "${BUILD_SUBDIR}"
+    fi
+    ;;
   lint)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+    fi
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
         echo "${changed_file_list}"
@@ -137,16 +206,16 @@ case ${JOB_TYPE} in
       -T 1.5C \
       com.spotify.fmt:fmt-maven-plugin:check
     mvn -B -ntp checkstyle:check@checkstyle
+
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
     ;;
   *) ;;
 
 esac
-
-if [[ -n "${BUILD_SUBDIR}" ]]
-then
-  echo "restoring directory"
-  popd
-fi
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then
   bash ${KOKORO_GFILE_DIR}/codecov.sh

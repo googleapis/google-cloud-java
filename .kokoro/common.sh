@@ -13,7 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-vertexai')
+excluded_modules=(
+  'gapic-libraries-bom'
+  'google-cloud-jar-parent'
+  'google-cloud-pom-parent'
+  'java-vertexai'
+  'java-logging'
+)
 
 function retry_with_backoff {
   attempts_left=$1
@@ -56,10 +62,8 @@ function retry_with_backoff {
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
-  pushd "$1" >/dev/null
-
   submodules_array=()
-  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules)
+  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules -pl "$1")
   if mvn_submodules=$(grep '<.*>.*</.*>' <<< "$mvn_submodules"); then
     mvn_submodules=$(sed -e 's/<.*>\(.*\)<\/.*>/\1/g' <<< "$mvn_submodules")
     for submodule in $mvn_submodules; do
@@ -77,8 +81,6 @@ function parse_submodules() {
     echo "${submodules_array[*]}"
   )
   export submodules
-
-  popd >/dev/null
 }
 
 # Given a list of folders containing maven multi-modules, assign the variable 'all_submodules' to a
@@ -155,6 +157,13 @@ function release_please_snapshot_pull_request() {
   fi
 }
 
+# Sets bash variables for maven_modules and modified_module_list
+# maven_modules is the list of all maven submodules of the root pom
+# modified_module_list is the subset of maven_modules that have been touched
+# in the current pull request
+#
+# The first positional argument is a value true/false. If true (default), then
+# exclude modules from the global exclusion list.
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
   # Filter for java modules and get all the unique elements
@@ -167,11 +176,19 @@ function generate_modified_modules_list() {
   # Generate the list of valid maven modules
   maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
   maven_modules=()
-  for module in $maven_modules_list; do
-    if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
-      maven_modules+=("${module}")
-    fi
-  done
+
+  # If the first argument is "true" (default), then use the module exclusion list
+  use_exclusion_list=${1:-true}
+  if [[ "${use_exclusion_list}" == "true" ]]; then
+    echo "Excluding modules from the global exclusion list"
+    for module in $maven_modules_list; do
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
+        maven_modules+=("${module}")
+      fi
+    done
+  else
+    maven_modules=(${maven_modules_list[*]})
+  fi
 
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
