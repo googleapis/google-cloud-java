@@ -18,6 +18,7 @@ package com.google.cloud.databasecenter.v1beta.stub;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -33,6 +34,8 @@ import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -103,6 +106,17 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<QueryIssuesRequest, QueryIssuesResponse>
+      queryIssuesMethodDescriptor =
+          MethodDescriptor.<QueryIssuesRequest, QueryIssuesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/QueryIssues")
+              .setRequestMarshaller(ProtoUtils.marshaller(QueryIssuesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryIssuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
   private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable;
@@ -117,6 +131,9 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
       queryDatabaseResourceGroupsPagedCallable;
   private final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable;
+  private final UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable;
+  private final UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse>
+      queryIssuesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -183,6 +200,10 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
             GrpcCallSettings.<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
                 .setMethodDescriptor(aggregateIssueStatsMethodDescriptor)
                 .build();
+    GrpcCallSettings<QueryIssuesRequest, QueryIssuesResponse> queryIssuesTransportSettings =
+        GrpcCallSettings.<QueryIssuesRequest, QueryIssuesResponse>newBuilder()
+            .setMethodDescriptor(queryIssuesMethodDescriptor)
+            .build();
 
     this.queryProductsCallable =
         callableFactory.createUnaryCallable(
@@ -211,6 +232,12 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
             aggregateIssueStatsTransportSettings,
             settings.aggregateIssueStatsSettings(),
             clientContext);
+    this.queryIssuesCallable =
+        callableFactory.createUnaryCallable(
+            queryIssuesTransportSettings, settings.queryIssuesSettings(), clientContext);
+    this.queryIssuesPagedCallable =
+        callableFactory.createPagedCallable(
+            queryIssuesTransportSettings, settings.queryIssuesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -258,6 +285,16 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable() {
     return aggregateIssueStatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable() {
+    return queryIssuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse> queryIssuesPagedCallable() {
+    return queryIssuesPagedCallable;
   }
 
   @Override

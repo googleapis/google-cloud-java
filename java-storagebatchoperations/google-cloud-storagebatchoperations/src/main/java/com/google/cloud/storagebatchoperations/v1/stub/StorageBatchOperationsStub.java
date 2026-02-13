@@ -16,6 +16,7 @@
 
 package com.google.cloud.storagebatchoperations.v1.stub;
 
+import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListBucketOperationsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListJobsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListLocationsPagedResponse;
 
@@ -26,12 +27,16 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storagebatchoperations.v1.BucketOperation;
 import com.google.cloud.storagebatchoperations.v1.CancelJobRequest;
 import com.google.cloud.storagebatchoperations.v1.CancelJobResponse;
 import com.google.cloud.storagebatchoperations.v1.CreateJobRequest;
 import com.google.cloud.storagebatchoperations.v1.DeleteJobRequest;
+import com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest;
 import com.google.cloud.storagebatchoperations.v1.GetJobRequest;
 import com.google.cloud.storagebatchoperations.v1.Job;
+import com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest;
+import com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse;
 import com.google.cloud.storagebatchoperations.v1.ListJobsRequest;
 import com.google.cloud.storagebatchoperations.v1.ListJobsResponse;
 import com.google.cloud.storagebatchoperations.v1.OperationMetadata;
@@ -83,6 +88,20 @@ public abstract class StorageBatchOperationsStub implements BackgroundResource {
 
   public UnaryCallable<CancelJobRequest, CancelJobResponse> cancelJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelJobCallable()");
+  }
+
+  public UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsPagedResponse>
+      listBucketOperationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBucketOperationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsResponse>
+      listBucketOperationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBucketOperationsCallable()");
+  }
+
+  public UnaryCallable<GetBucketOperationRequest, BucketOperation> getBucketOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBucketOperationCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

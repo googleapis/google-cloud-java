@@ -19,6 +19,9 @@
             "QueryDatabaseResourceGroups": {
               "methods": ["queryDatabaseResourceGroups", "queryDatabaseResourceGroupsPagedCallable", "queryDatabaseResourceGroupsCallable"]
             },
+            "QueryIssues": {
+              "methods": ["queryIssues", "queryIssues", "queryIssuesPagedCallable", "queryIssuesCallable"]
+            },
             "QueryProducts": {
               "methods": ["queryProducts", "queryProductsPagedCallable", "queryProductsCallable"]
             }

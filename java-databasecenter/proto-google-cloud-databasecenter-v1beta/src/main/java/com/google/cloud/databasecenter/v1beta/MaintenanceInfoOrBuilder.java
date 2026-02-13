@@ -144,11 +144,11 @@ public interface MaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Current Maintenance version of the database resource. Example:
+   * Output only. Current Maintenance version of the database resource. Example:
    * "MYSQL_8_0_41.R20250531.01_15"
    * </pre>
    *
-   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The maintenanceVersion.
    */
@@ -158,11 +158,11 @@ public interface MaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Current Maintenance version of the database resource. Example:
+   * Output only. Current Maintenance version of the database resource. Example:
    * "MYSQL_8_0_41.R20250531.01_15"
    * </pre>
    *
-   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for maintenanceVersion.
    */

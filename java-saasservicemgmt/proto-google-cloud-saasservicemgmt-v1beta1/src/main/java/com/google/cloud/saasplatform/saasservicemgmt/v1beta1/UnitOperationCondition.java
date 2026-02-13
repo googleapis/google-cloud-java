@@ -333,6 +333,26 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * <code>TYPE_CANCELLED = 5;</code>
      */
     TYPE_CANCELLED(5),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if AppHub app has been created.
+     * </pre>
+     *
+     * <code>TYPE_APP_CREATED = 6;</code>
+     */
+    TYPE_APP_CREATED(6),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if services and workloads have been registered with AppHub.
+     * </pre>
+     *
+     * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
+     */
+    TYPE_APP_COMPONENTS_REGISTERED(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -401,6 +421,28 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      */
     public static final int TYPE_CANCELLED_VALUE = 5;
 
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if AppHub app has been created.
+     * </pre>
+     *
+     * <code>TYPE_APP_CREATED = 6;</code>
+     */
+    public static final int TYPE_APP_CREATED_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if services and workloads have been registered with AppHub.
+     * </pre>
+     *
+     * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
+     */
+    public static final int TYPE_APP_COMPONENTS_REGISTERED_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -435,6 +477,10 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
           return TYPE_SUCCEEDED;
         case 5:
           return TYPE_CANCELLED;
+        case 6:
+          return TYPE_APP_CREATED;
+        case 7:
+          return TYPE_APP_COMPONENTS_REGISTERED;
         default:
           return null;
       }
