@@ -134,6 +134,7 @@
     <module>java-life-sciences</module>
     <module>java-locationfinder</module>
     <module>java-logging</module>
+    <module>java-logging-logback</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
     <module>java-managed-identities</module>

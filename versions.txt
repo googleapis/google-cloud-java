@@ -945,3 +945,4 @@ grpc-google-cloud-cloudapiregistry-v1:0.3.0:0.4.0-SNAPSHOT
 google-cloud-logging:3.25.0:3.26.0-SNAPSHOT
 grpc-google-cloud-logging-v2:0.114.0:0.115.0-SNAPSHOT
 proto-google-cloud-logging-v2:0.114.0:0.115.0-SNAPSHOT
+google-cloud-logging-logback:0.134.0-alpha:0.134.1-alpha-SNAPSHOT

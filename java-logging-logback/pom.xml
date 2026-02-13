@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>google-cloud-logging-logback</artifactId>
+  <version>0.134.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+  <packaging>jar</packaging>
+  <name>Google Cloud Logging Logback Appender</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    Logback support for Google Cloud Logging
+  </description>
+
+  <properties>
+    <logback.version>1.2.13</logback.version>
+    <easymock.version>5.6.0</easymock.version>
+    <truth.version>1.4.4</truth.version>
+    <logging.version>3.25.0</logging.version>
+    <slf4j.version>1.7.36</slf4j.version>
+    <google.api-common.version>1.10.1</google.api-common.version>
+  </properties>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <developers>
+    <developer>
+      <id>chingor</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-logging</artifactId>
+      <version>3.26.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <exclusions>
+         <exclusion>
+           <groupId>com.google.guava</groupId>
+           <artifactId>failureaccess</artifactId>
+         </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-credentials</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>${easymock.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>${truth.version}</version>
+      <scope>test</scope>
+      <exclusions>
+          <exclusion>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+          </exclusion>
+        </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+      <profiles>
+    <profile>
+      <id>native</id>
+      <properties>
+      <!-- Skip native image tests that use mocking libs to avoid loading classes at runtime. -->
+        <test>!LoggingAppenderTest</test>
+      </properties>
+    </profile>
+  </profiles>
+</project>
