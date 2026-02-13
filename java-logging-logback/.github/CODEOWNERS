@@ -1,0 +1,11 @@
+# Code owners file.
+# This file controls who is tagged for review for any given pull request.
+
+# For syntax help see:
+# https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
+
+# @googleapis/cloud-sdk-java-team are the default owners for changes in this repo
+*                       @googleapis/cloud-sdk-java-team
+
+# @googleapis/java-samples-reviewers teams are the default owners for samples changes
+samples/**/*.java       @googleapis/java-samples-reviewers

@@ -1,0 +1,15 @@
+bumpMinorPreMajor: true
+handleGHRelease: true
+releaseType: java-yoshi
+branches:
+  - branch: java7
+  - branch: protobuf-4.x-rc
+    manifest: true
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - src/main/java/com/google/cloud/logging/logback/LoggingAppender.java
+    branch: 0.133.x
+extraFiles:
+  - src/main/java/com/google/cloud/logging/logback/LoggingAppender.java
