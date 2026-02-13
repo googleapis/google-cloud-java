@@ -54,6 +54,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   private AutoscalingPolicy() {
     id_ = "";
     name_ = "";
+    clusterType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,6 +82,178 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataproc.v1.AutoscalingPolicy.class,
             com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the clusters for which this autoscaling policy is to be
+   * configured.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType}
+   */
+  public enum ClusterType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>CLUSTER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CLUSTER_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Standard dataproc cluster with a minimum of two primary workers.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    STANDARD(1),
+    /**
+     *
+     *
+     * <pre>
+     * Clusters that can use only secondary workers and be scaled down to zero
+     * secondary worker nodes.
+     * </pre>
+     *
+     * <code>ZERO_SCALE = 2;</code>
+     */
+    ZERO_SCALE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ClusterType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>CLUSTER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CLUSTER_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Standard dataproc cluster with a minimum of two primary workers.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    public static final int STANDARD_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Clusters that can use only secondary workers and be scaled down to zero
+     * secondary worker nodes.
+     * </pre>
+     *
+     * <code>ZERO_SCALE = 2;</code>
+     */
+    public static final int ZERO_SCALE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ClusterType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ClusterType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CLUSTER_TYPE_UNSPECIFIED;
+        case 1:
+          return STANDARD;
+        case 2:
+          return ZERO_SCALE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ClusterType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ClusterType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ClusterType>() {
+          public ClusterType findValueByNumber(int number) {
+            return ClusterType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.AutoscalingPolicy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ClusterType[] VALUES = values();
+
+    public static ClusterType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ClusterType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType)
   }
 
   private int bitField0_;
@@ -558,6 +731,51 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return map.get(key);
   }
 
+  public static final int CLUSTER_TYPE_FIELD_NUMBER = 7;
+  private int clusterType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the clusters for which this autoscaling policy is to
+   * be configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterType.
+   */
+  @java.lang.Override
+  public int getClusterTypeValue() {
+    return clusterType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the clusters for which this autoscaling policy is to
+   * be configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clusterType.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType getClusterType() {
+    com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType result =
+        com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType.forNumber(clusterType_);
+    return result == null
+        ? com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -589,6 +807,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
+    if (clusterType_
+        != com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType.CLUSTER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, clusterType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -626,6 +849,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, labels__);
     }
+    if (clusterType_
+        != com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType.CLUSTER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, clusterType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -653,6 +881,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (!getSecondaryWorkerConfig().equals(other.getSecondaryWorkerConfig())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (clusterType_ != other.clusterType_) return false;
     if (!getAlgorithmCase().equals(other.getAlgorithmCase())) return false;
     switch (algorithmCase_) {
       case 3:
@@ -688,6 +917,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + CLUSTER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + clusterType_;
     switch (algorithmCase_) {
       case 3:
         hash = (37 * hash) + BASIC_ALGORITHM_FIELD_NUMBER;
@@ -884,6 +1115,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         secondaryWorkerConfigBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      clusterType_ = 0;
       algorithmCase_ = 0;
       algorithm_ = null;
       return this;
@@ -946,6 +1178,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clusterType_ = clusterType_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -987,6 +1222,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000020;
+      if (other.clusterType_ != 0) {
+        setClusterTypeValue(other.getClusterTypeValue());
+      }
       switch (other.getAlgorithmCase()) {
         case BASIC_ALGORITHM:
           {
@@ -1069,6 +1307,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 56:
+              {
+                clusterType_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2226,6 +2470,119 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000020;
+      return this;
+    }
+
+    private int clusterType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the clusters for which this autoscaling policy is to
+     * be configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for clusterType.
+     */
+    @java.lang.Override
+    public int getClusterTypeValue() {
+      return clusterType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the clusters for which this autoscaling policy is to
+     * be configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for clusterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterTypeValue(int value) {
+      clusterType_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the clusters for which this autoscaling policy is to
+     * be configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clusterType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType getClusterType() {
+      com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType result =
+          com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType.forNumber(clusterType_);
+      return result == null
+          ? com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the clusters for which this autoscaling policy is to
+     * be configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The clusterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterType(
+        com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      clusterType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the clusters for which this autoscaling policy is to
+     * be configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterType() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      clusterType_ = 0;
+      onChanged();
       return this;
     }
 
