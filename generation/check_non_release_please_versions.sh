@@ -8,6 +8,7 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
       [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
       [[ "${pomFile}" =~ .*java-shared-dependencies*. ]] || \
+      [[ "${pomFile}" =~ .*java-datastore.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
