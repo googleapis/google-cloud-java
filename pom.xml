@@ -19,8 +19,8 @@
     <module>java-admanager</module>
     <module>java-advisorynotifications</module>
     <module>java-aiplatform</module>
-    <module>java-alloydb</module>
     <module>java-alloydb-connectors</module>
+    <module>java-alloydb</module>
     <module>java-analytics-admin</module>
     <module>java-analytics-data</module>
     <module>java-analyticshub</module>
@@ -52,6 +52,7 @@
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
+    <module>java-bigquerystorage</module>
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
@@ -85,14 +86,14 @@
     <module>java-datalineage</module>
     <module>java-datamanager</module>
     <module>java-dataplex</module>
-    <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
+    <module>java-dataproc</module>
     <module>java-datastream</module>
     <module>java-deploy</module>
     <module>java-developerconnect</module>
     <module>java-devicestreaming</module>
-    <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>
+    <module>java-dialogflow</module>
     <module>java-discoveryengine</module>
     <module>java-distributedcloudedge</module>
     <module>java-dlp</module>
@@ -104,8 +105,8 @@
     <module>java-enterpriseknowledgegraph</module>
     <module>java-errorreporting</module>
     <module>java-essential-contacts</module>
-    <module>java-eventarc</module>
     <module>java-eventarc-publishing</module>
+    <module>java-eventarc</module>
     <module>java-filestore</module>
     <module>java-financialservices</module>
     <module>java-functions</module>
@@ -119,8 +120,8 @@
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
     <module>java-hypercomputecluster</module>
-    <module>java-iam</module>
     <module>java-iam-admin</module>
+    <module>java-iam</module>
     <module>java-iamcredentials</module>
     <module>java-iap</module>
     <module>java-ids</module>
@@ -141,8 +142,8 @@
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
     <module>java-maps-area-insights</module>
-    <module>java-maps-fleetengine</module>
     <module>java-maps-fleetengine-delivery</module>
+    <module>java-maps-fleetengine</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routeoptimization</module>
@@ -154,9 +155,9 @@
     <module>java-memcache</module>
     <module>java-migrationcenter</module>
     <module>java-modelarmor</module>
-    <module>java-monitoring</module>
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
+    <module>java-monitoring</module>
     <module>java-netapp</module>
     <module>java-network-management</module>
     <module>java-network-security</module>
@@ -183,8 +184,8 @@
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
-    <module>java-redis</module>
     <module>java-redis-cluster</module>
+    <module>java-redis</module>
     <module>java-resourcemanager</module>
     <module>java-retail</module>
     <module>java-run</module>
@@ -194,8 +195,8 @@
     <module>java-secretmanager</module>
     <module>java-securesourcemanager</module>
     <module>java-security-private-ca</module>
-    <module>java-securitycenter</module>
     <module>java-securitycenter-settings</module>
+    <module>java-securitycenter</module>
     <module>java-securitycentermanagement</module>
     <module>java-securityposture</module>
     <module>java-service-control</module>
