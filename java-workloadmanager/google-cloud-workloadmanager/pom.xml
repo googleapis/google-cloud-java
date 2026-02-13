@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workloadmanager</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workloadmanager:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-workloadmanager:current} -->
   <packaging>jar</packaging>
   <name>Google Workload Manager API</name>
   <description>Workload Manager API Workload Manager is a service that provides tooling for enterprise workloads to automate the deployment and validation of your workloads against best practices and recommendations.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-workloadmanager-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workloadmanager:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-workloadmanager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-workloadmanager</site.installationModule>
