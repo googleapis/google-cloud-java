@@ -951,3 +951,10 @@ grpc-google-cloud-workloadmanager-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-ces:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-ces-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-ces-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-datastore:2.34.0:2.34.1-SNAPSHOT
+google-cloud-datastore-bom:2.34.0:2.34.1-SNAPSHOT
+proto-google-cloud-datastore-v1:0.125.0:0.125.1-SNAPSHOT
+datastore-v1-proto-client:2.34.0:2.34.1-SNAPSHOT
+proto-google-cloud-datastore-admin-v1:2.34.0:2.34.1-SNAPSHOT
+grpc-google-cloud-datastore-admin-v1:2.34.0:2.34.1-SNAPSHOT
+grpc-google-cloud-datastore-v1:2.34.0:2.34.1-SNAPSHOT

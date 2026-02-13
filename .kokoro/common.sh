@@ -19,6 +19,7 @@ excluded_modules=(
   'google-cloud-pom-parent'
   'java-vertexai'
   'java-logging'
+  'java-datastore'
 )
 
 function retry_with_backoff {
@@ -203,7 +204,7 @@ function generate_modified_modules_list() {
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
-        if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
+        if [[ " ${maven_modules[*]} " =~ " ${module} " ]]; then
           modified_module_list+=("${module}")
         fi
       done
