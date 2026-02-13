@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "both",
   "language": "java",
-  "repo": "googleapis/java-datastore",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-datastore",
   "distribution_name": "com.google.cloud:google-cloud-datastore",
   "api_id": "datastore.googleapis.com",
