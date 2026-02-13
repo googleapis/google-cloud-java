@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-ces</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-ces:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-ces:current} -->
   <packaging>jar</packaging>
   <name>Google Gemini Enterprise for Customer Experience API</name>
   <description>Gemini Enterprise for Customer Experience API Customer Experience Agent Studio (CX Agent Studio) is a minimal code conversational agent builder.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-ces-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-ces:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-ces:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-ces</site.installationModule>

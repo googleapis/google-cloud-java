@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.79.0](https://github.com/googleapis/google-cloud-java/compare/v1.78.0...v1.79.0) (2026-02-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* [auditmanager] A new packaging option `cloud.google.com/go/auditmanager/apiv1main/auditmanagerpb;auditmanagerpb` for `go_package` is added
+
+### Features
+
+* [aiplatform] A new field `predefined_metric_spec` is added to message `.google.cloud.aiplatform.v1beta1.Metric` ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [aiplatform] add max_concurrent_active_run_count field to Schedule message ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [aiplatform] add max_concurrent_active_run_count field to Schedule message ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [aiplatform] add model_armor_config to GeminiExample ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [ces] new module for ces ([#11940](https://github.com/googleapis/google-cloud-java/issues/11940)) ([fb47842](https://github.com/googleapis/google-cloud-java/commit/fb47842b9d10b62a418da9a4c46518482f0c46a8))
+* [databasecenter] Adding Method QueryIssues of Database Center API v1beta ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [dataform] Update GCP Client Libraries in v1beta1 to support Folders, TeamFolders, and other relevant APIs ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [discoveryengine] add Natural Language Query Understanding fields and messages to DiscoveryEngine request, response, and datastore messages ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [kms] Added DeleteCryptoKey and DeleteCryptoKeyVersion RPCs to permanently remove resources ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [maps-places] Add `googleMapsTypeLabel` field to show type information on Google Maps ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [saasservicemgmt] Add AppHub related condition types to Deployment protos ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [storagebatchoperations] add QUEUED state to Storage Batch Operations API ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [workloadmanager] new module for workloadmanager ([#11941](https://github.com/googleapis/google-cloud-java/issues/11941)) ([e7e86f7](https://github.com/googleapis/google-cloud-java/commit/e7e86f79419451460470ad0278e7a642464514f6))
+
+
+### Bug Fixes
+
+* [auditmanager] A new packaging option `cloud.google.com/go/auditmanager/apiv1main/auditmanagerpb;auditmanagerpb` for `go_package` is added ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+
+
+### Documentation
+
+* [maps-solar] Add satellite imagery to `rgb_url` description ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+
 ## [1.78.0](https://github.com/googleapis/google-cloud-java/compare/v1.77.0...v1.78.0) (2026-02-10)
 
 
