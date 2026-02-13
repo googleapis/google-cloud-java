@@ -948,3 +948,6 @@ proto-google-cloud-logging-v2:0.114.0:0.115.0-SNAPSHOT
 google-cloud-workloadmanager:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-workloadmanager-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-workloadmanager-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-ces:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-ces-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-ces-v1:0.0.0:0.0.1-SNAPSHOT
