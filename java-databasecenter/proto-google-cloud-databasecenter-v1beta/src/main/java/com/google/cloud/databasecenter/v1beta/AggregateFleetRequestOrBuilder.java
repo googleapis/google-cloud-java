@@ -86,10 +86,10 @@ public interface AggregateFleetRequestOrBuilder
    * expression, parentheses must be appropriately used to group the
    * combinations.
    *
-   * Example: location="us-east1"
-   * Example: container="projects/123" OR container="projects/456"
-   * Example: (container="projects/123" OR
-   * container="projects/456") AND location="us-east1"
+   * Example: `location="us-east1"`
+   * Example: `container="projects/123" OR container="projects/456"`
+   * Example: `(container="projects/123" OR
+   * container="projects/456") AND location="us-east1"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -114,10 +114,10 @@ public interface AggregateFleetRequestOrBuilder
    * expression, parentheses must be appropriately used to group the
    * combinations.
    *
-   * Example: location="us-east1"
-   * Example: container="projects/123" OR container="projects/456"
-   * Example: (container="projects/123" OR
-   * container="projects/456") AND location="us-east1"
+   * Example: `location="us-east1"`
+   * Example: `container="projects/123" OR container="projects/456"`
+   * Example: `(container="projects/123" OR
+   * container="projects/456") AND location="us-east1"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -200,9 +200,10 @@ public interface AggregateFleetRequestOrBuilder
    * descending order. Add "ASC" after the field name to indicate ascending
    * order. It supports ordering using multiple fields.
    * For example:
-   * order_by = "resource_groups_count" sorts response in ascending order
-   * order_by = "resource_groups_count DESC" sorts response in descending order
-   * order_by = "product.type, product.version DESC, location" orders by type
+   * `order_by = "resource_groups_count"` sorts response in ascending order
+   * `order_by = "resource_groups_count DESC"` sorts response in descending
+   * order
+   * `order_by = "product.type, product.version DESC, location"` orders by type
    * in ascending order, version in descending order and location in ascending
    * order
    * </pre>
@@ -225,9 +226,10 @@ public interface AggregateFleetRequestOrBuilder
    * descending order. Add "ASC" after the field name to indicate ascending
    * order. It supports ordering using multiple fields.
    * For example:
-   * order_by = "resource_groups_count" sorts response in ascending order
-   * order_by = "resource_groups_count DESC" sorts response in descending order
-   * order_by = "product.type, product.version DESC, location" orders by type
+   * `order_by = "resource_groups_count"` sorts response in ascending order
+   * `order_by = "resource_groups_count DESC"` sorts response in descending
+   * order
+   * `order_by = "product.type, product.version DESC, location"` orders by type
    * in ascending order, version in descending order and location in ascending
    * order
    * </pre>

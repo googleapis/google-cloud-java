@@ -24,7 +24,8 @@ package com.google.cloud.databasecenter.v1beta;
  *
  *
  * <pre>
- * The response message to aggregate a fleet by some group by fields.
+ * The response message to aggregate a fleet by some group by
+ * fields.
  * </pre>
  *
  * Protobuf type {@code google.cloud.databasecenter.v1beta.AggregateFleetResponse}
@@ -525,7 +526,8 @@ public final class AggregateFleetResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The response message to aggregate a fleet by some group by fields.
+   * The response message to aggregate a fleet by some group by
+   * fields.
    * </pre>
    *
    * Protobuf type {@code google.cloud.databasecenter.v1beta.AggregateFleetResponse}

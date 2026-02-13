@@ -634,6 +634,130 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; additional_options = 14;</code>
      */
     java.lang.String getAdditionalOptionsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connection specifying the credentials to be used to read
+     * and write to external storage, such as Cloud Storage. The connection can
+     * have the form `{project}.{location}.{connection_id}` or
+     * `projects/{project}/locations/{location}/connections/{connection_id}`,
+     * or be set to DEFAULT.
+     * </pre>
+     *
+     * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The connection.
+     */
+    java.lang.String getConnection();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connection specifying the credentials to be used to read
+     * and write to external storage, such as Cloud Storage. The connection can
+     * have the form `{project}.{location}.{connection_id}` or
+     * `projects/{project}/locations/{location}/connections/{connection_id}`,
+     * or be set to DEFAULT.
+     * </pre>
+     *
+     * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for connection.
+     */
+    com.google.protobuf.ByteString getConnectionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The table format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tableFormat.
+     */
+    int getTableFormatValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The table format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tableFormat.
+     */
+    com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat getTableFormat();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The file format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fileFormat.
+     */
+    int getFileFormatValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The file format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fileFormat.
+     */
+    com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat getFileFormat();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fully qualified location prefix of the external folder
+     * where table data is stored. The URI should be in the format
+     * `gs://bucket/path_to_table/`.
+     * </pre>
+     *
+     * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The storageUri.
+     */
+    java.lang.String getStorageUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fully qualified location prefix of the external folder
+     * where table data is stored. The URI should be in the format
+     * `gs://bucket/path_to_table/`.
+     * </pre>
+     *
+     * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for storageUri.
+     */
+    com.google.protobuf.ByteString getStorageUriBytes();
   }
 
   /**
@@ -675,6 +799,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       postOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       partitionExpression_ = "";
       clusterExpressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      connection_ = "";
+      tableFormat_ = 0;
+      fileFormat_ = 0;
+      storageUri_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -920,6 +1048,304 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
 
       // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1beta1.CompilationResultAction.Relation.RelationType)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Supported table formats for BigQuery tables.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat}
+     */
+    public enum TableFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>TABLE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      TABLE_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Apache Iceberg format.
+       * </pre>
+       *
+       * <code>ICEBERG = 1;</code>
+       */
+      ICEBERG(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "TableFormat");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>TABLE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int TABLE_FORMAT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Apache Iceberg format.
+       * </pre>
+       *
+       * <code>ICEBERG = 1;</code>
+       */
+      public static final int ICEBERG_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TableFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TableFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TABLE_FORMAT_UNSPECIFIED;
+          case 1:
+            return ICEBERG;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TableFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TableFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TableFormat>() {
+            public TableFormat findValueByNumber(int number) {
+              return TableFormat.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final TableFormat[] VALUES = values();
+
+      public static TableFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TableFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Supported file formats for BigQuery tables.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat}
+     */
+    public enum FileFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>FILE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      FILE_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Apache Parquet format.
+       * </pre>
+       *
+       * <code>PARQUET = 1;</code>
+       */
+      PARQUET(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "FileFormat");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>FILE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Apache Parquet format.
+       * </pre>
+       *
+       * <code>PARQUET = 1;</code>
+       */
+      public static final int PARQUET_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FileFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FileFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FILE_FORMAT_UNSPECIFIED;
+          case 1:
+            return PARQUET;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FileFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<FileFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FileFormat>() {
+            public FileFormat findValueByNumber(int number) {
+              return FileFormat.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.getDescriptor()
+            .getEnumTypes()
+            .get(2);
+      }
+
+      private static final FileFormat[] VALUES = values();
+
+      public static FileFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FileFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat)
     }
 
     public interface IncrementalTableConfigOrBuilder
@@ -3882,6 +4308,216 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       return map.get(key);
     }
 
+    public static final int CONNECTION_FIELD_NUMBER = 15;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object connection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connection specifying the credentials to be used to read
+     * and write to external storage, such as Cloud Storage. The connection can
+     * have the form `{project}.{location}.{connection_id}` or
+     * `projects/{project}/locations/{location}/connections/{connection_id}`,
+     * or be set to DEFAULT.
+     * </pre>
+     *
+     * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The connection.
+     */
+    @java.lang.Override
+    public java.lang.String getConnection() {
+      java.lang.Object ref = connection_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connection_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The connection specifying the credentials to be used to read
+     * and write to external storage, such as Cloud Storage. The connection can
+     * have the form `{project}.{location}.{connection_id}` or
+     * `projects/{project}/locations/{location}/connections/{connection_id}`,
+     * or be set to DEFAULT.
+     * </pre>
+     *
+     * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for connection.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getConnectionBytes() {
+      java.lang.Object ref = connection_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        connection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FORMAT_FIELD_NUMBER = 16;
+    private int tableFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The table format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tableFormat.
+     */
+    @java.lang.Override
+    public int getTableFormatValue() {
+      return tableFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The table format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tableFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+        getTableFormat() {
+      com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat result =
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat.forNumber(
+              tableFormat_);
+      return result == null
+          ? com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int FILE_FORMAT_FIELD_NUMBER = 17;
+    private int fileFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The file format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fileFormat.
+     */
+    @java.lang.Override
+    public int getFileFormatValue() {
+      return fileFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The file format for the BigQuery table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fileFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat
+        getFileFormat() {
+      com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat result =
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat.forNumber(
+              fileFormat_);
+      return result == null
+          ? com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int STORAGE_URI_FIELD_NUMBER = 18;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object storageUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fully qualified location prefix of the external folder
+     * where table data is stored. The URI should be in the format
+     * `gs://bucket/path_to_table/`.
+     * </pre>
+     *
+     * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The storageUri.
+     */
+    @java.lang.Override
+    public java.lang.String getStorageUri() {
+      java.lang.Object ref = storageUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storageUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fully qualified location prefix of the external folder
+     * where table data is stored. The URI should be in the format
+     * `gs://bucket/path_to_table/`.
+     * </pre>
+     *
+     * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for storageUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStorageUriBytes() {
+      java.lang.Object ref = storageUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storageUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3943,6 +4579,24 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           internalGetAdditionalOptions(),
           AdditionalOptionsDefaultEntryHolder.defaultEntry,
           14);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(connection_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 15, connection_);
+      }
+      if (tableFormat_
+          != com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+              .TABLE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(16, tableFormat_);
+      }
+      if (fileFormat_
+          != com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat
+              .FILE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(17, fileFormat_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(storageUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 18, storageUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4029,6 +4683,24 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, additionalOptions__);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(connection_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(15, connection_);
+      }
+      if (tableFormat_
+          != com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+              .TABLE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, tableFormat_);
+      }
+      if (fileFormat_
+          != com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat
+              .FILE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, fileFormat_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(storageUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(18, storageUri_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4066,6 +4738,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       if (getRequirePartitionFilter() != other.getRequirePartitionFilter()) return false;
       if (!internalGetAdditionalOptions().equals(other.internalGetAdditionalOptions()))
         return false;
+      if (!getConnection().equals(other.getConnection())) return false;
+      if (tableFormat_ != other.tableFormat_) return false;
+      if (fileFormat_ != other.fileFormat_) return false;
+      if (!getStorageUri().equals(other.getStorageUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4121,6 +4797,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         hash = (37 * hash) + ADDITIONAL_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAdditionalOptions().hashCode();
       }
+      hash = (37 * hash) + CONNECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getConnection().hashCode();
+      hash = (37 * hash) + TABLE_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + tableFormat_;
+      hash = (37 * hash) + FILE_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + fileFormat_;
+      hash = (37 * hash) + STORAGE_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getStorageUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4325,6 +5009,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         partitionExpirationDays_ = 0;
         requirePartitionFilter_ = false;
         internalGetMutableAdditionalOptions().clear();
+        connection_ = "";
+        tableFormat_ = 0;
+        fileFormat_ = 0;
+        storageUri_ = "";
         return this;
       }
 
@@ -4430,6 +5118,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (((from_bitField0_ & 0x00002000) != 0)) {
           result.additionalOptions_ = internalGetAdditionalOptions();
           result.additionalOptions_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.connection_ = connection_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.tableFormat_ = tableFormat_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.fileFormat_ = fileFormat_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.storageUri_ = storageUri_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -4547,6 +5247,22 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         internalGetMutableAdditionalOptions().mergeFrom(other.internalGetAdditionalOptions());
         bitField0_ |= 0x00002000;
+        if (!other.getConnection().isEmpty()) {
+          connection_ = other.connection_;
+          bitField0_ |= 0x00004000;
+          onChanged();
+        }
+        if (other.tableFormat_ != 0) {
+          setTableFormatValue(other.getTableFormatValue());
+        }
+        if (other.fileFormat_ != 0) {
+          setFileFormatValue(other.getFileFormatValue());
+        }
+        if (!other.getStorageUri().isEmpty()) {
+          storageUri_ = other.storageUri_;
+          bitField0_ |= 0x00020000;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4678,6 +5394,30 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                   bitField0_ |= 0x00002000;
                   break;
                 } // case 114
+              case 122:
+                {
+                  connection_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00004000;
+                  break;
+                } // case 122
+              case 128:
+                {
+                  tableFormat_ = input.readEnum();
+                  bitField0_ |= 0x00008000;
+                  break;
+                } // case 128
+              case 136:
+                {
+                  fileFormat_ = input.readEnum();
+                  bitField0_ |= 0x00010000;
+                  break;
+                } // case 136
+              case 146:
+                {
+                  storageUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00020000;
+                  break;
+                } // case 146
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6955,6 +7695,480 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableAdditionalOptions().getMutableMap().putAll(values);
         bitField0_ |= 0x00002000;
+        return this;
+      }
+
+      private java.lang.Object connection_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The connection specifying the credentials to be used to read
+       * and write to external storage, such as Cloud Storage. The connection can
+       * have the form `{project}.{location}.{connection_id}` or
+       * `projects/{project}/locations/{location}/connections/{connection_id}`,
+       * or be set to DEFAULT.
+       * </pre>
+       *
+       * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The connection.
+       */
+      public java.lang.String getConnection() {
+        java.lang.Object ref = connection_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          connection_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The connection specifying the credentials to be used to read
+       * and write to external storage, such as Cloud Storage. The connection can
+       * have the form `{project}.{location}.{connection_id}` or
+       * `projects/{project}/locations/{location}/connections/{connection_id}`,
+       * or be set to DEFAULT.
+       * </pre>
+       *
+       * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for connection.
+       */
+      public com.google.protobuf.ByteString getConnectionBytes() {
+        java.lang.Object ref = connection_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          connection_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The connection specifying the credentials to be used to read
+       * and write to external storage, such as Cloud Storage. The connection can
+       * have the form `{project}.{location}.{connection_id}` or
+       * `projects/{project}/locations/{location}/connections/{connection_id}`,
+       * or be set to DEFAULT.
+       * </pre>
+       *
+       * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The connection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnection(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connection_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The connection specifying the credentials to be used to read
+       * and write to external storage, such as Cloud Storage. The connection can
+       * have the form `{project}.{location}.{connection_id}` or
+       * `projects/{project}/locations/{location}/connections/{connection_id}`,
+       * or be set to DEFAULT.
+       * </pre>
+       *
+       * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConnection() {
+        connection_ = getDefaultInstance().getConnection();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The connection specifying the credentials to be used to read
+       * and write to external storage, such as Cloud Storage. The connection can
+       * have the form `{project}.{location}.{connection_id}` or
+       * `projects/{project}/locations/{location}/connections/{connection_id}`,
+       * or be set to DEFAULT.
+       * </pre>
+       *
+       * <code>string connection = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for connection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        connection_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+
+      private int tableFormat_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The table format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for tableFormat.
+       */
+      @java.lang.Override
+      public int getTableFormatValue() {
+        return tableFormat_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The table format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for tableFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableFormatValue(int value) {
+        tableFormat_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The table format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The tableFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+          getTableFormat() {
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat result =
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+                .forNumber(tableFormat_);
+        return result == null
+            ? com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The table format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The tableFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableFormat(
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00008000;
+        tableFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The table format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.TableFormat table_format = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTableFormat() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        tableFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fileFormat_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The file format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for fileFormat.
+       */
+      @java.lang.Override
+      public int getFileFormatValue() {
+        return fileFormat_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The file format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for fileFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileFormatValue(int value) {
+        fileFormat_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The file format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The fileFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat
+          getFileFormat() {
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat result =
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat.forNumber(
+                fileFormat_);
+        return result == null
+            ? com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The file format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The fileFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileFormat(
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00010000;
+        fileFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The file format for the BigQuery table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.CompilationResultAction.Relation.FileFormat file_format = 17 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFileFormat() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        fileFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object storageUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fully qualified location prefix of the external folder
+       * where table data is stored. The URI should be in the format
+       * `gs://bucket/path_to_table/`.
+       * </pre>
+       *
+       * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The storageUri.
+       */
+      public java.lang.String getStorageUri() {
+        java.lang.Object ref = storageUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          storageUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fully qualified location prefix of the external folder
+       * where table data is stored. The URI should be in the format
+       * `gs://bucket/path_to_table/`.
+       * </pre>
+       *
+       * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for storageUri.
+       */
+      public com.google.protobuf.ByteString getStorageUriBytes() {
+        java.lang.Object ref = storageUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          storageUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fully qualified location prefix of the external folder
+       * where table data is stored. The URI should be in the format
+       * `gs://bucket/path_to_table/`.
+       * </pre>
+       *
+       * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The storageUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStorageUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        storageUri_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fully qualified location prefix of the external folder
+       * where table data is stored. The URI should be in the format
+       * `gs://bucket/path_to_table/`.
+       * </pre>
+       *
+       * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStorageUri() {
+        storageUri_ = getDefaultInstance().getStorageUri();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fully qualified location prefix of the external folder
+       * where table data is stored. The URI should be in the format
+       * `gs://bucket/path_to_table/`.
+       * </pre>
+       *
+       * <code>string storage_uri = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for storageUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStorageUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        storageUri_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
         return this;
       }
 

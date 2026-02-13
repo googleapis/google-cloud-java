@@ -16,40 +16,38 @@
 
 package com.google.cloud.dataform.v1beta1.samples;
 
-// [START dataform_v1beta1_generated_DataformSettings_GetRepository_sync]
+// [START dataform_v1beta1_generated_DataformSettings_MoveFolder_sync]
+import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.dataform.v1beta1.DataformSettings;
 import java.time.Duration;
 
-public class SyncGetRepository {
+public class SyncMoveFolder {
 
   public static void main(String[] args) throws Exception {
-    syncGetRepository();
+    syncMoveFolder();
   }
 
-  public static void syncGetRepository() throws Exception {
+  public static void syncMoveFolder() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     DataformSettings.Builder dataformSettingsBuilder = DataformSettings.newBuilder();
-    dataformSettingsBuilder
-        .getRepositorySettings()
-        .setRetrySettings(
-            dataformSettingsBuilder
-                .getRepositorySettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setInitialRetryDelayDuration(Duration.ofSeconds(1))
-                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
-                .setMaxAttempts(5)
-                .setMaxRetryDelayDuration(Duration.ofSeconds(30))
-                .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
-                .setRetryDelayMultiplier(1.3)
-                .setRpcTimeoutMultiplier(1.5)
-                .setTotalTimeoutDuration(Duration.ofSeconds(300))
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationalTimedPollAlgorithm.create(
+            RetrySettings.newBuilder()
+                .setInitialRetryDelayDuration(Duration.ofMillis(500))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+                .setTotalTimeoutDuration(Duration.ofHours(24))
                 .build());
-    DataformSettings dataformSettings = dataformSettingsBuilder.build();
+    dataformSettingsBuilder
+        .createClusterOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm)
+        .build();
   }
 }
-// [END dataform_v1beta1_generated_DataformSettings_GetRepository_sync]
+// [END dataform_v1beta1_generated_DataformSettings_MoveFolder_sync]

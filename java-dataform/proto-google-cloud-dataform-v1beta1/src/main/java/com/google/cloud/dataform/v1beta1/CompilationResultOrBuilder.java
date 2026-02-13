@@ -501,5 +501,55 @@ public interface CompilationResultOrBuilder
    */
   com.google.protobuf.ByteString getInternalMetadataBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `CompilationResult` resource is `user_scoped` only if it is sourced
+   * from a workspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateResourceMetadata field is set.
+   */
+  boolean hasPrivateResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `CompilationResult` resource is `user_scoped` only if it is sourced
+   * from a workspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateResourceMetadata.
+   */
+  com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `CompilationResult` resource is `user_scoped` only if it is sourced
+   * from a workspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+      getPrivateResourceMetadataOrBuilder();
+
   com.google.cloud.dataform.v1beta1.CompilationResult.SourceCase getSourceCase();
 }

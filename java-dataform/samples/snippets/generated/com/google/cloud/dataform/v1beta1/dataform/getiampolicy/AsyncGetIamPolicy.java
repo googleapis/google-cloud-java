@@ -19,7 +19,7 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
-import com.google.cloud.dataform.v1beta1.RepositoryName;
+import com.google.cloud.dataform.v1beta1.FolderName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (DataformClient dataformClient = DataformClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = dataformClient.getIamPolicyCallable().futureCall(request);
