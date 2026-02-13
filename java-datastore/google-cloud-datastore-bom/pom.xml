@@ -7,12 +7,13 @@
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.56.1</version>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Cloud datastore BOM</name>
-  <url>https://github.com/googleapis/java-datastore</url>
+  <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
     BOM for Google Cloud datastore
   </description>
@@ -34,9 +35,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/googleapis/java-datastore.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-datastore.git</developerConnection>
-    <url>https://github.com/googleapis/java-datastore</url>
+    <connection>scm:git:https://github.com/googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
   </scm>
 
   <licenses>
