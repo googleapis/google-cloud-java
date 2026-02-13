@@ -1,0 +1,98 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+deep-remove-regex:
+- /java-bigquerystorage/grpc-google-.*/src
+- /java-bigquerystorage/proto-google-.*/src
+- /java-bigquerystorage/google-.*/src
+deep-preserve-regex:
+- /java-bigquerystorage/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/SchemaAwareStreamWriter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ToProtoConverter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/AppendFormats.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BigQuerySchemaUtil.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/BigQuerySchemaUtilTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerPoolTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/RequestProfiler.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/TelemetryMetrics.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/BigQueryReadSettings.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/BigQueryReadClient.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/util
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/stub/BigQueryReadStubSettings.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/stub/EnhancedBigQueryReadStub.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/stub/EnhancedBigQueryReadStubSettings.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/stub/readrows
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/proto
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v.*/stub
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v.*/it
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/util
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v.*/BigQueryReadClientTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageClientTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/it/SimpleRowReader.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/stub/EnhancedBigQueryStorageStubSettingsTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/stub/ResourceHeaderTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1beta1/stub/readrows/ReadRowsRetryTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/BQTableSchemaToProtoDescriptorTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/BQV2ToBQStorageConverterTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/BigDecimalByteStringEncoderTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/BigQueryReadClientTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/CivilTimeEncoderTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/FakeBigQueryWrite.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/FakeBigQueryWriteImpl.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/FakeClock.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/FakeScheduledExecutorService.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/JsonStreamWriterTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/JsonToProtoMessageTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/ProtoSchemaConverterTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/RequestProfilerTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/SchemaCompatibilityTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/StreamWriterTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/StreamWriterV2Test.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/RequestProfilerTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/it/BigQueryResource.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/it/SimpleRowReader.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/stub/EnhancedBigQueryReadStubSettingsTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/stub/ResourceHeaderTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1.*/stub/readrows/ReadRowsRetryTest.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageClient.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BigQueryStorageSettings.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/EnhancedBigQueryStorageStub.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/EnhancedBigQueryStorageStubSettings.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/BQTableSchemaToProtoDescriptor.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/BQV2ToBQStorageConverter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/BigDecimalByteStringEncoder.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/CivilTimeEncoder.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/JsonStreamWriter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/JsonToProtoMessage.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/OnSchemaUpdateRunnable.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/ProtoSchemaConverter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/SchemaCompatibility.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/StreamConnection.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/StreamWriter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/StreamWriterV2.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1.*/Waiter.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/Exceptions.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ConnectionWorker.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/Singletons.java
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/resources/META-INF/native-image/com.google.cloud/google-cloud-bigquerystorage/reflect-config.json
+- /java-bigquerystorage/google-cloud-bigquerystorage/src/main/resources/META-INF/native-image/com.google.cloud/google-cloud-bigquerystorage/resource-config.json
+deep-copy-regex:
+- source: /google/cloud/bigquery/storage/(v.*)/.*-java/proto-google-.*/src
+  dest: /owl-bot-staging/java-bigquerystorage/$1/proto-google-cloud-bigquerystorage-$1/src
+- source: /google/cloud/bigquery/storage/(v.*)/.*-java/grpc-google-.*/src
+  dest: /owl-bot-staging/java-bigquerystorage/$1/grpc-google-cloud-bigquerystorage-$1/src
+- source: /google/cloud/bigquery/storage/(v.*)/.*-java/gapic-google-.*/src
+  dest: /owl-bot-staging/java-bigquerystorage/$1/google-cloud-bigquerystorage/src
