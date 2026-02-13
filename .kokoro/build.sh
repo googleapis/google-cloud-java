@@ -33,6 +33,8 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+env
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in

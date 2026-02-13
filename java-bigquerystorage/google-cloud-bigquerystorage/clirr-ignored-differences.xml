@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$SchemaMismatchedException</className>
+    <method>Exceptions$SchemaMismatchedException(io.grpc.Status, io.grpc.Metadata, java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$StreamFinalizedException</className>
+    <method>Exceptions$StreamFinalizedException(io.grpc.Status, io.grpc.Metadata, java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$WriterClosedException</className>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$StreamWriterClosedException</className>
+    <to>com/google/cloud/bigquery/storage/v1/Exceptions$StorageException</to>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$StreamWriterClosedException</className>
+    <method>Exceptions$StreamWriterClosedException(io.grpc.Status, java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.ProtoRows, long)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.ProtoRows, long)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.ProtoRows)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool$Settings$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool$Settings$Builder setMaxConnectionsPerPool(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool$Settings$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool$Settings$Builder setMaxConnectionsPerRegion(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool$Settings$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool$Settings$Builder setMinConnectionsPerPool(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool$Settings$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool$Settings$Builder setMinConnectionsPerRegion(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$AppendSerializtionError</className>
+    <method>Exceptions$AppendSerializtionError(java.lang.String, java.util.Map)</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>com.google.cloud.bigquery.storage.v1.TableSchema getUpdatedSchema()</method>
+    <to>com.google.cloud.bigquery.storage.v1.ConnectionWorker$TableSchemaAndTimestamp</to>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>com.google.cloud.bigquery.storage.v1.TableSchema getUpdatedSchema()</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>ConnectionWorker(java.lang.String, com.google.cloud.bigquery.storage.v1.ProtoSchema, long, long, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>ConnectionWorkerPool(long, long, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>ConnectionWorker(java.lang.String, com.google.cloud.bigquery.storage.v1.ProtoSchema, long, long, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+    <to>ConnectionWorker(java.lang.String, com.google.cloud.bigquery.storage.v1.ProtoSchema, long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>ConnectionWorkerPool(long, long, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+    <to>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings)</to>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+    <method>ConnectionWorker(java.lang.String, com.google.cloud.bigquery.storage.v1.ProtoSchema, long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>1001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.StreamWriter, com.google.cloud.bigquery.storage.v1.ProtoRows)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.StreamWriter, com.google.cloud.bigquery.storage.v1.ProtoRows, long)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>void close(com.google.cloud.bigquery.storage.v1.StreamWriter)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>void enableTestingLogic()</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>long getInflightWaitSeconds(com.google.cloud.bigquery.storage.v1.StreamWriter)</method>
+  </difference>
+  <difference>
+  <differenceType>7009</differenceType>
+  <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+  <method>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings)</method>
+  </difference>
+  <difference>
+  <differenceType>7002</differenceType>
+  <className>com/google/cloud/bigquery/storage/v1/StreamWriter</className>
+  <method>boolean isDone()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/JsonStreamWriter</className>
+    <method>boolean isDone()</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ToProtoConverter</className>
+    <method>com.google.protobuf.DynamicMessage convertToProtoMessage(com.google.protobuf.Descriptors$Descriptor, com.google.cloud.bigquery.storage.v1.TableSchema, java.lang.Object, boolean)</method>
+    <to>java.util.List</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ToProtoConverter</className>
+    <method>com.google.protobuf.DynamicMessage convertToProtoMessage(com.google.protobuf.Descriptors$Descriptor, com.google.cloud.bigquery.storage.v1.TableSchema, java.lang.Object, boolean)</method>
+    <to>com.google.protobuf.DynamicMessage convertToProtoMessage(com.google.protobuf.Descriptors$Descriptor, com.google.cloud.bigquery.storage.v1.TableSchema, java.lang.Iterable, boolean)</to>
+  </difference>
+  <difference>
+    <differenceType>1001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamConnection</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamWriter$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.StreamWriter$Builder setMaxRetryNumAttempts(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamWriter$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.StreamWriter$Builder setRetryMultiplier(double)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamWriter$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.StreamWriter$Builder setRetryFirstDelay(org.threeten.bp.Duration)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/SchemaAwareStreamWriter$Builder</className>
+    <method>com.google.cloud.bigquery.storage.v1.SchemaAwareStreamWriter$Builder setTraceIdBase(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>1001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamWriter$SingleConnectionOrConnectionPool</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/JsonStreamWriter</className>
+    <method>void setMissingValueInterpretationMap(java.util.Map)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/SchemaAwareStreamWriter</className>
+    <method>void setMissingValueInterpretationMap(java.util.Map)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamWriter</className>
+    <method>void setMissingValueInterpretationMap(java.util.Map)</method>
+  </difference>
+  <difference>
+    <!--This class is marked as @InternalApi "public for technical reasons"-->
+    <differenceType>6004</differenceType>
+    <className>com/google/cloud/bigquery/storage/*/stub/readrows/ApiResultRetryAlgorithm</className>
+    <field>DEADLINE_SLEEP_DURATION</field>
+    <from>org.threeten.bp.Duration</from>
+    <to>java.time.Duration</to>
+  </difference>
+  <difference>
+    <!--The retryDelay field is used by ApiResultRetryAlgorithm, which is marked as @InternalApi-->
+    <differenceType>6004</differenceType>
+    <className>com/google/cloud/bigquery/storage/util/Errors$IsRetryableStatusResult</className>
+    <field>retryDelay</field>
+    <from>org.threeten.bp.Duration</from>
+    <to>java.time.Duration</to>
+  </difference>
+</differences>
+

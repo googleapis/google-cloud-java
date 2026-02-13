@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.bigquery.storage.v1alpha",
+  "libraryPackage": "com.google.cloud.bigquery.storage.v1alpha",
+  "services": {
+    "MetastorePartitionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetastorePartitionServiceClient",
+          "rpcs": {
+            "BatchCreateMetastorePartitions": {
+              "methods": ["batchCreateMetastorePartitions", "batchCreateMetastorePartitionsCallable"]
+            },
+            "BatchDeleteMetastorePartitions": {
+              "methods": ["batchDeleteMetastorePartitions", "batchDeleteMetastorePartitionsCallable"]
+            },
+            "BatchUpdateMetastorePartitions": {
+              "methods": ["batchUpdateMetastorePartitions", "batchUpdateMetastorePartitionsCallable"]
+            },
+            "ListMetastorePartitions": {
+              "methods": ["listMetastorePartitions", "listMetastorePartitions", "listMetastorePartitions", "listMetastorePartitionsCallable"]
+            },
+            "StreamMetastorePartitions": {
+              "methods": ["streamMetastorePartitionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
