@@ -5348,7 +5348,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * List of reviews about this place, contexual to the place query.
+   * List of reviews about this place, contextual to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -5362,7 +5362,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * List of reviews about this place, contexual to the place query.
+   * List of reviews about this place, contextual to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -5377,7 +5377,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * List of reviews about this place, contexual to the place query.
+   * List of reviews about this place, contextual to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -5391,7 +5391,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * List of reviews about this place, contexual to the place query.
+   * List of reviews about this place, contextual to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -5405,7 +5405,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * List of reviews about this place, contexual to the place query.
+   * List of reviews about this place, contextual to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -5424,8 +5424,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Information (including references) about photos of this place, contexual to
-   * the place query.
+   * Information (including references) about photos of this place, contextual
+   * to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -5439,8 +5439,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Information (including references) about photos of this place, contexual to
-   * the place query.
+   * Information (including references) about photos of this place, contextual
+   * to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -5455,8 +5455,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Information (including references) about photos of this place, contexual to
-   * the place query.
+   * Information (including references) about photos of this place, contextual
+   * to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -5470,8 +5470,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Information (including references) about photos of this place, contexual to
-   * the place query.
+   * Information (including references) about photos of this place, contextual
+   * to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -5485,8 +5485,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Information (including references) about photos of this place, contexual to
-   * the place query.
+   * Information (including references) about photos of this place, contextual
+   * to the place query.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6113,7 +6113,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6130,7 +6130,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6147,7 +6147,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6164,7 +6164,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6187,7 +6187,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6207,7 +6207,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6230,7 +6230,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6253,7 +6253,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6273,7 +6273,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6293,7 +6293,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6314,7 +6314,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6334,7 +6334,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6354,7 +6354,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6367,7 +6367,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6384,7 +6384,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6402,7 +6402,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6416,7 +6416,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6430,7 +6430,7 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of reviews about this place, contexual to the place query.
+     * List of reviews about this place, contextual to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Review reviews = 1;</code>
@@ -6476,8 +6476,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6494,8 +6494,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6512,8 +6512,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6530,8 +6530,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6554,8 +6554,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6575,8 +6575,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6599,8 +6599,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6623,8 +6623,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6644,8 +6644,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6665,8 +6665,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6687,8 +6687,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6708,8 +6708,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6729,8 +6729,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6743,8 +6743,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6761,8 +6761,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6780,8 +6780,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6795,8 +6795,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>
@@ -6810,8 +6810,8 @@ public final class ContextualContent extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Information (including references) about photos of this place, contexual to
-     * the place query.
+     * Information (including references) about photos of this place, contextual
+     * to the place query.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Photo photos = 2;</code>

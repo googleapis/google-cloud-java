@@ -603,6 +603,20 @@ public interface JobOrBuilder
    */
   boolean getDryRun();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If true, this Job operates on multiple buckets. Multibucket
+   * jobs are subject to different quota limits than single-bucket jobs.
+   * </pre>
+   *
+   * <code>bool is_multi_bucket_job = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The isMultiBucketJob.
+   */
+  boolean getIsMultiBucketJob();
+
   com.google.cloud.storagebatchoperations.v1.Job.SourceCase getSourceCase();
 
   com.google.cloud.storagebatchoperations.v1.Job.TransformationCase getTransformationCase();

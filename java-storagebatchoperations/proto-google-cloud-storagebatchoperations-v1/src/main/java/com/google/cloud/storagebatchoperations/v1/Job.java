@@ -133,6 +133,16 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * <code>FAILED = 4;</code>
      */
     FAILED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Queued but not yet started.
+     * </pre>
+     *
+     * <code>QUEUED = 5;</code>
+     */
+    QUEUED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -201,6 +211,17 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public static final int FAILED_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Queued but not yet started.
+     * </pre>
+     *
+     * <code>QUEUED = 5;</code>
+     */
+    public static final int QUEUED_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -235,6 +256,8 @@ public final class Job extends com.google.protobuf.GeneratedMessage
           return CANCELED;
         case 4:
           return FAILED;
+        case 5:
+          return QUEUED;
         default:
           return null;
       }
@@ -1228,6 +1251,26 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     return dryRun_;
   }
 
+  public static final int IS_MULTI_BUCKET_JOB_FIELD_NUMBER = 24;
+  private boolean isMultiBucketJob_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If true, this Job operates on multiple buckets. Multibucket
+   * jobs are subject to different quota limits than single-bucket jobs.
+   * </pre>
+   *
+   * <code>bool is_multi_bucket_job = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The isMultiBucketJob.
+   */
+  @java.lang.Override
+  public boolean getIsMultiBucketJob() {
+    return isMultiBucketJob_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1291,6 +1334,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     }
     if (dryRun_ != false) {
       output.writeBool(22, dryRun_);
+    }
+    if (isMultiBucketJob_ != false) {
+      output.writeBool(24, isMultiBucketJob_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1357,6 +1403,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (dryRun_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, dryRun_);
     }
+    if (isMultiBucketJob_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, isMultiBucketJob_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1398,6 +1447,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (!getErrorSummariesList().equals(other.getErrorSummariesList())) return false;
     if (state_ != other.state_) return false;
     if (getDryRun() != other.getDryRun()) return false;
+    if (getIsMultiBucketJob() != other.getIsMultiBucketJob()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 19:
@@ -1466,6 +1516,8 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + state_;
     hash = (37 * hash) + DRY_RUN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDryRun());
+    hash = (37 * hash) + IS_MULTI_BUCKET_JOB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsMultiBucketJob());
     switch (sourceCase_) {
       case 19:
         hash = (37 * hash) + BUCKET_LIST_FIELD_NUMBER;
@@ -1699,6 +1751,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00001000);
       state_ = 0;
       dryRun_ = false;
+      isMultiBucketJob_ = false;
       sourceCase_ = 0;
       source_ = null;
       transformationCase_ = 0;
@@ -1788,6 +1841,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.dryRun_ = dryRun_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.isMultiBucketJob_ = isMultiBucketJob_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1883,6 +1939,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       }
       if (other.getDryRun() != false) {
         setDryRun(other.getDryRun());
+      }
+      if (other.getIsMultiBucketJob() != false) {
+        setIsMultiBucketJob(other.getIsMultiBucketJob());
       }
       switch (other.getSourceCase()) {
         case BUCKET_LIST:
@@ -2055,6 +2114,12 @@ public final class Job extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00004000;
                 break;
               } // case 176
+            case 192:
+              {
+                isMultiBucketJob_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 192
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5132,6 +5197,65 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     public Builder clearDryRun() {
       bitField0_ = (bitField0_ & ~0x00004000);
       dryRun_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isMultiBucketJob_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If true, this Job operates on multiple buckets. Multibucket
+     * jobs are subject to different quota limits than single-bucket jobs.
+     * </pre>
+     *
+     * <code>bool is_multi_bucket_job = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The isMultiBucketJob.
+     */
+    @java.lang.Override
+    public boolean getIsMultiBucketJob() {
+      return isMultiBucketJob_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If true, this Job operates on multiple buckets. Multibucket
+     * jobs are subject to different quota limits than single-bucket jobs.
+     * </pre>
+     *
+     * <code>bool is_multi_bucket_job = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The isMultiBucketJob to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsMultiBucketJob(boolean value) {
+
+      isMultiBucketJob_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If true, this Job operates on multiple buckets. Multibucket
+     * jobs are subject to different quota limits than single-bucket jobs.
+     * </pre>
+     *
+     * <code>bool is_multi_bucket_job = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsMultiBucketJob() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      isMultiBucketJob_ = false;
       onChanged();
       return this;
     }
