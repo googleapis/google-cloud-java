@@ -91,4 +91,30 @@ public interface BaseImageOrBuilder
    * @return The layerCount.
    */
   int getLayerCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The registry in which the base image is from.
+   * </pre>
+   *
+   * <code>string registry = 4;</code>
+   *
+   * @return The registry.
+   */
+  java.lang.String getRegistry();
+
+  /**
+   *
+   *
+   * <pre>
+   * The registry in which the base image is from.
+   * </pre>
+   *
+   * <code>string registry = 4;</code>
+   *
+   * @return The bytes for registry.
+   */
+  com.google.protobuf.ByteString getRegistryBytes();
 }
