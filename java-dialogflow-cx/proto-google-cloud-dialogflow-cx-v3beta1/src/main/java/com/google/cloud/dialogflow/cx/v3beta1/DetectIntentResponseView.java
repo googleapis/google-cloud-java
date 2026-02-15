@@ -36,7 +36,7 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
    *
    *
    * <pre>
-   * Not specified. `FULL` will be used.
+   * Not specified. `DETECT_INTENT_RESPONSE_VIEW_DEFAULT` will be used.
    * </pre>
    *
    * <code>DETECT_INTENT_RESPONSE_VIEW_UNSPECIFIED = 0;</code>
@@ -66,6 +66,18 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
    * <code>DETECT_INTENT_RESPONSE_VIEW_BASIC = 2;</code>
    */
   DETECT_INTENT_RESPONSE_VIEW_BASIC(2),
+  /**
+   *
+   *
+   * <pre>
+   * Default response view omits the following fields:
+   * -
+   * [QueryResult.trace_blocks][google.cloud.dialogflow.cx.v3beta1.QueryResult.trace_blocks]
+   * </pre>
+   *
+   * <code>DETECT_INTENT_RESPONSE_VIEW_DEFAULT = 3;</code>
+   */
+  DETECT_INTENT_RESPONSE_VIEW_DEFAULT(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -83,7 +95,7 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
    *
    *
    * <pre>
-   * Not specified. `FULL` will be used.
+   * Not specified. `DETECT_INTENT_RESPONSE_VIEW_DEFAULT` will be used.
    * </pre>
    *
    * <code>DETECT_INTENT_RESPONSE_VIEW_UNSPECIFIED = 0;</code>
@@ -116,6 +128,19 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
    */
   public static final int DETECT_INTENT_RESPONSE_VIEW_BASIC_VALUE = 2;
 
+  /**
+   *
+   *
+   * <pre>
+   * Default response view omits the following fields:
+   * -
+   * [QueryResult.trace_blocks][google.cloud.dialogflow.cx.v3beta1.QueryResult.trace_blocks]
+   * </pre>
+   *
+   * <code>DETECT_INTENT_RESPONSE_VIEW_DEFAULT = 3;</code>
+   */
+  public static final int DETECT_INTENT_RESPONSE_VIEW_DEFAULT_VALUE = 3;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -146,6 +171,8 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
         return DETECT_INTENT_RESPONSE_VIEW_FULL;
       case 2:
         return DETECT_INTENT_RESPONSE_VIEW_BASIC;
+      case 3:
+        return DETECT_INTENT_RESPONSE_VIEW_DEFAULT;
       default:
         return null;
     }
