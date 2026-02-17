@@ -66,6 +66,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -569,6 +570,7 @@ public class Publisher implements PublisherInterface {
         };
 
     ApiFuture<PublishResponse> future;
+    Executor callbackExecutor = directExecutor();
     if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
       future = publishCall(outstandingBatch);
     } else {
@@ -581,8 +583,9 @@ public class Publisher implements PublisherInterface {
                   return publishCall(outstandingBatch);
                 }
               });
+      callbackExecutor = this.executor;
     }
-    ApiFutures.addCallback(future, futureCallback, directExecutor());
+    ApiFutures.addCallback(future, futureCallback, callbackExecutor);
   }
 
   private final class OutstandingBatch {
