@@ -460,8 +460,7 @@ public interface ImportJobOrBuilder
    * operations are performed. Currently, this field is only populated for keys
    * stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may
    * apply to additional [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel]
-   * in the future.
-   * Supported resources:
+   * in the future. Supported resources:
    * * `"projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;"`
    * </pre>
    *
@@ -482,8 +481,7 @@ public interface ImportJobOrBuilder
    * operations are performed. Currently, this field is only populated for keys
    * stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may
    * apply to additional [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel]
-   * in the future.
-   * Supported resources:
+   * in the future. Supported resources:
    * * `"projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;"`
    * </pre>
    *

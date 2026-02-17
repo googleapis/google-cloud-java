@@ -31,7 +31,8 @@ public interface AutokeyConfigOrBuilder
    *
    * <pre>
    * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+   * `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,7 +46,8 @@ public interface AutokeyConfigOrBuilder
    *
    * <pre>
    * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+   * `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -161,4 +163,38 @@ public interface AutokeyConfigOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+   * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+   * `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for keyProjectResolutionMode.
+   */
+  int getKeyProjectResolutionModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+   * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+   * `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The keyProjectResolutionMode.
+   */
+  com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode getKeyProjectResolutionMode();
 }

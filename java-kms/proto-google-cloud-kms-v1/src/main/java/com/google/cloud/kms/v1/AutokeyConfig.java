@@ -56,6 +56,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     keyProject_ = "";
     state_ = 0;
     etag_ = "";
+    keyProjectResolutionMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,6 +126,17 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      * <code>UNINITIALIZED = 3;</code>
      */
     UNINITIALIZED(3),
+    /**
+     *
+     *
+     * <pre>
+     * The service account lacks the necessary permissions in the key project to
+     * configure Autokey.
+     * </pre>
+     *
+     * <code>KEY_PROJECT_PERMISSION_DENIED = 4;</code>
+     */
+    KEY_PROJECT_PERMISSION_DENIED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -184,6 +196,18 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      */
     public static final int UNINITIALIZED_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * The service account lacks the necessary permissions in the key project to
+     * configure Autokey.
+     * </pre>
+     *
+     * <code>KEY_PROJECT_PERMISSION_DENIED = 4;</code>
+     */
+    public static final int KEY_PROJECT_PERMISSION_DENIED_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -216,6 +240,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
           return KEY_PROJECT_DELETED;
         case 3:
           return UNINITIALIZED;
+        case 4:
+          return KEY_PROJECT_PERMISSION_DENIED;
         default:
           return null;
       }
@@ -269,6 +295,224 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.AutokeyConfig.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Defines the resolution mode enum for the key project.
+   * The
+   * [KeyProjectResolutionMode][google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode]
+   * determines the mechanism by which
+   * [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] identifies a
+   * [key_project][google.cloud.kms.v1.AutokeyConfig.key_project] at its
+   * specific configuration node. This parameter also determines if Autokey can
+   * be used within this project or folder.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode}
+   */
+  public enum KeyProjectResolutionMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. KeyProjectResolutionMode when not specified will act as
+     * `DEDICATED_KEY_PROJECT`.
+     * </pre>
+     *
+     * <code>KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Keys are created in a dedicated project specified by `key_project`.
+     * </pre>
+     *
+     * <code>DEDICATED_KEY_PROJECT = 1;</code>
+     */
+    DEDICATED_KEY_PROJECT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Keys are created in the same project as the resource requesting the key.
+     * The `key_project` must not be set when this mode is used.
+     * </pre>
+     *
+     * <code>RESOURCE_PROJECT = 2;</code>
+     */
+    RESOURCE_PROJECT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Disables the AutokeyConfig. When this mode is set, any AutokeyConfig
+     * from higher levels in the resource hierarchy are ignored for this
+     * resource and its descendants. This setting can be overridden
+     * by a more specific configuration at a lower level. For example,
+     * if Autokey is disabled on a folder, it can be re-enabled on a sub-folder
+     * or project within that folder by setting a different mode (e.g.,
+     * DEDICATED_KEY_PROJECT or RESOURCE_PROJECT).
+     * </pre>
+     *
+     * <code>DISABLED = 3;</code>
+     */
+    DISABLED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "KeyProjectResolutionMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. KeyProjectResolutionMode when not specified will act as
+     * `DEDICATED_KEY_PROJECT`.
+     * </pre>
+     *
+     * <code>KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Keys are created in a dedicated project specified by `key_project`.
+     * </pre>
+     *
+     * <code>DEDICATED_KEY_PROJECT = 1;</code>
+     */
+    public static final int DEDICATED_KEY_PROJECT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Keys are created in the same project as the resource requesting the key.
+     * The `key_project` must not be set when this mode is used.
+     * </pre>
+     *
+     * <code>RESOURCE_PROJECT = 2;</code>
+     */
+    public static final int RESOURCE_PROJECT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the AutokeyConfig. When this mode is set, any AutokeyConfig
+     * from higher levels in the resource hierarchy are ignored for this
+     * resource and its descendants. This setting can be overridden
+     * by a more specific configuration at a lower level. For example,
+     * if Autokey is disabled on a folder, it can be re-enabled on a sub-folder
+     * or project within that folder by setting a different mode (e.g.,
+     * DEDICATED_KEY_PROJECT or RESOURCE_PROJECT).
+     * </pre>
+     *
+     * <code>DISABLED = 3;</code>
+     */
+    public static final int DISABLED_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static KeyProjectResolutionMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static KeyProjectResolutionMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED;
+        case 1:
+          return DEDICATED_KEY_PROJECT;
+        case 2:
+          return RESOURCE_PROJECT;
+        case 3:
+          return DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<KeyProjectResolutionMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<KeyProjectResolutionMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<KeyProjectResolutionMode>() {
+              public KeyProjectResolutionMode findValueByNumber(int number) {
+                return KeyProjectResolutionMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.kms.v1.AutokeyConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final KeyProjectResolutionMode[] VALUES = values();
+
+    public static KeyProjectResolutionMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private KeyProjectResolutionMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -279,7 +523,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+   * `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -304,7 +549,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+   * `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -497,6 +743,55 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int KEY_PROJECT_RESOLUTION_MODE_FIELD_NUMBER = 8;
+  private int keyProjectResolutionMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+   * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+   * `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for keyProjectResolutionMode.
+   */
+  @java.lang.Override
+  public int getKeyProjectResolutionModeValue() {
+    return keyProjectResolutionMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+   * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+   * `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The keyProjectResolutionMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode
+      getKeyProjectResolutionMode() {
+    com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode result =
+        com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode.forNumber(
+            keyProjectResolutionMode_);
+    return result == null
+        ? com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -523,6 +818,12 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, etag_);
     }
+    if (keyProjectResolutionMode_
+        != com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode
+            .KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, keyProjectResolutionMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -544,6 +845,12 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, etag_);
     }
+    if (keyProjectResolutionMode_
+        != com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode
+            .KEY_PROJECT_RESOLUTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, keyProjectResolutionMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -563,6 +870,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     if (!getKeyProject().equals(other.getKeyProject())) return false;
     if (state_ != other.state_) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (keyProjectResolutionMode_ != other.keyProjectResolutionMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -582,6 +890,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + state_;
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + KEY_PROJECT_RESOLUTION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + keyProjectResolutionMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -725,6 +1035,7 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
       keyProject_ = "";
       state_ = 0;
       etag_ = "";
+      keyProjectResolutionMode_ = 0;
       return this;
     }
 
@@ -773,6 +1084,9 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.etag_ = etag_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.keyProjectResolutionMode_ = keyProjectResolutionMode_;
+      }
     }
 
     @java.lang.Override
@@ -804,6 +1118,9 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
         etag_ = other.etag_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.keyProjectResolutionMode_ != 0) {
+        setKeyProjectResolutionModeValue(other.getKeyProjectResolutionModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -855,6 +1172,12 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 50
+            case 64:
+              {
+                keyProjectResolutionMode_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -881,7 +1204,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+     * `projects/{PROJECT_NUMBER}/autokeyConfig`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -905,7 +1229,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+     * `projects/{PROJECT_NUMBER}/autokeyConfig`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -929,7 +1254,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+     * `projects/{PROJECT_NUMBER}/autokeyConfig`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -952,7 +1278,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+     * `projects/{PROJECT_NUMBER}/autokeyConfig`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -971,7 +1298,8 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+     * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+     * `projects/{PROJECT_NUMBER}/autokeyConfig`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1378,6 +1706,126 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int keyProjectResolutionMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+     * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+     * `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for keyProjectResolutionMode.
+     */
+    @java.lang.Override
+    public int getKeyProjectResolutionModeValue() {
+      return keyProjectResolutionMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+     * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+     * `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for keyProjectResolutionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyProjectResolutionModeValue(int value) {
+      keyProjectResolutionMode_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+     * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+     * `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keyProjectResolutionMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode
+        getKeyProjectResolutionMode() {
+      com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode result =
+          com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode.forNumber(
+              keyProjectResolutionMode_);
+      return result == null
+          ? com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+     * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+     * `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The keyProjectResolutionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyProjectResolutionMode(
+        com.google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      keyProjectResolutionMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. KeyProjectResolutionMode for the AutokeyConfig.
+     * Valid values are `DEDICATED_KEY_PROJECT`, `RESOURCE_PROJECT`, or
+     * `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.AutokeyConfig.KeyProjectResolutionMode key_project_resolution_mode = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyProjectResolutionMode() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      keyProjectResolutionMode_ = 0;
       onChanged();
       return this;
     }

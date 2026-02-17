@@ -36,7 +36,7 @@ public class SyncEncryptStringBytestring {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (KeyManagementServiceClient keyManagementServiceClient =
         KeyManagementServiceClient.create()) {
-      String name = AutokeyConfigName.of("[FOLDER]").toString();
+      String name = AutokeyConfigName.ofFolderName("[FOLDER]").toString();
       ByteString plaintext = ByteString.EMPTY;
       EncryptResponse response = keyManagementServiceClient.encrypt(name, plaintext);
     }

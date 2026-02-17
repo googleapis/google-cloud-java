@@ -546,12 +546,34 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 1. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_44 = 68;</code>
+     */
+    PQ_SIGN_ML_DSA_44(68),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
      * security level 3. Randomized version.
      * </pre>
      *
      * <code>PQ_SIGN_ML_DSA_65 = 56;</code>
      */
     PQ_SIGN_ML_DSA_65(56),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 5. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_87 = 69;</code>
+     */
+    PQ_SIGN_ML_DSA_87(69),
     /**
      *
      *
@@ -563,6 +585,53 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PQ_SIGN_SLH_DSA_SHA2_128S = 57;</code>
      */
     PQ_SIGN_SLH_DSA_SHA2_128S(57),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum stateless hash-based digital signature algorithm, at
+     * security level 1. Randomized pre-hash version supporting SHA256 digests.
+     * </pre>
+     *
+     * <code>PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256 = 60;</code>
+     */
+    PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256(60),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 1. Randomized version supporting externally-computed
+     * message representatives.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_44_EXTERNAL_MU = 70;</code>
+     */
+    PQ_SIGN_ML_DSA_44_EXTERNAL_MU(70),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 3. Randomized version supporting externally-computed
+     * message representatives.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_65_EXTERNAL_MU = 67;</code>
+     */
+    PQ_SIGN_ML_DSA_65_EXTERNAL_MU(67),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 5. Randomized version supporting externally-computed
+     * message representatives.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_87_EXTERNAL_MU = 71;</code>
+     */
+    PQ_SIGN_ML_DSA_87_EXTERNAL_MU(71),
     UNRECOGNIZED(-1),
     ;
 
@@ -1018,12 +1087,36 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 1. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_44 = 68;</code>
+     */
+    public static final int PQ_SIGN_ML_DSA_44_VALUE = 68;
+
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
      * security level 3. Randomized version.
      * </pre>
      *
      * <code>PQ_SIGN_ML_DSA_65 = 56;</code>
      */
     public static final int PQ_SIGN_ML_DSA_65_VALUE = 56;
+
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 5. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_87 = 69;</code>
+     */
+    public static final int PQ_SIGN_ML_DSA_87_VALUE = 69;
 
     /**
      *
@@ -1036,6 +1129,57 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PQ_SIGN_SLH_DSA_SHA2_128S = 57;</code>
      */
     public static final int PQ_SIGN_SLH_DSA_SHA2_128S_VALUE = 57;
+
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum stateless hash-based digital signature algorithm, at
+     * security level 1. Randomized pre-hash version supporting SHA256 digests.
+     * </pre>
+     *
+     * <code>PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256 = 60;</code>
+     */
+    public static final int PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256_VALUE = 60;
+
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 1. Randomized version supporting externally-computed
+     * message representatives.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_44_EXTERNAL_MU = 70;</code>
+     */
+    public static final int PQ_SIGN_ML_DSA_44_EXTERNAL_MU_VALUE = 70;
+
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 3. Randomized version supporting externally-computed
+     * message representatives.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_65_EXTERNAL_MU = 67;</code>
+     */
+    public static final int PQ_SIGN_ML_DSA_65_EXTERNAL_MU_VALUE = 67;
+
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 5. Randomized version supporting externally-computed
+     * message representatives.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_87_EXTERNAL_MU = 71;</code>
+     */
+    public static final int PQ_SIGN_ML_DSA_87_EXTERNAL_MU_VALUE = 71;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1139,10 +1283,22 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return ML_KEM_1024;
         case 63:
           return KEM_XWING;
+        case 68:
+          return PQ_SIGN_ML_DSA_44;
         case 56:
           return PQ_SIGN_ML_DSA_65;
+        case 69:
+          return PQ_SIGN_ML_DSA_87;
         case 57:
           return PQ_SIGN_SLH_DSA_SHA2_128S;
+        case 60:
+          return PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256;
+        case 70:
+          return PQ_SIGN_ML_DSA_44_EXTERNAL_MU;
+        case 67:
+          return PQ_SIGN_ML_DSA_65_EXTERNAL_MU;
+        case 71:
+          return PQ_SIGN_ML_DSA_87_EXTERNAL_MU;
         default:
           return null;
       }
