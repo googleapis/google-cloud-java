@@ -197,11 +197,11 @@ if [ -f "$SOURCE_INTEGRATION_CFG" ]; then
 
     # Append BUILD_SUBDIR
     cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
 env_vars: {
   key: "BUILD_SUBDIR"
   value: "$SOURCE_REPO_NAME"
 }
-
 EOF
 
     echo "Committing split integration config..."
