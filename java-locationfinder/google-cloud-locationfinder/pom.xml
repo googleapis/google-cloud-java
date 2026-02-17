@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-locationfinder</artifactId>
-  <version>0.10.0</version><!-- {x-version-update:google-cloud-locationfinder:current} -->
+  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-locationfinder:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Location Finder API</name>
   <description>Cloud Location Finder API Cloud Location Finder is a public API that offers a repository of all Google Cloud and Google Distributed Cloud locations, as well as cloud locations for other cloud providers.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-locationfinder-parent</artifactId>
-    <version>0.10.0</version><!-- {x-version-update:google-cloud-locationfinder:current} -->
+    <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-locationfinder:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-locationfinder</site.installationModule>
