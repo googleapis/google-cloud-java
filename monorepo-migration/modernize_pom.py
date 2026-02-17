@@ -216,92 +216,92 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
             new_lines.append(line)
             continue
 
-        if in_dep_mgmt:
-            if '<dependencies>' in line:
-                in_dependencies = True
-                new_lines.append(line)
-                continue
-            if '</dependencies>' in line:
-                in_dependencies = False
-                new_lines.append(line)
-                continue
+        # if in_dep_mgmt:
+        if '<dependencies>' in line:
+            in_dependencies = True
+            new_lines.append(line)
+            continue
+        if '</dependencies>' in line:
+            in_dependencies = False
+            new_lines.append(line)
+            continue
 
-            if in_dependencies:
-                if '<dependency>' in line:
-                    in_dependency = True
-                    current_dependency_lines = [line]
-                    should_preserve = False
-                    current_group_id = None
-                    current_artifact_id = None
-                    has_version = False
+        if in_dependencies:
+            if '<dependency>' in line:
+                in_dependency = True
+                current_dependency_lines = [line]
+                should_preserve = False
+                current_group_id = None
+                current_artifact_id = None
+                has_version = False
+                continue
+            if '</dependency>' in line:
+                in_dependency = False
+                current_dependency_lines.append(line)
+
+                if current_artifact_id == 'google-cloud-shared-dependencies':
                     continue
-                if '</dependency>' in line:
-                    in_dependency = False
-                    current_dependency_lines.append(line)
 
-                    if current_artifact_id == 'google-cloud-shared-dependencies':
+                # Prune if already managed by parent mit same version
+                if in_dep_mgmt and parent_managed_deps and (current_group_id, current_artifact_id) in parent_managed_deps:
+                    managed_version = parent_managed_deps[(current_group_id, current_artifact_id)]
+                    
+                    # Extract current version to compare
+                    current_version = None
+                    for d_line in current_dependency_lines:
+                        v_match = re.search(r'<version>(.*?)</version>', d_line)
+                        if v_match:
+                            current_version = v_match.group(1).strip()
+                            break
+                    
+                    if current_version == managed_version:
                         continue
 
-                    # Prune if already managed by parent mit same version
-                    if parent_managed_deps and (current_group_id, current_artifact_id) in parent_managed_deps:
-                        managed_version = parent_managed_deps[(current_group_id, current_artifact_id)]
-                        
-                        # Extract current version to compare
-                        current_version = None
-                        for d_line in current_dependency_lines:
-                            v_match = re.search(r'<version>(.*?)</version>', d_line)
-                            if v_match:
-                                current_version = v_match.group(1).strip()
-                                break
-                        
-                        if current_version == managed_version:
-                            continue
 
-
-                    # Preservation logic:
-                    # 1. Has x-version-update comment
-                    # 2. Is NOT com.google group AND has a version tag
-                    # 3. Is com.google.cloud group AND artifactId starts with google-cloud- AND has a version tag
-                    is_external = current_group_id and not current_group_id.startswith('com.google')
-                    is_google_cloud_lib = current_group_id == 'com.google.cloud' and current_artifact_id and current_artifact_id.startswith('google-cloud-')
-                    
-                    if should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version):
-                        new_lines.extend(current_dependency_lines)
-                    continue
-
-                if in_dependency:
-                    if '<groupId>' in line:
-                        match = re.search(r'<groupId>(.*?)</groupId>', line)
-                        if match:
-                            current_group_id = match.group(1).strip()
-                    if '<artifactId>' in line:
-                        match = re.search(r'<artifactId>(.*?)</artifactId>', line)
-                        if match:
-                            current_artifact_id = match.group(1).strip()
-                    if '<version>' in line:
-                        has_version = True
-                    
-                    if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
-                        new_version = monorepo_versions[current_artifact_id]
-                        indent = line[:line.find('<')]
-                        if '<version>' in line:
-                            marker_artifact = current_artifact_id.replace('-bom', '')
-                            current_dependency_lines.append(f"{indent}<version>{new_version}</version><!-- {{x-version-update:{marker_artifact}:current}} -->\n")
-                            should_preserve = True
-                            continue
-
-                    if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
-                        should_preserve = True
-                    
-                    current_dependency_lines.append(line)
-                    if '{x-version-update:' in line:
-                        should_preserve = True
-                    continue
-
-                # Prune comments and extra whitespace in depMgmt for a cleaner result
-                if not line.strip():
-                    new_lines.append(line)
+                # Preservation logic:
+                # 1. Has x-version-update comment
+                # 2. Is NOT com.google group AND has a version tag
+                # 3. Is com.google.cloud group AND artifactId starts with google-cloud- AND has a version tag
+                is_external = current_group_id and not current_group_id.startswith('com.google')
+                is_google_cloud_lib = current_group_id == 'com.google.cloud' and current_artifact_id and current_artifact_id.startswith('google-cloud-')
+                
+                if not in_dep_mgmt or should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version):
+                    new_lines.extend(current_dependency_lines)
                 continue
+
+            if in_dependency:
+                if '<groupId>' in line:
+                    match = re.search(r'<groupId>(.*?)</groupId>', line)
+                    if match:
+                        current_group_id = match.group(1).strip()
+                if '<artifactId>' in line:
+                    match = re.search(r'<artifactId>(.*?)</artifactId>', line)
+                    if match:
+                        current_artifact_id = match.group(1).strip()
+                if '<version>' in line:
+                    has_version = True
+                
+                if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
+                    new_version = monorepo_versions[current_artifact_id]
+                    indent = line[:line.find('<')]
+                    if '<version>' in line:
+                        marker_artifact = current_artifact_id.replace('-bom', '')
+                        current_dependency_lines.append(f"{indent}<version>{new_version}</version><!-- {{x-version-update:{marker_artifact}:current}} -->\n")
+                        should_preserve = True
+                        continue
+
+                if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
+                    should_preserve = True
+                
+                current_dependency_lines.append(line)
+                if '{x-version-update:' in line:
+                    should_preserve = True
+                continue
+
+            # Prune comments and extra whitespace in depMgmt for a cleaner result
+            if not line.strip():
+                new_lines.append(line)
+            continue
 
         # Reporting section removal
         if '<reporting>' in line:
