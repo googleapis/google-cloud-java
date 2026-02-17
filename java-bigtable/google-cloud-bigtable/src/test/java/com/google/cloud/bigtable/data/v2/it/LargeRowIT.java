@@ -114,50 +114,12 @@ public class LargeRowIT {
     assertThat(row.getCells().get(1).getValue()).isEqualTo(largeValue);
   }
 
-  static class AccumulatingObserver implements ResponseObserver<Row> {
-
-    final List<Row> responses = Lists.newArrayList();
-    final SettableApiFuture<Void> completionFuture = SettableApiFuture.create();
-
-    void awaitCompletion() throws Throwable {
-      try {
-        completionFuture.get(10, TimeUnit.MINUTES);
-      } catch (ExecutionException e) {
-        throw e.getCause();
-      }
-    }
-
-    @Override
-    public void onStart(StreamController controller) {}
-
-    @Override
-    public void onResponse(Row row) {
-      responses.add(row);
-    }
-
-    @Override
-    public void onError(Throwable t) {
-      completionFuture.setException(t);
-    }
-
-    @Override
-    public void onComplete() {
-      completionFuture.set(null);
-    }
-  }
-
   @Test
-  public void read() throws Throwable {
+  public void testSkipLargeRow() throws Throwable {
     assume()
         .withMessage("Large row read errors are not supported by emulator")
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
-
-    //    TODO: remove this once skip large row for read is released
-    assume()
-        .withMessage("Skip large row for read is not released yet")
-        .that(System.getProperty("bigtable.testSkipLargeRowIntegrationTests"))
-        .isEqualTo("true");
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
     String tableId = table.getId();
@@ -202,12 +164,34 @@ public class LargeRowIT {
                     ImmutableList.<String>of(),
                     ByteString.copyFromUtf8("my-value"))));
 
+    Row expectedRow5 =
+        Row.create(
+            ByteString.copyFromUtf8("r5"),
+            ImmutableList.of(
+                RowCell.create(
+                    familyId,
+                    ByteString.copyFromUtf8("qualifier"),
+                    timestampMicros,
+                    ImmutableList.of(),
+                    ByteString.copyFromUtf8("my-value"))));
+
+    Row expectedRow6 =
+        Row.create(
+            ByteString.copyFromUtf8("r6"),
+            ImmutableList.of(
+                RowCell.create(
+                    familyId,
+                    ByteString.copyFromUtf8("qualifier"),
+                    timestampMicros,
+                    ImmutableList.of(),
+                    ByteString.copyFromUtf8("my-value"))));
+
     // large row creation
     byte[] largeValueBytes = new byte[3 * 1024 * 1024];
     ByteString largeValue = ByteString.copyFrom(largeValueBytes);
 
     for (int i = 0; i < 100; i++) {
-      ByteString qualifier = ByteString.copyFromUtf8("qualifier1_" + "_" + String.valueOf(i));
+      ByteString qualifier = ByteString.copyFromUtf8("qualifier1_" + "_" + i);
       client.mutateRow(
           RowMutation.create(TableId.of(tableId), "r2").setCell(familyId, qualifier, largeValue));
       client.mutateRow(
@@ -222,7 +206,8 @@ public class LargeRowIT {
                 .call(
                     Query.create(tableId)
                         .range(ByteStringRange.unbounded().startClosed("r1").endOpen("r3"))))
-        .containsExactly(expectedRow1);
+        .containsExactly(expectedRow1)
+        .inOrder();
 
     assertThat(
             client
@@ -231,7 +216,8 @@ public class LargeRowIT {
                 .call(
                     Query.create(tableId)
                         .range(ByteStringRange.unbounded().startClosed("r1").endClosed("r4"))))
-        .containsExactly(expectedRow1, expectedRow4);
+        .containsExactly(expectedRow1, expectedRow4)
+        .inOrder();
 
     List<Row> emptyRows =
         client
@@ -267,7 +253,78 @@ public class LargeRowIT {
                 .call(
                     Query.create(tableId)
                         .range(ByteStringRange.unbounded().startClosed("r1").endClosed("r4"))))
-        .containsExactly(expectedRow1, expectedRow4);
+        .containsExactly(expectedRow1, expectedRow4)
+        .inOrder();
+
+    assertThat(client.skipLargeRowsCallable().all().call(Query.create(tableId)))
+        .containsExactly(expectedRow1, expectedRow4, expectedRow5, expectedRow6)
+        .inOrder();
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(Query.create(tableId).range(ByteStringRange.unbounded().endClosed("r4"))))
+        .containsExactly(expectedRow1, expectedRow4)
+        .inOrder();
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(Query.create(tableId).range(ByteStringRange.unbounded().startClosed("r1"))))
+        .containsExactly(expectedRow1, expectedRow4, expectedRow5, expectedRow6)
+        .inOrder();
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(Query.create(tableId).range(ByteStringRange.unbounded().endOpen("r4"))))
+        .containsExactly(expectedRow1);
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(Query.create(tableId).range(ByteStringRange.unbounded().startOpen("r1"))))
+        .containsExactly(expectedRow4, expectedRow5, expectedRow6);
+
+    assertThat(client.skipLargeRowsCallable().all().call(Query.create(tableId).reversed(true)))
+        .containsExactly(expectedRow6, expectedRow5, expectedRow4, expectedRow1)
+        .inOrder();
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().endClosed("r4"))
+                        .reversed(true)))
+        .containsExactly(expectedRow4, expectedRow1)
+        .inOrder();
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startClosed("r1"))
+                        .reversed(true)))
+        .containsExactly(expectedRow6, expectedRow5, expectedRow4, expectedRow1)
+        .inOrder();
+
+    assertThat(
+            client
+                .skipLargeRowsCallable()
+                .all()
+                .call(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startClosed("r2").endOpen("r3\0"))))
+        .isEmpty();
+
     // async
     AccumulatingObserver observer = new AccumulatingObserver();
     Query query = Query.create(tableId).range("r1", "r3");
@@ -280,5 +337,44 @@ public class LargeRowIT {
     client.skipLargeRowsCallable().call(query2, observer2);
     observer2.awaitCompletion();
     assertThat(observer2.responses).containsExactly(expectedRow1, expectedRow4);
+
+    AccumulatingObserver observer3 = new AccumulatingObserver();
+    Query query3 = Query.create(tableId);
+    client.skipLargeRowsCallable().call(query3, observer3);
+    observer3.awaitCompletion();
+    assertThat(observer3.responses)
+        .containsExactly(expectedRow1, expectedRow4, expectedRow5, expectedRow6);
+  }
+
+  static class AccumulatingObserver implements ResponseObserver<Row> {
+
+    final List<Row> responses = Lists.newArrayList();
+    final SettableApiFuture<Void> completionFuture = SettableApiFuture.create();
+
+    void awaitCompletion() throws Throwable {
+      try {
+        completionFuture.get(10, TimeUnit.MINUTES);
+      } catch (ExecutionException e) {
+        throw e.getCause();
+      }
+    }
+
+    @Override
+    public void onStart(StreamController controller) {}
+
+    @Override
+    public void onResponse(Row row) {
+      responses.add(row);
+    }
+
+    @Override
+    public void onError(Throwable t) {
+      completionFuture.setException(t);
+    }
+
+    @Override
+    public void onComplete() {
+      completionFuture.set(null);
+    }
   }
 }

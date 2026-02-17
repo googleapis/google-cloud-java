@@ -336,6 +336,132 @@ public class ReadRowsRetryTest {
   }
 
   @Test
+  public void readRowRangeWithUnboundedRanges() {
+    ApiException largeRowException = createLargeRowException("r3");
+
+    // Test case 1: Full table scan (unbounded start and end)
+    service.expectations.add(
+        RpcExpectation.create()
+            .respondWith("r1", "r2")
+            .respondWithException(Code.INTERNAL, largeRowException));
+
+    // After the large row error, the query should be split into two ranges
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequestForMultipleRowRanges(
+                ImmutableList.of(Range.open("r2", "r3"), Range.greaterThan("r3")))
+            .respondWith("r4")
+            .respondWithStatus(Code.OK));
+
+    List<String> actualResults = getSkipLargeRowsResults(Query.create(TABLE_ID));
+    Truth.assertThat(actualResults).containsExactly("r1", "r2", "r4").inOrder();
+
+    // Test case 2: Unbounded end
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.atLeast("r2"))
+            .respondWith("r2")
+            .respondWithException(Code.INTERNAL, largeRowException));
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequestForMultipleRowRanges(
+                ImmutableList.of(Range.open("r2", "r3"), Range.greaterThan("r3")))
+            .respondWith("r4")
+            .respondWithStatus(Code.OK));
+
+    actualResults =
+        getSkipLargeRowsResults(
+            Query.create(TABLE_ID).range(ByteStringRange.unbounded().startClosed("r2")));
+    Truth.assertThat(actualResults).containsExactly("r2", "r4").inOrder();
+
+    // Test case 3: Unbounded start
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.atMost("r4"))
+            .respondWith("r1", "r2")
+            .respondWithException(Code.INTERNAL, largeRowException));
+
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequestForMultipleRowRanges(
+                ImmutableList.of(Range.open("r2", "r3"), Range.openClosed("r3", "r4")))
+            .respondWith("r4")
+            .respondWithStatus(Code.OK));
+
+    actualResults =
+        getSkipLargeRowsResults(
+            Query.create(TABLE_ID).range(ByteStringRange.unbounded().endClosed("r4")));
+    Truth.assertThat(actualResults).containsExactly("r1", "r2", "r4").inOrder();
+  }
+
+  @Test
+  public void readRowRangeWithUnboundedRangesReversed() {
+    ApiException largeRowException = createLargeRowException("r3");
+
+    // Test case 1: Full table scan (unbounded start and end) reversed
+    service.expectations.add(
+        RpcExpectation.create()
+            .setReversed(true)
+            .respondWith("r5", "r4")
+            .respondWithException(Code.INTERNAL, largeRowException));
+
+    // After the large row error, the query should be split into two ranges and retried
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequestForMultipleRowRanges(
+                ImmutableList.of(Range.lessThan("r3"), Range.open("r3", "r4")))
+            .setReversed(true)
+            .respondWith("r2", "r1")
+            .respondWithStatus(Code.OK));
+
+    List<String> actualResults = getSkipLargeRowsResults(Query.create(TABLE_ID).reversed(true));
+    Truth.assertThat(actualResults).containsExactly("r5", "r4", "r2", "r1").inOrder();
+
+    // Test case 2: Unbounded start reversed
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.atLeast("r2"))
+            .setReversed(true)
+            .respondWith("r5", "r4")
+            .respondWithException(Code.INTERNAL, largeRowException));
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequestForMultipleRowRanges(
+                ImmutableList.of(Range.closedOpen("r2", "r3"), Range.open("r3", "r4")))
+            .setReversed(true)
+            .respondWith("r2")
+            .respondWithStatus(Code.OK));
+    actualResults =
+        getSkipLargeRowsResults(
+            Query.create(TABLE_ID)
+                .range(ByteStringRange.unbounded().startClosed("r2"))
+                .reversed(true));
+    Truth.assertThat(actualResults).containsExactly("r5", "r4", "r2").inOrder();
+
+    // Test case 3: Unbounded end reversed
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.atMost("r4"))
+            .setReversed(true)
+            .respondWith("r4")
+            .respondWithException(Code.INTERNAL, largeRowException));
+
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequestForMultipleRowRanges(
+                ImmutableList.of(Range.lessThan("r3"), Range.open("r3", "r4")))
+            .setReversed(true)
+            .respondWith("r2", "r1")
+            .respondWithStatus(Code.OK));
+    actualResults =
+        getSkipLargeRowsResults(
+            Query.create(TABLE_ID)
+                .range(ByteStringRange.unbounded().endClosed("r4"))
+                .reversed(true));
+    Truth.assertThat(actualResults).containsExactly("r4", "r2", "r1").inOrder();
+  }
+
+  @Test
   public void multipleRetryTest() {
     service.expectations.add(
         RpcExpectation.create()

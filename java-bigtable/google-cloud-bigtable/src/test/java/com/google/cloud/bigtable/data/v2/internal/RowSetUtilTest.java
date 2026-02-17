@@ -331,6 +331,20 @@ public class RowSetUtilTest {
     assertThat(actual).isEqualTo(ByteStringRange.create("a", "z"));
   }
 
+  @Test
+  public void eraseLargeRowEmptyRangeTest() {
+    ByteString key = ByteString.copyFromUtf8("a");
+    ByteString keyTrailer = key.concat(ByteString.copyFrom(new byte[] {0}));
+
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(key).setEndKeyOpen(keyTrailer).build())
+            .build();
+    RowSet actual = RowSetUtil.eraseLargeRow(rowSet, key);
+    assertThat(actual).isNull();
+  }
+
   // Helpers
   private static void verifyShard(RowSet input, SortedSet<ByteString> splits, RowSet... expected) {
     List<RowSet> actualWithNull = RowSetUtil.shard(input, splits);

@@ -68,7 +68,7 @@ public final class RowSetUtil {
     // Handle ranges
     for (RowRange rowRange : rowSet.getRowRangesList()) {
       List<RowRange> afterSplit = splitOnLargeRowKey(rowRange, excludePoint);
-      if (afterSplit != null && !afterSplit.isEmpty()) {
+      if (!afterSplit.isEmpty()) {
         afterSplit.forEach(newRowSet::addRowRanges);
       }
     }
@@ -162,8 +162,11 @@ public final class RowSetUtil {
     ByteString startKey = StartPoint.extract(range).value;
     ByteString endKey = EndPoint.extract(range).value;
 
-    // if end key is on the left of large row key, don't split
-    if (ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) < 0) {
+    // Empty endKey means it's unbounded
+    boolean boundedEnd = !endKey.isEmpty();
+
+    // if end key is on the left of large row key, don't split.
+    if (boundedEnd && ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) < 0) {
       rowRanges.add(range);
       return rowRanges;
     }
@@ -181,11 +184,19 @@ public final class RowSetUtil {
     }
 
     // if the end key is on the right of the large row key, set the start key to be large row key
-    // open
-    if (ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) > 0) {
-      RowRange afterSplit = range.toBuilder().setStartKeyOpen(largeRowKey).build();
-      rowRanges.add(afterSplit);
+    // open.
+    if (!boundedEnd || ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) > 0) {
+      // handle the edge case where (key, key\0) is an empty range and should be excluded
+      ByteString nextKey = largeRowKey.concat(ByteString.copyFrom(new byte[] {0}));
+      EndPoint endPoint = EndPoint.extract(range);
+      boolean isEmptyRange = !endPoint.isClosed && endPoint.value.equals(nextKey);
+
+      if (!isEmptyRange) {
+        RowRange afterSplit = range.toBuilder().setStartKeyOpen(largeRowKey).build();
+        rowRanges.add(afterSplit);
+      }
     }
+
     return rowRanges;
   }
 
