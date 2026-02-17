@@ -1047,6 +1047,56 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testRegexFind() throws Exception {
+    assumeFalse(
+        "Regexes are not supported against the emulator",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .select(field("title").regexFind("^\\w+").as("firstWordInTitle"))
+            .sort(field("firstWordInTitle").ascending())
+            .limit(3)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("firstWordInTitle", "1984"),
+                map("firstWordInTitle", "Crime"),
+                map("firstWordInTitle", "Dune")));
+  }
+
+  @Test
+  public void testRegexFindAll() throws Exception {
+    assumeFalse(
+        "Regexes are not supported against the emulator",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .select(field("title").regexFindAll("\\w+").as("wordsInTitle"))
+            .sort(field("wordsInTitle").ascending())
+            .limit(3)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("wordsInTitle", Lists.newArrayList("1984")),
+                map("wordsInTitle", Lists.newArrayList("Crime", "and", "Punishment")),
+                map("wordsInTitle", Lists.newArrayList("Dune"))));
+  }
+
+  @Test
   public void testRegexMatches() throws Exception {
     assumeFalse(
         "LIKE is not supported against the emulator.",

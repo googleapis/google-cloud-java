@@ -1229,6 +1229,134 @@ public abstract class Expression {
   }
 
   /**
+   * Creates an expression that returns the first substring of a string expression that matches a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param string The expression representing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} representing the regular expression find function.
+   */
+  @BetaApi
+  public static Expression regexFind(Expression string, Expression pattern) {
+    return new FunctionExpression("regex_find", ImmutableList.of(string, pattern));
+  }
+
+  /**
+   * Creates an expression that returns the first substring of a string expression that matches a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param string The expression representing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} representing the regular expression find function.
+   */
+  @BetaApi
+  public static Expression regexFind(Expression string, String pattern) {
+    return regexFind(string, constant(pattern));
+  }
+
+  /**
+   * Creates an expression that returns the first substring of a string field that matches a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param fieldName The name of the field containing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} representing the regular expression find function.
+   */
+  @BetaApi
+  public static Expression regexFind(String fieldName, Expression pattern) {
+    return regexFind(field(fieldName), pattern);
+  }
+
+  /**
+   * Creates an expression that returns the first substring of a string field that matches a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param fieldName The name of the field containing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} representing the regular expression find function.
+   */
+  @BetaApi
+  public static Expression regexFind(String fieldName, String pattern) {
+    return regexFind(field(fieldName), constant(pattern));
+  }
+
+  /**
+   * Creates an expression that evaluates to a list of all substrings in a string expression that
+   * match a specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param string The expression representing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} that evaluates to a list of matched substrings.
+   */
+  @BetaApi
+  public static Expression regexFindAll(Expression string, Expression pattern) {
+    return new FunctionExpression("regex_find_all", ImmutableList.of(string, pattern));
+  }
+
+  /**
+   * Creates an expression that evaluates to a list of all substrings in a string expression that
+   * match a specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param string The expression representing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} that evaluates to a list of matched substrings.
+   */
+  @BetaApi
+  public static Expression regexFindAll(Expression string, String pattern) {
+    return regexFindAll(string, constant(pattern));
+  }
+
+  /**
+   * Creates an expression that evaluates to a list of all substrings in a string field that match a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param fieldName The name of the field containing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} that evaluates to a list of matched substrings.
+   */
+  @BetaApi
+  public static Expression regexFindAll(String fieldName, Expression pattern) {
+    return regexFindAll(field(fieldName), pattern);
+  }
+
+  /**
+   * Creates an expression that evaluates to a list of all substrings in a string field that match a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param fieldName The name of the field containing the string to search.
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} that evaluates to a list of matched substrings.
+   */
+  @BetaApi
+  public static Expression regexFindAll(String fieldName, String pattern) {
+    return regexFindAll(field(fieldName), constant(pattern));
+  }
+
+  /**
    * Creates an expression that checks if a string field matches a specified regular expression.
    *
    * @param string The expression representing the string to match against.
@@ -3870,6 +3998,36 @@ public abstract class Expression {
   @BetaApi
   public final BooleanExpression regexContains(Object pattern) {
     return regexContains(this, toExprOrConstant(pattern));
+  }
+
+  /**
+   * Creates an expression that returns the first substring of a string expression that matches a
+   * specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} representing the regular expression find function.
+   */
+  @BetaApi
+  public final Expression regexFind(Object pattern) {
+    return regexFind(this, toExprOrConstant(pattern));
+  }
+
+  /**
+   * Creates an expression that evaluates to a list of all substrings in a string expression that
+   * match a specified regular expression.
+   *
+   * <p>This expression uses the [RE2](https://github.com/google/re2/wiki/Syntax) regular expression
+   * syntax.
+   *
+   * @param pattern The regular expression to search for.
+   * @return A new {@link Expression} that evaluates to a list of matched substrings.
+   */
+  @BetaApi
+  public final Expression regexFindAll(Object pattern) {
+    return regexFindAll(this, toExprOrConstant(pattern));
   }
 
   /**
