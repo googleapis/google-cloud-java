@@ -32,7 +32,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 
 @InternalApi("For internal use only")
 public class ChannelPoolMetricsTracer implements Runnable {
@@ -45,15 +44,11 @@ public class ChannelPoolMetricsTracer implements Runnable {
   private final AtomicReference<BigtableChannelPoolObserver> bigtableChannelInsightsProviderRef =
       new AtomicReference<>();
   private final AtomicReference<String> lbPolicyRef = new AtomicReference<>("ROUND_ROBIN");
-  private final Attributes commonAttrs;
 
   // Attributes for unary and streaming RPCs, built on demand in run()
-  @Nullable private Attributes unaryAttributes;
-  @Nullable private Attributes streamingAttributes;
 
-  public ChannelPoolMetricsTracer(OpenTelemetry openTelemetry, Attributes commonAttrs) {
+  public ChannelPoolMetricsTracer(OpenTelemetry openTelemetry) {
     Meter meter = openTelemetry.getMeter(METER_NAME);
-    this.commonAttrs = commonAttrs;
     this.outstandingRpcsHistogram =
         meter
             .histogramBuilder(OUTSTANDING_RPCS_PER_CHANNEL_NAME)
@@ -99,35 +94,51 @@ public class ChannelPoolMetricsTracer implements Runnable {
       logger.warning("No Bigtable ChannelPoolObserver available");
       return; // Not registered yet
     }
-    String lbPolicy = lbPolicyRef.get();
-
-    // Build attributes if they haven't been built yet.
-    if (unaryAttributes == null || streamingAttributes == null) {
-      Attributes baseAttrs = commonAttrs.toBuilder().put("lb_policy", lbPolicy).build();
-      this.unaryAttributes = baseAttrs.toBuilder().put("streaming", false).build();
-      this.streamingAttributes = baseAttrs.toBuilder().put("streaming", true).build();
-    }
     List<? extends BigtableChannelObserver> channelInsights =
         channelInsightsProvider.getChannelInfos();
     if (channelInsights == null || channelInsights.isEmpty()) {
       return;
     }
+
+    String lbPolicy = lbPolicyRef.get();
+
+    Attributes dpUnaryAttrs =
+        Attributes.builder()
+            .put("transport_type", "directpath")
+            .put("streaming", false)
+            .put("lb_policy", lbPolicy)
+            .build();
+    Attributes dpStreamingAttrs =
+        Attributes.builder()
+            .put("transport_type", "directpath")
+            .put("streaming", true)
+            .put("lb_policy", lbPolicy)
+            .build();
+    Attributes cpUnaryAttrs =
+        Attributes.builder()
+            .put("transport_type", "cloudpath")
+            .put("streaming", false)
+            .put("lb_policy", lbPolicy)
+            .build();
+    Attributes cpStreamingAttrs =
+        Attributes.builder()
+            .put("transport_type", "cloudpath")
+            .put("streaming", true)
+            .put("lb_policy", lbPolicy)
+            .build();
+
     for (BigtableChannelObserver info : channelInsights) {
-      String transportTypeValue = info.isAltsChannel() ? "DIRECTPATH" : "CLOUDPATH";
-      this.unaryAttributes =
-          this.unaryAttributes.toBuilder().put("transport_type", transportTypeValue).build();
-      this.streamingAttributes =
-          this.streamingAttributes.toBuilder().put("transport_type", transportTypeValue).build();
+      Attributes unaryAttrs = info.isAltsChannel() ? dpUnaryAttrs : cpUnaryAttrs;
+      Attributes streamingAttrs = info.isAltsChannel() ? dpStreamingAttrs : cpStreamingAttrs;
 
       long currentOutstandingUnaryRpcs = info.getOutstandingUnaryRpcs();
       long currentOutstandingStreamingRpcs = info.getOutstandingStreamingRpcs();
-      // Record outstanding unary RPCs with streaming=false
-      outstandingRpcsHistogram.record(currentOutstandingUnaryRpcs, unaryAttributes);
-      // Record outstanding streaming RPCs with streaming=true
-      outstandingRpcsHistogram.record(currentOutstandingStreamingRpcs, streamingAttributes);
+      outstandingRpcsHistogram.record(currentOutstandingUnaryRpcs, unaryAttrs);
+      outstandingRpcsHistogram.record(currentOutstandingStreamingRpcs, streamingAttrs);
 
       long errors = info.getAndResetErrorCount();
-      perConnectionErrorCountHistogram.record(errors, commonAttrs);
+      // Record errors with empty attributes.
+      perConnectionErrorCountHistogram.record(errors, Attributes.empty());
     }
   }
 }

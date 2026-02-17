@@ -60,7 +60,6 @@ public class ChannelPoolMetricsTracerTest {
   private ArgumentCaptor<Runnable> runnableCaptor;
 
   private ChannelPoolMetricsTracer tracker;
-  private Attributes baseAttributes;
 
   @Mock private BigtableChannelPoolObserver mockInsightsProvider;
   @Mock private BigtableChannelObserver mockInsight1;
@@ -74,9 +73,7 @@ public class ChannelPoolMetricsTracerTest {
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
-    baseAttributes = Attributes.builder().build();
-
-    tracker = new ChannelPoolMetricsTracer(openTelemetry, baseAttributes);
+    tracker = new ChannelPoolMetricsTracer(openTelemetry);
 
     runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
     // Configure mockScheduler to capture the runnable when tracker.start() is called
@@ -114,7 +111,7 @@ public class ChannelPoolMetricsTracerTest {
 
   private static Attributes getExpectedRpcAttributes(String lbPolicy, boolean streaming) {
     return Attributes.builder()
-        .put(AttributeKey.stringKey("transport_type"), "CLOUDPATH")
+        .put(AttributeKey.stringKey("transport_type"), "cloudpath")
         .put(AttributeKey.stringKey("lb_policy"), lbPolicy)
         .put(AttributeKey.booleanKey("streaming"), streaming)
         .build();

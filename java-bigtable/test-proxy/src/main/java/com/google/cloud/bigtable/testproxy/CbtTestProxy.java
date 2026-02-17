@@ -289,8 +289,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       // This response is empty.
       client.dataClient().mutateRow(mutation);
     } catch (ApiException e) {
-      responseObserver.onNext(
-          MutateRowResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(MutateRowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -342,8 +341,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       responseObserver.onCompleted();
       return;
     } catch (ApiException e) {
-      responseObserver.onNext(
-          MutateRowsResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(MutateRowsResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -395,8 +393,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         logger.info(String.format("readRow() did not find row: %s", request.getRowKey()));
       }
     } catch (ApiException e) {
-      responseObserver.onNext(
-          RowResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(RowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -440,8 +437,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
           // Note that the default instance == OK
           resultBuilder.setStatus(com.google.rpc.Status.getDefaultInstance()).build());
     } catch (ApiException e) {
-      responseObserver.onNext(
-          RowsResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(RowsResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -558,8 +554,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     try {
       keyOffsets = client.dataClient().sampleRowKeys(tableId);
     } catch (ApiException e) {
-      responseObserver.onNext(
-          SampleRowKeysResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(SampleRowKeysResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -643,8 +638,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                 "readModifyWriteRow() did not find row: %s", request.getRequest().getRowKey()));
       }
     } catch (ApiException e) {
-      responseObserver.onNext(
-          RowResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(RowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -700,8 +694,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       responseObserver.onError(e);
       return;
     } catch (ApiException e) {
-      responseObserver.onNext(
-          ExecuteQueryResult.newBuilder().setStatus(convertStatus(e)).build());
+      responseObserver.onNext(ExecuteQueryResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
       return;
     } catch (StatusRuntimeException e) {
@@ -803,7 +796,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return status;
     }
 
-    return com.google.rpc.Status.newBuilder().setCode(e.getStatusCode().getCode().ordinal()).setMessage(e.getMessage())
+    return com.google.rpc.Status.newBuilder()
+        .setCode(e.getStatusCode().getCode().ordinal())
+        .setMessage(e.getMessage())
         .build();
   }
 

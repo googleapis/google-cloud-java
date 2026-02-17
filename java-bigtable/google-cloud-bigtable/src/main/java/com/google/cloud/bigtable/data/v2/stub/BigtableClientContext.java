@@ -121,9 +121,7 @@ public class BigtableClientContext {
               .getInternalMetricsProvider()
               .createOtelProvider(settings, credentials, backgroundExecutor);
       if (internalOtel != null) {
-        channelPoolMetricsTracer =
-            new ChannelPoolMetricsTracer(
-                internalOtel, EnhancedBigtableStub.createBuiltinAttributes(builder.build()));
+        channelPoolMetricsTracer = new ChannelPoolMetricsTracer(internalOtel);
 
         // Configure grpc metrics
         configureGrpcOtel(transportProvider, internalOtel);

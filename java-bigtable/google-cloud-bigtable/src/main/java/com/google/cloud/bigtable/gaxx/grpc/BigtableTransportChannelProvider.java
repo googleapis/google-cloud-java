@@ -38,7 +38,6 @@ import javax.annotation.Nullable;
  */
 @InternalApi
 public final class BigtableTransportChannelProvider implements TransportChannelProvider {
-
   private final InstantiatingGrpcChannelProvider delegate;
   private final ChannelPrimer channelPrimer;
   @Nullable private final ChannelPoolMetricsTracer channelPoolMetricsTracer;
