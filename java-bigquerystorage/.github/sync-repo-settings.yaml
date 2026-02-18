@@ -1,0 +1,175 @@
+rebaseMergeAllowed: false
+squashMergeAllowed: true
+mergeCommitAllowed: false
+branchProtectionRules:
+  - pattern: main
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: java7
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (7)
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.4.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.12.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.25.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.38.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.47.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+  - pattern: 3.5.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+  - pattern: 3.11.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 3.15.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 3.20.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
+      - library_generation
+      - unmanaged_dependency_check
+permissionRules:
+  - team: yoshi-admins
+    permission: admin
+  - team: yoshi-java-admins
+    permission: admin
+  - team: api-bigquerystorage
+    permission: push
+  - team: yoshi-java
+    permission: push
