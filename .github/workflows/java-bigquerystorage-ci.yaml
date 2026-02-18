@@ -5,9 +5,25 @@ on:
     branches:
     - main
   pull_request:
-name: ci
+name: java-bigquerystorage ci
+env:
+  BUILD_SUBDIR: java-bigquerystorage
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-bigquerystorage/**'
   units:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -24,6 +40,8 @@ jobs:
       env:
         JOB_TYPE: test
   units-java8:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     # Building using Java 17 and run the tests with Java 8 runtime
     name: "units (8)"
     runs-on: ubuntu-latest
@@ -36,7 +54,7 @@ jobs:
     - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
       # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
       # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
-      run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
+      run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java -P !java17" >> $GITHUB_ENV
       shell: bash
     - uses: actions/setup-java@v3
       with:
@@ -46,18 +64,24 @@ jobs:
       env:
         JOB_TYPE: test
   windows:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: windows-latest
     steps:
+    - name: Support longpaths
+      run: git config --system core.longpaths true
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - uses: actions/setup-java@v2
       with:
         distribution: temurin
         java-version: 8
     - run: java -version
-    - run: .kokoro/build.bat
+    - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
   dependencies:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -71,6 +95,8 @@ jobs:
     - run: java -version
     - run: .kokoro/dependencies.sh
   javadoc:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -83,6 +109,8 @@ jobs:
         env:
           JOB_TYPE: javadoc
   lint:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -94,15 +122,3 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
-  clirr:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-    - uses: actions/setup-java@v2
-      with:
-        distribution: temurin
-        java-version: 8
-    - run: java -version
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: clirr

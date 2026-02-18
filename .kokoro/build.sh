@@ -157,6 +157,7 @@ case ${JOB_TYPE} in
       mvn test -Pnative \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
+        -PcustomNative \
         -DtrimStackTrace=false \
         -Dclirr.skip=true \
         -Denforcer.skip=true \
