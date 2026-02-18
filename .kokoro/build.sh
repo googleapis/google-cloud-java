@@ -110,7 +110,7 @@ case ${JOB_TYPE} in
         -Djacoco.skip=true \
         -DskipUnitTests=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C ${SUREFIRE_JVM_OPT}
+        ${SUREFIRE_JVM_OPT}
 
       RETURN_CODE=$?
       popd
