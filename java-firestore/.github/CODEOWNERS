@@ -4,20 +4,20 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-# The @googleapis/api-firestore @googleapis/firestore-dpe is the default owner for changes in this repo
-*                       @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+# The @googleapis/firestore-team is the default owner for changes in this repo
+*                       @googleapis/cloud-sdk-java-team @googleapis/firestore-team
 
 # for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
-**/*.java               @googleapis/api-firestore @googleapis/firestore-dpe
+**/*.java               @googleapis/firestore-team
 
 # For generated Java code
-proto-*/                    @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
-grpc-*/                     @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+proto-*/                    @googleapis/cloud-sdk-java-team @googleapis/firestore-team
+grpc-*/                     @googleapis/cloud-sdk-java-team @googleapis/firestore-team
 # Generated code pattern in google-cloud-firestore and google-cloud-firestore-admin
-**/*Client.java             @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
-**/*Settings.java           @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
-**/*ClientHttpJsonTest.java @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
-**/*ClientTest.java         @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+**/*Client.java             @googleapis/cloud-sdk-java-team @googleapis/firestore-team
+**/*Settings.java           @googleapis/cloud-sdk-java-team @googleapis/firestore-team
+**/*ClientHttpJsonTest.java @googleapis/cloud-sdk-java-team @googleapis/firestore-team
+**/*ClientTest.java         @googleapis/cloud-sdk-java-team @googleapis/firestore-team
 
 # The java-samples-reviewers team is the default owner for samples changes
 samples/**/*.java       @googleapis/java-samples-reviewers
