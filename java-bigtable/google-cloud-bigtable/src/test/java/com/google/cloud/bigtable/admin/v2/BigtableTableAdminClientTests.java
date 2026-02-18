@@ -45,6 +45,7 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
+import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
 import com.google.bigtable.admin.v2.RestoreSourceType;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.SchemaBundleName;
@@ -76,6 +77,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
+import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
 import com.google.cloud.bigtable.admin.v2.models.SchemaBundle;
@@ -284,6 +286,10 @@ public class BigtableTableAdminClientTests {
   private UnaryCallable<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       mockTestIamPermissionsCallable;
+
+  @Mock
+  private OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+      mockOptimizeRestoredTableCallable;
 
   @Before
   public void setUp() {
@@ -1680,6 +1686,59 @@ public class BigtableTableAdminClientTests {
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testAwaitOptimizeRestoredTable() throws Exception {
+    // Setup
+    Mockito.when(mockStub.awaitOptimizeRestoredTableCallable())
+        .thenReturn(mockOptimizeRestoredTableCallable);
+
+    String optimizeToken = "my-optimization-token";
+
+    // 1. Mock the Token
+    OptimizeRestoredTableOperationToken mockToken =
+        Mockito.mock(OptimizeRestoredTableOperationToken.class);
+    Mockito.when(mockToken.getOperationName()).thenReturn(optimizeToken);
+
+    // 2. Mock the Result (wrapping the token)
+    RestoredTableResult mockResult = Mockito.mock(RestoredTableResult.class);
+    Mockito.when(mockResult.getOptimizeRestoredTableOperationToken()).thenReturn(mockToken);
+
+    // 3. Mock the Input Future (returning the result)
+    ApiFuture<RestoredTableResult> mockRestoreFuture = Mockito.mock(ApiFuture.class);
+    Mockito.when(mockRestoreFuture.get()).thenReturn(mockResult);
+
+    // 4. Mock the Stub's behavior (resuming the Optimize Op)
+    OperationFuture<Empty, OptimizeRestoredTableMetadata> mockOptimizeOp =
+        Mockito.mock(OperationFuture.class);
+    Mockito.when(mockOptimizeRestoredTableCallable.resumeFutureCall(optimizeToken))
+        .thenReturn(mockOptimizeOp);
+
+    // Execute
+    ApiFuture<Empty> result = adminClient.awaitOptimizeRestoredTable(mockRestoreFuture);
+
+    // Verify
+    assertThat(result).isEqualTo(mockOptimizeOp);
+    Mockito.verify(mockOptimizeRestoredTableCallable).resumeFutureCall(optimizeToken);
+  }
+
+  @Test
+  public void testAwaitOptimizeRestoredTable_NoOp() throws Exception {
+    // Setup: Result with NO optimization token (null or empty)
+    RestoredTableResult mockResult = Mockito.mock(RestoredTableResult.class);
+    Mockito.when(mockResult.getOptimizeRestoredTableOperationToken()).thenReturn(null);
+
+    // Mock the Input Future
+    ApiFuture<RestoredTableResult> mockRestoreFuture = Mockito.mock(ApiFuture.class);
+    Mockito.when(mockRestoreFuture.get()).thenReturn(mockResult);
+
+    // Execute
+    ApiFuture<Empty> result = adminClient.awaitOptimizeRestoredTable(mockRestoreFuture);
+
+    // Verify: Returns immediate success (Empty) without calling the stub
+    assertThat(result.get()).isEqualTo(Empty.getDefaultInstance());
+    Mockito.verifyNoInteractions(mockStub);
   }
 
   private <ReqT, RespT, MetaT> void mockOperationResult(

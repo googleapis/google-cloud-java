@@ -72,6 +72,7 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -1294,6 +1295,37 @@ public final class BigtableTableAdminClient implements AutoCloseable {
           }
         },
         MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Awaits the completion of the "Optimize Restored Table" operation.
+   *
+   * <p>This method blocks until the restore operation is complete, extracts the optimization token,
+   * and returns an ApiFuture for the optimization phase.
+   *
+   * @param restoreFuture The future returned by restoreTableAsync().
+   * @return An ApiFuture that tracks the optimization progress.
+   */
+  public ApiFuture<Empty> awaitOptimizeRestoredTable(ApiFuture<RestoredTableResult> restoreFuture) {
+    // 1. Block and wait for the restore operation to complete
+    RestoredTableResult result;
+    try {
+      result = restoreFuture.get();
+    } catch (Exception e) {
+      throw new RuntimeException("Restore operation failed", e);
+    }
+
+    // 2. Extract the operation token from the result
+    // (RestoredTableResult already wraps the OptimizeRestoredTableOperationToken)
+    OptimizeRestoredTableOperationToken token = result.getOptimizeRestoredTableOperationToken();
+
+    if (token == null || Strings.isNullOrEmpty(token.getOperationName())) {
+      // If there is no optimization operation, return immediate success.
+      return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    }
+
+    // 3. Return the future for the optimization operation
+    return stub.awaitOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
   }
 
   /**
