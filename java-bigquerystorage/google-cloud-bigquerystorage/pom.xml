@@ -331,7 +331,7 @@
     </profile>
     <profile>
       <!-- This profile is used to enable GraalVM native image testing in BQ storage-->
-      <id>customNative</id>
+      <id>native</id>
       <dependencies>
         <dependency>
           <groupId>org.opentest4j</groupId>
