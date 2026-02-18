@@ -13,7 +13,7 @@
   "api_id": "bigtable.googleapis.com",
   "library_type": "GAPIC_COMBO",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/api-bigtable",
+  "codeowner_team": "@googleapis/bigtable-team",
   "excluded_poms": "google-cloud-bigtable-bom",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
   "extra_versioned_modules": "google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core",
