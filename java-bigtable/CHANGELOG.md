@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.73.1](https://github.com/googleapis/java-bigtable/compare/v2.73.0...v2.73.1) (2026-02-17)
+
+
+### Bug Fixes
+
+* **bigtable:** Drop redudant fields from internal otel metrics which are already in monitored resource ([#2783](https://github.com/googleapis/java-bigtable/issues/2783)) ([f45bb0e](https://github.com/googleapis/java-bigtable/commit/f45bb0e30343f08a90b1c7e30107ba7e0ae8e23a))
+* Fix skip large row ([#2785](https://github.com/googleapis/java-bigtable/issues/2785)) ([504bb51](https://github.com/googleapis/java-bigtable/commit/504bb512ff6d7c0ab6dd86785f0b255a2d910dbd))
+* Test proxy doesn't return "http2 excpetion" for long errors ([#2775](https://github.com/googleapis/java-bigtable/issues/2775)) ([dafe647](https://github.com/googleapis/java-bigtable/commit/dafe647ab7877f65b5d73e2a6519f71e6eb03f77))
+* Use StatusProto.fromThrowable for ApiException in test-proxy ([#2778](https://github.com/googleapis/java-bigtable/issues/2778)) ([de1669e](https://github.com/googleapis/java-bigtable/commit/de1669e882b814ff1708d2b74e62540f5bcd3dbf))
+
 ## [2.73.0](https://github.com/googleapis/java-bigtable/compare/v2.72.0...v2.73.0) (2026-02-06)
 
 
