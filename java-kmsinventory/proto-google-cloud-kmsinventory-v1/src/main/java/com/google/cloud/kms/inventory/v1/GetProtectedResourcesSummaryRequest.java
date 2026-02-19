@@ -55,6 +55,7 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
 
   private GetProtectedResourcesSummaryRequest() {
     name_ = "";
+    fallbackScope_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,6 +132,49 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
     }
   }
 
+  public static final int FALLBACK_SCOPE_FIELD_NUMBER = 2;
+  private int fallbackScope_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope to use if the kms organization service account is not
+   * configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fallbackScope.
+   */
+  @java.lang.Override
+  public int getFallbackScopeValue() {
+    return fallbackScope_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope to use if the kms organization service account is not
+   * configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fallbackScope.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.inventory.v1.FallbackScope getFallbackScope() {
+    com.google.cloud.kms.inventory.v1.FallbackScope result =
+        com.google.cloud.kms.inventory.v1.FallbackScope.forNumber(fallbackScope_);
+    return result == null ? com.google.cloud.kms.inventory.v1.FallbackScope.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -148,6 +192,10 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (fallbackScope_
+        != com.google.cloud.kms.inventory.v1.FallbackScope.FALLBACK_SCOPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, fallbackScope_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +207,10 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (fallbackScope_
+        != com.google.cloud.kms.inventory.v1.FallbackScope.FALLBACK_SCOPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, fallbackScope_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -177,6 +229,7 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
         (com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (fallbackScope_ != other.fallbackScope_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -190,6 +243,8 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FALLBACK_SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + fallbackScope_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,6 +390,7 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      fallbackScope_ = 0;
       return this;
     }
 
@@ -377,6 +433,9 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fallbackScope_ = fallbackScope_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +458,9 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.fallbackScope_ != 0) {
+        setFallbackScopeValue(other.getFallbackScopeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -432,6 +494,12 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                fallbackScope_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -573,6 +641,116 @@ public final class GetProtectedResourcesSummaryRequest extends com.google.protob
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int fallbackScope_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope to use if the kms organization service account is not
+     * configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fallbackScope.
+     */
+    @java.lang.Override
+    public int getFallbackScopeValue() {
+      return fallbackScope_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope to use if the kms organization service account is not
+     * configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for fallbackScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFallbackScopeValue(int value) {
+      fallbackScope_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope to use if the kms organization service account is not
+     * configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fallbackScope.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.inventory.v1.FallbackScope getFallbackScope() {
+      com.google.cloud.kms.inventory.v1.FallbackScope result =
+          com.google.cloud.kms.inventory.v1.FallbackScope.forNumber(fallbackScope_);
+      return result == null ? com.google.cloud.kms.inventory.v1.FallbackScope.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope to use if the kms organization service account is not
+     * configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The fallbackScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFallbackScope(com.google.cloud.kms.inventory.v1.FallbackScope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      fallbackScope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope to use if the kms organization service account is not
+     * configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFallbackScope() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fallbackScope_ = 0;
       onChanged();
       return this;
     }

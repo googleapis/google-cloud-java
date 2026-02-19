@@ -56,8 +56,8 @@ public interface ResourceDetailsOrBuilder
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it is
+   * the full name of the project.
    * </pre>
    *
    * <code>string container = 2;</code>
@@ -70,8 +70,8 @@ public interface ResourceDetailsOrBuilder
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it is
+   * the full name of the project.
    * </pre>
    *
    * <code>string container = 2;</code>

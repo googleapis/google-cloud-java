@@ -16,37 +16,33 @@
 
 package com.google.cloud.kms.inventory.v1.samples;
 
-// [START kmsinventory_v1_generated_KeyTrackingService_GetProtectedResourcesSummary_sync]
-import com.google.cloud.kms.inventory.v1.FallbackScope;
-import com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest;
+// [START kmsinventory_v1_generated_KeyTrackingService_SearchProtectedResources_ProjectnameResourcename_sync]
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.kms.inventory.v1.KeyTrackingServiceClient;
-import com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary;
-import com.google.cloud.kms.inventory.v1.ProtectedResourcesSummaryName;
+import com.google.cloud.kms.inventory.v1.OrganizationName;
+import com.google.cloud.kms.inventory.v1.ProjectName;
+import com.google.cloud.kms.inventory.v1.ProtectedResource;
 
-public class SyncGetProtectedResourcesSummary {
+public class SyncSearchProtectedResourcesProjectnameResourcename {
 
   public static void main(String[] args) throws Exception {
-    syncGetProtectedResourcesSummary();
+    syncSearchProtectedResourcesProjectnameResourcename();
   }
 
-  public static void syncGetProtectedResourcesSummary() throws Exception {
+  public static void syncSearchProtectedResourcesProjectnameResourcename() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (KeyTrackingServiceClient keyTrackingServiceClient = KeyTrackingServiceClient.create()) {
-      GetProtectedResourcesSummaryRequest request =
-          GetProtectedResourcesSummaryRequest.newBuilder()
-              .setName(
-                  ProtectedResourcesSummaryName.ofProjectLocationKeyRingCryptoKeyName(
-                          "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
-              .setFallbackScope(FallbackScope.forNumber(0))
-              .build();
-      ProtectedResourcesSummary response =
-          keyTrackingServiceClient.getProtectedResourcesSummary(request);
+      ProjectName scope = ProjectName.of("[PROJECT]");
+      ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
+      for (ProtectedResource element :
+          keyTrackingServiceClient.searchProtectedResources(scope, cryptoKey).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END kmsinventory_v1_generated_KeyTrackingService_GetProtectedResourcesSummary_sync]
+// [END kmsinventory_v1_generated_KeyTrackingService_SearchProtectedResources_ProjectnameResourcename_sync]

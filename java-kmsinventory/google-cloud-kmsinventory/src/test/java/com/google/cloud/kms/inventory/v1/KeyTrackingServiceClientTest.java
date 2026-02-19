@@ -30,6 +30,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -93,6 +94,7 @@ public class KeyTrackingServiceClientTest {
             .putAllResourceTypes(new HashMap<String, Long>())
             .putAllCloudProducts(new HashMap<String, Long>())
             .putAllLocations(new HashMap<String, Long>())
+            .addAllWarnings(new ArrayList<Warning>())
             .build();
     mockKeyTrackingService.addResponse(expectedResponse);
 
@@ -144,6 +146,7 @@ public class KeyTrackingServiceClientTest {
             .putAllResourceTypes(new HashMap<String, Long>())
             .putAllCloudProducts(new HashMap<String, Long>())
             .putAllLocations(new HashMap<String, Long>())
+            .addAllWarnings(new ArrayList<Warning>())
             .build();
     mockKeyTrackingService.addResponse(expectedResponse);
 
@@ -286,6 +289,104 @@ public class KeyTrackingServiceClientTest {
             .build();
     mockKeyTrackingService.addResponse(expectedResponse);
 
+    ProjectName scope = ProjectName.of("[PROJECT]");
+    ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
+
+    SearchProtectedResourcesPagedResponse pagedListResponse =
+        client.searchProtectedResources(scope, cryptoKey);
+
+    List<ProtectedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProtectedResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyTrackingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchProtectedResourcesRequest actualRequest =
+        ((SearchProtectedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(scope.toString(), actualRequest.getScope());
+    Assert.assertEquals(cryptoKey.toString(), actualRequest.getCryptoKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchProtectedResourcesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyTrackingService.addException(exception);
+
+    try {
+      ProjectName scope = ProjectName.of("[PROJECT]");
+      ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
+      client.searchProtectedResources(scope, cryptoKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchProtectedResourcesTest4() throws Exception {
+    ProtectedResource responsesElement = ProtectedResource.newBuilder().build();
+    SearchProtectedResourcesResponse expectedResponse =
+        SearchProtectedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProtectedResources(Arrays.asList(responsesElement))
+            .build();
+    mockKeyTrackingService.addResponse(expectedResponse);
+
+    ProjectName scope = ProjectName.of("[PROJECT]");
+    String cryptoKey = "cryptoKey1598288350";
+
+    SearchProtectedResourcesPagedResponse pagedListResponse =
+        client.searchProtectedResources(scope, cryptoKey);
+
+    List<ProtectedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProtectedResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyTrackingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchProtectedResourcesRequest actualRequest =
+        ((SearchProtectedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(scope.toString(), actualRequest.getScope());
+    Assert.assertEquals(cryptoKey, actualRequest.getCryptoKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchProtectedResourcesExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyTrackingService.addException(exception);
+
+    try {
+      ProjectName scope = ProjectName.of("[PROJECT]");
+      String cryptoKey = "cryptoKey1598288350";
+      client.searchProtectedResources(scope, cryptoKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchProtectedResourcesTest5() throws Exception {
+    ProtectedResource responsesElement = ProtectedResource.newBuilder().build();
+    SearchProtectedResourcesResponse expectedResponse =
+        SearchProtectedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProtectedResources(Arrays.asList(responsesElement))
+            .build();
+    mockKeyTrackingService.addResponse(expectedResponse);
+
     String scope = "scope109264468";
     ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
 
@@ -311,7 +412,7 @@ public class KeyTrackingServiceClientTest {
   }
 
   @Test
-  public void searchProtectedResourcesExceptionTest3() throws Exception {
+  public void searchProtectedResourcesExceptionTest5() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockKeyTrackingService.addException(exception);
 
@@ -326,7 +427,7 @@ public class KeyTrackingServiceClientTest {
   }
 
   @Test
-  public void searchProtectedResourcesTest4() throws Exception {
+  public void searchProtectedResourcesTest6() throws Exception {
     ProtectedResource responsesElement = ProtectedResource.newBuilder().build();
     SearchProtectedResourcesResponse expectedResponse =
         SearchProtectedResourcesResponse.newBuilder()
@@ -360,7 +461,7 @@ public class KeyTrackingServiceClientTest {
   }
 
   @Test
-  public void searchProtectedResourcesExceptionTest4() throws Exception {
+  public void searchProtectedResourcesExceptionTest6() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockKeyTrackingService.addException(exception);
 

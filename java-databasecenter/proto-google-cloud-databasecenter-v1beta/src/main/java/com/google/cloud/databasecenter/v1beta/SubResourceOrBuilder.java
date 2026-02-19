@@ -174,8 +174,8 @@ public interface SubResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it is
+   * the full name of the project.
    * </pre>
    *
    * <code>string container = 4;</code>
@@ -188,8 +188,8 @@ public interface SubResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it is
+   * the full name of the project.
    * </pre>
    *
    * <code>string container = 4;</code>

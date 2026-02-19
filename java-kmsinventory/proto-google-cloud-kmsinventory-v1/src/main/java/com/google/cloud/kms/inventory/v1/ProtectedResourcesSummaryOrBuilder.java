@@ -260,4 +260,75 @@ public interface ProtectedResourcesSummaryOrBuilder
    * <code>map&lt;string, int64&gt; locations = 4;</code>
    */
   long getLocationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  java.util.List<com.google.cloud.kms.inventory.v1.Warning> getWarningsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  com.google.cloud.kms.inventory.v1.Warning getWarnings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  int getWarningsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  java.util.List<? extends com.google.cloud.kms.inventory.v1.WarningOrBuilder>
+      getWarningsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  com.google.cloud.kms.inventory.v1.WarningOrBuilder getWarningsOrBuilder(int index);
 }
