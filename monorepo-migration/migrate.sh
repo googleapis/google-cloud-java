@@ -436,7 +436,7 @@ if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
         # then commit --amend adds those staged changes to C1.
         
         git reset --soft "HEAD~$((COMMIT_COUNT - 1))"
-        git commit --amend --no-edit --no-gpg-sign
+        git commit --amend --no-edit --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
         echo "Squashed everything into one commit."
     fi
 fi
