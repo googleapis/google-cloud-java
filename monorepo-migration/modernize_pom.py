@@ -241,6 +241,31 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                 continue
             if '</dependency>' in line:
                 in_dependency = False
+                
+                # Monorepo version alignment and annotation
+                if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
+                    new_version = monorepo_versions[current_artifact_id]
+                    marker_artifact = current_artifact_id.replace('-bom', '')
+                    annotation = f"<!-- {{x-version-update:{marker_artifact}:current}} -->"
+                    version_line_content = f"<version>{new_version}</version>{annotation}\n"
+                    
+                    if has_version:
+                        # Replace existing version line
+                        for i, d_line in enumerate(current_dependency_lines):
+                            if '<version>' in d_line:
+                                indent = d_line[:d_line.find('<')]
+                                current_dependency_lines[i] = f"{indent}{version_line_content}"
+                                break
+                    else:
+                        # Add missing version line before </dependency>
+                        indent = "      " # Default indent
+                        if len(current_dependency_lines) > 0:
+                            first_line = current_dependency_lines[0]
+                            indent = first_line[:first_line.find('<')] + "  "
+                        current_dependency_lines.append(f"{indent}{version_line_content}")
+                    
+                    should_preserve = True
+
                 current_dependency_lines.append(line)
 
                 if current_artifact_id == 'google-cloud-shared-dependencies':
@@ -269,6 +294,10 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                 is_external = current_group_id and not current_group_id.startswith('com.google')
                 is_google_cloud_lib = current_group_id == 'com.google.cloud' and current_artifact_id and current_artifact_id.startswith('google-cloud-')
                 
+                # Skip gapic-libraries-bom in dependencyManagement
+                if in_dep_mgmt and current_artifact_id == 'gapic-libraries-bom':
+                    continue
+
                 if not in_dep_mgmt or should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version):
                     new_lines.extend(current_dependency_lines)
                 continue
@@ -285,15 +314,6 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                 if '<version>' in line:
                     has_version = True
                 
-                if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
-                    new_version = monorepo_versions[current_artifact_id]
-                    indent = line[:line.find('<')]
-                    if '<version>' in line:
-                        marker_artifact = current_artifact_id.replace('-bom', '')
-                        current_dependency_lines.append(f"{indent}<version>{new_version}</version><!-- {{x-version-update:{marker_artifact}:current}} -->\n")
-                        should_preserve = True
-                        continue
-
                 if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
                     should_preserve = True
                 
