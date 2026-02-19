@@ -150,6 +150,12 @@ public final class Instance {
     return proto.getDisplayName();
   }
 
+  /** Gets the instance's tags. */
+  @SuppressWarnings("WeakerAccess")
+  public Map<String, String> getTags() {
+    return proto.getTagsMap();
+  }
+
   /** Gets the instance's current type. Can be DEVELOPMENT or PRODUCTION. */
   @SuppressWarnings("WeakerAccess")
   public Type getType() {

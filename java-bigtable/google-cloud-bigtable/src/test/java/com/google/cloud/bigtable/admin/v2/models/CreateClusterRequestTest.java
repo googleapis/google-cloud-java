@@ -128,6 +128,7 @@ public class CreateClusterRequestTest {
             .setDisplayName("custom display name")
             .addLabel("my label", "with some value")
             .addLabel("my other label", "with some value")
+            .addTag("tagKeys/123", "tagValues/456")
             .setType(Instance.Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
@@ -142,6 +143,7 @@ public class CreateClusterRequestTest {
                     .setDisplayName("custom display name")
                     .putLabels("my label", "with some value")
                     .putLabels("my other label", "with some value")
+                    .putTags("tagKeys/123", "tagValues/456")
                     .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT))
             .putClusters(
                 "cluster1",

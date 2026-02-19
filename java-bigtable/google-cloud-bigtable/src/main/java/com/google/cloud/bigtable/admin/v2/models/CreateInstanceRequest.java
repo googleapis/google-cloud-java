@@ -119,6 +119,22 @@ public final class CreateInstanceRequest {
   }
 
   /**
+   * Adds a tag to the instance.
+   *
+   * <p>Tags are a way to organize and govern resources across Google Cloud. Unlike labels, Tags are
+   * standalone resources created and managed through the Resource Manager API.
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/tags">For more details</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public CreateInstanceRequest addTag(@Nonnull String key, @Nonnull String value) {
+    Preconditions.checkNotNull(key, "Key can't be null");
+    Preconditions.checkNotNull(value, "Value can't be null");
+    builder.getInstanceBuilder().putTags(key, value);
+    return this;
+  }
+
+  /**
    * Adds a cluster to the instance request with manual scaling enabled.
    *
    * <p>All new instances must have at least one cluster. DEVELOPMENT instances must have exactly

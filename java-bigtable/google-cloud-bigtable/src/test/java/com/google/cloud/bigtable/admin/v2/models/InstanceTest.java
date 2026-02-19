@@ -36,6 +36,8 @@ public class InstanceTest {
             .setState(com.google.bigtable.admin.v2.Instance.State.READY)
             .putLabels("label1", "value1")
             .putLabels("label2", "value2")
+            .putTags("tagKeys/123", "tagValues/456")
+            .putTags("tagKeys/234", "tagValues/567")
             .build();
 
     Instance result = Instance.fromProto(proto);
@@ -48,6 +50,8 @@ public class InstanceTest {
         .containsExactly(
             "label1", "value1",
             "label2", "value2");
+    assertThat(result.getTags())
+        .containsExactly("tagKeys/123", "tagValues/456", "tagKeys/234", "tagValues/567");
   }
 
   @Test
@@ -59,6 +63,7 @@ public class InstanceTest {
             .setState(com.google.bigtable.admin.v2.Instance.State.READY)
             .putLabels("label1", "value1")
             .putLabels("label2", "value2")
+            .putTags("tagKeys/123", "tagValues/456")
             .build();
 
     Exception actualException = null;
