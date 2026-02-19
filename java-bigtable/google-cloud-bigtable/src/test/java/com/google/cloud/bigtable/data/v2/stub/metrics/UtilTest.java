@@ -19,7 +19,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.DeadlineExceededException;
-import com.google.common.util.concurrent.Futures;
 import io.grpc.Status;
 import io.opencensus.tags.TagValue;
 import org.junit.Test;
@@ -35,32 +34,11 @@ public class UtilTest {
   }
 
   @Test
-  public void testOkFuture() {
-    TagValue tagValue = Util.extractStatusFromFuture(Futures.immediateFuture(null));
-    assertThat(tagValue.asString()).isEqualTo("OK");
-  }
-
-  @Test
   public void testError() {
     DeadlineExceededException error =
         new DeadlineExceededException(
             "Deadline exceeded", null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true);
     TagValue tagValue = TagValue.create(Util.extractStatus(error));
     assertThat(tagValue.asString()).isEqualTo("DEADLINE_EXCEEDED");
-  }
-
-  @Test
-  public void testErrorFuture() {
-    DeadlineExceededException error =
-        new DeadlineExceededException(
-            "Deadline exceeded", null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true);
-    TagValue tagValue = Util.extractStatusFromFuture(Futures.immediateFailedFuture(error));
-    assertThat(tagValue.asString()).isEqualTo("DEADLINE_EXCEEDED");
-  }
-
-  @Test
-  public void testCancelledFuture() {
-    TagValue tagValue = Util.extractStatusFromFuture(Futures.immediateCancelledFuture());
-    assertThat(tagValue.asString()).isEqualTo("CANCELLED");
   }
 }

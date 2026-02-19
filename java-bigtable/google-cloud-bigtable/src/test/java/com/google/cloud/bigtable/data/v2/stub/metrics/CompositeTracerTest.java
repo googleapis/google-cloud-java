@@ -25,10 +25,9 @@ import static org.mockito.Mockito.when;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracer.Scope;
 import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.cloud.bigtable.misc_utilities.MethodComparator;
 import com.google.common.collect.ImmutableList;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import org.junit.Assert;
@@ -241,11 +240,12 @@ public class CompositeTracerTest {
   }
 
   @Test
-  public void testRecordGfeLatency() {
-    Throwable t = new StatusRuntimeException(Status.UNAVAILABLE);
-    compositeTracer.recordGfeMetadata(20L, t);
-    verify(child3, times(1)).recordGfeMetadata(20L, t);
-    verify(child4, times(1)).recordGfeMetadata(20L, t);
+  public void testSidebandData() {
+    MetadataExtractorInterceptor.SidebandData sidebandData =
+        new MetadataExtractorInterceptor.SidebandData();
+    compositeTracer.setSidebandData(sidebandData);
+    verify(child3, times(1)).setSidebandData(sidebandData);
+    verify(child4, times(1)).setSidebandData(sidebandData);
   }
 
   @Test
@@ -262,13 +262,6 @@ public class CompositeTracerTest {
     assertThat(Arrays.asList(compositeTracerMethods))
         .comparingElementsUsing(MethodComparator.METHOD_CORRESPONDENCE)
         .containsAtLeastElementsIn(baseMethods);
-  }
-
-  @Test
-  public void testRequestBlockedOnChannel() {
-    compositeTracer.grpcChannelQueuedLatencies(5L);
-    verify(child3, times(1)).grpcChannelQueuedLatencies(5L);
-    verify(child4, times(1)).grpcChannelQueuedLatencies(5L);
   }
 
   @Test

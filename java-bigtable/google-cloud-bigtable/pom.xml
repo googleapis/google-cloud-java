@@ -137,17 +137,12 @@
       <artifactId>protobuf-java-util</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-api</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-alts</artifactId>
-      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.checkerframework</groupId>

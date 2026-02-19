@@ -21,6 +21,7 @@ import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.api.gax.tracing.SpanName;
+import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.base.Stopwatch;
 import io.opencensus.stats.MeasureMap;
 import io.opencensus.stats.StatsRecorder;
@@ -63,6 +64,7 @@ class MetricsTracer extends BigtableTracer {
 
   private volatile boolean reportBatchingLatency = false;
   private volatile long batchThrottledLatency = 0;
+  private MetadataExtractorInterceptor.SidebandData sidebandData;
 
   MetricsTracer(
       OperationType operationType,
@@ -187,6 +189,14 @@ class MetricsTracer extends BigtableTracer {
                 RpcMeasureConstants.BIGTABLE_ATTEMPT_LATENCY,
                 attemptTimer.elapsed(TimeUnit.MILLISECONDS));
 
+    if (sidebandData != null && sidebandData.getGfeTiming() != null) {
+      measures
+          .put(RpcMeasureConstants.BIGTABLE_GFE_LATENCY, sidebandData.getGfeTiming())
+          .put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 0L);
+    } else {
+      measures.put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 1L);
+    }
+
     if (reportBatchingLatency) {
       measures.put(RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME, batchThrottledLatency);
 
@@ -226,20 +236,8 @@ class MetricsTracer extends BigtableTracer {
   }
 
   @Override
-  public void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable) {
-    MeasureMap measures = stats.newMeasureMap();
-    if (latency != null) {
-      measures
-          .put(RpcMeasureConstants.BIGTABLE_GFE_LATENCY, latency)
-          .put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 0L);
-    } else {
-      measures.put(RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT, 1L);
-    }
-    measures.record(
-        newTagCtxBuilder()
-            .putLocal(
-                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create(Util.extractStatus(throwable)))
-            .build());
+  public void setSidebandData(MetadataExtractorInterceptor.SidebandData sidebandData) {
+    this.sidebandData = sidebandData;
   }
 
   @Override

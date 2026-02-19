@@ -19,6 +19,7 @@ import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.tracing.ApiTracer;
+import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
@@ -198,13 +199,6 @@ class CompositeTracer extends BigtableTracer {
   }
 
   @Override
-  public void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable) {
-    for (BigtableTracer tracer : bigtableTracers) {
-      tracer.recordGfeMetadata(latency, throwable);
-    }
-  }
-
-  @Override
   public void batchRequestThrottled(long throttledTimeMs) {
     for (BigtableTracer tracer : bigtableTracers) {
       tracer.batchRequestThrottled(throttledTimeMs);
@@ -212,16 +206,9 @@ class CompositeTracer extends BigtableTracer {
   }
 
   @Override
-  public void setLocations(String zone, String cluster) {
-    for (BigtableTracer tracer : bigtableTracers) {
-      tracer.setLocations(zone, cluster);
-    }
-  }
-
-  @Override
-  public void setTransportAttrs(BuiltinMetricsTracer.TransportAttrs attrs) {
-    for (BigtableTracer tracer : bigtableTracers) {
-      tracer.setTransportAttrs(attrs);
+  public void setSidebandData(MetadataExtractorInterceptor.SidebandData sidebandData) {
+    for (BigtableTracer bigtableTracer : bigtableTracers) {
+      bigtableTracer.setSidebandData(sidebandData);
     }
   }
 
@@ -243,13 +230,6 @@ class CompositeTracer extends BigtableTracer {
   public void afterResponse(long applicationLatency) {
     for (BigtableTracer tracer : bigtableTracers) {
       tracer.afterResponse(applicationLatency);
-    }
-  }
-
-  @Override
-  public void grpcChannelQueuedLatencies(long queuedTimeMs) {
-    for (BigtableTracer tracer : bigtableTracers) {
-      tracer.grpcChannelQueuedLatencies(queuedTimeMs);
     }
   }
 

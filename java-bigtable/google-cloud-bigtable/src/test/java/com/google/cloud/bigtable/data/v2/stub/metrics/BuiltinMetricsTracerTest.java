@@ -136,6 +136,9 @@ import org.mockito.junit.MockitoRule;
 
 @RunWith(JUnit4.class)
 public class BuiltinMetricsTracerTest {
+  private static final Metadata.Key<byte[]> LOCATION_METADATA_KEY =
+      Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
+
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
@@ -211,7 +214,7 @@ public class BuiltinMetricsTracerTest {
                     ResponseParams params =
                         ResponseParams.newBuilder().setZoneId(ZONE).setClusterId(CLUSTER).build();
                     byte[] byteArray = params.toByteArray();
-                    headers.put(Util.LOCATION_METADATA_KEY, byteArray);
+                    headers.put(LOCATION_METADATA_KEY, byteArray);
 
                     super.sendHeaders(headers);
                   }

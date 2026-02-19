@@ -16,8 +16,6 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.api.gax.grpc.GrpcResponseMetadata;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
@@ -29,6 +27,7 @@ import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.MaterializedViewName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -36,15 +35,13 @@ import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
-import com.google.protobuf.InvalidProtocolBufferException;
-import io.grpc.CallOptions;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
-import io.opencensus.tags.TagValue;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -57,13 +54,11 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 /** Utilities to help integrating with OpenCensus. */
@@ -73,12 +68,6 @@ public class Util {
       Metadata.Key.of("bigtable-attempt", Metadata.ASCII_STRING_MARSHALLER);
   static final Metadata.Key<String> ATTEMPT_EPOCH_KEY =
       Metadata.Key.of("bigtable-client-attempt-epoch-usec", Metadata.ASCII_STRING_MARSHALLER);
-
-  private static final Metadata.Key<String> SERVER_TIMING_HEADER_KEY =
-      Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER);
-  private static final Pattern SERVER_TIMING_HEADER_PATTERN = Pattern.compile(".*dur=(?<dur>\\d+)");
-  static final Metadata.Key<byte[]> LOCATION_METADATA_KEY =
-      Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
 
   /** Convert an exception into a value that can be used to create an OpenCensus tag value. */
   public static String extractStatus(@Nullable Throwable error) {
@@ -99,26 +88,6 @@ public class Util {
     }
 
     return statusString;
-  }
-
-  /**
-   * Await the result of the future and convert it into a value that can be used as an OpenCensus
-   * tag value.
-   */
-  static TagValue extractStatusFromFuture(Future<?> future) {
-    Throwable error = null;
-
-    try {
-      future.get();
-    } catch (InterruptedException e) {
-      error = e;
-      Thread.currentThread().interrupt();
-    } catch (ExecutionException e) {
-      error = e.getCause();
-    } catch (RuntimeException e) {
-      error = e;
-    }
-    return TagValue.create(extractStatus(error));
   }
 
   static String extractTableId(Object request) {
@@ -179,84 +148,6 @@ public class Util {
     return headers.build();
   }
 
-  private static Long getGfeLatency(@Nullable Metadata metadata) {
-    if (metadata == null) {
-      return null;
-    }
-    String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
-    if (serverTiming == null) {
-      return null;
-    }
-    Matcher matcher = SERVER_TIMING_HEADER_PATTERN.matcher(serverTiming);
-    // this should always be true
-    if (matcher.find()) {
-      long latency = Long.valueOf(matcher.group("dur"));
-      return latency;
-    }
-    return null;
-  }
-
-  private static ResponseParams getResponseParams(@Nullable Metadata metadata) {
-    if (metadata == null) {
-      return null;
-    }
-    byte[] responseParams = metadata.get(Util.LOCATION_METADATA_KEY);
-    if (responseParams != null) {
-      try {
-        return ResponseParams.parseFrom(responseParams);
-      } catch (InvalidProtocolBufferException e) {
-      }
-    }
-    return null;
-  }
-
-  static void recordMetricsFromMetadata(
-      GrpcResponseMetadata responseMetadata, BigtableTracer tracer, Throwable throwable) {
-    Metadata metadata = responseMetadata.getMetadata();
-
-    // Get the response params from the metadata. Check both headers and trailers
-    // because in different environments the metadata could be returned in headers or trailers
-    @Nullable ResponseParams responseParams = getResponseParams(responseMetadata.getMetadata());
-    if (responseParams == null) {
-      responseParams = getResponseParams(responseMetadata.getTrailingMetadata());
-    }
-    // Set tracer locations if response params is not null
-    if (responseParams != null) {
-      tracer.setLocations(responseParams.getZoneId(), responseParams.getClusterId());
-    }
-
-    // server-timing metric will be added through GrpcResponseMetadata#onHeaders(Metadata),
-    // so it's not checking trailing metadata here.
-    @Nullable Long latency = getGfeLatency(metadata);
-    // For direct path, we won't see GFE server-timing header. However, if we received the
-    // location info, we know that there isn't a connectivity issue. Set the latency to
-    // 0 so gfe missing header won't get incremented.
-    if (responseParams != null && latency == null) {
-      latency = 0L;
-    }
-    // Record gfe metrics
-    tracer.recordGfeMetadata(latency, throwable);
-  }
-
-  /**
-   * This method bridges gRPC stream tracing to bigtable tracing by adding a {@link
-   * io.grpc.ClientStreamTracer} to the callContext.
-   */
-  static GrpcCallContext injectBigtableStreamTracer(
-      ApiCallContext context, GrpcResponseMetadata responseMetadata, BigtableTracer tracer) {
-    if (context instanceof GrpcCallContext) {
-      GrpcCallContext callContext = (GrpcCallContext) context;
-      CallOptions callOptions = callContext.getCallOptions();
-      return responseMetadata.addHandlers(
-          callContext.withCallOptions(
-              callOptions.withStreamTracerFactory(new BigtableGrpcStreamTracer.Factory(tracer))));
-    } else {
-      // context should always be an instance of GrpcCallContext. If not throw an exception
-      // so we can see what class context is.
-      throw new RuntimeException("Unexpected context class: " + context.getClass().getName());
-    }
-  }
-
   public static OpenTelemetrySdk newInternalOpentelemetry(
       EnhancedBigtableStubSettings settings,
       Credentials credentials,
@@ -284,5 +175,34 @@ public class Util {
             .setInterval(Duration.ofMinutes(1))
             .build());
     return OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
+  }
+
+  public static String formatTransportTypeMetricLabel(
+      MetadataExtractorInterceptor.SidebandData sidebandData) {
+    return Optional.ofNullable(sidebandData)
+        .flatMap(s -> Optional.ofNullable(s.getPeerInfo()))
+        .map(PeerInfo::getTransportType)
+        .orElse(PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN)
+        .name()
+        .replace("TRANSPORT_TYPE_", "")
+        .toLowerCase(Locale.ENGLISH);
+  }
+
+  public static String formatClusterIdMetricLabel(
+      @Nullable MetadataExtractorInterceptor.SidebandData sidebandData) {
+    return Optional.ofNullable(sidebandData)
+        .flatMap(d -> Optional.ofNullable(d.getResponseParams()))
+        .map(ResponseParams::getClusterId)
+        .filter(s -> !s.isEmpty())
+        .orElse("<unspecified>");
+  }
+
+  public static String formatZoneIdMetricLabel(
+      @Nullable MetadataExtractorInterceptor.SidebandData sidebandData) {
+    return Optional.ofNullable(sidebandData)
+        .flatMap(d -> Optional.ofNullable(d.getResponseParams()))
+        .map(ResponseParams::getZoneId)
+        .filter(s -> !s.isEmpty())
+        .orElse("global");
   }
 }
