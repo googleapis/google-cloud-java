@@ -695,10 +695,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
         withStatsHeaders = new StatsHeadersUnaryCallable<>(spoolable);
 
     UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-        withBigtableTracer = new BigtableTracerUnaryCallable<>(withStatsHeaders);
+        withAttemptTracer = new BigtableTracerUnaryCallable<>(withStatsHeaders);
 
     UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-        retryable = withRetries(withBigtableTracer, settings.sampleRowKeysSettings());
+        retryable = withRetries(withAttemptTracer, settings.sampleRowKeysSettings());
 
     return createUserFacingUnaryCallable(
         methodName,
@@ -774,7 +774,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> convertException =
         new ConvertExceptionCallable<>(callable);
 
-    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withBigtableTracer =
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withAttemptTracer =
         new BigtableTracerStreamingCallable<>(convertException);
 
     BasicResultRetryAlgorithm<MutateRowsAttemptResult> resultRetryAlgorithm;
@@ -797,7 +797,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> baseCallable =
         new MutateRowsRetryingCallable(
             clientContext.getDefaultCallContext(),
-            withBigtableTracer,
+            withAttemptTracer,
             retryingExecutor,
             settings.bulkMutateRowsSettings().getRetryableCodes(),
             retryAlgorithm);
@@ -1033,11 +1033,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<String, ByteStringRange> watched =
         Callables.watched(convertException, innerSettings, clientContext);
 
-    ServerStreamingCallable<String, ByteStringRange> withBigtableTracer =
+    ServerStreamingCallable<String, ByteStringRange> withAttemptTracer =
         new BigtableTracerStreamingCallable<>(watched);
 
     ServerStreamingCallable<String, ByteStringRange> retrying =
-        withRetries(withBigtableTracer, innerSettings);
+        withRetries(withAttemptTracer, innerSettings);
 
     SpanName span = getSpanName("GenerateInitialChangeStreamPartitions");
     ServerStreamingCallable<String, ByteStringRange> traced =
@@ -1105,11 +1105,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ReadChangeStreamRequest, ChangeStreamRecordT> watched =
         Callables.watched(merging, innerSettings, clientContext);
 
-    ServerStreamingCallable<ReadChangeStreamRequest, ChangeStreamRecordT> withBigtableTracer =
+    ServerStreamingCallable<ReadChangeStreamRequest, ChangeStreamRecordT> withAttemptTracer =
         new BigtableTracerStreamingCallable<>(watched);
 
     ServerStreamingCallable<ReadChangeStreamRequest, ChangeStreamRecordT> readChangeStreamCallable =
-        withRetries(withBigtableTracer, innerSettings);
+        withRetries(withAttemptTracer, innerSettings);
 
     ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecordT>
         readChangeStreamUserCallable =
@@ -1175,6 +1175,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> convertException =
         new ConvertExceptionCallable<>(withPlanRefresh);
 
+    ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> withAttemptTracer =
+        new BigtableTracerStreamingCallable<>(convertException);
+
     ServerStreamingCallSettings<ExecuteQueryCallContext, ExecuteQueryResponse> retrySettings =
         ServerStreamingCallSettings.<ExecuteQueryCallContext, ExecuteQueryResponse>newBuilder()
             .setResumptionStrategy(new ExecuteQueryResumptionStrategy())
@@ -1189,7 +1192,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     // attempt stream will have reset set to true, so any unyielded data from the previous
     // attempt will be reset properly
     ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> retries =
-        withRetries(convertException, retrySettings);
+        withRetries(withAttemptTracer, retrySettings);
 
     ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> merging =
         new SqlRowMergingCallable(retries);
@@ -1208,13 +1211,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> passingThroughErrorsToMetadata =
         new MetadataErrorHandlingCallable(watched);
 
-    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> withBigtableTracer =
-        new BigtableTracerStreamingCallable<>(passingThroughErrorsToMetadata);
-
     SpanName span = getSpanName("ExecuteQuery");
     ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> traced =
         new TracedServerStreamingCallable<>(
-            withBigtableTracer, clientContext.getTracerFactory(), span);
+            passingThroughErrorsToMetadata, clientContext.getTracerFactory(), span);
 
     return new ExecuteQueryCallable(
         traced.withDefaultCallContext(
