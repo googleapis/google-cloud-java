@@ -214,6 +214,23 @@ env_vars: {
 EOF
     fi
 
+    if [ -n "$EXTRA_KOKORO_ENVS" ]; then
+        OLD_IFS="$IFS"
+        IFS=','
+        for env in $EXTRA_KOKORO_ENVS; do
+            key="${env%%=*}"
+            value="${env#*=}"
+            cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "$key"
+  value: "$value"
+}
+EOF
+        done
+        IFS="$OLD_IFS"
+    fi
+
     echo "Committing split integration config..."
     git add "$TARGET_INTEGRATION_CFG"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split integration config"
@@ -249,6 +266,23 @@ env_vars: {
   value: "$INTEGRATION_TEST_ARGS"
 }
 EOF
+    fi
+
+    if [ -n "$EXTRA_KOKORO_ENVS" ]; then
+        OLD_IFS="$IFS"
+        IFS=','
+        for env in $EXTRA_KOKORO_ENVS; do
+            key="${env%%=*}"
+            value="${env#*=}"
+            cat <<EOF >> "$TARGET_GRAALVM_CFG"
+
+env_vars: {
+  key: "$key"
+  value: "$value"
+}
+EOF
+        done
+        IFS="$OLD_IFS"
     fi
 
     echo "Committing split GraalVM config..."
