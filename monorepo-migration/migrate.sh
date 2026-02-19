@@ -210,6 +210,33 @@ EOF
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
+# 6.6b Create split GraalVM config if needed
+SOURCE_GRAALVM_CFG="$SOURCE_DIR/.kokoro/presubmit/graalvm-native-a.cfg"
+if [ -f "$SOURCE_GRAALVM_CFG" ]; then
+    echo "Creating split GraalVM config for $SOURCE_REPO_NAME..."
+    SHORT_NAME="${SOURCE_REPO_NAME#java-}"
+    TARGET_GRAALVM_CFG=".kokoro/presubmit/${SHORT_NAME}-graalvm-native-presubmit.cfg"
+    
+    cp "$SOURCE_GRAALVM_CFG" "$TARGET_GRAALVM_CFG"
+
+    # Replace JOB_TYPE with graalvm-single. Robustly handle multi-line or single-line.
+    perl -0777 -i -pe 's/(key:\s*"JOB_TYPE"\s*value:\s*")[^"]*(")/$1graalvm-single$2/g' "$TARGET_GRAALVM_CFG"
+
+    # Append BUILD_SUBDIR
+    cat <<EOF >> "$TARGET_GRAALVM_CFG"
+
+env_vars: {
+  key: "BUILD_SUBDIR"
+  value: "$SOURCE_REPO_NAME"
+}
+EOF
+
+    echo "Committing split GraalVM config..."
+    git add "$TARGET_GRAALVM_CFG"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split GraalVM config"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
 # 6.7 Update excluded_modules in .kokoro/common.sh
 COMMON_SH=".kokoro/common.sh"
 if [ -f "$COMMON_SH" ]; then
