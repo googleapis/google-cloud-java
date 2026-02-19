@@ -204,6 +204,16 @@ env_vars: {
 }
 EOF
 
+    if [ -n "$INTEGRATION_TEST_ARGS" ]; then
+        cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "INTEGRATION_TEST_ARGS"
+  value: "$INTEGRATION_TEST_ARGS"
+}
+EOF
+    fi
+
     echo "Committing split integration config..."
     git add "$TARGET_INTEGRATION_CFG"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split integration config"
@@ -230,6 +240,16 @@ env_vars: {
   value: "$SOURCE_REPO_NAME"
 }
 EOF
+
+    if [ -n "$INTEGRATION_TEST_ARGS" ]; then
+        cat <<EOF >> "$TARGET_GRAALVM_CFG"
+
+env_vars: {
+  key: "INTEGRATION_TEST_ARGS"
+  value: "$INTEGRATION_TEST_ARGS"
+}
+EOF
+    fi
 
     echo "Committing split GraalVM config..."
     git add "$TARGET_GRAALVM_CFG"
