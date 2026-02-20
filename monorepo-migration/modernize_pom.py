@@ -298,6 +298,10 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                 if in_dep_mgmt and current_artifact_id == 'gapic-libraries-bom':
                     continue
 
+                # Skip boms for artifacts managed in the monorepo as their individual versions will be updated via x-version-update
+                if in_dep_mgmt and current_artifact_id.endswith('-bom') and current_artifact_id in monorepo_versions:
+                    continue
+
                 if not in_dep_mgmt or should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version):
                     new_lines.extend(current_dependency_lines)
                 continue
