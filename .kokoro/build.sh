@@ -43,8 +43,12 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPT=""
+    else
+      EXTRA_PROFILE_OPT="-PbulkTests"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
+    echo "EXTRA_PROFILE_OPT: ${EXTRA_PROFILE_OPT}"
     retry_with_backoff 3 10 \
       mvn test \
         -B -ntp \
@@ -56,7 +60,7 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C ${SUREFIRE_JVM_OPT}
+        ${SUREFIRE_JVM_OPT} ${EXTRA_PROFILE_OPT}
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
