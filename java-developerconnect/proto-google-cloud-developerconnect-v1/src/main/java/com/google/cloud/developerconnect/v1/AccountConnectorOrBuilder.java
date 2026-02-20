@@ -30,10 +30,12 @@ public interface AccountConnectorOrBuilder
    *
    *
    * <pre>
-   * Provider OAuth config.
+   * Optional. Provider OAuth config.
    * </pre>
    *
-   * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+   * <code>
+   * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the providerOauthConfig field is set.
    */
@@ -43,10 +45,12 @@ public interface AccountConnectorOrBuilder
    *
    *
    * <pre>
-   * Provider OAuth config.
+   * Optional. Provider OAuth config.
    * </pre>
    *
-   * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+   * <code>
+   * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The providerOauthConfig.
    */
@@ -56,10 +60,12 @@ public interface AccountConnectorOrBuilder
    *
    *
    * <pre>
-   * Provider OAuth config.
+   * Optional. Provider OAuth config.
    * </pre>
    *
-   * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+   * <code>
+   * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.developerconnect.v1.ProviderOAuthConfigOrBuilder
       getProviderOauthConfigOrBuilder();

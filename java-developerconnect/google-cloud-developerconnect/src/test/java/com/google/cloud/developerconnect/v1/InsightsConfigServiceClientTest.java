@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -559,6 +560,198 @@ public class InsightsConfigServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDeploymentEventTest() throws Exception {
+    DeploymentEvent expectedResponse =
+        DeploymentEvent.newBuilder()
+            .setName(
+                DeploymentEventName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRuntimeConfig(RuntimeConfig.newBuilder().build())
+            .setRuntimeDeploymentUri("runtimeDeploymentUri1057341295")
+            .addAllArtifactDeployments(new ArrayList<ArtifactDeployment>())
+            .setDeployTime(Timestamp.newBuilder().build())
+            .setUndeployTime(Timestamp.newBuilder().build())
+            .build();
+    mockInsightsConfigService.addResponse(expectedResponse);
+
+    DeploymentEventName name =
+        DeploymentEventName.of(
+            "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]");
+
+    DeploymentEvent actualResponse = client.getDeploymentEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockInsightsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeploymentEventRequest actualRequest = ((GetDeploymentEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeploymentEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInsightsConfigService.addException(exception);
+
+    try {
+      DeploymentEventName name =
+          DeploymentEventName.of(
+              "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]");
+      client.getDeploymentEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDeploymentEventTest2() throws Exception {
+    DeploymentEvent expectedResponse =
+        DeploymentEvent.newBuilder()
+            .setName(
+                DeploymentEventName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRuntimeConfig(RuntimeConfig.newBuilder().build())
+            .setRuntimeDeploymentUri("runtimeDeploymentUri1057341295")
+            .addAllArtifactDeployments(new ArrayList<ArtifactDeployment>())
+            .setDeployTime(Timestamp.newBuilder().build())
+            .setUndeployTime(Timestamp.newBuilder().build())
+            .build();
+    mockInsightsConfigService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DeploymentEvent actualResponse = client.getDeploymentEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockInsightsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDeploymentEventRequest actualRequest = ((GetDeploymentEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDeploymentEventExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInsightsConfigService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDeploymentEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentEventsTest() throws Exception {
+    DeploymentEvent responsesElement = DeploymentEvent.newBuilder().build();
+    ListDeploymentEventsResponse expectedResponse =
+        ListDeploymentEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentEvents(Arrays.asList(responsesElement))
+            .build();
+    mockInsightsConfigService.addResponse(expectedResponse);
+
+    InsightsConfigName parent =
+        InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]");
+
+    ListDeploymentEventsPagedResponse pagedListResponse = client.listDeploymentEvents(parent);
+
+    List<DeploymentEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeploymentEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockInsightsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeploymentEventsRequest actualRequest =
+        ((ListDeploymentEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeploymentEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInsightsConfigService.addException(exception);
+
+    try {
+      InsightsConfigName parent =
+          InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]");
+      client.listDeploymentEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentEventsTest2() throws Exception {
+    DeploymentEvent responsesElement = DeploymentEvent.newBuilder().build();
+    ListDeploymentEventsResponse expectedResponse =
+        ListDeploymentEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentEvents(Arrays.asList(responsesElement))
+            .build();
+    mockInsightsConfigService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDeploymentEventsPagedResponse pagedListResponse = client.listDeploymentEvents(parent);
+
+    List<DeploymentEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeploymentEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockInsightsConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDeploymentEventsRequest actualRequest =
+        ((ListDeploymentEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDeploymentEventsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInsightsConfigService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDeploymentEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

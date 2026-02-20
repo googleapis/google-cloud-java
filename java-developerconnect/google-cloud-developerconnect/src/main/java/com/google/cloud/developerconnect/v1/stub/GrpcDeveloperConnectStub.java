@@ -55,6 +55,8 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthResponse;
 import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
@@ -68,6 +70,8 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.StartOAuthRequest;
+import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
 import com.google.cloud.developerconnect.v1.User;
@@ -381,6 +385,27 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<StartOAuthRequest, StartOAuthResponse>
+      startOAuthMethodDescriptor =
+          MethodDescriptor.<StartOAuthRequest, StartOAuthResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/StartOAuth")
+              .setRequestMarshaller(ProtoUtils.marshaller(StartOAuthRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StartOAuthResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FinishOAuthRequest, FinishOAuthResponse>
+      finishOAuthMethodDescriptor =
+          MethodDescriptor.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/FinishOAuth")
+              .setRequestMarshaller(ProtoUtils.marshaller(FinishOAuthRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FinishOAuthResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -476,6 +501,8 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable;
   private final OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationCallable;
+  private final UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable;
+  private final UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -791,6 +818,26 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthTransportSettings =
+        GrpcCallSettings.<StartOAuthRequest, StartOAuthResponse>newBuilder()
+            .setMethodDescriptor(startOAuthMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account_connector", String.valueOf(request.getAccountConnector()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthTransportSettings =
+        GrpcCallSettings.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
+            .setMethodDescriptor(finishOAuthMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account_connector", String.valueOf(request.getAccountConnector()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -992,6 +1039,12 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
             settings.deleteSelfOperationSettings(),
             clientContext,
             operationsStub);
+    this.startOAuthCallable =
+        callableFactory.createUnaryCallable(
+            startOAuthTransportSettings, settings.startOAuthSettings(), clientContext);
+    this.finishOAuthCallable =
+        callableFactory.createUnaryCallable(
+            finishOAuthTransportSettings, settings.finishOAuthSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1232,6 +1285,16 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   public OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationCallable() {
     return deleteSelfOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable() {
+    return startOAuthCallable;
+  }
+
+  @Override
+  public UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable() {
+    return finishOAuthCallable;
   }
 
   @Override

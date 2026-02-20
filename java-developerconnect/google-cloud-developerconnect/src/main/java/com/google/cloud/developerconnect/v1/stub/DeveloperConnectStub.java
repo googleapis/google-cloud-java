@@ -50,6 +50,8 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthResponse;
 import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
@@ -63,6 +65,8 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.StartOAuthRequest;
+import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
 import com.google.cloud.developerconnect.v1.User;
@@ -283,6 +287,14 @@ public abstract class DeveloperConnectStub implements BackgroundResource {
 
   public UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSelfCallable()");
+  }
+
+  public UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable() {
+    throw new UnsupportedOperationException("Not implemented: startOAuthCallable()");
+  }
+
+  public UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable() {
+    throw new UnsupportedOperationException("Not implemented: finishOAuthCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

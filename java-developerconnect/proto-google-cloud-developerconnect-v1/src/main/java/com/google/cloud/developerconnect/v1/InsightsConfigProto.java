@@ -53,6 +53,10 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_InsightsConfig_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_Projects_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_Projects_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_RuntimeConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_RuntimeConfig_fieldAccessorTable;
@@ -61,9 +65,17 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_GKEWorkload_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_GoogleCloudRun_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_GoogleCloudRun_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_AppHubWorkload_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_AppHubWorkload_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_AppHubService_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_AppHubService_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_ArtifactConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -76,6 +88,26 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
       internal_static_google_cloud_developerconnect_v1_GoogleArtifactRegistry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_GoogleArtifactRegistry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_DeploymentEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_DeploymentEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_GetDeploymentEventRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_GetDeploymentEventRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_ArtifactDeployment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_ArtifactDeployment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_CreateInsightsConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -117,22 +149,24 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
           + "o.proto\032\031google/api/resource.proto\0328goog"
           + "le/cloud/developerconnect/v1/developer_connect.proto\032#google/longrunning/operati"
           + "ons.proto\032\033google/protobuf/empty.proto\032\037"
-          + "google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\374\007\n"
+          + "google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\301\010\n"
           + "\016InsightsConfig\022\"\n"
-          + "\023app_hub_application\030\004 \001(\tB\003\340A\001H\000\022\021\n"
+          + "\023app_hub_application\030\004 \001(\tB\003\340A\001H\000\022C\n"
+          + "\010projects\030\014"
+          + " \001(\0132*.google.cloud.developerconnect.v1.ProjectsB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022M\n"
           + "\017runtime_configs\030\005"
           + " \003(\0132/.google.cloud.developerconnect.v1.RuntimeConfigB\003\340A\003\022O\n"
-          + "\020artifact_configs\030\006 \003(\01320.google.cloud.d"
-          + "eveloperconnect.v1.ArtifactConfigB\003\340A\001\022J\n"
-          + "\005state\030\007"
-          + " \001(\01626.google.cloud.developerconnect.v1.InsightsConfig.StateB\003\340A\001\022[\n"
-          + "\013annotations\030\010 \003(\0132A.google.cloud.developer"
-          + "connect.v1.InsightsConfig.AnnotationsEntryB\003\340A\001\022Q\n"
-          + "\006labels\030\t \003(\0132<.google.cloud.d"
-          + "eveloperconnect.v1.InsightsConfig.LabelsEntryB\003\340A\001\022\030\n"
+          + "\020artifact_configs\030\006"
+          + " \003(\01320.google.cloud.developerconnect.v1.ArtifactConfigB\003\340A\001\022J\n"
+          + "\005state\030\007 \001"
+          + "(\01626.google.cloud.developerconnect.v1.InsightsConfig.StateB\003\340A\001\022[\n"
+          + "\013annotations\030\010"
+          + " \003(\0132A.google.cloud.developerconnect.v1.InsightsConfig.AnnotationsEntryB\003\340A\001\022Q\n"
+          + "\006labels\030\t \003(\0132<.google.cloud.developercon"
+          + "nect.v1.InsightsConfig.LabelsEntryB\003\340A\001\022\030\n"
           + "\013reconciling\030\n"
           + " \001(\010B\003\340A\003\022\'\n"
           + "\006errors\030\013 \003(\0132\022.google.rpc.StatusB\003\340A\003\0322\n"
@@ -147,18 +181,24 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
           + "\007PENDING\020\005\022\014\n"
           + "\010COMPLETE\020\003\022\t\n"
           + "\005ERROR\020\004:\243\001\352A\237\001\n"
-          + ".developerconnect.googleapis.com/InsightsConfig\022Iprojects/{project"
-          + "}/locations/{location}/insightsConfigs/{"
-          + "insights_config}*\017insightsConfigs2\016insightsConfigR\001\001B\031\n"
-          + "\027insights_config_context\"\343\002\n\r"
+          + ".developerconnect.googleapis.com/InsightsConfig\022Iprojects/{project}/locations"
+          + "/{location}/insightsConfigs/{insights_co"
+          + "nfig}*\017insightsConfigs2\016insightsConfigR\001\001B\031\n"
+          + "\027insights_config_context\"$\n"
+          + "\010Projects\022\030\n"
+          + "\013project_ids\030\001 \003(\tB\003\340A\001\"\207\004\n\r"
           + "RuntimeConfig\022J\n"
-          + "\014gke_workload\030\003 \001(\0132"
-          + "-.google.cloud.developerconnect.v1.GKEWorkloadB\003\340A\003H\000\022Q\n"
-          + "\020app_hub_workload\030\004 \001(\0132"
-          + "0.google.cloud.developerconnect.v1.AppHubWorkloadB\003\340A\003H\001\022\023\n"
+          + "\014gke_workload\030\003 \001(\0132-.google.clou"
+          + "d.developerconnect.v1.GKEWorkloadB\003\340A\003H\000\022Q\n"
+          + "\020google_cloud_run\030\005 \001(\01320.google.clou"
+          + "d.developerconnect.v1.GoogleCloudRunB\003\340A\003H\000\022Q\n"
+          + "\020app_hub_workload\030\004 \001(\01320.google.c"
+          + "loud.developerconnect.v1.AppHubWorkloadB\003\340A\003H\001\022O\n"
+          + "\017app_hub_service\030\006 \001(\0132/.google"
+          + ".cloud.developerconnect.v1.AppHubServiceB\003\340A\003H\001\022\023\n"
           + "\003uri\030\001 \001(\tB\006\340A\002\340A\005\022I\n"
-          + "\005state\030\002"
-          + " \001(\01625.google.cloud.developerconnect.v1.RuntimeConfig.StateB\003\340A\003\"8\n"
+          + "\005state\030\002 "
+          + "\001(\01625.google.cloud.developerconnect.v1.RuntimeConfig.StateB\003\340A\003\"8\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006LINKED\020\001\022\014\n"
@@ -166,18 +206,23 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
           + "\007runtimeB\016\n"
           + "\014derived_from\"?\n"
           + "\013GKEWorkload\022\027\n"
-          + "\007cluster\030\001 \001(\tB\006\340A\002\340A\005\022\027\n"
-          + "\n"
-          + "deployment\030\002 \001(\tB\003\340A\003\"a\n"
+          + "\007cluster\030\001 \001(\tB\006\340A\002\340A\005\022\027\n\n"
+          + "deployment\030\002 \001(\tB\003\340A\003\"-\n"
+          + "\016GoogleCloudRun\022\033\n"
+          + "\013service_uri\030\001 \001(\tB\006\340A\002\340A\005\"a\n"
           + "\016AppHubWorkload\022\033\n"
           + "\010workload\030\001 \001(\tB\t\340A\002\340A\005\340A\003\022\030\n"
           + "\013criticality\030\002 \001(\tB\003\340A\003\022\030\n"
+          + "\013environment\030\003 \001(\tB\003\340A\003\"f\n\r"
+          + "AppHubService\022!\n"
+          + "\016apphub_service\030\001 \001(\tB\t\340A\002\340A\005\340A\003\022\030\n"
+          + "\013criticality\030\002 \001(\tB\003\340A\003\022\030\n"
           + "\013environment\030\003 \001(\tB\003\340A\003\"\234\002\n"
           + "\016ArtifactConfig\022a\n"
-          + "\030google_artifact_registry\030\002 \001(\01328.google.cloud.developerc"
-          + "onnect.v1.GoogleArtifactRegistryB\003\340A\001H\000\022a\n"
-          + "\030google_artifact_analysis\030\003 \001(\01328.goog"
-          + "le.cloud.developerconnect.v1.GoogleArtifactAnalysisB\003\340A\001H\001\022\023\n"
+          + "\030google_artifact_registry\030\002 \001(\01328.g"
+          + "oogle.cloud.developerconnect.v1.GoogleArtifactRegistryB\003\340A\001H\000\022a\n"
+          + "\030google_artifact_analysis\030\003 \001(\01328.google.cloud.developer"
+          + "connect.v1.GoogleArtifactAnalysisB\003\340A\001H\001\022\023\n"
           + "\003uri\030\001 \001(\tB\006\340A\002\340A\005B\022\n"
           + "\020artifact_storageB\033\n"
           + "\031artifact_metadata_storage\"1\n"
@@ -185,27 +230,71 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
           + "project_id\030\001 \001(\tB\003\340A\002\"\\\n"
           + "\026GoogleArtifactRegistry\022\027\n\n"
           + "project_id\030\001 \001(\tB\003\340A\002\022)\n"
-          + "\031artifact_registry_package\030\002 \001(\tB\006\340A\002\340A\005\"\362\001\n"
+          + "\031artifact_registry_package\030\002 \001(\tB\006\340A\002\340A\005\"\247\006\n"
+          + "\017DeploymentEvent\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
+          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022L\n"
+          + "\016runtime_config\030\010 \001(\0132/.google.clou"
+          + "d.developerconnect.v1.RuntimeConfigB\003\340A\003\022#\n"
+          + "\026runtime_deployment_uri\030\016 \001(\tB\003\340A\003\022K\n"
+          + "\005state\030\013"
+          + " \001(\01627.google.cloud.developerconnect.v1.DeploymentEvent.StateB\003\340A\003\022W\n"
+          + "\024artifact_deployments\030\t \003(\01324.google.cloud."
+          + "developerconnect.v1.ArtifactDeploymentB\003\340A\003\0224\n"
+          + "\013deploy_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n\r"
+          + "undeploy_time\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"D\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\020\n"
+          + "\014STATE_ACTIVE\020\001\022\022\n"
+          + "\016STATE_INACTIVE\020\002:\307\001\352A\303\001\n"
+          + "/developerconnect.googleapis.com/DeploymentEvent\022"
+          + "mprojects/{project}/locations/{location}/insightsConfigs/{insights_config}/deplo"
+          + "ymentEvents/{deployment_event}*\020deploymentEvents2\017deploymentEvent\"b\n"
+          + "\031GetDeploymentEventRequest\022E\n"
+          + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/developerconnect.googleapis.com/DeploymentEvent\"\254\001\n"
+          + "\033ListDeploymentEventsRequest\022G\n"
+          + "\006parent\030\001 \001("
+          + "\tB7\340A\002\372A1\022/developerconnect.googleapis.com/DeploymentEvent\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"\205\001\n"
+          + "\034ListDeploymentEventsResponse\022L\n"
+          + "\021deployment_events\030\001 \003(\013"
+          + "21.google.cloud.developerconnect.v1.DeploymentEvent\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\231\002\n"
+          + "\022ArtifactDeployment\022\017\n"
+          + "\002id\030\001 \001(\tB\003\340A\003\022\037\n"
+          + "\022artifact_reference\030\002 \001(\tB\003\340A\003\022\033\n"
+          + "\016artifact_alias\030\n"
+          + " \001(\tB\003\340A\003\022\037\n"
+          + "\022source_commit_uris\030\006 \003(\tB\003\340A\003\0224\n"
+          + "\013deploy_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n\r"
+          + "undeploy_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022%\n"
+          + "\030container_status_summary\030\007 \001(\tB\003\340A\003\"\362\001\n"
           + "\033CreateInsightsConfigRequest\022F\n"
           + "\006parent\030\001 \001("
           + "\tB6\340A\002\372A0\022.developerconnect.googleapis.com/InsightsConfig\022\037\n"
           + "\022insights_config_id\030\002 \001(\tB\003\340A\002\022N\n"
-          + "\017insights_config\030\003 \001(\01320.go"
-          + "ogle.cloud.developerconnect.v1.InsightsConfigB\003\340A\002\022\032\n\r"
+          + "\017insights_config\030\003 \001"
+          + "(\01320.google.cloud.developerconnect.v1.InsightsConfigB\003\340A\002\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"`\n"
           + "\030GetInsightsConfigRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
           + ".developerconnect.googleapis.com/InsightsConfig\"\301\001\n"
           + "\032ListInsightsConfigsRequest\022F\n"
-          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.develop"
-          + "erconnect.googleapis.com/InsightsConfig\022\026\n"
+          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022."
+          + "developerconnect.googleapis.com/InsightsConfig\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\227\001\n"
           + "\033ListInsightsConfigsResponse\022J\n"
-          + "\020insights_configs\030\001 \003(\01320.google."
-          + "cloud.developerconnect.v1.InsightsConfig\022\027\n"
+          + "\020insights_configs\030\001 \003(\01320."
+          + "google.cloud.developerconnect.v1.InsightsConfig\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\263\001\n"
           + "\033DeleteInsightsConfigRequest\022D\n"
@@ -219,37 +308,45 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
           + " \001(\01320.google.cloud.developerconnect.v1.InsightsConfigB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "allow_missing\030\004 \001(\010B\003\340A\001\022\032\n\r"
-          + "validate_only\030\005 \001(\010B\003\340A\0012\357\n\n"
+          + "validate_only\030\005 \001(\010B\003\340A\0012\276\016\n"
           + "\025InsightsConfigService\022\330\001\n"
-          + "\023ListInsightsConfigs\022<.google.cloud.developerconnect.v1.ListI"
-          + "nsightsConfigsRequest\032=.google.cloud.developerconnect.v1.ListInsightsConfigsResp"
-          + "onse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{parent=projects/*/locations/*}/insightsConfigs\022\266\002\n"
-          + "\024CreateInsightsConfig\022=.google.cloud.devel"
-          + "operconnect.v1.CreateInsightsConfigRequest\032\035.google.longrunning.Operation\"\277\001\312AD\n"
+          + "\023ListInsightsConfigs\022<.google.cloud.developerconnect.v"
+          + "1.ListInsightsConfigsRequest\032=.google.cloud.developerconnect.v1.ListInsightsConf"
+          + "igsResponse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{paren"
+          + "t=projects/*/locations/*}/insightsConfigs\022\266\002\n"
+          + "\024CreateInsightsConfig\022=.google.cloud.developerconnect.v1.CreateInsightsConf"
+          + "igRequest\032\035.google.longrunning.Operation\"\277\001\312AD\n"
+          + "\016InsightsConfig\0222google.cloud.developerconnect.v1.OperationMetadata\332A)par"
+          + "ent,insights_config,insights_config_id\202\323"
+          + "\344\223\002F\"3/v1/{parent=projects/*/locations/*}/insightsConfigs:\017insights_config\022\305\001\n"
+          + "\021GetInsightsConfig\022:.google.cloud.develope"
+          + "rconnect.v1.GetInsightsConfigRequest\0320.google.cloud.developerconnect.v1.Insights"
+          + "Config\"B\332A\004name\202\323\344\223\0025\0223/v1/{name=projects/*/locations/*/insightsConfigs/*}\022\232\002\n"
+          + "\024UpdateInsightsConfig\022=.google.cloud.devel"
+          + "operconnect.v1.UpdateInsightsConfigRequest\032\035.google.longrunning.Operation\"\243\001\312AD\n"
           + "\016InsightsConfig\0222google.cloud.developerc"
-          + "onnect.v1.OperationMetadata\332A)parent,ins"
-          + "ights_config,insights_config_id\202\323\344\223\002F\"3/"
-          + "v1/{parent=projects/*/locations/*}/insightsConfigs:\017insights_config\022\305\001\n"
-          + "\021GetInsightsConfig\022:.google.cloud.developerconnec"
-          + "t.v1.GetInsightsConfigRequest\0320.google.cloud.developerconnect.v1.InsightsConfig\""
-          + "B\332A\004name\202\323\344\223\0025\0223/v1/{name=projects/*/locations/*/insightsConfigs/*}\022\232\002\n"
-          + "\024UpdateInsightsConfig\022=.google.cloud.developercon"
-          + "nect.v1.UpdateInsightsConfigRequest\032\035.google.longrunning.Operation\"\243\001\312AD\n"
-          + "\016InsightsConfig\0222google.cloud.developerconnect."
-          + "v1.OperationMetadata\202\323\344\223\002V2C/v1/{insight"
-          + "s_config.name=projects/*/locations/*/insightsConfigs/*}:\017insights_config\022\207\002\n"
-          + "\024DeleteInsightsConfig\022=.google.cloud.develop"
-          + "erconnect.v1.DeleteInsightsConfigRequest\032\035.google.longrunning.Operation\"\220\001\312AK\n"
-          + "\025google.protobuf.Empty\0222google.cloud.devel"
-          + "operconnect.v1.OperationMetadata\332A\004name\202"
-          + "\323\344\223\0025*3/v1/{name=projects/*/locations/*/"
-          + "insightsConfigs/*}\032S\312A\037developerconnect."
-          + "googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\325\001\n"
-          + "$com.google.cloud.developerconnect.v1B\023InsightsConfig"
-          + "ProtoP\001ZPcloud.google.com/go/developerco"
-          + "nnect/apiv1/developerconnectpb;developerconnectpb\252\002"
-          + " Google.Cloud.DeveloperConnect.V1\312\002 Google\\Cloud\\DeveloperConnect\\V1b"
-          + "\006proto3"
+          + "onnect.v1.OperationMetadata\202\323\344\223\002V2C/v1/{"
+          + "insights_config.name=projects/*/location"
+          + "s/*/insightsConfigs/*}:\017insights_config\022\207\002\n"
+          + "\024DeleteInsightsConfig\022=.google.cloud.developerconnect.v1.DeleteInsightsConfig"
+          + "Request\032\035.google.longrunning.Operation\"\220\001\312AK\n"
+          + "\025google.protobuf.Empty\0222google.cloud.developerconnect.v1.OperationMetadata\332"
+          + "A\004name\202\323\344\223\0025*3/v1/{name=projects/*/locations/*/insightsConfigs/*}\022\333\001\n"
+          + "\022GetDeploymentEvent\022;.google.cloud.developerconnect"
+          + ".v1.GetDeploymentEventRequest\0321.google.cloud.developerconnect.v1.DeploymentEvent"
+          + "\"U\332A\004name\202\323\344\223\002H\022F/v1/{name=projects/*/lo"
+          + "cations/*/insightsConfigs/*/deploymentEvents/*}\022\356\001\n"
+          + "\024ListDeploymentEvents\022=.google.cloud.developerconnect.v1.ListDeployme"
+          + "ntEventsRequest\032>.google.cloud.developerconnect.v1.ListDeploymentEventsResponse\""
+          + "W\332A\006parent\202\323\344\223\002H\022F/v1/{parent=projects/*"
+          + "/locations/*/insightsConfigs/*}/deployme"
+          + "ntEvents\032S\312A\037developerconnect.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/cloud-platformB\325\001\n"
+          + "$com.google.cloud.developerconnect.v1B\023InsightsConfigProtoP\001ZPc"
+          + "loud.google.com/go/developerconnect/apiv"
+          + "1/developerconnectpb;developerconnectpb\252\002"
+          + " Google.Cloud.DeveloperConnect.V1\312\002 Goo"
+          + "gle\\Cloud\\DeveloperConnect\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -273,6 +370,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
             internal_static_google_cloud_developerconnect_v1_InsightsConfig_descriptor,
             new java.lang.String[] {
               "AppHubApplication",
+              "Projects",
               "Name",
               "CreateTime",
               "UpdateTime",
@@ -301,32 +399,63 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_developerconnect_v1_RuntimeConfig_descriptor =
+    internal_static_google_cloud_developerconnect_v1_Projects_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_cloud_developerconnect_v1_Projects_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_Projects_descriptor,
+            new java.lang.String[] {
+              "ProjectIds",
+            });
+    internal_static_google_cloud_developerconnect_v1_RuntimeConfig_descriptor =
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_developerconnect_v1_RuntimeConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_RuntimeConfig_descriptor,
             new java.lang.String[] {
-              "GkeWorkload", "AppHubWorkload", "Uri", "State", "Runtime", "DerivedFrom",
+              "GkeWorkload",
+              "GoogleCloudRun",
+              "AppHubWorkload",
+              "AppHubService",
+              "Uri",
+              "State",
+              "Runtime",
+              "DerivedFrom",
             });
     internal_static_google_cloud_developerconnect_v1_GKEWorkload_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_developerconnect_v1_GKEWorkload_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GKEWorkload_descriptor,
             new java.lang.String[] {
               "Cluster", "Deployment",
             });
+    internal_static_google_cloud_developerconnect_v1_GoogleCloudRun_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_developerconnect_v1_GoogleCloudRun_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_GoogleCloudRun_descriptor,
+            new java.lang.String[] {
+              "ServiceUri",
+            });
     internal_static_google_cloud_developerconnect_v1_AppHubWorkload_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_developerconnect_v1_AppHubWorkload_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_AppHubWorkload_descriptor,
             new java.lang.String[] {
               "Workload", "Criticality", "Environment",
             });
+    internal_static_google_cloud_developerconnect_v1_AppHubService_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_developerconnect_v1_AppHubService_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_AppHubService_descriptor,
+            new java.lang.String[] {
+              "ApphubService", "Criticality", "Environment",
+            });
     internal_static_google_cloud_developerconnect_v1_ArtifactConfig_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_developerconnect_v1_ArtifactConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ArtifactConfig_descriptor,
@@ -338,7 +467,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "ArtifactMetadataStorage",
             });
     internal_static_google_cloud_developerconnect_v1_GoogleArtifactAnalysis_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_developerconnect_v1_GoogleArtifactAnalysis_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GoogleArtifactAnalysis_descriptor,
@@ -346,15 +475,69 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "ProjectId",
             });
     internal_static_google_cloud_developerconnect_v1_GoogleArtifactRegistry_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_developerconnect_v1_GoogleArtifactRegistry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GoogleArtifactRegistry_descriptor,
             new java.lang.String[] {
               "ProjectId", "ArtifactRegistryPackage",
             });
+    internal_static_google_cloud_developerconnect_v1_DeploymentEvent_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_developerconnect_v1_DeploymentEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_DeploymentEvent_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "RuntimeConfig",
+              "RuntimeDeploymentUri",
+              "State",
+              "ArtifactDeployments",
+              "DeployTime",
+              "UndeployTime",
+            });
+    internal_static_google_cloud_developerconnect_v1_GetDeploymentEventRequest_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_developerconnect_v1_GetDeploymentEventRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_GetDeploymentEventRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsResponse_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_ListDeploymentEventsResponse_descriptor,
+            new java.lang.String[] {
+              "DeploymentEvents", "NextPageToken",
+            });
+    internal_static_google_cloud_developerconnect_v1_ArtifactDeployment_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_developerconnect_v1_ArtifactDeployment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_ArtifactDeployment_descriptor,
+            new java.lang.String[] {
+              "Id",
+              "ArtifactReference",
+              "ArtifactAlias",
+              "SourceCommitUris",
+              "DeployTime",
+              "UndeployTime",
+              "ContainerStatusSummary",
+            });
     internal_static_google_cloud_developerconnect_v1_CreateInsightsConfigRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_developerconnect_v1_CreateInsightsConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_CreateInsightsConfigRequest_descriptor,
@@ -362,7 +545,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "Parent", "InsightsConfigId", "InsightsConfig", "ValidateOnly",
             });
     internal_static_google_cloud_developerconnect_v1_GetInsightsConfigRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_developerconnect_v1_GetInsightsConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GetInsightsConfigRequest_descriptor,
@@ -370,7 +553,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "Name",
             });
     internal_static_google_cloud_developerconnect_v1_ListInsightsConfigsRequest_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_developerconnect_v1_ListInsightsConfigsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ListInsightsConfigsRequest_descriptor,
@@ -378,7 +561,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_developerconnect_v1_ListInsightsConfigsResponse_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_developerconnect_v1_ListInsightsConfigsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ListInsightsConfigsResponse_descriptor,
@@ -386,7 +569,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "InsightsConfigs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_developerconnect_v1_DeleteInsightsConfigRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_developerconnect_v1_DeleteInsightsConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_DeleteInsightsConfigRequest_descriptor,
@@ -394,7 +577,7 @@ public final class InsightsConfigProto extends com.google.protobuf.GeneratedFile
               "Name", "RequestId", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_developerconnect_v1_UpdateInsightsConfigRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_developerconnect_v1_UpdateInsightsConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_UpdateInsightsConfigRequest_descriptor,

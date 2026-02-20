@@ -96,7 +96,9 @@ public interface GitHubEnterpriseConfigOrBuilder
    *
    * <pre>
    * Optional. SecretManager resource containing the private key of the GitHub
-   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -112,7 +114,9 @@ public interface GitHubEnterpriseConfigOrBuilder
    *
    * <pre>
    * Optional. SecretManager resource containing the private key of the GitHub
-   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -128,7 +132,9 @@ public interface GitHubEnterpriseConfigOrBuilder
    *
    * <pre>
    * Optional. SecretManager resource containing the webhook secret of the
-   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -144,7 +150,9 @@ public interface GitHubEnterpriseConfigOrBuilder
    *
    * <pre>
    * Optional. SecretManager resource containing the webhook secret of the
-   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -303,4 +311,36 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The bytes for sslCaCertificate.
    */
   com.google.protobuf.ByteString getSslCaCertificateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+   * is created.
+   * </pre>
+   *
+   * <code>
+   * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The organization.
+   */
+  java.lang.String getOrganization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+   * is created.
+   * </pre>
+   *
+   * <code>
+   * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for organization.
+   */
+  com.google.protobuf.ByteString getOrganizationBytes();
 }

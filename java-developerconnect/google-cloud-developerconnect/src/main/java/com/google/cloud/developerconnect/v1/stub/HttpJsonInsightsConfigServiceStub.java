@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1.stub;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -37,8 +38,12 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest;
+import com.google.cloud.developerconnect.v1.DeploymentEvent;
+import com.google.cloud.developerconnect.v1.GetDeploymentEventRequest;
 import com.google.cloud.developerconnect.v1.GetInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.InsightsConfig;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
@@ -284,6 +289,81 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventMethodDescriptor =
+          ApiMethodDescriptor.<GetDeploymentEventRequest, DeploymentEvent>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.InsightsConfigService/GetDeploymentEvent")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDeploymentEventRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/insightsConfigs/*/deploymentEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeploymentEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeploymentEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DeploymentEvent>newBuilder()
+                      .setDefaultInstance(DeploymentEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDeploymentEventsRequest, ListDeploymentEventsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.InsightsConfigService/ListDeploymentEvents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDeploymentEventsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/insightsConfigs/*}/deploymentEvents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeploymentEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeploymentEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDeploymentEventsResponse>newBuilder()
+                      .setDefaultInstance(ListDeploymentEventsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -366,6 +446,12 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
   private final UnaryCallable<DeleteInsightsConfigRequest, Operation> deleteInsightsConfigCallable;
   private final OperationCallable<DeleteInsightsConfigRequest, Empty, OperationMetadata>
       deleteInsightsConfigOperationCallable;
+  private final UnaryCallable<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventCallable;
+  private final UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsCallable;
+  private final UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsPagedResponse>
+      listDeploymentEventsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -506,6 +592,31 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetDeploymentEventRequest, DeploymentEvent>
+        getDeploymentEventTransportSettings =
+            HttpJsonCallSettings.<GetDeploymentEventRequest, DeploymentEvent>newBuilder()
+                .setMethodDescriptor(getDeploymentEventMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+        listDeploymentEventsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDeploymentEventsRequest, ListDeploymentEventsResponse>newBuilder()
+                .setMethodDescriptor(listDeploymentEventsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -578,6 +689,21 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
             settings.deleteInsightsConfigOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getDeploymentEventCallable =
+        callableFactory.createUnaryCallable(
+            getDeploymentEventTransportSettings,
+            settings.getDeploymentEventSettings(),
+            clientContext);
+    this.listDeploymentEventsCallable =
+        callableFactory.createUnaryCallable(
+            listDeploymentEventsTransportSettings,
+            settings.listDeploymentEventsSettings(),
+            clientContext);
+    this.listDeploymentEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeploymentEventsTransportSettings,
+            settings.listDeploymentEventsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -600,6 +726,8 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
     methodDescriptors.add(getInsightsConfigMethodDescriptor);
     methodDescriptors.add(updateInsightsConfigMethodDescriptor);
     methodDescriptors.add(deleteInsightsConfigMethodDescriptor);
+    methodDescriptors.add(getDeploymentEventMethodDescriptor);
+    methodDescriptors.add(listDeploymentEventsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -657,6 +785,23 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
   public OperationCallable<DeleteInsightsConfigRequest, Empty, OperationMetadata>
       deleteInsightsConfigOperationCallable() {
     return deleteInsightsConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeploymentEventRequest, DeploymentEvent> getDeploymentEventCallable() {
+    return getDeploymentEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsCallable() {
+    return listDeploymentEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsPagedResponse>
+      listDeploymentEventsPagedCallable() {
+    return listDeploymentEventsPagedCallable;
   }
 
   @Override

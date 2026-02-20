@@ -73,6 +73,49 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
+   * Output only. Cloud Run runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the googleCloudRun field is set.
+   */
+  boolean hasGoogleCloudRun();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Run runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The googleCloudRun.
+   */
+  com.google.cloud.developerconnect.v1.GoogleCloudRun getGoogleCloudRun();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Run runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.GoogleCloudRunOrBuilder getGoogleCloudRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. App Hub Workload.
    * </pre>
    *
@@ -111,6 +154,49 @@ public interface RuntimeConfigOrBuilder
    * </code>
    */
   com.google.cloud.developerconnect.v1.AppHubWorkloadOrBuilder getAppHubWorkloadOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. App Hub Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the appHubService field is set.
+   */
+  boolean hasAppHubService();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. App Hub Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The appHubService.
+   */
+  com.google.cloud.developerconnect.v1.AppHubService getAppHubService();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. App Hub Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.AppHubServiceOrBuilder getAppHubServiceOrBuilder();
 
   /**
    *

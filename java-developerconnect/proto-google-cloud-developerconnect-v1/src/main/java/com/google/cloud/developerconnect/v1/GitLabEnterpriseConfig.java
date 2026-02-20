@@ -137,8 +137,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Immutable. SecretManager resource containing the webhook secret
-   * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-   * is used to validate webhooks.
+   * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location). This is used to validate webhooks.
    * </pre>
    *
    * <code>
@@ -165,8 +166,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Immutable. SecretManager resource containing the webhook secret
-   * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-   * is used to validate webhooks.
+   * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location). This is used to validate webhooks.
    * </pre>
    *
    * <code>
@@ -1138,8 +1140,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Immutable. SecretManager resource containing the webhook secret
-     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-     * is used to validate webhooks.
+     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location). This is used to validate webhooks.
      * </pre>
      *
      * <code>
@@ -1165,8 +1168,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Immutable. SecretManager resource containing the webhook secret
-     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-     * is used to validate webhooks.
+     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location). This is used to validate webhooks.
      * </pre>
      *
      * <code>
@@ -1192,8 +1196,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Immutable. SecretManager resource containing the webhook secret
-     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-     * is used to validate webhooks.
+     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location). This is used to validate webhooks.
      * </pre>
      *
      * <code>
@@ -1218,8 +1223,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Immutable. SecretManager resource containing the webhook secret
-     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-     * is used to validate webhooks.
+     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location). This is used to validate webhooks.
      * </pre>
      *
      * <code>
@@ -1240,8 +1246,9 @@ public final class GitLabEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Immutable. SecretManager resource containing the webhook secret
-     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This
-     * is used to validate webhooks.
+     * of a GitLab project, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location). This is used to validate webhooks.
      * </pre>
      *
      * <code>

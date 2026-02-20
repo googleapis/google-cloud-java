@@ -173,7 +173,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateGitRepositoryLink</td>
- *      <td><p> Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure the Git Repository to send webhook events to Developer Connect. Connections that use Firebase GitHub Application will have events forwarded to the Firebase service. All other Connections will have events forwarded to Cloud Build.</td>
+ *      <td><p> Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure the Git Repository to send webhook events to Developer Connect. Connections that use Firebase GitHub Application will have events forwarded to the Firebase service. Connections that use Gemini Code Assist will have events forwarded to Gemini Code Assist service. All other Connections will have events forwarded to Cloud Build.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -544,8 +544,47 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StartOAuth</td>
+ *      <td><p> Starts OAuth flow for an account connector.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startOAuth(StartOAuthRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> startOAuth(AccountConnectorName accountConnector)
+ *           <li><p> startOAuth(String accountConnector)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startOAuthCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FinishOAuth</td>
+ *      <td><p> Finishes OAuth flow for an account connector.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> finishOAuth(FinishOAuthRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> finishOAuth(AccountConnectorName accountConnector)
+ *           <li><p> finishOAuth(String accountConnector)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> finishOAuthCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1446,8 +1485,9 @@ public class DeveloperConnectClient implements BackgroundResource {
   /**
    * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure
    * the Git Repository to send webhook events to Developer Connect. Connections that use Firebase
-   * GitHub Application will have events forwarded to the Firebase service. All other Connections
-   * will have events forwarded to Cloud Build.
+   * GitHub Application will have events forwarded to the Firebase service. Connections that use
+   * Gemini Code Assist will have events forwarded to Gemini Code Assist service. All other
+   * Connections will have events forwarded to Cloud Build.
    *
    * <p>Sample code:
    *
@@ -1490,8 +1530,9 @@ public class DeveloperConnectClient implements BackgroundResource {
   /**
    * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure
    * the Git Repository to send webhook events to Developer Connect. Connections that use Firebase
-   * GitHub Application will have events forwarded to the Firebase service. All other Connections
-   * will have events forwarded to Cloud Build.
+   * GitHub Application will have events forwarded to the Firebase service. Connections that use
+   * Gemini Code Assist will have events forwarded to Gemini Code Assist service. All other
+   * Connections will have events forwarded to Cloud Build.
    *
    * <p>Sample code:
    *
@@ -1534,8 +1575,9 @@ public class DeveloperConnectClient implements BackgroundResource {
   /**
    * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure
    * the Git Repository to send webhook events to Developer Connect. Connections that use Firebase
-   * GitHub Application will have events forwarded to the Firebase service. All other Connections
-   * will have events forwarded to Cloud Build.
+   * GitHub Application will have events forwarded to the Firebase service. Connections that use
+   * Gemini Code Assist will have events forwarded to Gemini Code Assist service. All other
+   * Connections will have events forwarded to Cloud Build.
    *
    * <p>Sample code:
    *
@@ -1571,8 +1613,9 @@ public class DeveloperConnectClient implements BackgroundResource {
   /**
    * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure
    * the Git Repository to send webhook events to Developer Connect. Connections that use Firebase
-   * GitHub Application will have events forwarded to the Firebase service. All other Connections
-   * will have events forwarded to Cloud Build.
+   * GitHub Application will have events forwarded to the Firebase service. Connections that use
+   * Gemini Code Assist will have events forwarded to Gemini Code Assist service. All other
+   * Connections will have events forwarded to Cloud Build.
    *
    * <p>Sample code:
    *
@@ -1608,8 +1651,9 @@ public class DeveloperConnectClient implements BackgroundResource {
   /**
    * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer Connect will configure
    * the Git Repository to send webhook events to Developer Connect. Connections that use Firebase
-   * GitHub Application will have events forwarded to the Firebase service. All other Connections
-   * will have events forwarded to Cloud Build.
+   * GitHub Application will have events forwarded to the Firebase service. Connections that use
+   * Gemini Code Assist will have events forwarded to Gemini Code Assist service. All other
+   * Connections will have events forwarded to Cloud Build.
    *
    * <p>Sample code:
    *
@@ -4349,7 +4393,253 @@ public class DeveloperConnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Starts OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName accountConnector =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   StartOAuthResponse response = developerConnectClient.startOAuth(accountConnector);
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The resource name of the AccountConnector in the format
+   *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StartOAuthResponse startOAuth(AccountConnectorName accountConnector) {
+    StartOAuthRequest request =
+        StartOAuthRequest.newBuilder()
+            .setAccountConnector(accountConnector == null ? null : accountConnector.toString())
+            .build();
+    return startOAuth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String accountConnector =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   StartOAuthResponse response = developerConnectClient.startOAuth(accountConnector);
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The resource name of the AccountConnector in the format
+   *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StartOAuthResponse startOAuth(String accountConnector) {
+    StartOAuthRequest request =
+        StartOAuthRequest.newBuilder().setAccountConnector(accountConnector).build();
+    return startOAuth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   StartOAuthRequest request =
+   *       StartOAuthRequest.newBuilder()
+   *           .setAccountConnector(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   StartOAuthResponse response = developerConnectClient.startOAuth(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StartOAuthResponse startOAuth(StartOAuthRequest request) {
+    return startOAuthCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   StartOAuthRequest request =
+   *       StartOAuthRequest.newBuilder()
+   *           .setAccountConnector(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<StartOAuthResponse> future =
+   *       developerConnectClient.startOAuthCallable().futureCall(request);
+   *   // Do something.
+   *   StartOAuthResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable() {
+    return stub.startOAuthCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finishes OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName accountConnector =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   FinishOAuthResponse response = developerConnectClient.finishOAuth(accountConnector);
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The resource name of the AccountConnector in the format
+   *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FinishOAuthResponse finishOAuth(AccountConnectorName accountConnector) {
+    FinishOAuthRequest request =
+        FinishOAuthRequest.newBuilder()
+            .setAccountConnector(accountConnector == null ? null : accountConnector.toString())
+            .build();
+    return finishOAuth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finishes OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String accountConnector =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   FinishOAuthResponse response = developerConnectClient.finishOAuth(accountConnector);
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The resource name of the AccountConnector in the format
+   *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FinishOAuthResponse finishOAuth(String accountConnector) {
+    FinishOAuthRequest request =
+        FinishOAuthRequest.newBuilder().setAccountConnector(accountConnector).build();
+    return finishOAuth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finishes OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FinishOAuthRequest request =
+   *       FinishOAuthRequest.newBuilder()
+   *           .setAccountConnector(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   FinishOAuthResponse response = developerConnectClient.finishOAuth(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FinishOAuthResponse finishOAuth(FinishOAuthRequest request) {
+    return finishOAuthCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finishes OAuth flow for an account connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FinishOAuthRequest request =
+   *       FinishOAuthRequest.newBuilder()
+   *           .setAccountConnector(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FinishOAuthResponse> future =
+   *       developerConnectClient.finishOAuthCallable().futureCall(request);
+   *   // Do something.
+   *   FinishOAuthResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable() {
+    return stub.finishOAuthCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -4382,7 +4672,13 @@ public class DeveloperConnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -4416,7 +4712,13 @@ public class DeveloperConnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

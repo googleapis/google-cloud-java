@@ -143,10 +143,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Provider OAuth config.
+   * Optional. Provider OAuth config.
    * </pre>
    *
-   * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+   * <code>
+   * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the providerOauthConfig field is set.
    */
@@ -159,10 +161,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Provider OAuth config.
+   * Optional. Provider OAuth config.
    * </pre>
    *
-   * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+   * <code>
+   * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The providerOauthConfig.
    */
@@ -178,10 +182,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Provider OAuth config.
+   * Optional. Provider OAuth config.
    * </pre>
    *
-   * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+   * <code>
+   * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.developerconnect.v1.ProviderOAuthConfigOrBuilder
@@ -1301,10 +1307,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the providerOauthConfig field is set.
      */
@@ -1317,10 +1325,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The providerOauthConfig.
      */
@@ -1343,10 +1353,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setProviderOauthConfig(
         com.google.cloud.developerconnect.v1.ProviderOAuthConfig value) {
@@ -1367,10 +1379,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setProviderOauthConfig(
         com.google.cloud.developerconnect.v1.ProviderOAuthConfig.Builder builderForValue) {
@@ -1388,10 +1402,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeProviderOauthConfig(
         com.google.cloud.developerconnect.v1.ProviderOAuthConfig value) {
@@ -1424,10 +1440,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearProviderOauthConfig() {
       if (providerOauthConfigBuilder_ == null) {
@@ -1450,10 +1468,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.developerconnect.v1.ProviderOAuthConfig.Builder
         getProviderOauthConfigBuilder() {
@@ -1464,10 +1484,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.developerconnect.v1.ProviderOAuthConfigOrBuilder
@@ -1486,10 +1508,12 @@ public final class AccountConnector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provider OAuth config.
+     * Optional. Provider OAuth config.
      * </pre>
      *
-     * <code>.google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5;</code>
+     * <code>
+     * .google.cloud.developerconnect.v1.ProviderOAuthConfig provider_oauth_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.developerconnect.v1.ProviderOAuthConfig,

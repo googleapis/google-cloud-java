@@ -63,6 +63,8 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthResponse;
 import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
@@ -76,6 +78,8 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.StartOAuthRequest;
+import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
 import com.google.cloud.developerconnect.v1.User;
@@ -1090,6 +1094,80 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<StartOAuthRequest, StartOAuthResponse>
+      startOAuthMethodDescriptor =
+          ApiMethodDescriptor.<StartOAuthRequest, StartOAuthResponse>newBuilder()
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/StartOAuth")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartOAuthRequest>newBuilder()
+                      .setPath(
+                          "/v1/{accountConnector=projects/*/locations/*/accountConnectors/*}/users:startOAuthFlow",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartOAuthRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "accountConnector", request.getAccountConnector());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartOAuthRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<StartOAuthResponse>newBuilder()
+                      .setDefaultInstance(StartOAuthResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<FinishOAuthRequest, FinishOAuthResponse>
+      finishOAuthMethodDescriptor =
+          ApiMethodDescriptor.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/FinishOAuth")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FinishOAuthRequest>newBuilder()
+                      .setPath(
+                          "/v1/{accountConnector=projects/*/locations/*/accountConnectors/*}/users:finishOAuthFlow",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FinishOAuthRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "accountConnector", request.getAccountConnector());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FinishOAuthRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "googleOauthParams", request.getGoogleOauthParams());
+                            serializer.putQueryParam(
+                                fields, "oauthParams", request.getOauthParams());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FinishOAuthResponse>newBuilder()
+                      .setDefaultInstance(FinishOAuthResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1232,6 +1310,8 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable;
   private final OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationCallable;
+  private final UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable;
+  private final UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1598,6 +1678,28 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthTransportSettings =
+        HttpJsonCallSettings.<StartOAuthRequest, StartOAuthResponse>newBuilder()
+            .setMethodDescriptor(startOAuthMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account_connector", String.valueOf(request.getAccountConnector()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthTransportSettings =
+        HttpJsonCallSettings.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
+            .setMethodDescriptor(finishOAuthMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account_connector", String.valueOf(request.getAccountConnector()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1802,6 +1904,12 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
             settings.deleteSelfOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.startOAuthCallable =
+        callableFactory.createUnaryCallable(
+            startOAuthTransportSettings, settings.startOAuthSettings(), clientContext);
+    this.finishOAuthCallable =
+        callableFactory.createUnaryCallable(
+            finishOAuthTransportSettings, settings.finishOAuthSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1843,6 +1951,8 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
     methodDescriptors.add(deleteUserMethodDescriptor);
     methodDescriptors.add(fetchSelfMethodDescriptor);
     methodDescriptors.add(deleteSelfMethodDescriptor);
+    methodDescriptors.add(startOAuthMethodDescriptor);
+    methodDescriptors.add(finishOAuthMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2074,6 +2184,16 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   public OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationCallable() {
     return deleteSelfOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable() {
+    return startOAuthCallable;
+  }
+
+  @Override
+  public UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable() {
+    return finishOAuthCallable;
   }
 
   @Override

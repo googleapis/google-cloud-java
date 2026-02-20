@@ -58,7 +58,9 @@ public interface BitbucketDataCenterConfigOrBuilder
    * <pre>
    * Required. Immutable. SecretManager resource containing the webhook secret
    * used to verify webhook events, formatted as
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This is used to validate webhooks.
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location). This is used to validate webhooks.
    * </pre>
    *
    * <code>
@@ -75,7 +77,9 @@ public interface BitbucketDataCenterConfigOrBuilder
    * <pre>
    * Required. Immutable. SecretManager resource containing the webhook secret
    * used to verify webhook events, formatted as
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`. This is used to validate webhooks.
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location). This is used to validate webhooks.
    * </pre>
    *
    * <code>
