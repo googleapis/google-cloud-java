@@ -951,3 +951,5 @@ grpc-google-cloud-workloadmanager-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-ces:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-ces-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-ces-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-bigquery:2.59.0:2.59.0
+google-cloud-bigquery-jdbc:0.3.0:0.3.0
