@@ -26,6 +26,8 @@ package com.google.ads.datamanager.v1;
  * <pre>
  * [PAIR](//support.google.com/admanager/answer/15067908) IDs for the audience.
  * At least one PAIR ID is required.
+ *
+ * This feature is only available to data partners.
  * </pre>
  *
  * Protobuf type {@code google.ads.datamanager.v1.PairData}
@@ -327,6 +329,8 @@ public final class PairData extends com.google.protobuf.GeneratedMessage
    * <pre>
    * [PAIR](//support.google.com/admanager/answer/15067908) IDs for the audience.
    * At least one PAIR ID is required.
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * Protobuf type {@code google.ads.datamanager.v1.PairData}

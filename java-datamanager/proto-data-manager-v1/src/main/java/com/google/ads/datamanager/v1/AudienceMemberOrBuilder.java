@@ -135,6 +135,8 @@ public interface AudienceMemberOrBuilder
    * <pre>
    * [Publisher Advertiser Identity Reconciliation (PAIR)
    * IDs](//support.google.com/admanager/answer/15067908).
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -149,6 +151,8 @@ public interface AudienceMemberOrBuilder
    * <pre>
    * [Publisher Advertiser Identity Reconciliation (PAIR)
    * IDs](//support.google.com/admanager/answer/15067908).
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -163,6 +167,8 @@ public interface AudienceMemberOrBuilder
    * <pre>
    * [Publisher Advertiser Identity Reconciliation (PAIR)
    * IDs](//support.google.com/admanager/answer/15067908).
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -205,6 +211,89 @@ public interface AudienceMemberOrBuilder
    * <code>.google.ads.datamanager.v1.MobileData mobile_data = 5;</code>
    */
   com.google.ads.datamanager.v1.MobileDataOrBuilder getMobileDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to unique identifiers for a user, as defined by the
+   * advertiser.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+   *
+   * @return Whether the userIdData field is set.
+   */
+  boolean hasUserIdData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to unique identifiers for a user, as defined by the
+   * advertiser.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+   *
+   * @return The userIdData.
+   */
+  com.google.ads.datamanager.v1.UserIdData getUserIdData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to unique identifiers for a user, as defined by the
+   * advertiser.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+   */
+  com.google.ads.datamanager.v1.UserIdDataOrBuilder getUserIdDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to publisher provided identifiers.
+   *
+   * This feature is only available to data partners.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+   *
+   * @return Whether the ppidData field is set.
+   */
+  boolean hasPpidData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to publisher provided identifiers.
+   *
+   * This feature is only available to data partners.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+   *
+   * @return The ppidData.
+   */
+  com.google.ads.datamanager.v1.PpidData getPpidData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to publisher provided identifiers.
+   *
+   * This feature is only available to data partners.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+   */
+  com.google.ads.datamanager.v1.PpidDataOrBuilder getPpidDataOrBuilder();
 
   /**
    *
