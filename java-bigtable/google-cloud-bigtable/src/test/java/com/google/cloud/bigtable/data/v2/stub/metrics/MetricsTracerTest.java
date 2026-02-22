@@ -131,6 +131,7 @@ public class MetricsTracerTest {
                     settings.getStubSettings(),
                     Tags.getTagger(),
                     localStats.getStatsRecorder(),
+                    null,
                     null))
             .build();
     stub =

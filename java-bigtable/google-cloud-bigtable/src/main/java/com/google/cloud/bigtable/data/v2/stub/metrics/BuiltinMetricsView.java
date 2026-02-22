@@ -16,13 +16,9 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.auth.Credentials;
-import com.google.auth.oauth2.GoogleCredentials;
 import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.View;
-import io.opentelemetry.sdk.metrics.export.MetricExporter;
-import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
-import io.opentelemetry.sdk.metrics.export.PeriodicMetricReaderBuilder;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
@@ -37,53 +33,29 @@ import javax.annotation.Nullable;
  */
 @Deprecated
 public class BuiltinMetricsView {
-
   private BuiltinMetricsView() {}
 
-  /**
-   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with application default
-   * credentials and default endpoint.
-   *
-   * @deprecated projectId is no longer used. Call {@link
-   *     #registerBuiltinMetrics(SdkMeterProviderBuilder)} instead.
-   */
   @Deprecated
   public static void registerBuiltinMetrics(String projectId, SdkMeterProviderBuilder builder)
       throws IOException {
-    BuiltinMetricsView.registerBuiltinMetrics(
-        GoogleCredentials.getApplicationDefault(), builder, null);
+    registerBuiltinMetrics(builder);
   }
 
-  /**
-   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with application default
-   * credentials and default endpoint.
-   */
+  @Deprecated
   public static void registerBuiltinMetrics(SdkMeterProviderBuilder builder) throws IOException {
-    BuiltinMetricsView.registerBuiltinMetrics(
-        GoogleCredentials.getApplicationDefault(), builder, null);
+    for (Map.Entry<InstrumentSelector, View> entry :
+        BuiltinMetricsConstants.getAllViews().entrySet()) {
+      builder.registerView(entry.getKey(), entry.getValue());
+    }
   }
 
-  /**
-   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
-   * default endpoint.
-   *
-   * @deprecated projectId is no longer used. Call {@link #registerBuiltinMetrics(Credentials,
-   *     SdkMeterProviderBuilder, String)} instead.
-   */
   @Deprecated
   public static void registerBuiltinMetrics(
       String projectId, @Nullable Credentials credentials, SdkMeterProviderBuilder builder)
       throws IOException {
-    BuiltinMetricsView.registerBuiltinMetrics(credentials, builder, null);
+    registerBuiltinMetrics(builder);
   }
 
-  /**
-   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
-   * endpoint.
-   *
-   * @deprecated projectId is no longer used. Call {@link #registerBuiltinMetrics(Credentials,
-   *     SdkMeterProviderBuilder, String)} instead.
-   */
   @Deprecated
   public static void registerBuiltinMetrics(
       String projectId,
@@ -94,31 +66,24 @@ public class BuiltinMetricsView {
     registerBuiltinMetrics(credentials, builder, endpoint);
   }
 
-  /**
-   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials and
-   * endpoint.
-   */
+  @Deprecated
   public static void registerBuiltinMetrics(
       @Nullable Credentials credentials, SdkMeterProviderBuilder builder, @Nullable String endpoint)
       throws IOException {
-    registerBuiltinMetricsWithUniverseDomain(
-        credentials, builder, endpoint, Credentials.GOOGLE_DEFAULT_UNIVERSE, null);
+    registerBuiltinMetrics(builder);
   }
 
-  /**
-   * Register built-in metrics on the {@link SdkMeterProviderBuilder} with custom credentials,
-   * endpoint and executor service.
-   */
+  @Deprecated
   public static void registerBuiltinMetrics(
       @Nullable Credentials credentials,
       SdkMeterProviderBuilder builder,
       @Nullable String endpoint,
       @Nullable ScheduledExecutorService executorService)
       throws IOException {
-    registerBuiltinMetricsWithUniverseDomain(
-        credentials, builder, endpoint, Credentials.GOOGLE_DEFAULT_UNIVERSE, executorService);
+    registerBuiltinMetrics(builder);
   }
 
+  @Deprecated
   static void registerBuiltinMetricsWithUniverseDomain(
       @Nullable Credentials credentials,
       SdkMeterProviderBuilder builder,
@@ -126,23 +91,6 @@ public class BuiltinMetricsView {
       String universeDomain,
       @Nullable ScheduledExecutorService executorService)
       throws IOException {
-    MetricExporter publicExporter =
-        BigtableCloudMonitoringExporter.create(
-            "bigtable metrics",
-            credentials,
-            endpoint,
-            universeDomain,
-            new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter(),
-            executorService);
-
-    for (Map.Entry<InstrumentSelector, View> entry :
-        BuiltinMetricsConstants.getAllViews().entrySet()) {
-      builder.registerView(entry.getKey(), entry.getValue());
-    }
-    PeriodicMetricReaderBuilder readerBuilder = PeriodicMetricReader.builder(publicExporter);
-    if (executorService != null) {
-      readerBuilder.setExecutor(executorService);
-    }
-    builder.registerMetricReader(readerBuilder.build());
+    registerBuiltinMetrics(builder);
   }
 }

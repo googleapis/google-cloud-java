@@ -18,8 +18,11 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import com.google.auth.Credentials;
 import com.google.common.base.MoreObjects;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.View;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
@@ -71,39 +74,51 @@ public final class CustomOpenTelemetryMetricsProvider implements MetricsProvider
    * Convenient method to set up SdkMeterProviderBuilder with the default credential and endpoint.
    */
   public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder) throws IOException {
-    setupSdkMeterProvider(builder, null, null, null);
-  }
-
-  /** Convenient method to set up SdkMeterProviderBuilder with a custom credential. */
-  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, Credentials credentials)
-      throws IOException {
-    setupSdkMeterProvider(builder, credentials, null, null);
-  }
-
-  /** Convenient method to set up SdkMeterProviderBuilder with a custom endpoint. */
-  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, String endpoint)
-      throws IOException {
-    setupSdkMeterProvider(builder, null, endpoint, null);
-  }
-
-  /** Convenient method to set up SdkMeterProviderBuilder with custom credentials and endpoint. */
-  public static void setupSdkMeterProvider(
-      SdkMeterProviderBuilder builder, Credentials credentials, String endpoint)
-      throws IOException {
-    setupSdkMeterProvider(builder, credentials, endpoint, null);
+    for (Map.Entry<InstrumentSelector, View> entry :
+        BuiltinMetricsConstants.getAllViews().entrySet()) {
+      builder.registerView(entry.getKey(), entry.getValue());
+    }
   }
 
   /**
-   * Convenient method to set up SdkMeterProviderBuilder with custom credentials, endpoint and a
-   * shared executor service.
+   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
    */
+  @Deprecated
+  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, Credentials credentials)
+      throws IOException {
+    setupSdkMeterProvider(builder);
+  }
+
+  /**
+   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   */
+  @Deprecated
+  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, String endpoint)
+      throws IOException {
+    setupSdkMeterProvider(builder);
+  }
+
+  /**
+   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   */
+  @Deprecated
+  public static void setupSdkMeterProvider(
+      SdkMeterProviderBuilder builder, Credentials credentials, String endpoint)
+      throws IOException {
+    setupSdkMeterProvider(builder);
+  }
+
+  /**
+   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   */
+  @Deprecated
   public static void setupSdkMeterProvider(
       SdkMeterProviderBuilder builder,
       Credentials credentials,
       String endpoint,
       ScheduledExecutorService executor)
       throws IOException {
-    BuiltinMetricsView.registerBuiltinMetrics(credentials, builder, endpoint, executor);
+    setupSdkMeterProvider(builder);
   }
 
   @Override

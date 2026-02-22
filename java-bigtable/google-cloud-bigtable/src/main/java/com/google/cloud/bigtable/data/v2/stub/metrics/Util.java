@@ -24,6 +24,7 @@ import com.google.auth.Credentials;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.MaterializedViewName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -34,9 +35,10 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.base.Suppliers;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Status;
@@ -47,9 +49,10 @@ import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.View;
+import io.opentelemetry.sdk.metrics.export.MetricExporter;
 import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
+import io.opentelemetry.sdk.metrics.export.PeriodicMetricReaderBuilder;
 import java.io.IOException;
-import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
@@ -148,33 +151,50 @@ public class Util {
     return headers.build();
   }
 
-  public static OpenTelemetrySdk newInternalOpentelemetry(
-      EnhancedBigtableStubSettings settings,
-      Credentials credentials,
+  public static OpenTelemetrySdk createBuiltinOtel(
+      InstanceName instanceName,
+      String appProfileId,
+      @Nullable Credentials defaultCredentials,
+      @Nullable String metricsEndpoint,
+      String universeDomain,
       ScheduledExecutorService executor)
       throws IOException {
-    SdkMeterProviderBuilder meterProviderBuilder = SdkMeterProvider.builder();
+
+    Credentials credentials =
+        BigtableDataSettings.getMetricsCredentials() != null
+            ? BigtableDataSettings.getMetricsCredentials()
+            : defaultCredentials;
+
+    SdkMeterProviderBuilder meterProvider = SdkMeterProvider.builder();
+
+    for (Map.Entry<InstrumentSelector, View> entry :
+        BuiltinMetricsConstants.getAllViews().entrySet()) {
+      meterProvider.registerView(entry.getKey(), entry.getValue());
+    }
 
     for (Map.Entry<InstrumentSelector, View> e :
         BuiltinMetricsConstants.getInternalViews().entrySet()) {
-      meterProviderBuilder.registerView(e.getKey(), e.getValue());
+      meterProvider.registerView(e.getKey(), e.getValue());
     }
 
-    meterProviderBuilder.registerMetricReader(
-        PeriodicMetricReader.builder(
-                BigtableCloudMonitoringExporter.create(
-                    "application metrics",
-                    credentials,
-                    settings.getMetricsEndpoint(),
-                    settings.getUniverseDomain(),
-                    new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
-                        Suppliers.memoize(
-                            () -> BigtableExporterUtils.createInternalMonitoredResource(settings))),
-                    executor))
-            .setExecutor(settings.getBackgroundExecutorProvider().getExecutor())
-            .setInterval(Duration.ofMinutes(1))
-            .build());
-    return OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
+    MetricExporter publicExporter =
+        BigtableCloudMonitoringExporter.create(
+            credentials,
+            metricsEndpoint,
+            universeDomain,
+            ImmutableList.of(
+                new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter(),
+                new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
+                    Suppliers.memoize(
+                        () ->
+                            BigtableExporterUtils.createInternalMonitoredResource(
+                                instanceName, appProfileId)))),
+            executor);
+    PeriodicMetricReaderBuilder readerBuilder =
+        PeriodicMetricReader.builder(publicExporter).setExecutor(executor);
+    meterProvider.registerMetricReader(readerBuilder.build());
+
+    return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
   }
 
   public static String formatTransportTypeMetricLabel(

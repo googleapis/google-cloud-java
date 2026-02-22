@@ -96,9 +96,9 @@ public class BigtableCloudMonitoringExporterTest {
 
     exporter =
         new BigtableCloudMonitoringExporter(
-            "bigtable metrics",
             fakeMetricServiceClient,
-            new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter(taskId));
+            ImmutableList.of(
+                new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter(taskId)));
 
     attributes =
         Attributes.builder()
@@ -310,23 +310,23 @@ public class BigtableCloudMonitoringExporterTest {
     String gceProjectId = "fake-gce-project";
     BigtableCloudMonitoringExporter exporter =
         new BigtableCloudMonitoringExporter(
-            "application metrics",
             fakeMetricServiceClient,
-            new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
-                Suppliers.ofInstance(
-                    MonitoredResource.newBuilder()
-                        .setType("bigtable_client")
-                        .putLabels("project_id", gceProjectId)
-                        .putLabels("instance", "resource-instance")
-                        .putLabels("app_profile", "resource-app-profile")
-                        .putLabels("client_project", "client-project")
-                        .putLabels("region", "cleint-region")
-                        .putLabels("cloud_platform", "gce_instance")
-                        .putLabels("host_id", "1234567890")
-                        .putLabels("host_name", "harold")
-                        .putLabels("client_name", "java/1234")
-                        .putLabels("uuid", "something")
-                        .build())));
+            ImmutableList.of(
+                new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
+                    Suppliers.ofInstance(
+                        MonitoredResource.newBuilder()
+                            .setType("bigtable_client")
+                            .putLabels("project_id", gceProjectId)
+                            .putLabels("instance", "resource-instance")
+                            .putLabels("app_profile", "resource-app-profile")
+                            .putLabels("client_project", "client-project")
+                            .putLabels("region", "cleint-region")
+                            .putLabels("cloud_platform", "gce_instance")
+                            .putLabels("host_id", "1234567890")
+                            .putLabels("host_name", "harold")
+                            .putLabels("client_name", "java/1234")
+                            .putLabels("uuid", "something")
+                            .build()))));
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 

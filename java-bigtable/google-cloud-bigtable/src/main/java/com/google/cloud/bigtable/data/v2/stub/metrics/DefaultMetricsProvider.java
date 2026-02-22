@@ -15,20 +15,10 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import com.google.api.core.InternalApi;
-import com.google.auth.Credentials;
-import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.metrics.SdkMeterProvider;
-import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import java.io.IOException;
-import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nullable;
-
 /**
  * Set {@link
  * com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder#setMetricsProvider(MetricsProvider)},
- * to {@link this#INSTANCE} to enable collecting and export client side metrics
+ * to {@link DefaultMetricsProvider#INSTANCE} to enable collecting and export client side metrics
  * https://cloud.google.com/bigtable/docs/client-side-metrics. This is the default setting in {@link
  * com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
  */
@@ -37,19 +27,6 @@ public final class DefaultMetricsProvider implements MetricsProvider {
   public static DefaultMetricsProvider INSTANCE = new DefaultMetricsProvider();
 
   private DefaultMetricsProvider() {}
-
-  @InternalApi
-  public OpenTelemetry getOpenTelemetry(
-      @Nullable String metricsEndpoint,
-      String universeDomain,
-      @Nullable Credentials credentials,
-      ScheduledExecutorService executor)
-      throws IOException {
-    SdkMeterProviderBuilder meterProvider = SdkMeterProvider.builder();
-    BuiltinMetricsView.registerBuiltinMetricsWithUniverseDomain(
-        credentials, meterProvider, metricsEndpoint, universeDomain, executor);
-    return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
-  }
 
   @Override
   public String toString() {

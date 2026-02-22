@@ -63,6 +63,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -100,11 +101,9 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
 
-  private final String exporterName;
-
   private final MetricServiceClient client;
 
-  private final TimeSeriesConverter timeSeriesConverter;
+  private final List<TimeSeriesConverter> timeSeriesConverters;
 
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
 
@@ -113,11 +112,10 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
   private final AtomicBoolean exportFailureLogged = new AtomicBoolean(false);
 
   static BigtableCloudMonitoringExporter create(
-      String exporterName,
       @Nullable Credentials credentials,
       @Nullable String endpoint,
       String universeDomain,
-      TimeSeriesConverter converter,
+      List<TimeSeriesConverter> converters,
       @Nullable ScheduledExecutorService executorService)
       throws IOException {
     Preconditions.checkNotNull(universeDomain);
@@ -155,15 +153,14 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.createServiceTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
 
     return new BigtableCloudMonitoringExporter(
-        exporterName, MetricServiceClient.create(settingsBuilder.build()), converter);
+        MetricServiceClient.create(settingsBuilder.build()), converters);
   }
 
   @VisibleForTesting
   BigtableCloudMonitoringExporter(
-      String exporterName, MetricServiceClient client, TimeSeriesConverter converter) {
-    this.exporterName = exporterName;
+      MetricServiceClient client, List<TimeSeriesConverter> converters) {
     this.client = client;
-    this.timeSeriesConverter = converter;
+    this.timeSeriesConverters = ImmutableList.copyOf(converters);
   }
 
   @Override
@@ -176,17 +173,30 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
 
   /** Export metrics associated with a BigtableTable resource. */
   private CompletableResultCode doExport(Collection<MetricData> metricData) {
-    Map<ProjectName, List<TimeSeries>> bigtableTimeSeries;
+    Map<ProjectName, List<TimeSeries>> bigtableTimeSeries = new HashMap<>();
 
-    try {
-      bigtableTimeSeries = timeSeriesConverter.convert(metricData);
-    } catch (Throwable t) {
-      logger.log(
-          Level.WARNING,
-          String.format(
-              "Failed to convert %s metric data to cloud monitoring timeseries.", exporterName),
-          t);
-      return CompletableResultCode.ofFailure();
+    List<CompletableResultCode> results = new ArrayList<>();
+
+    for (TimeSeriesConverter c : timeSeriesConverters) {
+      try {
+        for (Map.Entry<ProjectName, List<TimeSeries>> e : c.convert(metricData).entrySet()) {
+          bigtableTimeSeries
+              .computeIfAbsent(e.getKey(), (k) -> new ArrayList<>())
+              .addAll(e.getValue());
+        }
+        results.add(CompletableResultCode.ofSuccess());
+      } catch (Throwable t) {
+        logger.log(
+            Level.WARNING,
+            String.format(
+                "Failed to convert %s metric data to cloud monitoring timeseries.", c.name),
+            t);
+        results.add(CompletableResultCode.ofExceptionalFailure(t));
+      }
+    }
+    CompletableResultCode overall = CompletableResultCode.ofAll(results);
+    if (!overall.isSuccess()) {
+      return overall;
     }
 
     // Skips exporting if there's none
@@ -204,9 +214,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
                 @Override
                 public void onFailure(Throwable throwable) {
                   if (exportFailureLogged.compareAndSet(false, true)) {
-                    String msg =
-                        String.format(
-                            "createServiceTimeSeries request failed for %s.", exporterName);
+                    String msg = "createServiceTimeSeries request failed";
                     if (throwable instanceof PermissionDeniedException) {
                       msg +=
                           String.format(
@@ -294,11 +302,17 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     return AggregationTemporality.CUMULATIVE;
   }
 
-  interface TimeSeriesConverter {
-    Map<ProjectName, List<TimeSeries>> convert(Collection<MetricData> metricData);
+  abstract static class TimeSeriesConverter {
+    private final String name;
+
+    TimeSeriesConverter(String name) {
+      this.name = name;
+    }
+
+    abstract Map<ProjectName, List<TimeSeries>> convert(Collection<MetricData> metricData);
   }
 
-  static class PublicTimeSeriesConverter implements TimeSeriesConverter {
+  static class PublicTimeSeriesConverter extends TimeSeriesConverter {
     private static final ImmutableList<String> BIGTABLE_TABLE_METRICS =
         ImmutableSet.of(
                 OPERATION_LATENCIES_NAME,
@@ -326,6 +340,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     }
 
     PublicTimeSeriesConverter(String taskId) {
+      super("table metrics");
       this.taskId = taskId;
     }
 
@@ -342,7 +357,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     }
   }
 
-  static class InternalTimeSeriesConverter implements TimeSeriesConverter {
+  static class InternalTimeSeriesConverter extends TimeSeriesConverter {
     private static final ImmutableList<String> APPLICATION_METRICS =
         ImmutableSet.of(PER_CONNECTION_ERROR_COUNT_NAME).stream()
             .map(m -> METER_NAME + m)
@@ -351,6 +366,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     private final Supplier<MonitoredResource> monitoredResource;
 
     InternalTimeSeriesConverter(Supplier<MonitoredResource> monitoredResource) {
+      super("client metrics");
       this.monitoredResource = monitoredResource;
     }
 

@@ -200,10 +200,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
     BigtableClientContext bigtableClientContext = createBigtableClientContext(settings);
-    OpenTelemetry openTelemetry = bigtableClientContext.getOpenTelemetry();
     ClientContext contextWithTracer =
         bigtableClientContext.getClientContext().toBuilder()
-            .setTracerFactory(createBigtableTracerFactory(settings, openTelemetry))
+            .setTracerFactory(
+                createBigtableTracerFactory(
+                    settings,
+                    bigtableClientContext.getBuiltinOpenTelemetry(),
+                    bigtableClientContext.getUserOpenTelemetry()))
             .build();
     bigtableClientContext = bigtableClientContext.withClientContext(contextWithTracer);
     return new EnhancedBigtableStub(settings, bigtableClientContext);
@@ -222,10 +225,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   public static ApiTracerFactory createBigtableTracerFactory(
-      EnhancedBigtableStubSettings settings, @Nullable OpenTelemetry openTelemetry)
+      EnhancedBigtableStubSettings settings,
+      @Nullable OpenTelemetry builtinOtel,
+      @Nullable OpenTelemetry userOtel)
       throws IOException {
     return createBigtableTracerFactory(
-        settings, Tags.getTagger(), Stats.getStatsRecorder(), openTelemetry);
+        settings, Tags.getTagger(), Stats.getStatsRecorder(), builtinOtel, userOtel);
   }
 
   @VisibleForTesting
@@ -233,7 +238,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
       EnhancedBigtableStubSettings settings,
       Tagger tagger,
       StatsRecorder stats,
-      @Nullable OpenTelemetry openTelemetry)
+      @Nullable OpenTelemetry builtinOtel,
+      @Nullable OpenTelemetry userOtel)
       throws IOException {
     String projectId = settings.getProjectId();
     String instanceId = settings.getInstanceId();
@@ -265,12 +271,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .add(MetricsTracerFactory.create(tagger, stats, attributes))
         // Add user configured tracer
         .add(settings.getTracerFactory());
-    BuiltinMetricsTracerFactory builtinMetricsTracerFactory =
-        openTelemetry != null
-            ? BuiltinMetricsTracerFactory.create(openTelemetry, createBuiltinAttributes(settings))
-            : null;
-    if (builtinMetricsTracerFactory != null) {
-      tracerFactories.add(builtinMetricsTracerFactory);
+
+    if (builtinOtel != null) {
+      tracerFactories.add(
+          BuiltinMetricsTracerFactory.create(builtinOtel, createBuiltinAttributes(settings)));
+    }
+    if (userOtel != null) {
+      tracerFactories.add(
+          BuiltinMetricsTracerFactory.create(userOtel, createBuiltinAttributes(settings)));
     }
     return new CompositeTracerFactory(tracerFactories.build());
   }
