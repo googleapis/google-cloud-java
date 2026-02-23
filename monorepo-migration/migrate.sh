@@ -29,6 +29,7 @@ check_command() {
 check_command git
 check_command python3
 check_command mvn
+check_command jq
 
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
@@ -301,6 +302,19 @@ if [ -f "$COMMON_SH" ]; then
     echo "Committing excluded_modules update..."
     git add "$COMMON_SH"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add to excluded_modules in .kokoro/common.sh"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 6.8 Update .repo-metadata.json if it exists
+REPO_METADATA="$SOURCE_REPO_NAME/.repo-metadata.json"
+if [ -f "$REPO_METADATA" ]; then
+    echo "Updating $REPO_METADATA..."
+    # Update "repo" to googleapis/google-cloud-java and "repo_short" to google-cloud-java
+    jq '.repo = "googleapis/google-cloud-java" | .repo_short = "google-cloud-java"' "$REPO_METADATA" > "${REPO_METADATA}.tmp" && mv "${REPO_METADATA}.tmp" "$REPO_METADATA"
+
+    echo "Committing $REPO_METADATA update..."
+    git add "$REPO_METADATA"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update .repo-metadata.json"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
