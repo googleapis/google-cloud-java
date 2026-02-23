@@ -244,26 +244,8 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testReadRowDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyRetryInfoCanBeDisabled(() -> newClient.readRow("table", "row"));
-    }
-  }
-
-  @Test
   public void testReadRowServerNotReturningRetryInfo() {
     verifyNoRetryInfo(() -> client.readRow("table", "row"), true);
-  }
-
-  @Test
-  public void testReadRowServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(() -> newClient.readRow("table", "row"), true);
-    }
   }
 
   @Test
@@ -277,19 +259,6 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testReadRowsDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyRetryInfoCanBeDisabled(
-          () -> {
-            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-            ArrayList<Row> ignored = Lists.newArrayList(newClient.readRows(Query.create("table")));
-          });
-    }
-  }
-
-  @Test
   public void testReadRowsServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
         () -> {
@@ -297,20 +266,6 @@ public class RetryInfoTest {
           ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
         },
         true);
-  }
-
-  @Test
-  public void testReadRowsServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () -> {
-            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-            ArrayList<Row> ignored = Lists.newArrayList(newClient.readRows(Query.create("table")));
-          },
-          true);
-    }
   }
 
   @Test
@@ -324,19 +279,6 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testMutateRowsDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyRetryInfoCanBeDisabled(
-          () ->
-              newClient.bulkMutateRows(
-                  BulkMutation.create("fake-table")
-                      .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))));
-    }
-  }
-
-  @Test
   public void testMutateRowsServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
         () ->
@@ -347,34 +289,9 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testMutateRowsServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () ->
-              newClient.bulkMutateRows(
-                  BulkMutation.create("fake-table")
-                      .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
-          true);
-    }
-  }
-
-  @Test
   public void testMutateRowNonRetryableErrorWithRetryInfo() {
     verifyRetryInfoIsUsed(
         () -> client.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")), false);
-  }
-
-  @Test
-  public void testMutateRowDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-
-      verifyRetryInfoCanBeDisabled(
-          () -> newClient.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")));
-    }
   }
 
   @Test
@@ -384,61 +301,13 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testMutateRowServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () -> newClient.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")),
-          true);
-    }
-  }
-
-  @Test
   public void testSampleRowKeysNonRetryableErrorWithRetryInfo() {
     verifyRetryInfoIsUsed(() -> client.sampleRowKeys("table"), false);
   }
 
   @Test
-  public void testSampleRowKeysDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyRetryInfoCanBeDisabled(() -> newClient.sampleRowKeys("table"));
-    }
-  }
-
-  @Test
   public void testSampleRowKeysServerNotReturningRetryInfo() {
     verifyNoRetryInfo(() -> client.sampleRowKeys("table"), true);
-  }
-
-  @Test
-  public void testSampleRowKeysServerNotReturningRetryInfoClientDisabledHandling()
-      throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(() -> newClient.sampleRowKeys("table"), true);
-    }
-  }
-
-  @Test
-  public void testCheckAndMutateDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-      ApiException exception = enqueueNonRetryableExceptionWithDelay(defaultDelay);
-      try {
-        client.checkAndMutateRow(
-            ConditionalRowMutation.create("table", "key")
-                .condition(Filters.FILTERS.value().regex("old-value"))
-                .then(Mutation.create().setCell("cf", "q", "v")));
-      } catch (ApiException e) {
-        assertThat(e.getStatusCode()).isEqualTo(exception.getStatusCode());
-      }
-      assertThat(attemptCounter.get()).isEqualTo(1);
-    }
   }
 
   @Test
@@ -453,56 +322,12 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testCheckAndMutateServerNotReturningRetryInfoClientDisabledHandling()
-      throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () ->
-              newClient.checkAndMutateRow(
-                  ConditionalRowMutation.create("table", "key")
-                      .condition(Filters.FILTERS.value().regex("old-value"))
-                      .then(Mutation.create().setCell("cf", "q", "v"))),
-          false);
-    }
-  }
-
-  @Test
-  public void testReadModifyWriteDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-      ApiException exception = enqueueNonRetryableExceptionWithDelay(defaultDelay);
-      try {
-        client.readModifyWriteRow(ReadModifyWriteRow.create("table", "row").append("cf", "q", "v"));
-      } catch (ApiException e) {
-        assertThat(e.getStatusCode()).isEqualTo(exception.getStatusCode());
-      }
-      assertThat(attemptCounter.get()).isEqualTo(1);
-    }
-  }
-
-  @Test
   public void testReadModifyWriteServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
         () ->
             client.readModifyWriteRow(
                 ReadModifyWriteRow.create("table", "row").append("cf", "q", "v")),
         false);
-  }
-
-  @Test
-  public void testReadModifyWriteNotReturningRetryInfoClientDisabledHandling() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () ->
-              newClient.readModifyWriteRow(
-                  ReadModifyWriteRow.create("table", "row").append("cf", "q", "v")),
-          false);
-    }
   }
 
   @Test
@@ -517,21 +342,6 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testReadChangeStreamDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyRetryInfoCanBeDisabled(
-          () -> {
-            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-            ArrayList<ChangeStreamRecord> ignored =
-                Lists.newArrayList(
-                    newClient.readChangeStream(ReadChangeStreamQuery.create("table")));
-          });
-    }
-  }
-
-  @Test
   public void testReadChangeStreamServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
         () -> {
@@ -540,23 +350,6 @@ public class RetryInfoTest {
               Lists.newArrayList(client.readChangeStream(ReadChangeStreamQuery.create("table")));
         },
         true);
-  }
-
-  @Test
-  public void testReadChangeStreamNotReturningRetryInfoClientDisabledHandling() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () -> {
-            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-            ArrayList<ChangeStreamRecord> ignored =
-                Lists.newArrayList(
-                    newClient.readChangeStream(ReadChangeStreamQuery.create("table")));
-          },
-          true,
-          com.google.protobuf.Duration.newBuilder().setSeconds(5).setNanos(0).build());
-    }
   }
 
   @Test
@@ -571,20 +364,6 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testGenerateInitialChangeStreamPartitionDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyRetryInfoCanBeDisabled(
-          () -> {
-            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-            ArrayList<Range.ByteStringRange> ignored =
-                Lists.newArrayList(newClient.generateInitialChangeStreamPartitions("table"));
-          });
-    }
-  }
-
-  @Test
   public void testGenerateInitialChangeStreamServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
         () -> {
@@ -596,52 +375,14 @@ public class RetryInfoTest {
   }
 
   @Test
-  public void testGenerateInitialChangeStreamServerNotReturningRetryInfoClientDisabledHandling()
-      throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () -> {
-            @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-            ArrayList<Range.ByteStringRange> ignored =
-                Lists.newArrayList(newClient.generateInitialChangeStreamPartitions("table"));
-          },
-          true);
-    }
-  }
-
-  @Test
   public void testPrepareQueryNonRetryableErrorWithRetryInfo() {
     verifyRetryInfoIsUsed(
         () -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), false);
   }
 
   @Test
-  public void testPrepareQueryDisableRetryInfo() throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-
-      verifyRetryInfoCanBeDisabled(
-          () -> newClient.prepareStatement("SELECT * FROM table", new HashMap<>()));
-    }
-  }
-
-  @Test
   public void testPrepareQueryServerNotReturningRetryInfo() {
     verifyNoRetryInfo(() -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
-  }
-
-  @Test
-  public void testPrepareQueryServerNotReturningRetryInfoClientDisabledHandling()
-      throws IOException {
-    settings.stubSettings().setEnableRetryInfo(false);
-
-    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
-      verifyNoRetryInfo(
-          () -> newClient.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
-    }
   }
 
   // Test the case where server returns retry info and client enables handling of retry info

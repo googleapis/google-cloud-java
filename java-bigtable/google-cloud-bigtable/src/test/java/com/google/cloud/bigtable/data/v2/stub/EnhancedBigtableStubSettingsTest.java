@@ -94,8 +94,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setCredentialsProvider(credentialsProvider)
             .setStreamWatchdogProvider(watchdogProvider)
             .setStreamWatchdogCheckInterval(watchdogInterval)
-            .setEnableRoutingCookie(enableRoutingCookie)
-            .setEnableRetryInfo(enableRetryInfo)
             .setMetricsEndpoint(metricsEndpoint);
 
     verifyBuilder(
@@ -160,8 +158,6 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(builder.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
     assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
-    assertThat(builder.getEnableRoutingCookie()).isEqualTo(enableRoutingCookie);
-    assertThat(builder.getEnableRetryInfo()).isEqualTo(enableRetryInfo);
     assertThat(builder.getMetricsEndpoint()).isEqualTo(metricsEndpoint);
   }
 
@@ -186,8 +182,6 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(settings.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
     assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
-    assertThat(settings.getEnableRoutingCookie()).isEqualTo(enableRoutingCookie);
-    assertThat(settings.getEnableRetryInfo()).isEqualTo(enableRetryInfo);
     assertThat(settings.getMetricsEndpoint()).isEqualTo(metricsEndpoint);
   }
 
@@ -920,81 +914,11 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
   }
 
-  @Test
-  public void routingCookieIsEnabled() throws IOException {
-    String dummyProjectId = "my-project";
-    String dummyInstanceId = "my-instance";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
-    Mockito.when(credentialsProvider.getCredentials()).thenReturn(new FakeCredentials());
-    EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder()
-            .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId)
-            .setCredentialsProvider(credentialsProvider);
-
-    assertThat(builder.getEnableRoutingCookie()).isTrue();
-    assertThat(builder.build().getEnableRoutingCookie()).isTrue();
-    assertThat(builder.build().toBuilder().getEnableRoutingCookie()).isTrue();
-  }
-
-  @Test
-  public void enableRetryInfoDefaultValueTest() throws IOException {
-    String dummyProjectId = "my-project";
-    String dummyInstanceId = "my-instance";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
-    Mockito.when(credentialsProvider.getCredentials()).thenReturn(new FakeCredentials());
-    EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder()
-            .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId)
-            .setCredentialsProvider(credentialsProvider);
-    assertThat(builder.getEnableRetryInfo()).isTrue();
-    assertThat(builder.build().getEnableRetryInfo()).isTrue();
-    assertThat(builder.build().toBuilder().getEnableRetryInfo()).isTrue();
-  }
-
-  @Test
-  public void routingCookieFalseValueSet() throws IOException {
-    String dummyProjectId = "my-project";
-    String dummyInstanceId = "my-instance";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
-    Mockito.when(credentialsProvider.getCredentials()).thenReturn(new FakeCredentials());
-    EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder()
-            .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId)
-            .setEnableRoutingCookie(false)
-            .setCredentialsProvider(credentialsProvider);
-    assertThat(builder.getEnableRoutingCookie()).isFalse();
-    assertThat(builder.build().getEnableRoutingCookie()).isFalse();
-    assertThat(builder.build().toBuilder().getEnableRoutingCookie()).isFalse();
-  }
-
-  @Test
-  public void enableRetryInfoFalseValueTest() throws IOException {
-    String dummyProjectId = "my-project";
-    String dummyInstanceId = "my-instance";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
-    Mockito.when(credentialsProvider.getCredentials()).thenReturn(new FakeCredentials());
-    EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder()
-            .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId)
-            .setEnableRetryInfo(false)
-            .setCredentialsProvider(credentialsProvider);
-    assertThat(builder.getEnableRetryInfo()).isFalse();
-    assertThat(builder.build().getEnableRetryInfo()).isFalse();
-    assertThat(builder.build().toBuilder().getEnableRetryInfo()).isFalse();
-  }
-
   static final String[] SETTINGS_LIST = {
     "projectId",
     "instanceId",
     "appProfileId",
     "isRefreshingChannel",
-    "primedTableIds",
-    "enableRoutingCookie",
-    "enableRetryInfo",
     "readRowsSettings",
     "readRowSettings",
     "sampleRowKeysSettings",
@@ -1025,17 +949,12 @@ public class EnhancedBigtableStubSettingsTest {
             .build();
 
     checkToString(defaultSettings);
-    assertThat(defaultSettings.toString()).contains("primedTableIds=[]");
 
     EnhancedBigtableStubSettings settings =
-        defaultSettings.toBuilder()
-            .setPrimedTableIds("2", "12", "85", "06")
-            .setEndpoint("example.com:1234")
-            .build();
+        defaultSettings.toBuilder().setEndpoint("example.com:1234").build();
 
     checkToString(settings);
     assertThat(settings.toString()).contains("endpoint=example.com:1234");
-    assertThat(settings.toString()).contains("primedTableIds=[2, 12, 85, 06]");
 
     int nonStaticFields = 0;
     for (Field field : EnhancedBigtableStubSettings.class.getDeclaredFields()) {

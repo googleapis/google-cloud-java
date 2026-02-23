@@ -69,7 +69,6 @@ import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -670,58 +669,6 @@ public class CookiesHolderTest {
       assertThat(lastMetadata).doesNotContainKeys(BAD_KEY.name());
 
       serverMetadata.clear();
-    }
-  }
-
-  @Test
-  public void testDisableRoutingCookie() throws IOException {
-    // This test disables routing cookie in the client settings and ensures that none of the routing
-    // cookie
-    // is added.
-    settings.stubSettings().setEnableRoutingCookie(false);
-    try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
-      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-      ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      client.mutateRow(RowMutation.create("fake-table", "key").setCell("cf", "q", "v"));
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      client.bulkMutateRows(
-          BulkMutation.create("fake-table")
-              .add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      client.sampleRowKeys("fake-table");
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      client.checkAndMutateRow(
-          ConditionalRowMutation.create("fake-table", "key")
-              .then(Mutation.create().setCell("cf", "q", "v")));
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      client.readModifyWriteRow(
-          ReadModifyWriteRow.create("fake-table", "key").append("cf", "q", "v"));
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-      ArrayList<Range.ByteStringRange> ignored2 =
-          Lists.newArrayList(client.generateInitialChangeStreamPartitions("fake-table"));
-      assertThat(fakeService.count.get()).isEqualTo(2);
-      fakeService.count.set(0);
-
-      for (ChangeStreamRecord record :
-          client.readChangeStream(ReadChangeStreamQuery.create("fake-table"))) {}
-
-      assertThat(fakeService.count.get()).isEqualTo(2);
-
-      assertThat(methods).isEmpty();
     }
   }
 

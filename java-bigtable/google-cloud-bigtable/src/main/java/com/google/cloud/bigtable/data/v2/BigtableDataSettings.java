@@ -450,7 +450,6 @@ public final class BigtableDataSettings {
      */
     @Deprecated
     public Builder setPrimingTableIds(String... tableIds) {
-      stubSettings.setPrimedTableIds(tableIds);
       return this;
     }
 

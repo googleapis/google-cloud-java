@@ -128,10 +128,7 @@ public class BigtableClientContext {
     }
 
     if (transportProvider != null) {
-      // Set up cookie holder if routing cookie is enabled
-      if (builder.getEnableRoutingCookie()) {
-        setupCookieHolder(transportProvider);
-      }
+      setupCookieHolder(transportProvider);
 
       ChannelPrimer channelPrimer = NoOpChannelPrimer.create();
 

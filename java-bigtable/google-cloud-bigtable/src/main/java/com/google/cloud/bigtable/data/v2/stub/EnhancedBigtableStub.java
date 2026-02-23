@@ -121,7 +121,6 @@ import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryResumptionStrategy
 import com.google.cloud.bigtable.data.v2.stub.sql.MetadataErrorHandlingCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.PlanRefreshingCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlRowMergingCallable;
-import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Functions;
@@ -785,12 +784,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withAttemptTracer =
         new BigtableTracerStreamingCallable<>(convertException);
 
-    BasicResultRetryAlgorithm<MutateRowsAttemptResult> resultRetryAlgorithm;
-    if (settings.getEnableRetryInfo()) {
-      resultRetryAlgorithm = new RetryInfoRetryAlgorithm<>();
-    } else {
-      resultRetryAlgorithm = new ApiResultRetryAlgorithm<>();
-    }
+    BasicResultRetryAlgorithm<MutateRowsAttemptResult> resultRetryAlgorithm =
+        new RetryInfoRetryAlgorithm<>();
+
     MutateRowsPartialErrorRetryAlgorithm mutateRowsPartialErrorRetryAlgorithm =
         new MutateRowsPartialErrorRetryAlgorithm(resultRetryAlgorithm);
 
@@ -810,11 +806,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
             settings.bulkMutateRowsSettings().getRetryableCodes(),
             retryAlgorithm);
 
-    UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> withCookie = baseCallable;
-
-    if (settings.getEnableRoutingCookie()) {
-      withCookie = new CookiesUnaryCallable<>(baseCallable);
-    }
+    UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> withCookie =
+        new CookiesUnaryCallable<>(baseCallable);
 
     UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> flowControlCallable = null;
     if (settings.bulkMutateRowsSettings().isLatencyBasedThrottlingEnabled()) {
@@ -1319,56 +1312,31 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   private <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> withRetries(
       UnaryCallable<RequestT, ResponseT> innerCallable, UnaryCallSettings<?, ?> unaryCallSettings) {
-    UnaryCallable<RequestT, ResponseT> retrying;
-    if (settings.getEnableRetryInfo()) {
-      retrying =
-          com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
-              innerCallable, unaryCallSettings, bigtableClientContext.getClientContext());
-    } else {
-      retrying =
-          Callables.retrying(
-              innerCallable, unaryCallSettings, bigtableClientContext.getClientContext());
-    }
-    if (settings.getEnableRoutingCookie()) {
-      return new CookiesUnaryCallable<>(retrying);
-    }
-    return retrying;
+    UnaryCallable<RequestT, ResponseT> retrying =
+        com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
+            innerCallable, unaryCallSettings, bigtableClientContext.getClientContext());
+    return new CookiesUnaryCallable<>(retrying);
   }
 
   private <RequestT, ResponseT> ServerStreamingCallable<RequestT, ResponseT> withRetries(
       ServerStreamingCallable<RequestT, ResponseT> innerCallable,
       ServerStreamingCallSettings<RequestT, ResponseT> serverStreamingCallSettings) {
 
-    ServerStreamingCallable<RequestT, ResponseT> retrying;
-    if (settings.getEnableRetryInfo()) {
-      retrying =
-          com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
-              innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
-    } else {
-      retrying =
-          Callables.retrying(
-              innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
-    }
-    if (settings.getEnableRoutingCookie()) {
-      return new CookiesServerStreamingCallable<>(retrying);
-    }
-    return retrying;
+    ServerStreamingCallable<RequestT, ResponseT> retrying =
+        com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
+            innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
+
+    return new CookiesServerStreamingCallable<>(retrying);
   }
 
   private <RequestT, ResponseT> ServerStreamingCallable<RequestT, ResponseT> largeRowWithRetries(
       ServerStreamingCallable<RequestT, ResponseT> innerCallable,
       ServerStreamingCallSettings<RequestT, ResponseT> serverStreamingCallSettings) {
 
-    // Retrying algorithm in retryingForLargeRows also takes RetryInfo into consideration, so we
-    // skip the check for settings.getEnableRetryInfo here
-    ServerStreamingCallable<RequestT, ResponseT> retrying;
-    retrying =
+    ServerStreamingCallable<RequestT, ResponseT> retrying =
         com.google.cloud.bigtable.gaxx.retrying.Callables.retryingForLargeRows(
             innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
-    if (settings.getEnableRoutingCookie()) {
-      return new CookiesServerStreamingCallable<>(retrying);
-    }
-    return retrying;
+    return new CookiesServerStreamingCallable<>(retrying);
   }
 
   // </editor-fold>

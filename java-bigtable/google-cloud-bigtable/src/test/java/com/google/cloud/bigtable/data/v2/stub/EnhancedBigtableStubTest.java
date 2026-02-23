@@ -698,10 +698,7 @@ public class EnhancedBigtableStubTest {
   public void testCallContextPropagatedInMutationBatcher()
       throws IOException, InterruptedException, ExecutionException {
     EnhancedBigtableStubSettings settings =
-        defaultSettings.toBuilder()
-            .setRefreshingChannel(true)
-            .setPrimedTableIds("table1", "table2")
-            .build();
+        defaultSettings.toBuilder().setRefreshingChannel(true).build();
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
       // clear the previous contexts
@@ -728,10 +725,7 @@ public class EnhancedBigtableStubTest {
   public void testCallContextPropagatedInReadBatcher()
       throws IOException, InterruptedException, ExecutionException {
     EnhancedBigtableStubSettings settings =
-        defaultSettings.toBuilder()
-            .setRefreshingChannel(true)
-            .setPrimedTableIds("table1", "table2")
-            .build();
+        defaultSettings.toBuilder().setRefreshingChannel(true).build();
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
       // clear the previous contexts
