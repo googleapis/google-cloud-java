@@ -15,18 +15,12 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APP_PROFILE_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INSTANCE_ID_KEY;
-
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcRawCallableFactory;
@@ -45,8 +39,6 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.gax.tracing.ApiTracerFactory;
-import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.gax.tracing.TracedServerStreamingCallable;
 import com.google.api.gax.tracing.TracedUnaryCallable;
@@ -64,7 +56,6 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.SampleRowKeysResponse;
-import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
 import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
@@ -96,10 +87,6 @@ import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamResum
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerUnaryCallable;
-import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerFactory;
-import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
-import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsTracerFactory;
-import com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.TracedBatcherUnaryCallable;
@@ -122,22 +109,12 @@ import com.google.cloud.bigtable.data.v2.stub.sql.MetadataErrorHandlingCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.PlanRefreshingCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlRowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import io.grpc.MethodDescriptor;
-import io.opencensus.stats.Stats;
-import io.opencensus.stats.StatsRecorder;
-import io.opencensus.tags.TagKey;
-import io.opencensus.tags.TagValue;
-import io.opencensus.tags.Tagger;
-import io.opencensus.tags.Tags;
-import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -167,7 +144,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final EnhancedBigtableStubSettings settings;
   private final BigtableClientContext bigtableClientContext;
 
-  private final boolean closeClientContext;
   private final RequestContext requestContext;
   private final FlowController bulkMutationFlowController;
   private final DynamicFlowControlStats bulkMutationDynamicFlowControlStats;
@@ -198,117 +174,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
-    BigtableClientContext bigtableClientContext = createBigtableClientContext(settings);
-    ClientContext contextWithTracer =
-        bigtableClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                createBigtableTracerFactory(
-                    settings,
-                    bigtableClientContext.getBuiltinOpenTelemetry(),
-                    bigtableClientContext.getUserOpenTelemetry()))
-            .build();
-    bigtableClientContext = bigtableClientContext.withClientContext(contextWithTracer);
+    BigtableClientContext bigtableClientContext = BigtableClientContext.create(settings);
     return new EnhancedBigtableStub(settings, bigtableClientContext);
-  }
-
-  public static EnhancedBigtableStub createWithClientContext(
-      EnhancedBigtableStubSettings settings, BigtableClientContext clientContext)
-      throws IOException {
-
-    return new EnhancedBigtableStub(settings, clientContext, false);
-  }
-
-  public static BigtableClientContext createBigtableClientContext(
-      EnhancedBigtableStubSettings settings) throws IOException {
-    return BigtableClientContext.create(settings);
-  }
-
-  public static ApiTracerFactory createBigtableTracerFactory(
-      EnhancedBigtableStubSettings settings,
-      @Nullable OpenTelemetry builtinOtel,
-      @Nullable OpenTelemetry userOtel)
-      throws IOException {
-    return createBigtableTracerFactory(
-        settings, Tags.getTagger(), Stats.getStatsRecorder(), builtinOtel, userOtel);
-  }
-
-  @VisibleForTesting
-  public static ApiTracerFactory createBigtableTracerFactory(
-      EnhancedBigtableStubSettings settings,
-      Tagger tagger,
-      StatsRecorder stats,
-      @Nullable OpenTelemetry builtinOtel,
-      @Nullable OpenTelemetry userOtel)
-      throws IOException {
-    String projectId = settings.getProjectId();
-    String instanceId = settings.getInstanceId();
-    String appProfileId = settings.getAppProfileId();
-
-    ImmutableMap<TagKey, TagValue> attributes =
-        ImmutableMap.<TagKey, TagValue>builder()
-            .put(RpcMeasureConstants.BIGTABLE_PROJECT_ID, TagValue.create(projectId))
-            .put(RpcMeasureConstants.BIGTABLE_INSTANCE_ID, TagValue.create(instanceId))
-            .put(RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID, TagValue.create(appProfileId))
-            .build();
-
-    ImmutableList.Builder<ApiTracerFactory> tracerFactories = ImmutableList.builder();
-    tracerFactories
-        .add(
-            // Add OpenCensus Tracing
-            new OpencensusTracerFactory(
-                ImmutableMap.<String, String>builder()
-                    // Annotate traces with the same tags as metrics
-                    .put(RpcMeasureConstants.BIGTABLE_PROJECT_ID.getName(), projectId)
-                    .put(RpcMeasureConstants.BIGTABLE_INSTANCE_ID.getName(), instanceId)
-                    .put(RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID.getName(), appProfileId)
-                    // Also annotate traces with library versions
-                    .put("gax", GaxGrpcProperties.getGaxGrpcVersion())
-                    .put("grpc", GaxGrpcProperties.getGrpcVersion())
-                    .put("gapic", Version.VERSION)
-                    .build()))
-        // Add OpenCensus Metrics
-        .add(MetricsTracerFactory.create(tagger, stats, attributes))
-        // Add user configured tracer
-        .add(settings.getTracerFactory());
-
-    if (builtinOtel != null) {
-      tracerFactories.add(
-          BuiltinMetricsTracerFactory.create(builtinOtel, createBuiltinAttributes(settings)));
-    }
-    if (userOtel != null) {
-      tracerFactories.add(
-          BuiltinMetricsTracerFactory.create(userOtel, createBuiltinAttributes(settings)));
-    }
-    return new CompositeTracerFactory(tracerFactories.build());
-  }
-
-  static Attributes createBuiltinAttributes(EnhancedBigtableStubSettings settings) {
-    return Attributes.of(
-        BIGTABLE_PROJECT_ID_KEY,
-        settings.getProjectId(),
-        INSTANCE_ID_KEY,
-        settings.getInstanceId(),
-        APP_PROFILE_KEY,
-        settings.getAppProfileId(),
-        CLIENT_NAME_KEY,
-        "bigtable-java/" + Version.VERSION);
   }
 
   public EnhancedBigtableStub(
       EnhancedBigtableStubSettings settings, BigtableClientContext clientContext) {
-    this(settings, clientContext, true);
-  }
-
-  public EnhancedBigtableStub(
-      EnhancedBigtableStubSettings settings,
-      BigtableClientContext clientContext,
-      boolean closeClientContext) {
     this.settings = settings;
     this.bigtableClientContext = clientContext;
-    this.closeClientContext = closeClientContext;
     this.requestContext =
         RequestContext.create(
-            settings.getProjectId(), settings.getInstanceId(), settings.getAppProfileId());
+            clientContext.getInstanceName().getProject(),
+            clientContext.getInstanceName().getInstance(),
+            clientContext.getAppProfileId());
     this.bulkMutationFlowController =
         new FlowController(settings.bulkMutateRowsSettings().getDynamicFlowControlSettings());
     this.bulkMutationDynamicFlowControlStats = new DynamicFlowControlStats();
@@ -1430,12 +1308,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   @Override
   public void close() {
-    if (closeClientContext) {
-      try {
-        bigtableClientContext.close();
-      } catch (Exception e) {
-        throw new IllegalStateException("failed to close client context", e);
-      }
+    try {
+      bigtableClientContext.close();
+    } catch (Exception e) {
+      throw new IllegalStateException("failed to close client context", e);
     }
   }
 }

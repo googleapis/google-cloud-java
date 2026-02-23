@@ -15,11 +15,19 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APP_PROFILE_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INSTANCE_ID_KEY;
+
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
@@ -35,6 +43,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.base.Suppliers;
@@ -44,6 +53,12 @@ import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
+import io.opencensus.stats.StatsRecorder;
+import io.opencensus.tags.TagKey;
+import io.opencensus.tags.TagValue;
+import io.opencensus.tags.Tagger;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -224,5 +239,50 @@ public class Util {
         .map(ResponseParams::getZoneId)
         .filter(s -> !s.isEmpty())
         .orElse("global");
+  }
+
+  public static ApiTracerFactory createOCTracingFactory(
+      InstanceName instanceName, String appProfileId) {
+    return new OpencensusTracerFactory(
+        ImmutableMap.<String, String>builder()
+            // Annotate traces with the same tags as metrics
+            .put(RpcMeasureConstants.BIGTABLE_PROJECT_ID.getName(), instanceName.getProject())
+            .put(RpcMeasureConstants.BIGTABLE_INSTANCE_ID.getName(), instanceName.getInstance())
+            .put(RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID.getName(), appProfileId)
+            // Also annotate traces with library versions
+            .put("gax", GaxGrpcProperties.getGaxGrpcVersion())
+            .put("grpc", GaxGrpcProperties.getGrpcVersion())
+            .put("gapic", Version.VERSION)
+            .build());
+  }
+
+  public static ApiTracerFactory createOCMetricsFactory(
+      InstanceName instanceName, String appProfileId, Tagger tagger, StatsRecorder stats) {
+
+    ImmutableMap<TagKey, TagValue> attributes =
+        ImmutableMap.<TagKey, TagValue>builder()
+            .put(
+                RpcMeasureConstants.BIGTABLE_PROJECT_ID, TagValue.create(instanceName.getProject()))
+            .put(
+                RpcMeasureConstants.BIGTABLE_INSTANCE_ID,
+                TagValue.create(instanceName.getInstance()))
+            .put(RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID, TagValue.create(appProfileId))
+            .build();
+    return MetricsTracerFactory.create(tagger, stats, attributes);
+  }
+
+  public static BuiltinMetricsTracerFactory createOtelMetricsFactory(
+      OpenTelemetry otel, InstanceName instanceName, String appProfileId) throws IOException {
+    Attributes attributes =
+        Attributes.of(
+            BIGTABLE_PROJECT_ID_KEY,
+            instanceName.getProject(),
+            INSTANCE_ID_KEY,
+            instanceName.getInstance(),
+            APP_PROFILE_KEY,
+            appProfileId,
+            CLIENT_NAME_KEY,
+            "bigtable-java/" + Version.VERSION);
+    return BuiltinMetricsTracerFactory.create(otel, attributes);
   }
 }

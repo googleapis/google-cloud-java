@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
-import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
@@ -125,24 +124,17 @@ public class BigtableTracerCallableTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
+            // only testing opencensus
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics()
             .build();
 
-    BigtableClientContext bigtableClientContext =
-        EnhancedBigtableStub.createBigtableClientContext(settings.getStubSettings());
-    ClientContext clientContext =
-        bigtableClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(),
-                    Tags.getTagger(),
-                    localStats.getStatsRecorder(),
-                    null,
-                    null))
-            .build();
     attempts = settings.getStubSettings().readRowsSettings().getRetrySettings().getMaxAttempts();
     stub =
         new EnhancedBigtableStub(
-            settings.getStubSettings(), bigtableClientContext.withClientContext(clientContext));
+            settings.getStubSettings(),
+            BigtableClientContext.create(
+                settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder()));
 
     // Create another server without injecting the server-timing header and another stub that
     // connects to it.
@@ -153,24 +145,17 @@ public class BigtableTracerCallableTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics()
             .build();
 
-    BigtableClientContext noHeaderBigtableClientContext =
-        EnhancedBigtableStub.createBigtableClientContext(noHeaderSettings.getStubSettings());
-    ClientContext noHeaderClientContext =
-        noHeaderBigtableClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                EnhancedBigtableStub.createBigtableTracerFactory(
-                    noHeaderSettings.getStubSettings(),
-                    Tags.getTagger(),
-                    localStats.getStatsRecorder(),
-                    null,
-                    null))
-            .build();
     noHeaderStub =
         new EnhancedBigtableStub(
             noHeaderSettings.getStubSettings(),
-            noHeaderBigtableClientContext.withClientContext(noHeaderClientContext));
+            BigtableClientContext.create(
+                noHeaderSettings.getStubSettings(),
+                Tags.getTagger(),
+                localStats.getStatsRecorder()));
   }
 
   @After

@@ -25,7 +25,6 @@ import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ClientContext;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
@@ -120,23 +119,15 @@ public class MetricsTracerTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics()
             .build();
 
     BigtableClientContext bigtableClientContext =
-        EnhancedBigtableStub.createBigtableClientContext(settings.getStubSettings());
-    ClientContext clientContext =
-        bigtableClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(),
-                    Tags.getTagger(),
-                    localStats.getStatsRecorder(),
-                    null,
-                    null))
-            .build();
-    stub =
-        new EnhancedBigtableStub(
-            settings.getStubSettings(), bigtableClientContext.withClientContext(clientContext));
+        BigtableClientContext.create(
+            settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder());
+
+    stub = new EnhancedBigtableStub(settings.getStubSettings(), bigtableClientContext);
   }
 
   @After

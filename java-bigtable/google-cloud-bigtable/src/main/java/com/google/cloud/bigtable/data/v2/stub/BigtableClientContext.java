@@ -24,18 +24,25 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.ChannelPoolMetricsTracer;
+import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.Util;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableTransportChannelProvider;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
+import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
+import io.opencensus.stats.Stats;
+import io.opencensus.stats.StatsRecorder;
+import io.opencensus.tags.Tagger;
+import io.opencensus.tags.Tags;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.IOException;
@@ -55,15 +62,30 @@ public class BigtableClientContext {
 
   private static final Logger logger = Logger.getLogger(BigtableClientContext.class.getName());
 
+  private final boolean isChild;
+  private final InstanceName instanceName;
+  private final String appProfileId;
+  private final ApiTracerFactory userTracerFactory;
   @Nullable private final OpenTelemetrySdk builtinOpenTelemetry;
   @Nullable private final OpenTelemetry userOpenTelemetry;
   private final ClientContext clientContext;
   // the background executor shared for OTEL instances and monitoring client and all other
   // background tasks
   private final ExecutorProvider backgroundExecutorProvider;
+  private final Tagger ocTagger;
+  private final StatsRecorder ocRecorder;
 
   public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
       throws IOException {
+    return create(settings, Tags.getTagger(), Stats.getStatsRecorder());
+  }
+
+  public static BigtableClientContext create(
+      EnhancedBigtableStubSettings settings, Tagger ocTagger, StatsRecorder ocRecorder)
+      throws IOException {
+    InstanceName instanceName = InstanceName.of(settings.getProjectId(), settings.getInstanceId());
+    String appProfileId = settings.getAppProfileId();
+
     EnhancedBigtableStubSettings.Builder builder = settings.toBuilder();
 
     // Set up credentials
@@ -84,6 +106,8 @@ public class BigtableClientContext {
     FixedExecutorProvider executorProvider =
         FixedExecutorProvider.create(backgroundExecutor, shouldAutoClose);
     builder.setBackgroundExecutorProvider(executorProvider);
+
+    ApiTracerFactory userTracerFactory = settings.getTracerFactory();
 
     // Set up OpenTelemetry
     @Nullable OpenTelemetry userOtel = null;
@@ -158,7 +182,17 @@ public class BigtableClientContext {
       channelPoolMetricsTracer.start(clientContext.getExecutor());
     }
 
-    return new BigtableClientContext(clientContext, builtinOtel, userOtel, executorProvider);
+    return new BigtableClientContext(
+        false,
+        instanceName,
+        appProfileId,
+        clientContext,
+        userTracerFactory,
+        builtinOtel,
+        userOtel,
+        ocTagger,
+        ocRecorder,
+        executorProvider);
   }
 
   private static void configureGrpcOtel(
@@ -189,14 +223,53 @@ public class BigtableClientContext {
   }
 
   private BigtableClientContext(
+      boolean isChild,
+      InstanceName instanceName,
+      String appProfileId,
       ClientContext clientContext,
-      @Nullable OpenTelemetrySdk internalOtel,
-      @Nullable OpenTelemetry userOpenTelemetry,
-      ExecutorProvider backgroundExecutorProvider) {
-    this.clientContext = clientContext;
-    this.userOpenTelemetry = userOpenTelemetry;
-    this.builtinOpenTelemetry = internalOtel;
+      ApiTracerFactory userTracerFactory,
+      @Nullable OpenTelemetrySdk builtinOtel,
+      @Nullable OpenTelemetry userOtel,
+      Tagger ocTagger,
+      StatsRecorder ocRecorder,
+      ExecutorProvider backgroundExecutorProvider)
+      throws IOException {
+    this.isChild = isChild;
+    this.instanceName = instanceName;
+    this.appProfileId = appProfileId;
+
+    this.userTracerFactory = userTracerFactory;
+    this.builtinOpenTelemetry = builtinOtel;
+    this.userOpenTelemetry = userOtel;
+    this.ocTagger = ocTagger;
+    this.ocRecorder = ocRecorder;
     this.backgroundExecutorProvider = backgroundExecutorProvider;
+
+    ImmutableList.Builder<ApiTracerFactory> tracerFactories = ImmutableList.builder();
+    tracerFactories
+        .add(Util.createOCTracingFactory(instanceName, appProfileId))
+        .add(Util.createOCMetricsFactory(instanceName, appProfileId, ocTagger, ocRecorder))
+        .add(userTracerFactory);
+
+    if (builtinOtel != null) {
+      tracerFactories.add(Util.createOtelMetricsFactory(builtinOtel, instanceName, appProfileId));
+    }
+    if (userOtel != null) {
+      tracerFactories.add(Util.createOtelMetricsFactory(userOtel, instanceName, appProfileId));
+    }
+
+    this.clientContext =
+        clientContext.toBuilder()
+            .setTracerFactory(new CompositeTracerFactory(tracerFactories.build()))
+            .build();
+  }
+
+  public InstanceName getInstanceName() {
+    return instanceName;
+  }
+
+  public String getAppProfileId() {
+    return appProfileId;
   }
 
   @Nullable
@@ -213,12 +286,26 @@ public class BigtableClientContext {
     return this.clientContext;
   }
 
-  public BigtableClientContext withClientContext(ClientContext clientContext) {
+  public BigtableClientContext createChild(InstanceName instanceName, String appProfileId)
+      throws IOException {
     return new BigtableClientContext(
-        clientContext, builtinOpenTelemetry, userOpenTelemetry, backgroundExecutorProvider);
+        true,
+        instanceName,
+        appProfileId,
+        clientContext,
+        userTracerFactory,
+        builtinOpenTelemetry,
+        userOpenTelemetry,
+        ocTagger,
+        ocRecorder,
+        backgroundExecutorProvider);
   }
 
   public void close() throws Exception {
+    if (isChild) {
+      return;
+    }
+
     for (BackgroundResource resource : clientContext.getBackgroundResources()) {
       resource.close();
     }

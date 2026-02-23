@@ -16,9 +16,8 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.rpc.ClientContext;
+import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 
@@ -75,8 +74,7 @@ public final class BigtableDataClientFactory implements AutoCloseable {
   public static BigtableDataClientFactory create(BigtableDataSettings defaultSettings)
       throws IOException {
     BigtableClientContext sharedClientContext =
-        EnhancedBigtableStub.createBigtableClientContext(defaultSettings.getStubSettings());
-
+        BigtableClientContext.create(defaultSettings.getStubSettings());
     return new BigtableDataClientFactory(sharedClientContext, defaultSettings);
   }
 
@@ -107,17 +105,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   public BigtableDataClient createDefault() {
     try {
-      ClientContext clientContext =
-          sharedClientContext.getClientContext().toBuilder()
-              .setTracerFactory(
-                  EnhancedBigtableStub.createBigtableTracerFactory(
-                      defaultSettings.getStubSettings(),
-                      sharedClientContext.getBuiltinOpenTelemetry(),
-                      sharedClientContext.getUserOpenTelemetry()))
-              .build();
+      BigtableClientContext ctx =
+          sharedClientContext.createChild(
+              sharedClientContext.getInstanceName(), sharedClientContext.getAppProfileId());
 
-      return BigtableDataClient.createWithClientContext(
-          defaultSettings, sharedClientContext.withClientContext(clientContext));
+      return BigtableDataClient.createWithClientContext(defaultSettings, ctx);
     } catch (IOException e) {
       // Should never happen because the connection has been established already
       throw new RuntimeException(
@@ -137,17 +129,12 @@ public final class BigtableDataClientFactory implements AutoCloseable {
   public BigtableDataClient createForAppProfile(@Nonnull String appProfileId) throws IOException {
     BigtableDataSettings settings =
         defaultSettings.toBuilder().setAppProfileId(appProfileId).build();
+    BigtableClientContext ctx =
+        sharedClientContext.createChild(
+            InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
+            settings.getAppProfileId());
 
-    ClientContext clientContext =
-        sharedClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(),
-                    sharedClientContext.getBuiltinOpenTelemetry(),
-                    sharedClientContext.getUserOpenTelemetry()))
-            .build();
-    return BigtableDataClient.createWithClientContext(
-        settings, sharedClientContext.withClientContext(clientContext));
+    return BigtableDataClient.createWithClientContext(settings, ctx);
   }
 
   /**
@@ -167,18 +154,12 @@ public final class BigtableDataClientFactory implements AutoCloseable {
             .setInstanceId(instanceId)
             .setDefaultAppProfileId()
             .build();
+    BigtableClientContext ctx =
+        sharedClientContext.createChild(
+            InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
+            settings.getAppProfileId());
 
-    ClientContext clientContext =
-        sharedClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(),
-                    sharedClientContext.getBuiltinOpenTelemetry(),
-                    sharedClientContext.getUserOpenTelemetry()))
-            .build();
-
-    return BigtableDataClient.createWithClientContext(
-        settings, sharedClientContext.withClientContext(clientContext));
+    return BigtableDataClient.createWithClientContext(settings, ctx);
   }
 
   /**
@@ -199,15 +180,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
             .setInstanceId(instanceId)
             .setAppProfileId(appProfileId)
             .build();
-    ClientContext clientContext =
-        sharedClientContext.getClientContext().toBuilder()
-            .setTracerFactory(
-                EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(),
-                    sharedClientContext.getBuiltinOpenTelemetry(),
-                    sharedClientContext.getUserOpenTelemetry()))
-            .build();
-    return BigtableDataClient.createWithClientContext(
-        settings, sharedClientContext.withClientContext(clientContext));
+    BigtableClientContext ctx =
+        sharedClientContext.createChild(
+            InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
+            settings.getAppProfileId());
+
+    return BigtableDataClient.createWithClientContext(settings, ctx);
   }
 }
