@@ -17,6 +17,7 @@
 package com.google.cloud.kms.inventory.v1.samples;
 
 // [START kmsinventory_v1_generated_KeyTrackingService_GetProtectedResourcesSummary_sync]
+import com.google.cloud.kms.inventory.v1.FallbackScope;
 import com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest;
 import com.google.cloud.kms.inventory.v1.KeyTrackingServiceClient;
 import com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary;
@@ -41,6 +42,7 @@ public class SyncGetProtectedResourcesSummary {
                   ProtectedResourcesSummaryName.ofProjectLocationKeyRingCryptoKeyName(
                           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setFallbackScope(FallbackScope.forNumber(0))
               .build();
       ProtectedResourcesSummary response =
           keyTrackingServiceClient.getProtectedResourcesSummary(request);

@@ -375,6 +375,51 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingConfig field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingConfig.
+   */
+  com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+      getNaturalLanguageQueryUnderstandingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfigOrBuilder
+      getNaturalLanguageQueryUnderstandingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Input only. The KMS key to be used to protect this DataStore at creation
    * time.
    *

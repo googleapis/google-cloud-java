@@ -30,6 +30,50 @@ public interface ImageConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The image output format for generated images.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageOutputOptions field is set.
+   */
+  boolean hasImageOutputOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The image output format for generated images.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageOutputOptions.
+   */
+  com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions getImageOutputOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The image output format for generated images.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptions image_output_options = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ImageConfig.ImageOutputOptionsOrBuilder
+      getImageOutputOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The desired aspect ratio for the generated images. The following
    * aspect ratios are supported:
    *
@@ -88,4 +132,91 @@ public interface ImageConfigOrBuilder
    * @return The bytes for aspectRatio.
    */
   com.google.protobuf.ByteString getAspectRatioBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether the model can generate people.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the personGeneration field is set.
+   */
+  boolean hasPersonGeneration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether the model can generate people.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for personGeneration.
+   */
+  int getPersonGenerationValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether the model can generate people.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig.PersonGeneration person_generation = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The personGeneration.
+   */
+  com.google.cloud.aiplatform.v1.ImageConfig.PersonGeneration getPersonGeneration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the size of generated images. Supported values are
+   * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+   * </pre>
+   *
+   * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the imageSize field is set.
+   */
+  boolean hasImageSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the size of generated images. Supported values are
+   * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+   * </pre>
+   *
+   * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imageSize.
+   */
+  java.lang.String getImageSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the size of generated images. Supported values are
+   * `1K`, `2K`, `4K`. If not specified, the model will use default value `1K`.
+   * </pre>
+   *
+   * <code>optional string image_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for imageSize.
+   */
+  com.google.protobuf.ByteString getImageSizeBytes();
 }

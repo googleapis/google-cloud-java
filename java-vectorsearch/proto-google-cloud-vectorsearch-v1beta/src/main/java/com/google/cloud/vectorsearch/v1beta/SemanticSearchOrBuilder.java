@@ -218,4 +218,53 @@ public interface SemanticSearchOrBuilder
    * @return The topK.
    */
   int getTopK();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets the search hint. If no strategy is specified, the service
+   * will use an index if one is available, and fall back to KNN search
+   * otherwise.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchHint field is set.
+   */
+  boolean hasSearchHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets the search hint. If no strategy is specified, the service
+   * will use an index if one is available, and fall back to KNN search
+   * otherwise.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchHint.
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchHint getSearchHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets the search hint. If no strategy is specified, the service
+   * will use an index if one is available, and fall back to KNN search
+   * otherwise.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint search_hint = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchHintOrBuilder getSearchHintOrBuilder();
 }

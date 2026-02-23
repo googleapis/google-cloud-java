@@ -62,7 +62,7 @@ public interface AwsWrappedKeyInfoOrBuilder
    * <pre>
    * Required. The Amazon Resource Name of the IAM Role to assume for KMS
    * decryption access. Should be in the format of
-   * "arn:{partition}:iam::{account_id}:role/{role_name}"
+   * `arn:{partition}:iam::{account_id}:role/{role_name}`
    * </pre>
    *
    * <code>string role_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -77,7 +77,7 @@ public interface AwsWrappedKeyInfoOrBuilder
    * <pre>
    * Required. The Amazon Resource Name of the IAM Role to assume for KMS
    * decryption access. Should be in the format of
-   * "arn:{partition}:iam::{account_id}:role/{role_name}"
+   * `arn:{partition}:iam::{account_id}:role/{role_name}`
    * </pre>
    *
    * <code>string role_arn = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,7 +91,8 @@ public interface AwsWrappedKeyInfoOrBuilder
    *
    * <pre>
    * Required. The URI of the AWS KMS key used to decrypt the DEK. Should be in
-   * the format of "arn:{partition}:kms:{region}:{account_id}:key/{key_id}"
+   * the format of `arn:{partition}:kms:{region}:{account_id}:key/{key_id}` or
+   * `aws-kms://arn:{partition}:kms:{region}:{account_id}:key/{key_id}`
    * </pre>
    *
    * <code>string kek_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -105,7 +106,8 @@ public interface AwsWrappedKeyInfoOrBuilder
    *
    * <pre>
    * Required. The URI of the AWS KMS key used to decrypt the DEK. Should be in
-   * the format of "arn:{partition}:kms:{region}:{account_id}:key/{key_id}"
+   * the format of `arn:{partition}:kms:{region}:{account_id}:key/{key_id}` or
+   * `aws-kms://arn:{partition}:kms:{region}:{account_id}:key/{key_id}`
    * </pre>
    *
    * <code>string kek_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>

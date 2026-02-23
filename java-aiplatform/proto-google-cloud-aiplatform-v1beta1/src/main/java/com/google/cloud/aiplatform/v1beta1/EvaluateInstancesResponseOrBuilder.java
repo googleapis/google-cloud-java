@@ -1383,6 +1383,72 @@ public interface EvaluateInstancesResponseOrBuilder
   com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder
       getRubricBasedInstructionFollowingResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.MetricResult> getMetricResultsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricResult getMetricResults(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  int getMetricResultsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder>
+      getMetricResultsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metric results for each instance.
+   * The order of the metric results is guaranteed to be the same as the order
+   * of the instances in the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.MetricResult metric_results = 43;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricResultOrBuilder getMetricResultsOrBuilder(int index);
+
   com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse.EvaluationResultsCase
       getEvaluationResultsCase();
 }

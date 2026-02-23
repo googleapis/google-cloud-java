@@ -185,4 +185,79 @@ public interface WorkspaceOrBuilder
    * @return The bytes for internalMetadata.
    */
   com.google.protobuf.ByteString getInternalMetadataBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, workspaces will not be moved if its linked
+   * Repository is moved. Instead, it will be deleted.
+   * </pre>
+   *
+   * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the disableMoves field is set.
+   */
+  boolean hasDisableMoves();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, workspaces will not be moved if its linked
+   * Repository is moved. Instead, it will be deleted.
+   * </pre>
+   *
+   * <code>optional bool disable_moves = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableMoves.
+   */
+  boolean getDisableMoves();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped. For
+   * `Workspace` resources, the `user_scoped` field is always `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateResourceMetadata field is set.
+   */
+  boolean hasPrivateResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped. For
+   * `Workspace` resources, the `user_scoped` field is always `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateResourceMetadata.
+   */
+  com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped. For
+   * `Workspace` resources, the `user_scoped` field is always `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+      getPrivateResourceMetadataOrBuilder();
 }

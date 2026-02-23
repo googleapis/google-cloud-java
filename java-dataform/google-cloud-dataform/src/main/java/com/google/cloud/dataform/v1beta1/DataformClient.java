@@ -20,11 +20,15 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.dataform.v1beta1.stub.DataformStub;
 import com.google.cloud.dataform.v1beta1.stub.DataformStubSettings;
 import com.google.cloud.location.GetLocationRequest;
@@ -37,6 +41,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -59,8 +64,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DataformClient dataformClient = DataformClient.create()) {
- *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
- *   Repository response = dataformClient.getRepository(name);
+ *   TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+ *   TeamFolder response = dataformClient.getTeamFolder(name);
  * }
  * }</pre>
  *
@@ -73,6 +78,251 @@ import javax.annotation.Generated;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTeamFolder</td>
+ *      <td><p> Fetches a single TeamFolder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTeamFolder(GetTeamFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTeamFolder(TeamFolderName name)
+ *           <li><p> getTeamFolder(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTeamFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTeamFolder</td>
+ *      <td><p> Creates a new TeamFolder in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTeamFolder(CreateTeamFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createTeamFolder(LocationName parent, TeamFolder teamFolder)
+ *           <li><p> createTeamFolder(String parent, TeamFolder teamFolder)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTeamFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTeamFolder</td>
+ *      <td><p> Updates a single TeamFolder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTeamFolder(UpdateTeamFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateTeamFolder(TeamFolder teamFolder, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTeamFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTeamFolder</td>
+ *      <td><p> Deletes a single TeamFolder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTeamFolder(DeleteTeamFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTeamFolder(TeamFolderName name)
+ *           <li><p> deleteTeamFolder(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTeamFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryTeamFolderContents</td>
+ *      <td><p> Returns the contents of a given TeamFolder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryTeamFolderContents(QueryTeamFolderContentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryTeamFolderContents(TeamFolderName teamFolder)
+ *           <li><p> queryTeamFolderContents(String teamFolder)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryTeamFolderContentsPagedCallable()
+ *           <li><p> queryTeamFolderContentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchTeamFolders</td>
+ *      <td><p> Returns all TeamFolders in a given location that the caller has access to and match the provided filter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchTeamFolders(SearchTeamFoldersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchTeamFoldersPagedCallable()
+ *           <li><p> searchTeamFoldersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFolder</td>
+ *      <td><p> Fetches a single Folder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFolder(GetFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFolder(FolderName name)
+ *           <li><p> getFolder(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFolder</td>
+ *      <td><p> Creates a new Folder in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFolder(CreateFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createFolder(LocationName parent, Folder folder)
+ *           <li><p> createFolder(String parent, Folder folder)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFolder</td>
+ *      <td><p> Updates a single Folder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFolder(UpdateFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateFolder(Folder folder, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFolder</td>
+ *      <td><p> Deletes a single Folder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFolder(DeleteFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteFolder(FolderName name)
+ *           <li><p> deleteFolder(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryFolderContents</td>
+ *      <td><p> Returns the contents of a given Folder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryFolderContents(QueryFolderContentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryFolderContents(FolderName folder)
+ *           <li><p> queryFolderContents(String folder)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryFolderContentsPagedCallable()
+ *           <li><p> queryFolderContentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryUserRootContents</td>
+ *      <td><p> Returns the contents of a caller's root folder in a given location. The root folder contains all resources that are created by the user and not contained in any other folder.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryUserRootContents(QueryUserRootContentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryUserRootContents(LocationName location)
+ *           <li><p> queryUserRootContents(String location)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryUserRootContentsPagedCallable()
+ *           <li><p> queryUserRootContentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MoveFolder</td>
+ *      <td><p> Moves a Folder to a new Folder, TeamFolder, or the root location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> moveFolderAsync(MoveFolderRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> moveFolderAsync(FolderName name, String destinationContainingFolder)
+ *           <li><p> moveFolderAsync(String name, String destinationContainingFolder)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> moveFolderOperationCallable()
+ *           <li><p> moveFolderCallable()
+ *      </ul>
+ *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> ListRepositories</td>
@@ -168,6 +418,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MoveRepository</td>
+ *      <td><p> Moves a Repository to a new location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> moveRepositoryAsync(MoveRepositoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> moveRepositoryAsync(RepositoryName name, String destinationContainingFolder)
+ *           <li><p> moveRepositoryAsync(String name, String destinationContainingFolder)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> moveRepositoryOperationCallable()
+ *           <li><p> moveRepositoryCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -984,8 +1254,58 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.
+ * <p>  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+ * <p>  Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1009,50 +1329,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getLocationCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> SetIamPolicy</td>
- *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
- * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> setIamPolicy(SetIamPolicyRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> setIamPolicyCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> GetIamPolicy</td>
- *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> getIamPolicy(GetIamPolicyRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> getIamPolicyCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> TestIamPermissions</td>
- *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
- * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1115,6 +1391,8 @@ import javax.annotation.Generated;
 public class DataformClient implements BackgroundResource {
   private final DataformSettings settings;
   private final DataformStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of DataformClient with default settings. */
   public static final DataformClient create() throws IOException {
@@ -1144,11 +1422,17 @@ public class DataformClient implements BackgroundResource {
   protected DataformClient(DataformSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((DataformStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected DataformClient(DataformStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final DataformSettings getSettings() {
@@ -1157,6 +1441,1694 @@ public class DataformClient implements BackgroundResource {
 
   public DataformStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+   *   TeamFolder response = dataformClient.getTeamFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The TeamFolder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder getTeamFolder(TeamFolderName name) {
+    GetTeamFolderRequest request =
+        GetTeamFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString();
+   *   TeamFolder response = dataformClient.getTeamFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The TeamFolder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder getTeamFolder(String name) {
+    GetTeamFolderRequest request = GetTeamFolderRequest.newBuilder().setName(name).build();
+    return getTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetTeamFolderRequest request =
+   *       GetTeamFolderRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .build();
+   *   TeamFolder response = dataformClient.getTeamFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder getTeamFolder(GetTeamFolderRequest request) {
+    return getTeamFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetTeamFolderRequest request =
+   *       GetTeamFolderRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .build();
+   *   ApiFuture<TeamFolder> future = dataformClient.getTeamFolderCallable().futureCall(request);
+   *   // Do something.
+   *   TeamFolder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTeamFolderRequest, TeamFolder> getTeamFolderCallable() {
+    return stub.getTeamFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TeamFolder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   TeamFolder teamFolder = TeamFolder.newBuilder().build();
+   *   TeamFolder response = dataformClient.createTeamFolder(parent, teamFolder);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location in which to create the TeamFolder. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param teamFolder Required. The TeamFolder to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder createTeamFolder(LocationName parent, TeamFolder teamFolder) {
+    CreateTeamFolderRequest request =
+        CreateTeamFolderRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTeamFolder(teamFolder)
+            .build();
+    return createTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TeamFolder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   TeamFolder teamFolder = TeamFolder.newBuilder().build();
+   *   TeamFolder response = dataformClient.createTeamFolder(parent, teamFolder);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location in which to create the TeamFolder. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param teamFolder Required. The TeamFolder to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder createTeamFolder(String parent, TeamFolder teamFolder) {
+    CreateTeamFolderRequest request =
+        CreateTeamFolderRequest.newBuilder().setParent(parent).setTeamFolder(teamFolder).build();
+    return createTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TeamFolder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateTeamFolderRequest request =
+   *       CreateTeamFolderRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTeamFolder(TeamFolder.newBuilder().build())
+   *           .setTeamFolderId("teamFolderId18004902")
+   *           .build();
+   *   TeamFolder response = dataformClient.createTeamFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder createTeamFolder(CreateTeamFolderRequest request) {
+    return createTeamFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TeamFolder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateTeamFolderRequest request =
+   *       CreateTeamFolderRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTeamFolder(TeamFolder.newBuilder().build())
+   *           .setTeamFolderId("teamFolderId18004902")
+   *           .build();
+   *   ApiFuture<TeamFolder> future = dataformClient.createTeamFolderCallable().futureCall(request);
+   *   // Do something.
+   *   TeamFolder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateTeamFolderRequest, TeamFolder> createTeamFolderCallable() {
+    return stub.createTeamFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TeamFolder teamFolder = TeamFolder.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   TeamFolder response = dataformClient.updateTeamFolder(teamFolder, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param teamFolder Required. The updated TeamFolder.
+   * @param updateMask Optional. Specifies the fields to be updated in the Folder. If left unset,
+   *     all fields will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder updateTeamFolder(TeamFolder teamFolder, FieldMask updateMask) {
+    UpdateTeamFolderRequest request =
+        UpdateTeamFolderRequest.newBuilder()
+            .setTeamFolder(teamFolder)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   UpdateTeamFolderRequest request =
+   *       UpdateTeamFolderRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setTeamFolder(TeamFolder.newBuilder().build())
+   *           .build();
+   *   TeamFolder response = dataformClient.updateTeamFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TeamFolder updateTeamFolder(UpdateTeamFolderRequest request) {
+    return updateTeamFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   UpdateTeamFolderRequest request =
+   *       UpdateTeamFolderRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setTeamFolder(TeamFolder.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TeamFolder> future = dataformClient.updateTeamFolderCallable().futureCall(request);
+   *   // Do something.
+   *   TeamFolder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderCallable() {
+    return stub.updateTeamFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+   *   dataformClient.deleteTeamFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The TeamFolder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTeamFolder(TeamFolderName name) {
+    DeleteTeamFolderRequest request =
+        DeleteTeamFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString();
+   *   dataformClient.deleteTeamFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The TeamFolder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTeamFolder(String name) {
+    DeleteTeamFolderRequest request = DeleteTeamFolderRequest.newBuilder().setName(name).build();
+    deleteTeamFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteTeamFolderRequest request =
+   *       DeleteTeamFolderRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .build();
+   *   dataformClient.deleteTeamFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTeamFolder(DeleteTeamFolderRequest request) {
+    deleteTeamFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteTeamFolderRequest request =
+   *       DeleteTeamFolderRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = dataformClient.deleteTeamFolderCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTeamFolderRequest, Empty> deleteTeamFolderCallable() {
+    return stub.deleteTeamFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TeamFolderName teamFolder = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+   *   for (QueryTeamFolderContentsResponse.TeamFolderContentsEntry element :
+   *       dataformClient.queryTeamFolderContents(teamFolder).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param teamFolder Required. Name of the team_folder whose contents to list. Format:
+   *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTeamFolderContentsPagedResponse queryTeamFolderContents(
+      TeamFolderName teamFolder) {
+    QueryTeamFolderContentsRequest request =
+        QueryTeamFolderContentsRequest.newBuilder()
+            .setTeamFolder(teamFolder == null ? null : teamFolder.toString())
+            .build();
+    return queryTeamFolderContents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String teamFolder = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString();
+   *   for (QueryTeamFolderContentsResponse.TeamFolderContentsEntry element :
+   *       dataformClient.queryTeamFolderContents(teamFolder).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param teamFolder Required. Name of the team_folder whose contents to list. Format:
+   *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTeamFolderContentsPagedResponse queryTeamFolderContents(String teamFolder) {
+    QueryTeamFolderContentsRequest request =
+        QueryTeamFolderContentsRequest.newBuilder().setTeamFolder(teamFolder).build();
+    return queryTeamFolderContents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryTeamFolderContentsRequest request =
+   *       QueryTeamFolderContentsRequest.newBuilder()
+   *           .setTeamFolder(
+   *               TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (QueryTeamFolderContentsResponse.TeamFolderContentsEntry element :
+   *       dataformClient.queryTeamFolderContents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTeamFolderContentsPagedResponse queryTeamFolderContents(
+      QueryTeamFolderContentsRequest request) {
+    return queryTeamFolderContentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryTeamFolderContentsRequest request =
+   *       QueryTeamFolderContentsRequest.newBuilder()
+   *           .setTeamFolder(
+   *               TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<QueryTeamFolderContentsResponse.TeamFolderContentsEntry> future =
+   *       dataformClient.queryTeamFolderContentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QueryTeamFolderContentsResponse.TeamFolderContentsEntry element :
+   *       future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsPagedCallable() {
+    return stub.queryTeamFolderContentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given TeamFolder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryTeamFolderContentsRequest request =
+   *       QueryTeamFolderContentsRequest.newBuilder()
+   *           .setTeamFolder(
+   *               TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     QueryTeamFolderContentsResponse response =
+   *         dataformClient.queryTeamFolderContentsCallable().call(request);
+   *     for (QueryTeamFolderContentsResponse.TeamFolderContentsEntry element :
+   *         response.getEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+      queryTeamFolderContentsCallable() {
+    return stub.queryTeamFolderContentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns all TeamFolders in a given location that the caller has access to and match the
+   * provided filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SearchTeamFoldersRequest request =
+   *       SearchTeamFoldersRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (SearchTeamFoldersResponse.TeamFolderSearchResult element :
+   *       dataformClient.searchTeamFolders(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchTeamFoldersPagedResponse searchTeamFolders(SearchTeamFoldersRequest request) {
+    return searchTeamFoldersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns all TeamFolders in a given location that the caller has access to and match the
+   * provided filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SearchTeamFoldersRequest request =
+   *       SearchTeamFoldersRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<SearchTeamFoldersResponse.TeamFolderSearchResult> future =
+   *       dataformClient.searchTeamFoldersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SearchTeamFoldersResponse.TeamFolderSearchResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersPagedCallable() {
+    return stub.searchTeamFoldersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns all TeamFolders in a given location that the caller has access to and match the
+   * provided filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SearchTeamFoldersRequest request =
+   *       SearchTeamFoldersRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     SearchTeamFoldersResponse response =
+   *         dataformClient.searchTeamFoldersCallable().call(request);
+   *     for (SearchTeamFoldersResponse.TeamFolderSearchResult element : response.getResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
+      searchTeamFoldersCallable() {
+    return stub.searchTeamFoldersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+   *   Folder response = dataformClient.getFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Folder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder getFolder(FolderName name) {
+    GetFolderRequest request =
+        GetFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString();
+   *   Folder response = dataformClient.getFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Folder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder getFolder(String name) {
+    GetFolderRequest request = GetFolderRequest.newBuilder().setName(name).build();
+    return getFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetFolderRequest request =
+   *       GetFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .build();
+   *   Folder response = dataformClient.getFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder getFolder(GetFolderRequest request) {
+    return getFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetFolderRequest request =
+   *       GetFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .build();
+   *   ApiFuture<Folder> future = dataformClient.getFolderCallable().futureCall(request);
+   *   // Do something.
+   *   Folder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetFolderRequest, Folder> getFolderCallable() {
+    return stub.getFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Folder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Folder folder = Folder.newBuilder().build();
+   *   Folder response = dataformClient.createFolder(parent, folder);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location in which to create the Folder. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param folder Required. The Folder to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder createFolder(LocationName parent, Folder folder) {
+    CreateFolderRequest request =
+        CreateFolderRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFolder(folder)
+            .build();
+    return createFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Folder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Folder folder = Folder.newBuilder().build();
+   *   Folder response = dataformClient.createFolder(parent, folder);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location in which to create the Folder. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param folder Required. The Folder to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder createFolder(String parent, Folder folder) {
+    CreateFolderRequest request =
+        CreateFolderRequest.newBuilder().setParent(parent).setFolder(folder).build();
+    return createFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Folder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateFolderRequest request =
+   *       CreateFolderRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFolder(Folder.newBuilder().build())
+   *           .setFolderId("folderId294109737")
+   *           .build();
+   *   Folder response = dataformClient.createFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder createFolder(CreateFolderRequest request) {
+    return createFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Folder in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateFolderRequest request =
+   *       CreateFolderRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFolder(Folder.newBuilder().build())
+   *           .setFolderId("folderId294109737")
+   *           .build();
+   *   ApiFuture<Folder> future = dataformClient.createFolderCallable().futureCall(request);
+   *   // Do something.
+   *   Folder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable() {
+    return stub.createFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   Folder folder = Folder.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Folder response = dataformClient.updateFolder(folder, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param folder Required. The updated Folder.
+   * @param updateMask Optional. Specifies the fields to be updated in the Folder. If left unset,
+   *     all fields that can be updated, will be updated. A few fields cannot be updated and will be
+   *     ignored if specified in the update_mask (e.g. parent_name, team_folder_name).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder updateFolder(Folder folder, FieldMask updateMask) {
+    UpdateFolderRequest request =
+        UpdateFolderRequest.newBuilder().setFolder(folder).setUpdateMask(updateMask).build();
+    return updateFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   UpdateFolderRequest request =
+   *       UpdateFolderRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setFolder(Folder.newBuilder().build())
+   *           .build();
+   *   Folder response = dataformClient.updateFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Folder updateFolder(UpdateFolderRequest request) {
+    return updateFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   UpdateFolderRequest request =
+   *       UpdateFolderRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setFolder(Folder.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Folder> future = dataformClient.updateFolderCallable().futureCall(request);
+   *   // Do something.
+   *   Folder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateFolderRequest, Folder> updateFolderCallable() {
+    return stub.updateFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+   *   dataformClient.deleteFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Folder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFolder(FolderName name) {
+    DeleteFolderRequest request =
+        DeleteFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString();
+   *   dataformClient.deleteFolder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Folder's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFolder(String name) {
+    DeleteFolderRequest request = DeleteFolderRequest.newBuilder().setName(name).build();
+    deleteFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteFolderRequest request =
+   *       DeleteFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .build();
+   *   dataformClient.deleteFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFolder(DeleteFolderRequest request) {
+    deleteFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteFolderRequest request =
+   *       DeleteFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = dataformClient.deleteFolderCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
+    return stub.deleteFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FolderName folder = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+   *   for (QueryFolderContentsResponse.FolderContentsEntry element :
+   *       dataformClient.queryFolderContents(folder).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param folder Required. Name of the folder whose contents to list. Format:
+   *     projects/&#42;/locations/&#42;/folders/&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryFolderContentsPagedResponse queryFolderContents(FolderName folder) {
+    QueryFolderContentsRequest request =
+        QueryFolderContentsRequest.newBuilder()
+            .setFolder(folder == null ? null : folder.toString())
+            .build();
+    return queryFolderContents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String folder = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString();
+   *   for (QueryFolderContentsResponse.FolderContentsEntry element :
+   *       dataformClient.queryFolderContents(folder).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param folder Required. Name of the folder whose contents to list. Format:
+   *     projects/&#42;/locations/&#42;/folders/&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryFolderContentsPagedResponse queryFolderContents(String folder) {
+    QueryFolderContentsRequest request =
+        QueryFolderContentsRequest.newBuilder().setFolder(folder).build();
+    return queryFolderContents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryFolderContentsRequest request =
+   *       QueryFolderContentsRequest.newBuilder()
+   *           .setFolder(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (QueryFolderContentsResponse.FolderContentsEntry element :
+   *       dataformClient.queryFolderContents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryFolderContentsPagedResponse queryFolderContents(
+      QueryFolderContentsRequest request) {
+    return queryFolderContentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryFolderContentsRequest request =
+   *       QueryFolderContentsRequest.newBuilder()
+   *           .setFolder(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<QueryFolderContentsResponse.FolderContentsEntry> future =
+   *       dataformClient.queryFolderContentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QueryFolderContentsResponse.FolderContentsEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsPagedResponse>
+      queryFolderContentsPagedCallable() {
+    return stub.queryFolderContentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a given Folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryFolderContentsRequest request =
+   *       QueryFolderContentsRequest.newBuilder()
+   *           .setFolder(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     QueryFolderContentsResponse response =
+   *         dataformClient.queryFolderContentsCallable().call(request);
+   *     for (QueryFolderContentsResponse.FolderContentsEntry element : response.getEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse>
+      queryFolderContentsCallable() {
+    return stub.queryFolderContentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a caller's root folder in a given location. The root folder contains
+   * all resources that are created by the user and not contained in any other folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (QueryUserRootContentsResponse.RootContentsEntry element :
+   *       dataformClient.queryUserRootContents(location).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param location Required. Location of the user root folder whose contents to list. Format:
+   *     projects/&#42;/locations/&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryUserRootContentsPagedResponse queryUserRootContents(LocationName location) {
+    QueryUserRootContentsRequest request =
+        QueryUserRootContentsRequest.newBuilder()
+            .setLocation(location == null ? null : location.toString())
+            .build();
+    return queryUserRootContents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a caller's root folder in a given location. The root folder contains
+   * all resources that are created by the user and not contained in any other folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (QueryUserRootContentsResponse.RootContentsEntry element :
+   *       dataformClient.queryUserRootContents(location).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param location Required. Location of the user root folder whose contents to list. Format:
+   *     projects/&#42;/locations/&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryUserRootContentsPagedResponse queryUserRootContents(String location) {
+    QueryUserRootContentsRequest request =
+        QueryUserRootContentsRequest.newBuilder().setLocation(location).build();
+    return queryUserRootContents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a caller's root folder in a given location. The root folder contains
+   * all resources that are created by the user and not contained in any other folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryUserRootContentsRequest request =
+   *       QueryUserRootContentsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (QueryUserRootContentsResponse.RootContentsEntry element :
+   *       dataformClient.queryUserRootContents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryUserRootContentsPagedResponse queryUserRootContents(
+      QueryUserRootContentsRequest request) {
+    return queryUserRootContentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a caller's root folder in a given location. The root folder contains
+   * all resources that are created by the user and not contained in any other folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryUserRootContentsRequest request =
+   *       QueryUserRootContentsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<QueryUserRootContentsResponse.RootContentsEntry> future =
+   *       dataformClient.queryUserRootContentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QueryUserRootContentsResponse.RootContentsEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsPagedResponse>
+      queryUserRootContentsPagedCallable() {
+    return stub.queryUserRootContentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the contents of a caller's root folder in a given location. The root folder contains
+   * all resources that are created by the user and not contained in any other folder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   QueryUserRootContentsRequest request =
+   *       QueryUserRootContentsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     QueryUserRootContentsResponse response =
+   *         dataformClient.queryUserRootContentsCallable().call(request);
+   *     for (QueryUserRootContentsResponse.RootContentsEntry element : response.getEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
+      queryUserRootContentsCallable() {
+    return stub.queryUserRootContentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Folder to a new Folder, TeamFolder, or the root location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+   *   String destinationContainingFolder = "destinationContainingFolder870737098";
+   *   dataformClient.moveFolderAsync(name, destinationContainingFolder).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full resource name of the Folder to move.
+   * @param destinationContainingFolder Optional. The name of the Folder, TeamFolder, or root
+   *     location to move the Folder to. Can be in the format of: "" to move into the root User
+   *     folder, `projects/&#42;/locations/&#42;/folders/&#42;`,
+   *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, MoveFolderMetadata> moveFolderAsync(
+      FolderName name, String destinationContainingFolder) {
+    MoveFolderRequest request =
+        MoveFolderRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDestinationContainingFolder(destinationContainingFolder)
+            .build();
+    return moveFolderAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Folder to a new Folder, TeamFolder, or the root location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString();
+   *   String destinationContainingFolder = "destinationContainingFolder870737098";
+   *   dataformClient.moveFolderAsync(name, destinationContainingFolder).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full resource name of the Folder to move.
+   * @param destinationContainingFolder Optional. The name of the Folder, TeamFolder, or root
+   *     location to move the Folder to. Can be in the format of: "" to move into the root User
+   *     folder, `projects/&#42;/locations/&#42;/folders/&#42;`,
+   *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, MoveFolderMetadata> moveFolderAsync(
+      String name, String destinationContainingFolder) {
+    MoveFolderRequest request =
+        MoveFolderRequest.newBuilder()
+            .setName(name)
+            .setDestinationContainingFolder(destinationContainingFolder)
+            .build();
+    return moveFolderAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Folder to a new Folder, TeamFolder, or the root location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   MoveFolderRequest request =
+   *       MoveFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setDestinationContainingFolder("destinationContainingFolder870737098")
+   *           .build();
+   *   dataformClient.moveFolderAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, MoveFolderMetadata> moveFolderAsync(
+      MoveFolderRequest request) {
+    return moveFolderOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Folder to a new Folder, TeamFolder, or the root location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   MoveFolderRequest request =
+   *       MoveFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setDestinationContainingFolder("destinationContainingFolder870737098")
+   *           .build();
+   *   OperationFuture<Empty, MoveFolderMetadata> future =
+   *       dataformClient.moveFolderOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationCallable() {
+    return stub.moveFolderOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Folder to a new Folder, TeamFolder, or the root location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   MoveFolderRequest request =
+   *       MoveFolderRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setDestinationContainingFolder("destinationContainingFolder870737098")
+   *           .build();
+   *   ApiFuture<Operation> future = dataformClient.moveFolderCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveFolderRequest, Operation> moveFolderCallable() {
+    return stub.moveFolderCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1802,6 +3774,166 @@ public class DataformClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable() {
     return stub.deleteRepositoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Repository to a new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   String destinationContainingFolder = "destinationContainingFolder870737098";
+   *   dataformClient.moveRepositoryAsync(name, destinationContainingFolder).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full resource name of the repository to move.
+   * @param destinationContainingFolder Optional. The name of the Folder, TeamFolder, or root
+   *     location to move the repository to. Can be in the format of: "" to move into the root User
+   *     folder, `projects/&#42;/locations/&#42;/folders/&#42;`,
+   *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, MoveRepositoryMetadata> moveRepositoryAsync(
+      RepositoryName name, String destinationContainingFolder) {
+    MoveRepositoryRequest request =
+        MoveRepositoryRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDestinationContainingFolder(destinationContainingFolder)
+            .build();
+    return moveRepositoryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Repository to a new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   String destinationContainingFolder = "destinationContainingFolder870737098";
+   *   dataformClient.moveRepositoryAsync(name, destinationContainingFolder).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full resource name of the repository to move.
+   * @param destinationContainingFolder Optional. The name of the Folder, TeamFolder, or root
+   *     location to move the repository to. Can be in the format of: "" to move into the root User
+   *     folder, `projects/&#42;/locations/&#42;/folders/&#42;`,
+   *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, MoveRepositoryMetadata> moveRepositoryAsync(
+      String name, String destinationContainingFolder) {
+    MoveRepositoryRequest request =
+        MoveRepositoryRequest.newBuilder()
+            .setName(name)
+            .setDestinationContainingFolder(destinationContainingFolder)
+            .build();
+    return moveRepositoryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Repository to a new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   MoveRepositoryRequest request =
+   *       MoveRepositoryRequest.newBuilder()
+   *           .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setDestinationContainingFolder("destinationContainingFolder870737098")
+   *           .build();
+   *   dataformClient.moveRepositoryAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, MoveRepositoryMetadata> moveRepositoryAsync(
+      MoveRepositoryRequest request) {
+    return moveRepositoryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Repository to a new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   MoveRepositoryRequest request =
+   *       MoveRepositoryRequest.newBuilder()
+   *           .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setDestinationContainingFolder("destinationContainingFolder870737098")
+   *           .build();
+   *   OperationFuture<Empty, MoveRepositoryMetadata> future =
+   *       dataformClient.moveRepositoryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationCallable() {
+    return stub.moveRepositoryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a Repository to a new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   MoveRepositoryRequest request =
+   *       MoveRepositoryRequest.newBuilder()
+   *           .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setDestinationContainingFolder("destinationContainingFolder870737098")
+   *           .build();
+   *   ApiFuture<Operation> future = dataformClient.moveRepositoryCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveRepositoryRequest, Operation> moveRepositoryCallable() {
+    return stub.moveRepositoryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6794,7 +8926,266 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   ResourceName resource = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+   *   Policy response = dataformClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String resource =
+   *       CompilationResultName.of(
+   *               "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *           .toString();
+   *   Policy response = dataformClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = dataformClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = dataformClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = dataformClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = dataformClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = dataformClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       dataformClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -6827,7 +9218,13 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -6860,7 +9257,13 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -6946,197 +9349,6 @@ public class DataformClient implements BackgroundResource {
     return stub.getLocationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the access control policy on the specified resource. Replacesany existing policy.
-   *
-   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataformClient dataformClient = DataformClient.create()) {
-   *   SetIamPolicyRequest request =
-   *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-   *           .setPolicy(Policy.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   Policy response = dataformClient.setIamPolicy(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(SetIamPolicyRequest request) {
-    return setIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the access control policy on the specified resource. Replacesany existing policy.
-   *
-   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataformClient dataformClient = DataformClient.create()) {
-   *   SetIamPolicyRequest request =
-   *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-   *           .setPolicy(Policy.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Policy> future = dataformClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something.
-   *   Policy response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return stub.setIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataformClient dataformClient = DataformClient.create()) {
-   *   GetIamPolicyRequest request =
-   *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-   *           .setOptions(GetPolicyOptions.newBuilder().build())
-   *           .build();
-   *   Policy response = dataformClient.getIamPolicy(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(GetIamPolicyRequest request) {
-    return getIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataformClient dataformClient = DataformClient.create()) {
-   *   GetIamPolicyRequest request =
-   *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-   *           .setOptions(GetPolicyOptions.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Policy> future = dataformClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something.
-   *   Policy response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return stub.getIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
-   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
-   *
-   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
-   * command-line tools, not for authorizationchecking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataformClient dataformClient = DataformClient.create()) {
-   *   TestIamPermissionsRequest request =
-   *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-   *           .addAllPermissions(new ArrayList<String>())
-   *           .build();
-   *   TestIamPermissionsResponse response = dataformClient.testIamPermissions(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
-    return testIamPermissionsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
-   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
-   *
-   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
-   * command-line tools, not for authorizationchecking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataformClient dataformClient = DataformClient.create()) {
-   *   TestIamPermissionsRequest request =
-   *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
-   *           .addAllPermissions(new ArrayList<String>())
-   *           .build();
-   *   ApiFuture<TestIamPermissionsResponse> future =
-   *       dataformClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something.
-   *   TestIamPermissionsResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return stub.testIamPermissionsCallable();
-  }
-
   @Override
   public final void close() {
     stub.close();
@@ -7165,6 +9377,390 @@ public class DataformClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class QueryTeamFolderContentsPagedResponse
+      extends AbstractPagedListResponse<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsResponse.TeamFolderContentsEntry,
+          QueryTeamFolderContentsPage,
+          QueryTeamFolderContentsFixedSizeCollection> {
+
+    public static ApiFuture<QueryTeamFolderContentsPagedResponse> createAsync(
+        PageContext<
+                QueryTeamFolderContentsRequest,
+                QueryTeamFolderContentsResponse,
+                QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+            context,
+        ApiFuture<QueryTeamFolderContentsResponse> futureResponse) {
+      ApiFuture<QueryTeamFolderContentsPage> futurePage =
+          QueryTeamFolderContentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryTeamFolderContentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryTeamFolderContentsPagedResponse(QueryTeamFolderContentsPage page) {
+      super(page, QueryTeamFolderContentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryTeamFolderContentsPage
+      extends AbstractPage<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsResponse.TeamFolderContentsEntry,
+          QueryTeamFolderContentsPage> {
+
+    private QueryTeamFolderContentsPage(
+        PageContext<
+                QueryTeamFolderContentsRequest,
+                QueryTeamFolderContentsResponse,
+                QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+            context,
+        QueryTeamFolderContentsResponse response) {
+      super(context, response);
+    }
+
+    private static QueryTeamFolderContentsPage createEmptyPage() {
+      return new QueryTeamFolderContentsPage(null, null);
+    }
+
+    @Override
+    protected QueryTeamFolderContentsPage createPage(
+        PageContext<
+                QueryTeamFolderContentsRequest,
+                QueryTeamFolderContentsResponse,
+                QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+            context,
+        QueryTeamFolderContentsResponse response) {
+      return new QueryTeamFolderContentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryTeamFolderContentsPage> createPageAsync(
+        PageContext<
+                QueryTeamFolderContentsRequest,
+                QueryTeamFolderContentsResponse,
+                QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+            context,
+        ApiFuture<QueryTeamFolderContentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryTeamFolderContentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsResponse.TeamFolderContentsEntry,
+          QueryTeamFolderContentsPage,
+          QueryTeamFolderContentsFixedSizeCollection> {
+
+    private QueryTeamFolderContentsFixedSizeCollection(
+        List<QueryTeamFolderContentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryTeamFolderContentsFixedSizeCollection createEmptyCollection() {
+      return new QueryTeamFolderContentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryTeamFolderContentsFixedSizeCollection createCollection(
+        List<QueryTeamFolderContentsPage> pages, int collectionSize) {
+      return new QueryTeamFolderContentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchTeamFoldersPagedResponse
+      extends AbstractPagedListResponse<
+          SearchTeamFoldersRequest,
+          SearchTeamFoldersResponse,
+          SearchTeamFoldersResponse.TeamFolderSearchResult,
+          SearchTeamFoldersPage,
+          SearchTeamFoldersFixedSizeCollection> {
+
+    public static ApiFuture<SearchTeamFoldersPagedResponse> createAsync(
+        PageContext<
+                SearchTeamFoldersRequest,
+                SearchTeamFoldersResponse,
+                SearchTeamFoldersResponse.TeamFolderSearchResult>
+            context,
+        ApiFuture<SearchTeamFoldersResponse> futureResponse) {
+      ApiFuture<SearchTeamFoldersPage> futurePage =
+          SearchTeamFoldersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchTeamFoldersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchTeamFoldersPagedResponse(SearchTeamFoldersPage page) {
+      super(page, SearchTeamFoldersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchTeamFoldersPage
+      extends AbstractPage<
+          SearchTeamFoldersRequest,
+          SearchTeamFoldersResponse,
+          SearchTeamFoldersResponse.TeamFolderSearchResult,
+          SearchTeamFoldersPage> {
+
+    private SearchTeamFoldersPage(
+        PageContext<
+                SearchTeamFoldersRequest,
+                SearchTeamFoldersResponse,
+                SearchTeamFoldersResponse.TeamFolderSearchResult>
+            context,
+        SearchTeamFoldersResponse response) {
+      super(context, response);
+    }
+
+    private static SearchTeamFoldersPage createEmptyPage() {
+      return new SearchTeamFoldersPage(null, null);
+    }
+
+    @Override
+    protected SearchTeamFoldersPage createPage(
+        PageContext<
+                SearchTeamFoldersRequest,
+                SearchTeamFoldersResponse,
+                SearchTeamFoldersResponse.TeamFolderSearchResult>
+            context,
+        SearchTeamFoldersResponse response) {
+      return new SearchTeamFoldersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchTeamFoldersPage> createPageAsync(
+        PageContext<
+                SearchTeamFoldersRequest,
+                SearchTeamFoldersResponse,
+                SearchTeamFoldersResponse.TeamFolderSearchResult>
+            context,
+        ApiFuture<SearchTeamFoldersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchTeamFoldersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchTeamFoldersRequest,
+          SearchTeamFoldersResponse,
+          SearchTeamFoldersResponse.TeamFolderSearchResult,
+          SearchTeamFoldersPage,
+          SearchTeamFoldersFixedSizeCollection> {
+
+    private SearchTeamFoldersFixedSizeCollection(
+        List<SearchTeamFoldersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchTeamFoldersFixedSizeCollection createEmptyCollection() {
+      return new SearchTeamFoldersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchTeamFoldersFixedSizeCollection createCollection(
+        List<SearchTeamFoldersPage> pages, int collectionSize) {
+      return new SearchTeamFoldersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryFolderContentsPagedResponse
+      extends AbstractPagedListResponse<
+          QueryFolderContentsRequest,
+          QueryFolderContentsResponse,
+          QueryFolderContentsResponse.FolderContentsEntry,
+          QueryFolderContentsPage,
+          QueryFolderContentsFixedSizeCollection> {
+
+    public static ApiFuture<QueryFolderContentsPagedResponse> createAsync(
+        PageContext<
+                QueryFolderContentsRequest,
+                QueryFolderContentsResponse,
+                QueryFolderContentsResponse.FolderContentsEntry>
+            context,
+        ApiFuture<QueryFolderContentsResponse> futureResponse) {
+      ApiFuture<QueryFolderContentsPage> futurePage =
+          QueryFolderContentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryFolderContentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryFolderContentsPagedResponse(QueryFolderContentsPage page) {
+      super(page, QueryFolderContentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryFolderContentsPage
+      extends AbstractPage<
+          QueryFolderContentsRequest,
+          QueryFolderContentsResponse,
+          QueryFolderContentsResponse.FolderContentsEntry,
+          QueryFolderContentsPage> {
+
+    private QueryFolderContentsPage(
+        PageContext<
+                QueryFolderContentsRequest,
+                QueryFolderContentsResponse,
+                QueryFolderContentsResponse.FolderContentsEntry>
+            context,
+        QueryFolderContentsResponse response) {
+      super(context, response);
+    }
+
+    private static QueryFolderContentsPage createEmptyPage() {
+      return new QueryFolderContentsPage(null, null);
+    }
+
+    @Override
+    protected QueryFolderContentsPage createPage(
+        PageContext<
+                QueryFolderContentsRequest,
+                QueryFolderContentsResponse,
+                QueryFolderContentsResponse.FolderContentsEntry>
+            context,
+        QueryFolderContentsResponse response) {
+      return new QueryFolderContentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryFolderContentsPage> createPageAsync(
+        PageContext<
+                QueryFolderContentsRequest,
+                QueryFolderContentsResponse,
+                QueryFolderContentsResponse.FolderContentsEntry>
+            context,
+        ApiFuture<QueryFolderContentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryFolderContentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryFolderContentsRequest,
+          QueryFolderContentsResponse,
+          QueryFolderContentsResponse.FolderContentsEntry,
+          QueryFolderContentsPage,
+          QueryFolderContentsFixedSizeCollection> {
+
+    private QueryFolderContentsFixedSizeCollection(
+        List<QueryFolderContentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryFolderContentsFixedSizeCollection createEmptyCollection() {
+      return new QueryFolderContentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryFolderContentsFixedSizeCollection createCollection(
+        List<QueryFolderContentsPage> pages, int collectionSize) {
+      return new QueryFolderContentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryUserRootContentsPagedResponse
+      extends AbstractPagedListResponse<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsResponse.RootContentsEntry,
+          QueryUserRootContentsPage,
+          QueryUserRootContentsFixedSizeCollection> {
+
+    public static ApiFuture<QueryUserRootContentsPagedResponse> createAsync(
+        PageContext<
+                QueryUserRootContentsRequest,
+                QueryUserRootContentsResponse,
+                QueryUserRootContentsResponse.RootContentsEntry>
+            context,
+        ApiFuture<QueryUserRootContentsResponse> futureResponse) {
+      ApiFuture<QueryUserRootContentsPage> futurePage =
+          QueryUserRootContentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryUserRootContentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryUserRootContentsPagedResponse(QueryUserRootContentsPage page) {
+      super(page, QueryUserRootContentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryUserRootContentsPage
+      extends AbstractPage<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsResponse.RootContentsEntry,
+          QueryUserRootContentsPage> {
+
+    private QueryUserRootContentsPage(
+        PageContext<
+                QueryUserRootContentsRequest,
+                QueryUserRootContentsResponse,
+                QueryUserRootContentsResponse.RootContentsEntry>
+            context,
+        QueryUserRootContentsResponse response) {
+      super(context, response);
+    }
+
+    private static QueryUserRootContentsPage createEmptyPage() {
+      return new QueryUserRootContentsPage(null, null);
+    }
+
+    @Override
+    protected QueryUserRootContentsPage createPage(
+        PageContext<
+                QueryUserRootContentsRequest,
+                QueryUserRootContentsResponse,
+                QueryUserRootContentsResponse.RootContentsEntry>
+            context,
+        QueryUserRootContentsResponse response) {
+      return new QueryUserRootContentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryUserRootContentsPage> createPageAsync(
+        PageContext<
+                QueryUserRootContentsRequest,
+                QueryUserRootContentsResponse,
+                QueryUserRootContentsResponse.RootContentsEntry>
+            context,
+        ApiFuture<QueryUserRootContentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryUserRootContentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsResponse.RootContentsEntry,
+          QueryUserRootContentsPage,
+          QueryUserRootContentsFixedSizeCollection> {
+
+    private QueryUserRootContentsFixedSizeCollection(
+        List<QueryUserRootContentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryUserRootContentsFixedSizeCollection createEmptyCollection() {
+      return new QueryUserRootContentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryUserRootContentsFixedSizeCollection createCollection(
+        List<QueryUserRootContentsPage> pages, int collectionSize) {
+      return new QueryUserRootContentsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListRepositoriesPagedResponse

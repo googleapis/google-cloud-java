@@ -54,6 +54,7 @@ public final class Config extends com.google.protobuf.GeneratedMessage
   private Config() {
     name_ = "";
     defaultKmsKeyName_ = "";
+    internalMetadata_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,6 +72,7 @@ public final class Config extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataform.v1beta1.Config.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -183,6 +185,84 @@ public final class Config extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalMetadata() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -203,6 +283,9 @@ public final class Config extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(defaultKmsKeyName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, defaultKmsKeyName_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, internalMetadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -217,6 +300,9 @@ public final class Config extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(defaultKmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, defaultKmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, internalMetadata_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -235,6 +321,10 @@ public final class Config extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (!getDefaultKmsKeyName().equals(other.getDefaultKmsKeyName())) return false;
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -250,6 +340,10 @@ public final class Config extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DEFAULT_KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultKmsKeyName().hashCode();
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -392,6 +486,7 @@ public final class Config extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       defaultKmsKeyName_ = "";
+      internalMetadata_ = "";
       return this;
     }
 
@@ -434,6 +529,12 @@ public final class Config extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.defaultKmsKeyName_ = defaultKmsKeyName_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -456,6 +557,11 @@ public final class Config extends com.google.protobuf.GeneratedMessage
       if (!other.getDefaultKmsKeyName().isEmpty()) {
         defaultKmsKeyName_ = other.defaultKmsKeyName_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -496,6 +602,12 @@ public final class Config extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 58:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -748,6 +860,150 @@ public final class Config extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       defaultKmsKeyName_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object internalMetadata_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the internalMetadata field is set.
+     */
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The internalMetadata.
+     */
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for internalMetadata.
+     */
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -175,8 +175,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it
+   * is the full name of the project.
    * </pre>
    *
    * <code>string container = 2;</code>
@@ -191,8 +191,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it
+   * is the full name of the project.
    * </pre>
    *
    * <code>string container = 2;</code>
@@ -220,8 +220,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it
+   * is the full name of the project.
    * </pre>
    *
    * <code>string container = 2;</code>
@@ -438,7 +438,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The location of the resources. It supports returning only regional
-   * locations in GCP.
+   * locations in Google Cloud.
    * </pre>
    *
    * <code>string location = 6;</code>
@@ -454,7 +454,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The location of the resources. It supports returning only regional
-   * locations in GCP.
+   * locations in Google Cloud.
    * </pre>
    *
    * <code>string location = 6;</code>
@@ -483,7 +483,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The location of the resources. It supports returning only regional
-   * locations in GCP.
+   * locations in Google Cloud.
    * </pre>
    *
    * <code>string location = 6;</code>
@@ -2213,8 +2213,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies where the resource is created. For GCP, it is the full name of
-     * the project.
+     * Specifies where the resource is created. For Google Cloud resources, it
+     * is the full name of the project.
      * </pre>
      *
      * <code>string container = 2;</code>
@@ -2230,8 +2230,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies where the resource is created. For GCP, it is the full name of
-     * the project.
+     * Specifies where the resource is created. For Google Cloud resources, it
+     * is the full name of the project.
      * </pre>
      *
      * <code>string container = 2;</code>
@@ -2260,8 +2260,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies where the resource is created. For GCP, it is the full name of
-     * the project.
+     * Specifies where the resource is created. For Google Cloud resources, it
+     * is the full name of the project.
      * </pre>
      *
      * <code>string container = 2;</code>
@@ -2290,8 +2290,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies where the resource is created. For GCP, it is the full name of
-     * the project.
+     * Specifies where the resource is created. For Google Cloud resources, it
+     * is the full name of the project.
      * </pre>
      *
      * <code>string container = 2;</code>
@@ -2313,8 +2313,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies where the resource is created. For GCP, it is the full name of
-     * the project.
+     * Specifies where the resource is created. For Google Cloud resources, it
+     * is the full name of the project.
      * </pre>
      *
      * <code>string container = 2;</code>
@@ -2334,8 +2334,8 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies where the resource is created. For GCP, it is the full name of
-     * the project.
+     * Specifies where the resource is created. For Google Cloud resources, it
+     * is the full name of the project.
      * </pre>
      *
      * <code>string container = 2;</code>
@@ -2735,7 +2735,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The location of the resources. It supports returning only regional
-     * locations in GCP.
+     * locations in Google Cloud.
      * </pre>
      *
      * <code>string location = 6;</code>
@@ -2752,7 +2752,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The location of the resources. It supports returning only regional
-     * locations in GCP.
+     * locations in Google Cloud.
      * </pre>
      *
      * <code>string location = 6;</code>
@@ -2782,7 +2782,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The location of the resources. It supports returning only regional
-     * locations in GCP.
+     * locations in Google Cloud.
      * </pre>
      *
      * <code>string location = 6;</code>
@@ -2812,7 +2812,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The location of the resources. It supports returning only regional
-     * locations in GCP.
+     * locations in Google Cloud.
      * </pre>
      *
      * <code>string location = 6;</code>
@@ -2835,7 +2835,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The location of the resources. It supports returning only regional
-     * locations in GCP.
+     * locations in Google Cloud.
      * </pre>
      *
      * <code>string location = 6;</code>
@@ -2856,7 +2856,7 @@ public final class Dimension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The location of the resources. It supports returning only regional
-     * locations in GCP.
+     * locations in Google Cloud.
      * </pre>
      *
      * <code>string location = 6;</code>

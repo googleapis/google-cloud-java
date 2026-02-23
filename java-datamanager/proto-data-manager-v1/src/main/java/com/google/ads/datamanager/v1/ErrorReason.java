@@ -25,6 +25,7 @@ package com.google.ads.datamanager.v1;
  *
  * <pre>
  * Error reasons for Data Manager API.
+ * NOTE: This enum is not frozen and new values may be added in the future.
  * </pre>
  *
  * Protobuf enum {@code google.ads.datamanager.v1.ErrorReason}
@@ -558,6 +559,482 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOO_MANY_ELEMENTS = 51;</code>
    */
   TOO_MANY_ELEMENTS(51),
+  /**
+   *
+   *
+   * <pre>
+   * The resource already exists.
+   * </pre>
+   *
+   * <code>ALREADY_EXISTS = 52;</code>
+   */
+  ALREADY_EXISTS(52),
+  /**
+   *
+   *
+   * <pre>
+   * Attempted to set an immutable field for an update request.
+   * </pre>
+   *
+   * <code>IMMUTABLE_FIELD_FOR_UPDATE = 53;</code>
+   */
+  IMMUTABLE_FIELD_FOR_UPDATE(53),
+  /**
+   *
+   *
+   * <pre>
+   * The resource name is invalid.
+   * </pre>
+   *
+   * <code>INVALID_RESOURCE_NAME = 54;</code>
+   */
+  INVALID_RESOURCE_NAME(54),
+  /**
+   *
+   *
+   * <pre>
+   * The query filter is invalid.
+   * </pre>
+   *
+   * <code>INVALID_FILTER = 55;</code>
+   */
+  INVALID_FILTER(55),
+  /**
+   *
+   *
+   * <pre>
+   * The update mask is invalid.
+   * </pre>
+   *
+   * <code>INVALID_UPDATE_MASK = 56;</code>
+   */
+  INVALID_UPDATE_MASK(56),
+  /**
+   *
+   *
+   * <pre>
+   * The page token is invalid.
+   * </pre>
+   *
+   * <code>INVALID_PAGE_TOKEN = 57;</code>
+   */
+  INVALID_PAGE_TOKEN(57),
+  /**
+   *
+   *
+   * <pre>
+   * Cannot update a license that has been disabled.
+   * </pre>
+   *
+   * <code>CANNOT_UPDATE_DISABLED_LICENSE = 58;</code>
+   */
+  CANNOT_UPDATE_DISABLED_LICENSE(58),
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive user lists cannot be licensed to this client.
+   * </pre>
+   *
+   * <code>CANNOT_CREATE_LICENSE_FOR_SENSITIVE_USERLIST = 59;</code>
+   */
+  CANNOT_CREATE_LICENSE_FOR_SENSITIVE_USERLIST(59),
+  /**
+   *
+   *
+   * <pre>
+   * Cost too low for this license.
+   * </pre>
+   *
+   * <code>INSUFFICIENT_COST = 60;</code>
+   */
+  INSUFFICIENT_COST(60),
+  /**
+   *
+   *
+   * <pre>
+   * Reseller license cannot be disabled since it is in use.
+   * </pre>
+   *
+   * <code>CANNOT_DISABLE_LICENSE = 61;</code>
+   */
+  CANNOT_DISABLE_LICENSE(61),
+  /**
+   *
+   *
+   * <pre>
+   * Invalid client account id.
+   * </pre>
+   *
+   * <code>INVALID_CLIENT_ACCOUNT_ID = 62;</code>
+   */
+  INVALID_CLIENT_ACCOUNT_ID(62),
+  /**
+   *
+   *
+   * <pre>
+   * Non-zero cost not allowed for this client account.
+   * </pre>
+   *
+   * <code>PRICING_ONLY_ZERO_COST_ALLOWED = 63;</code>
+   */
+  PRICING_ONLY_ZERO_COST_ALLOWED(63),
+  /**
+   *
+   *
+   * <pre>
+   * Cost too high for this license.
+   * </pre>
+   *
+   * <code>PRICE_TOO_HIGH = 64;</code>
+   */
+  PRICE_TOO_HIGH(64),
+  /**
+   *
+   *
+   * <pre>
+   * Customer not allowed to create license.
+   * </pre>
+   *
+   * <code>CUSTOMER_NOT_ALLOWED_TO_CREATE_LICENSE = 65;</code>
+   */
+  CUSTOMER_NOT_ALLOWED_TO_CREATE_LICENSE(65),
+  /**
+   *
+   *
+   * <pre>
+   * Pricing end date is invalid for this license.
+   * </pre>
+   *
+   * <code>INVALID_PRICING_END_DATE = 66;</code>
+   */
+  INVALID_PRICING_END_DATE(66),
+  /**
+   *
+   *
+   * <pre>
+   * Logical user list with shared or licensed segment cannot be licensed.
+   * </pre>
+   *
+   * <code>CANNOT_LICENSE_LOGICAL_LIST_WITH_LICENSED_OR_SHARED_SEGMENT = 67;</code>
+   */
+  CANNOT_LICENSE_LOGICAL_LIST_WITH_LICENSED_OR_SHARED_SEGMENT(67),
+  /**
+   *
+   *
+   * <pre>
+   * Client customer's account type in the request does not match the customer's
+   * actual account type.
+   * </pre>
+   *
+   * <code>MISMATCHED_ACCOUNT_TYPE = 68;</code>
+   */
+  MISMATCHED_ACCOUNT_TYPE(68),
+  /**
+   *
+   *
+   * <pre>
+   * License type does not support media share cost.
+   * </pre>
+   *
+   * <code>MEDIA_SHARE_COST_NOT_ALLOWED_FOR_LICENSE_TYPE = 69;</code>
+   */
+  MEDIA_SHARE_COST_NOT_ALLOWED_FOR_LICENSE_TYPE(69),
+  /**
+   *
+   *
+   * <pre>
+   * Client customer type does not support media share cost.
+   * </pre>
+   *
+   * <code>MEDIA_SHARE_COST_NOT_ALLOWED_FOR_CLIENT_CUSTOMER = 70;</code>
+   */
+  MEDIA_SHARE_COST_NOT_ALLOWED_FOR_CLIENT_CUSTOMER(70),
+  /**
+   *
+   *
+   * <pre>
+   * Invalid media share cost.
+   * </pre>
+   *
+   * <code>INVALID_MEDIA_SHARE_COST = 71;</code>
+   */
+  INVALID_MEDIA_SHARE_COST(71),
+  /**
+   *
+   *
+   * <pre>
+   * Invalid cost type.
+   * </pre>
+   *
+   * <code>INVALID_COST_TYPE = 72;</code>
+   */
+  INVALID_COST_TYPE(72),
+  /**
+   *
+   *
+   * <pre>
+   * UserList type does not support media share cost.
+   * </pre>
+   *
+   * <code>MEDIA_SHARE_COST_NOT_ALLOWED_FOR_NON_COMMERCE_USER_LIST = 73;</code>
+   */
+  MEDIA_SHARE_COST_NOT_ALLOWED_FOR_NON_COMMERCE_USER_LIST(73),
+  /**
+   *
+   *
+   * <pre>
+   * Max cost is only allowed for cost_type MEDIA_SHARE.
+   * </pre>
+   *
+   * <code>MAX_COST_NOT_ALLOWED = 74;</code>
+   */
+  MAX_COST_NOT_ALLOWED(74),
+  /**
+   *
+   *
+   * <pre>
+   * Commerce audience can only be directly licensed.
+   * </pre>
+   *
+   * <code>COMMERCE_AUDIENCE_CAN_ONLY_BE_DIRECTLY_LICENSED = 75;</code>
+   */
+  COMMERCE_AUDIENCE_CAN_ONLY_BE_DIRECTLY_LICENSED(75),
+  /**
+   *
+   *
+   * <pre>
+   * The description is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DESCRIPTION = 76;</code>
+   */
+  INVALID_DESCRIPTION(76),
+  /**
+   *
+   *
+   * <pre>
+   * The display name is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DISPLAY_NAME = 77;</code>
+   */
+  INVALID_DISPLAY_NAME(77),
+  /**
+   *
+   *
+   * <pre>
+   * The display name is already being used for another user list for the
+   * account.
+   * </pre>
+   *
+   * <code>DISPLAY_NAME_ALREADY_USED = 78;</code>
+   */
+  DISPLAY_NAME_ALREADY_USED(78),
+  /**
+   *
+   *
+   * <pre>
+   * Ownership is required to modify the user list.
+   * </pre>
+   *
+   * <code>OWNERSHIP_REQUIRED_FOR_UPDATE = 79;</code>
+   */
+  OWNERSHIP_REQUIRED_FOR_UPDATE(79),
+  /**
+   *
+   *
+   * <pre>
+   * The user list type is read-only and does not support mutation.
+   * </pre>
+   *
+   * <code>USER_LIST_MUTATION_NOT_SUPPORTED = 80;</code>
+   */
+  USER_LIST_MUTATION_NOT_SUPPORTED(80),
+  /**
+   *
+   *
+   * <pre>
+   * A user list which is privacy sensitive or legal rejected cannot be mutated
+   * by external users.
+   * </pre>
+   *
+   * <code>SENSITIVE_USER_LIST_IMMUTABLE = 81;</code>
+   */
+  SENSITIVE_USER_LIST_IMMUTABLE(81),
+  /**
+   *
+   *
+   * <pre>
+   * The remarketing user list's billable record field cannot be modified once
+   * it is set.
+   * </pre>
+   *
+   * <code>BILLABLE_RECORD_COUNT_IMMUTABLE = 82;</code>
+   */
+  BILLABLE_RECORD_COUNT_IMMUTABLE(82),
+  /**
+   *
+   *
+   * <pre>
+   * The user list name is reserved for system lists.
+   * </pre>
+   *
+   * <code>USER_LIST_NAME_RESERVED = 83;</code>
+   */
+  USER_LIST_NAME_RESERVED(83),
+  /**
+   *
+   *
+   * <pre>
+   * The advertiser needs to be allowlisted to use remarketing lists created
+   * from advertiser uploaded data.
+   * </pre>
+   *
+   * <code>ADVERTISER_NOT_ALLOWLISTED_FOR_UPLOADED_DATA = 84;</code>
+   */
+  ADVERTISER_NOT_ALLOWLISTED_FOR_UPLOADED_DATA(84),
+  /**
+   *
+   *
+   * <pre>
+   * The partner audience source is not supported for the user list type.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_PARTNER_AUDIENCE_SOURCE = 85;</code>
+   */
+  UNSUPPORTED_PARTNER_AUDIENCE_SOURCE(85),
+  /**
+   *
+   *
+   * <pre>
+   * Setting the `commerce_partner` field is only supported if the
+   * `partner_audience_source` is `COMMERCE_AUDIENCE`.
+   * </pre>
+   *
+   * <code>COMMERCE_PARTNER_NOT_ALLOWED = 86;</code>
+   */
+  COMMERCE_PARTNER_NOT_ALLOWED(86),
+  /**
+   *
+   *
+   * <pre>
+   * The `partner_audience_info` field is not supported for the user list type.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_PARTNER_AUDIENCE_INFO = 87;</code>
+   */
+  UNSUPPORTED_PARTNER_AUDIENCE_INFO(87),
+  /**
+   *
+   *
+   * <pre>
+   * Partner Match user lists cannot be created by manager accounts.
+   * </pre>
+   *
+   * <code>PARTNER_MATCH_FOR_MANAGER_ACCOUNT_DISALLOWED = 88;</code>
+   */
+  PARTNER_MATCH_FOR_MANAGER_ACCOUNT_DISALLOWED(88),
+  /**
+   *
+   *
+   * <pre>
+   * The data partner is not allowlisted for THIRD_PARTY_PARTNER_DATA.
+   * </pre>
+   *
+   * <code>DATA_PARTNER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA = 89;</code>
+   */
+  DATA_PARTNER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA(89),
+  /**
+   *
+   *
+   * <pre>
+   * The advertiser has not accepted the partner's terms of service.
+   * </pre>
+   *
+   * <code>ADVERTISER_TOS_NOT_ACCEPTED = 90;</code>
+   */
+  ADVERTISER_TOS_NOT_ACCEPTED(90),
+  /**
+   *
+   *
+   * <pre>
+   * The advertiser is not allowlisted for THIRD_PARTY_PARTNER_DATA.
+   * </pre>
+   *
+   * <code>ADVERTISER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA = 91;</code>
+   */
+  ADVERTISER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA(91),
+  /**
+   *
+   *
+   * <pre>
+   * This user list type is not supported for this account.
+   * </pre>
+   *
+   * <code>USER_LIST_TYPE_NOT_SUPPORTED_FOR_ACCOUNT = 92;</code>
+   */
+  USER_LIST_TYPE_NOT_SUPPORTED_FOR_ACCOUNT(92),
+  /**
+   *
+   *
+   * <pre>
+   * The `commerce_partner` field is invalid.
+   * </pre>
+   *
+   * <code>INVALID_COMMERCE_PARTNER = 93;</code>
+   */
+  INVALID_COMMERCE_PARTNER(93),
+  /**
+   *
+   *
+   * <pre>
+   * The data provider is not allowlisted to create commerce audiences.
+   * </pre>
+   *
+   * <code>CUSTOMER_NOT_ALLOWLISTED_FOR_COMMERCE_AUDIENCE = 94;</code>
+   */
+  CUSTOMER_NOT_ALLOWLISTED_FOR_COMMERCE_AUDIENCE(94),
+  /**
+   *
+   *
+   * <pre>
+   * The user list upload key types are not supported.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_USER_LIST_UPLOAD_KEY_TYPES = 95;</code>
+   */
+  UNSUPPORTED_USER_LIST_UPLOAD_KEY_TYPES(95),
+  /**
+   *
+   *
+   * <pre>
+   * The ingested user list info config is not supported.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_INGESTED_USER_LIST_INFO_CONFIG = 96;</code>
+   */
+  UNSUPPORTED_INGESTED_USER_LIST_INFO_CONFIG(96),
+  /**
+   *
+   *
+   * <pre>
+   * The account types are not supported for the user list type.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_ACCOUNT_TYPES_FOR_USER_LIST_TYPE = 97;</code>
+   */
+  UNSUPPORTED_ACCOUNT_TYPES_FOR_USER_LIST_TYPE(97),
+  /**
+   *
+   *
+   * <pre>
+   * The account types are not supported for the partner link.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK = 98;</code>
+   */
+  UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK(98),
   UNRECOGNIZED(-1),
   ;
 
@@ -1150,6 +1627,529 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int TOO_MANY_ELEMENTS_VALUE = 51;
 
+  /**
+   *
+   *
+   * <pre>
+   * The resource already exists.
+   * </pre>
+   *
+   * <code>ALREADY_EXISTS = 52;</code>
+   */
+  public static final int ALREADY_EXISTS_VALUE = 52;
+
+  /**
+   *
+   *
+   * <pre>
+   * Attempted to set an immutable field for an update request.
+   * </pre>
+   *
+   * <code>IMMUTABLE_FIELD_FOR_UPDATE = 53;</code>
+   */
+  public static final int IMMUTABLE_FIELD_FOR_UPDATE_VALUE = 53;
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name is invalid.
+   * </pre>
+   *
+   * <code>INVALID_RESOURCE_NAME = 54;</code>
+   */
+  public static final int INVALID_RESOURCE_NAME_VALUE = 54;
+
+  /**
+   *
+   *
+   * <pre>
+   * The query filter is invalid.
+   * </pre>
+   *
+   * <code>INVALID_FILTER = 55;</code>
+   */
+  public static final int INVALID_FILTER_VALUE = 55;
+
+  /**
+   *
+   *
+   * <pre>
+   * The update mask is invalid.
+   * </pre>
+   *
+   * <code>INVALID_UPDATE_MASK = 56;</code>
+   */
+  public static final int INVALID_UPDATE_MASK_VALUE = 56;
+
+  /**
+   *
+   *
+   * <pre>
+   * The page token is invalid.
+   * </pre>
+   *
+   * <code>INVALID_PAGE_TOKEN = 57;</code>
+   */
+  public static final int INVALID_PAGE_TOKEN_VALUE = 57;
+
+  /**
+   *
+   *
+   * <pre>
+   * Cannot update a license that has been disabled.
+   * </pre>
+   *
+   * <code>CANNOT_UPDATE_DISABLED_LICENSE = 58;</code>
+   */
+  public static final int CANNOT_UPDATE_DISABLED_LICENSE_VALUE = 58;
+
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive user lists cannot be licensed to this client.
+   * </pre>
+   *
+   * <code>CANNOT_CREATE_LICENSE_FOR_SENSITIVE_USERLIST = 59;</code>
+   */
+  public static final int CANNOT_CREATE_LICENSE_FOR_SENSITIVE_USERLIST_VALUE = 59;
+
+  /**
+   *
+   *
+   * <pre>
+   * Cost too low for this license.
+   * </pre>
+   *
+   * <code>INSUFFICIENT_COST = 60;</code>
+   */
+  public static final int INSUFFICIENT_COST_VALUE = 60;
+
+  /**
+   *
+   *
+   * <pre>
+   * Reseller license cannot be disabled since it is in use.
+   * </pre>
+   *
+   * <code>CANNOT_DISABLE_LICENSE = 61;</code>
+   */
+  public static final int CANNOT_DISABLE_LICENSE_VALUE = 61;
+
+  /**
+   *
+   *
+   * <pre>
+   * Invalid client account id.
+   * </pre>
+   *
+   * <code>INVALID_CLIENT_ACCOUNT_ID = 62;</code>
+   */
+  public static final int INVALID_CLIENT_ACCOUNT_ID_VALUE = 62;
+
+  /**
+   *
+   *
+   * <pre>
+   * Non-zero cost not allowed for this client account.
+   * </pre>
+   *
+   * <code>PRICING_ONLY_ZERO_COST_ALLOWED = 63;</code>
+   */
+  public static final int PRICING_ONLY_ZERO_COST_ALLOWED_VALUE = 63;
+
+  /**
+   *
+   *
+   * <pre>
+   * Cost too high for this license.
+   * </pre>
+   *
+   * <code>PRICE_TOO_HIGH = 64;</code>
+   */
+  public static final int PRICE_TOO_HIGH_VALUE = 64;
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer not allowed to create license.
+   * </pre>
+   *
+   * <code>CUSTOMER_NOT_ALLOWED_TO_CREATE_LICENSE = 65;</code>
+   */
+  public static final int CUSTOMER_NOT_ALLOWED_TO_CREATE_LICENSE_VALUE = 65;
+
+  /**
+   *
+   *
+   * <pre>
+   * Pricing end date is invalid for this license.
+   * </pre>
+   *
+   * <code>INVALID_PRICING_END_DATE = 66;</code>
+   */
+  public static final int INVALID_PRICING_END_DATE_VALUE = 66;
+
+  /**
+   *
+   *
+   * <pre>
+   * Logical user list with shared or licensed segment cannot be licensed.
+   * </pre>
+   *
+   * <code>CANNOT_LICENSE_LOGICAL_LIST_WITH_LICENSED_OR_SHARED_SEGMENT = 67;</code>
+   */
+  public static final int CANNOT_LICENSE_LOGICAL_LIST_WITH_LICENSED_OR_SHARED_SEGMENT_VALUE = 67;
+
+  /**
+   *
+   *
+   * <pre>
+   * Client customer's account type in the request does not match the customer's
+   * actual account type.
+   * </pre>
+   *
+   * <code>MISMATCHED_ACCOUNT_TYPE = 68;</code>
+   */
+  public static final int MISMATCHED_ACCOUNT_TYPE_VALUE = 68;
+
+  /**
+   *
+   *
+   * <pre>
+   * License type does not support media share cost.
+   * </pre>
+   *
+   * <code>MEDIA_SHARE_COST_NOT_ALLOWED_FOR_LICENSE_TYPE = 69;</code>
+   */
+  public static final int MEDIA_SHARE_COST_NOT_ALLOWED_FOR_LICENSE_TYPE_VALUE = 69;
+
+  /**
+   *
+   *
+   * <pre>
+   * Client customer type does not support media share cost.
+   * </pre>
+   *
+   * <code>MEDIA_SHARE_COST_NOT_ALLOWED_FOR_CLIENT_CUSTOMER = 70;</code>
+   */
+  public static final int MEDIA_SHARE_COST_NOT_ALLOWED_FOR_CLIENT_CUSTOMER_VALUE = 70;
+
+  /**
+   *
+   *
+   * <pre>
+   * Invalid media share cost.
+   * </pre>
+   *
+   * <code>INVALID_MEDIA_SHARE_COST = 71;</code>
+   */
+  public static final int INVALID_MEDIA_SHARE_COST_VALUE = 71;
+
+  /**
+   *
+   *
+   * <pre>
+   * Invalid cost type.
+   * </pre>
+   *
+   * <code>INVALID_COST_TYPE = 72;</code>
+   */
+  public static final int INVALID_COST_TYPE_VALUE = 72;
+
+  /**
+   *
+   *
+   * <pre>
+   * UserList type does not support media share cost.
+   * </pre>
+   *
+   * <code>MEDIA_SHARE_COST_NOT_ALLOWED_FOR_NON_COMMERCE_USER_LIST = 73;</code>
+   */
+  public static final int MEDIA_SHARE_COST_NOT_ALLOWED_FOR_NON_COMMERCE_USER_LIST_VALUE = 73;
+
+  /**
+   *
+   *
+   * <pre>
+   * Max cost is only allowed for cost_type MEDIA_SHARE.
+   * </pre>
+   *
+   * <code>MAX_COST_NOT_ALLOWED = 74;</code>
+   */
+  public static final int MAX_COST_NOT_ALLOWED_VALUE = 74;
+
+  /**
+   *
+   *
+   * <pre>
+   * Commerce audience can only be directly licensed.
+   * </pre>
+   *
+   * <code>COMMERCE_AUDIENCE_CAN_ONLY_BE_DIRECTLY_LICENSED = 75;</code>
+   */
+  public static final int COMMERCE_AUDIENCE_CAN_ONLY_BE_DIRECTLY_LICENSED_VALUE = 75;
+
+  /**
+   *
+   *
+   * <pre>
+   * The description is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DESCRIPTION = 76;</code>
+   */
+  public static final int INVALID_DESCRIPTION_VALUE = 76;
+
+  /**
+   *
+   *
+   * <pre>
+   * The display name is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DISPLAY_NAME = 77;</code>
+   */
+  public static final int INVALID_DISPLAY_NAME_VALUE = 77;
+
+  /**
+   *
+   *
+   * <pre>
+   * The display name is already being used for another user list for the
+   * account.
+   * </pre>
+   *
+   * <code>DISPLAY_NAME_ALREADY_USED = 78;</code>
+   */
+  public static final int DISPLAY_NAME_ALREADY_USED_VALUE = 78;
+
+  /**
+   *
+   *
+   * <pre>
+   * Ownership is required to modify the user list.
+   * </pre>
+   *
+   * <code>OWNERSHIP_REQUIRED_FOR_UPDATE = 79;</code>
+   */
+  public static final int OWNERSHIP_REQUIRED_FOR_UPDATE_VALUE = 79;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user list type is read-only and does not support mutation.
+   * </pre>
+   *
+   * <code>USER_LIST_MUTATION_NOT_SUPPORTED = 80;</code>
+   */
+  public static final int USER_LIST_MUTATION_NOT_SUPPORTED_VALUE = 80;
+
+  /**
+   *
+   *
+   * <pre>
+   * A user list which is privacy sensitive or legal rejected cannot be mutated
+   * by external users.
+   * </pre>
+   *
+   * <code>SENSITIVE_USER_LIST_IMMUTABLE = 81;</code>
+   */
+  public static final int SENSITIVE_USER_LIST_IMMUTABLE_VALUE = 81;
+
+  /**
+   *
+   *
+   * <pre>
+   * The remarketing user list's billable record field cannot be modified once
+   * it is set.
+   * </pre>
+   *
+   * <code>BILLABLE_RECORD_COUNT_IMMUTABLE = 82;</code>
+   */
+  public static final int BILLABLE_RECORD_COUNT_IMMUTABLE_VALUE = 82;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user list name is reserved for system lists.
+   * </pre>
+   *
+   * <code>USER_LIST_NAME_RESERVED = 83;</code>
+   */
+  public static final int USER_LIST_NAME_RESERVED_VALUE = 83;
+
+  /**
+   *
+   *
+   * <pre>
+   * The advertiser needs to be allowlisted to use remarketing lists created
+   * from advertiser uploaded data.
+   * </pre>
+   *
+   * <code>ADVERTISER_NOT_ALLOWLISTED_FOR_UPLOADED_DATA = 84;</code>
+   */
+  public static final int ADVERTISER_NOT_ALLOWLISTED_FOR_UPLOADED_DATA_VALUE = 84;
+
+  /**
+   *
+   *
+   * <pre>
+   * The partner audience source is not supported for the user list type.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_PARTNER_AUDIENCE_SOURCE = 85;</code>
+   */
+  public static final int UNSUPPORTED_PARTNER_AUDIENCE_SOURCE_VALUE = 85;
+
+  /**
+   *
+   *
+   * <pre>
+   * Setting the `commerce_partner` field is only supported if the
+   * `partner_audience_source` is `COMMERCE_AUDIENCE`.
+   * </pre>
+   *
+   * <code>COMMERCE_PARTNER_NOT_ALLOWED = 86;</code>
+   */
+  public static final int COMMERCE_PARTNER_NOT_ALLOWED_VALUE = 86;
+
+  /**
+   *
+   *
+   * <pre>
+   * The `partner_audience_info` field is not supported for the user list type.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_PARTNER_AUDIENCE_INFO = 87;</code>
+   */
+  public static final int UNSUPPORTED_PARTNER_AUDIENCE_INFO_VALUE = 87;
+
+  /**
+   *
+   *
+   * <pre>
+   * Partner Match user lists cannot be created by manager accounts.
+   * </pre>
+   *
+   * <code>PARTNER_MATCH_FOR_MANAGER_ACCOUNT_DISALLOWED = 88;</code>
+   */
+  public static final int PARTNER_MATCH_FOR_MANAGER_ACCOUNT_DISALLOWED_VALUE = 88;
+
+  /**
+   *
+   *
+   * <pre>
+   * The data partner is not allowlisted for THIRD_PARTY_PARTNER_DATA.
+   * </pre>
+   *
+   * <code>DATA_PARTNER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA = 89;</code>
+   */
+  public static final int DATA_PARTNER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA_VALUE = 89;
+
+  /**
+   *
+   *
+   * <pre>
+   * The advertiser has not accepted the partner's terms of service.
+   * </pre>
+   *
+   * <code>ADVERTISER_TOS_NOT_ACCEPTED = 90;</code>
+   */
+  public static final int ADVERTISER_TOS_NOT_ACCEPTED_VALUE = 90;
+
+  /**
+   *
+   *
+   * <pre>
+   * The advertiser is not allowlisted for THIRD_PARTY_PARTNER_DATA.
+   * </pre>
+   *
+   * <code>ADVERTISER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA = 91;</code>
+   */
+  public static final int ADVERTISER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA_VALUE = 91;
+
+  /**
+   *
+   *
+   * <pre>
+   * This user list type is not supported for this account.
+   * </pre>
+   *
+   * <code>USER_LIST_TYPE_NOT_SUPPORTED_FOR_ACCOUNT = 92;</code>
+   */
+  public static final int USER_LIST_TYPE_NOT_SUPPORTED_FOR_ACCOUNT_VALUE = 92;
+
+  /**
+   *
+   *
+   * <pre>
+   * The `commerce_partner` field is invalid.
+   * </pre>
+   *
+   * <code>INVALID_COMMERCE_PARTNER = 93;</code>
+   */
+  public static final int INVALID_COMMERCE_PARTNER_VALUE = 93;
+
+  /**
+   *
+   *
+   * <pre>
+   * The data provider is not allowlisted to create commerce audiences.
+   * </pre>
+   *
+   * <code>CUSTOMER_NOT_ALLOWLISTED_FOR_COMMERCE_AUDIENCE = 94;</code>
+   */
+  public static final int CUSTOMER_NOT_ALLOWLISTED_FOR_COMMERCE_AUDIENCE_VALUE = 94;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user list upload key types are not supported.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_USER_LIST_UPLOAD_KEY_TYPES = 95;</code>
+   */
+  public static final int UNSUPPORTED_USER_LIST_UPLOAD_KEY_TYPES_VALUE = 95;
+
+  /**
+   *
+   *
+   * <pre>
+   * The ingested user list info config is not supported.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_INGESTED_USER_LIST_INFO_CONFIG = 96;</code>
+   */
+  public static final int UNSUPPORTED_INGESTED_USER_LIST_INFO_CONFIG_VALUE = 96;
+
+  /**
+   *
+   *
+   * <pre>
+   * The account types are not supported for the user list type.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_ACCOUNT_TYPES_FOR_USER_LIST_TYPE = 97;</code>
+   */
+  public static final int UNSUPPORTED_ACCOUNT_TYPES_FOR_USER_LIST_TYPE_VALUE = 97;
+
+  /**
+   *
+   *
+   * <pre>
+   * The account types are not supported for the partner link.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK = 98;</code>
+   */
+  public static final int UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK_VALUE = 98;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -1278,6 +2278,100 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return FIELD_VALUE_TOO_LONG;
       case 51:
         return TOO_MANY_ELEMENTS;
+      case 52:
+        return ALREADY_EXISTS;
+      case 53:
+        return IMMUTABLE_FIELD_FOR_UPDATE;
+      case 54:
+        return INVALID_RESOURCE_NAME;
+      case 55:
+        return INVALID_FILTER;
+      case 56:
+        return INVALID_UPDATE_MASK;
+      case 57:
+        return INVALID_PAGE_TOKEN;
+      case 58:
+        return CANNOT_UPDATE_DISABLED_LICENSE;
+      case 59:
+        return CANNOT_CREATE_LICENSE_FOR_SENSITIVE_USERLIST;
+      case 60:
+        return INSUFFICIENT_COST;
+      case 61:
+        return CANNOT_DISABLE_LICENSE;
+      case 62:
+        return INVALID_CLIENT_ACCOUNT_ID;
+      case 63:
+        return PRICING_ONLY_ZERO_COST_ALLOWED;
+      case 64:
+        return PRICE_TOO_HIGH;
+      case 65:
+        return CUSTOMER_NOT_ALLOWED_TO_CREATE_LICENSE;
+      case 66:
+        return INVALID_PRICING_END_DATE;
+      case 67:
+        return CANNOT_LICENSE_LOGICAL_LIST_WITH_LICENSED_OR_SHARED_SEGMENT;
+      case 68:
+        return MISMATCHED_ACCOUNT_TYPE;
+      case 69:
+        return MEDIA_SHARE_COST_NOT_ALLOWED_FOR_LICENSE_TYPE;
+      case 70:
+        return MEDIA_SHARE_COST_NOT_ALLOWED_FOR_CLIENT_CUSTOMER;
+      case 71:
+        return INVALID_MEDIA_SHARE_COST;
+      case 72:
+        return INVALID_COST_TYPE;
+      case 73:
+        return MEDIA_SHARE_COST_NOT_ALLOWED_FOR_NON_COMMERCE_USER_LIST;
+      case 74:
+        return MAX_COST_NOT_ALLOWED;
+      case 75:
+        return COMMERCE_AUDIENCE_CAN_ONLY_BE_DIRECTLY_LICENSED;
+      case 76:
+        return INVALID_DESCRIPTION;
+      case 77:
+        return INVALID_DISPLAY_NAME;
+      case 78:
+        return DISPLAY_NAME_ALREADY_USED;
+      case 79:
+        return OWNERSHIP_REQUIRED_FOR_UPDATE;
+      case 80:
+        return USER_LIST_MUTATION_NOT_SUPPORTED;
+      case 81:
+        return SENSITIVE_USER_LIST_IMMUTABLE;
+      case 82:
+        return BILLABLE_RECORD_COUNT_IMMUTABLE;
+      case 83:
+        return USER_LIST_NAME_RESERVED;
+      case 84:
+        return ADVERTISER_NOT_ALLOWLISTED_FOR_UPLOADED_DATA;
+      case 85:
+        return UNSUPPORTED_PARTNER_AUDIENCE_SOURCE;
+      case 86:
+        return COMMERCE_PARTNER_NOT_ALLOWED;
+      case 87:
+        return UNSUPPORTED_PARTNER_AUDIENCE_INFO;
+      case 88:
+        return PARTNER_MATCH_FOR_MANAGER_ACCOUNT_DISALLOWED;
+      case 89:
+        return DATA_PARTNER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA;
+      case 90:
+        return ADVERTISER_TOS_NOT_ACCEPTED;
+      case 91:
+        return ADVERTISER_NOT_ALLOWLISTED_FOR_THIRD_PARTY_PARTNER_DATA;
+      case 92:
+        return USER_LIST_TYPE_NOT_SUPPORTED_FOR_ACCOUNT;
+      case 93:
+        return INVALID_COMMERCE_PARTNER;
+      case 94:
+        return CUSTOMER_NOT_ALLOWLISTED_FOR_COMMERCE_AUDIENCE;
+      case 95:
+        return UNSUPPORTED_USER_LIST_UPLOAD_KEY_TYPES;
+      case 96:
+        return UNSUPPORTED_INGESTED_USER_LIST_INFO_CONFIG;
+      case 97:
+        return UNSUPPORTED_ACCOUNT_TYPES_FOR_USER_LIST_TYPE;
+      case 98:
+        return UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK;
       default:
         return null;
     }

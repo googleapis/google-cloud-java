@@ -69,7 +69,7 @@ public interface RevisionRefOrBuilder
    *
    *
    * <pre>
-   * Reads the revision given by the ID.
+   * Reads the revision given by the id.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
@@ -82,7 +82,7 @@ public interface RevisionRefOrBuilder
    *
    *
    * <pre>
-   * Reads the revision given by the ID.
+   * Reads the revision given by the id.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
@@ -95,7 +95,7 @@ public interface RevisionRefOrBuilder
    *
    *
    * <pre>
-   * Reads the revision given by the ID.
+   * Reads the revision given by the id.
    * </pre>
    *
    * <code>string revision_id = 2;</code>

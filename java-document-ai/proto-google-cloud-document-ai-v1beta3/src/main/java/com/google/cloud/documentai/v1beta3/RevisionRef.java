@@ -377,7 +377,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reads the revision given by the ID.
+   * Reads the revision given by the id.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
@@ -392,7 +392,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reads the revision given by the ID.
+   * Reads the revision given by the id.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
@@ -420,7 +420,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reads the revision given by the ID.
+   * Reads the revision given by the id.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
@@ -1051,7 +1051,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reads the revision given by the ID.
+     * Reads the revision given by the id.
      * </pre>
      *
      * <code>string revision_id = 2;</code>
@@ -1067,7 +1067,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reads the revision given by the ID.
+     * Reads the revision given by the id.
      * </pre>
      *
      * <code>string revision_id = 2;</code>
@@ -1096,7 +1096,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reads the revision given by the ID.
+     * Reads the revision given by the id.
      * </pre>
      *
      * <code>string revision_id = 2;</code>
@@ -1125,7 +1125,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reads the revision given by the ID.
+     * Reads the revision given by the id.
      * </pre>
      *
      * <code>string revision_id = 2;</code>
@@ -1147,7 +1147,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reads the revision given by the ID.
+     * Reads the revision given by the id.
      * </pre>
      *
      * <code>string revision_id = 2;</code>
@@ -1167,7 +1167,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reads the revision given by the ID.
+     * Reads the revision given by the id.
      * </pre>
      *
      * <code>string revision_id = 2;</code>

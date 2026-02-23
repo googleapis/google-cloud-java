@@ -92,6 +92,10 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_RetiredResource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_RetiredResource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -166,7 +170,7 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "\021AttestationFormat\022\"\n"
           + "\036ATTESTATION_FORMAT_UNSPECIFIED\020\000\022\030\n"
           + "\024CAVIUM_V1_COMPRESSED\020\003\022\030\n"
-          + "\024CAVIUM_V2_COMPRESSED\020\004\"\347\023\n"
+          + "\024CAVIUM_V2_COMPRESSED\020\004\"\251\025\n"
           + "\020CryptoKeyVersion\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022J\n"
           + "\005state\030\003 \001(\0162;.google.cloud.kms.v"
@@ -191,7 +195,7 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "#external_destruction_failure_reason\030\024 \001(\tB\003\340A\003\022^\n"
           + "!external_protection_level_options\030\021"
           + " \001(\01323.google.cloud.kms.v1.ExternalProtectionLevelOptions\022\036\n"
-          + "\021reimport_eligible\030\022 \001(\010B\003\340A\003\"\310\010\n"
+          + "\021reimport_eligible\030\022 \001(\010B\003\340A\003\"\212\n\n"
           + "\031CryptoKeyVersionAlgorithm\022,\n"
           + "(CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED\020\000\022\037\n"
           + "\033GOOGLE_SYMMETRIC_ENCRYPTION\020\001\022\017\n"
@@ -234,8 +238,14 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "ML_KEM_768\020/\022\017\n"
           + "\013ML_KEM_1024\0200\022\r\n"
           + "\tKEM_XWING\020?\022\025\n"
-          + "\021PQ_SIGN_ML_DSA_65\0208\022\035\n"
-          + "\031PQ_SIGN_SLH_DSA_SHA2_128S\0209\"\233\002\n"
+          + "\021PQ_SIGN_ML_DSA_44\020D\022\025\n"
+          + "\021PQ_SIGN_ML_DSA_65\0208\022\025\n"
+          + "\021PQ_SIGN_ML_DSA_87\020E\022\035\n"
+          + "\031PQ_SIGN_SLH_DSA_SHA2_128S\0209\022)\n"
+          + "%PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256\020<\022!\n"
+          + "\035PQ_SIGN_ML_DSA_44_EXTERNAL_MU\020F\022!\n"
+          + "\035PQ_SIGN_ML_DSA_65_EXTERNAL_MU\020C\022!\n"
+          + "\035PQ_SIGN_ML_DSA_87_EXTERNAL_MU\020G\"\233\002\n"
           + "\025CryptoKeyVersionState\022(\n"
           + "$CRYPTO_KEY_VERSION_STATE_UNSPECIFIED\020\000\022\026\n"
           + "\022PENDING_GENERATION\020\005\022\013\n"
@@ -252,16 +262,16 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "\024CryptoKeyVersionView\022\'\n"
           + "#CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED\020\000\022\010\n"
           + "\004FULL\020\001:\252\001\352A\246\001\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/l"
-          + "ocations/{location}/keyRings/{key_ring}/"
-          + "cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\"U\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/locatio"
+          + "ns/{location}/keyRings/{key_ring}/crypto"
+          + "Keys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\"U\n"
           + "\017ChecksummedData\022\014\n"
           + "\004data\030\003 \001(\014\0224\n"
           + "\017crc32c_checksum\030\002 \001(\0132\033.google.protobuf.Int64Value\"\214\005\n"
           + "\tPublicKey\022\013\n"
           + "\003pem\030\001 \001(\t\022R\n"
-          + "\talgorithm\030\002 \001(\0162?.go"
-          + "ogle.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm\022/\n\n"
+          + "\talgorithm\030\002 \001(\0162?.google.c"
+          + "loud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm\022/\n\n"
           + "pem_crc32c\030\003 \001(\0132\033.google.protobuf.Int64Value\022\014\n"
           + "\004name\030\004 \001(\t\022>\n"
           + "\020protection_level\030\005 \001(\0162$.google.cloud.kms.v1.ProtectionLevel\022I\n"
@@ -274,12 +284,11 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "\003DER\020\002\022\014\n"
           + "\010NIST_PQC\020\003\022\023\n"
           + "\017XWING_RAW_BYTES\020\004:\256\001\352A\252\001\n"
-          + "!cloudkms.googleapis.com/PublicKey\022\204\001projects"
-          + "/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryp"
-          + "toKeyVersions/{crypto_key_version}/publicKey\"\373\010\n"
+          + "!cloudkms.googleapis.com/PublicKey\022\204\001projects/{proj"
+          + "ect}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyV"
+          + "ersions/{crypto_key_version}/publicKey\"\373\010\n"
           + "\tImportJob\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022J\n"
-          + "\r"
+          + "\004name\030\001 \001(\tB\003\340A\003\022J\n\r"
           + "import_method\030\002"
           + " \001(\0162+.google.cloud.kms.v1.ImportJob.ImportMethodB\006\340A\002\340A\005\022F\n"
           + "\020protection_level\030\t"
@@ -310,17 +319,27 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "\024RSA_OAEP_4096_SHA256\020\006\"c\n"
           + "\016ImportJobState\022 \n"
           + "\034IMPORT_JOB_STATE_UNSPECIFIED\020\000\022\026\n"
-          + "\022PENDING_GENERATION\020\001\022\n\n"
+          + "\022PENDING_GENERATION\020\001\022\n"
+          + "\n"
           + "\006ACTIVE\020\002\022\013\n"
           + "\007EXPIRED\020\003:{\352Ax\n"
-          + "!cloudkms.googleapis.com/ImportJob\022Sprojects/"
-          + "{project}/locations/{location}/keyRings/{key_ring}/importJobs/{import_job}\"[\n"
+          + "!cloudkms.googleapis.com/ImportJob\022Sprojects/{proje"
+          + "ct}/locations/{location}/keyRings/{key_ring}/importJobs/{import_job}\"[\n"
           + "\036ExternalProtectionLevelOptions\022\030\n"
           + "\020external_key_uri\030\001 \001(\t\022\037\n"
           + "\027ekm_connection_key_path\030\002 \001(\t\"b\n"
           + "\035KeyAccessJustificationsPolicy\022A\n"
           + "\026allowed_access_reasons\030\001"
-          + " \003(\0162!.google.cloud.kms.v1.AccessReason*\201\001\n"
+          + " \003(\0162!.google.cloud.kms.v1.AccessReason\"\271\002\n"
+          + "\017RetiredResource\022\024\n"
+          + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\036\n"
+          + "\021original_resource\030\002 \001(\tB\003\340A\003\022\032\n\r"
+          + "resource_type\030\003 \001(\tB\003\340A\003\0224\n"
+          + "\013delete_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\235\001\352A\231\001\n"
+          + "\'cloudkms.googleapis.com/RetiredResource\022Kprojects/{pro"
+          + "ject}/locations/{location}/retiredResour"
+          + "ces/{retired_resource}*\020retiredResources2\017retiredResource*\201\001\n"
           + "\017ProtectionLevel\022 \n"
           + "\034PROTECTION_LEVEL_UNSPECIFIED\020\000\022\014\n"
           + "\010SOFTWARE\020\001\022\007\n"
@@ -342,9 +361,9 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "#GOOGLE_RESPONSE_TO_PRODUCTION_ALERT\020\n"
           + "\022*\n"
           + "&CUSTOMER_AUTHORIZED_WORKFLOW_SERVICING\020\013B\205\001\n"
-          + "\027com.google.cloud.kms.v1B\021KmsResourcesP"
-          + "rotoP\001Z)cloud.google.com/go/kms/apiv1/km"
-          + "spb;kmspb\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
+          + "\027com.google.cloud.kms.v1B\021KmsResourcesProtoP\001Z)cl"
+          + "oud.google.com/go/kms/apiv1/kmspb;kmspb\252"
+          + "\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -498,6 +517,14 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_descriptor,
             new java.lang.String[] {
               "AllowedAccessReasons",
+            });
+    internal_static_google_cloud_kms_v1_RetiredResource_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_kms_v1_RetiredResource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_RetiredResource_descriptor,
+            new java.lang.String[] {
+              "Name", "OriginalResource", "ResourceType", "DeleteTime",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -40,6 +40,7 @@ public class SyncDeleteJob {
           DeleteJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       storageBatchOperationsClient.deleteJob(request);
     }

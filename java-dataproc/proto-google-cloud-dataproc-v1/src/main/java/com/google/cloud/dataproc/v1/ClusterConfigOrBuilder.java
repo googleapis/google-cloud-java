@@ -30,6 +30,36 @@ public interface ClusterConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig.ClusterType cluster_type = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterType.
+   */
+  int getClusterTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig.ClusterType cluster_type = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clusterType.
+   */
+  com.google.cloud.dataproc.v1.ClusterConfig.ClusterType getClusterType();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The cluster tier.
    * </pre>
    *

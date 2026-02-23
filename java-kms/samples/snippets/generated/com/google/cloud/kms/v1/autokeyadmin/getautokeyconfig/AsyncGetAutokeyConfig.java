@@ -38,7 +38,7 @@ public class AsyncGetAutokeyConfig {
     try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
       GetAutokeyConfigRequest request =
           GetAutokeyConfigRequest.newBuilder()
-              .setName(AutokeyConfigName.of("[FOLDER]").toString())
+              .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
               .build();
       ApiFuture<AutokeyConfig> future =
           autokeyAdminClient.getAutokeyConfigCallable().futureCall(request);

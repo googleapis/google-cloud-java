@@ -76,6 +76,948 @@ public final class Part extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1.Part.Builder.class);
   }
 
+  public interface MediaResolutionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Part.MediaResolution)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The tokenization quality used for given media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+     *
+     * @return Whether the level field is set.
+     */
+    boolean hasLevel();
+
+    /**
+     *
+     *
+     * <pre>
+     * The tokenization quality used for given media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+     *
+     * @return The enum numeric value on the wire for level.
+     */
+    int getLevelValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The tokenization quality used for given media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+     *
+     * @return The level.
+     */
+    com.google.cloud.aiplatform.v1.Part.MediaResolution.Level getLevel();
+
+    com.google.cloud.aiplatform.v1.Part.MediaResolution.ValueCase getValueCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.Part.MediaResolution}
+   */
+  public static final class MediaResolution extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Part.MediaResolution)
+      MediaResolutionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "MediaResolution");
+    }
+
+    // Use MediaResolution.newBuilder() to construct.
+    private MediaResolution(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MediaResolution() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1_Part_MediaResolution_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1_Part_MediaResolution_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.Part.MediaResolution.class,
+              com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The media resolution level.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.aiplatform.v1.Part.MediaResolution.Level}
+     */
+    public enum Level implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution has not been set.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_UNSPECIFIED = 0;</code>
+       */
+      MEDIA_RESOLUTION_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to low.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_LOW = 1;</code>
+       */
+      MEDIA_RESOLUTION_LOW(1),
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to medium.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_MEDIUM = 2;</code>
+       */
+      MEDIA_RESOLUTION_MEDIUM(2),
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to high.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_HIGH = 3;</code>
+       */
+      MEDIA_RESOLUTION_HIGH(3),
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to ultra high. This is for image only.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_ULTRA_HIGH = 4;</code>
+       */
+      MEDIA_RESOLUTION_ULTRA_HIGH(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Level");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution has not been set.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_UNSPECIFIED = 0;</code>
+       */
+      public static final int MEDIA_RESOLUTION_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to low.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_LOW = 1;</code>
+       */
+      public static final int MEDIA_RESOLUTION_LOW_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to medium.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_MEDIUM = 2;</code>
+       */
+      public static final int MEDIA_RESOLUTION_MEDIUM_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to high.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_HIGH = 3;</code>
+       */
+      public static final int MEDIA_RESOLUTION_HIGH_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Media resolution set to ultra high. This is for image only.
+       * </pre>
+       *
+       * <code>MEDIA_RESOLUTION_ULTRA_HIGH = 4;</code>
+       */
+      public static final int MEDIA_RESOLUTION_ULTRA_HIGH_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Level valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Level forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MEDIA_RESOLUTION_UNSPECIFIED;
+          case 1:
+            return MEDIA_RESOLUTION_LOW;
+          case 2:
+            return MEDIA_RESOLUTION_MEDIUM;
+          case 3:
+            return MEDIA_RESOLUTION_HIGH;
+          case 4:
+            return MEDIA_RESOLUTION_ULTRA_HIGH;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Level> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Level> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Level>() {
+            public Level findValueByNumber(int number) {
+              return Level.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.Part.MediaResolution.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Level[] VALUES = values();
+
+      public static Level valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Level(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.Part.MediaResolution.Level)
+    }
+
+    private int valueCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object value_;
+
+    public enum ValueCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      LEVEL(1),
+      VALUE_NOT_SET(0);
+      private final int value;
+
+      private ValueCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ValueCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return LEVEL;
+          case 0:
+            return VALUE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ValueCase getValueCase() {
+      return ValueCase.forNumber(valueCase_);
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The tokenization quality used for given media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+     *
+     * @return Whether the level field is set.
+     */
+    public boolean hasLevel() {
+      return valueCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tokenization quality used for given media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+     *
+     * @return The enum numeric value on the wire for level.
+     */
+    public int getLevelValue() {
+      if (valueCase_ == 1) {
+        return (java.lang.Integer) value_;
+      }
+      return 0;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tokenization quality used for given media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+     *
+     * @return The level.
+     */
+    public com.google.cloud.aiplatform.v1.Part.MediaResolution.Level getLevel() {
+      if (valueCase_ == 1) {
+        com.google.cloud.aiplatform.v1.Part.MediaResolution.Level result =
+            com.google.cloud.aiplatform.v1.Part.MediaResolution.Level.forNumber(
+                (java.lang.Integer) value_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.Part.MediaResolution.Level.UNRECOGNIZED
+            : result;
+      }
+      return com.google.cloud.aiplatform.v1.Part.MediaResolution.Level.MEDIA_RESOLUTION_UNSPECIFIED;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (valueCase_ == 1) {
+        output.writeEnum(1, ((java.lang.Integer) value_));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (valueCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(1, ((java.lang.Integer) value_));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.Part.MediaResolution)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.Part.MediaResolution other =
+          (com.google.cloud.aiplatform.v1.Part.MediaResolution) obj;
+
+      if (!getValueCase().equals(other.getValueCase())) return false;
+      switch (valueCase_) {
+        case 1:
+          if (getLevelValue() != other.getLevelValue()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (valueCase_) {
+        case 1:
+          hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+          hash = (53 * hash) + getLevelValue();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.Part.MediaResolution prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Part.MediaResolution}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Part.MediaResolution)
+        com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_Part_MediaResolution_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_Part_MediaResolution_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Part.MediaResolution.class,
+                com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.Part.MediaResolution.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        valueCase_ = 0;
+        value_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_Part_MediaResolution_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Part.MediaResolution getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Part.MediaResolution build() {
+        com.google.cloud.aiplatform.v1.Part.MediaResolution result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Part.MediaResolution buildPartial() {
+        com.google.cloud.aiplatform.v1.Part.MediaResolution result =
+            new com.google.cloud.aiplatform.v1.Part.MediaResolution(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Part.MediaResolution result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.cloud.aiplatform.v1.Part.MediaResolution result) {
+        result.valueCase_ = valueCase_;
+        result.value_ = this.value_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.Part.MediaResolution) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.Part.MediaResolution) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.Part.MediaResolution other) {
+        if (other == com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance())
+          return this;
+        switch (other.getValueCase()) {
+          case LEVEL:
+            {
+              setLevelValue(other.getLevelValue());
+              break;
+            }
+          case VALUE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  int rawValue = input.readEnum();
+                  valueCase_ = 1;
+                  value_ = rawValue;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int valueCase_ = 0;
+      private java.lang.Object value_;
+
+      public ValueCase getValueCase() {
+        return ValueCase.forNumber(valueCase_);
+      }
+
+      public Builder clearValue() {
+        valueCase_ = 0;
+        value_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The tokenization quality used for given media.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+       *
+       * @return Whether the level field is set.
+       */
+      @java.lang.Override
+      public boolean hasLevel() {
+        return valueCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The tokenization quality used for given media.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+       *
+       * @return The enum numeric value on the wire for level.
+       */
+      @java.lang.Override
+      public int getLevelValue() {
+        if (valueCase_ == 1) {
+          return ((java.lang.Integer) value_).intValue();
+        }
+        return 0;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The tokenization quality used for given media.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for level to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelValue(int value) {
+        valueCase_ = 1;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The tokenization quality used for given media.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+       *
+       * @return The level.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Part.MediaResolution.Level getLevel() {
+        if (valueCase_ == 1) {
+          com.google.cloud.aiplatform.v1.Part.MediaResolution.Level result =
+              com.google.cloud.aiplatform.v1.Part.MediaResolution.Level.forNumber(
+                  (java.lang.Integer) value_);
+          return result == null
+              ? com.google.cloud.aiplatform.v1.Part.MediaResolution.Level.UNRECOGNIZED
+              : result;
+        }
+        return com.google.cloud.aiplatform.v1.Part.MediaResolution.Level
+            .MEDIA_RESOLUTION_UNSPECIFIED;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The tokenization quality used for given media.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+       *
+       * @param value The level to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevel(com.google.cloud.aiplatform.v1.Part.MediaResolution.Level value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        valueCase_ = 1;
+        value_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The tokenization quality used for given media.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Part.MediaResolution.Level level = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLevel() {
+        if (valueCase_ == 1) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Part.MediaResolution)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Part.MediaResolution)
+    private static final com.google.cloud.aiplatform.v1.Part.MediaResolution DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.Part.MediaResolution();
+    }
+
+    public static com.google.cloud.aiplatform.v1.Part.MediaResolution getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MediaResolution> PARSER =
+        new com.google.protobuf.AbstractParser<MediaResolution>() {
+          @java.lang.Override
+          public MediaResolution parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MediaResolution> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MediaResolution> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Part.MediaResolution getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   private int dataCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -739,6 +1681,63 @@ public final class Part extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.aiplatform.v1.VideoMetadata.getDefaultInstance();
   }
 
+  public static final int MEDIA_RESOLUTION_FIELD_NUMBER = 12;
+  private com.google.cloud.aiplatform.v1.Part.MediaResolution mediaResolution_;
+
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+   *
+   * @return Whether the mediaResolution field is set.
+   */
+  @java.lang.Override
+  public boolean hasMediaResolution() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+   *
+   * @return The mediaResolution.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Part.MediaResolution getMediaResolution() {
+    return mediaResolution_ == null
+        ? com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance()
+        : mediaResolution_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder
+      getMediaResolutionOrBuilder() {
+    return mediaResolution_ == null
+        ? com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance()
+        : mediaResolution_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -782,6 +1781,9 @@ public final class Part extends com.google.protobuf.GeneratedMessage
     }
     if (!thoughtSignature_.isEmpty()) {
       output.writeBytes(11, thoughtSignature_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(12, getMediaResolution());
     }
     getUnknownFields().writeTo(output);
   }
@@ -836,6 +1838,9 @@ public final class Part extends com.google.protobuf.GeneratedMessage
     if (!thoughtSignature_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(11, thoughtSignature_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getMediaResolution());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -853,6 +1858,10 @@ public final class Part extends com.google.protobuf.GeneratedMessage
 
     if (getThought() != other.getThought()) return false;
     if (!getThoughtSignature().equals(other.getThoughtSignature())) return false;
+    if (hasMediaResolution() != other.hasMediaResolution()) return false;
+    if (hasMediaResolution()) {
+      if (!getMediaResolution().equals(other.getMediaResolution())) return false;
+    }
     if (!getDataCase().equals(other.getDataCase())) return false;
     switch (dataCase_) {
       case 1:
@@ -902,6 +1911,10 @@ public final class Part extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThought());
     hash = (37 * hash) + THOUGHT_SIGNATURE_FIELD_NUMBER;
     hash = (53 * hash) + getThoughtSignature().hashCode();
+    if (hasMediaResolution()) {
+      hash = (37 * hash) + MEDIA_RESOLUTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMediaResolution().hashCode();
+    }
     switch (dataCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -1077,10 +2090,19 @@ public final class Part extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.aiplatform.v1.Part.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetMediaResolutionFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1109,6 +2131,11 @@ public final class Part extends com.google.protobuf.GeneratedMessage
       thoughtSignature_ = com.google.protobuf.ByteString.EMPTY;
       if (videoMetadataBuilder_ != null) {
         videoMetadataBuilder_.clear();
+      }
+      mediaResolution_ = null;
+      if (mediaResolutionBuilder_ != null) {
+        mediaResolutionBuilder_.dispose();
+        mediaResolutionBuilder_ = null;
       }
       dataCase_ = 0;
       data_ = null;
@@ -1156,6 +2183,13 @@ public final class Part extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.thoughtSignature_ = thoughtSignature_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.mediaResolution_ =
+            mediaResolutionBuilder_ == null ? mediaResolution_ : mediaResolutionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1.Part result) {
@@ -1203,6 +2237,9 @@ public final class Part extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getThoughtSignature().isEmpty()) {
         setThoughtSignature(other.getThoughtSignature());
+      }
+      if (other.hasMediaResolution()) {
+        mergeMediaResolution(other.getMediaResolution());
       }
       switch (other.getDataCase()) {
         case TEXT:
@@ -1352,6 +2389,13 @@ public final class Part extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetMediaResolutionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3356,6 +4400,212 @@ public final class Part extends com.google.protobuf.GeneratedMessage
       metadataCase_ = 4;
       onChanged();
       return videoMetadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.Part.MediaResolution mediaResolution_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.Part.MediaResolution,
+            com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder,
+            com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder>
+        mediaResolutionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     *
+     * @return Whether the mediaResolution field is set.
+     */
+    public boolean hasMediaResolution() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     *
+     * @return The mediaResolution.
+     */
+    public com.google.cloud.aiplatform.v1.Part.MediaResolution getMediaResolution() {
+      if (mediaResolutionBuilder_ == null) {
+        return mediaResolution_ == null
+            ? com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance()
+            : mediaResolution_;
+      } else {
+        return mediaResolutionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    public Builder setMediaResolution(com.google.cloud.aiplatform.v1.Part.MediaResolution value) {
+      if (mediaResolutionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mediaResolution_ = value;
+      } else {
+        mediaResolutionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    public Builder setMediaResolution(
+        com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder builderForValue) {
+      if (mediaResolutionBuilder_ == null) {
+        mediaResolution_ = builderForValue.build();
+      } else {
+        mediaResolutionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    public Builder mergeMediaResolution(com.google.cloud.aiplatform.v1.Part.MediaResolution value) {
+      if (mediaResolutionBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && mediaResolution_ != null
+            && mediaResolution_
+                != com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance()) {
+          getMediaResolutionBuilder().mergeFrom(value);
+        } else {
+          mediaResolution_ = value;
+        }
+      } else {
+        mediaResolutionBuilder_.mergeFrom(value);
+      }
+      if (mediaResolution_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    public Builder clearMediaResolution() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      mediaResolution_ = null;
+      if (mediaResolutionBuilder_ != null) {
+        mediaResolutionBuilder_.dispose();
+        mediaResolutionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder getMediaResolutionBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetMediaResolutionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder
+        getMediaResolutionOrBuilder() {
+      if (mediaResolutionBuilder_ != null) {
+        return mediaResolutionBuilder_.getMessageOrBuilder();
+      } else {
+        return mediaResolution_ == null
+            ? com.google.cloud.aiplatform.v1.Part.MediaResolution.getDefaultInstance()
+            : mediaResolution_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * per part media resolution.
+     * Media resolution for the input media.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.Part.MediaResolution,
+            com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder,
+            com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder>
+        internalGetMediaResolutionFieldBuilder() {
+      if (mediaResolutionBuilder_ == null) {
+        mediaResolutionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.Part.MediaResolution,
+                com.google.cloud.aiplatform.v1.Part.MediaResolution.Builder,
+                com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder>(
+                getMediaResolution(), getParentForChildren(), isClean());
+        mediaResolution_ = null;
+      }
+      return mediaResolutionBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Part)

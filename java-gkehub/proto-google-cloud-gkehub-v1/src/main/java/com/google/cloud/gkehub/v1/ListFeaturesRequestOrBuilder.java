@@ -182,4 +182,20 @@ public interface ListFeaturesRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will return partial results when
+   * some regions are unreachable and the unreachable field in Feature proto
+   * will be populated. If set to false, the request will fail when some regions
+   * are unreachable.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  boolean getReturnPartialSuccess();
 }

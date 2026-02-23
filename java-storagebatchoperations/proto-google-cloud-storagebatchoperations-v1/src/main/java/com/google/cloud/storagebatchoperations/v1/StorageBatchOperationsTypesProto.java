@@ -45,6 +45,10 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_storagebatchoperations_v1_Job_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_storagebatchoperations_v1_BucketOperation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_storagebatchoperations_v1_BucketOperation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_storagebatchoperations_v1_BucketList_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_storagebatchoperations_v1_BucketList_fieldAccessorTable;
@@ -113,7 +117,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "Kgoogle/cloud/storagebatchoperations/v1/storage_batch_operations_types.proto\022&g"
           + "oogle.cloud.storagebatchoperations.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\032\037google/protobuf/timestamp.proto\032\025google/rpc/code.proto\"\221"
+          + "pi/resource.proto\032\037google/protobuf/timestamp.proto\032\025google/rpc/code.proto\"\277"
           + "\t\n"
           + "\003Job\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
@@ -140,36 +144,76 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "oud.storagebatchoperations.v1.ErrorSummaryB\003\340A\003\022E\n"
           + "\005state\030\017 \001(\01621.google.cloud.st"
           + "oragebatchoperations.v1.Job.StateB\003\340A\003\022\024\n"
-          + "\007dry_run\030\026 \001(\010B\003\340A\001\"T\n"
+          + "\007dry_run\030\026 \001(\010B\003\340A\001\022 \n"
+          + "\023is_multi_bucket_job\030\030 \001(\010B\003\340A\003\"`\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007RUNNING\020\001\022\r\n"
           + "\tSUCCEEDED\020\002\022\014\n"
           + "\010CANCELED\020\003\022\n\n"
-          + "\006FAILED\020\004:m\352Aj\n"
-          + ")storagebatchoperations.googleapis.com/Job\0222proj"
-          + "ects/{project}/locations/{location}/jobs/{job}*\004jobs2\003jobB\010\n"
+          + "\006FAILED\020\004\022\n\n"
+          + "\006QUEUED\020\005:m\352Aj\n"
+          + ")storagebatchoperations.googleapis.com/Job"
+          + "\0222projects/{project}/locations/{location}/jobs/{job}*\004jobs2\003jobB\010\n"
           + "\006sourceB\020\n"
+          + "\016transformation\"\341\t\n"
+          + "\017BucketOperation\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
+          + "\013bucket_name\030\002 \001(\t\022I\n"
+          + "\013prefix_list\030\003"
+          + " \001(\01322.google.cloud.storagebatchoperations.v1.PrefixListH\000\022D\n"
+          + "\010manifest\030\004"
+          + " \001(\01320.google.cloud.storagebatchoperations.v1.ManifestH\000\022P\n"
+          + "\017put_object_hold\030\013 \001("
+          + "\01325.google.cloud.storagebatchoperations.v1.PutObjectHoldH\001\022M\n\r"
+          + "delete_object\030\014 \001("
+          + "\01324.google.cloud.storagebatchoperations.v1.DeleteObjectH\001\022K\n"
+          + "\014put_metadata\030\r"
+          + " \001(\01323.google.cloud.storagebatchoperations.v1.PutMetadataH\001\022O\n"
+          + "\016rewrite_object\030\016 \001(\01325"
+          + ".google.cloud.storagebatchoperations.v1.RewriteObjectH\001\0224\n"
+          + "\013create_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n\n"
+          + "start_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n\r"
+          + "complete_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022G\n"
+          + "\010counters\030\010 \001(\01320.g"
+          + "oogle.cloud.storagebatchoperations.v1.CountersB\003\340A\003\022R\n"
+          + "\017error_summaries\030\t \003(\01324.g"
+          + "oogle.cloud.storagebatchoperations.v1.ErrorSummaryB\003\340A\003\022Q\n"
+          + "\005state\030\n"
+          + " \001(\0162=.google."
+          + "cloud.storagebatchoperations.v1.BucketOperation.StateB\003\340A\003\"`\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006QUEUED\020\001\022\013\n"
+          + "\007RUNNING\020\002\022\r\n"
+          + "\tSUCCEEDED\020\003\022\014\n"
+          + "\010CANCELED\020\004\022\n\n"
+          + "\006FAILED\020\005:\266\001\352A\262\001\n"
+          + "5storagebatchoperations.googleapis.com/BucketOperation\022Vprojects/{project}/l"
+          + "ocations/{location}/jobs/{job}/bucketOpe"
+          + "rations/{bucket_operation}*\020bucketoperations2\017bucketOperationB\026\n"
+          + "\024object_configurationB\020\n"
           + "\016transformation\"\246\002\n\n"
           + "BucketList\022O\n"
-          + "\007buckets\030\001 \003(\01329."
-          + "google.cloud.storagebatchoperations.v1.BucketList.BucketB\003\340A\002\032\306\001\n"
+          + "\007buckets\030\001 \003(\01329.google.cloud.storageba"
+          + "tchoperations.v1.BucketList.BucketB\003\340A\002\032\306\001\n"
           + "\006Bucket\022\023\n"
           + "\006bucket\030\001 \001(\tB\003\340A\002\022I\n"
-          + "\013prefix_list\030\002 \001(\01322.goo"
-          + "gle.cloud.storagebatchoperations.v1.PrefixListH\000\022D\n"
-          + "\010manifest\030\003 \001(\01320.google.clou"
-          + "d.storagebatchoperations.v1.ManifestH\000B\026\n"
+          + "\013prefix_list\030\002"
+          + " \001(\01322.google.cloud.storagebatchoperations.v1.PrefixListH\000\022D\n"
+          + "\010manifest\030\003"
+          + " \001(\01320.google.cloud.storagebatchoperations.v1.ManifestH\000B\026\n"
           + "\024object_configuration\"*\n"
           + "\010Manifest\022\036\n"
           + "\021manifest_location\030\002 \001(\tB\003\340A\002\"3\n\n"
           + "PrefixList\022%\n"
           + "\030included_object_prefixes\030\002 \003(\tB\003\340A\001\"\216\002\n\r"
           + "PutObjectHold\022]\n"
-          + "\016temporary_hold\030\001 \001("
-          + "\0162@.google.cloud.storagebatchoperations.v1.PutObjectHold.HoldStatusB\003\340A\002\022_\n"
-          + "\020event_based_hold\030\002 \001(\0162@.google.cloud.storag"
-          + "ebatchoperations.v1.PutObjectHold.HoldStatusB\003\340A\002\"=\n\n"
+          + "\016temporary_hold\030\001 \001(\0162@.google.cloud.stora"
+          + "gebatchoperations.v1.PutObjectHold.HoldStatusB\003\340A\002\022_\n"
+          + "\020event_based_hold\030\002 \001(\0162@.g"
+          + "oogle.cloud.storagebatchoperations.v1.PutObjectHold.HoldStatusB\003\340A\002\"=\n\n"
           + "HoldStatus\022\033\n"
           + "\027HOLD_STATUS_UNSPECIFIED\020\000\022\007\n"
           + "\003SET\020\001\022\t\n"
@@ -182,8 +226,8 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "\010_kms_key\"\223\002\n"
           + "\017ObjectRetention\022#\n"
           + "\021retain_until_time\030\001 \001(\tB\003\340A\002H\000\210\001\001\022g\n"
-          + "\016retention_mode\030\002 \001(\0162E.google"
-          + ".cloud.storagebatchoperations.v1.ObjectRetention.RetentionModeB\003\340A\002H\001\210\001\001\"I\n\r"
+          + "\016retention_mode\030\002 \001(\0162E.google.cloud.storagebatchope"
+          + "rations.v1.ObjectRetention.RetentionModeB\003\340A\002H\001\210\001\001\"I\n\r"
           + "RetentionMode\022\036\n"
           + "\032RETENTION_MODE_UNSPECIFIED\020\000\022\n\n"
           + "\006LOCKED\020\001\022\014\n"
@@ -197,10 +241,10 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "\014content_type\030\004 \001(\tB\003\340A\001H\003\210\001\001\022\037\n\r"
           + "cache_control\030\005 \001(\tB\003\340A\001H\004\210\001\001\022\035\n"
           + "\013custom_time\030\006 \001(\tB\003\340A\001H\005\210\001\001\022e\n"
-          + "\017custom_metadata\030\007 \003(\0132G.g"
-          + "oogle.cloud.storagebatchoperations.v1.PutMetadata.CustomMetadataEntryB\003\340A\001\022[\n"
-          + "\020object_retention\030\010 \001(\01327.google.cloud.stor"
-          + "agebatchoperations.v1.ObjectRetentionB\003\340A\001H\006\210\001\001\0325\n"
+          + "\017custom_metadata\030\007 \003(\0132G.google.cloud.storagebat"
+          + "choperations.v1.PutMetadata.CustomMetadataEntryB\003\340A\001\022[\n"
+          + "\020object_retention\030\010 \001(\01327"
+          + ".google.cloud.storagebatchoperations.v1.ObjectRetentionB\003\340A\001H\006\210\001\001\0325\n"
           + "\023CustomMetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\026\n"
@@ -214,8 +258,8 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "\014ErrorSummary\022)\n\n"
           + "error_code\030\001 \001(\0162\020.google.rpc.CodeB\003\340A\002\022\030\n"
           + "\013error_count\030\002 \001(\003B\003\340A\002\022U\n"
-          + "\021error_log_entries\030\003 \003(\01325.goog"
-          + "le.cloud.storagebatchoperations.v1.ErrorLogEntryB\003\340A\002\"J\n\r"
+          + "\021error_log_entries\030\003"
+          + " \003(\01325.google.cloud.storagebatchoperations.v1.ErrorLogEntryB\003\340A\002\"J\n\r"
           + "ErrorLogEntry\022\032\n\n"
           + "object_uri\030\001 \001(\tB\006\340A\002\340A\003\022\035\n\r"
           + "error_details\030\003 \003(\tB\006\340A\001\340A\003\"\255\001\n"
@@ -226,10 +270,10 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "\021total_bytes_found\030\004 \001(\003B\003\340A\003H\000\210\001\001B\024\n"
           + "\022_total_bytes_found\"\365\002\n\r"
           + "LoggingConfig\022^\n"
-          + "\013log_actions\030\001 \003(\0162D.google.cloud."
-          + "storagebatchoperations.v1.LoggingConfig.LoggableActionB\003\340A\002\022i\n"
-          + "\021log_action_states\030\002 \003(\0162I.google.cloud.storagebatchoperat"
-          + "ions.v1.LoggingConfig.LoggableActionStateB\003\340A\002\"@\n"
+          + "\013log_actions\030\001 \003"
+          + "(\0162D.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableActionB\003\340A\002\022i\n"
+          + "\021log_action_states\030\002 \003(\0162I.google.cloud."
+          + "storagebatchoperations.v1.LoggingConfig.LoggableActionStateB\003\340A\002\"@\n"
           + "\016LoggableAction\022\037\n"
           + "\033LOGGABLE_ACTION_UNSPECIFIED\020\000\022\r\n"
           + "\tTRANSFORM\020\006\"W\n"
@@ -237,13 +281,13 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "!LOGGABLE_ACTION_STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tSUCCEEDED\020\001\022\n\n"
           + "\006FAILED\020\002B\255\003\n"
-          + "*com.google.cloud.storagebatchoperations.v1B StorageBatchOperationsTypesPro"
-          + "toP\001Zbcloud.google.com/go/storagebatchoperations/apiv1/storagebatchoperationspb;"
-          + "storagebatchoperationspb\252\002&Google.Cloud."
-          + "StorageBatchOperations.V1\312\002&Google\\Cloud"
-          + "\\StorageBatchOperations\\V1\352\002)Google::Cloud::StorageBatchOperations::V1\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{"
-          + "project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
+          + "*com.google.cloud.storagebatchoperations.v1B StorageBatch"
+          + "OperationsTypesProtoP\001Zbcloud.google.com/go/storagebatchoperations/apiv1/storage"
+          + "batchoperationspb;storagebatchoperationspb\252\002&Google.Cloud.StorageBatchOperations"
+          + ".V1\312\002&Google\\Cloud\\StorageBatchOperation"
+          + "s\\V1\352\002)Google::Cloud::StorageBatchOperations::V1\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{lo"
+          + "cation}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -275,11 +319,35 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "ErrorSummaries",
               "State",
               "DryRun",
+              "IsMultiBucketJob",
               "Source",
               "Transformation",
             });
-    internal_static_google_cloud_storagebatchoperations_v1_BucketList_descriptor =
+    internal_static_google_cloud_storagebatchoperations_v1_BucketOperation_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_cloud_storagebatchoperations_v1_BucketOperation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_storagebatchoperations_v1_BucketOperation_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "BucketName",
+              "PrefixList",
+              "Manifest",
+              "PutObjectHold",
+              "DeleteObject",
+              "PutMetadata",
+              "RewriteObject",
+              "CreateTime",
+              "StartTime",
+              "CompleteTime",
+              "Counters",
+              "ErrorSummaries",
+              "State",
+              "ObjectConfiguration",
+              "Transformation",
+            });
+    internal_static_google_cloud_storagebatchoperations_v1_BucketList_descriptor =
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_storagebatchoperations_v1_BucketList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_BucketList_descriptor,
@@ -296,7 +364,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "Bucket", "PrefixList", "Manifest", "ObjectConfiguration",
             });
     internal_static_google_cloud_storagebatchoperations_v1_Manifest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_storagebatchoperations_v1_Manifest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_Manifest_descriptor,
@@ -304,7 +372,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "ManifestLocation",
             });
     internal_static_google_cloud_storagebatchoperations_v1_PrefixList_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_storagebatchoperations_v1_PrefixList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_PrefixList_descriptor,
@@ -312,7 +380,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "IncludedObjectPrefixes",
             });
     internal_static_google_cloud_storagebatchoperations_v1_PutObjectHold_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_storagebatchoperations_v1_PutObjectHold_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_PutObjectHold_descriptor,
@@ -320,7 +388,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "TemporaryHold", "EventBasedHold",
             });
     internal_static_google_cloud_storagebatchoperations_v1_DeleteObject_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_storagebatchoperations_v1_DeleteObject_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_DeleteObject_descriptor,
@@ -328,7 +396,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "PermanentObjectDeletionEnabled",
             });
     internal_static_google_cloud_storagebatchoperations_v1_RewriteObject_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_storagebatchoperations_v1_RewriteObject_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_RewriteObject_descriptor,
@@ -336,7 +404,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "KmsKey",
             });
     internal_static_google_cloud_storagebatchoperations_v1_ObjectRetention_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_storagebatchoperations_v1_ObjectRetention_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_ObjectRetention_descriptor,
@@ -344,7 +412,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "RetainUntilTime", "RetentionMode",
             });
     internal_static_google_cloud_storagebatchoperations_v1_PutMetadata_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_storagebatchoperations_v1_PutMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_PutMetadata_descriptor,
@@ -368,7 +436,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "Key", "Value",
             });
     internal_static_google_cloud_storagebatchoperations_v1_ErrorSummary_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_storagebatchoperations_v1_ErrorSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_ErrorSummary_descriptor,
@@ -376,7 +444,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "ErrorCode", "ErrorCount", "ErrorLogEntries",
             });
     internal_static_google_cloud_storagebatchoperations_v1_ErrorLogEntry_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_storagebatchoperations_v1_ErrorLogEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_ErrorLogEntry_descriptor,
@@ -384,7 +452,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "ObjectUri", "ErrorDetails",
             });
     internal_static_google_cloud_storagebatchoperations_v1_Counters_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_storagebatchoperations_v1_Counters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_Counters_descriptor,
@@ -392,7 +460,7 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
               "TotalObjectCount", "SucceededObjectCount", "FailedObjectCount", "TotalBytesFound",
             });
     internal_static_google_cloud_storagebatchoperations_v1_LoggingConfig_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_storagebatchoperations_v1_LoggingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_LoggingConfig_descriptor,

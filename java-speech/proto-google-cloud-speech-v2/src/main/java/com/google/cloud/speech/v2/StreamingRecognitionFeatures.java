@@ -51,7 +51,9 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     super(builder);
   }
 
-  private StreamingRecognitionFeatures() {}
+  private StreamingRecognitionFeatures() {
+    endpointingSensitivity_ = 0;
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
@@ -66,6 +68,216 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         .ensureFieldAccessorsInitialized(
             com.google.cloud.speech.v2.StreamingRecognitionFeatures.class,
             com.google.cloud.speech.v2.StreamingRecognitionFeatures.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Endpointing sensitivity is intended for applications that want to minimize
+   * result latency, possibly at the expense of quality. Some utterances may be
+   * broken up into multiple fragments.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity}
+   */
+  public enum EndpointingSensitivity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * If no value is specified, the values for
+     * ENDPOINTING_SENSITIVITY_STANDARD will be used.
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_UNSPECIFIED = 0;</code>
+     */
+    ENDPOINTING_SENSITIVITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Standard sensitivity, no optimization for latency.
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_STANDARD = 1;</code>
+     */
+    ENDPOINTING_SENSITIVITY_STANDARD(1),
+    /**
+     *
+     *
+     * <pre>
+     * Super short sensitivity, optimized for super short utterances like single
+     * words ("Yes", "No", "Hello", etc.) or a single phrase, command or short
+     * query (e.g. "check balance", "five dollars", "call Mom").
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_SUPERSHORT = 2;</code>
+     */
+    ENDPOINTING_SENSITIVITY_SUPERSHORT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Short sensitivity, optimized for short utterances like single sentences.
+     * (e.g. "Remind me to call the dentist tomorrow morning at nine",
+     * "Navigate to the nearest coffee shop that is currently open")
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_SHORT = 3;</code>
+     */
+    ENDPOINTING_SENSITIVITY_SHORT(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EndpointingSensitivity");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If no value is specified, the values for
+     * ENDPOINTING_SENSITIVITY_STANDARD will be used.
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int ENDPOINTING_SENSITIVITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Standard sensitivity, no optimization for latency.
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_STANDARD = 1;</code>
+     */
+    public static final int ENDPOINTING_SENSITIVITY_STANDARD_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Super short sensitivity, optimized for super short utterances like single
+     * words ("Yes", "No", "Hello", etc.) or a single phrase, command or short
+     * query (e.g. "check balance", "five dollars", "call Mom").
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_SUPERSHORT = 2;</code>
+     */
+    public static final int ENDPOINTING_SENSITIVITY_SUPERSHORT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Short sensitivity, optimized for short utterances like single sentences.
+     * (e.g. "Remind me to call the dentist tomorrow morning at nine",
+     * "Navigate to the nearest coffee shop that is currently open")
+     * </pre>
+     *
+     * <code>ENDPOINTING_SENSITIVITY_SHORT = 3;</code>
+     */
+    public static final int ENDPOINTING_SENSITIVITY_SHORT_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndpointingSensitivity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EndpointingSensitivity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ENDPOINTING_SENSITIVITY_UNSPECIFIED;
+        case 1:
+          return ENDPOINTING_SENSITIVITY_STANDARD;
+        case 2:
+          return ENDPOINTING_SENSITIVITY_SUPERSHORT;
+        case 3:
+          return ENDPOINTING_SENSITIVITY_SHORT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EndpointingSensitivity>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EndpointingSensitivity>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EndpointingSensitivity>() {
+              public EndpointingSensitivity findValueByNumber(int number) {
+                return EndpointingSensitivity.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.speech.v2.StreamingRecognitionFeatures.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final EndpointingSensitivity[] VALUES = values();
+
+    public static EndpointingSensitivity valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EndpointingSensitivity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity)
   }
 
   public interface VoiceActivityTimeoutOrBuilder
@@ -1313,6 +1525,52 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         : voiceActivityTimeout_;
   }
 
+  public static final int ENDPOINTING_SENSITIVITY_FIELD_NUMBER = 8;
+  private int endpointingSensitivity_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Endpointing sensitivity for this stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endpointingSensitivity.
+   */
+  @java.lang.Override
+  public int getEndpointingSensitivityValue() {
+    return endpointingSensitivity_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Endpointing sensitivity for this stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endpointingSensitivity.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+      getEndpointingSensitivity() {
+    com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity result =
+        com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity.forNumber(
+            endpointingSensitivity_);
+    return result == null
+        ? com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1336,6 +1594,12 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getVoiceActivityTimeout());
     }
+    if (endpointingSensitivity_
+        != com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+            .ENDPOINTING_SENSITIVITY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, endpointingSensitivity_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1354,6 +1618,12 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getVoiceActivityTimeout());
+    }
+    if (endpointingSensitivity_
+        != com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+            .ENDPOINTING_SENSITIVITY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, endpointingSensitivity_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1377,6 +1647,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     if (hasVoiceActivityTimeout()) {
       if (!getVoiceActivityTimeout().equals(other.getVoiceActivityTimeout())) return false;
     }
+    if (endpointingSensitivity_ != other.endpointingSensitivity_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1396,6 +1667,8 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       hash = (37 * hash) + VOICE_ACTIVITY_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getVoiceActivityTimeout().hashCode();
     }
+    hash = (37 * hash) + ENDPOINTING_SENSITIVITY_FIELD_NUMBER;
+    hash = (53 * hash) + endpointingSensitivity_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1553,6 +1826,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         voiceActivityTimeoutBuilder_.dispose();
         voiceActivityTimeoutBuilder_ = null;
       }
+      endpointingSensitivity_ = 0;
       return this;
     }
 
@@ -1603,6 +1877,9 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
                 : voiceActivityTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.endpointingSensitivity_ = endpointingSensitivity_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1627,6 +1904,9 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       }
       if (other.hasVoiceActivityTimeout()) {
         mergeVoiceActivityTimeout(other.getVoiceActivityTimeout());
+      }
+      if (other.endpointingSensitivity_ != 0) {
+        setEndpointingSensitivityValue(other.getEndpointingSensitivityValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1673,6 +1953,12 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 64:
+              {
+                endpointingSensitivity_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2055,6 +2341,117 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         voiceActivityTimeout_ = null;
       }
       return voiceActivityTimeoutBuilder_;
+    }
+
+    private int endpointingSensitivity_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Endpointing sensitivity for this stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for endpointingSensitivity.
+     */
+    @java.lang.Override
+    public int getEndpointingSensitivityValue() {
+      return endpointingSensitivity_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Endpointing sensitivity for this stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for endpointingSensitivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointingSensitivityValue(int value) {
+      endpointingSensitivity_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Endpointing sensitivity for this stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endpointingSensitivity.
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+        getEndpointingSensitivity() {
+      com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity result =
+          com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity.forNumber(
+              endpointingSensitivity_);
+      return result == null
+          ? com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Endpointing sensitivity for this stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The endpointingSensitivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointingSensitivity(
+        com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      endpointingSensitivity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Endpointing sensitivity for this stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointingSensitivity() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      endpointingSensitivity_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.speech.v2.StreamingRecognitionFeatures)

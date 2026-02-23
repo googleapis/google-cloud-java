@@ -1125,6 +1125,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *       DeleteRagCorpusRequest.newBuilder()
    *           .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
    *           .setForce(true)
+   *           .setForceDelete(true)
    *           .build();
    *   vertexRagDataServiceClient.deleteRagCorpusAsync(request).get();
    * }
@@ -1156,6 +1157,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *       DeleteRagCorpusRequest.newBuilder()
    *           .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
    *           .setForce(true)
+   *           .setForceDelete(true)
    *           .build();
    *   OperationFuture<Empty, DeleteOperationMetadata> future =
    *       vertexRagDataServiceClient.deleteRagCorpusOperationCallable().futureCall(request);
@@ -1187,6 +1189,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *       DeleteRagCorpusRequest.newBuilder()
    *           .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
    *           .setForce(true)
+   *           .setForceDelete(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       vertexRagDataServiceClient.deleteRagCorpusCallable().futureCall(request);

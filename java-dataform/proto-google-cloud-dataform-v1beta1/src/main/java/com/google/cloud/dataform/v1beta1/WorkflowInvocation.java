@@ -944,6 +944,72 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int PRIVATE_RESOURCE_METADATA_FIELD_NUMBER = 10;
+  private com.google.cloud.dataform.v1beta1.PrivateResourceMetadata privateResourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+   * from a compilation result and the compilation result is user-scoped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the privateResourceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateResourceMetadata() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+   * from a compilation result and the compilation result is user-scoped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The privateResourceMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata() {
+    return privateResourceMetadata_ == null
+        ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+        : privateResourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata indicating whether this resource is user-scoped.
+   * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+   * from a compilation result and the compilation result is user-scoped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+      getPrivateResourceMetadataOrBuilder() {
+    return privateResourceMetadata_ == null
+        ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+        : privateResourceMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -987,6 +1053,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, internalMetadata_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(10, getPrivateResourceMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1025,6 +1094,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, internalMetadata_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getPrivateResourceMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1059,6 +1133,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
     if (hasInternalMetadata()) {
       if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
+    if (hasPrivateResourceMetadata() != other.hasPrivateResourceMetadata()) return false;
+    if (hasPrivateResourceMetadata()) {
+      if (!getPrivateResourceMetadata().equals(other.getPrivateResourceMetadata())) return false;
     }
     if (!getCompilationSourceCase().equals(other.getCompilationSourceCase())) return false;
     switch (compilationSourceCase_) {
@@ -1103,6 +1181,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasInternalMetadata()) {
       hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
+    if (hasPrivateResourceMetadata()) {
+      hash = (37 * hash) + PRIVATE_RESOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateResourceMetadata().hashCode();
     }
     switch (compilationSourceCase_) {
       case 2:
@@ -1260,6 +1342,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         internalGetInvocationConfigFieldBuilder();
         internalGetInvocationTimingFieldBuilder();
         internalGetDataEncryptionStateFieldBuilder();
+        internalGetPrivateResourceMetadataFieldBuilder();
       }
     }
 
@@ -1286,6 +1369,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         dataEncryptionStateBuilder_ = null;
       }
       internalMetadata_ = "";
+      privateResourceMetadata_ = null;
+      if (privateResourceMetadataBuilder_ != null) {
+        privateResourceMetadataBuilder_.dispose();
+        privateResourceMetadataBuilder_ = null;
+      }
       compilationSourceCase_ = 0;
       compilationSource_ = null;
       return this;
@@ -1356,6 +1444,13 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         result.internalMetadata_ = internalMetadata_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.privateResourceMetadata_ =
+            privateResourceMetadataBuilder_ == null
+                ? privateResourceMetadata_
+                : privateResourceMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1403,6 +1498,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         internalMetadata_ = other.internalMetadata_;
         bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.hasPrivateResourceMetadata()) {
+        mergePrivateResourceMetadata(other.getPrivateResourceMetadata());
       }
       switch (other.getCompilationSourceCase()) {
         case COMPILATION_RESULT:
@@ -1509,6 +1607,14 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetPrivateResourceMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2998,6 +3104,242 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dataform.v1beta1.PrivateResourceMetadata privateResourceMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder>
+        privateResourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the privateResourceMetadata field is set.
+     */
+    public boolean hasPrivateResourceMetadata() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The privateResourceMetadata.
+     */
+    public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata getPrivateResourceMetadata() {
+      if (privateResourceMetadataBuilder_ == null) {
+        return privateResourceMetadata_ == null
+            ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+            : privateResourceMetadata_;
+      } else {
+        return privateResourceMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPrivateResourceMetadata(
+        com.google.cloud.dataform.v1beta1.PrivateResourceMetadata value) {
+      if (privateResourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateResourceMetadata_ = value;
+      } else {
+        privateResourceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPrivateResourceMetadata(
+        com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder builderForValue) {
+      if (privateResourceMetadataBuilder_ == null) {
+        privateResourceMetadata_ = builderForValue.build();
+      } else {
+        privateResourceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePrivateResourceMetadata(
+        com.google.cloud.dataform.v1beta1.PrivateResourceMetadata value) {
+      if (privateResourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && privateResourceMetadata_ != null
+            && privateResourceMetadata_
+                != com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()) {
+          getPrivateResourceMetadataBuilder().mergeFrom(value);
+        } else {
+          privateResourceMetadata_ = value;
+        }
+      } else {
+        privateResourceMetadataBuilder_.mergeFrom(value);
+      }
+      if (privateResourceMetadata_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPrivateResourceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      privateResourceMetadata_ = null;
+      if (privateResourceMetadataBuilder_ != null) {
+        privateResourceMetadataBuilder_.dispose();
+        privateResourceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder
+        getPrivateResourceMetadataBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetPrivateResourceMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
+        getPrivateResourceMetadataOrBuilder() {
+      if (privateResourceMetadataBuilder_ != null) {
+        return privateResourceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return privateResourceMetadata_ == null
+            ? com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()
+            : privateResourceMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata indicating whether this resource is user-scoped.
+     * `WorkflowInvocation` resource is `user_scoped` only if it is sourced
+     * from a compilation result and the compilation result is user-scoped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PrivateResourceMetadata private_resource_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder,
+            com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder>
+        internalGetPrivateResourceMetadataFieldBuilder() {
+      if (privateResourceMetadataBuilder_ == null) {
+        privateResourceMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
+                com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder,
+                com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder>(
+                getPrivateResourceMetadata(), getParentForChildren(), isClean());
+        privateResourceMetadata_ = null;
+      }
+      return privateResourceMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocation)

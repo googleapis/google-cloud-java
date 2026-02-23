@@ -30,16 +30,15 @@ public interface DataObjectOrBuilder
    *
    *
    * <pre>
-   * Immutable. The fully qualified resource name of the dataObject.
+   * Identifier. The fully qualified resource name of the dataObject.
    *
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataObjects/{data_object_id}`
    * The data_object_id must be 1-63 characters
-   * long, and comply with
-   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * long, and comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -49,16 +48,15 @@ public interface DataObjectOrBuilder
    *
    *
    * <pre>
-   * Immutable. The fully qualified resource name of the dataObject.
+   * Identifier. The fully qualified resource name of the dataObject.
    *
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataObjects/{data_object_id}`
    * The data_object_id must be 1-63 characters
-   * long, and comply with
-   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * long, and comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -76,7 +74,7 @@ public interface DataObjectOrBuilder
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=45
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
    * @return The dataObjectId.
    */
   @java.lang.Deprecated
@@ -94,7 +92,7 @@ public interface DataObjectOrBuilder
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=45
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
    * @return The bytes for dataObjectId.
    */
   @java.lang.Deprecated

@@ -630,6 +630,24 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
+   * Optional. Specifies the maximum number of active runs that can be executed
+   * concurrently for this Schedule. This limits the number of runs that can be
+   * in a non-terminal state at the same time.
+   * Currently, this field is only supported for requests of type
+   * CreatePipelineJobRequest.
+   * </pre>
+   *
+   * <code>int64 max_concurrent_active_run_count = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxConcurrentActiveRunCount.
+   */
+  long getMaxConcurrentActiveRunCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Whether new scheduled runs can be queued when max_concurrent_runs
    * limit is reached. If set to true, new runs will be queued instead of
    * skipped. Default to false.

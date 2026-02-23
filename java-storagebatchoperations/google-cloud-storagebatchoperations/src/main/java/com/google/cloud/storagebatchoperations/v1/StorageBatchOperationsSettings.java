@@ -16,6 +16,7 @@
 
 package com.google.cloud.storagebatchoperations.v1;
 
+import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListBucketOperationsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListJobsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListLocationsPagedResponse;
 
@@ -154,6 +155,21 @@ public class StorageBatchOperationsSettings extends ClientSettings<StorageBatchO
   /** Returns the object with the settings used for calls to cancelJob. */
   public UnaryCallSettings<CancelJobRequest, CancelJobResponse> cancelJobSettings() {
     return ((StorageBatchOperationsStubSettings) getStubSettings()).cancelJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBucketOperations. */
+  public PagedCallSettings<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          ListBucketOperationsPagedResponse>
+      listBucketOperationsSettings() {
+    return ((StorageBatchOperationsStubSettings) getStubSettings()).listBucketOperationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBucket. */
+  public UnaryCallSettings<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationSettings() {
+    return ((StorageBatchOperationsStubSettings) getStubSettings()).getBucketOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -310,6 +326,21 @@ public class StorageBatchOperationsSettings extends ClientSettings<StorageBatchO
     /** Returns the builder for the settings used for calls to cancelJob. */
     public UnaryCallSettings.Builder<CancelJobRequest, CancelJobResponse> cancelJobSettings() {
       return getStubSettingsBuilder().cancelJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBucketOperations. */
+    public PagedCallSettings.Builder<
+            ListBucketOperationsRequest,
+            ListBucketOperationsResponse,
+            ListBucketOperationsPagedResponse>
+        listBucketOperationsSettings() {
+      return getStubSettingsBuilder().listBucketOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBucket. */
+    public UnaryCallSettings.Builder<GetBucketOperationRequest, BucketOperation>
+        getBucketOperationSettings() {
+      return getStubSettingsBuilder().getBucketOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -41,6 +41,7 @@ public class AsyncDeleteRagCorpus {
           DeleteRagCorpusRequest.newBuilder()
               .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
               .setForce(true)
+              .setForceDelete(true)
               .build();
       ApiFuture<Operation> future =
           vertexRagDataServiceClient.deleteRagCorpusCallable().futureCall(request);

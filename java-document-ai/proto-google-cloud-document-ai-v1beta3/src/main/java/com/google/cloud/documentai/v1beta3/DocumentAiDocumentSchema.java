@@ -85,67 +85,93 @@ public final class DocumentAiDocumentSchema extends com.google.protobuf.Generate
 
   static {
     java.lang.String[] descriptorData = {
-      "\n5google/cloud/documentai/v1beta3/docume"
-          + "nt_schema.proto\022\037google.cloud.documentai"
-          + ".v1beta3\"\254\002\n\016SummaryOptions\022F\n\006length\030\001 "
-          + "\001(\01626.google.cloud.documentai.v1beta3.Su"
-          + "mmaryOptions.Length\022F\n\006format\030\002 \001(\01626.go"
-          + "ogle.cloud.documentai.v1beta3.SummaryOpt"
-          + "ions.Format\"L\n\006Length\022\026\n\022LENGTH_UNSPECIF"
-          + "IED\020\000\022\t\n\005BRIEF\020\001\022\014\n\010MODERATE\020\002\022\021\n\rCOMPRE"
-          + "HENSIVE\020\003\"<\n\006Format\022\026\n\022FORMAT_UNSPECIFIE"
-          + "D\020\000\022\r\n\tPARAGRAPH\020\001\022\013\n\007BULLETS\020\002\"c\n\027Field"
-          + "ExtractionMetadata\022H\n\017summary_options\030\002 "
-          + "\001(\0132/.google.cloud.documentai.v1beta3.Su"
-          + "mmaryOptions\"\201\001\n\020PropertyMetadata\022\020\n\010ina"
-          + "ctive\030\003 \001(\010\022[\n\031field_extraction_metadata"
-          + "\030\t \001(\01328.google.cloud.documentai.v1beta3"
-          + ".FieldExtractionMetadata\"&\n\022EntityTypeMe"
-          + "tadata\022\020\n\010inactive\030\005 \001(\010\"\270\n\n\016DocumentSch"
-          + "ema\022\024\n\014display_name\030\001 \001(\t\022\023\n\013description"
-          + "\030\002 \001(\t\022P\n\014entity_types\030\003 \003(\0132:.google.cl"
-          + "oud.documentai.v1beta3.DocumentSchema.En"
-          + "tityType\022J\n\010metadata\030\004 \001(\01328.google.clou"
-          + "d.documentai.v1beta3.DocumentSchema.Meta"
-          + "data\032\305\007\n\nEntityType\022\\\n\013enum_values\030\016 \001(\013"
-          + "2E.google.cloud.documentai.v1beta3.Docum"
-          + "entSchema.EntityType.EnumValuesH\000\022\024\n\014dis"
-          + "play_name\030\r \001(\t\022\014\n\004name\030\001 \001(\t\022\023\n\013descrip"
-          + "tion\030\017 \001(\t\022\022\n\nbase_types\030\002 \003(\t\022W\n\nproper"
-          + "ties\030\006 \003(\0132C.google.cloud.documentai.v1b"
-          + "eta3.DocumentSchema.EntityType.Property\022"
-          + "Q\n\024entity_type_metadata\030\013 \001(\01323.google.c"
-          + "loud.documentai.v1beta3.EntityTypeMetada"
-          + "ta\032\034\n\nEnumValues\022\016\n\006values\030\001 \003(\t\032\261\004\n\010Pro"
-          + "perty\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\007 \001(\t"
-          + "\022\024\n\014display_name\030\006 \001(\t\022\022\n\nvalue_type\030\002 \001"
-          + "(\t\022k\n\017occurrence_type\030\003 \001(\0162R.google.clo"
-          + "ud.documentai.v1beta3.DocumentSchema.Ent"
-          + "ityType.Property.OccurrenceType\022Z\n\006metho"
-          + "d\030\010 \001(\0162J.google.cloud.documentai.v1beta"
-          + "3.DocumentSchema.EntityType.Property.Met"
-          + "hod\022L\n\021property_metadata\030\005 \001(\01321.google."
-          + "cloud.documentai.v1beta3.PropertyMetadat"
-          + "a\"\205\001\n\016OccurrenceType\022\037\n\033OCCURRENCE_TYPE_"
-          + "UNSPECIFIED\020\000\022\021\n\rOPTIONAL_ONCE\020\001\022\025\n\021OPTI"
-          + "ONAL_MULTIPLE\020\002\022\021\n\rREQUIRED_ONCE\020\003\022\025\n\021RE"
-          + "QUIRED_MULTIPLE\020\004\"9\n\006Method\022\026\n\022METHOD_UN"
-          + "SPECIFIED\020\000\022\013\n\007EXTRACT\020\001\022\n\n\006DERIVE\020\002B\016\n\014"
-          + "value_source\032\224\001\n\010Metadata\022\031\n\021document_sp"
-          + "litter\030\001 \001(\010\022&\n\036document_allow_multiple_"
-          + "labels\030\002 \001(\010\022%\n\035prefixed_naming_on_prope"
-          + "rties\030\006 \001(\010\022\036\n\026skip_naming_validation\030\007 "
-          + "\001(\010B\357\001\n#com.google.cloud.documentai.v1be"
-          + "ta3B\030DocumentAiDocumentSchemaP\001ZCcloud.g"
-          + "oogle.com/go/documentai/apiv1beta3/docum"
-          + "entaipb;documentaipb\252\002\037Google.Cloud.Docu"
-          + "mentAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI"
-          + "\\V1beta3\352\002\"Google::Cloud::DocumentAI::V1"
-          + "beta3b\006proto3"
+      "\n"
+          + "5google/cloud/documentai/v1beta3/document_schema.proto\022\037google.cloud.documentai"
+          + ".v1beta3\032\037google/api/field_behavior.proto\"\254\002\n"
+          + "\016SummaryOptions\022F\n"
+          + "\006length\030\001 \001(\01626.g"
+          + "oogle.cloud.documentai.v1beta3.SummaryOptions.Length\022F\n"
+          + "\006format\030\002 \001(\01626.google.cl"
+          + "oud.documentai.v1beta3.SummaryOptions.Format\"L\n"
+          + "\006Length\022\026\n"
+          + "\022LENGTH_UNSPECIFIED\020\000\022\t\n"
+          + "\005BRIEF\020\001\022\014\n"
+          + "\010MODERATE\020\002\022\021\n\r"
+          + "COMPREHENSIVE\020\003\"<\n"
+          + "\006Format\022\026\n"
+          + "\022FORMAT_UNSPECIFIED\020\000\022\r\n"
+          + "\tPARAGRAPH\020\001\022\013\n"
+          + "\007BULLETS\020\002\"c\n"
+          + "\027FieldExtractionMetadata\022H\n"
+          + "\017summary_options\030\002 \001(\0132/.g"
+          + "oogle.cloud.documentai.v1beta3.SummaryOptions\"\201\001\n"
+          + "\020PropertyMetadata\022\020\n"
+          + "\010inactive\030\003 \001(\010\022[\n"
+          + "\031field_extraction_metadata\030\t \001(\0132"
+          + "8.google.cloud.documentai.v1beta3.FieldExtractionMetadata\"&\n"
+          + "\022EntityTypeMetadata\022\020\n"
+          + "\010inactive\030\005 \001(\010\"\326\n\n"
+          + "\016DocumentSchema\022\024\n"
+          + "\014display_name\030\001 \001(\t\022\023\n"
+          + "\013description\030\002 \001(\t\022P\n"
+          + "\014entity_types\030\003 \003(\0132:.google.cloud.doc"
+          + "umentai.v1beta3.DocumentSchema.EntityType\022J\n"
+          + "\010metadata\030\004"
+          + " \001(\01328.google.cloud.documentai.v1beta3.DocumentSchema.Metadata\022\034\n"
+          + "\017document_prompt\030\005 \001(\tB\003\340A\001\032\305\007\n\n"
+          + "EntityType\022\\\n"
+          + "\013enum_values\030\016 \001(\0132E.google.cloud.d"
+          + "ocumentai.v1beta3.DocumentSchema.EntityType.EnumValuesH\000\022\024\n"
+          + "\014display_name\030\r"
+          + " \001(\t\022\014\n"
+          + "\004name\030\001 \001(\t\022\023\n"
+          + "\013description\030\017 \001(\t\022\022\n\n"
+          + "base_types\030\002 \003(\t\022W\n\n"
+          + "properties\030\006 \003(\0132C.goog"
+          + "le.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property\022Q\n"
+          + "\024entity_type_metadata\030\013"
+          + " \001(\01323.google.cloud.documentai.v1beta3.EntityTypeMetadata\032\034\n\n"
+          + "EnumValues\022\016\n"
+          + "\006values\030\001 \003(\t\032\261\004\n"
+          + "\010Property\022\014\n"
+          + "\004name\030\001 \001(\t\022\023\n"
+          + "\013description\030\007 \001(\t\022\024\n"
+          + "\014display_name\030\006 \001(\t\022\022\n\n"
+          + "value_type\030\002 \001(\t\022k\n"
+          + "\017occurrence_type\030\003 \001(\0162R.google.cloud.documentai.v1b"
+          + "eta3.DocumentSchema.EntityType.Property.OccurrenceType\022Z\n"
+          + "\006method\030\010 \001(\0162J.google."
+          + "cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.Method\022L\n"
+          + "\021property_metadata\030\005"
+          + " \001(\01321.google.cloud.documentai.v1beta3.PropertyMetadata\"\205\001\n"
+          + "\016OccurrenceType\022\037\n"
+          + "\033OCCURRENCE_TYPE_UNSPECIFIED\020\000\022\021\n\r"
+          + "OPTIONAL_ONCE\020\001\022\025\n"
+          + "\021OPTIONAL_MULTIPLE\020\002\022\021\n\r"
+          + "REQUIRED_ONCE\020\003\022\025\n"
+          + "\021REQUIRED_MULTIPLE\020\004\"9\n"
+          + "\006Method\022\026\n"
+          + "\022METHOD_UNSPECIFIED\020\000\022\013\n"
+          + "\007EXTRACT\020\001\022\n\n"
+          + "\006DERIVE\020\002B\016\n"
+          + "\014value_source\032\224\001\n"
+          + "\010Metadata\022\031\n"
+          + "\021document_splitter\030\001 \001(\010\022&\n"
+          + "\036document_allow_multiple_labels\030\002 \001(\010\022%\n"
+          + "\035prefixed_naming_on_properties\030\006 \001(\010\022\036\n"
+          + "\026skip_naming_validation\030\007 \001(\010B\357\001\n"
+          + "#com.google.cloud.documentai.v1beta3B\030DocumentAiDo"
+          + "cumentSchemaP\001ZCcloud.google.com/go/documentai/apiv1beta3/documentaipb;documenta"
+          + "ipb\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002\037"
+          + "Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Google"
+          + "::Cloud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
     internal_static_google_cloud_documentai_v1beta3_SummaryOptions_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_documentai_v1beta3_SummaryOptions_fieldAccessorTable =
@@ -184,7 +210,7 @@ public final class DocumentAiDocumentSchema extends com.google.protobuf.Generate
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DocumentSchema_descriptor,
             new java.lang.String[] {
-              "DisplayName", "Description", "EntityTypes", "Metadata",
+              "DisplayName", "Description", "EntityTypes", "Metadata", "DocumentPrompt",
             });
     internal_static_google_cloud_documentai_v1beta3_DocumentSchema_EntityType_descriptor =
         internal_static_google_cloud_documentai_v1beta3_DocumentSchema_descriptor.getNestedType(0);
@@ -237,6 +263,12 @@ public final class DocumentAiDocumentSchema extends com.google.protobuf.Generate
               "SkipNamingValidation",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

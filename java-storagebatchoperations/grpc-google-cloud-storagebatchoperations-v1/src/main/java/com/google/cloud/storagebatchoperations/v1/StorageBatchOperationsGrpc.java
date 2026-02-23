@@ -265,6 +265,107 @@ public final class StorageBatchOperationsGrpc {
     return getCancelJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest,
+          com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+      getListBucketOperationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBucketOperations",
+      requestType = com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest.class,
+      responseType = com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest,
+          com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+      getListBucketOperationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest,
+            com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+        getListBucketOperationsMethod;
+    if ((getListBucketOperationsMethod = StorageBatchOperationsGrpc.getListBucketOperationsMethod)
+        == null) {
+      synchronized (StorageBatchOperationsGrpc.class) {
+        if ((getListBucketOperationsMethod =
+                StorageBatchOperationsGrpc.getListBucketOperationsMethod)
+            == null) {
+          StorageBatchOperationsGrpc.getListBucketOperationsMethod =
+              getListBucketOperationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest,
+                          com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBucketOperations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.storagebatchoperations.v1
+                                  .ListBucketOperationsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageBatchOperationsMethodDescriptorSupplier(
+                              "ListBucketOperations"))
+                      .build();
+        }
+      }
+    }
+    return getListBucketOperationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest,
+          com.google.cloud.storagebatchoperations.v1.BucketOperation>
+      getGetBucketOperationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBucketOperation",
+      requestType = com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest.class,
+      responseType = com.google.cloud.storagebatchoperations.v1.BucketOperation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest,
+          com.google.cloud.storagebatchoperations.v1.BucketOperation>
+      getGetBucketOperationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest,
+            com.google.cloud.storagebatchoperations.v1.BucketOperation>
+        getGetBucketOperationMethod;
+    if ((getGetBucketOperationMethod = StorageBatchOperationsGrpc.getGetBucketOperationMethod)
+        == null) {
+      synchronized (StorageBatchOperationsGrpc.class) {
+        if ((getGetBucketOperationMethod = StorageBatchOperationsGrpc.getGetBucketOperationMethod)
+            == null) {
+          StorageBatchOperationsGrpc.getGetBucketOperationMethod =
+              getGetBucketOperationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest,
+                          com.google.cloud.storagebatchoperations.v1.BucketOperation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBucketOperation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.storagebatchoperations.v1.BucketOperation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageBatchOperationsMethodDescriptorSupplier("GetBucketOperation"))
+                      .build();
+        }
+      }
+    }
+    return getGetBucketOperationMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static StorageBatchOperationsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StorageBatchOperationsStub> factory =
@@ -398,6 +499,37 @@ public final class StorageBatchOperationsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelJobMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BucketOperations in a given project and job.
+     * </pre>
+     */
+    default void listBucketOperations(
+        com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBucketOperationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BucketOperation.
+     * </pre>
+     */
+    default void getBucketOperation(
+        com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.storagebatchoperations.v1.BucketOperation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBucketOperationMethod(), responseObserver);
+    }
   }
 
   /**
@@ -513,6 +645,41 @@ public final class StorageBatchOperationsGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelJobMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BucketOperations in a given project and job.
+     * </pre>
+     */
+    public void listBucketOperations(
+        com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBucketOperationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BucketOperation.
+     * </pre>
+     */
+    public void getBucketOperation(
+        com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.storagebatchoperations.v1.BucketOperation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBucketOperationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -607,6 +774,35 @@ public final class StorageBatchOperationsGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BucketOperations in a given project and job.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse
+        listBucketOperations(
+            com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBucketOperationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BucketOperation.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.BucketOperation getBucketOperation(
+        com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBucketOperationMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -695,6 +891,33 @@ public final class StorageBatchOperationsGrpc {
         com.google.cloud.storagebatchoperations.v1.CancelJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BucketOperations in a given project and job.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse
+        listBucketOperations(
+            com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBucketOperationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BucketOperation.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.BucketOperation getBucketOperation(
+        com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBucketOperationMethod(), getCallOptions(), request);
     }
   }
 
@@ -789,6 +1012,36 @@ public final class StorageBatchOperationsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BucketOperations in a given project and job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>
+        listBucketOperations(
+            com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBucketOperationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BucketOperation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.storagebatchoperations.v1.BucketOperation>
+        getBucketOperation(
+            com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBucketOperationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_JOBS = 0;
@@ -796,6 +1049,8 @@ public final class StorageBatchOperationsGrpc {
   private static final int METHODID_CREATE_JOB = 2;
   private static final int METHODID_DELETE_JOB = 3;
   private static final int METHODID_CANCEL_JOB = 4;
+  private static final int METHODID_LIST_BUCKET_OPERATIONS = 5;
+  private static final int METHODID_GET_BUCKET_OPERATION = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -842,6 +1097,20 @@ public final class StorageBatchOperationsGrpc {
               (com.google.cloud.storagebatchoperations.v1.CancelJobRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.storagebatchoperations.v1.CancelJobResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BUCKET_OPERATIONS:
+          serviceImpl.listBucketOperations(
+              (com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BUCKET_OPERATION:
+          serviceImpl.getBucketOperation(
+              (com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.storagebatchoperations.v1.BucketOperation>)
                   responseObserver);
           break;
         default:
@@ -894,6 +1163,20 @@ public final class StorageBatchOperationsGrpc {
                     com.google.cloud.storagebatchoperations.v1.CancelJobRequest,
                     com.google.cloud.storagebatchoperations.v1.CancelJobResponse>(
                     service, METHODID_CANCEL_JOB)))
+        .addMethod(
+            getListBucketOperationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest,
+                    com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse>(
+                    service, METHODID_LIST_BUCKET_OPERATIONS)))
+        .addMethod(
+            getGetBucketOperationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest,
+                    com.google.cloud.storagebatchoperations.v1.BucketOperation>(
+                    service, METHODID_GET_BUCKET_OPERATION)))
         .build();
   }
 
@@ -950,6 +1233,8 @@ public final class StorageBatchOperationsGrpc {
                       .addMethod(getCreateJobMethod())
                       .addMethod(getDeleteJobMethod())
                       .addMethod(getCancelJobMethod())
+                      .addMethod(getListBucketOperationsMethod())
+                      .addMethod(getGetBucketOperationMethod())
                       .build();
         }
       }

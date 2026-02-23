@@ -83,6 +83,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
     USER_DATA(2),
     PAIR_DATA(4),
     MOBILE_DATA(5),
+    USER_ID_DATA(6),
+    PPID_DATA(7),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -108,6 +110,10 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
           return PAIR_DATA;
         case 5:
           return MOBILE_DATA;
+        case 6:
+          return USER_ID_DATA;
+        case 7:
+          return PPID_DATA;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -266,6 +272,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
    * <pre>
    * [Publisher Advertiser Identity Reconciliation (PAIR)
    * IDs](//support.google.com/admanager/answer/15067908).
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -283,6 +291,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
    * <pre>
    * [Publisher Advertiser Identity Reconciliation (PAIR)
    * IDs](//support.google.com/admanager/answer/15067908).
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -303,6 +313,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
    * <pre>
    * [Publisher Advertiser Identity Reconciliation (PAIR)
    * IDs](//support.google.com/admanager/answer/15067908).
+   *
+   * This feature is only available to data partners.
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -367,6 +379,123 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       return (com.google.ads.datamanager.v1.MobileData) data_;
     }
     return com.google.ads.datamanager.v1.MobileData.getDefaultInstance();
+  }
+
+  public static final int USER_ID_DATA_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to unique identifiers for a user, as defined by the
+   * advertiser.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+   *
+   * @return Whether the userIdData field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserIdData() {
+    return dataCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to unique identifiers for a user, as defined by the
+   * advertiser.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+   *
+   * @return The userIdData.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.UserIdData getUserIdData() {
+    if (dataCase_ == 6) {
+      return (com.google.ads.datamanager.v1.UserIdData) data_;
+    }
+    return com.google.ads.datamanager.v1.UserIdData.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to unique identifiers for a user, as defined by the
+   * advertiser.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.UserIdDataOrBuilder getUserIdDataOrBuilder() {
+    if (dataCase_ == 6) {
+      return (com.google.ads.datamanager.v1.UserIdData) data_;
+    }
+    return com.google.ads.datamanager.v1.UserIdData.getDefaultInstance();
+  }
+
+  public static final int PPID_DATA_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to publisher provided identifiers.
+   *
+   * This feature is only available to data partners.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+   *
+   * @return Whether the ppidData field is set.
+   */
+  @java.lang.Override
+  public boolean hasPpidData() {
+    return dataCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to publisher provided identifiers.
+   *
+   * This feature is only available to data partners.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+   *
+   * @return The ppidData.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.PpidData getPpidData() {
+    if (dataCase_ == 7) {
+      return (com.google.ads.datamanager.v1.PpidData) data_;
+    }
+    return com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data related to publisher provided identifiers.
+   *
+   * This feature is only available to data partners.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.PpidDataOrBuilder getPpidDataOrBuilder() {
+    if (dataCase_ == 7) {
+      return (com.google.ads.datamanager.v1.PpidData) data_;
+    }
+    return com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
   }
 
   public static final int CONSENT_FIELD_NUMBER = 3;
@@ -450,6 +579,12 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 5) {
       output.writeMessage(5, (com.google.ads.datamanager.v1.MobileData) data_);
     }
+    if (dataCase_ == 6) {
+      output.writeMessage(6, (com.google.ads.datamanager.v1.UserIdData) data_);
+    }
+    if (dataCase_ == 7) {
+      output.writeMessage(7, (com.google.ads.datamanager.v1.PpidData) data_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -485,6 +620,16 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.ads.datamanager.v1.MobileData) data_);
     }
+    if (dataCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.ads.datamanager.v1.UserIdData) data_);
+    }
+    if (dataCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.ads.datamanager.v1.PpidData) data_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -516,6 +661,12 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         break;
       case 5:
         if (!getMobileData().equals(other.getMobileData())) return false;
+        break;
+      case 6:
+        if (!getUserIdData().equals(other.getUserIdData())) return false;
+        break;
+      case 7:
+        if (!getPpidData().equals(other.getPpidData())) return false;
         break;
       case 0:
       default:
@@ -551,6 +702,14 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       case 5:
         hash = (37 * hash) + MOBILE_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getMobileData().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + USER_ID_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getUserIdData().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + PPID_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPpidData().hashCode();
         break;
       case 0:
       default:
@@ -714,6 +873,12 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       if (mobileDataBuilder_ != null) {
         mobileDataBuilder_.clear();
       }
+      if (userIdDataBuilder_ != null) {
+        userIdDataBuilder_.clear();
+      }
+      if (ppidDataBuilder_ != null) {
+        ppidDataBuilder_.clear();
+      }
       consent_ = null;
       if (consentBuilder_ != null) {
         consentBuilder_.dispose();
@@ -763,7 +928,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         result.destinationReferences_ = destinationReferences_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.consent_ = consentBuilder_ == null ? consent_ : consentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -781,6 +946,12 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       }
       if (dataCase_ == 5 && mobileDataBuilder_ != null) {
         result.data_ = mobileDataBuilder_.build();
+      }
+      if (dataCase_ == 6 && userIdDataBuilder_ != null) {
+        result.data_ = userIdDataBuilder_.build();
+      }
+      if (dataCase_ == 7 && ppidDataBuilder_ != null) {
+        result.data_ = ppidDataBuilder_.build();
       }
     }
 
@@ -823,6 +994,16 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         case MOBILE_DATA:
           {
             mergeMobileData(other.getMobileData());
+            break;
+          }
+        case USER_ID_DATA:
+          {
+            mergeUserIdData(other.getUserIdData());
+            break;
+          }
+        case PPID_DATA:
+          {
+            mergePpidData(other.getPpidData());
             break;
           }
         case DATA_NOT_SET:
@@ -873,7 +1054,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 input.readMessage(internalGetConsentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
@@ -890,6 +1071,20 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetUserIdDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetPpidDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1361,6 +1556,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1378,6 +1575,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1405,6 +1604,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1429,6 +1630,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1450,6 +1653,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1484,6 +1689,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1511,6 +1718,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1525,6 +1734,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1547,6 +1758,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * <pre>
      * [Publisher Advertiser Identity Reconciliation (PAIR)
      * IDs](//support.google.com/admanager/answer/15067908).
+     *
+     * This feature is only available to data partners.
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.PairData pair_data = 4;</code>
@@ -1790,6 +2003,465 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       return mobileDataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.UserIdData,
+            com.google.ads.datamanager.v1.UserIdData.Builder,
+            com.google.ads.datamanager.v1.UserIdDataOrBuilder>
+        userIdDataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     *
+     * @return Whether the userIdData field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserIdData() {
+      return dataCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     *
+     * @return The userIdData.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.UserIdData getUserIdData() {
+      if (userIdDataBuilder_ == null) {
+        if (dataCase_ == 6) {
+          return (com.google.ads.datamanager.v1.UserIdData) data_;
+        }
+        return com.google.ads.datamanager.v1.UserIdData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 6) {
+          return userIdDataBuilder_.getMessage();
+        }
+        return com.google.ads.datamanager.v1.UserIdData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    public Builder setUserIdData(com.google.ads.datamanager.v1.UserIdData value) {
+      if (userIdDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        userIdDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    public Builder setUserIdData(com.google.ads.datamanager.v1.UserIdData.Builder builderForValue) {
+      if (userIdDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        userIdDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    public Builder mergeUserIdData(com.google.ads.datamanager.v1.UserIdData value) {
+      if (userIdDataBuilder_ == null) {
+        if (dataCase_ == 6
+            && data_ != com.google.ads.datamanager.v1.UserIdData.getDefaultInstance()) {
+          data_ =
+              com.google.ads.datamanager.v1.UserIdData.newBuilder(
+                      (com.google.ads.datamanager.v1.UserIdData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 6) {
+          userIdDataBuilder_.mergeFrom(value);
+        } else {
+          userIdDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    public Builder clearUserIdData() {
+      if (userIdDataBuilder_ == null) {
+        if (dataCase_ == 6) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 6) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        userIdDataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    public com.google.ads.datamanager.v1.UserIdData.Builder getUserIdDataBuilder() {
+      return internalGetUserIdDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.UserIdDataOrBuilder getUserIdDataOrBuilder() {
+      if ((dataCase_ == 6) && (userIdDataBuilder_ != null)) {
+        return userIdDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 6) {
+          return (com.google.ads.datamanager.v1.UserIdData) data_;
+        }
+        return com.google.ads.datamanager.v1.UserIdData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to unique identifiers for a user, as defined by the
+     * advertiser.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.UserIdData user_id_data = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.UserIdData,
+            com.google.ads.datamanager.v1.UserIdData.Builder,
+            com.google.ads.datamanager.v1.UserIdDataOrBuilder>
+        internalGetUserIdDataFieldBuilder() {
+      if (userIdDataBuilder_ == null) {
+        if (!(dataCase_ == 6)) {
+          data_ = com.google.ads.datamanager.v1.UserIdData.getDefaultInstance();
+        }
+        userIdDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.UserIdData,
+                com.google.ads.datamanager.v1.UserIdData.Builder,
+                com.google.ads.datamanager.v1.UserIdDataOrBuilder>(
+                (com.google.ads.datamanager.v1.UserIdData) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 6;
+      onChanged();
+      return userIdDataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.PpidData,
+            com.google.ads.datamanager.v1.PpidData.Builder,
+            com.google.ads.datamanager.v1.PpidDataOrBuilder>
+        ppidDataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     *
+     * @return Whether the ppidData field is set.
+     */
+    @java.lang.Override
+    public boolean hasPpidData() {
+      return dataCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     *
+     * @return The ppidData.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.PpidData getPpidData() {
+      if (ppidDataBuilder_ == null) {
+        if (dataCase_ == 7) {
+          return (com.google.ads.datamanager.v1.PpidData) data_;
+        }
+        return com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 7) {
+          return ppidDataBuilder_.getMessage();
+        }
+        return com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    public Builder setPpidData(com.google.ads.datamanager.v1.PpidData value) {
+      if (ppidDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        ppidDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    public Builder setPpidData(com.google.ads.datamanager.v1.PpidData.Builder builderForValue) {
+      if (ppidDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        ppidDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    public Builder mergePpidData(com.google.ads.datamanager.v1.PpidData value) {
+      if (ppidDataBuilder_ == null) {
+        if (dataCase_ == 7
+            && data_ != com.google.ads.datamanager.v1.PpidData.getDefaultInstance()) {
+          data_ =
+              com.google.ads.datamanager.v1.PpidData.newBuilder(
+                      (com.google.ads.datamanager.v1.PpidData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 7) {
+          ppidDataBuilder_.mergeFrom(value);
+        } else {
+          ppidDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    public Builder clearPpidData() {
+      if (ppidDataBuilder_ == null) {
+        if (dataCase_ == 7) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 7) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        ppidDataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    public com.google.ads.datamanager.v1.PpidData.Builder getPpidDataBuilder() {
+      return internalGetPpidDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.PpidDataOrBuilder getPpidDataOrBuilder() {
+      if ((dataCase_ == 7) && (ppidDataBuilder_ != null)) {
+        return ppidDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 7) {
+          return (com.google.ads.datamanager.v1.PpidData) data_;
+        }
+        return com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data related to publisher provided identifiers.
+     *
+     * This feature is only available to data partners.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.PpidData ppid_data = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.PpidData,
+            com.google.ads.datamanager.v1.PpidData.Builder,
+            com.google.ads.datamanager.v1.PpidDataOrBuilder>
+        internalGetPpidDataFieldBuilder() {
+      if (ppidDataBuilder_ == null) {
+        if (!(dataCase_ == 7)) {
+          data_ = com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
+        }
+        ppidDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.PpidData,
+                com.google.ads.datamanager.v1.PpidData.Builder,
+                com.google.ads.datamanager.v1.PpidDataOrBuilder>(
+                (com.google.ads.datamanager.v1.PpidData) data_, getParentForChildren(), isClean());
+        data_ = null;
+      }
+      dataCase_ = 7;
+      onChanged();
+      return ppidDataBuilder_;
+    }
+
     private com.google.ads.datamanager.v1.Consent consent_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.ads.datamanager.v1.Consent,
@@ -1811,7 +2483,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * @return Whether the consent field is set.
      */
     public boolean hasConsent() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1857,7 +2529,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       } else {
         consentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1879,7 +2551,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       } else {
         consentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1897,7 +2569,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConsent(com.google.ads.datamanager.v1.Consent value) {
       if (consentBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && consent_ != null
             && consent_ != com.google.ads.datamanager.v1.Consent.getDefaultInstance()) {
           getConsentBuilder().mergeFrom(value);
@@ -1908,7 +2580,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         consentBuilder_.mergeFrom(value);
       }
       if (consent_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1926,7 +2598,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearConsent() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       consent_ = null;
       if (consentBuilder_ != null) {
         consentBuilder_.dispose();
@@ -1948,7 +2620,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.Consent.Builder getConsentBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetConsentFieldBuilder().getBuilder();
     }

@@ -65,7 +65,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateQuotaAdjusterSettings</td>
- *      <td><p> RPC Method for updating QuotaAdjusterSettings based on the request</td>
+ *      <td><p> Updates the QuotaAdjusterSettings for the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +83,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetQuotaAdjusterSettings</td>
- *      <td><p> RPC Method for getting QuotaAdjusterSettings based on the request</td>
+ *      <td><p> Gets the QuotaAdjusterSettings for the specified resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -215,7 +215,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for updating QuotaAdjusterSettings based on the request
+   * Updates the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *
@@ -251,7 +251,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for updating QuotaAdjusterSettings based on the request
+   * Updates the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *
@@ -284,7 +284,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for updating QuotaAdjusterSettings based on the request
+   * Updates the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *
@@ -318,7 +318,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for getting QuotaAdjusterSettings based on the request
+   * Gets the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *
@@ -351,7 +351,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for getting QuotaAdjusterSettings based on the request
+   * Gets the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *
@@ -382,7 +382,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for getting QuotaAdjusterSettings based on the request
+   * Gets the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *
@@ -415,7 +415,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RPC Method for getting QuotaAdjusterSettings based on the request
+   * Gets the QuotaAdjusterSettings for the specified resource.
    *
    * <p>Sample code:
    *

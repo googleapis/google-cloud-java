@@ -310,5 +310,37 @@ public interface AutoscalingPolicyOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the clusters for which this autoscaling policy is to
+   * be configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterType.
+   */
+  int getClusterTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the clusters for which this autoscaling policy is to
+   * be configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType cluster_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clusterType.
+   */
+  com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType getClusterType();
+
   com.google.cloud.dataproc.v1.AutoscalingPolicy.AlgorithmCase getAlgorithmCase();
 }

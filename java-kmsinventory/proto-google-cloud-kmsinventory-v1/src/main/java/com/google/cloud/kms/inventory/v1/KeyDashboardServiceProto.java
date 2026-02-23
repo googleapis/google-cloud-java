@@ -76,12 +76,12 @@ public final class KeyDashboardServiceProto extends com.google.protobuf.Generate
           + "se\"3\332A\006parent\202\323\344\223\002$\022\"/v1/{parent=project"
           + "s/*}/cryptoKeys\032O\312A\033kmsinventory.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\303\001\n!com.google.cloud.km"
+          + "h/cloud-platformB\300\001\n!com.google.cloud.km"
           + "s.inventory.v1B\030KeyDashboardServiceProto"
           + "P\001Z?cloud.google.com/go/kms/inventory/ap"
-          + "iv1/inventorypb;inventorypb\370\001\001\252\002\035Google."
-          + "Cloud.Kms.Inventory.V1\312\002\035Google\\Cloud\\Km"
-          + "s\\Inventory\\V1b\006proto3"
+          + "iv1/inventorypb;inventorypb\252\002\035Google.Clo"
+          + "ud.Kms.Inventory.V1\312\002\035Google\\Cloud\\Kms\\I"
+          + "nventory\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

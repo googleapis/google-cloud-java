@@ -53,33 +53,31 @@ public final class DatasetVersionProto extends com.google.protobuf.GeneratedFile
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "0google/cloud/aiplatform/v1/dataset_ver"
+      "\n0google/cloud/aiplatform/v1/dataset_ver"
           + "sion.proto\022\032google.cloud.aiplatform.v1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\034google/protobuf/stru"
-          + "ct.proto\032\037google/protobuf/timestamp.proto\"\362\003\n"
-          + "\016DatasetVersion\022\024\n"
-          + "\004name\030\001 \001(\tB\006\340A\003\340A\010\0224\n"
-          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
-          + "\004etag\030\003 \001(\t\022#\n"
-          + "\026big_query_dataset_name\030\004 \001(\tB\003\340A\003\022\024\n"
-          + "\014display_name\030\007 \001(\t\0220\n"
-          + "\010metadata\030\010"
-          + " \001(\0132\026.google.protobuf.ValueB\006\340A\003\340A\002\022\034\n"
-          + "\017model_reference\030\t \001(\tB\003\340A\003\022\032\n\r"
-          + "satisfies_pzs\030\n"
-          + " \001(\010B\003\340A\003\022\032\n\r"
-          + "satisfies_pzi\030\013 \001(\010B\003\340A\003:\214\001\352A\210\001\n"
-          + "(aiplatform.googleapis.com/DatasetVersion\022\\projects/{project}/locations/{"
-          + "location}/datasets/{dataset}/datasetVersions/{dataset_version}B\321\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\023DatasetVersionProtoP\001"
-          + "Z>cloud.google.com/go/aiplatform/apiv1/a"
-          + "iplatformpb;aiplatformpb\252\002\032Google.Cloud."
-          + "AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\"
-          + "V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "ct.proto\032\037google/protobuf/timestamp.prot"
+          + "o\"\237\004\n\016DatasetVersion\022A\n\004name\030\001 \001(\tB3\340A\003\340"
+          + "A\010\372A*\n(aiplatform.googleapis.com/Dataset"
+          + "Version\0224\n\013create_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\006 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n\004e"
+          + "tag\030\003 \001(\t\022#\n\026big_query_dataset_name\030\004 \001("
+          + "\tB\003\340A\003\022\024\n\014display_name\030\007 \001(\t\0220\n\010metadata"
+          + "\030\010 \001(\0132\026.google.protobuf.ValueB\006\340A\003\340A\002\022\034"
+          + "\n\017model_reference\030\t \001(\tB\003\340A\003\022\032\n\rsatisfie"
+          + "s_pzs\030\n \001(\010B\003\340A\003\022\032\n\rsatisfies_pzi\030\013 \001(\010B"
+          + "\003\340A\003:\214\001\352A\210\001\n(aiplatform.googleapis.com/D"
+          + "atasetVersion\022\\projects/{project}/locati"
+          + "ons/{location}/datasets/{dataset}/datase"
+          + "tVersions/{dataset_version}B\321\001\n\036com.goog"
+          + "le.cloud.aiplatform.v1B\023DatasetVersionPr"
+          + "otoP\001Z>cloud.google.com/go/aiplatform/ap"
+          + "iv1/aiplatformpb;aiplatformpb\252\002\032Google.C"
+          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
+          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -116,6 +114,7 @@ public final class DatasetVersionProto extends com.google.protobuf.GeneratedFile
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

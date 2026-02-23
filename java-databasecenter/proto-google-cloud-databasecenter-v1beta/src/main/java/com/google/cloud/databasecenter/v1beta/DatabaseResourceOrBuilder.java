@@ -131,8 +131,8 @@ public interface DatabaseResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it is
+   * the full name of the project.
    * </pre>
    *
    * <code>string container = 4;</code>
@@ -145,8 +145,8 @@ public interface DatabaseResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies where the resource is created. For GCP, it is the full name of
-   * the project.
+   * Specifies where the resource is created. For Google Cloud resources, it is
+   * the full name of the project.
    * </pre>
    *
    * <code>string container = 4;</code>
@@ -197,8 +197,9 @@ public interface DatabaseResourceOrBuilder
    *
    * <pre>
    * The location of the resources. It supports returning only regional
-   * locations in GCP. These are of the form: "us-central1", "us-east1", etc.
-   * See https://cloud.google.com/about/locations for a list of such regions.
+   * locations in Google Cloud. These are of the form: "us-central1",
+   * "us-east1", etc. See https://cloud.google.com/about/locations for a list of
+   * such regions.
    * </pre>
    *
    * <code>string location = 6;</code>
@@ -212,8 +213,9 @@ public interface DatabaseResourceOrBuilder
    *
    * <pre>
    * The location of the resources. It supports returning only regional
-   * locations in GCP. These are of the form: "us-central1", "us-east1", etc.
-   * See https://cloud.google.com/about/locations for a list of such regions.
+   * locations in Google Cloud. These are of the form: "us-central1",
+   * "us-east1", etc. See https://cloud.google.com/about/locations for a list of
+   * such regions.
    * </pre>
    *
    * <code>string location = 6;</code>

@@ -24,7 +24,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response in LRO for EvaluationService.EvaluateDataset.
+ * The results from an evaluation run performed by the EvaluationService.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse}
@@ -77,7 +77,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. Aggregation statistics derived from results of
-   * EvaluationService.EvaluateDataset.
+   * EvaluationService.
    * </pre>
    *
    * <code>
@@ -96,7 +96,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. Aggregation statistics derived from results of
-   * EvaluationService.EvaluateDataset.
+   * EvaluationService.
    * </pre>
    *
    * <code>
@@ -117,7 +117,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. Aggregation statistics derived from results of
-   * EvaluationService.EvaluateDataset.
+   * EvaluationService.
    * </pre>
    *
    * <code>
@@ -139,7 +139,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Output info for EvaluationService.EvaluateDataset.
+   * Output only. Output info for EvaluationService.
    * </pre>
    *
    * <code>
@@ -157,7 +157,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Output info for EvaluationService.EvaluateDataset.
+   * Output only. Output info for EvaluationService.
    * </pre>
    *
    * <code>
@@ -177,7 +177,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Output info for EvaluationService.EvaluateDataset.
+   * Output only. Output info for EvaluationService.
    * </pre>
    *
    * <code>
@@ -375,7 +375,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Response in LRO for EvaluationService.EvaluateDataset.
+   * The results from an evaluation run performed by the EvaluationService.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse}
@@ -571,7 +571,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -589,7 +589,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -613,7 +613,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -640,7 +640,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -664,7 +664,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -720,7 +720,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -739,7 +739,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -762,7 +762,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. Aggregation statistics derived from results of
-     * EvaluationService.EvaluateDataset.
+     * EvaluationService.
      * </pre>
      *
      * <code>
@@ -797,7 +797,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -814,7 +814,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -837,7 +837,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -862,7 +862,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -885,7 +885,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -915,7 +915,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -937,7 +937,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -954,7 +954,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>
@@ -975,7 +975,7 @@ public final class EvaluateDatasetResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Output info for EvaluationService.EvaluateDataset.
+     * Output only. Output info for EvaluationService.
      * </pre>
      *
      * <code>

@@ -261,7 +261,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The URL for an image of RGB data (aerial photo) of the region.
+   * The URL for an image of RGB data (aerial or satellite photo) of the region.
    * </pre>
    *
    * <code>string rgb_url = 4;</code>
@@ -285,7 +285,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The URL for an image of RGB data (aerial photo) of the region.
+   * The URL for an image of RGB data (aerial or satellite photo) of the region.
    * </pre>
    *
    * <code>string rgb_url = 4;</code>
@@ -1779,7 +1779,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL for an image of RGB data (aerial photo) of the region.
+     * The URL for an image of RGB data (aerial or satellite photo) of the region.
      * </pre>
      *
      * <code>string rgb_url = 4;</code>
@@ -1802,7 +1802,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL for an image of RGB data (aerial photo) of the region.
+     * The URL for an image of RGB data (aerial or satellite photo) of the region.
      * </pre>
      *
      * <code>string rgb_url = 4;</code>
@@ -1825,7 +1825,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL for an image of RGB data (aerial photo) of the region.
+     * The URL for an image of RGB data (aerial or satellite photo) of the region.
      * </pre>
      *
      * <code>string rgb_url = 4;</code>
@@ -1847,7 +1847,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL for an image of RGB data (aerial photo) of the region.
+     * The URL for an image of RGB data (aerial or satellite photo) of the region.
      * </pre>
      *
      * <code>string rgb_url = 4;</code>
@@ -1865,7 +1865,7 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL for an image of RGB data (aerial photo) of the region.
+     * The URL for an image of RGB data (aerial or satellite photo) of the region.
      * </pre>
      *
      * <code>string rgb_url = 4;</code>

@@ -78,6 +78,8 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetProtectedResourcesSummaryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "fallbackScope", request.getFallbackScopeValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -110,6 +112,7 @@ public class HttpJsonKeyTrackingServiceStub extends KeyTrackingServiceStub {
                             serializer.putPathParam(fields, "scope", request.getScope());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{scope=projects/*}/protectedResources:search")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

@@ -45,12 +45,13 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Provides interfaces for managing [Cloud KMS
- * Autokey](https://cloud.google.com/kms/help/autokey) folder-level configurations. A configuration
- * is inherited by all descendent projects. A configuration at one folder overrides any other
- * configurations in its ancestry. Setting a configuration on a folder is a prerequisite for Cloud
- * KMS Autokey, so that users working in a descendant project can request provisioned
- * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed Encryption Key (CMEK)
- * use, on-demand.
+ * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or project-level configurations.
+ * A configuration is inherited by all descendent folders and projects. A configuration at a folder
+ * or project overrides any other configurations in its ancestry. Setting a configuration on a
+ * folder is a prerequisite for Cloud KMS Autokey, so that users working in a descendant project can
+ * request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
+ * Encryption Key (CMEK) use, on-demand when using the dedicated key project mode. This is not
+ * required when using the delegated key management mode for same-project keys.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -80,7 +81,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAutokeyConfig</td>
- *      <td><p> Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder. The caller must have both `cloudkms.autokeyConfigs.update` permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy` permission on the provided key project. A [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's descendant projects will use this configuration to determine where to create the resulting [CryptoKey][google.cloud.kms.v1.CryptoKey].</td>
+ *      <td><p> Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or a project. The caller must have both `cloudkms.autokeyConfigs.update` permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy` permission on the provided key project. A [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's descendant projects will use this configuration to determine where to create the resulting [CryptoKey][google.cloud.kms.v1.CryptoKey].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -98,7 +99,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetAutokeyConfig</td>
- *      <td><p> Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder.</td>
+ *      <td><p> Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -136,7 +137,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -312,8 +314,8 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder. The caller must
-   * have both `cloudkms.autokeyConfigs.update` permission on the parent folder and
+   * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or a project. The
+   * caller must have both `cloudkms.autokeyConfigs.update` permission on the parent folder and
    * `cloudkms.cryptoKeys.setIamPolicy` permission on the provided key project. A
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's descendant projects will
    * use this configuration to determine where to create the resulting
@@ -352,8 +354,8 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder. The caller must
-   * have both `cloudkms.autokeyConfigs.update` permission on the parent folder and
+   * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or a project. The
+   * caller must have both `cloudkms.autokeyConfigs.update` permission on the parent folder and
    * `cloudkms.cryptoKeys.setIamPolicy` permission on the provided key project. A
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's descendant projects will
    * use this configuration to determine where to create the resulting
@@ -386,8 +388,8 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder. The caller must
-   * have both `cloudkms.autokeyConfigs.update` permission on the parent folder and
+   * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or a project. The
+   * caller must have both `cloudkms.autokeyConfigs.update` permission on the parent folder and
    * `cloudkms.cryptoKeys.setIamPolicy` permission on the provided key project. A
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's descendant projects will
    * use this configuration to determine where to create the resulting
@@ -421,7 +423,7 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder.
+   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or project.
    *
    * <p>Sample code:
    *
@@ -432,13 +434,13 @@ public class AutokeyAdminClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
-   *   AutokeyConfigName name = AutokeyConfigName.of("[FOLDER]");
+   *   AutokeyConfigName name = AutokeyConfigName.ofFolderName("[FOLDER]");
    *   AutokeyConfig response = autokeyAdminClient.getAutokeyConfig(name);
    * }
    * }</pre>
    *
    * @param name Required. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] resource,
-   *     e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   *     e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutokeyConfig getAutokeyConfig(AutokeyConfigName name) {
@@ -449,7 +451,7 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder.
+   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or project.
    *
    * <p>Sample code:
    *
@@ -460,13 +462,13 @@ public class AutokeyAdminClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
-   *   String name = AutokeyConfigName.of("[FOLDER]").toString();
+   *   String name = AutokeyConfigName.ofFolderName("[FOLDER]").toString();
    *   AutokeyConfig response = autokeyAdminClient.getAutokeyConfig(name);
    * }
    * }</pre>
    *
    * @param name Required. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] resource,
-   *     e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   *     e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutokeyConfig getAutokeyConfig(String name) {
@@ -476,7 +478,7 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder.
+   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or project.
    *
    * <p>Sample code:
    *
@@ -489,7 +491,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   GetAutokeyConfigRequest request =
    *       GetAutokeyConfigRequest.newBuilder()
-   *           .setName(AutokeyConfigName.of("[FOLDER]").toString())
+   *           .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
    *           .build();
    *   AutokeyConfig response = autokeyAdminClient.getAutokeyConfig(request);
    * }
@@ -504,7 +506,7 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder.
+   * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder or project.
    *
    * <p>Sample code:
    *
@@ -517,7 +519,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   GetAutokeyConfigRequest request =
    *       GetAutokeyConfigRequest.newBuilder()
-   *           .setName(AutokeyConfigName.of("[FOLDER]").toString())
+   *           .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
    *           .build();
    *   ApiFuture<AutokeyConfig> future =
    *       autokeyAdminClient.getAutokeyConfigCallable().futureCall(request);
@@ -653,7 +655,13 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -686,7 +694,13 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -720,7 +734,13 @@ public class AutokeyAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

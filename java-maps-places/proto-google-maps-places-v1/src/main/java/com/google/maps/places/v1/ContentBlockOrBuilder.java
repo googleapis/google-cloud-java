@@ -30,32 +30,6 @@ public interface ContentBlockOrBuilder
    *
    *
    * <pre>
-   * The topic of the content, for example "overview" or "restaurant".
-   * </pre>
-   *
-   * <code>string topic = 1;</code>
-   *
-   * @return The topic.
-   */
-  java.lang.String getTopic();
-
-  /**
-   *
-   *
-   * <pre>
-   * The topic of the content, for example "overview" or "restaurant".
-   * </pre>
-   *
-   * <code>string topic = 1;</code>
-   *
-   * @return The bytes for topic.
-   */
-  com.google.protobuf.ByteString getTopicBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Content related to the topic.
    * </pre>
    *
@@ -93,48 +67,57 @@ public interface ContentBlockOrBuilder
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * References that are related to this block of content.
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
    * </pre>
    *
-   * <code>.google.maps.places.v1.References references = 3;</code>
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
    *
-   * @return Whether the references field is set.
+   * @return A list containing the referencedPlaces.
    */
-  boolean hasReferences();
+  java.util.List<java.lang.String> getReferencedPlacesList();
 
   /**
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * References that are related to this block of content.
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
    * </pre>
    *
-   * <code>.google.maps.places.v1.References references = 3;</code>
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
    *
-   * @return The references.
+   * @return The count of referencedPlaces.
    */
-  com.google.maps.places.v1.References getReferences();
+  int getReferencedPlacesCount();
 
   /**
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * References that are related to this block of content.
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
    * </pre>
    *
-   * <code>.google.maps.places.v1.References references = 3;</code>
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The referencedPlaces at the given index.
    */
-  com.google.maps.places.v1.ReferencesOrBuilder getReferencesOrBuilder();
+  java.lang.String getReferencedPlaces(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
+   * </pre>
+   *
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the referencedPlaces at the given index.
+   */
+  com.google.protobuf.ByteString getReferencedPlacesBytes(int index);
 }

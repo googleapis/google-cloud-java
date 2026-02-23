@@ -105,4 +105,18 @@ public interface VideoMetadataOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getEndOffsetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The frame rate of the video sent to the model. If not specified,
+   * the default value is 1.0. The valid range is (0.0, 24.0].
+   * </pre>
+   *
+   * <code>double fps = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fps.
+   */
+  double getFps();
 }

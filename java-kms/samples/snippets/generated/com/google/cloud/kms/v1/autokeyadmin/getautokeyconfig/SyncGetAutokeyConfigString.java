@@ -34,7 +34,7 @@ public class SyncGetAutokeyConfigString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
-      String name = AutokeyConfigName.of("[FOLDER]").toString();
+      String name = AutokeyConfigName.ofFolderName("[FOLDER]").toString();
       AutokeyConfig response = autokeyAdminClient.getAutokeyConfig(name);
     }
   }

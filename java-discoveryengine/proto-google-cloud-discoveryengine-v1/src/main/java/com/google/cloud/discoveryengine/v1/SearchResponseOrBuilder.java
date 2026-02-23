@@ -382,6 +382,54 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Output only. Natural language query understanding information for the
+   * returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Natural language query understanding information for the
+   * returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingInfo.
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+      getNaturalLanguageQueryUnderstandingInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Natural language query understanding information for the
+   * returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfoOrBuilder
+      getNaturalLanguageQueryUnderstandingInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Session information.
    *
    * Only set if
@@ -494,4 +542,34 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder getSearchLinkPromotionsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the semantic state of the search response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for semanticState.
+   */
+  int getSemanticStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the semantic state of the search response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The semanticState.
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.SemanticState getSemanticState();
 }

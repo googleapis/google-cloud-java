@@ -1987,6 +1987,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .putAllEntityMetrics(new HashMap<String, Evaluation.MultiConfidenceMetrics>())
             .setKmsKeyName("kmsKeyName412586233")
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .addAllRevisions(new ArrayList<Evaluation.EvaluationRevision>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2048,6 +2049,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .putAllEntityMetrics(new HashMap<String, Evaluation.MultiConfidenceMetrics>())
             .setKmsKeyName("kmsKeyName412586233")
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .addAllRevisions(new ArrayList<Evaluation.EvaluationRevision>())
             .build();
     mockService.addResponse(expectedResponse);
 

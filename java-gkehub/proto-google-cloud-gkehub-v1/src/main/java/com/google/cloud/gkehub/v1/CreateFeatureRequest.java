@@ -239,7 +239,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A request ID to identify requests. Specify a unique request ID
+   * A request ID to identify requests. Specify a unique request ID
    * so that if you must retry your request, the server will know to ignore
    * the request if it has already been completed. The server will guarantee
    * that for at least 60 minutes after the first request.
@@ -275,7 +275,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A request ID to identify requests. Specify a unique request ID
+   * A request ID to identify requests. Specify a unique request ID
    * so that if you must retry your request, the server will know to ignore
    * the request if it has already been completed. The server will guarantee
    * that for at least 60 minutes after the first request.
@@ -1136,7 +1136,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A request ID to identify requests. Specify a unique request ID
+     * A request ID to identify requests. Specify a unique request ID
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes after the first request.
@@ -1171,7 +1171,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A request ID to identify requests. Specify a unique request ID
+     * A request ID to identify requests. Specify a unique request ID
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes after the first request.
@@ -1206,7 +1206,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A request ID to identify requests. Specify a unique request ID
+     * A request ID to identify requests. Specify a unique request ID
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes after the first request.
@@ -1240,7 +1240,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A request ID to identify requests. Specify a unique request ID
+     * A request ID to identify requests. Specify a unique request ID
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes after the first request.
@@ -1270,7 +1270,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A request ID to identify requests. Specify a unique request ID
+     * A request ID to identify requests. Specify a unique request ID
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes after the first request.

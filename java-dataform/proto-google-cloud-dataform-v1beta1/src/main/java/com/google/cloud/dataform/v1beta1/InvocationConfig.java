@@ -57,6 +57,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     includedTargets_ = java.util.Collections.emptyList();
     includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
+    queryPriority_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,6 +75,186 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataform.v1beta1.InvocationConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Types of priority for query execution in BigQuery.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority}
+   */
+  public enum QueryPriority implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>QUERY_PRIORITY_UNSPECIFIED = 0;</code>
+     */
+    QUERY_PRIORITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Query will be executed in BigQuery with interactive priority.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>INTERACTIVE = 1;</code>
+     */
+    INTERACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Query will be executed in BigQuery with batch priority.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#batchqueries.
+     * </pre>
+     *
+     * <code>BATCH = 2;</code>
+     */
+    BATCH(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "QueryPriority");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>QUERY_PRIORITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int QUERY_PRIORITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Query will be executed in BigQuery with interactive priority.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>INTERACTIVE = 1;</code>
+     */
+    public static final int INTERACTIVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Query will be executed in BigQuery with batch priority.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#batchqueries.
+     * </pre>
+     *
+     * <code>BATCH = 2;</code>
+     */
+    public static final int BATCH_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static QueryPriority valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static QueryPriority forNumber(int value) {
+      switch (value) {
+        case 0:
+          return QUERY_PRIORITY_UNSPECIFIED;
+        case 1:
+          return INTERACTIVE;
+        case 2:
+          return BATCH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<QueryPriority> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<QueryPriority> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<QueryPriority>() {
+          public QueryPriority findValueByNumber(int number) {
+            return QueryPriority.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataform.v1beta1.InvocationConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final QueryPriority[] VALUES = values();
+
+    public static QueryPriority valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private QueryPriority(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority)
+  }
+
+  private int bitField0_;
   public static final int INCLUDED_TARGETS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -343,6 +524,73 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int QUERY_PRIORITY_FIELD_NUMBER = 9;
+  private int queryPriority_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority for query execution in BigQuery.
+   * More information can be found at
+   * https://cloud.google.com/bigquery/docs/running-queries#queries.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the queryPriority field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueryPriority() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority for query execution in BigQuery.
+   * More information can be found at
+   * https://cloud.google.com/bigquery/docs/running-queries#queries.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for queryPriority.
+   */
+  @java.lang.Override
+  public int getQueryPriorityValue() {
+    return queryPriority_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority for query execution in BigQuery.
+   * More information can be found at
+   * https://cloud.google.com/bigquery/docs/running-queries#queries.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The queryPriority.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority getQueryPriority() {
+    com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority result =
+        com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority.forNumber(queryPriority_);
+    return result == null
+        ? com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -374,6 +622,9 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(9, queryPriority_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -411,6 +662,9 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, serviceAccount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, queryPriority_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -435,6 +689,10 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     if (getFullyRefreshIncrementalTablesEnabled()
         != other.getFullyRefreshIncrementalTablesEnabled()) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasQueryPriority() != other.hasQueryPriority()) return false;
+    if (hasQueryPriority()) {
+      if (queryPriority_ != other.queryPriority_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -466,6 +724,10 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
             + com.google.protobuf.Internal.hashBoolean(getFullyRefreshIncrementalTablesEnabled());
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasQueryPriority()) {
+      hash = (37 * hash) + QUERY_PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + queryPriority_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -620,6 +882,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       transitiveDependentsIncluded_ = false;
       fullyRefreshIncrementalTablesEnabled_ = false;
       serviceAccount_ = "";
+      queryPriority_ = 0;
       return this;
     }
 
@@ -686,6 +949,12 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.queryPriority_ = queryPriority_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -751,6 +1020,9 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         serviceAccount_ = other.serviceAccount_;
         bitField0_ |= 0x00000020;
         onChanged();
+      }
+      if (other.hasQueryPriority()) {
+        setQueryPriorityValue(other.getQueryPriorityValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -822,6 +1094,12 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 72:
+              {
+                queryPriority_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1725,6 +2003,145 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private int queryPriority_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the priority for query execution in BigQuery.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the queryPriority field is set.
+     */
+    @java.lang.Override
+    public boolean hasQueryPriority() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the priority for query execution in BigQuery.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for queryPriority.
+     */
+    @java.lang.Override
+    public int getQueryPriorityValue() {
+      return queryPriority_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the priority for query execution in BigQuery.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for queryPriority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryPriorityValue(int value) {
+      queryPriority_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the priority for query execution in BigQuery.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The queryPriority.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority getQueryPriority() {
+      com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority result =
+          com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority.forNumber(
+              queryPriority_);
+      return result == null
+          ? com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the priority for query execution in BigQuery.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The queryPriority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryPriority(
+        com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      queryPriority_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the priority for query execution in BigQuery.
+     * More information can be found at
+     * https://cloud.google.com/bigquery/docs/running-queries#queries.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority query_priority = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQueryPriority() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      queryPriority_ = 0;
       onChanged();
       return this;
     }

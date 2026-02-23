@@ -753,7 +753,12 @@ public class DocumentProcessorServiceStubSettings
     return setDefaultProcessorVersionOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to reviewDocument. */
+  /**
+   * Returns the object with the settings used for calls to reviewDocument.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<ReviewDocumentRequest, Operation> reviewDocumentSettings() {
     return reviewDocumentSettings;
   }
@@ -1940,7 +1945,12 @@ public class DocumentProcessorServiceStubSettings
       return setDefaultProcessorVersionOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to reviewDocument. */
+    /**
+     * Returns the builder for the settings used for calls to reviewDocument.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<ReviewDocumentRequest, Operation> reviewDocumentSettings() {
       return reviewDocumentSettings;
     }

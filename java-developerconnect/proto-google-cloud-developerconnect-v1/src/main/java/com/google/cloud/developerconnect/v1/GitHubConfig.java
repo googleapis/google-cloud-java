@@ -112,6 +112,16 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessage
      * <code>FIREBASE = 2;</code>
      */
     FIREBASE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The Gemini Code Assist Application.
+     * </pre>
+     *
+     * <code>GEMINI_CODE_ASSIST = 3;</code>
+     */
+    GEMINI_CODE_ASSIST(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,6 +168,17 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessage
      */
     public static final int FIREBASE_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * The Gemini Code Assist Application.
+     * </pre>
+     *
+     * <code>GEMINI_CODE_ASSIST = 3;</code>
+     */
+    public static final int GEMINI_CODE_ASSIST_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -188,6 +209,8 @@ public final class GitHubConfig extends com.google.protobuf.GeneratedMessage
           return DEVELOPER_CONNECT;
         case 2:
           return FIREBASE;
+        case 3:
+          return GEMINI_CODE_ASSIST;
         default:
           return null;
       }

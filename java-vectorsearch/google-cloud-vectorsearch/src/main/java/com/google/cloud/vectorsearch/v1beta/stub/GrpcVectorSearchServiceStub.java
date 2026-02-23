@@ -38,6 +38,9 @@ import com.google.cloud.vectorsearch.v1beta.CreateCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.CreateIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteIndexRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsMetadata;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsResponse;
 import com.google.cloud.vectorsearch.v1beta.GetCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.GetIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.ImportDataObjectsMetadata;
@@ -179,6 +182,18 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExportDataObjectsRequest, Operation>
+      exportDataObjectsMethodDescriptor =
+          MethodDescriptor.<ExportDataObjectsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vectorsearch.v1beta.VectorSearchService/ExportDataObjects")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportDataObjectsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -228,6 +243,10 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
   private final OperationCallable<
           ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
       importDataObjectsOperationCallable;
+  private final UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable;
+  private final OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -378,6 +397,16 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsTransportSettings =
+        GrpcCallSettings.<ExportDataObjectsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportDataObjectsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -471,6 +500,17 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
         callableFactory.createOperationCallable(
             importDataObjectsTransportSettings,
             settings.importDataObjectsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportDataObjectsCallable =
+        callableFactory.createUnaryCallable(
+            exportDataObjectsTransportSettings,
+            settings.exportDataObjectsSettings(),
+            clientContext);
+    this.exportDataObjectsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportDataObjectsTransportSettings,
+            settings.exportDataObjectsOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -587,6 +627,18 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
           ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
       importDataObjectsOperationCallable() {
     return importDataObjectsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable() {
+    return exportDataObjectsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable() {
+    return exportDataObjectsOperationCallable;
   }
 
   @Override

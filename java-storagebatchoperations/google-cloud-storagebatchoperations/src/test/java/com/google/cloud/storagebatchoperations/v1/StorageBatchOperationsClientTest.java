@@ -16,6 +16,7 @@
 
 package com.google.cloud.storagebatchoperations.v1;
 
+import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListBucketOperationsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListJobsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListLocationsPagedResponse;
 
@@ -195,6 +196,7 @@ public class StorageBatchOperationsClientTest {
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
             .setDryRun(true)
+            .setIsMultiBucketJob(true)
             .build();
     mockStorageBatchOperations.addResponse(expectedResponse);
 
@@ -241,6 +243,7 @@ public class StorageBatchOperationsClientTest {
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
             .setDryRun(true)
+            .setIsMultiBucketJob(true)
             .build();
     mockStorageBatchOperations.addResponse(expectedResponse);
 
@@ -287,6 +290,7 @@ public class StorageBatchOperationsClientTest {
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
             .setDryRun(true)
+            .setIsMultiBucketJob(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -347,6 +351,7 @@ public class StorageBatchOperationsClientTest {
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
             .setDryRun(true)
+            .setIsMultiBucketJob(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -526,6 +531,190 @@ public class StorageBatchOperationsClientTest {
     try {
       String name = "name3373707";
       client.cancelJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBucketOperationsTest() throws Exception {
+    BucketOperation responsesElement = BucketOperation.newBuilder().build();
+    ListBucketOperationsResponse expectedResponse =
+        ListBucketOperationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBucketOperations(Arrays.asList(responsesElement))
+            .build();
+    mockStorageBatchOperations.addResponse(expectedResponse);
+
+    JobName parent = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    ListBucketOperationsPagedResponse pagedListResponse = client.listBucketOperations(parent);
+
+    List<BucketOperation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBucketOperationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageBatchOperations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBucketOperationsRequest actualRequest =
+        ((ListBucketOperationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBucketOperationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageBatchOperations.addException(exception);
+
+    try {
+      JobName parent = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.listBucketOperations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBucketOperationsTest2() throws Exception {
+    BucketOperation responsesElement = BucketOperation.newBuilder().build();
+    ListBucketOperationsResponse expectedResponse =
+        ListBucketOperationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBucketOperations(Arrays.asList(responsesElement))
+            .build();
+    mockStorageBatchOperations.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBucketOperationsPagedResponse pagedListResponse = client.listBucketOperations(parent);
+
+    List<BucketOperation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBucketOperationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageBatchOperations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBucketOperationsRequest actualRequest =
+        ((ListBucketOperationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBucketOperationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageBatchOperations.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBucketOperations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBucketOperationTest() throws Exception {
+    BucketOperation expectedResponse =
+        BucketOperation.newBuilder()
+            .setName(
+                BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]")
+                    .toString())
+            .setBucketName("bucketName1117008789")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setCompleteTime(Timestamp.newBuilder().build())
+            .setCounters(Counters.newBuilder().build())
+            .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .build();
+    mockStorageBatchOperations.addResponse(expectedResponse);
+
+    BucketOperationName name =
+        BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]");
+
+    BucketOperation actualResponse = client.getBucketOperation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageBatchOperations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBucketOperationRequest actualRequest = ((GetBucketOperationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBucketOperationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageBatchOperations.addException(exception);
+
+    try {
+      BucketOperationName name =
+          BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]");
+      client.getBucketOperation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBucketOperationTest2() throws Exception {
+    BucketOperation expectedResponse =
+        BucketOperation.newBuilder()
+            .setName(
+                BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]")
+                    .toString())
+            .setBucketName("bucketName1117008789")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setCompleteTime(Timestamp.newBuilder().build())
+            .setCounters(Counters.newBuilder().build())
+            .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .build();
+    mockStorageBatchOperations.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    BucketOperation actualResponse = client.getBucketOperation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageBatchOperations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBucketOperationRequest actualRequest = ((GetBucketOperationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBucketOperationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageBatchOperations.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBucketOperation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -30,6 +30,125 @@ public interface MetricOrBuilder
    *
    *
    * <pre>
+   * The spec for a pre-defined metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;</code>
+   *
+   * @return Whether the predefinedMetricSpec field is set.
+   */
+  boolean hasPredefinedMetricSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * The spec for a pre-defined metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;</code>
+   *
+   * @return The predefinedMetricSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec getPredefinedMetricSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * The spec for a pre-defined metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec predefined_metric_spec = 8;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpecOrBuilder
+      getPredefinedMetricSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for a computation based metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+   * </code>
+   *
+   * @return Whether the computationBasedMetricSpec field is set.
+   */
+  boolean hasComputationBasedMetricSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for a computation based metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+   * </code>
+   *
+   * @return The computationBasedMetricSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec getComputationBasedMetricSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for a computation based metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpec computation_based_metric_spec = 9;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ComputationBasedMetricSpecOrBuilder
+      getComputationBasedMetricSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for an LLM based metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+   *
+   * @return Whether the llmBasedMetricSpec field is set.
+   */
+  boolean hasLlmBasedMetricSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for an LLM based metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+   *
+   * @return The llmBasedMetricSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec getLlmBasedMetricSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for an LLM based metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec llm_based_metric_spec = 10;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpecOrBuilder getLlmBasedMetricSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Spec for pointwise metric.
    * </pre>
    *

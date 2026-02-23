@@ -18,6 +18,7 @@ package com.google.cloud.visionai.v1;
 
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListClustersPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.visionai.v1.StreamsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListSeriesPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListStreamsPagedResponse;
 
@@ -34,6 +35,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.stub.StreamsServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -323,6 +328,17 @@ public class StreamsServiceSettings extends ClientSettings<StreamsServiceSetting
   public OperationCallSettings<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationSettings() {
     return ((StreamsServiceStubSettings) getStubSettings()).materializeChannelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((StreamsServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((StreamsServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final StreamsServiceSettings create(StreamsServiceStubSettings stub)
@@ -644,6 +660,18 @@ public class StreamsServiceSettings extends ClientSettings<StreamsServiceSetting
     public OperationCallSettings.Builder<MaterializeChannelRequest, Channel, OperationMetadata>
         materializeChannelOperationSettings() {
       return getStubSettingsBuilder().materializeChannelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

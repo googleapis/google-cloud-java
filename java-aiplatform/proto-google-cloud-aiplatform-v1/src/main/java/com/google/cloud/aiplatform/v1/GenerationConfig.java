@@ -54,6 +54,8 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   private GenerationConfig() {
     stopSequences_ = com.google.protobuf.LazyStringArrayList.emptyList();
     responseMimeType_ = "";
+    responseModalities_ = emptyIntList();
+    mediaResolution_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +71,392 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1.GenerationConfig.class,
             com.google.cloud.aiplatform.v1.GenerationConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The modalities of the response.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1.GenerationConfig.Modality}
+   */
+  public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified modality. Will be processed as text.
+     * </pre>
+     *
+     * <code>MODALITY_UNSPECIFIED = 0;</code>
+     */
+    MODALITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Text modality.
+     * </pre>
+     *
+     * <code>TEXT = 1;</code>
+     */
+    TEXT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Image modality.
+     * </pre>
+     *
+     * <code>IMAGE = 2;</code>
+     */
+    IMAGE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Audio modality.
+     * </pre>
+     *
+     * <code>AUDIO = 3;</code>
+     */
+    AUDIO(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Modality");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified modality. Will be processed as text.
+     * </pre>
+     *
+     * <code>MODALITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODALITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Text modality.
+     * </pre>
+     *
+     * <code>TEXT = 1;</code>
+     */
+    public static final int TEXT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Image modality.
+     * </pre>
+     *
+     * <code>IMAGE = 2;</code>
+     */
+    public static final int IMAGE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Audio modality.
+     * </pre>
+     *
+     * <code>AUDIO = 3;</code>
+     */
+    public static final int AUDIO_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Modality valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Modality forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODALITY_UNSPECIFIED;
+        case 1:
+          return TEXT;
+        case 2:
+          return IMAGE;
+        case 3:
+          return AUDIO;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Modality> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Modality> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Modality>() {
+          public Modality findValueByNumber(int number) {
+            return Modality.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.GenerationConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Modality[] VALUES = values();
+
+    public static Modality valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Modality(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.GenerationConfig.Modality)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1.GenerationConfig.MediaResolution}
+   */
+  public enum MediaResolution implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution has not been set.
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_UNSPECIFIED = 0;</code>
+     */
+    MEDIA_RESOLUTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution set to low (64 tokens).
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_LOW = 1;</code>
+     */
+    MEDIA_RESOLUTION_LOW(1),
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution set to medium (256 tokens).
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_MEDIUM = 2;</code>
+     */
+    MEDIA_RESOLUTION_MEDIUM(2),
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution set to high (zoomed reframing with 256 tokens).
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_HIGH = 3;</code>
+     */
+    MEDIA_RESOLUTION_HIGH(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "MediaResolution");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution has not been set.
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int MEDIA_RESOLUTION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution set to low (64 tokens).
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_LOW = 1;</code>
+     */
+    public static final int MEDIA_RESOLUTION_LOW_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution set to medium (256 tokens).
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_MEDIUM = 2;</code>
+     */
+    public static final int MEDIA_RESOLUTION_MEDIUM_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Media resolution set to high (zoomed reframing with 256 tokens).
+     * </pre>
+     *
+     * <code>MEDIA_RESOLUTION_HIGH = 3;</code>
+     */
+    public static final int MEDIA_RESOLUTION_HIGH_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MediaResolution valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MediaResolution forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MEDIA_RESOLUTION_UNSPECIFIED;
+        case 1:
+          return MEDIA_RESOLUTION_LOW;
+        case 2:
+          return MEDIA_RESOLUTION_MEDIUM;
+        case 3:
+          return MEDIA_RESOLUTION_HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MediaResolution> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MediaResolution>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MediaResolution>() {
+              public MediaResolution findValueByNumber(int number) {
+                return MediaResolution.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.GenerationConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final MediaResolution[] VALUES = values();
+
+    public static MediaResolution valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MediaResolution(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.GenerationConfig.MediaResolution)
   }
 
   public interface RoutingConfigOrBuilder
@@ -3063,6 +3451,51 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return The thinkingBudget.
      */
     int getThinkingBudget();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of thoughts tokens that the model should generate.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thinkingLevel field is set.
+     */
+    boolean hasThinkingLevel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of thoughts tokens that the model should generate.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for thinkingLevel.
+     */
+    int getThinkingLevelValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of thoughts tokens that the model should generate.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thinkingLevel.
+     */
+    com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel getThinkingLevel();
   }
 
   /**
@@ -3095,7 +3528,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       super(builder);
     }
 
-    private ThinkingConfig() {}
+    private ThinkingConfig() {
+      thinkingLevel_ = 0;
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ContentProto
@@ -3110,6 +3545,226 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           .ensureFieldAccessorsInitialized(
               com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.class,
               com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking level for the model.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel}
+     */
+    public enum ThinkingLevel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified thinking level.
+       * </pre>
+       *
+       * <code>THINKING_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      THINKING_LEVEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Low thinking level.
+       * </pre>
+       *
+       * <code>LOW = 1;</code>
+       */
+      LOW(1),
+      /**
+       *
+       *
+       * <pre>
+       * Medium thinking level.
+       * </pre>
+       *
+       * <code>MEDIUM = 2;</code>
+       */
+      MEDIUM(2),
+      /**
+       *
+       *
+       * <pre>
+       * High thinking level.
+       * </pre>
+       *
+       * <code>HIGH = 3;</code>
+       */
+      HIGH(3),
+      /**
+       *
+       *
+       * <pre>
+       * MINIMAL thinking level.
+       * </pre>
+       *
+       * <code>MINIMAL = 4;</code>
+       */
+      MINIMAL(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "ThinkingLevel");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified thinking level.
+       * </pre>
+       *
+       * <code>THINKING_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int THINKING_LEVEL_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Low thinking level.
+       * </pre>
+       *
+       * <code>LOW = 1;</code>
+       */
+      public static final int LOW_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Medium thinking level.
+       * </pre>
+       *
+       * <code>MEDIUM = 2;</code>
+       */
+      public static final int MEDIUM_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * High thinking level.
+       * </pre>
+       *
+       * <code>HIGH = 3;</code>
+       */
+      public static final int HIGH_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * MINIMAL thinking level.
+       * </pre>
+       *
+       * <code>MINIMAL = 4;</code>
+       */
+      public static final int MINIMAL_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ThinkingLevel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ThinkingLevel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return THINKING_LEVEL_UNSPECIFIED;
+          case 1:
+            return LOW;
+          case 2:
+            return MEDIUM;
+          case 3:
+            return HIGH;
+          case 4:
+            return MINIMAL;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ThinkingLevel> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ThinkingLevel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ThinkingLevel>() {
+                public ThinkingLevel findValueByNumber(int number) {
+                  return ThinkingLevel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final ThinkingLevel[] VALUES = values();
+
+      public static ThinkingLevel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ThinkingLevel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel)
     }
 
     private int bitField0_;
@@ -3187,6 +3842,70 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return thinkingBudget_;
     }
 
+    public static final int THINKING_LEVEL_FIELD_NUMBER = 4;
+    private int thinkingLevel_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of thoughts tokens that the model should generate.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thinkingLevel field is set.
+     */
+    @java.lang.Override
+    public boolean hasThinkingLevel() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of thoughts tokens that the model should generate.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for thinkingLevel.
+     */
+    @java.lang.Override
+    public int getThinkingLevelValue() {
+      return thinkingLevel_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of thoughts tokens that the model should generate.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thinkingLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel
+        getThinkingLevel() {
+      com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel result =
+          com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel.forNumber(
+              thinkingLevel_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel
+              .UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3207,6 +3926,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(3, thinkingBudget_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeEnum(4, thinkingLevel_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3221,6 +3943,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, thinkingBudget_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, thinkingLevel_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3246,6 +3971,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (hasThinkingBudget()) {
         if (getThinkingBudget() != other.getThinkingBudget()) return false;
       }
+      if (hasThinkingLevel() != other.hasThinkingLevel()) return false;
+      if (hasThinkingLevel()) {
+        if (thinkingLevel_ != other.thinkingLevel_) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3264,6 +3993,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (hasThinkingBudget()) {
         hash = (37 * hash) + THINKING_BUDGET_FIELD_NUMBER;
         hash = (53 * hash) + getThinkingBudget();
+      }
+      if (hasThinkingLevel()) {
+        hash = (37 * hash) + THINKING_LEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + thinkingLevel_;
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -3408,6 +4141,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         includeThoughts_ = false;
         thinkingBudget_ = 0;
+        thinkingLevel_ = 0;
         return this;
       }
 
@@ -3455,6 +4189,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           result.thinkingBudget_ = thinkingBudget_;
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.thinkingLevel_ = thinkingLevel_;
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -3478,6 +4216,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasThinkingBudget()) {
           setThinkingBudget(other.getThinkingBudget());
+        }
+        if (other.hasThinkingLevel()) {
+          setThinkingLevelValue(other.getThinkingLevelValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3517,6 +4258,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 24
+              case 32:
+                {
+                  thinkingLevel_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3684,6 +4431,135 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public Builder clearThinkingBudget() {
         bitField0_ = (bitField0_ & ~0x00000002);
         thinkingBudget_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int thinkingLevel_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of thoughts tokens that the model should generate.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the thinkingLevel field is set.
+       */
+      @java.lang.Override
+      public boolean hasThinkingLevel() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of thoughts tokens that the model should generate.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for thinkingLevel.
+       */
+      @java.lang.Override
+      public int getThinkingLevelValue() {
+        return thinkingLevel_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of thoughts tokens that the model should generate.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for thinkingLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThinkingLevelValue(int value) {
+        thinkingLevel_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of thoughts tokens that the model should generate.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The thinkingLevel.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel
+          getThinkingLevel() {
+        com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel result =
+            com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel.forNumber(
+                thinkingLevel_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of thoughts tokens that the model should generate.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The thinkingLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThinkingLevel(
+          com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        thinkingLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of thoughts tokens that the model should generate.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.ThinkingLevel thinking_level = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThinkingLevel() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        thinkingLevel_ = 0;
         onChanged();
         return this;
       }
@@ -4528,6 +5404,252 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : routingConfig_;
   }
 
+  public static final int AUDIO_TIMESTAMP_FIELD_NUMBER = 20;
+  private boolean audioTimestamp_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamps will be included in the request to
+   * the model. This can be useful for synchronizing audio with other modalities
+   * in the response.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the audioTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioTimestamp() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamps will be included in the request to
+   * the model. This can be useful for synchronizing audio with other modalities
+   * in the response.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The audioTimestamp.
+   */
+  @java.lang.Override
+  public boolean getAudioTimestamp() {
+    return audioTimestamp_;
+  }
+
+  public static final int RESPONSE_MODALITIES_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList responseModalities_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.cloud.aiplatform.v1.GenerationConfig.Modality>
+      responseModalities_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.cloud.aiplatform.v1.GenerationConfig.Modality>() {
+            public com.google.cloud.aiplatform.v1.GenerationConfig.Modality convert(int from) {
+              com.google.cloud.aiplatform.v1.GenerationConfig.Modality result =
+                  com.google.cloud.aiplatform.v1.GenerationConfig.Modality.forNumber(from);
+              return result == null
+                  ? com.google.cloud.aiplatform.v1.GenerationConfig.Modality.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the responseModalities.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.GenerationConfig.Modality>
+      getResponseModalitiesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.cloud.aiplatform.v1.GenerationConfig.Modality>(
+        responseModalities_, responseModalities_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of responseModalities.
+   */
+  @java.lang.Override
+  public int getResponseModalitiesCount() {
+    return responseModalities_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The responseModalities at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GenerationConfig.Modality getResponseModalities(int index) {
+    return responseModalities_converter_.convert(responseModalities_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for responseModalities.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getResponseModalitiesValueList() {
+    return responseModalities_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of responseModalities at the given index.
+   */
+  @java.lang.Override
+  public int getResponseModalitiesValue(int index) {
+    return responseModalities_.getInt(index);
+  }
+
+  private int responseModalitiesMemoizedSerializedSize;
+
+  public static final int MEDIA_RESOLUTION_FIELD_NUMBER = 22;
+  private int mediaResolution_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The token resolution at which input media content is sampled.
+   * This is used to control the trade-off between the quality of the response
+   * and the number of tokens used to represent the media. A higher resolution
+   * allows the model to perceive more detail, which can lead to a more nuanced
+   * response, but it will also use more tokens. This does not affect the
+   * image dimensions sent to the model.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mediaResolution field is set.
+   */
+  @java.lang.Override
+  public boolean hasMediaResolution() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The token resolution at which input media content is sampled.
+   * This is used to control the trade-off between the quality of the response
+   * and the number of tokens used to represent the media. A higher resolution
+   * allows the model to perceive more detail, which can lead to a more nuanced
+   * response, but it will also use more tokens. This does not affect the
+   * image dimensions sent to the model.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mediaResolution.
+   */
+  @java.lang.Override
+  public int getMediaResolutionValue() {
+    return mediaResolution_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The token resolution at which input media content is sampled.
+   * This is used to control the trade-off between the quality of the response
+   * and the number of tokens used to represent the media. A higher resolution
+   * allows the model to perceive more detail, which can lead to a more nuanced
+   * response, but it will also use more tokens. This does not affect the
+   * image dimensions sent to the model.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mediaResolution.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution getMediaResolution() {
+    com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution result =
+        com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution.forNumber(mediaResolution_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution.UNRECOGNIZED
+        : result;
+  }
+
   public static final int SPEECH_CONFIG_FIELD_NUMBER = 23;
   private com.google.cloud.aiplatform.v1.SpeechConfig speechConfig_;
 
@@ -4546,7 +5668,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSpeechConfig() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -4607,7 +5729,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasThinkingConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -4671,7 +5793,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasImageConfig() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -4726,6 +5848,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeFloat(1, temperature_);
     }
@@ -4769,15 +5892,28 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       output.writeBool(18, responseLogprobs_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeMessage(23, getSpeechConfig());
+      output.writeBool(20, audioTimestamp_);
+    }
+    if (getResponseModalitiesList().size() > 0) {
+      output.writeUInt32NoTag(170);
+      output.writeUInt32NoTag(responseModalitiesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < responseModalities_.size(); i++) {
+      output.writeEnumNoTag(responseModalities_.getInt(i));
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeEnum(22, mediaResolution_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(23, getSpeechConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(25, getThinkingConfig());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(28, getResponseJsonSchema());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(30, getImageConfig());
     }
     getUnknownFields().writeTo(output);
@@ -4837,15 +5973,35 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, responseLogprobs_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSpeechConfig());
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, audioTimestamp_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < responseModalities_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                responseModalities_.getInt(i));
+      }
+      size += dataSize;
+      if (!getResponseModalitiesList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      responseModalitiesMemoizedSerializedSize = dataSize;
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, mediaResolution_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSpeechConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getThinkingConfig());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getResponseJsonSchema());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getImageConfig());
     }
     size += getUnknownFields().getSerializedSize();
@@ -4922,6 +6078,15 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasRoutingConfig() != other.hasRoutingConfig()) return false;
     if (hasRoutingConfig()) {
       if (!getRoutingConfig().equals(other.getRoutingConfig())) return false;
+    }
+    if (hasAudioTimestamp() != other.hasAudioTimestamp()) return false;
+    if (hasAudioTimestamp()) {
+      if (getAudioTimestamp() != other.getAudioTimestamp()) return false;
+    }
+    if (!responseModalities_.equals(other.responseModalities_)) return false;
+    if (hasMediaResolution() != other.hasMediaResolution()) return false;
+    if (hasMediaResolution()) {
+      if (mediaResolution_ != other.mediaResolution_) return false;
     }
     if (hasSpeechConfig() != other.hasSpeechConfig()) return false;
     if (hasSpeechConfig()) {
@@ -5003,6 +6168,18 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasRoutingConfig()) {
       hash = (37 * hash) + ROUTING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingConfig().hashCode();
+    }
+    if (hasAudioTimestamp()) {
+      hash = (37 * hash) + AUDIO_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAudioTimestamp());
+    }
+    if (getResponseModalitiesCount() > 0) {
+      hash = (37 * hash) + RESPONSE_MODALITIES_FIELD_NUMBER;
+      hash = (53 * hash) + responseModalities_.hashCode();
+    }
+    if (hasMediaResolution()) {
+      hash = (37 * hash) + MEDIA_RESOLUTION_FIELD_NUMBER;
+      hash = (53 * hash) + mediaResolution_;
     }
     if (hasSpeechConfig()) {
       hash = (37 * hash) + SPEECH_CONFIG_FIELD_NUMBER;
@@ -5197,6 +6374,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigBuilder_.dispose();
         routingConfigBuilder_ = null;
       }
+      audioTimestamp_ = false;
+      responseModalities_ = emptyIntList();
+      mediaResolution_ = 0;
       speechConfig_ = null;
       if (speechConfigBuilder_ != null) {
         speechConfigBuilder_.dispose();
@@ -5314,19 +6494,31 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.speechConfig_ =
-            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
+        result.audioTimestamp_ = audioTimestamp_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.thinkingConfig_ =
-            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        responseModalities_.makeImmutable();
+        result.responseModalities_ = responseModalities_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.mediaResolution_ = mediaResolution_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.speechConfig_ =
+            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.thinkingConfig_ =
+            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.imageConfig_ =
             imageConfigBuilder_ == null ? imageConfig_ : imageConfigBuilder_.build();
-        to_bitField0_ |= 0x00008000;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5397,6 +6589,23 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRoutingConfig()) {
         mergeRoutingConfig(other.getRoutingConfig());
+      }
+      if (other.hasAudioTimestamp()) {
+        setAudioTimestamp(other.getAudioTimestamp());
+      }
+      if (!other.responseModalities_.isEmpty()) {
+        if (responseModalities_.isEmpty()) {
+          responseModalities_ = other.responseModalities_;
+          responseModalities_.makeImmutable();
+          bitField0_ |= 0x00010000;
+        } else {
+          ensureResponseModalitiesIsMutable();
+          responseModalities_.addAll(other.responseModalities_);
+        }
+        onChanged();
+      }
+      if (other.hasMediaResolution()) {
+        setMediaResolutionValue(other.getMediaResolutionValue());
       }
       if (other.hasSpeechConfig()) {
         mergeSpeechConfig(other.getSpeechConfig());
@@ -5520,18 +6729,48 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 144
+            case 160:
+              {
+                audioTimestamp_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 160
+            case 168:
+              {
+                int tmpRaw = input.readEnum();
+                ensureResponseModalitiesIsMutable();
+                responseModalities_.addInt(tmpRaw);
+                break;
+              } // case 168
+            case 170:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureResponseModalitiesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  responseModalities_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 170
+            case 176:
+              {
+                mediaResolution_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 176
             case 186:
               {
                 input.readMessage(
                     internalGetSpeechConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 186
             case 202:
               {
                 input.readMessage(
                     internalGetThinkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 202
             case 226:
@@ -5545,7 +6784,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetImageConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 242
             default:
@@ -7624,6 +8863,542 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return routingConfigBuilder_;
     }
 
+    private boolean audioTimestamp_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamps will be included in the request to
+     * the model. This can be useful for synchronizing audio with other modalities
+     * in the response.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the audioTimestamp field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioTimestamp() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamps will be included in the request to
+     * the model. This can be useful for synchronizing audio with other modalities
+     * in the response.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The audioTimestamp.
+     */
+    @java.lang.Override
+    public boolean getAudioTimestamp() {
+      return audioTimestamp_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamps will be included in the request to
+     * the model. This can be useful for synchronizing audio with other modalities
+     * in the response.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The audioTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAudioTimestamp(boolean value) {
+
+      audioTimestamp_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, audio timestamps will be included in the request to
+     * the model. This can be useful for synchronizing audio with other modalities
+     * in the response.
+     * </pre>
+     *
+     * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAudioTimestamp() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      audioTimestamp_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList responseModalities_ = emptyIntList();
+
+    private void ensureResponseModalitiesIsMutable() {
+      if (!responseModalities_.isModifiable()) {
+        responseModalities_ = makeMutableCopy(responseModalities_);
+      }
+      bitField0_ |= 0x00010000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the responseModalities.
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.GenerationConfig.Modality>
+        getResponseModalitiesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.cloud.aiplatform.v1.GenerationConfig.Modality>(
+          responseModalities_, responseModalities_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of responseModalities.
+     */
+    public int getResponseModalitiesCount() {
+      return responseModalities_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The responseModalities at the given index.
+     */
+    public com.google.cloud.aiplatform.v1.GenerationConfig.Modality getResponseModalities(
+        int index) {
+      return responseModalities_converter_.convert(responseModalities_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The responseModalities to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseModalities(
+        int index, com.google.cloud.aiplatform.v1.GenerationConfig.Modality value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResponseModalitiesIsMutable();
+      responseModalities_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The responseModalities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResponseModalities(
+        com.google.cloud.aiplatform.v1.GenerationConfig.Modality value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResponseModalitiesIsMutable();
+      responseModalities_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The responseModalities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResponseModalities(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.GenerationConfig.Modality>
+            values) {
+      ensureResponseModalitiesIsMutable();
+      for (com.google.cloud.aiplatform.v1.GenerationConfig.Modality value : values) {
+        responseModalities_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseModalities() {
+      responseModalities_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for responseModalities.
+     */
+    public java.util.List<java.lang.Integer> getResponseModalitiesValueList() {
+      responseModalities_.makeImmutable();
+      return responseModalities_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of responseModalities at the given index.
+     */
+    public int getResponseModalitiesValue(int index) {
+      return responseModalities_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for responseModalities to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseModalitiesValue(int index, int value) {
+      ensureResponseModalitiesIsMutable();
+      responseModalities_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for responseModalities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResponseModalitiesValue(int value) {
+      ensureResponseModalitiesIsMutable();
+      responseModalities_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modalities of the response. The model will generate a
+     * response that includes all the specified modalities. For example, if this
+     * is set to `[TEXT, IMAGE]`, the response will include both text and an
+     * image.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for responseModalities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResponseModalitiesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureResponseModalitiesIsMutable();
+      for (int value : values) {
+        responseModalities_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private int mediaResolution_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The token resolution at which input media content is sampled.
+     * This is used to control the trade-off between the quality of the response
+     * and the number of tokens used to represent the media. A higher resolution
+     * allows the model to perceive more detail, which can lead to a more nuanced
+     * response, but it will also use more tokens. This does not affect the
+     * image dimensions sent to the model.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the mediaResolution field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaResolution() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The token resolution at which input media content is sampled.
+     * This is used to control the trade-off between the quality of the response
+     * and the number of tokens used to represent the media. A higher resolution
+     * allows the model to perceive more detail, which can lead to a more nuanced
+     * response, but it will also use more tokens. This does not affect the
+     * image dimensions sent to the model.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mediaResolution.
+     */
+    @java.lang.Override
+    public int getMediaResolutionValue() {
+      return mediaResolution_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The token resolution at which input media content is sampled.
+     * This is used to control the trade-off between the quality of the response
+     * and the number of tokens used to represent the media. A higher resolution
+     * allows the model to perceive more detail, which can lead to a more nuanced
+     * response, but it will also use more tokens. This does not affect the
+     * image dimensions sent to the model.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for mediaResolution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMediaResolutionValue(int value) {
+      mediaResolution_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The token resolution at which input media content is sampled.
+     * This is used to control the trade-off between the quality of the response
+     * and the number of tokens used to represent the media. A higher resolution
+     * allows the model to perceive more detail, which can lead to a more nuanced
+     * response, but it will also use more tokens. This does not affect the
+     * image dimensions sent to the model.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mediaResolution.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution getMediaResolution() {
+      com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution result =
+          com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution.forNumber(
+              mediaResolution_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The token resolution at which input media content is sampled.
+     * This is used to control the trade-off between the quality of the response
+     * and the number of tokens used to represent the media. A higher resolution
+     * allows the model to perceive more detail, which can lead to a more nuanced
+     * response, but it will also use more tokens. This does not affect the
+     * image dimensions sent to the model.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The mediaResolution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMediaResolution(
+        com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      mediaResolution_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The token resolution at which input media content is sampled.
+     * This is used to control the trade-off between the quality of the response
+     * and the number of tokens used to represent the media. A higher resolution
+     * allows the model to perceive more detail, which can lead to a more nuanced
+     * response, but it will also use more tokens. This does not affect the
+     * image dimensions sent to the model.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMediaResolution() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      mediaResolution_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1.SpeechConfig speechConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1.SpeechConfig,
@@ -7645,7 +9420,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the speechConfig field is set.
      */
     public boolean hasSpeechConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -7691,7 +9466,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         speechConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7714,7 +9489,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         speechConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7732,7 +9507,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSpeechConfig(com.google.cloud.aiplatform.v1.SpeechConfig value) {
       if (speechConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && speechConfig_ != null
             && speechConfig_ != com.google.cloud.aiplatform.v1.SpeechConfig.getDefaultInstance()) {
           getSpeechConfigBuilder().mergeFrom(value);
@@ -7743,7 +9518,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         speechConfigBuilder_.mergeFrom(value);
       }
       if (speechConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -7761,7 +9536,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSpeechConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       speechConfig_ = null;
       if (speechConfigBuilder_ != null) {
         speechConfigBuilder_.dispose();
@@ -7783,7 +9558,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.SpeechConfig.Builder getSpeechConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return internalGetSpeechConfigFieldBuilder().getBuilder();
     }
@@ -7860,7 +9635,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the thinkingConfig field is set.
      */
     public boolean hasThinkingConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -7911,7 +9686,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         thinkingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7936,7 +9711,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         thinkingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7957,7 +9732,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeThinkingConfig(
         com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig value) {
       if (thinkingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && thinkingConfig_ != null
             && thinkingConfig_
                 != com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig
@@ -7970,7 +9745,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         thinkingConfigBuilder_.mergeFrom(value);
       }
       if (thinkingConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -7990,7 +9765,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearThinkingConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       thinkingConfig_ = null;
       if (thinkingConfigBuilder_ != null) {
         thinkingConfigBuilder_.dispose();
@@ -8015,7 +9790,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.Builder
         getThinkingConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetThinkingConfigFieldBuilder().getBuilder();
     }
@@ -8095,7 +9870,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the imageConfig field is set.
      */
     public boolean hasImageConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -8141,7 +9916,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         imageConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8164,7 +9939,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         imageConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8182,7 +9957,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeImageConfig(com.google.cloud.aiplatform.v1.ImageConfig value) {
       if (imageConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && imageConfig_ != null
             && imageConfig_ != com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()) {
           getImageConfigBuilder().mergeFrom(value);
@@ -8193,7 +9968,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         imageConfigBuilder_.mergeFrom(value);
       }
       if (imageConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -8211,7 +9986,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearImageConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       imageConfig_ = null;
       if (imageConfigBuilder_ != null) {
         imageConfigBuilder_.dispose();
@@ -8233,7 +10008,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ImageConfig.Builder getImageConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetImageConfigFieldBuilder().getBuilder();
     }

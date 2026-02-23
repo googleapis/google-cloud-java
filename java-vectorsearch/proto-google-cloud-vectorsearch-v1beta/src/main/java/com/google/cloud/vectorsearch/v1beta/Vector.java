@@ -243,7 +243,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
    * @return A list containing the values.
    */
   @java.lang.Override
@@ -262,7 +262,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
    * @return The count of values.
    */
   @java.lang.Deprecated
@@ -280,7 +280,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
    * @param index The index of the element to return.
    * @return The values at the given index.
    */
@@ -1199,7 +1199,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @return A list containing the values.
      */
     @java.lang.Deprecated
@@ -1218,7 +1218,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @return The count of values.
      */
     @java.lang.Deprecated
@@ -1236,7 +1236,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @param index The index of the element to return.
      * @return The values at the given index.
      */
@@ -1255,7 +1255,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @param index The index to set the value at.
      * @param value The values to set.
      * @return This builder for chaining.
@@ -1280,7 +1280,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @param value The values to add.
      * @return This builder for chaining.
      */
@@ -1304,7 +1304,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @param values The values to add.
      * @return This builder for chaining.
      */
@@ -1327,7 +1327,7 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=75
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

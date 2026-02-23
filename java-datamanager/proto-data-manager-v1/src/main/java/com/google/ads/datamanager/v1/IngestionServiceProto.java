@@ -151,13 +151,13 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
           + "datamanager.v1.RetrieveRequestStatusResp"
           + "onse\"\"\202\323\344\223\002\034\022\032/v1/requestStatus:retrieve"
           + "\032K\312A\032datamanager.googleapis.com\322A+https:"
-          + "//www.googleapis.com/auth/datamanagerB\325\001"
+          + "//www.googleapis.com/auth/datamanagerB\322\001"
           + "\n\035com.google.ads.datamanager.v1B\025Ingesti"
-          + "onServiceProtoP\001ZDgoogle.golang.org/genp"
-          + "roto/googleapis/ads/datamanager/v1;datam"
-          + "anager\252\002\031Google.Ads.DataManager.V1\312\002\031Goo"
-          + "gle\\Ads\\DataManager\\V1\352\002\034Google::Ads::Da"
-          + "taManager::V1b\006proto3"
+          + "onServiceProtoP\001ZAcloud.google.com/go/da"
+          + "tamanager/apiv1/datamanagerpb;datamanage"
+          + "rpb\252\002\031Google.Ads.DataManager.V1\312\002\031Google"
+          + "\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataM"
+          + "anager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

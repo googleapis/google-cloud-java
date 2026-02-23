@@ -2538,6 +2538,70 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         : advancedSiteSearchConfig_;
   }
 
+  public static final int NATURAL_LANGUAGE_QUERY_UNDERSTANDING_CONFIG_FIELD_NUMBER = 34;
+  private com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+      naturalLanguageQueryUnderstandingConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNaturalLanguageQueryUnderstandingConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+      getNaturalLanguageQueryUnderstandingConfig() {
+    return naturalLanguageQueryUnderstandingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+            .getDefaultInstance()
+        : naturalLanguageQueryUnderstandingConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfigOrBuilder
+      getNaturalLanguageQueryUnderstandingConfigOrBuilder() {
+    return naturalLanguageQueryUnderstandingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+            .getDefaultInstance()
+        : naturalLanguageQueryUnderstandingConfig_;
+  }
+
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 32;
 
   @SuppressWarnings("serial")
@@ -2623,7 +2687,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCmekConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -2682,7 +2746,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBillingEstimation() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -2779,7 +2843,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasWorkspaceConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -2843,7 +2907,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -2918,7 +2982,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -3005,7 +3069,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasHealthcareFhirConfig() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -3159,25 +3223,25 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(12, getAdvancedSiteSearchConfig());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(18, getCmekConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(23, getBillingEstimation());
     }
     if (aclEnabled_ != false) {
       output.writeBool(24, aclEnabled_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(25, getWorkspaceConfig());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(28, getStartingSchema());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(29, getHealthcareFhirConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(identityMappingStore_)) {
@@ -3185,6 +3249,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 32, kmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(34, getNaturalLanguageQueryUnderstandingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3235,27 +3302,27 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, getAdvancedSiteSearchConfig());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getCmekConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
     }
     if (aclEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, aclEnabled_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(29, getHealthcareFhirConfig());
     }
@@ -3264,6 +3331,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(32, kmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              34, getNaturalLanguageQueryUnderstandingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3294,6 +3366,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     if (hasAdvancedSiteSearchConfig() != other.hasAdvancedSiteSearchConfig()) return false;
     if (hasAdvancedSiteSearchConfig()) {
       if (!getAdvancedSiteSearchConfig().equals(other.getAdvancedSiteSearchConfig())) return false;
+    }
+    if (hasNaturalLanguageQueryUnderstandingConfig()
+        != other.hasNaturalLanguageQueryUnderstandingConfig()) return false;
+    if (hasNaturalLanguageQueryUnderstandingConfig()) {
+      if (!getNaturalLanguageQueryUnderstandingConfig()
+          .equals(other.getNaturalLanguageQueryUnderstandingConfig())) return false;
     }
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (hasCmekConfig() != other.hasCmekConfig()) return false;
@@ -3354,6 +3432,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     if (hasAdvancedSiteSearchConfig()) {
       hash = (37 * hash) + ADVANCED_SITE_SEARCH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedSiteSearchConfig().hashCode();
+    }
+    if (hasNaturalLanguageQueryUnderstandingConfig()) {
+      hash = (37 * hash) + NATURAL_LANGUAGE_QUERY_UNDERSTANDING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNaturalLanguageQueryUnderstandingConfig().hashCode();
     }
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
@@ -3528,6 +3610,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetAdvancedSiteSearchConfigFieldBuilder();
+        internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder();
         internalGetCmekConfigFieldBuilder();
         internalGetBillingEstimationFieldBuilder();
         internalGetWorkspaceConfigFieldBuilder();
@@ -3556,6 +3639,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       if (advancedSiteSearchConfigBuilder_ != null) {
         advancedSiteSearchConfigBuilder_.dispose();
         advancedSiteSearchConfigBuilder_ = null;
+      }
+      naturalLanguageQueryUnderstandingConfig_ = null;
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ != null) {
+        naturalLanguageQueryUnderstandingConfigBuilder_.dispose();
+        naturalLanguageQueryUnderstandingConfigBuilder_ = null;
       }
       kmsKeyName_ = "";
       cmekConfig_ = null;
@@ -3658,47 +3746,54 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.kmsKeyName_ = kmsKeyName_;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.cmekConfig_ = cmekConfigBuilder_ == null ? cmekConfig_ : cmekConfigBuilder_.build();
+        result.naturalLanguageQueryUnderstandingConfig_ =
+            naturalLanguageQueryUnderstandingConfigBuilder_ == null
+                ? naturalLanguageQueryUnderstandingConfig_
+                : naturalLanguageQueryUnderstandingConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.cmekConfig_ = cmekConfigBuilder_ == null ? cmekConfig_ : cmekConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.billingEstimation_ =
             billingEstimationBuilder_ == null
                 ? billingEstimation_
                 : billingEstimationBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.aclEnabled_ = aclEnabled_;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.workspaceConfig_ =
-            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.aclEnabled_ = aclEnabled_;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.workspaceConfig_ =
+            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.startingSchema_ =
-            startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.startingSchema_ =
+            startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.healthcareFhirConfig_ =
             healthcareFhirConfigBuilder_ == null
                 ? healthcareFhirConfig_
                 : healthcareFhirConfigBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.identityMappingStore_ = identityMappingStore_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3754,9 +3849,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       if (other.hasAdvancedSiteSearchConfig()) {
         mergeAdvancedSiteSearchConfig(other.getAdvancedSiteSearchConfig());
       }
+      if (other.hasNaturalLanguageQueryUnderstandingConfig()) {
+        mergeNaturalLanguageQueryUnderstandingConfig(
+            other.getNaturalLanguageQueryUnderstandingConfig());
+      }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCmekConfig()) {
@@ -3782,7 +3881,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getIdentityMappingStore().isEmpty()) {
         identityMappingStore_ = other.identityMappingStore_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3878,27 +3977,27 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCmekConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 146
             case 186:
               {
                 input.readMessage(
                     internalGetBillingEstimationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 186
             case 192:
               {
                 aclEnabled_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 192
             case 202:
               {
                 input.readMessage(
                     internalGetWorkspaceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 202
             case 218:
@@ -3906,35 +4005,43 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetDocumentProcessingConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(
                     internalGetStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 226
             case 234:
               {
                 input.readMessage(
                     internalGetHealthcareFhirConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 234
             case 250:
               {
                 identityMappingStore_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 250
             case 258:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 258
+            case 274:
+              {
+                input.readMessage(
+                    internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 274
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5308,6 +5415,231 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       return advancedSiteSearchConfigBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+        naturalLanguageQueryUnderstandingConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig,
+            com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig.Builder,
+            com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfigOrBuilder>
+        naturalLanguageQueryUnderstandingConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the naturalLanguageQueryUnderstandingConfig field is set.
+     */
+    public boolean hasNaturalLanguageQueryUnderstandingConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The naturalLanguageQueryUnderstandingConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+        getNaturalLanguageQueryUnderstandingConfig() {
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ == null) {
+        return naturalLanguageQueryUnderstandingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+                .getDefaultInstance()
+            : naturalLanguageQueryUnderstandingConfig_;
+      } else {
+        return naturalLanguageQueryUnderstandingConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNaturalLanguageQueryUnderstandingConfig(
+        com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig value) {
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        naturalLanguageQueryUnderstandingConfig_ = value;
+      } else {
+        naturalLanguageQueryUnderstandingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNaturalLanguageQueryUnderstandingConfig(
+        com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig.Builder
+            builderForValue) {
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ == null) {
+        naturalLanguageQueryUnderstandingConfig_ = builderForValue.build();
+      } else {
+        naturalLanguageQueryUnderstandingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNaturalLanguageQueryUnderstandingConfig(
+        com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig value) {
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && naturalLanguageQueryUnderstandingConfig_ != null
+            && naturalLanguageQueryUnderstandingConfig_
+                != com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+                    .getDefaultInstance()) {
+          getNaturalLanguageQueryUnderstandingConfigBuilder().mergeFrom(value);
+        } else {
+          naturalLanguageQueryUnderstandingConfig_ = value;
+        }
+      } else {
+        naturalLanguageQueryUnderstandingConfigBuilder_.mergeFrom(value);
+      }
+      if (naturalLanguageQueryUnderstandingConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNaturalLanguageQueryUnderstandingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      naturalLanguageQueryUnderstandingConfig_ = null;
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ != null) {
+        naturalLanguageQueryUnderstandingConfigBuilder_.dispose();
+        naturalLanguageQueryUnderstandingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig.Builder
+        getNaturalLanguageQueryUnderstandingConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfigOrBuilder
+        getNaturalLanguageQueryUnderstandingConfigOrBuilder() {
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ != null) {
+        return naturalLanguageQueryUnderstandingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return naturalLanguageQueryUnderstandingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig
+                .getDefaultInstance()
+            : naturalLanguageQueryUnderstandingConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Natural Language Query Understanding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig,
+            com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig.Builder,
+            com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfigOrBuilder>
+        internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder() {
+      if (naturalLanguageQueryUnderstandingConfigBuilder_ == null) {
+        naturalLanguageQueryUnderstandingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig,
+                com.google.cloud.discoveryengine.v1.NaturalLanguageQueryUnderstandingConfig.Builder,
+                com.google.cloud.discoveryengine.v1
+                    .NaturalLanguageQueryUnderstandingConfigOrBuilder>(
+                getNaturalLanguageQueryUnderstandingConfig(), getParentForChildren(), isClean());
+        naturalLanguageQueryUnderstandingConfig_ = null;
+      }
+      return naturalLanguageQueryUnderstandingConfigBuilder_;
+    }
+
     private java.lang.Object kmsKeyName_ = "";
 
     /**
@@ -5394,7 +5726,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5419,7 +5751,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -5449,7 +5781,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5475,7 +5807,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the cmekConfig field is set.
      */
     public boolean hasCmekConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -5521,7 +5853,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         cmekConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5544,7 +5876,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         cmekConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5562,7 +5894,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCmekConfig(com.google.cloud.discoveryengine.v1.CmekConfig value) {
       if (cmekConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && cmekConfig_ != null
             && cmekConfig_ != com.google.cloud.discoveryengine.v1.CmekConfig.getDefaultInstance()) {
           getCmekConfigBuilder().mergeFrom(value);
@@ -5573,7 +5905,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         cmekConfigBuilder_.mergeFrom(value);
       }
       if (cmekConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -5591,7 +5923,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCmekConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       cmekConfig_ = null;
       if (cmekConfigBuilder_ != null) {
         cmekConfigBuilder_.dispose();
@@ -5613,7 +5945,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.discoveryengine.v1.CmekConfig.Builder getCmekConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetCmekConfigFieldBuilder().getBuilder();
     }
@@ -5688,7 +6020,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the billingEstimation field is set.
      */
     public boolean hasBillingEstimation() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -5735,7 +6067,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         billingEstimationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5758,7 +6090,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         billingEstimationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5777,7 +6109,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeBillingEstimation(
         com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation value) {
       if (billingEstimationBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && billingEstimation_ != null
             && billingEstimation_
                 != com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
@@ -5790,7 +6122,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         billingEstimationBuilder_.mergeFrom(value);
       }
       if (billingEstimation_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -5808,7 +6140,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearBillingEstimation() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
         billingEstimationBuilder_.dispose();
@@ -5831,7 +6163,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder
         getBillingEstimationBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetBillingEstimationFieldBuilder().getBuilder();
     }
@@ -5951,7 +6283,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder setAclEnabled(boolean value) {
 
       aclEnabled_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5984,7 +6316,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAclEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       aclEnabled_ = false;
       onChanged();
       return this;
@@ -6013,7 +6345,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the workspaceConfig field is set.
      */
     public boolean hasWorkspaceConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -6063,7 +6395,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         workspaceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6088,7 +6420,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         workspaceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6108,7 +6440,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeWorkspaceConfig(com.google.cloud.discoveryengine.v1.WorkspaceConfig value) {
       if (workspaceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && workspaceConfig_ != null
             && workspaceConfig_
                 != com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()) {
@@ -6120,7 +6452,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         workspaceConfigBuilder_.mergeFrom(value);
       }
       if (workspaceConfig_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -6140,7 +6472,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
      */
     public Builder clearWorkspaceConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       workspaceConfig_ = null;
       if (workspaceConfigBuilder_ != null) {
         workspaceConfigBuilder_.dispose();
@@ -6164,7 +6496,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
      */
     public com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder getWorkspaceConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetWorkspaceConfigFieldBuilder().getBuilder();
     }
@@ -6244,7 +6576,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6292,7 +6624,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6315,7 +6647,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6334,7 +6666,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
@@ -6347,7 +6679,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6365,7 +6697,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -6388,7 +6720,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetDocumentProcessingConfigFieldBuilder().getBuilder();
     }
@@ -6478,7 +6810,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6552,7 +6884,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6589,7 +6921,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6621,7 +6953,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && startingSchema_ != null
             && startingSchema_ != com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()) {
           getStartingSchemaBuilder().mergeFrom(value);
@@ -6632,7 +6964,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6664,7 +6996,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -6700,7 +7032,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetStartingSchemaFieldBuilder().getBuilder();
     }
@@ -6803,7 +7135,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the healthcareFhirConfig field is set.
      */
     public boolean hasHealthcareFhirConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6850,7 +7182,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         healthcareFhirConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6873,7 +7205,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         healthcareFhirConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6892,7 +7224,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeHealthcareFhirConfig(
         com.google.cloud.discoveryengine.v1.HealthcareFhirConfig value) {
       if (healthcareFhirConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && healthcareFhirConfig_ != null
             && healthcareFhirConfig_
                 != com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.getDefaultInstance()) {
@@ -6904,7 +7236,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         healthcareFhirConfigBuilder_.mergeFrom(value);
       }
       if (healthcareFhirConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6922,7 +7254,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearHealthcareFhirConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       healthcareFhirConfig_ = null;
       if (healthcareFhirConfigBuilder_ != null) {
         healthcareFhirConfigBuilder_.dispose();
@@ -6945,7 +7277,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1.HealthcareFhirConfig.Builder
         getHealthcareFhirConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetHealthcareFhirConfigFieldBuilder().getBuilder();
     }
@@ -7083,7 +7415,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       identityMappingStore_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7107,7 +7439,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIdentityMappingStore() {
       identityMappingStore_ = getDefaultInstance().getIdentityMappingStore();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -7136,7 +7468,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       identityMappingStore_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

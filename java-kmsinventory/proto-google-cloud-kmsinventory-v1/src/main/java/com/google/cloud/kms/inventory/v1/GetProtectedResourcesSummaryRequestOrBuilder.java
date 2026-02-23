@@ -57,4 +57,36 @@ public interface GetProtectedResourcesSummaryRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope to use if the kms organization service account is not
+   * configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fallbackScope.
+   */
+  int getFallbackScopeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope to use if the kms organization service account is not
+   * configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.inventory.v1.FallbackScope fallback_scope = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fallbackScope.
+   */
+  com.google.cloud.kms.inventory.v1.FallbackScope getFallbackScope();
 }

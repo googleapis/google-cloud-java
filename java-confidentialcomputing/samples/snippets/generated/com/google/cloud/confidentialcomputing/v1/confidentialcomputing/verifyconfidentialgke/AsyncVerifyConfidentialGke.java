@@ -40,6 +40,7 @@ public class AsyncVerifyConfidentialGke {
       VerifyConfidentialGkeRequest request =
           VerifyConfidentialGkeRequest.newBuilder()
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
               .build();
       ApiFuture<VerifyConfidentialGkeResponse> future =
           confidentialComputingClient.verifyConfidentialGkeCallable().futureCall(request);

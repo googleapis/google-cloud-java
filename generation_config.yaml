@@ -1,6 +1,6 @@
-gapic_generator_version: 2.66.0
-googleapis_commitish: af232e71d7b67e84811f55b48c51de867f98f35b
-libraries_bom_version: 26.74.0
+gapic_generator_version: 2.67.0
+googleapis_commitish: 47e44e0ff4b6aeecd2f2661c14c55e62c42d5ed8
+libraries_bom_version: 26.76.0
 libraries:
 - api_shortname: accessapproval
   name_pretty: Access Approval
@@ -400,6 +400,30 @@ libraries:
   release_level: stable
   GAPICs:
   - proto_path: google/cloud/bigquery/reservation/v1
+- api_shortname: bigquerystorage
+  name_pretty: BigQuery Storage
+  product_documentation: https://cloud.google.com/bigquery/docs/reference/storage/
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/history
+  api_description: is an API for reading data stored in BigQuery. This API provides
+    direct, high-throughput read access to existing BigQuery tables, supports parallel
+    access with automatic liquid sharding, and allows fine-grained control over what
+    data is returned.
+  issue_tracker: https://issuetracker.google.com/savedsearches/559654
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-bigquerystorage
+  codeowner_team: '@googleapis/bigquery-team'
+  api_id: bigquerystorage.googleapis.com
+  transport: grpc
+  requires_billing: true
+  library_type: GAPIC_COMBO
+  recommended_package: com.google.cloud.bigquery.storage.v1
+  GAPICs:
+  - proto_path: google/cloud/bigquery/storage/v1
+  - proto_path: google/cloud/bigquery/storage/v1alpha
+  - proto_path: google/cloud/bigquery/storage/v1beta1
+  - proto_path: google/cloud/bigquery/storage/v1beta2
+  - proto_path: google/cloud/bigquery/storage/v1beta
 - api_shortname: cloudbilling
   name_pretty: Cloud Billing
   product_documentation: https://cloud.google.com/billing/docs
@@ -459,6 +483,22 @@ libraries:
   api_id: certificatemanager.googleapis.com
   GAPICs:
   - proto_path: google/cloud/certificatemanager/v1
+- api_shortname: ces
+  name_pretty: Gemini Enterprise for Customer Experience API
+  product_documentation: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps
+  api_description: Customer Experience Agent Studio (CX Agent Studio) is a minimal
+    code conversational agent builder.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-ces/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-ces
+  api_id: ces.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/ces/v1
+  requires_billing: true
+  rpc_documentation: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rpc
 - api_shortname: cloudchannel
   name_pretty: Channel Services
   product_documentation: https://cloud.google.com/channel/docs
@@ -812,6 +852,27 @@ libraries:
   - proto_path: google/cloud/metastore/v1
   - proto_path: google/cloud/metastore/v1alpha
   - proto_path: google/cloud/metastore/v1beta
+- api_shortname: datastore
+  name_pretty: Cloud Datastore
+  product_documentation: https://cloud.google.com/datastore
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/559768
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-datastore
+  api_id: datastore.googleapis.com
+  library_type: GAPIC_COMBO
+  api_description: is a fully managed, schemaless database for\nstoring non-relational
+    data. Cloud Datastore automatically scales with\nyour users and supports ACID
+    transactions, high availability of reads and\nwrites, strong consistency for reads
+    and ancestor queries, and eventual\nconsistency for all other queries.
+  excluded_dependencies: grpc-google-cloud-datastore-v1
+  extra_versioned_modules: datastore-v1-proto-client
+  excluded_poms: grpc-google-cloud-datastore-v1
+  recommended_package: com.google.cloud.datastore
+  GAPICs:
+  - proto_path: google/datastore/v1
+  - proto_path: google/datastore/admin/v1
 - api_shortname: datastream
   name_pretty: Datastream
   product_documentation: https://cloud.google.com/datastream/docs
@@ -2758,6 +2819,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workflows/v1
   - proto_path: google/cloud/workflows/v1beta
+- api_shortname: workloadmanager
+  name_pretty: Workload Manager API
+  product_documentation: https://docs.cloud.google.com/workload-manager/docs
+  api_description: Workload Manager is a service that provides tooling for enterprise
+    workloads to automate the deployment and validation of your workloads against
+    best practices and recommendations.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-workloadmanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-workloadmanager
+  api_id: workloadmanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/workloadmanager/v1
+  requires_billing: true
+  rpc_documentation: https://docs.cloud.google.com/workload-manager/docs/reference/rest
 - api_shortname: workspaceevents
   name_pretty: Google Workspace Events API
   product_documentation: https://developers.google.com/workspace/events

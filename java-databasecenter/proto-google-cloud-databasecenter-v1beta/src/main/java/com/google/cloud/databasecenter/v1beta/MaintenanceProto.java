@@ -81,7 +81,7 @@ public final class MaintenanceProto extends com.google.protobuf.GeneratedFile {
           + "deny_maintenance_schedules\030\002 \003(\0132C.googl"
           + "e.cloud.databasecenter.v1beta.ResourceMa"
           + "intenanceDenyScheduleB\003\340A\001\022 \n\023maintenanc"
-          + "e_version\030\003 \001(\tB\003\340A\001*`\n\005Phase\022\025\n\021PHASE_U"
+          + "e_version\030\003 \001(\tB\003\340A\003*`\n\005Phase\022\025\n\021PHASE_U"
           + "NSPECIFIED\020\000\022\017\n\013PHASE_WEEK1\020\001\022\017\n\013PHASE_W"
           + "EEK2\020\002\022\017\n\013PHASE_WEEK5\020\003\022\r\n\tPHASE_ANY\020\004B\376"
           + "\001\n&com.google.cloud.databasecenter.v1bet"

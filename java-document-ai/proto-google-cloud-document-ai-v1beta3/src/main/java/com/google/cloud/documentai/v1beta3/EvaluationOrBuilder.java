@@ -303,4 +303,68 @@ public interface EvaluationOrBuilder
    * @return The bytes for kmsKeyVersionName.
    */
   com.google.protobuf.ByteString getKmsKeyVersionNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains all revisions of the evaluation, excluding the latest one.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision revisions = 9;
+   * </code>
+   */
+  java.util.List<com.google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision>
+      getRevisionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains all revisions of the evaluation, excluding the latest one.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision revisions = 9;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision getRevisions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains all revisions of the evaluation, excluding the latest one.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision revisions = 9;
+   * </code>
+   */
+  int getRevisionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains all revisions of the evaluation, excluding the latest one.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision revisions = 9;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.documentai.v1beta3.Evaluation.EvaluationRevisionOrBuilder>
+      getRevisionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains all revisions of the evaluation, excluding the latest one.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1beta3.Evaluation.EvaluationRevision revisions = 9;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.Evaluation.EvaluationRevisionOrBuilder getRevisionsOrBuilder(
+      int index);
 }

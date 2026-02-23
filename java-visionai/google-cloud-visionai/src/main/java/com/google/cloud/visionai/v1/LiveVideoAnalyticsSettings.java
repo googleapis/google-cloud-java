@@ -17,6 +17,7 @@
 package com.google.cloud.visionai.v1;
 
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListOperatorsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListProcessesPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListPublicOperatorsPagedResponse;
@@ -34,6 +35,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.stub.LiveVideoAnalyticsStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -275,6 +280,17 @@ public class LiveVideoAnalyticsSettings extends ClientSettings<LiveVideoAnalytic
   public OperationCallSettings<BatchRunProcessRequest, BatchRunProcessResponse, OperationMetadata>
       batchRunProcessOperationSettings() {
     return ((LiveVideoAnalyticsStubSettings) getStubSettings()).batchRunProcessOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((LiveVideoAnalyticsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((LiveVideoAnalyticsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final LiveVideoAnalyticsSettings create(LiveVideoAnalyticsStubSettings stub)
@@ -549,6 +565,18 @@ public class LiveVideoAnalyticsSettings extends ClientSettings<LiveVideoAnalytic
             BatchRunProcessRequest, BatchRunProcessResponse, OperationMetadata>
         batchRunProcessOperationSettings() {
       return getStubSettingsBuilder().batchRunProcessOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

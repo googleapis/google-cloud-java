@@ -1,5 +1,76 @@
 # Changelog
 
+## [1.79.0](https://github.com/googleapis/google-cloud-java/compare/v1.78.0...v1.79.0) (2026-02-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* [auditmanager] A new packaging option `cloud.google.com/go/auditmanager/apiv1main/auditmanagerpb;auditmanagerpb` for `go_package` is added
+
+### Features
+
+* [aiplatform] A new field `predefined_metric_spec` is added to message `.google.cloud.aiplatform.v1beta1.Metric` ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [aiplatform] add max_concurrent_active_run_count field to Schedule message ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [aiplatform] add max_concurrent_active_run_count field to Schedule message ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [aiplatform] add model_armor_config to GeminiExample ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [ces] new module for ces ([#11940](https://github.com/googleapis/google-cloud-java/issues/11940)) ([fb47842](https://github.com/googleapis/google-cloud-java/commit/fb47842b9d10b62a418da9a4c46518482f0c46a8))
+* [databasecenter] Adding Method QueryIssues of Database Center API v1beta ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [dataform] Update GCP Client Libraries in v1beta1 to support Folders, TeamFolders, and other relevant APIs ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [discoveryengine] add Natural Language Query Understanding fields and messages to DiscoveryEngine request, response, and datastore messages ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [kms] Added DeleteCryptoKey and DeleteCryptoKeyVersion RPCs to permanently remove resources ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [maps-places] Add `googleMapsTypeLabel` field to show type information on Google Maps ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [saasservicemgmt] Add AppHub related condition types to Deployment protos ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [storagebatchoperations] add QUEUED state to Storage Batch Operations API ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+* [workloadmanager] new module for workloadmanager ([#11941](https://github.com/googleapis/google-cloud-java/issues/11941)) ([e7e86f7](https://github.com/googleapis/google-cloud-java/commit/e7e86f79419451460470ad0278e7a642464514f6))
+
+
+### Bug Fixes
+
+* [auditmanager] A new packaging option `cloud.google.com/go/auditmanager/apiv1main/auditmanagerpb;auditmanagerpb` for `go_package` is added ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+
+
+### Documentation
+
+* [maps-solar] Add satellite imagery to `rgb_url` description ([1041e03](https://github.com/googleapis/google-cloud-java/commit/1041e030cf2c325d96c7e1a5eee18cd086096222))
+
+## [1.78.0](https://github.com/googleapis/google-cloud-java/compare/v1.77.0...v1.78.0) (2026-02-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* The `SpannerIndexingConfig` message and the `spanner_indexing_config` field within the `Dataset` message have been removed. Client code referencing these will need to stop referencing these in case of an error docs: [document-ai] Updated comments for various fields and messages
+* [visionai] An existing default host `visionai.googleapis.com` is changed to `warehouse-visionai.googleapis.com` in service `Warehouse`
+
+### Features
+
+* [aiplatform] Add `fps` to message `VideoMetadata` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] add Vertex Multimodal Datasets as input and output types in `google.cloud.aiplatform.v1beta1.BatchPredictionJob` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] add Vertex Multimodal Datasets as input and output types in `google.cloud.aiplatform.v1beta1.BatchPredictionJob` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] Force-delete for RagCorpora, ignoring any external errors and ensuring deletion of the RagCorpus ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [artifact-registry] add DIRSUM_SHA256 hash type ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [chat] Addition of QuoteType enum, QuotedMessageSnapshot & ForwardMetadata in the QuotedMessageMetadata proto ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [cloudquotas] Hierarchical Quota Adjuster ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [confidentialcomputing] add Nvidia Attestation proto message with its relevant fields and ConfidentialGke options ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [dialogflow] added a new field StreamingAnalyzeContentRequest.output_multiple_utterances ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [document-ai] A new field `revisions` is added to message `.google.cloud.documentai.v1beta3.Evaluation` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [geminidataanalytics] add ClarificationMessage, thought-signature, formatted-data ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [gkehub] Add GKE Hub teams scope and RBAC GAPIC ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [vectorsearch] add SearchHint to SemanticSearch requests ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+
+
+### Bug Fixes
+
+* [visionai] An existing default host `visionai.googleapis.com` is changed to `warehouse-visionai.googleapis.com` in service `Warehouse` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.66.1 ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.1 ([#11916](https://github.com/googleapis/google-cloud-java/issues/11916)) ([6127aa6](https://github.com/googleapis/google-cloud-java/commit/6127aa6a9c366dfc907a2e85dc9b896d2c31f16d))
+
+
+### Documentation
+
+* [aiplatform] update documentation of `.google.cloud.aiplatform.v1.DatasetService`, `.google.cloud.aiplatform.v1.Dataset`, and `.google.cloud.aiplatform.v1.DatasetVersion` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [aiplatform] update documentation of `.google.cloud.aiplatform.v1beta1.Dataset` and `.google.cloud.aiplatform.v1beta1.DatasetVersion` ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+* [datamanager] describe additional URI format for kek_uri in GcpEncryptionInfo and AwsKmsEncryptionInfo ([91994ba](https://github.com/googleapis/google-cloud-java/commit/91994bab571960f2d5e29de31a433c7c97808fa2))
+
 ## [1.77.0](https://github.com/googleapis/google-cloud-java/compare/v1.76.0...v1.77.0) (2026-01-29)
 
 

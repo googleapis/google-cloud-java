@@ -105,4 +105,35 @@ public interface StreamingRecognitionFeaturesOrBuilder
    */
   com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeoutOrBuilder
       getVoiceActivityTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Endpointing sensitivity for this stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endpointingSensitivity.
+   */
+  int getEndpointingSensitivityValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Endpointing sensitivity for this stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity endpointing_sensitivity = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endpointingSensitivity.
+   */
+  com.google.cloud.speech.v2.StreamingRecognitionFeatures.EndpointingSensitivity
+      getEndpointingSensitivity();
 }

@@ -18,6 +18,7 @@ package com.google.cloud.databasecenter.v1beta;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -118,6 +119,12 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).aggregateIssueStatsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryIssues. */
+  public PagedCallSettings<QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+      queryIssuesSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).queryIssuesSettings();
   }
 
   public static final DatabaseCenterSettings create(DatabaseCenterStubSettings stub)
@@ -259,6 +266,13 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
     public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
         aggregateIssueStatsSettings() {
       return getStubSettingsBuilder().aggregateIssueStatsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryIssues. */
+    public PagedCallSettings.Builder<
+            QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+        queryIssuesSettings() {
+      return getStubSettingsBuilder().queryIssuesSettings();
     }
 
     @Override

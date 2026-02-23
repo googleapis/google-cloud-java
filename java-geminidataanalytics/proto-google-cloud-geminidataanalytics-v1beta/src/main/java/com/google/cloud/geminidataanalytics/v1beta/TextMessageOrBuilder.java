@@ -109,4 +109,18 @@ public interface TextMessageOrBuilder
    * @return The textType.
    */
   com.google.cloud.geminidataanalytics.v1beta.TextMessage.TextType getTextType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An opaque signature for a thought so it can be reused in
+   * subsequent requests.
+   * </pre>
+   *
+   * <code>bytes thought_signature = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The thoughtSignature.
+   */
+  com.google.protobuf.ByteString getThoughtSignature();
 }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1.stub;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -24,8 +25,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest;
+import com.google.cloud.developerconnect.v1.DeploymentEvent;
+import com.google.cloud.developerconnect.v1.GetDeploymentEventRequest;
 import com.google.cloud.developerconnect.v1.GetInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.InsightsConfig;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
@@ -98,6 +103,20 @@ public abstract class InsightsConfigServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInsightsConfigRequest, Operation> deleteInsightsConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInsightsConfigCallable()");
+  }
+
+  public UnaryCallable<GetDeploymentEventRequest, DeploymentEvent> getDeploymentEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDeploymentEventCallable()");
+  }
+
+  public UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsPagedResponse>
+      listDeploymentEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDeploymentEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDeploymentEventsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

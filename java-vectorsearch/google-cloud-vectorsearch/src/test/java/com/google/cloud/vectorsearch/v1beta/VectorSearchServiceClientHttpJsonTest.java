@@ -1068,6 +1068,58 @@ public class VectorSearchServiceClientHttpJsonTest {
   }
 
   @Test
+  public void exportDataObjectsTest() throws Exception {
+    ExportDataObjectsResponse expectedResponse = ExportDataObjectsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataObjectsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportDataObjectsRequest request =
+        ExportDataObjectsRequest.newBuilder()
+            .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+            .build();
+
+    ExportDataObjectsResponse actualResponse = client.exportDataObjectsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportDataObjectsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportDataObjectsRequest request =
+          ExportDataObjectsRequest.newBuilder()
+              .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .build();
+      client.exportDataObjectsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

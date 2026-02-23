@@ -59,6 +59,9 @@ import com.google.cloud.vectorsearch.v1beta.CreateCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.CreateIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteIndexRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsMetadata;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsResponse;
 import com.google.cloud.vectorsearch.v1beta.GetCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.GetIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.ImportDataObjectsMetadata;
@@ -192,6 +195,10 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
   private final OperationCallSettings<
           ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
       importDataObjectsOperationSettings;
+  private final UnaryCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsSettings;
+  private final OperationCallSettings<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -443,6 +450,18 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     return importDataObjectsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportDataObjects. */
+  public UnaryCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsSettings() {
+    return exportDataObjectsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportDataObjects. */
+  public OperationCallSettings<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationSettings() {
+    return exportDataObjectsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -582,6 +601,9 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     importDataObjectsSettings = settingsBuilder.importDataObjectsSettings().build();
     importDataObjectsOperationSettings =
         settingsBuilder.importDataObjectsOperationSettings().build();
+    exportDataObjectsSettings = settingsBuilder.exportDataObjectsSettings().build();
+    exportDataObjectsOperationSettings =
+        settingsBuilder.exportDataObjectsOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -623,6 +645,11 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     private final OperationCallSettings.Builder<
             ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
         importDataObjectsOperationSettings;
+    private final UnaryCallSettings.Builder<ExportDataObjectsRequest, Operation>
+        exportDataObjectsSettings;
+    private final OperationCallSettings.Builder<
+            ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+        exportDataObjectsOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -637,7 +664,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -660,12 +688,15 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
               .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -694,6 +725,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       deleteIndexOperationSettings = OperationCallSettings.newBuilder();
       importDataObjectsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importDataObjectsOperationSettings = OperationCallSettings.newBuilder();
+      exportDataObjectsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportDataObjectsOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -709,6 +742,7 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               createIndexSettings,
               deleteIndexSettings,
               importDataObjectsSettings,
+              exportDataObjectsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -733,6 +767,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       deleteIndexOperationSettings = settings.deleteIndexOperationSettings.toBuilder();
       importDataObjectsSettings = settings.importDataObjectsSettings.toBuilder();
       importDataObjectsOperationSettings = settings.importDataObjectsOperationSettings.toBuilder();
+      exportDataObjectsSettings = settings.exportDataObjectsSettings.toBuilder();
+      exportDataObjectsOperationSettings = settings.exportDataObjectsOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -748,6 +784,7 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               createIndexSettings,
               deleteIndexSettings,
               importDataObjectsSettings,
+              exportDataObjectsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -789,18 +826,18 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
 
       builder
           .createCollectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .updateCollectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .deleteCollectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .listIndexesSettings()
@@ -814,18 +851,23 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
 
       builder
           .createIndexSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .deleteIndexSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .importDataObjectsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .exportDataObjectsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -842,8 +884,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateCollectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Collection.class))
@@ -866,8 +908,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateCollectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Collection.class))
@@ -890,8 +932,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteCollectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -913,8 +955,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .createIndexOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Index.class))
@@ -936,8 +978,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .deleteIndexOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -960,8 +1002,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportDataObjectsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -969,6 +1011,32 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   ImportDataObjectsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportDataObjectsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportDataObjectsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportDataObjectsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportDataObjectsMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1092,6 +1160,19 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
             ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
         importDataObjectsOperationSettings() {
       return importDataObjectsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportDataObjects. */
+    public UnaryCallSettings.Builder<ExportDataObjectsRequest, Operation>
+        exportDataObjectsSettings() {
+      return exportDataObjectsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportDataObjects. */
+    public OperationCallSettings.Builder<
+            ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+        exportDataObjectsOperationSettings() {
+      return exportDataObjectsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

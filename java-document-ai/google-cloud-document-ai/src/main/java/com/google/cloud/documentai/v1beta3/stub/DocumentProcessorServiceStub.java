@@ -266,12 +266,14 @@ public abstract class DocumentProcessorServiceStub implements BackgroundResource
         "Not implemented: setDefaultProcessorVersionCallable()");
   }
 
+  @Deprecated
   public OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: reviewDocumentOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: reviewDocumentCallable()");
   }

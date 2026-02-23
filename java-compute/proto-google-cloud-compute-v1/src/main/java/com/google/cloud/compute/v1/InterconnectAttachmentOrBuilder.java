@@ -117,6 +117,7 @@ public interface InterconnectAttachmentOrBuilder
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * Check the Bandwidth enum for the list of possible values.
    * </pre>
    *
@@ -150,6 +151,7 @@ public interface InterconnectAttachmentOrBuilder
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * Check the Bandwidth enum for the list of possible values.
    * </pre>
    *
@@ -183,6 +185,7 @@ public interface InterconnectAttachmentOrBuilder
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * Check the Bandwidth enum for the list of possible values.
    * </pre>
    *

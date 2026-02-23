@@ -69,6 +69,18 @@ public final class StorageBatchOperationsProto extends com.google.protobuf.Gener
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_storagebatchoperations_v1_CancelJobResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_storagebatchoperations_v1_GetBucketOperationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_storagebatchoperations_v1_GetBucketOperationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_storagebatchoperations_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_storagebatchoperations_v1_OperationMetadata_fieldAccessorTable;
@@ -114,12 +126,28 @@ public final class StorageBatchOperationsProto extends com.google.protobuf.Gener
           + "\020CancelJobRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")storagebatchoperations.googleapis.com/Job\022\037\n\n"
-          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"t\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\210\001\n"
           + "\020DeleteJobRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")storagebatchoperations.googleapis.com/Job\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\023\n"
-          + "\021CancelJobResponse\"\222\002\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\023\n"
+          + "\021CancelJobResponse\"\311\001\n"
+          + "\033ListBucketOperationsRequest\022M\n"
+          + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225s"
+          + "toragebatchoperations.googleapis.com/BucketOperation\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\240\001\n"
+          + "\034ListBucketOperationsResponse\022R\n"
+          + "\021bucket_operations\030\001"
+          + " \003(\01327.google.cloud.storagebatchoperations.v1.BucketOperation\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"h\n"
+          + "\031GetBucketOperationRequest\022K\n"
+          + "\004name\030\001 \001(\tB=\340A\002\372A7\n"
+          + "5storagebatchoperations.googleapis.com/BucketOperation\"\222\002\n"
           + "\021OperationMetadata\022\026\n"
           + "\toperation\030\001 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
@@ -127,33 +155,39 @@ public final class StorageBatchOperationsProto extends com.google.protobuf.Gener
           + "\026requested_cancellation\030\007 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\010 \001(\tB\003\340A\003\022=\n"
           + "\003job\030\n"
-          + " \001(\0132+.google.cloud.storagebatchoperations.v1.JobB\003\340A\0032\202\010\n"
+          + " \001(\0132+.google.cloud.storagebatchoperations.v1.JobB\003\340A\0032\323\013\n"
           + "\026StorageBatchOperations\022\270\001\n"
-          + "\010ListJobs\0227.google.cloud.storagebatchoperations.v1.L"
-          + "istJobsRequest\0328.google.cloud.storagebat"
-          + "choperations.v1.ListJobsResponse\"9\332A\006par"
-          + "ent\202\323\344\223\002*\022(/v1/{parent=projects/*/locations/*}/jobs\022\245\001\n"
-          + "\006GetJob\0225.google.cloud.storagebatchoperations.v1.GetJobRequest\032+."
-          + "google.cloud.storagebatchoperations.v1.J"
-          + "ob\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=projects/*/locations/*/jobs/*}\022\312\001\n"
-          + "\tCreateJob\0228.google.cloud.storagebatchoperations.v1.Creat"
-          + "eJobRequest\032\035.google.longrunning.Operation\"d\312A\030\n"
-          + "\003Job\022\021OperationMetadata\332A\021parent"
-          + ",job,job_id\202\323\344\223\002/\"(/v1/{parent=projects/*/locations/*}/jobs:\003job\022\226\001\n"
-          + "\tDeleteJob\0228.google.cloud.storagebatchoperations.v1."
-          + "DeleteJobRequest\032\026.google.protobuf.Empty"
-          + "\"7\332A\004name\202\323\344\223\002**(/v1/{name=projects/*/locations/*/jobs/*}\022\303\001\n"
-          + "\tCancelJob\0228.google.cloud.storagebatchoperations.v1.CancelJ"
-          + "obRequest\0329.google.cloud.storagebatchope"
-          + "rations.v1.CancelJobResponse\"A\332A\004name\202\323\344"
-          + "\223\0024\"//v1/{name=projects/*/locations/*/jo"
-          + "bs/*}:cancel:\001*\032Y\312A%storagebatchoperatio"
-          + "ns.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\255\002\n"
-          + "*com.google.cloud.storagebatchoperations.v1B\033Stora"
-          + "geBatchOperationsProtoP\001Zbcloud.google.com/go/storagebatchoperations/apiv1/stora"
-          + "gebatchoperationspb;storagebatchoperationspb\252\002&Google.Cloud.StorageBatchOperatio"
-          + "ns.V1\312\002&Google\\Cloud\\StorageBatchOperati"
-          + "ons\\V1\352\002)Google::Cloud::StorageBatchOperations::V1b\006proto3"
+          + "\010ListJobs\0227.google.cloud.storagebatcho"
+          + "perations.v1.ListJobsRequest\0328.google.cloud.storagebatchoperations.v1.ListJobsRe"
+          + "sponse\"9\332A\006parent\202\323\344\223\002*\022(/v1/{parent=projects/*/locations/*}/jobs\022\245\001\n"
+          + "\006GetJob\0225.google.cloud.storagebatchoperations.v1.Ge"
+          + "tJobRequest\032+.google.cloud.storagebatcho"
+          + "perations.v1.Job\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=projects/*/locations/*/jobs/*}\022\312\001\n"
+          + "\tCreateJob\0228.google.cloud.storagebatchopera"
+          + "tions.v1.CreateJobRequest\032\035.google.longrunning.Operation\"d\312A\030\n"
+          + "\003Job\022\021OperationMet"
+          + "adata\332A\021parent,job,job_id\202\323\344\223\002/\"(/v1/{pa"
+          + "rent=projects/*/locations/*}/jobs:\003job\022\226\001\n"
+          + "\tDeleteJob\0228.google.cloud.storagebatch"
+          + "operations.v1.DeleteJobRequest\032\026.google."
+          + "protobuf.Empty\"7\332A\004name\202\323\344\223\002**(/v1/{name=projects/*/locations/*/jobs/*}\022\303\001\n"
+          + "\tCancelJob\0228.google.cloud.storagebatchoperati"
+          + "ons.v1.CancelJobRequest\0329.google.cloud.storagebatchoperations.v1.CancelJobRespon"
+          + "se\"A\332A\004name\202\323\344\223\0024\"//v1/{name=projects/*/locations/*/jobs/*}:cancel:\001*\022\357\001\n"
+          + "\024ListBucketOperations\022C.google.cloud.storagebat"
+          + "choperations.v1.ListBucketOperationsRequest\032D.google.cloud.storagebatchoperation"
+          + "s.v1.ListBucketOperationsResponse\"L\332A\006pa"
+          + "rent\202\323\344\223\002=\022;/v1/{parent=projects/*/locations/*/jobs/*}/bucketOperations\022\334\001\n"
+          + "\022GetBucketOperation\022A.google.cloud.storagebat"
+          + "choperations.v1.GetBucketOperationRequest\0327.google.cloud.storagebatchoperations."
+          + "v1.BucketOperation\"J\332A\004name\202\323\344\223\002=\022;/v1/{"
+          + "name=projects/*/locations/*/jobs/*/bucketOperations/*}\032Y\312A%storagebatchoperation"
+          + "s.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\255\002\n"
+          + "*com.google.cloud.storagebatchoperations.v1B\033Storag"
+          + "eBatchOperationsProtoP\001Zbcloud.google.com/go/storagebatchoperations/apiv1/storag"
+          + "ebatchoperationspb;storagebatchoperationspb\252\002&Google.Cloud.StorageBatchOperation"
+          + "s.V1\312\002&Google\\Cloud\\StorageBatchOperatio"
+          + "ns\\V1\352\002)Google::Cloud::StorageBatchOperations::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -216,7 +250,7 @@ public final class StorageBatchOperationsProto extends com.google.protobuf.Gener
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_DeleteJobRequest_descriptor,
             new java.lang.String[] {
-              "Name", "RequestId",
+              "Name", "RequestId", "Force",
             });
     internal_static_google_cloud_storagebatchoperations_v1_CancelJobResponse_descriptor =
         getDescriptor().getMessageType(6);
@@ -224,8 +258,32 @@ public final class StorageBatchOperationsProto extends com.google.protobuf.Gener
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_CancelJobResponse_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_storagebatchoperations_v1_OperationMetadata_descriptor =
+    internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsRequest_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken", "OrderBy",
+            });
+    internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_storagebatchoperations_v1_ListBucketOperationsResponse_descriptor,
+            new java.lang.String[] {
+              "BucketOperations", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_storagebatchoperations_v1_GetBucketOperationRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_storagebatchoperations_v1_GetBucketOperationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_storagebatchoperations_v1_GetBucketOperationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_storagebatchoperations_v1_OperationMetadata_descriptor =
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_storagebatchoperations_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_OperationMetadata_descriptor,

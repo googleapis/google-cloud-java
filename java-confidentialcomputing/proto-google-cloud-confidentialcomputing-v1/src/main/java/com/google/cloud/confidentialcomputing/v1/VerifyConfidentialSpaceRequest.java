@@ -2577,6 +2577,69 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
         : options_;
   }
 
+  public static final int NVIDIA_ATTESTATION_FIELD_NUMBER = 8;
+  private com.google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidiaAttestation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional Nvidia attestation report, used to populate hardware
+   * rooted claims for Nvidia devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nvidiaAttestation field is set.
+   */
+  @java.lang.Override
+  public boolean hasNvidiaAttestation() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional Nvidia attestation report, used to populate hardware
+   * rooted claims for Nvidia devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nvidiaAttestation.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.NvidiaAttestation getNvidiaAttestation() {
+    return nvidiaAttestation_ == null
+        ? com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance()
+        : nvidiaAttestation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional Nvidia attestation report, used to populate hardware
+   * rooted claims for Nvidia devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder
+      getNvidiaAttestationOrBuilder() {
+    return nvidiaAttestation_ == null
+        ? com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance()
+        : nvidiaAttestation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2614,6 +2677,9 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getOptions());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getNvidiaAttestation());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2648,6 +2714,9 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getOptions());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getNvidiaAttestation());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2678,6 +2747,10 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
     if (hasOptions() != other.hasOptions()) return false;
     if (hasOptions()) {
       if (!getOptions().equals(other.getOptions())) return false;
+    }
+    if (hasNvidiaAttestation() != other.hasNvidiaAttestation()) return false;
+    if (hasNvidiaAttestation()) {
+      if (!getNvidiaAttestation().equals(other.getNvidiaAttestation())) return false;
     }
     if (!getTeeAttestationCase().equals(other.getTeeAttestationCase())) return false;
     switch (teeAttestationCase_) {
@@ -2718,6 +2791,10 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
     if (hasOptions()) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOptions().hashCode();
+    }
+    if (hasNvidiaAttestation()) {
+      hash = (37 * hash) + NVIDIA_ATTESTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getNvidiaAttestation().hashCode();
     }
     switch (teeAttestationCase_) {
       case 3:
@@ -2881,6 +2958,7 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
         internalGetSignedEntitiesFieldBuilder();
         internalGetGceShieldedIdentityFieldBuilder();
         internalGetOptionsFieldBuilder();
+        internalGetNvidiaAttestationFieldBuilder();
       }
     }
 
@@ -2916,6 +2994,11 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
       if (optionsBuilder_ != null) {
         optionsBuilder_.dispose();
         optionsBuilder_ = null;
+      }
+      nvidiaAttestation_ = null;
+      if (nvidiaAttestationBuilder_ != null) {
+        nvidiaAttestationBuilder_.dispose();
+        nvidiaAttestationBuilder_ = null;
       }
       teeAttestationCase_ = 0;
       teeAttestation_ = null;
@@ -2994,6 +3077,13 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
         result.options_ = optionsBuilder_ == null ? options_ : optionsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.nvidiaAttestation_ =
+            nvidiaAttestationBuilder_ == null
+                ? nvidiaAttestation_
+                : nvidiaAttestationBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3066,6 +3156,9 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
       }
       if (other.hasOptions()) {
         mergeOptions(other.getOptions());
+      }
+      if (other.hasNvidiaAttestation()) {
+        mergeNvidiaAttestation(other.getNvidiaAttestation());
       }
       switch (other.getTeeAttestationCase()) {
         case TD_CCEL:
@@ -3162,6 +3255,13 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetNvidiaAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4957,6 +5057,234 @@ public final class VerifyConfidentialSpaceRequest extends com.google.protobuf.Ge
         options_ = null;
       }
       return optionsBuilder_;
+    }
+
+    private com.google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidiaAttestation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder>
+        nvidiaAttestationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nvidiaAttestation field is set.
+     */
+    public boolean hasNvidiaAttestation() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nvidiaAttestation.
+     */
+    public com.google.cloud.confidentialcomputing.v1.NvidiaAttestation getNvidiaAttestation() {
+      if (nvidiaAttestationBuilder_ == null) {
+        return nvidiaAttestation_ == null
+            ? com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance()
+            : nvidiaAttestation_;
+      } else {
+        return nvidiaAttestationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNvidiaAttestation(
+        com.google.cloud.confidentialcomputing.v1.NvidiaAttestation value) {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nvidiaAttestation_ = value;
+      } else {
+        nvidiaAttestationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNvidiaAttestation(
+        com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder builderForValue) {
+      if (nvidiaAttestationBuilder_ == null) {
+        nvidiaAttestation_ = builderForValue.build();
+      } else {
+        nvidiaAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNvidiaAttestation(
+        com.google.cloud.confidentialcomputing.v1.NvidiaAttestation value) {
+      if (nvidiaAttestationBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && nvidiaAttestation_ != null
+            && nvidiaAttestation_
+                != com.google.cloud.confidentialcomputing.v1.NvidiaAttestation
+                    .getDefaultInstance()) {
+          getNvidiaAttestationBuilder().mergeFrom(value);
+        } else {
+          nvidiaAttestation_ = value;
+        }
+      } else {
+        nvidiaAttestationBuilder_.mergeFrom(value);
+      }
+      if (nvidiaAttestation_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNvidiaAttestation() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      nvidiaAttestation_ = null;
+      if (nvidiaAttestationBuilder_ != null) {
+        nvidiaAttestationBuilder_.dispose();
+        nvidiaAttestationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder
+        getNvidiaAttestationBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetNvidiaAttestationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder
+        getNvidiaAttestationOrBuilder() {
+      if (nvidiaAttestationBuilder_ != null) {
+        return nvidiaAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        return nvidiaAttestation_ == null
+            ? com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.getDefaultInstance()
+            : nvidiaAttestation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional Nvidia attestation report, used to populate hardware
+     * rooted claims for Nvidia devices.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder>
+        internalGetNvidiaAttestationFieldBuilder() {
+      if (nvidiaAttestationBuilder_ == null) {
+        nvidiaAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.confidentialcomputing.v1.NvidiaAttestation,
+                com.google.cloud.confidentialcomputing.v1.NvidiaAttestation.Builder,
+                com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder>(
+                getNvidiaAttestation(), getParentForChildren(), isClean());
+        nvidiaAttestation_ = null;
+      }
+      return nvidiaAttestationBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest)

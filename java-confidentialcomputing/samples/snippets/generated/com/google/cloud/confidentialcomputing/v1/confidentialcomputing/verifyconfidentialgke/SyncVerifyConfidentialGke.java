@@ -39,6 +39,7 @@ public class SyncVerifyConfidentialGke {
       VerifyConfidentialGkeRequest request =
           VerifyConfidentialGkeRequest.newBuilder()
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
               .build();
       VerifyConfidentialGkeResponse response =
           confidentialComputingClient.verifyConfidentialGke(request);

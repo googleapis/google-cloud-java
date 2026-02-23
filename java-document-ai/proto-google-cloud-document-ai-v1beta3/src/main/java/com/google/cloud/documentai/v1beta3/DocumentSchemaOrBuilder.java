@@ -30,7 +30,7 @@ public interface DocumentSchemaOrBuilder
    *
    *
    * <pre>
-   * Display name to show to users.
+   * Display name to show users.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -43,7 +43,7 @@ public interface DocumentSchemaOrBuilder
    *
    *
    * <pre>
-   * Display name to show to users.
+   * Display name to show users.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -177,4 +177,34 @@ public interface DocumentSchemaOrBuilder
    * <code>.google.cloud.documentai.v1beta3.DocumentSchema.Metadata metadata = 4;</code>
    */
   com.google.cloud.documentai.v1beta3.DocumentSchema.MetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Document level prompt provided by the user. This custom text is
+   * injected into the AI model's prompt to provide extra, document-wide
+   * guidance for processing.
+   * </pre>
+   *
+   * <code>string document_prompt = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The documentPrompt.
+   */
+  java.lang.String getDocumentPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Document level prompt provided by the user. This custom text is
+   * injected into the AI model's prompt to provide extra, document-wide
+   * guidance for processing.
+   * </pre>
+   *
+   * <code>string document_prompt = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for documentPrompt.
+   */
+  com.google.protobuf.ByteString getDocumentPromptBytes();
 }

@@ -48,7 +48,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Cloud SQL product area in GCP
+   * Cloud SQL product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_CLOUD_SQL = 1;</code>
@@ -58,7 +58,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * AlloyDB product area in GCP
+   * AlloyDB product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_ALLOYDB = 2;</code>
@@ -68,7 +68,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Spanner product area in GCP
+   * Spanner product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_SPANNER = 3;</code>
@@ -78,7 +78,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Bigtable product area in GCP
+   * Bigtable product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_BIGTABLE = 6;</code>
@@ -88,7 +88,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Memorystore product area in GCP
+   * Memorystore product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_MEMORYSTORE = 7;</code>
@@ -98,7 +98,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Firestore product area in GCP
+   * Firestore product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_FIRESTORE = 8;</code>
@@ -118,7 +118,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Oracle product area in GCP
+   * Oracle product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_ORACLE_ON_GCP = 10;</code>
@@ -128,7 +128,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * BigQuery product area in GCP
+   * BigQuery product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_BIGQUERY = 11;</code>
@@ -174,7 +174,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Cloud SQL product area in GCP
+   * Cloud SQL product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_CLOUD_SQL = 1;</code>
@@ -185,7 +185,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * AlloyDB product area in GCP
+   * AlloyDB product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_ALLOYDB = 2;</code>
@@ -196,7 +196,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Spanner product area in GCP
+   * Spanner product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_SPANNER = 3;</code>
@@ -207,7 +207,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Bigtable product area in GCP
+   * Bigtable product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_BIGTABLE = 6;</code>
@@ -218,7 +218,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Memorystore product area in GCP
+   * Memorystore product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_MEMORYSTORE = 7;</code>
@@ -229,7 +229,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Firestore product area in GCP
+   * Firestore product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_FIRESTORE = 8;</code>
@@ -251,7 +251,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Oracle product area in GCP
+   * Oracle product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_ORACLE_ON_GCP = 10;</code>
@@ -262,7 +262,7 @@ public enum ProductType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * BigQuery product area in GCP
+   * BigQuery product area in Google Cloud
    * </pre>
    *
    * <code>PRODUCT_TYPE_BIGQUERY = 11;</code>

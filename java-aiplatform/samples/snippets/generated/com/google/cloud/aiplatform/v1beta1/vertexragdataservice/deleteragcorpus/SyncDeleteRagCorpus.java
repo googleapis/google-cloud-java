@@ -40,6 +40,7 @@ public class SyncDeleteRagCorpus {
           DeleteRagCorpusRequest.newBuilder()
               .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
               .setForce(true)
+              .setForceDelete(true)
               .build();
       vertexRagDataServiceClient.deleteRagCorpusAsync(request).get();
     }

@@ -181,12 +181,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
    * expression, parentheses must be appropriately used to group the
    * combinations.
    *
-   * Example: location="us-east1"
-   * Example: container="projects/123" OR container="projects/456"
-   * Example: (container="projects/123" OR
-   * container="projects/456") AND location="us-east1"
-   * Example: full_resource_name=~"test"
-   * Example: full_resource_name=~"test.*master"
+   * Example: `location="us-east1"`
+   * Example: `container="projects/123" OR container="projects/456"`
+   * Example: `(container="projects/123" OR
+   * container="projects/456") AND location="us-east1"`
+   * Example: `full_resource_name=~"test"`
+   * Example: `full_resource_name=~"test.*master"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -235,12 +235,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
    * expression, parentheses must be appropriately used to group the
    * combinations.
    *
-   * Example: location="us-east1"
-   * Example: container="projects/123" OR container="projects/456"
-   * Example: (container="projects/123" OR
-   * container="projects/456") AND location="us-east1"
-   * Example: full_resource_name=~"test"
-   * Example: full_resource_name=~"test.*master"
+   * Example: `location="us-east1"`
+   * Example: `container="projects/123" OR container="projects/456"`
+   * Example: `(container="projects/123" OR
+   * container="projects/456") AND location="us-east1"`
+   * Example: `full_resource_name=~"test"`
+   * Example: `full_resource_name=~"test.*master"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -484,12 +484,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
    * order. It only supports a single field at a time.
    *
    * For example:
-   * order_by = "full_resource_name" sorts response in ascending order
-   * order_by = "full_resource_name DESC" sorts response in descending order
-   * order_by = "issue_count DESC" sorts response in descending order of
+   * `order_by = "full_resource_name"` sorts response in ascending order
+   * `order_by = "full_resource_name DESC"` sorts response in descending order
+   * `order_by = "issue_count DESC"` sorts response in descending order of
    * count of all issues associated with a resource.
    *
-   * More explicitly, order_by = "full_resource_name, product" is not supported.
+   * More explicitly, `order_by = "full_resource_name, product"` is not
+   * supported.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -547,12 +548,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
    * order. It only supports a single field at a time.
    *
    * For example:
-   * order_by = "full_resource_name" sorts response in ascending order
-   * order_by = "full_resource_name DESC" sorts response in descending order
-   * order_by = "issue_count DESC" sorts response in descending order of
+   * `order_by = "full_resource_name"` sorts response in ascending order
+   * `order_by = "full_resource_name DESC"` sorts response in descending order
+   * `order_by = "issue_count DESC"` sorts response in descending order of
    * count of all issues associated with a resource.
    *
-   * More explicitly, order_by = "full_resource_name, product" is not supported.
+   * More explicitly, `order_by = "full_resource_name, product"` is not
+   * supported.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1393,12 +1395,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * expression, parentheses must be appropriately used to group the
      * combinations.
      *
-     * Example: location="us-east1"
-     * Example: container="projects/123" OR container="projects/456"
-     * Example: (container="projects/123" OR
-     * container="projects/456") AND location="us-east1"
-     * Example: full_resource_name=~"test"
-     * Example: full_resource_name=~"test.*master"
+     * Example: `location="us-east1"`
+     * Example: `container="projects/123" OR container="projects/456"`
+     * Example: `(container="projects/123" OR
+     * container="projects/456") AND location="us-east1"`
+     * Example: `full_resource_name=~"test"`
+     * Example: `full_resource_name=~"test.*master"`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1446,12 +1448,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * expression, parentheses must be appropriately used to group the
      * combinations.
      *
-     * Example: location="us-east1"
-     * Example: container="projects/123" OR container="projects/456"
-     * Example: (container="projects/123" OR
-     * container="projects/456") AND location="us-east1"
-     * Example: full_resource_name=~"test"
-     * Example: full_resource_name=~"test.*master"
+     * Example: `location="us-east1"`
+     * Example: `container="projects/123" OR container="projects/456"`
+     * Example: `(container="projects/123" OR
+     * container="projects/456") AND location="us-east1"`
+     * Example: `full_resource_name=~"test"`
+     * Example: `full_resource_name=~"test.*master"`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1499,12 +1501,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * expression, parentheses must be appropriately used to group the
      * combinations.
      *
-     * Example: location="us-east1"
-     * Example: container="projects/123" OR container="projects/456"
-     * Example: (container="projects/123" OR
-     * container="projects/456") AND location="us-east1"
-     * Example: full_resource_name=~"test"
-     * Example: full_resource_name=~"test.*master"
+     * Example: `location="us-east1"`
+     * Example: `container="projects/123" OR container="projects/456"`
+     * Example: `(container="projects/123" OR
+     * container="projects/456") AND location="us-east1"`
+     * Example: `full_resource_name=~"test"`
+     * Example: `full_resource_name=~"test.*master"`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1551,12 +1553,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * expression, parentheses must be appropriately used to group the
      * combinations.
      *
-     * Example: location="us-east1"
-     * Example: container="projects/123" OR container="projects/456"
-     * Example: (container="projects/123" OR
-     * container="projects/456") AND location="us-east1"
-     * Example: full_resource_name=~"test"
-     * Example: full_resource_name=~"test.*master"
+     * Example: `location="us-east1"`
+     * Example: `container="projects/123" OR container="projects/456"`
+     * Example: `(container="projects/123" OR
+     * container="projects/456") AND location="us-east1"`
+     * Example: `full_resource_name=~"test"`
+     * Example: `full_resource_name=~"test.*master"`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1599,12 +1601,12 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * expression, parentheses must be appropriately used to group the
      * combinations.
      *
-     * Example: location="us-east1"
-     * Example: container="projects/123" OR container="projects/456"
-     * Example: (container="projects/123" OR
-     * container="projects/456") AND location="us-east1"
-     * Example: full_resource_name=~"test"
-     * Example: full_resource_name=~"test.*master"
+     * Example: `location="us-east1"`
+     * Example: `container="projects/123" OR container="projects/456"`
+     * Example: `(container="projects/123" OR
+     * container="projects/456") AND location="us-east1"`
+     * Example: `full_resource_name=~"test"`
+     * Example: `full_resource_name=~"test.*master"`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2514,12 +2516,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * order. It only supports a single field at a time.
      *
      * For example:
-     * order_by = "full_resource_name" sorts response in ascending order
-     * order_by = "full_resource_name DESC" sorts response in descending order
-     * order_by = "issue_count DESC" sorts response in descending order of
+     * `order_by = "full_resource_name"` sorts response in ascending order
+     * `order_by = "full_resource_name DESC"` sorts response in descending order
+     * `order_by = "issue_count DESC"` sorts response in descending order of
      * count of all issues associated with a resource.
      *
-     * More explicitly, order_by = "full_resource_name, product" is not supported.
+     * More explicitly, `order_by = "full_resource_name, product"` is not
+     * supported.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2576,12 +2579,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * order. It only supports a single field at a time.
      *
      * For example:
-     * order_by = "full_resource_name" sorts response in ascending order
-     * order_by = "full_resource_name DESC" sorts response in descending order
-     * order_by = "issue_count DESC" sorts response in descending order of
+     * `order_by = "full_resource_name"` sorts response in ascending order
+     * `order_by = "full_resource_name DESC"` sorts response in descending order
+     * `order_by = "issue_count DESC"` sorts response in descending order of
      * count of all issues associated with a resource.
      *
-     * More explicitly, order_by = "full_resource_name, product" is not supported.
+     * More explicitly, `order_by = "full_resource_name, product"` is not
+     * supported.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2638,12 +2642,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * order. It only supports a single field at a time.
      *
      * For example:
-     * order_by = "full_resource_name" sorts response in ascending order
-     * order_by = "full_resource_name DESC" sorts response in descending order
-     * order_by = "issue_count DESC" sorts response in descending order of
+     * `order_by = "full_resource_name"` sorts response in ascending order
+     * `order_by = "full_resource_name DESC"` sorts response in descending order
+     * `order_by = "issue_count DESC"` sorts response in descending order of
      * count of all issues associated with a resource.
      *
-     * More explicitly, order_by = "full_resource_name, product" is not supported.
+     * More explicitly, `order_by = "full_resource_name, product"` is not
+     * supported.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2699,12 +2704,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * order. It only supports a single field at a time.
      *
      * For example:
-     * order_by = "full_resource_name" sorts response in ascending order
-     * order_by = "full_resource_name DESC" sorts response in descending order
-     * order_by = "issue_count DESC" sorts response in descending order of
+     * `order_by = "full_resource_name"` sorts response in ascending order
+     * `order_by = "full_resource_name DESC"` sorts response in descending order
+     * `order_by = "issue_count DESC"` sorts response in descending order of
      * count of all issues associated with a resource.
      *
-     * More explicitly, order_by = "full_resource_name, product" is not supported.
+     * More explicitly, `order_by = "full_resource_name, product"` is not
+     * supported.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2756,12 +2762,13 @@ public final class QueryDatabaseResourceGroupsRequest extends com.google.protobu
      * order. It only supports a single field at a time.
      *
      * For example:
-     * order_by = "full_resource_name" sorts response in ascending order
-     * order_by = "full_resource_name DESC" sorts response in descending order
-     * order_by = "issue_count DESC" sorts response in descending order of
+     * `order_by = "full_resource_name"` sorts response in ascending order
+     * `order_by = "full_resource_name DESC"` sorts response in descending order
+     * `order_by = "issue_count DESC"` sorts response in descending order of
      * count of all issues associated with a resource.
      *
-     * More explicitly, order_by = "full_resource_name, product" is not supported.
+     * More explicitly, `order_by = "full_resource_name, product"` is not
+     * supported.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

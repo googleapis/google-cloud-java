@@ -579,7 +579,24 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    * conversions.
    * </pre>
    *
-   * <code>double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversionValue() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with the event, for value-based
+   * conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The conversionValue.
    */
@@ -648,7 +665,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEventDeviceInfo() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -710,7 +727,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCartData() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -957,7 +974,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUserProperties() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1302,17 +1319,17 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currency_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, currency_);
     }
-    if (java.lang.Double.doubleToRawLongBits(conversionValue_) != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeDouble(9, conversionValue_);
     }
     if (eventSource_
         != com.google.ads.datamanager.v1.EventSource.EVENT_SOURCE_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, eventSource_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(11, getEventDeviceInfo());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(12, getCartData());
     }
     for (int i = 0; i < customVariables_.size(); i++) {
@@ -1321,7 +1338,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < experimentalFields_.size(); i++) {
       output.writeMessage(14, experimentalFields_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(15, getUserProperties());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(eventName_)) {
@@ -1375,17 +1392,17 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currency_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, currency_);
     }
-    if (java.lang.Double.doubleToRawLongBits(conversionValue_) != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(9, conversionValue_);
     }
     if (eventSource_
         != com.google.ads.datamanager.v1.EventSource.EVENT_SOURCE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, eventSource_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEventDeviceInfo());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCartData());
     }
     for (int i = 0; i < customVariables_.size(); i++) {
@@ -1395,7 +1412,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, experimentalFields_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUserProperties());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(eventName_)) {
@@ -1450,8 +1467,11 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       if (!getAdIdentifiers().equals(other.getAdIdentifiers())) return false;
     }
     if (!getCurrency().equals(other.getCurrency())) return false;
-    if (java.lang.Double.doubleToLongBits(getConversionValue())
-        != java.lang.Double.doubleToLongBits(other.getConversionValue())) return false;
+    if (hasConversionValue() != other.hasConversionValue()) return false;
+    if (hasConversionValue()) {
+      if (java.lang.Double.doubleToLongBits(getConversionValue())
+          != java.lang.Double.doubleToLongBits(other.getConversionValue())) return false;
+    }
     if (eventSource_ != other.eventSource_) return false;
     if (hasEventDeviceInfo() != other.hasEventDeviceInfo()) return false;
     if (hasEventDeviceInfo()) {
@@ -1511,11 +1531,13 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
     hash = (53 * hash) + getCurrency().hashCode();
-    hash = (37 * hash) + CONVERSION_VALUE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getConversionValue()));
+    if (hasConversionValue()) {
+      hash = (37 * hash) + CONVERSION_VALUE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getConversionValue()));
+    }
     hash = (37 * hash) + EVENT_SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + eventSource_;
     if (hasEventDeviceInfo()) {
@@ -1880,6 +1902,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.conversionValue_ = conversionValue_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.eventSource_ = eventSource_;
@@ -1887,16 +1910,16 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.eventDeviceInfo_ =
             eventDeviceInfoBuilder_ == null ? eventDeviceInfo_ : eventDeviceInfoBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.cartData_ = cartDataBuilder_ == null ? cartData_ : cartDataBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.userProperties_ =
             userPropertiesBuilder_ == null ? userProperties_ : userPropertiesBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.eventName_ = eventName_;
@@ -1957,7 +1980,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000080;
         onChanged();
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getConversionValue()) != 0) {
+      if (other.hasConversionValue()) {
         setConversionValue(other.getConversionValue());
       }
       if (other.eventSource_ != 0) {
@@ -3807,7 +3830,24 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * conversions.
      * </pre>
      *
-     * <code>double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the conversionValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionValue() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with the event, for value-based
+     * conversions.
+     * </pre>
+     *
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The conversionValue.
      */
@@ -3824,7 +3864,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * conversions.
      * </pre>
      *
-     * <code>double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The conversionValue to set.
      * @return This builder for chaining.
@@ -3845,7 +3885,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * conversions.
      * </pre>
      *
-     * <code>double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

@@ -62,7 +62,7 @@ public interface VertexEmbeddingConfigOrBuilder
    * <pre>
    * Required. Required: Text template for the input to the model. The template
    * must contain one or more references to fields in the DataObject, e.g.:
-   * "Movie Title: {title} ---- Movie Plot: {plot}"".
+   * "Movie Title: {title} ---- Movie Plot: {plot}".
    * </pre>
    *
    * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -77,7 +77,7 @@ public interface VertexEmbeddingConfigOrBuilder
    * <pre>
    * Required. Required: Text template for the input to the model. The template
    * must contain one or more references to fields in the DataObject, e.g.:
-   * "Movie Title: {title} ---- Movie Plot: {plot}"".
+   * "Movie Title: {title} ---- Movie Plot: {plot}".
    * </pre>
    *
    * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>

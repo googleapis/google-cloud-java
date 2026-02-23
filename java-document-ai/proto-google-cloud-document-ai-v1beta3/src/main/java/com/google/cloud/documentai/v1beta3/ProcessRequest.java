@@ -391,7 +391,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=473
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=477
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -413,7 +413,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=473
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=477
    * @return The document.
    */
   @java.lang.Override
@@ -455,11 +455,14 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
    * `false`.
    * </pre>
    *
-   * <code>bool skip_human_review = 3;</code>
+   * <code>bool skip_human_review = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.skip_human_review is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=481
    * @return The skipHumanReview.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getSkipHumanReview() {
     return skipHumanReview_;
   }
@@ -2224,7 +2227,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=473
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=477
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -2245,7 +2248,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=473
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=477
      * @return The document.
      */
     @java.lang.Deprecated
@@ -2448,11 +2451,14 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
      * `false`.
      * </pre>
      *
-     * <code>bool skip_human_review = 3;</code>
+     * <code>bool skip_human_review = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.skip_human_review is deprecated.
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=481
      * @return The skipHumanReview.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getSkipHumanReview() {
       return skipHumanReview_;
     }
@@ -2465,11 +2471,14 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
      * `false`.
      * </pre>
      *
-     * <code>bool skip_human_review = 3;</code>
+     * <code>bool skip_human_review = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.skip_human_review is deprecated.
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=481
      * @param value The skipHumanReview to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSkipHumanReview(boolean value) {
 
       skipHumanReview_ = value;
@@ -2486,10 +2495,13 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessage
      * `false`.
      * </pre>
      *
-     * <code>bool skip_human_review = 3;</code>
+     * <code>bool skip_human_review = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.skip_human_review is deprecated.
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=481
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSkipHumanReview() {
       bitField0_ = (bitField0_ & ~0x00000020);
       skipHumanReview_ = false;

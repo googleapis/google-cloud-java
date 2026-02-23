@@ -105,7 +105,10 @@ public class EvaluationServiceClientTest {
 
   @Test
   public void evaluateInstancesTest() throws Exception {
-    EvaluateInstancesResponse expectedResponse = EvaluateInstancesResponse.newBuilder().build();
+    EvaluateInstancesResponse expectedResponse =
+        EvaluateInstancesResponse.newBuilder()
+            .addAllMetricResults(new ArrayList<MetricResult>())
+            .build();
     mockEvaluationService.addResponse(expectedResponse);
 
     EvaluateInstancesRequest request =

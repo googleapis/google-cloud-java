@@ -69,7 +69,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetProtectedResourcesSummary</td>
- *      <td><p> Returns aggregate information about the resources protected by the given Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within the same Cloud organization as the key will be returned. The project that holds the key must be part of an organization in order for this call to succeed.</td>
+ *      <td><p> Returns aggregate information about the resources protected by the given Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default, summary of resources within the same Cloud organization as the key will be returned, which requires the KMS organization service account to be configured(refer https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles). If the KMS organization service account is not configured or key's project is not part of an organization, set [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope] to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources within the key's project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchProtectedResources</td>
- *      <td><p> Returns metadata about the resources protected by the given Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.</td>
+ *      <td><p> Returns metadata about the resources protected by the given Cloud KMS [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -98,6 +98,8 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> searchProtectedResources(OrganizationName scope, ResourceName cryptoKey)
  *           <li><p> searchProtectedResources(OrganizationName scope, String cryptoKey)
+ *           <li><p> searchProtectedResources(ProjectName scope, ResourceName cryptoKey)
+ *           <li><p> searchProtectedResources(ProjectName scope, String cryptoKey)
  *           <li><p> searchProtectedResources(String scope, ResourceName cryptoKey)
  *           <li><p> searchProtectedResources(String scope, String cryptoKey)
  *      </ul>
@@ -219,9 +221,14 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns aggregate information about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within the same Cloud organization
-   * as the key will be returned. The project that holds the key must be part of an organization in
-   * order for this call to succeed.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default, summary of resources within the same
+   * Cloud organization as the key will be returned, which requires the KMS organization service
+   * account to be configured(refer
+   * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles). If the KMS organization
+   * service account is not configured or key's project is not part of an organization, set
+   * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+   * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources within the key's
+   * project.
    *
    * <p>Sample code:
    *
@@ -255,9 +262,14 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns aggregate information about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within the same Cloud organization
-   * as the key will be returned. The project that holds the key must be part of an organization in
-   * order for this call to succeed.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default, summary of resources within the same
+   * Cloud organization as the key will be returned, which requires the KMS organization service
+   * account to be configured(refer
+   * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles). If the KMS organization
+   * service account is not configured or key's project is not part of an organization, set
+   * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+   * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources within the key's
+   * project.
    *
    * <p>Sample code:
    *
@@ -289,9 +301,14 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns aggregate information about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within the same Cloud organization
-   * as the key will be returned. The project that holds the key must be part of an organization in
-   * order for this call to succeed.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default, summary of resources within the same
+   * Cloud organization as the key will be returned, which requires the KMS organization service
+   * account to be configured(refer
+   * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles). If the KMS organization
+   * service account is not configured or key's project is not part of an organization, set
+   * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+   * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources within the key's
+   * project.
    *
    * <p>Sample code:
    *
@@ -308,6 +325,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    *               ProtectedResourcesSummaryName.ofProjectLocationKeyRingCryptoKeyName(
    *                       "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
+   *           .setFallbackScope(FallbackScope.forNumber(0))
    *           .build();
    *   ProtectedResourcesSummary response =
    *       keyTrackingServiceClient.getProtectedResourcesSummary(request);
@@ -325,9 +343,14 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns aggregate information about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Only resources within the same Cloud organization
-   * as the key will be returned. The project that holds the key must be part of an organization in
-   * order for this call to succeed.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. By default, summary of resources within the same
+   * Cloud organization as the key will be returned, which requires the KMS organization service
+   * account to be configured(refer
+   * https://docs.cloud.google.com/kms/docs/view-key-usage#required-roles). If the KMS organization
+   * service account is not configured or key's project is not part of an organization, set
+   * [fallback_scope][google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest.fallback_scope]
+   * to `FALLBACK_SCOPE_PROJECT` to retrieve a summary of protected resources within the key's
+   * project.
    *
    * <p>Sample code:
    *
@@ -344,6 +367,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    *               ProtectedResourcesSummaryName.ofProjectLocationKeyRingCryptoKeyName(
    *                       "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
+   *           .setFallbackScope(FallbackScope.forNumber(0))
    *           .build();
    *   ApiFuture<ProtectedResourcesSummary> future =
    *       keyTrackingServiceClient.getProtectedResourcesSummaryCallable().futureCall(request);
@@ -360,7 +384,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *
@@ -380,7 +404,15 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. Resource name of the organization. Example: organizations/123
+   * @param scope Required. A scope can be an organization or a project. Resources protected by the
+   *     crypto key in provided scope will be returned.
+   *     <p>The following values are allowed:
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *     </ul>
+   *
    * @param cryptoKey Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -397,7 +429,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *
@@ -417,7 +449,15 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. Resource name of the organization. Example: organizations/123
+   * @param scope Required. A scope can be an organization or a project. Resources protected by the
+   *     crypto key in provided scope will be returned.
+   *     <p>The following values are allowed:
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *     </ul>
+   *
    * @param cryptoKey Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -434,7 +474,97 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyTrackingServiceClient keyTrackingServiceClient = KeyTrackingServiceClient.create()) {
+   *   ProjectName scope = ProjectName.of("[PROJECT]");
+   *   ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
+   *   for (ProtectedResource element :
+   *       keyTrackingServiceClient.searchProtectedResources(scope, cryptoKey).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param scope Required. A scope can be an organization or a project. Resources protected by the
+   *     crypto key in provided scope will be returned.
+   *     <p>The following values are allowed:
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *     </ul>
+   *
+   * @param cryptoKey Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchProtectedResourcesPagedResponse searchProtectedResources(
+      ProjectName scope, ResourceName cryptoKey) {
+    SearchProtectedResourcesRequest request =
+        SearchProtectedResourcesRequest.newBuilder()
+            .setScope(scope == null ? null : scope.toString())
+            .setCryptoKey(cryptoKey == null ? null : cryptoKey.toString())
+            .build();
+    return searchProtectedResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata about the resources protected by the given Cloud KMS
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyTrackingServiceClient keyTrackingServiceClient = KeyTrackingServiceClient.create()) {
+   *   ProjectName scope = ProjectName.of("[PROJECT]");
+   *   String cryptoKey = OrganizationName.of("[ORGANIZATION]").toString();
+   *   for (ProtectedResource element :
+   *       keyTrackingServiceClient.searchProtectedResources(scope, cryptoKey).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param scope Required. A scope can be an organization or a project. Resources protected by the
+   *     crypto key in provided scope will be returned.
+   *     <p>The following values are allowed:
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *     </ul>
+   *
+   * @param cryptoKey Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchProtectedResourcesPagedResponse searchProtectedResources(
+      ProjectName scope, String cryptoKey) {
+    SearchProtectedResourcesRequest request =
+        SearchProtectedResourcesRequest.newBuilder()
+            .setScope(scope == null ? null : scope.toString())
+            .setCryptoKey(cryptoKey)
+            .build();
+    return searchProtectedResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata about the resources protected by the given Cloud KMS
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *
@@ -454,7 +584,15 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. Resource name of the organization. Example: organizations/123
+   * @param scope Required. A scope can be an organization or a project. Resources protected by the
+   *     crypto key in provided scope will be returned.
+   *     <p>The following values are allowed:
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *     </ul>
+   *
    * @param cryptoKey Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -471,7 +609,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *
@@ -491,7 +629,15 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. Resource name of the organization. Example: organizations/123
+   * @param scope Required. A scope can be an organization or a project. Resources protected by the
+   *     crypto key in provided scope will be returned.
+   *     <p>The following values are allowed:
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *     </ul>
+   *
    * @param cryptoKey Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -508,7 +654,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *
@@ -545,7 +691,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *
@@ -581,7 +727,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata about the resources protected by the given Cloud KMS
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization/project.
    *
    * <p>Sample code:
    *

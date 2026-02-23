@@ -82,7 +82,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A SecretManager resource containing the OAuth token that
-   * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -109,7 +111,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A SecretManager resource containing the OAuth token that
-   * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -526,7 +530,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A SecretManager resource containing the OAuth token that
-     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -552,7 +558,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A SecretManager resource containing the OAuth token that
-     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -578,7 +586,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A SecretManager resource containing the OAuth token that
-     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -603,7 +613,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A SecretManager resource containing the OAuth token that
-     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -624,7 +636,9 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A SecretManager resource containing the OAuth token that
-     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * authorizes the connection. Format: `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>

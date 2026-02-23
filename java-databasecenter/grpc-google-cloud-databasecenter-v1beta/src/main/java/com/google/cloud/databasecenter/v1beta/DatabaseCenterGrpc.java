@@ -230,6 +230,53 @@ public final class DatabaseCenterGrpc {
     return getAggregateIssueStatsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.QueryIssuesRequest,
+          com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+      getQueryIssuesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryIssues",
+      requestType = com.google.cloud.databasecenter.v1beta.QueryIssuesRequest.class,
+      responseType = com.google.cloud.databasecenter.v1beta.QueryIssuesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.QueryIssuesRequest,
+          com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+      getQueryIssuesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.databasecenter.v1beta.QueryIssuesRequest,
+            com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+        getQueryIssuesMethod;
+    if ((getQueryIssuesMethod = DatabaseCenterGrpc.getQueryIssuesMethod) == null) {
+      synchronized (DatabaseCenterGrpc.class) {
+        if ((getQueryIssuesMethod = DatabaseCenterGrpc.getQueryIssuesMethod) == null) {
+          DatabaseCenterGrpc.getQueryIssuesMethod =
+              getQueryIssuesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.databasecenter.v1beta.QueryIssuesRequest,
+                          com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryIssues"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta.QueryIssuesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta.QueryIssuesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseCenterMethodDescriptorSupplier("QueryIssues"))
+                      .build();
+        }
+      }
+    }
+    return getQueryIssuesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DatabaseCenterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DatabaseCenterStub> factory =
@@ -356,6 +403,22 @@ public final class DatabaseCenterGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAggregateIssueStatsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryIssues provides a list of issues and recommendations
+     * that a user has access to and that are within the requested scope.
+     * </pre>
+     */
+    default void queryIssues(
+        com.google.cloud.databasecenter.v1beta.QueryIssuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryIssuesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -463,6 +526,24 @@ public final class DatabaseCenterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryIssues provides a list of issues and recommendations
+     * that a user has access to and that are within the requested scope.
+     * </pre>
+     */
+    public void queryIssues(
+        com.google.cloud.databasecenter.v1beta.QueryIssuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryIssuesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -542,6 +623,21 @@ public final class DatabaseCenterGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregateIssueStatsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryIssues provides a list of issues and recommendations
+     * that a user has access to and that are within the requested scope.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.QueryIssuesResponse queryIssues(
+        com.google.cloud.databasecenter.v1beta.QueryIssuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryIssuesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -616,6 +712,20 @@ public final class DatabaseCenterGrpc {
         com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAggregateIssueStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryIssues provides a list of issues and recommendations
+     * that a user has access to and that are within the requested scope.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.QueryIssuesResponse queryIssues(
+        com.google.cloud.databasecenter.v1beta.QueryIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryIssuesMethod(), getCallOptions(), request);
     }
   }
 
@@ -697,12 +807,28 @@ public final class DatabaseCenterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAggregateIssueStatsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryIssues provides a list of issues and recommendations
+     * that a user has access to and that are within the requested scope.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>
+        queryIssues(com.google.cloud.databasecenter.v1beta.QueryIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryIssuesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_QUERY_PRODUCTS = 0;
   private static final int METHODID_AGGREGATE_FLEET = 1;
   private static final int METHODID_QUERY_DATABASE_RESOURCE_GROUPS = 2;
   private static final int METHODID_AGGREGATE_ISSUE_STATS = 3;
+  private static final int METHODID_QUERY_ISSUES = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -747,6 +873,13 @@ public final class DatabaseCenterGrpc {
               (com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_QUERY_ISSUES:
+          serviceImpl.queryIssues(
+              (com.google.cloud.databasecenter.v1beta.QueryIssuesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>)
                   responseObserver);
           break;
         default:
@@ -795,6 +928,13 @@ public final class DatabaseCenterGrpc {
                     com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest,
                     com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>(
                     service, METHODID_AGGREGATE_ISSUE_STATS)))
+        .addMethod(
+            getQueryIssuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.databasecenter.v1beta.QueryIssuesRequest,
+                    com.google.cloud.databasecenter.v1beta.QueryIssuesResponse>(
+                    service, METHODID_QUERY_ISSUES)))
         .build();
   }
 
@@ -850,6 +990,7 @@ public final class DatabaseCenterGrpc {
                       .addMethod(getAggregateFleetMethod())
                       .addMethod(getQueryDatabaseResourceGroupsMethod())
                       .addMethod(getAggregateIssueStatsMethod())
+                      .addMethod(getQueryIssuesMethod())
                       .build();
         }
       }

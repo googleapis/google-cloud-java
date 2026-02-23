@@ -295,6 +295,50 @@ public interface SystemMessageOrBuilder
    *
    *
    * <pre>
+   * Optional. A message containing clarification questions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clarification field is set.
+   */
+  boolean hasClarification();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing clarification questions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clarification.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage getClarification();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing clarification questions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder
+      getClarificationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifies the group that the event belongs to. Similar events are deemed
    * to be logically relevant to each other and should be shown together in
    * the UI.

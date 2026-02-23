@@ -57,12 +57,12 @@ public final class DeviceInfoProto extends com.google.protobuf.GeneratedFile {
           + "proto\022\031google.ads.datamanager.v1\032\037google"
           + "/api/field_behavior.proto\">\n\nDeviceInfo\022"
           + "\027\n\nuser_agent\030\001 \001(\tB\003\340A\001\022\027\n\nip_address\030\002"
-          + " \001(\tB\003\340A\001B\317\001\n\035com.google.ads.datamanager"
-          + ".v1B\017DeviceInfoProtoP\001ZDgoogle.golang.or"
-          + "g/genproto/googleapis/ads/datamanager/v1"
-          + ";datamanager\252\002\031Google.Ads.DataManager.V1"
-          + "\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::A"
-          + "ds::DataManager::V1b\006proto3"
+          + " \001(\tB\003\340A\001B\314\001\n\035com.google.ads.datamanager"
+          + ".v1B\017DeviceInfoProtoP\001ZAcloud.google.com"
+          + "/go/datamanager/apiv1/datamanagerpb;data"
+          + "managerpb\252\002\031Google.Ads.DataManager.V1\312\002\031"
+          + "Google\\Ads\\DataManager\\V1\352\002\034Google::Ads:"
+          + ":DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

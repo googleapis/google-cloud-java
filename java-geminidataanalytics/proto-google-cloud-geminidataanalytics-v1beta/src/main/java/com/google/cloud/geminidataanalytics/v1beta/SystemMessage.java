@@ -87,6 +87,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     CHART(5),
     ERROR(6),
     EXAMPLE_QUERIES(13),
+    CLARIFICATION(14),
     KIND_NOT_SET(0);
     private final int value;
 
@@ -120,6 +121,8 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
           return ERROR;
         case 13:
           return EXAMPLE_QUERIES;
+        case 14:
+          return CLARIFICATION;
         case 0:
           return KIND_NOT_SET;
         default:
@@ -522,6 +525,67 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
   }
 
+  public static final int CLARIFICATION_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing clarification questions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clarification field is set.
+   */
+  @java.lang.Override
+  public boolean hasClarification() {
+    return kindCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing clarification questions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clarification.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage getClarification() {
+    if (kindCase_ == 14) {
+      return (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing clarification questions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder
+      getClarificationOrBuilder() {
+    if (kindCase_ == 14) {
+      return (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.getDefaultInstance();
+  }
+
   public static final int GROUP_ID_FIELD_NUMBER = 12;
   private int groupId_ = 0;
 
@@ -599,6 +663,10 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     if (kindCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_);
     }
+    if (kindCase_ == 14) {
+      output.writeMessage(
+          14, (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -646,6 +714,11 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_);
     }
+    if (kindCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -688,6 +761,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
         break;
       case 13:
         if (!getExampleQueries().equals(other.getExampleQueries())) return false;
+        break;
+      case 14:
+        if (!getClarification().equals(other.getClarification())) return false;
         break;
       case 0:
       default:
@@ -735,6 +811,10 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
       case 13:
         hash = (37 * hash) + EXAMPLE_QUERIES_FIELD_NUMBER;
         hash = (53 * hash) + getExampleQueries().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + CLARIFICATION_FIELD_NUMBER;
+        hash = (53 * hash) + getClarification().hashCode();
         break;
       case 0:
       default:
@@ -903,6 +983,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
       if (exampleQueriesBuilder_ != null) {
         exampleQueriesBuilder_.clear();
       }
+      if (clarificationBuilder_ != null) {
+        clarificationBuilder_.clear();
+      }
       groupId_ = 0;
       kindCase_ = 0;
       kind_ = null;
@@ -944,7 +1027,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.SystemMessage result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.groupId_ = groupId_;
         to_bitField0_ |= 0x00000001;
       }
@@ -975,6 +1058,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
       }
       if (kindCase_ == 13 && exampleQueriesBuilder_ != null) {
         result.kind_ = exampleQueriesBuilder_.build();
+      }
+      if (kindCase_ == 14 && clarificationBuilder_ != null) {
+        result.kind_ = clarificationBuilder_.build();
       }
     }
 
@@ -1028,6 +1114,11 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
         case EXAMPLE_QUERIES:
           {
             mergeExampleQueries(other.getExampleQueries());
+            break;
+          }
+        case CLARIFICATION:
+          {
+            mergeClarification(other.getClarification());
             break;
           }
         case KIND_NOT_SET:
@@ -1101,7 +1192,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
             case 96:
               {
                 groupId_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 96
             case 106:
@@ -1111,6 +1202,13 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
                 kindCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetClarificationFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 14;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2704,6 +2802,252 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
       return exampleQueriesBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage,
+            com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder>
+        clarificationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clarification field is set.
+     */
+    @java.lang.Override
+    public boolean hasClarification() {
+      return kindCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clarification.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage getClarification() {
+      if (clarificationBuilder_ == null) {
+        if (kindCase_ == 14) {
+          return (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage
+            .getDefaultInstance();
+      } else {
+        if (kindCase_ == 14) {
+          return clarificationBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClarification(
+        com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage value) {
+      if (clarificationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        clarificationBuilder_.setMessage(value);
+      }
+      kindCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClarification(
+        com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder builderForValue) {
+      if (clarificationBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        clarificationBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClarification(
+        com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage value) {
+      if (clarificationBuilder_ == null) {
+        if (kindCase_ == 14
+            && kind_
+                != com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage
+                    .getDefaultInstance()) {
+          kind_ =
+              com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 14) {
+          clarificationBuilder_.mergeFrom(value);
+        } else {
+          clarificationBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClarification() {
+      if (clarificationBuilder_ == null) {
+        if (kindCase_ == 14) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 14) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        clarificationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder
+        getClarificationBuilder() {
+      return internalGetClarificationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder
+        getClarificationOrBuilder() {
+      if ((kindCase_ == 14) && (clarificationBuilder_ != null)) {
+        return clarificationBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 14) {
+          return (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing clarification questions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage,
+            com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder>
+        internalGetClarificationFieldBuilder() {
+      if (clarificationBuilder_ == null) {
+        if (!(kindCase_ == 14)) {
+          kind_ =
+              com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.getDefaultInstance();
+        }
+        clarificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage,
+                com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_,
+                getParentForChildren(),
+                isClean());
+        kind_ = null;
+      }
+      kindCase_ = 14;
+      onChanged();
+      return clarificationBuilder_;
+    }
+
     private int groupId_;
 
     /**
@@ -2721,7 +3065,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGroupId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2759,7 +3103,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     public Builder setGroupId(int value) {
 
       groupId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2778,7 +3122,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGroupId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       groupId_ = 0;
       onChanged();
       return this;

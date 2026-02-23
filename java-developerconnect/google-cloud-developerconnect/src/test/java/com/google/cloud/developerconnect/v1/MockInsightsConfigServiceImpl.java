@@ -167,4 +167,48 @@ public class MockInsightsConfigServiceImpl extends InsightsConfigServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getDeploymentEvent(
+      GetDeploymentEventRequest request, StreamObserver<DeploymentEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DeploymentEvent) {
+      requests.add(request);
+      responseObserver.onNext(((DeploymentEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDeploymentEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DeploymentEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDeploymentEvents(
+      ListDeploymentEventsRequest request,
+      StreamObserver<ListDeploymentEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDeploymentEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDeploymentEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeploymentEvents, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDeploymentEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -33,6 +33,9 @@ import com.google.cloud.vectorsearch.v1beta.CreateCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.CreateIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteIndexRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsMetadata;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsResponse;
 import com.google.cloud.vectorsearch.v1beta.GetCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.GetIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.ImportDataObjectsMetadata;
@@ -147,6 +150,17 @@ public abstract class VectorSearchServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportDataObjectsRequest, Operation> importDataObjectsCallable() {
     throw new UnsupportedOperationException("Not implemented: importDataObjectsCallable()");
+  }
+
+  public OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportDataObjectsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDataObjectsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -104,7 +104,7 @@ public class AutokeyAdminClientTest {
   public void updateAutokeyConfigTest() throws Exception {
     AutokeyConfig expectedResponse =
         AutokeyConfig.newBuilder()
-            .setName(AutokeyConfigName.of("[FOLDER]").toString())
+            .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
             .setEtag("etag3123477")
             .build();
@@ -147,13 +147,13 @@ public class AutokeyAdminClientTest {
   public void getAutokeyConfigTest() throws Exception {
     AutokeyConfig expectedResponse =
         AutokeyConfig.newBuilder()
-            .setName(AutokeyConfigName.of("[FOLDER]").toString())
+            .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
             .setEtag("etag3123477")
             .build();
     mockAutokeyAdmin.addResponse(expectedResponse);
 
-    AutokeyConfigName name = AutokeyConfigName.of("[FOLDER]");
+    AutokeyConfigName name = AutokeyConfigName.ofFolderName("[FOLDER]");
 
     AutokeyConfig actualResponse = client.getAutokeyConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -175,7 +175,7 @@ public class AutokeyAdminClientTest {
     mockAutokeyAdmin.addException(exception);
 
     try {
-      AutokeyConfigName name = AutokeyConfigName.of("[FOLDER]");
+      AutokeyConfigName name = AutokeyConfigName.ofFolderName("[FOLDER]");
       client.getAutokeyConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -187,7 +187,7 @@ public class AutokeyAdminClientTest {
   public void getAutokeyConfigTest2() throws Exception {
     AutokeyConfig expectedResponse =
         AutokeyConfig.newBuilder()
-            .setName(AutokeyConfigName.of("[FOLDER]").toString())
+            .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
             .setKeyProject("keyProject65612730")
             .setEtag("etag3123477")
             .build();

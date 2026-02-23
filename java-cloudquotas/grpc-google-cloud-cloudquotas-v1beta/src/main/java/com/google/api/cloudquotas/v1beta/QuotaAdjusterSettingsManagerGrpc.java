@@ -215,7 +215,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for updating QuotaAdjusterSettings based on the request
+     * Updates the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     default void updateQuotaAdjusterSettings(
@@ -230,7 +230,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for getting QuotaAdjusterSettings based on the request
+     * Gets the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     default void getQuotaAdjusterSettings(
@@ -290,7 +290,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for updating QuotaAdjusterSettings based on the request
+     * Updates the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public void updateQuotaAdjusterSettings(
@@ -307,7 +307,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for getting QuotaAdjusterSettings based on the request
+     * Gets the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public void getQuotaAdjusterSettings(
@@ -349,7 +349,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for updating QuotaAdjusterSettings based on the request
+     * Updates the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings updateQuotaAdjusterSettings(
@@ -363,7 +363,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for getting QuotaAdjusterSettings based on the request
+     * Gets the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings getQuotaAdjusterSettings(
@@ -403,7 +403,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for updating QuotaAdjusterSettings based on the request
+     * Updates the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings updateQuotaAdjusterSettings(
@@ -416,7 +416,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for getting QuotaAdjusterSettings based on the request
+     * Gets the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings getQuotaAdjusterSettings(
@@ -455,7 +455,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for updating QuotaAdjusterSettings based on the request
+     * Updates the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -470,7 +470,7 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      *
      *
      * <pre>
-     * RPC Method for getting QuotaAdjusterSettings based on the request
+     * Gets the QuotaAdjusterSettings for the specified resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

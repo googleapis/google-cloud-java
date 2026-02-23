@@ -117,6 +117,50 @@ public interface VerifyAttestationRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nvidiaAttestation field is set.
+   */
+  boolean hasNvidiaAttestation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nvidiaAttestation.
+   */
+  com.google.cloud.confidentialcomputing.v1.NvidiaAttestation getNvidiaAttestation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Nvidia attestation report for GPU and NVSwitch devices.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.NvidiaAttestation nvidia_attestation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.NvidiaAttestationOrBuilder
+      getNvidiaAttestationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The name of the Challenge whose nonce was used to generate the
    * attestation, in the format `projects/&#42;&#47;locations/&#42;&#47;challenges/&#42;`. The
    * provided Challenge will be consumed, and cannot be used again.
@@ -359,4 +403,7 @@ public interface VerifyAttestationRequestOrBuilder
 
   com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest.TeeAttestationCase
       getTeeAttestationCase();
+
+  com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest.DeviceAttestationCase
+      getDeviceAttestationCase();
 }

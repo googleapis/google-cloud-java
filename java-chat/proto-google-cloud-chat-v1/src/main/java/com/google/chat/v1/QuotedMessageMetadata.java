@@ -63,6 +63,7 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
 
   private QuotedMessageMetadata() {
     name_ = "";
+    quoteType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,6 +79,168 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         .ensureFieldAccessorsInitialized(
             com.google.chat.v1.QuotedMessageMetadata.class,
             com.google.chat.v1.QuotedMessageMetadata.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The quote type of the quoted message.
+   * </pre>
+   *
+   * Protobuf enum {@code google.chat.v1.QuotedMessageMetadata.QuoteType}
+   */
+  public enum QuoteType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Reserved. This value is unused.
+     * </pre>
+     *
+     * <code>QUOTE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    QUOTE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * If quote_type is `REPLY`, you can do the following:
+     *
+     * * If you're replying in a thread, you can quote another message in that
+     * thread.
+     *
+     * * If you're creating a root message, you can quote another root message
+     * in that space.
+     *
+     * You can't quote a message reply from a different thread.
+     * </pre>
+     *
+     * <code>REPLY = 1;</code>
+     */
+    REPLY(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "QuoteType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reserved. This value is unused.
+     * </pre>
+     *
+     * <code>QUOTE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int QUOTE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * If quote_type is `REPLY`, you can do the following:
+     *
+     * * If you're replying in a thread, you can quote another message in that
+     * thread.
+     *
+     * * If you're creating a root message, you can quote another root message
+     * in that space.
+     *
+     * You can't quote a message reply from a different thread.
+     * </pre>
+     *
+     * <code>REPLY = 1;</code>
+     */
+    public static final int REPLY_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static QuoteType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static QuoteType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return QUOTE_TYPE_UNSPECIFIED;
+        case 1:
+          return REPLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<QuoteType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<QuoteType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<QuoteType>() {
+          public QuoteType findValueByNumber(int number) {
+            return QuoteType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.chat.v1.QuotedMessageMetadata.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final QuoteType[] VALUES = values();
+
+    public static QuoteType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private QuoteType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.chat.v1.QuotedMessageMetadata.QuoteType)
   }
 
   private int bitField0_;
@@ -222,6 +385,172 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         : lastUpdateTime_;
   }
 
+  public static final int QUOTE_TYPE_FIELD_NUMBER = 4;
+  private int quoteType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+   * message read/write path for backward compatibility.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for quoteType.
+   */
+  @java.lang.Override
+  public int getQuoteTypeValue() {
+    return quoteType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+   * message read/write path for backward compatibility.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The quoteType.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.QuotedMessageMetadata.QuoteType getQuoteType() {
+    com.google.chat.v1.QuotedMessageMetadata.QuoteType result =
+        com.google.chat.v1.QuotedMessageMetadata.QuoteType.forNumber(quoteType_);
+    return result == null
+        ? com.google.chat.v1.QuotedMessageMetadata.QuoteType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int QUOTED_MESSAGE_SNAPSHOT_FIELD_NUMBER = 5;
+  private com.google.chat.v1.QuotedMessageSnapshot quotedMessageSnapshot_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A snapshot of the quoted message's content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the quotedMessageSnapshot field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuotedMessageSnapshot() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A snapshot of the quoted message's content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The quotedMessageSnapshot.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.QuotedMessageSnapshot getQuotedMessageSnapshot() {
+    return quotedMessageSnapshot_ == null
+        ? com.google.chat.v1.QuotedMessageSnapshot.getDefaultInstance()
+        : quotedMessageSnapshot_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A snapshot of the quoted message's content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.QuotedMessageSnapshotOrBuilder getQuotedMessageSnapshotOrBuilder() {
+    return quotedMessageSnapshot_ == null
+        ? com.google.chat.v1.QuotedMessageSnapshot.getDefaultInstance()
+        : quotedMessageSnapshot_;
+  }
+
+  public static final int FORWARDED_METADATA_FIELD_NUMBER = 6;
+  private com.google.chat.v1.ForwardedMetadata forwardedMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the source space of the quoted message.
+   * Populated only for FORWARD quote type.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the forwardedMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasForwardedMetadata() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the source space of the quoted message.
+   * Populated only for FORWARD quote type.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The forwardedMetadata.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.ForwardedMetadata getForwardedMetadata() {
+    return forwardedMetadata_ == null
+        ? com.google.chat.v1.ForwardedMetadata.getDefaultInstance()
+        : forwardedMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the source space of the quoted message.
+   * Populated only for FORWARD quote type.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.ForwardedMetadataOrBuilder getForwardedMetadataOrBuilder() {
+    return forwardedMetadata_ == null
+        ? com.google.chat.v1.ForwardedMetadata.getDefaultInstance()
+        : forwardedMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -242,6 +571,16 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getLastUpdateTime());
     }
+    if (quoteType_
+        != com.google.chat.v1.QuotedMessageMetadata.QuoteType.QUOTE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, quoteType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getQuotedMessageSnapshot());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(6, getForwardedMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -256,6 +595,17 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLastUpdateTime());
+    }
+    if (quoteType_
+        != com.google.chat.v1.QuotedMessageMetadata.QuoteType.QUOTE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, quoteType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getQuotedMessageSnapshot());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getForwardedMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,6 +627,15 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     if (hasLastUpdateTime()) {
       if (!getLastUpdateTime().equals(other.getLastUpdateTime())) return false;
     }
+    if (quoteType_ != other.quoteType_) return false;
+    if (hasQuotedMessageSnapshot() != other.hasQuotedMessageSnapshot()) return false;
+    if (hasQuotedMessageSnapshot()) {
+      if (!getQuotedMessageSnapshot().equals(other.getQuotedMessageSnapshot())) return false;
+    }
+    if (hasForwardedMetadata() != other.hasForwardedMetadata()) return false;
+    if (hasForwardedMetadata()) {
+      if (!getForwardedMetadata().equals(other.getForwardedMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -293,6 +652,16 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     if (hasLastUpdateTime()) {
       hash = (37 * hash) + LAST_UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastUpdateTime().hashCode();
+    }
+    hash = (37 * hash) + QUOTE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + quoteType_;
+    if (hasQuotedMessageSnapshot()) {
+      hash = (37 * hash) + QUOTED_MESSAGE_SNAPSHOT_FIELD_NUMBER;
+      hash = (53 * hash) + getQuotedMessageSnapshot().hashCode();
+    }
+    if (hasForwardedMetadata()) {
+      hash = (37 * hash) + FORWARDED_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getForwardedMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -446,6 +815,8 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetLastUpdateTimeFieldBuilder();
+        internalGetQuotedMessageSnapshotFieldBuilder();
+        internalGetForwardedMetadataFieldBuilder();
       }
     }
 
@@ -458,6 +829,17 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       if (lastUpdateTimeBuilder_ != null) {
         lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
+      }
+      quoteType_ = 0;
+      quotedMessageSnapshot_ = null;
+      if (quotedMessageSnapshotBuilder_ != null) {
+        quotedMessageSnapshotBuilder_.dispose();
+        quotedMessageSnapshotBuilder_ = null;
+      }
+      forwardedMetadata_ = null;
+      if (forwardedMetadataBuilder_ != null) {
+        forwardedMetadataBuilder_.dispose();
+        forwardedMetadataBuilder_ = null;
       }
       return this;
     }
@@ -504,6 +886,23 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
             lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.quoteType_ = quoteType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.quotedMessageSnapshot_ =
+            quotedMessageSnapshotBuilder_ == null
+                ? quotedMessageSnapshot_
+                : quotedMessageSnapshotBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.forwardedMetadata_ =
+            forwardedMetadataBuilder_ == null
+                ? forwardedMetadata_
+                : forwardedMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -526,6 +925,15 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
       }
       if (other.hasLastUpdateTime()) {
         mergeLastUpdateTime(other.getLastUpdateTime());
+      }
+      if (other.quoteType_ != 0) {
+        setQuoteTypeValue(other.getQuoteTypeValue());
+      }
+      if (other.hasQuotedMessageSnapshot()) {
+        mergeQuotedMessageSnapshot(other.getQuotedMessageSnapshot());
+      }
+      if (other.hasForwardedMetadata()) {
+        mergeForwardedMetadata(other.getForwardedMetadata());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -566,6 +974,26 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 32:
+              {
+                quoteType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    internalGetQuotedMessageSnapshotFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetForwardedMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -989,6 +1417,554 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
         lastUpdateTime_ = null;
       }
       return lastUpdateTimeBuilder_;
+    }
+
+    private int quoteType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+     * message read/write path for backward compatibility.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for quoteType.
+     */
+    @java.lang.Override
+    public int getQuoteTypeValue() {
+      return quoteType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+     * message read/write path for backward compatibility.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for quoteType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuoteTypeValue(int value) {
+      quoteType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+     * message read/write path for backward compatibility.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The quoteType.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.QuotedMessageMetadata.QuoteType getQuoteType() {
+      com.google.chat.v1.QuotedMessageMetadata.QuoteType result =
+          com.google.chat.v1.QuotedMessageMetadata.QuoteType.forNumber(quoteType_);
+      return result == null
+          ? com.google.chat.v1.QuotedMessageMetadata.QuoteType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+     * message read/write path for backward compatibility.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The quoteType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuoteType(com.google.chat.v1.QuotedMessageMetadata.QuoteType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      quoteType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the quote type. If not set, defaults to REPLY in the
+     * message read/write path for backward compatibility.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageMetadata.QuoteType quote_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuoteType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      quoteType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.chat.v1.QuotedMessageSnapshot quotedMessageSnapshot_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.QuotedMessageSnapshot,
+            com.google.chat.v1.QuotedMessageSnapshot.Builder,
+            com.google.chat.v1.QuotedMessageSnapshotOrBuilder>
+        quotedMessageSnapshotBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the quotedMessageSnapshot field is set.
+     */
+    public boolean hasQuotedMessageSnapshot() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The quotedMessageSnapshot.
+     */
+    public com.google.chat.v1.QuotedMessageSnapshot getQuotedMessageSnapshot() {
+      if (quotedMessageSnapshotBuilder_ == null) {
+        return quotedMessageSnapshot_ == null
+            ? com.google.chat.v1.QuotedMessageSnapshot.getDefaultInstance()
+            : quotedMessageSnapshot_;
+      } else {
+        return quotedMessageSnapshotBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setQuotedMessageSnapshot(com.google.chat.v1.QuotedMessageSnapshot value) {
+      if (quotedMessageSnapshotBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        quotedMessageSnapshot_ = value;
+      } else {
+        quotedMessageSnapshotBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setQuotedMessageSnapshot(
+        com.google.chat.v1.QuotedMessageSnapshot.Builder builderForValue) {
+      if (quotedMessageSnapshotBuilder_ == null) {
+        quotedMessageSnapshot_ = builderForValue.build();
+      } else {
+        quotedMessageSnapshotBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeQuotedMessageSnapshot(com.google.chat.v1.QuotedMessageSnapshot value) {
+      if (quotedMessageSnapshotBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && quotedMessageSnapshot_ != null
+            && quotedMessageSnapshot_
+                != com.google.chat.v1.QuotedMessageSnapshot.getDefaultInstance()) {
+          getQuotedMessageSnapshotBuilder().mergeFrom(value);
+        } else {
+          quotedMessageSnapshot_ = value;
+        }
+      } else {
+        quotedMessageSnapshotBuilder_.mergeFrom(value);
+      }
+      if (quotedMessageSnapshot_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearQuotedMessageSnapshot() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      quotedMessageSnapshot_ = null;
+      if (quotedMessageSnapshotBuilder_ != null) {
+        quotedMessageSnapshotBuilder_.dispose();
+        quotedMessageSnapshotBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.QuotedMessageSnapshot.Builder getQuotedMessageSnapshotBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetQuotedMessageSnapshotFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.QuotedMessageSnapshotOrBuilder getQuotedMessageSnapshotOrBuilder() {
+      if (quotedMessageSnapshotBuilder_ != null) {
+        return quotedMessageSnapshotBuilder_.getMessageOrBuilder();
+      } else {
+        return quotedMessageSnapshot_ == null
+            ? com.google.chat.v1.QuotedMessageSnapshot.getDefaultInstance()
+            : quotedMessageSnapshot_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A snapshot of the quoted message's content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.QuotedMessageSnapshot quoted_message_snapshot = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.QuotedMessageSnapshot,
+            com.google.chat.v1.QuotedMessageSnapshot.Builder,
+            com.google.chat.v1.QuotedMessageSnapshotOrBuilder>
+        internalGetQuotedMessageSnapshotFieldBuilder() {
+      if (quotedMessageSnapshotBuilder_ == null) {
+        quotedMessageSnapshotBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.chat.v1.QuotedMessageSnapshot,
+                com.google.chat.v1.QuotedMessageSnapshot.Builder,
+                com.google.chat.v1.QuotedMessageSnapshotOrBuilder>(
+                getQuotedMessageSnapshot(), getParentForChildren(), isClean());
+        quotedMessageSnapshot_ = null;
+      }
+      return quotedMessageSnapshotBuilder_;
+    }
+
+    private com.google.chat.v1.ForwardedMetadata forwardedMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.ForwardedMetadata,
+            com.google.chat.v1.ForwardedMetadata.Builder,
+            com.google.chat.v1.ForwardedMetadataOrBuilder>
+        forwardedMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the forwardedMetadata field is set.
+     */
+    public boolean hasForwardedMetadata() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The forwardedMetadata.
+     */
+    public com.google.chat.v1.ForwardedMetadata getForwardedMetadata() {
+      if (forwardedMetadataBuilder_ == null) {
+        return forwardedMetadata_ == null
+            ? com.google.chat.v1.ForwardedMetadata.getDefaultInstance()
+            : forwardedMetadata_;
+      } else {
+        return forwardedMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setForwardedMetadata(com.google.chat.v1.ForwardedMetadata value) {
+      if (forwardedMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        forwardedMetadata_ = value;
+      } else {
+        forwardedMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setForwardedMetadata(
+        com.google.chat.v1.ForwardedMetadata.Builder builderForValue) {
+      if (forwardedMetadataBuilder_ == null) {
+        forwardedMetadata_ = builderForValue.build();
+      } else {
+        forwardedMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeForwardedMetadata(com.google.chat.v1.ForwardedMetadata value) {
+      if (forwardedMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && forwardedMetadata_ != null
+            && forwardedMetadata_ != com.google.chat.v1.ForwardedMetadata.getDefaultInstance()) {
+          getForwardedMetadataBuilder().mergeFrom(value);
+        } else {
+          forwardedMetadata_ = value;
+        }
+      } else {
+        forwardedMetadataBuilder_.mergeFrom(value);
+      }
+      if (forwardedMetadata_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearForwardedMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      forwardedMetadata_ = null;
+      if (forwardedMetadataBuilder_ != null) {
+        forwardedMetadataBuilder_.dispose();
+        forwardedMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.ForwardedMetadata.Builder getForwardedMetadataBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetForwardedMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.ForwardedMetadataOrBuilder getForwardedMetadataOrBuilder() {
+      if (forwardedMetadataBuilder_ != null) {
+        return forwardedMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return forwardedMetadata_ == null
+            ? com.google.chat.v1.ForwardedMetadata.getDefaultInstance()
+            : forwardedMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the source space of the quoted message.
+     * Populated only for FORWARD quote type.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.ForwardedMetadata forwarded_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.ForwardedMetadata,
+            com.google.chat.v1.ForwardedMetadata.Builder,
+            com.google.chat.v1.ForwardedMetadataOrBuilder>
+        internalGetForwardedMetadataFieldBuilder() {
+      if (forwardedMetadataBuilder_ == null) {
+        forwardedMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.chat.v1.ForwardedMetadata,
+                com.google.chat.v1.ForwardedMetadata.Builder,
+                com.google.chat.v1.ForwardedMetadataOrBuilder>(
+                getForwardedMetadata(), getParentForChildren(), isClean());
+        forwardedMetadata_ = null;
+      }
+      return forwardedMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.chat.v1.QuotedMessageMetadata)

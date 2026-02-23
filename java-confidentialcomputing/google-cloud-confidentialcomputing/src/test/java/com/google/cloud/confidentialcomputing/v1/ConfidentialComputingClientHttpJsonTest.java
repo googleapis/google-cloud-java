@@ -262,6 +262,7 @@ public class ConfidentialComputingClientHttpJsonTest {
             .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
             .setOptions(
                 VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+            .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
             .build();
 
     VerifyConfidentialSpaceResponse actualResponse = client.verifyConfidentialSpace(request);
@@ -298,6 +299,7 @@ public class ConfidentialComputingClientHttpJsonTest {
               .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
               .setOptions(
                   VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+              .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
               .build();
       client.verifyConfidentialSpace(request);
       Assert.fail("No exception raised");
@@ -317,6 +319,7 @@ public class ConfidentialComputingClientHttpJsonTest {
     VerifyConfidentialGkeRequest request =
         VerifyConfidentialGkeRequest.newBuilder()
             .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+            .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
             .build();
 
     VerifyConfidentialGkeResponse actualResponse = client.verifyConfidentialGke(request);
@@ -348,6 +351,7 @@ public class ConfidentialComputingClientHttpJsonTest {
       VerifyConfidentialGkeRequest request =
           VerifyConfidentialGkeRequest.newBuilder()
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
               .build();
       client.verifyConfidentialGke(request);
       Assert.fail("No exception raised");

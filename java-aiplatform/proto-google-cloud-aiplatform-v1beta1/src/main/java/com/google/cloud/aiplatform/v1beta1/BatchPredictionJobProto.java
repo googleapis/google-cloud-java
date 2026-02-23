@@ -85,7 +85,7 @@ public final class BatchPredictionJobProto extends com.google.protobuf.Generated
           + "1beta1/model_deployment_monitoring_job.proto\0326google/cloud/aiplatform/v1beta1/mo"
           + "del_monitoring.proto\032?google/cloud/aiplatform/v1beta1/unmanaged_container_model."
           + "proto\032\034google/protobuf/struct.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\305\026\n"
+          + "gle/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\374\030\n"
           + "\022BatchPredictionJob\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\0223\n"
@@ -135,40 +135,47 @@ public final class BatchPredictionJobProto extends com.google.protobuf.Generated
           + "\027model_monitoring_status\030  \001(\0132\022.google.rpc.StatusB\003\340A\003\022!\n"
           + "\031disable_container_logging\030\" \001(\010\022\032\n\r"
           + "satisfies_pzs\030$ \001(\010B\003\340A\003\022\032\n\r"
-          + "satisfies_pzi\030% \001(\010B\003\340A\003\032\304\001\n"
+          + "satisfies_pzi\030% \001(\010B\003\340A\003\032\260\002\n"
           + "\013InputConfig\022@\n\n"
           + "gcs_source\030\002 \001(\0132*.google.cloud.aiplatform.v1beta1.GcsSourceH\000\022J\n"
           + "\017bigquery_source\030\003"
-          + " \001(\0132/.google.cloud.aiplatform.v1beta1.BigQuerySourceH\000\022\035\n"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.BigQuerySourceH\000\022j\n"
+          + " vertex_multimodal_dataset_source\030\004 \001(\0132>.goo"
+          + "gle.cloud.aiplatform.v1beta1.VertexMultimodalDatasetSourceH\000\022\035\n"
           + "\020instances_format\030\001 \001(\tB\003\340A\002B\010\n"
           + "\006source\032l\n"
           + "\016InstanceConfig\022\025\n\r"
           + "instance_type\030\001 \001(\t\022\021\n"
           + "\tkey_field\030\002 \001(\t\022\027\n"
           + "\017included_fields\030\003 \003(\t\022\027\n"
-          + "\017excluded_fields\030\004 \003(\t\032\340\001\n"
+          + "\017excluded_fields\030\004 \003(\t\032\326\002\n"
           + "\014OutputConfig\022J\n"
           + "\017gcs_destination\030\002"
           + " \001(\0132/.google.cloud.aiplatform.v1beta1.GcsDestinationH\000\022T\n"
-          + "\024bigquery_destination\030\003 \001(\01324.google.clou"
-          + "d.aiplatform.v1beta1.BigQueryDestinationH\000\022\037\n"
+          + "\024bigquery_destination\030\003"
+          + " \001(\01324.google.cloud.aiplatform.v1beta1.BigQueryDestinationH\000\022t\n"
+          + "%vertex_multimodal_dataset_destination\030\006 \001(\0132C."
+          + "google.cloud.aiplatform.v1beta1.VertexMultimodalDatasetDestinationH\000\022\037\n"
           + "\022predictions_format\030\001 \001(\tB\003\340A\002B\r\n"
-          + "\013destination\032\220\001\n\n"
+          + "\013destination\032\345\001\n"
+          + "\n"
           + "OutputInfo\022#\n"
           + "\024gcs_output_directory\030\001 \001(\tB\003\340A\003H\000\022&\n"
-          + "\027bigquery_output_dataset\030\002 \001(\tB\003\340A\003H\000\022\"\n"
+          + "\027bigquery_output_dataset\030\002 \001(\tB\003\340A\003H\000\022S\n"
+          + "\036vertex_multimodal_dataset_name\030\005 \001(\tB)\340A\003\372A#\n"
+          + "!aiplatform.googleapis.com/DatasetH\000\022\"\n"
           + "\025bigquery_output_table\030\004 \001(\tB\003\340A\003B\021\n"
           + "\017output_location\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\206\001\352A\202\001\n"
-          + ",aiplatform.googleapis.com/BatchPredictionJob\022Rprojects/{project}/lo"
-          + "cations/{location}/batchPredictionJobs/{batch_prediction_job}B\356\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\027BatchPredictionJo"
-          + "bProtoP\001ZCcloud.google.com/go/aiplatform"
-          + "/apiv1beta1/aiplatformpb;aiplatformpb\252\002\037"
-          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
-          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + ",aiplatform.googleapis.com/BatchPredictionJob\022Rprojects/{project}/locations/{"
+          + "location}/batchPredictionJobs/{batch_prediction_job}B\356\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\027BatchPredictionJobProtoP\001Z"
+          + "Ccloud.google.com/go/aiplatform/apiv1bet"
+          + "a1/aiplatformpb;aiplatformpb\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -236,7 +243,11 @@ public final class BatchPredictionJobProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InputConfig_descriptor,
             new java.lang.String[] {
-              "GcsSource", "BigquerySource", "InstancesFormat", "Source",
+              "GcsSource",
+              "BigquerySource",
+              "VertexMultimodalDatasetSource",
+              "InstancesFormat",
+              "Source",
             });
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor.getNestedType(
@@ -254,7 +265,11 @@ public final class BatchPredictionJobProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_descriptor,
             new java.lang.String[] {
-              "GcsDestination", "BigqueryDestination", "PredictionsFormat", "Destination",
+              "GcsDestination",
+              "BigqueryDestination",
+              "VertexMultimodalDatasetDestination",
+              "PredictionsFormat",
+              "Destination",
             });
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputInfo_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor.getNestedType(
@@ -265,6 +280,7 @@ public final class BatchPredictionJobProto extends com.google.protobuf.Generated
             new java.lang.String[] {
               "GcsOutputDirectory",
               "BigqueryOutputDataset",
+              "VertexMultimodalDatasetName",
               "BigqueryOutputTable",
               "OutputLocation",
             });

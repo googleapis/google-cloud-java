@@ -160,4 +160,48 @@ public class MockStorageBatchOperationsImpl extends StorageBatchOperationsImplBa
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listBucketOperations(
+      ListBucketOperationsRequest request,
+      StreamObserver<ListBucketOperationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBucketOperationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBucketOperationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBucketOperations, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBucketOperationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBucketOperation(
+      GetBucketOperationRequest request, StreamObserver<BucketOperation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BucketOperation) {
+      requests.add(request);
+      responseObserver.onNext(((BucketOperation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBucketOperation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BucketOperation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

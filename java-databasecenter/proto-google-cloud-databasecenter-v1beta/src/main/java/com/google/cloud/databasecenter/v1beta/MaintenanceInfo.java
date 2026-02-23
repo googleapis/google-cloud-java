@@ -233,11 +233,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Current Maintenance version of the database resource. Example:
+   * Output only. Current Maintenance version of the database resource. Example:
    * "MYSQL_8_0_41.R20250531.01_15"
    * </pre>
    *
-   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The maintenanceVersion.
    */
@@ -258,11 +258,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Current Maintenance version of the database resource. Example:
+   * Output only. Current Maintenance version of the database resource. Example:
    * "MYSQL_8_0_41.R20250531.01_15"
    * </pre>
    *
-   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for maintenanceVersion.
    */
@@ -1378,11 +1378,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Current Maintenance version of the database resource. Example:
+     * Output only. Current Maintenance version of the database resource. Example:
      * "MYSQL_8_0_41.R20250531.01_15"
      * </pre>
      *
-     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The maintenanceVersion.
      */
@@ -1402,11 +1402,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Current Maintenance version of the database resource. Example:
+     * Output only. Current Maintenance version of the database resource. Example:
      * "MYSQL_8_0_41.R20250531.01_15"
      * </pre>
      *
-     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for maintenanceVersion.
      */
@@ -1426,11 +1426,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Current Maintenance version of the database resource. Example:
+     * Output only. Current Maintenance version of the database resource. Example:
      * "MYSQL_8_0_41.R20250531.01_15"
      * </pre>
      *
-     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The maintenanceVersion to set.
      * @return This builder for chaining.
@@ -1449,11 +1449,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Current Maintenance version of the database resource. Example:
+     * Output only. Current Maintenance version of the database resource. Example:
      * "MYSQL_8_0_41.R20250531.01_15"
      * </pre>
      *
-     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1468,11 +1468,11 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Current Maintenance version of the database resource. Example:
+     * Output only. Current Maintenance version of the database resource. Example:
      * "MYSQL_8_0_41.R20250531.01_15"
      * </pre>
      *
-     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string maintenance_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for maintenanceVersion to set.
      * @return This builder for chaining.

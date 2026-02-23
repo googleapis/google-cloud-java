@@ -195,6 +195,28 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 3;
+  private boolean force_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, any child bucket operations of the job will also
+   * be deleted. Highly recommended to be set to true by all clients. Users
+   * cannot mutate bucket operations directly, so only the jobs.delete
+   * permission is required to delete a job (and its child bucket operations).
+   * </pre>
+   *
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -215,6 +237,9 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, requestId_);
     }
+    if (force_ != false) {
+      output.writeBool(3, force_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -229,6 +254,9 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, requestId_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, force_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,6 +276,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -263,6 +292,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,6 +437,7 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       requestId_ = "";
+      force_ = false;
       return this;
     }
 
@@ -448,6 +480,9 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
+      }
     }
 
     @java.lang.Override
@@ -472,6 +507,9 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
         requestId_ = other.requestId_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -511,6 +549,12 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                force_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -793,6 +837,71 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, any child bucket operations of the job will also
+     * be deleted. Highly recommended to be set to true by all clients. Users
+     * cannot mutate bucket operations directly, so only the jobs.delete
+     * permission is required to delete a job (and its child bucket operations).
+     * </pre>
+     *
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, any child bucket operations of the job will also
+     * be deleted. Highly recommended to be set to true by all clients. Users
+     * cannot mutate bucket operations directly, so only the jobs.delete
+     * permission is required to delete a job (and its child bucket operations).
+     * </pre>
+     *
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, any child bucket operations of the job will also
+     * be deleted. Highly recommended to be set to true by all clients. Users
+     * cannot mutate bucket operations directly, so only the jobs.delete
+     * permission is required to delete a job (and its child bucket operations).
+     * </pre>
+     *
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      force_ = false;
       onChanged();
       return this;
     }

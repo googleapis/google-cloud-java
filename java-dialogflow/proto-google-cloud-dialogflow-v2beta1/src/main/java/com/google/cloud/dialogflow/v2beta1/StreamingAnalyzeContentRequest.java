@@ -1116,6 +1116,27 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return enablePartialAutomatedAgentReply_;
   }
 
+  public static final int OUTPUT_MULTIPLE_UTTERANCES_FIELD_NUMBER = 18;
+  private boolean outputMultipleUtterances_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If multiple utterances are detected in the audio stream, process
+   * them individually instead of stitching them together to form a single
+   * utterance.
+   * </pre>
+   *
+   * <code>bool output_multiple_utterances = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputMultipleUtterances.
+   */
+  @java.lang.Override
+  public boolean getOutputMultipleUtterances() {
+    return outputMultipleUtterances_;
+  }
+
   public static final int ENABLE_DEBUGGING_INFO_FIELD_NUMBER = 19;
   private boolean enableDebuggingInfo_ = false;
 
@@ -1192,6 +1213,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (inputCase_ == 17) {
       com.google.protobuf.GeneratedMessage.writeString(output, 17, input_);
     }
+    if (outputMultipleUtterances_ != false) {
+      output.writeBool(18, outputMultipleUtterances_);
+    }
     if (enableDebuggingInfo_ != false) {
       output.writeBool(19, enableDebuggingInfo_);
     }
@@ -1259,6 +1283,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (inputCase_ == 17) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(17, input_);
     }
+    if (outputMultipleUtterances_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, outputMultipleUtterances_);
+    }
     if (enableDebuggingInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableDebuggingInfo_);
     }
@@ -1302,6 +1329,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (getEnableExtendedStreaming() != other.getEnableExtendedStreaming()) return false;
     if (getEnablePartialAutomatedAgentReply() != other.getEnablePartialAutomatedAgentReply())
       return false;
+    if (getOutputMultipleUtterances() != other.getOutputMultipleUtterances()) return false;
     if (getEnableDebuggingInfo() != other.getEnableDebuggingInfo()) return false;
     if (!getConfigCase().equals(other.getConfigCase())) return false;
     switch (configCase_) {
@@ -1371,6 +1399,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashBoolean(getEnablePartialAutomatedAgentReply());
+    hash = (37 * hash) + OUTPUT_MULTIPLE_UTTERANCES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOutputMultipleUtterances());
     hash = (37 * hash) + ENABLE_DEBUGGING_INFO_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDebuggingInfo());
     switch (configCase_) {
@@ -1640,6 +1670,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       cxCurrentPage_ = "";
       enableExtendedStreaming_ = false;
       enablePartialAutomatedAgentReply_ = false;
+      outputMultipleUtterances_ = false;
       enableDebuggingInfo_ = false;
       configCase_ = 0;
       config_ = null;
@@ -1721,6 +1752,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.outputMultipleUtterances_ = outputMultipleUtterances_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.enableDebuggingInfo_ = enableDebuggingInfo_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1786,6 +1820,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       if (other.getEnablePartialAutomatedAgentReply() != false) {
         setEnablePartialAutomatedAgentReply(other.getEnablePartialAutomatedAgentReply());
+      }
+      if (other.getOutputMultipleUtterances() != false) {
+        setOutputMultipleUtterances(other.getOutputMultipleUtterances());
       }
       if (other.getEnableDebuggingInfo() != false) {
         setEnableDebuggingInfo(other.getEnableDebuggingInfo());
@@ -1962,10 +1999,16 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
                 input_ = s;
                 break;
               } // case 138
+            case 144:
+              {
+                outputMultipleUtterances_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 144
             case 152:
               {
                 enableDebuggingInfo_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 152
             case 162:
@@ -4614,6 +4657,68 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return this;
     }
 
+    private boolean outputMultipleUtterances_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If multiple utterances are detected in the audio stream, process
+     * them individually instead of stitching them together to form a single
+     * utterance.
+     * </pre>
+     *
+     * <code>bool output_multiple_utterances = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The outputMultipleUtterances.
+     */
+    @java.lang.Override
+    public boolean getOutputMultipleUtterances() {
+      return outputMultipleUtterances_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If multiple utterances are detected in the audio stream, process
+     * them individually instead of stitching them together to form a single
+     * utterance.
+     * </pre>
+     *
+     * <code>bool output_multiple_utterances = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The outputMultipleUtterances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputMultipleUtterances(boolean value) {
+
+      outputMultipleUtterances_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If multiple utterances are detected in the audio stream, process
+     * them individually instead of stitching them together to form a single
+     * utterance.
+     * </pre>
+     *
+     * <code>bool output_multiple_utterances = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOutputMultipleUtterances() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      outputMultipleUtterances_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean enableDebuggingInfo_;
 
     /**
@@ -4649,7 +4754,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnableDebuggingInfo(boolean value) {
 
       enableDebuggingInfo_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4667,7 +4772,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnableDebuggingInfo() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       enableDebuggingInfo_ = false;
       onChanged();
       return this;

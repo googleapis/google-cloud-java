@@ -174,4 +174,44 @@ public interface TextSearchOrBuilder
    * @return The topK.
    */
   int getTopK();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. `{"genre": {"$eq": "sci-fi"}}`,
+   * represented as a `google.protobuf.Struct`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  boolean hasFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. `{"genre": {"$eq": "sci-fi"}}`,
+   * represented as a `google.protobuf.Struct`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  com.google.protobuf.Struct getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. `{"genre": {"$eq": "sci-fi"}}`,
+   * represented as a `google.protobuf.Struct`.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getFilterOrBuilder();
 }

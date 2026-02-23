@@ -72,12 +72,12 @@ public final class UserPropertiesProto extends com.google.protobuf.GeneratedFile
           + "W\020\001\022\r\n\tRETURNING\020\002\022\r\n\tREENGAGED\020\003*[\n\023Cus"
           + "tomerValueBucket\022%\n!CUSTOMER_VALUE_BUCKE"
           + "T_UNSPECIFIED\020\000\022\007\n\003LOW\020\001\022\n\n\006MEDIUM\020\002\022\010\n\004"
-          + "HIGH\020\003B\323\001\n\035com.google.ads.datamanager.v1"
-          + "B\023UserPropertiesProtoP\001ZDgoogle.golang.o"
-          + "rg/genproto/googleapis/ads/datamanager/v"
-          + "1;datamanager\252\002\031Google.Ads.DataManager.V"
-          + "1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::"
-          + "Ads::DataManager::V1b\006proto3"
+          + "HIGH\020\003B\320\001\n\035com.google.ads.datamanager.v1"
+          + "B\023UserPropertiesProtoP\001ZAcloud.google.co"
+          + "m/go/datamanager/apiv1/datamanagerpb;dat"
+          + "amanagerpb\252\002\031Google.Ads.DataManager.V1\312\002"
+          + "\031Google\\Ads\\DataManager\\V1\352\002\034Google::Ads"
+          + "::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

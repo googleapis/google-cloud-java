@@ -195,7 +195,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -356,9 +357,9 @@ public class DataObjectServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/collections/{collection}`
    * @param dataObject Required. The DataObject to create.
    * @param dataObjectId Required. The id of the dataObject to create. The id must be 1-63
-   *     characters long, and comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
-   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
-   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
+   *     characters long, and comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *     Specifically, it must be 1-63 characters long and match the regular expression
+   *     `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataObject createDataObject(
@@ -397,9 +398,9 @@ public class DataObjectServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/collections/{collection}`
    * @param dataObject Required. The DataObject to create.
    * @param dataObjectId Required. The id of the dataObject to create. The id must be 1-63
-   *     characters long, and comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
-   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
-   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
+   *     characters long, and comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *     Specifically, it must be 1-63 characters long and match the regular expression
+   *     `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataObject createDataObject(
@@ -1124,7 +1125,13 @@ public class DataObjectServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1157,7 +1164,13 @@ public class DataObjectServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1191,7 +1204,13 @@ public class DataObjectServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

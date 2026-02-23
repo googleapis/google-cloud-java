@@ -472,7 +472,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=190
+   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=203
    * @return Whether the schema field is set.
    */
   @java.lang.Override
@@ -493,7 +493,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=190
+   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=203
    * @return The schema.
    */
   @java.lang.Override
@@ -2267,7 +2267,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=190
+     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=203
      * @return Whether the schema field is set.
      */
     @java.lang.Deprecated
@@ -2287,7 +2287,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=190
+     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=203
      * @return The schema.
      */
     @java.lang.Deprecated

@@ -18,6 +18,7 @@ package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListClustersPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.visionai.v1.StreamsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListSeriesPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListStreamsPagedResponse;
 
@@ -51,6 +52,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Channel;
 import com.google.cloud.visionai.v1.Cluster;
 import com.google.cloud.visionai.v1.CreateClusterRequest;
@@ -237,6 +242,10 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
   private final UnaryCallSettings<MaterializeChannelRequest, Operation> materializeChannelSettings;
   private final OperationCallSettings<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListClustersRequest, ListClustersResponse, Cluster>
       LIST_CLUSTERS_PAGE_STR_DESC =
@@ -374,6 +383,40 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
       LIST_CLUSTERS_PAGE_STR_FACT =
@@ -439,6 +482,23 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
               PageContext<ListSeriesRequest, ListSeriesResponse, Series> pageContext =
                   PageContext.create(callable, LIST_SERIES_PAGE_STR_DESC, request, context);
               return ListSeriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -647,6 +707,17 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
     return materializeChannelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public StreamsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -797,6 +868,8 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
     materializeChannelSettings = settingsBuilder.materializeChannelSettings().build();
     materializeChannelOperationSettings =
         settingsBuilder.materializeChannelOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for StreamsServiceStubSettings. */
@@ -867,6 +940,10 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
     private final OperationCallSettings.Builder<
             MaterializeChannelRequest, Channel, OperationMetadata>
         materializeChannelOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -931,6 +1008,8 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
       deleteSeriesOperationSettings = OperationCallSettings.newBuilder();
       materializeChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       materializeChannelOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -956,7 +1035,9 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
               createSeriesSettings,
               updateSeriesSettings,
               deleteSeriesSettings,
-              materializeChannelSettings);
+              materializeChannelSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -1002,6 +1083,8 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
       materializeChannelSettings = settings.materializeChannelSettings.toBuilder();
       materializeChannelOperationSettings =
           settings.materializeChannelOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1027,7 +1110,9 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
               createSeriesSettings,
               updateSeriesSettings,
               deleteSeriesSettings,
-              materializeChannelSettings);
+              materializeChannelSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -1167,6 +1252,16 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
 
       builder
           .materializeChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1729,6 +1824,18 @@ public class StreamsServiceStubSettings extends StubSettings<StreamsServiceStubS
     public OperationCallSettings.Builder<MaterializeChannelRequest, Channel, OperationMetadata>
         materializeChannelOperationSettings() {
       return materializeChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

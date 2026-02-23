@@ -173,6 +173,45 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListBucketOperations</td>
+ *      <td><p> Lists BucketOperations in a given project and job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBucketOperations(ListBucketOperationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBucketOperations(JobName parent)
+ *           <li><p> listBucketOperations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBucketOperationsPagedCallable()
+ *           <li><p> listBucketOperationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBucketOperation</td>
+ *      <td><p> Gets a BucketOperation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBucketOperation(GetBucketOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBucketOperation(BucketOperationName name)
+ *           <li><p> getBucketOperation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBucketOperationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -865,6 +904,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    *       DeleteJobRequest.newBuilder()
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   storageBatchOperationsClient.deleteJob(request);
    * }
@@ -895,6 +935,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    *       DeleteJobRequest.newBuilder()
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       storageBatchOperationsClient.deleteJobCallable().futureCall(request);
@@ -1022,6 +1063,312 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    */
   public final UnaryCallable<CancelJobRequest, CancelJobResponse> cancelJobCallable() {
     return stub.cancelJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BucketOperations in a given project and job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   JobName parent = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   for (BucketOperation element :
+   *       storageBatchOperationsClient.listBucketOperations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: projects/{project_id}/locations/global/jobs/{job_id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketOperationsPagedResponse listBucketOperations(JobName parent) {
+    ListBucketOperationsRequest request =
+        ListBucketOperationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBucketOperations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BucketOperations in a given project and job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   String parent = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   for (BucketOperation element :
+   *       storageBatchOperationsClient.listBucketOperations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: projects/{project_id}/locations/global/jobs/{job_id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketOperationsPagedResponse listBucketOperations(String parent) {
+    ListBucketOperationsRequest request =
+        ListBucketOperationsRequest.newBuilder().setParent(parent).build();
+    return listBucketOperations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BucketOperations in a given project and job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   ListBucketOperationsRequest request =
+   *       ListBucketOperationsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (BucketOperation element :
+   *       storageBatchOperationsClient.listBucketOperations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketOperationsPagedResponse listBucketOperations(
+      ListBucketOperationsRequest request) {
+    return listBucketOperationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BucketOperations in a given project and job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   ListBucketOperationsRequest request =
+   *       ListBucketOperationsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<BucketOperation> future =
+   *       storageBatchOperationsClient.listBucketOperationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BucketOperation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsPagedResponse>
+      listBucketOperationsPagedCallable() {
+    return stub.listBucketOperationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BucketOperations in a given project and job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   ListBucketOperationsRequest request =
+   *       ListBucketOperationsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListBucketOperationsResponse response =
+   *         storageBatchOperationsClient.listBucketOperationsCallable().call(request);
+   *     for (BucketOperation element : response.getBucketOperationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsResponse>
+      listBucketOperationsCallable() {
+    return stub.listBucketOperationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a BucketOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   BucketOperationName name =
+   *       BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]");
+   *   BucketOperation response = storageBatchOperationsClient.getBucketOperation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. `name` of the bucket operation to retrieve. Format:
+   *     projects/{project_id}/locations/global/jobs/{job_id}/bucketOperations/{bucket_operation_id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BucketOperation getBucketOperation(BucketOperationName name) {
+    GetBucketOperationRequest request =
+        GetBucketOperationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getBucketOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a BucketOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   String name =
+   *       BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]")
+   *           .toString();
+   *   BucketOperation response = storageBatchOperationsClient.getBucketOperation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. `name` of the bucket operation to retrieve. Format:
+   *     projects/{project_id}/locations/global/jobs/{job_id}/bucketOperations/{bucket_operation_id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BucketOperation getBucketOperation(String name) {
+    GetBucketOperationRequest request =
+        GetBucketOperationRequest.newBuilder().setName(name).build();
+    return getBucketOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a BucketOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   GetBucketOperationRequest request =
+   *       GetBucketOperationRequest.newBuilder()
+   *           .setName(
+   *               BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]")
+   *                   .toString())
+   *           .build();
+   *   BucketOperation response = storageBatchOperationsClient.getBucketOperation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BucketOperation getBucketOperation(GetBucketOperationRequest request) {
+    return getBucketOperationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a BucketOperation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageBatchOperationsClient storageBatchOperationsClient =
+   *     StorageBatchOperationsClient.create()) {
+   *   GetBucketOperationRequest request =
+   *       GetBucketOperationRequest.newBuilder()
+   *           .setName(
+   *               BucketOperationName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[BUCKET_OPERATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<BucketOperation> future =
+   *       storageBatchOperationsClient.getBucketOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BucketOperation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationCallable() {
+    return stub.getBucketOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1276,6 +1623,90 @@ public class StorageBatchOperationsClient implements BackgroundResource {
     protected ListJobsFixedSizeCollection createCollection(
         List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBucketOperationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          BucketOperation,
+          ListBucketOperationsPage,
+          ListBucketOperationsFixedSizeCollection> {
+
+    public static ApiFuture<ListBucketOperationsPagedResponse> createAsync(
+        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+            context,
+        ApiFuture<ListBucketOperationsResponse> futureResponse) {
+      ApiFuture<ListBucketOperationsPage> futurePage =
+          ListBucketOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBucketOperationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBucketOperationsPagedResponse(ListBucketOperationsPage page) {
+      super(page, ListBucketOperationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBucketOperationsPage
+      extends AbstractPage<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          BucketOperation,
+          ListBucketOperationsPage> {
+
+    private ListBucketOperationsPage(
+        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+            context,
+        ListBucketOperationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBucketOperationsPage createEmptyPage() {
+      return new ListBucketOperationsPage(null, null);
+    }
+
+    @Override
+    protected ListBucketOperationsPage createPage(
+        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+            context,
+        ListBucketOperationsResponse response) {
+      return new ListBucketOperationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBucketOperationsPage> createPageAsync(
+        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+            context,
+        ApiFuture<ListBucketOperationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBucketOperationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          BucketOperation,
+          ListBucketOperationsPage,
+          ListBucketOperationsFixedSizeCollection> {
+
+    private ListBucketOperationsFixedSizeCollection(
+        List<ListBucketOperationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBucketOperationsFixedSizeCollection createEmptyCollection() {
+      return new ListBucketOperationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBucketOperationsFixedSizeCollection createCollection(
+        List<ListBucketOperationsPage> pages, int collectionSize) {
+      return new ListBucketOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
 

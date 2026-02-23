@@ -52,7 +52,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
   }
 
   private ContentBlock() {
-    topic_ = "";
+    referencedPlaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,59 +71,6 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
-  public static final int TOPIC_FIELD_NUMBER = 1;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object topic_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * The topic of the content, for example "overview" or "restaurant".
-   * </pre>
-   *
-   * <code>string topic = 1;</code>
-   *
-   * @return The topic.
-   */
-  @java.lang.Override
-  public java.lang.String getTopic() {
-    java.lang.Object ref = topic_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      topic_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The topic of the content, for example "overview" or "restaurant".
-   * </pre>
-   *
-   * <code>string topic = 1;</code>
-   *
-   * @return The bytes for topic.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getTopicBytes() {
-    java.lang.Object ref = topic_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      topic_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int CONTENT_FIELD_NUMBER = 2;
   private com.google.type.LocalizedText content_;
 
@@ -173,69 +120,76 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     return content_ == null ? com.google.type.LocalizedText.getDefaultInstance() : content_;
   }
 
-  public static final int REFERENCES_FIELD_NUMBER = 3;
-  private com.google.maps.places.v1.References references_;
+  public static final int REFERENCED_PLACES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList referencedPlaces_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
 
   /**
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * References that are related to this block of content.
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
    * </pre>
    *
-   * <code>.google.maps.places.v1.References references = 3;</code>
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
    *
-   * @return Whether the references field is set.
+   * @return A list containing the referencedPlaces.
    */
-  @java.lang.Override
-  public boolean hasReferences() {
-    return ((bitField0_ & 0x00000002) != 0);
+  public com.google.protobuf.ProtocolStringList getReferencedPlacesList() {
+    return referencedPlaces_;
   }
 
   /**
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * References that are related to this block of content.
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
    * </pre>
    *
-   * <code>.google.maps.places.v1.References references = 3;</code>
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
    *
-   * @return The references.
+   * @return The count of referencedPlaces.
    */
-  @java.lang.Override
-  public com.google.maps.places.v1.References getReferences() {
-    return references_ == null
-        ? com.google.maps.places.v1.References.getDefaultInstance()
-        : references_;
+  public int getReferencedPlacesCount() {
+    return referencedPlaces_.size();
   }
 
   /**
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * References that are related to this block of content.
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
    * </pre>
    *
-   * <code>.google.maps.places.v1.References references = 3;</code>
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The referencedPlaces at the given index.
    */
-  @java.lang.Override
-  public com.google.maps.places.v1.ReferencesOrBuilder getReferencesOrBuilder() {
-    return references_ == null
-        ? com.google.maps.places.v1.References.getDefaultInstance()
-        : references_;
+  public java.lang.String getReferencedPlaces(int index) {
+    return referencedPlaces_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of resource names of the referenced places. This name can be used
+   * in other APIs that accept Place resource names.
+   * </pre>
+   *
+   * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the referencedPlaces at the given index.
+   */
+  public com.google.protobuf.ByteString getReferencedPlacesBytes(int index) {
+    return referencedPlaces_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -252,14 +206,11 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(topic_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, topic_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getContent());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(3, getReferences());
+    for (int i = 0; i < referencedPlaces_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, referencedPlaces_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -270,14 +221,16 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(topic_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, topic_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getContent());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getReferences());
+    {
+      int dataSize = 0;
+      for (int i = 0; i < referencedPlaces_.size(); i++) {
+        dataSize += computeStringSizeNoTag(referencedPlaces_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getReferencedPlacesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -294,15 +247,11 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     }
     com.google.maps.places.v1.ContentBlock other = (com.google.maps.places.v1.ContentBlock) obj;
 
-    if (!getTopic().equals(other.getTopic())) return false;
     if (hasContent() != other.hasContent()) return false;
     if (hasContent()) {
       if (!getContent().equals(other.getContent())) return false;
     }
-    if (hasReferences() != other.hasReferences()) return false;
-    if (hasReferences()) {
-      if (!getReferences().equals(other.getReferences())) return false;
-    }
+    if (!getReferencedPlacesList().equals(other.getReferencedPlacesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,15 +263,13 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-    hash = (53 * hash) + getTopic().hashCode();
     if (hasContent()) {
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
     }
-    if (hasReferences()) {
-      hash = (37 * hash) + REFERENCES_FIELD_NUMBER;
-      hash = (53 * hash) + getReferences().hashCode();
+    if (getReferencedPlacesCount() > 0) {
+      hash = (37 * hash) + REFERENCED_PLACES_FIELD_NUMBER;
+      hash = (53 * hash) + getReferencedPlacesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -466,7 +413,6 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetContentFieldBuilder();
-        internalGetReferencesFieldBuilder();
       }
     }
 
@@ -474,17 +420,12 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      topic_ = "";
       content_ = null;
       if (contentBuilder_ != null) {
         contentBuilder_.dispose();
         contentBuilder_ = null;
       }
-      references_ = null;
-      if (referencesBuilder_ != null) {
-        referencesBuilder_.dispose();
-        referencesBuilder_ = null;
-      }
+      referencedPlaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -521,17 +462,14 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.maps.places.v1.ContentBlock result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.topic_ = topic_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.content_ = contentBuilder_ == null ? content_ : contentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.references_ = referencesBuilder_ == null ? references_ : referencesBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        referencedPlaces_.makeImmutable();
+        result.referencedPlaces_ = referencedPlaces_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -548,16 +486,18 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.maps.places.v1.ContentBlock other) {
       if (other == com.google.maps.places.v1.ContentBlock.getDefaultInstance()) return this;
-      if (!other.getTopic().isEmpty()) {
-        topic_ = other.topic_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (other.hasContent()) {
         mergeContent(other.getContent());
       }
-      if (other.hasReferences()) {
-        mergeReferences(other.getReferences());
+      if (!other.referencedPlaces_.isEmpty()) {
+        if (referencedPlaces_.isEmpty()) {
+          referencedPlaces_ = other.referencedPlaces_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureReferencedPlacesIsMutable();
+          referencedPlaces_.addAll(other.referencedPlaces_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -585,25 +525,19 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                topic_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
             case 18:
               {
                 input.readMessage(internalGetContentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
-            case 26:
+            case 34:
               {
-                input.readMessage(
-                    internalGetReferencesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReferencedPlacesIsMutable();
+                referencedPlaces_.add(s);
                 break;
-              } // case 26
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -622,117 +556,6 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
-
-    private java.lang.Object topic_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * The topic of the content, for example "overview" or "restaurant".
-     * </pre>
-     *
-     * <code>string topic = 1;</code>
-     *
-     * @return The topic.
-     */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        topic_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The topic of the content, for example "overview" or "restaurant".
-     * </pre>
-     *
-     * <code>string topic = 1;</code>
-     *
-     * @return The bytes for topic.
-     */
-    public com.google.protobuf.ByteString getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The topic of the content, for example "overview" or "restaurant".
-     * </pre>
-     *
-     * <code>string topic = 1;</code>
-     *
-     * @param value The topic to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTopic(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      topic_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The topic of the content, for example "overview" or "restaurant".
-     * </pre>
-     *
-     * <code>string topic = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearTopic() {
-      topic_ = getDefaultInstance().getTopic();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The topic of the content, for example "overview" or "restaurant".
-     * </pre>
-     *
-     * <code>string topic = 1;</code>
-     *
-     * @param value The bytes for topic to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTopicBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      topic_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
 
     private com.google.type.LocalizedText content_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -753,7 +576,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      * @return Whether the content field is set.
      */
     public boolean hasContent() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
 
     /**
@@ -793,7 +616,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
       } else {
         contentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,7 +636,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
       } else {
         contentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -829,7 +652,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeContent(com.google.type.LocalizedText value) {
       if (contentBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000001) != 0)
             && content_ != null
             && content_ != com.google.type.LocalizedText.getDefaultInstance()) {
           getContentBuilder().mergeFrom(value);
@@ -840,7 +663,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
         contentBuilder_.mergeFrom(value);
       }
       if (content_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -856,7 +679,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      * <code>.google.type.LocalizedText content = 2;</code>
      */
     public Builder clearContent() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       content_ = null;
       if (contentBuilder_ != null) {
         contentBuilder_.dispose();
@@ -876,7 +699,7 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      * <code>.google.type.LocalizedText content = 2;</code>
      */
     public com.google.type.LocalizedText.Builder getContentBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return internalGetContentFieldBuilder().getBuilder();
     }
@@ -924,80 +747,109 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
       return contentBuilder_;
     }
 
-    private com.google.maps.places.v1.References references_;
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.maps.places.v1.References,
-            com.google.maps.places.v1.References.Builder,
-            com.google.maps.places.v1.ReferencesOrBuilder>
-        referencesBuilder_;
+    private com.google.protobuf.LazyStringArrayList referencedPlaces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     *
-     * @return Whether the references field is set.
-     */
-    public boolean hasReferences() {
-      return ((bitField0_ & 0x00000004) != 0);
+    private void ensureReferencedPlacesIsMutable() {
+      if (!referencedPlaces_.isModifiable()) {
+        referencedPlaces_ = new com.google.protobuf.LazyStringArrayList(referencedPlaces_);
+      }
+      bitField0_ |= 0x00000002;
     }
 
     /**
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @return The references.
+     * @return A list containing the referencedPlaces.
      */
-    public com.google.maps.places.v1.References getReferences() {
-      if (referencesBuilder_ == null) {
-        return references_ == null
-            ? com.google.maps.places.v1.References.getDefaultInstance()
-            : references_;
-      } else {
-        return referencesBuilder_.getMessage();
-      }
+    public com.google.protobuf.ProtocolStringList getReferencedPlacesList() {
+      referencedPlaces_.makeImmutable();
+      return referencedPlaces_;
     }
 
     /**
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of referencedPlaces.
      */
-    public Builder setReferences(com.google.maps.places.v1.References value) {
-      if (referencesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        references_ = value;
-      } else {
-        referencesBuilder_.setMessage(value);
+    public int getReferencedPlacesCount() {
+      return referencedPlaces_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
+     * </pre>
+     *
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The referencedPlaces at the given index.
+     */
+    public java.lang.String getReferencedPlaces(int index) {
+      return referencedPlaces_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
+     * </pre>
+     *
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the referencedPlaces at the given index.
+     */
+    public com.google.protobuf.ByteString getReferencedPlacesBytes(int index) {
+      return referencedPlaces_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
+     * </pre>
+     *
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The referencedPlaces to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReferencedPlaces(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      ensureReferencedPlacesIsMutable();
+      referencedPlaces_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1006,22 +858,23 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The referencedPlaces to add.
+     * @return This builder for chaining.
      */
-    public Builder setReferences(com.google.maps.places.v1.References.Builder builderForValue) {
-      if (referencesBuilder_ == null) {
-        references_ = builderForValue.build();
-      } else {
-        referencesBuilder_.setMessage(builderForValue.build());
+    public Builder addReferencedPlaces(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      ensureReferencedPlacesIsMutable();
+      referencedPlaces_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1030,54 +883,20 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The referencedPlaces to add.
+     * @return This builder for chaining.
      */
-    public Builder mergeReferences(com.google.maps.places.v1.References value) {
-      if (referencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
-            && references_ != null
-            && references_ != com.google.maps.places.v1.References.getDefaultInstance()) {
-          getReferencesBuilder().mergeFrom(value);
-        } else {
-          references_ = value;
-        }
-      } else {
-        referencesBuilder_.mergeFrom(value);
-      }
-      if (references_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     */
-    public Builder clearReferences() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      references_ = null;
-      if (referencesBuilder_ != null) {
-        referencesBuilder_.dispose();
-        referencesBuilder_ = null;
-      }
+    public Builder addAllReferencedPlaces(java.lang.Iterable<java.lang.String> values) {
+      ensureReferencedPlacesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, referencedPlaces_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1086,72 +905,47 @@ public final class ContentBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
      */
-    public com.google.maps.places.v1.References.Builder getReferencesBuilder() {
-      bitField0_ |= 0x00000004;
+    public Builder clearReferencedPlaces() {
+      referencedPlaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
-      return internalGetReferencesFieldBuilder().getBuilder();
+      return this;
     }
 
     /**
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
+     * The list of resource names of the referenced places. This name can be used
+     * in other APIs that accept Place resource names.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>repeated string referenced_places = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the referencedPlaces to add.
+     * @return This builder for chaining.
      */
-    public com.google.maps.places.v1.ReferencesOrBuilder getReferencesOrBuilder() {
-      if (referencesBuilder_ != null) {
-        return referencesBuilder_.getMessageOrBuilder();
-      } else {
-        return references_ == null
-            ? com.google.maps.places.v1.References.getDefaultInstance()
-            : references_;
+    public Builder addReferencedPlacesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * References that are related to this block of content.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.maps.places.v1.References,
-            com.google.maps.places.v1.References.Builder,
-            com.google.maps.places.v1.ReferencesOrBuilder>
-        internalGetReferencesFieldBuilder() {
-      if (referencesBuilder_ == null) {
-        referencesBuilder_ =
-            new com.google.protobuf.SingleFieldBuilder<
-                com.google.maps.places.v1.References,
-                com.google.maps.places.v1.References.Builder,
-                com.google.maps.places.v1.ReferencesOrBuilder>(
-                getReferences(), getParentForChildren(), isClean());
-        references_ = null;
-      }
-      return referencesBuilder_;
+      checkByteStringIsUtf8(value);
+      ensureReferencedPlacesIsMutable();
+      referencedPlaces_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.maps.places.v1.ContentBlock)

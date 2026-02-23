@@ -31,7 +31,7 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    * <pre>
    * Output only. Aggregation statistics derived from results of
-   * EvaluationService.EvaluateDataset.
+   * EvaluationService.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    * <pre>
    * Output only. Aggregation statistics derived from results of
-   * EvaluationService.EvaluateDataset.
+   * EvaluationService.
    * </pre>
    *
    * <code>
@@ -63,7 +63,7 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    * <pre>
    * Output only. Aggregation statistics derived from results of
-   * EvaluationService.EvaluateDataset.
+   * EvaluationService.
    * </pre>
    *
    * <code>
@@ -76,7 +76,7 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Output info for EvaluationService.EvaluateDataset.
+   * Output only. Output info for EvaluationService.
    * </pre>
    *
    * <code>
@@ -91,7 +91,7 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Output info for EvaluationService.EvaluateDataset.
+   * Output only. Output info for EvaluationService.
    * </pre>
    *
    * <code>
@@ -106,7 +106,7 @@ public interface EvaluateDatasetResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Output info for EvaluationService.EvaluateDataset.
+   * Output only. Output info for EvaluationService.
    * </pre>
    *
    * <code>

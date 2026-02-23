@@ -269,8 +269,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportDataObjects</td>
+ *      <td><p> Initiates a Long-Running Operation to export DataObjects from a Collection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportDataObjectsAsync(ExportDataObjectsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportDataObjectsOperationCallable()
+ *           <li><p> exportDataObjectsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -734,9 +750,9 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param collection Required. The resource being created
    * @param collectionId Required. ID of the Collection to create. The id must be 1-63 characters
-   *     long, and comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
-   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
-   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
+   *     long, and comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, it
+   *     must be 1-63 characters long and match the regular expression
+   *     `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collection, OperationMetadata> createCollectionAsync(
@@ -774,9 +790,9 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param collection Required. The resource being created
    * @param collectionId Required. ID of the Collection to create. The id must be 1-63 characters
-   *     long, and comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
-   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
-   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
+   *     long, and comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, it
+   *     must be 1-63 characters long and match the regular expression
+   *     `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collection, OperationMetadata> createCollectionAsync(
@@ -913,9 +929,10 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *     overwritten.
    *     <p>The following fields support update: `display_name`, `description`, `labels`,
    *     `data_schema`, `vector_schema`. For `data_schema` and `vector_schema`, fields can only be
-   *     added, not modified or deleted. Partial updates for `data_schema` and `vector_schema` are
-   *     also supported by using sub-field paths in `update_mask`, e.g. `data_schema.properties.foo`
-   *     or `vector_schema.my_vector_field`.
+   *     added, not deleted, but `vertex_embedding_config` in `vector_schema` can be added or
+   *     removed. Partial updates for `data_schema` and `vector_schema` are also supported by using
+   *     sub-field paths in `update_mask`, e.g. `data_schema.properties.foo` or
+   *     `vector_schema.my_vector_field`.
    *     <p>If `&#42;` is provided in the update_mask, full replacement will be performed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1467,9 +1484,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/collections/{collection}`
    * @param index Required. The resource being created
    * @param indexId Required. ID of the Index to create. The id must be 1-63 characters long, and
-   *     comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
-   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
-   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
+   *     comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, it must be 1-63
+   *     characters long and match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, OperationMetadata> createIndexAsync(
@@ -1507,9 +1523,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/collections/{collection}`
    * @param index Required. The resource being created
    * @param indexId Required. ID of the Index to create. The id must be 1-63 characters long, and
-   *     comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
-   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
-   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
+   *     comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, it must be 1-63
+   *     characters long and match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, OperationMetadata> createIndexAsync(
@@ -1855,7 +1870,101 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Initiates a Long-Running Operation to export DataObjects from a Collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   ExportDataObjectsRequest request =
+   *       ExportDataObjectsRequest.newBuilder()
+   *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .build();
+   *   ExportDataObjectsResponse response =
+   *       vectorSearchServiceClient.exportDataObjectsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsAsync(ExportDataObjectsRequest request) {
+    return exportDataObjectsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates a Long-Running Operation to export DataObjects from a Collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   ExportDataObjectsRequest request =
+   *       ExportDataObjectsRequest.newBuilder()
+   *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .build();
+   *   OperationFuture<ExportDataObjectsResponse, ExportDataObjectsMetadata> future =
+   *       vectorSearchServiceClient.exportDataObjectsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportDataObjectsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable() {
+    return stub.exportDataObjectsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates a Long-Running Operation to export DataObjects from a Collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   ExportDataObjectsRequest request =
+   *       ExportDataObjectsRequest.newBuilder()
+   *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vectorSearchServiceClient.exportDataObjectsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable() {
+    return stub.exportDataObjectsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1888,7 +1997,13 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1922,7 +2037,13 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

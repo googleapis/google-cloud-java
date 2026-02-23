@@ -282,6 +282,55 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
+   * The type label of the place on Google Maps, localized to the request
+   * language if applicable, for example, "Restaurant", "Cafe", "Airport", etc.
+   * The type label may be different from the primary type display name and may
+   * not be a supported type in [Places API Place Types
+   * table](https://developers.google.com/maps/documentation/places/web-service/place-types).
+   * </pre>
+   *
+   * <code>.google.type.LocalizedText google_maps_type_label = 96;</code>
+   *
+   * @return Whether the googleMapsTypeLabel field is set.
+   */
+  boolean hasGoogleMapsTypeLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type label of the place on Google Maps, localized to the request
+   * language if applicable, for example, "Restaurant", "Cafe", "Airport", etc.
+   * The type label may be different from the primary type display name and may
+   * not be a supported type in [Places API Place Types
+   * table](https://developers.google.com/maps/documentation/places/web-service/place-types).
+   * </pre>
+   *
+   * <code>.google.type.LocalizedText google_maps_type_label = 96;</code>
+   *
+   * @return The googleMapsTypeLabel.
+   */
+  com.google.type.LocalizedText getGoogleMapsTypeLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type label of the place on Google Maps, localized to the request
+   * language if applicable, for example, "Restaurant", "Cafe", "Airport", etc.
+   * The type label may be different from the primary type display name and may
+   * not be a supported type in [Places API Place Types
+   * table](https://developers.google.com/maps/documentation/places/web-service/place-types).
+   * </pre>
+   *
+   * <code>.google.type.LocalizedText google_maps_type_label = 96;</code>
+   */
+  com.google.type.LocalizedTextOrBuilder getGoogleMapsTypeLabelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A human-readable phone number for the place, in national format.
    * </pre>
    *
@@ -2492,6 +2541,43 @@ public interface PlaceOrBuilder
    * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
    */
   com.google.maps.places.v1.AddressDescriptorOrBuilder getAddressDescriptorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Links to trigger different Google Maps actions.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.GoogleMapsLinks google_maps_links = 85;</code>
+   *
+   * @return Whether the googleMapsLinks field is set.
+   */
+  boolean hasGoogleMapsLinks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Links to trigger different Google Maps actions.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.GoogleMapsLinks google_maps_links = 85;</code>
+   *
+   * @return The googleMapsLinks.
+   */
+  com.google.maps.places.v1.Place.GoogleMapsLinks getGoogleMapsLinks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Links to trigger different Google Maps actions.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.GoogleMapsLinks google_maps_links = 85;</code>
+   */
+  com.google.maps.places.v1.Place.GoogleMapsLinksOrBuilder getGoogleMapsLinksOrBuilder();
 
   /**
    *

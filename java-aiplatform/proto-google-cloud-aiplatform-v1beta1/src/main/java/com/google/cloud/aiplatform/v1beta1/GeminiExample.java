@@ -790,6 +790,69 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     return safetySettings_.get(index);
   }
 
+  public static final int MODEL_ARMOR_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1beta1.ModelArmorConfig modelArmorConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt and response sanitization using the Model
+   * Armor service. If supplied, safety_settings must not be supplied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelArmorConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelArmorConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt and response sanitization using the Model
+   * Armor service. If supplied, safety_settings must not be supplied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelArmorConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelArmorConfig getModelArmorConfig() {
+    return modelArmorConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.getDefaultInstance()
+        : modelArmorConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt and response sanitization using the Model
+   * Armor service. If supplied, safety_settings must not be supplied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelArmorConfigOrBuilder
+      getModelArmorConfigOrBuilder() {
+    return modelArmorConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.getDefaultInstance()
+        : modelArmorConfig_;
+  }
+
   public static final int GENERATION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.GenerationConfig generationConfig_;
 
@@ -808,7 +871,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGenerationConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -873,7 +936,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < safetySettings_.size(); i++) {
       output.writeMessage(3, safetySettings_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getGenerationConfig());
     }
     for (int i = 0; i < tools_.size(); i++) {
@@ -890,6 +953,9 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(11, getModelArmorConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -908,7 +974,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < safetySettings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, safetySettings_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getGenerationConfig());
     }
     for (int i = 0; i < tools_.size(); i++) {
@@ -932,6 +998,9 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getModelArmorConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -963,6 +1032,10 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getSafetySettingsList().equals(other.getSafetySettingsList())) return false;
+    if (hasModelArmorConfig() != other.hasModelArmorConfig()) return false;
+    if (hasModelArmorConfig()) {
+      if (!getModelArmorConfig().equals(other.getModelArmorConfig())) return false;
+    }
     if (hasGenerationConfig() != other.hasGenerationConfig()) return false;
     if (hasGenerationConfig()) {
       if (!getGenerationConfig().equals(other.getGenerationConfig())) return false;
@@ -1005,6 +1078,10 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     if (getSafetySettingsCount() > 0) {
       hash = (37 * hash) + SAFETY_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSafetySettingsList().hashCode();
+    }
+    if (hasModelArmorConfig()) {
+      hash = (37 * hash) + MODEL_ARMOR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getModelArmorConfig().hashCode();
     }
     if (hasGenerationConfig()) {
       hash = (37 * hash) + GENERATION_CONFIG_FIELD_NUMBER;
@@ -1178,6 +1255,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
         internalGetToolsFieldBuilder();
         internalGetToolConfigFieldBuilder();
         internalGetSafetySettingsFieldBuilder();
+        internalGetModelArmorConfigFieldBuilder();
         internalGetGenerationConfigFieldBuilder();
       }
     }
@@ -1220,6 +1298,11 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
         safetySettingsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      modelArmorConfig_ = null;
+      if (modelArmorConfigBuilder_ != null) {
+        modelArmorConfigBuilder_.dispose();
+        modelArmorConfigBuilder_ = null;
+      }
       generationConfig_ = null;
       if (generationConfigBuilder_ != null) {
         generationConfigBuilder_.dispose();
@@ -1316,9 +1399,14 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
         result.labels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.modelArmorConfig_ =
+            modelArmorConfigBuilder_ == null ? modelArmorConfig_ : modelArmorConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.generationConfig_ =
             generationConfigBuilder_ == null ? generationConfig_ : generationConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1435,6 +1523,9 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasModelArmorConfig()) {
+        mergeModelArmorConfig(other.getModelArmorConfig());
+      }
       if (other.hasGenerationConfig()) {
         mergeGenerationConfig(other.getGenerationConfig());
       }
@@ -1501,7 +1592,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetGenerationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 34
             case 50:
@@ -1549,6 +1640,13 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetModelArmorConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3932,6 +4030,232 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
       return safetySettingsBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.ModelArmorConfig modelArmorConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ModelArmorConfig,
+            com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelArmorConfigOrBuilder>
+        modelArmorConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the modelArmorConfig field is set.
+     */
+    public boolean hasModelArmorConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The modelArmorConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelArmorConfig getModelArmorConfig() {
+      if (modelArmorConfigBuilder_ == null) {
+        return modelArmorConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.getDefaultInstance()
+            : modelArmorConfig_;
+      } else {
+        return modelArmorConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelArmorConfig(com.google.cloud.aiplatform.v1beta1.ModelArmorConfig value) {
+      if (modelArmorConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelArmorConfig_ = value;
+      } else {
+        modelArmorConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelArmorConfig(
+        com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.Builder builderForValue) {
+      if (modelArmorConfigBuilder_ == null) {
+        modelArmorConfig_ = builderForValue.build();
+      } else {
+        modelArmorConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeModelArmorConfig(
+        com.google.cloud.aiplatform.v1beta1.ModelArmorConfig value) {
+      if (modelArmorConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && modelArmorConfig_ != null
+            && modelArmorConfig_
+                != com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.getDefaultInstance()) {
+          getModelArmorConfigBuilder().mergeFrom(value);
+        } else {
+          modelArmorConfig_ = value;
+        }
+      } else {
+        modelArmorConfigBuilder_.mergeFrom(value);
+      }
+      if (modelArmorConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearModelArmorConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      modelArmorConfig_ = null;
+      if (modelArmorConfigBuilder_ != null) {
+        modelArmorConfigBuilder_.dispose();
+        modelArmorConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.Builder
+        getModelArmorConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetModelArmorConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelArmorConfigOrBuilder
+        getModelArmorConfigOrBuilder() {
+      if (modelArmorConfigBuilder_ != null) {
+        return modelArmorConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return modelArmorConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.getDefaultInstance()
+            : modelArmorConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt and response sanitization using the Model
+     * Armor service. If supplied, safety_settings must not be supplied.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelArmorConfig model_armor_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ModelArmorConfig,
+            com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelArmorConfigOrBuilder>
+        internalGetModelArmorConfigFieldBuilder() {
+      if (modelArmorConfigBuilder_ == null) {
+        modelArmorConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.ModelArmorConfig,
+                com.google.cloud.aiplatform.v1beta1.ModelArmorConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ModelArmorConfigOrBuilder>(
+                getModelArmorConfig(), getParentForChildren(), isClean());
+        modelArmorConfig_ = null;
+      }
+      return modelArmorConfigBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.GenerationConfig generationConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.GenerationConfig,
@@ -3953,7 +4277,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
      * @return Whether the generationConfig field is set.
      */
     public boolean hasGenerationConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3999,7 +4323,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
       } else {
         generationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4022,7 +4346,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
       } else {
         generationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4041,7 +4365,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
     public Builder mergeGenerationConfig(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
       if (generationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && generationConfig_ != null
             && generationConfig_
                 != com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()) {
@@ -4053,7 +4377,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
         generationConfigBuilder_.mergeFrom(value);
       }
       if (generationConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -4071,7 +4395,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       generationConfig_ = null;
       if (generationConfigBuilder_ != null) {
         generationConfigBuilder_.dispose();
@@ -4094,7 +4418,7 @@ public final class GeminiExample extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder
         getGenerationConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetGenerationConfigFieldBuilder().getBuilder();
     }

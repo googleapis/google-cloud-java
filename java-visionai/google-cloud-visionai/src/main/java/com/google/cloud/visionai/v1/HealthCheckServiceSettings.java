@@ -16,6 +16,8 @@
 
 package com.google.cloud.visionai.v1;
 
+import static com.google.cloud.visionai.v1.HealthCheckServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,8 +27,13 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.stub.HealthCheckServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
@@ -89,6 +96,17 @@ public class HealthCheckServiceSettings extends ClientSettings<HealthCheckServic
   /** Returns the object with the settings used for calls to healthCheck. */
   public UnaryCallSettings<HealthCheckRequest, HealthCheckResponse> healthCheckSettings() {
     return ((HealthCheckServiceStubSettings) getStubSettings()).healthCheckSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((HealthCheckServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((HealthCheckServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final HealthCheckServiceSettings create(HealthCheckServiceStubSettings stub)
@@ -207,6 +225,18 @@ public class HealthCheckServiceSettings extends ClientSettings<HealthCheckServic
     public UnaryCallSettings.Builder<HealthCheckRequest, HealthCheckResponse>
         healthCheckSettings() {
       return getStubSettingsBuilder().healthCheckSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

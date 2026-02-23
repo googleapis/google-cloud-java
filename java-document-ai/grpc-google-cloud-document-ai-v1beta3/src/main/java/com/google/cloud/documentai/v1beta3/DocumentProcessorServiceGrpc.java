@@ -1537,6 +1537,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     default void reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1968,6 +1969,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public void reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -2344,6 +2346,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request)
         throws io.grpc.StatusException {
@@ -2692,6 +2695,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3052,6 +3056,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         reviewDocument(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(

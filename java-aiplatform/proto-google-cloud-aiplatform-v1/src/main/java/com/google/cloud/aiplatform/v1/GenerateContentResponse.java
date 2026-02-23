@@ -2099,6 +2099,115 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder getCandidatesTokensDetailsOrBuilder(
         int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        getToolUsePromptTokensDetailsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCount getToolUsePromptTokensDetails(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getToolUsePromptTokensDetailsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getToolUsePromptTokensDetailsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+        getToolUsePromptTokensDetailsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The traffic type for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trafficType.
+     */
+    int getTrafficTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The traffic type for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The trafficType.
+     */
+    com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+        getTrafficType();
   }
 
   /**
@@ -2135,6 +2244,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       promptTokensDetails_ = java.util.Collections.emptyList();
       cacheTokensDetails_ = java.util.Collections.emptyList();
       candidatesTokensDetails_ = java.util.Collections.emptyList();
+      toolUsePromptTokensDetails_ = java.util.Collections.emptyList();
+      trafficType_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2150,6 +2261,225 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           .ensureFieldAccessorsInitialized(
               com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.class,
               com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of traffic that this request was processed with, indicating
+     * which quota is consumed.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType}
+     */
+    public enum TrafficType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified request traffic type.
+       * </pre>
+       *
+       * <code>TRAFFIC_TYPE_UNSPECIFIED = 0;</code>
+       */
+      TRAFFIC_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The request was processed using Pay-As-You-Go quota.
+       * </pre>
+       *
+       * <code>ON_DEMAND = 1;</code>
+       */
+      ON_DEMAND(1),
+      /**
+       *
+       *
+       * <pre>
+       * Type for Priority Pay-As-You-Go traffic.
+       * </pre>
+       *
+       * <code>ON_DEMAND_PRIORITY = 3;</code>
+       */
+      ON_DEMAND_PRIORITY(3),
+      /**
+       *
+       *
+       * <pre>
+       * Type for Flex traffic.
+       * </pre>
+       *
+       * <code>ON_DEMAND_FLEX = 4;</code>
+       */
+      ON_DEMAND_FLEX(4),
+      /**
+       *
+       *
+       * <pre>
+       * Type for Provisioned Throughput traffic.
+       * </pre>
+       *
+       * <code>PROVISIONED_THROUGHPUT = 2;</code>
+       */
+      PROVISIONED_THROUGHPUT(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "TrafficType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified request traffic type.
+       * </pre>
+       *
+       * <code>TRAFFIC_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TRAFFIC_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The request was processed using Pay-As-You-Go quota.
+       * </pre>
+       *
+       * <code>ON_DEMAND = 1;</code>
+       */
+      public static final int ON_DEMAND_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Type for Priority Pay-As-You-Go traffic.
+       * </pre>
+       *
+       * <code>ON_DEMAND_PRIORITY = 3;</code>
+       */
+      public static final int ON_DEMAND_PRIORITY_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Type for Flex traffic.
+       * </pre>
+       *
+       * <code>ON_DEMAND_FLEX = 4;</code>
+       */
+      public static final int ON_DEMAND_FLEX_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * Type for Provisioned Throughput traffic.
+       * </pre>
+       *
+       * <code>PROVISIONED_THROUGHPUT = 2;</code>
+       */
+      public static final int PROVISIONED_THROUGHPUT_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TrafficType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TrafficType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TRAFFIC_TYPE_UNSPECIFIED;
+          case 1:
+            return ON_DEMAND;
+          case 3:
+            return ON_DEMAND_PRIORITY;
+          case 4:
+            return ON_DEMAND_FLEX;
+          case 2:
+            return PROVISIONED_THROUGHPUT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TrafficType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TrafficType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TrafficType>() {
+            public TrafficType findValueByNumber(int number) {
+              return TrafficType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final TrafficType[] VALUES = values();
+
+      public static TrafficType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TrafficType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType)
     }
 
     public static final int PROMPT_TOKEN_COUNT_FIELD_NUMBER = 1;
@@ -2521,6 +2851,152 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return candidatesTokensDetails_.get(index);
     }
 
+    public static final int TOOL_USE_PROMPT_TOKENS_DETAILS_FIELD_NUMBER = 12;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        toolUsePromptTokensDetails_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+        getToolUsePromptTokensDetailsList() {
+      return toolUsePromptTokensDetails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+        getToolUsePromptTokensDetailsOrBuilderList() {
+      return toolUsePromptTokensDetails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getToolUsePromptTokensDetailsCount() {
+      return toolUsePromptTokensDetails_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCount getToolUsePromptTokensDetails(
+        int index) {
+      return toolUsePromptTokensDetails_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed breakdown by modality of the token counts from
+     * the results of tool executions, which are provided back to the model as
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+        getToolUsePromptTokensDetailsOrBuilder(int index) {
+      return toolUsePromptTokensDetails_.get(index);
+    }
+
+    public static final int TRAFFIC_TYPE_FIELD_NUMBER = 8;
+    private int trafficType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The traffic type for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trafficType.
+     */
+    @java.lang.Override
+    public int getTrafficTypeValue() {
+      return trafficType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The traffic type for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The trafficType.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+        getTrafficType() {
+      com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType result =
+          com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+              .forNumber(trafficType_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+              .UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2547,6 +3023,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (cachedContentTokenCount_ != 0) {
         output.writeInt32(5, cachedContentTokenCount_);
       }
+      if (trafficType_
+          != com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+              .TRAFFIC_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(8, trafficType_);
+      }
       for (int i = 0; i < promptTokensDetails_.size(); i++) {
         output.writeMessage(9, promptTokensDetails_.get(i));
       }
@@ -2555,6 +3037,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       for (int i = 0; i < candidatesTokensDetails_.size(); i++) {
         output.writeMessage(11, candidatesTokensDetails_.get(i));
+      }
+      for (int i = 0; i < toolUsePromptTokensDetails_.size(); i++) {
+        output.writeMessage(12, toolUsePromptTokensDetails_.get(i));
       }
       if (thoughtsTokenCount_ != 0) {
         output.writeInt32(14, thoughtsTokenCount_);
@@ -2580,6 +3065,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (cachedContentTokenCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, cachedContentTokenCount_);
       }
+      if (trafficType_
+          != com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+              .TRAFFIC_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, trafficType_);
+      }
       for (int i = 0; i < promptTokensDetails_.size(); i++) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2594,6 +3085,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 11, candidatesTokensDetails_.get(i));
+      }
+      for (int i = 0; i < toolUsePromptTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                12, toolUsePromptTokensDetails_.get(i));
       }
       if (thoughtsTokenCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, thoughtsTokenCount_);
@@ -2623,6 +3119,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (!getCacheTokensDetailsList().equals(other.getCacheTokensDetailsList())) return false;
       if (!getCandidatesTokensDetailsList().equals(other.getCandidatesTokensDetailsList()))
         return false;
+      if (!getToolUsePromptTokensDetailsList().equals(other.getToolUsePromptTokensDetailsList()))
+        return false;
+      if (trafficType_ != other.trafficType_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2656,6 +3155,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         hash = (37 * hash) + CANDIDATES_TOKENS_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getCandidatesTokensDetailsList().hashCode();
       }
+      if (getToolUsePromptTokensDetailsCount() > 0) {
+        hash = (37 * hash) + TOOL_USE_PROMPT_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getToolUsePromptTokensDetailsList().hashCode();
+      }
+      hash = (37 * hash) + TRAFFIC_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + trafficType_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2825,6 +3330,14 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           candidatesTokensDetailsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          toolUsePromptTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          toolUsePromptTokensDetails_ = null;
+          toolUsePromptTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
+        trafficType_ = 0;
         return this;
       }
 
@@ -2893,6 +3406,16 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         } else {
           result.candidatesTokensDetails_ = candidatesTokensDetailsBuilder_.build();
         }
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            toolUsePromptTokensDetails_ =
+                java.util.Collections.unmodifiableList(toolUsePromptTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.toolUsePromptTokensDetails_ = toolUsePromptTokensDetails_;
+        } else {
+          result.toolUsePromptTokensDetails_ = toolUsePromptTokensDetailsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -2912,6 +3435,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.cachedContentTokenCount_ = cachedContentTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.trafficType_ = trafficType_;
         }
       }
 
@@ -3027,6 +3553,36 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             }
           }
         }
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          if (!other.toolUsePromptTokensDetails_.isEmpty()) {
+            if (toolUsePromptTokensDetails_.isEmpty()) {
+              toolUsePromptTokensDetails_ = other.toolUsePromptTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureToolUsePromptTokensDetailsIsMutable();
+              toolUsePromptTokensDetails_.addAll(other.toolUsePromptTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.toolUsePromptTokensDetails_.isEmpty()) {
+            if (toolUsePromptTokensDetailsBuilder_.isEmpty()) {
+              toolUsePromptTokensDetailsBuilder_.dispose();
+              toolUsePromptTokensDetailsBuilder_ = null;
+              toolUsePromptTokensDetails_ = other.toolUsePromptTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              toolUsePromptTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetToolUsePromptTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              toolUsePromptTokensDetailsBuilder_.addAllMessages(other.toolUsePromptTokensDetails_);
+            }
+          }
+        }
+        if (other.trafficType_ != 0) {
+          setTrafficTypeValue(other.getTrafficTypeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3077,6 +3633,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 40
+              case 64:
+                {
+                  trafficType_ = input.readEnum();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 64
               case 74:
                 {
                   com.google.cloud.aiplatform.v1.ModalityTokenCount m =
@@ -3119,6 +3681,20 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   }
                   break;
                 } // case 90
+              case 98:
+                {
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (toolUsePromptTokensDetailsBuilder_ == null) {
+                    ensureToolUsePromptTokensDetailsIsMutable();
+                    toolUsePromptTokensDetails_.add(m);
+                  } else {
+                    toolUsePromptTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 98
               case 112:
                 {
                   thoughtsTokenCount_ = input.readInt32();
@@ -4704,6 +5280,572 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           candidatesTokensDetails_ = null;
         }
         return candidatesTokensDetailsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          toolUsePromptTokensDetails_ = java.util.Collections.emptyList();
+
+      private void ensureToolUsePromptTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000100) != 0)) {
+          toolUsePromptTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1.ModalityTokenCount>(
+                  toolUsePromptTokensDetails_);
+          bitField0_ |= 0x00000100;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          toolUsePromptTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount>
+          getToolUsePromptTokensDetailsList() {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(toolUsePromptTokensDetails_);
+        } else {
+          return toolUsePromptTokensDetailsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getToolUsePromptTokensDetailsCount() {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          return toolUsePromptTokensDetails_.size();
+        } else {
+          return toolUsePromptTokensDetailsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount getToolUsePromptTokensDetails(
+          int index) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          return toolUsePromptTokensDetails_.get(index);
+        } else {
+          return toolUsePromptTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setToolUsePromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setToolUsePromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addToolUsePromptTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.add(value);
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addToolUsePromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount value) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addToolUsePromptTokensDetails(
+          com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addToolUsePromptTokensDetails(
+          int index, com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder builderForValue) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllToolUsePromptTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.ModalityTokenCount> values) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          ensureToolUsePromptTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, toolUsePromptTokensDetails_);
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearToolUsePromptTokensDetails() {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          toolUsePromptTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeToolUsePromptTokensDetails(int index) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          ensureToolUsePromptTokensDetailsIsMutable();
+          toolUsePromptTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          toolUsePromptTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          getToolUsePromptTokensDetailsBuilder(int index) {
+        return internalGetToolUsePromptTokensDetailsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder
+          getToolUsePromptTokensDetailsOrBuilder(int index) {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          return toolUsePromptTokensDetails_.get(index);
+        } else {
+          return toolUsePromptTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          getToolUsePromptTokensDetailsOrBuilderList() {
+        if (toolUsePromptTokensDetailsBuilder_ != null) {
+          return toolUsePromptTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(toolUsePromptTokensDetails_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addToolUsePromptTokensDetailsBuilder() {
+        return internalGetToolUsePromptTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder
+          addToolUsePromptTokensDetailsBuilder(int index) {
+        return internalGetToolUsePromptTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.aiplatform.v1.ModalityTokenCount.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed breakdown by modality of the token counts from
+       * the results of tool executions, which are provided back to the model as
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.ModalityTokenCount tool_use_prompt_tokens_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder>
+          getToolUsePromptTokensDetailsBuilderList() {
+        return internalGetToolUsePromptTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.aiplatform.v1.ModalityTokenCount,
+              com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+              com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+          internalGetToolUsePromptTokensDetailsFieldBuilder() {
+        if (toolUsePromptTokensDetailsBuilder_ == null) {
+          toolUsePromptTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCount.Builder,
+                  com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>(
+                  toolUsePromptTokensDetails_,
+                  ((bitField0_ & 0x00000100) != 0),
+                  getParentForChildren(),
+                  isClean());
+          toolUsePromptTokensDetails_ = null;
+        }
+        return toolUsePromptTokensDetailsBuilder_;
+      }
+
+      private int trafficType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The traffic type for this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for trafficType.
+       */
+      @java.lang.Override
+      public int getTrafficTypeValue() {
+        return trafficType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The traffic type for this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for trafficType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrafficTypeValue(int value) {
+        trafficType_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The traffic type for this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The trafficType.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+          getTrafficType() {
+        com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType result =
+            com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+                .forNumber(trafficType_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The traffic type for this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The trafficType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrafficType(
+          com.google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        trafficType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The traffic type for this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata.TrafficType traffic_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrafficType() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        trafficType_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.GenerateContentResponse.UsageMetadata)

@@ -61,12 +61,12 @@ public final class TermsOfServiceProto extends com.google.protobuf.GeneratedFile
           + "r.v1.TermsOfServiceStatusB\003\340A\001*[\n\024TermsO"
           + "fServiceStatus\022\'\n#TERMS_OF_SERVICE_STATU"
           + "S_UNSPECIFIED\020\000\022\014\n\010ACCEPTED\020\001\022\014\n\010REJECTE"
-          + "D\020\002B\323\001\n\035com.google.ads.datamanager.v1B\023T"
-          + "ermsOfServiceProtoP\001ZDgoogle.golang.org/"
-          + "genproto/googleapis/ads/datamanager/v1;d"
-          + "atamanager\252\002\031Google.Ads.DataManager.V1\312\002"
-          + "\031Google\\Ads\\DataManager\\V1\352\002\034Google::Ads"
-          + "::DataManager::V1b\006proto3"
+          + "D\020\002B\320\001\n\035com.google.ads.datamanager.v1B\023T"
+          + "ermsOfServiceProtoP\001ZAcloud.google.com/g"
+          + "o/datamanager/apiv1/datamanagerpb;datama"
+          + "nagerpb\252\002\031Google.Ads.DataManager.V1\312\002\031Go"
+          + "ogle\\Ads\\DataManager\\V1\352\002\034Google::Ads::D"
+          + "ataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

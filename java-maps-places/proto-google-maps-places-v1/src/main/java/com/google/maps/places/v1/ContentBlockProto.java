@@ -54,23 +54,22 @@ public final class ContentBlockProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/maps/places/v1/content_block.pr"
-          + "oto\022\025google.maps.places.v1\032%google/maps/"
-          + "places/v1/reference.proto\032 google/type/l"
-          + "ocalized_text.proto\"\201\001\n\014ContentBlock\022\r\n\005"
-          + "topic\030\001 \001(\t\022+\n\007content\030\002 \001(\0132\032.google.ty"
-          + "pe.LocalizedText\0225\n\nreferences\030\003 \001(\0132!.g"
-          + "oogle.maps.places.v1.ReferencesB\242\001\n\031com."
-          + "google.maps.places.v1B\021ContentBlockProto"
-          + "P\001Z7cloud.google.com/go/maps/places/apiv"
-          + "1/placespb;placespb\242\002\006GMPSV1\252\002\025Google.Ma"
-          + "ps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006pr"
-          + "oto3"
+          + "oto\022\025google.maps.places.v1\032\031google/api/r"
+          + "esource.proto\032 google/type/localized_tex"
+          + "t.proto\"x\n\014ContentBlock\022+\n\007content\030\002 \001(\013"
+          + "2\032.google.type.LocalizedText\022;\n\021referenc"
+          + "ed_places\030\004 \003(\tB \372A\035\n\033places.googleapis."
+          + "com/PlaceB\242\001\n\031com.google.maps.places.v1B"
+          + "\021ContentBlockProtoP\001Z7cloud.google.com/g"
+          + "o/maps/places/apiv1/placespb;placespb\242\002\006"
+          + "GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Google\\"
+          + "Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.maps.places.v1.ReferenceProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.type.LocalizedTextProto.getDescriptor(),
             });
     internal_static_google_maps_places_v1_ContentBlock_descriptor =
@@ -79,11 +78,16 @@ public final class ContentBlockProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_places_v1_ContentBlock_descriptor,
             new java.lang.String[] {
-              "Topic", "Content", "References",
+              "Content", "ReferencedPlaces",
             });
     descriptor.resolveAllFeaturesImmutable();
-    com.google.maps.places.v1.ReferenceProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.type.LocalizedTextProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

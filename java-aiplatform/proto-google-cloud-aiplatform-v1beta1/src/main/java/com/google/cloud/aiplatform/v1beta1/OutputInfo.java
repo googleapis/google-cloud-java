@@ -24,7 +24,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Describes the info for output of EvaluationService.EvaluateDataset.
+ * Describes the info for output of EvaluationService.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.OutputInfo}
@@ -368,7 +368,7 @@ public final class OutputInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the info for output of EvaluationService.EvaluateDataset.
+   * Describes the info for output of EvaluationService.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.OutputInfo}

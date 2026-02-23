@@ -125,6 +125,28 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 2;
+  private boolean returnPartialSuccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will return partial results when
+   * some regions are unreachable and the unreachable field in Feature proto
+   * will be populated. If set to false, the request will fail when some regions
+   * are unreachable.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialSuccess() {
+    return returnPartialSuccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -142,6 +164,9 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (returnPartialSuccess_ != false) {
+      output.writeBool(2, returnPartialSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -153,6 +178,9 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (returnPartialSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -171,6 +199,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.gkehub.v1.GetFeatureRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -184,6 +213,8 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -325,6 +356,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -364,6 +396,9 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
+      }
     }
 
     @java.lang.Override
@@ -382,6 +417,9 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.getReturnPartialSuccess() != false) {
+        setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -415,6 +453,12 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                returnPartialSuccess_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -546,6 +590,71 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialSuccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field in Feature proto
+     * will be populated. If set to false, the request will fail when some regions
+     * are unreachable.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnPartialSuccess.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialSuccess() {
+      return returnPartialSuccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field in Feature proto
+     * will be populated. If set to false, the request will fail when some regions
+     * are unreachable.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The returnPartialSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialSuccess(boolean value) {
+
+      returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field in Feature proto
+     * will be populated. If set to false, the request will fail when some regions
+     * are unreachable.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialSuccess() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }

@@ -18,6 +18,7 @@ package com.google.cloud.databasecenter.v1beta;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -326,6 +327,50 @@ public class DatabaseCenterClientTest {
               .setBaselineDate(Date.newBuilder().build())
               .build();
       client.aggregateIssueStats(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryIssuesTest() throws Exception {
+    DatabaseResourceIssue responsesElement = DatabaseResourceIssue.newBuilder().build();
+    QueryIssuesResponse expectedResponse =
+        QueryIssuesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceIssues(Arrays.asList(responsesElement))
+            .build();
+    mockDatabaseCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    QueryIssuesPagedResponse pagedListResponse = client.queryIssues(parent);
+
+    List<DatabaseResourceIssue> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceIssuesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatabaseCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryIssuesRequest actualRequest = ((QueryIssuesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryIssuesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatabaseCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.queryIssues(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

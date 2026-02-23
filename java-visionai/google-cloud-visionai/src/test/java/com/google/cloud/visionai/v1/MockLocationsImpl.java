@@ -17,8 +17,13 @@
 package com.google.cloud.visionai.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.location.LocationsGrpc.LocationsImplBase;
 import com.google.protobuf.AbstractMessage;
+import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -55,5 +60,46 @@ public class MockLocationsImpl extends LocationsImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
+  }
+
+  @Override
+  public void listLocations(
+      ListLocationsRequest request, StreamObserver<ListLocationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListLocationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListLocationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLocations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListLocationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getLocation(GetLocationRequest request, StreamObserver<Location> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Location) {
+      requests.add(request);
+      responseObserver.onNext(((Location) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLocation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Location.class.getName(),
+                  Exception.class.getName())));
+    }
   }
 }

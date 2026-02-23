@@ -196,6 +196,12 @@
             "Decrypt": {
               "methods": ["decrypt", "decrypt", "decrypt", "decryptCallable"]
             },
+            "DeleteCryptoKey": {
+              "methods": ["deleteCryptoKeyAsync", "deleteCryptoKeyAsync", "deleteCryptoKeyAsync", "deleteCryptoKeyOperationCallable", "deleteCryptoKeyCallable"]
+            },
+            "DeleteCryptoKeyVersion": {
+              "methods": ["deleteCryptoKeyVersionAsync", "deleteCryptoKeyVersionAsync", "deleteCryptoKeyVersionAsync", "deleteCryptoKeyVersionOperationCallable", "deleteCryptoKeyVersionCallable"]
+            },
             "DestroyCryptoKeyVersion": {
               "methods": ["destroyCryptoKeyVersion", "destroyCryptoKeyVersion", "destroyCryptoKeyVersion", "destroyCryptoKeyVersionCallable"]
             },
@@ -226,6 +232,9 @@
             "GetPublicKey": {
               "methods": ["getPublicKey", "getPublicKey", "getPublicKey", "getPublicKeyCallable"]
             },
+            "GetRetiredResource": {
+              "methods": ["getRetiredResource", "getRetiredResource", "getRetiredResource", "getRetiredResourceCallable"]
+            },
             "ImportCryptoKeyVersion": {
               "methods": ["importCryptoKeyVersion", "importCryptoKeyVersionCallable"]
             },
@@ -243,6 +252,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRetiredResources": {
+              "methods": ["listRetiredResources", "listRetiredResources", "listRetiredResources", "listRetiredResourcesPagedCallable", "listRetiredResourcesCallable"]
             },
             "MacSign": {
               "methods": ["macSign", "macSign", "macSign", "macSignCallable"]
