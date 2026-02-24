@@ -792,7 +792,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=294
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -811,7 +811,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=294
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
@@ -989,6 +989,95 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1beta1.IpMasqueradingSkippedInfoOrBuilder
       getIpMasqueradingSkippedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a GKE Network Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+   * </code>
+   *
+   * @return Whether the gkeNetworkPolicy field is set.
+   */
+  boolean hasGkeNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a GKE Network Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+   * </code>
+   *
+   * @return The gkeNetworkPolicy.
+   */
+  com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo getGkeNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a GKE Network Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfoOrBuilder
+      getGkeNetworkPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Network Policy evaluation was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+   * </code>
+   *
+   * @return Whether the gkeNetworkPolicySkipped field is set.
+   */
+  boolean hasGkeNetworkPolicySkipped();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Network Policy evaluation was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+   * </code>
+   *
+   * @return The gkeNetworkPolicySkipped.
+   */
+  com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+      getGkeNetworkPolicySkipped();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Network Policy evaluation was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfoOrBuilder
+      getGkeNetworkPolicySkippedOrBuilder();
 
   /**
    *
@@ -1419,6 +1508,50 @@ public interface StepOrBuilder
    * <code>.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo serverless_neg = 29;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfoOrBuilder getServerlessNegOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a layer 7 packet inspection by the firewall.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+   * </code>
+   *
+   * @return Whether the ngfwPacketInspection field is set.
+   */
+  boolean hasNgfwPacketInspection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a layer 7 packet inspection by the firewall.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+   * </code>
+   *
+   * @return The ngfwPacketInspection.
+   */
+  com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo getNgfwPacketInspection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a layer 7 packet inspection by the firewall.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfoOrBuilder
+      getNgfwPacketInspectionOrBuilder();
 
   com.google.cloud.networkmanagement.v1beta1.Step.StepInfoCase getStepInfoCase();
 }
