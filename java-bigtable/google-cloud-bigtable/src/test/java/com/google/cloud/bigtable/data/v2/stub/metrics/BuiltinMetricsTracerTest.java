@@ -70,7 +70,6 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
-import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.Stopwatch;
@@ -287,8 +286,7 @@ public class BuiltinMetricsTracerTest {
           return builder.proxyDetector(delayProxyDetector).intercept(outstandingRpcCounter);
         });
     stubSettingsBuilder.setTransportChannelProvider(channelProvider.build());
-    EnhancedBigtableStubSettings stubSettings = stubSettingsBuilder.build();
-    stub = new EnhancedBigtableStub(stubSettings, BigtableClientContext.create(stubSettings));
+    stub = EnhancedBigtableStub.create(stubSettingsBuilder.build());
   }
 
   @After

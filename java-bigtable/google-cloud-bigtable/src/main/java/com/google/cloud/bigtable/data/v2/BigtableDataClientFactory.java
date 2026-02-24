@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.data.v2;
 import com.google.api.core.BetaApi;
 import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
+import com.google.cloud.bigtable.data.v2.stub.ClientOperationSettings;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 
@@ -61,9 +63,8 @@ import javax.annotation.Nonnull;
  */
 @BetaApi("This feature is currently experimental and can change in the future")
 public final class BigtableDataClientFactory implements AutoCloseable {
-
-  private final BigtableDataSettings defaultSettings;
   private final BigtableClientContext sharedClientContext;
+  private final ClientOperationSettings perOpSettings;
 
   /**
    * Create a instance of this factory.
@@ -75,13 +76,14 @@ public final class BigtableDataClientFactory implements AutoCloseable {
       throws IOException {
     BigtableClientContext sharedClientContext =
         BigtableClientContext.create(defaultSettings.getStubSettings());
-    return new BigtableDataClientFactory(sharedClientContext, defaultSettings);
+    ClientOperationSettings perOpSettings = defaultSettings.getStubSettings().getPerOpSettings();
+    return new BigtableDataClientFactory(sharedClientContext, perOpSettings);
   }
 
   private BigtableDataClientFactory(
-      BigtableClientContext sharedClientContext, BigtableDataSettings defaultSettings) {
+      BigtableClientContext sharedClientContext, ClientOperationSettings perOpSettings) {
     this.sharedClientContext = sharedClientContext;
-    this.defaultSettings = defaultSettings;
+    this.perOpSettings = perOpSettings;
   }
 
   /**
@@ -109,7 +111,7 @@ public final class BigtableDataClientFactory implements AutoCloseable {
           sharedClientContext.createChild(
               sharedClientContext.getInstanceName(), sharedClientContext.getAppProfileId());
 
-      return BigtableDataClient.createWithClientContext(defaultSettings, ctx);
+      return new BigtableDataClient(new EnhancedBigtableStub(perOpSettings, ctx));
     } catch (IOException e) {
       // Should never happen because the connection has been established already
       throw new RuntimeException(
@@ -127,14 +129,10 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    * release all resources, first close all of the created clients and then this factory instance.
    */
   public BigtableDataClient createForAppProfile(@Nonnull String appProfileId) throws IOException {
-    BigtableDataSettings settings =
-        defaultSettings.toBuilder().setAppProfileId(appProfileId).build();
     BigtableClientContext ctx =
-        sharedClientContext.createChild(
-            InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
-            settings.getAppProfileId());
+        sharedClientContext.createChild(sharedClientContext.getInstanceName(), appProfileId);
 
-    return BigtableDataClient.createWithClientContext(settings, ctx);
+    return new BigtableDataClient(new EnhancedBigtableStub(perOpSettings, ctx));
   }
 
   /**
@@ -148,18 +146,10 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   public BigtableDataClient createForInstance(@Nonnull String projectId, @Nonnull String instanceId)
       throws IOException {
-    BigtableDataSettings settings =
-        defaultSettings.toBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .setDefaultAppProfileId()
-            .build();
     BigtableClientContext ctx =
-        sharedClientContext.createChild(
-            InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
-            settings.getAppProfileId());
+        sharedClientContext.createChild(InstanceName.of(projectId, instanceId), "");
 
-    return BigtableDataClient.createWithClientContext(settings, ctx);
+    return new BigtableDataClient(new EnhancedBigtableStub(perOpSettings, ctx));
   }
 
   /**
@@ -174,17 +164,9 @@ public final class BigtableDataClientFactory implements AutoCloseable {
   public BigtableDataClient createForInstance(
       @Nonnull String projectId, @Nonnull String instanceId, @Nonnull String appProfileId)
       throws IOException {
-    BigtableDataSettings settings =
-        defaultSettings.toBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .setAppProfileId(appProfileId)
-            .build();
     BigtableClientContext ctx =
-        sharedClientContext.createChild(
-            InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
-            settings.getAppProfileId());
+        sharedClientContext.createChild(InstanceName.of(projectId, instanceId), appProfileId);
 
-    return BigtableDataClient.createWithClientContext(settings, ctx);
+    return new BigtableDataClient(new EnhancedBigtableStub(perOpSettings, ctx));
   }
 }

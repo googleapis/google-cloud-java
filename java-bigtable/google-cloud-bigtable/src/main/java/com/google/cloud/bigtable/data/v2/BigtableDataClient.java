@@ -54,7 +54,6 @@ import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
-import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -177,17 +176,6 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public static BigtableDataClient create(BigtableDataSettings settings) throws IOException {
     EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.getStubSettings());
-    return new BigtableDataClient(stub);
-  }
-
-  /**
-   * Constructs an instance of BigtableDataClient with the provided client context. This is used by
-   * {@link BigtableDataClientFactory} and the client context will not be closed unless {@link
-   * BigtableDataClientFactory#close()} is called.
-   */
-  static BigtableDataClient createWithClientContext(
-      BigtableDataSettings settings, BigtableClientContext context) throws IOException {
-    EnhancedBigtableStub stub = new EnhancedBigtableStub(settings.getStubSettings(), context);
     return new BigtableDataClient(stub);
   }
 

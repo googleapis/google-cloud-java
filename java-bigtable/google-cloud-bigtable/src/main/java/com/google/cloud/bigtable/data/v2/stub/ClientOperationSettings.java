@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
@@ -45,7 +46,8 @@ import java.util.List;
 import java.util.Set;
 import org.threeten.bp.Duration;
 
-class ClientOperationSettings {
+@InternalApi
+public class ClientOperationSettings {
   private static final Set<StatusCode.Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE);
 

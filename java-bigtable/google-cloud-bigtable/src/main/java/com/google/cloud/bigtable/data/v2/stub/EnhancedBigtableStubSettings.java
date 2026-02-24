@@ -237,6 +237,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return areInternalMetricsEnabled;
   }
 
+  @InternalApi
+  public ClientOperationSettings getPerOpSettings() {
+    return perOpSettings;
+  }
+
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     InstantiatingGrpcChannelProvider.Builder grpcTransportProviderBuilder =

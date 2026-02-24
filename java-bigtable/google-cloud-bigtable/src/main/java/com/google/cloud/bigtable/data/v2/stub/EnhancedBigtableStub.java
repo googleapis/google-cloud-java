@@ -141,7 +141,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   private static final String CLIENT_NAME = "Bigtable";
   private static final long FLOW_CONTROL_ADJUSTING_INTERVAL_MS = TimeUnit.SECONDS.toMillis(20);
-  private final EnhancedBigtableStubSettings settings;
+  private final ClientOperationSettings perOpSettings;
   private final BigtableClientContext bigtableClientContext;
 
   private final RequestContext requestContext;
@@ -175,12 +175,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
     BigtableClientContext bigtableClientContext = BigtableClientContext.create(settings);
-    return new EnhancedBigtableStub(settings, bigtableClientContext);
+    return new EnhancedBigtableStub(settings.getPerOpSettings(), bigtableClientContext);
   }
 
   public EnhancedBigtableStub(
-      EnhancedBigtableStubSettings settings, BigtableClientContext clientContext) {
-    this.settings = settings;
+      ClientOperationSettings perOpSettings, BigtableClientContext clientContext) {
+    this.perOpSettings = perOpSettings;
     this.bigtableClientContext = clientContext;
     this.requestContext =
         RequestContext.create(
@@ -188,7 +188,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getInstanceName().getInstance(),
             clientContext.getAppProfileId());
     this.bulkMutationFlowController =
-        new FlowController(settings.bulkMutateRowsSettings().getDynamicFlowControlSettings());
+        new FlowController(perOpSettings.bulkMutateRowsSettings.getDynamicFlowControlSettings());
     this.bulkMutationDynamicFlowControlStats = new DynamicFlowControlStats();
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
@@ -230,7 +230,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   @BetaApi("This surface is stable yet it might be removed in the future.")
   public <RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsRawCallable(
       RowAdapter<RowT> rowAdapter) {
-    return createReadRowsBaseCallable(settings.readRowsSettings(), rowAdapter)
+    return createReadRowsBaseCallable(perOpSettings.readRowsSettings, rowAdapter)
         .withDefaultCallContext(bigtableClientContext.getClientContext().getDefaultCallContext());
   }
 
@@ -251,7 +251,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
     ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
-        createReadRowsBaseCallable(settings.readRowsSettings(), rowAdapter);
+        createReadRowsBaseCallable(perOpSettings.readRowsSettings, rowAdapter);
 
     ServerStreamingCallable<Query, RowT> readRowsUserCallable =
         new ReadRowsUserCallable<>(readRowsCallable, requestContext);
@@ -267,7 +267,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         bigtableClientContext
             .getClientContext()
             .getDefaultCallContext()
-            .withRetrySettings(settings.readRowsSettings().getRetrySettings()));
+            .withRetrySettings(perOpSettings.readRowsSettings.getRetrySettings()));
   }
 
   /**
@@ -290,8 +290,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
         createReadRowsBaseCallable(
             ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
-                .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
-                .setRetrySettings(settings.readRowSettings().getRetrySettings())
+                .setRetryableCodes(perOpSettings.readRowSettings.getRetryableCodes())
+                .setRetrySettings(perOpSettings.readRowSettings.getRetrySettings())
                 .setIdleTimeoutDuration(Duration.ZERO)
                 .setWaitTimeoutDuration(Duration.ZERO)
                 .build(),
@@ -307,7 +307,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         readRowCallable,
         clientContext
             .getDefaultCallContext()
-            .withRetrySettings(settings.readRowSettings().getRetrySettings()),
+            .withRetrySettings(perOpSettings.readRowSettings.getRetrySettings()),
         clientContext.getTracerFactory(),
         getSpanName("ReadRow"),
         /* allowNoResponses= */ true);
@@ -410,7 +410,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
       RowAdapter<RowT> rowAdapter) {
 
     ServerStreamingCallSettings<ReqT, Row> readRowsSettings =
-        (ServerStreamingCallSettings<ReqT, Row>) settings.readRowsSettings();
+        (ServerStreamingCallSettings<ReqT, Row>) perOpSettings.readRowsSettings;
 
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
@@ -501,7 +501,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private <RowT> UnaryCallable<Query, List<RowT>> createBulkReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
     ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
-        createReadRowsBaseCallable(settings.readRowsSettings(), rowAdapter);
+        createReadRowsBaseCallable(perOpSettings.readRowsSettings, rowAdapter);
 
     ServerStreamingCallable<Query, RowT> readRowsUserCallable =
         new ReadRowsUserCallable<>(readRowsCallable, requestContext);
@@ -521,7 +521,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         bigtableClientContext
             .getClientContext()
             .getDefaultCallContext()
-            .withRetrySettings(settings.readRowsSettings().getRetrySettings()));
+            .withRetrySettings(perOpSettings.readRowsSettings.getRetrySettings()));
   }
 
   /**
@@ -571,7 +571,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                             composeRequestParams(
                                 r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
                     .build(),
-                settings.sampleRowKeysSettings().getRetryableCodes());
+                perOpSettings.sampleRowKeysSettings.getRetryableCodes());
 
     UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
         spoolable = base.all();
@@ -583,7 +583,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         withAttemptTracer = new BigtableTracerUnaryCallable<>(withStatsHeaders);
 
     UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-        retryable = withRetries(withAttemptTracer, settings.sampleRowKeysSettings());
+        retryable = withRetries(withAttemptTracer, perOpSettings.sampleRowKeysSettings);
 
     return createUserFacingUnaryCallable(
         methodName,
@@ -592,7 +592,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 bigtableClientContext
                     .getClientContext()
                     .getDefaultCallContext()
-                    .withRetrySettings(settings.sampleRowKeysSettings().getRetrySettings())));
+                    .withRetrySettings(perOpSettings.sampleRowKeysSettings.getRetrySettings())));
   }
 
   /**
@@ -609,7 +609,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         req ->
             composeRequestParams(
                 req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-        settings.mutateRowSettings(),
+        perOpSettings.mutateRowSettings,
         req -> req.toProto(requestContext),
         resp -> null);
   }
@@ -643,12 +643,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
                         composeRequestParams(
                             r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
                 .build(),
-            settings.bulkMutateRowsSettings().getRetryableCodes());
+            perOpSettings.bulkMutateRowsSettings.getRetryableCodes());
 
     ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> callable =
         new StatsHeadersServerStreamingCallable<>(base);
 
-    if (settings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled()) {
+    if (perOpSettings.bulkMutateRowsSettings.isServerInitiatedFlowControlEnabled()) {
       callable = new RateLimitingServerStreamingCallable(callable);
     }
 
@@ -672,7 +672,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new RetryAlgorithm<>(
             mutateRowsPartialErrorRetryAlgorithm,
             new ExponentialRetryAlgorithm(
-                settings.bulkMutateRowsSettings().getRetrySettings(), clientContext.getClock()));
+                perOpSettings.bulkMutateRowsSettings.getRetrySettings(), clientContext.getClock()));
 
     RetryingExecutorWithContext<MutateRowsAttemptResult> retryingExecutor =
         new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
@@ -681,20 +681,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
             clientContext.getDefaultCallContext(),
             withAttemptTracer,
             retryingExecutor,
-            settings.bulkMutateRowsSettings().getRetryableCodes(),
+            perOpSettings.bulkMutateRowsSettings.getRetryableCodes(),
             retryAlgorithm);
 
     UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> withCookie =
         new CookiesUnaryCallable<>(baseCallable);
 
     UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> flowControlCallable = null;
-    if (settings.bulkMutateRowsSettings().isLatencyBasedThrottlingEnabled()) {
+    if (perOpSettings.bulkMutateRowsSettings.isLatencyBasedThrottlingEnabled()) {
       flowControlCallable =
           new DynamicFlowControlCallable(
               withCookie,
               bulkMutationFlowController,
               bulkMutationDynamicFlowControlStats,
-              settings.bulkMutateRowsSettings().getTargetRpcLatencyMs(),
+              perOpSettings.bulkMutateRowsSettings.getTargetRpcLatencyMs(),
               FLOW_CONTROL_ADJUSTING_INTERVAL_MS);
     }
     UnaryCallable<BulkMutation, MutateRowsAttemptResult> userFacing =
@@ -713,7 +713,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return traced.withDefaultCallContext(
         clientContext
             .getDefaultCallContext()
-            .withRetrySettings(settings.bulkMutateRowsSettings().getRetrySettings()));
+            .withRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings()));
   }
 
   /**
@@ -738,10 +738,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(
       @Nonnull String tableId, @Nullable GrpcCallContext ctx) {
     return new BatcherImpl<>(
-        settings.bulkMutateRowsSettings().getBatchingDescriptor(),
+        perOpSettings.bulkMutateRowsSettings.getBatchingDescriptor(),
         bulkMutateRowsCallable,
         BulkMutation.create(tableId),
-        settings.bulkMutateRowsSettings().getBatchingSettings(),
+        perOpSettings.bulkMutateRowsSettings.getBatchingSettings(),
         bigtableClientContext.getClientContext().getExecutor(),
         bulkMutationFlowController,
         MoreObjects.firstNonNull(
@@ -770,10 +770,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(
       TargetId targetId, @Nullable GrpcCallContext ctx) {
     return new BatcherImpl<>(
-        settings.bulkMutateRowsSettings().getBatchingDescriptor(),
+        perOpSettings.bulkMutateRowsSettings.getBatchingDescriptor(),
         bulkMutateRowsCallable,
         BulkMutation.create(targetId),
-        settings.bulkMutateRowsSettings().getBatchingSettings(),
+        perOpSettings.bulkMutateRowsSettings.getBatchingSettings(),
         bigtableClientContext.getClientContext().getExecutor(),
         bulkMutationFlowController,
         MoreObjects.firstNonNull(
@@ -799,10 +799,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
       @Nonnull Query query, @Nullable GrpcCallContext ctx) {
     Preconditions.checkNotNull(query, "query cannot be null");
     return new BatcherImpl<>(
-        settings.bulkReadRowsSettings().getBatchingDescriptor(),
+        perOpSettings.bulkReadRowsSettings.getBatchingDescriptor(),
         bulkReadRowsCallable,
         query,
-        settings.bulkReadRowsSettings().getBatchingSettings(),
+        perOpSettings.bulkReadRowsSettings.getBatchingSettings(),
         bigtableClientContext.getClientContext().getExecutor(),
         null,
         MoreObjects.firstNonNull(
@@ -824,7 +824,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         req ->
             composeRequestParams(
                 req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-        settings.checkAndMutateRowSettings(),
+        perOpSettings.checkAndMutateRowSettings,
         req -> req.toProto(requestContext),
         CheckAndMutateRowResponse::getPredicateMatched);
   }
@@ -847,7 +847,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         req ->
             composeRequestParams(
                 req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-        settings.readModifyWriteRowSettings(),
+        perOpSettings.readModifyWriteRowSettings,
         req -> req.toProto(requestContext),
         resp -> rowAdapter.createRowFromProto(resp.getRow()));
   }
@@ -881,7 +881,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     .setParamsExtractor(
                         r -> composeRequestParams(r.getAppProfileId(), r.getTableName(), ""))
                     .build(),
-                settings.generateInitialChangeStreamPartitionsSettings().getRetryableCodes());
+                perOpSettings.generateInitialChangeStreamPartitionsSettings.getRetryableCodes());
 
     ServerStreamingCallable<String, ByteStringRange> userCallable =
         new GenerateInitialChangeStreamPartitionsUserCallable(base, requestContext);
@@ -900,13 +900,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallSettings<String, ByteStringRange> innerSettings =
         ServerStreamingCallSettings.<String, ByteStringRange>newBuilder()
             .setRetryableCodes(
-                settings.generateInitialChangeStreamPartitionsSettings().getRetryableCodes())
+                perOpSettings.generateInitialChangeStreamPartitionsSettings.getRetryableCodes())
             .setRetrySettings(
-                settings.generateInitialChangeStreamPartitionsSettings().getRetrySettings())
+                perOpSettings.generateInitialChangeStreamPartitionsSettings.getRetrySettings())
             .setIdleTimeout(
-                settings.generateInitialChangeStreamPartitionsSettings().getIdleTimeout())
+                perOpSettings.generateInitialChangeStreamPartitionsSettings.getIdleTimeout())
             .setWaitTimeout(
-                settings.generateInitialChangeStreamPartitionsSettings().getWaitTimeout())
+                perOpSettings.generateInitialChangeStreamPartitionsSettings.getWaitTimeout())
             .build();
 
     ServerStreamingCallable<String, ByteStringRange> watched =
@@ -926,7 +926,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         clientContext
             .getDefaultCallContext()
             .withRetrySettings(
-                settings.generateInitialChangeStreamPartitionsSettings().getRetrySettings()));
+                perOpSettings.generateInitialChangeStreamPartitionsSettings.getRetrySettings()));
   }
 
   /**
@@ -955,7 +955,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .setParamsExtractor(
                     r -> composeRequestParams(r.getAppProfileId(), r.getTableName(), ""))
                 .build(),
-            settings.readChangeStreamSettings().getRetryableCodes());
+            perOpSettings.readChangeStreamSettings.getRetryableCodes());
 
     ServerStreamingCallable<ReadChangeStreamRequest, ReadChangeStreamResponse> withStatsHeaders =
         new StatsHeadersServerStreamingCallable<>(base);
@@ -975,10 +975,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
         ServerStreamingCallSettings.<ReadChangeStreamRequest, ChangeStreamRecordT>newBuilder()
             .setResumptionStrategy(
                 new ReadChangeStreamResumptionStrategy<>(changeStreamRecordAdapter))
-            .setRetryableCodes(settings.readChangeStreamSettings().getRetryableCodes())
-            .setRetrySettings(settings.readChangeStreamSettings().getRetrySettings())
-            .setIdleTimeout(settings.readChangeStreamSettings().getIdleTimeout())
-            .setWaitTimeout(settings.readChangeStreamSettings().getWaitTimeout())
+            .setRetryableCodes(perOpSettings.readChangeStreamSettings.getRetryableCodes())
+            .setRetrySettings(perOpSettings.readChangeStreamSettings.getRetrySettings())
+            .setIdleTimeout(perOpSettings.readChangeStreamSettings.getIdleTimeout())
+            .setWaitTimeout(perOpSettings.readChangeStreamSettings.getWaitTimeout())
             .build();
 
     ServerStreamingCallable<ReadChangeStreamRequest, ChangeStreamRecordT> watched =
@@ -1002,7 +1002,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return traced.withDefaultCallContext(
         clientContext
             .getDefaultCallContext()
-            .withRetrySettings(settings.readChangeStreamSettings().getRetrySettings()));
+            .withRetrySettings(perOpSettings.readChangeStreamSettings.getRetrySettings()));
   }
 
   /**
@@ -1039,7 +1039,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                       }
                     })
                 .build(),
-            settings.executeQuerySettings().getRetryableCodes());
+            perOpSettings.executeQuerySettings.getRetryableCodes());
 
     ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> withStatsHeaders =
         new StatsHeadersServerStreamingCallable<>(base);
@@ -1060,10 +1060,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallSettings<ExecuteQueryCallContext, ExecuteQueryResponse> retrySettings =
         ServerStreamingCallSettings.<ExecuteQueryCallContext, ExecuteQueryResponse>newBuilder()
             .setResumptionStrategy(new ExecuteQueryResumptionStrategy())
-            .setRetryableCodes(settings.executeQuerySettings().getRetryableCodes())
-            .setRetrySettings(settings.executeQuerySettings().getRetrySettings())
-            .setIdleTimeout(settings.executeQuerySettings().getIdleTimeout())
-            .setWaitTimeout(settings.executeQuerySettings().getWaitTimeout())
+            .setRetryableCodes(perOpSettings.executeQuerySettings.getRetryableCodes())
+            .setRetrySettings(perOpSettings.executeQuerySettings.getRetrySettings())
+            .setIdleTimeout(perOpSettings.executeQuerySettings.getIdleTimeout())
+            .setWaitTimeout(perOpSettings.executeQuerySettings.getWaitTimeout())
             .build();
 
     // Retries need to happen before row merging, because the resumeToken is part
@@ -1078,8 +1078,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     ServerStreamingCallSettings<ExecuteQueryCallContext, SqlRow> watchdogSettings =
         ServerStreamingCallSettings.<ExecuteQueryCallContext, SqlRow>newBuilder()
-            .setIdleTimeout(settings.executeQuerySettings().getIdleTimeout())
-            .setWaitTimeout(settings.executeQuerySettings().getWaitTimeout())
+            .setIdleTimeout(perOpSettings.executeQuerySettings.getIdleTimeout())
+            .setWaitTimeout(perOpSettings.executeQuerySettings.getWaitTimeout())
             .build();
 
     // Watchdog needs to stay above the metadata error handling so that watchdog errors
@@ -1099,14 +1099,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
         traced.withDefaultCallContext(
             clientContext
                 .getDefaultCallContext()
-                .withRetrySettings(settings.executeQuerySettings().getRetrySettings())));
+                .withRetrySettings(perOpSettings.executeQuerySettings.getRetrySettings())));
   }
 
   private UnaryCallable<PrepareQueryRequest, PrepareResponse> createPrepareQueryCallable() {
     return createUnaryCallable(
         BigtableGrpc.getPrepareQueryMethod(),
         req -> composeInstanceLevelRequestParams(req.getInstanceName(), req.getAppProfileId()),
-        settings.prepareQuerySettings(),
+        perOpSettings.prepareQuerySettings,
         req -> req.toProto(requestContext),
         PrepareResponse::fromProto);
   }
