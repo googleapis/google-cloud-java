@@ -381,8 +381,8 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                                 # Even if already managed, we should remove the local version
                                 extracted_dep = (current_group_id, current_artifact_id, resolved_version)
 
-                # if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
-                #     should_preserve = True
+                if current_artifact_id and current_artifact_id == 'appengine-api-1.0-sdk':
+                    should_preserve = True
                 
                 current_dependency_lines.append(line)
                 if '{x-version-update:' in line:
