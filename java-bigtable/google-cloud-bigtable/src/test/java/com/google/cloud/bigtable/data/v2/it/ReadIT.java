@@ -73,6 +73,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ReadIT {
+
   private String prefix;
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
@@ -460,7 +461,7 @@ public class ReadIT {
   }
 
   @Test
-  public void rangeQueriesOnAuthorizedView() {
+  public void rangeQueriesOnAuthorizedView() throws InterruptedException {
     assume()
         .withMessage("AuthorizedView is not supported on Emulator")
         .that(testEnvRule.env())
@@ -761,6 +762,7 @@ public class ReadIT {
   }
 
   static class AccumulatingObserver implements ResponseObserver<Row> {
+
     final List<Row> responses = Lists.newArrayList();
     final SettableApiFuture<Void> completionFuture = SettableApiFuture.create();
 
