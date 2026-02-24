@@ -185,6 +185,13 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
     in_dependencies = False
     in_dependency = False
     in_reporting = False
+    in_plugins = False
+    in_plugin = False
+    in_configuration = False
+    in_ignored_deps = False
+    current_plugin_artifactId = None
+    has_javax_annotation = False
+    ignored_deps_lines = []
     current_dependency_lines = []
     should_preserve = False
     current_group_id = None
@@ -386,6 +393,67 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
             if not line.strip():
                 new_lines.append(line)
             continue
+
+        # Plugin management (for maven-dependency-plugin configuration)
+        if '<plugins>' in line:
+            in_plugins = True
+        if '</plugins>' in line:
+            in_plugins = False
+
+        if in_plugins:
+            if '<plugin>' in line:
+                in_plugin = True
+                current_plugin_artifactId = None
+                has_javax_annotation = False
+            if '</plugin>' in line:
+                in_plugin = False
+            
+            if in_plugin:
+                if '<artifactId>' in line and not in_configuration:
+                     match = re.search(r'<artifactId>(.*?)</artifactId>', line)
+                     if match:
+                         current_plugin_artifactId = match.group(1).strip()
+                
+                if current_plugin_artifactId == 'maven-dependency-plugin':
+                    if '<configuration>' in line:
+                        in_configuration = True
+                    if '</configuration>' in line:
+                        in_configuration = False
+                    
+                    if in_configuration:
+                        if '<ignoredUnusedDeclaredDependencies>' in line:
+                            in_ignored_deps = True
+                            ignored_deps_lines = [line]
+                            continue
+                        
+                        if in_ignored_deps:
+                            if 'javax.annotation:javax.annotation-api' in line:
+                                has_javax_annotation = True
+                            
+                            if '</ignoredUnusedDeclaredDependencies>' in line:
+                                if not has_javax_annotation:
+                                    # Try to find a good indentation
+                                    indent = "            " # Default
+                                    if len(ignored_deps_lines) > 1:
+                                        last_line = ignored_deps_lines[-1]
+                                        match = re.search(r'^(\s+)', last_line)
+                                        if match:
+                                            indent = match.group(1)
+                                    elif len(ignored_deps_lines) == 1:
+                                        # Only the start tag
+                                        match = re.search(r'^(\s+)', ignored_deps_lines[0])
+                                        if match:
+                                            indent = match.group(1) + "  "
+                                    
+                                    ignored_deps_lines.append(f"{indent}<ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>\n")
+                                
+                                new_lines.extend(ignored_deps_lines)
+                                new_lines.append(line)
+                                in_ignored_deps = False
+                                continue
+                            else:
+                                ignored_deps_lines.append(line)
+                                continue
 
         # Reporting section removal
         if '<reporting>' in line:
