@@ -1947,9 +1947,8 @@ public class ITSystemTest extends ITBaseTest {
     if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
       assertEquals(asList("a", "b", "d", "e"), querySnapshotToIds(query.get().get()));
     } else {
-      // TODO: Currently rejected because of mixed type setup, backend will change the behavior; and
-      // this test will fail by then.
-      assertThrows(ExecutionException.class, () -> querySnapshotToIds(query.get().get()));
+      assertThat(querySnapshotToIds(query.get().get()))
+          .containsExactlyElementsIn(asList("a", "b", "d", "e"));
     }
   }
 
