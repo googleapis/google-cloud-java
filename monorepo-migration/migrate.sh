@@ -233,6 +233,12 @@ EOF
         IFS="$OLD_IFS"
     fi
 
+    if [ "${TEST_WITH_EXISTING:-false}" = "true" ]; then
+        echo "Copying to logging-integration.cfg for testing..."
+        cp "$TARGET_INTEGRATION_CFG" ".kokoro/presubmit/logging-integration.cfg"
+        git add ".kokoro/presubmit/logging-integration.cfg"
+    fi
+
     echo "Committing split integration config..."
     git add "$TARGET_INTEGRATION_CFG"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split integration config"
@@ -285,6 +291,12 @@ env_vars: {
 EOF
         done
         IFS="$OLD_IFS"
+    fi
+
+    if [ "${TEST_WITH_EXISTING:-false}" = "true" ]; then
+        echo "Copying to logging-graalvm-native-presubmit.cfg for testing..."
+        cp "$TARGET_GRAALVM_CFG" ".kokoro/presubmit/logging-graalvm-native-presubmit.cfg"
+        git add ".kokoro/presubmit/logging-graalvm-native-presubmit.cfg"
     fi
 
     echo "Committing split GraalVM config..."
