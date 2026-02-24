@@ -67,6 +67,32 @@ def get_managed_dependencies(pom_path):
     return managed_deps
 
 
+def get_pom_properties(pom_path):
+    """Extracts all properties from the <properties> section of a pom.xml."""
+    properties = {}
+    if not os.path.exists(pom_path):
+        return properties
+
+    try:
+        # We'll use a simple regex-based parser to avoid complex namespace issues with ET
+        # and to handle property names that might not be valid XML tags if not careful
+        with open(pom_path, 'r') as f:
+            content = f.read()
+
+        props_match = re.search(r'<properties>(.*?)</properties>', content, re.DOTALL)
+        if props_match:
+            props_content = props_match.group(1)
+            # Find all tag pairs inside properties
+            for match in re.finditer(r'<([^/ >]+)>([^<]*)</\1>', props_content):
+                tag = match.group(1)
+                value = match.group(2).strip()
+                properties[tag] = value
+    except Exception as e:
+        print(f"Warning: Failed to get properties from {pom_path}: {e}")
+
+    return properties
+
+
 def parse_pom_for_version(file_path):
     """Extracts artifactId and version from a pom.xml file."""
     artifact_id = None
@@ -150,6 +176,10 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
         lines = f.readlines()
 
     new_lines = []
+    
+    # Pre-parse properties for resolution
+    pom_properties = get_pom_properties(file_path)
+    
     in_parent = False
     in_dep_mgmt = False
     in_dependencies = False
@@ -238,10 +268,17 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                 current_group_id = None
                 current_artifact_id = None
                 has_version = False
+                extracted_dep = None
                 continue
             if '</dependency>' in line:
                 in_dependency = False
                 
+                if extracted_dep:
+                    # Remove version tag from current_dependency_lines if it was extracted
+                    # We do this before further checks
+                    current_dependency_lines = [l for l in current_dependency_lines if '<version>' not in l]
+                    has_version = False # It's now managed
+                    should_preserve = True # We want to keep the dependency entry
                 # Monorepo version alignment and annotation
                 if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
                     new_version = monorepo_versions[current_artifact_id]
@@ -317,9 +354,28 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                         current_artifact_id = match.group(1).strip()
                 if '<version>' in line:
                     has_version = True
-                
-                if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
-                    should_preserve = True
+                    match = re.search(r'<version>(.*?)</version>', line)
+                    if match:
+                        current_version = match.group(1).strip()
+                        
+                        # Resolve version if it's a property
+                        resolved_version = current_version
+                        if current_version.startswith("${") and current_version.endswith("}"):
+                            prop_name = current_version[2:-1]
+                            if prop_name in pom_properties:
+                                resolved_version = pom_properties[prop_name]
+
+                        if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
+                            if not parent_managed_deps or (current_group_id, current_artifact_id) not in parent_managed_deps:
+                                # Only extract if not already managed
+                                extracted_dep = (current_group_id, current_artifact_id, resolved_version)
+                                print(f"EXTRACT_DEP:{current_group_id}:{current_artifact_id}:{resolved_version}")
+                            else:
+                                # Even if already managed, we should remove the local version
+                                extracted_dep = (current_group_id, current_artifact_id, resolved_version)
+
+                # if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
+                #     should_preserve = True
                 
                 current_dependency_lines.append(line)
                 if '{x-version-update:' in line:

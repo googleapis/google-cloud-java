@@ -57,6 +57,7 @@ FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
+UPDATE_DEP_MGMT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_dependency_management.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -472,10 +473,34 @@ fi
 # git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
 # COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
+# 7.10 Modernize pom.xml files and extract google-api-services dependencies
+modernize_and_extract() {
+    local pom_file="$1"
+    shift
+    local cmd_output
+    cmd_output=$(python3 "$MODERNIZE_POM_SCRIPT" "$pom_file" "$@" 2>&1)
+    echo "$cmd_output" | grep -v "EXTRACT_DEP:" || true
+    
+    # Process extracted dependencies
+    echo "$cmd_output" | grep "EXTRACT_DEP:" | while read -r line; do
+        dep_info="${line#EXTRACT_DEP:}"
+        IFS=':' read -r gid aid ver <<< "$dep_info"
+        echo "Extracting $gid:$aid:$ver to parent POM..."
+        python3 "$UPDATE_DEP_MGMT_SCRIPT" "google-cloud-jar-parent/pom.xml" "$gid" "$aid" "$ver"
+        
+        # Commit parent POM change if anything changed
+        if git diff --name-only | grep -q "google-cloud-jar-parent/pom.xml"; then
+            git add "google-cloud-jar-parent/pom.xml"
+            git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): manage $aid in parent POM"
+            COMMIT_COUNT=$((COMMIT_COUNT + 1))
+        fi
+    done
+}
+
 # 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
-python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME"
+modernize_and_extract "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME"
 
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
@@ -489,7 +514,7 @@ echo "Modernizing BOM pom.xml..."
 while read -r bom_pom; do
     echo "Modernizing BOM: $bom_pom"
     # BOMs should inherit from google-cloud-pom-parent
-    python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --parent-artifactId "google-cloud-pom-parent" --relative-path "../../google-cloud-pom-parent/pom.xml"
+    modernize_and_extract "$bom_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --parent-artifactId "google-cloud-pom-parent" --relative-path "../../google-cloud-pom-parent/pom.xml"
     
     echo "Committing BOM pom.xml modernization for $bom_pom..."
     git add "$bom_pom"
@@ -502,7 +527,7 @@ echo "Modernizing other pom.xml files..."
 while read -r other_pom; do
     echo "Modernizing submodule POM: $other_pom"
     # Preserve the existing parent, but update everything else
-    python3 "$MODERNIZE_POM_SCRIPT" "$other_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --keep-parent
+    modernize_and_extract "$other_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --keep-parent
     
     echo "Committing submodule pom.xml modernization for $other_pom..."
     git add "$other_pom" && git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize submodule pom.xml" && COMMIT_COUNT=$((COMMIT_COUNT + 1)) || true
