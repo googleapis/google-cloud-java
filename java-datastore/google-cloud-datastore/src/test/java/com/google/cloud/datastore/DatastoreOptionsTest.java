@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -80,17 +81,82 @@ public class DatastoreOptionsTest {
   }
 
   @Test
+  public void testOpenTelemetryOptionsDefault() {
+    DatastoreOpenTelemetryOptions o1 = DatastoreOpenTelemetryOptions.newBuilder().build();
+    assertFalse(o1.isMetricsEnabled());
+    assertFalse(o1.isTracingEnabled());
+    assertFalse(o1.isEnabled());
+  }
+
+  @Test
   public void testOpenTelemetryOptionsEnabled() {
     options.setOpenTelemetryOptions(
-        DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build());
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setTracingEnabled(true)
+            .setMetricsEnabled(true)
+            .build());
     assertTrue(options.build().getOpenTelemetryOptions().isEnabled());
+    assertTrue(options.build().getOpenTelemetryOptions().isTracingEnabled());
+    assertTrue(options.build().getOpenTelemetryOptions().isMetricsEnabled());
   }
 
   @Test
   public void testOpenTelemetryOptionsDisabled() {
     options.setOpenTelemetryOptions(
-        DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(false).build());
-    assertTrue(!options.build().getOpenTelemetryOptions().isEnabled());
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setTracingEnabled(false)
+            .setMetricsEnabled(false)
+            .build());
+    assertFalse(options.build().getOpenTelemetryOptions().isEnabled());
+    assertFalse(options.build().getOpenTelemetryOptions().isTracingEnabled());
+    assertFalse(options.build().getOpenTelemetryOptions().isMetricsEnabled());
+  }
+
+  @Test
+  public void testOpenTelemetryTracingEnabled() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(false).build();
+    assertFalse(o1.isTracingEnabled());
+    assertFalse(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build();
+    assertTrue(o2.isTracingEnabled());
+    assertTrue(o2.isEnabled());
+  }
+
+  @Test
+  public void testOpenTelemetryMetricsEnabled() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder().setMetricsEnabled(false).build();
+    assertFalse(o1.isMetricsEnabled());
+    assertFalse(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder().setMetricsEnabled(true).build();
+    assertTrue(o2.isMetricsEnabled());
+    assertTrue(o2.isEnabled());
+  }
+
+  @Test
+  public void testTelemetrySignalsMixedEnabled() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setTracingEnabled(true)
+            .setMetricsEnabled(false)
+            .build();
+    assertTrue(o1.isTracingEnabled());
+    assertFalse(o1.isMetricsEnabled());
+    assertTrue(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setTracingEnabled(false)
+            .setMetricsEnabled(true)
+            .build();
+    assertFalse(o2.isTracingEnabled());
+    assertTrue(o2.isMetricsEnabled());
+    assertTrue(o2.isEnabled());
   }
 
   @Test
