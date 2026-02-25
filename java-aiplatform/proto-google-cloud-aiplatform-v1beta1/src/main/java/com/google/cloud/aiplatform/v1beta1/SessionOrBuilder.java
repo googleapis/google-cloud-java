@@ -33,6 +33,7 @@ public interface SessionOrBuilder
    * Optional. Timestamp of when this session is considered expired.
    * This is *always* provided on output, regardless of what was sent
    * on input.
+   * The minimum value is 24 hours from the time of creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -49,6 +50,7 @@ public interface SessionOrBuilder
    * Optional. Timestamp of when this session is considered expired.
    * This is *always* provided on output, regardless of what was sent
    * on input.
+   * The minimum value is 24 hours from the time of creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -65,6 +67,7 @@ public interface SessionOrBuilder
    * Optional. Timestamp of when this session is considered expired.
    * This is *always* provided on output, regardless of what was sent
    * on input.
+   * The minimum value is 24 hours from the time of creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -77,6 +80,7 @@ public interface SessionOrBuilder
    *
    * <pre>
    * Optional. Input only. The TTL for this session.
+   * The minimum value is 24 hours.
    * </pre>
    *
    * <code>
@@ -92,6 +96,7 @@ public interface SessionOrBuilder
    *
    * <pre>
    * Optional. Input only. The TTL for this session.
+   * The minimum value is 24 hours.
    * </pre>
    *
    * <code>
@@ -107,6 +112,7 @@ public interface SessionOrBuilder
    *
    * <pre>
    * Optional. Input only. The TTL for this session.
+   * The minimum value is 24 hours.
    * </pre>
    *
    * <code>
@@ -250,6 +256,99 @@ public interface SessionOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
    *

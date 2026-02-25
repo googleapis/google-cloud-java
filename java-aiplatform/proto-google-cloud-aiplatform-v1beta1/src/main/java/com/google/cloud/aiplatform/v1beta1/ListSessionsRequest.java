@@ -230,8 +230,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    * Supported fields:
    * * `display_name`
    * * `user_id`
+   * * `labels`
    *
-   * Example: `display_name="abc"`, `user_id="123"`.
+   * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -259,8 +260,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    * Supported fields:
    * * `display_name`
    * * `user_id`
+   * * `labels`
    *
-   * Example: `display_name="abc"`, `user_id="123"`.
+   * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1083,8 +1085,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      * * `display_name`
      * * `user_id`
+     * * `labels`
      *
-     * Example: `display_name="abc"`, `user_id="123"`.
+     * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1111,8 +1114,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      * * `display_name`
      * * `user_id`
+     * * `labels`
      *
-     * Example: `display_name="abc"`, `user_id="123"`.
+     * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1139,8 +1143,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      * * `display_name`
      * * `user_id`
+     * * `labels`
      *
-     * Example: `display_name="abc"`, `user_id="123"`.
+     * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1166,8 +1171,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      * * `display_name`
      * * `user_id`
+     * * `labels`
      *
-     * Example: `display_name="abc"`, `user_id="123"`.
+     * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1189,8 +1195,9 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      * * `display_name`
      * * `user_id`
+     * * `labels`
      *
-     * Example: `display_name="abc"`, `user_id="123"`.
+     * Example: `display_name="abc"`, `user_id="123"`, `labels.key="value"`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -45,6 +45,10 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Session_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Session_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Session_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_SessionEvent_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_SessionEvent_fieldAccessorTable;
@@ -60,6 +64,10 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_aiplatform_v1beta1_EventActions_ArtifactDeltaEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_EventActions_ArtifactDeltaEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Transcription_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Transcription_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,7 +83,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "e/api/resource.proto\032-google/cloud/aipla"
           + "tform/v1beta1/content.proto\032\036google/prot"
           + "obuf/duration.proto\032\034google/protobuf/str"
-          + "uct.proto\032\037google/protobuf/timestamp.proto\"\206\004\n"
+          + "uct.proto\032\037google/protobuf/timestamp.proto\"\373\004\n"
           + "\007Session\0226\n"
           + "\013expire_time\030\r"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\000\0220\n"
@@ -85,18 +93,23 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\031\n"
-          + "\014display_name\030\005 \001(\tB\003\340A\001\0223\n\r"
+          + "\014display_name\030\005 \001(\tB\003\340A\001\022D\n"
+          + "\006labels\030\010"
+          + " \003(\01324.google.cloud.aiplatform.v1beta1.Session.LabelsEntry\0223\n\r"
           + "session_state\030\n"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022\027\n"
-          + "\007user_id\030\014 \001(\tB\006\340A\005\340A\002:\232\001\352A\226\001\n"
-          + "!aiplatform.googleapis.com/Session\022^projects/{project}/locations/{location}/reas"
-          + "oningEngines/{reasoning_engine}/sessions/{session}*\010sessions2\007sessionB\014\n\n"
+          + "\007user_id\030\014 \001(\tB\006\340A\005\340A\002\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\232\001\352A\226\001\n"
+          + "!aiplatform.googleapis.com/Session\022^projects/{project}/locations/{location}/reasoni"
+          + "ngEngines/{reasoning_engine}/sessions/{session}*\010sessions2\007sessionB\014\n\n"
           + "expiration\"\310\004\n"
           + "\014SessionEvent\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\006author\030\003 \001(\tB\003\340A\002\022>\n"
-          + "\007content\030\004 \001(\0132(."
-          + "google.cloud.aiplatform.v1beta1.ContentB\003\340A\001\022\032\n\r"
+          + "\007content\030\004 \001(\0132(.goo"
+          + "gle.cloud.aiplatform.v1beta1.ContentB\003\340A\001\022\032\n\r"
           + "invocation_id\030\005 \001(\tB\003\340A\002\022C\n"
           + "\007actions\030\006"
           + " \001(\0132-.google.cloud.aiplatform.v1beta1.EventActionsB\003\340A\001\0222\n"
@@ -104,37 +117,44 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "error_code\030\t \001(\tB\003\340A\001\022\032\n\r"
           + "error_message\030\n"
           + " \001(\tB\003\340A\001\022K\n"
-          + "\016event_metadata\030\013 \001(\0132..google."
-          + "cloud.aiplatform.v1beta1.EventMetadataB\003\340A\001:\270\001\352A\264\001\n"
-          + "&aiplatform.googleapis.com/SessionEvent\022mprojects/{project}/locations"
-          + "/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}*\r"
-          + "sessionEvents2\014sessionEvent\"\233\002\n\r"
+          + "\016event_metadata\030\013 \001(\0132..google.clo"
+          + "ud.aiplatform.v1beta1.EventMetadataB\003\340A\001:\270\001\352A\264\001\n"
+          + "&aiplatform.googleapis.com/SessionEvent\022mprojects/{project}/locations/{l"
+          + "ocation}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}*\r"
+          + "sessionEvents2\014sessionEvent\"\300\003\n\r"
           + "EventMetadata\022S\n"
-          + "\022grounding_metadata\030\001 \001(\01322.g"
-          + "oogle.cloud.aiplatform.v1beta1.GroundingMetadataB\003\340A\001\022\024\n"
+          + "\022grounding_metadata\030\001 \001(\01322.goog"
+          + "le.cloud.aiplatform.v1beta1.GroundingMetadataB\003\340A\001\022\024\n"
           + "\007partial\030\002 \001(\010B\003\340A\001\022\032\n\r"
           + "turn_complete\030\003 \001(\010B\003\340A\001\022\030\n"
           + "\013interrupted\030\004 \001(\010B\003\340A\001\022\"\n"
           + "\025long_running_tool_ids\030\005 \003(\tB\003\340A\001\022\023\n"
           + "\006branch\030\006 \001(\tB\003\340A\001\0220\n"
-          + "\017custom_metadata\030\007 \001(\0132\027.google.protobuf.Struct\"\351\002\n"
+          + "\017custom_metadata\030\007 \001(\0132\027.google.protobuf.Struct\022P\n"
+          + "\023input_transcription\030\n"
+          + " \001(\0132..google.cloud.aiplatform.v1beta1.TranscriptionB\003\340A\001\022Q\n"
+          + "\024output_transcription\030\013 \001(\0132..google.cloud"
+          + ".aiplatform.v1beta1.TranscriptionB\003\340A\001\"\351\002\n"
           + "\014EventActions\022\037\n"
           + "\022skip_summarization\030\001 \001(\010B\003\340A\001\0221\n"
           + "\013state_delta\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\022]\n"
-          + "\016artifact_delta\030\003 \003("
-          + "\0132@.google.cloud.aiplatform.v1beta1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\025\n"
+          + "\016artifact_delta\030\003 "
+          + "\003(\0132@.google.cloud.aiplatform.v1beta1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\025\n"
           + "\010escalate\030\006 \001(\010B\003\340A\001\022<\n"
           + "\026requested_auth_configs\030\007"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022\033\n"
           + "\016transfer_agent\030\010 \001(\tB\003\340A\001\0324\n"
           + "\022ArtifactDeltaEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\005:\0028\001B\343\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\014SessionProtoP\001ZCcloud.google.com/go/ai"
-          + "platform/apiv1beta1/aiplatformpb;aiplatf"
-          + "ormpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312"
-          + "\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goog"
-          + "le::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "\005value\030\002 \001(\005:\0028\001\"9\n\r"
+          + "Transcription\022\021\n"
+          + "\004text\030\001 \001(\tB\003\340A\001\022\025\n"
+          + "\010finished\030\002 \001(\010B\003\340A\001B\343\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\014SessionProtoP\001ZCc"
+          + "loud.google.com/go/aiplatform/apiv1beta1"
+          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
+          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
+          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -159,9 +179,18 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "CreateTime",
               "UpdateTime",
               "DisplayName",
+              "Labels",
               "SessionState",
               "UserId",
               "Expiration",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Session_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Session_descriptor.getNestedType(0);
+    internal_static_google_cloud_aiplatform_v1beta1_Session_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Session_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SessionEvent_descriptor =
         getDescriptor().getMessageType(1);
@@ -192,6 +221,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "LongRunningToolIds",
               "Branch",
               "CustomMetadata",
+              "InputTranscription",
+              "OutputTranscription",
             });
     internal_static_google_cloud_aiplatform_v1beta1_EventActions_descriptor =
         getDescriptor().getMessageType(3);
@@ -213,6 +244,14 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_aiplatform_v1beta1_EventActions_ArtifactDeltaEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Transcription_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_aiplatform_v1beta1_Transcription_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Transcription_descriptor,
+            new java.lang.String[] {
+              "Text", "Finished",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
