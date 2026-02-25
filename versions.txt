@@ -970,3 +970,7 @@ proto-google-cloud-datastore-admin-v1:2.34.0:2.34.1-SNAPSHOT
 grpc-google-cloud-datastore-admin-v1:2.34.0:2.34.1-SNAPSHOT
 grpc-google-cloud-datastore-v1:2.34.0:2.34.1-SNAPSHOT
 google-cloud-logging-logback:0.134.0-alpha:0.134.1-alpha-SNAPSHOT
+proto-google-cloud-ces-v1beta:0.1.0:0.2.0-SNAPSHOT
+grpc-google-cloud-ces-v1beta:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-vectorsearch-v1:0.6.0:0.7.0-SNAPSHOT
+grpc-google-cloud-vectorsearch-v1:0.6.0:0.7.0-SNAPSHOT

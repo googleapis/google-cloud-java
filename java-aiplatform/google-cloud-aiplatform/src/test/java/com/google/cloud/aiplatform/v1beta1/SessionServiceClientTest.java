@@ -118,6 +118,7 @@ public class SessionServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
             .setSessionState(Struct.newBuilder().build())
             .setUserId("userId-836030906")
             .build();
@@ -176,6 +177,7 @@ public class SessionServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
             .setSessionState(Struct.newBuilder().build())
             .setUserId("userId-836030906")
             .build();
@@ -232,6 +234,7 @@ public class SessionServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
             .setSessionState(Struct.newBuilder().build())
             .setUserId("userId-836030906")
             .build();
@@ -278,6 +281,7 @@ public class SessionServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
             .setSessionState(Struct.newBuilder().build())
             .setUserId("userId-836030906")
             .build();
@@ -413,6 +417,7 @@ public class SessionServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
             .setSessionState(Struct.newBuilder().build())
             .setUserId("userId-836030906")
             .build();

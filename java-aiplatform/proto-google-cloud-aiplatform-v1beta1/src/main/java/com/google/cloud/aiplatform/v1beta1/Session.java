@@ -62,6 +62,18 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_aiplatform_v1beta1_Session_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 8:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -132,6 +144,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
    * Optional. Timestamp of when this session is considered expired.
    * This is *always* provided on output, regardless of what was sent
    * on input.
+   * The minimum value is 24 hours from the time of creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -151,6 +164,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
    * Optional. Timestamp of when this session is considered expired.
    * This is *always* provided on output, regardless of what was sent
    * on input.
+   * The minimum value is 24 hours from the time of creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -173,6 +187,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
    * Optional. Timestamp of when this session is considered expired.
    * This is *always* provided on output, regardless of what was sent
    * on input.
+   * The minimum value is 24 hours from the time of creation.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -193,6 +208,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Input only. The TTL for this session.
+   * The minimum value is 24 hours.
    * </pre>
    *
    * <code>
@@ -211,6 +227,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Input only. The TTL for this session.
+   * The minimum value is 24 hours.
    * </pre>
    *
    * <code>
@@ -232,6 +249,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Input only. The TTL for this session.
+   * The minimum value is 24 hours.
    * </pre>
    *
    * <code>
@@ -460,6 +478,137 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int LABELS_FIELD_NUMBER = 8;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.SessionProto
+                .internal_static_google_cloud_aiplatform_v1beta1_Session_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize your Sessions.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int SESSION_STATE_FIELD_NUMBER = 10;
   private com.google.protobuf.Struct sessionState_;
 
@@ -595,6 +744,8 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, displayName_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 8);
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10, getSessionState());
     }
@@ -627,6 +778,16 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, displayName_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, labels__);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getSessionState());
@@ -670,6 +831,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasSessionState() != other.hasSessionState()) return false;
     if (hasSessionState()) {
       if (!getSessionState().equals(other.getSessionState())) return false;
@@ -709,6 +871,10 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     if (hasSessionState()) {
       hash = (37 * hash) + SESSION_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getSessionState().hashCode();
@@ -846,6 +1012,28 @@ public final class Session extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_aiplatform_v1beta1_Session_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -896,6 +1084,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       displayName_ = "";
+      internalGetMutableLabels().clear();
       sessionState_ = null;
       if (sessionStateBuilder_ != null) {
         sessionStateBuilder_.dispose();
@@ -957,11 +1146,15 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         result.displayName_ = displayName_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.sessionState_ =
             sessionStateBuilder_ == null ? sessionState_ : sessionStateBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.userId_ = userId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1006,12 +1199,14 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000040;
       if (other.hasSessionState()) {
         mergeSessionState(other.getSessionState());
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getExpirationCase()) {
@@ -1082,17 +1277,29 @@ public final class Session extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             case 82:
               {
                 input.readMessage(
                     internalGetSessionStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 98:
               {
                 userId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 106:
@@ -1154,6 +1361,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1173,6 +1381,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1202,6 +1411,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1228,6 +1438,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1251,6 +1462,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1286,6 +1498,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1315,6 +1528,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1331,6 +1545,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1355,6 +1570,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * Optional. Timestamp of when this session is considered expired.
      * This is *always* provided on output, regardless of what was sent
      * on input.
+     * The minimum value is 24 hours from the time of creation.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1393,6 +1609,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1411,6 +1628,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1439,6 +1657,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1464,6 +1683,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1486,6 +1706,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1520,6 +1741,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1548,6 +1770,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1563,6 +1786,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -1586,6 +1810,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Input only. The TTL for this session.
+     * The minimum value is 24 hours.
      * </pre>
      *
      * <code>
@@ -2270,6 +2495,220 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableLabels().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize your Sessions.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 8;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
     private com.google.protobuf.Struct sessionState_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Struct,
@@ -2290,7 +2729,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * @return Whether the sessionState field is set.
      */
     public boolean hasSessionState() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2334,7 +2773,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       } else {
         sessionStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2355,7 +2794,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       } else {
         sessionStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2372,7 +2811,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSessionState(com.google.protobuf.Struct value) {
       if (sessionStateBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && sessionState_ != null
             && sessionState_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getSessionStateBuilder().mergeFrom(value);
@@ -2383,7 +2822,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         sessionStateBuilder_.mergeFrom(value);
       }
       if (sessionState_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2400,7 +2839,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSessionState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       sessionState_ = null;
       if (sessionStateBuilder_ != null) {
         sessionStateBuilder_.dispose();
@@ -2421,7 +2860,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Struct.Builder getSessionStateBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetSessionStateFieldBuilder().getBuilder();
     }
@@ -2544,7 +2983,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       userId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2564,7 +3003,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUserId() {
       userId_ = getDefaultInstance().getUserId();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2589,7 +3028,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       userId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
