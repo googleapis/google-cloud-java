@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.base.Stopwatch;
 import com.google.common.math.IntMath;
 import io.grpc.Deadline;
+import io.grpc.Status;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleGauge;
 import io.opentelemetry.api.metrics.DoubleHistogram;
@@ -336,9 +337,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
     flowControlIsDisabled = true;
   }
 
-  private void recordOperationCompletion(@Nullable Throwable status) {
+  private void recordOperationCompletion(@Nullable Throwable throwable) {
     if (operationFinishedEarly.get()) {
-      status = null; // force an ok
+      throwable = null; // force an ok
     }
 
     if (!opFinished.compareAndSet(false, true)) {
@@ -347,7 +348,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
     boolean isStreaming = operationType == OperationType.ServerStreaming;
-    String statusStr = extractStatus(status);
+    Status.Code code = extractStatus(throwable);
 
     // Publish metric data with all the attributes. The attributes get filtered in
     // BuiltinMetricsConstants when we construct the views.
@@ -359,7 +360,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
             .put(METHOD_KEY, spanName.toString())
             .put(CLIENT_NAME_KEY, NAME)
             .put(STREAMING_KEY, isStreaming)
-            .put(STATUS_KEY, statusStr)
+            .put(STATUS_KEY, code.name())
             .build();
 
     // Only record when retry count is greater than 0 so the retry
@@ -381,9 +382,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
     }
   }
 
-  private void recordAttemptCompletion(@Nullable Throwable status) {
+  private void recordAttemptCompletion(@Nullable Throwable throwable) {
     if (operationFinishedEarly.get()) {
-      status = null; // force an ok
+      throwable = null; // force an ok
     }
     // If the attempt failed, the time spent in retry should be counted in application latency.
     // Stop the stopwatch and decrement requestLeft.
@@ -397,14 +398,14 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     boolean isStreaming = operationType == OperationType.ServerStreaming;
 
-    // Patch the status until it's fixed in gax. When an attempt failed,
+    // Patch the throwable until it's fixed in gax. When an attempt failed,
     // it'll throw a ServerStreamingAttemptException. Unwrap the exception
     // so it could get processed by extractStatus
-    if (status instanceof ServerStreamingAttemptException) {
-      status = status.getCause();
+    if (throwable instanceof ServerStreamingAttemptException) {
+      throwable = throwable.getCause();
     }
 
-    String statusStr = extractStatus(status);
+    Status.Code code = extractStatus(throwable);
 
     Attributes attributes =
         baseAttributes.toBuilder()
@@ -414,7 +415,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
             .put(METHOD_KEY, spanName.toString())
             .put(CLIENT_NAME_KEY, NAME)
             .put(STREAMING_KEY, isStreaming)
-            .put(STATUS_KEY, statusStr)
+            .put(STATUS_KEY, code.name())
             .build();
 
     totalClientBlockingTime.addAndGet(grpcMessageSentDelay.get());
@@ -477,11 +478,11 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   @Override
   public void addBatchWriteFlowControlFactor(
-      double factor, @Nullable Throwable status, boolean applied) {
+      double factor, @Nullable Throwable throwable, boolean applied) {
     Attributes attributes =
         baseAttributes.toBuilder()
             .put(METHOD_KEY, spanName.toString())
-            .put(STATUS_KEY, extractStatus(status))
+            .put(STATUS_KEY, extractStatus(throwable).name())
             .put(APPLIED_KEY, applied)
             .build();
 

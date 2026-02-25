@@ -133,7 +133,7 @@ class MetricsTracer extends BigtableTracer {
         newTagCtxBuilder()
             .putLocal(
                 RpcMeasureConstants.BIGTABLE_STATUS,
-                TagValue.create(Util.extractStatus(throwable)));
+                TagValue.create(Util.extractStatus(throwable).name()));
 
     measures.record(tagCtx.build());
   }
@@ -216,7 +216,7 @@ class MetricsTracer extends BigtableTracer {
         newTagCtxBuilder()
             .putLocal(
                 RpcMeasureConstants.BIGTABLE_STATUS,
-                TagValue.create(Util.extractStatus(throwable)));
+                TagValue.create(Util.extractStatus(throwable).name()));
 
     measures.record(tagCtx.build());
   }

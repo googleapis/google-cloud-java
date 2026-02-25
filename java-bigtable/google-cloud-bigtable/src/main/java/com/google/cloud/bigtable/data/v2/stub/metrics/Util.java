@@ -17,10 +17,9 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.auth.Credentials;
@@ -44,8 +43,6 @@ import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Status;
-import io.grpc.StatusException;
-import io.grpc.StatusRuntimeException;
 import io.opencensus.stats.StatsRecorder;
 import io.opencensus.tags.TagKey;
 import io.opencensus.tags.TagValue;
@@ -79,25 +76,26 @@ public class Util {
   static final Metadata.Key<String> ATTEMPT_EPOCH_KEY =
       Metadata.Key.of("bigtable-client-attempt-epoch-usec", Metadata.ASCII_STRING_MARSHALLER);
 
-  /** Convert an exception into a value that can be used to create an OpenCensus tag value. */
-  public static String extractStatus(@Nullable Throwable error) {
-    final String statusString;
-
+  public static Status.Code extractStatus(@Nullable Throwable error) {
     if (error == null) {
-      return StatusCode.Code.OK.toString();
-    } else if (error instanceof CancellationException) {
-      statusString = Status.Code.CANCELLED.toString();
-    } else if (error instanceof ApiException) {
-      statusString = ((ApiException) error).getStatusCode().getCode().toString();
-    } else if (error instanceof StatusRuntimeException) {
-      statusString = ((StatusRuntimeException) error).getStatus().getCode().toString();
-    } else if (error instanceof StatusException) {
-      statusString = ((StatusException) error).getStatus().getCode().toString();
-    } else {
-      statusString = Code.UNKNOWN.toString();
+      return Status.Code.OK;
+    }
+    // Handle java CancellationException as if it was a gax CancelledException
+    if (error instanceof CancellationException) {
+      return Status.Code.CANCELLED;
+    }
+    if (error instanceof ApiException) {
+      ApiException apiException = (ApiException) error;
+      if (apiException.getStatusCode() instanceof GrpcStatusCode) {
+        return ((GrpcStatusCode) apiException.getStatusCode()).getTransportCode();
+      }
     }
 
-    return statusString;
+    Status s = Status.fromThrowable(error);
+    if (s != null) {
+      return s.getCode();
+    }
+    return Status.Code.UNKNOWN;
   }
 
   static String extractTableId(Object request) {
