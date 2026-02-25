@@ -45,7 +45,8 @@ public class TelemetryConstants {
   public static final String METHOD_TRANSACTION_RUN = "Transaction.Run";
   public static final String METHOD_TRANSACTION_RUN_QUERY = "Transaction.RunQuery";
   public static final String METHOD_TRANSACTION_ROLLBACK = "Transaction.Rollback";
-  public static final String METHOD_TRANSACTION_RUN_AGGREGATION_QUERY = "Transaction.RunAggregationQuery";
+  public static final String METHOD_TRANSACTION_RUN_AGGREGATION_QUERY =
+      "Transaction.RunAggregationQuery";
   public static final String METHOD_ADD = "add";
   public static final String METHOD_PUT = "put";
   public static final String METHOD_UPDATE = "update";

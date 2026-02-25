@@ -25,8 +25,12 @@ import java.util.Map;
 class NoOpMetricsRecorder implements MetricsRecorder {
 
   @Override
-  public void recordTransactionLatency(double latencyMs, Map<String, String> attributes) { /* No-Op OTel Operation */ }
+  public void recordTransactionLatency(double latencyMs, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
 
   @Override
-  public void recordTransactionAttemptCount(long count, Map<String, String> attributes) { /* No-Op OTel Operation */ }
+  public void recordTransactionAttemptCount(long count, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
 }

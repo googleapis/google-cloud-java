@@ -589,7 +589,9 @@ public class ITTracingTest {
             Attributes.builder()
                 .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, false)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY, "READ_CONSISTENCY_UNSPECIFIED")
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY,
+                    "READ_CONSISTENCY_UNSPECIFIED")
                 .put(TelemetryConstants.ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
                 .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, "")
                 .build()));
@@ -682,7 +684,9 @@ public class ITTracingTest {
                 .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 1)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 0)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
+                    transaction.getTransactionId().toStringUtf8())
                 .build()));
 
     assertSpanHierarchy(SPAN_NAME_TRANSACTION_COMMIT);
@@ -694,7 +698,9 @@ public class ITTracingTest {
             Attributes.builder()
                 .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
+                    transaction.getTransactionId().toStringUtf8())
                 .build()));
   }
 
@@ -738,9 +744,13 @@ public class ITTracingTest {
             Attributes.builder()
                 .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY, "READ_CONSISTENCY_UNSPECIFIED")
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY,
+                    "READ_CONSISTENCY_UNSPECIFIED")
                 .put(TelemetryConstants.ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
+                    transaction.getTransactionId().toStringUtf8())
                 .build()));
   }
 
@@ -794,7 +804,9 @@ public class ITTracingTest {
                 .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 0)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 1)
                 .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
+                    transaction.getTransactionId().toStringUtf8())
                 .build()));
 
     assertSpanHierarchy(SPAN_NAME_ROLLBACK);
@@ -804,7 +816,9 @@ public class ITTracingTest {
             span,
             SPAN_NAME_ROLLBACK,
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
+                .put(
+                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
+                    transaction.getTransactionId().toStringUtf8())
                 .build()));
   }
 
