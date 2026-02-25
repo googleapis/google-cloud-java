@@ -497,6 +497,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/ces/v1
+  - proto_path: google/cloud/ces/v1beta
   requires_billing: true
   rpc_documentation: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rpc
 - api_shortname: cloudchannel
@@ -2655,6 +2656,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/vectorsearch/v1beta
+  - proto_path: google/cloud/vectorsearch/v1
   requires_billing: true
 - api_shortname: videointelligence
   name_pretty: Cloud Video Intelligence
