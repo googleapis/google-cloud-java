@@ -27,7 +27,6 @@ import com.google.auth.Credentials;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
-import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.MaterializedViewName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -42,8 +41,6 @@ import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
-import com.google.common.base.Suppliers;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Status;
@@ -162,8 +159,7 @@ public class Util {
   }
 
   public static OpenTelemetrySdk createBuiltinOtel(
-      InstanceName instanceName,
-      String appProfileId,
+      ClientInfo clientInfo,
       @Nullable Credentials defaultCredentials,
       @Nullable String metricsEndpoint,
       String universeDomain,
@@ -189,17 +185,7 @@ public class Util {
 
     MetricExporter publicExporter =
         BigtableCloudMonitoringExporter.create(
-            credentials,
-            metricsEndpoint,
-            universeDomain,
-            ImmutableList.of(
-                new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter(),
-                new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
-                    Suppliers.memoize(
-                        () ->
-                            BigtableExporterUtils.createInternalMonitoredResource(
-                                instanceName, appProfileId)))),
-            executor);
+            clientInfo, credentials, metricsEndpoint, universeDomain, executor);
     PeriodicMetricReaderBuilder readerBuilder =
         PeriodicMetricReader.builder(publicExporter).setExecutor(executor);
     meterProvider.registerMetricReader(readerBuilder.build());
@@ -274,7 +260,8 @@ public class Util {
   }
 
   public static BuiltinMetricsTracerFactory createOtelMetricsFactory(
-      OpenTelemetry otel, ClientInfo clientInfo) {
-    return new BuiltinMetricsTracerFactory(otel, clientInfo);
+      OpenTelemetry otel, ClientInfo clientInfo) throws IOException {
+
+    return BuiltinMetricsTracerFactory.create(otel, clientInfo);
   }
 }

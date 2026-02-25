@@ -38,8 +38,8 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import com.google.api.Distribution;
 import com.google.api.Metric;
 import com.google.api.MonitoredResource;
-import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.Version;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.opentelemetry.detection.AttributeKeys;
 import com.google.cloud.opentelemetry.detection.DetectedPlatform;
 import com.google.cloud.opentelemetry.detection.GCPPlatformDetector;
@@ -182,10 +182,9 @@ class BigtableExporterUtils {
   }
 
   @Nullable
-  static MonitoredResource createInternalMonitoredResource(
-      InstanceName instanceName, String appProfileId) {
+  static MonitoredResource createInternalMonitoredResource(ClientInfo clientInfo) {
     try {
-      MonitoredResource monitoredResource = detectResource(instanceName, appProfileId);
+      MonitoredResource monitoredResource = detectResource(clientInfo);
       logger.log(Level.FINE, "Internal metrics monitored resource: %s", monitoredResource);
       return monitoredResource;
     } catch (Exception e) {
@@ -198,7 +197,7 @@ class BigtableExporterUtils {
   }
 
   @Nullable
-  private static MonitoredResource detectResource(InstanceName instanceName, String appProfileId) {
+  private static MonitoredResource detectResource(ClientInfo clientInfo) {
     GCPPlatformDetector detector = GCPPlatformDetector.DEFAULT_INSTANCE;
     DetectedPlatform detectedPlatform = detector.detectPlatform();
 
@@ -245,9 +244,9 @@ class BigtableExporterUtils {
 
     return MonitoredResource.newBuilder()
         .setType("bigtable_client")
-        .putLabels("project_id", instanceName.getProject())
-        .putLabels("instance", instanceName.getInstance())
-        .putLabels("app_profile", appProfileId)
+        .putLabels("project_id", clientInfo.getInstanceName().getProject())
+        .putLabels("instance", clientInfo.getInstanceName().getInstance())
+        .putLabels("app_profile", clientInfo.getAppProfileId())
         .putLabels("client_project", detectedPlatform.getProjectId())
         .putLabels("region", region)
         .putLabels("cloud_platform", cloud_platform)

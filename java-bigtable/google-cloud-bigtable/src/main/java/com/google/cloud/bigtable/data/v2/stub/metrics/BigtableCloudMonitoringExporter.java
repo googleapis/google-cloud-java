@@ -39,11 +39,13 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.auth.Credentials;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -112,10 +114,10 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
   private final AtomicBoolean exportFailureLogged = new AtomicBoolean(false);
 
   static BigtableCloudMonitoringExporter create(
+      ClientInfo clientInfo,
       @Nullable Credentials credentials,
       @Nullable String endpoint,
       String universeDomain,
-      List<TimeSeriesConverter> converters,
       @Nullable ScheduledExecutorService executorService)
       throws IOException {
     Preconditions.checkNotNull(universeDomain);
@@ -151,6 +153,13 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     // TODO: createServiceTimeSeries needs special handling if the request failed. Leaving
     // it as not retried for now.
     settingsBuilder.createServiceTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
+
+    ImmutableList<TimeSeriesConverter> converters =
+        ImmutableList.of(
+            new PublicTimeSeriesConverter(),
+            new InternalTimeSeriesConverter(
+                Suppliers.memoize(
+                    () -> BigtableExporterUtils.createInternalMonitoredResource(clientInfo))));
 
     return new BigtableCloudMonitoringExporter(
         MetricServiceClient.create(settingsBuilder.build()), converters);

@@ -124,8 +124,7 @@ public class BigtableClientContext {
       if (settings.areInternalMetricsEnabled()) {
         builtinOtel =
             Util.createBuiltinOtel(
-                InstanceName.of(settings.getProjectId(), settings.getInstanceId()),
-                settings.getAppProfileId(),
+                clientInfo,
                 credentials,
                 settings.getMetricsEndpoint(),
                 universeDomain,
