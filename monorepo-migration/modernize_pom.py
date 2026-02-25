@@ -228,6 +228,8 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
         # Profile renaming
         if '<id>customNative</id>' in line:
             line = line.replace('<id>customNative</id>', '<id>native</id>')
+        if '<id>native-test</id>' in line:
+            line = line.replace('<id>native-test</id>', '<id>native</id>')
 
         # Parent section modernization
         if not keep_parent:
