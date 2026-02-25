@@ -53,7 +53,7 @@ public interface TraceUtil {
   String ATTRIBUTES_KEY_RECEIVED = "Received";
   String ATTRIBUTES_KEY_MISSING = "Missing";
   String ATTRIBUTES_KEY_DEFERRED = "Deferred";
-  String ATTRIBUTES_KEY_MORE_RESULTS = "mor_results";
+  String ATTRIBUTES_KEY_MORE_RESULTS = "more_results";
 
   /**
    * Creates and returns an instance of the TraceUtil class.
