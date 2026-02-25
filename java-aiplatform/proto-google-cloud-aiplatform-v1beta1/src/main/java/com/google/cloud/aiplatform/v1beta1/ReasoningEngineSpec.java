@@ -4819,6 +4819,50 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder
         getPythonSpecOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building an image with custom config file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageSpec field is set.
+     */
+    boolean hasImageSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building an image with custom config file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageSpec.
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec getImageSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building an image with custom config file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpecOrBuilder
+        getImageSpecOrBuilder();
+
     com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.SourceCase
         getSourceCase();
 
@@ -5453,6 +5497,890 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ImageSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      int getBuildArgsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      boolean containsBuildArgs(java.lang.String key);
+
+      /** Use {@link #getBuildArgsMap()} instead. */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String> getBuildArgs();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.Map<java.lang.String, java.lang.String> getBuildArgsMap();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      /* nullable */
+      java.lang.String getBuildArgsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.lang.String getBuildArgsOrThrow(java.lang.String key);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The image spec for building an image (within a single build step), based
+     * on the config file (i.e. Dockerfile) in the source directory.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec}
+     */
+    public static final class ImageSpec extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+        ImageSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "ImageSpec");
+      }
+
+      // Use ImageSpec.newBuilder() to construct.
+      private ImageSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ImageSpec() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetBuildArgs();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                    .Builder.class);
+      }
+
+      public static final int BUILD_ARGS_FIELD_NUMBER = 1;
+
+      private static final class BuildArgsDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                    .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_BuildArgsEntry_descriptor,
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+      }
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> buildArgs_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetBuildArgs() {
+        if (buildArgs_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              BuildArgsDefaultEntryHolder.defaultEntry);
+        }
+        return buildArgs_;
+      }
+
+      public int getBuildArgsCount() {
+        return internalGetBuildArgs().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsBuildArgs(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetBuildArgs().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getBuildArgsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getBuildArgs() {
+        return getBuildArgsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getBuildArgsMap() {
+        return internalGetBuildArgs().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getBuildArgsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildArgs().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Build arguments to be used. They will be passed through
+       * --build-arg flags.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getBuildArgsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildArgs().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+            output, internalGetBuildArgs(), BuildArgsDefaultEntryHolder.defaultEntry, 1);
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+            internalGetBuildArgs().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildArgs__ =
+              BuildArgsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, buildArgs__);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec other =
+            (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec) obj;
+
+        if (!internalGetBuildArgs().equals(other.internalGetBuildArgs())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (!internalGetBuildArgs().getMap().isEmpty()) {
+          hash = (37 * hash) + BUILD_ARGS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetBuildArgs().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The image spec for building an image (within a single build step), based
+       * on the config file (i.e. Dockerfile) in the source directory.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+              .ImageSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetBuildArgs();
+            default:
+              throw new RuntimeException("Invalid map field number: " + number);
+          }
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapFieldReflectionAccessor
+            internalGetMutableMapFieldReflection(int number) {
+          switch (number) {
+            case 1:
+              return internalGetMutableBuildArgs();
+            default:
+              throw new RuntimeException("Invalid map field number: " + number);
+          }
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                      .class,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          internalGetMutableBuildArgs().clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+            build() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec result =
+              new com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.buildArgs_ = internalGetBuildArgs();
+            result.buildArgs_.makeImmutable();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                  .getDefaultInstance()) return this;
+          internalGetMutableBuildArgs().mergeFrom(other.internalGetBuildArgs());
+          bitField0_ |= 0x00000001;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildArgs__ =
+                        input.readMessage(
+                            BuildArgsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                    internalGetMutableBuildArgs()
+                        .getMutableMap()
+                        .put(buildArgs__.getKey(), buildArgs__.getValue());
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String> buildArgs_;
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+            internalGetBuildArgs() {
+          if (buildArgs_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                BuildArgsDefaultEntryHolder.defaultEntry);
+          }
+          return buildArgs_;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+            internalGetMutableBuildArgs() {
+          if (buildArgs_ == null) {
+            buildArgs_ =
+                com.google.protobuf.MapField.newMapField(BuildArgsDefaultEntryHolder.defaultEntry);
+          }
+          if (!buildArgs_.isMutable()) {
+            buildArgs_ = buildArgs_.copy();
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return buildArgs_;
+        }
+
+        public int getBuildArgsCount() {
+          return internalGetBuildArgs().getMap().size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public boolean containsBuildArgs(java.lang.String key) {
+          if (key == null) {
+            throw new NullPointerException("map key");
+          }
+          return internalGetBuildArgs().getMap().containsKey(key);
+        }
+
+        /** Use {@link #getBuildArgsMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getBuildArgs() {
+          return getBuildArgsMap();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.Map<java.lang.String, java.lang.String> getBuildArgsMap() {
+          return internalGetBuildArgs().getMap();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public /* nullable */ java.lang.String getBuildArgsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            java.lang.String defaultValue) {
+          if (key == null) {
+            throw new NullPointerException("map key");
+          }
+          java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildArgs().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public java.lang.String getBuildArgsOrThrow(java.lang.String key) {
+          if (key == null) {
+            throw new NullPointerException("map key");
+          }
+          java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildArgs().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearBuildArgs() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          internalGetMutableBuildArgs().getMutableMap().clear();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder removeBuildArgs(java.lang.String key) {
+          if (key == null) {
+            throw new NullPointerException("map key");
+          }
+          internalGetMutableBuildArgs().getMutableMap().remove(key);
+          return this;
+        }
+
+        /** Use alternate mutation accessors instead. */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getMutableBuildArgs() {
+          bitField0_ |= 0x00000001;
+          return internalGetMutableBuildArgs().getMutableMap();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder putBuildArgs(java.lang.String key, java.lang.String value) {
+          if (key == null) {
+            throw new NullPointerException("map key");
+          }
+          if (value == null) {
+            throw new NullPointerException("map value");
+          }
+          internalGetMutableBuildArgs().getMutableMap().put(key, value);
+          bitField0_ |= 0x00000001;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Build arguments to be used. They will be passed through
+         * --build-arg flags.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; build_args = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder putAllBuildArgs(java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableBuildArgs().getMutableMap().putAll(values);
+          bitField0_ |= 0x00000001;
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+      private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+              .ImageSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ImageSpec> PARSER =
+          new com.google.protobuf.AbstractParser<ImageSpec>() {
+            @java.lang.Override
+            public ImageSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ImageSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ImageSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -8970,6 +9898,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PYTHON_SPEC(2),
+      IMAGE_SPEC(5),
       LANGUAGESPEC_NOT_SET(0);
       private final int value;
 
@@ -8991,6 +9920,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         switch (value) {
           case 2:
             return PYTHON_SPEC;
+          case 5:
+            return IMAGE_SPEC;
           case 0:
             return LANGUAGESPEC_NOT_SET;
           default:
@@ -9211,6 +10142,72 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           .getDefaultInstance();
     }
 
+    public static final int IMAGE_SPEC_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building an image with custom config file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageSpec() {
+      return languageSpecCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building an image with custom config file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+        getImageSpec() {
+      if (languageSpecCase_ == 5) {
+        return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+            languageSpec_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building an image with custom config file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpecOrBuilder
+        getImageSpecOrBuilder() {
+      if (languageSpecCase_ == 5) {
+        return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+            languageSpec_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9244,6 +10241,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                     .DeveloperConnectSource)
                 source_);
       }
+      if (languageSpecCase_ == 5) {
+        output.writeMessage(
+            5,
+            (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+                languageSpec_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9275,6 +10278,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
                         .DeveloperConnectSource)
                     source_);
+      }
+      if (languageSpecCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5,
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+                    languageSpec_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -9309,6 +10319,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         case 2:
           if (!getPythonSpec().equals(other.getPythonSpec())) return false;
           break;
+        case 5:
+          if (!getImageSpec().equals(other.getImageSpec())) return false;
+          break;
         case 0:
         default:
       }
@@ -9339,6 +10352,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         case 2:
           hash = (37 * hash) + PYTHON_SPEC_FIELD_NUMBER;
           hash = (53 * hash) + getPythonSpec().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + IMAGE_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getImageSpec().hashCode();
           break;
         case 0:
         default:
@@ -9496,6 +10513,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (pythonSpecBuilder_ != null) {
           pythonSpecBuilder_.clear();
         }
+        if (imageSpecBuilder_ != null) {
+          imageSpecBuilder_.clear();
+        }
         sourceCase_ = 0;
         source_ = null;
         languageSpecCase_ = 0;
@@ -9558,6 +10578,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (languageSpecCase_ == 2 && pythonSpecBuilder_ != null) {
           result.languageSpec_ = pythonSpecBuilder_.build();
         }
+        if (languageSpecCase_ == 5 && imageSpecBuilder_ != null) {
+          result.languageSpec_ = imageSpecBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -9597,6 +10620,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           case PYTHON_SPEC:
             {
               mergePythonSpec(other.getPythonSpec());
+              break;
+            }
+          case IMAGE_SPEC:
+            {
+              mergeImageSpec(other.getImageSpec());
               break;
             }
           case LANGUAGESPEC_NOT_SET:
@@ -9652,6 +10680,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                   sourceCase_ = 3;
                   break;
                 } // case 26
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetImageSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  languageSpecCase_ = 5;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10508,6 +11543,271 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         languageSpecCase_ = 2;
         onChanged();
         return pythonSpecBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                  .ImageSpecOrBuilder>
+          imageSpecBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the imageSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasImageSpec() {
+        return languageSpecCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The imageSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+          getImageSpec() {
+        if (imageSpecBuilder_ == null) {
+          if (languageSpecCase_ == 5) {
+            return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                    .ImageSpec)
+                languageSpec_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+              .getDefaultInstance();
+        } else {
+          if (languageSpecCase_ == 5) {
+            return imageSpecBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setImageSpec(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec value) {
+        if (imageSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          languageSpec_ = value;
+          onChanged();
+        } else {
+          imageSpecBuilder_.setMessage(value);
+        }
+        languageSpecCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setImageSpec(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec.Builder
+              builderForValue) {
+        if (imageSpecBuilder_ == null) {
+          languageSpec_ = builderForValue.build();
+          onChanged();
+        } else {
+          imageSpecBuilder_.setMessage(builderForValue.build());
+        }
+        languageSpecCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeImageSpec(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec value) {
+        if (imageSpecBuilder_ == null) {
+          if (languageSpecCase_ == 5
+              && languageSpec_
+                  != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                      .ImageSpec.getDefaultInstance()) {
+            languageSpec_ =
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                                .ImageSpec)
+                            languageSpec_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            languageSpec_ = value;
+          }
+          onChanged();
+        } else {
+          if (languageSpecCase_ == 5) {
+            imageSpecBuilder_.mergeFrom(value);
+          } else {
+            imageSpecBuilder_.setMessage(value);
+          }
+        }
+        languageSpecCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearImageSpec() {
+        if (imageSpecBuilder_ == null) {
+          if (languageSpecCase_ == 5) {
+            languageSpecCase_ = 0;
+            languageSpec_ = null;
+            onChanged();
+          }
+        } else {
+          if (languageSpecCase_ == 5) {
+            languageSpecCase_ = 0;
+            languageSpec_ = null;
+          }
+          imageSpecBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+              .Builder
+          getImageSpecBuilder() {
+        return internalGetImageSpecFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+              .ImageSpecOrBuilder
+          getImageSpecOrBuilder() {
+        if ((languageSpecCase_ == 5) && (imageSpecBuilder_ != null)) {
+          return imageSpecBuilder_.getMessageOrBuilder();
+        } else {
+          if (languageSpecCase_ == 5) {
+            return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                    .ImageSpec)
+                languageSpec_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for building an image with custom config file.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec image_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                  .ImageSpecOrBuilder>
+          internalGetImageSpecFieldBuilder() {
+        if (imageSpecBuilder_ == null) {
+          if (!(languageSpecCase_ == 5)) {
+            languageSpec_ =
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                    .getDefaultInstance();
+          }
+          imageSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+                      .ImageSpecOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
+                      languageSpec_,
+                  getParentForChildren(),
+                  isClean());
+          languageSpec_ = null;
+        }
+        languageSpecCase_ = 5;
+        onChanged();
+        return imageSpecBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec)

@@ -247,4 +247,90 @@ public interface EventMetadataOrBuilder
    * <code>.google.protobuf.Struct custom_metadata = 7;</code>
    */
   com.google.protobuf.StructOrBuilder getCustomMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of user input.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inputTranscription field is set.
+   */
+  boolean hasInputTranscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of user input.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inputTranscription.
+   */
+  com.google.cloud.aiplatform.v1beta1.Transcription getInputTranscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of user input.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder getInputTranscriptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of model output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the outputTranscription field is set.
+   */
+  boolean hasOutputTranscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of model output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The outputTranscription.
+   */
+  com.google.cloud.aiplatform.v1beta1.Transcription getOutputTranscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of model output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder getOutputTranscriptionOrBuilder();
 }
