@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal;
 
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import java.io.Serializable;
 
 /**
@@ -32,6 +33,13 @@ import java.io.Serializable;
 @InternalApi
 @AutoValue
 public abstract class RequestContext implements Serializable {
+
+  public static RequestContext create(ClientInfo clientInfo) {
+    return create(
+        clientInfo.getInstanceName().getProject(),
+        clientInfo.getInstanceName().getInstance(),
+        clientInfo.getAppProfileId());
+  }
 
   /** Creates a new instance of the {@link RequestContext}. */
   public static RequestContext create(String projectId, String instanceId, String appProfileId) {

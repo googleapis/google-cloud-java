@@ -16,13 +16,17 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APP_PROFILE_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES2_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.FIRST_RESPONSE_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INSTANCE_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METER_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OPERATION_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.REMAINING_DEADLINE_NAME;
@@ -34,6 +38,8 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
+import com.google.cloud.bigtable.Version;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleGauge;
@@ -68,13 +74,23 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
   private final DoubleHistogram batchWriteFlowControlFactorHistogram;
 
   public static BuiltinMetricsTracerFactory create(
-      OpenTelemetry openTelemetry, Attributes attributes) throws IOException {
-    return new BuiltinMetricsTracerFactory(openTelemetry, attributes);
+      OpenTelemetry openTelemetry, ClientInfo clientInfo) throws IOException {
+    return new BuiltinMetricsTracerFactory(openTelemetry, clientInfo);
   }
 
-  BuiltinMetricsTracerFactory(OpenTelemetry openTelemetry, Attributes attributes) {
-    this.attributes = attributes;
+  BuiltinMetricsTracerFactory(OpenTelemetry openTelemetry, ClientInfo clientInfo) {
     Meter meter = openTelemetry.getMeter(METER_NAME);
+
+    this.attributes =
+        Attributes.of(
+            BIGTABLE_PROJECT_ID_KEY,
+            clientInfo.getInstanceName().getProject(),
+            INSTANCE_ID_KEY,
+            clientInfo.getInstanceName().getInstance(),
+            APP_PROFILE_KEY,
+            clientInfo.getAppProfileId(),
+            CLIENT_NAME_KEY,
+            "bigtable-java/" + Version.VERSION);
 
     operationLatenciesHistogram =
         meter

@@ -29,6 +29,7 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.ChannelPoolMetricsTracer;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
@@ -63,8 +64,7 @@ public class BigtableClientContext {
   private static final Logger logger = Logger.getLogger(BigtableClientContext.class.getName());
 
   private final boolean isChild;
-  private final InstanceName instanceName;
-  private final String appProfileId;
+  private final ClientInfo clientInfo;
   private final ApiTracerFactory userTracerFactory;
   @Nullable private final OpenTelemetrySdk builtinOpenTelemetry;
   @Nullable private final OpenTelemetry userOpenTelemetry;
@@ -83,8 +83,11 @@ public class BigtableClientContext {
   public static BigtableClientContext create(
       EnhancedBigtableStubSettings settings, Tagger ocTagger, StatsRecorder ocRecorder)
       throws IOException {
-    InstanceName instanceName = InstanceName.of(settings.getProjectId(), settings.getInstanceId());
-    String appProfileId = settings.getAppProfileId();
+    ClientInfo clientInfo =
+        ClientInfo.builder()
+            .setInstanceName(InstanceName.of(settings.getProjectId(), settings.getInstanceId()))
+            .setAppProfileId(settings.getAppProfileId())
+            .build();
 
     EnhancedBigtableStubSettings.Builder builder = settings.toBuilder();
 
@@ -184,8 +187,7 @@ public class BigtableClientContext {
 
     return new BigtableClientContext(
         false,
-        instanceName,
-        appProfileId,
+        clientInfo,
         clientContext,
         userTracerFactory,
         builtinOtel,
@@ -224,8 +226,7 @@ public class BigtableClientContext {
 
   private BigtableClientContext(
       boolean isChild,
-      InstanceName instanceName,
-      String appProfileId,
+      ClientInfo clientInfo,
       ClientContext clientContext,
       ApiTracerFactory userTracerFactory,
       @Nullable OpenTelemetrySdk builtinOtel,
@@ -235,8 +236,7 @@ public class BigtableClientContext {
       ExecutorProvider backgroundExecutorProvider)
       throws IOException {
     this.isChild = isChild;
-    this.instanceName = instanceName;
-    this.appProfileId = appProfileId;
+    this.clientInfo = clientInfo;
 
     this.userTracerFactory = userTracerFactory;
     this.builtinOpenTelemetry = builtinOtel;
@@ -247,15 +247,15 @@ public class BigtableClientContext {
 
     ImmutableList.Builder<ApiTracerFactory> tracerFactories = ImmutableList.builder();
     tracerFactories
-        .add(Util.createOCTracingFactory(instanceName, appProfileId))
-        .add(Util.createOCMetricsFactory(instanceName, appProfileId, ocTagger, ocRecorder))
+        .add(Util.createOCTracingFactory(clientInfo))
+        .add(Util.createOCMetricsFactory(clientInfo, ocTagger, ocRecorder))
         .add(userTracerFactory);
 
     if (builtinOtel != null) {
-      tracerFactories.add(Util.createOtelMetricsFactory(builtinOtel, instanceName, appProfileId));
+      tracerFactories.add(Util.createOtelMetricsFactory(builtinOtel, clientInfo));
     }
     if (userOtel != null) {
-      tracerFactories.add(Util.createOtelMetricsFactory(userOtel, instanceName, appProfileId));
+      tracerFactories.add(Util.createOtelMetricsFactory(userOtel, clientInfo));
     }
 
     this.clientContext =
@@ -264,12 +264,8 @@ public class BigtableClientContext {
             .build();
   }
 
-  public InstanceName getInstanceName() {
-    return instanceName;
-  }
-
-  public String getAppProfileId() {
-    return appProfileId;
+  public ClientInfo getClientInfo() {
+    return clientInfo;
   }
 
   @Nullable
@@ -290,8 +286,7 @@ public class BigtableClientContext {
       throws IOException {
     return new BigtableClientContext(
         true,
-        instanceName,
-        appProfileId,
+        clientInfo.toBuilder().setInstanceName(instanceName).setAppProfileId(appProfileId).build(),
         clientContext,
         userTracerFactory,
         builtinOpenTelemetry,

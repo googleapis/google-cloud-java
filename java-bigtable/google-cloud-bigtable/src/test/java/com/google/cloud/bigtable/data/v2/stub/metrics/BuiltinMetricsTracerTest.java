@@ -54,6 +54,7 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -64,6 +65,7 @@ import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -163,7 +165,17 @@ public class BuiltinMetricsTracerTest {
 
   private int batchElementCount = 2;
 
-  private Attributes baseAttributes;
+  private ClientInfo clientInfo =
+      ClientInfo.builder()
+          .setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
+          .setAppProfileId(APP_PROFILE_ID)
+          .build();
+  private Attributes expectedBaseAttributes =
+      Attributes.builder()
+          .put(BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
+          .put(BuiltinMetricsConstants.INSTANCE_ID_KEY, INSTANCE_ID)
+          .put(BuiltinMetricsConstants.APP_PROFILE_KEY, APP_PROFILE_ID)
+          .build();
 
   private InMemoryMetricReader metricReader;
 
@@ -175,13 +187,6 @@ public class BuiltinMetricsTracerTest {
   public void setUp() throws Exception {
     metricReader = InMemoryMetricReader.create();
 
-    baseAttributes =
-        Attributes.builder()
-            .put(BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
-            .put(BuiltinMetricsConstants.INSTANCE_ID_KEY, INSTANCE_ID)
-            .put(BuiltinMetricsConstants.APP_PROFILE_KEY, APP_PROFILE_ID)
-            .build();
-
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
 
@@ -192,7 +197,7 @@ public class BuiltinMetricsTracerTest {
 
     OpenTelemetrySdk otel =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
-    BuiltinMetricsTracerFactory facotry = BuiltinMetricsTracerFactory.create(otel, baseAttributes);
+    BuiltinMetricsTracerFactory facotry = new BuiltinMetricsTracerFactory(otel, clientInfo);
 
     // Add an interceptor to add server-timing in headers
     ServerInterceptor trailersInterceptor =
@@ -302,7 +307,7 @@ public class BuiltinMetricsTracerTest {
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -327,7 +332,7 @@ public class BuiltinMetricsTracerTest {
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -372,7 +377,7 @@ public class BuiltinMetricsTracerTest {
             });
 
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, FIRST_RESPONSE_TABLE_ID)
             .put(ZONE_ID_KEY, ZONE)
@@ -392,7 +397,7 @@ public class BuiltinMetricsTracerTest {
     Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)));
 
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -409,7 +414,7 @@ public class BuiltinMetricsTracerTest {
     MetricData connectivityErrorCountMetricData =
         getMetricData(metricReader, CONNECTIVITY_ERROR_COUNT_NAME);
     Attributes expected1 =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "UNAVAILABLE")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, "global")
@@ -418,7 +423,7 @@ public class BuiltinMetricsTracerTest {
             .put(CLIENT_NAME_KEY, CLIENT_NAME)
             .build();
     Attributes expected2 =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -473,7 +478,7 @@ public class BuiltinMetricsTracerTest {
         getMetricData(metricReader, APPLICATION_BLOCKING_LATENCIES_NAME);
 
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
             .put(CLUSTER_ID_KEY, CLUSTER)
@@ -508,7 +513,7 @@ public class BuiltinMetricsTracerTest {
         getMetricData(metricReader, APPLICATION_BLOCKING_LATENCIES_NAME);
 
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
             .put(CLUSTER_ID_KEY, CLUSTER)
@@ -537,7 +542,7 @@ public class BuiltinMetricsTracerTest {
 
     MetricData metricData = getMetricData(metricReader, RETRY_COUNT_NAME);
     Attributes expectedAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
             .put(CLUSTER_ID_KEY, CLUSTER)
@@ -559,7 +564,7 @@ public class BuiltinMetricsTracerTest {
     MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
 
     Attributes expected1 =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "UNAVAILABLE")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, "global")
@@ -570,7 +575,7 @@ public class BuiltinMetricsTracerTest {
             .build();
 
     Attributes expected2 =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -598,7 +603,7 @@ public class BuiltinMetricsTracerTest {
     MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
 
     Attributes expected =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -626,7 +631,7 @@ public class BuiltinMetricsTracerTest {
     MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
 
     Attributes expected =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "NOT_FOUND")
             .put(TABLE_ID_KEY, BAD_TABLE_ID)
             .put(ZONE_ID_KEY, "global")
@@ -646,7 +651,7 @@ public class BuiltinMetricsTracerTest {
     MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
 
     Attributes expected1 =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "UNAVAILABLE")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, "global")
@@ -657,7 +662,7 @@ public class BuiltinMetricsTracerTest {
             .build();
 
     Attributes expected2 =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -686,7 +691,7 @@ public class BuiltinMetricsTracerTest {
       MetricData applicationLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
 
       Attributes expectedAttributes =
-          baseAttributes.toBuilder()
+          expectedBaseAttributes.toBuilder()
               .put(TABLE_ID_KEY, TABLE)
               .put(ZONE_ID_KEY, ZONE)
               .put(CLUSTER_ID_KEY, CLUSTER)
@@ -712,7 +717,7 @@ public class BuiltinMetricsTracerTest {
     MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
 
     Attributes attributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(TABLE_ID_KEY, TABLE)
             .put(CLUSTER_ID_KEY, CLUSTER)
             .put(ZONE_ID_KEY, ZONE)
@@ -739,7 +744,7 @@ public class BuiltinMetricsTracerTest {
     MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
 
     Attributes attributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(TABLE_ID_KEY, TABLE)
             .put(CLUSTER_ID_KEY, CLUSTER)
             .put(ZONE_ID_KEY, ZONE)
@@ -765,7 +770,7 @@ public class BuiltinMetricsTracerTest {
     MetricData attemptLatency = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
 
     Attributes expected =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "NOT_FOUND")
             .put(TABLE_ID_KEY, BAD_TABLE_ID)
             .put(CLUSTER_ID_KEY, "<unspecified>")
@@ -787,7 +792,7 @@ public class BuiltinMetricsTracerTest {
     MetricData deadlineMetric = getMetricData(metricReader, REMAINING_DEADLINE_NAME);
 
     Attributes retryAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "UNAVAILABLE")
             .put(TABLE_ID_KEY, TABLE)
             .put(METHOD_KEY, "Bigtable.ReadRows")
@@ -807,7 +812,7 @@ public class BuiltinMetricsTracerTest {
     assertThat(retryRemainingDeadline).isEqualTo(9000);
 
     Attributes okAttributes =
-        baseAttributes.toBuilder()
+        expectedBaseAttributes.toBuilder()
             .put(STATUS_KEY, "OK")
             .put(TABLE_ID_KEY, TABLE)
             .put(ZONE_ID_KEY, ZONE)
@@ -840,14 +845,14 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
       Attributes targetQpsAttributes =
-          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       double expected_qps = 12;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
       MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
       Attributes factorAttributes =
-          baseAttributes.toBuilder()
+          expectedBaseAttributes.toBuilder()
               .put(METHOD_KEY, "Bigtable.MutateRows")
               .put(APPLIED_KEY, true)
               .put(STATUS_KEY, "OK")
@@ -870,14 +875,14 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
       Attributes targetQpsAttributes =
-          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       double expected_qps = 8.0;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
       MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
       Attributes factorAttributes =
-          baseAttributes.toBuilder()
+          expectedBaseAttributes.toBuilder()
               .put(METHOD_KEY, "Bigtable.MutateRows")
               .put(APPLIED_KEY, true)
               .put(STATUS_KEY, "OK")
@@ -900,7 +905,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
       Attributes targetQpsAttributes =
-          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // Factor is 1.8 but capped at 1.3 so updated QPS is 13.
       double expected_qps = 13;
@@ -908,7 +913,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
       Attributes factorAttributes =
-          baseAttributes.toBuilder()
+          expectedBaseAttributes.toBuilder()
               .put(METHOD_KEY, "Bigtable.MutateRows")
               .put(APPLIED_KEY, true)
               .put(STATUS_KEY, "OK")
@@ -932,7 +937,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
       Attributes targetQpsAttributes =
-          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // Factor is 0.5 but capped at 0.7 so updated QPS is 7.
       double expected_qps = 7;
@@ -940,7 +945,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
       Attributes factorAttributes =
-          baseAttributes.toBuilder()
+          expectedBaseAttributes.toBuilder()
               .put(METHOD_KEY, "Bigtable.MutateRows")
               .put(APPLIED_KEY, true)
               .put(STATUS_KEY, "OK")
@@ -965,7 +970,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
       Attributes targetQpsAttributes =
-          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // On error, min factor is applied.
       double expected_qps = 7;
@@ -973,7 +978,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
       Attributes factorAttributes =
-          baseAttributes.toBuilder()
+          expectedBaseAttributes.toBuilder()
               .put(METHOD_KEY, "Bigtable.MutateRows")
               .put(APPLIED_KEY, true)
               .put(STATUS_KEY, "UNAVAILABLE")
