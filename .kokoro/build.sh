@@ -194,12 +194,15 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
     fi
+
+    MODULE_FILTER=""
+
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
         echo "${changed_file_list}"
-        
+
         has_code_change="false"
-        
+
         while IFS= read -r changed_file; do
             # Checks if the line is not empty AND if it matches a .java file
             if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
@@ -208,19 +211,66 @@ case ${JOB_TYPE} in
                 break
             fi
         done <<< "${changed_file_list}"
-        
+
         if [ "${has_code_change}" == "false" ]; then
             echo "No java modules affected. Skipping linter check."
             exit 0
         fi
+
+        # Compute list of changed Maven modules from changed Java files
+        # Walk each changed .java file up to its nearest pom.xml to find the module
+        changed_modules=()
+        while IFS= read -r changed_file; do
+            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+                dir=$(dirname "${changed_file}")
+                while [ "${dir}" != "." ] && [ ! -f "${dir}/pom.xml" ]; do
+                    dir=$(dirname "${dir}")
+                done
+                if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
+                    changed_modules+=("${dir}")
+                fi
+            fi
+        done <<< "${changed_file_list}"
+
+        # Deduplicate
+        if [ ${#changed_modules[@]} -gt 0 ]; then
+            unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
+            MODULE_FILTER="-pl ${unique_modules}"
+            echo "Formatting only changed modules: ${unique_modules}"
+        fi
     else
         echo "BASE_SHA or HEAD_SHA is empty. Skipping file difference check."
+
+        # For non-PR runs (no diff available), exclude generated modules
+        # (proto-google-*, grpc-google-*, *-bom) to skip formatting generated code
+        exclusions=""
+        # Find generated sub-modules and parent/aggregator POMs to exclude
+        # - proto-google-*, grpc-google-* : generated protobuf/gRPC stubs
+        # - *-bom : BOM modules with no source code
+        # - java-* at depth 1 : per-library aggregator parent POMs
+        # - google-cloud-pom-parent, google-cloud-jar-parent, gapic-libraries-bom : repo-level parents
+        for dir in $(find . -maxdepth 1 -type d -name "java-*" | sort; \
+                      find . -maxdepth 2 -type d \( -name "proto-google-*" -o -name "grpc-google-*" -o -name "*-bom" -o -name "google-cloud-pom-parent" -o -name "google-cloud-jar-parent" \) | sort); do
+            # Strip leading ./
+            dir="${dir#./}"
+            if [ -n "${exclusions}" ]; then
+                exclusions="${exclusions},!${dir}"
+            else
+                exclusions="!${dir}"
+            fi
+        done
+
+        if [ -n "${exclusions}" ]; then
+            MODULE_FILTER="-pl ${exclusions}"
+            echo "Excluding generated modules from formatting"
+        fi
     fi
-    
+
     mvn -B -ntp \
-      -T 1.5C \
+      -T 1C \
+      ${MODULE_FILTER} \
       com.spotify.fmt:fmt-maven-plugin:check
-    mvn -B -ntp checkstyle:check@checkstyle
+    mvn -B -ntp ${MODULE_FILTER} checkstyle:check@checkstyle
 
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
