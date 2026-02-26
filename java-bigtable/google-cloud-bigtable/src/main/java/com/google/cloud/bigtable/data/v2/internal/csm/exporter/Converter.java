@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.exporter;
 
 import static com.google.api.MetricDescriptor.MetricKind.CUMULATIVE;
 import static com.google.api.MetricDescriptor.MetricKind.GAUGE;

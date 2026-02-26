@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util.extractStatus;
@@ -23,8 +23,10 @@ import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor.SidebandData;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Comparators;
 import com.google.common.math.IntMath;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
@@ -21,6 +21,7 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracer;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 
 /**
  * This callable will extract total throttled time from {@link ApiCallContext} and add it to {@link

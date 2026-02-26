@@ -18,9 +18,20 @@ package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
+import com.google.bigtable.v2.AuthorizedViewName;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.MaterializedViewName;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
+import com.google.bigtable.v2.ReadChangeStreamRequest;
+import com.google.bigtable.v2.ReadModifyWriteRowRequest;
+import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ResponseParams;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.TableName;
 import com.google.common.annotations.VisibleForTesting;
 import io.grpc.Status;
 import java.util.Locale;
@@ -125,5 +136,46 @@ public class Util {
       return s.getCode();
     }
     return Status.Code.UNKNOWN;
+  }
+
+  public static String extractTableId(Object request) {
+    String tableName = null;
+    String authorizedViewName = null;
+    String materializedViewName = null;
+    if (request instanceof ReadRowsRequest) {
+      tableName = ((ReadRowsRequest) request).getTableName();
+      authorizedViewName = ((ReadRowsRequest) request).getAuthorizedViewName();
+      materializedViewName = ((ReadRowsRequest) request).getMaterializedViewName();
+    } else if (request instanceof MutateRowsRequest) {
+      tableName = ((MutateRowsRequest) request).getTableName();
+      authorizedViewName = ((MutateRowsRequest) request).getAuthorizedViewName();
+    } else if (request instanceof MutateRowRequest) {
+      tableName = ((MutateRowRequest) request).getTableName();
+      authorizedViewName = ((MutateRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof SampleRowKeysRequest) {
+      tableName = ((SampleRowKeysRequest) request).getTableName();
+      authorizedViewName = ((SampleRowKeysRequest) request).getAuthorizedViewName();
+      materializedViewName = ((SampleRowKeysRequest) request).getMaterializedViewName();
+    } else if (request instanceof CheckAndMutateRowRequest) {
+      tableName = ((CheckAndMutateRowRequest) request).getTableName();
+      authorizedViewName = ((CheckAndMutateRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof ReadModifyWriteRowRequest) {
+      tableName = ((ReadModifyWriteRowRequest) request).getTableName();
+      authorizedViewName = ((ReadModifyWriteRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof GenerateInitialChangeStreamPartitionsRequest) {
+      tableName = ((GenerateInitialChangeStreamPartitionsRequest) request).getTableName();
+    } else if (request instanceof ReadChangeStreamRequest) {
+      tableName = ((ReadChangeStreamRequest) request).getTableName();
+    }
+    if (tableName != null && !tableName.isEmpty()) {
+      return TableName.parse(tableName).getTable();
+    }
+    if (authorizedViewName != null && !authorizedViewName.isEmpty()) {
+      return AuthorizedViewName.parse(authorizedViewName).getTable();
+    }
+    if (materializedViewName != null && !materializedViewName.isEmpty()) {
+      return MaterializedViewName.parse(materializedViewName).getMaterializedView();
+    }
+    return "<unspecified>";
   }
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import static com.google.common.truth.Truth.assertThat;
@@ -26,6 +26,7 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracer.Scope;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 import com.google.cloud.bigtable.misc_utilities.MethodComparator;
 import com.google.common.collect.ImmutableList;
 import java.lang.reflect.Method;

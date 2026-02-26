@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.exporter;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -126,7 +127,8 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
         metricRegistry, envInfo, clientInfo, MetricServiceClient.create(settingsBuilder.build()));
   }
 
-  BigtableCloudMonitoringExporter(
+  @VisibleForTesting
+  public BigtableCloudMonitoringExporter(
       MetricRegistry metricRegistry,
       Supplier<EnvInfo> envInfo,
       ClientInfo clientInfo,

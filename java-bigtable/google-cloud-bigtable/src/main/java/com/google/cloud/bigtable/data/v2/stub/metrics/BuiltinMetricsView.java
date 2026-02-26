@@ -22,11 +22,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nullable;
 
 /**
- * A util class to register built-in metrics on a custom OpenTelemetry instance. This is for
- * advanced usage, and is only necessary when wanting to write built-in metrics to cloud monitoring
- * and custom sinks.
- *
- * @deprecated Use methods in {@link CustomOpenTelemetryMetricsProvider} instead.
+ * @deprecated this class is no longer used and is empty. It only exists because it's symbols were
+ *     part of the public surface.
  */
 @Deprecated
 public class BuiltinMetricsView {

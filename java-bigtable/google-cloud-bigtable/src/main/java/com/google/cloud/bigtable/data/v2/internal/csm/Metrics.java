@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm;
 
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
-import com.google.cloud.bigtable.data.v2.stub.metrics.ChannelPoolMetricsTracer;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.ChannelPoolMetricsTracer;
 import io.grpc.ManagedChannelBuilder;
 import java.io.Closeable;
 import java.io.IOException;

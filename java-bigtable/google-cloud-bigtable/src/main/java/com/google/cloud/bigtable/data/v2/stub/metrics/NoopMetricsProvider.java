@@ -20,8 +20,8 @@ import com.google.common.base.MoreObjects;
 /**
  * Set {@link
  * com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder#setMetricsProvider(MetricsProvider)},
- * to {@link this#INSTANCE} to disable collecting and export client side metrics
- * https://cloud.google.com/bigtable/docs/client-side-metrics.
+ * to {@link NoopMetricsProvider#INSTANCE} to disable collecting and export of <a
+ * href="https://cloud.google.com/bigtable/docs/client-side-metrics">client side metrics</a>.
  */
 public final class NoopMetricsProvider implements MetricsProvider {
 

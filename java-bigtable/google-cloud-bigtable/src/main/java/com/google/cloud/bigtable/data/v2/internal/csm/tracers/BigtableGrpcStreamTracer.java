@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 import io.grpc.ClientStreamTracer;
 import io.grpc.Metadata;
 
@@ -26,7 +27,7 @@ import io.grpc.Metadata;
 class BigtableGrpcStreamTracer extends ClientStreamTracer {
   private final BigtableTracer tracer;
 
-  public BigtableGrpcStreamTracer(BigtableTracer tracer) {
+  private BigtableGrpcStreamTracer(BigtableTracer tracer) {
     this.tracer = tracer;
   }
 

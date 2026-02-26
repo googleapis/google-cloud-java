@@ -20,6 +20,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BigtableTracerStreamingCallable;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BigtableTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import java.time.Duration;
 import javax.annotation.Nullable;
@@ -28,6 +30,8 @@ import javax.annotation.Nullable;
  * A Bigtable specific {@link ApiTracer} that includes additional contexts. This class is a base
  * implementation that does nothing.
  */
+// NOTE: this class was part of the public surface so can't move to
+// com.google.cloud.bigtable.data.v2.internal.csm with the rest of the metrics.
 @BetaApi("This surface is not stable yet it might be removed in the future.")
 public class BigtableTracer extends BaseApiTracer {
 
