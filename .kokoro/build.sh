@@ -200,7 +200,7 @@ case ${JOB_TYPE} in
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
         # Format those specific modules instead of the entire codebase, reducing format check time.
-        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
+        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
         has_code_change="false"
