@@ -283,6 +283,51 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+   * </code>
+   *
+   * @return Whether the updateObjectCustomContext field is set.
+   */
+  boolean hasUpdateObjectCustomContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+   * </code>
+   *
+   * @return The updateObjectCustomContext.
+   */
+  com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+      getUpdateObjectCustomContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+   * </code>
+   */
+  com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder
+      getUpdateObjectCustomContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Logging configuration.
    * </pre>
    *

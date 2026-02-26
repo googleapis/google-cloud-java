@@ -276,6 +276,69 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         : autoraterConfig_;
   }
 
+  public static final int INFERENCE_GENERATION_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.GenerationConfig inferenceGenerationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for inference generation and outputs.
+   * If not set, default generation parameters are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inferenceGenerationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInferenceGenerationConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for inference generation and outputs.
+   * If not set, default generation parameters are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inferenceGenerationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig getInferenceGenerationConfig() {
+    return inferenceGenerationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+        : inferenceGenerationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for inference generation and outputs.
+   * If not set, default generation parameters are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+      getInferenceGenerationConfigOrBuilder() {
+    return inferenceGenerationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+        : inferenceGenerationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -299,6 +362,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getAutoraterConfig());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getInferenceGenerationConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -316,6 +382,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAutoraterConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getInferenceGenerationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -342,6 +413,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     if (hasAutoraterConfig()) {
       if (!getAutoraterConfig().equals(other.getAutoraterConfig())) return false;
     }
+    if (hasInferenceGenerationConfig() != other.hasInferenceGenerationConfig()) return false;
+    if (hasInferenceGenerationConfig()) {
+      if (!getInferenceGenerationConfig().equals(other.getInferenceGenerationConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -364,6 +440,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     if (hasAutoraterConfig()) {
       hash = (37 * hash) + AUTORATER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAutoraterConfig().hashCode();
+    }
+    if (hasInferenceGenerationConfig()) {
+      hash = (37 * hash) + INFERENCE_GENERATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getInferenceGenerationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -509,6 +589,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         internalGetMetricsFieldBuilder();
         internalGetOutputConfigFieldBuilder();
         internalGetAutoraterConfigFieldBuilder();
+        internalGetInferenceGenerationConfigFieldBuilder();
       }
     }
 
@@ -532,6 +613,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       if (autoraterConfigBuilder_ != null) {
         autoraterConfigBuilder_.dispose();
         autoraterConfigBuilder_ = null;
+      }
+      inferenceGenerationConfig_ = null;
+      if (inferenceGenerationConfigBuilder_ != null) {
+        inferenceGenerationConfigBuilder_.dispose();
+        inferenceGenerationConfigBuilder_ = null;
       }
       return this;
     }
@@ -594,6 +680,13 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
             autoraterConfigBuilder_ == null ? autoraterConfig_ : autoraterConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inferenceGenerationConfig_ =
+            inferenceGenerationConfigBuilder_ == null
+                ? inferenceGenerationConfig_
+                : inferenceGenerationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -642,6 +735,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAutoraterConfig()) {
         mergeAutoraterConfig(other.getAutoraterConfig());
+      }
+      if (other.hasInferenceGenerationConfig()) {
+        mergeInferenceGenerationConfig(other.getInferenceGenerationConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -696,6 +792,14 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    internalGetInferenceGenerationConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1544,6 +1648,233 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         autoraterConfig_ = null;
       }
       return autoraterConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.GenerationConfig inferenceGenerationConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>
+        inferenceGenerationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the inferenceGenerationConfig field is set.
+     */
+    public boolean hasInferenceGenerationConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The inferenceGenerationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig getInferenceGenerationConfig() {
+      if (inferenceGenerationConfigBuilder_ == null) {
+        return inferenceGenerationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+            : inferenceGenerationConfig_;
+      } else {
+        return inferenceGenerationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInferenceGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
+      if (inferenceGenerationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inferenceGenerationConfig_ = value;
+      } else {
+        inferenceGenerationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInferenceGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder builderForValue) {
+      if (inferenceGenerationConfigBuilder_ == null) {
+        inferenceGenerationConfig_ = builderForValue.build();
+      } else {
+        inferenceGenerationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInferenceGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
+      if (inferenceGenerationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && inferenceGenerationConfig_ != null
+            && inferenceGenerationConfig_
+                != com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()) {
+          getInferenceGenerationConfigBuilder().mergeFrom(value);
+        } else {
+          inferenceGenerationConfig_ = value;
+        }
+      } else {
+        inferenceGenerationConfigBuilder_.mergeFrom(value);
+      }
+      if (inferenceGenerationConfig_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInferenceGenerationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      inferenceGenerationConfig_ = null;
+      if (inferenceGenerationConfigBuilder_ != null) {
+        inferenceGenerationConfigBuilder_.dispose();
+        inferenceGenerationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder
+        getInferenceGenerationConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetInferenceGenerationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+        getInferenceGenerationConfigOrBuilder() {
+      if (inferenceGenerationConfigBuilder_ != null) {
+        return inferenceGenerationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return inferenceGenerationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+            : inferenceGenerationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for inference generation and outputs.
+     * If not set, default generation parameters are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>
+        internalGetInferenceGenerationConfigFieldBuilder() {
+      if (inferenceGenerationConfigBuilder_ == null) {
+        inferenceGenerationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>(
+                getInferenceGenerationConfig(), getParentForChildren(), isClean());
+        inferenceGenerationConfig_ = null;
+      }
+      return inferenceGenerationConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.EvaluationConfig)

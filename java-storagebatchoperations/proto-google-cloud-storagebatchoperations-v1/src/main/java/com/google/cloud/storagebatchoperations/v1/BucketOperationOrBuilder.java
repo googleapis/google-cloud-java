@@ -314,6 +314,51 @@ public interface BucketOperationOrBuilder
    *
    *
    * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 15;
+   * </code>
+   *
+   * @return Whether the updateObjectCustomContext field is set.
+   */
+  boolean hasUpdateObjectCustomContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 15;
+   * </code>
+   *
+   * @return The updateObjectCustomContext.
+   */
+  com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+      getUpdateObjectCustomContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 15;
+   * </code>
+   */
+  com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder
+      getUpdateObjectCustomContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time that the BucketOperation was created.
    * </pre>
    *
