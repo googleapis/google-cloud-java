@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.ResponseParams;
+import com.google.common.annotations.VisibleForTesting;
 import java.util.Locale;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -42,17 +43,48 @@ public class Util {
   }
 
   public static String transportTypeToString(TransportType transportType) {
-    if (transportType == TransportType.TRANSPORT_TYPE_UNKNOWN) {
-      return "none";
+    String label = transportTypeToStringWithoutFallback(transportType);
+    if (label != null) {
+      return label;
     }
-    if (transportType == TransportType.UNRECOGNIZED) {
-      return "unrecognized";
+    // In case the client is running with a newer version of protos
+    if (transportType.name().startsWith(TRANSPORT_TYPE_PREFIX)) {
+      return transportType
+          .name()
+          .substring(TRANSPORT_TYPE_PREFIX.length())
+          .toLowerCase(Locale.ENGLISH);
+    } else {
+      return transportType.name();
     }
+  }
 
-    return transportType
-        .name()
-        .substring(TRANSPORT_TYPE_PREFIX.length())
-        .toLowerCase(Locale.ENGLISH);
+  @VisibleForTesting
+  static String transportTypeToStringWithoutFallback(TransportType transportType) {
+    if (transportType == null) {
+      return "null";
+    }
+    switch (transportType) {
+      case TRANSPORT_TYPE_UNKNOWN:
+        return "unknown";
+      case TRANSPORT_TYPE_EXTERNAL:
+        return "external";
+      case TRANSPORT_TYPE_CLOUD_PATH:
+        return "cloudpath";
+      case TRANSPORT_TYPE_DIRECT_ACCESS:
+        return "directpath";
+      case TRANSPORT_TYPE_SESSION_UNKNOWN:
+        return "session_unknown";
+      case TRANSPORT_TYPE_SESSION_EXTERNAL:
+        return "session_external";
+      case TRANSPORT_TYPE_SESSION_CLOUD_PATH:
+        return "session_cloudpath";
+      case TRANSPORT_TYPE_SESSION_DIRECT_ACCESS:
+        return "session_directpath";
+      case UNRECOGNIZED:
+        return "unrecognized";
+      default:
+        return null;
+    }
   }
 
   public static String formatClusterIdMetricLabel(@Nullable ResponseParams clusterInfo) {

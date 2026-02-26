@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 
+import static com.google.common.truth.Truth.assertWithMessage;
+
 import com.google.bigtable.v2.PeerInfo.TransportType;
 import org.junit.jupiter.api.Test;
 
@@ -23,8 +25,9 @@ class UtilTest {
   @Test
   void ensureAllTransportTypeHaveExpectedPrefix() {
     for (TransportType type : TransportType.values()) {
-      // Ensure that no variant throws an error
-      Util.transportTypeToString(type);
+      assertWithMessage("%s should have a mapping", type)
+          .that(Util.transportTypeToStringWithoutFallback(type))
+          .isNotNull();
     }
   }
 }
