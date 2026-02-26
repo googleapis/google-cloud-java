@@ -9177,4 +9177,6 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessage
   public com.google.maps.fleetengine.v1.VehicleLocation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

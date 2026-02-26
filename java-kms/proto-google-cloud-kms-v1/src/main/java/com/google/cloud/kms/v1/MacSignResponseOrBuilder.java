@@ -195,4 +195,5 @@ public interface MacSignResponseOrBuilder
    * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
+  // Simulated PR Change
 }

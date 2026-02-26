@@ -971,4 +971,5 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

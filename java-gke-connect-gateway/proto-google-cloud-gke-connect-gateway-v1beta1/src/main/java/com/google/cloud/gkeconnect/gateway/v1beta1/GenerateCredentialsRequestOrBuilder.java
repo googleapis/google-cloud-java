@@ -164,4 +164,6 @@ public interface GenerateCredentialsRequestOrBuilder
    */
   com.google.cloud.gkeconnect.gateway.v1beta1.GenerateCredentialsRequest.OperatingSystem
       getOperatingSystem();
+  // Simulated PR Change
+  // Simulated PR Change
 }

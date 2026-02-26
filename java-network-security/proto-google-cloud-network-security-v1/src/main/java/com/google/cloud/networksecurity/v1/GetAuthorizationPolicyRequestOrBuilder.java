@@ -57,4 +57,5 @@ public interface GetAuthorizationPolicyRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+  // Simulated PR Change
 }

@@ -266,4 +266,5 @@ public enum AccessRight implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   // @@protoc_insertion_point(enum_scope:google.shopping.merchant.accounts.v1.AccessRight)
+  // Simulated PR Change
 }

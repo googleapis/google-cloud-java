@@ -56,4 +56,5 @@ public class MockProductInputsService implements MockGrpcService {
   public void reset() {
     serviceImpl.reset();
   }
+  // Simulated PR Change
 }

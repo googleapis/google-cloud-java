@@ -155,4 +155,5 @@ public interface BatchEnableServicesRequestOrBuilder
    * @return The bytes of the serviceIds at the given index.
    */
   com.google.protobuf.ByteString getServiceIdsBytes(int index);
+  // Simulated PR Change
 }

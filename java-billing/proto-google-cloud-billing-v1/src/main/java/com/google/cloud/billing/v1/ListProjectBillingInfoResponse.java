@@ -1161,4 +1161,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
   public com.google.cloud.billing.v1.ListProjectBillingInfoResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

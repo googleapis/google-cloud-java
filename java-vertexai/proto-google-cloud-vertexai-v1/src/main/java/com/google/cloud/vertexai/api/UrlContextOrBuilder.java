@@ -24,4 +24,5 @@ package com.google.cloud.vertexai.api;
 public interface UrlContextOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.UrlContext)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {  // Simulated PR Change
+}

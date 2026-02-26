@@ -148,4 +148,5 @@ public class TetherClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+  // Simulated PR Change
 }

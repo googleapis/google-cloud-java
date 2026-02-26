@@ -592,4 +592,6 @@ public final class StreamInfo extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.apigeeconnect.v1.StreamInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

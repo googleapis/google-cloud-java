@@ -506,4 +506,6 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.bigquery.storage.v1beta2.AvroRows getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

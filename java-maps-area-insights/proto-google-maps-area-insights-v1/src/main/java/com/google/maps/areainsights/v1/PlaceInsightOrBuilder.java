@@ -55,4 +55,6 @@ public interface PlaceInsightOrBuilder
    * @return The bytes for place.
    */
   com.google.protobuf.ByteString getPlaceBytes();
+  // Simulated PR Change
+  // Simulated PR Change
 }

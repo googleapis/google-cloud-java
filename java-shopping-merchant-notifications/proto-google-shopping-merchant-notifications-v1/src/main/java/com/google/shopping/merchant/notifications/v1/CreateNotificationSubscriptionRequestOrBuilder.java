@@ -102,4 +102,5 @@ public interface CreateNotificationSubscriptionRequestOrBuilder
    */
   com.google.shopping.merchant.notifications.v1.NotificationSubscriptionOrBuilder
       getNotificationSubscriptionOrBuilder();
+  // Simulated PR Change
 }

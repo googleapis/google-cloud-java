@@ -481,4 +481,5 @@ public interface QueryReservationsRequestOrBuilder
    * <code>.google.type.Date end_date = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.type.DateOrBuilder getEndDateOrBuilder();
+  // Simulated PR Change
 }

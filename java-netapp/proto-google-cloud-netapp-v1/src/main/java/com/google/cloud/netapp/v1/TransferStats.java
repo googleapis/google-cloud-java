@@ -2342,4 +2342,5 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.netapp.v1.TransferStats getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

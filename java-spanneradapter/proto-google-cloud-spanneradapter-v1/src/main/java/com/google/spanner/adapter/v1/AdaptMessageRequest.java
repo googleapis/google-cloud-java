@@ -1260,4 +1260,5 @@ public final class AdaptMessageRequest extends com.google.protobuf.GeneratedMess
   public com.google.spanner.adapter.v1.AdaptMessageRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -2505,4 +2505,6 @@ public final class Message extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.advisorynotifications.v1.Message getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

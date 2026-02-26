@@ -219,4 +219,6 @@ public interface TranslateSpeechConfigOrBuilder
    * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
+  // Simulated PR Change
+  // Simulated PR Change
 }

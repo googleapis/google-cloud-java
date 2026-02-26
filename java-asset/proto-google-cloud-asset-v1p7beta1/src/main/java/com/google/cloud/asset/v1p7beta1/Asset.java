@@ -4135,4 +4135,5 @@ public final class Asset extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.asset.v1p7beta1.Asset getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

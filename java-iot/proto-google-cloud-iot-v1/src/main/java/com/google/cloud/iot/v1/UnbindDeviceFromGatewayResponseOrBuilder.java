@@ -24,4 +24,5 @@ package com.google.cloud.iot.v1;
 public interface UnbindDeviceFromGatewayResponseOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.UnbindDeviceFromGatewayResponse)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {  // Simulated PR Change
+}

@@ -113,4 +113,5 @@ public interface ListAvailableVersionsRequestOrBuilder
    * @return The latestPatchOnly.
    */
   boolean getLatestPatchOnly();
+  // Simulated PR Change
 }

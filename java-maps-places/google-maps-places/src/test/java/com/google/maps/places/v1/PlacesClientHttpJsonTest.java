@@ -624,4 +624,5 @@ public class PlacesClientHttpJsonTest {
       // Expected exception.
     }
   }
+  // Simulated PR Change
 }

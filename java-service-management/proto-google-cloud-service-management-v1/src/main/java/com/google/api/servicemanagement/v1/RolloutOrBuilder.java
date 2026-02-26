@@ -282,4 +282,5 @@ public interface RolloutOrBuilder
   com.google.protobuf.ByteString getServiceNameBytes();
 
   com.google.api.servicemanagement.v1.Rollout.StrategyCase getStrategyCase();
+  // Simulated PR Change
 }

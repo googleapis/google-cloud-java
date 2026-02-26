@@ -1094,4 +1094,5 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
   public com.google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

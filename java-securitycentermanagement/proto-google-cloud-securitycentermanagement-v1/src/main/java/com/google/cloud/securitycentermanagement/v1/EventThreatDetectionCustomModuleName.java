@@ -483,4 +483,5 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
       return new EventThreatDetectionCustomModuleName(this);
     }
   }
+  // Simulated PR Change
 }

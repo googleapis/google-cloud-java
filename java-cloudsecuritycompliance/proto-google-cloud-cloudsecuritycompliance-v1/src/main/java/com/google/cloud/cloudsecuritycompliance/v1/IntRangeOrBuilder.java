@@ -53,4 +53,6 @@ public interface IntRangeOrBuilder
    * @return The max.
    */
   long getMax();
+  // Simulated PR Change
+  // Simulated PR Change
 }

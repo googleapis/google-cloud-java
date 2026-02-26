@@ -1807,4 +1807,5 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.video.stitcher.v1.Slate getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

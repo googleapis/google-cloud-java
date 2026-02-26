@@ -605,4 +605,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.managedkafka.v1.CapacityConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

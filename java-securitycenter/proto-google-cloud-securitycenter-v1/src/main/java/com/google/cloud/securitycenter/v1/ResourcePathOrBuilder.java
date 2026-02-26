@@ -88,4 +88,5 @@ public interface ResourcePathOrBuilder
    */
   com.google.cloud.securitycenter.v1.ResourcePath.ResourcePathNodeOrBuilder getNodesOrBuilder(
       int index);
+  // Simulated PR Change
 }

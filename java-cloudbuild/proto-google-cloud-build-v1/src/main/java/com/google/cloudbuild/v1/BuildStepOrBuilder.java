@@ -847,4 +847,5 @@ public interface BuildStepOrBuilder
    * @return The automapSubstitutions.
    */
   boolean getAutomapSubstitutions();
+  // Simulated PR Change
 }

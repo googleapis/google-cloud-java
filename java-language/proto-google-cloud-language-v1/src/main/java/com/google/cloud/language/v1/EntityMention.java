@@ -1329,4 +1329,5 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.language.v1.EntityMention getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

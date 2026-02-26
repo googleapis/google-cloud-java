@@ -909,4 +909,5 @@ public final class CropHint extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.vision.v1p2beta1.CropHint getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

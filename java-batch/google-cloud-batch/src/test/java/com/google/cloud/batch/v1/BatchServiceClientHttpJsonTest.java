@@ -812,4 +812,5 @@ public class BatchServiceClientHttpJsonTest {
       // Expected exception.
     }
   }
+  // Simulated PR Change
 }

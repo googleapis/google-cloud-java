@@ -155,4 +155,6 @@ public class AggregationQuerySampleTestIT {
     systemsOutRule.assertContains("Sum of sales: 239");
     systemsOutRule.assertContains("Avg of sales: 79.66666667");
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

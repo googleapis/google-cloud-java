@@ -32,4 +32,5 @@ public class ITNativeImageLoggingSample {
     assertThat(stdOut.getCapturedOutputAsUtf8String())
         .contains("Logged: This is a log produced by Native Image.");
   }
+  // Simulated PR Change
 }

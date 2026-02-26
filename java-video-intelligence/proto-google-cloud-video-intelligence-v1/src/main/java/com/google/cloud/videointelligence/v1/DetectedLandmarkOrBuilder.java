@@ -104,4 +104,5 @@ public interface DetectedLandmarkOrBuilder
    * @return The confidence.
    */
   float getConfidence();
+  // Simulated PR Change
 }

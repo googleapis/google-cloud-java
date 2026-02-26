@@ -923,4 +923,5 @@ public final class ImageAnnotatorGrpc {
     }
     return result;
   }
+  // Simulated PR Change
 }

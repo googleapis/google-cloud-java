@@ -172,4 +172,5 @@ public enum FallbackScope implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   // @@protoc_insertion_point(enum_scope:google.cloud.kms.inventory.v1.FallbackScope)
+  // Simulated PR Change
 }

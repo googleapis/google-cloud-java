@@ -185,4 +185,5 @@ public interface TypedValueOrBuilder
   com.google.api.DistributionOrBuilder getDistributionValueOrBuilder();
 
   com.google.cloud.bigquery.migration.v2.TypedValue.ValueCase getValueCase();
+  // Simulated PR Change
 }

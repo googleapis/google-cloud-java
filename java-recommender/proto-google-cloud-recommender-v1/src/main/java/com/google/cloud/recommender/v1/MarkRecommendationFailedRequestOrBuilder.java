@@ -159,4 +159,5 @@ public interface MarkRecommendationFailedRequestOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+  // Simulated PR Change
 }

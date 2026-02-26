@@ -1162,4 +1162,5 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
   public com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

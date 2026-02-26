@@ -65,4 +65,6 @@ public interface SearchResultOrBuilder
    * <code>.google.cloud.apihub.v1.ApiHubResource resource = 1;</code>
    */
   com.google.cloud.apihub.v1.ApiHubResourceOrBuilder getResourceOrBuilder();
+  // Simulated PR Change
+  // Simulated PR Change
 }

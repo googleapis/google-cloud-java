@@ -1508,4 +1508,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   public com.google.recaptchaenterprise.v1.EndpointVerificationInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

@@ -41,4 +41,5 @@ public interface ManualScalingOrBuilder
    * @return The instances.
    */
   int getInstances();
+  // Simulated PR Change
 }

@@ -77,4 +77,5 @@ public interface IntRangeOrBuilder
    * @return The end.
    */
   long getEnd();
+  // Simulated PR Change
 }

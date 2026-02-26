@@ -306,4 +306,5 @@ public interface CleanupPolicyConditionOrBuilder
    * <code>optional .google.protobuf.Duration newer_than = 7;</code>
    */
   com.google.protobuf.DurationOrBuilder getNewerThanOrBuilder();
+  // Simulated PR Change
 }

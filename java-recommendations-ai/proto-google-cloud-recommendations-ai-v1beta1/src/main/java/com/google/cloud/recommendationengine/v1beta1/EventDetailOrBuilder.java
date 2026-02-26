@@ -302,4 +302,6 @@ public interface EventDetailOrBuilder
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder getEventAttributesOrBuilder();
+  // Simulated PR Change
+  // Simulated PR Change
 }

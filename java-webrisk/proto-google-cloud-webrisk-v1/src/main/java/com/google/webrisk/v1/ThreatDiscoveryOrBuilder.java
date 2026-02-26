@@ -109,4 +109,5 @@ public interface ThreatDiscoveryOrBuilder
    * @return The bytes of the regionCodes at the given index.
    */
   com.google.protobuf.ByteString getRegionCodesBytes(int index);
+  // Simulated PR Change
 }

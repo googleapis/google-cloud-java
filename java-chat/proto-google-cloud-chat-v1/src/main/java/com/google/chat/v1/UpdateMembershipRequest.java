@@ -1192,4 +1192,5 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
   public com.google.chat.v1.UpdateMembershipRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

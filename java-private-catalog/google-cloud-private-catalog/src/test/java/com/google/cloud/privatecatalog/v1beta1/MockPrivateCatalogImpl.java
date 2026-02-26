@@ -120,4 +120,5 @@ public class MockPrivateCatalogImpl extends PrivateCatalogImplBase {
                   Exception.class.getName())));
     }
   }
+  // Simulated PR Change
 }

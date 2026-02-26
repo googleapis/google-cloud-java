@@ -1932,4 +1932,5 @@ public final class CommonMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.datastore.admin.v1.CommonMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

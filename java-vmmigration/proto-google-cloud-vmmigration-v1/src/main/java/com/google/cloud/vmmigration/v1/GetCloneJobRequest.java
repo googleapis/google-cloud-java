@@ -607,4 +607,5 @@ public final class GetCloneJobRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.vmmigration.v1.GetCloneJobRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

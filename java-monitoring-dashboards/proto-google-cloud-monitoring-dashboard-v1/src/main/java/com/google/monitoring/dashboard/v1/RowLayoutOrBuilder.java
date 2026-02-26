@@ -81,4 +81,5 @@ public interface RowLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
   com.google.monitoring.dashboard.v1.RowLayout.RowOrBuilder getRowsOrBuilder(int index);
+  // Simulated PR Change
 }

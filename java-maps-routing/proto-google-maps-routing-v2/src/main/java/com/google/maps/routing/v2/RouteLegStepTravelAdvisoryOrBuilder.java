@@ -82,4 +82,5 @@ public interface RouteLegStepTravelAdvisoryOrBuilder
    */
   com.google.maps.routing.v2.SpeedReadingIntervalOrBuilder getSpeedReadingIntervalsOrBuilder(
       int index);
+  // Simulated PR Change
 }

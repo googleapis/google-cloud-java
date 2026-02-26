@@ -1116,4 +1116,5 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
   public com.google.logging.v2.ListBucketsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

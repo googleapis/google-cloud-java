@@ -1397,4 +1397,5 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.apigateway.v1.ListGatewaysResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

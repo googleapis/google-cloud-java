@@ -917,4 +917,5 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
   public io.grafeas.v1beta1.BatchCreateOccurrencesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -592,4 +592,6 @@ public final class GetGeoTiffRequest extends com.google.protobuf.GeneratedMessag
   public com.google.maps.solar.v1.GetGeoTiffRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

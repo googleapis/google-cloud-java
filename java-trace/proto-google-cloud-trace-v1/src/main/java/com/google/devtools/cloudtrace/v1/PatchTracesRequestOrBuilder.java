@@ -94,4 +94,5 @@ public interface PatchTracesRequestOrBuilder
    * </code>
    */
   com.google.devtools.cloudtrace.v1.TracesOrBuilder getTracesOrBuilder();
+  // Simulated PR Change
 }

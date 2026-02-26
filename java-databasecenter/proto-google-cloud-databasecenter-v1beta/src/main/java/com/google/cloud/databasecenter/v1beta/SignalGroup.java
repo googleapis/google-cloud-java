@@ -1260,4 +1260,5 @@ public final class SignalGroup extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.databasecenter.v1beta.SignalGroup getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -1016,4 +1016,5 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

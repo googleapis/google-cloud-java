@@ -62,4 +62,5 @@ public interface ReplyOrBuilder
    * <code>.google.cloud.discoveryengine.v1.SearchResponse.Summary summary = 3;</code>
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.SummaryOrBuilder getSummaryOrBuilder();
+  // Simulated PR Change
 }

@@ -24,4 +24,5 @@ package com.google.phishingprotection.v1beta1;
 public interface ReportPhishingResponseOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.phishingprotection.v1beta1.ReportPhishingResponse)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {  // Simulated PR Change
+}

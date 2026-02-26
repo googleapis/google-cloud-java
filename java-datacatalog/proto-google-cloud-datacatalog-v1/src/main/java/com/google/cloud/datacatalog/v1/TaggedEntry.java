@@ -1950,4 +1950,5 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datacatalog.v1.TaggedEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -57,4 +57,6 @@ public interface GetAttestorRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+  // Simulated PR Change
+  // Simulated PR Change
 }

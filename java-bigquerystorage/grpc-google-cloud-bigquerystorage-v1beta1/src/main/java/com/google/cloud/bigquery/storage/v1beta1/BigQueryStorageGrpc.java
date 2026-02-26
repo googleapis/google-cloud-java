@@ -1206,4 +1206,5 @@ public final class BigQueryStorageGrpc {
     }
     return result;
   }
+  // Simulated PR Change
 }

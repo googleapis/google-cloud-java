@@ -2119,4 +2119,5 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.SubnetworkLogConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -1589,4 +1589,5 @@ public final class UpdateMembershipRequest extends com.google.protobuf.Generated
   public com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

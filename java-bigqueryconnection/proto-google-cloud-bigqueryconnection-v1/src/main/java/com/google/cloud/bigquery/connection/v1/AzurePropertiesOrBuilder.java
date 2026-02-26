@@ -215,4 +215,5 @@ public interface AzurePropertiesOrBuilder
    * @return The bytes for identity.
    */
   com.google.protobuf.ByteString getIdentityBytes();
+  // Simulated PR Change
 }

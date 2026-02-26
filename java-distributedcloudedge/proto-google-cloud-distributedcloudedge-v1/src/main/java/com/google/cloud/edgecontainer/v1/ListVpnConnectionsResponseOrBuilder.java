@@ -161,4 +161,5 @@ public interface ListVpnConnectionsResponseOrBuilder
    * @return The bytes of the unreachable at the given index.
    */
   com.google.protobuf.ByteString getUnreachableBytes(int index);
+  // Simulated PR Change
 }

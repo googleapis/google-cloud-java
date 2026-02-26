@@ -334,4 +334,5 @@ class BigQueryReadClientTest {
     assertEquals(retryCount, 1);
     assertEquals(lastRetryStatusCode, Code.RESOURCE_EXHAUSTED);
   }
+  // Simulated PR Change
 }

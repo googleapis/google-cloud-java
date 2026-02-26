@@ -2143,4 +2143,5 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public com.google.cloud.speech.v2.StreamingRecognizeResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

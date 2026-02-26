@@ -105,4 +105,5 @@ public interface VideoSegmentOrBuilder
    * <code>.google.protobuf.Duration end_time_offset = 2;</code>
    */
   com.google.protobuf.DurationOrBuilder getEndTimeOffsetOrBuilder();
+  // Simulated PR Change
 }

@@ -189,4 +189,7 @@ public class LoggingIT {
     }
     assertThat(bout.toString().contains(STRING_PAYLOAD)).isTrue();
   }
+  // Simulated PR Change
+  // Simulated PR Change
+  // Simulated PR Change
 }

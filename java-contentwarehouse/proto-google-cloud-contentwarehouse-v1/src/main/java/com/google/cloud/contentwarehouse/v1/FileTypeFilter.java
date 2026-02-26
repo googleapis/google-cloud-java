@@ -784,4 +784,6 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.contentwarehouse.v1.FileTypeFilter getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

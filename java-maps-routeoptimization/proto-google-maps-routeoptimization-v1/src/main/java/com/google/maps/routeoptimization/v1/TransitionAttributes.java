@@ -2118,4 +2118,5 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   public com.google.maps.routeoptimization.v1.TransitionAttributes getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

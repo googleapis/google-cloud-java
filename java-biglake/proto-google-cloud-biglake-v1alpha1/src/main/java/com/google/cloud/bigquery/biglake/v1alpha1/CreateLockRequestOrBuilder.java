@@ -105,4 +105,6 @@ public interface CreateLockRequestOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.biglake.v1alpha1.LockOrBuilder getLockOrBuilder();
+  // Simulated PR Change
+  // Simulated PR Change
 }

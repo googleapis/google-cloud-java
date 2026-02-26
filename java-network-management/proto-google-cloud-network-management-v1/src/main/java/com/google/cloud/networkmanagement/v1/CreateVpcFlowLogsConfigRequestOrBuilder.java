@@ -140,4 +140,6 @@ public interface CreateVpcFlowLogsConfigRequestOrBuilder
    * </code>
    */
   com.google.cloud.networkmanagement.v1.VpcFlowLogsConfigOrBuilder getVpcFlowLogsConfigOrBuilder();
+  // Simulated PR Change
+  // Simulated PR Change
 }

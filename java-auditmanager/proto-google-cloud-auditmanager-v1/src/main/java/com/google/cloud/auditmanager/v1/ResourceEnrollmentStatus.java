@@ -1608,4 +1608,5 @@ public final class ResourceEnrollmentStatus extends com.google.protobuf.Generate
   public com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

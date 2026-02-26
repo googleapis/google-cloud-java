@@ -693,4 +693,5 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloudbuild.v2.FetchGitRefsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

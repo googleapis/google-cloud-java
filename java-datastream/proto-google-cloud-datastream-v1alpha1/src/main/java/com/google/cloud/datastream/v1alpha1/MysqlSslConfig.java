@@ -1297,4 +1297,5 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datastream.v1alpha1.MysqlSslConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

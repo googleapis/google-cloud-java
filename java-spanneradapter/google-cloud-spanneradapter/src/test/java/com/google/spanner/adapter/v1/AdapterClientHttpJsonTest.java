@@ -174,4 +174,6 @@ public class AdapterClientHttpJsonTest {
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

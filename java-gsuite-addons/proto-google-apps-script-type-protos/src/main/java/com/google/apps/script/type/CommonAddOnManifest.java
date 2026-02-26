@@ -2781,4 +2781,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public com.google.apps.script.type.CommonAddOnManifest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

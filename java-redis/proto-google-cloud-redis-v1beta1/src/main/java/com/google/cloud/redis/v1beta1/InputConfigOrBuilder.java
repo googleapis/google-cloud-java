@@ -64,4 +64,5 @@ public interface InputConfigOrBuilder
   com.google.cloud.redis.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
   com.google.cloud.redis.v1beta1.InputConfig.SourceCase getSourceCase();
+  // Simulated PR Change
 }

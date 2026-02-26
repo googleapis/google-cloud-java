@@ -1268,4 +1268,5 @@ public final class BigQueryWriteGrpc {
     }
     return result;
   }
+  // Simulated PR Change
 }

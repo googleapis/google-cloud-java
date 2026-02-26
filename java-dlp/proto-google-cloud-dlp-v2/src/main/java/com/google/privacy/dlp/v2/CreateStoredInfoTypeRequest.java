@@ -1456,4 +1456,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
   public com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

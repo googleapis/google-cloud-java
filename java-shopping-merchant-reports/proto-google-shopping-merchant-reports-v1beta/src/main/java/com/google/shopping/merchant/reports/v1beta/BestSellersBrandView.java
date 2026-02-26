@@ -2669,4 +2669,5 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -98,4 +98,5 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
                   Exception.class.getName())));
     }
   }
+  // Simulated PR Change
 }

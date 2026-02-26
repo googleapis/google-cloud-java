@@ -221,4 +221,6 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    */
   com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationMetadataOrBuilder
       getMetadataOrBuilder();
+  // Simulated PR Change
+  // Simulated PR Change
 }

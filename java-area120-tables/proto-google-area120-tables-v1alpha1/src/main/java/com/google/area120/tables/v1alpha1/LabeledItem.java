@@ -781,4 +781,6 @@ public final class LabeledItem extends com.google.protobuf.GeneratedMessage
   public com.google.area120.tables.v1alpha1.LabeledItem getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

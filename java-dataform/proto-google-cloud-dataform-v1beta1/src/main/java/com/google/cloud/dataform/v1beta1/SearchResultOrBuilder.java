@@ -101,4 +101,5 @@ public interface SearchResultOrBuilder
   com.google.cloud.dataform.v1beta1.DirectorySearchResultOrBuilder getDirectoryOrBuilder();
 
   com.google.cloud.dataform.v1beta1.SearchResult.EntryCase getEntryCase();
+  // Simulated PR Change
 }

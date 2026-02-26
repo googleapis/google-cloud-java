@@ -1869,4 +1869,5 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   public com.google.cloud.translate.v3beta1.DetectLanguageRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

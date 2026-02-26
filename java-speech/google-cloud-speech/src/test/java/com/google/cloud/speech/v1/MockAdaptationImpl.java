@@ -269,4 +269,5 @@ public class MockAdaptationImpl extends AdaptationImplBase {
                   Exception.class.getName())));
     }
   }
+  // Simulated PR Change
 }

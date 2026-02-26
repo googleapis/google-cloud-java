@@ -259,4 +259,5 @@ public interface PolicyOrBuilder
   com.google.cloud.orgpolicy.v1.Policy.RestoreDefaultOrBuilder getRestoreDefaultOrBuilder();
 
   com.google.cloud.orgpolicy.v1.Policy.PolicyTypeCase getPolicyTypeCase();
+  // Simulated PR Change
 }

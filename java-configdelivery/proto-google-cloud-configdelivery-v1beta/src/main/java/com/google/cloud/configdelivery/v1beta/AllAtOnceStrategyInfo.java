@@ -1005,4 +1005,5 @@ public final class AllAtOnceStrategyInfo extends com.google.protobuf.GeneratedMe
   public com.google.cloud.configdelivery.v1beta.AllAtOnceStrategyInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

@@ -783,4 +783,5 @@ public final class StatusDetails extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.gkehub.servicemesh.v1beta.StatusDetails getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

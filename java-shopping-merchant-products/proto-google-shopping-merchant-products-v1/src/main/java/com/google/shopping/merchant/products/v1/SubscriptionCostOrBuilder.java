@@ -107,4 +107,5 @@ public interface SubscriptionCostOrBuilder
    * <code>.google.shopping.type.Price amount = 3;</code>
    */
   com.google.shopping.type.PriceOrBuilder getAmountOrBuilder();
+  // Simulated PR Change
 }

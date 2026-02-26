@@ -1606,4 +1606,5 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.video.transcoder.v1.ElementaryStream getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

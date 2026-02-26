@@ -138,4 +138,5 @@ public interface BatchCalculateEffectiveSettingsRequestOrBuilder
    */
   com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequestOrBuilder
       getRequestsOrBuilder(int index);
+  // Simulated PR Change
 }

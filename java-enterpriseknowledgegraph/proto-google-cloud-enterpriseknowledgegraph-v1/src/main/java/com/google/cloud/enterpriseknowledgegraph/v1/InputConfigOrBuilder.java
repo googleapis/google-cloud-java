@@ -155,4 +155,6 @@ public interface InputConfigOrBuilder
    * @return The bytes for previousResultBigqueryTable.
    */
   com.google.protobuf.ByteString getPreviousResultBigqueryTableBytes();
+  // Simulated PR Change
+  // Simulated PR Change
 }

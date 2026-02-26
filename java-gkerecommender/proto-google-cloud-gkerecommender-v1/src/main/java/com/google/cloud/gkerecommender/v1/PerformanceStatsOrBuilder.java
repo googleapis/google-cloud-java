@@ -149,4 +149,5 @@ public interface PerformanceStatsOrBuilder
    * </code>
    */
   com.google.cloud.gkerecommender.v1.CostOrBuilder getCostOrBuilder(int index);
+  // Simulated PR Change
 }

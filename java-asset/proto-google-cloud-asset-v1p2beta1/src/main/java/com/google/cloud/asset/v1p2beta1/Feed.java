@@ -1885,4 +1885,5 @@ public final class Feed extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.asset.v1p2beta1.Feed getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

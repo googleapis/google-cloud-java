@@ -198,4 +198,6 @@ public class MobileDeviceSubmodelName implements ResourceName {
       return new MobileDeviceSubmodelName(this);
     }
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

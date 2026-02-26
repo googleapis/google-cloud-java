@@ -923,4 +923,5 @@ public final class ListPermittedScopesRequest extends com.google.protobuf.Genera
   public com.google.cloud.gkehub.v1.ListPermittedScopesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

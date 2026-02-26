@@ -113,4 +113,6 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
       getBigqueryDestinationOrBuilder();
 
   com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.DestinationCase getDestinationCase();
+  // Simulated PR Change
+  // Simulated PR Change
 }

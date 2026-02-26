@@ -94,4 +94,5 @@ public interface SearchResultOrBuilder
    * @return The distance.
    */
   double getDistance();
+  // Simulated PR Change
 }

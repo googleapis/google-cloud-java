@@ -1460,4 +1460,5 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
   public com.google.cloud.metastore.v1beta.CreateFederationRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

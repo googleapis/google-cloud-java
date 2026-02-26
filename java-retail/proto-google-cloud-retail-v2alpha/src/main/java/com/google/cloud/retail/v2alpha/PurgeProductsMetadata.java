@@ -1177,4 +1177,5 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
   public com.google.cloud.retail.v2alpha.PurgeProductsMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

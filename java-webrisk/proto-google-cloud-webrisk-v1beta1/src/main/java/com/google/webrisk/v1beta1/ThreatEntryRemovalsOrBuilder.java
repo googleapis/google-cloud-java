@@ -108,4 +108,5 @@ public interface ThreatEntryRemovalsOrBuilder
    * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_indices = 2;</code>
    */
   com.google.webrisk.v1beta1.RiceDeltaEncodingOrBuilder getRiceIndicesOrBuilder();
+  // Simulated PR Change
 }

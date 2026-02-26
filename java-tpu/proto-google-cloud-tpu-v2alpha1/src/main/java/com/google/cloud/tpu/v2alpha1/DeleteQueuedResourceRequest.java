@@ -912,4 +912,5 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
   public com.google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

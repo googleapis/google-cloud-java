@@ -51,4 +51,5 @@ public interface GenerateIdTokenResponseOrBuilder
    * @return The bytes for token.
    */
   com.google.protobuf.ByteString getTokenBytes();
+  // Simulated PR Change
 }

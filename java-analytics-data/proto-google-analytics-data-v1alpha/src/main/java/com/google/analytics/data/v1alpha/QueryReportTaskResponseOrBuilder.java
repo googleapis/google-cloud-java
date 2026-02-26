@@ -420,4 +420,5 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>.google.analytics.data.v1alpha.ResponseMetaData metadata = 8;</code>
    */
   com.google.analytics.data.v1alpha.ResponseMetaDataOrBuilder getMetadataOrBuilder();
+  // Simulated PR Change
 }

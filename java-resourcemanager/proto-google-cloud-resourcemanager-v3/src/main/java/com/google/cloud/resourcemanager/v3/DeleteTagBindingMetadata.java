@@ -397,4 +397,6 @@ public final class DeleteTagBindingMetadata extends com.google.protobuf.Generate
   public com.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

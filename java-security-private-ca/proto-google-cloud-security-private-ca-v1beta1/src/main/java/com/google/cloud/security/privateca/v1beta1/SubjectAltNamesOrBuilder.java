@@ -298,4 +298,5 @@ public interface SubjectAltNamesOrBuilder
    */
   com.google.cloud.security.privateca.v1beta1.X509ExtensionOrBuilder getCustomSansOrBuilder(
       int index);
+  // Simulated PR Change
 }

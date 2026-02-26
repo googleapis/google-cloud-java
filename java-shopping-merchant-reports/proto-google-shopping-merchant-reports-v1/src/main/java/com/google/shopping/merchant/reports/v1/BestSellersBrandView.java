@@ -2662,4 +2662,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public com.google.shopping.merchant.reports.v1.BestSellersBrandView getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

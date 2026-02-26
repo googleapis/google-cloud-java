@@ -307,4 +307,5 @@ public interface SubjectAltNamesOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1.X509Extension custom_sans = 5;</code>
    */
   com.google.cloud.security.privateca.v1.X509ExtensionOrBuilder getCustomSansOrBuilder(int index);
+  // Simulated PR Change
 }

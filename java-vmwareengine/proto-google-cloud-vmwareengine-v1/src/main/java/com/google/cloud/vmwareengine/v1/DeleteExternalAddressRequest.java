@@ -922,4 +922,6 @@ public final class DeleteExternalAddressRequest extends com.google.protobuf.Gene
   public com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

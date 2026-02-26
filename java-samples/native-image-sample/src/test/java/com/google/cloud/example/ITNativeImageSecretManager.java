@@ -67,4 +67,6 @@ public class ITNativeImageSecretManager {
       assertThat(bout.toString()).contains("Reading secret value: Hello World");
     }
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

@@ -524,4 +524,5 @@ public final class GcsHierarchicalNamespaceConfig extends com.google.protobuf.Ge
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

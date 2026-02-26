@@ -108,4 +108,5 @@ public interface AutoMigrationConfigOrBuilder
    * @return The autoMigrationEnabled.
    */
   boolean getAutoMigrationEnabled();
+  // Simulated PR Change
 }

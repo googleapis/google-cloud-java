@@ -83,4 +83,6 @@ public interface GenerationOptionsOrBuilder
    * @return The generateDisambiguationQuestion.
    */
   boolean getGenerateDisambiguationQuestion();
+  // Simulated PR Change
+  // Simulated PR Change
 }

@@ -51,4 +51,5 @@ public interface SingleEntityRenameOrBuilder
    * @return The bytes for newName.
    */
   com.google.protobuf.ByteString getNewNameBytes();
+  // Simulated PR Change
 }

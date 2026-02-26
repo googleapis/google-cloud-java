@@ -615,4 +615,6 @@ public final class GetLfpStoreRequest extends com.google.protobuf.GeneratedMessa
   public com.google.shopping.merchant.lfp.v1.GetLfpStoreRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

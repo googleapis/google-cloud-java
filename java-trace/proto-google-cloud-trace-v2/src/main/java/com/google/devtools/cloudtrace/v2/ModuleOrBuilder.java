@@ -105,4 +105,5 @@ public interface ModuleOrBuilder
    * <code>.google.devtools.cloudtrace.v2.TruncatableString build_id = 2;</code>
    */
   com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getBuildIdOrBuilder();
+  // Simulated PR Change
 }

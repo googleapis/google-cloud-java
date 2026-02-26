@@ -53,4 +53,5 @@ public interface GenerateAttachedClusterInstallManifestResponseOrBuilder
    * @return The bytes for manifest.
    */
   com.google.protobuf.ByteString getManifestBytes();
+  // Simulated PR Change
 }

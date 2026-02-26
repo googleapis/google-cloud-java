@@ -9376,4 +9376,5 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.osconfig.v1.OSPolicyAssignment getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

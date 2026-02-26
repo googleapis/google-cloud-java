@@ -122,4 +122,5 @@ public class MockIssueResolutionServiceImpl extends IssueResolutionServiceImplBa
                   Exception.class.getName())));
     }
   }
+  // Simulated PR Change
 }

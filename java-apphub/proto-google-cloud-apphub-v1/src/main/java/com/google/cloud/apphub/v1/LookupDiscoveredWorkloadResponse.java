@@ -702,4 +702,6 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
   public com.google.cloud.apphub.v1.LookupDiscoveredWorkloadResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }

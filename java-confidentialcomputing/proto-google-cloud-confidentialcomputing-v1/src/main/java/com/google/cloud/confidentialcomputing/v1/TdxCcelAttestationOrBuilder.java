@@ -80,4 +80,5 @@ public interface TdxCcelAttestationOrBuilder
    * @return The tdQuote.
    */
   com.google.protobuf.ByteString getTdQuote();
+  // Simulated PR Change
 }

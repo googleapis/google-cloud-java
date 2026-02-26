@@ -1300,4 +1300,5 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.ids.v1.ListEndpointsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
 }

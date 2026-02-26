@@ -631,4 +631,6 @@ public final class DeleteIssueCommentRequest extends com.google.protobuf.Generat
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+  // Simulated PR Change
+  // Simulated PR Change
 }
