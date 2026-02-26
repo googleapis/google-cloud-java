@@ -66,16 +66,20 @@ function retry_with_backoff {
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
   submodules_array=()
-  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules -pl "$1")
-  if mvn_submodules=$(grep '<.*>.*</.*>' <<< "$mvn_submodules"); then
-    mvn_submodules=$(sed -e 's/<.*>\(.*\)<\/.*>/\1/g' <<< "$mvn_submodules")
-    for submodule in $mvn_submodules; do
-      # Each entry = <folder>/<submodule>
-      submodules_array+=("$1/${submodule}");
-    done
+  if [ -f "$1/pom.xml" ]; then
+    local modules
+    modules=$(grep '<module>' "$1/pom.xml" | sed 's/.*<module>\(.*\)<\/module>.*/\1/')
+    if [ -n "$modules" ]; then
+      for submodule in $modules; do
+        # Each entry = <folder>/<submodule>
+        submodules_array+=("$1/${submodule}")
+      done
+    else
+      # If this module contains no submodules, select the module itself.
+      submodules_array+=("$1")
+    fi
   else
-    # If this module contains no submodules, select the module itself.
-    submodules_array+=("$1");
+    submodules_array+=("$1")
   fi
 
   # Convert from array to comma-delimited string
@@ -214,6 +218,21 @@ function generate_modified_modules_list() {
       echo "Found no changes in the java modules"
     fi
   fi
+}
+
+# Filters the modified_module_list to only include modules that contain
+# integration test files (matching IT*.java or *IT.java in src/test/java).
+# Sets filtered_it_module_list as a bash array.
+function filter_modules_with_integration_tests() {
+  filtered_it_module_list=()
+  for module in "${modified_module_list[@]}"; do
+    if find "$module" -path '*/src/test/java/*' \( -name 'IT*.java' -o -name '*IT.java' \) -print -quit 2>/dev/null | grep -q .; then
+      filtered_it_module_list+=("$module")
+    fi
+  done
+  printf "Modules with integration tests:\n"
+  printf "  %s\n" "${filtered_it_module_list[@]}"
+  echo "Found ${#filtered_it_module_list[@]} modules with integration tests (out of ${#modified_module_list[@]} modified modules)"
 }
 
 function run_integration_tests() {

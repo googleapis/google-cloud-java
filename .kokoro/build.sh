@@ -71,13 +71,18 @@ case ${JOB_TYPE} in
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Skipping integration tests as this is Release Please SNAPSHOT pull request."
     elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      module_list=$(
-        IFS=,
-        echo "${modified_module_list[*]}"
-      )
-      setup_cloud "$module_list"
-      install_modules "$module_list"
-      run_integration_tests "$module_list"
+      filter_modules_with_integration_tests
+      if [[ ${#filtered_it_module_list[@]} -eq 0 ]]; then
+        echo "No modified modules contain integration tests. Skipping."
+      else
+        module_list=$(
+          IFS=,
+          echo "${filtered_it_module_list[*]}"
+        )
+        setup_cloud "$module_list"
+        install_modules "$module_list"
+        run_integration_tests "$module_list"
+      fi
     else
       echo "No Integration Tests to run"
     fi
