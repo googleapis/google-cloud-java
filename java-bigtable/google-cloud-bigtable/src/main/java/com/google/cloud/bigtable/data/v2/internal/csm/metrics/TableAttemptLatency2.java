@@ -31,6 +31,7 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
+import javax.annotation.Nullable;
 
 public class TableAttemptLatency2 extends MetricWrapper<TableSchema> {
   private static final String NAME = "bigtable.googleapis.com/internal/client/attempt_latencies2";
@@ -68,8 +69,8 @@ public class TableAttemptLatency2 extends MetricWrapper<TableSchema> {
     public void record(
         ClientInfo clientInfo,
         String tableId,
-        PeerInfo peerInfo,
-        ResponseParams clusterInfo,
+        @Nullable PeerInfo peerInfo,
+        @Nullable ResponseParams clusterInfo,
         MethodInfo methodInfo,
         Status.Code code,
         Duration latency) {
@@ -77,14 +78,12 @@ public class TableAttemptLatency2 extends MetricWrapper<TableSchema> {
       Attributes attributes =
           getSchema()
               .createResourceAttrs(clientInfo, tableId, clusterInfo)
-              .put(
-                  MetricLabels.TRANSPORT_TYPE,
-                  Util.transportTypeToString(peerInfo.getTransportType()))
+              .put(MetricLabels.TRANSPORT_TYPE, Util.formatTransportType(peerInfo))
               .put(MetricLabels.STATUS_KEY, code.name())
               .put(MetricLabels.TRANSPORT_REGION, "")
               // To maintain backwards compat CLIENT_UID is set using sideband data in the exporter
-              .put(MetricLabels.TRANSPORT_ZONE, peerInfo.getApplicationFrontendZone())
-              .put(MetricLabels.TRANSPORT_SUBZONE, peerInfo.getApplicationFrontendSubzone())
+              .put(MetricLabels.TRANSPORT_ZONE, Util.formatTransportZone(peerInfo))
+              .put(MetricLabels.TRANSPORT_SUBZONE, Util.formatTransportSubzone(peerInfo))
               .put(MetricLabels.CLIENT_NAME, clientInfo.getClientName())
               .put(MetricLabels.APP_PROFILE_KEY, clientInfo.getAppProfileId())
               .put(MetricLabels.METHOD_KEY, methodInfo.getName())

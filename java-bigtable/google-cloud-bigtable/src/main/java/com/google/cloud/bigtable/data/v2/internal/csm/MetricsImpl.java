@@ -21,6 +21,7 @@ import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.auth.Credentials;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableCloudMonitoringExporter;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
@@ -57,6 +58,8 @@ import java.util.concurrent.ScheduledFuture;
 import javax.annotation.Nullable;
 
 public class MetricsImpl implements Metrics, Closeable {
+  private final MetricRegistry metricRegistry;
+
   private final ApiTracerFactory userTracerFactory;
   private final @Nullable OpenTelemetrySdk internalOtel;
   private final @Nullable OpenTelemetry userOtel;
@@ -69,12 +72,14 @@ public class MetricsImpl implements Metrics, Closeable {
   private final List<ScheduledFuture<?>> tasks = new ArrayList<>();
 
   public MetricsImpl(
+      ClientInfo clientInfo,
       ApiTracerFactory userTracerFactory,
       @Nullable OpenTelemetrySdk internalOtel,
       @Nullable OpenTelemetry userOtel,
       Tagger ocTagger,
       StatsRecorder ocRecorder,
       ScheduledExecutorService executor) {
+    metricRegistry = new MetricRegistry();
     this.userTracerFactory = Preconditions.checkNotNull(userTracerFactory);
 
     this.internalOtel = internalOtel;
@@ -100,7 +105,9 @@ public class MetricsImpl implements Metrics, Closeable {
     }
 
     if (internalOtel != null) {
-      this.channelPoolMetricsTracer = new ChannelPoolMetricsTracer(internalOtel);
+      this.channelPoolMetricsTracer =
+          new ChannelPoolMetricsTracer(
+              metricRegistry.newRecorderRegistry(internalOtel.getMeterProvider()), clientInfo);
     } else {
       this.channelPoolMetricsTracer = null;
     }
@@ -141,10 +148,14 @@ public class MetricsImpl implements Metrics, Closeable {
         .add(userTracerFactory);
 
     if (internalOtel != null) {
-      tracerFactories.add(createOtelMetricsFactory(internalOtel, clientInfo));
+      tracerFactories.add(
+          createOtelMetricsFactory(
+              metricRegistry.newRecorderRegistry(internalOtel.getMeterProvider()), clientInfo));
     }
     if (userOtel != null) {
-      tracerFactories.add(createOtelMetricsFactory(userOtel, clientInfo));
+      tracerFactories.add(
+          createOtelMetricsFactory(
+              metricRegistry.newRecorderRegistry(userOtel.getMeterProvider()), clientInfo));
     }
 
     return new CompositeTracerFactory(tracerFactories.build());
@@ -229,8 +240,8 @@ public class MetricsImpl implements Metrics, Closeable {
   }
 
   private static BuiltinMetricsTracerFactory createOtelMetricsFactory(
-      OpenTelemetry otel, ClientInfo clientInfo) {
+      RecorderRegistry recorder, ClientInfo clientInfo) {
 
-    return BuiltinMetricsTracerFactory.create(otel, clientInfo);
+    return BuiltinMetricsTracerFactory.create(recorder, clientInfo);
   }
 }

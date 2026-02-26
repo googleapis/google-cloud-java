@@ -16,31 +16,56 @@
 
 package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 
+import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
-import com.google.common.base.Preconditions;
+import com.google.bigtable.v2.ResponseParams;
 import java.util.Locale;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 public class Util {
   static final String TRANSPORT_TYPE_PREFIX = "TRANSPORT_TYPE_";
 
+  public static String formatTransportZone(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendZone).orElse("");
+  }
+
+  public static String formatTransportSubzone(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendSubzone).orElse("");
+  }
+
+  public static String formatTransportType(@Nullable PeerInfo peerInfo) {
+    return transportTypeToString(
+        Optional.ofNullable(peerInfo)
+            .map(PeerInfo::getTransportType)
+            .orElse(TransportType.TRANSPORT_TYPE_UNKNOWN));
+  }
+
   public static String transportTypeToString(TransportType transportType) {
-
-    Preconditions.checkArgument(
-        transportType.name().startsWith(TRANSPORT_TYPE_PREFIX)
-            || transportType == TransportType.UNRECOGNIZED,
-        "TransportType values must start with %s",
-        TRANSPORT_TYPE_PREFIX);
-
     if (transportType == TransportType.TRANSPORT_TYPE_UNKNOWN) {
-      return "session_none";
+      return "none";
     }
     if (transportType == TransportType.UNRECOGNIZED) {
-      return "session_unrecognized";
+      return "unrecognized";
     }
 
     return transportType
         .name()
         .substring(TRANSPORT_TYPE_PREFIX.length())
         .toLowerCase(Locale.ENGLISH);
+  }
+
+  public static String formatClusterIdMetricLabel(@Nullable ResponseParams clusterInfo) {
+    return Optional.ofNullable(clusterInfo)
+        .map(ResponseParams::getClusterId)
+        .filter(s -> !s.isEmpty())
+        .orElse("<unspecified>");
+  }
+
+  public static String formatZoneIdMetricLabel(@Nullable ResponseParams clusterInfo) {
+    return Optional.ofNullable(clusterInfo)
+        .map(ResponseParams::getZoneId)
+        .filter(s -> !s.isEmpty())
+        .orElse("global");
   }
 }

@@ -29,6 +29,7 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
+import javax.annotation.Nullable;
 
 public class TableClientBlockingLatency extends MetricWrapper<TableSchema> {
   private static final String NAME = "bigtable.googleapis.com/internal/client/throttling_latencies";
@@ -69,7 +70,7 @@ public class TableClientBlockingLatency extends MetricWrapper<TableSchema> {
         ClientInfo clientInfo,
         String tableId,
         MethodInfo methodInfo,
-        ResponseParams clusterInfo,
+        @Nullable ResponseParams clusterInfo,
         Duration duration) {
       Attributes attributes =
           getSchema()

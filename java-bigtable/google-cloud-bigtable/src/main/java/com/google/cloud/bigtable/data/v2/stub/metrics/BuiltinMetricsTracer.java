@@ -15,38 +15,22 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLIED_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STATUS_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STREAMING_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_REGION;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_SUBZONE;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_TYPE;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_ZONE;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.Util.extractStatus;
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
-import com.google.api.gax.tracing.SpanName;
-import com.google.bigtable.v2.PeerInfo;
-import com.google.cloud.bigtable.Version;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
+import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor.SidebandData;
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.Comparators;
 import com.google.common.math.IntMath;
 import io.grpc.Deadline;
 import io.grpc.Status;
-import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.DoubleGauge;
-import io.opentelemetry.api.metrics.DoubleHistogram;
-import io.opentelemetry.api.metrics.LongCounter;
 import java.time.Duration;
-import java.util.Optional;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -59,9 +43,11 @@ import javax.annotation.Nullable;
  * bigtable.googleapis.com/client namespace
  */
 class BuiltinMetricsTracer extends BigtableTracer {
-  private static final String NAME = "java-bigtable/" + Version.VERSION;
-  private final OperationType operationType;
-  private final SpanName spanName;
+  private static final MethodInfo READ_ROWS =
+      MethodInfo.builder().setName("Bigtable.ReadRows").setStreaming(true).build();
+  private final MetricRegistry.RecorderRegistry recorder;
+  private final ClientInfo clientInfo;
+  private final MethodInfo methodInfo;
 
   // Operation level metrics
   private final AtomicBoolean operationFinishedEarly = new AtomicBoolean();
@@ -91,67 +77,19 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   private final AtomicLong totalClientBlockingTime = new AtomicLong(0);
 
-  private final Attributes baseAttributes;
-
   private final AtomicLong grpcMessageSentDelay = new AtomicLong(0);
 
   private Deadline operationDeadline = null;
-  private volatile long remainingDeadlineAtAttemptStart = 0;
+  private volatile Duration remainingDeadlineAtAttemptStart = Duration.ZERO;
 
-  // TODO: ensure that this is never null and remove all of the checks
-  // Sideband data wrapper itself should never be null unless a callable chain forgets to
-  // add BigtableTracer{Streaming,Unary}Callable. Which would be considered a bug.
-  @Nullable private volatile MetadataExtractorInterceptor.SidebandData sidebandData = null;
-
-  // OpenCensus (and server) histogram buckets use [start, end), however OpenTelemetry uses (start,
-  // end]. To work around this, we measure all the latencies in nanoseconds and convert them
-  // to milliseconds and use DoubleHistogram. This should minimize the chance of a data
-  // point fall on the bucket boundary that causes off by one errors.
-  private final DoubleHistogram operationLatenciesHistogram;
-  private final DoubleHistogram attemptLatenciesHistogram;
-  private final DoubleHistogram attemptLatencies2Histogram;
-  private final DoubleHistogram serverLatenciesHistogram;
-  private final DoubleHistogram firstResponseLatenciesHistogram;
-  private final DoubleHistogram clientBlockingLatenciesHistogram;
-  private final DoubleHistogram applicationBlockingLatenciesHistogram;
-  private final DoubleHistogram remainingDeadlineHistogram;
-  private final LongCounter connectivityErrorCounter;
-  private final LongCounter retryCounter;
-  private final DoubleGauge batchWriteFlowControlTargetQps;
-  private final DoubleHistogram batchWriteFlowControlFactorHistogram;
+  private volatile MetadataExtractorInterceptor.SidebandData sidebandData = new SidebandData();
 
   BuiltinMetricsTracer(
-      OperationType operationType,
-      SpanName spanName,
-      Attributes attributes,
-      DoubleHistogram operationLatenciesHistogram,
-      DoubleHistogram attemptLatenciesHistogram,
-      DoubleHistogram attemptLatencies2Histogram,
-      DoubleHistogram serverLatenciesHistogram,
-      DoubleHistogram firstResponseLatenciesHistogram,
-      DoubleHistogram clientBlockingLatenciesHistogram,
-      DoubleHistogram applicationBlockingLatenciesHistogram,
-      DoubleHistogram deadlineHistogram,
-      LongCounter connectivityErrorCounter,
-      LongCounter retryCounter,
-      DoubleGauge batchWriteFlowControlTargetQps,
-      DoubleHistogram batchWriteFlowControlFactorHistogram) {
-    this.operationType = operationType;
-    this.spanName = spanName;
-    this.baseAttributes = attributes;
+      MetricRegistry.RecorderRegistry recorder, ClientInfo clientInfo, MethodInfo methodInfo) {
 
-    this.operationLatenciesHistogram = operationLatenciesHistogram;
-    this.attemptLatenciesHistogram = attemptLatenciesHistogram;
-    this.attemptLatencies2Histogram = attemptLatencies2Histogram;
-    this.serverLatenciesHistogram = serverLatenciesHistogram;
-    this.firstResponseLatenciesHistogram = firstResponseLatenciesHistogram;
-    this.clientBlockingLatenciesHistogram = clientBlockingLatenciesHistogram;
-    this.applicationBlockingLatenciesHistogram = applicationBlockingLatenciesHistogram;
-    this.remainingDeadlineHistogram = deadlineHistogram;
-    this.connectivityErrorCounter = connectivityErrorCounter;
-    this.retryCounter = retryCounter;
-    this.batchWriteFlowControlTargetQps = batchWriteFlowControlTargetQps;
-    this.batchWriteFlowControlFactorHistogram = batchWriteFlowControlFactorHistogram;
+    this.recorder = recorder;
+    this.clientInfo = clientInfo;
+    this.methodInfo = methodInfo;
   }
 
   @Override
@@ -195,7 +133,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
     attemptCount++;
     attemptTimer = Stopwatch.createStarted();
     if (operationDeadline != null) {
-      remainingDeadlineAtAttemptStart = operationDeadline.timeRemaining(TimeUnit.MILLISECONDS);
+      remainingDeadlineAtAttemptStart =
+          Duration.ofMillis(operationDeadline.timeRemaining(TimeUnit.MILLISECONDS));
     }
     if (request != null) {
       this.tableId = Util.extractTableId(request);
@@ -328,7 +267,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     if (operationDeadline == null && !totalTimeoutDuration.isZero()) {
       this.operationDeadline =
           Deadline.after(totalTimeoutDuration.toMillis(), TimeUnit.MILLISECONDS);
-      this.remainingDeadlineAtAttemptStart = totalTimeoutDuration.toMillis();
+      this.remainingDeadlineAtAttemptStart = totalTimeoutDuration;
     }
   }
 
@@ -347,38 +286,45 @@ class BuiltinMetricsTracer extends BigtableTracer {
     }
     long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
-    boolean isStreaming = operationType == OperationType.ServerStreaming;
     Status.Code code = extractStatus(throwable);
-
-    // Publish metric data with all the attributes. The attributes get filtered in
-    // BuiltinMetricsConstants when we construct the views.
-    Attributes attributes =
-        baseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, tableId)
-            .put(CLUSTER_ID_KEY, Util.formatClusterIdMetricLabel(sidebandData))
-            .put(ZONE_ID_KEY, Util.formatZoneIdMetricLabel(sidebandData))
-            .put(METHOD_KEY, spanName.toString())
-            .put(CLIENT_NAME_KEY, NAME)
-            .put(STREAMING_KEY, isStreaming)
-            .put(STATUS_KEY, code.name())
-            .build();
 
     // Only record when retry count is greater than 0 so the retry
     // graph will be less confusing
     if (attemptCount > 1) {
-      retryCounter.add(attemptCount - 1, attributes);
+      recorder.retryCount.record(
+          clientInfo,
+          tableId,
+          methodInfo,
+          sidebandData.getResponseParams(),
+          code,
+          attemptCount - 1);
     }
 
-    operationLatenciesHistogram.record(convertToMs(operationLatencyNano), attributes);
+    recorder.operationLatency.record(
+        clientInfo,
+        tableId,
+        methodInfo,
+        sidebandData.getResponseParams(),
+        code,
+        Duration.ofNanos(operationLatencyNano));
 
     // serverLatencyTimer should already be stopped in recordAttemptCompletion
     long applicationLatencyNano = operationLatencyNano - totalServerLatencyNano.get();
-    applicationBlockingLatenciesHistogram.record(convertToMs(applicationLatencyNano), attributes);
+    recorder.applicationBlockingLatency.record(
+        clientInfo,
+        tableId,
+        methodInfo,
+        sidebandData.getResponseParams(),
+        Duration.ofNanos(applicationLatencyNano));
 
-    if (operationType == OperationType.ServerStreaming
-        && spanName.getMethodName().equals("ReadRows")) {
-      firstResponseLatenciesHistogram.record(
-          convertToMs(firstResponsePerOpTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
+    if (methodInfo.equals(READ_ROWS)) {
+      recorder.firstResponseLantency.record(
+          clientInfo,
+          tableId,
+          methodInfo,
+          sidebandData.getResponseParams(),
+          code,
+          firstResponsePerOpTimer.elapsed());
     }
   }
 
@@ -396,8 +342,6 @@ class BuiltinMetricsTracer extends BigtableTracer {
       }
     }
 
-    boolean isStreaming = operationType == OperationType.ServerStreaming;
-
     // Patch the throwable until it's fixed in gax. When an attempt failed,
     // it'll throw a ServerStreamingAttemptException. Unwrap the exception
     // so it could get processed by extractStatus
@@ -407,60 +351,56 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     Status.Code code = extractStatus(throwable);
 
-    Attributes attributes =
-        baseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, tableId)
-            .put(CLUSTER_ID_KEY, Util.formatClusterIdMetricLabel(sidebandData))
-            .put(ZONE_ID_KEY, Util.formatZoneIdMetricLabel(sidebandData))
-            .put(METHOD_KEY, spanName.toString())
-            .put(CLIENT_NAME_KEY, NAME)
-            .put(STREAMING_KEY, isStreaming)
-            .put(STATUS_KEY, code.name())
-            .build();
-
     totalClientBlockingTime.addAndGet(grpcMessageSentDelay.get());
-    clientBlockingLatenciesHistogram.record(convertToMs(totalClientBlockingTime.get()), attributes);
+    recorder.clientBlockingLatency.record(
+        clientInfo,
+        tableId,
+        methodInfo,
+        sidebandData.getResponseParams(),
+        Duration.ofNanos(totalClientBlockingTime.get()));
 
-    attemptLatenciesHistogram.record(
-        convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
+    recorder.attemptLatency.record(
+        clientInfo,
+        tableId,
+        sidebandData.getResponseParams(),
+        methodInfo,
+        code,
+        attemptTimer.elapsed());
 
-    String transportTypeStr = "cloudpath";
-    String transportRegion = "";
-    String transportZone = "";
-    String transportSubzone = "";
-
-    if (sidebandData != null) {
-      transportTypeStr = Util.formatTransportTypeMetricLabel(sidebandData);
-      transportZone =
-          Optional.ofNullable(sidebandData.getPeerInfo())
-              .map(PeerInfo::getApplicationFrontendZone)
-              .orElse("");
-      transportSubzone =
-          Optional.ofNullable(sidebandData.getPeerInfo())
-              .map(PeerInfo::getApplicationFrontendSubzone)
-              .orElse("");
-    }
-
-    attemptLatencies2Histogram.record(
-        convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)),
-        attributes.toBuilder()
-            .put(TRANSPORT_TYPE, transportTypeStr)
-            .put(TRANSPORT_REGION, transportRegion)
-            .put(TRANSPORT_ZONE, transportZone)
-            .put(TRANSPORT_SUBZONE, transportSubzone)
-            .build());
+    recorder.attemptLatency2.record(
+        clientInfo,
+        tableId,
+        sidebandData.getPeerInfo(),
+        sidebandData.getResponseParams(),
+        methodInfo,
+        code,
+        attemptTimer.elapsed());
 
     // When operationDeadline is set, it's possible that the deadline is passed by the time we send
     // a new attempt. In this case we'll record 0.
     if (operationDeadline != null) {
-      remainingDeadlineHistogram.record(Math.max(0, remainingDeadlineAtAttemptStart), attributes);
+      recorder.remainingDeadline.record(
+          clientInfo,
+          tableId,
+          methodInfo,
+          sidebandData.getResponseParams(),
+          code,
+          Comparators.max(remainingDeadlineAtAttemptStart, Duration.ZERO));
     }
 
-    if (sidebandData != null && sidebandData.getGfeTiming() != null) {
-      serverLatenciesHistogram.record(sidebandData.getGfeTiming(), attributes);
-      connectivityErrorCounter.add(0, attributes);
+    if (sidebandData.getGfeTiming() != null) {
+      recorder.serverLatency.record(
+          clientInfo,
+          tableId,
+          methodInfo,
+          sidebandData.getResponseParams(),
+          code,
+          sidebandData.getGfeTiming());
+      recorder.connectivityErrorCount.record(
+          clientInfo, tableId, methodInfo, sidebandData.getResponseParams(), code, 0);
     } else {
-      connectivityErrorCounter.add(1, attributes);
+      recorder.connectivityErrorCount.record(
+          clientInfo, tableId, methodInfo, sidebandData.getResponseParams(), code, 1);
     }
   }
 
@@ -471,21 +411,13 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   @Override
   public void setBatchWriteFlowControlTargetQps(double targetQps) {
-    Attributes attributes = baseAttributes.toBuilder().put(METHOD_KEY, spanName.toString()).build();
-
-    batchWriteFlowControlTargetQps.set(targetQps, attributes);
+    recorder.batchWriteFlowControlTargetQps.record(clientInfo, methodInfo, targetQps);
   }
 
   @Override
   public void addBatchWriteFlowControlFactor(
       double factor, @Nullable Throwable throwable, boolean applied) {
-    Attributes attributes =
-        baseAttributes.toBuilder()
-            .put(METHOD_KEY, spanName.toString())
-            .put(STATUS_KEY, extractStatus(throwable).name())
-            .put(APPLIED_KEY, applied)
-            .build();
-
-    batchWriteFlowControlFactorHistogram.record(factor, attributes);
+    recorder.batchWriteFlowControlFactor.record(
+        clientInfo, extractStatus(throwable), applied, methodInfo, factor);
   }
 }

@@ -65,6 +65,7 @@ import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -197,7 +198,11 @@ public class BuiltinMetricsTracerTest {
 
     OpenTelemetrySdk otel =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
-    BuiltinMetricsTracerFactory facotry = new BuiltinMetricsTracerFactory(otel, clientInfo);
+    MetricRegistry mr = new MetricRegistry();
+
+    BuiltinMetricsTracerFactory facotry =
+        new BuiltinMetricsTracerFactory(
+            mr.newRecorderRegistry(otel.getMeterProvider()), clientInfo);
 
     // Add an interceptor to add server-timing in headers
     ServerInterceptor trailersInterceptor =

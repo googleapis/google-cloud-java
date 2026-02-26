@@ -26,6 +26,7 @@ import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
+import javax.annotation.Nullable;
 
 public class TableDebugTagCount extends MetricWrapper<TableSchema> {
   private static final String NAME = "bigtable.googleapis.com/internal/client/debug_tags";
@@ -63,7 +64,7 @@ public class TableDebugTagCount extends MetricWrapper<TableSchema> {
         ClientInfo clientInfo,
         String tableId,
         String tag,
-        ResponseParams clusterInfo,
+        @Nullable ResponseParams clusterInfo,
         long amount) {
       Attributes attributes =
           getSchema()

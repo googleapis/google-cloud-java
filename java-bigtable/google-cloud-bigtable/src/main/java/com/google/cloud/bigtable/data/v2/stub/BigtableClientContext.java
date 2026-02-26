@@ -125,6 +125,7 @@ public class BigtableClientContext {
 
     Metrics metrics =
         new MetricsImpl(
+            clientInfo,
             settings.getTracerFactory(),
             builtinOtel,
             userOtel,

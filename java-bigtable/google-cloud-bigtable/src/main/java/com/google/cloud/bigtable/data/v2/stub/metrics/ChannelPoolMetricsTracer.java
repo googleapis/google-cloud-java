@@ -15,17 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METER_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OUTSTANDING_RPCS_PER_CHANNEL_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME;
-
 import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.PeerInfo.TransportType;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelObserver;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolObserver;
-import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.LongHistogram;
-import io.opentelemetry.api.metrics.Meter;
+import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings.LoadBalancingStrategy;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -38,34 +34,19 @@ public class ChannelPoolMetricsTracer implements Runnable {
   private static final Logger logger = Logger.getLogger(ChannelPoolMetricsTracer.class.getName());
 
   private static final int SAMPLING_PERIOD_SECONDS = 60;
-  private final LongHistogram outstandingRpcsHistogram;
-  private final LongHistogram perConnectionErrorCountHistogram;
+  private final MetricRegistry.RecorderRegistry recorder;
+  private final ClientInfo clientInfo;
 
   private final AtomicReference<BigtableChannelPoolObserver> bigtableChannelInsightsProviderRef =
       new AtomicReference<>();
-  private final AtomicReference<String> lbPolicyRef = new AtomicReference<>("ROUND_ROBIN");
+  private final AtomicReference<LoadBalancingStrategy> lbPolicyRef =
+      new AtomicReference<>(LoadBalancingStrategy.ROUND_ROBIN);
 
   // Attributes for unary and streaming RPCs, built on demand in run()
 
-  public ChannelPoolMetricsTracer(OpenTelemetry openTelemetry) {
-    Meter meter = openTelemetry.getMeter(METER_NAME);
-    this.outstandingRpcsHistogram =
-        meter
-            .histogramBuilder(OUTSTANDING_RPCS_PER_CHANNEL_NAME)
-            .ofLongs()
-            .setDescription(
-                "A distribution of the number of outstanding RPCs per connection in the client"
-                    + " pool, sampled periodically.")
-            .setUnit("1")
-            .build();
-
-    this.perConnectionErrorCountHistogram =
-        meter
-            .histogramBuilder(PER_CONNECTION_ERROR_COUNT_NAME)
-            .ofLongs()
-            .setDescription("Distribution of counts of channels per 'error count per minute'.")
-            .setUnit("1")
-            .build();
+  public ChannelPoolMetricsTracer(MetricRegistry.RecorderRegistry recorder, ClientInfo clientInfo) {
+    this.recorder = recorder;
+    this.clientInfo = clientInfo;
   }
 
   /**
@@ -77,7 +58,7 @@ public class ChannelPoolMetricsTracer implements Runnable {
   }
 
   /** Register the current lb policy * */
-  public void registerLoadBalancingStrategy(String lbPolicy) {
+  public void registerLoadBalancingStrategy(LoadBalancingStrategy lbPolicy) {
     this.lbPolicyRef.set(lbPolicy);
   }
 
@@ -100,45 +81,25 @@ public class ChannelPoolMetricsTracer implements Runnable {
       return;
     }
 
-    String lbPolicy = lbPolicyRef.get();
-
-    Attributes dpUnaryAttrs =
-        Attributes.builder()
-            .put("transport_type", "directpath")
-            .put("streaming", false)
-            .put("lb_policy", lbPolicy)
-            .build();
-    Attributes dpStreamingAttrs =
-        Attributes.builder()
-            .put("transport_type", "directpath")
-            .put("streaming", true)
-            .put("lb_policy", lbPolicy)
-            .build();
-    Attributes cpUnaryAttrs =
-        Attributes.builder()
-            .put("transport_type", "cloudpath")
-            .put("streaming", false)
-            .put("lb_policy", lbPolicy)
-            .build();
-    Attributes cpStreamingAttrs =
-        Attributes.builder()
-            .put("transport_type", "cloudpath")
-            .put("streaming", true)
-            .put("lb_policy", lbPolicy)
-            .build();
+    LoadBalancingStrategy lbPolicy = lbPolicyRef.get();
 
     for (BigtableChannelObserver info : channelInsights) {
-      Attributes unaryAttrs = info.isAltsChannel() ? dpUnaryAttrs : cpUnaryAttrs;
-      Attributes streamingAttrs = info.isAltsChannel() ? dpStreamingAttrs : cpStreamingAttrs;
+      TransportType transportType =
+          info.isAltsChannel()
+              ? TransportType.TRANSPORT_TYPE_DIRECT_ACCESS
+              : TransportType.TRANSPORT_TYPE_CLOUD_PATH;
 
       long currentOutstandingUnaryRpcs = info.getOutstandingUnaryRpcs();
       long currentOutstandingStreamingRpcs = info.getOutstandingStreamingRpcs();
-      outstandingRpcsHistogram.record(currentOutstandingUnaryRpcs, unaryAttrs);
-      outstandingRpcsHistogram.record(currentOutstandingStreamingRpcs, streamingAttrs);
+
+      recorder.channelPoolOutstandingRpcs.record(
+          clientInfo, transportType, lbPolicy, false, currentOutstandingUnaryRpcs);
+      recorder.channelPoolOutstandingRpcs.record(
+          clientInfo, transportType, lbPolicy, true, currentOutstandingStreamingRpcs);
 
       long errors = info.getAndResetErrorCount();
       // Record errors with empty attributes.
-      perConnectionErrorCountHistogram.record(errors, Attributes.empty());
+      recorder.perConnectionErrorCount.record(clientInfo, errors);
     }
   }
 }

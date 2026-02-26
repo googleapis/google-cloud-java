@@ -28,6 +28,7 @@ import io.grpc.Status;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
+import javax.annotation.Nullable;
 
 public class TableRetryCount extends MetricWrapper<TableSchema> {
   private static final String NAME = "bigtable.googleapis.com/internal/client/retry_count";
@@ -65,7 +66,7 @@ public class TableRetryCount extends MetricWrapper<TableSchema> {
         ClientInfo clientInfo,
         String tableId,
         MethodInfo methodInfo,
-        ResponseParams clusterInfo,
+        @Nullable ResponseParams clusterInfo,
         Status.Code code,
         long amount) {
       Attributes attributes =

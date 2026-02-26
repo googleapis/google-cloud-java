@@ -28,6 +28,7 @@ import io.grpc.Status;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
+import javax.annotation.Nullable;
 
 public class TableConnectivityErrorCount extends MetricWrapper<TableSchema> {
   private static final String NAME =
@@ -68,7 +69,7 @@ public class TableConnectivityErrorCount extends MetricWrapper<TableSchema> {
         ClientInfo clientInfo,
         String tableId,
         MethodInfo methodInfo,
-        ResponseParams clusterInfo,
+        @Nullable ResponseParams clusterInfo,
         Status.Code code,
         long count) {
       Attributes attributes =

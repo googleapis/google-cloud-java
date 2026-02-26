@@ -22,8 +22,12 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
+import com.google.bigtable.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelObserver;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolObserver;
+import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings.LoadBalancingStrategy;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
@@ -68,12 +72,21 @@ public class ChannelPoolMetricsTracerTest {
   @Before
   public void setUp() {
     metricReader = InMemoryMetricReader.create();
+    ClientInfo clientInfo =
+        ClientInfo.builder()
+            .setInstanceName(InstanceName.of("fake-project", "fake-instance"))
+            .setAppProfileId("fake-profile")
+            .build();
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
-    tracker = new ChannelPoolMetricsTracer(openTelemetry);
+    MetricRegistry mr = new MetricRegistry();
+
+    tracker =
+        new ChannelPoolMetricsTracer(
+            mr.newRecorderRegistry(openTelemetry.getMeterProvider()), clientInfo);
 
     runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
     // Configure mockScheduler to capture the runnable when tracker.start() is called
@@ -147,7 +160,7 @@ public class ChannelPoolMetricsTracerTest {
   public void testSingleRun() {
     // Arrange
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
-    tracker.registerLoadBalancingStrategy("LEAST_IN_FLIGHT");
+    tracker.registerLoadBalancingStrategy(LoadBalancingStrategy.LEAST_IN_FLIGHT);
     tracker.start(mockScheduler);
 
     // Outstanding RPCs
@@ -205,7 +218,7 @@ public class ChannelPoolMetricsTracerTest {
   public void testMultipleRuns() {
     // Arrange
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
-    tracker.registerLoadBalancingStrategy("ROUND_ROBIN");
+    tracker.registerLoadBalancingStrategy(LoadBalancingStrategy.ROUND_ROBIN);
     tracker.start(mockScheduler);
 
     // First run

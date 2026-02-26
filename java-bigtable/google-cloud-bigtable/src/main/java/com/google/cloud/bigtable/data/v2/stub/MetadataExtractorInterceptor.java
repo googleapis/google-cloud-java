@@ -33,6 +33,7 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.grpc.alts.AltsContextUtil;
+import java.time.Duration;
 import java.util.Base64;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -98,7 +99,7 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
 
     @Nullable private volatile ResponseParams responseParams;
     @Nullable private volatile PeerInfo peerInfo;
-    @Nullable private volatile Long gfeTiming;
+    @Nullable private volatile Duration gfeTiming;
 
     @Nullable
     public ResponseParams getResponseParams() {
@@ -111,7 +112,7 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     }
 
     @Nullable
-    public Long getGfeTiming() {
+    public Duration getGfeTiming() {
       return gfeTiming;
     }
 
@@ -134,7 +135,7 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     }
 
     @Nullable
-    private static Long extractGfeLatency(Metadata metadata) {
+    private static Duration extractGfeLatency(Metadata metadata) {
       String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
       if (serverTiming == null) {
         return null;
@@ -142,14 +143,14 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
       Matcher matcher = SERVER_TIMING_HEADER_PATTERN.matcher(serverTiming);
       // this should always be true
       if (matcher.find()) {
-        return Long.parseLong(matcher.group("dur"));
+        return Duration.ofMillis(Long.parseLong(matcher.group("dur")));
       }
       return null;
     }
 
     @Nullable
     private static PeerInfo extractPeerInfo(
-        Metadata metadata, Long gfeTiming, Attributes attributes) {
+        Metadata metadata, Duration gfeTiming, Attributes attributes) {
       String encodedStr = metadata.get(PEER_INFO_KEY);
       if (Strings.isNullOrEmpty(encodedStr)) {
         return null;

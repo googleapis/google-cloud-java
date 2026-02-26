@@ -19,11 +19,13 @@ package com.google.cloud.bigtable.data.v2.internal.csm.schema;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
 import com.google.common.collect.ImmutableList;
 import com.google.monitoring.v3.ProjectName;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import javax.annotation.Nullable;
 
 public final class TableSchema extends Schema {
   // This implements the `bigtable_client_raw` resource defined in
@@ -52,12 +54,12 @@ public final class TableSchema extends Schema {
   }
 
   public AttributesBuilder createResourceAttrs(
-      ClientInfo clientInfo, String tableId, ResponseParams clusterInfo) {
+      ClientInfo clientInfo, String tableId, @Nullable ResponseParams clusterInfo) {
     return Attributes.builder()
         .put(BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProject())
         .put(INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstance())
         .put(TABLE_ID_KEY, tableId)
-        .put(CLUSTER_ID_KEY, clusterInfo.getClusterId())
-        .put(ZONE_ID_KEY, clusterInfo.getZoneId());
+        .put(CLUSTER_ID_KEY, Util.formatClusterIdMetricLabel(clusterInfo))
+        .put(ZONE_ID_KEY, Util.formatZoneIdMetricLabel(clusterInfo));
   }
 }

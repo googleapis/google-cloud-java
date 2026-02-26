@@ -29,6 +29,7 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
+import javax.annotation.Nullable;
 
 public class TableApplicationBlockingLatency extends MetricWrapper<TableSchema> {
   private static final String NAME =
@@ -69,7 +70,7 @@ public class TableApplicationBlockingLatency extends MetricWrapper<TableSchema> 
         ClientInfo clientInfo,
         String tableId,
         MethodInfo methodInfo,
-        ResponseParams clusterInfo,
+        @Nullable ResponseParams clusterInfo,
         Duration duration) {
       Attributes attributes =
           getSchema()

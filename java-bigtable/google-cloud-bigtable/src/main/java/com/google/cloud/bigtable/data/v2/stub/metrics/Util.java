@@ -25,14 +25,11 @@ import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.MaterializedViewName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
-import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Status;
@@ -40,9 +37,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
-import java.util.Optional;
 import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
 
@@ -132,34 +127,5 @@ public class Util {
       headers.put(ATTEMPT_HEADER_KEY.name(), Arrays.asList(String.valueOf(attemptCount)));
     }
     return headers.build();
-  }
-
-  public static String formatTransportTypeMetricLabel(
-      MetadataExtractorInterceptor.SidebandData sidebandData) {
-    return Optional.ofNullable(sidebandData)
-        .flatMap(s -> Optional.ofNullable(s.getPeerInfo()))
-        .map(PeerInfo::getTransportType)
-        .orElse(PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN)
-        .name()
-        .replace("TRANSPORT_TYPE_", "")
-        .toLowerCase(Locale.ENGLISH);
-  }
-
-  public static String formatClusterIdMetricLabel(
-      @Nullable MetadataExtractorInterceptor.SidebandData sidebandData) {
-    return Optional.ofNullable(sidebandData)
-        .flatMap(d -> Optional.ofNullable(d.getResponseParams()))
-        .map(ResponseParams::getClusterId)
-        .filter(s -> !s.isEmpty())
-        .orElse("<unspecified>");
-  }
-
-  public static String formatZoneIdMetricLabel(
-      @Nullable MetadataExtractorInterceptor.SidebandData sidebandData) {
-    return Optional.ofNullable(sidebandData)
-        .flatMap(d -> Optional.ofNullable(d.getResponseParams()))
-        .map(ResponseParams::getZoneId)
-        .filter(s -> !s.isEmpty())
-        .orElse("global");
   }
 }
