@@ -28,6 +28,7 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
@@ -101,6 +102,7 @@ public class BigtableClientContext {
         FixedExecutorProvider.create(backgroundExecutor, shouldAutoClose);
     builder.setBackgroundExecutorProvider(executorProvider);
 
+    MetricRegistry metricRegistry = new MetricRegistry();
     // Set up OpenTelemetry
     @Nullable OpenTelemetry userOtel = null;
     if (settings.getMetricsProvider() instanceof CustomOpenTelemetryMetricsProvider) {
@@ -113,6 +115,7 @@ public class BigtableClientContext {
       if (settings.areInternalMetricsEnabled()) {
         builtinOtel =
             MetricsImpl.createBuiltinOtel(
+                metricRegistry,
                 clientInfo,
                 credentials,
                 settings.getMetricsEndpoint(),
@@ -125,6 +128,7 @@ public class BigtableClientContext {
 
     Metrics metrics =
         new MetricsImpl(
+            metricRegistry,
             clientInfo,
             settings.getTracerFactory(),
             builtinOtel,

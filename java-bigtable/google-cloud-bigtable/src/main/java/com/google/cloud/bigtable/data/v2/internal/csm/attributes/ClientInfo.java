@@ -42,7 +42,7 @@ public abstract class ClientInfo {
 
   @AutoValue.Builder
   public abstract static class Builder {
-    protected abstract Builder setClientName(String name);
+    public abstract Builder setClientName(String name);
 
     public abstract Builder setInstanceName(InstanceName name);
 

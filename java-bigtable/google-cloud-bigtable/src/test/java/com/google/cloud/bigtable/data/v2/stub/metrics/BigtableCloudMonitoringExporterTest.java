@@ -31,10 +31,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.Distribution;
-import com.google.api.MonitoredResource;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
 import com.google.common.base.Suppliers;
@@ -90,15 +93,32 @@ public class BigtableCloudMonitoringExporterTest {
   private Resource resource;
   private InstrumentationScopeInfo scope;
 
+  private EnvInfo envInfo =
+      EnvInfo.builder()
+          .setProject("client-project")
+          .setPlatform("gce_instance")
+          .setRegion("cleint-region")
+          .setHostName("harold")
+          .setHostId("1234567890")
+          .setUid(taskId)
+          .build();
+  private ClientInfo clientInfo =
+      ClientInfo.builder()
+          .setInstanceName(InstanceName.of(projectId, instanceId))
+          .setAppProfileId(appProfileId)
+          .setClientName(clientName)
+          .build();
+
   @Before
   public void setUp() {
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
 
     exporter =
         new BigtableCloudMonitoringExporter(
-            fakeMetricServiceClient,
-            ImmutableList.of(
-                new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter(taskId)));
+            new MetricRegistry(),
+            Suppliers.ofInstance(envInfo),
+            clientInfo,
+            fakeMetricServiceClient);
 
     attributes =
         Attributes.builder()
@@ -307,26 +327,12 @@ public class BigtableCloudMonitoringExporterTest {
 
   @Test
   public void testTimeSeriesForMetricWithGceOrGkeResource() {
-    String gceProjectId = "fake-gce-project";
     BigtableCloudMonitoringExporter exporter =
         new BigtableCloudMonitoringExporter(
-            fakeMetricServiceClient,
-            ImmutableList.of(
-                new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
-                    Suppliers.ofInstance(
-                        MonitoredResource.newBuilder()
-                            .setType("bigtable_client")
-                            .putLabels("project_id", gceProjectId)
-                            .putLabels("instance", "resource-instance")
-                            .putLabels("app_profile", "resource-app-profile")
-                            .putLabels("client_project", "client-project")
-                            .putLabels("region", "cleint-region")
-                            .putLabels("cloud_platform", "gce_instance")
-                            .putLabels("host_id", "1234567890")
-                            .putLabels("host_name", "harold")
-                            .putLabels("client_name", "java/1234")
-                            .putLabels("uuid", "something")
-                            .build()))));
+            new MetricRegistry(),
+            Suppliers.ofInstance(envInfo),
+            clientInfo,
+            fakeMetricServiceClient);
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
@@ -372,7 +378,7 @@ public class BigtableCloudMonitoringExporterTest {
 
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
 
-    assertThat(request.getName()).isEqualTo("projects/" + gceProjectId);
+    assertThat(request.getName()).isEqualTo("projects/" + projectId);
     assertThat(request.getTimeSeriesList()).hasSize(1);
 
     com.google.monitoring.v3.TimeSeries timeSeries = request.getTimeSeriesList().get(0);
@@ -380,16 +386,16 @@ public class BigtableCloudMonitoringExporterTest {
     assertThat(timeSeries.getResource().getLabelsMap())
         .isEqualTo(
             ImmutableMap.<String, String>builder()
-                .put("project_id", gceProjectId)
-                .put("instance", "resource-instance")
-                .put("app_profile", "resource-app-profile")
+                .put("project_id", projectId)
+                .put("instance", instanceId)
+                .put("app_profile", appProfileId)
                 .put("client_project", "client-project")
                 .put("region", "cleint-region")
                 .put("cloud_platform", "gce_instance")
                 .put("host_id", "1234567890")
                 .put("host_name", "harold")
-                .put("client_name", "java/1234")
-                .put("uuid", "something")
+                .put("client_name", clientName)
+                .put("uuid", taskId)
                 .build());
 
     assertThat(timeSeries.getMetric().getLabelsMap())

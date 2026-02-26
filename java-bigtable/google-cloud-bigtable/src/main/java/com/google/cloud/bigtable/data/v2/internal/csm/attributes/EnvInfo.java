@@ -77,7 +77,7 @@ public abstract class EnvInfo {
 
   @AutoValue.Builder
   public abstract static class Builder {
-    protected abstract Builder setUid(String uid);
+    public abstract Builder setUid(String uid);
 
     public abstract Builder setPlatform(String platform);
 

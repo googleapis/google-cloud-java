@@ -165,7 +165,7 @@ public class MetricRegistry {
     return ImmutableList.copyOf(grpcMetricNames);
   }
 
-  MetricWrapper<?> getMetric(String name) {
+  public MetricWrapper<?> getMetric(String name) {
     return metrics.get(name);
   }
 

@@ -23,6 +23,7 @@ import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableCloudMonitoringExporter;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerFactory;
@@ -72,6 +73,7 @@ public class MetricsImpl implements Metrics, Closeable {
   private final List<ScheduledFuture<?>> tasks = new ArrayList<>();
 
   public MetricsImpl(
+      MetricRegistry metricRegistry,
       ClientInfo clientInfo,
       ApiTracerFactory userTracerFactory,
       @Nullable OpenTelemetrySdk internalOtel,
@@ -79,7 +81,7 @@ public class MetricsImpl implements Metrics, Closeable {
       Tagger ocTagger,
       StatsRecorder ocRecorder,
       ScheduledExecutorService executor) {
-    metricRegistry = new MetricRegistry();
+    this.metricRegistry = metricRegistry;
     this.userTracerFactory = Preconditions.checkNotNull(userTracerFactory);
 
     this.internalOtel = internalOtel;
@@ -168,6 +170,7 @@ public class MetricsImpl implements Metrics, Closeable {
   }
 
   public static OpenTelemetrySdk createBuiltinOtel(
+      MetricRegistry metricRegistry,
       ClientInfo clientInfo,
       @Nullable Credentials defaultCredentials,
       @Nullable String metricsEndpoint,
@@ -194,7 +197,12 @@ public class MetricsImpl implements Metrics, Closeable {
 
     MetricExporter publicExporter =
         BigtableCloudMonitoringExporter.create(
-            clientInfo, credentials, metricsEndpoint, universeDomain, executor);
+            metricRegistry,
+            EnvInfo::detect,
+            clientInfo,
+            credentials,
+            metricsEndpoint,
+            universeDomain);
     PeriodicMetricReaderBuilder readerBuilder =
         PeriodicMetricReader.builder(publicExporter).setExecutor(executor);
     meterProvider.registerMetricReader(readerBuilder.build());
