@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.80.0](https://github.com/googleapis/google-cloud-java/compare/v1.79.0...v1.80.0) (2026-02-25)
+
+
+### Features
+
+* [aiplatform] Add `traffic_type, tool_use_prompt_tokens_details` to message `GenerateContentResponse.UsageMetadata` ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* [aiplatform] Add image_spec to Reasoning Engine public protos ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
+* [aiplatform] Add image_spec to Reasoning Engine public protos ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
+* [aiplatform] Add transcription fields to Session Service ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
+* [compute] Update Compute Engine v1 API to revision 20260106 ([#1148](https://github.com/googleapis/google-cloud-java/issues/1148)) ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* [datamanager] add `UserListService` for creating and managing user lists ([2ac7566](https://github.com/googleapis/google-cloud-java/commit/2ac75667cca649d7a9fde9569866fb8eaafb2b4b))
+* [developerconnect] Add Secure Source Manager and Generic HTTP Endpoint connection types ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* [dialogflow-cx] Add new value `DETECT_INTENT_RESPONSE_VIEW_DEFAULT` to enum `DetectIntentResponseView` ([d544f39](https://github.com/googleapis/google-cloud-java/commit/d544f3925a0c305ce4f785b0d045fd7c09cd301d))
+* [grafeas] A new field `registry` is added to message `.grafeas.v1.BaseImage` ([d544f39](https://github.com/googleapis/google-cloud-java/commit/d544f3925a0c305ce4f785b0d045fd7c09cd301d))
+* [kms] Add KeyProjectResolutionMode to AutokeyConfig to support project-level configurations ([d544f39](https://github.com/googleapis/google-cloud-java/commit/d544f3925a0c305ce4f785b0d045fd7c09cd301d))
+* [kmsinventory] Add support for project level key usage tracking ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* [network-management] Add API fields related to GKE Pods and Network Policies ([fc77e70](https://github.com/googleapis/google-cloud-java/commit/fc77e70a15e46395e62d03a1410cfff855a71af0))
+* [speech] adds endpointing sensitivity to streaming recognition features ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* Add CES v1beta library ([833da55](https://github.com/googleapis/google-cloud-java/commit/833da55a9b5ea990090dabd054cd1f733b6ed719))
+* Add VectorSearch v1 library ([833da55](https://github.com/googleapis/google-cloud-java/commit/833da55a9b5ea990090dabd054cd1f733b6ed719))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.63.0 ([#11895](https://github.com/googleapis/google-cloud-java/issues/11895)) ([aa65976](https://github.com/googleapis/google-cloud-java/commit/aa659761b67b89678ba501a6d7c4e68a6d543f24))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.67.0 ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+### Documentation
+
+* [databasecenter] Replace "GCP" with "Google Cloud" in API comments ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+
 ## [1.79.0](https://github.com/googleapis/google-cloud-java/compare/v1.78.0...v1.79.0) (2026-02-13)
 
 
