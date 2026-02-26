@@ -31,7 +31,7 @@ import io.opentelemetry.api.metrics.Meter;
 import javax.annotation.Nullable;
 
 public class TableRetryCount extends MetricWrapper<TableSchema> {
-  private static final String NAME = "bigtable.googleapis.com/internal/client/retry_count";
+  public static final String NAME = "bigtable.googleapis.com/internal/client/retry_count";
 
   public TableRetryCount() {
     super(TableSchema.INSTANCE, NAME);

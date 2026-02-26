@@ -16,11 +16,8 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.auth.Credentials;
-import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.View;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nullable;
 
@@ -37,24 +34,15 @@ public class BuiltinMetricsView {
 
   @Deprecated
   public static void registerBuiltinMetrics(String projectId, SdkMeterProviderBuilder builder)
-      throws IOException {
-    registerBuiltinMetrics(builder);
-  }
+      throws IOException {}
 
   @Deprecated
-  public static void registerBuiltinMetrics(SdkMeterProviderBuilder builder) throws IOException {
-    for (Map.Entry<InstrumentSelector, View> entry :
-        BuiltinMetricsConstants.getAllViews().entrySet()) {
-      builder.registerView(entry.getKey(), entry.getValue());
-    }
-  }
+  public static void registerBuiltinMetrics(SdkMeterProviderBuilder builder) throws IOException {}
 
   @Deprecated
   public static void registerBuiltinMetrics(
       String projectId, @Nullable Credentials credentials, SdkMeterProviderBuilder builder)
-      throws IOException {
-    registerBuiltinMetrics(builder);
-  }
+      throws IOException {}
 
   @Deprecated
   public static void registerBuiltinMetrics(
@@ -62,16 +50,12 @@ public class BuiltinMetricsView {
       @Nullable Credentials credentials,
       SdkMeterProviderBuilder builder,
       @Nullable String endpoint)
-      throws IOException {
-    registerBuiltinMetrics(credentials, builder, endpoint);
-  }
+      throws IOException {}
 
   @Deprecated
   public static void registerBuiltinMetrics(
       @Nullable Credentials credentials, SdkMeterProviderBuilder builder, @Nullable String endpoint)
-      throws IOException {
-    registerBuiltinMetrics(builder);
-  }
+      throws IOException {}
 
   @Deprecated
   public static void registerBuiltinMetrics(
@@ -79,9 +63,7 @@ public class BuiltinMetricsView {
       SdkMeterProviderBuilder builder,
       @Nullable String endpoint,
       @Nullable ScheduledExecutorService executorService)
-      throws IOException {
-    registerBuiltinMetrics(builder);
-  }
+      throws IOException {}
 
   @Deprecated
   static void registerBuiltinMetricsWithUniverseDomain(
@@ -90,7 +72,5 @@ public class BuiltinMetricsView {
       @Nullable String endpoint,
       String universeDomain,
       @Nullable ScheduledExecutorService executorService)
-      throws IOException {
-    registerBuiltinMetrics(builder);
-  }
+      throws IOException {}
 }

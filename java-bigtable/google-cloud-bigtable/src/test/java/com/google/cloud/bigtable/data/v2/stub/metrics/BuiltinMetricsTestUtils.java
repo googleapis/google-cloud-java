@@ -42,7 +42,7 @@ public class BuiltinMetricsTestUtils {
   private BuiltinMetricsTestUtils() {}
 
   public static MetricData getMetricData(InMemoryMetricReader reader, String metricName) {
-    String fullMetricName = BuiltinMetricsConstants.METER_NAME + metricName;
+    String fullMetricName = metricName;
     Collection<MetricData> allMetricData = Collections.emptyList();
 
     // Fetch the MetricData with retries

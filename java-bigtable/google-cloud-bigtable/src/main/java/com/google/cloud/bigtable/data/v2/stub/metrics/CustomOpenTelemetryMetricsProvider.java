@@ -18,11 +18,8 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import com.google.auth.Credentials;
 import com.google.common.base.MoreObjects;
 import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.View;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
@@ -32,19 +29,6 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>{@code
  * SdkMeterProviderBuilder sdkMeterProvider = SdkMeterProvider.builder();
- *
- * // Set up SdkMeterProvider for client side metrics
- * CustomOpenTelemetryMetricsProvider.setupSdkMeterProvider(sdkMeterProvider);
- *
- * // register other metrics reader and views
- * sdkMeterProvider.registerMetricReader(..);
- * sdkMeterProvider.registerView(..);
- *
- * // create the OTEL instance
- * OpenTelemetry openTelemetry = OpenTelemetrySdk
- *     .builder()
- *     .setMeterProvider(sdkMeterProvider.build())
- *     .build();
  *
  * // Override MetricsProvider in BigtableDataSettings
  * BigtableDataSettings settings = BigtableDataSettings.newBuilder()
@@ -71,45 +55,35 @@ public final class CustomOpenTelemetryMetricsProvider implements MetricsProvider
   }
 
   /**
-   * Convenient method to set up SdkMeterProviderBuilder with the default credential and endpoint.
+   * @deprecated this is no longer needed and is now a no-op
    */
-  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder) throws IOException {
-    for (Map.Entry<InstrumentSelector, View> entry :
-        BuiltinMetricsConstants.getAllViews().entrySet()) {
-      builder.registerView(entry.getKey(), entry.getValue());
-    }
-  }
+  @Deprecated
+  public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder) throws IOException {}
 
   /**
-   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   * @deprecated this is no longer needed and is now a no-op
    */
   @Deprecated
   public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, Credentials credentials)
-      throws IOException {
-    setupSdkMeterProvider(builder);
-  }
+      throws IOException {}
 
   /**
-   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   * @deprecated this is no longer needed and is now a no-op
    */
   @Deprecated
   public static void setupSdkMeterProvider(SdkMeterProviderBuilder builder, String endpoint)
-      throws IOException {
-    setupSdkMeterProvider(builder);
-  }
+      throws IOException {}
 
   /**
-   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   * @deprecated this is no longer needed and is now a no-op
    */
   @Deprecated
   public static void setupSdkMeterProvider(
       SdkMeterProviderBuilder builder, Credentials credentials, String endpoint)
-      throws IOException {
-    setupSdkMeterProvider(builder);
-  }
+      throws IOException {}
 
   /**
-   * @deprecated Please use {@link #setupSdkMeterProvider(SdkMeterProviderBuilder)}
+   * @deprecated this is no longer needed and is now a no-op
    */
   @Deprecated
   public static void setupSdkMeterProvider(
@@ -117,9 +91,7 @@ public final class CustomOpenTelemetryMetricsProvider implements MetricsProvider
       Credentials credentials,
       String endpoint,
       ScheduledExecutorService executor)
-      throws IOException {
-    setupSdkMeterProvider(builder);
-  }
+      throws IOException {}
 
   @Override
   public String toString() {

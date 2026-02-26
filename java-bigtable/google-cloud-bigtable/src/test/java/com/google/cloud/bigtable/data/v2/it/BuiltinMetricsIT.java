@@ -29,10 +29,10 @@ import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.MetricLabels;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.test_helpers.env.CloudEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
@@ -339,7 +339,7 @@ public class BuiltinMetricsIT {
               .putAll(ts.getMetric().getLabelsMap())
               .build();
       AttributesBuilder attributesBuilder = Attributes.builder();
-      String streamingKey = BuiltinMetricsConstants.STREAMING_KEY.getKey();
+      String streamingKey = MetricLabels.STREAMING_KEY.getKey();
       attributesMap.forEach(
           (k, v) -> {
             if (!k.equals(streamingKey)) {

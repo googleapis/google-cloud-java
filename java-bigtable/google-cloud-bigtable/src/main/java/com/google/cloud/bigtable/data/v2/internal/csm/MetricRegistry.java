@@ -53,7 +53,7 @@ import java.util.Map;
  * </ul>
  */
 public class MetricRegistry {
-  static final String METER_NAME = "bigtable.googleapis.com/internal/client/";
+  public static final String METER_NAME = "bigtable.googleapis.com/internal/client/";
 
   final TableOperationLatency operationLatencyMetric;
   final TableAttemptLatency attemptLatencyMetric;

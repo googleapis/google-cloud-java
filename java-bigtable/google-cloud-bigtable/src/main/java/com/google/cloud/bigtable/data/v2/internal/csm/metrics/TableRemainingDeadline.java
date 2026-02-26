@@ -32,7 +32,7 @@ import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
 
 public class TableRemainingDeadline extends MetricWrapper<TableSchema> {
-  private static final String NAME = "bigtable.googleapis.com/internal/client/remaining_deadline";
+  public static final String NAME = "bigtable.googleapis.com/internal/client/remaining_deadline";
 
   public TableRemainingDeadline() {
     super(TableSchema.INSTANCE, NAME);

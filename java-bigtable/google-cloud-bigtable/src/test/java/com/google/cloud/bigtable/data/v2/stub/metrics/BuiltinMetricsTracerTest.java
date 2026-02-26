@@ -15,25 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLIED_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.FIRST_RESPONSE_LATENCIES_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OPERATION_LATENCIES_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.REMAINING_DEADLINE_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.RETRY_COUNT_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.SERVER_LATENCIES_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STATUS_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STREAMING_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedDoubleValue;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedValue;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getMetricData;
@@ -67,6 +48,19 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientBatchWriteFlowControlFactor;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientBatchWriteFlowControlTargetQps;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.MetricLabels;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableApplicationBlockingLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableAttemptLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableClientBlockingLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableConnectivityErrorCount;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableFirstResponseLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRemainingDeadline;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRetryCount;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableServerLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -103,10 +97,8 @@ import io.grpc.stub.ServerCallStreamObserver;
 import io.grpc.stub.StreamObserver;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.View;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
@@ -120,7 +112,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -173,9 +164,9 @@ public class BuiltinMetricsTracerTest {
           .build();
   private Attributes expectedBaseAttributes =
       Attributes.builder()
-          .put(BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
-          .put(BuiltinMetricsConstants.INSTANCE_ID_KEY, INSTANCE_ID)
-          .put(BuiltinMetricsConstants.APP_PROFILE_KEY, APP_PROFILE_ID)
+          .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
+          .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
+          .put(MetricLabels.APP_PROFILE_KEY, APP_PROFILE_ID)
           .build();
 
   private InMemoryMetricReader metricReader;
@@ -190,11 +181,6 @@ public class BuiltinMetricsTracerTest {
 
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
-
-    for (Map.Entry<InstrumentSelector, View> entry :
-        BuiltinMetricsConstants.getAllViews().entrySet()) {
-      meterProvider.registerView(entry.getKey(), entry.getValue());
-    }
 
     OpenTelemetrySdk otel =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
@@ -313,16 +299,16 @@ public class BuiltinMetricsTracerTest {
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(STREAMING_KEY, true)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
-    MetricData metricData = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableOperationLatency.NAME);
 
     long value = getAggregatedValue(metricData, expectedAttributes);
     assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
@@ -338,16 +324,16 @@ public class BuiltinMetricsTracerTest {
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(STREAMING_KEY, true)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
-    MetricData metricData = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableOperationLatency.NAME);
     long value = getAggregatedValue(metricData, expectedAttributes);
     assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
   }
@@ -383,15 +369,15 @@ public class BuiltinMetricsTracerTest {
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, FIRST_RESPONSE_TABLE_ID)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, FIRST_RESPONSE_TABLE_ID)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
-    MetricData metricData = getMetricData(metricReader, FIRST_RESPONSE_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableFirstResponseLatency.NAME);
 
     long value = getAggregatedValue(metricData, expectedAttributes);
     assertThat(value).isAtMost(firstResponseTimer.elapsed(TimeUnit.MILLISECONDS));
@@ -403,38 +389,38 @@ public class BuiltinMetricsTracerTest {
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
             .build();
 
-    MetricData serverLatenciesMetricData = getMetricData(metricReader, SERVER_LATENCIES_NAME);
+    MetricData serverLatenciesMetricData = getMetricData(metricReader, TableServerLatency.NAME);
 
     long serverLatencies = getAggregatedValue(serverLatenciesMetricData, expectedAttributes);
     assertThat(serverLatencies).isEqualTo(FAKE_SERVER_TIMING);
 
     MetricData connectivityErrorCountMetricData =
-        getMetricData(metricReader, CONNECTIVITY_ERROR_COUNT_NAME);
+        getMetricData(metricReader, TableConnectivityErrorCount.NAME);
     Attributes expected1 =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "UNAVAILABLE")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, "global")
-            .put(CLUSTER_ID_KEY, "<unspecified>")
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
     Attributes expected2 =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
     verifyAttributes(connectivityErrorCountMetricData, expected1);
@@ -480,25 +466,28 @@ public class BuiltinMetricsTracerTest {
     assertThat(counter.get()).isEqualTo(fakeService.getResponseCounter().get());
 
     MetricData applicationLatency =
-        getMetricData(metricReader, APPLICATION_BLOCKING_LATENCIES_NAME);
+        getMetricData(metricReader, TableApplicationBlockingLatency.NAME);
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
             .build();
     long value = getAggregatedValue(applicationLatency, expectedAttributes);
 
     assertThat(value).isAtLeast((APPLICATION_LATENCY - SLEEP_VARIABILITY) * counter.get());
 
-    MetricData operationLatency = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
+    MetricData operationLatency = getMetricData(metricReader, TableOperationLatency.NAME);
     long operationLatencyValue =
         getAggregatedValue(
             operationLatency,
-            expectedAttributes.toBuilder().put(STATUS_KEY, "OK").put(STREAMING_KEY, true).build());
+            expectedAttributes.toBuilder()
+                .put(MetricLabels.STATUS_KEY, "OK")
+                .put(MetricLabels.STREAMING_KEY, true)
+                .build());
     assertThat(value).isAtMost(operationLatencyValue - SERVER_LATENCY);
   }
 
@@ -515,15 +504,15 @@ public class BuiltinMetricsTracerTest {
     }
 
     MetricData applicationLatency =
-        getMetricData(metricReader, APPLICATION_BLOCKING_LATENCIES_NAME);
+        getMetricData(metricReader, TableApplicationBlockingLatency.NAME);
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
             .build();
 
     long value = getAggregatedValue(applicationLatency, expectedAttributes);
@@ -532,11 +521,14 @@ public class BuiltinMetricsTracerTest {
     assertThat(counter).isEqualTo(fakeService.getResponseCounter().get());
     assertThat(value).isAtLeast(APPLICATION_LATENCY * (counter - 1) - SERVER_LATENCY);
 
-    MetricData operationLatency = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
+    MetricData operationLatency = getMetricData(metricReader, TableOperationLatency.NAME);
     long operationLatencyValue =
         getAggregatedValue(
             operationLatency,
-            expectedAttributes.toBuilder().put(STATUS_KEY, "OK").put(STREAMING_KEY, true).build());
+            expectedAttributes.toBuilder()
+                .put(MetricLabels.STATUS_KEY, "OK")
+                .put(MetricLabels.STREAMING_KEY, true)
+                .build());
     assertThat(value).isAtMost(operationLatencyValue - SERVER_LATENCY);
   }
 
@@ -545,15 +537,15 @@ public class BuiltinMetricsTracerTest {
     stub.mutateRowCallable()
         .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
-    MetricData metricData = getMetricData(metricReader, RETRY_COUNT_NAME);
+    MetricData metricData = getMetricData(metricReader, TableRetryCount.NAME);
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(METHOD_KEY, "Bigtable.MutateRow")
-            .put(STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.STATUS_KEY, "OK")
             .build();
 
     long value = getAggregatedValue(metricData, expectedAttributes);
@@ -566,28 +558,28 @@ public class BuiltinMetricsTracerTest {
         .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
     outstandingRpcCounter.waitUntilRpcsDone();
-    MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
     Attributes expected1 =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "UNAVAILABLE")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, "global")
-            .put(CLUSTER_ID_KEY, "<unspecified>")
-            .put(METHOD_KEY, "Bigtable.MutateRow")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(STREAMING_KEY, false)
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
             .build();
 
     Attributes expected2 =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.MutateRow")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(STREAMING_KEY, false)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
             .build();
 
     verifyAttributes(metricData, expected1);
@@ -605,17 +597,17 @@ public class BuiltinMetricsTracerTest {
 
     Assert.assertThrows(BatchingException.class, batcher::close);
 
-    MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
     Attributes expected =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.MutateRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(STREAMING_KEY, false)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
             .build();
 
     verifyAttributes(metricData, expected);
@@ -633,17 +625,17 @@ public class BuiltinMetricsTracerTest {
 
     Assert.assertThrows(BatchingException.class, batcher::close);
 
-    MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
     Attributes expected =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "NOT_FOUND")
-            .put(TABLE_ID_KEY, BAD_TABLE_ID)
-            .put(ZONE_ID_KEY, "global")
-            .put(CLUSTER_ID_KEY, "<unspecified>")
-            .put(METHOD_KEY, "Bigtable.MutateRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(STREAMING_KEY, false)
+            .put(MetricLabels.STATUS_KEY, "NOT_FOUND")
+            .put(TableSchema.TABLE_ID_KEY, BAD_TABLE_ID)
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
             .build();
 
     verifyAttributes(metricData, expected);
@@ -653,28 +645,28 @@ public class BuiltinMetricsTracerTest {
   public void testReadRowsAttemptsTagValues() {
     Lists.newArrayList(stub.readRowsCallable().call(Query.create("fake-table")).iterator());
 
-    MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
     Attributes expected1 =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "UNAVAILABLE")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, "global")
-            .put(CLUSTER_ID_KEY, "<unspecified>")
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(STREAMING_KEY, true)
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, true)
             .build();
 
     Attributes expected2 =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
-            .put(STREAMING_KEY, true)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, true)
             .build();
 
     verifyAttributes(metricData, expected1);
@@ -693,15 +685,15 @@ public class BuiltinMetricsTracerTest {
 
       int expectedNumRequests = 6 / batchElementCount;
 
-      MetricData applicationLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
+      MetricData applicationLatency = getMetricData(metricReader, TableClientBlockingLatency.NAME);
 
       Attributes expectedAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(TABLE_ID_KEY, TABLE)
-              .put(ZONE_ID_KEY, ZONE)
-              .put(CLUSTER_ID_KEY, CLUSTER)
-              .put(METHOD_KEY, "Bigtable.MutateRows")
-              .put(CLIENT_NAME_KEY, CLIENT_NAME)
+              .put(TableSchema.TABLE_ID_KEY, TABLE)
+              .put(TableSchema.ZONE_ID_KEY, ZONE)
+              .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
               .build();
 
       long value = getAggregatedValue(applicationLatency, expectedAttributes);
@@ -719,15 +711,15 @@ public class BuiltinMetricsTracerTest {
     Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
     f.get();
 
-    MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
+    MetricData clientLatency = getMetricData(metricReader, TableClientBlockingLatency.NAME);
 
     Attributes attributes =
         expectedBaseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, TABLE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
     assertThat(Duration.ofMillis(getAggregatedValue(clientLatency, attributes)))
@@ -746,15 +738,15 @@ public class BuiltinMetricsTracerTest {
     f.get();
 
     outstandingRpcCounter.waitUntilRpcsDone();
-    MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
+    MetricData clientLatency = getMetricData(metricReader, TableClientBlockingLatency.NAME);
 
     Attributes attributes =
         expectedBaseAttributes.toBuilder()
-            .put(TABLE_ID_KEY, TABLE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(METHOD_KEY, "Bigtable.MutateRow")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
     assertThat(Duration.ofMillis(getAggregatedValue(clientLatency, attributes)))
@@ -772,39 +764,39 @@ public class BuiltinMetricsTracerTest {
     } catch (NotFoundException e) {
     }
 
-    MetricData attemptLatency = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
+    MetricData attemptLatency = getMetricData(metricReader, TableAttemptLatency.NAME);
 
     Attributes expected =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "NOT_FOUND")
-            .put(TABLE_ID_KEY, BAD_TABLE_ID)
-            .put(CLUSTER_ID_KEY, "<unspecified>")
-            .put(ZONE_ID_KEY, "global")
-            .put(STREAMING_KEY, true)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "NOT_FOUND")
+            .put(TableSchema.TABLE_ID_KEY, BAD_TABLE_ID)
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
 
     verifyAttributes(attemptLatency, expected);
 
-    MetricData opLatency = getMetricData(metricReader, OPERATION_LATENCIES_NAME);
+    MetricData opLatency = getMetricData(metricReader, TableOperationLatency.NAME);
     verifyAttributes(opLatency, expected);
   }
 
   @Test
   public void testRemainingDeadline() {
     stub.readRowsCallable().all().call(Query.create(TABLE));
-    MetricData deadlineMetric = getMetricData(metricReader, REMAINING_DEADLINE_NAME);
+    MetricData deadlineMetric = getMetricData(metricReader, TableRemainingDeadline.NAME);
 
     Attributes retryAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "UNAVAILABLE")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(ZONE_ID_KEY, "global")
-            .put(CLUSTER_ID_KEY, "<unspecified>")
-            .put(STREAMING_KEY, true)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
     HistogramPointData retryHistogramPointData =
         deadlineMetric.getHistogramData().getPoints().stream()
@@ -818,13 +810,13 @@ public class BuiltinMetricsTracerTest {
 
     Attributes okAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(STATUS_KEY, "OK")
-            .put(TABLE_ID_KEY, TABLE)
-            .put(ZONE_ID_KEY, ZONE)
-            .put(CLUSTER_ID_KEY, CLUSTER)
-            .put(METHOD_KEY, "Bigtable.ReadRows")
-            .put(STREAMING_KEY, true)
-            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
     HistogramPointData okHistogramPointData =
         deadlineMetric.getHistogramData().getPoints().stream()
@@ -848,19 +840,21 @@ public class BuiltinMetricsTracerTest {
       batcher.close();
 
       MetricData targetQpsMetric =
-          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       double expected_qps = 12;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
-      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(METHOD_KEY, "Bigtable.MutateRows")
-              .put(APPLIED_KEY, true)
-              .put(STATUS_KEY, "OK")
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       double expected_factor_mean = 1.2;
@@ -878,19 +872,21 @@ public class BuiltinMetricsTracerTest {
       batcher.close();
 
       MetricData targetQpsMetric =
-          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       double expected_qps = 8.0;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
-      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(METHOD_KEY, "Bigtable.MutateRows")
-              .put(APPLIED_KEY, true)
-              .put(STATUS_KEY, "OK")
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       double expected_factor_mean = 0.8;
@@ -908,20 +904,22 @@ public class BuiltinMetricsTracerTest {
       batcher.close();
 
       MetricData targetQpsMetric =
-          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // Factor is 1.8 but capped at 1.3 so updated QPS is 13.
       double expected_qps = 13;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
-      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(METHOD_KEY, "Bigtable.MutateRows")
-              .put(APPLIED_KEY, true)
-              .put(STATUS_KEY, "OK")
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       // Factor is 1.8 but capped at 1.3
@@ -940,20 +938,22 @@ public class BuiltinMetricsTracerTest {
       batcher.close();
 
       MetricData targetQpsMetric =
-          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // Factor is 0.5 but capped at 0.7 so updated QPS is 7.
       double expected_qps = 7;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
-      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(METHOD_KEY, "Bigtable.MutateRows")
-              .put(APPLIED_KEY, true)
-              .put(STATUS_KEY, "OK")
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       // Factor is 0.5 but capped at 0.7
@@ -973,20 +973,22 @@ public class BuiltinMetricsTracerTest {
       batcher.close();
 
       MetricData targetQpsMetric =
-          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+          expectedBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // On error, min factor is applied.
       double expected_qps = 7;
       assertThat(expected_qps).isEqualTo(actual_qps);
 
-      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(METHOD_KEY, "Bigtable.MutateRows")
-              .put(APPLIED_KEY, true)
-              .put(STATUS_KEY, "UNAVAILABLE")
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       // On error, min factor is applied.

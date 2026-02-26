@@ -15,8 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OUTSTANDING_RPCS_PER_CHANNEL_NAME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -25,6 +23,8 @@ import static org.mockito.Mockito.when;
 import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientChannelPoolOutstandingRpcs;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientPerConnectionErrorCount;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelObserver;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolObserver;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings.LoadBalancingStrategy;
@@ -182,7 +182,7 @@ public class ChannelPoolMetricsTracerTest {
 
     // Assert Outstanding RPCs metric
     Optional<MetricData> rpcMetricDataOpt =
-        getMetricData(metrics, OUTSTANDING_RPCS_PER_CHANNEL_NAME);
+        getMetricData(metrics, ClientChannelPoolOutstandingRpcs.NAME);
     assertThat(rpcMetricDataOpt.isPresent()).isTrue();
     MetricData rpcMetricData = rpcMetricDataOpt.get();
     Collection<HistogramPointData> rpcPoints = rpcMetricData.getHistogramData().getPoints();
@@ -202,7 +202,7 @@ public class ChannelPoolMetricsTracerTest {
 
     // Assert Error Count metric
     Optional<MetricData> errorMetricDataOpt =
-        getMetricData(metrics, PER_CONNECTION_ERROR_COUNT_NAME);
+        getMetricData(metrics, ClientPerConnectionErrorCount.NAME);
     assertThat(errorMetricDataOpt.isPresent()).isTrue();
     MetricData errorMetricData = errorMetricDataOpt.get();
     Collection<HistogramPointData> errorPoints = errorMetricData.getHistogramData().getPoints();
@@ -249,7 +249,7 @@ public class ChannelPoolMetricsTracerTest {
 
     // Assert Outstanding RPCs
     Optional<MetricData> rpcMetricDataOpt =
-        getMetricData(metrics, OUTSTANDING_RPCS_PER_CHANNEL_NAME);
+        getMetricData(metrics, ClientChannelPoolOutstandingRpcs.NAME);
     assertThat(rpcMetricDataOpt.isPresent()).isTrue();
     Collection<HistogramPointData> rpcPoints =
         rpcMetricDataOpt.get().getHistogramData().getPoints();
@@ -265,7 +265,7 @@ public class ChannelPoolMetricsTracerTest {
 
     // Assert Error Counts
     Optional<MetricData> errorMetricDataOpt =
-        getMetricData(metrics, PER_CONNECTION_ERROR_COUNT_NAME);
+        getMetricData(metrics, ClientPerConnectionErrorCount.NAME);
     assertThat(errorMetricDataOpt.isPresent()).isTrue();
     Collection<HistogramPointData> errorPoints =
         errorMetricDataOpt.get().getHistogramData().getPoints();
@@ -294,7 +294,7 @@ public class ChannelPoolMetricsTracerTest {
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     Optional<MetricData> errorMetricDataOpt =
-        getMetricData(metrics, PER_CONNECTION_ERROR_COUNT_NAME);
+        getMetricData(metrics, ClientPerConnectionErrorCount.NAME);
     assertThat(errorMetricDataOpt.isPresent()).isTrue();
     Collection<HistogramPointData> errorPoints =
         errorMetricDataOpt.get().getHistogramData().getPoints();
@@ -315,7 +315,7 @@ public class ChannelPoolMetricsTracerTest {
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     Optional<MetricData> rpcMetricDataOpt =
-        getMetricData(metrics, OUTSTANDING_RPCS_PER_CHANNEL_NAME);
+        getMetricData(metrics, ClientChannelPoolOutstandingRpcs.NAME);
     assertThat(rpcMetricDataOpt.isPresent()).isTrue();
     Collection<HistogramPointData> points = rpcMetricDataOpt.get().getHistogramData().getPoints();
 

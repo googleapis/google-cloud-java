@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.it;
 
-import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
 import com.google.common.truth.Correspondence;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.PointData;
@@ -27,11 +27,11 @@ public class MetricsITUtils {
 
   static final Correspondence<PointData, String> POINT_DATA_CLUSTER_ID_CONTAINS =
       Correspondence.from(
-          (pd, s) -> pd.getAttributes().get(BuiltinMetricsConstants.CLUSTER_ID_KEY).contains(s),
+          (pd, s) -> pd.getAttributes().get(TableSchema.CLUSTER_ID_KEY).contains(s),
           "contains attributes");
 
   static final Correspondence<PointData, String> POINT_DATA_ZONE_ID_CONTAINS =
       Correspondence.from(
-          (pd, s) -> pd.getAttributes().get(BuiltinMetricsConstants.ZONE_ID_KEY).contains(s),
+          (pd, s) -> pd.getAttributes().get(TableSchema.ZONE_ID_KEY).contains(s),
           "contains attributes");
 }

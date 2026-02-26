@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ClientPerConnectionErrorCount extends MetricWrapper<ClientSchema> {
-  private static final String NAME =
+  public static final String NAME =
       "bigtable.googleapis.com/internal/client/per_connection_error_count";
 
   static final List<Long> BUCKETS =

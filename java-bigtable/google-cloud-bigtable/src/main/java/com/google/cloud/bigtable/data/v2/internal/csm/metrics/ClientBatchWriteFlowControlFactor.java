@@ -25,7 +25,7 @@ import io.opentelemetry.api.metrics.DoubleGauge;
 import io.opentelemetry.api.metrics.Meter;
 
 public class ClientBatchWriteFlowControlFactor extends MetricWrapper<ClientSchema> {
-  private static final String NAME =
+  public static final String NAME =
       "bigtable.googleapis.com/internal/client/batch_write_flow_control_factor";
 
   public ClientBatchWriteFlowControlFactor() {

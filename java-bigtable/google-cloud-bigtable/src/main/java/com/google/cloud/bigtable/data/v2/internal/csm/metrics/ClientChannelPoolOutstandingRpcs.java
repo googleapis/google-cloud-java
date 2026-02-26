@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ClientChannelPoolOutstandingRpcs extends MetricWrapper<ClientSchema> {
-  private static final String NAME =
+  public static final String NAME =
       "bigtable.googleapis.com/internal/client/connection_pool/outstanding_rpcs";
 
   private static final List<Long> BUCKETS =

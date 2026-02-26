@@ -25,7 +25,6 @@ import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderReg
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableCloudMonitoringExporter;
-import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.ChannelPoolMetricsTracer;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
@@ -42,10 +41,8 @@ import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tagger;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.View;
 import io.opentelemetry.sdk.metrics.export.MetricExporter;
 import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
 import io.opentelemetry.sdk.metrics.export.PeriodicMetricReaderBuilder;
@@ -53,7 +50,6 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import javax.annotation.Nullable;
@@ -100,7 +96,7 @@ public class MetricsImpl implements Metrics, Closeable {
               // Disable default grpc metrics
               .disableAllMetrics()
               // Enable specific grpc metrics
-              .enableMetrics(BuiltinMetricsConstants.GRPC_METRICS.keySet())
+              .enableMetrics(metricRegistry.getGrpcMetricNames())
               .build();
     } else {
       this.grpcOtel = null;
@@ -184,16 +180,6 @@ public class MetricsImpl implements Metrics, Closeable {
             : defaultCredentials;
 
     SdkMeterProviderBuilder meterProvider = SdkMeterProvider.builder();
-
-    for (Map.Entry<InstrumentSelector, View> entry :
-        BuiltinMetricsConstants.getAllViews().entrySet()) {
-      meterProvider.registerView(entry.getKey(), entry.getValue());
-    }
-
-    for (Map.Entry<InstrumentSelector, View> e :
-        BuiltinMetricsConstants.getInternalViews().entrySet()) {
-      meterProvider.registerView(e.getKey(), e.getValue());
-    }
 
     MetricExporter publicExporter =
         BigtableCloudMonitoringExporter.create(

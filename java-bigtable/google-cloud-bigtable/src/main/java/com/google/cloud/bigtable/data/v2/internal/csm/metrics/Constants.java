@@ -54,7 +54,7 @@ public final class Constants {
         AttributeKey.stringKey("app_profile");
     public static final AttributeKey<String> DEBUG_TAG_KEY = AttributeKey.stringKey("tag");
 
-    static final AttributeKey<Boolean> APPLIED_KEY = AttributeKey.booleanKey("applied");
+    public static final AttributeKey<Boolean> APPLIED_KEY = AttributeKey.booleanKey("applied");
 
     static final AttributeKey<String> CHANNEL_POOL_LB_POLICY = AttributeKey.stringKey("lb_policy");
     static final AttributeKey<String> DP_REASON_KEY = AttributeKey.stringKey("reason");

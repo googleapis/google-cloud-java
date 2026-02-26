@@ -26,9 +26,10 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -105,23 +106,23 @@ public class StreamingMetricsMetadataIT {
     Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
     List<MetricData> metrics =
         metricReader.collectAllMetrics().stream()
-            .filter(m -> m.getName().contains(BuiltinMetricsConstants.OPERATION_LATENCIES_NAME))
+            .filter(m -> m.getName().contains(TableOperationLatency.NAME))
             .collect(Collectors.toList());
 
     assertThat(allMetricData)
         .comparingElementsUsing(METRIC_DATA_NAME_CONTAINS)
-        .contains(BuiltinMetricsConstants.OPERATION_LATENCIES_NAME);
+        .contains(TableOperationLatency.NAME);
     assertThat(metrics).hasSize(1);
 
     MetricData metricData = metrics.get(0);
     List<PointData> pointData = new ArrayList<>(metricData.getData().getPoints());
     List<String> clusterAttributes =
         pointData.stream()
-            .map(pd -> pd.getAttributes().get(BuiltinMetricsConstants.CLUSTER_ID_KEY))
+            .map(pd -> pd.getAttributes().get(TableSchema.CLUSTER_ID_KEY))
             .collect(Collectors.toList());
     List<String> zoneAttributes =
         pointData.stream()
-            .map(pd -> pd.getAttributes().get(BuiltinMetricsConstants.ZONE_ID_KEY))
+            .map(pd -> pd.getAttributes().get(TableSchema.ZONE_ID_KEY))
             .collect(Collectors.toList());
 
     assertThat(pointData)
@@ -146,23 +147,23 @@ public class StreamingMetricsMetadataIT {
     Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
     List<MetricData> metrics =
         metricReader.collectAllMetrics().stream()
-            .filter(m -> m.getName().contains(BuiltinMetricsConstants.OPERATION_LATENCIES_NAME))
+            .filter(m -> m.getName().contains(TableOperationLatency.NAME))
             .collect(Collectors.toList());
 
     assertThat(allMetricData)
         .comparingElementsUsing(METRIC_DATA_NAME_CONTAINS)
-        .contains(BuiltinMetricsConstants.OPERATION_LATENCIES_NAME);
+        .contains(TableOperationLatency.NAME);
     assertThat(metrics).hasSize(1);
 
     MetricData metricData = metrics.get(0);
     List<PointData> pointData = new ArrayList<>(metricData.getData().getPoints());
     List<String> clusterAttributes =
         pointData.stream()
-            .map(pd -> pd.getAttributes().get(BuiltinMetricsConstants.CLUSTER_ID_KEY))
+            .map(pd -> pd.getAttributes().get(TableSchema.CLUSTER_ID_KEY))
             .collect(Collectors.toList());
     List<String> zoneAttributes =
         pointData.stream()
-            .map(pd -> pd.getAttributes().get(BuiltinMetricsConstants.ZONE_ID_KEY))
+            .map(pd -> pd.getAttributes().get(TableSchema.ZONE_ID_KEY))
             .collect(Collectors.toList());
 
     assertThat(pointData)

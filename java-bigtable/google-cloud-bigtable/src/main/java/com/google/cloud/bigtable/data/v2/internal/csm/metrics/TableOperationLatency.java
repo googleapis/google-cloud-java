@@ -33,7 +33,7 @@ import java.time.Duration;
 import javax.annotation.Nullable;
 
 public class TableOperationLatency extends MetricWrapper<TableSchema> {
-  private static final String NAME = "bigtable.googleapis.com/internal/client/operation_latencies";
+  public static final String NAME = "bigtable.googleapis.com/internal/client/operation_latencies";
 
   public TableOperationLatency() {
     super(TableSchema.INSTANCE, NAME);

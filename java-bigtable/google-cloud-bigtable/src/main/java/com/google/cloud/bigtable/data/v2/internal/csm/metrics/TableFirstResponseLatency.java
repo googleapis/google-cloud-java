@@ -33,7 +33,7 @@ import java.time.Duration;
 import javax.annotation.Nullable;
 
 public class TableFirstResponseLatency extends MetricWrapper<TableSchema> {
-  private static final String NAME =
+  public static final String NAME =
       "bigtable.googleapis.com/internal/client/first_response_latencies";
 
   public TableFirstResponseLatency() {
