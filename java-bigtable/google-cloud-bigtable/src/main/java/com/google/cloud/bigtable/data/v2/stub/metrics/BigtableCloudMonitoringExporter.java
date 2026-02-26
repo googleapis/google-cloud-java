@@ -113,7 +113,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
 
   private final AtomicBoolean exportFailureLogged = new AtomicBoolean(false);
 
-  static BigtableCloudMonitoringExporter create(
+  public static BigtableCloudMonitoringExporter create(
       ClientInfo clientInfo,
       @Nullable Credentials credentials,
       @Nullable String endpoint,

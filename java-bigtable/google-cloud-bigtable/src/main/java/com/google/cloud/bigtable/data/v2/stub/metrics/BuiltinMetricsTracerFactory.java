@@ -46,7 +46,6 @@ import io.opentelemetry.api.metrics.DoubleGauge;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
-import java.io.IOException;
 
 /**
  * {@link ApiTracerFactory} that will generate OpenTelemetry metrics by using the {@link ApiTracer}
@@ -74,7 +73,7 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
   private final DoubleHistogram batchWriteFlowControlFactorHistogram;
 
   public static BuiltinMetricsTracerFactory create(
-      OpenTelemetry openTelemetry, ClientInfo clientInfo) throws IOException {
+      OpenTelemetry openTelemetry, ClientInfo clientInfo) {
     return new BuiltinMetricsTracerFactory(openTelemetry, clientInfo);
   }
 
