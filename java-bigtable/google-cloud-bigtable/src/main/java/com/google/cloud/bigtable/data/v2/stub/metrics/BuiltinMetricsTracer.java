@@ -16,7 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.Util.extractStatus;
+import static com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util.extractStatus;
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;

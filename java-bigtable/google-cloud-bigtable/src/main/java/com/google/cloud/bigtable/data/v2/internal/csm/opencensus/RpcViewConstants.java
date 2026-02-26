@@ -13,22 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.opencensus;
 
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_ATTEMPT_LATENCY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_GFE_LATENCY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_INSTANCE_ID;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_OP;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_OP_ATTEMPT_COUNT;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_OP_LATENCY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_PROJECT_ID;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY;
-import static com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants.BIGTABLE_STATUS;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_ATTEMPT_LATENCY;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_GFE_LATENCY;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_INSTANCE_ID;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_OP;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_OP_ATTEMPT_COUNT;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_OP_LATENCY;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_PROJECT_ID;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY;
+import static com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants.BIGTABLE_STATUS;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import io.opencensus.stats.Aggregation;
 import io.opencensus.stats.Aggregation.Count;
 import io.opencensus.stats.Aggregation.Distribution;
@@ -37,7 +39,7 @@ import io.opencensus.stats.BucketBoundaries;
 import io.opencensus.stats.View;
 import java.util.Arrays;
 
-class RpcViewConstants {
+public class RpcViewConstants {
   // Aggregations
   private static final Aggregation COUNT = Count.create();
   private static final Aggregation SUM = Sum.create();
@@ -167,4 +169,19 @@ class RpcViewConstants {
           AGGREGATION_WITH_MILLIS_HISTOGRAM,
           ImmutableList.of(
               BIGTABLE_INSTANCE_ID, BIGTABLE_PROJECT_ID, BIGTABLE_APP_PROFILE_ID, BIGTABLE_OP));
+
+  @VisibleForTesting
+  public static final ImmutableSet<View> BIGTABLE_CLIENT_VIEWS_SET =
+      ImmutableSet.of(
+          RpcViewConstants.BIGTABLE_OP_LATENCY_VIEW,
+          RpcViewConstants.BIGTABLE_COMPLETED_OP_VIEW,
+          RpcViewConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY_VIEW,
+          RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
+          RpcViewConstants.BIGTABLE_ATTEMPTS_PER_OP_VIEW,
+          RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW);
+
+  public static final ImmutableSet<View> GFE_VIEW_SET =
+      ImmutableSet.of(
+          RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
+          RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW);
 }

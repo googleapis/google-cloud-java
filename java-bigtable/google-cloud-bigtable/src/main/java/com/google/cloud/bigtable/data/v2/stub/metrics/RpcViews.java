@@ -15,29 +15,15 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import com.google.api.core.InternalApi;
+import com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcViewConstants;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableSet;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.View;
 import io.opencensus.stats.ViewManager;
 
 @Deprecated
 public class RpcViews {
-  @VisibleForTesting
-  private static final ImmutableSet<View> BIGTABLE_CLIENT_VIEWS_SET =
-      ImmutableSet.of(
-          RpcViewConstants.BIGTABLE_OP_LATENCY_VIEW,
-          RpcViewConstants.BIGTABLE_COMPLETED_OP_VIEW,
-          RpcViewConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY_VIEW,
-          RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
-          RpcViewConstants.BIGTABLE_ATTEMPTS_PER_OP_VIEW,
-          RpcViewConstants.BIGTABLE_BATCH_THROTTLED_TIME_VIEW);
-
-  private static final ImmutableSet<View> GFE_VIEW_SET =
-      ImmutableSet.of(
-          RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
-          RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW);
-
   private static boolean gfeMetricsRegistered = false;
 
   /** Registers all Bigtable specific views. */
@@ -55,16 +41,18 @@ public class RpcViews {
     registerBigtableClientGfeViews(Stats.getViewManager());
   }
 
+  @InternalApi
   @VisibleForTesting
-  static void registerBigtableClientViews(ViewManager viewManager) {
-    for (View view : BIGTABLE_CLIENT_VIEWS_SET) {
+  public static void registerBigtableClientViews(ViewManager viewManager) {
+    for (View view : RpcViewConstants.BIGTABLE_CLIENT_VIEWS_SET) {
       viewManager.registerView(view);
     }
   }
 
+  @InternalApi
   @VisibleForTesting
-  static void registerBigtableClientGfeViews(ViewManager viewManager) {
-    for (View view : GFE_VIEW_SET) {
+  public static void registerBigtableClientGfeViews(ViewManager viewManager) {
+    for (View view : RpcViewConstants.GFE_VIEW_SET) {
       viewManager.registerView(view);
     }
     gfeMetricsRegistered = true;

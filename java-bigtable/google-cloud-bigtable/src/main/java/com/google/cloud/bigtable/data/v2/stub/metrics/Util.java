@@ -16,9 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ApiException;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
@@ -32,14 +30,11 @@ import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
-import io.grpc.Status;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CancellationException;
-import javax.annotation.Nullable;
 
 /** Utilities to help integrating with OpenCensus. */
 @InternalApi("For internal use only")
@@ -48,28 +43,6 @@ public class Util {
       Metadata.Key.of("bigtable-attempt", Metadata.ASCII_STRING_MARSHALLER);
   static final Metadata.Key<String> ATTEMPT_EPOCH_KEY =
       Metadata.Key.of("bigtable-client-attempt-epoch-usec", Metadata.ASCII_STRING_MARSHALLER);
-
-  public static Status.Code extractStatus(@Nullable Throwable error) {
-    if (error == null) {
-      return Status.Code.OK;
-    }
-    // Handle java CancellationException as if it was a gax CancelledException
-    if (error instanceof CancellationException) {
-      return Status.Code.CANCELLED;
-    }
-    if (error instanceof ApiException) {
-      ApiException apiException = (ApiException) error;
-      if (apiException.getStatusCode() instanceof GrpcStatusCode) {
-        return ((GrpcStatusCode) apiException.getStatusCode()).getTransportCode();
-      }
-    }
-
-    Status s = Status.fromThrowable(error);
-    if (s != null) {
-      return s.getCode();
-    }
-    return Status.Code.UNKNOWN;
-  }
 
   static String extractTableId(Object request) {
     String tableName = null;

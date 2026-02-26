@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import static com.google.cloud.bigtable.data.v2.stub.metrics.Util.extractStatus;
+import static com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util.extractStatus;
 
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.DeadlineExceededException;

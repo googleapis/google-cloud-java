@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.opencensus;
 
 import io.opencensus.implcore.common.MillisClock;
 import io.opencensus.implcore.internal.SimpleEventQueue;

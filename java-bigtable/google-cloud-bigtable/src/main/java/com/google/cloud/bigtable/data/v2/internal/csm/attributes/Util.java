@@ -16,12 +16,16 @@
 
 package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.common.annotations.VisibleForTesting;
+import io.grpc.Status;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
 
 public class Util {
@@ -99,5 +103,27 @@ public class Util {
         .map(ResponseParams::getZoneId)
         .filter(s -> !s.isEmpty())
         .orElse("global");
+  }
+
+  public static Status.Code extractStatus(@Nullable Throwable error) {
+    if (error == null) {
+      return Status.Code.OK;
+    }
+    // Handle java CancellationException as if it was a gax CancelledException
+    if (error instanceof CancellationException) {
+      return Status.Code.CANCELLED;
+    }
+    if (error instanceof ApiException) {
+      ApiException apiException = (ApiException) error;
+      if (apiException.getStatusCode() instanceof GrpcStatusCode) {
+        return ((GrpcStatusCode) apiException.getStatusCode()).getTransportCode();
+      }
+    }
+
+    Status s = Status.fromThrowable(error);
+    if (s != null) {
+      return s.getCode();
+    }
+    return Status.Code.UNKNOWN;
   }
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.metrics;
+package com.google.cloud.bigtable.data.v2.internal.csm.opencensus;
 
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
@@ -21,7 +21,9 @@ import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.api.gax.tracing.SpanName;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
 import com.google.common.base.Stopwatch;
 import io.opencensus.stats.MeasureMap;
 import io.opencensus.stats.StatsRecorder;
