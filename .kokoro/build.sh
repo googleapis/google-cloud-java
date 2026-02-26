@@ -199,7 +199,7 @@ case ${JOB_TYPE} in
 
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
-        # Format those specific modules instead of the entire codebase.
+        # Format those specific modules instead of the entire codebase, reducing format check time.
         changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
         echo "${changed_file_list}"
 
@@ -231,8 +231,12 @@ case ${JOB_TYPE} in
                     dir=$(dirname "${dir}")
                 done
                 if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
-                    # Filter out samples, directories with no Java source code, and generated protobuf/gRPC code
+                    # Filter out directories not participating in the default formatting reactor:
+                    # - samples/tutorials are wrapped in the include-samples profile
+                    # - proto-*/grpc-* are generated code and should not be formatted manually
+                    # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "${dir}" != *"tutorials"* ]] && \
                        [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
                        [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
