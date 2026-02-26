@@ -31,7 +31,7 @@ public class TelemetryConstants {
   public static final String ATTRIBUTES_KEY_RECEIVED = "Received";
   public static final String ATTRIBUTES_KEY_MISSING = "Missing";
   public static final String ATTRIBUTES_KEY_DEFERRED = "Deferred";
-  public static final String ATTRIBUTES_KEY_MORE_RESULTS = "mor_results";
+  public static final String ATTRIBUTES_KEY_MORE_RESULTS = "more_results";
 
   /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
   public static final String METHOD_ALLOCATE_IDS = "AllocateIds";
