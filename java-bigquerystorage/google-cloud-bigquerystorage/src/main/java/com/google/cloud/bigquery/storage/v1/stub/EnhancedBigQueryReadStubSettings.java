@@ -36,7 +36,6 @@ import com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse;
 import com.google.cloud.bigquery.storage.v1.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.common.collect.ImmutableList;
-
 import java.time.Duration;
 import java.util.List;
 
