@@ -18,7 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import org.junit.jupiter.api.Test;
 
 class ClientInfoTest {

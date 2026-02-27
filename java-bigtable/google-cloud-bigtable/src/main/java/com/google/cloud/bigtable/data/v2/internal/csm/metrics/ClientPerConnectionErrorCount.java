@@ -99,8 +99,9 @@ public class ClientPerConnectionErrorCount extends MetricWrapper<ClientSchema> {
       Attributes attributes =
           getSchema()
               .createResourceAttrs(clientInfo)
-              .put(MetricLabels.BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProject())
-              .put(MetricLabels.INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstance())
+              .put(
+                  MetricLabels.BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProjectId())
+              .put(MetricLabels.INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstanceId())
               .put(MetricLabels.CLIENT_NAME, clientInfo.getClientName())
               .put(MetricLabels.APP_PROFILE_KEY, clientInfo.getAppProfileId())
               .build();

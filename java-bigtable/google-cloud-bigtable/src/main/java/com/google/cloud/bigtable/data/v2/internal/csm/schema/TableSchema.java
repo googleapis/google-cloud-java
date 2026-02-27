@@ -56,8 +56,8 @@ public final class TableSchema extends Schema {
   public AttributesBuilder createResourceAttrs(
       ClientInfo clientInfo, String tableId, @Nullable ResponseParams clusterInfo) {
     return Attributes.builder()
-        .put(BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProject())
-        .put(INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstance())
+        .put(BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProjectId())
+        .put(INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstanceId())
         .put(TABLE_ID_KEY, tableId)
         .put(CLUSTER_ID_KEY, Util.formatClusterIdMetricLabel(clusterInfo))
         .put(ZONE_ID_KEY, Util.formatZoneIdMetricLabel(clusterInfo));

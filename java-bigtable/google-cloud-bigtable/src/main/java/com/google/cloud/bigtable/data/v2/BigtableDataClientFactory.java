@@ -16,7 +16,7 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.BetaApi;
-import com.google.bigtable.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.ClientOperationSettings;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;

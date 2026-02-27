@@ -30,9 +30,9 @@ import io.opentelemetry.api.common.Attributes;
 public final class GrpcClientSchema extends Schema {
   // Unlike the normal ClientSchema, the bigtable resource ids must be injected during export time
   private static final DeferredAttr BIGTABLE_PROJECT_ID =
-      DeferredAttr.fromClientInfo("project_id", ci -> ci.getInstanceName().getProject());
+      DeferredAttr.fromClientInfo("project_id", ci -> ci.getInstanceName().getProjectId());
   private static final DeferredAttr INSTANCE_ID =
-      DeferredAttr.fromClientInfo("instance", ci -> ci.getInstanceName().getInstance());
+      DeferredAttr.fromClientInfo("instance", ci -> ci.getInstanceName().getInstanceId());
   private static final DeferredAttr APP_PROFILE_ID =
       DeferredAttr.fromClientInfo("app_profile", ClientInfo::getAppProfileId);
   private static final DeferredAttr CLIENT_NAME =
@@ -73,6 +73,6 @@ public final class GrpcClientSchema extends Schema {
   @Override
   public ProjectName extractProjectName(
       Attributes ignored, EnvInfo ignored2, ClientInfo clientInfo) {
-    return ProjectName.of(clientInfo.getInstanceName().getProject());
+    return ProjectName.of(clientInfo.getInstanceName().getProjectId());
   }
 }

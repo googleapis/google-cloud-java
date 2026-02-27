@@ -20,9 +20,9 @@ import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.BigtableGrpc;
-import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
 import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
@@ -80,7 +80,7 @@ public class BigtableChannelPrimer implements ChannelPrimer {
 
     request =
         PingAndWarmRequest.newBuilder()
-            .setName(InstanceName.format(projectId, instanceId))
+            .setName(InstanceName.of(projectId, instanceId).toString())
             .setAppProfileId(appProfileId)
             .build();
 

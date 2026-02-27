@@ -25,11 +25,11 @@ import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
@@ -143,8 +143,8 @@ public class MetricRegistryExportTest {
     expectedTableMonitoredResource =
         MonitoredResource.newBuilder()
             .setType("bigtable_client_raw")
-            .putLabels("project_id", clientInfo.getInstanceName().getProject())
-            .putLabels("instance", clientInfo.getInstanceName().getInstance())
+            .putLabels("project_id", clientInfo.getInstanceName().getProjectId())
+            .putLabels("instance", clientInfo.getInstanceName().getInstanceId())
             .putLabels("cluster", clusterInfo.getClusterId())
             .putLabels("table", tableId)
             .putLabels("zone", clusterInfo.getZoneId())
@@ -153,8 +153,8 @@ public class MetricRegistryExportTest {
     expectedClientMonitoredResource =
         MonitoredResource.newBuilder()
             .setType("bigtable_client")
-            .putLabels("project_id", clientInfo.getInstanceName().getProject())
-            .putLabels("instance", clientInfo.getInstanceName().getInstance())
+            .putLabels("project_id", clientInfo.getInstanceName().getProjectId())
+            .putLabels("instance", clientInfo.getInstanceName().getInstanceId())
             .putLabels("app_profile", appProfileId)
             .putLabels("client_project", envInfo.getProject())
             .putLabels("region", envInfo.getRegion())
@@ -575,9 +575,9 @@ public class MetricRegistryExportTest {
 
     assertThat(timeSeries.getMetric().getLabelsMap())
         .containsExactly(
-            "project_id", clientInfo.getInstanceName().getProject(),
+            "project_id", clientInfo.getInstanceName().getProjectId(),
             "client_uid", envInfo.getUid(),
-            "instance", clientInfo.getInstanceName().getInstance(),
+            "instance", clientInfo.getInstanceName().getInstanceId(),
             "client_name", clientInfo.getClientName(),
             "app_profile", clientInfo.getAppProfileId());
 

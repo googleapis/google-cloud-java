@@ -188,7 +188,7 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
                         " Need monitoring metric writer permission on project=%s. Follow"
                             + " https://cloud.google.com/bigtable/docs/client-side-metrics-setup"
                             + " to set up permissions.",
-                        clientInfo.getInstanceName().getProject());
+                        clientInfo.getInstanceName().getProjectId());
               }
               RuntimeException asyncWrapper = new RuntimeException("export failed", throwable);
               asyncWrapper.setStackTrace(stackTrace);

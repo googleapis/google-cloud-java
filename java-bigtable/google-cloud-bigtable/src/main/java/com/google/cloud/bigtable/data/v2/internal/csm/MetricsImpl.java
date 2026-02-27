@@ -202,10 +202,10 @@ public class MetricsImpl implements Metrics, Closeable {
             // Annotate traces with the same tags as metrics
             .put(
                 RpcMeasureConstants.BIGTABLE_PROJECT_ID.getName(),
-                clientInfo.getInstanceName().getProject())
+                clientInfo.getInstanceName().getProjectId())
             .put(
                 RpcMeasureConstants.BIGTABLE_INSTANCE_ID.getName(),
-                clientInfo.getInstanceName().getInstance())
+                clientInfo.getInstanceName().getInstanceId())
             .put(
                 RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID.getName(), clientInfo.getAppProfileId())
             // Also annotate traces with library versions
@@ -222,10 +222,10 @@ public class MetricsImpl implements Metrics, Closeable {
         ImmutableMap.<TagKey, TagValue>builder()
             .put(
                 RpcMeasureConstants.BIGTABLE_PROJECT_ID,
-                TagValue.create(clientInfo.getInstanceName().getProject()))
+                TagValue.create(clientInfo.getInstanceName().getProjectId()))
             .put(
                 RpcMeasureConstants.BIGTABLE_INSTANCE_ID,
-                TagValue.create(clientInfo.getInstanceName().getInstance()))
+                TagValue.create(clientInfo.getInstanceName().getInstanceId()))
             .put(
                 RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
                 TagValue.create(clientInfo.getAppProfileId()))

@@ -64,13 +64,13 @@ public final class ClientSchema extends Schema {
 
   @Override
   public ProjectName extractProjectName(Attributes attrs, EnvInfo envInfo, ClientInfo clientInfo) {
-    return ProjectName.of(clientInfo.getInstanceName().getProject());
+    return ProjectName.of(clientInfo.getInstanceName().getProjectId());
   }
 
   public AttributesBuilder createResourceAttrs(ClientInfo clientInfo) {
     return Attributes.builder()
-        .put(BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProject())
-        .put(INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstance())
+        .put(BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProjectId())
+        .put(INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstanceId())
         .put(APP_PROFILE_KEY, clientInfo.getAppProfileId())
         .put(CLIENT_NAME, clientInfo.getClientName());
   }

@@ -17,8 +17,8 @@
 package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
 
 import com.google.auto.value.AutoValue;
-import com.google.bigtable.v2.InstanceName;
 import com.google.cloud.bigtable.Version;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 
 /**
  * A value class to capture parameters that the client was instantiated with. These parameters will

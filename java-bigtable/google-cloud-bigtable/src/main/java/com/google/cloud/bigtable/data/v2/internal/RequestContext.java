@@ -36,8 +36,8 @@ public abstract class RequestContext implements Serializable {
 
   public static RequestContext create(ClientInfo clientInfo) {
     return create(
-        clientInfo.getInstanceName().getProject(),
-        clientInfo.getInstanceName().getInstance(),
+        clientInfo.getInstanceName().getProjectId(),
+        clientInfo.getInstanceName().getInstanceId(),
         clientInfo.getAppProfileId());
   }
 
