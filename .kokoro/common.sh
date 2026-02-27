@@ -71,7 +71,7 @@ function parse_submodules() {
 
     # Use grep to find the modules in the aggregator pom file
     # Faster than invoking mvn help:evaluate to list all the project modules
-    modules=$(grep '<module>' "$1/pom.xml" | sed 's/.*<module>\(.*\)<\/module>.*/\1/')
+    modules=$(grep '<module>' "$1/pom.xml" | sed 's/.*<module>\(.*\)<\/module>.*/\1/' || true)
     if [ -n "$modules" ]; then
       for submodule in $modules; do
         # Each entry = <folder>/<submodule>
