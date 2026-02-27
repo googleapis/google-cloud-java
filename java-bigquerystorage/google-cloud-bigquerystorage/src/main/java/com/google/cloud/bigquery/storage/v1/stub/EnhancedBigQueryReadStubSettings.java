@@ -36,6 +36,8 @@ import com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse;
 import com.google.cloud.bigquery.storage.v1.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.common.collect.ImmutableList;
+
+import java.time.Duration;
 import java.util.List;
 
 /**
@@ -111,7 +113,10 @@ public class EnhancedBigQueryReadStubSettings
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return BigQueryReadStubSettings.defaultGrpcTransportProviderBuilder();
+    return BigQueryReadStubSettings.defaultGrpcTransportProviderBuilder()
+        .setKeepAliveTimeDuration(Duration.ofMinutes(1))
+        .setKeepAliveTimeoutDuration(Duration.ofMinutes(1))
+        .setKeepAliveWithoutCalls(true);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
