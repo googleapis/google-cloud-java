@@ -68,6 +68,9 @@ function parse_submodules() {
   submodules_array=()
   if [ -f "$1/pom.xml" ]; then
     local modules
+
+    # Use grep to find the modules in the aggregator pom file
+    # Faster than invoking mvn help:evaluate to list all the project modules
     modules=$(grep '<module>' "$1/pom.xml" | sed 's/.*<module>\(.*\)<\/module>.*/\1/')
     if [ -n "$modules" ]; then
       for submodule in $modules; do
@@ -222,10 +225,14 @@ function generate_modified_modules_list() {
 
 # Filters the modified_module_list to only include modules that contain
 # integration test files (matching IT*.java or *IT.java in src/test/java).
-# Sets filtered_it_module_list as a bash array.
+# Not all modules will have ITs written and there is not need to test
+# modules without ITs.
 function filter_modules_with_integration_tests() {
   filtered_it_module_list=()
   for module in "${modified_module_list[@]}"; do
+    # 1. Search for files in the Java test directory (*/src/test/java/*)
+    # 2. Filter for ITs that match the typical file name (IT prefix or suffix)
+    # 3. Stop searching when a single file match has been found
     if find "$module" -path '*/src/test/java/*' \( -name 'IT*.java' -o -name '*IT.java' \) -print -quit 2>/dev/null | grep -q .; then
       filtered_it_module_list+=("$module")
     fi
