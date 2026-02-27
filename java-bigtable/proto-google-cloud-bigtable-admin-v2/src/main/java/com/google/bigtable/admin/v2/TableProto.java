@@ -117,6 +117,14 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_BackupInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_TieredStorageConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_TieredStorageConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_TieredStorageRule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_TieredStorageRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_ProtoSchema_fieldAccessorTable;
@@ -145,7 +153,7 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\013backup_info\030\002 \001(\0132$.google.bigtable.admin.v2.BackupInfoH\000B\r\n"
           + "\013source_info\"I\n"
           + "\022ChangeStreamConfig\0223\n"
-          + "\020retention_period\030\001 \001(\0132\031.google.protobuf.Duration\"\225\014\n"
+          + "\020retention_period\030\001 \001(\0132\031.google.protobuf.Duration\"\343\014\n"
           + "\005Table\022\014\n"
           + "\004name\030\001 \001(\t\022O\n"
           + "\016cluster_states\030\002"
@@ -160,12 +168,14 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132,.google.bigtable.admin.v2.ChangeStreamConfig\022\033\n"
           + "\023deletion_protection\030\t \001(\010\022X\n"
           + "\027automated_backup_policy\030\r"
-          + " \001(\01325.google.bigtable.admin.v2.Table.AutomatedBackupPolicyH\000\022=\n"
+          + " \001(\01325.google.bigtable.admin.v2.Table.AutomatedBackupPolicyH\000\022L\n"
+          + "\025tiered_storage_config\030\016 \001(\013"
+          + "2-.google.bigtable.admin.v2.TieredStorageConfig\022=\n"
           + "\016row_key_schema\030\017"
           + " \001(\0132%.google.bigtable.admin.v2.Type.Struct\032\306\002\n"
           + "\014ClusterState\022]\n"
-          + "\021replication_state\030\001 \001(\0162=.g"
-          + "oogle.bigtable.admin.v2.Table.ClusterState.ReplicationStateB\003\340A\003\022F\n"
+          + "\021replication_state\030\001 \001(\0162=.goo"
+          + "gle.bigtable.admin.v2.Table.ClusterState.ReplicationStateB\003\340A\003\022F\n"
           + "\017encryption_info\030\002"
           + " \003(\0132(.google.bigtable.admin.v2.EncryptionInfoB\003\340A\003\"\216\001\n"
           + "\020ReplicationState\022\023\n"
@@ -196,13 +206,13 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\020REPLICATION_VIEW\020\003\022\023\n"
           + "\017ENCRYPTION_VIEW\020\005\022\010\n"
           + "\004FULL\020\004:_\352A\\\n"
-          + "\"bigtableadmin.googleapis.com/Tab"
-          + "le\0226projects/{project}/instances/{instance}/tables/{table}B\031\n"
+          + "\"bigtableadmin.googleapis.com/Table"
+          + "\0226projects/{project}/instances/{instance}/tables/{table}B\031\n"
           + "\027automated_backup_config\"\343\005\n"
           + "\016AuthorizedView\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022J\n"
-          + "\013subset_view\030\002 \001(\01323.google.bigtab"
-          + "le.admin.v2.AuthorizedView.SubsetViewH\000\022\014\n"
+          + "\013subset_view\030\002"
+          + " \001(\01323.google.bigtable.admin.v2.AuthorizedView.SubsetViewH\000\022\014\n"
           + "\004etag\030\003 \001(\t\022\033\n"
           + "\023deletion_protection\030\004 \001(\010\032?\n\r"
           + "FamilySubsets\022\022\n\n"
@@ -210,8 +220,8 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\022qualifier_prefixes\030\002 \003(\014\032\360\001\n\n"
           + "SubsetView\022\024\n"
           + "\014row_prefixes\030\001 \003(\014\022^\n"
-          + "\016family_subsets\030\002 \003(\0132F.google.bigtable.admin.v2.Auth"
-          + "orizedView.SubsetView.FamilySubsetsEntry\032l\n"
+          + "\016family_subsets\030\002 \003(\0132F.google.bigtable.admin.v2.Author"
+          + "izedView.SubsetView.FamilySubsetsEntry\032l\n"
           + "\022FamilySubsetsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022E\n"
           + "\005value\030\002"
@@ -221,9 +231,9 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\tNAME_ONLY\020\001\022\t\n"
           + "\005BASIC\020\002\022\010\n"
           + "\004FULL\020\003:\254\001\352A\250\001\n"
-          + "+bigtableadmin.googleapis.com/AuthorizedView\022Xprojects/{project}/instances/{ins"
-          + "tance}/tables/{table}/authorizedViews/{a"
-          + "uthorized_view}*\017authorizedViews2\016authorizedViewB\021\n"
+          + "+bigtableadmin.googleapis.com/AuthorizedView\022Xprojects/{project}/instances/{insta"
+          + "nce}/tables/{table}/authorizedViews/{aut"
+          + "horized_view}*\017authorizedViews2\016authorizedViewB\021\n"
           + "\017authorized_view\"u\n"
           + "\014ColumnFamily\0221\n"
           + "\007gc_rule\030\001 \001(\0132 .google.bigtable.admin.v2.GcRule\0222\n\n"
@@ -256,15 +266,15 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\017data_size_bytes\030\003 \001(\003B\003\340A\003\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022/\n"
           + "\013delete_time\030\005 \001(\0132\032.google.protobuf.Timestamp\022<\n"
-          + "\005state\030\006 \001(\0162(.goog"
-          + "le.bigtable.admin.v2.Snapshot.StateB\003\340A\003\022\023\n"
+          + "\005state\030\006 \001(\0162(.google"
+          + ".bigtable.admin.v2.Snapshot.StateB\003\340A\003\022\023\n"
           + "\013description\030\007 \001(\t\"5\n"
           + "\005State\022\023\n"
           + "\017STATE_NOT_KNOWN\020\000\022\t\n"
           + "\005READY\020\001\022\014\n"
           + "\010CREATING\020\002:{\352Ax\n"
-          + "%bigtableadmin.googleapis.com/Snapshot\022Oprojects/{project}/instances/{instance"
-          + "}/clusters/{cluster}/snapshots/{snapshot}\"\371\005\n"
+          + "%bigtableadmin.googleapis.com/Snapshot\022Oprojects/{project}/instances/{instance}/"
+          + "clusters/{cluster}/snapshots/{snapshot}\"\371\005\n"
           + "\006Backup\022\014\n"
           + "\004name\030\001 \001(\t\022\034\n"
           + "\014source_table\030\002 \001(\tB\006\340A\005\340A\002\022\032\n\r"
@@ -276,10 +286,10 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\010end_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\027\n\n"
           + "size_bytes\030\006 \001(\003B\003\340A\003\022:\n"
-          + "\005state\030\007 \001"
-          + "(\0162&.google.bigtable.admin.v2.Backup.StateB\003\340A\003\022F\n"
-          + "\017encryption_info\030\t \001(\0132(.googl"
-          + "e.bigtable.admin.v2.EncryptionInfoB\003\340A\003\022@\n"
+          + "\005state\030\007 \001(\016"
+          + "2&.google.bigtable.admin.v2.Backup.StateB\003\340A\003\022F\n"
+          + "\017encryption_info\030\t"
+          + " \001(\0132(.google.bigtable.admin.v2.EncryptionInfoB\003\340A\003\022@\n"
           + "\013backup_type\030\013 \001(\0162+.google.bigtable.admin.v2.Backup.BackupType\0228\n"
           + "\024hot_to_standard_time\030\014 \001(\0132\032.google.protobuf.Timestamp\"7\n"
           + "\005State\022\025\n"
@@ -290,15 +300,21 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\027BACKUP_TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010STANDARD\020\001\022\007\n"
           + "\003HOT\020\002:u\352Ar\n"
-          + "#bigtableadmin.googleapis.com/Backup\022Kprojects/{project}/instances/{"
-          + "instance}/clusters/{cluster}/backups/{backup}\"\300\001\n\n"
+          + "#bigtableadmin.googleapis.com/Backup\022Kprojects/{project}/instances/{in"
+          + "stance}/clusters/{cluster}/backups/{backup}\"\300\001\n\n"
           + "BackupInfo\022\023\n"
           + "\006backup\030\001 \001(\tB\003\340A\003\0223\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\031\n"
           + "\014source_table\030\004 \001(\tB\003\340A\003\022\032\n\r"
           + "source_backup\030\n"
-          + " \001(\tB\003\340A\003\"-\n"
+          + " \001(\tB\003\340A\003\"]\n"
+          + "\023TieredStorageConfig\022F\n"
+          + "\021infrequent_access\030\001"
+          + " \001(\0132+.google.bigtable.admin.v2.TieredStorageRule\"W\n"
+          + "\021TieredStorageRule\022:\n"
+          + "\025include_if_older_than\030\001 \001(\0132\031.google.protobuf.DurationH\000B\006\n"
+          + "\004rule\"-\n"
           + "\013ProtoSchema\022\036\n"
           + "\021proto_descriptors\030\002 \001(\014B\003\340A\002\"\240\002\n"
           + "\014SchemaBundle\022\021\n"
@@ -306,21 +322,21 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "\014proto_schema\030\002"
           + " \001(\0132%.google.bigtable.admin.v2.ProtoSchemaH\000\022\021\n"
           + "\004etag\030\003 \001(\tB\003\340A\001:\242\001\352A\236\001\n"
-          + ")bigtableadmin.googleapis.com/SchemaBundle\022Tprojects/{project}/inst"
-          + "ances/{instance}/tables/{table}/schemaBundles/{schema_bundle}*\r"
+          + ")bigtableadmin.googleapis.com/SchemaBundle\022Tp"
+          + "rojects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}*\r"
           + "schemaBundles2\014schemaBundleB\006\n"
           + "\004type*D\n"
           + "\021RestoreSourceType\022#\n"
           + "\037RESTORE_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006BACKUP\020\001B\367\002\n"
           + "\034com.google.bigtable.admin.v2B\n"
-          + "TableProtoP\001Z8cloud.google.com/go/big"
-          + "table/admin/apiv2/adminpb;adminpb\252\002\036Goog"
-          + "le.Cloud.Bigtable.Admin.V2\312\002\036Google\\Clou"
-          + "d\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigtable::Admin::V2\352A\246\001\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{projec"
-          + "t}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVer"
-          + "sions/{crypto_key_version}b\006proto3"
+          + "TableProtoP\001Z8cloud.google.com/go/bigtable/admin/apiv2/"
+          + "adminpb;adminpb\252\002\036Google.Cloud.Bigtable."
+          + "Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V"
+          + "2\352\002\"Google::Cloud::Bigtable::Admin::V2\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/locations/{loca"
+          + "tion}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_"
+          + "version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -362,6 +378,7 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
               "ChangeStreamConfig",
               "DeletionProtection",
               "AutomatedBackupPolicy",
+              "TieredStorageConfig",
               "RowKeySchema",
               "AutomatedBackupConfig",
             });
@@ -508,8 +525,24 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Backup", "StartTime", "EndTime", "SourceTable", "SourceBackup",
             });
-    internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor =
+    internal_static_google_bigtable_admin_v2_TieredStorageConfig_descriptor =
         getDescriptor().getMessageType(10);
+    internal_static_google_bigtable_admin_v2_TieredStorageConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_TieredStorageConfig_descriptor,
+            new java.lang.String[] {
+              "InfrequentAccess",
+            });
+    internal_static_google_bigtable_admin_v2_TieredStorageRule_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_bigtable_admin_v2_TieredStorageRule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_TieredStorageRule_descriptor,
+            new java.lang.String[] {
+              "IncludeIfOlderThan", "Rule",
+            });
+    internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor =
+        getDescriptor().getMessageType(12);
     internal_static_google_bigtable_admin_v2_ProtoSchema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_ProtoSchema_descriptor,
@@ -517,7 +550,7 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
               "ProtoDescriptors",
             });
     internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_bigtable_admin_v2_SchemaBundle_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor,

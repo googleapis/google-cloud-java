@@ -412,6 +412,61 @@ public interface TableOrBuilder
    *
    *
    * <pre>
+   * Rules to specify what data is stored in each storage tier.
+   * Different tiers store data differently, providing different trade-offs
+   * between cost and performance. Different parts of a table can be stored
+   * separately on different tiers.
+   * If a config is specified, tiered storage is enabled for this table.
+   * Otherwise, tiered storage is disabled.
+   * Only SSD instances can configure tiered storage.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+   *
+   * @return Whether the tieredStorageConfig field is set.
+   */
+  boolean hasTieredStorageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules to specify what data is stored in each storage tier.
+   * Different tiers store data differently, providing different trade-offs
+   * between cost and performance. Different parts of a table can be stored
+   * separately on different tiers.
+   * If a config is specified, tiered storage is enabled for this table.
+   * Otherwise, tiered storage is disabled.
+   * Only SSD instances can configure tiered storage.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+   *
+   * @return The tieredStorageConfig.
+   */
+  com.google.bigtable.admin.v2.TieredStorageConfig getTieredStorageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules to specify what data is stored in each storage tier.
+   * Different tiers store data differently, providing different trade-offs
+   * between cost and performance. Different parts of a table can be stored
+   * separately on different tiers.
+   * If a config is specified, tiered storage is enabled for this table.
+   * Otherwise, tiered storage is disabled.
+   * Only SSD instances can configure tiered storage.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+   */
+  com.google.bigtable.admin.v2.TieredStorageConfigOrBuilder getTieredStorageConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The row key schema for this table. The schema is used to decode the raw row
    * key bytes into a structured format. The order of field declarations in this
    * schema is important, as it reflects how the raw row key bytes are

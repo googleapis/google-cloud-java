@@ -81,6 +81,7 @@ import com.google.bigtable.admin.v2.SnapshotName;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.bigtable.admin.v2.TieredStorageConfig;
 import com.google.bigtable.admin.v2.Type;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
@@ -166,6 +167,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -216,6 +218,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -266,6 +269,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -328,6 +332,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -388,6 +393,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -450,6 +456,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -598,6 +605,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -642,6 +650,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -686,6 +695,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -809,6 +819,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -861,6 +872,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1330,6 +1342,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -1378,6 +1391,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
@@ -2534,6 +2548,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
     Operation resultOperation =

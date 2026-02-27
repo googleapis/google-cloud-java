@@ -3829,6 +3829,78 @@ public final class Table extends com.google.protobuf.GeneratedMessage
     return com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance();
   }
 
+  public static final int TIERED_STORAGE_CONFIG_FIELD_NUMBER = 14;
+  private com.google.bigtable.admin.v2.TieredStorageConfig tieredStorageConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules to specify what data is stored in each storage tier.
+   * Different tiers store data differently, providing different trade-offs
+   * between cost and performance. Different parts of a table can be stored
+   * separately on different tiers.
+   * If a config is specified, tiered storage is enabled for this table.
+   * Otherwise, tiered storage is disabled.
+   * Only SSD instances can configure tiered storage.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+   *
+   * @return Whether the tieredStorageConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTieredStorageConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules to specify what data is stored in each storage tier.
+   * Different tiers store data differently, providing different trade-offs
+   * between cost and performance. Different parts of a table can be stored
+   * separately on different tiers.
+   * If a config is specified, tiered storage is enabled for this table.
+   * Otherwise, tiered storage is disabled.
+   * Only SSD instances can configure tiered storage.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+   *
+   * @return The tieredStorageConfig.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.TieredStorageConfig getTieredStorageConfig() {
+    return tieredStorageConfig_ == null
+        ? com.google.bigtable.admin.v2.TieredStorageConfig.getDefaultInstance()
+        : tieredStorageConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules to specify what data is stored in each storage tier.
+   * Different tiers store data differently, providing different trade-offs
+   * between cost and performance. Different parts of a table can be stored
+   * separately on different tiers.
+   * If a config is specified, tiered storage is enabled for this table.
+   * Otherwise, tiered storage is disabled.
+   * Only SSD instances can configure tiered storage.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.TieredStorageConfigOrBuilder
+      getTieredStorageConfigOrBuilder() {
+    return tieredStorageConfig_ == null
+        ? com.google.bigtable.admin.v2.TieredStorageConfig.getDefaultInstance()
+        : tieredStorageConfig_;
+  }
+
   public static final int ROW_KEY_SCHEMA_FIELD_NUMBER = 15;
   private com.google.bigtable.admin.v2.Type.Struct rowKeySchema_;
 
@@ -3900,7 +3972,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRowKeySchema() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -4087,6 +4159,9 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           13, (com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy) automatedBackupConfig_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(14, getTieredStorageConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(15, getRowKeySchema());
     }
     getUnknownFields().writeTo(output);
@@ -4145,6 +4220,10 @@ public final class Table extends com.google.protobuf.GeneratedMessage
               (com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy) automatedBackupConfig_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getTieredStorageConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRowKeySchema());
     }
     size += getUnknownFields().getSerializedSize();
@@ -4175,6 +4254,10 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (!getChangeStreamConfig().equals(other.getChangeStreamConfig())) return false;
     }
     if (getDeletionProtection() != other.getDeletionProtection()) return false;
+    if (hasTieredStorageConfig() != other.hasTieredStorageConfig()) return false;
+    if (hasTieredStorageConfig()) {
+      if (!getTieredStorageConfig().equals(other.getTieredStorageConfig())) return false;
+    }
     if (hasRowKeySchema() != other.hasRowKeySchema()) return false;
     if (hasRowKeySchema()) {
       if (!getRowKeySchema().equals(other.getRowKeySchema())) return false;
@@ -4220,6 +4303,10 @@ public final class Table extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
+    if (hasTieredStorageConfig()) {
+      hash = (37 * hash) + TIERED_STORAGE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTieredStorageConfig().hashCode();
+    }
     if (hasRowKeySchema()) {
       hash = (37 * hash) + ROW_KEY_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getRowKeySchema().hashCode();
@@ -4401,6 +4488,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetRestoreInfoFieldBuilder();
         internalGetChangeStreamConfigFieldBuilder();
+        internalGetTieredStorageConfigFieldBuilder();
         internalGetRowKeySchemaFieldBuilder();
       }
     }
@@ -4426,6 +4514,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       deletionProtection_ = false;
       if (automatedBackupPolicyBuilder_ != null) {
         automatedBackupPolicyBuilder_.clear();
+      }
+      tieredStorageConfig_ = null;
+      if (tieredStorageConfigBuilder_ != null) {
+        tieredStorageConfigBuilder_.dispose();
+        tieredStorageConfigBuilder_ = null;
       }
       rowKeySchema_ = null;
       if (rowKeySchemaBuilder_ != null) {
@@ -4501,9 +4594,16 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         result.deletionProtection_ = deletionProtection_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.tieredStorageConfig_ =
+            tieredStorageConfigBuilder_ == null
+                ? tieredStorageConfig_
+                : tieredStorageConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.rowKeySchema_ =
             rowKeySchemaBuilder_ == null ? rowKeySchema_ : rowKeySchemaBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4548,6 +4648,9 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       }
       if (other.getDeletionProtection() != false) {
         setDeletionProtection(other.getDeletionProtection());
+      }
+      if (other.hasTieredStorageConfig()) {
+        mergeTieredStorageConfig(other.getTieredStorageConfig());
       }
       if (other.hasRowKeySchema()) {
         mergeRowKeySchema(other.getRowKeySchema());
@@ -4656,11 +4759,18 @@ public final class Table extends com.google.protobuf.GeneratedMessage
                 automatedBackupConfigCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetTieredStorageConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetRowKeySchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 122
             default:
@@ -6248,6 +6358,259 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       return automatedBackupPolicyBuilder_;
     }
 
+    private com.google.bigtable.admin.v2.TieredStorageConfig tieredStorageConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.admin.v2.TieredStorageConfig,
+            com.google.bigtable.admin.v2.TieredStorageConfig.Builder,
+            com.google.bigtable.admin.v2.TieredStorageConfigOrBuilder>
+        tieredStorageConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     *
+     * @return Whether the tieredStorageConfig field is set.
+     */
+    public boolean hasTieredStorageConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     *
+     * @return The tieredStorageConfig.
+     */
+    public com.google.bigtable.admin.v2.TieredStorageConfig getTieredStorageConfig() {
+      if (tieredStorageConfigBuilder_ == null) {
+        return tieredStorageConfig_ == null
+            ? com.google.bigtable.admin.v2.TieredStorageConfig.getDefaultInstance()
+            : tieredStorageConfig_;
+      } else {
+        return tieredStorageConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    public Builder setTieredStorageConfig(com.google.bigtable.admin.v2.TieredStorageConfig value) {
+      if (tieredStorageConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tieredStorageConfig_ = value;
+      } else {
+        tieredStorageConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    public Builder setTieredStorageConfig(
+        com.google.bigtable.admin.v2.TieredStorageConfig.Builder builderForValue) {
+      if (tieredStorageConfigBuilder_ == null) {
+        tieredStorageConfig_ = builderForValue.build();
+      } else {
+        tieredStorageConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    public Builder mergeTieredStorageConfig(
+        com.google.bigtable.admin.v2.TieredStorageConfig value) {
+      if (tieredStorageConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && tieredStorageConfig_ != null
+            && tieredStorageConfig_
+                != com.google.bigtable.admin.v2.TieredStorageConfig.getDefaultInstance()) {
+          getTieredStorageConfigBuilder().mergeFrom(value);
+        } else {
+          tieredStorageConfig_ = value;
+        }
+      } else {
+        tieredStorageConfigBuilder_.mergeFrom(value);
+      }
+      if (tieredStorageConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    public Builder clearTieredStorageConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      tieredStorageConfig_ = null;
+      if (tieredStorageConfigBuilder_ != null) {
+        tieredStorageConfigBuilder_.dispose();
+        tieredStorageConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    public com.google.bigtable.admin.v2.TieredStorageConfig.Builder
+        getTieredStorageConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetTieredStorageConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    public com.google.bigtable.admin.v2.TieredStorageConfigOrBuilder
+        getTieredStorageConfigOrBuilder() {
+      if (tieredStorageConfigBuilder_ != null) {
+        return tieredStorageConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return tieredStorageConfig_ == null
+            ? com.google.bigtable.admin.v2.TieredStorageConfig.getDefaultInstance()
+            : tieredStorageConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules to specify what data is stored in each storage tier.
+     * Different tiers store data differently, providing different trade-offs
+     * between cost and performance. Different parts of a table can be stored
+     * separately on different tiers.
+     * If a config is specified, tiered storage is enabled for this table.
+     * Otherwise, tiered storage is disabled.
+     * Only SSD instances can configure tiered storage.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.admin.v2.TieredStorageConfig,
+            com.google.bigtable.admin.v2.TieredStorageConfig.Builder,
+            com.google.bigtable.admin.v2.TieredStorageConfigOrBuilder>
+        internalGetTieredStorageConfigFieldBuilder() {
+      if (tieredStorageConfigBuilder_ == null) {
+        tieredStorageConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.admin.v2.TieredStorageConfig,
+                com.google.bigtable.admin.v2.TieredStorageConfig.Builder,
+                com.google.bigtable.admin.v2.TieredStorageConfigOrBuilder>(
+                getTieredStorageConfig(), getParentForChildren(), isClean());
+        tieredStorageConfig_ = null;
+      }
+      return tieredStorageConfigBuilder_;
+    }
+
     private com.google.bigtable.admin.v2.Type.Struct rowKeySchema_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.bigtable.admin.v2.Type.Struct,
@@ -6322,7 +6685,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * @return Whether the rowKeySchema field is set.
      */
     public boolean hasRowKeySchema() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -6474,7 +6837,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       } else {
         rowKeySchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6550,7 +6913,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       } else {
         rowKeySchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6621,7 +6984,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRowKeySchema(com.google.bigtable.admin.v2.Type.Struct value) {
       if (rowKeySchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && rowKeySchema_ != null
             && rowKeySchema_ != com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()) {
           getRowKeySchemaBuilder().mergeFrom(value);
@@ -6632,7 +6995,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         rowKeySchemaBuilder_.mergeFrom(value);
       }
       if (rowKeySchema_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -6703,7 +7066,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
      */
     public Builder clearRowKeySchema() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       rowKeySchema_ = null;
       if (rowKeySchemaBuilder_ != null) {
         rowKeySchemaBuilder_.dispose();
@@ -6778,7 +7141,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
      */
     public com.google.bigtable.admin.v2.Type.Struct.Builder getRowKeySchemaBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetRowKeySchemaFieldBuilder().getBuilder();
     }
