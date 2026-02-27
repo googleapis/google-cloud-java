@@ -52,6 +52,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
 public class MetricsImpl implements Metrics, Closeable {
@@ -59,13 +60,16 @@ public class MetricsImpl implements Metrics, Closeable {
 
   private final ApiTracerFactory userTracerFactory;
   private final @Nullable OpenTelemetrySdk internalOtel;
+  private final @Nullable MetricRegistry.RecorderRegistry internalRecorder;
   private final @Nullable OpenTelemetry userOtel;
+  private final @Nullable MetricRegistry.RecorderRegistry userRecorder;
   private final ScheduledExecutorService executor;
   private final Tagger ocTagger;
   private final StatsRecorder ocRecorder;
 
   @Nullable private final GrpcOpenTelemetry grpcOtel;
   @Nullable private final ChannelPoolMetricsTracer channelPoolMetricsTracer;
+  @Nullable private final Pacemaker pacemaker;
   private final List<ScheduledFuture<?>> tasks = new ArrayList<>();
 
   public MetricsImpl(
@@ -89,6 +93,9 @@ public class MetricsImpl implements Metrics, Closeable {
     this.executor = executor;
 
     if (internalOtel != null) {
+      this.internalRecorder = metricRegistry.newRecorderRegistry(internalOtel.getMeterProvider());
+      this.pacemaker = new Pacemaker(internalRecorder, clientInfo, "background");
+      this.channelPoolMetricsTracer = new ChannelPoolMetricsTracer(internalRecorder, clientInfo);
       this.grpcOtel =
           GrpcOpenTelemetry.newBuilder()
               .sdk(internalOtel)
@@ -98,16 +105,18 @@ public class MetricsImpl implements Metrics, Closeable {
               // Enable specific grpc metrics
               .enableMetrics(metricRegistry.getGrpcMetricNames())
               .build();
+
     } else {
+      this.internalRecorder = null;
       this.grpcOtel = null;
+      this.pacemaker = null;
+      this.channelPoolMetricsTracer = null;
     }
 
-    if (internalOtel != null) {
-      this.channelPoolMetricsTracer =
-          new ChannelPoolMetricsTracer(
-              metricRegistry.newRecorderRegistry(internalOtel.getMeterProvider()), clientInfo);
+    if (userOtel != null) {
+      this.userRecorder = metricRegistry.newRecorderRegistry(userOtel.getMeterProvider());
     } else {
-      this.channelPoolMetricsTracer = null;
+      this.userRecorder = null;
     }
   }
 
@@ -125,6 +134,14 @@ public class MetricsImpl implements Metrics, Closeable {
   public void start() {
     if (channelPoolMetricsTracer != null) {
       tasks.add(channelPoolMetricsTracer.start(executor));
+    }
+    if (pacemaker != null) {
+      tasks.add(
+          executor.scheduleAtFixedRate(
+              pacemaker,
+              Pacemaker.PACEMAKER_INTERVAL.toMillis(),
+              Pacemaker.PACEMAKER_INTERVAL.toMillis(),
+              TimeUnit.MILLISECONDS));
     }
   }
 
@@ -145,15 +162,11 @@ public class MetricsImpl implements Metrics, Closeable {
         .add(createOCMetricsFactory(clientInfo, ocTagger, ocRecorder))
         .add(userTracerFactory);
 
-    if (internalOtel != null) {
-      tracerFactories.add(
-          createOtelMetricsFactory(
-              metricRegistry.newRecorderRegistry(internalOtel.getMeterProvider()), clientInfo));
+    if (internalRecorder != null) {
+      tracerFactories.add(createOtelMetricsFactory(internalRecorder, clientInfo));
     }
-    if (userOtel != null) {
-      tracerFactories.add(
-          createOtelMetricsFactory(
-              metricRegistry.newRecorderRegistry(userOtel.getMeterProvider()), clientInfo));
+    if (userRecorder != null) {
+      tracerFactories.add(createOtelMetricsFactory(userRecorder, clientInfo));
     }
 
     return new CompositeTracerFactory(tracerFactories.build());
