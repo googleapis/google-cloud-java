@@ -30,31 +30,30 @@ import javax.annotation.Nullable;
 /** Utility interface to manage OpenTelemetry tracing instrumentation based on the configuration. */
 @InternalExtensionOnly
 public interface TraceUtil {
-  static final String ATTRIBUTE_SERVICE_PREFIX = "gcp.datastore.";
-  static final String ENABLE_TRACING_ENV_VAR = "DATASTORE_ENABLE_TRACING";
-  static final String LIBRARY_NAME = "com.google.cloud.datastore";
-  static final String SPAN_NAME_LOOKUP = "Lookup";
-  static final String SPAN_NAME_ALLOCATE_IDS = "AllocateIds";
-  static final String SPAN_NAME_RESERVE_IDS = "ReserveIds";
-  static final String SPAN_NAME_COMMIT = "Commit";
-  static final String SPAN_NAME_RUN_QUERY = "RunQuery";
-  static final String SPAN_NAME_RUN_AGGREGATION_QUERY = "RunAggregationQuery";
-  static final String SPAN_NAME_TRANSACTION_RUN = "Transaction.Run";
-  static final String SPAN_NAME_BEGIN_TRANSACTION = "Transaction.Begin";
-  static final String SPAN_NAME_TRANSACTION_LOOKUP = "Transaction.Lookup";
-  static final String SPAN_NAME_TRANSACTION_COMMIT = "Transaction.Commit";
-  static final String SPAN_NAME_TRANSACTION_RUN_QUERY = "Transaction.RunQuery";
-  static final String SPAN_NAME_ROLLBACK = "Transaction.Rollback";
-  static final String SPAN_NAME_TRANSACTION_RUN_AGGREGATION_QUERY =
-      "Transaction.RunAggregationQuery";
-  static final String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
-  static final String ATTRIBUTES_KEY_TRANSACTIONAL = "transactional";
-  static final String ATTRIBUTES_KEY_TRANSACTION_ID = "transaction_id";
-  static final String ATTRIBUTES_KEY_READ_CONSISTENCY = "read_consistency";
-  static final String ATTRIBUTES_KEY_RECEIVED = "Received";
-  static final String ATTRIBUTES_KEY_MISSING = "Missing";
-  static final String ATTRIBUTES_KEY_DEFERRED = "Deferred";
-  static final String ATTRIBUTES_KEY_MORE_RESULTS = "mor_results";
+  String ATTRIBUTE_SERVICE_PREFIX = "gcp.datastore.";
+  String ENABLE_TRACING_ENV_VAR = "DATASTORE_ENABLE_TRACING";
+  String LIBRARY_NAME = "com.google.cloud.datastore";
+  String SPAN_NAME_LOOKUP = "Lookup";
+  String SPAN_NAME_ALLOCATE_IDS = "AllocateIds";
+  String SPAN_NAME_RESERVE_IDS = "ReserveIds";
+  String SPAN_NAME_COMMIT = "Commit";
+  String SPAN_NAME_RUN_QUERY = "RunQuery";
+  String SPAN_NAME_RUN_AGGREGATION_QUERY = "RunAggregationQuery";
+  String SPAN_NAME_TRANSACTION_RUN = "Transaction.Run";
+  String SPAN_NAME_BEGIN_TRANSACTION = "Transaction.Begin";
+  String SPAN_NAME_TRANSACTION_LOOKUP = "Transaction.Lookup";
+  String SPAN_NAME_TRANSACTION_COMMIT = "Transaction.Commit";
+  String SPAN_NAME_TRANSACTION_RUN_QUERY = "Transaction.RunQuery";
+  String SPAN_NAME_ROLLBACK = "Transaction.Rollback";
+  String SPAN_NAME_TRANSACTION_RUN_AGGREGATION_QUERY = "Transaction.RunAggregationQuery";
+  String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
+  String ATTRIBUTES_KEY_TRANSACTIONAL = "transactional";
+  String ATTRIBUTES_KEY_TRANSACTION_ID = "transaction_id";
+  String ATTRIBUTES_KEY_READ_CONSISTENCY = "read_consistency";
+  String ATTRIBUTES_KEY_RECEIVED = "Received";
+  String ATTRIBUTES_KEY_MISSING = "Missing";
+  String ATTRIBUTES_KEY_DEFERRED = "Deferred";
+  String ATTRIBUTES_KEY_MORE_RESULTS = "more_results";
 
   /**
    * Creates and returns an instance of the TraceUtil class.
@@ -64,7 +63,7 @@ public interface TraceUtil {
    * @return An instance of the TraceUtil class.
    */
   static TraceUtil getInstance(@Nonnull DatastoreOptions datastoreOptions) {
-    boolean createEnabledInstance = datastoreOptions.getOpenTelemetryOptions().isEnabled();
+    boolean createEnabledInstance = datastoreOptions.getOpenTelemetryOptions().isTracingEnabled();
 
     // The environment variable can override options to enable/disable telemetry collection.
     String enableTracingEnvVar = System.getenv(ENABLE_TRACING_ENV_VAR);

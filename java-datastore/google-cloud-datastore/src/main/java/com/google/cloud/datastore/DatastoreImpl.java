@@ -255,7 +255,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   public <T> T runInTransaction(final TransactionCallable<T> callable) {
     TraceUtil.Span span = otelTraceUtil.startSpan(SPAN_NAME_TRANSACTION_RUN);
     Callable<T> transactionCallable =
-        (getOptions().getOpenTelemetryOptions().isEnabled()
+        (getOptions().getOpenTelemetryOptions().isTracingEnabled()
             ? new TracedReadWriteTransactionCallable<T>(
                 this, callable, /* transactionOptions= */ null, span)
             : new ReadWriteTransactionCallable<T>(this, callable, /* transactionOptions= */ null));
@@ -279,7 +279,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     TraceUtil.Span span = otelTraceUtil.startSpan(SPAN_NAME_TRANSACTION_RUN);
 
     Callable<T> transactionCallable =
-        (getOptions().getOpenTelemetryOptions().isEnabled()
+        (getOptions().getOpenTelemetryOptions().isTracingEnabled()
             ? new TracedReadWriteTransactionCallable<T>(this, callable, transactionOptions, span)
             : new ReadWriteTransactionCallable<T>(this, callable, transactionOptions));
 
