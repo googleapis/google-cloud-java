@@ -58,7 +58,8 @@ public final class Constants {
 
     static final AttributeKey<String> CHANNEL_POOL_LB_POLICY = AttributeKey.stringKey("lb_policy");
     static final AttributeKey<String> DP_REASON_KEY = AttributeKey.stringKey("reason");
-    static final AttributeKey<String> DP_IP_PREFERENCE_KEY = AttributeKey.stringKey("reason");
+    static final AttributeKey<String> DP_IP_PREFERENCE_KEY =
+        AttributeKey.stringKey("ip_preference");
 
     public static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
 

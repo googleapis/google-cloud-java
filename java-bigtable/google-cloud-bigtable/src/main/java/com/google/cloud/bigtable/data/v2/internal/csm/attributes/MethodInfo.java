@@ -28,6 +28,10 @@ public abstract class MethodInfo {
   /** If the method is streaming (ie a scan). */
   public abstract boolean getStreaming();
 
+  public static MethodInfo of(String name, boolean streaming) {
+    return builder().setName(name).setStreaming(streaming).build();
+  }
+
   public static Builder builder() {
     return new AutoValue_MethodInfo.Builder();
   }

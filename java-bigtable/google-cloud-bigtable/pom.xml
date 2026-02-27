@@ -256,6 +256,11 @@
 
     <!-- Test dependencies -->
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
       <classifier>testlib</classifier>
