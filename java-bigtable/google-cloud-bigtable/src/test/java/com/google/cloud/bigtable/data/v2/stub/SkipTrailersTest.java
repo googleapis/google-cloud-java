@@ -95,6 +95,7 @@ public class SkipTrailersTest {
     server = FakeServiceBuilder.create(hackedService).start();
 
     when(tracerFactory.newTracer(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(tracer);
+    when(tracerFactory.withContext(Mockito.any())).thenReturn(tracerFactory);
 
     BigtableDataSettings.Builder clientBuilder =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
