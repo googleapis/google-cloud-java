@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.38.0](https://github.com/googleapis/java-firestore/compare/v3.37.0...v3.38.0) (2026-02-26)
+
+
+### Features
+
+* Add support for `regexFind` and `regexFindAll` Pipeline expressions ([#2310](https://github.com/googleapis/java-firestore/issues/2310)) ([1d92887](https://github.com/googleapis/java-firestore/commit/1d9288719e36e76d8710233b161ae1c79d50be28))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.67.0 ([aeaf77f](https://github.com/googleapis/java-firestore/commit/aeaf77f9ed7ee6bd145f64977cd516e27f29bbe4))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#2325](https://github.com/googleapis/java-firestore/issues/2325)) ([597ab41](https://github.com/googleapis/java-firestore/commit/597ab41c6387c65d3ef2455303a7f9f66b53fc59))
+
 ## [3.37.0](https://github.com/googleapis/java-firestore/compare/v3.36.0...v3.37.0) (2026-02-12)
 
 
