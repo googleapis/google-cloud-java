@@ -200,6 +200,8 @@ case ${JOB_TYPE} in
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
         # Format those specific modules instead of the entire codebase, reducing format check time.
+        # The --relative flag is when building in the submodule as only files modified in the module
+        # should be accounted for.
         changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
@@ -232,11 +234,10 @@ case ${JOB_TYPE} in
                 done
                 if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
                     # Filter out directories not participating in the default formatting reactor:
-                    # - samples/tutorials are wrapped in the include-samples profile
-                    # - proto-*/grpc-* are generated code and should not be formatted manually
+                    # - samples are handwritten by developers
+                    # - proto-*/grpc-* are generated code and should use the compiler format
                     # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
-                       [[ "${dir}" != *"tutorials"* ]] && \
                        [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
                        [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
@@ -251,7 +252,7 @@ case ${JOB_TYPE} in
 
         echo "Changed Modules: ${changed_modules[*]}"
 
-        # Deduplicate the modules using sort -u, so that we pass a concise list of unique modules
+        # Deduplicate the modules using sort -u to pass a concise list of unique modules
         # via the Maven `-pl` argument.
         if [ ${#changed_modules[@]} -gt 0 ]; then
             unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
