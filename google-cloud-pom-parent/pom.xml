@@ -11,7 +11,6 @@
   <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
     The top-level parent for all modules in the repository.
-    
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -202,14 +202,4 @@
     <module>google-cloud-bigquerystorage-bom</module>
   </modules>
 
-  <profiles>
-    <profile>
-      <id>include-samples</id>
-      <modules>
-        <module>samples</module>
-        <module>tutorials</module>
-      </modules>
-    </profile>
-  </profiles>
-
 </project>

@@ -62,6 +62,46 @@ function retry_with_backoff {
   return $exit_code
 }
 
+# Helper function to reliably extract the text between <module> tags strictly
+# within the default <modules> block, natively ignoring <profiles>.
+# Uses a pure Bash loop to avoid spawning slower external processes like awk or sed,
+# and naturally survives single-module components without throwing exit signals.
+function extract_pom_modules() {
+  local pom_file="$1"
+  local modules_list=""
+  local in_profiles=false
+  local in_modules=false
+  
+  while IFS= read -r line || [ -n "$line" ]; do
+    if [[ "$line" == *"<profiles>"* ]]; then
+      in_profiles=true
+    elif [[ "$line" == *"</profiles>"* ]]; then
+      in_profiles=false
+    elif [[ "$line" == *"<modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=true
+    elif [[ "$line" == *"</modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=false
+      break
+    elif [ "$in_modules" = true ] && [[ "$line" == *"<module>"* ]]; then
+      # Extract text between tags
+      local module="${line#*<module>}"
+      module="${module%</module>*}"
+      
+      # Trim whitespace natively
+      module="${module#"${module%%[![:space:]]*}"}"
+      module="${module%"${module##*[![:space:]]}"}"
+      
+      if [ -z "$modules_list" ]; then
+        modules_list="$module"
+      else
+        modules_list="${modules_list} ${module}"
+      fi
+    fi
+  done < "$pom_file"
+  
+  echo "$modules_list"
+}
+
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
@@ -69,10 +109,10 @@ function parse_submodules() {
   if [ -f "$1/pom.xml" ]; then
     local modules
 
-    # Use grep to find the modules in the aggregator pom file
-    # Faster than invoking mvn help:evaluate to list all the project modules
-    # Not all modules will have sub-modules (use `|| true`) to prevent the script from failing.
-    modules=$(grep '<module>' "$1/pom.xml" | sed 's/.*<module>\(.*\)<\/module>.*/\1/' || true)
+    # Use pure Bash extraction to find the modules in the aggregator pom file.
+    # Faster than invoking mvn help:evaluate to list all the project modules,
+    # cleanly ignores optional <profiles>, and gracefully skips flat POMs.
+    modules=$(extract_pom_modules "$1/pom.xml")
     if [ -n "$modules" ]; then
       for submodule in $modules; do
         # Each entry = <folder>/<submodule>
@@ -83,7 +123,8 @@ function parse_submodules() {
       submodules_array+=("$1")
     fi
   else
-    submodules_array+=("$1")
+    echo "Module does not have a pom.xml file: $1"
+    exit 1
   fi
 
   # Convert from array to comma-delimited string
