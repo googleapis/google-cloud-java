@@ -162,7 +162,7 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-single)
-    generate_modified_modules_list false    
+    generate_modified_modules_list false
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
     elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
@@ -203,7 +203,11 @@ case ${JOB_TYPE} in
     MODULE_FILTER=""
 
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
-        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
+        # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
+        # Format those specific modules instead of the entire codebase, reducing format check time.
+        # The --relative flag is when building in the submodule as only files modified in the module
+        # should be accounted for.
+        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
         has_code_change="false"
@@ -222,8 +226,10 @@ case ${JOB_TYPE} in
             exit 0
         fi
 
-        # Compute list of changed Maven modules from changed Java files
-        # Walk each changed .java file up to its nearest pom.xml to find the module
+        # Compute list of changed Maven modules from changed Java files.
+        # We walk each changed .java file up to its nearest pom.xml to find the correct module.
+        # e.g., if "java-asset/google-cloud-asset/src/main/java/Foo.java" is changed,
+        # it traverses upward until finding "java-asset/google-cloud-asset/pom.xml" and adds that module.
         changed_modules=()
         while IFS= read -r changed_file; do
             if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
@@ -232,43 +238,35 @@ case ${JOB_TYPE} in
                     dir=$(dirname "${dir}")
                 done
                 if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
-                    changed_modules+=("${dir}")
+                    # Filter out directories not participating in the default formatting reactor:
+                    # - samples are handwritten by developers
+                    # - proto-*/grpc-* are generated code and should use the compiler format
+                    # - *-bom/parents are POM-only and contain no Java source
+                    if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
+                       [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
+                       [[ "$(basename "${dir}")" != *"-bom" ]] && \
+                       [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
+                       [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
+
+                        changed_modules+=("${dir}")
+                    fi
                 fi
             fi
         done <<< "${changed_file_list}"
 
-        # Deduplicate
+        echo "Changed Modules: ${changed_modules[*]}"
+
+        # Deduplicate the modules using sort -u to pass a concise list of unique modules
+        # via the Maven `-pl` argument.
         if [ ${#changed_modules[@]} -gt 0 ]; then
             unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
             MODULE_FILTER="-pl ${unique_modules}"
             echo "Formatting only changed modules: ${unique_modules}"
         fi
     else
-        echo "BASE_SHA or HEAD_SHA is empty. Skipping file difference check."
-
-        # For non-PR runs (no diff available), exclude generated modules
-        # (proto-google-*, grpc-google-*, *-bom) to skip formatting generated code
-        exclusions=""
-        # Find generated sub-modules and parent/aggregator POMs to exclude
-        # - proto-google-*, grpc-google-* : generated protobuf/gRPC stubs
-        # - *-bom : BOM modules with no source code
-        # - java-* at depth 1 : per-library aggregator parent POMs
-        # - google-cloud-pom-parent, google-cloud-jar-parent, gapic-libraries-bom : repo-level parents
-        for dir in $(find . -maxdepth 1 -type d -name "java-*" | sort; \
-                      find . -maxdepth 2 -type d \( -name "proto-google-*" -o -name "grpc-google-*" -o -name "*-bom" -o -name "google-cloud-pom-parent" -o -name "google-cloud-jar-parent" \) | sort); do
-            # Strip leading ./
-            dir="${dir#./}"
-            if [ -n "${exclusions}" ]; then
-                exclusions="${exclusions},!${dir}"
-            else
-                exclusions="!${dir}"
-            fi
-        done
-
-        if [ -n "${exclusions}" ]; then
-            MODULE_FILTER="-pl ${exclusions}"
-            echo "Excluding generated modules from formatting"
-        fi
+        echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."
+        exit 1
     fi
 
     mvn -B -ntp \
