@@ -157,7 +157,7 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-single)
-    generate_modified_modules_list false    
+    generate_modified_modules_list false
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
     elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
@@ -194,12 +194,19 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
     fi
+
+    MODULE_FILTER=""
+
     if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
-        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
+        # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
+        # Format those specific modules instead of the entire codebase, reducing format check time.
+        # The --relative flag is when building in the submodule as only files modified in the module
+        # should be accounted for.
+        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
-        
+
         has_code_change="false"
-        
+
         while IFS= read -r changed_file; do
             # Checks if the line is not empty AND if it matches a .java file
             if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
@@ -208,19 +215,60 @@ case ${JOB_TYPE} in
                 break
             fi
         done <<< "${changed_file_list}"
-        
+
         if [ "${has_code_change}" == "false" ]; then
             echo "No java modules affected. Skipping linter check."
             exit 0
         fi
+
+        # Compute list of changed Maven modules from changed Java files.
+        # We walk each changed .java file up to its nearest pom.xml to find the correct module.
+        # e.g., if "java-asset/google-cloud-asset/src/main/java/Foo.java" is changed,
+        # it traverses upward until finding "java-asset/google-cloud-asset/pom.xml" and adds that module.
+        changed_modules=()
+        while IFS= read -r changed_file; do
+            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+                dir=$(dirname "${changed_file}")
+                while [ "${dir}" != "." ] && [ ! -f "${dir}/pom.xml" ]; do
+                    dir=$(dirname "${dir}")
+                done
+                if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
+                    # Filter out directories not participating in the default formatting reactor:
+                    # - samples are handwritten by developers
+                    # - proto-*/grpc-* are generated code and should use the compiler format
+                    # - *-bom/parents are POM-only and contain no Java source
+                    if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
+                       [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
+                       [[ "$(basename "${dir}")" != *"-bom" ]] && \
+                       [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
+                       [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
+
+                        changed_modules+=("${dir}")
+                    fi
+                fi
+            fi
+        done <<< "${changed_file_list}"
+
+        echo "Changed Modules: ${changed_modules[*]}"
+
+        # Deduplicate the modules using sort -u to pass a concise list of unique modules
+        # via the Maven `-pl` argument.
+        if [ ${#changed_modules[@]} -gt 0 ]; then
+            unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
+            MODULE_FILTER="-pl ${unique_modules}"
+            echo "Formatting only changed modules: ${unique_modules}"
+        fi
     else
-        echo "BASE_SHA or HEAD_SHA is empty. Skipping file difference check."
+        echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."
+        exit 1
     fi
-    
+
     mvn -B -ntp \
-      -T 1.5C \
+      -T 1C \
+      ${MODULE_FILTER} \
       com.spotify.fmt:fmt-maven-plugin:check
-    mvn -B -ntp checkstyle:check@checkstyle
+    mvn -B -ntp ${MODULE_FILTER} checkstyle:check@checkstyle
 
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
