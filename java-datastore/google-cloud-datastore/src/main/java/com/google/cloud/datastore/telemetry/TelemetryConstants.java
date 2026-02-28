@@ -34,6 +34,7 @@ public class TelemetryConstants {
   public static final String ATTRIBUTES_KEY_MORE_RESULTS = "more_results";
 
   /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
+  // Format is not SnakeCase to keep backward compatibility with the existing values TraceUtil spans
   public static final String METHOD_ALLOCATE_IDS = "AllocateIds";
   public static final String METHOD_BEGIN_TRANSACTION = "Transaction.Begin";
   public static final String METHOD_COMMIT = "Commit";
