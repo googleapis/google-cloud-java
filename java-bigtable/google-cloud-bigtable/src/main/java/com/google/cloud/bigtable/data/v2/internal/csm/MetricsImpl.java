@@ -25,6 +25,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderReg
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.exporter.BigtableCloudMonitoringExporter;
+import com.google.cloud.bigtable.data.v2.internal.csm.exporter.BigtablePeriodicReader;
 import com.google.cloud.bigtable.data.v2.internal.csm.opencensus.MetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BuiltinMetricsTracerFactory;
@@ -43,9 +44,6 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.export.MetricExporter;
-import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
-import io.opentelemetry.sdk.metrics.export.PeriodicMetricReaderBuilder;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -194,7 +192,7 @@ public class MetricsImpl implements Metrics, Closeable {
 
     SdkMeterProviderBuilder meterProvider = SdkMeterProvider.builder();
 
-    MetricExporter publicExporter =
+    BigtableCloudMonitoringExporter exporter =
         BigtableCloudMonitoringExporter.create(
             metricRegistry,
             EnvInfo::detect,
@@ -202,9 +200,8 @@ public class MetricsImpl implements Metrics, Closeable {
             credentials,
             metricsEndpoint,
             universeDomain);
-    PeriodicMetricReaderBuilder readerBuilder =
-        PeriodicMetricReader.builder(publicExporter).setExecutor(executor);
-    meterProvider.registerMetricReader(readerBuilder.build());
+
+    meterProvider.registerMetricReader(new BigtablePeriodicReader(exporter, executor));
 
     return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
   }
