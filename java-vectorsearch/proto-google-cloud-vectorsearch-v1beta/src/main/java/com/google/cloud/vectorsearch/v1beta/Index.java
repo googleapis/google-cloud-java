@@ -89,6 +89,221 @@ public final class Index extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  private int infraTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object infraType_;
+
+  public enum InfraTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DEDICATED_INFRASTRUCTURE(11),
+    INFRATYPE_NOT_SET(0);
+    private final int value;
+
+    private InfraTypeCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InfraTypeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static InfraTypeCase forNumber(int value) {
+      switch (value) {
+        case 11:
+          return DEDICATED_INFRASTRUCTURE;
+        case 0:
+          return INFRATYPE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public InfraTypeCase getInfraTypeCase() {
+    return InfraTypeCase.forNumber(infraTypeCase_);
+  }
+
+  private int indexTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object indexType_;
+
+  public enum IndexTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DENSE_SCANN(12),
+    INDEXTYPE_NOT_SET(0);
+    private final int value;
+
+    private IndexTypeCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IndexTypeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static IndexTypeCase forNumber(int value) {
+      switch (value) {
+        case 12:
+          return DENSE_SCANN;
+        case 0:
+          return INDEXTYPE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public IndexTypeCase getIndexTypeCase() {
+    return IndexTypeCase.forNumber(indexTypeCase_);
+  }
+
+  public static final int DEDICATED_INFRASTRUCTURE_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dedicated infrastructure for the index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedInfrastructure field is set.
+   */
+  @java.lang.Override
+  public boolean hasDedicatedInfrastructure() {
+    return infraTypeCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dedicated infrastructure for the index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedInfrastructure.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure getDedicatedInfrastructure() {
+    if (infraTypeCase_ == 11) {
+      return (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dedicated infrastructure for the index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructureOrBuilder
+      getDedicatedInfrastructureOrBuilder() {
+    if (infraTypeCase_ == 11) {
+      return (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.getDefaultInstance();
+  }
+
+  public static final int DENSE_SCANN_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dense ScaNN index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the denseScann field is set.
+   */
+  @java.lang.Override
+  public boolean hasDenseScann() {
+    return indexTypeCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dense ScaNN index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The denseScann.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.DenseScannIndex getDenseScann() {
+    if (indexTypeCase_ == 12) {
+      return (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dense ScaNN index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.DenseScannIndexOrBuilder getDenseScannOrBuilder() {
+    if (indexTypeCase_ == 12) {
+      return (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -746,6 +961,13 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
+    if (infraTypeCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_);
+    }
+    if (indexTypeCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -804,6 +1026,16 @@ public final class Index extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
     }
+    if (infraTypeCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_);
+    }
+    if (indexTypeCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -836,6 +1068,22 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (!getIndexField().equals(other.getIndexField())) return false;
     if (!getFilterFieldsList().equals(other.getFilterFieldsList())) return false;
     if (!getStoreFieldsList().equals(other.getStoreFieldsList())) return false;
+    if (!getInfraTypeCase().equals(other.getInfraTypeCase())) return false;
+    switch (infraTypeCase_) {
+      case 11:
+        if (!getDedicatedInfrastructure().equals(other.getDedicatedInfrastructure())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getIndexTypeCase().equals(other.getIndexTypeCase())) return false;
+    switch (indexTypeCase_) {
+      case 12:
+        if (!getDenseScann().equals(other.getDenseScann())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -876,6 +1124,22 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (getStoreFieldsCount() > 0) {
       hash = (37 * hash) + STORE_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getStoreFieldsList().hashCode();
+    }
+    switch (infraTypeCase_) {
+      case 11:
+        hash = (37 * hash) + DEDICATED_INFRASTRUCTURE_FIELD_NUMBER;
+        hash = (53 * hash) + getDedicatedInfrastructure().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (indexTypeCase_) {
+      case 12:
+        hash = (37 * hash) + DENSE_SCANN_FIELD_NUMBER;
+        hash = (53 * hash) + getDenseScann().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1049,6 +1313,12 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (dedicatedInfrastructureBuilder_ != null) {
+        dedicatedInfrastructureBuilder_.clear();
+      }
+      if (denseScannBuilder_ != null) {
+        denseScannBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       description_ = "";
@@ -1067,6 +1337,10 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       indexField_ = "";
       filterFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       storeFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      infraTypeCase_ = 0;
+      infraType_ = null;
+      indexTypeCase_ = 0;
+      indexType_ = null;
       return this;
     }
 
@@ -1097,49 +1371,63 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.vectorsearch.v1beta.Index result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.distanceMetric_ = distanceMetric_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.indexField_ = indexField_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         filterFields_.makeImmutable();
         result.filterFields_ = filterFields_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         storeFields_.makeImmutable();
         result.storeFields_ = storeFields_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vectorsearch.v1beta.Index result) {
+      result.infraTypeCase_ = infraTypeCase_;
+      result.infraType_ = this.infraType_;
+      if (infraTypeCase_ == 11 && dedicatedInfrastructureBuilder_ != null) {
+        result.infraType_ = dedicatedInfrastructureBuilder_.build();
+      }
+      result.indexTypeCase_ = indexTypeCase_;
+      result.indexType_ = this.indexType_;
+      if (indexTypeCase_ == 12 && denseScannBuilder_ != null) {
+        result.indexType_ = denseScannBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1156,21 +1444,21 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.vectorsearch.v1beta.Index.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1182,13 +1470,13 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getIndexField().isEmpty()) {
         indexField_ = other.indexField_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.filterFields_.isEmpty()) {
         if (filterFields_.isEmpty()) {
           filterFields_ = other.filterFields_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000400;
         } else {
           ensureFilterFieldsIsMutable();
           filterFields_.addAll(other.filterFields_);
@@ -1198,12 +1486,34 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (!other.storeFields_.isEmpty()) {
         if (storeFields_.isEmpty()) {
           storeFields_ = other.storeFields_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000800;
         } else {
           ensureStoreFieldsIsMutable();
           storeFields_.addAll(other.storeFields_);
         }
         onChanged();
+      }
+      switch (other.getInfraTypeCase()) {
+        case DEDICATED_INFRASTRUCTURE:
+          {
+            mergeDedicatedInfrastructure(other.getDedicatedInfrastructure());
+            break;
+          }
+        case INFRATYPE_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getIndexTypeCase()) {
+        case DENSE_SCANN:
+          {
+            mergeDenseScann(other.getDenseScann());
+            break;
+          }
+        case INDEXTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1234,33 +1544,33 @@ public final class Index extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 32:
               {
                 distanceMetric_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 32
             case 42:
               {
                 indexField_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
@@ -1280,13 +1590,13 @@ public final class Index extends com.google.protobuf.GeneratedMessage
             case 66:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 66
             case 74:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 74
             case 82:
@@ -1298,9 +1608,24 @@ public final class Index extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetDedicatedInfrastructureFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infraTypeCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetDenseScannFieldBuilder().getBuilder(), extensionRegistry);
+                indexTypeCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1318,7 +1643,516 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int infraTypeCase_ = 0;
+    private java.lang.Object infraType_;
+
+    public InfraTypeCase getInfraTypeCase() {
+      return InfraTypeCase.forNumber(infraTypeCase_);
+    }
+
+    public Builder clearInfraType() {
+      infraTypeCase_ = 0;
+      infraType_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int indexTypeCase_ = 0;
+    private java.lang.Object indexType_;
+
+    public IndexTypeCase getIndexTypeCase() {
+      return IndexTypeCase.forNumber(indexTypeCase_);
+    }
+
+    public Builder clearIndexType() {
+      indexTypeCase_ = 0;
+      indexType_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure,
+            com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.Builder,
+            com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructureOrBuilder>
+        dedicatedInfrastructureBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dedicatedInfrastructure field is set.
+     */
+    @java.lang.Override
+    public boolean hasDedicatedInfrastructure() {
+      return infraTypeCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dedicatedInfrastructure.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure
+        getDedicatedInfrastructure() {
+      if (dedicatedInfrastructureBuilder_ == null) {
+        if (infraTypeCase_ == 11) {
+          return (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.getDefaultInstance();
+      } else {
+        if (infraTypeCase_ == 11) {
+          return dedicatedInfrastructureBuilder_.getMessage();
+        }
+        return com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedInfrastructure(
+        com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure value) {
+      if (dedicatedInfrastructureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        infraType_ = value;
+        onChanged();
+      } else {
+        dedicatedInfrastructureBuilder_.setMessage(value);
+      }
+      infraTypeCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedInfrastructure(
+        com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.Builder builderForValue) {
+      if (dedicatedInfrastructureBuilder_ == null) {
+        infraType_ = builderForValue.build();
+        onChanged();
+      } else {
+        dedicatedInfrastructureBuilder_.setMessage(builderForValue.build());
+      }
+      infraTypeCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDedicatedInfrastructure(
+        com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure value) {
+      if (dedicatedInfrastructureBuilder_ == null) {
+        if (infraTypeCase_ == 11
+            && infraType_
+                != com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure
+                    .getDefaultInstance()) {
+          infraType_ =
+              com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.newBuilder(
+                      (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          infraType_ = value;
+        }
+        onChanged();
+      } else {
+        if (infraTypeCase_ == 11) {
+          dedicatedInfrastructureBuilder_.mergeFrom(value);
+        } else {
+          dedicatedInfrastructureBuilder_.setMessage(value);
+        }
+      }
+      infraTypeCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDedicatedInfrastructure() {
+      if (dedicatedInfrastructureBuilder_ == null) {
+        if (infraTypeCase_ == 11) {
+          infraTypeCase_ = 0;
+          infraType_ = null;
+          onChanged();
+        }
+      } else {
+        if (infraTypeCase_ == 11) {
+          infraTypeCase_ = 0;
+          infraType_ = null;
+        }
+        dedicatedInfrastructureBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.Builder
+        getDedicatedInfrastructureBuilder() {
+      return internalGetDedicatedInfrastructureFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructureOrBuilder
+        getDedicatedInfrastructureOrBuilder() {
+      if ((infraTypeCase_ == 11) && (dedicatedInfrastructureBuilder_ != null)) {
+        return dedicatedInfrastructureBuilder_.getMessageOrBuilder();
+      } else {
+        if (infraTypeCase_ == 11) {
+          return (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dedicated infrastructure for the index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure,
+            com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.Builder,
+            com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructureOrBuilder>
+        internalGetDedicatedInfrastructureFieldBuilder() {
+      if (dedicatedInfrastructureBuilder_ == null) {
+        if (!(infraTypeCase_ == 11)) {
+          infraType_ =
+              com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.getDefaultInstance();
+        }
+        dedicatedInfrastructureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure,
+                com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure.Builder,
+                com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructureOrBuilder>(
+                (com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure) infraType_,
+                getParentForChildren(),
+                isClean());
+        infraType_ = null;
+      }
+      infraTypeCase_ = 11;
+      onChanged();
+      return dedicatedInfrastructureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.DenseScannIndex,
+            com.google.cloud.vectorsearch.v1beta.DenseScannIndex.Builder,
+            com.google.cloud.vectorsearch.v1beta.DenseScannIndexOrBuilder>
+        denseScannBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the denseScann field is set.
+     */
+    @java.lang.Override
+    public boolean hasDenseScann() {
+      return indexTypeCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The denseScann.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.DenseScannIndex getDenseScann() {
+      if (denseScannBuilder_ == null) {
+        if (indexTypeCase_ == 12) {
+          return (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance();
+      } else {
+        if (indexTypeCase_ == 12) {
+          return denseScannBuilder_.getMessage();
+        }
+        return com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDenseScann(com.google.cloud.vectorsearch.v1beta.DenseScannIndex value) {
+      if (denseScannBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexType_ = value;
+        onChanged();
+      } else {
+        denseScannBuilder_.setMessage(value);
+      }
+      indexTypeCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDenseScann(
+        com.google.cloud.vectorsearch.v1beta.DenseScannIndex.Builder builderForValue) {
+      if (denseScannBuilder_ == null) {
+        indexType_ = builderForValue.build();
+        onChanged();
+      } else {
+        denseScannBuilder_.setMessage(builderForValue.build());
+      }
+      indexTypeCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDenseScann(com.google.cloud.vectorsearch.v1beta.DenseScannIndex value) {
+      if (denseScannBuilder_ == null) {
+        if (indexTypeCase_ == 12
+            && indexType_
+                != com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance()) {
+          indexType_ =
+              com.google.cloud.vectorsearch.v1beta.DenseScannIndex.newBuilder(
+                      (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          indexType_ = value;
+        }
+        onChanged();
+      } else {
+        if (indexTypeCase_ == 12) {
+          denseScannBuilder_.mergeFrom(value);
+        } else {
+          denseScannBuilder_.setMessage(value);
+        }
+      }
+      indexTypeCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDenseScann() {
+      if (denseScannBuilder_ == null) {
+        if (indexTypeCase_ == 12) {
+          indexTypeCase_ = 0;
+          indexType_ = null;
+          onChanged();
+        }
+      } else {
+        if (indexTypeCase_ == 12) {
+          indexTypeCase_ = 0;
+          indexType_ = null;
+        }
+        denseScannBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.DenseScannIndex.Builder getDenseScannBuilder() {
+      return internalGetDenseScannFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.DenseScannIndexOrBuilder getDenseScannOrBuilder() {
+      if ((indexTypeCase_ == 12) && (denseScannBuilder_ != null)) {
+        return denseScannBuilder_.getMessageOrBuilder();
+      } else {
+        if (indexTypeCase_ == 12) {
+          return (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.DenseScannIndex,
+            com.google.cloud.vectorsearch.v1beta.DenseScannIndex.Builder,
+            com.google.cloud.vectorsearch.v1beta.DenseScannIndexOrBuilder>
+        internalGetDenseScannFieldBuilder() {
+      if (denseScannBuilder_ == null) {
+        if (!(indexTypeCase_ == 12)) {
+          indexType_ = com.google.cloud.vectorsearch.v1beta.DenseScannIndex.getDefaultInstance();
+        }
+        denseScannBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.DenseScannIndex,
+                com.google.cloud.vectorsearch.v1beta.DenseScannIndex.Builder,
+                com.google.cloud.vectorsearch.v1beta.DenseScannIndexOrBuilder>(
+                (com.google.cloud.vectorsearch.v1beta.DenseScannIndex) indexType_,
+                getParentForChildren(),
+                isClean());
+        indexType_ = null;
+      }
+      indexTypeCase_ = 12;
+      onChanged();
+      return denseScannBuilder_;
+    }
 
     private java.lang.Object name_ = "";
 
@@ -1385,7 +2219,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1403,7 +2237,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1426,7 +2260,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1496,7 +2330,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1514,7 +2348,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1537,7 +2371,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1607,7 +2441,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1625,7 +2459,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1648,7 +2482,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1670,7 +2504,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return labels_;
     }
@@ -1760,7 +2594,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1785,7 +2619,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -1806,7 +2640,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -1821,7 +2655,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -1846,7 +2680,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1892,7 +2726,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1914,7 +2748,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1932,7 +2766,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1943,7 +2777,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1961,7 +2795,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1983,7 +2817,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2058,7 +2892,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2104,7 +2938,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2126,7 +2960,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2144,7 +2978,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2155,7 +2989,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2173,7 +3007,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2195,7 +3029,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2287,7 +3121,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder setDistanceMetricValue(int value) {
       distanceMetric_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2334,7 +3168,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       distanceMetric_ = value.getNumber();
       onChanged();
       return this;
@@ -2355,7 +3189,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDistanceMetric() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       distanceMetric_ = 0;
       onChanged();
       return this;
@@ -2426,7 +3260,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       indexField_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2444,7 +3278,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIndexField() {
       indexField_ = getDefaultInstance().getIndexField();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2467,7 +3301,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       indexField_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2479,7 +3313,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (!filterFields_.isModifiable()) {
         filterFields_ = new com.google.protobuf.LazyStringArrayList(filterFields_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
     }
 
     /**
@@ -2569,7 +3403,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       ensureFilterFieldsIsMutable();
       filterFields_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2593,7 +3427,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       ensureFilterFieldsIsMutable();
       filterFields_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2614,7 +3448,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     public Builder addAllFilterFields(java.lang.Iterable<java.lang.String> values) {
       ensureFilterFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filterFields_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2633,7 +3467,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFilterFields() {
       filterFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -2659,7 +3493,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureFilterFieldsIsMutable();
       filterFields_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2671,7 +3505,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (!storeFields_.isModifiable()) {
         storeFields_ = new com.google.protobuf.LazyStringArrayList(storeFields_);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
     }
 
     /**
@@ -2761,7 +3595,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       ensureStoreFieldsIsMutable();
       storeFields_.set(index, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2785,7 +3619,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       ensureStoreFieldsIsMutable();
       storeFields_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2806,7 +3640,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     public Builder addAllStoreFields(java.lang.Iterable<java.lang.String> values) {
       ensureStoreFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storeFields_);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2825,7 +3659,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStoreFields() {
       storeFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -2851,7 +3685,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureStoreFieldsIsMutable();
       storeFields_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

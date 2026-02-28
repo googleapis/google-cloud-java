@@ -52,10 +52,13 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "n.proto\022 google.cloud.vectorsearch.v1bet"
           + "a*W\n\016DistanceMetric\022\037\n\033DISTANCE_METRIC_U"
           + "NSPECIFIED\020\000\022\017\n\013DOT_PRODUCT\020\001\022\023\n\017COSINE_"
-          + "DISTANCE\020\002B\177\n$com.google.cloud.vectorsea"
-          + "rch.v1betaB\013CommonProtoP\001ZHcloud.google."
-          + "com/go/vectorsearch/apiv1beta/vectorsear"
-          + "chpb;vectorsearchpbb\006proto3"
+          + "DISTANCE\020\002B\353\001\n$com.google.cloud.vectorse"
+          + "arch.v1betaB\013CommonProtoP\001ZHcloud.google"
+          + ".com/go/vectorsearch/apiv1beta/vectorsea"
+          + "rchpb;vectorsearchpb\252\002 Google.Cloud.Vect"
+          + "orSearch.V1Beta\312\002 Google\\Cloud\\VectorSea"
+          + "rch\\V1beta\352\002#Google::Cloud::VectorSearch"
+          + "::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

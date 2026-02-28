@@ -237,13 +237,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The values of the vector.
+   * Deprecated: Use `dense` or `sparse` instead.
    * </pre>
    *
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
    * @return A list containing the values.
    */
   @java.lang.Override
@@ -256,13 +256,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The values of the vector.
+   * Deprecated: Use `dense` or `sparse` instead.
    * </pre>
    *
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
    * @return The count of values.
    */
   @java.lang.Deprecated
@@ -274,13 +274,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The values of the vector.
+   * Deprecated: Use `dense` or `sparse` instead.
    * </pre>
    *
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
    * @param index The index of the element to return.
    * @return The values at the given index.
    */
@@ -1193,13 +1193,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @return A list containing the values.
      */
     @java.lang.Deprecated
@@ -1212,13 +1212,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @return The count of values.
      */
     @java.lang.Deprecated
@@ -1230,13 +1230,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @param index The index of the element to return.
      * @return The values at the given index.
      */
@@ -1249,13 +1249,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @param index The index to set the value at.
      * @param value The values to set.
      * @return This builder for chaining.
@@ -1274,13 +1274,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @param value The values to add.
      * @return This builder for chaining.
      */
@@ -1298,13 +1298,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @param values The values to add.
      * @return This builder for chaining.
      */
@@ -1321,13 +1321,13 @@ public final class Vector extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The values of the vector.
+     * Deprecated: Use `dense` or `sparse` instead.
      * </pre>
      *
      * <code>repeated float values = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

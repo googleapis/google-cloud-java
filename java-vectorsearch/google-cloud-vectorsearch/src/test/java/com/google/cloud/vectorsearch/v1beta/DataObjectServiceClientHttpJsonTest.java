@@ -98,6 +98,7 @@ public class DataObjectServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -153,6 +154,7 @@ public class DataObjectServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -260,6 +262,7 @@ public class DataObjectServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -313,6 +316,7 @@ public class DataObjectServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -366,6 +370,7 @@ public class DataObjectServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -379,6 +384,7 @@ public class DataObjectServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
+            .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -418,6 +424,7 @@ public class DataObjectServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setData(Struct.newBuilder().build())
               .putAllVectors(new HashMap<String, Vector>())
+              .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataObject(dataObject, updateMask);

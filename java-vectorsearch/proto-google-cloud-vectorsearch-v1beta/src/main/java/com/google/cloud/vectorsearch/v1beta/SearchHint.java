@@ -77,13 +77,60 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Dense ScaNN parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the denseScannParams field is set.
+     */
+    boolean hasDenseScannParams();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The denseScannParams.
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+        getDenseScannParams();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParamsOrBuilder
+        getDenseScannParamsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Required. The resource name of the index to use for the search.
      * The index must be in the same project, location, and collection.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -99,11 +146,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
+
+    com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.ParamsCase getParamsCase();
   }
 
   /**
@@ -155,6 +206,770 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
               com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder.class);
     }
 
+    public interface DenseScannParamsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ANN param overrides to control recall and latency.
+       * The percentage of leaves to search, in the range [0, 100].
+       * </pre>
+       *
+       * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The searchLeavesPct.
+       */
+      int getSearchLeavesPct();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of initial candidates. Must be a positive integer
+       * (&gt; 0).
+       * </pre>
+       *
+       * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The initialCandidateCount.
+       */
+      int getInitialCandidateCount();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for dense ScaNN.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams}
+     */
+    public static final class DenseScannParams extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+        DenseScannParamsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "DenseScannParams");
+      }
+
+      // Use DenseScannParams.newBuilder() to construct.
+      private DenseScannParams(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DenseScannParams() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_IndexHint_DenseScannParams_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_IndexHint_DenseScannParams_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.class,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.Builder
+                    .class);
+      }
+
+      public static final int SEARCH_LEAVES_PCT_FIELD_NUMBER = 1;
+      private int searchLeavesPct_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ANN param overrides to control recall and latency.
+       * The percentage of leaves to search, in the range [0, 100].
+       * </pre>
+       *
+       * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The searchLeavesPct.
+       */
+      @java.lang.Override
+      public int getSearchLeavesPct() {
+        return searchLeavesPct_;
+      }
+
+      public static final int INITIAL_CANDIDATE_COUNT_FIELD_NUMBER = 2;
+      private int initialCandidateCount_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of initial candidates. Must be a positive integer
+       * (&gt; 0).
+       * </pre>
+       *
+       * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The initialCandidateCount.
+       */
+      @java.lang.Override
+      public int getInitialCandidateCount() {
+        return initialCandidateCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (searchLeavesPct_ != 0) {
+          output.writeInt32(1, searchLeavesPct_);
+        }
+        if (initialCandidateCount_ != 0) {
+          output.writeInt32(2, initialCandidateCount_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (searchLeavesPct_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, searchLeavesPct_);
+        }
+        if (initialCandidateCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, initialCandidateCount_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams other =
+            (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams) obj;
+
+        if (getSearchLeavesPct() != other.getSearchLeavesPct()) return false;
+        if (getInitialCandidateCount() != other.getInitialCandidateCount()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SEARCH_LEAVES_PCT_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchLeavesPct();
+        hash = (37 * hash) + INITIAL_CANDIDATE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getInitialCandidateCount();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Parameters for dense ScaNN.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParamsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_IndexHint_DenseScannParams_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_IndexHint_DenseScannParams_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.class,
+                  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          searchLeavesPct_ = 0;
+          initialCandidateCount_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_IndexHint_DenseScannParams_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+            getDefaultInstanceForType() {
+          return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams build() {
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+            buildPartial() {
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams result =
+              new com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.searchLeavesPct_ = searchLeavesPct_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.initialCandidateCount_ = initialCandidateCount_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams) {
+            return mergeFrom(
+                (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams other) {
+          if (other
+              == com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+                  .getDefaultInstance()) return this;
+          if (other.getSearchLeavesPct() != 0) {
+            setSearchLeavesPct(other.getSearchLeavesPct());
+          }
+          if (other.getInitialCandidateCount() != 0) {
+            setInitialCandidateCount(other.getInitialCandidateCount());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    searchLeavesPct_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    initialCandidateCount_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int searchLeavesPct_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Dense ANN param overrides to control recall and latency.
+         * The percentage of leaves to search, in the range [0, 100].
+         * </pre>
+         *
+         * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The searchLeavesPct.
+         */
+        @java.lang.Override
+        public int getSearchLeavesPct() {
+          return searchLeavesPct_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Dense ANN param overrides to control recall and latency.
+         * The percentage of leaves to search, in the range [0, 100].
+         * </pre>
+         *
+         * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The searchLeavesPct to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSearchLeavesPct(int value) {
+
+          searchLeavesPct_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Dense ANN param overrides to control recall and latency.
+         * The percentage of leaves to search, in the range [0, 100].
+         * </pre>
+         *
+         * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSearchLeavesPct() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          searchLeavesPct_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int initialCandidateCount_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of initial candidates. Must be a positive integer
+         * (&gt; 0).
+         * </pre>
+         *
+         * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The initialCandidateCount.
+         */
+        @java.lang.Override
+        public int getInitialCandidateCount() {
+          return initialCandidateCount_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of initial candidates. Must be a positive integer
+         * (&gt; 0).
+         * </pre>
+         *
+         * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The initialCandidateCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInitialCandidateCount(int value) {
+
+          initialCandidateCount_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of initial candidates. Must be a positive integer
+         * (&gt; 0).
+         * </pre>
+         *
+         * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearInitialCandidateCount() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          initialCandidateCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+      private static final com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint
+              .DenseScannParams
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams();
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DenseScannParams> PARSER =
+          new com.google.protobuf.AbstractParser<DenseScannParams>() {
+            @java.lang.Override
+            public DenseScannParams parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DenseScannParams> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DenseScannParams> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int paramsCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object params_;
+
+    public enum ParamsCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DENSE_SCANN_PARAMS(2),
+      PARAMS_NOT_SET(0);
+      private final int value;
+
+      private ParamsCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ParamsCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ParamsCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return DENSE_SCANN_PARAMS;
+          case 0:
+            return PARAMS_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ParamsCase getParamsCase() {
+      return ParamsCase.forNumber(paramsCase_);
+    }
+
+    public static final int DENSE_SCANN_PARAMS_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the denseScannParams field is set.
+     */
+    @java.lang.Override
+    public boolean hasDenseScannParams() {
+      return paramsCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The denseScannParams.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+        getDenseScannParams() {
+      if (paramsCase_ == 2) {
+        return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams) params_;
+      }
+      return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dense ScaNN parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParamsOrBuilder
+        getDenseScannParamsOrBuilder() {
+      if (paramsCase_ == 2) {
+        return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams) params_;
+      }
+      return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          .getDefaultInstance();
+    }
+
     public static final int NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -170,7 +985,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -197,7 +1014,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -231,6 +1050,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
       }
+      if (paramsCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams) params_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -242,6 +1066,13 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (paramsCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+                    params_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -260,6 +1091,14 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) obj;
 
       if (!getName().equals(other.getName())) return false;
+      if (!getParamsCase().equals(other.getParamsCase())) return false;
+      switch (paramsCase_) {
+        case 2:
+          if (!getDenseScannParams().equals(other.getDenseScannParams())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -273,6 +1112,14 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      switch (paramsCase_) {
+        case 2:
+          hash = (37 * hash) + DENSE_SCANN_PARAMS_FIELD_NUMBER;
+          hash = (53 * hash) + getDenseScannParams().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -414,7 +1261,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (denseScannParamsBuilder_ != null) {
+          denseScannParamsBuilder_.clear();
+        }
         name_ = "";
+        paramsCase_ = 0;
+        params_ = null;
         return this;
       }
 
@@ -445,14 +1297,24 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
       private void buildPartial0(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.name_ = name_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint result) {
+        result.paramsCase_ = paramsCase_;
+        result.params_ = this.params_;
+        if (paramsCase_ == 2 && denseScannParamsBuilder_ != null) {
+          result.params_ = denseScannParamsBuilder_.build();
         }
       }
 
@@ -471,8 +1333,19 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           onChanged();
+        }
+        switch (other.getParamsCase()) {
+          case DENSE_SCANN_PARAMS:
+            {
+              mergeDenseScannParams(other.getDenseScannParams());
+              break;
+            }
+          case PARAMS_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -503,9 +1376,16 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetDenseScannParamsFieldBuilder().getBuilder(), extensionRegistry);
+                  paramsCase_ = 2;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -523,7 +1403,277 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private int paramsCase_ = 0;
+      private java.lang.Object params_;
+
+      public ParamsCase getParamsCase() {
+        return ParamsCase.forNumber(paramsCase_);
+      }
+
+      public Builder clearParams() {
+        paramsCase_ = 0;
+        params_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams,
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParamsOrBuilder>
+          denseScannParamsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the denseScannParams field is set.
+       */
+      @java.lang.Override
+      public boolean hasDenseScannParams() {
+        return paramsCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The denseScannParams.
+       */
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+          getDenseScannParams() {
+        if (denseScannParamsBuilder_ == null) {
+          if (paramsCase_ == 2) {
+            return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+                params_;
+          }
+          return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+              .getDefaultInstance();
+        } else {
+          if (paramsCase_ == 2) {
+            return denseScannParamsBuilder_.getMessage();
+          }
+          return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDenseScannParams(
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams value) {
+        if (denseScannParamsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          params_ = value;
+          onChanged();
+        } else {
+          denseScannParamsBuilder_.setMessage(value);
+        }
+        paramsCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDenseScannParams(
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.Builder
+              builderForValue) {
+        if (denseScannParamsBuilder_ == null) {
+          params_ = builderForValue.build();
+          onChanged();
+        } else {
+          denseScannParamsBuilder_.setMessage(builderForValue.build());
+        }
+        paramsCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDenseScannParams(
+          com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams value) {
+        if (denseScannParamsBuilder_ == null) {
+          if (paramsCase_ == 2
+              && params_
+                  != com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+                      .getDefaultInstance()) {
+            params_ =
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+                    .newBuilder(
+                        (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+                            params_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            params_ = value;
+          }
+          onChanged();
+        } else {
+          if (paramsCase_ == 2) {
+            denseScannParamsBuilder_.mergeFrom(value);
+          } else {
+            denseScannParamsBuilder_.setMessage(value);
+          }
+        }
+        paramsCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDenseScannParams() {
+        if (denseScannParamsBuilder_ == null) {
+          if (paramsCase_ == 2) {
+            paramsCase_ = 0;
+            params_ = null;
+            onChanged();
+          }
+        } else {
+          if (paramsCase_ == 2) {
+            paramsCase_ = 0;
+            params_ = null;
+          }
+          denseScannParamsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.Builder
+          getDenseScannParamsBuilder() {
+        return internalGetDenseScannParamsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParamsOrBuilder
+          getDenseScannParamsOrBuilder() {
+        if ((paramsCase_ == 2) && (denseScannParamsBuilder_ != null)) {
+          return denseScannParamsBuilder_.getMessageOrBuilder();
+        } else {
+          if (paramsCase_ == 2) {
+            return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+                params_;
+          }
+          return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Dense ScaNN parameters.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams dense_scann_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams,
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams.Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParamsOrBuilder>
+          internalGetDenseScannParamsFieldBuilder() {
+        if (denseScannParamsBuilder_ == null) {
+          if (!(paramsCase_ == 2)) {
+            params_ =
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+                    .getDefaultInstance();
+          }
+          denseScannParamsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams,
+                  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams
+                      .Builder,
+                  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint
+                      .DenseScannParamsOrBuilder>(
+                  (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.DenseScannParams)
+                      params_,
+                  getParentForChildren(),
+                  isClean());
+          params_ = null;
+        }
+        paramsCase_ = 2;
+        onChanged();
+        return denseScannParamsBuilder_;
+      }
 
       private java.lang.Object name_ = "";
 
@@ -537,7 +1687,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The name.
        */
@@ -563,7 +1715,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for name.
        */
@@ -589,7 +1743,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -599,7 +1755,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         name_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -614,13 +1770,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
       public Builder clearName() {
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -635,7 +1793,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -646,7 +1806,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         name_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -703,6 +1863,389 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface KnnHintOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.SearchHint.KnnHint)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * KnnHint will be used if search should be explicitly done on system's
+   * default K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vectorsearch.v1beta.SearchHint.KnnHint}
+   */
+  public static final class KnnHint extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.SearchHint.KnnHint)
+      KnnHintOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "KnnHint");
+    }
+
+    // Use KnnHint.newBuilder() to construct.
+    private KnnHint(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private KnnHint() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_KnnHint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_KnnHint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.class,
+              com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint other =
+          (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * KnnHint will be used if search should be explicitly done on system's
+     * default K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vectorsearch.v1beta.SearchHint.KnnHint}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.SearchHint.KnnHint)
+        com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_KnnHint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_KnnHint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.class,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder.class);
+      }
+
+      // Construct using com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchHint_KnnHint_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint getDefaultInstanceForType() {
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint build() {
+        com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint buildPartial() {
+        com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint result =
+            new com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) {
+          return mergeFrom((com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint other) {
+        if (other == com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchHint.KnnHint)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.SearchHint.KnnHint)
+    private static final com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint();
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KnnHint> PARSER =
+        new com.google.protobuf.AbstractParser<KnnHint>() {
+          @java.lang.Override
+          public KnnHint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<KnnHint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KnnHint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int indexTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -712,8 +2255,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     USE_INDEX(1),
+    @java.lang.Deprecated
     USE_KNN(2),
+    KNN_HINT(3),
+    INDEX_HINT(4),
     INDEXTYPE_NOT_SET(0);
     private final int value;
 
@@ -737,6 +2284,10 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           return USE_INDEX;
         case 2:
           return USE_KNN;
+        case 3:
+          return KNN_HINT;
+        case 4:
+          return INDEX_HINT;
         case 0:
           return INDEXTYPE_NOT_SET;
         default:
@@ -759,16 +2310,20 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Specifies that the search should use a particular index.
+   * Optional. Deprecated: Use `index_hint` instead.
+   * Specifies that the search should use a particular index.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
    * @return Whether the useIndex field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasUseIndex() {
     return indexTypeCase_ == 1;
   }
@@ -777,16 +2332,20 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Specifies that the search should use a particular index.
+   * Optional. Deprecated: Use `index_hint` instead.
+   * Specifies that the search should use a particular index.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
    * @return The useIndex.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint getUseIndex() {
     if (indexTypeCase_ == 1) {
       return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_;
@@ -798,14 +2357,16 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Specifies that the search should use a particular index.
+   * Optional. Deprecated: Use `index_hint` instead.
+   * Specifies that the search should use a particular index.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder getUseIndexOrBuilder() {
     if (indexTypeCase_ == 1) {
       return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_;
@@ -819,15 +2380,19 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. If set to true, the search will use the system's default
+   * Optional. Deprecated: Use `knn_hint` instead.
+   * If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
    * @return Whether the useKnn field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasUseKnn() {
     return indexTypeCase_ == 2;
   }
@@ -836,20 +2401,148 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. If set to true, the search will use the system's default
+   * Optional. Deprecated: Use `knn_hint` instead.
+   * If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
    * @return The useKnn.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getUseKnn() {
     if (indexTypeCase_ == 2) {
       return (java.lang.Boolean) indexType_;
     }
     return false;
+  }
+
+  public static final int KNN_HINT_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the search will use the system's default
+   * K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knnHint field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnnHint() {
+    return indexTypeCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the search will use the system's default
+   * K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knnHint.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint getKnnHint() {
+    if (indexTypeCase_ == 3) {
+      return (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the search will use the system's default
+   * K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder getKnnHintOrBuilder() {
+    if (indexTypeCase_ == 3) {
+      return (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+  }
+
+  public static final int INDEX_HINT_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies that the search should use a particular index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the indexHint field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndexHint() {
+    return indexTypeCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies that the search should use a particular index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The indexHint.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint getIndexHint() {
+    if (indexTypeCase_ == 4) {
+      return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies that the search should use a particular index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder
+      getIndexHintOrBuilder() {
+    if (indexTypeCase_ == 4) {
+      return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -873,6 +2566,13 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
     if (indexTypeCase_ == 2) {
       output.writeBool(2, (boolean) ((java.lang.Boolean) indexType_));
     }
+    if (indexTypeCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_);
+    }
+    if (indexTypeCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -891,6 +2591,16 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               2, (boolean) ((java.lang.Boolean) indexType_));
+    }
+    if (indexTypeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_);
+    }
+    if (indexTypeCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -916,6 +2626,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       case 2:
         if (getUseKnn() != other.getUseKnn()) return false;
         break;
+      case 3:
+        if (!getKnnHint().equals(other.getKnnHint())) return false;
+        break;
+      case 4:
+        if (!getIndexHint().equals(other.getIndexHint())) return false;
+        break;
       case 0:
       default:
     }
@@ -938,6 +2654,14 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + USE_KNN_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseKnn());
+        break;
+      case 3:
+        hash = (37 * hash) + KNN_HINT_FIELD_NUMBER;
+        hash = (53 * hash) + getKnnHint().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + INDEX_HINT_FIELD_NUMBER;
+        hash = (53 * hash) + getIndexHint().hashCode();
         break;
       case 0:
       default:
@@ -1085,6 +2809,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       if (useIndexBuilder_ != null) {
         useIndexBuilder_.clear();
       }
+      if (knnHintBuilder_ != null) {
+        knnHintBuilder_.clear();
+      }
+      if (indexHintBuilder_ != null) {
+        indexHintBuilder_.clear();
+      }
       indexTypeCase_ = 0;
       indexType_ = null;
       return this;
@@ -1132,6 +2862,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       if (indexTypeCase_ == 1 && useIndexBuilder_ != null) {
         result.indexType_ = useIndexBuilder_.build();
       }
+      if (indexTypeCase_ == 3 && knnHintBuilder_ != null) {
+        result.indexType_ = knnHintBuilder_.build();
+      }
+      if (indexTypeCase_ == 4 && indexHintBuilder_ != null) {
+        result.indexType_ = indexHintBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1156,6 +2892,16 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         case USE_KNN:
           {
             setUseKnn(other.getUseKnn());
+            break;
+          }
+        case KNN_HINT:
+          {
+            mergeKnnHint(other.getKnnHint());
+            break;
+          }
+        case INDEX_HINT:
+          {
+            mergeIndexHint(other.getIndexHint());
             break;
           }
         case INDEXTYPE_NOT_SET:
@@ -1202,6 +2948,19 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
                 indexTypeCase_ = 2;
                 break;
               } // case 16
+            case 26:
+              {
+                input.readMessage(internalGetKnnHintFieldBuilder().getBuilder(), extensionRegistry);
+                indexTypeCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetIndexHintFieldBuilder().getBuilder(), extensionRegistry);
+                indexTypeCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1245,16 +3004,20 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
      * @return Whether the useIndex field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasUseIndex() {
       return indexTypeCase_ == 1;
     }
@@ -1263,16 +3026,20 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
      * @return The useIndex.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint getUseIndex() {
       if (useIndexBuilder_ == null) {
         if (indexTypeCase_ == 1) {
@@ -1291,13 +3058,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setUseIndex(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint value) {
       if (useIndexBuilder_ == null) {
         if (value == null) {
@@ -1316,13 +3085,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setUseIndex(
         com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder builderForValue) {
       if (useIndexBuilder_ == null) {
@@ -1339,13 +3110,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeUseIndex(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint value) {
       if (useIndexBuilder_ == null) {
         if (indexTypeCase_ == 1
@@ -1375,13 +3148,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearUseIndex() {
       if (useIndexBuilder_ == null) {
         if (indexTypeCase_ == 1) {
@@ -1403,13 +3178,15 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder getUseIndexBuilder() {
       return internalGetUseIndexFieldBuilder().getBuilder();
     }
@@ -1418,14 +3195,16 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder
         getUseIndexOrBuilder() {
       if ((indexTypeCase_ == 1) && (useIndexBuilder_ != null)) {
@@ -1442,11 +3221,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies that the search should use a particular index.
+     * Optional. Deprecated: Use `index_hint` instead.
+     * Specifies that the search should use a particular index.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1478,14 +3258,18 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the search will use the system's default
+     * Optional. Deprecated: Use `knn_hint` instead.
+     * If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
      * @return Whether the useKnn field is set.
      */
+    @java.lang.Deprecated
     public boolean hasUseKnn() {
       return indexTypeCase_ == 2;
     }
@@ -1494,14 +3278,18 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the search will use the system's default
+     * Optional. Deprecated: Use `knn_hint` instead.
+     * If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
      * @return The useKnn.
      */
+    @java.lang.Deprecated
     public boolean getUseKnn() {
       if (indexTypeCase_ == 2) {
         return (java.lang.Boolean) indexType_;
@@ -1513,15 +3301,19 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the search will use the system's default
+     * Optional. Deprecated: Use `knn_hint` instead.
+     * If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
      * @param value The useKnn to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setUseKnn(boolean value) {
 
       indexTypeCase_ = 2;
@@ -1534,14 +3326,18 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the search will use the system's default
+     * Optional. Deprecated: Use `knn_hint` instead.
+     * If set to true, the search will use the system's default
      * K-Nearest Neighbor (KNN) index engine.
      * </pre>
      *
-     * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearUseKnn() {
       if (indexTypeCase_ == 2) {
         indexTypeCase_ = 0;
@@ -1549,6 +3345,491 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder>
+        knnHintBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the knnHint field is set.
+     */
+    @java.lang.Override
+    public boolean hasKnnHint() {
+      return indexTypeCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The knnHint.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint getKnnHint() {
+      if (knnHintBuilder_ == null) {
+        if (indexTypeCase_ == 3) {
+          return (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+      } else {
+        if (indexTypeCase_ == 3) {
+          return knnHintBuilder_.getMessage();
+        }
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnnHint(com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint value) {
+      if (knnHintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexType_ = value;
+        onChanged();
+      } else {
+        knnHintBuilder_.setMessage(value);
+      }
+      indexTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnnHint(
+        com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder builderForValue) {
+      if (knnHintBuilder_ == null) {
+        indexType_ = builderForValue.build();
+        onChanged();
+      } else {
+        knnHintBuilder_.setMessage(builderForValue.build());
+      }
+      indexTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKnnHint(com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint value) {
+      if (knnHintBuilder_ == null) {
+        if (indexTypeCase_ == 3
+            && indexType_
+                != com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance()) {
+          indexType_ =
+              com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.newBuilder(
+                      (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          indexType_ = value;
+        }
+        onChanged();
+      } else {
+        if (indexTypeCase_ == 3) {
+          knnHintBuilder_.mergeFrom(value);
+        } else {
+          knnHintBuilder_.setMessage(value);
+        }
+      }
+      indexTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKnnHint() {
+      if (knnHintBuilder_ == null) {
+        if (indexTypeCase_ == 3) {
+          indexTypeCase_ = 0;
+          indexType_ = null;
+          onChanged();
+        }
+      } else {
+        if (indexTypeCase_ == 3) {
+          indexTypeCase_ = 0;
+          indexType_ = null;
+        }
+        knnHintBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder getKnnHintBuilder() {
+      return internalGetKnnHintFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder getKnnHintOrBuilder() {
+      if ((indexTypeCase_ == 3) && (knnHintBuilder_ != null)) {
+        return knnHintBuilder_.getMessageOrBuilder();
+      } else {
+        if (indexTypeCase_ == 3) {
+          return (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the search will use the system's default
+     * K-Nearest Neighbor (KNN) index engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder>
+        internalGetKnnHintFieldBuilder() {
+      if (knnHintBuilder_ == null) {
+        if (!(indexTypeCase_ == 3)) {
+          indexType_ = com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.getDefaultInstance();
+        }
+        knnHintBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint.Builder,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder>(
+                (com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint) indexType_,
+                getParentForChildren(),
+                isClean());
+        indexType_ = null;
+      }
+      indexTypeCase_ = 3;
+      onChanged();
+      return knnHintBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder>
+        indexHintBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the indexHint field is set.
+     */
+    @java.lang.Override
+    public boolean hasIndexHint() {
+      return indexTypeCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The indexHint.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint getIndexHint() {
+      if (indexHintBuilder_ == null) {
+        if (indexTypeCase_ == 4) {
+          return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance();
+      } else {
+        if (indexTypeCase_ == 4) {
+          return indexHintBuilder_.getMessage();
+        }
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIndexHint(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint value) {
+      if (indexHintBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexType_ = value;
+        onChanged();
+      } else {
+        indexHintBuilder_.setMessage(value);
+      }
+      indexTypeCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIndexHint(
+        com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder builderForValue) {
+      if (indexHintBuilder_ == null) {
+        indexType_ = builderForValue.build();
+        onChanged();
+      } else {
+        indexHintBuilder_.setMessage(builderForValue.build());
+      }
+      indexTypeCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIndexHint(com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint value) {
+      if (indexHintBuilder_ == null) {
+        if (indexTypeCase_ == 4
+            && indexType_
+                != com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance()) {
+          indexType_ =
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.newBuilder(
+                      (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          indexType_ = value;
+        }
+        onChanged();
+      } else {
+        if (indexTypeCase_ == 4) {
+          indexHintBuilder_.mergeFrom(value);
+        } else {
+          indexHintBuilder_.setMessage(value);
+        }
+      }
+      indexTypeCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIndexHint() {
+      if (indexHintBuilder_ == null) {
+        if (indexTypeCase_ == 4) {
+          indexTypeCase_ = 0;
+          indexType_ = null;
+          onChanged();
+        }
+      } else {
+        if (indexTypeCase_ == 4) {
+          indexTypeCase_ = 0;
+          indexType_ = null;
+        }
+        indexHintBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder getIndexHintBuilder() {
+      return internalGetIndexHintFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder
+        getIndexHintOrBuilder() {
+      if ((indexTypeCase_ == 4) && (indexHintBuilder_ != null)) {
+        return indexHintBuilder_.getMessageOrBuilder();
+      } else {
+        if (indexTypeCase_ == 4) {
+          return (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies that the search should use a particular index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder>
+        internalGetIndexHintFieldBuilder() {
+      if (indexHintBuilder_ == null) {
+        if (!(indexTypeCase_ == 4)) {
+          indexType_ =
+              com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.getDefaultInstance();
+        }
+        indexHintBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint.Builder,
+                com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder>(
+                (com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint) indexType_,
+                getParentForChildren(),
+                isClean());
+        indexType_ = null;
+      }
+      indexTypeCase_ = 4;
+      onChanged();
+      return indexHintBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchHint)

@@ -194,7 +194,6 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Options for the format of the exported Data Objects.
-     * New formats may be added in the future.
      * </pre>
      *
      * Protobuf enum {@code
