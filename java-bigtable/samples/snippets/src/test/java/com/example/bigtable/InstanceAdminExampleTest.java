@@ -23,9 +23,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
-import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.admin.v2.models.Instance.Type;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import java.io.IOException;
@@ -101,7 +99,7 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   @Test
   public void testGetInstance() {
     // Gets an instance.
-    Instance instance = instanceAdmin.getInstance();
+    com.google.bigtable.admin.v2.Instance instance = instanceAdmin.getInstance();
     assertNotNull(instance);
   }
 
@@ -109,7 +107,8 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   public void testAddAndDeleteCluster() {
     // Adds a cluster.
     instanceAdmin.addCluster();
-    Cluster cluster = adminClient.getCluster(instanceId, CLUSTER);
+    com.google.cloud.bigtable.admin.v2.models.Cluster cluster =
+        adminClient.getCluster(instanceId, CLUSTER);
     assertNotNull(cluster);
 
     // Deletes a cluster.
@@ -132,7 +131,8 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(ID_PREFIX + "-([0-9a-f]+)");
     System.out.println();
-    for (Instance instance : adminClient.listInstances()) {
+    for (com.google.cloud.bigtable.admin.v2.models.Instance instance :
+        adminClient.listInstances()) {
       Matcher matcher = timestampPattern.matcher(instance.getId());
       if (!matcher.matches()) {
         continue;

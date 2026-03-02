@@ -16,24 +16,19 @@
 
 package com.example.bigtable;
 
-import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
-
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GcRule;
+import com.google.bigtable.admin.v2.ListTablesRequest;
+import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
-import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
-import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
-import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.cloud.bigtable.admin.v2.models.GcRuleBuilder;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 /**
  * An example of using Google Cloud Bigtable.
@@ -64,6 +59,8 @@ public class TableAdminExample {
   private static final String COLUMN_FAMILY_3 = "cf3";
   private static final String COLUMN_FAMILY_4 = "cf4";
   private static final String COLUMN_FAMILY_5 = "cf5";
+  private final String projectId;
+  private final String instanceId;
   private final String tableId;
   private final BigtableTableAdminClient adminClient;
 
@@ -81,6 +78,8 @@ public class TableAdminExample {
   }
 
   public TableAdminExample(String projectId, String instanceId, String tableId) throws IOException {
+    this.projectId = projectId;
+    this.instanceId = instanceId;
     this.tableId = tableId;
 
     // Creates the settings to configure a bigtable table admin client.
@@ -122,9 +121,18 @@ public class TableAdminExample {
     // Checks if table exists, creates table if does not exist.
     if (!adminClient.exists(tableId)) {
       System.out.println("Table does not exist, creating table: " + tableId);
-      CreateTableRequest createTableRequest = CreateTableRequest.of(tableId).addFamily("cf");
-      Table table = adminClient.createTable(createTableRequest);
-      System.out.printf("Table: %s created successfully%n", table.getId());
+      String parent = "projects/" + projectId + "/instances/" + instanceId;
+      CreateTableRequest createTableRequest =
+          CreateTableRequest.newBuilder()
+              .setParent(parent)
+              .setTableId(tableId)
+              .setTable(
+                  Table.newBuilder()
+                      .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
+                      .build())
+              .build();
+      Table table = adminClient.getBaseClient().createTable(createTableRequest);
+      System.out.printf("Table: %s created successfully%n", table.getName());
     }
     // [END bigtable_create_table]
   }
@@ -135,9 +143,10 @@ public class TableAdminExample {
     // [START bigtable_list_tables]
     // Lists tables in the current instance.
     try {
-      List<String> tableIds = adminClient.listTables();
-      for (String tableId : tableIds) {
-        System.out.println(tableId);
+      String parent = "projects/" + projectId + "/instances/" + instanceId;
+      ListTablesRequest request = ListTablesRequest.newBuilder().setParent(parent).build();
+      for (Table table : adminClient.getBaseClient().listTables(request).iterateAll()) {
+        System.out.println(table.getName());
       }
     } catch (NotFoundException e) {
       System.err.println("Failed to list tables from a non-existent instance: " + e.getMessage());
@@ -151,13 +160,14 @@ public class TableAdminExample {
     // [START bigtable_get_table_metadata]
     // Gets table metadata, and applies a view to the table fields.
     try {
-      Table table = adminClient.getTable(tableId);
-      System.out.println("Table: " + table.getId());
-      Collection<ColumnFamily> columnFamilies = table.getColumnFamilies();
-      for (ColumnFamily columnFamily : columnFamilies) {
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      Table table = adminClient.getBaseClient().getTable(tableName);
+      System.out.println("Table: " + table.getName());
+      for (java.util.Map.Entry<String, ColumnFamily> entry :
+          table.getColumnFamiliesMap().entrySet()) {
         System.out.printf(
-            "Column family: %s%nGC Rule: %s%n",
-            columnFamily.getId(), columnFamily.getGCRule().toString());
+            "Column family: %s%nGC Rule: %s%n", entry.getKey(), entry.getValue().getGcRule());
       }
     } catch (NotFoundException e) {
       System.err.println(
@@ -174,15 +184,21 @@ public class TableAdminExample {
     // where age = current time minus cell timestamp
 
     // Defines the GC rule to retain data with max age of 5 days.
-    DurationRule maxAgeRule = GCRULES.maxAge(5, TimeUnit.DAYS);
+    GcRule maxAgeRule = GcRuleBuilder.maxAge(Duration.ofDays(5));
 
     // Creates column family with given GC rule.
     try {
-      // ModifyColumnFamiliesRequest can be used both for adding and modifying families, here it is
-      // being used to add a family
-      ModifyColumnFamiliesRequest columnFamiliesRequest =
-          ModifyColumnFamiliesRequest.of(tableId).addFamily(COLUMN_FAMILY_1, maxAgeRule);
-      adminClient.modifyFamilies(columnFamiliesRequest);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_1)
+                      .setCreate(ColumnFamily.newBuilder().setGcRule(maxAgeRule)))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_1);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -199,15 +215,21 @@ public class TableAdminExample {
     // where 1 = most recent version
 
     // Defines the GC policy to retain only the most recent 2 versions.
-    VersionRule versionRule = GCRULES.maxVersions(2);
+    GcRule versionRule = GcRuleBuilder.maxVersions(2);
 
     // Creates column family with given GC rule.
     try {
-      // ModifyColumnFamiliesRequest can be used both for adding and modifying families, here it is
-      // being used to add a family
-      ModifyColumnFamiliesRequest columnFamiliesRequest =
-          ModifyColumnFamiliesRequest.of(tableId).addFamily(COLUMN_FAMILY_2, versionRule);
-      adminClient.modifyFamilies(columnFamiliesRequest);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_2)
+                      .setCreate(ColumnFamily.newBuilder().setGcRule(versionRule)))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_2);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -224,16 +246,25 @@ public class TableAdminExample {
 
     // Defines a list of GC rules to drop cells older than 5 days OR not the most recent
     // version.
-    UnionRule unionRule =
-        GCRULES.union().rule(GCRULES.maxAge(5, TimeUnit.DAYS)).rule(GCRULES.maxVersions(1));
+    GcRule unionRule =
+        GcRuleBuilder.union()
+            .add(GcRuleBuilder.maxAge(Duration.ofDays(5)))
+            .add(GcRuleBuilder.maxVersions(1))
+            .build();
 
     // Creates column family with given GC rule.
     try {
-      // ModifyColumnFamiliesRequest can be used both for adding and modifying families, here it is
-      // being used to add a family
-      ModifyColumnFamiliesRequest columnFamiliesRequest =
-          ModifyColumnFamiliesRequest.of(tableId).addFamily(COLUMN_FAMILY_3, unionRule);
-      adminClient.modifyFamilies(columnFamiliesRequest);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_3)
+                      .setCreate(ColumnFamily.newBuilder().setGcRule(unionRule)))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_3);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -249,17 +280,25 @@ public class TableAdminExample {
     // Creates a column family with GC policy to drop data that matches all conditions.
 
     // Defines a GC rule to drop cells older than 5 days AND older than the most recent 2 versions.
-    DurationRule maxAgeRule = GCRULES.maxAge(5, TimeUnit.DAYS);
-    VersionRule versionRule = GCRULES.maxVersions(2);
-    IntersectionRule intersectionRule = GCRULES.intersection().rule(maxAgeRule).rule(versionRule);
+    GcRule intersectionRule =
+        GcRuleBuilder.intersection()
+            .add(GcRuleBuilder.maxAge(Duration.ofDays(5)))
+            .add(GcRuleBuilder.maxVersions(2))
+            .build();
 
     // Creates column family with given GC rule.
     try {
-      // ModifyColumnFamiliesRequest can be used both for adding and modifying families, here it is
-      // being used to add a family
-      ModifyColumnFamiliesRequest columnFamiliesRequest =
-          ModifyColumnFamiliesRequest.of(tableId).addFamily(COLUMN_FAMILY_4, intersectionRule);
-      adminClient.modifyFamilies(columnFamiliesRequest);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_4)
+                      .setCreate(ColumnFamily.newBuilder().setGcRule(intersectionRule)))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_4);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -276,19 +315,27 @@ public class TableAdminExample {
     // Drop cells that are either older than the 10 recent versions
     // OR
     // Drop cells that are older than a month AND older than the 2 recent versions
-    VersionRule versionRule1 = GCRULES.maxVersions(10);
-    VersionRule versionRule2 = GCRULES.maxVersions(2);
-    DurationRule maxAgeRule = GCRULES.maxAge(30, TimeUnit.DAYS);
-    IntersectionRule intersectionRule = GCRULES.intersection().rule(maxAgeRule).rule(versionRule2);
-    UnionRule unionRule = GCRULES.union().rule(intersectionRule).rule(versionRule1);
+    GcRule intersectionRule =
+        GcRuleBuilder.intersection()
+            .add(GcRuleBuilder.maxAge(Duration.ofDays(30)))
+            .add(GcRuleBuilder.maxVersions(2))
+            .build();
+    GcRule unionRule =
+        GcRuleBuilder.union().add(intersectionRule).add(GcRuleBuilder.maxVersions(10)).build();
 
     // Creates column family with given GC rule.
     try {
-      // ModifyColumnFamiliesRequest can be used both for adding and modifying families, here it is
-      // being used to add a family
-      ModifyColumnFamiliesRequest columnFamiliesRequest =
-          ModifyColumnFamiliesRequest.of(tableId).addFamily(COLUMN_FAMILY_5, unionRule);
-      adminClient.modifyFamilies(columnFamiliesRequest);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_5)
+                      .setCreate(ColumnFamily.newBuilder().setGcRule(unionRule)))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_5);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -303,12 +350,13 @@ public class TableAdminExample {
     // [START bigtable_list_column_families]
     // Lists all families in the table with GC rules.
     try {
-      Table table = adminClient.getTable(tableId);
-      Collection<ColumnFamily> columnFamilies = table.getColumnFamilies();
-      for (ColumnFamily columnFamily : columnFamilies) {
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      Table table = adminClient.getBaseClient().getTable(tableName);
+      for (java.util.Map.Entry<String, ColumnFamily> entry :
+          table.getColumnFamiliesMap().entrySet()) {
         System.out.printf(
-            "Column family: %s%nGC Rule: %s%n",
-            columnFamily.getId(), columnFamily.getGCRule().toString());
+            "Column family: %s%nGC Rule: %s%n", entry.getKey(), entry.getValue().getGcRule());
       }
     } catch (NotFoundException e) {
       System.err.println(
@@ -323,14 +371,19 @@ public class TableAdminExample {
     // [START bigtable_update_gc_rule]
     // Updates the column family metadata to update the GC rule.
     // Updates a column family GC rule.
-    VersionRule versionRule = GCRULES.maxVersions(1);
+    GcRule versionRule = GcRuleBuilder.maxVersions(1);
     try {
-      // ModifyColumnFamiliesRequest can be used both for adding and modifying families, here it is
-      // being used to modify a family
-      // Updates column family with given GC rule.
-      ModifyColumnFamiliesRequest updateRequest =
-          ModifyColumnFamiliesRequest.of(tableId).updateFamily(COLUMN_FAMILY_1, versionRule);
-      adminClient.modifyFamilies(updateRequest);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_1)
+                      .setUpdate(ColumnFamily.newBuilder().setGcRule(versionRule)))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.printf("Column family %s GC rule updated%n", COLUMN_FAMILY_1);
     } catch (NotFoundException e) {
       System.err.println("Failed to modify a non-existent column family: " + e.getMessage());
@@ -343,14 +396,13 @@ public class TableAdminExample {
     System.out.printf("%nPrint updated GC rule for column family %s%n", COLUMN_FAMILY_1);
     // [START bigtable_family_get_gc_rule]
     try {
-      Table table = adminClient.getTable(tableId);
-      Collection<ColumnFamily> columnFamilies = table.getColumnFamilies();
-      for (ColumnFamily columnFamily : columnFamilies) {
-        if (columnFamily.getId().equals(COLUMN_FAMILY_1)) {
-          System.out.printf(
-              "Column family: %s%nGC Rule: %s%n",
-              columnFamily.getId(), columnFamily.getGCRule().toString());
-        }
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      Table table = adminClient.getBaseClient().getTable(tableName);
+      if (table.containsColumnFamilies(COLUMN_FAMILY_1)) {
+        System.out.printf(
+            "Column family: %s%nGC Rule: %s%n",
+            COLUMN_FAMILY_1, table.getColumnFamiliesMap().get(COLUMN_FAMILY_1).getGcRule());
       }
     } catch (NotFoundException e) {
       System.err.println("Failed to print a non-existent column family: " + e.getMessage());
@@ -364,9 +416,17 @@ public class TableAdminExample {
     // [START bigtable_delete_family]
     // Deletes a column family.
     try {
-      ModifyColumnFamiliesRequest deleted =
-          ModifyColumnFamiliesRequest.of(tableId).dropFamily(COLUMN_FAMILY_2);
-      adminClient.modifyFamilies(deleted);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
+              .setName(tableName)
+              .addModifications(
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(COLUMN_FAMILY_2)
+                      .setDrop(true))
+              .build();
+      adminClient.getBaseClient().modifyColumnFamilies(request);
       System.out.printf("Column family %s deleted successfully%n", COLUMN_FAMILY_2);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent column family: " + e.getMessage());
@@ -380,7 +440,9 @@ public class TableAdminExample {
     // Deletes the entire table.
     System.out.println("\nDelete table: " + tableId);
     try {
-      adminClient.deleteTable(tableId);
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      adminClient.getBaseClient().deleteTable(tableName);
       System.out.printf("Table: %s deleted successfully%n", tableId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());
