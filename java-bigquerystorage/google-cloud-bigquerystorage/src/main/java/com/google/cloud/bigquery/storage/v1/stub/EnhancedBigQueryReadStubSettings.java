@@ -112,6 +112,8 @@ public class EnhancedBigQueryReadStubSettings
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    // Configure a default keep-alive value to prevent idle connections from dropping.
+    // Some CreateReadSession calls may be long-running (10+ min).
     return BigQueryReadStubSettings.defaultGrpcTransportProviderBuilder()
         .setKeepAliveTimeDuration(Duration.ofMinutes(1))
         .setKeepAliveTimeoutDuration(Duration.ofMinutes(1))
