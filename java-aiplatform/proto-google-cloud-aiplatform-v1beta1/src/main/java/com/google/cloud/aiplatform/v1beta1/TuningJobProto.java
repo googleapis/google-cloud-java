@@ -358,19 +358,22 @@ public final class TuningJobProto extends com.google.protobuf.GeneratedFile {
           + "\024training_dataset_uri\030\001 \001(\tB\003\340A\002\022#\n"
           + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001\022R\n"
           + "\020hyper_parameters\030\003 \001("
-          + "\01323.google.cloud.aiplatform.v1beta1.VeoHyperParametersB\003\340A\001\"\355\001\n"
+          + "\01323.google.cloud.aiplatform.v1beta1.VeoHyperParametersB\003\340A\001\"\312\002\n"
           + "\020EvaluationConfig\022=\n"
           + "\007metrics\030\001"
           + " \003(\0132\'.google.cloud.aiplatform.v1beta1.MetricB\003\340A\002\022I\n\r"
           + "output_config\030\002"
           + " \001(\0132-.google.cloud.aiplatform.v1beta1.OutputConfigB\003\340A\002\022O\n"
           + "\020autorater_config\030\003"
-          + " \001(\01320.google.cloud.aiplatform.v1beta1.AutoraterConfigB\003\340A\001\"\327\001\n"
+          + " \001(\01320.google.cloud.aiplatform.v1beta1.AutoraterConfigB\003\340A\001\022[\n"
+          + "\033inference_generation_config\030\005"
+          + " \001(\01321.google.cloud.aiplatform.v1beta1.GenerationConfigB\003\340A\001\"\364\001\n"
           + "\022EvaluateDatasetRun\022\033\n"
-          + "\016operation_name\030\001 \001(\tB\003\340A\003\022\032\n\r"
+          + "\016operation_name\030\001 \001(\tB\003\340A\003\022\033\n"
+          + "\016evaluation_run\030\005 \001(\tB\003\340A\003\022\032\n\r"
           + "checkpoint_id\030\002 \001(\tB\003\340A\003\022`\n"
-          + "\031evaluate_dataset_response\030\003"
-          + " \001(\01328.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseB\003\340A\003\022&\n"
+          + "\031evaluate_dataset_response\030\003 \001(\01328.google.cloud.aiplatfo"
+          + "rm.v1beta1.EvaluateDatasetResponseB\003\340A\003\022&\n"
           + "\005error\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\"\\\n"
           + "\024TunedModelCheckpoint\022\025\n\r"
           + "checkpoint_id\030\001 \001(\t\022\r\n"
@@ -382,11 +385,11 @@ public final class TuningJobProto extends com.google.protobuf.GeneratedFile {
           + "\037aiplatform.googleapis.com/Model\022\032\n\r"
           + "checkpoint_id\030\002 \001(\tB\003\340A\001\022\027\n\n"
           + "base_model\030\003 \001(\tB\003\340A\003B\345\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\016TuningJobPro"
-          + "toP\001ZCcloud.google.com/go/aiplatform/api"
-          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
-          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\016TuningJobP"
+          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -627,7 +630,7 @@ public final class TuningJobProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_EvaluationConfig_descriptor,
             new java.lang.String[] {
-              "Metrics", "OutputConfig", "AutoraterConfig",
+              "Metrics", "OutputConfig", "AutoraterConfig", "InferenceGenerationConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_EvaluateDatasetRun_descriptor =
         getDescriptor().getMessageType(17);
@@ -635,7 +638,7 @@ public final class TuningJobProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_EvaluateDatasetRun_descriptor,
             new java.lang.String[] {
-              "OperationName", "CheckpointId", "EvaluateDatasetResponse", "Error",
+              "OperationName", "EvaluationRun", "CheckpointId", "EvaluateDatasetResponse", "Error",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_descriptor =
         getDescriptor().getMessageType(18);

@@ -77,10 +77,11 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -93,10 +94,11 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -109,10 +111,11 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -126,10 +129,11 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was last updated.
+   * Output only. The time the operation was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -142,10 +146,11 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was last updated.
+   * Output only. The time the operation was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -158,10 +163,11 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was last updated.
+   * Output only. The time the operation was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -175,10 +181,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Number of DataObjects that were processed successfully.
+   * Output only. Number of DataObjects that were processed successfully.
    * </pre>
    *
-   * <code>int64 success_count = 3;</code>
+   * <code>int64 success_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The successCount.
    */
@@ -194,10 +200,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Number of DataObjects that failed during processing.
+   * Output only. Number of DataObjects that failed during processing.
    * </pre>
    *
-   * <code>int64 failure_count = 4;</code>
+   * <code>int64 failure_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The failureCount.
    */
@@ -630,10 +636,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -645,10 +653,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -666,10 +676,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -689,10 +701,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -709,10 +723,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -737,10 +753,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -757,10 +775,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000001;
@@ -772,10 +792,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -791,10 +813,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -824,10 +848,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -839,10 +865,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -860,10 +888,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -883,10 +913,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -903,10 +935,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -931,10 +965,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -951,10 +987,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       bitField0_ |= 0x00000002;
@@ -966,10 +1004,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -985,10 +1025,12 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was last updated.
+     * Output only. The time the operation was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -1013,10 +1055,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Number of DataObjects that were processed successfully.
+     * Output only. Number of DataObjects that were processed successfully.
      * </pre>
      *
-     * <code>int64 success_count = 3;</code>
+     * <code>int64 success_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The successCount.
      */
@@ -1029,10 +1071,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Number of DataObjects that were processed successfully.
+     * Output only. Number of DataObjects that were processed successfully.
      * </pre>
      *
-     * <code>int64 success_count = 3;</code>
+     * <code>int64 success_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The successCount to set.
      * @return This builder for chaining.
@@ -1049,10 +1091,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Number of DataObjects that were processed successfully.
+     * Output only. Number of DataObjects that were processed successfully.
      * </pre>
      *
-     * <code>int64 success_count = 3;</code>
+     * <code>int64 success_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1069,10 +1111,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Number of DataObjects that failed during processing.
+     * Output only. Number of DataObjects that failed during processing.
      * </pre>
      *
-     * <code>int64 failure_count = 4;</code>
+     * <code>int64 failure_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The failureCount.
      */
@@ -1085,10 +1127,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Number of DataObjects that failed during processing.
+     * Output only. Number of DataObjects that failed during processing.
      * </pre>
      *
-     * <code>int64 failure_count = 4;</code>
+     * <code>int64 failure_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The failureCount to set.
      * @return This builder for chaining.
@@ -1105,10 +1147,10 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Number of DataObjects that failed during processing.
+     * Output only. Number of DataObjects that failed during processing.
      * </pre>
      *
-     * <code>int64 failure_count = 4;</code>
+     * <code>int64 failure_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

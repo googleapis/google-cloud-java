@@ -62,20 +62,69 @@ function retry_with_backoff {
   return $exit_code
 }
 
+# Helper function to reliably extract the text between <module> tags strictly
+# within the default <modules> block, natively ignoring <profiles>.
+# Uses a pure Bash loop to avoid spawning slower external processes like awk or sed,
+# and naturally survives single-module components without throwing exit signals.
+function extract_pom_modules() {
+  local pom_file="$1"
+  local modules_list=""
+  local in_profiles=false
+  local in_modules=false
+  
+  while IFS= read -r line || [ -n "$line" ]; do
+    if [[ "$line" == *"<profiles>"* ]]; then
+      in_profiles=true
+    elif [[ "$line" == *"</profiles>"* ]]; then
+      in_profiles=false
+    elif [[ "$line" == *"<modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=true
+    elif [[ "$line" == *"</modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=false
+      break
+    elif [ "$in_modules" = true ] && [[ "$line" == *"<module>"* ]]; then
+      # Extract text between tags
+      local module="${line#*<module>}"
+      module="${module%</module>*}"
+      
+      # Trim whitespace natively
+      module="${module#"${module%%[![:space:]]*}"}"
+      module="${module%"${module##*[![:space:]]}"}"
+      
+      if [ -z "$modules_list" ]; then
+        modules_list="$module"
+      else
+        modules_list="${modules_list} ${module}"
+      fi
+    fi
+  done < "$pom_file"
+  
+  echo "$modules_list"
+}
+
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
   submodules_array=()
-  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules -pl "$1")
-  if mvn_submodules=$(grep '<.*>.*</.*>' <<< "$mvn_submodules"); then
-    mvn_submodules=$(sed -e 's/<.*>\(.*\)<\/.*>/\1/g' <<< "$mvn_submodules")
-    for submodule in $mvn_submodules; do
-      # Each entry = <folder>/<submodule>
-      submodules_array+=("$1/${submodule}");
-    done
+  if [ -f "$1/pom.xml" ]; then
+    local modules
+
+    # Use pure Bash extraction to find the modules in the aggregator pom file.
+    # Faster than invoking mvn help:evaluate to list all the project modules,
+    # cleanly ignores optional <profiles>, and gracefully skips flat POMs.
+    modules=$(extract_pom_modules "$1/pom.xml")
+    if [ -n "$modules" ]; then
+      for submodule in $modules; do
+        # Each entry = <folder>/<submodule>
+        submodules_array+=("$1/${submodule}")
+      done
+    else
+      # If this module contains no submodules, select the module itself.
+      submodules_array+=("$1")
+    fi
   else
-    # If this module contains no submodules, select the module itself.
-    submodules_array+=("$1");
+    echo "Module does not have a pom.xml file: $1"
+    exit 1
   fi
 
   # Convert from array to comma-delimited string
@@ -214,6 +263,25 @@ function generate_modified_modules_list() {
       echo "Found no changes in the java modules"
     fi
   fi
+}
+
+# Filters the modified_module_list to only include modules that contain
+# integration test files (matching IT*.java or *IT.java in src/test/java).
+# Not all modules will have ITs written and there is not need to test
+# modules without ITs.
+function filter_modules_with_integration_tests() {
+  filtered_it_module_list=()
+  for module in "${modified_module_list[@]}"; do
+    # 1. Search for files in the Java test directory (*/src/test/java/*)
+    # 2. Filter for ITs that match the typical file name (IT prefix or suffix)
+    # 3. Stop searching when a single file match has been found
+    if find "$module" -path '*/src/test/java/*' \( -name 'IT*.java' -o -name '*IT.java' \) -print -quit 2>/dev/null | grep -q .; then
+      filtered_it_module_list+=("$module")
+    fi
+  done
+  printf "Modules with integration tests:\n"
+  printf "  %s\n" "${filtered_it_module_list[@]}"
+  echo "Found ${#filtered_it_module_list[@]} modules with integration tests (out of ${#modified_module_list[@]} modified modules)"
 }
 
 function run_integration_tests() {

@@ -652,7 +652,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=378
+   *     google/cloud/networkmanagement/v1/trace.proto;l=409
    * @return The serviceAccount.
    */
   @java.lang.Override
@@ -679,7 +679,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=378
+   *     google/cloud/networkmanagement/v1/trace.proto;l=409
    * @return The bytes for serviceAccount.
    */
   @java.lang.Override
@@ -763,7 +763,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
    * <code>bool running = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.running is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=385
+   *     google/cloud/networkmanagement/v1/trace.proto;l=416
    * @return The running.
    */
   @java.lang.Override
@@ -2236,7 +2236,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=378
+     *     google/cloud/networkmanagement/v1/trace.proto;l=409
      * @return The serviceAccount.
      */
     @java.lang.Deprecated
@@ -2262,7 +2262,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=378
+     *     google/cloud/networkmanagement/v1/trace.proto;l=409
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated
@@ -2288,7 +2288,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=378
+     *     google/cloud/networkmanagement/v1/trace.proto;l=409
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -2313,7 +2313,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=378
+     *     google/cloud/networkmanagement/v1/trace.proto;l=409
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2334,7 +2334,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>string service_account = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=378
+     *     google/cloud/networkmanagement/v1/trace.proto;l=409
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -2474,7 +2474,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>bool running = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.running is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=385
+     *     google/cloud/networkmanagement/v1/trace.proto;l=416
      * @return The running.
      */
     @java.lang.Override
@@ -2494,7 +2494,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>bool running = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.running is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=385
+     *     google/cloud/networkmanagement/v1/trace.proto;l=416
      * @param value The running to set.
      * @return This builder for chaining.
      */
@@ -2518,7 +2518,7 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessage
      * <code>bool running = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.running is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=385
+     *     google/cloud/networkmanagement/v1/trace.proto;l=416
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

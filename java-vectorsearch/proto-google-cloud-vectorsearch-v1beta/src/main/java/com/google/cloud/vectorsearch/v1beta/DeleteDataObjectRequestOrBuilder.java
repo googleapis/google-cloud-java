@@ -59,4 +59,34 @@ public interface DeleteDataObjectRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of the DataObject.
+   * If an etag is provided and does not match the current etag of the
+   * DataObject, deletion will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of the DataObject.
+   * If an etag is provided and does not match the current etag of the
+   * DataObject, deletion will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

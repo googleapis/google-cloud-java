@@ -283,6 +283,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDataObjectRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

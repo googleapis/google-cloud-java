@@ -110,7 +110,7 @@ public class DatastoreOpenTelemetryOptions {
      * @return the builder instance.
      */
     @Nonnull
-    public DatastoreOpenTelemetryOptions.Builder setMetricsEnabled(boolean enabled) {
+    DatastoreOpenTelemetryOptions.Builder setMetricsEnabled(boolean enabled) {
       this.metricsEnabled = enabled;
       return this;
     }

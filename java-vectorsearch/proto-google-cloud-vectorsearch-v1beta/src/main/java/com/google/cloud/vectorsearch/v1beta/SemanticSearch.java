@@ -188,11 +188,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The task type of the query embedding.
+   * Required. The task type of the query embedding.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for taskType.
@@ -206,11 +206,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The task type of the query embedding.
+   * Required. The task type of the query embedding.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The taskType.
@@ -1168,11 +1168,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The task type of the query embedding.
+     * Required. The task type of the query embedding.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for taskType.
@@ -1186,11 +1186,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The task type of the query embedding.
+     * Required. The task type of the query embedding.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for taskType to set.
@@ -1207,11 +1207,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The task type of the query embedding.
+     * Required. The task type of the query embedding.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The taskType.
@@ -1229,11 +1229,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The task type of the query embedding.
+     * Required. The task type of the query embedding.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The taskType to set.
@@ -1253,11 +1253,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The task type of the query embedding.
+     * Required. The task type of the query embedding.
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.

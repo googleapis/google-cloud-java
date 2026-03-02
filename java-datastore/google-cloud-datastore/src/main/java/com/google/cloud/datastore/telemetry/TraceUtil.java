@@ -46,14 +46,6 @@ public interface TraceUtil {
   String SPAN_NAME_TRANSACTION_RUN_QUERY = "Transaction.RunQuery";
   String SPAN_NAME_ROLLBACK = "Transaction.Rollback";
   String SPAN_NAME_TRANSACTION_RUN_AGGREGATION_QUERY = "Transaction.RunAggregationQuery";
-  String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
-  String ATTRIBUTES_KEY_TRANSACTIONAL = "transactional";
-  String ATTRIBUTES_KEY_TRANSACTION_ID = "transaction_id";
-  String ATTRIBUTES_KEY_READ_CONSISTENCY = "read_consistency";
-  String ATTRIBUTES_KEY_RECEIVED = "Received";
-  String ATTRIBUTES_KEY_MISSING = "Missing";
-  String ATTRIBUTES_KEY_DEFERRED = "Deferred";
-  String ATTRIBUTES_KEY_MORE_RESULTS = "more_results";
 
   /**
    * Creates and returns an instance of the TraceUtil class.

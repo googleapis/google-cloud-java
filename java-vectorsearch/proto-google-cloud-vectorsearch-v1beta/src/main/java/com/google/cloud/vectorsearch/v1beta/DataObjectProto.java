@@ -73,36 +73,39 @@ public final class DataObjectProto extends com.google.protobuf.GeneratedFile {
           + "2google/cloud/vectorsearch/v1beta/data_object.proto\022 google.cloud.vectorsearch."
           + "v1beta\032\037google/api/field_behavior.proto\032"
           + "\031google/api/resource.proto\032\034google/proto"
-          + "buf/struct.proto\032\037google/protobuf/timestamp.proto\"\244\004\n\n"
+          + "buf/struct.proto\032\037google/protobuf/timestamp.proto\"\265\004\n\n"
           + "DataObject\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\035\n"
-          + "\016data_object_id\030\002 \001(\tB\005\030\001\340A\003\0224\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\033\n"
+          + "\016data_object_id\030\002 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022*\n"
           + "\004data\030\006 \001(\0132\027.google.protobuf.StructB\003\340A\001\022O\n"
-          + "\007vectors\030\007 "
-          + "\003(\01329.google.cloud.vectorsearch.v1beta.DataObject.VectorsEntryB\003\340A\001\032X\n"
+          + "\007vectors\030\007 \003("
+          + "\01329.google.cloud.vectorsearch.v1beta.DataObject.VectorsEntryB\003\340A\001\022\021\n"
+          + "\004etag\030\010 \001(\tB\003\340A\001\032X\n"
           + "\014VectorsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0227\n"
-          + "\005value\030\002 \001(\0132(.google"
-          + ".cloud.vectorsearch.v1beta.Vector:\0028\001:\240\001\352A\234\001\n"
-          + "&vectorsearch.googleapis.com/DataObject\022Yprojects/{project}/locations/{loca"
-          + "tion}/collections/{collection}/dataObjects/{dataObject}*\013dataObjects2\n"
+          + "\005value\030\002"
+          + " \001(\0132(.google.cloud.vectorsearch.v1beta.Vector:\0028\001:\240\001\352A\234\001\n"
+          + "&vectorsearch.googleapis.com/DataObject\022Yprojects/{project"
+          + "}/locations/{location}/collections/{coll"
+          + "ection}/dataObjects/{dataObject}*\013dataObjects2\n"
           + "dataObject\"\255\001\n"
           + "\006Vector\022>\n"
           + "\005dense\030\002 \001(\0132-.google.cloud.vectorsearch.v1beta.DenseVectorH\000\022@\n"
-          + "\006sparse\030\003"
-          + " \001(\0132..google.cloud.vectorsearch.v1beta.SparseVectorH\000\022\022\n"
+          + "\006sparse\030\003 \001(\0132..google.cl"
+          + "oud.vectorsearch.v1beta.SparseVectorH\000\022\022\n"
           + "\006values\030\001 \003(\002B\002\030\001B\r\n"
           + "\013vector_type\"\"\n"
           + "\013DenseVector\022\023\n"
           + "\006values\030\001 \003(\002B\003\340A\002\"9\n"
           + "\014SparseVector\022\023\n"
           + "\006values\030\001 \003(\002B\003\340A\002\022\024\n"
-          + "\007indices\030\002 \003(\005B\003\340A\002B\203\001\n"
-          + "$com.google.cloud.vectorsearch.v1betaB\017DataOb"
-          + "jectProtoP\001ZHcloud.google.com/go/vectorsearch/apiv1beta/vectorsearchpb;vectorsea"
-          + "rchpbb\006proto3"
+          + "\007indices\030\002 \003(\005B\003\340A\002B\357\001\n"
+          + "$com.google.cloud.vectorsearch.v1betaB\017DataObjectProtoP\001ZHcloud.goog"
+          + "le.com/go/vectorsearch/apiv1beta/vectorsearchpb;vectorsearchpb\252\002"
+          + " Google.Cloud.VectorSearch.V1Beta\312\002 Google\\Cloud\\VectorS"
+          + "earch\\V1beta\352\002#Google::Cloud::VectorSearch::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,7 +122,7 @@ public final class DataObjectProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1beta_DataObject_descriptor,
             new java.lang.String[] {
-              "Name", "DataObjectId", "CreateTime", "UpdateTime", "Data", "Vectors",
+              "Name", "DataObjectId", "CreateTime", "UpdateTime", "Data", "Vectors", "Etag",
             });
     internal_static_google_cloud_vectorsearch_v1beta_DataObject_VectorsEntry_descriptor =
         internal_static_google_cloud_vectorsearch_v1beta_DataObject_descriptor.getNestedType(0);

@@ -30,72 +30,179 @@ public interface SearchHintOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies that the search should use a particular index.
+   * Optional. Deprecated: Use `index_hint` instead.
+   * Specifies that the search should use a particular index.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
    * @return Whether the useIndex field is set.
    */
+  @java.lang.Deprecated
   boolean hasUseIndex();
 
   /**
    *
    *
    * <pre>
-   * Optional. Specifies that the search should use a particular index.
+   * Optional. Deprecated: Use `index_hint` instead.
+   * Specifies that the search should use a particular index.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
    * @return The useIndex.
    */
+  @java.lang.Deprecated
   com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint getUseIndex();
 
   /**
    *
    *
    * <pre>
-   * Optional. Specifies that the search should use a particular index.
+   * Optional. Deprecated: Use `index_hint` instead.
+   * Specifies that the search should use a particular index.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint use_index = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder getUseIndexOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Optional. If set to true, the search will use the system's default
+   * Optional. Deprecated: Use `knn_hint` instead.
+   * If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
    * @return Whether the useKnn field is set.
    */
+  @java.lang.Deprecated
   boolean hasUseKnn();
 
   /**
    *
    *
    * <pre>
-   * Optional. If set to true, the search will use the system's default
+   * Optional. Deprecated: Use `knn_hint` instead.
+   * If set to true, the search will use the system's default
    * K-Nearest Neighbor (KNN) index engine.
    * </pre>
    *
-   * <code>bool use_knn = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
    * @return The useKnn.
    */
+  @java.lang.Deprecated
   boolean getUseKnn();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the search will use the system's default
+   * K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knnHint field is set.
+   */
+  boolean hasKnnHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the search will use the system's default
+   * K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knnHint.
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHint getKnnHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the search will use the system's default
+   * K-Nearest Neighbor (KNN) index engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.KnnHint knn_hint = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchHint.KnnHintOrBuilder getKnnHintOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies that the search should use a particular index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the indexHint field is set.
+   */
+  boolean hasIndexHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies that the search should use a particular index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The indexHint.
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHint getIndexHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies that the search should use a particular index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchHint.IndexHint index_hint = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchHint.IndexHintOrBuilder getIndexHintOrBuilder();
 
   com.google.cloud.vectorsearch.v1beta.SearchHint.IndexTypeCase getIndexTypeCase();
 }

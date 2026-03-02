@@ -53,6 +53,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
 
   private EvaluateDatasetRun() {
     operationName_ = "";
+    evaluationRun_ = "";
     checkpointId_ = "";
   }
 
@@ -127,6 +128,61 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int EVALUATION_RUN_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object evaluationRun_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the evaluation run. Format:
+   * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+   * </pre>
+   *
+   * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The evaluationRun.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluationRun() {
+    java.lang.Object ref = evaluationRun_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluationRun_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the evaluation run. Format:
+   * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+   * </pre>
+   *
+   * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for evaluationRun.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEvaluationRunBytes() {
+    java.lang.Object ref = evaluationRun_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      evaluationRun_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CHECKPOINT_ID_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -189,7 +245,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Results for EvaluationService.EvaluateDataset.
+   * Output only. Results for EvaluationService.
    * </pre>
    *
    * <code>
@@ -207,7 +263,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Results for EvaluationService.EvaluateDataset.
+   * Output only. Results for EvaluationService.
    * </pre>
    *
    * <code>
@@ -227,7 +283,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Results for EvaluationService.EvaluateDataset.
+   * Output only. Results for EvaluationService.
    * </pre>
    *
    * <code>
@@ -317,6 +373,9 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getError());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(evaluationRun_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, evaluationRun_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -339,6 +398,9 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getError());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(evaluationRun_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, evaluationRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -356,6 +418,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun) obj;
 
     if (!getOperationName().equals(other.getOperationName())) return false;
+    if (!getEvaluationRun().equals(other.getEvaluationRun())) return false;
     if (!getCheckpointId().equals(other.getCheckpointId())) return false;
     if (hasEvaluateDatasetResponse() != other.hasEvaluateDatasetResponse()) return false;
     if (hasEvaluateDatasetResponse()) {
@@ -378,6 +441,8 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + OPERATION_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getOperationName().hashCode();
+    hash = (37 * hash) + EVALUATION_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluationRun().hashCode();
     hash = (37 * hash) + CHECKPOINT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCheckpointId().hashCode();
     if (hasEvaluateDatasetResponse()) {
@@ -540,6 +605,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       operationName_ = "";
+      evaluationRun_ = "";
       checkpointId_ = "";
       evaluateDatasetResponse_ = null;
       if (evaluateDatasetResponseBuilder_ != null) {
@@ -591,17 +657,20 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         result.operationName_ = operationName_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.evaluationRun_ = evaluationRun_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.checkpointId_ = checkpointId_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.evaluateDatasetResponse_ =
             evaluateDatasetResponseBuilder_ == null
                 ? evaluateDatasetResponse_
                 : evaluateDatasetResponseBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
@@ -626,9 +695,14 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getEvaluationRun().isEmpty()) {
+        evaluationRun_ = other.evaluationRun_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getCheckpointId().isEmpty()) {
         checkpointId_ = other.checkpointId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasEvaluateDatasetResponse()) {
@@ -672,7 +746,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 checkpointId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -680,15 +754,21 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
                 input.readMessage(
                     internalGetEvaluateDatasetResponseFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(internalGetErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                evaluationRun_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -824,6 +904,122 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object evaluationRun_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the evaluation run. Format:
+     * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+     * </pre>
+     *
+     * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The evaluationRun.
+     */
+    public java.lang.String getEvaluationRun() {
+      java.lang.Object ref = evaluationRun_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluationRun_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the evaluation run. Format:
+     * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+     * </pre>
+     *
+     * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for evaluationRun.
+     */
+    public com.google.protobuf.ByteString getEvaluationRunBytes() {
+      java.lang.Object ref = evaluationRun_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        evaluationRun_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the evaluation run. Format:
+     * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+     * </pre>
+     *
+     * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The evaluationRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationRun(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      evaluationRun_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the evaluation run. Format:
+     * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+     * </pre>
+     *
+     * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationRun() {
+      evaluationRun_ = getDefaultInstance().getEvaluationRun();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the evaluation run. Format:
+     * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
+     * </pre>
+     *
+     * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for evaluationRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationRunBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      evaluationRun_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object checkpointId_ = "";
 
     /**
@@ -892,7 +1088,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkpointId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -911,7 +1107,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearCheckpointId() {
       checkpointId_ = getDefaultInstance().getCheckpointId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -935,7 +1131,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       checkpointId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -951,7 +1147,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -961,14 +1157,14 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * @return Whether the evaluateDatasetResponse field is set.
      */
     public boolean hasEvaluateDatasetResponse() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -992,7 +1188,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1009,7 +1205,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       } else {
         evaluateDatasetResponseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1018,7 +1214,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1032,7 +1228,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       } else {
         evaluateDatasetResponseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1041,7 +1237,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1051,7 +1247,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     public Builder mergeEvaluateDatasetResponse(
         com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse value) {
       if (evaluateDatasetResponseBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && evaluateDatasetResponse_ != null
             && evaluateDatasetResponse_
                 != com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse
@@ -1064,7 +1260,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         evaluateDatasetResponseBuilder_.mergeFrom(value);
       }
       if (evaluateDatasetResponse_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1074,7 +1270,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1082,7 +1278,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEvaluateDatasetResponse() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       evaluateDatasetResponse_ = null;
       if (evaluateDatasetResponseBuilder_ != null) {
         evaluateDatasetResponseBuilder_.dispose();
@@ -1096,7 +1292,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1105,7 +1301,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.Builder
         getEvaluateDatasetResponseBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetEvaluateDatasetResponseFieldBuilder().getBuilder();
     }
@@ -1114,7 +1310,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1136,7 +1332,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Results for EvaluationService.EvaluateDataset.
+     * Output only. Results for EvaluationService.
      * </pre>
      *
      * <code>
@@ -1177,7 +1373,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1217,7 +1413,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1237,7 +1433,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1253,7 +1449,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -1264,7 +1460,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1280,7 +1476,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -1300,7 +1496,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetErrorFieldBuilder().getBuilder();
     }

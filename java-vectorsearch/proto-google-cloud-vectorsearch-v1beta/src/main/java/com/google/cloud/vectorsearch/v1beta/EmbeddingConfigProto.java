@@ -65,11 +65,14 @@ public final class EmbeddingConfigProto extends com.google.protobuf.GeneratedFil
           + "\n\022RETRIEVAL_DOCUMENT\020\002\022\027\n\023SEMANTIC_SIMIL"
           + "ARITY\020\003\022\022\n\016CLASSIFICATION\020\004\022\016\n\nCLUSTERIN"
           + "G\020\005\022\026\n\022QUESTION_ANSWERING\020\006\022\025\n\021FACT_VERI"
-          + "FICATION\020\007\022\030\n\024CODE_RETRIEVAL_QUERY\020\010B\210\001\n"
+          + "FICATION\020\007\022\030\n\024CODE_RETRIEVAL_QUERY\020\010B\364\001\n"
           + "$com.google.cloud.vectorsearch.v1betaB\024E"
           + "mbeddingConfigProtoP\001ZHcloud.google.com/"
           + "go/vectorsearch/apiv1beta/vectorsearchpb"
-          + ";vectorsearchpbb\006proto3"
+          + ";vectorsearchpb\252\002 Google.Cloud.VectorSea"
+          + "rch.V1Beta\312\002 Google\\Cloud\\VectorSearch\\V"
+          + "1beta\352\002#Google::Cloud::VectorSearch::V1b"
+          + "etab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

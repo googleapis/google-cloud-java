@@ -30,6 +30,93 @@ public interface IndexOrBuilder
    *
    *
    * <pre>
+   * Optional. Dedicated infrastructure for the index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedInfrastructure field is set.
+   */
+  boolean hasDedicatedInfrastructure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dedicated infrastructure for the index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedInfrastructure.
+   */
+  com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructure getDedicatedInfrastructure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dedicated infrastructure for the index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DedicatedInfrastructure dedicated_infrastructure = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.DedicatedInfrastructureOrBuilder
+      getDedicatedInfrastructureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dense ScaNN index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the denseScann field is set.
+   */
+  boolean hasDenseScann();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dense ScaNN index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The denseScann.
+   */
+  com.google.cloud.vectorsearch.v1beta.DenseScannIndex getDenseScann();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dense ScaNN index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.DenseScannIndex dense_scann = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.DenseScannIndexOrBuilder getDenseScannOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. name of resource
    * </pre>
    *
@@ -420,4 +507,8 @@ public interface IndexOrBuilder
    * @return The bytes of the storeFields at the given index.
    */
   com.google.protobuf.ByteString getStoreFieldsBytes(int index);
+
+  com.google.cloud.vectorsearch.v1beta.Index.InfraTypeCase getInfraTypeCase();
+
+  com.google.cloud.vectorsearch.v1beta.Index.IndexTypeCase getIndexTypeCase();
 }

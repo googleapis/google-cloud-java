@@ -16,14 +16,14 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_DEFERRED;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_DOCUMENT_COUNT;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_MISSING;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_MORE_RESULTS;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_READ_CONSISTENCY;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_RECEIVED;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_TRANSACTIONAL;
-import static com.google.cloud.datastore.telemetry.TraceUtil.ATTRIBUTES_KEY_TRANSACTION_ID;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_DEFERRED;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_MISSING;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_MORE_RESULTS;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_RECEIVED;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL;
+import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID;
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_ALLOCATE_IDS;
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_BEGIN_TRANSACTION;
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_COMMIT;

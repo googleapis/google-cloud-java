@@ -114,6 +114,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-java@v2
       with:
         distribution: temurin
@@ -122,3 +124,5 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}

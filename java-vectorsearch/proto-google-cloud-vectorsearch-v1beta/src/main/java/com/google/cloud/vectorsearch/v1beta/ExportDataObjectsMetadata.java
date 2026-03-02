@@ -76,10 +76,11 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -92,10 +93,11 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -108,10 +110,11 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -125,10 +128,11 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation finished.
+   * Output only. The time the operation finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the finishTime field is set.
    */
@@ -141,10 +145,11 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation finished.
+   * Output only. The time the operation finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The finishTime.
    */
@@ -157,10 +162,11 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The time the operation finished.
+   * Output only. The time the operation finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+   * <code>.google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
@@ -546,10 +552,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -561,10 +569,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -582,10 +592,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -605,10 +617,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -625,10 +639,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -653,10 +669,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -673,10 +691,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000001;
@@ -688,10 +708,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -707,10 +729,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -740,10 +764,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the finishTime field is set.
      */
@@ -755,10 +781,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The finishTime.
      */
@@ -776,10 +804,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setFinishTime(com.google.protobuf.Timestamp value) {
       if (finishTimeBuilder_ == null) {
@@ -799,10 +829,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setFinishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (finishTimeBuilder_ == null) {
@@ -819,10 +851,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeFinishTime(com.google.protobuf.Timestamp value) {
       if (finishTimeBuilder_ == null) {
@@ -847,10 +881,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearFinishTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -867,10 +903,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getFinishTimeBuilder() {
       bitField0_ |= 0x00000002;
@@ -882,10 +920,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
       if (finishTimeBuilder_ != null) {
@@ -901,10 +941,12 @@ public final class ExportDataObjectsMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The time the operation finished.
+     * Output only. The time the operation finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp finish_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
