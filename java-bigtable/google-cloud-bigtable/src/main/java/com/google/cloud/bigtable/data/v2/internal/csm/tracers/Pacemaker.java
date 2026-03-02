@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.internal.csm;
+package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-class Pacemaker implements Runnable {
+public class Pacemaker implements Runnable {
 
   static final Duration PACEMAKER_INTERVAL = Duration.ofMillis(100);
 
@@ -30,11 +33,19 @@ class Pacemaker implements Runnable {
 
   private Instant prev;
 
-  Pacemaker(RecorderRegistry registry, ClientInfo clientInfo, String name) {
+  public Pacemaker(RecorderRegistry registry, ClientInfo clientInfo, String name) {
     this.prev = Instant.now();
     this.registry = registry;
     this.clientInfo = clientInfo;
     this.executorName = name;
+  }
+
+  public ScheduledFuture<?> start(ScheduledExecutorService executor) {
+    return executor.scheduleAtFixedRate(
+        this,
+        Pacemaker.PACEMAKER_INTERVAL.toMillis(),
+        Pacemaker.PACEMAKER_INTERVAL.toMillis(),
+        TimeUnit.MILLISECONDS);
   }
 
   @Override

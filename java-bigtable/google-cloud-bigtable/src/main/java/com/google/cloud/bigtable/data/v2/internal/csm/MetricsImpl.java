@@ -31,6 +31,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConst
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BuiltinMetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.ChannelPoolMetricsTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.CompositeTracerFactory;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.Pacemaker;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -50,7 +51,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
 public class MetricsImpl implements Metrics, Closeable {
@@ -134,12 +134,7 @@ public class MetricsImpl implements Metrics, Closeable {
       tasks.add(channelPoolMetricsTracer.start(executor));
     }
     if (pacemaker != null) {
-      tasks.add(
-          executor.scheduleAtFixedRate(
-              pacemaker,
-              Pacemaker.PACEMAKER_INTERVAL.toMillis(),
-              Pacemaker.PACEMAKER_INTERVAL.toMillis(),
-              TimeUnit.MILLISECONDS));
+      tasks.add(pacemaker.start(executor));
     }
   }
 

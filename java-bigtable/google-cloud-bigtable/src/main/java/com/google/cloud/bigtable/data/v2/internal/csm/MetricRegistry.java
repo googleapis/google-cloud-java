@@ -192,7 +192,7 @@ public class MetricRegistry {
 
     public final TableDebugTagCount.Recorder debugTagCount;
 
-    final PacemakerDelay.Recorder pacemakerDelay;
+    public final PacemakerDelay.Recorder pacemakerDelay;
 
     private RecorderRegistry(Meter meter) {
       operationLatency = operationLatencyMetric.newRecorder(meter);
