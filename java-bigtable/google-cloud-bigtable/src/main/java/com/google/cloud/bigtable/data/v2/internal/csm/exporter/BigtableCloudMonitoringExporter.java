@@ -140,6 +140,7 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
     this.state = new AtomicReference<>(State.Running);
   }
 
+  @Override
   public void close() {
     client.close();
   }

@@ -64,12 +64,12 @@ public class BigtablePeriodicReader implements MetricReader {
 
   @Override
   public CompletableResultCode shutdown() {
+    exporter.prepareForShutdown();
     return delegate.shutdown();
   }
 
   @Override
   public void close() throws IOException {
-    exporter.prepareForShutdown();
     delegate.close();
   }
 
