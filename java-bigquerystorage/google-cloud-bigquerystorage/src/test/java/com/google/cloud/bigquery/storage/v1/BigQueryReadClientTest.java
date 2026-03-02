@@ -145,11 +145,14 @@ class BigQueryReadClientTest {
   @Test
   void readSettingsGrpcChannelDefault() throws IOException {
     BigQueryReadSettings bigQueryReadSettings = BigQueryReadSettings.newBuilder().build();
-    TransportChannelProvider transportChannelProvider = bigQueryReadSettings.getTransportChannelProvider();
+    TransportChannelProvider transportChannelProvider =
+        bigQueryReadSettings.getTransportChannelProvider();
     assertInstanceOf(InstantiatingGrpcChannelProvider.class, transportChannelProvider);
-    InstantiatingGrpcChannelProvider grpcChannelProvider = (InstantiatingGrpcChannelProvider) transportChannelProvider;
+    InstantiatingGrpcChannelProvider grpcChannelProvider =
+        (InstantiatingGrpcChannelProvider) transportChannelProvider;
     assertEquals(java.time.Duration.ofMinutes(1), grpcChannelProvider.getKeepAliveTimeDuration());
-    assertEquals(java.time.Duration.ofMinutes(1), grpcChannelProvider.getKeepAliveTimeoutDuration());
+    assertEquals(
+        java.time.Duration.ofMinutes(1), grpcChannelProvider.getKeepAliveTimeoutDuration());
     assertTrue(grpcChannelProvider.getKeepAliveWithoutCalls());
   }
 
