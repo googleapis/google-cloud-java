@@ -16,12 +16,14 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -33,6 +35,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ResourceExhaustedException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Parser;
@@ -137,6 +140,17 @@ class BigQueryReadClientTest {
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  void readSettingsGrpcChannelDefault() throws IOException {
+    BigQueryReadSettings bigQueryReadSettings = BigQueryReadSettings.newBuilder().build();
+    TransportChannelProvider transportChannelProvider = bigQueryReadSettings.getTransportChannelProvider();
+    assertInstanceOf(InstantiatingGrpcChannelProvider.class, transportChannelProvider);
+    InstantiatingGrpcChannelProvider grpcChannelProvider = (InstantiatingGrpcChannelProvider) transportChannelProvider;
+    assertEquals(java.time.Duration.ofMinutes(1), grpcChannelProvider.getKeepAliveTimeDuration());
+    assertEquals(java.time.Duration.ofMinutes(1), grpcChannelProvider.getKeepAliveTimeoutDuration());
+    assertTrue(grpcChannelProvider.getKeepAliveWithoutCalls());
   }
 
   @Test
