@@ -117,68 +117,31 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return new TransactionImpl(this, transactionOptions);
   }
 
+  Transaction newTransaction(TransactionOptions transactionOptions, boolean recordMetrics) {
+    return new TransactionImpl(this, transactionOptions, recordMetrics);
+  }
+
   @Override
   public Transaction newTransaction() {
     return new TransactionImpl(this);
   }
 
   static class TracedReadWriteTransactionCallable<T> implements Callable<T> {
-    private final Datastore datastore;
-    private final TransactionCallable<T> callable;
-    private volatile TransactionOptions options;
-    private volatile Transaction transaction;
-
+    private final ReadWriteTransactionCallable<T> innerCallable;
     private final TraceUtil.Span parentSpan;
 
     TracedReadWriteTransactionCallable(
-        Datastore datastore,
-        TransactionCallable<T> callable,
-        TransactionOptions options,
+        ReadWriteTransactionCallable<T> innerCallable,
         @Nullable com.google.cloud.datastore.telemetry.TraceUtil.Span parentSpan) {
-      this.datastore = datastore;
-      this.callable = callable;
-      this.options = options;
-      this.transaction = null;
+      this.innerCallable = innerCallable;
       this.parentSpan = parentSpan;
-    }
-
-    Datastore getDatastore() {
-      return datastore;
-    }
-
-    TransactionOptions getOptions() {
-      return options;
-    }
-
-    Transaction getTransaction() {
-      return transaction;
-    }
-
-    void setPrevTransactionId(ByteString transactionId) {
-      TransactionOptions.ReadWrite readWrite =
-          TransactionOptions.ReadWrite.newBuilder().setPreviousTransaction(transactionId).build();
-      options = options.toBuilder().setReadWrite(readWrite).build();
     }
 
     @Override
     public T call() throws DatastoreException {
       try (io.opentelemetry.context.Scope ignored =
           Context.current().with(parentSpan.getSpan()).makeCurrent()) {
-        transaction = datastore.newTransaction(options);
-        T value = callable.run(transaction);
-        transaction.commit();
-        return value;
-      } catch (Exception ex) {
-        transaction.rollback();
-        throw DatastoreException.propagateUserException(ex);
-      } finally {
-        if (transaction.isActive()) {
-          transaction.rollback();
-        }
-        if (options != null
-            && options.getModeCase().equals(TransactionOptions.ModeCase.READ_WRITE)) {
-          setPrevTransactionId(transaction.getTransactionId());
-        }
+        return innerCallable.call();
       }
     }
   }
@@ -202,6 +165,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     private final TransactionCallable<T> callable;
     private volatile TransactionOptions options;
     private volatile Transaction transaction;
+    private int attempts;
 
     ReadWriteTransactionCallable(
         Datastore datastore, TransactionCallable<T> callable, TransactionOptions options) {
@@ -209,6 +173,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       this.callable = callable;
       this.options = options;
       this.transaction = null;
+      this.attempts = 0;
     }
 
     Datastore getDatastore() {
@@ -223,6 +188,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       return transaction;
     }
 
+    int getAttempts() {
+      return attempts;
+    }
+
     void setPrevTransactionId(ByteString transactionId) {
       TransactionOptions.ReadWrite readWrite =
           TransactionOptions.ReadWrite.newBuilder().setPreviousTransaction(transactionId).build();
@@ -232,8 +201,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     @Override
     public T call() throws DatastoreException {
       try {
-        transaction = datastore.newTransaction(options);
+        if (datastore instanceof DatastoreImpl) {
+          transaction = ((DatastoreImpl) datastore).newTransaction(options, false);
+        } else {
+          transaction = datastore.newTransaction(options);
+        }
         T value = callable.run(transaction);
+        attempts++;
         transaction.commit();
         return value;
       } catch (Exception ex) {
@@ -254,17 +228,28 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   public <T> T runInTransaction(final TransactionCallable<T> callable) {
     TraceUtil.Span span = otelTraceUtil.startSpan(SPAN_NAME_TRANSACTION_RUN);
+    ReadWriteTransactionCallable<T> internalCallable =
+        new ReadWriteTransactionCallable<T>(this, callable, null);
     Callable<T> transactionCallable =
-        (getOptions().getOpenTelemetryOptions().isTracingEnabled()
-            ? new TracedReadWriteTransactionCallable<T>(
-                this, callable, /* transactionOptions= */ null, span)
-            : new ReadWriteTransactionCallable<T>(this, callable, /* transactionOptions= */ null));
+        getOptions().getOpenTelemetryOptions().isTracingEnabled()
+            ? new TracedReadWriteTransactionCallable<T>(internalCallable, span)
+            : internalCallable;
+    long startTime = getOptions().getClock().millisTime();
     try (Scope ignored = span.makeCurrent()) {
-      return RetryHelper.runWithRetries(
-          transactionCallable,
-          retrySettings,
-          TRANSACTION_EXCEPTION_HANDLER,
-          getOptions().getClock());
+      T result =
+          RetryHelper.runWithRetries(
+              transactionCallable,
+              retrySettings,
+              TRANSACTION_EXCEPTION_HANDLER,
+              getOptions().getClock());
+      getOptions()
+          .getMetricsRecorder()
+          .recordTransactionLatency(
+              (double) (getOptions().getClock().millisTime() - startTime), null);
+      getOptions()
+          .getMetricsRecorder()
+          .recordTransactionAttemptCount(internalCallable.getAttempts(), null);
+      return result;
     } catch (RetryHelperException e) {
       span.end(e);
       throw DatastoreException.translateAndThrow(e);
@@ -278,17 +263,29 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       final TransactionCallable<T> callable, TransactionOptions transactionOptions) {
     TraceUtil.Span span = otelTraceUtil.startSpan(SPAN_NAME_TRANSACTION_RUN);
 
+    ReadWriteTransactionCallable<T> internalCallable =
+        new ReadWriteTransactionCallable<T>(this, callable, transactionOptions);
     Callable<T> transactionCallable =
-        (getOptions().getOpenTelemetryOptions().isTracingEnabled()
-            ? new TracedReadWriteTransactionCallable<T>(this, callable, transactionOptions, span)
-            : new ReadWriteTransactionCallable<T>(this, callable, transactionOptions));
+        getOptions().getOpenTelemetryOptions().isTracingEnabled()
+            ? new TracedReadWriteTransactionCallable<T>(internalCallable, span)
+            : internalCallable;
 
+    long startTime = getOptions().getClock().millisTime();
     try (Scope ignored = span.makeCurrent()) {
-      return RetryHelper.runWithRetries(
-          transactionCallable,
-          retrySettings,
-          TRANSACTION_EXCEPTION_HANDLER,
-          getOptions().getClock());
+      T result =
+          RetryHelper.runWithRetries(
+              transactionCallable,
+              retrySettings,
+              TRANSACTION_EXCEPTION_HANDLER,
+              getOptions().getClock());
+      getOptions()
+          .getMetricsRecorder()
+          .recordTransactionLatency(
+              (double) (getOptions().getClock().millisTime() - startTime), null);
+      getOptions()
+          .getMetricsRecorder()
+          .recordTransactionAttemptCount(internalCallable.getAttempts(), null);
+      return result;
     } catch (RetryHelperException e) {
       span.end(e);
       throw DatastoreException.translateAndThrow(e);

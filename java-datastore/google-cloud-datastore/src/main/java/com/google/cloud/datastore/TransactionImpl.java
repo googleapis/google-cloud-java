@@ -41,6 +41,9 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Nonnull private final TraceUtil traceUtil;
 
+  private final long startTime;
+  private final boolean recordMetrics;
+
   static class ResponseImpl implements Transaction.Response {
 
     private final com.google.datastore.v1.CommitResponse response;
@@ -64,12 +67,18 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   TransactionImpl(DatastoreImpl datastore) {
-    this(datastore, null);
+    this(datastore, null, true);
   }
 
   TransactionImpl(DatastoreImpl datastore, TransactionOptions options) {
+    this(datastore, options, true);
+  }
+
+  TransactionImpl(DatastoreImpl datastore, TransactionOptions options, boolean recordMetrics) {
     super("transaction");
     this.datastore = datastore;
+    this.recordMetrics = recordMetrics;
+    this.startTime = datastore.getOptions().getClock().millisTime();
     com.google.datastore.v1.BeginTransactionRequest.Builder requestPb =
         com.google.datastore.v1.BeginTransactionRequest.newBuilder();
 
@@ -145,6 +154,13 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
     com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
+    
+    if (recordMetrics) {
+      long latencyMs = datastore.getOptions().getClock().millisTime() - startTime;
+      datastore.getOptions().getMetricsRecorder().recordTransactionLatency((double) latencyMs, null);
+      datastore.getOptions().getMetricsRecorder().recordTransactionAttemptCount(1, null);
+    }
+    
     return new ResponseImpl(responsePb, toAddAutoId().size());
   }
 
