@@ -84,10 +84,7 @@ public class ChannelPoolMetricsTracer implements Runnable {
     LoadBalancingStrategy lbPolicy = lbPolicyRef.get();
 
     for (BigtableChannelObserver info : channelInsights) {
-      TransportType transportType =
-          info.isAltsChannel()
-              ? TransportType.TRANSPORT_TYPE_DIRECT_ACCESS
-              : TransportType.TRANSPORT_TYPE_CLOUD_PATH;
+      TransportType transportType = info.getTransportType();
 
       long currentOutstandingUnaryRpcs = info.getOutstandingUnaryRpcs();
       long currentOutstandingStreamingRpcs = info.getOutstandingStreamingRpcs();

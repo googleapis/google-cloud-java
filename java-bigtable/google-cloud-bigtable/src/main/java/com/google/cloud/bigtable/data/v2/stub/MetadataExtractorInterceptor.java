@@ -88,6 +88,11 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     private static final CallOptions.Key<SidebandData> KEY =
         CallOptions.Key.create("bigtable-sideband");
 
+    @Nullable
+    public static SidebandData from(CallOptions callOptions) {
+      return callOptions.getOption(KEY);
+    }
+
     private static final Metadata.Key<String> SERVER_TIMING_HEADER_KEY =
         Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER);
     private static final Pattern SERVER_TIMING_HEADER_PATTERN =

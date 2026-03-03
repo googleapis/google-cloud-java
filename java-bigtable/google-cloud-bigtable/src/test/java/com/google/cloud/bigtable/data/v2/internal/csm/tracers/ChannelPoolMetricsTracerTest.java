@@ -20,6 +20,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
+import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
@@ -56,6 +57,9 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class ChannelPoolMetricsTracerTest {
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String APP_PROFILE_ID = "fake-profile";
 
   @Rule public final MockitoRule mockito = MockitoJUnit.rule();
 
@@ -74,8 +78,8 @@ public class ChannelPoolMetricsTracerTest {
     metricReader = InMemoryMetricReader.create();
     ClientInfo clientInfo =
         ClientInfo.builder()
-            .setInstanceName(InstanceName.of("fake-project", "fake-instance"))
-            .setAppProfileId("fake-profile")
+            .setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
+            .setAppProfileId(APP_PROFILE_ID)
             .build();
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
@@ -105,8 +109,10 @@ public class ChannelPoolMetricsTracerTest {
     when(mockInsight2.getOutstandingStreamingRpcs()).thenReturn(0);
     when(mockInsight2.getAndResetErrorCount()).thenReturn(0L);
     when(mockInsight2.getAndResetSuccessCount()).thenReturn(0L);
-    when(mockInsight1.isAltsChannel()).thenReturn(false);
-    when(mockInsight2.isAltsChannel()).thenReturn(false);
+    when(mockInsight1.getTransportType())
+        .thenReturn(PeerInfo.TransportType.TRANSPORT_TYPE_CLOUD_PATH);
+    when(mockInsight2.getTransportType())
+        .thenReturn(PeerInfo.TransportType.TRANSPORT_TYPE_CLOUD_PATH);
   }
 
   /** Helper to run the captured ChannelPoolMetricsTracer task. */
@@ -119,11 +125,24 @@ public class ChannelPoolMetricsTracerTest {
   }
 
   private Attributes getExpectedErrorAttributes() {
-    return Attributes.builder().build();
+    return Attributes.builder()
+        .put(AttributeKey.stringKey("project_id"), PROJECT_ID)
+        .put(AttributeKey.stringKey("instance"), INSTANCE_ID)
+        .put(AttributeKey.stringKey("app_profile"), APP_PROFILE_ID)
+        .put(
+            AttributeKey.stringKey("client_name"),
+            "java-bigtable/" + com.google.cloud.bigtable.Version.VERSION)
+        .build();
   }
 
   private static Attributes getExpectedRpcAttributes(String lbPolicy, boolean streaming) {
     return Attributes.builder()
+        .put(AttributeKey.stringKey("project_id"), PROJECT_ID)
+        .put(AttributeKey.stringKey("instance"), INSTANCE_ID)
+        .put(AttributeKey.stringKey("app_profile"), APP_PROFILE_ID)
+        .put(
+            AttributeKey.stringKey("client_name"),
+            "java-bigtable/" + com.google.cloud.bigtable.Version.VERSION)
         .put(AttributeKey.stringKey("transport_type"), "cloudpath")
         .put(AttributeKey.stringKey("lb_policy"), lbPolicy)
         .put(AttributeKey.booleanKey("streaming"), streaming)
@@ -145,15 +164,6 @@ public class ChannelPoolMetricsTracerTest {
         .findFirst()
         .orElseThrow(
             () -> new AssertionError("Missing HistogramPointData for streaming=" + streaming));
-  }
-
-  /** Helper to create expected Attributes for assertions. */
-  private static Attributes getExpectedAttributes(String lbPolicy, boolean streaming) {
-    return Attributes.builder()
-        .put(AttributeKey.stringKey("transport_type"), "grpc")
-        .put(AttributeKey.stringKey("lb_policy"), lbPolicy)
-        .put(AttributeKey.booleanKey("streaming"), streaming)
-        .build();
   }
 
   @Test

@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.gaxx.grpc;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.PeerInfo;
 
 /** Provides observability about a single channel in the channel pool. */
 @InternalApi
@@ -32,5 +33,5 @@ public interface BigtableChannelObserver {
   /** Get the current number of successful requests since the last observed period */
   long getAndResetSuccessCount();
 
-  boolean isAltsChannel();
+  PeerInfo.TransportType getTransportType();
 }

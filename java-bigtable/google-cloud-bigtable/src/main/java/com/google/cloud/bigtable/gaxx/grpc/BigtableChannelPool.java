@@ -17,6 +17,8 @@ package com.google.cloud.bigtable.gaxx.grpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.ChannelFactory;
+import com.google.bigtable.v2.PeerInfo;
+import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPoolHealthChecker.ProbeResult;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -34,6 +36,7 @@ import java.io.IOException;
 import java.time.Clock;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -543,9 +546,8 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
      * outstanding RPCs has to happen when the ClientCall is closed or the ClientCall failed to
      * start.
      */
-    @VisibleForTesting final AtomicReference<Boolean> isAltsHolder = new AtomicReference<>(null);
-
     @VisibleForTesting final AtomicInteger errorCount = new AtomicInteger(0);
+
     @VisibleForTesting final AtomicInteger successCount = new AtomicInteger(0);
     @VisibleForTesting final AtomicInteger outstandingUnaryRpcs = new AtomicInteger(0);
 
@@ -553,6 +555,10 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
 
     private final AtomicInteger maxOutstandingUnaryRpcs = new AtomicInteger();
     private final AtomicInteger maxOutstandingStreamingRpcs = new AtomicInteger();
+
+    /** this contains the PeerInfo field of the most recent rpc on this channel entry. */
+    @VisibleForTesting
+    volatile PeerInfo.TransportType transportType = PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN;
 
     /** Queue storing the last 5 minutes of probe results */
     @VisibleForTesting
@@ -576,10 +582,18 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
       this.channel = channel;
     }
 
-    void checkAndSetIsAlts(ClientCall<?, ?> call) {
-      // TODO(populate ALTS holder)
-      boolean result = false;
-      isAltsHolder.compareAndSet(null, result);
+    void setTransportType(CallOptions callOptions) {
+      MetadataExtractorInterceptor.SidebandData sidebandData =
+          MetadataExtractorInterceptor.SidebandData.from(callOptions);
+
+      // Set to the specific transport type if present, otherwise default to UNKNOWN
+      // we could check the Status and set it to unknown, but we might have PeerInfo with some non
+      // OK Status
+      transportType =
+          Optional.ofNullable(sidebandData)
+              .map(MetadataExtractorInterceptor.SidebandData::getPeerInfo)
+              .map(PeerInfo::getTransportType)
+              .orElse(PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN);
     }
 
     ManagedChannel getManagedChannel() {
@@ -683,9 +697,8 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     }
 
     @Override
-    public boolean isAltsChannel() {
-      Boolean val = isAltsHolder.get();
-      return val != null && val;
+    public PeerInfo.TransportType getTransportType() {
+      return transportType;
     }
 
     void incrementErrorCount() {
@@ -717,7 +730,7 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
           methodDescriptor.getType() == MethodDescriptor.MethodType.SERVER_STREAMING;
       Entry entry = getRetainedEntry(index, isStreaming);
       return new ReleasingClientCall<>(
-          entry.channel.newCall(methodDescriptor, callOptions), entry, isStreaming);
+          entry.channel.newCall(methodDescriptor, callOptions), entry, isStreaming, callOptions);
     }
   }
 
@@ -726,13 +739,19 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     @Nullable private CancellationException cancellationException;
     final Entry entry;
     private final boolean isStreaming;
+    private final CallOptions callOptions;
     private final AtomicBoolean wasClosed = new AtomicBoolean();
     private final AtomicBoolean wasReleased = new AtomicBoolean();
 
-    public ReleasingClientCall(ClientCall<ReqT, RespT> delegate, Entry entry, boolean isStreaming) {
+    public ReleasingClientCall(
+        ClientCall<ReqT, RespT> delegate,
+        Entry entry,
+        boolean isStreaming,
+        CallOptions callOptions) {
       super(delegate);
       this.entry = entry;
       this.isStreaming = isStreaming;
+      this.callOptions = callOptions;
     }
 
     @Override
@@ -741,10 +760,14 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
         throw new IllegalStateException("Call is already cancelled", cancellationException);
       }
       try {
-        entry.checkAndSetIsAlts(delegate());
-
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
+              @Override
+              public void onHeaders(Metadata headers) {
+                super.onHeaders(headers);
+                entry.setTransportType(callOptions);
+              }
+
               @Override
               public void onClose(Status status, Metadata trailers) {
                 if (!wasClosed.compareAndSet(false, true)) {
