@@ -36,6 +36,7 @@ public class SyncListAssociations {
     try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
       ListAssociationsFirewallPolicyRequest request =
           ListAssociationsFirewallPolicyRequest.newBuilder()
+              .setIncludeInheritedPolicies(true)
               .setTargetResource("targetResource-1933150017")
               .build();
       FirewallPoliciesListAssociationsResponse response =

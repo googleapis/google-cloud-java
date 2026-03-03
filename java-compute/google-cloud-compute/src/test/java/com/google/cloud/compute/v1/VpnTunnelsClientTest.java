@@ -222,6 +222,7 @@ public class VpnTunnelsClientTest {
             .putAllLabels(new HashMap<String, String>())
             .addAllLocalTrafficSelector(new ArrayList<String>())
             .setName("name3373707")
+            .setParams(VpnTunnelParams.newBuilder().build())
             .setPeerExternalGateway("peerExternalGateway-1595423177")
             .setPeerExternalGatewayInterface(-620973433)
             .setPeerGcpGateway("peerGcpGateway586378130")

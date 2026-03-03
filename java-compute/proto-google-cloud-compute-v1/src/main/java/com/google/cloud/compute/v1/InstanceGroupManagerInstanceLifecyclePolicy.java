@@ -55,6 +55,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
   private InstanceGroupManagerInstanceLifecyclePolicy() {
     defaultActionOnFailure_ = "";
     forceUpdateOnRepair_ = "";
+    onFailedHealthCheck_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -86,6 +87,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    * repairing VMs in a MIG.
    * - DO_NOTHING: MIG does not repair a failed or an unhealthy
    * VM.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * DO_NOTHING
+   * REPAIR
    * </pre>
    *
    * Protobuf enum {@code
@@ -102,27 +106,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      * <code>UNDEFINED_DEFAULT_ACTION_ON_FAILURE = 0;</code>
      */
     UNDEFINED_DEFAULT_ACTION_ON_FAILURE(0),
-    /**
-     *
-     *
-     * <pre>
-     * MIG does not repair a failed or an unhealthy VM.
-     * </pre>
-     *
-     * <code>DO_NOTHING = 451307513;</code>
-     */
+    /** <code>DO_NOTHING = 451307513;</code> */
     DO_NOTHING(451307513),
-    /**
-     *
-     *
-     * <pre>
-     * (Default) MIG automatically repairs a failed or an unhealthy
-     * VM by recreating it. For more information, see About
-     * repairing VMs in a MIG.
-     * </pre>
-     *
-     * <code>REPAIR = 266277773;</code>
-     */
+    /** <code>REPAIR = 266277773;</code> */
     REPAIR(266277773),
     UNRECOGNIZED(-1),
     ;
@@ -148,28 +134,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      */
     public static final int UNDEFINED_DEFAULT_ACTION_ON_FAILURE_VALUE = 0;
 
-    /**
-     *
-     *
-     * <pre>
-     * MIG does not repair a failed or an unhealthy VM.
-     * </pre>
-     *
-     * <code>DO_NOTHING = 451307513;</code>
-     */
+    /** <code>DO_NOTHING = 451307513;</code> */
     public static final int DO_NOTHING_VALUE = 451307513;
 
-    /**
-     *
-     *
-     * <pre>
-     * (Default) MIG automatically repairs a failed or an unhealthy
-     * VM by recreating it. For more information, see About
-     * repairing VMs in a MIG.
-     * </pre>
-     *
-     * <code>REPAIR = 266277773;</code>
-     */
+    /** <code>REPAIR = 266277773;</code> */
     public static final int REPAIR_VALUE = 266277773;
 
     public final int getNumber() {
@@ -413,6 +381,173 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.ForceUpdateOnRepair)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * DO_NOTHING
+   * REPAIR
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.OnFailedHealthCheck}
+   */
+  public enum OnFailedHealthCheck implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ON_FAILED_HEALTH_CHECK = 0;</code>
+     */
+    UNDEFINED_ON_FAILED_HEALTH_CHECK(0),
+    /**
+     *
+     *
+     * <pre>
+     * (Default) MIG uses the same action configured for
+     * instanceLifecyclePolicy.defaultActionOnFailure field.
+     * </pre>
+     *
+     * <code>DEFAULT_ACTION = 463967764;</code>
+     */
+    DEFAULT_ACTION(463967764),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "OnFailedHealthCheck");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ON_FAILED_HEALTH_CHECK = 0;</code>
+     */
+    public static final int UNDEFINED_ON_FAILED_HEALTH_CHECK_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * (Default) MIG uses the same action configured for
+     * instanceLifecyclePolicy.defaultActionOnFailure field.
+     * </pre>
+     *
+     * <code>DEFAULT_ACTION = 463967764;</code>
+     */
+    public static final int DEFAULT_ACTION_VALUE = 463967764;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OnFailedHealthCheck valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OnFailedHealthCheck forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ON_FAILED_HEALTH_CHECK;
+        case 463967764:
+          return DEFAULT_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OnFailedHealthCheck>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OnFailedHealthCheck>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OnFailedHealthCheck>() {
+              public OnFailedHealthCheck findValueByNumber(int number) {
+                return OnFailedHealthCheck.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final OnFailedHealthCheck[] VALUES = values();
+
+    public static OnFailedHealthCheck valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OnFailedHealthCheck(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.OnFailedHealthCheck)
+  }
+
   private int bitField0_;
   public static final int DEFAULT_ACTION_ON_FAILURE_FIELD_NUMBER = 61383253;
 
@@ -615,6 +750,108 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     }
   }
 
+  public static final int ON_FAILED_HEALTH_CHECK_FIELD_NUMBER = 39807943;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object onFailedHealthCheck_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Check the OnFailedHealthCheck enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string on_failed_health_check = 39807943;</code>
+   *
+   * @return Whether the onFailedHealthCheck field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnFailedHealthCheck() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Check the OnFailedHealthCheck enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string on_failed_health_check = 39807943;</code>
+   *
+   * @return The onFailedHealthCheck.
+   */
+  @java.lang.Override
+  public java.lang.String getOnFailedHealthCheck() {
+    java.lang.Object ref = onFailedHealthCheck_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      onFailedHealthCheck_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Check the OnFailedHealthCheck enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string on_failed_health_check = 39807943;</code>
+   *
+   * @return The bytes for onFailedHealthCheck.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOnFailedHealthCheckBytes() {
+    java.lang.Object ref = onFailedHealthCheck_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      onFailedHealthCheck_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -629,6 +866,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 39807943, onFailedHealthCheck_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 61383253, defaultActionOnFailure_);
     }
@@ -644,6 +884,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(39807943, onFailedHealthCheck_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(61383253, defaultActionOnFailure_);
@@ -676,6 +920,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (hasForceUpdateOnRepair()) {
       if (!getForceUpdateOnRepair().equals(other.getForceUpdateOnRepair())) return false;
     }
+    if (hasOnFailedHealthCheck() != other.hasOnFailedHealthCheck()) return false;
+    if (hasOnFailedHealthCheck()) {
+      if (!getOnFailedHealthCheck().equals(other.getOnFailedHealthCheck())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -694,6 +942,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (hasForceUpdateOnRepair()) {
       hash = (37 * hash) + FORCE_UPDATE_ON_REPAIR_FIELD_NUMBER;
       hash = (53 * hash) + getForceUpdateOnRepair().hashCode();
+    }
+    if (hasOnFailedHealthCheck()) {
+      hash = (37 * hash) + ON_FAILED_HEALTH_CHECK_FIELD_NUMBER;
+      hash = (53 * hash) + getOnFailedHealthCheck().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -840,6 +1092,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       bitField0_ = 0;
       defaultActionOnFailure_ = "";
       forceUpdateOnRepair_ = "";
+      onFailedHealthCheck_ = "";
       return this;
     }
 
@@ -889,6 +1142,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         result.forceUpdateOnRepair_ = forceUpdateOnRepair_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.onFailedHealthCheck_ = onFailedHealthCheck_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -919,6 +1176,11 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasOnFailedHealthCheck()) {
+        onFailedHealthCheck_ = other.onFailedHealthCheck_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -945,6 +1207,12 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
             case 0:
               done = true;
               break;
+            case 318463546:
+              {
+                onFailedHealthCheck_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 318463546
             case 491066026:
               {
                 defaultActionOnFailure_ = input.readStringRequireUtf8();
@@ -1350,6 +1618,198 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       checkByteStringIsUtf8(value);
       forceUpdateOnRepair_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object onFailedHealthCheck_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on an unhealthy VM. A VM is marked as
+     * unhealthy when the application running on that VM fails a health check.
+     * Valid values are:
+     *
+     * - DEFAULT_ACTION (default): MIG uses the same action
+     * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+     * - REPAIR: MIG automatically repairs an unhealthy VM by
+     * recreating it.
+     * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+     * For more information, see
+     * About repairing VMs in a MIG.
+     * Check the OnFailedHealthCheck enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_failed_health_check = 39807943;</code>
+     *
+     * @return Whether the onFailedHealthCheck field is set.
+     */
+    public boolean hasOnFailedHealthCheck() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on an unhealthy VM. A VM is marked as
+     * unhealthy when the application running on that VM fails a health check.
+     * Valid values are:
+     *
+     * - DEFAULT_ACTION (default): MIG uses the same action
+     * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+     * - REPAIR: MIG automatically repairs an unhealthy VM by
+     * recreating it.
+     * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+     * For more information, see
+     * About repairing VMs in a MIG.
+     * Check the OnFailedHealthCheck enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_failed_health_check = 39807943;</code>
+     *
+     * @return The onFailedHealthCheck.
+     */
+    public java.lang.String getOnFailedHealthCheck() {
+      java.lang.Object ref = onFailedHealthCheck_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onFailedHealthCheck_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on an unhealthy VM. A VM is marked as
+     * unhealthy when the application running on that VM fails a health check.
+     * Valid values are:
+     *
+     * - DEFAULT_ACTION (default): MIG uses the same action
+     * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+     * - REPAIR: MIG automatically repairs an unhealthy VM by
+     * recreating it.
+     * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+     * For more information, see
+     * About repairing VMs in a MIG.
+     * Check the OnFailedHealthCheck enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_failed_health_check = 39807943;</code>
+     *
+     * @return The bytes for onFailedHealthCheck.
+     */
+    public com.google.protobuf.ByteString getOnFailedHealthCheckBytes() {
+      java.lang.Object ref = onFailedHealthCheck_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        onFailedHealthCheck_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on an unhealthy VM. A VM is marked as
+     * unhealthy when the application running on that VM fails a health check.
+     * Valid values are:
+     *
+     * - DEFAULT_ACTION (default): MIG uses the same action
+     * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+     * - REPAIR: MIG automatically repairs an unhealthy VM by
+     * recreating it.
+     * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+     * For more information, see
+     * About repairing VMs in a MIG.
+     * Check the OnFailedHealthCheck enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_failed_health_check = 39807943;</code>
+     *
+     * @param value The onFailedHealthCheck to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOnFailedHealthCheck(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      onFailedHealthCheck_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on an unhealthy VM. A VM is marked as
+     * unhealthy when the application running on that VM fails a health check.
+     * Valid values are:
+     *
+     * - DEFAULT_ACTION (default): MIG uses the same action
+     * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+     * - REPAIR: MIG automatically repairs an unhealthy VM by
+     * recreating it.
+     * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+     * For more information, see
+     * About repairing VMs in a MIG.
+     * Check the OnFailedHealthCheck enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_failed_health_check = 39807943;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOnFailedHealthCheck() {
+      onFailedHealthCheck_ = getDefaultInstance().getOnFailedHealthCheck();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on an unhealthy VM. A VM is marked as
+     * unhealthy when the application running on that VM fails a health check.
+     * Valid values are:
+     *
+     * - DEFAULT_ACTION (default): MIG uses the same action
+     * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+     * - REPAIR: MIG automatically repairs an unhealthy VM by
+     * recreating it.
+     * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+     * For more information, see
+     * About repairing VMs in a MIG.
+     * Check the OnFailedHealthCheck enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_failed_health_check = 39807943;</code>
+     *
+     * @param value The bytes for onFailedHealthCheck to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOnFailedHealthCheckBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      onFailedHealthCheck_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

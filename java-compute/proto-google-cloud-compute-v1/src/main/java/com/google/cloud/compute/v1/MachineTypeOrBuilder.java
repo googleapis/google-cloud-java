@@ -133,6 +133,43 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The configuration of bundled local SSD for the machine type.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BundledLocalSsds bundled_local_ssds = 387462016;</code>
+   *
+   * @return Whether the bundledLocalSsds field is set.
+   */
+  boolean hasBundledLocalSsds();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The configuration of bundled local SSD for the machine type.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BundledLocalSsds bundled_local_ssds = 387462016;</code>
+   *
+   * @return The bundledLocalSsds.
+   */
+  com.google.cloud.compute.v1.BundledLocalSsds getBundledLocalSsds();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The configuration of bundled local SSD for the machine type.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.BundledLocalSsds bundled_local_ssds = 387462016;</code>
+   */
+  com.google.cloud.compute.v1.BundledLocalSsdsOrBuilder getBundledLocalSsdsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>

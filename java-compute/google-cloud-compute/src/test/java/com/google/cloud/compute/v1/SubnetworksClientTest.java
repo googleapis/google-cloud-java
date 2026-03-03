@@ -321,6 +321,7 @@ public class SubnetworksClientTest {
             .setPurpose("purpose-220463842")
             .setRegion("region-934795532")
             .setReservedInternalRange("reservedInternalRange518272568")
+            .setResolveSubnetMask("resolveSubnetMask1231531765")
             .setRole("role3506294")
             .addAllSecondaryIpRanges(new ArrayList<SubnetworkSecondaryRange>())
             .setSelfLink("selfLink1191800166")

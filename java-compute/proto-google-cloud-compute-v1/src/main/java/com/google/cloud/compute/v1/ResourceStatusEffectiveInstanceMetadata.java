@@ -248,6 +248,41 @@ public final class ResourceStatusEffectiveInstanceMetadata
     return enableOsloginMetadataValue_;
   }
 
+  public static final int GCE_CONTAINER_DECLARATION_METADATA_VALUE_FIELD_NUMBER = 219617210;
+  private boolean gceContainerDeclarationMetadataValue_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Effective gce-container-declaration value at Instance level.
+   * </pre>
+   *
+   * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+   *
+   * @return Whether the gceContainerDeclarationMetadataValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasGceContainerDeclarationMetadataValue() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Effective gce-container-declaration value at Instance level.
+   * </pre>
+   *
+   * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+   *
+   * @return The gceContainerDeclarationMetadataValue.
+   */
+  @java.lang.Override
+  public boolean getGceContainerDeclarationMetadataValue() {
+    return gceContainerDeclarationMetadataValue_;
+  }
+
   public static final int SERIAL_PORT_ENABLE_METADATA_VALUE_FIELD_NUMBER = 430536330;
   private boolean serialPortEnableMetadataValue_ = false;
 
@@ -264,7 +299,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
    */
   @java.lang.Override
   public boolean hasSerialPortEnableMetadataValue() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -299,7 +334,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
    */
   @java.lang.Override
   public boolean hasSerialPortLoggingEnableMetadataValue() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -336,7 +371,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
    */
   @java.lang.Override
   public boolean hasVmDnsSettingMetadataValue() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -404,7 +439,10 @@ public final class ResourceStatusEffectiveInstanceMetadata
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(216603159, enableOsloginMetadataValue_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(219617210, gceContainerDeclarationMetadataValue_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(311813290, serialPortLoggingEnableMetadataValue_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -413,14 +451,14 @@ public final class ResourceStatusEffectiveInstanceMetadata
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(371752675, enableOsInventoryMetadataValue_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 411127950, vmDnsSettingMetadataValue_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(420155878, enableGuestAttributesMetadataValue_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(430536330, serialPortEnableMetadataValue_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -440,7 +478,12 @@ public final class ResourceStatusEffectiveInstanceMetadata
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               216603159, enableOsloginMetadataValue_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              219617210, gceContainerDeclarationMetadataValue_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               311813290, serialPortLoggingEnableMetadataValue_);
@@ -455,7 +498,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               371752675, enableOsInventoryMetadataValue_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               411127950, vmDnsSettingMetadataValue_);
@@ -465,7 +508,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               420155878, enableGuestAttributesMetadataValue_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               430536330, serialPortEnableMetadataValue_);
@@ -516,6 +559,12 @@ public final class ResourceStatusEffectiveInstanceMetadata
     if (hasEnableOsloginMetadataValue() != other.hasEnableOsloginMetadataValue()) return false;
     if (hasEnableOsloginMetadataValue()) {
       if (getEnableOsloginMetadataValue() != other.getEnableOsloginMetadataValue()) return false;
+    }
+    if (hasGceContainerDeclarationMetadataValue()
+        != other.hasGceContainerDeclarationMetadataValue()) return false;
+    if (hasGceContainerDeclarationMetadataValue()) {
+      if (getGceContainerDeclarationMetadataValue()
+          != other.getGceContainerDeclarationMetadataValue()) return false;
     }
     if (hasSerialPortEnableMetadataValue() != other.hasSerialPortEnableMetadataValue())
       return false;
@@ -572,6 +621,12 @@ public final class ResourceStatusEffectiveInstanceMetadata
       hash = (37 * hash) + ENABLE_OSLOGIN_METADATA_VALUE_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableOsloginMetadataValue());
+    }
+    if (hasGceContainerDeclarationMetadataValue()) {
+      hash = (37 * hash) + GCE_CONTAINER_DECLARATION_METADATA_VALUE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getGceContainerDeclarationMetadataValue());
     }
     if (hasSerialPortEnableMetadataValue()) {
       hash = (37 * hash) + SERIAL_PORT_ENABLE_METADATA_VALUE_FIELD_NUMBER;
@@ -737,6 +792,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
       enableOsInventoryMetadataValue_ = false;
       enableOsconfigMetadataValue_ = false;
       enableOsloginMetadataValue_ = false;
+      gceContainerDeclarationMetadataValue_ = false;
       serialPortEnableMetadataValue_ = false;
       serialPortLoggingEnableMetadataValue_ = false;
       vmDnsSettingMetadataValue_ = "";
@@ -801,16 +857,20 @@ public final class ResourceStatusEffectiveInstanceMetadata
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.serialPortEnableMetadataValue_ = serialPortEnableMetadataValue_;
+        result.gceContainerDeclarationMetadataValue_ = gceContainerDeclarationMetadataValue_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.serialPortLoggingEnableMetadataValue_ = serialPortLoggingEnableMetadataValue_;
+        result.serialPortEnableMetadataValue_ = serialPortEnableMetadataValue_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.vmDnsSettingMetadataValue_ = vmDnsSettingMetadataValue_;
+        result.serialPortLoggingEnableMetadataValue_ = serialPortLoggingEnableMetadataValue_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.vmDnsSettingMetadataValue_ = vmDnsSettingMetadataValue_;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -846,6 +906,9 @@ public final class ResourceStatusEffectiveInstanceMetadata
       if (other.hasEnableOsloginMetadataValue()) {
         setEnableOsloginMetadataValue(other.getEnableOsloginMetadataValue());
       }
+      if (other.hasGceContainerDeclarationMetadataValue()) {
+        setGceContainerDeclarationMetadataValue(other.getGceContainerDeclarationMetadataValue());
+      }
       if (other.hasSerialPortEnableMetadataValue()) {
         setSerialPortEnableMetadataValue(other.getSerialPortEnableMetadataValue());
       }
@@ -854,7 +917,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
       }
       if (other.hasVmDnsSettingMetadataValue()) {
         vmDnsSettingMetadataValue_ = other.vmDnsSettingMetadataValue_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -889,10 +952,16 @@ public final class ResourceStatusEffectiveInstanceMetadata
                 bitField0_ |= 0x00000010;
                 break;
               } // case 1732825272
+            case 1756937680:
+              {
+                gceContainerDeclarationMetadataValue_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 1756937680
             case -1800460976:
               {
                 serialPortLoggingEnableMetadataValue_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1800460976
             case -1585982488:
@@ -910,7 +979,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
             case -1005943694:
               {
                 vmDnsSettingMetadataValue_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1005943694
             case -933720272:
@@ -922,7 +991,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
             case -850676656:
               {
                 serialPortEnableMetadataValue_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -850676656
             case -271235344:
@@ -1310,6 +1379,78 @@ public final class ResourceStatusEffectiveInstanceMetadata
       return this;
     }
 
+    private boolean gceContainerDeclarationMetadataValue_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Effective gce-container-declaration value at Instance level.
+     * </pre>
+     *
+     * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+     *
+     * @return Whether the gceContainerDeclarationMetadataValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasGceContainerDeclarationMetadataValue() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Effective gce-container-declaration value at Instance level.
+     * </pre>
+     *
+     * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+     *
+     * @return The gceContainerDeclarationMetadataValue.
+     */
+    @java.lang.Override
+    public boolean getGceContainerDeclarationMetadataValue() {
+      return gceContainerDeclarationMetadataValue_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Effective gce-container-declaration value at Instance level.
+     * </pre>
+     *
+     * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+     *
+     * @param value The gceContainerDeclarationMetadataValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGceContainerDeclarationMetadataValue(boolean value) {
+
+      gceContainerDeclarationMetadataValue_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Effective gce-container-declaration value at Instance level.
+     * </pre>
+     *
+     * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGceContainerDeclarationMetadataValue() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      gceContainerDeclarationMetadataValue_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean serialPortEnableMetadataValue_;
 
     /**
@@ -1325,7 +1466,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
      */
     @java.lang.Override
     public boolean hasSerialPortEnableMetadataValue() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1359,7 +1500,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
     public Builder setSerialPortEnableMetadataValue(boolean value) {
 
       serialPortEnableMetadataValue_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1376,7 +1517,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
      * @return This builder for chaining.
      */
     public Builder clearSerialPortEnableMetadataValue() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       serialPortEnableMetadataValue_ = false;
       onChanged();
       return this;
@@ -1397,7 +1538,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
      */
     @java.lang.Override
     public boolean hasSerialPortLoggingEnableMetadataValue() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1431,7 +1572,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
     public Builder setSerialPortLoggingEnableMetadataValue(boolean value) {
 
       serialPortLoggingEnableMetadataValue_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1448,7 +1589,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
      * @return This builder for chaining.
      */
     public Builder clearSerialPortLoggingEnableMetadataValue() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       serialPortLoggingEnableMetadataValue_ = false;
       onChanged();
       return this;
@@ -1468,7 +1609,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
      * @return Whether the vmDnsSettingMetadataValue field is set.
      */
     public boolean hasVmDnsSettingMetadataValue() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -1534,7 +1675,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
         throw new NullPointerException();
       }
       vmDnsSettingMetadataValue_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1552,7 +1693,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
      */
     public Builder clearVmDnsSettingMetadataValue() {
       vmDnsSettingMetadataValue_ = getDefaultInstance().getVmDnsSettingMetadataValue();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1575,7 +1716,7 @@ public final class ResourceStatusEffectiveInstanceMetadata
       }
       checkByteStringIsUtf8(value);
       vmDnsSettingMetadataValue_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

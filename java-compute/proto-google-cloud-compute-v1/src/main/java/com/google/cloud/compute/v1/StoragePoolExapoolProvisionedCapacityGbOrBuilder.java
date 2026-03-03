@@ -30,7 +30,7 @@ public interface StoragePoolExapoolProvisionedCapacityGbOrBuilder
    *
    *
    * <pre>
-   * Output only. Size, in GiB, of provisioned capacity-optimized capacity for this Exapool
+   * Size, in GiB, of provisioned capacity-optimized capacity for this Exapool
    * </pre>
    *
    * <code>optional int64 capacity_optimized = 251131874;</code>
@@ -43,7 +43,7 @@ public interface StoragePoolExapoolProvisionedCapacityGbOrBuilder
    *
    *
    * <pre>
-   * Output only. Size, in GiB, of provisioned capacity-optimized capacity for this Exapool
+   * Size, in GiB, of provisioned capacity-optimized capacity for this Exapool
    * </pre>
    *
    * <code>optional int64 capacity_optimized = 251131874;</code>
@@ -56,7 +56,7 @@ public interface StoragePoolExapoolProvisionedCapacityGbOrBuilder
    *
    *
    * <pre>
-   * Output only. Size, in GiB, of provisioned read-optimized capacity for this Exapool
+   * Size, in GiB, of provisioned read-optimized capacity for this Exapool
    * </pre>
    *
    * <code>optional int64 read_optimized = 389863870;</code>
@@ -69,7 +69,7 @@ public interface StoragePoolExapoolProvisionedCapacityGbOrBuilder
    *
    *
    * <pre>
-   * Output only. Size, in GiB, of provisioned read-optimized capacity for this Exapool
+   * Size, in GiB, of provisioned read-optimized capacity for this Exapool
    * </pre>
    *
    * <code>optional int64 read_optimized = 389863870;</code>
@@ -82,7 +82,7 @@ public interface StoragePoolExapoolProvisionedCapacityGbOrBuilder
    *
    *
    * <pre>
-   * Output only. Size, in GiB, of provisioned write-optimized capacity for this Exapool
+   * Size, in GiB, of provisioned write-optimized capacity for this Exapool
    * </pre>
    *
    * <code>optional int64 write_optimized = 492523719;</code>
@@ -95,7 +95,7 @@ public interface StoragePoolExapoolProvisionedCapacityGbOrBuilder
    *
    *
    * <pre>
-   * Output only. Size, in GiB, of provisioned write-optimized capacity for this Exapool
+   * Size, in GiB, of provisioned write-optimized capacity for this Exapool
    * </pre>
    *
    * <code>optional int64 write_optimized = 492523719;</code>

@@ -163,6 +163,7 @@ public class ExternalVpnGatewaysClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setParams(ExternalVpnGatewayParams.newBuilder().build())
             .setRedundancyType("redundancyType1705637879")
             .setSelfLink("selfLink1191800166")
             .build();

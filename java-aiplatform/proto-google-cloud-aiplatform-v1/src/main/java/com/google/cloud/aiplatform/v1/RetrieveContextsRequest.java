@@ -178,7 +178,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
      * @return Whether the vectorDistanceThreshold field is set.
      */
     @java.lang.Deprecated
@@ -198,7 +198,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
      * @return The vectorDistanceThreshold.
      */
     @java.lang.Deprecated
@@ -1442,7 +1442,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
      * @return Whether the vectorDistanceThreshold field is set.
      */
     @java.lang.Override
@@ -1465,7 +1465,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+     *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
      * @return The vectorDistanceThreshold.
      */
     @java.lang.Override
@@ -2403,7 +2403,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
        * @return Whether the vectorDistanceThreshold field is set.
        */
       @java.lang.Override
@@ -2426,7 +2426,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
        * @return The vectorDistanceThreshold.
        */
       @java.lang.Override
@@ -2449,7 +2449,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
        * @param value The vectorDistanceThreshold to set.
        * @return This builder for chaining.
        */
@@ -2476,7 +2476,7 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        *
        * @deprecated
        *     google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.vector_distance_threshold
-       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=118
+       *     is deprecated. See google/cloud/aiplatform/v1/vertex_rag_service.proto;l=143
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

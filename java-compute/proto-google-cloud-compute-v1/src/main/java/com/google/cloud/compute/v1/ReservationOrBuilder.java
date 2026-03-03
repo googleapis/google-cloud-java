@@ -371,6 +371,54 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Indicates the early access maintenance for the reservation.
+   * If this field is absent or set to NO_EARLY_ACCESS, the reservation is not
+   * enrolled in early access maintenance and the standard notice applies.
+   * Check the EarlyAccessMaintenance enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string early_access_maintenance = 343918356;</code>
+   *
+   * @return Whether the earlyAccessMaintenance field is set.
+   */
+  boolean hasEarlyAccessMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the early access maintenance for the reservation.
+   * If this field is absent or set to NO_EARLY_ACCESS, the reservation is not
+   * enrolled in early access maintenance and the standard notice applies.
+   * Check the EarlyAccessMaintenance enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string early_access_maintenance = 343918356;</code>
+   *
+   * @return The earlyAccessMaintenance.
+   */
+  java.lang.String getEarlyAccessMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the early access maintenance for the reservation.
+   * If this field is absent or set to NO_EARLY_ACCESS, the reservation is not
+   * enrolled in early access maintenance and the standard notice applies.
+   * Check the EarlyAccessMaintenance enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string early_access_maintenance = 343918356;</code>
+   *
+   * @return The bytes for earlyAccessMaintenance.
+   */
+  com.google.protobuf.ByteString getEarlyAccessMaintenanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
    * for example, to fix hardware errors.
    * </pre>
@@ -579,6 +627,46 @@ public interface ReservationOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.ReservationParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.ReservationParamsOrBuilder getParamsOrBuilder();
 
   /**
    *

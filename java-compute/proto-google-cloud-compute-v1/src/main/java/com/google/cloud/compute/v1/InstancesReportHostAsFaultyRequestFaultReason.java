@@ -103,6 +103,16 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
      * <code>BEHAVIOR_UNSPECIFIED = 85734570;</code>
      */
     BEHAVIOR_UNSPECIFIED(85734570),
+    /**
+     *
+     *
+     * <pre>
+     * Any GPU or TPU errors or faults where the accelerator becomes unusable
+     * </pre>
+     *
+     * <code>CHIP_ERROR = 263151669;</code>
+     */
+    CHIP_ERROR(263151669),
     /** <code>PERFORMANCE = 135701520;</code> */
     PERFORMANCE(135701520),
     /** <code>SILENT_DATA_CORRUPTION = 111360678;</code> */
@@ -152,6 +162,17 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
      */
     public static final int BEHAVIOR_UNSPECIFIED_VALUE = 85734570;
 
+    /**
+     *
+     *
+     * <pre>
+     * Any GPU or TPU errors or faults where the accelerator becomes unusable
+     * </pre>
+     *
+     * <code>CHIP_ERROR = 263151669;</code>
+     */
+    public static final int CHIP_ERROR_VALUE = 263151669;
+
     /** <code>PERFORMANCE = 135701520;</code> */
     public static final int PERFORMANCE_VALUE = 135701520;
 
@@ -197,6 +218,8 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
           return UNDEFINED_BEHAVIOR;
         case 85734570:
           return BEHAVIOR_UNSPECIFIED;
+        case 263151669:
+          return CHIP_ERROR;
         case 135701520:
           return PERFORMANCE;
         case 111360678:

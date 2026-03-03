@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1.VertexRagServiceGrpc.VertexRagServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -118,6 +119,49 @@ public class MockVertexRagServiceImpl extends VertexRagServiceImplBase {
                   "Unrecognized response type %s for method CorroborateContent, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CorroborateContentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void askContexts(
+      AskContextsRequest request, StreamObserver<AskContextsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AskContextsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AskContextsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AskContexts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AskContextsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void asyncRetrieveContexts(
+      AsyncRetrieveContextsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AsyncRetrieveContexts, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

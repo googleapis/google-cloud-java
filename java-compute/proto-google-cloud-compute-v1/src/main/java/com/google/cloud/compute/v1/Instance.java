@@ -3926,6 +3926,48 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     return tags_ == null ? com.google.cloud.compute.v1.Tags.getDefaultInstance() : tags_;
   }
 
+  public static final int WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 338198811;
+  private com.google.cloud.compute.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadIdentityConfig() {
+    return ((bitField1_ & 0x00000080) != 0);
+  }
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder
+      getWorkloadIdentityConfigOrBuilder() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
   public static final int ZONE_FIELD_NUMBER = 3744684;
 
   @SuppressWarnings("serial")
@@ -3946,7 +3988,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField1_ & 0x00000080) != 0);
+    return ((bitField1_ & 0x00000100) != 0);
   }
 
   /**
@@ -4027,7 +4069,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (((bitField1_ & 0x00000040) != 0)) {
       output.writeMessage(3552281, getTags());
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x80000000) != 0)) {
@@ -4106,6 +4148,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (((bitField1_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 297428154, statusMessage_);
     }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      output.writeMessage(338198811, getWorkloadIdentityConfig());
+    }
     if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 356275337, lastSuspendedTimestamp_);
     }
@@ -4174,7 +4219,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3552281, getTags());
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x80000000) != 0)) {
@@ -4276,6 +4321,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField1_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(297428154, statusMessage_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              338198811, getWorkloadIdentityConfig());
     }
     if (((bitField0_ & 0x00020000) != 0)) {
       size +=
@@ -4525,6 +4575,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (hasTags()) {
       if (!getTags().equals(other.getTags())) return false;
     }
+    if (hasWorkloadIdentityConfig() != other.hasWorkloadIdentityConfig()) return false;
+    if (hasWorkloadIdentityConfig()) {
+      if (!getWorkloadIdentityConfig().equals(other.getWorkloadIdentityConfig())) return false;
+    }
     if (hasZone() != other.hasZone()) return false;
     if (hasZone()) {
       if (!getZone().equals(other.getZone())) return false;
@@ -4720,6 +4774,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getTags().hashCode();
     }
+    if (hasWorkloadIdentityConfig()) {
+      hash = (37 * hash) + WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadIdentityConfig().hashCode();
+    }
     if (hasZone()) {
       hash = (37 * hash) + ZONE_FIELD_NUMBER;
       hash = (53 * hash) + getZone().hashCode();
@@ -4907,6 +4965,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         internalGetShieldedInstanceIntegrityPolicyFieldBuilder();
         internalGetSourceMachineImageEncryptionKeyFieldBuilder();
         internalGetTagsFieldBuilder();
+        internalGetWorkloadIdentityConfigFieldBuilder();
       }
     }
 
@@ -5039,6 +5098,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (tagsBuilder_ != null) {
         tagsBuilder_.dispose();
         tagsBuilder_ = null;
+      }
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
       }
       zone_ = "";
       return this;
@@ -5318,8 +5382,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         to_bitField1_ |= 0x00000040;
       }
       if (((from_bitField1_ & 0x00002000) != 0)) {
-        result.zone_ = zone_;
+        result.workloadIdentityConfig_ =
+            workloadIdentityConfigBuilder_ == null
+                ? workloadIdentityConfig_
+                : workloadIdentityConfigBuilder_.build();
         to_bitField1_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField1_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -5612,9 +5683,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (other.hasTags()) {
         mergeTags(other.getTags());
       }
+      if (other.hasWorkloadIdentityConfig()) {
+        mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
+      }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5670,7 +5744,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00004000;
                 break;
               } // case 29957474
             case 102903210:
@@ -5856,6 +5930,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00000800;
                 break;
               } // case -1915542062
+            case -1589376806:
+              {
+                input.readMessage(
+                    internalGetWorkloadIdentityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00002000;
+                break;
+              } // case -1589376806
             case -1444764598:
               {
                 lastSuspendedTimestamp_ = input.readStringRequireUtf8();
@@ -14101,6 +14183,170 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       return tagsBuilder_;
     }
 
+    private com.google.cloud.compute.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.WorkloadIdentityConfig,
+            com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder,
+            com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder>
+        workloadIdentityConfigBuilder_;
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     *
+     * @return Whether the workloadIdentityConfig field is set.
+     */
+    public boolean hasWorkloadIdentityConfig() {
+      return ((bitField1_ & 0x00002000) != 0);
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     *
+     * @return The workloadIdentityConfig.
+     */
+    public com.google.cloud.compute.v1.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      } else {
+        return workloadIdentityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.cloud.compute.v1.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadIdentityConfig_ = value;
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder builderForValue) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = builderForValue.build();
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder mergeWorkloadIdentityConfig(
+        com.google.cloud.compute.v1.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00002000) != 0)
+            && workloadIdentityConfig_ != null
+            && workloadIdentityConfig_
+                != com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()) {
+          getWorkloadIdentityConfigBuilder().mergeFrom(value);
+        } else {
+          workloadIdentityConfig_ = value;
+        }
+      } else {
+        workloadIdentityConfigBuilder_.mergeFrom(value);
+      }
+      if (workloadIdentityConfig_ != null) {
+        bitField1_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder clearWorkloadIdentityConfig() {
+      bitField1_ = (bitField1_ & ~0x00002000);
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder
+        getWorkloadIdentityConfigBuilder() {
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return internalGetWorkloadIdentityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder
+        getWorkloadIdentityConfigOrBuilder() {
+      if (workloadIdentityConfigBuilder_ != null) {
+        return workloadIdentityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      }
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.WorkloadIdentityConfig,
+            com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder,
+            com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder>
+        internalGetWorkloadIdentityConfigFieldBuilder() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.WorkloadIdentityConfig,
+                com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder,
+                com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder>(
+                getWorkloadIdentityConfig(), getParentForChildren(), isClean());
+        workloadIdentityConfig_ = null;
+      }
+      return workloadIdentityConfigBuilder_;
+    }
+
     private java.lang.Object zone_ = "";
 
     /**
@@ -14117,7 +14363,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00004000) != 0);
     }
 
     /**
@@ -14189,7 +14435,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -14209,7 +14455,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -14234,7 +14480,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }

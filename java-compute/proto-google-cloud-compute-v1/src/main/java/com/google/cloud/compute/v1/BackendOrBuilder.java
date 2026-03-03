@@ -600,6 +600,50 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
+   * Information about the resource or system that manages the backend.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   *
+   * @return Whether the orchestrationInfo field is set.
+   */
+  boolean hasOrchestrationInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   *
+   * @return The orchestrationInfo.
+   */
+  com.google.cloud.compute.v1.BackendBackendOrchestrationInfo getOrchestrationInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendBackendOrchestrationInfoOrBuilder
+      getOrchestrationInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * This field indicates whether this backend should be fully utilized before
    * sending traffic to backends with default preference. The possible values
    * are:

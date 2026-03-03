@@ -165,6 +165,7 @@ public class MachineImagesClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setMachineImageEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setName("name3373707")
+            .setParams(MachineImageParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .addAllSavedDisks(new ArrayList<SavedDisk>())

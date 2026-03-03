@@ -1732,8 +1732,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Specific subzone in the InterconnectLocation that represents where
-   * this connection is to be provisioned.
+   * To be deprecated.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -1747,8 +1746,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Specific subzone in the InterconnectLocation that represents where
-   * this connection is to be provisioned.
+   * To be deprecated.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -1762,8 +1760,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Specific subzone in the InterconnectLocation that represents where
-   * this connection is to be provisioned.
+   * To be deprecated.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *

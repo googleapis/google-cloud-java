@@ -29,6 +29,20 @@ package com.google.cloud.compute.v1;
  * A network endpoint group (NEG) defines how a set of endpoints should be
  * reached, whether they are reachable, and where they are located.
  * For more information about using NEGs for different use cases, seeNetwork endpoint groups overview.
+ *
+ * Note: Use the following APIs to manage network endpoint groups:
+ *
+ * -
+ * To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity
+ * NEGs): zonal
+ * API
+ * -
+ * To manage NEGs with regional scope (such as regional internet NEGs,
+ * serverless NEGs, Private Service Connect NEGs): regional
+ * API
+ * -
+ * To manage NEGs with global scope (such as global internet NEGs):global
+ * API
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroup}
@@ -2107,6 +2121,20 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * A network endpoint group (NEG) defines how a set of endpoints should be
    * reached, whether they are reachable, and where they are located.
    * For more information about using NEGs for different use cases, seeNetwork endpoint groups overview.
+   *
+   * Note: Use the following APIs to manage network endpoint groups:
+   *
+   * -
+   * To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity
+   * NEGs): zonal
+   * API
+   * -
+   * To manage NEGs with regional scope (such as regional internet NEGs,
+   * serverless NEGs, Private Service Connect NEGs): regional
+   * API
+   * -
+   * To manage NEGs with global scope (such as global internet NEGs):global
+   * API
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroup}

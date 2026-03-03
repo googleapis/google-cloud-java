@@ -23,8 +23,14 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.AskContextsRequest;
+import com.google.cloud.aiplatform.v1.AskContextsResponse;
+import com.google.cloud.aiplatform.v1.AsyncRetrieveContextsOperationMetadata;
+import com.google.cloud.aiplatform.v1.AsyncRetrieveContextsRequest;
+import com.google.cloud.aiplatform.v1.AsyncRetrieveContextsResponse;
 import com.google.cloud.aiplatform.v1.AugmentPromptRequest;
 import com.google.cloud.aiplatform.v1.AugmentPromptResponse;
 import com.google.cloud.aiplatform.v1.CorroborateContentRequest;
@@ -40,6 +46,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -88,6 +95,29 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   ProtoUtils.marshaller(CorroborateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CorroborateContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AskContextsRequest, AskContextsResponse>
+      askContextsMethodDescriptor =
+          MethodDescriptor.<AskContextsRequest, AskContextsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.VertexRagService/AskContexts")
+              .setRequestMarshaller(ProtoUtils.marshaller(AskContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AskContextsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsMethodDescriptor =
+          MethodDescriptor.<AsyncRetrieveContextsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.VertexRagService/AsyncRetrieveContexts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsyncRetrieveContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -147,6 +177,14 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
   private final UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable;
   private final UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentCallable;
+  private final UnaryCallable<AskContextsRequest, AskContextsResponse> askContextsCallable;
+  private final UnaryCallable<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsCallable;
+  private final OperationCallable<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -232,6 +270,27 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<AskContextsRequest, AskContextsResponse> askContextsTransportSettings =
+        GrpcCallSettings.<AskContextsRequest, AskContextsResponse>newBuilder()
+            .setMethodDescriptor(askContextsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AsyncRetrieveContextsRequest, Operation>
+        asyncRetrieveContextsTransportSettings =
+            GrpcCallSettings.<AsyncRetrieveContextsRequest, Operation>newBuilder()
+                .setMethodDescriptor(asyncRetrieveContextsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -295,6 +354,20 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
             corroborateContentTransportSettings,
             settings.corroborateContentSettings(),
             clientContext);
+    this.askContextsCallable =
+        callableFactory.createUnaryCallable(
+            askContextsTransportSettings, settings.askContextsSettings(), clientContext);
+    this.asyncRetrieveContextsCallable =
+        callableFactory.createUnaryCallable(
+            asyncRetrieveContextsTransportSettings,
+            settings.asyncRetrieveContextsSettings(),
+            clientContext);
+    this.asyncRetrieveContextsOperationCallable =
+        callableFactory.createOperationCallable(
+            asyncRetrieveContextsTransportSettings,
+            settings.asyncRetrieveContextsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -339,6 +412,25 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
   public UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentCallable() {
     return corroborateContentCallable;
+  }
+
+  @Override
+  public UnaryCallable<AskContextsRequest, AskContextsResponse> askContextsCallable() {
+    return askContextsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AsyncRetrieveContextsRequest, Operation> asyncRetrieveContextsCallable() {
+    return asyncRetrieveContextsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationCallable() {
+    return asyncRetrieveContextsOperationCallable;
   }
 
   @Override

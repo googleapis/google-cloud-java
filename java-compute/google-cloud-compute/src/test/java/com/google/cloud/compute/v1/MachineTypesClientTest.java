@@ -137,6 +137,7 @@ public class MachineTypesClientTest {
         MachineType.newBuilder()
             .addAllAccelerators(new ArrayList<Accelerators>())
             .setArchitecture("architecture839674195")
+            .setBundledLocalSsds(BundledLocalSsds.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDeprecated(DeprecationStatus.newBuilder().build())
             .setDescription("description-1724546052")

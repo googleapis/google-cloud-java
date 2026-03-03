@@ -640,6 +640,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
     GENERAL_PURPOSE_N2D(232471400),
     /** <code>GENERAL_PURPOSE_N4 = 301912158;</code> */
     GENERAL_PURPOSE_N4(301912158),
+    /** <code>GENERAL_PURPOSE_N4A = 232471459;</code> */
+    GENERAL_PURPOSE_N4A(232471459),
     /** <code>GENERAL_PURPOSE_N4D = 232471462;</code> */
     GENERAL_PURPOSE_N4D(232471462),
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
@@ -816,6 +818,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
 
     /** <code>GENERAL_PURPOSE_N4 = 301912158;</code> */
     public static final int GENERAL_PURPOSE_N4_VALUE = 301912158;
+
+    /** <code>GENERAL_PURPOSE_N4A = 232471459;</code> */
+    public static final int GENERAL_PURPOSE_N4A_VALUE = 232471459;
 
     /** <code>GENERAL_PURPOSE_N4D = 232471462;</code> */
     public static final int GENERAL_PURPOSE_N4D_VALUE = 232471462;
@@ -996,6 +1001,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return GENERAL_PURPOSE_N2D;
         case 301912158:
           return GENERAL_PURPOSE_N4;
+        case 232471459:
+          return GENERAL_PURPOSE_N4A;
         case 232471462:
           return GENERAL_PURPOSE_N4D;
         case 232477166:

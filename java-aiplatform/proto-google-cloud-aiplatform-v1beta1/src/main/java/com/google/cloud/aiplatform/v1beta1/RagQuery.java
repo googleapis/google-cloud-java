@@ -784,7 +784,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=92
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=117
    * @return The similarityTopK.
    */
   @java.lang.Override
@@ -808,7 +808,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=121
    * @return Whether the ranking field is set.
    */
   @java.lang.Override
@@ -829,7 +829,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=121
    * @return The ranking.
    */
   @java.lang.Override
@@ -1523,7 +1523,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=92
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=117
      * @return The similarityTopK.
      */
     @java.lang.Override
@@ -1544,7 +1544,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=92
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=117
      * @param value The similarityTopK to set.
      * @return This builder for chaining.
      */
@@ -1569,7 +1569,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=92
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=117
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1599,7 +1599,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=121
      * @return Whether the ranking field is set.
      */
     @java.lang.Deprecated
@@ -1619,7 +1619,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=121
      * @return The ranking.
      */
     @java.lang.Deprecated

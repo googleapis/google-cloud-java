@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -38,6 +39,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -49,6 +51,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -355,6 +358,192 @@ public class VertexRagServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void askContextsTest() throws Exception {
+    AskContextsResponse expectedResponse =
+        AskContextsResponse.newBuilder()
+            .setResponse("response-340323263")
+            .setContexts(RagContexts.newBuilder().build())
+            .build();
+    mockVertexRagService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RagQuery query = RagQuery.newBuilder().build();
+
+    AskContextsResponse actualResponse = client.askContexts(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AskContextsRequest actualRequest = ((AskContextsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void askContextsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RagQuery query = RagQuery.newBuilder().build();
+      client.askContexts(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void askContextsTest2() throws Exception {
+    AskContextsResponse expectedResponse =
+        AskContextsResponse.newBuilder()
+            .setResponse("response-340323263")
+            .setContexts(RagContexts.newBuilder().build())
+            .build();
+    mockVertexRagService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    RagQuery query = RagQuery.newBuilder().build();
+
+    AskContextsResponse actualResponse = client.askContexts(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AskContextsRequest actualRequest = ((AskContextsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void askContextsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RagQuery query = RagQuery.newBuilder().build();
+      client.askContexts(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void asyncRetrieveContextsTest() throws Exception {
+    AsyncRetrieveContextsResponse expectedResponse =
+        AsyncRetrieveContextsResponse.newBuilder()
+            .setContexts(RagContexts.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("asyncRetrieveContextsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RagQuery query = RagQuery.newBuilder().build();
+
+    AsyncRetrieveContextsResponse actualResponse =
+        client.asyncRetrieveContextsAsync(parent, query).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsyncRetrieveContextsRequest actualRequest =
+        ((AsyncRetrieveContextsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asyncRetrieveContextsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RagQuery query = RagQuery.newBuilder().build();
+      client.asyncRetrieveContextsAsync(parent, query).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void asyncRetrieveContextsTest2() throws Exception {
+    AsyncRetrieveContextsResponse expectedResponse =
+        AsyncRetrieveContextsResponse.newBuilder()
+            .setContexts(RagContexts.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("asyncRetrieveContextsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    RagQuery query = RagQuery.newBuilder().build();
+
+    AsyncRetrieveContextsResponse actualResponse =
+        client.asyncRetrieveContextsAsync(parent, query).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsyncRetrieveContextsRequest actualRequest =
+        ((AsyncRetrieveContextsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asyncRetrieveContextsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RagQuery query = RagQuery.newBuilder().build();
+      client.asyncRetrieveContextsAsync(parent, query).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

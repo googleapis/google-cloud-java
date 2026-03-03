@@ -168,7 +168,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
      * <code>double distance = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=207
      * @return The distance.
      */
     @java.lang.Deprecated
@@ -185,7 +185,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
      * <code>double sparse_distance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=211
      * @return The sparseDistance.
      */
     @java.lang.Deprecated
@@ -498,7 +498,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
      * <code>double distance = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=207
      * @return The distance.
      */
     @java.lang.Override
@@ -521,7 +521,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
      * <code>double sparse_distance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=211
      * @return The sparseDistance.
      */
     @java.lang.Override
@@ -1474,7 +1474,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
        * <code>double distance = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=207
        * @return The distance.
        */
       @java.lang.Override
@@ -1494,7 +1494,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
        * <code>double distance = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=207
        * @param value The distance to set.
        * @return This builder for chaining.
        */
@@ -1518,7 +1518,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
        * <code>double distance = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=207
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1542,7 +1542,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
        * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=211
        * @return The sparseDistance.
        */
       @java.lang.Override
@@ -1562,7 +1562,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
        * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=211
        * @param value The sparseDistance to set.
        * @return This builder for chaining.
        */
@@ -1586,7 +1586,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessage
        * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=211
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

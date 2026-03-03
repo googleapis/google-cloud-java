@@ -517,6 +517,46 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
+   * Input only. [Input Only] Additional parameters that are passed in the request, but are
+   * not persisted in the resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional parameters that are passed in the request, but are
+   * not persisted in the resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.MachineImageParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional parameters that are passed in the request, but are
+   * not persisted in the resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.MachineImageParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reserved for future use.
    * </pre>
    *

@@ -73,6 +73,45 @@ public final class ListAssociationsFirewallPolicyRequest
   }
 
   private int bitField0_;
+  public static final int INCLUDE_INHERITED_POLICIES_FIELD_NUMBER = 32280076;
+  private boolean includeInheritedPolicies_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to "true", the response will contain a list of all associations for
+   * the containing folders and the containing organization of the target. The
+   * parameter has no effect if the target is an organization.
+   * </pre>
+   *
+   * <code>optional bool include_inherited_policies = 32280076;</code>
+   *
+   * @return Whether the includeInheritedPolicies field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeInheritedPolicies() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to "true", the response will contain a list of all associations for
+   * the containing folders and the containing organization of the target. The
+   * parameter has no effect if the target is an organization.
+   * </pre>
+   *
+   * <code>optional bool include_inherited_policies = 32280076;</code>
+   *
+   * @return The includeInheritedPolicies.
+   */
+  @java.lang.Override
+  public boolean getIncludeInheritedPolicies() {
+    return includeInheritedPolicies_;
+  }
+
   public static final int TARGET_RESOURCE_FIELD_NUMBER = 467318524;
 
   @SuppressWarnings("serial")
@@ -92,7 +131,7 @@ public final class ListAssociationsFirewallPolicyRequest
    */
   @java.lang.Override
   public boolean hasTargetResource() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -160,6 +199,9 @@ public final class ListAssociationsFirewallPolicyRequest
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(32280076, includeInheritedPolicies_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 467318524, targetResource_);
     }
     getUnknownFields().writeTo(output);
@@ -172,6 +214,11 @@ public final class ListAssociationsFirewallPolicyRequest
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              32280076, includeInheritedPolicies_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(467318524, targetResource_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -190,6 +237,10 @@ public final class ListAssociationsFirewallPolicyRequest
     com.google.cloud.compute.v1.ListAssociationsFirewallPolicyRequest other =
         (com.google.cloud.compute.v1.ListAssociationsFirewallPolicyRequest) obj;
 
+    if (hasIncludeInheritedPolicies() != other.hasIncludeInheritedPolicies()) return false;
+    if (hasIncludeInheritedPolicies()) {
+      if (getIncludeInheritedPolicies() != other.getIncludeInheritedPolicies()) return false;
+    }
     if (hasTargetResource() != other.hasTargetResource()) return false;
     if (hasTargetResource()) {
       if (!getTargetResource().equals(other.getTargetResource())) return false;
@@ -205,6 +256,10 @@ public final class ListAssociationsFirewallPolicyRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasIncludeInheritedPolicies()) {
+      hash = (37 * hash) + INCLUDE_INHERITED_POLICIES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeInheritedPolicies());
+    }
     if (hasTargetResource()) {
       hash = (37 * hash) + TARGET_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetResource().hashCode();
@@ -352,6 +407,7 @@ public final class ListAssociationsFirewallPolicyRequest
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      includeInheritedPolicies_ = false;
       targetResource_ = "";
       return this;
     }
@@ -393,8 +449,12 @@ public final class ListAssociationsFirewallPolicyRequest
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.targetResource_ = targetResource_;
+        result.includeInheritedPolicies_ = includeInheritedPolicies_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetResource_ = targetResource_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -414,9 +474,12 @@ public final class ListAssociationsFirewallPolicyRequest
       if (other
           == com.google.cloud.compute.v1.ListAssociationsFirewallPolicyRequest.getDefaultInstance())
         return this;
+      if (other.hasIncludeInheritedPolicies()) {
+        setIncludeInheritedPolicies(other.getIncludeInheritedPolicies());
+      }
       if (other.hasTargetResource()) {
         targetResource_ = other.targetResource_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -445,10 +508,16 @@ public final class ListAssociationsFirewallPolicyRequest
             case 0:
               done = true;
               break;
+            case 258240608:
+              {
+                includeInheritedPolicies_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 258240608
             case -556419102:
               {
                 targetResource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -556419102
             default:
@@ -470,6 +539,86 @@ public final class ListAssociationsFirewallPolicyRequest
 
     private int bitField0_;
 
+    private boolean includeInheritedPolicies_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to "true", the response will contain a list of all associations for
+     * the containing folders and the containing organization of the target. The
+     * parameter has no effect if the target is an organization.
+     * </pre>
+     *
+     * <code>optional bool include_inherited_policies = 32280076;</code>
+     *
+     * @return Whether the includeInheritedPolicies field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludeInheritedPolicies() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to "true", the response will contain a list of all associations for
+     * the containing folders and the containing organization of the target. The
+     * parameter has no effect if the target is an organization.
+     * </pre>
+     *
+     * <code>optional bool include_inherited_policies = 32280076;</code>
+     *
+     * @return The includeInheritedPolicies.
+     */
+    @java.lang.Override
+    public boolean getIncludeInheritedPolicies() {
+      return includeInheritedPolicies_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to "true", the response will contain a list of all associations for
+     * the containing folders and the containing organization of the target. The
+     * parameter has no effect if the target is an organization.
+     * </pre>
+     *
+     * <code>optional bool include_inherited_policies = 32280076;</code>
+     *
+     * @param value The includeInheritedPolicies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeInheritedPolicies(boolean value) {
+
+      includeInheritedPolicies_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to "true", the response will contain a list of all associations for
+     * the containing folders and the containing organization of the target. The
+     * parameter has no effect if the target is an organization.
+     * </pre>
+     *
+     * <code>optional bool include_inherited_policies = 32280076;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeInheritedPolicies() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      includeInheritedPolicies_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object targetResource_ = "";
 
     /**
@@ -485,7 +634,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * @return Whether the targetResource field is set.
      */
     public boolean hasTargetResource() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -554,7 +703,7 @@ public final class ListAssociationsFirewallPolicyRequest
         throw new NullPointerException();
       }
       targetResource_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -573,7 +722,7 @@ public final class ListAssociationsFirewallPolicyRequest
      */
     public Builder clearTargetResource() {
       targetResource_ = getDefaultInstance().getTargetResource();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -597,7 +746,7 @@ public final class ListAssociationsFirewallPolicyRequest
       }
       checkByteStringIsUtf8(value);
       targetResource_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
