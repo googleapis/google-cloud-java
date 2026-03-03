@@ -56,6 +56,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.notEqua
 import static com.google.cloud.firestore.pipeline.expressions.Expression.nullValue;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.or;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.pow;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.rand;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.regexMatch;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.round;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.sqrt;
@@ -67,6 +68,8 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.timesta
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixMicros;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixMillis;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixSeconds;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.trunc;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.truncToPrecision;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.unixMicrosToTimestamp;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.unixMillisToTimestamp;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.unixSecondsToTimestamp;
@@ -1550,6 +1553,131 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat((Double) result.get("ln_rating")).isWithin(0.00001).of(1.54756);
     assertThat((Double) result.get("log_rating")).isWithin(0.00001).of(0.67209);
     assertThat((Double) result.get("log10_rating")).isWithin(0.00001).of(0.67209);
+  }
+
+  @Test
+  public void testRand() throws Exception {
+    assumeFalse(
+        "Rand is not supported against the emulator.",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .select(rand().as("randomNumber"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(results).hasSize(1);
+    Object randomNumber = results.get(0).getData().get("randomNumber");
+    assertThat(randomNumber).isInstanceOf(Double.class);
+    assertThat((Double) randomNumber).isAtLeast(0.0);
+    assertThat((Double) randomNumber).isLessThan(1.0);
+  }
+
+  @Test
+  public void testTrunc() throws Exception {
+    assumeFalse(
+        "Trunc is not supported against the emulator.",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(field("title").equal("Pride and Prejudice"))
+            .limit(1)
+            .select(trunc("rating").as("truncatedRating"))
+            .execute()
+            .get()
+            .getResults();
+
+    Map<String, Object> result = data(results).get(0);
+    assertThat(result.get("truncatedRating")).isEqualTo(4.0);
+  }
+
+  @Test
+  public void testTruncWithInstanceMethod() throws Exception {
+    assumeFalse(
+        "Trunc is not supported against the emulator.",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(field("title").equal("Pride and Prejudice"))
+            .limit(1)
+            .select(field("rating").trunc().as("truncatedRating"))
+            .execute()
+            .get()
+            .getResults();
+
+    Map<String, Object> result = data(results).get(0);
+    assertThat(result.get("truncatedRating")).isEqualTo(4.0);
+  }
+
+  @Test
+  public void testTruncToPrecision() throws Exception {
+    assumeFalse(
+        "Trunc is not supported against the emulator.",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .limit(1)
+            .select(
+                truncToPrecision(constant(4.123456), 0).as("p0"),
+                truncToPrecision(constant(4.123456), 1).as("p1"),
+                truncToPrecision(constant(4.123456), 2).as("p2"),
+                truncToPrecision(constant(4.123456), 4).as("p4"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "p0", 4.0,
+                    "p1", 4.1,
+                    "p2", 4.12,
+                    "p4", 4.1234)));
+  }
+
+  @Test
+  public void testTruncToPrecisionWithInstanceMethod() throws Exception {
+    assumeFalse(
+        "Trunc is not supported against the emulator.",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .limit(1)
+            .select(
+                constant(4.123456).truncToPrecision(0).as("p0"),
+                constant(4.123456).truncToPrecision(1).as("p1"),
+                constant(4.123456).truncToPrecision(constant(2)).as("p2"),
+                constant(4.123456).truncToPrecision(4).as("p4"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "p0", 4.0,
+                    "p1", 4.1,
+                    "p2", 4.12,
+                    "p4", 4.1234)));
   }
 
   @Test

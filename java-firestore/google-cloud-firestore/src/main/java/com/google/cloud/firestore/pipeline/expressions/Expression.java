@@ -3214,6 +3214,94 @@ public abstract class Expression {
   }
 
   /**
+   * Creates an expression that returns a random double between 0.0 and 1.0 but not including 1.0.
+   *
+   * @return A new {@link Expression} representing a random double result from the rand operation.
+   */
+  @BetaApi
+  public static Expression rand() {
+    return new FunctionExpression("rand", ImmutableList.of());
+  }
+
+  /**
+   * Creates an expression that truncates {@code numericExpr} to an integer.
+   *
+   * @param numericExpr An expression that returns number when evaluated.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public static Expression trunc(Expression numericExpr) {
+    return new FunctionExpression("trunc", ImmutableList.of(numericExpr));
+  }
+
+  /**
+   * Creates an expression that truncates {@code numericField} to an integer.
+   *
+   * @param numericField Name of field that returns number when evaluated.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public static Expression trunc(String numericField) {
+    return trunc(field(numericField));
+  }
+
+  /**
+   * Creates an expression that truncates {@code numericExpr} to {@code decimalPlace} decimal places
+   * if {@code decimalPlace} is positive, truncates digits to the left of the decimal point if
+   * {@code decimalPlace} is negative.
+   *
+   * @param numericExpr An expression that returns number when evaluated.
+   * @param decimalPlace The number of decimal places to truncate.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public static Expression truncToPrecision(Expression numericExpr, int decimalPlace) {
+    return new FunctionExpression("trunc", ImmutableList.of(numericExpr, constant(decimalPlace)));
+  }
+
+  /**
+   * Creates an expression that truncates {@code numericField} to {@code decimalPlace} decimal
+   * places if {@code decimalPlace} is positive, truncates digits to the left of the decimal point
+   * if {@code decimalPlace} is negative.
+   *
+   * @param numericField Name of field that returns number when evaluated.
+   * @param decimalPlace The number of decimal places to truncate.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public static Expression truncToPrecision(String numericField, int decimalPlace) {
+    return truncToPrecision(field(numericField), decimalPlace);
+  }
+
+  /**
+   * Creates an expression that truncates {@code numericExpr} to {@code decimalPlace} decimal places
+   * if {@code decimalPlace} is positive, truncates digits to the left of the decimal point if
+   * {@code decimalPlace} is negative.
+   *
+   * @param numericExpr An expression that returns number when evaluated.
+   * @param decimalPlace The number of decimal places to truncate.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public static Expression truncToPrecision(Expression numericExpr, Expression decimalPlace) {
+    return new FunctionExpression("trunc", ImmutableList.of(numericExpr, decimalPlace));
+  }
+
+  /**
+   * Creates an expression that truncates {@code numericField} to {@code decimalPlace} decimal
+   * places if {@code decimalPlace} is positive, truncates digits to the left of the decimal point
+   * if {@code decimalPlace} is negative.
+   *
+   * @param numericField Name of field that returns number when evaluated.
+   * @param decimalPlace The number of decimal places to truncate.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public static Expression truncToPrecision(String numericField, Expression decimalPlace) {
+    return truncToPrecision(field(numericField), decimalPlace);
+  }
+
+  /**
    * Creates an expression that returns the smallest integer that isn't less than {@code
    * numericExpr}.
    *
@@ -3684,6 +3772,42 @@ public abstract class Expression {
   @BetaApi
   public final Expression roundToPrecision(Expression decimalPlace) {
     return roundToPrecision(this, decimalPlace);
+  }
+
+  /**
+   * Creates an expression that truncates this numeric expression to an integer.
+   *
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public final Expression trunc() {
+    return trunc(this);
+  }
+
+  /**
+   * Creates an expression that truncates this numeric expression to {@code decimalPlace} decimal
+   * places if {@code decimalPlace} is positive, truncates digits to the left of the decimal point
+   * if {@code decimalPlace} is negative.
+   *
+   * @param decimalPlace The number of decimal places to truncate.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public final Expression truncToPrecision(int decimalPlace) {
+    return truncToPrecision(this, decimalPlace);
+  }
+
+  /**
+   * Creates an expression that truncates this numeric expression to {@code decimalPlace} decimal
+   * places if {@code decimalPlace} is positive, truncates digits to the left of the decimal point
+   * if {@code decimalPlace} is negative.
+   *
+   * @param decimalPlace The number of decimal places to truncate.
+   * @return A new {@link Expression} representing the trunc operation.
+   */
+  @BetaApi
+  public final Expression truncToPrecision(Expression decimalPlace) {
+    return truncToPrecision(this, decimalPlace);
   }
 
   /**
