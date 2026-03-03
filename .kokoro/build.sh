@@ -45,8 +45,8 @@ case ${JOB_TYPE} in
       pushd "${BUILD_SUBDIR}"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
-    retry_with_backoff 3 10 \
-      mvn test \
+    # retry_with_backoff 3 10 \
+      mvn install \
         -B -ntp \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -56,7 +56,8 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C ${SUREFIRE_JVM_OPT}
+        --also-make \
+         ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]

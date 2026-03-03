@@ -31,7 +31,6 @@ jobs:
       fail-fast: false
       matrix:
         repo:
-          - google-cloud-java
           - java-bigtable
           - java-bigquery
           - java-firestore
@@ -53,9 +52,9 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install libxml2-utils
       - name: Test helper scripts
-        run: ./.kokoro/presubmit/common_test.sh
+        run: ./sdk-platform-java/.kokoro/presubmit/common_test.sh
       - name: Perform downstream compatibility testing
-        run: REPOS_UNDER_TEST="${{ matrix.repo }}" ./.kokoro/presubmit/downstream-compatibility.sh
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" ./sdk-platform-java/.kokoro/presubmit/downstream-compatibility.sh
   downstream-compatibility-spring-generator:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -74,4 +73,4 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install libxml2-utils
       - name: Perform downstream compatibility testing
-        run: ./.kokoro/presubmit/downstream-compatibility-spring.sh
+        run: ./sdk-platform-java/.kokoro/presubmit/downstream-compatibility-spring.sh

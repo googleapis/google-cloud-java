@@ -23,6 +23,11 @@ excluded_modules=(
   'java-datastore'
   'java-logging-logback'
   'sdk-platform-java'
+  'sdk-platform-java/java-shared-dependencies/dependency-analyzer'
+  'sdk-platform-java/java-shared-dependencies/dependency-convergence-check'
+  'sdk-platform-java/java-showcase'
+  'sdk-platform-java/java-showcase-3.21.0'
+  'sdk-platform-java/java-showcase-3.25.8'
 )
 
 function retry_with_backoff {
@@ -405,6 +410,26 @@ function install_modules() {
     printf "Installing modules:\n%s\n" "$1"
     parse_all_submodules "$1"
     printf "Installing submodules:\n%s\n" "$all_submodules"
+
+    always_install_deps_list=(
+      'sdk-platform-java/java-shared-dependencies'
+      'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
+      'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
+      'sdk-platform-java/gapic-generator-java-bom'
+      'sdk-platform-java/java-core/google-cloud-core-bom'
+      'sdk-platform-java/java-core/google-cloud-core'
+      'sdk-platform-java/java-core/google-cloud-core-grpc'
+      'sdk-platform-java/java-core/google-cloud-core-http'
+      'sdk-platform-java/gax-java/gax-bom'
+      'sdk-platform-java/gax-java/gax'
+      'sdk-platform-java/gax-java/gax-grpc'
+      'sdk-platform-java/gax-java/gax-httpjson'
+    )
+    always_install_deps=$(
+      IFS=,
+      echo "${always_install_deps_list[*]}"
+    )
+    printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
     # When working with a maven multi-module project containing other multi-module projects,
     # to build a module with its dependencies and without building its dependents:

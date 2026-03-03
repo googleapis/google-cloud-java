@@ -45,14 +45,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>com.spotify.fmt</groupId>
-        <artifactId>fmt-maven-plugin</artifactId>
-        <version>2.25</version>
-        <configuration>
-          <filesNamePattern>(IT.*\.java)|(.*Test.java)|(TestClientInitializer.java)</filesNamePattern>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.6.8</version>
