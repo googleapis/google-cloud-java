@@ -23,7 +23,7 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 
 /** Interface to record specific metric operations. */
-public interface MetricsRecorder {
+interface MetricsRecorder {
   /** Records the total latency of a transaction in milliseconds. */
   void recordTransactionLatency(double latencyMs, Map<String, String> attributes);
 
