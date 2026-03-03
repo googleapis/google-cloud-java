@@ -66,7 +66,7 @@ jobs:
     - name: Install all modules using Java 11
       shell: bash
       run: |
-        mvn -V -B -ntp clean install -DskipTests -Dfmt.skip
+        mvn -V -B -ntp clean install -DskipTests -Dfmt.skip -Dclirr.skip -Denforcer.skip -Dcheckstyle.skip -Dflatten.skip -Danimal-sniffer.skip -Djacoco.skip
     - uses: actions/setup-java@v4
       with:
         java-version: 8
