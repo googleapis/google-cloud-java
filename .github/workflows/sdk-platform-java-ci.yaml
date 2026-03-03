@@ -3,9 +3,25 @@ on:
     branches:
       - main
   pull_request:
-name: ci
+name: sdk-platform-java ci
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   build:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -59,6 +75,8 @@ jobs:
           ./gradlew clean build publishToMavenLocal sourcesJar allJars
           popd
   build-java-21:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: "build(21) except self-service clients"
     # Support for Java 21 is available for all use cases except self-service clients.
     runs-on: ubuntu-22.04
@@ -92,6 +110,8 @@ jobs:
         run: |
           bazelisk --batch test //test/integration/...
   build-java-25:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: "build(25) except self-service clients"
     # Support for Java 25 is available for all use cases except self-service clients.
     runs-on: ubuntu-22.04
@@ -126,6 +146,8 @@ jobs:
         run: |
           bazelisk --batch test //test/integration/... --jvmopt=-Dcom.google.testing.junit.runner.shouldInstallTestSecurityManager=false
   build-java8-except-gapic-generator-java:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: "build(8) except for gapic-generator-java"
     runs-on: ubuntu-22.04
     steps:
@@ -172,6 +194,8 @@ jobs:
           GOOGLE_SDK_JAVA_LOGGING: true
 
   build-java8-gapic-generator-java:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: "build(8) for gapic-generator-java"
     runs-on: ubuntu-22.04
     steps:
@@ -219,6 +243,8 @@ jobs:
           popd
 
   lint:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -233,6 +259,8 @@ jobs:
         run: mvn -B -ntp fmt:check
 
   compatibility:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -248,6 +276,8 @@ jobs:
         run: mvn package clirr:check -DskipTests -Dfmt.skip
 
   build-java8-showcase:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: "build(8) for showcase"
     runs-on: ubuntu-22.04
     steps:
@@ -318,6 +348,8 @@ jobs:
             --batch-mode \
             --no-transfer-progress
   showcase:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -394,6 +426,8 @@ jobs:
             --no-transfer-progress
 
   showcase-clirr:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     if: ${{ github.base_ref != '' }} # Only execute on pull_request trigger event
     runs-on: ubuntu-22.04
     steps:
@@ -425,6 +459,8 @@ jobs:
           mvn clirr:check -B -ntp -DcomparisonVersion=$SHOWCASE_CLIENT_VERSION
 
   gapic-generator-java-bom:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -442,6 +478,8 @@ jobs:
         bom-path: gapic-generator-java-bom/pom.xml
 
   unmanaged_dependency_check:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -465,6 +503,8 @@ jobs:
         bom-path: gapic-generator-java-bom/pom.xml
 
   dependency_analyzer_unit_test:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4

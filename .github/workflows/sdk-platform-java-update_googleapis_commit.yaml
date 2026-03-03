@@ -13,14 +13,30 @@
 # limitations under the License.
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
-name: Update googleapis commit
+name: sdk-platform-java Update googleapis commit
 on:
   schedule:
   - cron: '0 2 * * *'
   workflow_dispatch:
 
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   update-googleapis-commit:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     env:
       # the branch into which the pull request is merged

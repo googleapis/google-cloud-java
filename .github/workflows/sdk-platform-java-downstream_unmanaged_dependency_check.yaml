@@ -7,9 +7,25 @@ on:
       - .github/workflows/downstream_unmanaged_dependency_check.yaml
       - java-shared-dependencies/**
 
-name: Downstream Unmanaged Dependency Check
+name: sdk-platform-java Downstream Unmanaged Dependency Check
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   validate:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
