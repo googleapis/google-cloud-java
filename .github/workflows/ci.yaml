@@ -45,6 +45,29 @@ jobs:
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
+  units-8-runtime:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - name: Install all modules using Java 11
+      shell: bash
+      run: |
+        mvn -V -B -ntp clean install -DskipTests -Dfmt.skip
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 8
+        distribution: temurin
+    - run: java -version
+    - name: Run tests in Java 8 with the source compiled in Java 11
+      run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
+        JOB_NAME: units-8-runtime-${{matrix.java}}
   windows:
     runs-on: windows-latest
     steps:
