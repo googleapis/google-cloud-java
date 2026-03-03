@@ -4428,6 +4428,56 @@ public abstract class Expression {
   }
 
   /**
+   * Creates an aggregation that finds the first value of this expression across multiple stage
+   * inputs.
+   *
+   * @return A new {@link AggregateFunction} representing the first aggregation.
+   */
+  @BetaApi
+  public final AggregateFunction first() {
+    return AggregateFunction.first(this);
+  }
+
+  /**
+   * Creates an aggregation that finds the last value of this expression across multiple stage
+   * inputs.
+   *
+   * @return A new {@link AggregateFunction} representing the last aggregation.
+   */
+  @BetaApi
+  public final AggregateFunction last() {
+    return AggregateFunction.last(this);
+  }
+
+  /**
+   * Creates an aggregation that collects all values of this expression across multiple stage inputs
+   * into an array.
+   *
+   * <p>If the expression resolves to an absent value, it is converted to `null`. The order of
+   * elements in the output array is not stable and shouldn't be relied upon.
+   *
+   * @return A new {@link AggregateFunction} representing the array_agg aggregation.
+   */
+  @BetaApi
+  public final AggregateFunction arrayAgg() {
+    return AggregateFunction.arrayAgg(this);
+  }
+
+  /**
+   * Creates an aggregation that collects all distinct values of this expression across multiple
+   * stage inputs into an array.
+   *
+   * <p>If the expression resolves to an absent value, it is converted to `null`. The order of
+   * elements in the output array is not stable and shouldn't be relied upon.
+   *
+   * @return A new {@link AggregateFunction} representing the array_agg_distinct aggregation.
+   */
+  @BetaApi
+  public final AggregateFunction arrayAggDistinct() {
+    return AggregateFunction.arrayAggDistinct(this);
+  }
+
+  /**
    * Create an {@link Ordering} that sorts documents in ascending order based on value of this
    * expression
    *

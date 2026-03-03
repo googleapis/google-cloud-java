@@ -215,6 +215,111 @@ public class AggregateFunction {
   }
 
   /**
+   * Creates an aggregation that finds the first value of a field across multiple stage inputs.
+   *
+   * @param fieldName The name of the field to find the first value of.
+   * @return A new {@link AggregateFunction} representing the first aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction first(String fieldName) {
+    return new AggregateFunction("first", fieldName);
+  }
+
+  /**
+   * Creates an aggregation that finds the first value of an expression across multiple stage
+   * inputs.
+   *
+   * @param expression The expression to find the first value of.
+   * @return A new {@link AggregateFunction} representing the first aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction first(Expression expression) {
+    return new AggregateFunction("first", expression);
+  }
+
+  /**
+   * Creates an aggregation that finds the last value of a field across multiple stage inputs.
+   *
+   * @param fieldName The name of the field to find the last value of.
+   * @return A new {@link AggregateFunction} representing the last aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction last(String fieldName) {
+    return new AggregateFunction("last", fieldName);
+  }
+
+  /**
+   * Creates an aggregation that finds the last value of an expression across multiple stage inputs.
+   *
+   * @param expression The expression to find the last value of.
+   * @return A new {@link AggregateFunction} representing the last aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction last(Expression expression) {
+    return new AggregateFunction("last", expression);
+  }
+
+  /**
+   * Creates an aggregation that collects all values of a field across multiple stage inputs into an
+   * array.
+   *
+   * <p>If the expression resolves to an absent value, it is converted to `null`. The order of
+   * elements in the output array is not stable and shouldn't be relied upon.
+   *
+   * @param fieldName The name of the field to collect values from.
+   * @return A new {@link AggregateFunction} representing the array_agg aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction arrayAgg(String fieldName) {
+    return new AggregateFunction("array_agg", fieldName);
+  }
+
+  /**
+   * Creates an aggregation that collects all values of an expression across multiple stage inputs
+   * into an array.
+   *
+   * <p>If the expression resolves to an absent value, it is converted to `null`. The order of
+   * elements in the output array is not stable and shouldn't be relied upon.
+   *
+   * @param expression The expression to collect values from.
+   * @return A new {@link AggregateFunction} representing the array_agg aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction arrayAgg(Expression expression) {
+    return new AggregateFunction("array_agg", expression);
+  }
+
+  /**
+   * Creates an aggregation that collects all distinct values of a field across multiple stage
+   * inputs into an array.
+   *
+   * <p>If the expression resolves to an absent value, it is converted to `null`. The order of
+   * elements in the output array is not stable and shouldn't be relied upon.
+   *
+   * @param fieldName The name of the field to collect values from.
+   * @return A new {@link AggregateFunction} representing the array_agg_distinct aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction arrayAggDistinct(String fieldName) {
+    return new AggregateFunction("array_agg_distinct", fieldName);
+  }
+
+  /**
+   * Creates an aggregation that collects all distinct values of an expression across multiple stage
+   * inputs into an array.
+   *
+   * <p>If the expression resolves to an absent value, it is converted to `null`. The order of
+   * elements in the output array is not stable and shouldn't be relied upon.
+   *
+   * @param expression The expression to collect values from.
+   * @return A new {@link AggregateFunction} representing the array_agg_distinct aggregation.
+   */
+  @BetaApi
+  public static AggregateFunction arrayAggDistinct(Expression expression) {
+    return new AggregateFunction("array_agg_distinct", expression);
+  }
+
+  /**
    * Assigns an alias to this aggregate.
    *
    * @param alias The alias to assign to this aggregate.
