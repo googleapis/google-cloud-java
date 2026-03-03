@@ -1,0 +1,175 @@
+rebaseMergeAllowed: true
+squashMergeAllowed: true
+mergeCommitAllowed: false
+branchProtectionRules:
+  - pattern: main
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - build(8) except for gapic-generator-java
+      - build(8) for gapic-generator-java
+      - build (11)
+      - build (17)
+      - cla/google
+      - compatibility
+      - graalvm-presubmit-sdk-platform-java-a (java-graalvm-ci-prod)
+      - graalvm-presubmit-sdk-platform-java-b (java-graalvm-ci-prod)
+      - graalvm-presubmit-sdk-platform-java-c (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-a-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-b-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-c-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-a-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-b-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-c-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - library_generation
+      - library-generation-integration-test (java-hermetic-build-prod)
+      - library-generation-lint-python
+      - library-generation-lint-shell
+      - library-generation-unit-tests
+      - lint
+      - should-run-library-generation-tests
+      - showcase (11)
+      - showcase (17)
+  - pattern: 2.23.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - build (8) except for gapic-generator-java
+      - build (8) for gapic-generator-java
+      - build (11)
+      - build (17)
+      - showcase (11)
+      - showcase (17)
+      - compatibility
+      - cla/google
+      - lint
+      - graalvm-presubmit-sdk-platform-java-a (cloud-devrel-kokoro-resources)
+      - graalvm-presubmit-sdk-platform-java-b (cloud-devrel-kokoro-resources)
+      - library-generation-integration-tests
+      - library-generation-lint-shell
+      - library-generation-lint-python
+      - should-run-library-generation-tests
+  - pattern: 2.40.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - build (8) except for gapic-generator-java
+      - build (8) for gapic-generator-java
+      - build (11)
+      - build (17)
+      - build(21) except self-service clients
+      - showcase (11)
+      - showcase (17)
+      - showcase-native
+      - compatibility
+      - cla/google
+      - lint
+      - graalvm-presubmit-sdk-platform-java-a (cloud-devrel-kokoro-resources)
+      - graalvm-presubmit-sdk-platform-java-b (cloud-devrel-kokoro-resources)
+      - library-generation-integration-tests
+      - library-generation-lint-shell
+      - library-generation-lint-python
+      - should-run-library-generation-tests
+  - pattern: 2.54.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - build(8) except for gapic-generator-java
+      - build(8) for gapic-generator-java
+      - build (11)
+      - build (17)
+      - cla/google
+      - compatibility
+      - graalvm-presubmit-sdk-platform-java-a (java-graalvm-ci-prod)
+      - graalvm-presubmit-sdk-platform-java-b (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-a-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-b-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-a-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-b-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - library_generation
+      - library-generation-integration-test (java-hermetic-build-prod)
+      - library-generation-lint-python
+      - library-generation-lint-shell
+      - library-generation-unit-tests
+      - lint
+      - should-run-library-generation-tests
+      - showcase-native
+      - showcase (11)
+      - showcase (17)
+  - pattern: 2.59.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - build(8) except for gapic-generator-java
+      - build(8) for gapic-generator-java
+      - build (11)
+      - build (17)
+      - cla/google
+      - compatibility
+      - graalvm-presubmit-sdk-platform-java-a (java-graalvm-ci-prod)
+      - graalvm-presubmit-sdk-platform-java-b (java-graalvm-ci-prod)
+      - graalvm-presubmit-sdk-platform-java-c (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-a-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-b-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-c-downstream-kms
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-a-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-b-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - >-
+        graalvm-presubmit-sdk-platform-java-c-downstream-kmsinventory
+        (java-graalvm-ci-prod)
+      - library_generation
+      - library-generation-integration-test (java-hermetic-build-prod)
+      - library-generation-lint-python
+      - library-generation-lint-shell
+      - library-generation-unit-tests
+      - lint
+      - should-run-library-generation-tests
+      - showcase (11)
+      - showcase (17)
+      - showcase (21)
+      - showcase (24)
+permissionRules:
+  - team: cloud-java-team-teamsync
+    permission: admin
+  - team: cloud-java-bot
+    permission: write

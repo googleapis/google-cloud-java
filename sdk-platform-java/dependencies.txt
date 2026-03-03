@@ -1,0 +1,51 @@
+# This file contains a list of dependencies and their versions to be tested for compatibility.
+# The format is `{GroupID}:{ArtifactID},{PropertyName}={Version}`. The GAV coordinates
+# (specifically the GroupID and ArtifactID) are parsed by renovate to find the artifact from Maven
+# Central. Version stores the currently known upper bound. PropertyName corresponds to the Maven
+# property value in the pom.xml (it is NOT a 1:1 mapping to the GAV).
+# "1P" refers to First-Party dependencies (owned by Google).
+# "3P" refers to Third-Party dependencies.
+
+# Pom-Parent Dependencies
+# These dependencies are declared: https://github.com/googleapis/sdk-platform-java/blob/main/gapic-generator-java-pom-parent/pom.xml
+javax.annotation:javax.annotation-api,javax.annotation-api=1.3.2
+io.grpc:grpc-bom,grpc=1.79.0
+com.google.auth:google-auth-library-bom,google.auth=1.43.0
+com.google.http-client:google-http-client,google.http-client=2.1.0
+com.google.code.gson:gson,gson=2.13.2
+com.google.guava:guava,guava=33.5.0-jre
+com.google.protobuf:protobuf-java,protobuf=4.33.5
+io.opentelemetry:opentelemetry-bom,opentelemetry=1.59.0
+com.google.errorprone:error_prone_annotations,errorprone=2.47.0
+com.google.j2objc:j2objc-annotations,j2objc-annotations=3.1
+org.threeten:threetenbp,threetenbp=1.7.2
+org.slf4j:slf4j-api,slf4j=2.0.17
+
+# 1P Shared-Deps
+# These dependencies are declared: https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/first-party-dependencies/pom.xml
+com.google.cloud:grpc-gcp,grpc-gcp=1.9.1
+com.google.oauth-client:google-oauth-client,google.oauth-client=1.39.0
+com.google.api-client:google-api-client,google.api-client=2.8.1
+
+# 3P Shared-Deps
+# These dependencies are declared: https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/third-party-dependencies/pom.xml
+org.threeten:threeten-extra,threeten-extra=1.8.0
+io.opencensus:opencensus-api,opencensus=0.31.1
+com.google.code.findbugs:jsr305,findbugs=3.0.2
+com.fasterxml.jackson:jackson-bom,jackson=2.21.0
+commons-codec:commons-codec,codec=1.21.0
+org.apache.httpcomponents:httpclient,httpcomponents.httpclient=4.5.14
+org.apache.httpcomponents:httpcore,httpcomponents.httpcore=4.4.16
+org.apache.httpcomponents.client5:httpclient5,apache-httpclient-5=5.6
+org.apache.httpcomponents.core5:httpcore5,apache-httpcore-5=5.4.1
+org.json:json,json=20251224
+io.perfmark:perfmark-api,perfmark-api=0.27.0
+# Note: This is the google opentelemetry exporter and not the general opentelemetry project
+com.google.cloud.opentelemetry:exporter-metrics,google.cloud.opentelemetry=0.36.0
+com.google.flogger:flogger,flogger=0.9
+org.apache.arrow:arrow-memory-core,arrow=18.3.0
+dev.cel:cel,dev.cel=0.11.1
+com.google.crypto.tink:tink,com.google.crypto.tink=1.20.0
+# The follow opentelemetry dependencies have a different version from the opentelemetry-bom
+io.opentelemetry.semconv:opentelemetry-semconv,opentelemetry-semconv=1.39.0
+io.opentelemetry.contrib:opentelemetry-gcp-resources,io.opentelemetry.contrib.opentelemetry-gcp-resources=1.52.0-alpha

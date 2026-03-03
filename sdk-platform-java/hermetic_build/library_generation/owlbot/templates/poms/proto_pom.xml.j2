@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>{{module.group_id}}</groupId>
+  <artifactId>{{module.artifact_id}}</artifactId>
+  <version>{{module.version}}</version><!-- {x-version-update:{{module.artifact_id}}:current} -->
+  <name>{{module.artifact_id}}</name>
+  <description>Proto library for {{main_module.artifact_id}}</description>
+  <parent>
+    <groupId>{{parent_module.group_id}}</groupId>
+    <artifactId>{{parent_module.artifact_id}}</artifactId>
+    <version>{{parent_module.version}}</version><!-- {x-version-update:{{main_module.artifact_id}}:current} -->
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+  </dependencies>
+
+  {%- if not monorepo %}
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>flatten-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+  </build>
+  {%- endif %}
+</project>

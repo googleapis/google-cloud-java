@@ -1,0 +1,231 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboard": true,
+  "ignoreDeps": [
+    "rules_pkg"
+  ],
+  "ignorePaths": [
+    "^library_generation/requirements\\.txt$"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["dependencies.txt"],
+      "matchStrings": ["(?<depName>.*),(.*)=(?<currentValue>.*)"],
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^gax-java/dependencies\\.properties$"
+      ],
+      "matchStrings": [
+        "=(?<depName>.+\\:.+?):(?<currentValue>.+?)\\n"
+      ],
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^gax-java/dependencies\\.properties$"
+      ],
+      "matchStrings": [
+        "version\\.google_java_format=(?<currentValue>.+?)\\n"
+      ],
+      "depNameTemplate": "com.google.googlejavaformat:google-java-format",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^gax-java/dependencies\\.properties$",
+        "^\\.cloudbuild/library_generation/library_generation.*\\.Dockerfile$"
+      ],
+      "matchStrings": [
+        "version\\.io_grpc=(?<currentValue>.+?)\\n",
+        "ARG GRPC_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "depNameTemplate": "io.grpc:grpc-core",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.kokoro/presubmit/graalvm-native.*.cfg$"
+      ],
+      "matchStrings": [
+        "value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm:(?<currentValue>.*?)\"",
+        "value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm17:(?<currentValue>.*?)\""
+      ],
+      "depNameTemplate": "ghcr.io/graalvm/graalvm-ce",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.cloudbuild/*"
+      ],
+      "matchStrings": [
+        "  _JAVA_SHARED_CONFIG_VERSION: '(?<currentValue>.+?)'"
+      ],
+      "depNameTemplate": "com.google.cloud:google-cloud-shared-config",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.cloudbuild/library_generation/library_generation.*\\.Dockerfile$"
+      ],
+      "matchStrings": [
+        "OWLBOT_CLI_COMMITTISH=(?<currentDigest>.*?)\\n"
+      ],
+      "currentValueTemplate": "main",
+      "depNameTemplate": "repo-automation-bots",
+      "packageNameTemplate": "https://github.com/googleapis/repo-automation-bots",
+      "datasourceTemplate": "git-refs"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "com.google.cloud:google-cloud-shared-config"
+      ],
+      "registryUrls": [
+        "https://repo.maven.apache.org/maven2/",
+        "https://repo1.maven.org/maven2"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "enabled": false,
+      "matchPackageNames": [
+        "*"
+      ]
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": [
+        "/^com.google.protobuf:/"
+      ]
+    },
+    {
+      "versioning": "docker",
+      "matchPackageNames": [
+        "/^com.google.guava:/"
+      ],
+      "enabled": false
+    },
+    {
+      "semanticCommitType": "deps",
+      "semanticCommitScope": null,
+      "matchPackageNames": [
+        "*"
+      ]
+    },
+    {
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps",
+      "enabled": true,
+      "matchPackageNames": [
+        "/^org.apache.maven/",
+        "/^org.jacoco:/",
+        "/^org.codehaus.mojo:/",
+        "/^org.sonatype.plugins:/",
+        "/^com.google.cloud:google-cloud-shared-config/"
+      ]
+    },
+    {
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^{{metadata['repo']['distribution_name']}}/",
+        "/^com.google.cloud:libraries-bom/",
+        "/^com.google.cloud.samples:shared-configuration/"
+      ]
+    },
+    {
+      "semanticCommitType": "test",
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^junit:junit/",
+        "/^com.google.truth:truth/",
+        "/^org.mockito:mockito-core/",
+        "/^org.objenesis:objenesis/",
+        "/^com.google.cloud:google-cloud-conformance-tests/"
+      ]
+    },
+    {
+      "ignoreUnstable": false,
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-/"
+      ]
+    },
+    {
+      "groupName": "jackson dependencies",
+      "matchPackageNames": [
+        "/^com.fasterxml.jackson.core/"
+      ]
+    },
+    {
+      "groupName": "gRPC dependencies",
+      "matchPackageNames": [
+        "/^io.grpc/"
+      ],
+      "enabled": false
+    },
+    {
+      "groupName": "Google Auth Library dependencies",
+      "matchPackageNames": [
+        "/^com.google.auth/"
+      ]
+    },
+    {
+      "groupName": "Google API dependencies",
+      "matchPackageNames": [
+        "/com.google.api.grpc:grpc-google-common-protos/",
+        "/com.google.api.grpc:grpc-google-iam-v1/",
+        "/com.google.api.grpc:proto-google-common-protos/",
+        "/com.google.api.grpc:proto-google-iam-v1/",
+        "/com.google.api:api-common/"
+      ]
+    },
+    {
+      "groupName": "Google HTTP Client dependencies",
+      "matchPackageNames": [
+        "/^com.google.http-client/"
+      ]
+    },
+    {
+      "groupName": "OpenCensus dependencies",
+      "matchPackageNames": [
+        "/^io.opencensus/"
+      ]
+    },
+    {
+      "groupName": "Netty dependencies",
+      "matchPackageNames": [
+        "/^io.netty/"
+      ]
+    },
+    {
+      "groupName": "Error Prone dependencies",
+      "matchPackageNames": [
+        "/^com.google.errorprone/"
+      ]
+    },
+    {
+      "matchManagers": [
+        "regex"
+      ],
+      "semanticCommitType": "chore",
+      "matchFileNames": ["dependencies.txt"],
+      "matchDatasources": ["maven"],
+      "groupName": "Upper Bound Dependencies File",
+      "description": "Group all dependencies from the Upper Bound Dependencies File"
+    }
+  ]
+}

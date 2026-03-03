@@ -1,0 +1,29 @@
+bazel-*
+.gradle/
+target/
+.flattened-pom.xml
+
+# IDE
+.idea
+.ijwb
+*.iml
+
+# Vim.
+*.sw*
+*.vim
+
+# Vscode Settings
+.vscode
+
+# Python
+**/__pycache__/
+.venv
+.python-version
+
+# library generation
+**/googleapis
+**/*egg-info/
+**/build/
+**/dist/
+library_generation/**/*.jar
+**/google-java-format.jar

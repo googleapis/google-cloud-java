@@ -1,0 +1,262 @@
+package com.google.selective.generate.v1beta1;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
+import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.selective.generate.v1beta1.stub.EchoServiceShouldGeneratePartialUsualStubSettings;
+import java.io.IOException;
+import java.util.List;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Settings class to configure an instance of {@link EchoServiceShouldGeneratePartialUsualClient}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ *   <li>The default service address (localhost) and default port (7469) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of echoShouldGenerateAsUsual:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EchoServiceShouldGeneratePartialUsualSettings.Builder
+ *     echoServiceShouldGeneratePartialUsualSettingsBuilder =
+ *         EchoServiceShouldGeneratePartialUsualSettings.newBuilder();
+ * echoServiceShouldGeneratePartialUsualSettingsBuilder
+ *     .echoShouldGenerateAsUsualSettings()
+ *     .setRetrySettings(
+ *         echoServiceShouldGeneratePartialUsualSettingsBuilder
+ *             .echoShouldGenerateAsUsualSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
+ *             .build());
+ * EchoServiceShouldGeneratePartialUsualSettings echoServiceShouldGeneratePartialUsualSettings =
+ *     echoServiceShouldGeneratePartialUsualSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class EchoServiceShouldGeneratePartialUsualSettings
+    extends ClientSettings<EchoServiceShouldGeneratePartialUsualSettings> {
+
+  /** Returns the object with the settings used for calls to echoShouldGenerateAsUsual. */
+  public UnaryCallSettings<EchoRequest, EchoResponse> echoShouldGenerateAsUsualSettings() {
+    return ((EchoServiceShouldGeneratePartialUsualStubSettings) getStubSettings())
+        .echoShouldGenerateAsUsualSettings();
+  }
+
+  /** Returns the object with the settings used for calls to chatShouldGenerateAsUsual. */
+  public StreamingCallSettings<EchoRequest, EchoResponse> chatShouldGenerateAsUsualSettings() {
+    return ((EchoServiceShouldGeneratePartialUsualStubSettings) getStubSettings())
+        .chatShouldGenerateAsUsualSettings();
+  }
+
+  /** Returns the object with the settings used for calls to chatAgainShouldGenerateAsUsual. */
+  public StreamingCallSettings<EchoRequest, EchoResponse> chatAgainShouldGenerateAsUsualSettings() {
+    return ((EchoServiceShouldGeneratePartialUsualStubSettings) getStubSettings())
+        .chatAgainShouldGenerateAsUsualSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to chatShouldGenerateAsInternal.
+   *
+   * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
+   */
+  @InternalApi("This API is not intended for public consumption.")
+  public UnaryCallSettings<EchoRequest, EchoResponse> chatShouldGenerateAsInternalSettings() {
+    return ((EchoServiceShouldGeneratePartialUsualStubSettings) getStubSettings())
+        .chatShouldGenerateAsInternalSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to echoShouldGenerateAsInternal.
+   *
+   * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
+   */
+  @InternalApi("This API is not intended for public consumption.")
+  public StreamingCallSettings<EchoRequest, EchoResponse> echoShouldGenerateAsInternalSettings() {
+    return ((EchoServiceShouldGeneratePartialUsualStubSettings) getStubSettings())
+        .echoShouldGenerateAsInternalSettings();
+  }
+
+  public static final EchoServiceShouldGeneratePartialUsualSettings create(
+      EchoServiceShouldGeneratePartialUsualStubSettings stub) throws IOException {
+    return new EchoServiceShouldGeneratePartialUsualSettings.Builder(stub.toBuilder()).build();
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings.defaultExecutorProviderBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings.getDefaultEndpoint();
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings.getDefaultServiceScopes();
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings.defaultCredentialsProviderBuilder();
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings.defaultTransportChannelProvider();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return EchoServiceShouldGeneratePartialUsualStubSettings
+        .defaultApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected EchoServiceShouldGeneratePartialUsualSettings(Builder settingsBuilder)
+      throws IOException {
+    super(settingsBuilder);
+  }
+
+  /** Builder for EchoServiceShouldGeneratePartialUsualSettings. */
+  public static class Builder
+      extends ClientSettings.Builder<EchoServiceShouldGeneratePartialUsualSettings, Builder> {
+
+    protected Builder() throws IOException {
+      this(((ClientContext) null));
+    }
+
+    protected Builder(ClientContext clientContext) {
+      super(EchoServiceShouldGeneratePartialUsualStubSettings.newBuilder(clientContext));
+    }
+
+    protected Builder(EchoServiceShouldGeneratePartialUsualSettings settings) {
+      super(settings.getStubSettings().toBuilder());
+    }
+
+    protected Builder(EchoServiceShouldGeneratePartialUsualStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
+
+    private static Builder createDefault() {
+      return new Builder(EchoServiceShouldGeneratePartialUsualStubSettings.newBuilder());
+    }
+
+    public EchoServiceShouldGeneratePartialUsualStubSettings.Builder getStubSettingsBuilder() {
+      return ((EchoServiceShouldGeneratePartialUsualStubSettings.Builder) getStubSettings());
+    }
+
+    /**
+     * Applies the given settings updater function to all of the unary API methods in this service.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
+     */
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
+      return this;
+    }
+
+    /** Returns the builder for the settings used for calls to echoShouldGenerateAsUsual. */
+    public UnaryCallSettings.Builder<EchoRequest, EchoResponse>
+        echoShouldGenerateAsUsualSettings() {
+      return getStubSettingsBuilder().echoShouldGenerateAsUsualSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to chatShouldGenerateAsUsual. */
+    public StreamingCallSettings.Builder<EchoRequest, EchoResponse>
+        chatShouldGenerateAsUsualSettings() {
+      return getStubSettingsBuilder().chatShouldGenerateAsUsualSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to chatAgainShouldGenerateAsUsual. */
+    public StreamingCallSettings.Builder<EchoRequest, EchoResponse>
+        chatAgainShouldGenerateAsUsualSettings() {
+      return getStubSettingsBuilder().chatAgainShouldGenerateAsUsualSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to chatShouldGenerateAsInternal.
+     *
+     * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
+     */
+    @InternalApi("This API is not intended for public consumption.")
+    public UnaryCallSettings.Builder<EchoRequest, EchoResponse>
+        chatShouldGenerateAsInternalSettings() {
+      return getStubSettingsBuilder().chatShouldGenerateAsInternalSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to echoShouldGenerateAsInternal.
+     *
+     * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
+     */
+    @InternalApi("This API is not intended for public consumption.")
+    public StreamingCallSettings.Builder<EchoRequest, EchoResponse>
+        echoShouldGenerateAsInternalSettings() {
+      return getStubSettingsBuilder().echoShouldGenerateAsInternalSettings();
+    }
+
+    @Override
+    public EchoServiceShouldGeneratePartialUsualSettings build() throws IOException {
+      return new EchoServiceShouldGeneratePartialUsualSettings(this);
+    }
+  }
+}
