@@ -92,14 +92,14 @@ class Converter {
     }
 
     ImmutableMultimap.Builder<ProjectName, TimeSeries> builder = ImmutableMultimap.builder();
-
+    MetricKind metricKind = convertMetricKind(metricData);
     for (PointData pd : metricData.getData().getPoints()) {
       ProjectName projectName =
           metricDef.getSchema().extractProjectName(pd.getAttributes(), envInfo, clientInfo);
 
       TimeSeries timeSeries =
           TimeSeries.newBuilder()
-              .setMetricKind(convertMetricKind(metricData))
+              .setMetricKind(metricKind)
               .setValueType(convertValueType(metricData.getType()))
               .setResource(
                   metricDef
@@ -110,7 +110,7 @@ class Converter {
                       .setType(metricDef.getExternalName())
                       .putAllLabels(
                           metricDef.extractMetricLabels(pd.getAttributes(), envInfo, clientInfo)))
-              .addPoints(convertPointData(metricData.getType(), pd))
+              .addPoints(convertPointData(metricData.getType(), pd, metricKind))
               .build();
 
       builder.put(projectName, timeSeries);
@@ -118,10 +118,13 @@ class Converter {
     return builder.build();
   }
 
-  private Point convertPointData(MetricDataType type, PointData pointData) {
+  private Point convertPointData(MetricDataType type, PointData pointData, MetricKind metricKind) {
+    long startNanos =
+        metricKind == GAUGE ? pointData.getEpochNanos() : pointData.getStartEpochNanos();
+
     TimeInterval timeInterval =
         TimeInterval.newBuilder()
-            .setStartTime(Timestamps.fromNanos(pointData.getStartEpochNanos()))
+            .setStartTime(Timestamps.fromNanos(startNanos))
             .setEndTime(Timestamps.fromNanos(pointData.getEpochNanos()))
             .build();
 
