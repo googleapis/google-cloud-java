@@ -21,8 +21,10 @@
 // 4. If the status is "pending", it will wait and check again.
 //
 // Flags:
-//   -skip-kokoro   (Optional) If set, skips applying Kokoro rerunning labels on failure.
-//   -email         (Optional) Email address to send success/failure notifications to.
+// -skip-kokoro (Optional) If set, skips applying Kokoro rerunning labels on failure.
+// -email       (Optional) Email address to send success/failure notifications to.
+//              Note: This relies on the internal sendgmr tool and is only
+//              supported on Cloudtop/gLinux with valid LOAS credentials.
 //
 // Prerequisites:
 // - Go must be installed (https://golang.org/doc/install).
@@ -135,7 +137,7 @@ func main() {
 	log.Println("Starting the release manager merge bot.")
 
 	flag.BoolVar(&skipKokoroOpt, "skip-kokoro", false, "Skip applying kokoro rerunning labels on failure")
-	flag.StringVar(&emailOpt, "email", "", "Email address to send notifications to (requires LOAS/gcert)")
+	flag.StringVar(&emailOpt, "email", "", "Email address to send notifications to (requires Cloudtop/gLinux and LOAS/gcert)")
 	flag.Parse()
 
 	args := flag.Args()
