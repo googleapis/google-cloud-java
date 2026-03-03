@@ -183,6 +183,7 @@ rm -f "$SOURCE_REPO_NAME/renovate.json"
 rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
 rm -rf "$SOURCE_REPO_NAME/.kokoro"
+git checkout -- "$SOURCE_REPO_NAME/.kokoro/presubmit/*.sh" || true
 # rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
 
 # 6.6 Create split integration config if needed
@@ -392,6 +393,7 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     
     # Cleanup empty .github directory if it exists
     rm -rf "$SOURCE_REPO_NAME/.github"
+    git checkout -- "$SOURCE_REPO_NAME/.github/scripts" || true
     git add -- "$SOURCE_REPO_NAME/.github"
     
     echo "Committing workflow migration..."
