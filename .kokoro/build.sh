@@ -244,10 +244,14 @@ case ${JOB_TYPE} in
                     # - proto-*/grpc-* are generated code and should use the compiler format
                     # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "${dir}" != *"java-showcase"* ]] && \
                        [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
                        [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
+                       [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
 
                         changed_modules+=("${dir}")
