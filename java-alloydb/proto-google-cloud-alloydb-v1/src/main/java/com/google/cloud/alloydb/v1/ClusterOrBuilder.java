@@ -572,7 +572,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=674
+   *     google/cloud/alloydb/v1/resources.proto;l=682
    * @return The network.
    */
   @java.lang.Deprecated
@@ -594,7 +594,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=674
+   *     google/cloud/alloydb/v1/resources.proto;l=682
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -827,7 +827,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=709
+   *     google/cloud/alloydb/v1/resources.proto;l=717
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -843,7 +843,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=709
+   *     google/cloud/alloydb/v1/resources.proto;l=717
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1447,6 +1447,49 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.lang.String getTagsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  boolean hasDataplexConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexConfig.
+   */
+  com.google.cloud.alloydb.v1.Cluster.DataplexConfig getDataplexConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Cluster.DataplexConfigOrBuilder getDataplexConfigOrBuilder();
 
   com.google.cloud.alloydb.v1.Cluster.SourceCase getSourceCase();
 }

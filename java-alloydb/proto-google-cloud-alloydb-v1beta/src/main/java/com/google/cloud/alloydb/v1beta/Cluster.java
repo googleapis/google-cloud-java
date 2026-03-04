@@ -5254,6 +5254,518 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface DataplexConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Cluster.DataplexConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataplex is enabled by default for resources such as clusters and
+     * instances. This flag controls the integration of AlloyDB PG
+     * resources (like databases, schemas, and tables) with Dataplex."
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Dataplex integration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Cluster.DataplexConfig}
+   */
+  public static final class DataplexConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Cluster.DataplexConfig)
+      DataplexConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DataplexConfig");
+    }
+
+    // Use DataplexConfig.newBuilder() to construct.
+    private DataplexConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataplexConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Cluster_DataplexConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Cluster_DataplexConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.class,
+              com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataplex is enabled by default for resources such as clusters and
+     * instances. This flag controls the integration of AlloyDB PG
+     * resources (like databases, schemas, and tables) with Dataplex."
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig other =
+          (com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Dataplex integration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Cluster.DataplexConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Cluster.DataplexConfig)
+        com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_DataplexConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_DataplexConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.class,
+                com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_DataplexConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig build() {
+        com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig buildPartial() {
+        com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig result =
+            new com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig other) {
+        if (other == com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance())
+          return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Dataplex is enabled by default for resources such as clusters and
+       * instances. This flag controls the integration of AlloyDB PG
+       * resources (like databases, schemas, and tables) with Dataplex."
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Dataplex is enabled by default for resources such as clusters and
+       * instances. This flag controls the integration of AlloyDB PG
+       * resources (like databases, schemas, and tables) with Dataplex."
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Dataplex is enabled by default for resources such as clusters and
+       * instances. This flag controls the integration of AlloyDB PG
+       * resources (like databases, schemas, and tables) with Dataplex."
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Cluster.DataplexConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Cluster.DataplexConfig)
+    private static final com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataplexConfig> PARSER =
+        new com.google.protobuf.AbstractParser<DataplexConfig>() {
+          @java.lang.Override
+          public DataplexConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataplexConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataplexConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -6123,7 +6635,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=678
+   *     google/cloud/alloydb/v1beta/resources.proto;l=686
    * @return The network.
    */
   @java.lang.Override
@@ -6156,7 +6668,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=678
+   *     google/cloud/alloydb/v1beta/resources.proto;l=686
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -6512,7 +7024,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=713
+   *     google/cloud/alloydb/v1beta/resources.proto;l=721
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -6531,7 +7043,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=713
+   *     google/cloud/alloydb/v1beta/resources.proto;l=721
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -7146,7 +7658,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=760
+   *     google/cloud/alloydb/v1beta/resources.proto;l=768
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
@@ -7168,7 +7680,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=760
+   *     google/cloud/alloydb/v1beta/resources.proto;l=768
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -7494,6 +8006,66 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DATAPLEX_CONFIG_FIELD_NUMBER = 47;
+  private com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplexConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataplexConfig() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig getDataplexConfig() {
+    return dataplexConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance()
+        : dataplexConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder
+      getDataplexConfigOrBuilder() {
+    return dataplexConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance()
+        : dataplexConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7618,6 +8190,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccountEmail_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 46, serviceAccountEmail_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeMessage(47, getDataplexConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -7775,6 +8350,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(46, serviceAccountEmail_);
     }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getDataplexConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7877,6 +8455,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     }
     if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
+    if (hasDataplexConfig() != other.hasDataplexConfig()) return false;
+    if (hasDataplexConfig()) {
+      if (!getDataplexConfig().equals(other.getDataplexConfig())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -8010,6 +8592,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccountEmail().hashCode();
+    if (hasDataplexConfig()) {
+      hash = (37 * hash) + DATAPLEX_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDataplexConfig().hashCode();
+    }
     switch (sourceCase_) {
       case 15:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
@@ -8217,6 +8803,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         internalGetMaintenanceScheduleFieldBuilder();
         internalGetGeminiConfigFieldBuilder();
         internalGetTrialMetadataFieldBuilder();
+        internalGetDataplexConfigFieldBuilder();
       }
     }
 
@@ -8339,6 +8926,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableTags().clear();
       serviceAccountEmail_ = "";
+      dataplexConfig_ = null;
+      if (dataplexConfigBuilder_ != null) {
+        dataplexConfigBuilder_.dispose();
+        dataplexConfigBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -8531,6 +9123,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       if (((from_bitField1_ & 0x00000008) != 0)) {
         result.serviceAccountEmail_ = serviceAccountEmail_;
       }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.dataplexConfig_ =
+            dataplexConfigBuilder_ == null ? dataplexConfig_ : dataplexConfigBuilder_.build();
+        to_bitField0_ |= 0x00040000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -8667,6 +9264,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         serviceAccountEmail_ = other.serviceAccountEmail_;
         bitField1_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasDataplexConfig()) {
+        mergeDataplexConfig(other.getDataplexConfig());
       }
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
@@ -8970,6 +9570,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00000008;
                 break;
               } // case 370
+            case 378:
+              {
+                input.readMessage(
+                    internalGetDataplexConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 378
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11414,7 +12021,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=678
+     *     google/cloud/alloydb/v1beta/resources.proto;l=686
      * @return The network.
      */
     @java.lang.Deprecated
@@ -11446,7 +12053,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=678
+     *     google/cloud/alloydb/v1beta/resources.proto;l=686
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -11478,7 +12085,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=678
+     *     google/cloud/alloydb/v1beta/resources.proto;l=686
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -11509,7 +12116,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=678
+     *     google/cloud/alloydb/v1beta/resources.proto;l=686
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11536,7 +12143,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=678
+     *     google/cloud/alloydb/v1beta/resources.proto;l=686
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -12413,7 +13020,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=713
+     *     google/cloud/alloydb/v1beta/resources.proto;l=721
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -12431,7 +13038,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=713
+     *     google/cloud/alloydb/v1beta/resources.proto;l=721
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -14671,7 +15278,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=760
+     *     google/cloud/alloydb/v1beta/resources.proto;l=768
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
@@ -14692,7 +15299,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=760
+     *     google/cloud/alloydb/v1beta/resources.proto;l=768
      * @return The geminiConfig.
      */
     @java.lang.Deprecated
@@ -15553,6 +16160,223 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       bitField1_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplexConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig,
+            com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder>
+        dataplexConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataplexConfig field is set.
+     */
+    public boolean hasDataplexConfig() {
+      return ((bitField1_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataplexConfig.
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig getDataplexConfig() {
+      if (dataplexConfigBuilder_ == null) {
+        return dataplexConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance()
+            : dataplexConfig_;
+      } else {
+        return dataplexConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataplexConfig(com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig value) {
+      if (dataplexConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataplexConfig_ = value;
+      } else {
+        dataplexConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataplexConfig(
+        com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder builderForValue) {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfig_ = builderForValue.build();
+      } else {
+        dataplexConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataplexConfig(
+        com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig value) {
+      if (dataplexConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000010) != 0)
+            && dataplexConfig_ != null
+            && dataplexConfig_
+                != com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance()) {
+          getDataplexConfigBuilder().mergeFrom(value);
+        } else {
+          dataplexConfig_ = value;
+        }
+      } else {
+        dataplexConfigBuilder_.mergeFrom(value);
+      }
+      if (dataplexConfig_ != null) {
+        bitField1_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataplexConfig() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      dataplexConfig_ = null;
+      if (dataplexConfigBuilder_ != null) {
+        dataplexConfigBuilder_.dispose();
+        dataplexConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder
+        getDataplexConfigBuilder() {
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return internalGetDataplexConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder
+        getDataplexConfigOrBuilder() {
+      if (dataplexConfigBuilder_ != null) {
+        return dataplexConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dataplexConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.getDefaultInstance()
+            : dataplexConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Dataplex integration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig,
+            com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder>
+        internalGetDataplexConfigFieldBuilder() {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig,
+                com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig.Builder,
+                com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder>(
+                getDataplexConfig(), getParentForChildren(), isClean());
+        dataplexConfig_ = null;
+      }
+      return dataplexConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Cluster)

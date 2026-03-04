@@ -572,7 +572,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=678
+   *     google/cloud/alloydb/v1beta/resources.proto;l=686
    * @return The network.
    */
   @java.lang.Deprecated
@@ -594,7 +594,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=678
+   *     google/cloud/alloydb/v1beta/resources.proto;l=686
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -828,7 +828,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=713
+   *     google/cloud/alloydb/v1beta/resources.proto;l=721
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -844,7 +844,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=713
+   *     google/cloud/alloydb/v1beta/resources.proto;l=721
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1292,7 +1292,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=760
+   *     google/cloud/alloydb/v1beta/resources.proto;l=768
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1311,7 +1311,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=760
+   *     google/cloud/alloydb/v1beta/resources.proto;l=768
    * @return The geminiConfig.
    */
   @java.lang.Deprecated
@@ -1534,6 +1534,49 @@ public interface ClusterOrBuilder
    * @return The bytes for serviceAccountEmail.
    */
   com.google.protobuf.ByteString getServiceAccountEmailBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  boolean hasDataplexConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Cluster.DataplexConfig getDataplexConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Dataplex integration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.DataplexConfig dataplex_config = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Cluster.DataplexConfigOrBuilder getDataplexConfigOrBuilder();
 
   com.google.cloud.alloydb.v1beta.Cluster.SourceCase getSourceCase();
 }

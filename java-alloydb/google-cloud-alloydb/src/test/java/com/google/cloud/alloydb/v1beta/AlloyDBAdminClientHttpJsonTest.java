@@ -228,6 +228,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -302,6 +303,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -376,6 +378,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -459,6 +462,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -542,6 +546,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -584,6 +589,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -646,6 +652,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
               .putAllTags(new HashMap<String, String>())
               .setServiceAccountEmail("serviceAccountEmail1825953988")
+              .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -1119,6 +1126,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1198,6 +1206,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1277,6 +1286,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1356,6 +1366,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1435,6 +1446,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1528,6 +1540,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1611,6 +1624,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
