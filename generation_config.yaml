@@ -1251,8 +1251,17 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/hypercomputecluster/v1beta
   requires_billing: true
-- api_shortname: iam
-  name_pretty: IAM
+- api_shortname: iam-admin
+  name_pretty: IAM Admin API
+  product_documentation: https://cloud.google.com/iam/docs/apis
+  api_description: you to manage your Service Accounts and IAM bindings.
+  release_level: stable
+  distribution_name: com.google.cloud:google-iam-admin
+  api_id: iam.googleapis.com
+  GAPICs:
+  - proto_path: google/iam/admin/v1
+- api_shortname: iam-policy
+  name_pretty: IAM Policy
   product_documentation: n/a
   api_description: n/a
   release_level: stable
@@ -1267,15 +1276,6 @@ libraries:
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
   - proto_path: google/iam/v3beta
-- api_shortname: iam-admin
-  name_pretty: IAM Admin API
-  product_documentation: https://cloud.google.com/iam/docs/apis
-  api_description: you to manage your Service Accounts and IAM bindings.
-  release_level: stable
-  distribution_name: com.google.cloud:google-iam-admin
-  api_id: iam.googleapis.com
-  GAPICs:
-  - proto_path: google/iam/admin/v1
 - api_shortname: iamcredentials
   name_pretty: IAM Service Account Credentials API
   product_documentation: https://cloud.google.com/iam/credentials/reference/rest/
