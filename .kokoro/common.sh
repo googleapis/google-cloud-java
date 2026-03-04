@@ -298,6 +298,7 @@ function run_integration_tests() {
   mvn verify -Penable-integration-tests --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
+    --also-make \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
