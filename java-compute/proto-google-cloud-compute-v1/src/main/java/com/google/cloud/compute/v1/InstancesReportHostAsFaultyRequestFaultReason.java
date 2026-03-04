@@ -107,7 +107,15 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     PERFORMANCE(135701520),
     /** <code>SILENT_DATA_CORRUPTION = 111360678;</code> */
     SILENT_DATA_CORRUPTION(111360678),
-    /** <code>UNRECOVERABLE_GPU_ERROR = 363710747;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unrecoverable GPU error identified by an XID
+     * </pre>
+     *
+     * <code>UNRECOVERABLE_GPU_ERROR = 363710747;</code>
+     */
     UNRECOVERABLE_GPU_ERROR(363710747),
     UNRECOGNIZED(-1),
     ;
@@ -150,7 +158,15 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     /** <code>SILENT_DATA_CORRUPTION = 111360678;</code> */
     public static final int SILENT_DATA_CORRUPTION_VALUE = 111360678;
 
-    /** <code>UNRECOVERABLE_GPU_ERROR = 363710747;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Unrecoverable GPU error identified by an XID
+     * </pre>
+     *
+     * <code>UNRECOVERABLE_GPU_ERROR = 363710747;</code>
+     */
     public static final int UNRECOVERABLE_GPU_ERROR_VALUE = 363710747;
 
     public final int getNumber() {

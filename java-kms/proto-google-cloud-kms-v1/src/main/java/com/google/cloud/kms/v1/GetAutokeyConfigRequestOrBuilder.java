@@ -31,7 +31,8 @@ public interface GetAutokeyConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+   * `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * </pre>
    *
    * <code>
@@ -47,7 +48,8 @@ public interface GetAutokeyConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig]
-   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+   * resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig` or
+   * `projects/{PROJECT_NUMBER}/autokeyConfig`.
    * </pre>
    *
    * <code>

@@ -372,6 +372,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     DELETE_OBJECT(6),
     PUT_METADATA(8),
     REWRITE_OBJECT(20),
+    UPDATE_OBJECT_CUSTOM_CONTEXT(23),
     TRANSFORMATION_NOT_SET(0);
     private final int value;
 
@@ -399,6 +400,8 @@ public final class Job extends com.google.protobuf.GeneratedMessage
           return PUT_METADATA;
         case 20:
           return REWRITE_OBJECT;
+        case 23:
+          return UPDATE_OBJECT_CUSTOM_CONTEXT;
         case 0:
           return TRANSFORMATION_NOT_SET;
         default:
@@ -808,6 +811,70 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.storagebatchoperations.v1.RewriteObject) transformation_;
     }
     return com.google.cloud.storagebatchoperations.v1.RewriteObject.getDefaultInstance();
+  }
+
+  public static final int UPDATE_OBJECT_CUSTOM_CONTEXT_FIELD_NUMBER = 23;
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+   * </code>
+   *
+   * @return Whether the updateObjectCustomContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateObjectCustomContext() {
+    return transformationCase_ == 23;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+   * </code>
+   *
+   * @return The updateObjectCustomContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+      getUpdateObjectCustomContext() {
+    if (transformationCase_ == 23) {
+      return (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext) transformation_;
+    }
+    return com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Update object custom context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder
+      getUpdateObjectCustomContextOrBuilder() {
+    if (transformationCase_ == 23) {
+      return (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext) transformation_;
+    }
+    return com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+        .getDefaultInstance();
   }
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 9;
@@ -1335,6 +1402,11 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (dryRun_ != false) {
       output.writeBool(22, dryRun_);
     }
+    if (transformationCase_ == 23) {
+      output.writeMessage(
+          23,
+          (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext) transformation_);
+    }
     if (isMultiBucketJob_ != false) {
       output.writeBool(24, isMultiBucketJob_);
     }
@@ -1403,6 +1475,13 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (dryRun_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, dryRun_);
     }
+    if (transformationCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23,
+              (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext)
+                  transformation_);
+    }
     if (isMultiBucketJob_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, isMultiBucketJob_);
     }
@@ -1469,6 +1548,10 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         break;
       case 20:
         if (!getRewriteObject().equals(other.getRewriteObject())) return false;
+        break;
+      case 23:
+        if (!getUpdateObjectCustomContext().equals(other.getUpdateObjectCustomContext()))
+          return false;
         break;
       case 0:
       default:
@@ -1542,6 +1625,10 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       case 20:
         hash = (37 * hash) + REWRITE_OBJECT_FIELD_NUMBER;
         hash = (53 * hash) + getRewriteObject().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + UPDATE_OBJECT_CUSTOM_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateObjectCustomContext().hashCode();
         break;
       case 0:
       default:
@@ -1717,6 +1804,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       if (rewriteObjectBuilder_ != null) {
         rewriteObjectBuilder_.clear();
       }
+      if (updateObjectCustomContextBuilder_ != null) {
+        updateObjectCustomContextBuilder_.clear();
+      }
       loggingConfig_ = null;
       if (loggingConfigBuilder_ != null) {
         loggingConfigBuilder_.dispose();
@@ -1748,7 +1838,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         errorSummaries_ = null;
         errorSummariesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       state_ = 0;
       dryRun_ = false;
       isMultiBucketJob_ = false;
@@ -1794,9 +1884,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.storagebatchoperations.v1.Job result) {
       if (errorSummariesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           errorSummaries_ = java.util.Collections.unmodifiableList(errorSummaries_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.errorSummaries_ = errorSummaries_;
       } else {
@@ -1813,36 +1903,36 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.loggingConfig_ =
             loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.scheduleTime_ =
             scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.completeTime_ =
             completeTimeBuilder_ == null ? completeTime_ : completeTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.counters_ = countersBuilder_ == null ? counters_ : countersBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.dryRun_ = dryRun_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.isMultiBucketJob_ = isMultiBucketJob_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1867,6 +1957,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       }
       if (transformationCase_ == 20 && rewriteObjectBuilder_ != null) {
         result.transformation_ = rewriteObjectBuilder_.build();
+      }
+      if (transformationCase_ == 23 && updateObjectCustomContextBuilder_ != null) {
+        result.transformation_ = updateObjectCustomContextBuilder_.build();
       }
     }
 
@@ -1911,7 +2004,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         if (!other.errorSummaries_.isEmpty()) {
           if (errorSummaries_.isEmpty()) {
             errorSummaries_ = other.errorSummaries_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureErrorSummariesIsMutable();
             errorSummaries_.addAll(other.errorSummaries_);
@@ -1924,7 +2017,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
             errorSummariesBuilder_.dispose();
             errorSummariesBuilder_ = null;
             errorSummaries_ = other.errorSummaries_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             errorSummariesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetErrorSummariesFieldBuilder()
@@ -1973,6 +2066,11 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         case REWRITE_OBJECT:
           {
             mergeRewriteObject(other.getRewriteObject());
+            break;
+          }
+        case UPDATE_OBJECT_CUSTOM_CONTEXT:
+          {
+            mergeUpdateObjectCustomContext(other.getUpdateObjectCustomContext());
             break;
           }
         case TRANSFORMATION_NOT_SET:
@@ -2043,35 +2141,35 @@ public final class Job extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetCompleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     internalGetCountersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
@@ -2091,7 +2189,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
             case 120:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 154:
@@ -2111,13 +2209,21 @@ public final class Job extends com.google.protobuf.GeneratedMessage
             case 176:
               {
                 dryRun_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 176
+            case 186:
+              {
+                input.readMessage(
+                    internalGetUpdateObjectCustomContextFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                transformationCase_ = 23;
+                break;
+              } // case 186
             case 192:
               {
                 isMultiBucketJob_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 192
             default:
@@ -3543,6 +3649,259 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       return rewriteObjectBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext,
+            com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext.Builder,
+            com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder>
+        updateObjectCustomContextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     *
+     * @return Whether the updateObjectCustomContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateObjectCustomContext() {
+      return transformationCase_ == 23;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     *
+     * @return The updateObjectCustomContext.
+     */
+    @java.lang.Override
+    public com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+        getUpdateObjectCustomContext() {
+      if (updateObjectCustomContextBuilder_ == null) {
+        if (transformationCase_ == 23) {
+          return (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext)
+              transformation_;
+        }
+        return com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+            .getDefaultInstance();
+      } else {
+        if (transformationCase_ == 23) {
+          return updateObjectCustomContextBuilder_.getMessage();
+        }
+        return com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    public Builder setUpdateObjectCustomContext(
+        com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext value) {
+      if (updateObjectCustomContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transformation_ = value;
+        onChanged();
+      } else {
+        updateObjectCustomContextBuilder_.setMessage(value);
+      }
+      transformationCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    public Builder setUpdateObjectCustomContext(
+        com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext.Builder
+            builderForValue) {
+      if (updateObjectCustomContextBuilder_ == null) {
+        transformation_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateObjectCustomContextBuilder_.setMessage(builderForValue.build());
+      }
+      transformationCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    public Builder mergeUpdateObjectCustomContext(
+        com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext value) {
+      if (updateObjectCustomContextBuilder_ == null) {
+        if (transformationCase_ == 23
+            && transformation_
+                != com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+                    .getDefaultInstance()) {
+          transformation_ =
+              com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext.newBuilder(
+                      (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext)
+                          transformation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transformation_ = value;
+        }
+        onChanged();
+      } else {
+        if (transformationCase_ == 23) {
+          updateObjectCustomContextBuilder_.mergeFrom(value);
+        } else {
+          updateObjectCustomContextBuilder_.setMessage(value);
+        }
+      }
+      transformationCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    public Builder clearUpdateObjectCustomContext() {
+      if (updateObjectCustomContextBuilder_ == null) {
+        if (transformationCase_ == 23) {
+          transformationCase_ = 0;
+          transformation_ = null;
+          onChanged();
+        }
+      } else {
+        if (transformationCase_ == 23) {
+          transformationCase_ = 0;
+          transformation_ = null;
+        }
+        updateObjectCustomContextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    public com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext.Builder
+        getUpdateObjectCustomContextBuilder() {
+      return internalGetUpdateObjectCustomContextFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder
+        getUpdateObjectCustomContextOrBuilder() {
+      if ((transformationCase_ == 23) && (updateObjectCustomContextBuilder_ != null)) {
+        return updateObjectCustomContextBuilder_.getMessageOrBuilder();
+      } else {
+        if (transformationCase_ == 23) {
+          return (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext)
+              transformation_;
+        }
+        return com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update object custom context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext update_object_custom_context = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext,
+            com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext.Builder,
+            com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder>
+        internalGetUpdateObjectCustomContextFieldBuilder() {
+      if (updateObjectCustomContextBuilder_ == null) {
+        if (!(transformationCase_ == 23)) {
+          transformation_ =
+              com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext
+                  .getDefaultInstance();
+        }
+        updateObjectCustomContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext,
+                com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext.Builder,
+                com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContextOrBuilder>(
+                (com.google.cloud.storagebatchoperations.v1.UpdateObjectCustomContext)
+                    transformation_,
+                getParentForChildren(),
+                isClean());
+        transformation_ = null;
+      }
+      transformationCase_ = 23;
+      onChanged();
+      return updateObjectCustomContextBuilder_;
+    }
+
     private com.google.cloud.storagebatchoperations.v1.LoggingConfig loggingConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.storagebatchoperations.v1.LoggingConfig,
@@ -3564,7 +3923,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3611,7 +3970,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3634,7 +3993,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3653,7 +4012,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     public Builder mergeLoggingConfig(
         com.google.cloud.storagebatchoperations.v1.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && loggingConfig_ != null
             && loggingConfig_
                 != com.google.cloud.storagebatchoperations.v1.LoggingConfig.getDefaultInstance()) {
@@ -3665,7 +4024,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         loggingConfigBuilder_.mergeFrom(value);
       }
       if (loggingConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3683,7 +4042,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLoggingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       loggingConfig_ = null;
       if (loggingConfigBuilder_ != null) {
         loggingConfigBuilder_.dispose();
@@ -3706,7 +4065,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.storagebatchoperations.v1.LoggingConfig.Builder
         getLoggingConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetLoggingConfigFieldBuilder().getBuilder();
     }
@@ -3782,7 +4141,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3828,7 +4187,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3850,7 +4209,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3868,7 +4227,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3879,7 +4238,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3897,7 +4256,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3919,7 +4278,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -3994,7 +4353,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -4040,7 +4399,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4062,7 +4421,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4080,7 +4439,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && scheduleTime_ != null
             && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getScheduleTimeBuilder().mergeFrom(value);
@@ -4091,7 +4450,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         scheduleTimeBuilder_.mergeFrom(value);
       }
       if (scheduleTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4109,7 +4468,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearScheduleTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       scheduleTime_ = null;
       if (scheduleTimeBuilder_ != null) {
         scheduleTimeBuilder_.dispose();
@@ -4131,7 +4490,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetScheduleTimeFieldBuilder().getBuilder();
     }
@@ -4206,7 +4565,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return Whether the completeTime field is set.
      */
     public boolean hasCompleteTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4252,7 +4611,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         completeTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4274,7 +4633,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         completeTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4292,7 +4651,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCompleteTime(com.google.protobuf.Timestamp value) {
       if (completeTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && completeTime_ != null
             && completeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCompleteTimeBuilder().mergeFrom(value);
@@ -4303,7 +4662,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         completeTimeBuilder_.mergeFrom(value);
       }
       if (completeTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4321,7 +4680,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCompleteTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       completeTime_ = null;
       if (completeTimeBuilder_ != null) {
         completeTimeBuilder_.dispose();
@@ -4343,7 +4702,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCompleteTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetCompleteTimeFieldBuilder().getBuilder();
     }
@@ -4418,7 +4777,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return Whether the counters field is set.
      */
     public boolean hasCounters() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4464,7 +4823,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         countersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4487,7 +4846,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       } else {
         countersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4505,7 +4864,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCounters(com.google.cloud.storagebatchoperations.v1.Counters value) {
       if (countersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && counters_ != null
             && counters_
                 != com.google.cloud.storagebatchoperations.v1.Counters.getDefaultInstance()) {
@@ -4517,7 +4876,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         countersBuilder_.mergeFrom(value);
       }
       if (counters_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4535,7 +4894,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCounters() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       counters_ = null;
       if (countersBuilder_ != null) {
         countersBuilder_.dispose();
@@ -4557,7 +4916,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.storagebatchoperations.v1.Counters.Builder getCountersBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetCountersFieldBuilder().getBuilder();
     }
@@ -4615,11 +4974,11 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         errorSummaries_ = java.util.Collections.emptyList();
 
     private void ensureErrorSummariesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         errorSummaries_ =
             new java.util.ArrayList<com.google.cloud.storagebatchoperations.v1.ErrorSummary>(
                 errorSummaries_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4874,7 +5233,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     public Builder clearErrorSummaries() {
       if (errorSummariesBuilder_ == null) {
         errorSummaries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         errorSummariesBuilder_.clear();
@@ -5024,7 +5383,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.storagebatchoperations.v1.ErrorSummary.Builder,
                 com.google.cloud.storagebatchoperations.v1.ErrorSummaryOrBuilder>(
                 errorSummaries_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         errorSummaries_ = null;
@@ -5068,7 +5427,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5113,7 +5472,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5133,7 +5492,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       state_ = 0;
       onChanged();
       return this;
@@ -5176,7 +5535,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     public Builder setDryRun(boolean value) {
 
       dryRun_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5195,7 +5554,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDryRun() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       dryRun_ = false;
       onChanged();
       return this;
@@ -5236,7 +5595,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     public Builder setIsMultiBucketJob(boolean value) {
 
       isMultiBucketJob_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5254,7 +5613,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIsMultiBucketJob() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       isMultiBucketJob_ = false;
       onChanged();
       return this;

@@ -83,8 +83,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of the organization.
-   * Example: organizations/123
+   * Required. A scope can be an organization or a project. Resources protected
+   * by the crypto key in provided scope will be returned.
+   *
+   * The following values are allowed:
+   *
+   * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * </pre>
    *
    * <code>
@@ -110,8 +116,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of the organization.
-   * Example: organizations/123
+   * Required. A scope can be an organization or a project. Resources protected
+   * by the crypto key in provided scope will be returned.
+   *
+   * The following values are allowed:
+   *
+   * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+   * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * </pre>
    *
    * <code>
@@ -831,8 +843,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the organization.
-     * Example: organizations/123
+     * Required. A scope can be an organization or a project. Resources protected
+     * by the crypto key in provided scope will be returned.
+     *
+     * The following values are allowed:
+     *
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * </pre>
      *
      * <code>
@@ -857,8 +875,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the organization.
-     * Example: organizations/123
+     * Required. A scope can be an organization or a project. Resources protected
+     * by the crypto key in provided scope will be returned.
+     *
+     * The following values are allowed:
+     *
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * </pre>
      *
      * <code>
@@ -883,8 +907,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the organization.
-     * Example: organizations/123
+     * Required. A scope can be an organization or a project. Resources protected
+     * by the crypto key in provided scope will be returned.
+     *
+     * The following values are allowed:
+     *
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * </pre>
      *
      * <code>
@@ -908,8 +938,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the organization.
-     * Example: organizations/123
+     * Required. A scope can be an organization or a project. Resources protected
+     * by the crypto key in provided scope will be returned.
+     *
+     * The following values are allowed:
+     *
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * </pre>
      *
      * <code>
@@ -929,8 +965,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the organization.
-     * Example: organizations/123
+     * Required. A scope can be an organization or a project. Resources protected
+     * by the crypto key in provided scope will be returned.
+     *
+     * The following values are allowed:
+     *
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/12345678")
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * </pre>
      *
      * <code>

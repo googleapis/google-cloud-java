@@ -170,7 +170,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Set if the artifact is stored in Artifact regsitry.
+   * Optional. Set if the artifact is stored in Artifact registry.
    * </pre>
    *
    * <code>
@@ -188,7 +188,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Set if the artifact is stored in Artifact regsitry.
+   * Optional. Set if the artifact is stored in Artifact registry.
    * </pre>
    *
    * <code>
@@ -209,7 +209,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Set if the artifact is stored in Artifact regsitry.
+   * Optional. Set if the artifact is stored in Artifact registry.
    * </pre>
    *
    * <code>
@@ -813,7 +813,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -831,7 +831,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -859,7 +859,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -885,7 +885,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -908,7 +908,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -947,7 +947,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -975,7 +975,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -991,7 +991,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>
@@ -1015,7 +1015,7 @@ public final class ArtifactConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Set if the artifact is stored in Artifact regsitry.
+     * Optional. Set if the artifact is stored in Artifact registry.
      * </pre>
      *
      * <code>

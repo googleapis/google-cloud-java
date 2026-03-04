@@ -25,7 +25,7 @@ package com.google.cloud.kms.inventory.v1;
  *
  * <pre>
  * Aggregate information about the resources protected by a Cloud KMS key in the
- * same Cloud organization as the key.
+ * same Cloud organization/project as the key.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.inventory.v1.ProtectedResourcesSummary}
@@ -54,6 +54,7 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
 
   private ProtectedResourcesSummary() {
     name_ = "";
+    warnings_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -500,6 +501,97 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     return map.get(key);
   }
 
+  public static final int WARNINGS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.kms.inventory.v1.Warning> warnings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.kms.inventory.v1.Warning> getWarningsList() {
+    return warnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.kms.inventory.v1.WarningOrBuilder>
+      getWarningsOrBuilderList() {
+    return warnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  @java.lang.Override
+  public int getWarningsCount() {
+    return warnings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.inventory.v1.Warning getWarnings(int index) {
+    return warnings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Warning messages for the state of response
+   * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+   * For example, if the organization service account is not configured,
+   * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.inventory.v1.WarningOrBuilder getWarningsOrBuilder(int index) {
+    return warnings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -529,6 +621,9 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetCloudProducts(), CloudProductsDefaultEntryHolder.defaultEntry, 6);
+    for (int i = 0; i < warnings_.size(); i++) {
+      output.writeMessage(7, warnings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -577,6 +672,9 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, cloudProducts__);
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, warnings_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -599,6 +697,7 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     if (!internalGetResourceTypes().equals(other.internalGetResourceTypes())) return false;
     if (!internalGetCloudProducts().equals(other.internalGetCloudProducts())) return false;
     if (!internalGetLocations().equals(other.internalGetLocations())) return false;
+    if (!getWarningsList().equals(other.getWarningsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -627,6 +726,10 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     if (!internalGetLocations().getMap().isEmpty()) {
       hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLocations().hashCode();
+    }
+    if (getWarningsCount() > 0) {
+      hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWarningsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -735,7 +838,7 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
    *
    * <pre>
    * Aggregate information about the resources protected by a Cloud KMS key in the
-   * same Cloud organization as the key.
+   * same Cloud organization/project as the key.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.inventory.v1.ProtectedResourcesSummary}
@@ -806,6 +909,13 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableResourceTypes().clear();
       internalGetMutableCloudProducts().clear();
       internalGetMutableLocations().clear();
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+      } else {
+        warnings_ = null;
+        warningsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -833,11 +943,25 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary buildPartial() {
       com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary result =
           new com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary result) {
+      if (warningsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          warnings_ = java.util.Collections.unmodifiableList(warnings_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.warnings_ = warnings_;
+      } else {
+        result.warnings_ = warningsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary result) {
@@ -895,6 +1019,33 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       bitField0_ |= 0x00000010;
       internalGetMutableLocations().mergeFrom(other.internalGetLocations());
       bitField0_ |= 0x00000020;
+      if (warningsBuilder_ == null) {
+        if (!other.warnings_.isEmpty()) {
+          if (warnings_.isEmpty()) {
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureWarningsIsMutable();
+            warnings_.addAll(other.warnings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.warnings_.isEmpty()) {
+          if (warningsBuilder_.isEmpty()) {
+            warningsBuilder_.dispose();
+            warningsBuilder_ = null;
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            warningsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetWarningsFieldBuilder()
+                    : null;
+          } else {
+            warningsBuilder_.addAllMessages(other.warnings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -975,6 +1126,19 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.cloud.kms.inventory.v1.Warning m =
+                    input.readMessage(
+                        com.google.cloud.kms.inventory.v1.Warning.parser(), extensionRegistry);
+                if (warningsBuilder_ == null) {
+                  ensureWarningsIsMutable();
+                  warnings_.add(m);
+                } else {
+                  warningsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1739,6 +1903,426 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableLocations().getMutableMap().putAll(values);
       bitField0_ |= 0x00000020;
       return this;
+    }
+
+    private java.util.List<com.google.cloud.kms.inventory.v1.Warning> warnings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureWarningsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        warnings_ = new java.util.ArrayList<com.google.cloud.kms.inventory.v1.Warning>(warnings_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.kms.inventory.v1.Warning,
+            com.google.cloud.kms.inventory.v1.Warning.Builder,
+            com.google.cloud.kms.inventory.v1.WarningOrBuilder>
+        warningsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public java.util.List<com.google.cloud.kms.inventory.v1.Warning> getWarningsList() {
+      if (warningsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(warnings_);
+      } else {
+        return warningsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public int getWarningsCount() {
+      if (warningsBuilder_ == null) {
+        return warnings_.size();
+      } else {
+        return warningsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public com.google.cloud.kms.inventory.v1.Warning getWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder setWarnings(int index, com.google.cloud.kms.inventory.v1.Warning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.set(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder setWarnings(
+        int index, com.google.cloud.kms.inventory.v1.Warning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder addWarnings(com.google.cloud.kms.inventory.v1.Warning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder addWarnings(int index, com.google.cloud.kms.inventory.v1.Warning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder addWarnings(com.google.cloud.kms.inventory.v1.Warning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder addWarnings(
+        int index, com.google.cloud.kms.inventory.v1.Warning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder addAllWarnings(
+        java.lang.Iterable<? extends com.google.cloud.kms.inventory.v1.Warning> values) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+        onChanged();
+      } else {
+        warningsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder clearWarnings() {
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        warningsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public Builder removeWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.remove(index);
+        onChanged();
+      } else {
+        warningsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public com.google.cloud.kms.inventory.v1.Warning.Builder getWarningsBuilder(int index) {
+      return internalGetWarningsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public com.google.cloud.kms.inventory.v1.WarningOrBuilder getWarningsOrBuilder(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public java.util.List<? extends com.google.cloud.kms.inventory.v1.WarningOrBuilder>
+        getWarningsOrBuilderList() {
+      if (warningsBuilder_ != null) {
+        return warningsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(warnings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public com.google.cloud.kms.inventory.v1.Warning.Builder addWarningsBuilder() {
+      return internalGetWarningsFieldBuilder()
+          .addBuilder(com.google.cloud.kms.inventory.v1.Warning.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public com.google.cloud.kms.inventory.v1.Warning.Builder addWarningsBuilder(int index) {
+      return internalGetWarningsFieldBuilder()
+          .addBuilder(index, com.google.cloud.kms.inventory.v1.Warning.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning messages for the state of response
+     * [ProtectedResourcesSummary][google.cloud.kms.inventory.v1.ProtectedResourcesSummary]
+     * For example, if the organization service account is not configured,
+     * INSUFFICIENT_PERMISSIONS_PARTIAL_DATA warning will be returned.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.kms.inventory.v1.Warning warnings = 7;</code>
+     */
+    public java.util.List<com.google.cloud.kms.inventory.v1.Warning.Builder>
+        getWarningsBuilderList() {
+      return internalGetWarningsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.kms.inventory.v1.Warning,
+            com.google.cloud.kms.inventory.v1.Warning.Builder,
+            com.google.cloud.kms.inventory.v1.WarningOrBuilder>
+        internalGetWarningsFieldBuilder() {
+      if (warningsBuilder_ == null) {
+        warningsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.kms.inventory.v1.Warning,
+                com.google.cloud.kms.inventory.v1.Warning.Builder,
+                com.google.cloud.kms.inventory.v1.WarningOrBuilder>(
+                warnings_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        warnings_ = null;
+      }
+      return warningsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.kms.inventory.v1.ProtectedResourcesSummary)

@@ -2311,6 +2311,172 @@ public class DeveloperConnectClientTest {
   }
 
   @Test
+  public void startOAuthTest() throws Exception {
+    StartOAuthResponse expectedResponse =
+        StartOAuthResponse.newBuilder()
+            .setTicket("ticket-873960692")
+            .setCodeChallenge("codeChallenge-401717002")
+            .setCodeChallengeMethod("codeChallengeMethod1151333751")
+            .setClientId("clientId908408390")
+            .addAllScopes(new ArrayList<String>())
+            .setAuthUri("authUri-646533468")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    AccountConnectorName accountConnector =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    StartOAuthResponse actualResponse = client.startOAuth(accountConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartOAuthRequest actualRequest = ((StartOAuthRequest) actualRequests.get(0));
+
+    Assert.assertEquals(accountConnector.toString(), actualRequest.getAccountConnector());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startOAuthExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      AccountConnectorName accountConnector =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.startOAuth(accountConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void startOAuthTest2() throws Exception {
+    StartOAuthResponse expectedResponse =
+        StartOAuthResponse.newBuilder()
+            .setTicket("ticket-873960692")
+            .setCodeChallenge("codeChallenge-401717002")
+            .setCodeChallengeMethod("codeChallengeMethod1151333751")
+            .setClientId("clientId908408390")
+            .addAllScopes(new ArrayList<String>())
+            .setAuthUri("authUri-646533468")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String accountConnector = "accountConnector-2141410144";
+
+    StartOAuthResponse actualResponse = client.startOAuth(accountConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartOAuthRequest actualRequest = ((StartOAuthRequest) actualRequests.get(0));
+
+    Assert.assertEquals(accountConnector, actualRequest.getAccountConnector());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startOAuthExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String accountConnector = "accountConnector-2141410144";
+      client.startOAuth(accountConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void finishOAuthTest() throws Exception {
+    FinishOAuthResponse expectedResponse =
+        FinishOAuthResponse.newBuilder()
+            .setExchangeError(ExchangeError.newBuilder().build())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    AccountConnectorName accountConnector =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    FinishOAuthResponse actualResponse = client.finishOAuth(accountConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FinishOAuthRequest actualRequest = ((FinishOAuthRequest) actualRequests.get(0));
+
+    Assert.assertEquals(accountConnector.toString(), actualRequest.getAccountConnector());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void finishOAuthExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      AccountConnectorName accountConnector =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.finishOAuth(accountConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void finishOAuthTest2() throws Exception {
+    FinishOAuthResponse expectedResponse =
+        FinishOAuthResponse.newBuilder()
+            .setExchangeError(ExchangeError.newBuilder().build())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String accountConnector = "accountConnector-2141410144";
+
+    FinishOAuthResponse actualResponse = client.finishOAuth(accountConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FinishOAuthRequest actualRequest = ((FinishOAuthRequest) actualRequests.get(0));
+
+    Assert.assertEquals(accountConnector, actualRequest.getAccountConnector());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void finishOAuthExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String accountConnector = "accountConnector-2141410144";
+      client.finishOAuth(accountConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

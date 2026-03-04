@@ -254,6 +254,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GKE_WORKLOAD(3),
+    GOOGLE_CLOUD_RUN(5),
     RUNTIME_NOT_SET(0);
     private final int value;
 
@@ -275,6 +276,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 3:
           return GKE_WORKLOAD;
+        case 5:
+          return GOOGLE_CLOUD_RUN;
         case 0:
           return RUNTIME_NOT_SET;
         default:
@@ -301,6 +304,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APP_HUB_WORKLOAD(4),
+    APP_HUB_SERVICE(6),
     DERIVEDFROM_NOT_SET(0);
     private final int value;
 
@@ -322,6 +326,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 4:
           return APP_HUB_WORKLOAD;
+        case 6:
+          return APP_HUB_SERVICE;
         case 0:
           return DERIVEDFROM_NOT_SET;
         default:
@@ -398,6 +404,66 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.developerconnect.v1.GKEWorkload.getDefaultInstance();
   }
 
+  public static final int GOOGLE_CLOUD_RUN_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Run runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the googleCloudRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleCloudRun() {
+    return runtimeCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Run runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The googleCloudRun.
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.GoogleCloudRun getGoogleCloudRun() {
+    if (runtimeCase_ == 5) {
+      return (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_;
+    }
+    return com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Run runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.GoogleCloudRunOrBuilder getGoogleCloudRunOrBuilder() {
+    if (runtimeCase_ == 5) {
+      return (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_;
+    }
+    return com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance();
+  }
+
   public static final int APP_HUB_WORKLOAD_FIELD_NUMBER = 4;
 
   /**
@@ -456,6 +522,66 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.developerconnect.v1.AppHubWorkload) derivedFrom_;
     }
     return com.google.cloud.developerconnect.v1.AppHubWorkload.getDefaultInstance();
+  }
+
+  public static final int APP_HUB_SERVICE_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. App Hub Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the appHubService field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppHubService() {
+    return derivedFromCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. App Hub Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The appHubService.
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.AppHubService getAppHubService() {
+    if (derivedFromCase_ == 6) {
+      return (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_;
+    }
+    return com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. App Hub Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.AppHubServiceOrBuilder getAppHubServiceOrBuilder() {
+    if (derivedFromCase_ == 6) {
+      return (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_;
+    }
+    return com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance();
   }
 
   public static final int URI_FIELD_NUMBER = 1;
@@ -589,6 +715,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
     if (derivedFromCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.developerconnect.v1.AppHubWorkload) derivedFrom_);
     }
+    if (runtimeCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_);
+    }
+    if (derivedFromCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -615,6 +747,16 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.developerconnect.v1.AppHubWorkload) derivedFrom_);
     }
+    if (runtimeCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_);
+    }
+    if (derivedFromCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -638,6 +780,9 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       case 3:
         if (!getGkeWorkload().equals(other.getGkeWorkload())) return false;
         break;
+      case 5:
+        if (!getGoogleCloudRun().equals(other.getGoogleCloudRun())) return false;
+        break;
       case 0:
       default:
     }
@@ -645,6 +790,9 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
     switch (derivedFromCase_) {
       case 4:
         if (!getAppHubWorkload().equals(other.getAppHubWorkload())) return false;
+        break;
+      case 6:
+        if (!getAppHubService().equals(other.getAppHubService())) return false;
         break;
       case 0:
       default:
@@ -669,6 +817,10 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + GKE_WORKLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getGkeWorkload().hashCode();
         break;
+      case 5:
+        hash = (37 * hash) + GOOGLE_CLOUD_RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getGoogleCloudRun().hashCode();
+        break;
       case 0:
       default:
     }
@@ -676,6 +828,10 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + APP_HUB_WORKLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getAppHubWorkload().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + APP_HUB_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getAppHubService().hashCode();
         break;
       case 0:
       default:
@@ -824,8 +980,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       if (gkeWorkloadBuilder_ != null) {
         gkeWorkloadBuilder_.clear();
       }
+      if (googleCloudRunBuilder_ != null) {
+        googleCloudRunBuilder_.clear();
+      }
       if (appHubWorkloadBuilder_ != null) {
         appHubWorkloadBuilder_.clear();
+      }
+      if (appHubServiceBuilder_ != null) {
+        appHubServiceBuilder_.clear();
       }
       uri_ = "";
       state_ = 0;
@@ -870,10 +1032,10 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.developerconnect.v1.RuntimeConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.uri_ = uri_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
       }
     }
@@ -884,10 +1046,16 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       if (runtimeCase_ == 3 && gkeWorkloadBuilder_ != null) {
         result.runtime_ = gkeWorkloadBuilder_.build();
       }
+      if (runtimeCase_ == 5 && googleCloudRunBuilder_ != null) {
+        result.runtime_ = googleCloudRunBuilder_.build();
+      }
       result.derivedFromCase_ = derivedFromCase_;
       result.derivedFrom_ = this.derivedFrom_;
       if (derivedFromCase_ == 4 && appHubWorkloadBuilder_ != null) {
         result.derivedFrom_ = appHubWorkloadBuilder_.build();
+      }
+      if (derivedFromCase_ == 6 && appHubServiceBuilder_ != null) {
+        result.derivedFrom_ = appHubServiceBuilder_.build();
       }
     }
 
@@ -906,7 +1074,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -918,6 +1086,11 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
             mergeGkeWorkload(other.getGkeWorkload());
             break;
           }
+        case GOOGLE_CLOUD_RUN:
+          {
+            mergeGoogleCloudRun(other.getGoogleCloudRun());
+            break;
+          }
         case RUNTIME_NOT_SET:
           {
             break;
@@ -927,6 +1100,11 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
         case APP_HUB_WORKLOAD:
           {
             mergeAppHubWorkload(other.getAppHubWorkload());
+            break;
+          }
+        case APP_HUB_SERVICE:
+          {
+            mergeAppHubService(other.getAppHubService());
             break;
           }
         case DERIVEDFROM_NOT_SET:
@@ -963,13 +1141,13 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 16
             case 26:
@@ -986,6 +1164,20 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
                 derivedFromCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetGoogleCloudRunFieldBuilder().getBuilder(), extensionRegistry);
+                runtimeCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetAppHubServiceFieldBuilder().getBuilder(), extensionRegistry);
+                derivedFromCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1270,6 +1462,244 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.GoogleCloudRun,
+            com.google.cloud.developerconnect.v1.GoogleCloudRun.Builder,
+            com.google.cloud.developerconnect.v1.GoogleCloudRunOrBuilder>
+        googleCloudRunBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the googleCloudRun field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleCloudRun() {
+      return runtimeCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The googleCloudRun.
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.GoogleCloudRun getGoogleCloudRun() {
+      if (googleCloudRunBuilder_ == null) {
+        if (runtimeCase_ == 5) {
+          return (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_;
+        }
+        return com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance();
+      } else {
+        if (runtimeCase_ == 5) {
+          return googleCloudRunBuilder_.getMessage();
+        }
+        return com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGoogleCloudRun(com.google.cloud.developerconnect.v1.GoogleCloudRun value) {
+      if (googleCloudRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runtime_ = value;
+        onChanged();
+      } else {
+        googleCloudRunBuilder_.setMessage(value);
+      }
+      runtimeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGoogleCloudRun(
+        com.google.cloud.developerconnect.v1.GoogleCloudRun.Builder builderForValue) {
+      if (googleCloudRunBuilder_ == null) {
+        runtime_ = builderForValue.build();
+        onChanged();
+      } else {
+        googleCloudRunBuilder_.setMessage(builderForValue.build());
+      }
+      runtimeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGoogleCloudRun(com.google.cloud.developerconnect.v1.GoogleCloudRun value) {
+      if (googleCloudRunBuilder_ == null) {
+        if (runtimeCase_ == 5
+            && runtime_
+                != com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance()) {
+          runtime_ =
+              com.google.cloud.developerconnect.v1.GoogleCloudRun.newBuilder(
+                      (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          runtime_ = value;
+        }
+        onChanged();
+      } else {
+        if (runtimeCase_ == 5) {
+          googleCloudRunBuilder_.mergeFrom(value);
+        } else {
+          googleCloudRunBuilder_.setMessage(value);
+        }
+      }
+      runtimeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGoogleCloudRun() {
+      if (googleCloudRunBuilder_ == null) {
+        if (runtimeCase_ == 5) {
+          runtimeCase_ = 0;
+          runtime_ = null;
+          onChanged();
+        }
+      } else {
+        if (runtimeCase_ == 5) {
+          runtimeCase_ = 0;
+          runtime_ = null;
+        }
+        googleCloudRunBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.developerconnect.v1.GoogleCloudRun.Builder getGoogleCloudRunBuilder() {
+      return internalGetGoogleCloudRunFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.GoogleCloudRunOrBuilder
+        getGoogleCloudRunOrBuilder() {
+      if ((runtimeCase_ == 5) && (googleCloudRunBuilder_ != null)) {
+        return googleCloudRunBuilder_.getMessageOrBuilder();
+      } else {
+        if (runtimeCase_ == 5) {
+          return (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_;
+        }
+        return com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Run runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GoogleCloudRun google_cloud_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.GoogleCloudRun,
+            com.google.cloud.developerconnect.v1.GoogleCloudRun.Builder,
+            com.google.cloud.developerconnect.v1.GoogleCloudRunOrBuilder>
+        internalGetGoogleCloudRunFieldBuilder() {
+      if (googleCloudRunBuilder_ == null) {
+        if (!(runtimeCase_ == 5)) {
+          runtime_ = com.google.cloud.developerconnect.v1.GoogleCloudRun.getDefaultInstance();
+        }
+        googleCloudRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.developerconnect.v1.GoogleCloudRun,
+                com.google.cloud.developerconnect.v1.GoogleCloudRun.Builder,
+                com.google.cloud.developerconnect.v1.GoogleCloudRunOrBuilder>(
+                (com.google.cloud.developerconnect.v1.GoogleCloudRun) runtime_,
+                getParentForChildren(),
+                isClean());
+        runtime_ = null;
+      }
+      runtimeCase_ = 5;
+      onChanged();
+      return googleCloudRunBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.developerconnect.v1.AppHubWorkload,
             com.google.cloud.developerconnect.v1.AppHubWorkload.Builder,
             com.google.cloud.developerconnect.v1.AppHubWorkloadOrBuilder>
@@ -1507,6 +1937,243 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       return appHubWorkloadBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.AppHubService,
+            com.google.cloud.developerconnect.v1.AppHubService.Builder,
+            com.google.cloud.developerconnect.v1.AppHubServiceOrBuilder>
+        appHubServiceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the appHubService field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppHubService() {
+      return derivedFromCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The appHubService.
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.AppHubService getAppHubService() {
+      if (appHubServiceBuilder_ == null) {
+        if (derivedFromCase_ == 6) {
+          return (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_;
+        }
+        return com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance();
+      } else {
+        if (derivedFromCase_ == 6) {
+          return appHubServiceBuilder_.getMessage();
+        }
+        return com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAppHubService(com.google.cloud.developerconnect.v1.AppHubService value) {
+      if (appHubServiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        derivedFrom_ = value;
+        onChanged();
+      } else {
+        appHubServiceBuilder_.setMessage(value);
+      }
+      derivedFromCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAppHubService(
+        com.google.cloud.developerconnect.v1.AppHubService.Builder builderForValue) {
+      if (appHubServiceBuilder_ == null) {
+        derivedFrom_ = builderForValue.build();
+        onChanged();
+      } else {
+        appHubServiceBuilder_.setMessage(builderForValue.build());
+      }
+      derivedFromCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAppHubService(com.google.cloud.developerconnect.v1.AppHubService value) {
+      if (appHubServiceBuilder_ == null) {
+        if (derivedFromCase_ == 6
+            && derivedFrom_
+                != com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance()) {
+          derivedFrom_ =
+              com.google.cloud.developerconnect.v1.AppHubService.newBuilder(
+                      (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          derivedFrom_ = value;
+        }
+        onChanged();
+      } else {
+        if (derivedFromCase_ == 6) {
+          appHubServiceBuilder_.mergeFrom(value);
+        } else {
+          appHubServiceBuilder_.setMessage(value);
+        }
+      }
+      derivedFromCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAppHubService() {
+      if (appHubServiceBuilder_ == null) {
+        if (derivedFromCase_ == 6) {
+          derivedFromCase_ = 0;
+          derivedFrom_ = null;
+          onChanged();
+        }
+      } else {
+        if (derivedFromCase_ == 6) {
+          derivedFromCase_ = 0;
+          derivedFrom_ = null;
+        }
+        appHubServiceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.developerconnect.v1.AppHubService.Builder getAppHubServiceBuilder() {
+      return internalGetAppHubServiceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.AppHubServiceOrBuilder getAppHubServiceOrBuilder() {
+      if ((derivedFromCase_ == 6) && (appHubServiceBuilder_ != null)) {
+        return appHubServiceBuilder_.getMessageOrBuilder();
+      } else {
+        if (derivedFromCase_ == 6) {
+          return (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_;
+        }
+        return com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. App Hub Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.AppHubService app_hub_service = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.AppHubService,
+            com.google.cloud.developerconnect.v1.AppHubService.Builder,
+            com.google.cloud.developerconnect.v1.AppHubServiceOrBuilder>
+        internalGetAppHubServiceFieldBuilder() {
+      if (appHubServiceBuilder_ == null) {
+        if (!(derivedFromCase_ == 6)) {
+          derivedFrom_ = com.google.cloud.developerconnect.v1.AppHubService.getDefaultInstance();
+        }
+        appHubServiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.developerconnect.v1.AppHubService,
+                com.google.cloud.developerconnect.v1.AppHubService.Builder,
+                com.google.cloud.developerconnect.v1.AppHubServiceOrBuilder>(
+                (com.google.cloud.developerconnect.v1.AppHubService) derivedFrom_,
+                getParentForChildren(),
+                isClean());
+        derivedFrom_ = null;
+      }
+      derivedFromCase_ = 6;
+      onChanged();
+      return appHubServiceBuilder_;
+    }
+
     private java.lang.Object uri_ = "";
 
     /**
@@ -1584,7 +2251,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uri_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1606,7 +2273,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUri() {
       uri_ = getDefaultInstance().getUri();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1633,7 +2300,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uri_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1674,7 +2341,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1719,7 +2386,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1739,7 +2406,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;

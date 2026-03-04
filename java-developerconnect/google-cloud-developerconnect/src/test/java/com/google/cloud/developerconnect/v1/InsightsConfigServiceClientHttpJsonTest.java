@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -609,6 +610,224 @@ public class InsightsConfigServiceClientHttpJsonTest {
       client.deleteInsightsConfigAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getDeploymentEventTest() throws Exception {
+    DeploymentEvent expectedResponse =
+        DeploymentEvent.newBuilder()
+            .setName(
+                DeploymentEventName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRuntimeConfig(RuntimeConfig.newBuilder().build())
+            .setRuntimeDeploymentUri("runtimeDeploymentUri1057341295")
+            .addAllArtifactDeployments(new ArrayList<ArtifactDeployment>())
+            .setDeployTime(Timestamp.newBuilder().build())
+            .setUndeployTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DeploymentEventName name =
+        DeploymentEventName.of(
+            "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]");
+
+    DeploymentEvent actualResponse = client.getDeploymentEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDeploymentEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DeploymentEventName name =
+          DeploymentEventName.of(
+              "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]");
+      client.getDeploymentEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDeploymentEventTest2() throws Exception {
+    DeploymentEvent expectedResponse =
+        DeploymentEvent.newBuilder()
+            .setName(
+                DeploymentEventName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRuntimeConfig(RuntimeConfig.newBuilder().build())
+            .setRuntimeDeploymentUri("runtimeDeploymentUri1057341295")
+            .addAllArtifactDeployments(new ArrayList<ArtifactDeployment>())
+            .setDeployTime(Timestamp.newBuilder().build())
+            .setUndeployTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6516/locations/location-6516/insightsConfigs/insightsConfig-6516/deploymentEvents/deploymentEvent-6516";
+
+    DeploymentEvent actualResponse = client.getDeploymentEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDeploymentEventExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6516/locations/location-6516/insightsConfigs/insightsConfig-6516/deploymentEvents/deploymentEvent-6516";
+      client.getDeploymentEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentEventsTest() throws Exception {
+    DeploymentEvent responsesElement = DeploymentEvent.newBuilder().build();
+    ListDeploymentEventsResponse expectedResponse =
+        ListDeploymentEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentEvents(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InsightsConfigName parent =
+        InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]");
+
+    ListDeploymentEventsPagedResponse pagedListResponse = client.listDeploymentEvents(parent);
+
+    List<DeploymentEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeploymentEventsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDeploymentEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InsightsConfigName parent =
+          InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]");
+      client.listDeploymentEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDeploymentEventsTest2() throws Exception {
+    DeploymentEvent responsesElement = DeploymentEvent.newBuilder().build();
+    ListDeploymentEventsResponse expectedResponse =
+        ListDeploymentEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDeploymentEvents(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-6149/locations/location-6149/insightsConfigs/insightsConfig-6149";
+
+    ListDeploymentEventsPagedResponse pagedListResponse = client.listDeploymentEvents(parent);
+
+    List<DeploymentEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDeploymentEventsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDeploymentEventsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-6149/locations/location-6149/insightsConfigs/insightsConfig-6149";
+      client.listDeploymentEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

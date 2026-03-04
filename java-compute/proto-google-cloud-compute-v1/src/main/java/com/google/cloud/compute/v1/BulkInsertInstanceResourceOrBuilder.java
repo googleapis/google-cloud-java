@@ -56,6 +56,50 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
+   * A flexible specification of machine type of instances to create.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 26937090;
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  boolean hasInstanceFlexibilityPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * A flexible specification of machine type of instances to create.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 26937090;
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  com.google.cloud.compute.v1.InstanceFlexibilityPolicy getInstanceFlexibilityPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * A flexible specification of machine type of instances to create.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 26937090;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The instance properties defining the VM instances to be created. Required
    * if sourceInstanceTemplate is not provided.
    * </pre>

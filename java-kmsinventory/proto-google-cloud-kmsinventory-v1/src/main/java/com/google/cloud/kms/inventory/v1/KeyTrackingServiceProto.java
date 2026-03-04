@@ -76,6 +76,10 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
       internal_static_google_cloud_kms_inventory_v1_ProtectedResource_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_kms_inventory_v1_ProtectedResource_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_inventory_v1_Warning_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_kms_inventory_v1_Warning_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -89,20 +93,24 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
           + "8google/cloud/kms/inventory/v1/key_tracking_service.proto\022\035google.cloud.kms.inv"
           + "entory.v1\032\034google/api/annotations.proto\032"
           + "\027google/api/client.proto\032\037google/api/fie"
-          + "ld_behavior.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"r\n"
+          + "ld_behavior.proto\032\031google/api/resource.p"
+          + "roto\032\037google/protobuf/timestamp.proto\"\275\001\n"
           + "#GetProtectedResourcesSummaryRequest\022K\n"
           + "\004name\030\001 \001(\tB=\340A\002\372A7\n"
-          + "5kmsinventory.googleapis.com/ProtectedResourcesSummary\"\340\006\n"
+          + "5kmsinventory.googleapis.com/ProtectedResourcesSummary\022I\n"
+          + "\016fallback_scope\030\002"
+          + " \001(\0162,.google.cloud.kms.inventory.v1.FallbackScopeB\003\340A\001\"\232\007\n"
           + "\031ProtectedResourcesSummary\022\014\n"
           + "\004name\030\005 \001(\t\022\026\n"
           + "\016resource_count\030\001 \001(\003\022\025\n\r"
           + "project_count\030\002 \001(\005\022c\n"
-          + "\016resource_types\030\003 \003(\0132K.google.cl"
-          + "oud.kms.inventory.v1.ProtectedResourcesSummary.ResourceTypesEntry\022c\n"
-          + "\016cloud_products\030\006 \003(\0132K.google.cloud.kms.inventory.v"
-          + "1.ProtectedResourcesSummary.CloudProductsEntry\022Z\n"
-          + "\tlocations\030\004 \003(\0132G.google.cloud"
-          + ".kms.inventory.v1.ProtectedResourcesSummary.LocationsEntry\0324\n"
+          + "\016resource_types\030\003 \003(\0132K.google.cloud."
+          + "kms.inventory.v1.ProtectedResourcesSummary.ResourceTypesEntry\022c\n"
+          + "\016cloud_products\030\006 \003(\0132K.google.cloud.kms.inventory.v1.Pr"
+          + "otectedResourcesSummary.CloudProductsEntry\022Z\n"
+          + "\tlocations\030\004 \003(\0132G.google.cloud.kms"
+          + ".inventory.v1.ProtectedResourcesSummary.LocationsEntry\0228\n"
+          + "\010warnings\030\007 \003(\0132&.google.cloud.kms.inventory.v1.Warning\0324\n"
           + "\022ResourceTypesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\003:\0028\001\0324\n"
@@ -112,22 +120,22 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
           + "\016LocationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\003:\0028\001:\301\002\352A\275\002\n"
-          + "5kmsinventory.googleapis.com/ProtectedResourcesSummary\022m"
-          + "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_k"
-          + "ey}/protectedResourcesSummary\022\224\001projects"
-          + "/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryp"
-          + "toKeyVersions/{crypto_key_version}/protectedResourcesSummary\"\315\001\n"
-          + "\037SearchProtectedResourcesRequest\022G\n"
-          + "\005scope\030\002 \001(\tB8\340A\002\372A2\n"
-          + "0cloudresourcemanager.googleapis.com/Organization\022\035\n\n"
+          + "5kmsinventory.googleapis.com/ProtectedResourcesSummary\022mprojects/{project}/locatio"
+          + "ns/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSumm"
+          + "ary\022\224\001projects/{project}/locations/{loca"
+          + "tion}/keyRings/{key_ring}/cryptoKeys/{cr"
+          + "ypto_key}/cryptoKeyVersions/{crypto_key_version}/protectedResourcesSummary\"\317\001\n"
+          + "\037SearchProtectedResourcesRequest\022I\n"
+          + "\005scope\030\002 \001("
+          + "\tB:\340A\002\372A4\0222kmsinventory.googleapis.com/ProtectedResourceScope\022\035\n\n"
           + "crypto_key\030\001 \001(\tB\t\340A\002\372A\003\n"
           + "\001*\022\021\n"
           + "\tpage_size\030\003 \001(\005\022\022\n\n"
           + "page_token\030\004 \001(\t\022\033\n"
           + "\016resource_types\030\005 \003(\tB\003\340A\001\"\212\001\n"
           + " SearchProtectedResourcesResponse\022M\n"
-          + "\023protected_resources\030\001"
-          + " \003(\01320.google.cloud.kms.inventory.v1.ProtectedResource\022\027\n"
+          + "\023protected_resources\030\001 \003(\01320.google."
+          + "cloud.kms.inventory.v1.ProtectedResource\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\371\003\n"
           + "\021ProtectedResource\022\014\n"
           + "\004name\030\001 \001(\t\022\017\n"
@@ -136,8 +144,8 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
           + "cloud_product\030\010 \001(\t\022\025\n\r"
           + "resource_type\030\003 \001(\t\022\020\n"
           + "\010location\030\004 \001(\t\022L\n"
-          + "\006labels\030\005 \003"
-          + "(\0132<.google.cloud.kms.inventory.v1.ProtectedResource.LabelsEntry\022I\n"
+          + "\006labels\030\005 \003(\0132<.google.cloud.kms.in"
+          + "ventory.v1.ProtectedResource.LabelsEntry\022I\n"
           + "\022crypto_key_version\030\006 \001(\tB-\372A*\n"
           + "(cloudkms.googleapis.com/CryptoKeyVersion\022J\n"
           + "\023crypto_key_versions\030\n"
@@ -147,24 +155,39 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\'\352A$\n"
-          + "\037cloudasset.googleapis.com/Asset\022\001*2\332\004\n"
+          + "\037cloudasset.googleapis.com/Asset\022\001*\"\222\002\n"
+          + "\007Warning\022H\n"
+          + "\014warning_code\030\001"
+          + " \001(\01622.google.cloud.kms.inventory.v1.Warning.WarningCode\022\027\n"
+          + "\017display_message\030\002 \001(\t\"\243\001\n"
+          + "\013WarningCode\022\034\n"
+          + "\030WARNING_CODE_UNSPECIFIED\020\000\022)\n"
+          + "%INSUFFICIENT_PERMISSIONS_PARTIAL_DATA\020\001\022(\n"
+          + "$RESOURCE_LIMIT_EXCEEDED_PARTIAL_DATA\020\002\022!\n"
+          + "\035ORG_LESS_PROJECT_PARTIAL_DATA\020\003*K\n\r"
+          + "FallbackScope\022\036\n"
+          + "\032FALLBACK_SCOPE_UNSPECIFIED\020\000\022\032\n"
+          + "\026FALLBACK_SCOPE_PROJECT\020\0012\217\005\n"
           + "\022KeyTrackingService\022\201\002\n"
-          + "\034GetProtectedResourcesSummary\022B.google.cloud.kms.invento"
-          + "ry.v1.GetProtectedResourcesSummaryRequest\0328.google.cloud.kms.inventory.v1.Protec"
-          + "tedResourcesSummary\"c\332A\004name\202\323\344\223\002V\022T/v1/"
-          + "{name=projects/*/locations/*/keyRings/*/"
-          + "cryptoKeys/**}/protectedResourcesSummary\022\356\001\n"
-          + "\030SearchProtectedResources\022>.google.cloud.kms.inventory.v1.SearchProtectedRes"
-          + "ourcesRequest\032?.google.cloud.kms.invento"
-          + "ry.v1.SearchProtectedResourcesResponse\"Q\332A\021scope,"
-          + " crypto_key\202\323\344\223\0027\0225/v1/{scope=o"
-          + "rganizations/*}/protectedResources:searc"
-          + "h\032O\312A\033kmsinventory.googleapis.com\322A.http"
-          + "s://www.googleapis.com/auth/cloud-platformB\302\001\n"
-          + "!com.google.cloud.kms.inventory.v1B\027KeyTrackingServiceProtoP\001Z?cloud.googl"
-          + "e.com/go/kms/inventory/apiv1/inventorypb"
-          + ";inventorypb\370\001\001\252\002\035Google.Cloud.Kms.Inven"
-          + "tory.V1\312\002\035Google\\Cloud\\Kms\\Inventory\\V1b\006proto3"
+          + "\034GetProtectedResourcesSummary\022B.google.cloud.k"
+          + "ms.inventory.v1.GetProtectedResourcesSummaryRequest\0328.google.cloud.kms.inventory"
+          + ".v1.ProtectedResourcesSummary\"c\332A\004name\202\323"
+          + "\344\223\002V\022T/v1/{name=projects/*/locations/*/k"
+          + "eyRings/*/cryptoKeys/**}/protectedResourcesSummary\022\243\002\n"
+          + "\030SearchProtectedResources\022>.google.cloud.kms.inventory.v1.SearchPr"
+          + "otectedResourcesRequest\032?.google.cloud.k"
+          + "ms.inventory.v1.SearchProtectedResourcesResponse\"\205\001\332A\021scope,"
+          + " crypto_key\202\323\344\223\002k\0225/v1/{scope=organizations/*}/protectedReso"
+          + "urces:searchZ2\0220/v1/{scope=projects/*}/p"
+          + "rotectedResources:search\032O\312A\033kmsinventor"
+          + "y.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\327\002\n"
+          + "!com.google.cloud.kms.inventory.v1B\027KeyTrackingServ"
+          + "iceProtoP\001Z?cloud.google.com/go/kms/inve"
+          + "ntory/apiv1/inventorypb;inventorypb\252\002\035Go"
+          + "ogle.Cloud.Kms.Inventory.V1\312\002\035Google\\Cloud\\Kms\\Inventory\\V1\352A\224\001\n"
+          + "2kmsinventory.googleapis.com/ProtectedResourceScope\0223org"
+          + "anizations/{organization}/protectedResourceScope\022)projects/{project}/protectedRe"
+          + "sourceScopeb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -182,7 +205,7 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_kms_inventory_v1_GetProtectedResourcesSummaryRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "FallbackScope",
             });
     internal_static_google_cloud_kms_inventory_v1_ProtectedResourcesSummary_descriptor =
         getDescriptor().getMessageType(1);
@@ -196,6 +219,7 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
               "ResourceTypes",
               "CloudProducts",
               "Locations",
+              "Warnings",
             });
     internal_static_google_cloud_kms_inventory_v1_ProtectedResourcesSummary_ResourceTypesEntry_descriptor =
         internal_static_google_cloud_kms_inventory_v1_ProtectedResourcesSummary_descriptor
@@ -265,6 +289,14 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_kms_inventory_v1_Warning_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_kms_inventory_v1_Warning_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_kms_inventory_v1_Warning_descriptor,
+            new java.lang.String[] {
+              "WarningCode", "DisplayMessage",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
@@ -279,6 +311,7 @@ public final class KeyTrackingServiceProto extends com.google.protobuf.Generated
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

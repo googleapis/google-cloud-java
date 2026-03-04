@@ -111,7 +111,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 2.0.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 2.0.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_2_0 = 8;</code>
@@ -121,7 +121,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.3.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.3.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_3 = 9;</code>
@@ -131,7 +131,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.2.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.2.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_2 = 10;</code>
@@ -141,7 +141,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.1.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.1.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_1 = 11;</code>
@@ -151,7 +151,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.0.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.0.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_0 = 12;</code>
@@ -1162,7 +1162,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 2.0.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 2.0.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_2_0 = 8;</code>
@@ -1173,7 +1173,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.3.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.3.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_3 = 9;</code>
@@ -1184,7 +1184,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.2.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.2.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_2 = 10;</code>
@@ -1195,7 +1195,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.1.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.1.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_1 = 11;</code>
@@ -1206,7 +1206,7 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Represents if a resource violates CIS GCP Foundation 1.0.
+   * Represents if a resource violates CIS Google Cloud Platform Foundation 1.0.
    * </pre>
    *
    * <code>SIGNAL_TYPE_VIOLATES_CIS_GCP_FOUNDATION_1_0 = 12;</code>

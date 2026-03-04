@@ -64,7 +64,7 @@ retry_with_backoff 3 10 \
     -Dmaven.javadoc.skip=true \
     -Dclirr.skip=true
 
-mvn -B dependency:analyze -DfailOnWarning=true
+mvn -B dependency:analyze -DfailOnWarning=true -Dcheckstyle.skip=true
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then

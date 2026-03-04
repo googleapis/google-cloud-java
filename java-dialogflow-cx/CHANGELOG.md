@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.97.0 (2026-02-25)
+
+### Features
+
+* Add new value `DETECT_INTENT_RESPONSE_VIEW_DEFAULT` to enum `DetectIntentResponseView` ([d544f39](https://github.com/googleapis/google-cloud-java/commit/d544f3925a0c305ce4f785b0d045fd7c09cd301d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
 ## 0.94.0 (2026-01-29)
 
 ### Features

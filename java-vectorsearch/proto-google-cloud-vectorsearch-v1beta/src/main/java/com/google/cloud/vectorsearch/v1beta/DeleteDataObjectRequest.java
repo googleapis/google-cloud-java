@@ -54,6 +54,7 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
 
   private DeleteDataObjectRequest() {
     name_ = "";
+    etag_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,6 +133,63 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int ETAG_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of the DataObject.
+   * If an etag is provided and does not match the current etag of the
+   * DataObject, deletion will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of the DataObject.
+   * If an etag is provided and does not match the current etag of the
+   * DataObject, deletion will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -149,6 +207,9 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, etag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -160,6 +221,9 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, etag_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -178,6 +242,7 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
         (com.google.cloud.vectorsearch.v1beta.DeleteDataObjectRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -191,6 +256,8 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -334,6 +401,7 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      etag_ = "";
       return this;
     }
 
@@ -375,6 +443,9 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +465,11 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -428,6 +504,12 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -574,6 +656,127 @@ public final class DeleteDataObjectRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the DataObject.
+     * If an etag is provided and does not match the current etag of the
+     * DataObject, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the DataObject.
+     * If an etag is provided and does not match the current etag of the
+     * DataObject, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the DataObject.
+     * If an etag is provided and does not match the current etag of the
+     * DataObject, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the DataObject.
+     * If an etag is provided and does not match the current etag of the
+     * DataObject, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the DataObject.
+     * If an etag is provided and does not match the current etag of the
+     * DataObject, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

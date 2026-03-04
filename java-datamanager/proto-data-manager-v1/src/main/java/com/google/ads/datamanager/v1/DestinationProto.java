@@ -59,38 +59,43 @@ public final class DestinationProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n+google/ads/datamanager/v1/destination."
           + "proto\022\031google.ads.datamanager.v1\032\037google"
-          + "/api/field_behavior.proto\"\244\002\n\013Destinatio"
-          + "n\022\026\n\treference\030\001 \001(\tB\003\340A\001\022E\n\rlogin_accou"
-          + "nt\030\002 \001(\0132).google.ads.datamanager.v1.Pro"
-          + "ductAccountB\003\340A\001\022F\n\016linked_account\030\003 \001(\013"
-          + "2).google.ads.datamanager.v1.ProductAcco"
-          + "untB\003\340A\001\022I\n\021operating_account\030\004 \001(\0132).go"
+          + "/api/field_behavior.proto\032\031google/api/re"
+          + "source.proto\"\244\002\n\013Destination\022\026\n\treferenc"
+          + "e\030\001 \001(\tB\003\340A\001\022E\n\rlogin_account\030\002 \001(\0132).go"
           + "ogle.ads.datamanager.v1.ProductAccountB\003"
-          + "\340A\002\022#\n\026product_destination_id\030\005 \001(\tB\003\340A\002"
-          + "\"\334\002\n\016ProductAccount\0227\n\007product\030\001 \001(\0162\".g"
-          + "oogle.ads.datamanager.v1.ProductB\002\030\001\022\027\n\n"
-          + "account_id\030\002 \001(\tB\003\340A\002\022P\n\014account_type\030\003 "
-          + "\001(\01625.google.ads.datamanager.v1.ProductA"
-          + "ccount.AccountTypeB\003\340A\001\"\245\001\n\013AccountType\022"
-          + "\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\016\n\nGOOGLE_"
-          + "ADS\020\001\022\031\n\025DISPLAY_VIDEO_PARTNER\020\002\022\034\n\030DISP"
-          + "LAY_VIDEO_ADVERTISER\020\003\022\020\n\014DATA_PARTNER\020\004"
-          + "\022\035\n\031GOOGLE_ANALYTICS_PROPERTY\020\005*\201\001\n\007Prod"
-          + "uct\022\027\n\023PRODUCT_UNSPECIFIED\020\000\022\016\n\nGOOGLE_A"
-          + "DS\020\001\022\031\n\025DISPLAY_VIDEO_PARTNER\020\002\022\034\n\030DISPL"
-          + "AY_VIDEO_ADVERTISER\020\003\022\020\n\014DATA_PARTNER\020\004\032"
-          + "\002\030\001B\315\001\n\035com.google.ads.datamanager.v1B\020D"
-          + "estinationProtoP\001ZAcloud.google.com/go/d"
-          + "atamanager/apiv1/datamanagerpb;datamanag"
-          + "erpb\252\002\031Google.Ads.DataManager.V1\312\002\031Googl"
-          + "e\\Ads\\DataManager\\V1\352\002\034Google::Ads::Data"
-          + "Manager::V1b\006proto3"
+          + "\340A\001\022F\n\016linked_account\030\003 \001(\0132).google.ads"
+          + ".datamanager.v1.ProductAccountB\003\340A\001\022I\n\021o"
+          + "perating_account\030\004 \001(\0132).google.ads.data"
+          + "manager.v1.ProductAccountB\003\340A\002\022#\n\026produc"
+          + "t_destination_id\030\005 \001(\tB\003\340A\002\"\201\003\n\016ProductA"
+          + "ccount\0227\n\007product\030\001 \001(\0162\".google.ads.dat"
+          + "amanager.v1.ProductB\002\030\001\022\027\n\naccount_id\030\002 "
+          + "\001(\tB\003\340A\002\022P\n\014account_type\030\003 \001(\01625.google."
+          + "ads.datamanager.v1.ProductAccount.Accoun"
+          + "tTypeB\003\340A\001\"\312\001\n\013AccountType\022\034\n\030ACCOUNT_TY"
+          + "PE_UNSPECIFIED\020\000\022\016\n\nGOOGLE_ADS\020\001\022\031\n\025DISP"
+          + "LAY_VIDEO_PARTNER\020\002\022\034\n\030DISPLAY_VIDEO_ADV"
+          + "ERTISER\020\003\022\020\n\014DATA_PARTNER\020\004\022\035\n\031GOOGLE_AN"
+          + "ALYTICS_PROPERTY\020\005\022#\n\037GOOGLE_AD_MANAGER_"
+          + "AUDIENCE_LINK\020\006*\201\001\n\007Product\022\027\n\023PRODUCT_U"
+          + "NSPECIFIED\020\000\022\016\n\nGOOGLE_ADS\020\001\022\031\n\025DISPLAY_"
+          + "VIDEO_PARTNER\020\002\022\034\n\030DISPLAY_VIDEO_ADVERTI"
+          + "SER\020\003\022\020\n\014DATA_PARTNER\020\004\032\002\030\001B\244\002\n\035com.goog"
+          + "le.ads.datamanager.v1B\020DestinationProtoP"
+          + "\001ZAcloud.google.com/go/datamanager/apiv1"
+          + "/datamanagerpb;datamanagerpb\252\002\031Google.Ad"
+          + "s.DataManager.V1\312\002\031Google\\Ads\\DataManage"
+          + "r\\V1\352\002\034Google::Ads::DataManager::V1\352AT\n\""
+          + "datamanager.googleapis.com/Account\022.acco"
+          + "untTypes/{account_type}/accounts/{accoun"
+          + "t}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_ads_datamanager_v1_Destination_descriptor =
         getDescriptor().getMessageType(0);
@@ -114,9 +119,11 @@ public final class DestinationProto extends com.google.protobuf.GeneratedFile {
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

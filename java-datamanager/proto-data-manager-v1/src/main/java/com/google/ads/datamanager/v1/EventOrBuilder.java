@@ -378,7 +378,21 @@ public interface EventOrBuilder
    * conversions.
    * </pre>
    *
-   * <code>double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  boolean hasConversionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with the event, for value-based
+   * conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The conversionValue.
    */

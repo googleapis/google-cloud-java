@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1.stub;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -29,8 +30,12 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest;
+import com.google.cloud.developerconnect.v1.DeploymentEvent;
+import com.google.cloud.developerconnect.v1.GetDeploymentEventRequest;
 import com.google.cloud.developerconnect.v1.GetInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.InsightsConfig;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
@@ -117,6 +122,31 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventMethodDescriptor =
+          MethodDescriptor.<GetDeploymentEventRequest, DeploymentEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.InsightsConfigService/GetDeploymentEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDeploymentEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DeploymentEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsMethodDescriptor =
+          MethodDescriptor.<ListDeploymentEventsRequest, ListDeploymentEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.InsightsConfigService/ListDeploymentEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDeploymentEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDeploymentEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -152,6 +182,12 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
   private final UnaryCallable<DeleteInsightsConfigRequest, Operation> deleteInsightsConfigCallable;
   private final OperationCallable<DeleteInsightsConfigRequest, Empty, OperationMetadata>
       deleteInsightsConfigOperationCallable;
+  private final UnaryCallable<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventCallable;
+  private final UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsCallable;
+  private final UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsPagedResponse>
+      listDeploymentEventsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -254,6 +290,28 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetDeploymentEventRequest, DeploymentEvent>
+        getDeploymentEventTransportSettings =
+            GrpcCallSettings.<GetDeploymentEventRequest, DeploymentEvent>newBuilder()
+                .setMethodDescriptor(getDeploymentEventMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+        listDeploymentEventsTransportSettings =
+            GrpcCallSettings.<ListDeploymentEventsRequest, ListDeploymentEventsResponse>newBuilder()
+                .setMethodDescriptor(listDeploymentEventsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -323,6 +381,21 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
             settings.deleteInsightsConfigOperationSettings(),
             clientContext,
             operationsStub);
+    this.getDeploymentEventCallable =
+        callableFactory.createUnaryCallable(
+            getDeploymentEventTransportSettings,
+            settings.getDeploymentEventSettings(),
+            clientContext);
+    this.listDeploymentEventsCallable =
+        callableFactory.createUnaryCallable(
+            listDeploymentEventsTransportSettings,
+            settings.listDeploymentEventsSettings(),
+            clientContext);
+    this.listDeploymentEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeploymentEventsTransportSettings,
+            settings.listDeploymentEventsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -389,6 +462,23 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
   public OperationCallable<DeleteInsightsConfigRequest, Empty, OperationMetadata>
       deleteInsightsConfigOperationCallable() {
     return deleteInsightsConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeploymentEventRequest, DeploymentEvent> getDeploymentEventCallable() {
+    return getDeploymentEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsCallable() {
+    return listDeploymentEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsPagedResponse>
+      listDeploymentEventsPagedCallable() {
+    return listDeploymentEventsPagedCallable;
   }
 
   @Override

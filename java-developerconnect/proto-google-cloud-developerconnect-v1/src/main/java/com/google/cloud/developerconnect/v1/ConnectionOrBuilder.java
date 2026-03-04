@@ -271,6 +271,94 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Configuration for connections to an instance of Secure Source Manager.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+   * </code>
+   *
+   * @return Whether the secureSourceManagerInstanceConfig field is set.
+   */
+  boolean hasSecureSourceManagerInstanceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of Secure Source Manager.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+   * </code>
+   *
+   * @return The secureSourceManagerInstanceConfig.
+   */
+  com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+      getSecureSourceManagerInstanceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of Secure Source Manager.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfigOrBuilder
+      getSecureSourceManagerInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for connections to an HTTP service provider.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the httpConfig field is set.
+   */
+  boolean hasHttpConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for connections to an HTTP service provider.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The httpConfig.
+   */
+  com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig getHttpConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for connections to an HTTP service provider.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfigOrBuilder getHttpConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the connection, in the format
    * `projects/{project}/locations/{location}/connections/{connection_id}`.
    * </pre>

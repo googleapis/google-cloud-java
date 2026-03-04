@@ -340,6 +340,16 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
     return ((DeveloperConnectStubSettings) getStubSettings()).deleteSelfOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to startOAuth. */
+  public UnaryCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).startOAuthSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishOAuth. */
+  public UnaryCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).finishOAuthSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -676,6 +686,17 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
     public OperationCallSettings.Builder<DeleteSelfRequest, Empty, OperationMetadata>
         deleteSelfOperationSettings() {
       return getStubSettingsBuilder().deleteSelfOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startOAuth. */
+    public UnaryCallSettings.Builder<StartOAuthRequest, StartOAuthResponse> startOAuthSettings() {
+      return getStubSettingsBuilder().startOAuthSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishOAuth. */
+    public UnaryCallSettings.Builder<FinishOAuthRequest, FinishOAuthResponse>
+        finishOAuthSettings() {
+      return getStubSettingsBuilder().finishOAuthSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -32,7 +32,9 @@ public interface UserCredentialOrBuilder
    * <pre>
    * Required. A SecretManager resource containing the user token that
    * authorizes the Developer Connect connection. Format:
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -49,7 +51,9 @@ public interface UserCredentialOrBuilder
    * <pre>
    * Required. A SecretManager resource containing the user token that
    * authorizes the Developer Connect connection. Format:
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>

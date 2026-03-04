@@ -143,6 +143,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.Bandwidth}
@@ -238,6 +239,16 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>BPS_300M = 49607540;</code>
      */
     BPS_300M(49607540),
+    /**
+     *
+     *
+     * <pre>
+     * 400 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_400G = 49637325;</code>
+     */
+    BPS_400G(49637325),
     /**
      *
      *
@@ -404,6 +415,17 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
+     * 400 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_400G = 49637325;</code>
+     */
+    public static final int BPS_400G_VALUE = 49637325;
+
+    /**
+     *
+     *
+     * <pre>
      * 400 Mbit/s
      * </pre>
      *
@@ -497,6 +519,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           return BPS_2G;
         case 49607540:
           return BPS_300M;
+        case 49637325:
+          return BPS_400G;
         case 49637331:
           return BPS_400M;
         case 49667122:
@@ -1944,6 +1968,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * Check the Bandwidth enum for the list of possible values.
    * </pre>
    *
@@ -1980,6 +2005,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * Check the Bandwidth enum for the list of possible values.
    * </pre>
    *
@@ -2024,6 +2050,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * - BPS_20G: 20 Gbit/s
    * - BPS_50G: 50 Gbit/s
    * - BPS_100G: 100 Gbit/s
+   * - BPS_400G: 400 Gbit/s
    * Check the Bandwidth enum for the list of possible values.
    * </pre>
    *
@@ -7448,6 +7475,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * - BPS_20G: 20 Gbit/s
      * - BPS_50G: 50 Gbit/s
      * - BPS_100G: 100 Gbit/s
+     * - BPS_400G: 400 Gbit/s
      * Check the Bandwidth enum for the list of possible values.
      * </pre>
      *
@@ -7483,6 +7511,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * - BPS_20G: 20 Gbit/s
      * - BPS_50G: 50 Gbit/s
      * - BPS_100G: 100 Gbit/s
+     * - BPS_400G: 400 Gbit/s
      * Check the Bandwidth enum for the list of possible values.
      * </pre>
      *
@@ -7526,6 +7555,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * - BPS_20G: 20 Gbit/s
      * - BPS_50G: 50 Gbit/s
      * - BPS_100G: 100 Gbit/s
+     * - BPS_400G: 400 Gbit/s
      * Check the Bandwidth enum for the list of possible values.
      * </pre>
      *
@@ -7569,6 +7599,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * - BPS_20G: 20 Gbit/s
      * - BPS_50G: 50 Gbit/s
      * - BPS_100G: 100 Gbit/s
+     * - BPS_400G: 400 Gbit/s
      * Check the Bandwidth enum for the list of possible values.
      * </pre>
      *
@@ -7611,6 +7642,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * - BPS_20G: 20 Gbit/s
      * - BPS_50G: 50 Gbit/s
      * - BPS_100G: 100 Gbit/s
+     * - BPS_400G: 400 Gbit/s
      * Check the Bandwidth enum for the list of possible values.
      * </pre>
      *
@@ -7649,6 +7681,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * - BPS_20G: 20 Gbit/s
      * - BPS_50G: 50 Gbit/s
      * - BPS_100G: 100 Gbit/s
+     * - BPS_400G: 400 Gbit/s
      * Check the Bandwidth enum for the list of possible values.
      * </pre>
      *

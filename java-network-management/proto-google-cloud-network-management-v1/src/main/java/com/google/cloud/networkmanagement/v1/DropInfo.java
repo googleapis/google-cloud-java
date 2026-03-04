@@ -1215,6 +1215,27 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      * <code>HYBRID_SUBNET_NO_ROUTE = 106;</code>
      */
     HYBRID_SUBNET_NO_ROUTE(106),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped by GKE Network Policy.
+     * </pre>
+     *
+     * <code>GKE_NETWORK_POLICY = 108;</code>
+     */
+    GKE_NETWORK_POLICY(108),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped because there is no valid matching route from the
+     * network of the Google-managed service to the destination.
+     * </pre>
+     *
+     * <code>NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION = 110;</code>
+     */
+    NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION(110),
     UNRECOGNIZED(-1),
     ;
 
@@ -2460,6 +2481,29 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      */
     public static final int HYBRID_SUBNET_NO_ROUTE_VALUE = 106;
 
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped by GKE Network Policy.
+     * </pre>
+     *
+     * <code>GKE_NETWORK_POLICY = 108;</code>
+     */
+    public static final int GKE_NETWORK_POLICY_VALUE = 108;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped because there is no valid matching route from the
+     * network of the Google-managed service to the destination.
+     * </pre>
+     *
+     * <code>NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION = 110;</code>
+     */
+    public static final int NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION_VALUE = 110;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -2690,6 +2734,10 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
           return HYBRID_SUBNET_REGION_MISMATCH;
         case 106:
           return HYBRID_SUBNET_NO_ROUTE;
+        case 108:
+          return GKE_NETWORK_POLICY;
+        case 110:
+          return NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION;
         default:
           return null;
       }

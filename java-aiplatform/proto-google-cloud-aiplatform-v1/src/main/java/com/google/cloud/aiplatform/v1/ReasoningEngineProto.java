@@ -65,6 +65,14 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_BuildArgsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_BuildArgsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_fieldAccessorTable;
@@ -99,7 +107,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\0320google/cloud/aiplatform/v1/encryption_spec.proto\032(google/cl"
           + "oud/aiplatform/v1/env_var.proto\0323google/cloud/aiplatform/v1/service_networking.p"
-          + "roto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\333\017\n"
+          + "roto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\362\021\n"
           + "\023ReasoningEngineSpec\022Z\n"
           + "\020source_code_spec\030\013 \001(\0132>."
           + "google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecH\000\022!\n"
@@ -132,7 +140,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\005value\030\002 \001(\t:\0028\001B\020\n"
           + "\016_min_instancesB\020\n"
           + "\016_max_instancesB\030\n"
-          + "\026_container_concurrency\032\306\006\n"
+          + "\026_container_concurrency\032\335\010\n"
           + "\016SourceCodeSpec\022d\n\r"
           + "inline_source\030\001 \001(\0132K.google.cloud.aiplatform.v1.Reasoning"
           + "EngineSpec.SourceCodeSpec.InlineSourceH\000\022y\n"
@@ -140,17 +148,25 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "gle.cloud.aiplatform.v1.ReasoningEngineS"
           + "pec.SourceCodeSpec.DeveloperConnectSourceH\000\022`\n"
           + "\013python_spec\030\002 \001(\0132I.google.cloud."
-          + "aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecH\001\032.\n"
+          + "aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecH\001\022c\n\n"
+          + "image_spec\030\005 \001(\0132H.google.cloud.aiplatform.v1.Reasoning"
+          + "EngineSpec.SourceCodeSpec.ImageSpecB\003\340A\001H\001\032.\n"
           + "\014InlineSource\022\036\n"
-          + "\016source_archive\030\001 \001(\014B\006\340A\002\340A\004\032\231\001\n"
+          + "\016source_archive\030\001 \001(\014B\006\340A\002\340A\004\032\257\001\n"
+          + "\tImageSpec\022p\n\n"
+          + "build_args\030\001 \003(\0132W.google.cloud.aiplatform.v1.Reason"
+          + "ingEngineSpec.SourceCodeSpec.ImageSpec.BuildArgsEntryB\003\340A\001\0320\n"
+          + "\016BuildArgsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032\231\001\n"
           + "\026DeveloperConnectConfig\022V\n"
           + "\023git_repository_link\030\001 \001(\tB9\340A\002\372A3\n"
           + "1developerconnect.googleapis.com/GitRepositoryLink\022\020\n"
           + "\003dir\030\002 \001(\tB\003\340A\002\022\025\n"
           + "\010revision\030\003 \001(\tB\003\340A\002\032\204\001\n"
           + "\026DeveloperConnectSource\022j\n"
-          + "\006config\030\001 \001(\0132U.google.cloud.aiplatform.v1.ReasoningEngineSpec.So"
-          + "urceCodeSpec.DeveloperConnectConfigB\003\340A\002\032\202\001\n\n"
+          + "\006config\030\001 \001(\0132U.google.cloud.aiplatform.v1.ReasoningEngineSpec.Sou"
+          + "rceCodeSpec.DeveloperConnectConfigB\003\340A\002\032\202\001\n\n"
           + "PythonSpec\022\024\n"
           + "\007version\030\001 \001(\tB\003\340A\001\022\036\n"
           + "\021entrypoint_module\030\002 \001(\tB\003\340A\001\022\036\n"
@@ -164,8 +180,8 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\007 \001(\tB\003\340A\001\022B\n"
-          + "\004spec\030\003 \001(\0132/.google.clo"
-          + "ud.aiplatform.v1.ReasoningEngineSpecB\003\340A\001\0224\n"
+          + "\004spec\030\003 \001(\0132/.google.clou"
+          + "d.aiplatform.v1.ReasoningEngineSpecB\003\340A\001\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
@@ -177,16 +193,16 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
-          + ")aiplatform.googleapis.com/ReasoningEngine\022Kprojects/{project}/locations/{l"
-          + "ocation}/reasoningEngines/{reasoning_eng"
-          + "ine}*\020reasoningEngines2\017reasoningEngineB\364\002\n"
-          + "\036com.google.cloud.aiplatform.v1B\024ReasoningEngineProtoP\001Z>cloud.google.com/go/"
-          + "aiplatform/apiv1/aiplatformpb;aiplatform"
-          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352A\236\001\n"
-          + "1developerconnect.googleapis.com/GitRepositoryLink\022iprojects/{p"
-          + "roject}/locations/{location}/connections/{connection}/gitRepositoryLinks/{git_re"
-          + "pository_link}b\006proto3"
+          + ")aiplatform.googleapis.com/ReasoningEngine\022Kprojects/{project}/locations/{lo"
+          + "cation}/reasoningEngines/{reasoning_engi"
+          + "ne}*\020reasoningEngines2\017reasoningEngineB\364\002\n"
+          + "\036com.google.cloud.aiplatform.v1B\024Reaso"
+          + "ningEngineProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aiplatformp"
+          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
+          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352A\236\001\n"
+          + "1developerconnect.googleapis.com/GitRepositoryLink\022iprojects/{pr"
+          + "oject}/locations/{location}/connections/{connection}/gitRepositoryLinks/{git_rep"
+          + "ository_link}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -251,7 +267,12 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor,
             new java.lang.String[] {
-              "InlineSource", "DeveloperConnectSource", "PythonSpec", "Source", "LanguageSpec",
+              "InlineSource",
+              "DeveloperConnectSource",
+              "PythonSpec",
+              "ImageSpec",
+              "Source",
+              "LanguageSpec",
             });
     internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor =
         internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor
@@ -262,9 +283,27 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
             new java.lang.String[] {
               "SourceArchive",
             });
-    internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor
             .getNestedType(1);
+    internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor,
+            new java.lang.String[] {
+              "BuildArgs",
+            });
+    internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_BuildArgsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_BuildArgsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_ImageSpec_BuildArgsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor
+            .getNestedType(2);
     internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor,
@@ -273,7 +312,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
             });
     internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_descriptor =
         internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor
-            .getNestedType(2);
+            .getNestedType(3);
     internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_descriptor,
@@ -282,7 +321,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
             });
     internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor
-            .getNestedType(3);
+            .getNestedType(4);
     internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor,

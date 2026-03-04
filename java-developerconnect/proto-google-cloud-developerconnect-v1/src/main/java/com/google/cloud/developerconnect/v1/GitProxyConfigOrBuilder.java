@@ -39,4 +39,40 @@ public interface GitProxyConfigOrBuilder
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The base URI for the HTTP proxy endpoint. Has
+   * the format
+   * `https://{generatedID}-c-h-{shortRegion}.developerconnect.dev`
+   * Populated only when enabled is set to true.
+   * This endpoint is used by other Google services that integrate with
+   * Developer Connect.
+   * </pre>
+   *
+   * <code>string http_proxy_base_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The httpProxyBaseUri.
+   */
+  java.lang.String getHttpProxyBaseUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The base URI for the HTTP proxy endpoint. Has
+   * the format
+   * `https://{generatedID}-c-h-{shortRegion}.developerconnect.dev`
+   * Populated only when enabled is set to true.
+   * This endpoint is used by other Google services that integrate with
+   * Developer Connect.
+   * </pre>
+   *
+   * <code>string http_proxy_base_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for httpProxyBaseUri.
+   */
+  com.google.protobuf.ByteString getHttpProxyBaseUriBytes();
 }

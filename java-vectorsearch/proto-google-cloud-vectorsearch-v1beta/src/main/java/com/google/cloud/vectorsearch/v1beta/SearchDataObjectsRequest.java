@@ -358,7 +358,9 @@ public final class SearchDataObjectsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The standard list page size.
+   * Optional. The standard list page size. Only supported for KNN. If not set,
+   * up to search_type.top_k results will be returned. The maximum value is
+   * 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1738,7 +1740,9 @@ public final class SearchDataObjectsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The standard list page size.
+     * Optional. The standard list page size. Only supported for KNN. If not set,
+     * up to search_type.top_k results will be returned. The maximum value is
+     * 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1754,7 +1758,9 @@ public final class SearchDataObjectsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The standard list page size.
+     * Optional. The standard list page size. Only supported for KNN. If not set,
+     * up to search_type.top_k results will be returned. The maximum value is
+     * 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1774,7 +1780,9 @@ public final class SearchDataObjectsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The standard list page size.
+     * Optional. The standard list page size. Only supported for KNN. If not set,
+     * up to search_type.top_k results will be returned. The maximum value is
+     * 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

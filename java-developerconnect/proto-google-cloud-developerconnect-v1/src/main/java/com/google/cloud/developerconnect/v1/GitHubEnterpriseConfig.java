@@ -59,6 +59,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     installationUri_ = "";
     serverVersion_ = "";
     sslCaCertificate_ = "";
+    organization_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -212,7 +213,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. SecretManager resource containing the private key of the GitHub
-   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -239,7 +242,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. SecretManager resource containing the private key of the GitHub
-   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -271,7 +276,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. SecretManager resource containing the webhook secret of the
-   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -298,7 +305,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. SecretManager resource containing the webhook secret of the
-   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+   * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+   * supported in that location).
    * </pre>
    *
    * <code>
@@ -572,6 +581,65 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int ORGANIZATION_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organization_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+   * is created.
+   * </pre>
+   *
+   * <code>
+   * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The organization.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganization() {
+    java.lang.Object ref = organization_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organization_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+   * is created.
+   * </pre>
+   *
+   * <code>
+   * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for organization.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrganizationBytes() {
+    java.lang.Object ref = organization_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      organization_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -616,6 +684,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sslCaCertificate_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 14, sslCaCertificate_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(organization_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, organization_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -657,6 +728,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sslCaCertificate_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(14, sslCaCertificate_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(organization_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, organization_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -687,6 +761,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
     if (!getServerVersion().equals(other.getServerVersion())) return false;
     if (!getSslCaCertificate().equals(other.getSslCaCertificate())) return false;
+    if (!getOrganization().equals(other.getOrganization())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -720,6 +795,8 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getServerVersion().hashCode();
     hash = (37 * hash) + SSL_CA_CERTIFICATE_FIELD_NUMBER;
     hash = (53 * hash) + getSslCaCertificate().hashCode();
+    hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganization().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -884,6 +961,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       }
       serverVersion_ = "";
       sslCaCertificate_ = "";
+      organization_ = "";
       return this;
     }
 
@@ -955,6 +1033,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.sslCaCertificate_ = sslCaCertificate_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.organization_ = organization_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1013,6 +1094,11 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       if (!other.getSslCaCertificate().isEmpty()) {
         sslCaCertificate_ = other.sslCaCertificate_;
         bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getOrganization().isEmpty()) {
+        organization_ = other.organization_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1103,6 +1189,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000200;
                 break;
               } // case 114
+            case 122:
+              {
+                organization_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1407,7 +1499,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the private key of the GitHub
-     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1433,7 +1527,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the private key of the GitHub
-     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1459,7 +1555,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the private key of the GitHub
-     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1484,7 +1582,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the private key of the GitHub
-     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1505,7 +1605,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the private key of the GitHub
-     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1533,7 +1635,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the webhook secret of the
-     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1559,7 +1663,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the webhook secret of the
-     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1585,7 +1691,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the webhook secret of the
-     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1610,7 +1718,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the webhook secret of the
-     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -1631,7 +1741,9 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. SecretManager resource containing the webhook secret of the
-     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * GitHub App, formatted as `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` or
+     * `projects/&#42;&#47;locations/&#42;&#47;secrets/&#42;&#47;versions/&#42;` (if regional secrets are
+     * supported in that location).
      * </pre>
      *
      * <code>
@@ -2297,6 +2409,132 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       sslCaCertificate_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organization_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+     * is created.
+     * </pre>
+     *
+     * <code>
+     * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The organization.
+     */
+    public java.lang.String getOrganization() {
+      java.lang.Object ref = organization_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organization_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+     * is created.
+     * </pre>
+     *
+     * <code>
+     * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for organization.
+     */
+    public com.google.protobuf.ByteString getOrganizationBytes() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        organization_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+     * is created.
+     * </pre>
+     *
+     * <code>
+     * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The organization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganization(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      organization_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+     * is created.
+     * </pre>
+     *
+     * <code>
+     * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganization() {
+      organization_ = getDefaultInstance().getOrganization();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
+     * is created.
+     * </pre>
+     *
+     * <code>
+     * string organization = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for organization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      organization_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

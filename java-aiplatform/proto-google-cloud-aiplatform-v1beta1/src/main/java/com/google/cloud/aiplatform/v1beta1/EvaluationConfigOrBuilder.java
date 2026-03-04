@@ -177,4 +177,51 @@ public interface EvaluationConfigOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.AutoraterConfigOrBuilder getAutoraterConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for inference generation and outputs.
+   * If not set, default generation parameters are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inferenceGenerationConfig field is set.
+   */
+  boolean hasInferenceGenerationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for inference generation and outputs.
+   * If not set, default generation parameters are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inferenceGenerationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig getInferenceGenerationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for inference generation and outputs.
+   * If not set, default generation parameters are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig inference_generation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+      getInferenceGenerationConfigOrBuilder();
 }

@@ -37,7 +37,7 @@ public class SyncGetAutokeyConfig {
     try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
       GetAutokeyConfigRequest request =
           GetAutokeyConfigRequest.newBuilder()
-              .setName(AutokeyConfigName.of("[FOLDER]").toString())
+              .setName(AutokeyConfigName.ofFolderName("[FOLDER]").toString())
               .build();
       AutokeyConfig response = autokeyAdminClient.getAutokeyConfig(request);
     }

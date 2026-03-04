@@ -574,4 +574,46 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void startOAuth(
+      StartOAuthRequest request, StreamObserver<StartOAuthResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof StartOAuthResponse) {
+      requests.add(request);
+      responseObserver.onNext(((StartOAuthResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartOAuth, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  StartOAuthResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void finishOAuth(
+      FinishOAuthRequest request, StreamObserver<FinishOAuthResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FinishOAuthResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FinishOAuthResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FinishOAuth, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FinishOAuthResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

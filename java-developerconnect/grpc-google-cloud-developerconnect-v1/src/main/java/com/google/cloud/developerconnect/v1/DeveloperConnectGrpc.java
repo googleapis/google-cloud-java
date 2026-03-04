@@ -1188,6 +1188,100 @@ public final class DeveloperConnectGrpc {
     return getDeleteSelfMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.StartOAuthRequest,
+          com.google.cloud.developerconnect.v1.StartOAuthResponse>
+      getStartOAuthMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartOAuth",
+      requestType = com.google.cloud.developerconnect.v1.StartOAuthRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.StartOAuthResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.StartOAuthRequest,
+          com.google.cloud.developerconnect.v1.StartOAuthResponse>
+      getStartOAuthMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.StartOAuthRequest,
+            com.google.cloud.developerconnect.v1.StartOAuthResponse>
+        getStartOAuthMethod;
+    if ((getStartOAuthMethod = DeveloperConnectGrpc.getStartOAuthMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getStartOAuthMethod = DeveloperConnectGrpc.getStartOAuthMethod) == null) {
+          DeveloperConnectGrpc.getStartOAuthMethod =
+              getStartOAuthMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.StartOAuthRequest,
+                          com.google.cloud.developerconnect.v1.StartOAuthResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartOAuth"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.StartOAuthRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.StartOAuthResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("StartOAuth"))
+                      .build();
+        }
+      }
+    }
+    return getStartOAuthMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FinishOAuthRequest,
+          com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+      getFinishOAuthMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FinishOAuth",
+      requestType = com.google.cloud.developerconnect.v1.FinishOAuthRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.FinishOAuthResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FinishOAuthRequest,
+          com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+      getFinishOAuthMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FinishOAuthRequest,
+            com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+        getFinishOAuthMethod;
+    if ((getFinishOAuthMethod = DeveloperConnectGrpc.getFinishOAuthMethod) == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFinishOAuthMethod = DeveloperConnectGrpc.getFinishOAuthMethod) == null) {
+          DeveloperConnectGrpc.getFinishOAuthMethod =
+              getFinishOAuthMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.FinishOAuthRequest,
+                          com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FinishOAuth"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.FinishOAuthRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.FinishOAuthResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier("FinishOAuth"))
+                      .build();
+        }
+      }
+    }
+    return getFinishOAuthMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DeveloperConnectStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DeveloperConnectStub> factory =
@@ -1330,8 +1424,9 @@ public final class DeveloperConnectGrpc {
      * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer
      * Connect will configure the Git Repository to send webhook events to
      * Developer Connect. Connections that use Firebase GitHub Application will
-     * have events forwarded to the Firebase service. All other Connections will
-     * have events forwarded to Cloud Build.
+     * have events forwarded to the Firebase service. Connections that use Gemini
+     * Code Assist will have events forwarded to Gemini Code Assist service. All
+     * other Connections will have events forwarded to Cloud Build.
      * </pre>
      */
     default void createGitRepositoryLink(
@@ -1608,6 +1703,35 @@ public final class DeveloperConnectGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSelfMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts OAuth flow for an account connector.
+     * </pre>
+     */
+    default void startOAuth(
+        com.google.cloud.developerconnect.v1.StartOAuthRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.StartOAuthResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartOAuthMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finishes OAuth flow for an account connector.
+     * </pre>
+     */
+    default void finishOAuth(
+        com.google.cloud.developerconnect.v1.FinishOAuthRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFinishOAuthMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1733,8 +1857,9 @@ public final class DeveloperConnectGrpc {
      * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer
      * Connect will configure the Git Repository to send webhook events to
      * Developer Connect. Connections that use Firebase GitHub Application will
-     * have events forwarded to the Firebase service. All other Connections will
-     * have events forwarded to Cloud Build.
+     * have events forwarded to the Firebase service. Connections that use Gemini
+     * Code Assist will have events forwarded to Gemini Code Assist service. All
+     * other Connections will have events forwarded to Cloud Build.
      * </pre>
      */
     public void createGitRepositoryLink(
@@ -2045,6 +2170,38 @@ public final class DeveloperConnectGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSelfMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts OAuth flow for an account connector.
+     * </pre>
+     */
+    public void startOAuth(
+        com.google.cloud.developerconnect.v1.StartOAuthRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.StartOAuthResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartOAuthMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finishes OAuth flow for an account connector.
+     * </pre>
+     */
+    public void finishOAuth(
+        com.google.cloud.developerconnect.v1.FinishOAuthRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFinishOAuthMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2144,8 +2301,9 @@ public final class DeveloperConnectGrpc {
      * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer
      * Connect will configure the Git Repository to send webhook events to
      * Developer Connect. Connections that use Firebase GitHub Application will
-     * have events forwarded to the Firebase service. All other Connections will
-     * have events forwarded to Cloud Build.
+     * have events forwarded to the Firebase service. Connections that use Gemini
+     * Code Assist will have events forwarded to Gemini Code Assist service. All
+     * other Connections will have events forwarded to Cloud Build.
      * </pre>
      */
     public com.google.longrunning.Operation createGitRepositoryLink(
@@ -2413,6 +2571,34 @@ public final class DeveloperConnectGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSelfMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts OAuth flow for an account connector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.StartOAuthResponse startOAuth(
+        com.google.cloud.developerconnect.v1.StartOAuthRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartOAuthMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finishes OAuth flow for an account connector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FinishOAuthResponse finishOAuth(
+        com.google.cloud.developerconnect.v1.FinishOAuthRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFinishOAuthMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2506,8 +2692,9 @@ public final class DeveloperConnectGrpc {
      * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer
      * Connect will configure the Git Repository to send webhook events to
      * Developer Connect. Connections that use Firebase GitHub Application will
-     * have events forwarded to the Firebase service. All other Connections will
-     * have events forwarded to Cloud Build.
+     * have events forwarded to the Firebase service. Connections that use Gemini
+     * Code Assist will have events forwarded to Gemini Code Assist service. All
+     * other Connections will have events forwarded to Cloud Build.
      * </pre>
      */
     public com.google.longrunning.Operation createGitRepositoryLink(
@@ -2756,6 +2943,32 @@ public final class DeveloperConnectGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSelfMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts OAuth flow for an account connector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.StartOAuthResponse startOAuth(
+        com.google.cloud.developerconnect.v1.StartOAuthRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartOAuthMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finishes OAuth flow for an account connector.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FinishOAuthResponse finishOAuth(
+        com.google.cloud.developerconnect.v1.FinishOAuthRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFinishOAuthMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2851,8 +3064,9 @@ public final class DeveloperConnectGrpc {
      * Creates a GitRepositoryLink. Upon linking a Git Repository, Developer
      * Connect will configure the Git Repository to send webhook events to
      * Developer Connect. Connections that use Firebase GitHub Application will
-     * have events forwarded to the Firebase service. All other Connections will
-     * have events forwarded to Cloud Build.
+     * have events forwarded to the Firebase service. Connections that use Gemini
+     * Code Assist will have events forwarded to Gemini Code Assist service. All
+     * other Connections will have events forwarded to Cloud Build.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3122,6 +3336,34 @@ public final class DeveloperConnectGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSelfMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts OAuth flow for an account connector.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.StartOAuthResponse>
+        startOAuth(com.google.cloud.developerconnect.v1.StartOAuthRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartOAuthMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finishes OAuth flow for an account connector.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.FinishOAuthResponse>
+        finishOAuth(com.google.cloud.developerconnect.v1.FinishOAuthRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFinishOAuthMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONNECTIONS = 0;
@@ -3148,6 +3390,8 @@ public final class DeveloperConnectGrpc {
   private static final int METHODID_DELETE_USER = 21;
   private static final int METHODID_FETCH_SELF = 22;
   private static final int METHODID_DELETE_SELF = 23;
+  private static final int METHODID_START_OAUTH = 24;
+  private static final int METHODID_FINISH_OAUTH = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3308,6 +3552,19 @@ public final class DeveloperConnectGrpc {
           serviceImpl.deleteSelf(
               (com.google.cloud.developerconnect.v1.DeleteSelfRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_START_OAUTH:
+          serviceImpl.startOAuth(
+              (com.google.cloud.developerconnect.v1.StartOAuthRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.StartOAuthResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FINISH_OAUTH:
+          serviceImpl.finishOAuth(
+              (com.google.cloud.developerconnect.v1.FinishOAuthRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.FinishOAuthResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3486,6 +3743,20 @@ public final class DeveloperConnectGrpc {
                 new MethodHandlers<
                     com.google.cloud.developerconnect.v1.DeleteSelfRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_SELF)))
+        .addMethod(
+            getStartOAuthMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.StartOAuthRequest,
+                    com.google.cloud.developerconnect.v1.StartOAuthResponse>(
+                    service, METHODID_START_OAUTH)))
+        .addMethod(
+            getFinishOAuthMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FinishOAuthRequest,
+                    com.google.cloud.developerconnect.v1.FinishOAuthResponse>(
+                    service, METHODID_FINISH_OAUTH)))
         .build();
   }
 
@@ -3561,6 +3832,8 @@ public final class DeveloperConnectGrpc {
                       .addMethod(getDeleteUserMethod())
                       .addMethod(getFetchSelfMethod())
                       .addMethod(getDeleteSelfMethod())
+                      .addMethod(getStartOAuthMethod())
+                      .addMethod(getFinishOAuthMethod())
                       .build();
         }
       }

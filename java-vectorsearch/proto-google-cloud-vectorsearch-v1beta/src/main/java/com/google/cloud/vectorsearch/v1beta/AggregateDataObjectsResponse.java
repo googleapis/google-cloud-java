@@ -80,10 +80,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The aggregated results of the query.
+   * Output only. The aggregated results of the query.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+   * <code>
+   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.protobuf.Struct> getAggregateResultsList() {
@@ -94,10 +96,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The aggregated results of the query.
+   * Output only. The aggregated results of the query.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+   * <code>
+   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.protobuf.StructOrBuilder>
@@ -109,10 +113,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The aggregated results of the query.
+   * Output only. The aggregated results of the query.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+   * <code>
+   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getAggregateResultsCount() {
@@ -123,10 +129,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The aggregated results of the query.
+   * Output only. The aggregated results of the query.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+   * <code>
+   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.Struct getAggregateResults(int index) {
@@ -137,10 +145,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The aggregated results of the query.
+   * Output only. The aggregated results of the query.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+   * <code>
+   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getAggregateResultsOrBuilder(int index) {
@@ -532,10 +542,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.protobuf.Struct> getAggregateResultsList() {
       if (aggregateResultsBuilder_ == null) {
@@ -549,10 +561,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getAggregateResultsCount() {
       if (aggregateResultsBuilder_ == null) {
@@ -566,10 +580,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Struct getAggregateResults(int index) {
       if (aggregateResultsBuilder_ == null) {
@@ -583,10 +599,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setAggregateResults(int index, com.google.protobuf.Struct value) {
       if (aggregateResultsBuilder_ == null) {
@@ -606,10 +624,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setAggregateResults(
         int index, com.google.protobuf.Struct.Builder builderForValue) {
@@ -627,10 +647,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAggregateResults(com.google.protobuf.Struct value) {
       if (aggregateResultsBuilder_ == null) {
@@ -650,10 +672,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAggregateResults(int index, com.google.protobuf.Struct value) {
       if (aggregateResultsBuilder_ == null) {
@@ -673,10 +697,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAggregateResults(com.google.protobuf.Struct.Builder builderForValue) {
       if (aggregateResultsBuilder_ == null) {
@@ -693,10 +719,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAggregateResults(
         int index, com.google.protobuf.Struct.Builder builderForValue) {
@@ -714,10 +742,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllAggregateResults(
         java.lang.Iterable<? extends com.google.protobuf.Struct> values) {
@@ -735,10 +765,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearAggregateResults() {
       if (aggregateResultsBuilder_ == null) {
@@ -755,10 +787,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeAggregateResults(int index) {
       if (aggregateResultsBuilder_ == null) {
@@ -775,10 +809,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Struct.Builder getAggregateResultsBuilder(int index) {
       return internalGetAggregateResultsFieldBuilder().getBuilder(index);
@@ -788,10 +824,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.StructOrBuilder getAggregateResultsOrBuilder(int index) {
       if (aggregateResultsBuilder_ == null) {
@@ -805,10 +843,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.protobuf.StructOrBuilder>
         getAggregateResultsOrBuilderList() {
@@ -823,10 +863,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Struct.Builder addAggregateResultsBuilder() {
       return internalGetAggregateResultsFieldBuilder()
@@ -837,10 +879,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Struct.Builder addAggregateResultsBuilder(int index) {
       return internalGetAggregateResultsFieldBuilder()
@@ -851,10 +895,12 @@ public final class AggregateDataObjectsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The aggregated results of the query.
+     * Output only. The aggregated results of the query.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
+     * <code>
+     * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.protobuf.Struct.Builder> getAggregateResultsBuilderList() {
       return internalGetAggregateResultsFieldBuilder().getBuilderList();

@@ -81,6 +81,7 @@ public class HttpJsonAutokeyAdminStub extends AutokeyAdminStub {
                                 fields, "autokeyConfig.name", request.getAutokeyConfig().getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{autokeyConfig.name=projects/*/autokeyConfig}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -119,6 +120,7 @@ public class HttpJsonAutokeyAdminStub extends AutokeyAdminStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/autokeyConfig}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

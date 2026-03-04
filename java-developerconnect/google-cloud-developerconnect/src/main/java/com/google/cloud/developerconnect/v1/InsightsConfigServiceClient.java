@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * Service Description: Creates and manages InsightsConfigs.
  *
  * <p>The InsightsConfig resource is the core configuration object to capture events from your
- * Software Development Lifecycle. It acts as the central hub for managing how Developer connect
+ * Software Development Lifecycle. It acts as the central hub for managing how Developer Connect
  * understands your application, its runtime environments, and the artifacts deployed within them. A
  * user can create an InsightsConfig, list previously-requested InsightsConfigs or get
  * InsightsConfigs by their ID to determine the status of the InsightsConfig.
@@ -156,7 +156,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteInsightsConfig</td>
- *      <td><p> Delete a single Insight.</td>
+ *      <td><p> Deletes a single Insight.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -175,8 +175,48 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetDeploymentEvent</td>
+ *      <td><p> Gets a single Deployment Event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeploymentEvent(GetDeploymentEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeploymentEvent(DeploymentEventName name)
+ *           <li><p> getDeploymentEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeploymentEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeploymentEvents</td>
+ *      <td><p> Lists Deployment Events in a given insights config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeploymentEvents(ListDeploymentEventsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeploymentEvents(InsightsConfigName parent)
+ *           <li><p> listDeploymentEvents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentEventsPagedCallable()
+ *           <li><p> listDeploymentEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -917,7 +957,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a single Insight.
+   * Deletes a single Insight.
    *
    * <p>Sample code:
    *
@@ -949,7 +989,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a single Insight.
+   * Deletes a single Insight.
    *
    * <p>Sample code:
    *
@@ -978,7 +1018,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a single Insight.
+   * Deletes a single Insight.
    *
    * <p>Sample code:
    *
@@ -1012,7 +1052,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a single Insight.
+   * Deletes a single Insight.
    *
    * <p>Sample code:
    *
@@ -1046,7 +1086,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a single Insight.
+   * Deletes a single Insight.
    *
    * <p>Sample code:
    *
@@ -1080,7 +1120,327 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Gets a single Deployment Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   DeploymentEventName name =
+   *       DeploymentEventName.of(
+   *           "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]");
+   *   DeploymentEvent response = insightsConfigServiceClient.getDeploymentEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment event to retrieve. Format:
+   *     projects/{project}/locations/{location}/insightsConfigs/{insights_config}/deploymentEvents/{uuid}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentEvent getDeploymentEvent(DeploymentEventName name) {
+    GetDeploymentEventRequest request =
+        GetDeploymentEventRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDeploymentEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a single Deployment Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   String name =
+   *       DeploymentEventName.of(
+   *               "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+   *           .toString();
+   *   DeploymentEvent response = insightsConfigServiceClient.getDeploymentEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment event to retrieve. Format:
+   *     projects/{project}/locations/{location}/insightsConfigs/{insights_config}/deploymentEvents/{uuid}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentEvent getDeploymentEvent(String name) {
+    GetDeploymentEventRequest request =
+        GetDeploymentEventRequest.newBuilder().setName(name).build();
+    return getDeploymentEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a single Deployment Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   GetDeploymentEventRequest request =
+   *       GetDeploymentEventRequest.newBuilder()
+   *           .setName(
+   *               DeploymentEventName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+   *                   .toString())
+   *           .build();
+   *   DeploymentEvent response = insightsConfigServiceClient.getDeploymentEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentEvent getDeploymentEvent(GetDeploymentEventRequest request) {
+    return getDeploymentEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a single Deployment Event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   GetDeploymentEventRequest request =
+   *       GetDeploymentEventRequest.newBuilder()
+   *           .setName(
+   *               DeploymentEventName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]", "[DEPLOYMENT_EVENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DeploymentEvent> future =
+   *       insightsConfigServiceClient.getDeploymentEventCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventCallable() {
+    return stub.getDeploymentEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Deployment Events in a given insights config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   InsightsConfigName parent =
+   *       InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]");
+   *   for (DeploymentEvent element :
+   *       insightsConfigServiceClient.listDeploymentEvents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent insights config that owns this collection of deployment
+   *     events. Format: projects/{project}/locations/{location}/insightsConfigs/{insights_config}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentEventsPagedResponse listDeploymentEvents(InsightsConfigName parent) {
+    ListDeploymentEventsRequest request =
+        ListDeploymentEventsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeploymentEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Deployment Events in a given insights config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   String parent =
+   *       InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]").toString();
+   *   for (DeploymentEvent element :
+   *       insightsConfigServiceClient.listDeploymentEvents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent insights config that owns this collection of deployment
+   *     events. Format: projects/{project}/locations/{location}/insightsConfigs/{insights_config}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentEventsPagedResponse listDeploymentEvents(String parent) {
+    ListDeploymentEventsRequest request =
+        ListDeploymentEventsRequest.newBuilder().setParent(parent).build();
+    return listDeploymentEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Deployment Events in a given insights config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   ListDeploymentEventsRequest request =
+   *       ListDeploymentEventsRequest.newBuilder()
+   *           .setParent(
+   *               InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (DeploymentEvent element :
+   *       insightsConfigServiceClient.listDeploymentEvents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentEventsPagedResponse listDeploymentEvents(
+      ListDeploymentEventsRequest request) {
+    return listDeploymentEventsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Deployment Events in a given insights config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   ListDeploymentEventsRequest request =
+   *       ListDeploymentEventsRequest.newBuilder()
+   *           .setParent(
+   *               InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<DeploymentEvent> future =
+   *       insightsConfigServiceClient.listDeploymentEventsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DeploymentEvent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsPagedResponse>
+      listDeploymentEventsPagedCallable() {
+    return stub.listDeploymentEventsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Deployment Events in a given insights config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InsightsConfigServiceClient insightsConfigServiceClient =
+   *     InsightsConfigServiceClient.create()) {
+   *   ListDeploymentEventsRequest request =
+   *       ListDeploymentEventsRequest.newBuilder()
+   *           .setParent(
+   *               InsightsConfigName.of("[PROJECT]", "[LOCATION]", "[INSIGHTS_CONFIG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListDeploymentEventsResponse response =
+   *         insightsConfigServiceClient.listDeploymentEventsCallable().call(request);
+   *     for (DeploymentEvent element : response.getDeploymentEventsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
+      listDeploymentEventsCallable() {
+    return stub.listDeploymentEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1114,7 +1474,13 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1149,7 +1515,13 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -1351,6 +1723,90 @@ public class InsightsConfigServiceClient implements BackgroundResource {
     protected ListInsightsConfigsFixedSizeCollection createCollection(
         List<ListInsightsConfigsPage> pages, int collectionSize) {
       return new ListInsightsConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDeploymentEventsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          DeploymentEvent,
+          ListDeploymentEventsPage,
+          ListDeploymentEventsFixedSizeCollection> {
+
+    public static ApiFuture<ListDeploymentEventsPagedResponse> createAsync(
+        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+            context,
+        ApiFuture<ListDeploymentEventsResponse> futureResponse) {
+      ApiFuture<ListDeploymentEventsPage> futurePage =
+          ListDeploymentEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDeploymentEventsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDeploymentEventsPagedResponse(ListDeploymentEventsPage page) {
+      super(page, ListDeploymentEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDeploymentEventsPage
+      extends AbstractPage<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          DeploymentEvent,
+          ListDeploymentEventsPage> {
+
+    private ListDeploymentEventsPage(
+        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+            context,
+        ListDeploymentEventsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDeploymentEventsPage createEmptyPage() {
+      return new ListDeploymentEventsPage(null, null);
+    }
+
+    @Override
+    protected ListDeploymentEventsPage createPage(
+        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+            context,
+        ListDeploymentEventsResponse response) {
+      return new ListDeploymentEventsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDeploymentEventsPage> createPageAsync(
+        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+            context,
+        ApiFuture<ListDeploymentEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDeploymentEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          DeploymentEvent,
+          ListDeploymentEventsPage,
+          ListDeploymentEventsFixedSizeCollection> {
+
+    private ListDeploymentEventsFixedSizeCollection(
+        List<ListDeploymentEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDeploymentEventsFixedSizeCollection createEmptyCollection() {
+      return new ListDeploymentEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDeploymentEventsFixedSizeCollection createCollection(
+        List<ListDeploymentEventsPage> pages, int collectionSize) {
+      return new ListDeploymentEventsFixedSizeCollection(pages, collectionSize);
     }
   }
 

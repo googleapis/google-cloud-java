@@ -26,7 +26,7 @@ package com.google.cloud.developerconnect.v1;
  * <pre>
  * The InsightsConfig resource is the core configuration object to capture
  * events from your Software Development Lifecycle. It acts as the central hub
- * for managing how Developer connect understands your application, its runtime
+ * for managing how Developer Connect understands your application, its runtime
  * environments, and the artifacts deployed within them.
  * </pre>
  *
@@ -296,6 +296,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APP_HUB_APPLICATION(4),
+    PROJECTS(12),
     INSIGHTSCONFIGCONTEXT_NOT_SET(0);
     private final int value;
 
@@ -317,6 +318,8 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 4:
           return APP_HUB_APPLICATION;
+        case 12:
+          return PROJECTS;
         case 0:
           return INSIGHTSCONFIGCONTEXT_NOT_SET;
         default:
@@ -412,6 +415,66 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PROJECTS_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The projects to track with the InsightsConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the projects field is set.
+   */
+  @java.lang.Override
+  public boolean hasProjects() {
+    return insightsConfigContextCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The projects to track with the InsightsConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The projects.
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.Projects getProjects() {
+    if (insightsConfigContextCase_ == 12) {
+      return (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_;
+    }
+    return com.google.cloud.developerconnect.v1.Projects.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The projects to track with the InsightsConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.ProjectsOrBuilder getProjectsOrBuilder() {
+    if (insightsConfigContextCase_ == 12) {
+      return (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_;
+    }
+    return com.google.cloud.developerconnect.v1.Projects.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -476,7 +539,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output only] Create timestamp
+   * Output only. Create timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -493,7 +556,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output only] Create timestamp
+   * Output only. Create timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -510,7 +573,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output only] Create timestamp
+   * Output only. Create timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -528,7 +591,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output only] Update timestamp
+   * Output only. Update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -545,7 +608,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output only] Update timestamp
+   * Output only. Update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -562,7 +625,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output only] Update timestamp
+   * Output only. Update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1184,6 +1247,10 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(11, errors_.get(i));
     }
+    if (insightsConfigContextCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1242,6 +1309,11 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, errors_.get(i));
     }
+    if (insightsConfigContextCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1278,6 +1350,9 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     switch (insightsConfigContextCase_) {
       case 4:
         if (!getAppHubApplication().equals(other.getAppHubApplication())) return false;
+        break;
+      case 12:
+        if (!getProjects().equals(other.getProjects())) return false;
         break;
       case 0:
       default:
@@ -1331,6 +1406,10 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + APP_HUB_APPLICATION_FIELD_NUMBER;
         hash = (53 * hash) + getAppHubApplication().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjects().hashCode();
         break;
       case 0:
       default:
@@ -1442,7 +1521,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * </pre>
    *
@@ -1517,6 +1596,9 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (projectsBuilder_ != null) {
+        projectsBuilder_.clear();
+      }
       name_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1534,14 +1616,14 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         runtimeConfigs_ = null;
         runtimeConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (artifactConfigsBuilder_ == null) {
         artifactConfigs_ = java.util.Collections.emptyList();
       } else {
         artifactConfigs_ = null;
         artifactConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       internalGetMutableAnnotations().clear();
       internalGetMutableLabels().clear();
@@ -1552,7 +1634,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       insightsConfigContextCase_ = 0;
       insightsConfigContext_ = null;
       return this;
@@ -1594,27 +1676,27 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.developerconnect.v1.InsightsConfig result) {
       if (runtimeConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           runtimeConfigs_ = java.util.Collections.unmodifiableList(runtimeConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.runtimeConfigs_ = runtimeConfigs_;
       } else {
         result.runtimeConfigs_ = runtimeConfigsBuilder_.build();
       }
       if (artifactConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           artifactConfigs_ = java.util.Collections.unmodifiableList(artifactConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.artifactConfigs_ = artifactConfigs_;
       } else {
         result.artifactConfigs_ = artifactConfigsBuilder_.build();
       }
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.errors_ = errors_;
       } else {
@@ -1624,30 +1706,30 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.developerconnect.v1.InsightsConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.reconciling_ = reconciling_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1656,6 +1738,9 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     private void buildPartialOneofs(com.google.cloud.developerconnect.v1.InsightsConfig result) {
       result.insightsConfigContextCase_ = insightsConfigContextCase_;
       result.insightsConfigContext_ = this.insightsConfigContext_;
+      if (insightsConfigContextCase_ == 12 && projectsBuilder_ != null) {
+        result.insightsConfigContext_ = projectsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1673,7 +1758,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1686,7 +1771,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         if (!other.runtimeConfigs_.isEmpty()) {
           if (runtimeConfigs_.isEmpty()) {
             runtimeConfigs_ = other.runtimeConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureRuntimeConfigsIsMutable();
             runtimeConfigs_.addAll(other.runtimeConfigs_);
@@ -1699,7 +1784,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
             runtimeConfigsBuilder_.dispose();
             runtimeConfigsBuilder_ = null;
             runtimeConfigs_ = other.runtimeConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             runtimeConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetRuntimeConfigsFieldBuilder()
@@ -1713,7 +1798,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         if (!other.artifactConfigs_.isEmpty()) {
           if (artifactConfigs_.isEmpty()) {
             artifactConfigs_ = other.artifactConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureArtifactConfigsIsMutable();
             artifactConfigs_.addAll(other.artifactConfigs_);
@@ -1726,7 +1811,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
             artifactConfigsBuilder_.dispose();
             artifactConfigsBuilder_ = null;
             artifactConfigs_ = other.artifactConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             artifactConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetArtifactConfigsFieldBuilder()
@@ -1740,9 +1825,9 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         setStateValue(other.getStateValue());
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00000080;
-      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000100;
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000200;
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
@@ -1750,7 +1835,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1763,7 +1848,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetErrorsFieldBuilder()
@@ -1779,6 +1864,11 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
             insightsConfigContextCase_ = 4;
             insightsConfigContext_ = other.insightsConfigContext_;
             onChanged();
+            break;
+          }
+        case PROJECTS:
+          {
+            mergeProjects(other.getProjects());
             break;
           }
         case INSIGHTSCONFIGCONTEXT_NOT_SET:
@@ -1815,21 +1905,21 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -1870,7 +1960,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
             case 56:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 66:
@@ -1882,7 +1972,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -1894,13 +1984,13 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 80:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
             case 90:
@@ -1915,6 +2005,13 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetProjectsFieldBuilder().getBuilder(), extensionRegistry);
+                insightsConfigContextCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2099,6 +2196,244 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.Projects,
+            com.google.cloud.developerconnect.v1.Projects.Builder,
+            com.google.cloud.developerconnect.v1.ProjectsOrBuilder>
+        projectsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the projects field is set.
+     */
+    @java.lang.Override
+    public boolean hasProjects() {
+      return insightsConfigContextCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The projects.
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.Projects getProjects() {
+      if (projectsBuilder_ == null) {
+        if (insightsConfigContextCase_ == 12) {
+          return (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_;
+        }
+        return com.google.cloud.developerconnect.v1.Projects.getDefaultInstance();
+      } else {
+        if (insightsConfigContextCase_ == 12) {
+          return projectsBuilder_.getMessage();
+        }
+        return com.google.cloud.developerconnect.v1.Projects.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProjects(com.google.cloud.developerconnect.v1.Projects value) {
+      if (projectsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        insightsConfigContext_ = value;
+        onChanged();
+      } else {
+        projectsBuilder_.setMessage(value);
+      }
+      insightsConfigContextCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProjects(
+        com.google.cloud.developerconnect.v1.Projects.Builder builderForValue) {
+      if (projectsBuilder_ == null) {
+        insightsConfigContext_ = builderForValue.build();
+        onChanged();
+      } else {
+        projectsBuilder_.setMessage(builderForValue.build());
+      }
+      insightsConfigContextCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProjects(com.google.cloud.developerconnect.v1.Projects value) {
+      if (projectsBuilder_ == null) {
+        if (insightsConfigContextCase_ == 12
+            && insightsConfigContext_
+                != com.google.cloud.developerconnect.v1.Projects.getDefaultInstance()) {
+          insightsConfigContext_ =
+              com.google.cloud.developerconnect.v1.Projects.newBuilder(
+                      (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          insightsConfigContext_ = value;
+        }
+        onChanged();
+      } else {
+        if (insightsConfigContextCase_ == 12) {
+          projectsBuilder_.mergeFrom(value);
+        } else {
+          projectsBuilder_.setMessage(value);
+        }
+      }
+      insightsConfigContextCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProjects() {
+      if (projectsBuilder_ == null) {
+        if (insightsConfigContextCase_ == 12) {
+          insightsConfigContextCase_ = 0;
+          insightsConfigContext_ = null;
+          onChanged();
+        }
+      } else {
+        if (insightsConfigContextCase_ == 12) {
+          insightsConfigContextCase_ = 0;
+          insightsConfigContext_ = null;
+        }
+        projectsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.developerconnect.v1.Projects.Builder getProjectsBuilder() {
+      return internalGetProjectsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.ProjectsOrBuilder getProjectsOrBuilder() {
+      if ((insightsConfigContextCase_ == 12) && (projectsBuilder_ != null)) {
+        return projectsBuilder_.getMessageOrBuilder();
+      } else {
+        if (insightsConfigContextCase_ == 12) {
+          return (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_;
+        }
+        return com.google.cloud.developerconnect.v1.Projects.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The projects to track with the InsightsConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.Projects,
+            com.google.cloud.developerconnect.v1.Projects.Builder,
+            com.google.cloud.developerconnect.v1.ProjectsOrBuilder>
+        internalGetProjectsFieldBuilder() {
+      if (projectsBuilder_ == null) {
+        if (!(insightsConfigContextCase_ == 12)) {
+          insightsConfigContext_ =
+              com.google.cloud.developerconnect.v1.Projects.getDefaultInstance();
+        }
+        projectsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.developerconnect.v1.Projects,
+                com.google.cloud.developerconnect.v1.Projects.Builder,
+                com.google.cloud.developerconnect.v1.ProjectsOrBuilder>(
+                (com.google.cloud.developerconnect.v1.Projects) insightsConfigContext_,
+                getParentForChildren(),
+                isClean());
+        insightsConfigContext_ = null;
+      }
+      insightsConfigContextCase_ = 12;
+      onChanged();
+      return projectsBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -2170,7 +2505,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2190,7 +2525,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2215,7 +2550,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2231,7 +2566,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2241,14 +2576,14 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2271,7 +2606,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2287,7 +2622,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2296,7 +2631,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2309,7 +2644,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2318,7 +2653,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2327,7 +2662,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2338,7 +2673,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2348,7 +2683,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2356,7 +2691,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2370,7 +2705,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2378,7 +2713,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2387,7 +2722,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2408,7 +2743,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Create timestamp
+     * Output only. Create timestamp.
      * </pre>
      *
      * <code>
@@ -2443,7 +2778,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2453,14 +2788,14 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2483,7 +2818,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2499,7 +2834,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2508,7 +2843,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2521,7 +2856,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2530,7 +2865,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2539,7 +2874,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2550,7 +2885,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2560,7 +2895,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2568,7 +2903,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2582,7 +2917,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2590,7 +2925,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2599,7 +2934,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2620,7 +2955,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output only] Update timestamp
+     * Output only. Update timestamp.
      * </pre>
      *
      * <code>
@@ -2648,11 +2983,11 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureRuntimeConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         runtimeConfigs_ =
             new java.util.ArrayList<com.google.cloud.developerconnect.v1.RuntimeConfig>(
                 runtimeConfigs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2903,7 +3238,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearRuntimeConfigs() {
       if (runtimeConfigsBuilder_ == null) {
         runtimeConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         runtimeConfigsBuilder_.clear();
@@ -3051,7 +3386,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.developerconnect.v1.RuntimeConfig.Builder,
                 com.google.cloud.developerconnect.v1.RuntimeConfigOrBuilder>(
                 runtimeConfigs_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         runtimeConfigs_ = null;
@@ -3063,11 +3398,11 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureArtifactConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         artifactConfigs_ =
             new java.util.ArrayList<com.google.cloud.developerconnect.v1.ArtifactConfig>(
                 artifactConfigs_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3318,7 +3653,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearArtifactConfigs() {
       if (artifactConfigsBuilder_ == null) {
         artifactConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         artifactConfigsBuilder_.clear();
@@ -3466,7 +3801,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.developerconnect.v1.ArtifactConfig.Builder,
                 com.google.cloud.developerconnect.v1.ArtifactConfigOrBuilder>(
                 artifactConfigs_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         artifactConfigs_ = null;
@@ -3510,7 +3845,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3555,7 +3890,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3575,7 +3910,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
@@ -3601,7 +3936,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return annotations_;
     }
@@ -3703,7 +4038,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -3731,7 +4066,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -3755,7 +4090,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3773,7 +4108,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3794,7 +4129,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return labels_;
     }
@@ -3884,7 +4219,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3909,7 +4244,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -3930,7 +4265,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3945,7 +4280,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3990,7 +4325,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4011,7 +4346,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       reconciling_ = false;
       onChanged();
       return this;
@@ -4020,9 +4355,9 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     private java.util.List<com.google.rpc.Status> errors_ = java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         errors_ = new java.util.ArrayList<com.google.rpc.Status>(errors_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -4286,7 +4621,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -4438,7 +4773,7 @@ public final class InsightsConfig extends com.google.protobuf.GeneratedMessage
                 com.google.rpc.Status,
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
-                errors_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

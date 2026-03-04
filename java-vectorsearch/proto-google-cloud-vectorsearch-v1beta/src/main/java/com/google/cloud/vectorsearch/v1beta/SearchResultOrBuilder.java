@@ -73,7 +73,8 @@ public interface SearchResultOrBuilder
    *
    *
    * <pre>
-   * Output only. The similarity distance.
+   * Output only. Similarity distance or ranker score returned by
+   * BatchSearchDataObjects.
    * </pre>
    *
    * <code>optional double distance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -86,7 +87,8 @@ public interface SearchResultOrBuilder
    *
    *
    * <pre>
-   * Output only. The similarity distance.
+   * Output only. Similarity distance or ranker score returned by
+   * BatchSearchDataObjects.
    * </pre>
    *
    * <code>optional double distance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

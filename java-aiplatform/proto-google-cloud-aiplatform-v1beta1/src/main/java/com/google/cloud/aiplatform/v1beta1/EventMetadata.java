@@ -386,6 +386,126 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
         : customMetadata_;
   }
 
+  public static final int INPUT_TRANSCRIPTION_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1beta1.Transcription inputTranscription_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of user input.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inputTranscription field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputTranscription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of user input.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inputTranscription.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Transcription getInputTranscription() {
+    return inputTranscription_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+        : inputTranscription_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of user input.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder
+      getInputTranscriptionOrBuilder() {
+    return inputTranscription_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+        : inputTranscription_;
+  }
+
+  public static final int OUTPUT_TRANSCRIPTION_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1beta1.Transcription outputTranscription_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of model output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the outputTranscription field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputTranscription() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of model output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The outputTranscription.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Transcription getOutputTranscription() {
+    return outputTranscription_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+        : outputTranscription_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Audio transcription of model output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder
+      getOutputTranscriptionOrBuilder() {
+    return outputTranscription_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+        : outputTranscription_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -420,6 +540,12 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getCustomMetadata());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getInputTranscription());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(11, getOutputTranscription());
     }
     getUnknownFields().writeTo(output);
   }
@@ -456,6 +582,13 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCustomMetadata());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getInputTranscription());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getOutputTranscription());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -484,6 +617,14 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
     if (hasCustomMetadata() != other.hasCustomMetadata()) return false;
     if (hasCustomMetadata()) {
       if (!getCustomMetadata().equals(other.getCustomMetadata())) return false;
+    }
+    if (hasInputTranscription() != other.hasInputTranscription()) return false;
+    if (hasInputTranscription()) {
+      if (!getInputTranscription().equals(other.getInputTranscription())) return false;
+    }
+    if (hasOutputTranscription() != other.hasOutputTranscription()) return false;
+    if (hasOutputTranscription()) {
+      if (!getOutputTranscription().equals(other.getOutputTranscription())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -515,6 +656,14 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
     if (hasCustomMetadata()) {
       hash = (37 * hash) + CUSTOM_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getCustomMetadata().hashCode();
+    }
+    if (hasInputTranscription()) {
+      hash = (37 * hash) + INPUT_TRANSCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getInputTranscription().hashCode();
+    }
+    if (hasOutputTranscription()) {
+      hash = (37 * hash) + OUTPUT_TRANSCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputTranscription().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -659,6 +808,8 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetGroundingMetadataFieldBuilder();
         internalGetCustomMetadataFieldBuilder();
+        internalGetInputTranscriptionFieldBuilder();
+        internalGetOutputTranscriptionFieldBuilder();
       }
     }
 
@@ -680,6 +831,16 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
       if (customMetadataBuilder_ != null) {
         customMetadataBuilder_.dispose();
         customMetadataBuilder_ = null;
+      }
+      inputTranscription_ = null;
+      if (inputTranscriptionBuilder_ != null) {
+        inputTranscriptionBuilder_.dispose();
+        inputTranscriptionBuilder_ = null;
+      }
+      outputTranscription_ = null;
+      if (outputTranscriptionBuilder_ != null) {
+        outputTranscriptionBuilder_.dispose();
+        outputTranscriptionBuilder_ = null;
       }
       return this;
     }
@@ -746,6 +907,20 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
             customMetadataBuilder_ == null ? customMetadata_ : customMetadataBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.inputTranscription_ =
+            inputTranscriptionBuilder_ == null
+                ? inputTranscription_
+                : inputTranscriptionBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.outputTranscription_ =
+            outputTranscriptionBuilder_ == null
+                ? outputTranscription_
+                : outputTranscriptionBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -791,6 +966,12 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasCustomMetadata()) {
         mergeCustomMetadata(other.getCustomMetadata());
+      }
+      if (other.hasInputTranscription()) {
+        mergeInputTranscription(other.getInputTranscription());
+      }
+      if (other.hasOutputTranscription()) {
+        mergeOutputTranscription(other.getOutputTranscription());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -863,6 +1044,20 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 82:
+              {
+                input.readMessage(
+                    internalGetInputTranscriptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetOutputTranscriptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1810,6 +2005,440 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessage
         customMetadata_ = null;
       }
       return customMetadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Transcription inputTranscription_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Transcription,
+            com.google.cloud.aiplatform.v1beta1.Transcription.Builder,
+            com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder>
+        inputTranscriptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the inputTranscription field is set.
+     */
+    public boolean hasInputTranscription() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The inputTranscription.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Transcription getInputTranscription() {
+      if (inputTranscriptionBuilder_ == null) {
+        return inputTranscription_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+            : inputTranscription_;
+      } else {
+        return inputTranscriptionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInputTranscription(com.google.cloud.aiplatform.v1beta1.Transcription value) {
+      if (inputTranscriptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputTranscription_ = value;
+      } else {
+        inputTranscriptionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInputTranscription(
+        com.google.cloud.aiplatform.v1beta1.Transcription.Builder builderForValue) {
+      if (inputTranscriptionBuilder_ == null) {
+        inputTranscription_ = builderForValue.build();
+      } else {
+        inputTranscriptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInputTranscription(
+        com.google.cloud.aiplatform.v1beta1.Transcription value) {
+      if (inputTranscriptionBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && inputTranscription_ != null
+            && inputTranscription_
+                != com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()) {
+          getInputTranscriptionBuilder().mergeFrom(value);
+        } else {
+          inputTranscription_ = value;
+        }
+      } else {
+        inputTranscriptionBuilder_.mergeFrom(value);
+      }
+      if (inputTranscription_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInputTranscription() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      inputTranscription_ = null;
+      if (inputTranscriptionBuilder_ != null) {
+        inputTranscriptionBuilder_.dispose();
+        inputTranscriptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Transcription.Builder
+        getInputTranscriptionBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetInputTranscriptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder
+        getInputTranscriptionOrBuilder() {
+      if (inputTranscriptionBuilder_ != null) {
+        return inputTranscriptionBuilder_.getMessageOrBuilder();
+      } else {
+        return inputTranscription_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+            : inputTranscription_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of user input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription input_transcription = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Transcription,
+            com.google.cloud.aiplatform.v1beta1.Transcription.Builder,
+            com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder>
+        internalGetInputTranscriptionFieldBuilder() {
+      if (inputTranscriptionBuilder_ == null) {
+        inputTranscriptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.Transcription,
+                com.google.cloud.aiplatform.v1beta1.Transcription.Builder,
+                com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder>(
+                getInputTranscription(), getParentForChildren(), isClean());
+        inputTranscription_ = null;
+      }
+      return inputTranscriptionBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Transcription outputTranscription_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Transcription,
+            com.google.cloud.aiplatform.v1beta1.Transcription.Builder,
+            com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder>
+        outputTranscriptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the outputTranscription field is set.
+     */
+    public boolean hasOutputTranscription() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The outputTranscription.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Transcription getOutputTranscription() {
+      if (outputTranscriptionBuilder_ == null) {
+        return outputTranscription_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+            : outputTranscription_;
+      } else {
+        return outputTranscriptionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOutputTranscription(com.google.cloud.aiplatform.v1beta1.Transcription value) {
+      if (outputTranscriptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputTranscription_ = value;
+      } else {
+        outputTranscriptionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOutputTranscription(
+        com.google.cloud.aiplatform.v1beta1.Transcription.Builder builderForValue) {
+      if (outputTranscriptionBuilder_ == null) {
+        outputTranscription_ = builderForValue.build();
+      } else {
+        outputTranscriptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOutputTranscription(
+        com.google.cloud.aiplatform.v1beta1.Transcription value) {
+      if (outputTranscriptionBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && outputTranscription_ != null
+            && outputTranscription_
+                != com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()) {
+          getOutputTranscriptionBuilder().mergeFrom(value);
+        } else {
+          outputTranscription_ = value;
+        }
+      } else {
+        outputTranscriptionBuilder_.mergeFrom(value);
+      }
+      if (outputTranscription_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOutputTranscription() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      outputTranscription_ = null;
+      if (outputTranscriptionBuilder_ != null) {
+        outputTranscriptionBuilder_.dispose();
+        outputTranscriptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Transcription.Builder
+        getOutputTranscriptionBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetOutputTranscriptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder
+        getOutputTranscriptionOrBuilder() {
+      if (outputTranscriptionBuilder_ != null) {
+        return outputTranscriptionBuilder_.getMessageOrBuilder();
+      } else {
+        return outputTranscription_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Transcription.getDefaultInstance()
+            : outputTranscription_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Audio transcription of model output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Transcription output_transcription = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Transcription,
+            com.google.cloud.aiplatform.v1beta1.Transcription.Builder,
+            com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder>
+        internalGetOutputTranscriptionFieldBuilder() {
+      if (outputTranscriptionBuilder_ == null) {
+        outputTranscriptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.Transcription,
+                com.google.cloud.aiplatform.v1beta1.Transcription.Builder,
+                com.google.cloud.aiplatform.v1beta1.TranscriptionOrBuilder>(
+                getOutputTranscription(), getParentForChildren(), isClean());
+        outputTranscription_ = null;
+      }
+      return outputTranscriptionBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.EventMetadata)

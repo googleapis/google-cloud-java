@@ -75,6 +75,49 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The projects to track with the InsightsConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the projects field is set.
+   */
+  boolean hasProjects();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The projects to track with the InsightsConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The projects.
+   */
+  com.google.cloud.developerconnect.v1.Projects getProjects();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The projects to track with the InsightsConfig.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.Projects projects = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.developerconnect.v1.ProjectsOrBuilder getProjectsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The name of the InsightsConfig.
    * Format:
    * projects/{project}/locations/{location}/insightsConfigs/{insightsConfig}
@@ -105,7 +148,7 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Create timestamp
+   * Output only. Create timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -119,7 +162,7 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Create timestamp
+   * Output only. Create timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -133,7 +176,7 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Create timestamp
+   * Output only. Create timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -145,7 +188,7 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Update timestamp
+   * Output only. Update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -159,7 +202,7 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Update timestamp
+   * Output only. Update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -173,7 +216,7 @@ public interface InsightsConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Update timestamp
+   * Output only. Update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

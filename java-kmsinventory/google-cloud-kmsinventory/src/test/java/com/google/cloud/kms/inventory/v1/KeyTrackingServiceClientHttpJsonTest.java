@@ -31,6 +31,7 @@ import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.kms.inventory.v1.stub.HttpJsonKeyTrackingServiceStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -90,6 +91,7 @@ public class KeyTrackingServiceClientHttpJsonTest {
             .putAllResourceTypes(new HashMap<String, Long>())
             .putAllCloudProducts(new HashMap<String, Long>())
             .putAllLocations(new HashMap<String, Long>())
+            .addAllWarnings(new ArrayList<Warning>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -146,6 +148,7 @@ public class KeyTrackingServiceClientHttpJsonTest {
             .putAllResourceTypes(new HashMap<String, Long>())
             .putAllCloudProducts(new HashMap<String, Long>())
             .putAllLocations(new HashMap<String, Long>())
+            .addAllWarnings(new ArrayList<Warning>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -303,7 +306,7 @@ public class KeyTrackingServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String scope = "organizations/organization-6471";
+    ProjectName scope = ProjectName.of("[PROJECT]");
     ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
 
     SearchProtectedResourcesPagedResponse pagedListResponse =
@@ -337,7 +340,7 @@ public class KeyTrackingServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String scope = "organizations/organization-6471";
+      ProjectName scope = ProjectName.of("[PROJECT]");
       ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
       client.searchProtectedResources(scope, cryptoKey);
       Assert.fail("No exception raised");
@@ -348,6 +351,112 @@ public class KeyTrackingServiceClientHttpJsonTest {
 
   @Test
   public void searchProtectedResourcesTest4() throws Exception {
+    ProtectedResource responsesElement = ProtectedResource.newBuilder().build();
+    SearchProtectedResourcesResponse expectedResponse =
+        SearchProtectedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProtectedResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName scope = ProjectName.of("[PROJECT]");
+    String cryptoKey = "cryptoKey1598288350";
+
+    SearchProtectedResourcesPagedResponse pagedListResponse =
+        client.searchProtectedResources(scope, cryptoKey);
+
+    List<ProtectedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProtectedResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchProtectedResourcesExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName scope = ProjectName.of("[PROJECT]");
+      String cryptoKey = "cryptoKey1598288350";
+      client.searchProtectedResources(scope, cryptoKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchProtectedResourcesTest5() throws Exception {
+    ProtectedResource responsesElement = ProtectedResource.newBuilder().build();
+    SearchProtectedResourcesResponse expectedResponse =
+        SearchProtectedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProtectedResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String scope = "organizations/organization-6471";
+    ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
+
+    SearchProtectedResourcesPagedResponse pagedListResponse =
+        client.searchProtectedResources(scope, cryptoKey);
+
+    List<ProtectedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProtectedResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchProtectedResourcesExceptionTest5() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String scope = "organizations/organization-6471";
+      ResourceName cryptoKey = OrganizationName.of("[ORGANIZATION]");
+      client.searchProtectedResources(scope, cryptoKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchProtectedResourcesTest6() throws Exception {
     ProtectedResource responsesElement = ProtectedResource.newBuilder().build();
     SearchProtectedResourcesResponse expectedResponse =
         SearchProtectedResourcesResponse.newBuilder()
@@ -383,7 +492,7 @@ public class KeyTrackingServiceClientHttpJsonTest {
   }
 
   @Test
-  public void searchProtectedResourcesExceptionTest4() throws Exception {
+  public void searchProtectedResourcesExceptionTest6() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);

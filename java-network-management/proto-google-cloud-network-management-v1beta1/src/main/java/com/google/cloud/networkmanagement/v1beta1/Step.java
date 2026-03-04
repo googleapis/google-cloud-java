@@ -415,6 +415,16 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Forwarding state: arriving at a GKE Pod.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_GKE_POD = 44;</code>
+     */
+    ARRIVE_AT_GKE_POD(44),
+    /**
+     *
+     *
+     * <pre>
      * Forwarding state: for packets originating from a serverless endpoint
      * forwarded through Direct VPC egress.
      * </pre>
@@ -437,6 +447,17 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Forwarding state: Layer 7 packet inspection by the firewall endpoint
+     * based on the configured security profile group.
+     * </pre>
+     *
+     * <code>NGFW_PACKET_INSPECTION = 47;</code>
+     */
+    NGFW_PACKET_INSPECTION(47),
+    /**
+     *
+     *
+     * <pre>
      * Transition state: packet header translated. The `nat` field is populated
      * with the translation information.
      * </pre>
@@ -455,6 +476,48 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * <code>SKIP_GKE_POD_IP_MASQUERADING = 40;</code>
      */
     SKIP_GKE_POD_IP_MASQUERADING(40),
+    /**
+     *
+     *
+     * <pre>
+     * Transition state: GKE Ingress Network Policy is skipped. The
+     * `gke_network_policy_skipped` field is populated with the reason.
+     * </pre>
+     *
+     * <code>SKIP_GKE_INGRESS_NETWORK_POLICY = 41;</code>
+     */
+    SKIP_GKE_INGRESS_NETWORK_POLICY(41),
+    /**
+     *
+     *
+     * <pre>
+     * Transition state: GKE Egress Network Policy is skipped. The
+     * `gke_network_policy_skipped` field is populated with the reason.
+     * </pre>
+     *
+     * <code>SKIP_GKE_EGRESS_NETWORK_POLICY = 42;</code>
+     */
+    SKIP_GKE_EGRESS_NETWORK_POLICY(42),
+    /**
+     *
+     *
+     * <pre>
+     * Config checking state: verify ingress GKE network policy.
+     * </pre>
+     *
+     * <code>APPLY_INGRESS_GKE_NETWORK_POLICY = 45;</code>
+     */
+    APPLY_INGRESS_GKE_NETWORK_POLICY(45),
+    /**
+     *
+     *
+     * <pre>
+     * Config checking state: verify egress GKE network policy.
+     * </pre>
+     *
+     * <code>APPLY_EGRESS_GKE_NETWORK_POLICY = 46;</code>
+     */
+    APPLY_EGRESS_GKE_NETWORK_POLICY(46),
     /**
      *
      *
@@ -890,6 +953,17 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Forwarding state: arriving at a GKE Pod.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_GKE_POD = 44;</code>
+     */
+    public static final int ARRIVE_AT_GKE_POD_VALUE = 44;
+
+    /**
+     *
+     *
+     * <pre>
      * Forwarding state: for packets originating from a serverless endpoint
      * forwarded through Direct VPC egress.
      * </pre>
@@ -914,6 +988,18 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Forwarding state: Layer 7 packet inspection by the firewall endpoint
+     * based on the configured security profile group.
+     * </pre>
+     *
+     * <code>NGFW_PACKET_INSPECTION = 47;</code>
+     */
+    public static final int NGFW_PACKET_INSPECTION_VALUE = 47;
+
+    /**
+     *
+     *
+     * <pre>
      * Transition state: packet header translated. The `nat` field is populated
      * with the translation information.
      * </pre>
@@ -933,6 +1019,52 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * <code>SKIP_GKE_POD_IP_MASQUERADING = 40;</code>
      */
     public static final int SKIP_GKE_POD_IP_MASQUERADING_VALUE = 40;
+
+    /**
+     *
+     *
+     * <pre>
+     * Transition state: GKE Ingress Network Policy is skipped. The
+     * `gke_network_policy_skipped` field is populated with the reason.
+     * </pre>
+     *
+     * <code>SKIP_GKE_INGRESS_NETWORK_POLICY = 41;</code>
+     */
+    public static final int SKIP_GKE_INGRESS_NETWORK_POLICY_VALUE = 41;
+
+    /**
+     *
+     *
+     * <pre>
+     * Transition state: GKE Egress Network Policy is skipped. The
+     * `gke_network_policy_skipped` field is populated with the reason.
+     * </pre>
+     *
+     * <code>SKIP_GKE_EGRESS_NETWORK_POLICY = 42;</code>
+     */
+    public static final int SKIP_GKE_EGRESS_NETWORK_POLICY_VALUE = 42;
+
+    /**
+     *
+     *
+     * <pre>
+     * Config checking state: verify ingress GKE network policy.
+     * </pre>
+     *
+     * <code>APPLY_INGRESS_GKE_NETWORK_POLICY = 45;</code>
+     */
+    public static final int APPLY_INGRESS_GKE_NETWORK_POLICY_VALUE = 45;
+
+    /**
+     *
+     *
+     * <pre>
+     * Config checking state: verify egress GKE network policy.
+     * </pre>
+     *
+     * <code>APPLY_EGRESS_GKE_NETWORK_POLICY = 46;</code>
+     */
+    public static final int APPLY_EGRESS_GKE_NETWORK_POLICY_VALUE = 46;
 
     /**
      *
@@ -1087,14 +1219,26 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return ARRIVE_AT_INTERCONNECT_ATTACHMENT;
         case 24:
           return ARRIVE_AT_VPC_CONNECTOR;
+        case 44:
+          return ARRIVE_AT_GKE_POD;
         case 35:
           return DIRECT_VPC_EGRESS_CONNECTION;
         case 36:
           return SERVERLESS_EXTERNAL_CONNECTION;
+        case 47:
+          return NGFW_PACKET_INSPECTION;
         case 14:
           return NAT;
         case 40:
           return SKIP_GKE_POD_IP_MASQUERADING;
+        case 41:
+          return SKIP_GKE_INGRESS_NETWORK_POLICY;
+        case 42:
+          return SKIP_GKE_EGRESS_NETWORK_POLICY;
+        case 45:
+          return APPLY_INGRESS_GKE_NETWORK_POLICY;
+        case 46:
+          return APPLY_EGRESS_GKE_NETWORK_POLICY;
         case 15:
           return PROXY_CONNECTION;
         case 16:
@@ -1192,6 +1336,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     GKE_MASTER(18),
     GKE_POD(37),
     IP_MASQUERADING_SKIPPED(38),
+    GKE_NETWORK_POLICY(39),
+    GKE_NETWORK_POLICY_SKIPPED(40),
     CLOUD_SQL_INSTANCE(19),
     REDIS_INSTANCE(30),
     REDIS_CLUSTER(31),
@@ -1203,6 +1349,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     LOAD_BALANCER_BACKEND_INFO(27),
     STORAGE_BUCKET(28),
     SERVERLESS_NEG(29),
+    NGFW_PACKET_INSPECTION(42),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -1266,6 +1413,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return GKE_POD;
         case 38:
           return IP_MASQUERADING_SKIPPED;
+        case 39:
+          return GKE_NETWORK_POLICY;
+        case 40:
+          return GKE_NETWORK_POLICY_SKIPPED;
         case 19:
           return CLOUD_SQL_INSTANCE;
         case 30:
@@ -1288,6 +1439,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return STORAGE_BUCKET;
         case 29:
           return SERVERLESS_NEG;
+        case 42:
+          return NGFW_PACKET_INSPECTION;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -2447,7 +2600,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=294
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -2469,7 +2622,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=294
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -2729,6 +2882,131 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.networkmanagement.v1beta1.IpMasqueradingSkippedInfo) stepInfo_;
     }
     return com.google.cloud.networkmanagement.v1beta1.IpMasqueradingSkippedInfo
+        .getDefaultInstance();
+  }
+
+  public static final int GKE_NETWORK_POLICY_FIELD_NUMBER = 39;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a GKE Network Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+   * </code>
+   *
+   * @return Whether the gkeNetworkPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeNetworkPolicy() {
+    return stepInfoCase_ == 39;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a GKE Network Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+   * </code>
+   *
+   * @return The gkeNetworkPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo getGkeNetworkPolicy() {
+    if (stepInfoCase_ == 39) {
+      return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a GKE Network Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfoOrBuilder
+      getGkeNetworkPolicyOrBuilder() {
+    if (stepInfoCase_ == 39) {
+      return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.getDefaultInstance();
+  }
+
+  public static final int GKE_NETWORK_POLICY_SKIPPED_FIELD_NUMBER = 40;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Network Policy evaluation was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+   * </code>
+   *
+   * @return Whether the gkeNetworkPolicySkipped field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeNetworkPolicySkipped() {
+    return stepInfoCase_ == 40;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Network Policy evaluation was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+   * </code>
+   *
+   * @return The gkeNetworkPolicySkipped.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+      getGkeNetworkPolicySkipped() {
+    if (stepInfoCase_ == 40) {
+      return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Network Policy evaluation was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfoOrBuilder
+      getGkeNetworkPolicySkippedOrBuilder() {
+    if (stepInfoCase_ == 40) {
+      return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
         .getDefaultInstance();
   }
 
@@ -3355,6 +3633,68 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo.getDefaultInstance();
   }
 
+  public static final int NGFW_PACKET_INSPECTION_FIELD_NUMBER = 42;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a layer 7 packet inspection by the firewall.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+   * </code>
+   *
+   * @return Whether the ngfwPacketInspection field is set.
+   */
+  @java.lang.Override
+  public boolean hasNgfwPacketInspection() {
+    return stepInfoCase_ == 42;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a layer 7 packet inspection by the firewall.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+   * </code>
+   *
+   * @return The ngfwPacketInspection.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+      getNgfwPacketInspection() {
+    if (stepInfoCase_ == 42) {
+      return (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a layer 7 packet inspection by the firewall.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfoOrBuilder
+      getNgfwPacketInspectionOrBuilder() {
+    if (stepInfoCase_ == 42) {
+      return (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3501,6 +3841,18 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     if (stepInfoCase_ == 38) {
       output.writeMessage(
           38, (com.google.cloud.networkmanagement.v1beta1.IpMasqueradingSkippedInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 39) {
+      output.writeMessage(
+          39, (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 40) {
+      output.writeMessage(
+          40, (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 42) {
+      output.writeMessage(
+          42, (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3693,6 +4045,22 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               38, (com.google.cloud.networkmanagement.v1beta1.IpMasqueradingSkippedInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 39) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              39, (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 40) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              40,
+              (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 42) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              42, (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3783,6 +4151,12 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       case 38:
         if (!getIpMasqueradingSkipped().equals(other.getIpMasqueradingSkipped())) return false;
         break;
+      case 39:
+        if (!getGkeNetworkPolicy().equals(other.getGkeNetworkPolicy())) return false;
+        break;
+      case 40:
+        if (!getGkeNetworkPolicySkipped().equals(other.getGkeNetworkPolicySkipped())) return false;
+        break;
       case 19:
         if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
         break;
@@ -3815,6 +4189,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         break;
       case 29:
         if (!getServerlessNeg().equals(other.getServerlessNeg())) return false;
+        break;
+      case 42:
+        if (!getNgfwPacketInspection().equals(other.getNgfwPacketInspection())) return false;
         break;
       case 0:
       default:
@@ -3927,6 +4304,14 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + IP_MASQUERADING_SKIPPED_FIELD_NUMBER;
         hash = (53 * hash) + getIpMasqueradingSkipped().hashCode();
         break;
+      case 39:
+        hash = (37 * hash) + GKE_NETWORK_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeNetworkPolicy().hashCode();
+        break;
+      case 40:
+        hash = (37 * hash) + GKE_NETWORK_POLICY_SKIPPED_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeNetworkPolicySkipped().hashCode();
+        break;
       case 19:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlInstance().hashCode();
@@ -3970,6 +4355,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       case 29:
         hash = (37 * hash) + SERVERLESS_NEG_FIELD_NUMBER;
         hash = (53 * hash) + getServerlessNeg().hashCode();
+        break;
+      case 42:
+        hash = (37 * hash) + NGFW_PACKET_INSPECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getNgfwPacketInspection().hashCode();
         break;
       case 0:
       default:
@@ -4186,6 +4575,12 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       if (ipMasqueradingSkippedBuilder_ != null) {
         ipMasqueradingSkippedBuilder_.clear();
       }
+      if (gkeNetworkPolicyBuilder_ != null) {
+        gkeNetworkPolicyBuilder_.clear();
+      }
+      if (gkeNetworkPolicySkippedBuilder_ != null) {
+        gkeNetworkPolicySkippedBuilder_.clear();
+      }
       if (cloudSqlInstanceBuilder_ != null) {
         cloudSqlInstanceBuilder_.clear();
       }
@@ -4218,6 +4613,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       }
       if (serverlessNegBuilder_ != null) {
         serverlessNegBuilder_.clear();
+      }
+      if (ngfwPacketInspectionBuilder_ != null) {
+        ngfwPacketInspectionBuilder_.clear();
       }
       stepInfoCase_ = 0;
       stepInfo_ = null;
@@ -4348,6 +4746,12 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       if (stepInfoCase_ == 38 && ipMasqueradingSkippedBuilder_ != null) {
         result.stepInfo_ = ipMasqueradingSkippedBuilder_.build();
       }
+      if (stepInfoCase_ == 39 && gkeNetworkPolicyBuilder_ != null) {
+        result.stepInfo_ = gkeNetworkPolicyBuilder_.build();
+      }
+      if (stepInfoCase_ == 40 && gkeNetworkPolicySkippedBuilder_ != null) {
+        result.stepInfo_ = gkeNetworkPolicySkippedBuilder_.build();
+      }
       if (stepInfoCase_ == 19 && cloudSqlInstanceBuilder_ != null) {
         result.stepInfo_ = cloudSqlInstanceBuilder_.build();
       }
@@ -4380,6 +4784,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       }
       if (stepInfoCase_ == 29 && serverlessNegBuilder_ != null) {
         result.stepInfo_ = serverlessNegBuilder_.build();
+      }
+      if (stepInfoCase_ == 42 && ngfwPacketInspectionBuilder_ != null) {
+        result.stepInfo_ = ngfwPacketInspectionBuilder_.build();
       }
     }
 
@@ -4523,6 +4930,16 @@ public final class Step extends com.google.protobuf.GeneratedMessage
             mergeIpMasqueradingSkipped(other.getIpMasqueradingSkipped());
             break;
           }
+        case GKE_NETWORK_POLICY:
+          {
+            mergeGkeNetworkPolicy(other.getGkeNetworkPolicy());
+            break;
+          }
+        case GKE_NETWORK_POLICY_SKIPPED:
+          {
+            mergeGkeNetworkPolicySkipped(other.getGkeNetworkPolicySkipped());
+            break;
+          }
         case CLOUD_SQL_INSTANCE:
           {
             mergeCloudSqlInstance(other.getCloudSqlInstance());
@@ -4576,6 +4993,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         case SERVERLESS_NEG:
           {
             mergeServerlessNeg(other.getServerlessNeg());
+            break;
+          }
+        case NGFW_PACKET_INSPECTION:
+          {
+            mergeNgfwPacketInspection(other.getNgfwPacketInspection());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -4860,6 +5282,28 @@ public final class Step extends com.google.protobuf.GeneratedMessage
                 stepInfoCase_ = 38;
                 break;
               } // case 306
+            case 314:
+              {
+                input.readMessage(
+                    internalGetGkeNetworkPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 39;
+                break;
+              } // case 314
+            case 322:
+              {
+                input.readMessage(
+                    internalGetGkeNetworkPolicySkippedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                stepInfoCase_ = 40;
+                break;
+              } // case 322
+            case 338:
+              {
+                input.readMessage(
+                    internalGetNgfwPacketInspectionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 42;
+                break;
+              } // case 338
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9168,7 +9612,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=294
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -9190,7 +9634,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=294
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
      * @return The loadBalancer.
      */
     @java.lang.Override
@@ -10328,6 +10772,499 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       stepInfoCase_ = 38;
       onChanged();
       return ipMasqueradingSkippedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfoOrBuilder>
+        gkeNetworkPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     *
+     * @return Whether the gkeNetworkPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasGkeNetworkPolicy() {
+      return stepInfoCase_ == 39;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     *
+     * @return The gkeNetworkPolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo getGkeNetworkPolicy() {
+      if (gkeNetworkPolicyBuilder_ == null) {
+        if (stepInfoCase_ == 39) {
+          return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 39) {
+          return gkeNetworkPolicyBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    public Builder setGkeNetworkPolicy(
+        com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo value) {
+      if (gkeNetworkPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        gkeNetworkPolicyBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 39;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    public Builder setGkeNetworkPolicy(
+        com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.Builder builderForValue) {
+      if (gkeNetworkPolicyBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeNetworkPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 39;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    public Builder mergeGkeNetworkPolicy(
+        com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo value) {
+      if (gkeNetworkPolicyBuilder_ == null) {
+        if (stepInfoCase_ == 39
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 39) {
+          gkeNetworkPolicyBuilder_.mergeFrom(value);
+        } else {
+          gkeNetworkPolicyBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 39;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    public Builder clearGkeNetworkPolicy() {
+      if (gkeNetworkPolicyBuilder_ == null) {
+        if (stepInfoCase_ == 39) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 39) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        gkeNetworkPolicyBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.Builder
+        getGkeNetworkPolicyBuilder() {
+      return internalGetGkeNetworkPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfoOrBuilder
+        getGkeNetworkPolicyOrBuilder() {
+      if ((stepInfoCase_ == 39) && (gkeNetworkPolicyBuilder_ != null)) {
+        return gkeNetworkPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 39) {
+          return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a GKE Network Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo gke_network_policy = 39;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfoOrBuilder>
+        internalGetGkeNetworkPolicyFieldBuilder() {
+      if (gkeNetworkPolicyBuilder_ == null) {
+        if (!(stepInfoCase_ == 39)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.getDefaultInstance();
+        }
+        gkeNetworkPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo,
+                com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicyInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 39;
+      onChanged();
+      return gkeNetworkPolicyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfoOrBuilder>
+        gkeNetworkPolicySkippedBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     *
+     * @return Whether the gkeNetworkPolicySkipped field is set.
+     */
+    @java.lang.Override
+    public boolean hasGkeNetworkPolicySkipped() {
+      return stepInfoCase_ == 40;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     *
+     * @return The gkeNetworkPolicySkipped.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+        getGkeNetworkPolicySkipped() {
+      if (gkeNetworkPolicySkippedBuilder_ == null) {
+        if (stepInfoCase_ == 40) {
+          return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+            .getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 40) {
+          return gkeNetworkPolicySkippedBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    public Builder setGkeNetworkPolicySkipped(
+        com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo value) {
+      if (gkeNetworkPolicySkippedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        gkeNetworkPolicySkippedBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 40;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    public Builder setGkeNetworkPolicySkipped(
+        com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo.Builder
+            builderForValue) {
+      if (gkeNetworkPolicySkippedBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeNetworkPolicySkippedBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 40;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    public Builder mergeGkeNetworkPolicySkipped(
+        com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo value) {
+      if (gkeNetworkPolicySkippedBuilder_ == null) {
+        if (stepInfoCase_ == 40
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo)
+                          stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 40) {
+          gkeNetworkPolicySkippedBuilder_.mergeFrom(value);
+        } else {
+          gkeNetworkPolicySkippedBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 40;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    public Builder clearGkeNetworkPolicySkipped() {
+      if (gkeNetworkPolicySkippedBuilder_ == null) {
+        if (stepInfoCase_ == 40) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 40) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        gkeNetworkPolicySkippedBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo.Builder
+        getGkeNetworkPolicySkippedBuilder() {
+      return internalGetGkeNetworkPolicySkippedFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfoOrBuilder
+        getGkeNetworkPolicySkippedOrBuilder() {
+      if ((stepInfoCase_ == 40) && (gkeNetworkPolicySkippedBuilder_ != null)) {
+        return gkeNetworkPolicySkippedBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 40) {
+          return (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Network Policy evaluation was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo gke_network_policy_skipped = 40;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfoOrBuilder>
+        internalGetGkeNetworkPolicySkippedFieldBuilder() {
+      if (gkeNetworkPolicySkippedBuilder_ == null) {
+        if (!(stepInfoCase_ == 40)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo
+                  .getDefaultInstance();
+        }
+        gkeNetworkPolicySkippedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo,
+                com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.GkeNetworkPolicySkippedInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 40;
+      onChanged();
+      return gkeNetworkPolicySkippedBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<
@@ -12867,6 +13804,256 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       stepInfoCase_ = 29;
       onChanged();
       return serverlessNegBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfoOrBuilder>
+        ngfwPacketInspectionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     *
+     * @return Whether the ngfwPacketInspection field is set.
+     */
+    @java.lang.Override
+    public boolean hasNgfwPacketInspection() {
+      return stepInfoCase_ == 42;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     *
+     * @return The ngfwPacketInspection.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+        getNgfwPacketInspection() {
+      if (ngfwPacketInspectionBuilder_ == null) {
+        if (stepInfoCase_ == 42) {
+          return (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+            .getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 42) {
+          return ngfwPacketInspectionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    public Builder setNgfwPacketInspection(
+        com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo value) {
+      if (ngfwPacketInspectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        ngfwPacketInspectionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    public Builder setNgfwPacketInspection(
+        com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.Builder
+            builderForValue) {
+      if (ngfwPacketInspectionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        ngfwPacketInspectionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    public Builder mergeNgfwPacketInspection(
+        com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo value) {
+      if (ngfwPacketInspectionBuilder_ == null) {
+        if (stepInfoCase_ == 42
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo)
+                          stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 42) {
+          ngfwPacketInspectionBuilder_.mergeFrom(value);
+        } else {
+          ngfwPacketInspectionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    public Builder clearNgfwPacketInspection() {
+      if (ngfwPacketInspectionBuilder_ == null) {
+        if (stepInfoCase_ == 42) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 42) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        ngfwPacketInspectionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.Builder
+        getNgfwPacketInspectionBuilder() {
+      return internalGetNgfwPacketInspectionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfoOrBuilder
+        getNgfwPacketInspectionOrBuilder() {
+      if ((stepInfoCase_ == 42) && (ngfwPacketInspectionBuilder_ != null)) {
+        return ngfwPacketInspectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 42) {
+          return (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a layer 7 packet inspection by the firewall.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo ngfw_packet_inspection = 42;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfoOrBuilder>
+        internalGetNgfwPacketInspectionFieldBuilder() {
+      if (ngfwPacketInspectionBuilder_ == null) {
+        if (!(stepInfoCase_ == 42)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo
+                  .getDefaultInstance();
+        }
+        ngfwPacketInspectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo,
+                com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 42;
+      onChanged();
+      return ngfwPacketInspectionBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1beta1.Step)

@@ -38,7 +38,7 @@ public interface ProductAccountOrBuilder
    * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
    *
    * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-   *     google/ads/datamanager/v1/destination.proto;l=90
+   *     google/ads/datamanager/v1/destination.proto;l=98
    * @return The enum numeric value on the wire for product.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface ProductAccountOrBuilder
    * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
    *
    * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-   *     google/ads/datamanager/v1/destination.proto;l=90
+   *     google/ads/datamanager/v1/destination.proto;l=98
    * @return The product.
    */
   @java.lang.Deprecated

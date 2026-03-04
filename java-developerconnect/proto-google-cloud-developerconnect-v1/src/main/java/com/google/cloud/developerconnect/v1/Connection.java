@@ -102,6 +102,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     GITLAB_ENTERPRISE_CONFIG(16),
     BITBUCKET_DATA_CENTER_CONFIG(17),
     BITBUCKET_CLOUD_CONFIG(18),
+    SECURE_SOURCE_MANAGER_INSTANCE_CONFIG(20),
+    HTTP_CONFIG(21),
     CONNECTIONCONFIG_NOT_SET(0);
     private final int value;
 
@@ -133,6 +135,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
           return BITBUCKET_DATA_CENTER_CONFIG;
         case 18:
           return BITBUCKET_CLOUD_CONFIG;
+        case 20:
+          return SECURE_SOURCE_MANAGER_INSTANCE_CONFIG;
+        case 21:
+          return HTTP_CONFIG;
         case 0:
           return CONNECTIONCONFIG_NOT_SET;
         default:
@@ -491,6 +497,133 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.developerconnect.v1.BitbucketCloudConfig) connectionConfig_;
     }
     return com.google.cloud.developerconnect.v1.BitbucketCloudConfig.getDefaultInstance();
+  }
+
+  public static final int SECURE_SOURCE_MANAGER_INSTANCE_CONFIG_FIELD_NUMBER = 20;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of Secure Source Manager.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+   * </code>
+   *
+   * @return Whether the secureSourceManagerInstanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecureSourceManagerInstanceConfig() {
+    return connectionConfigCase_ == 20;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of Secure Source Manager.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+   * </code>
+   *
+   * @return The secureSourceManagerInstanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+      getSecureSourceManagerInstanceConfig() {
+    if (connectionConfigCase_ == 20) {
+      return (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+          connectionConfig_;
+    }
+    return com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to an instance of Secure Source Manager.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfigOrBuilder
+      getSecureSourceManagerInstanceConfigOrBuilder() {
+    if (connectionConfigCase_ == 20) {
+      return (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+          connectionConfig_;
+    }
+    return com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+        .getDefaultInstance();
+  }
+
+  public static final int HTTP_CONFIG_FIELD_NUMBER = 21;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for connections to an HTTP service provider.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the httpConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpConfig() {
+    return connectionConfigCase_ == 21;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for connections to an HTTP service provider.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The httpConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig getHttpConfig() {
+    if (connectionConfigCase_ == 21) {
+      return (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_;
+    }
+    return com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for connections to an HTTP service provider.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfigOrBuilder
+      getHttpConfigOrBuilder() {
+    if (connectionConfigCase_ == 21) {
+      return (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_;
+    }
+    return com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1340,6 +1473,16 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(19, getGitProxyConfig());
     }
+    if (connectionConfigCase_ == 20) {
+      output.writeMessage(
+          20,
+          (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+              connectionConfig_);
+    }
+    if (connectionConfigCase_ == 21) {
+      output.writeMessage(
+          21, (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1433,6 +1576,19 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getGitProxyConfig());
     }
+    if (connectionConfigCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20,
+              (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+                  connectionConfig_);
+    }
+    if (connectionConfigCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21,
+              (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1500,6 +1656,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         break;
       case 18:
         if (!getBitbucketCloudConfig().equals(other.getBitbucketCloudConfig())) return false;
+        break;
+      case 20:
+        if (!getSecureSourceManagerInstanceConfig()
+            .equals(other.getSecureSourceManagerInstanceConfig())) return false;
+        break;
+      case 21:
+        if (!getHttpConfig().equals(other.getHttpConfig())) return false;
         break;
       case 0:
       default:
@@ -1581,6 +1744,14 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       case 18:
         hash = (37 * hash) + BITBUCKET_CLOUD_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getBitbucketCloudConfig().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + SECURE_SOURCE_MANAGER_INSTANCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSecureSourceManagerInstanceConfig().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + HTTP_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpConfig().hashCode();
         break;
       case 0:
       default:
@@ -1783,6 +1954,12 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       if (bitbucketCloudConfigBuilder_ != null) {
         bitbucketCloudConfigBuilder_.clear();
       }
+      if (secureSourceManagerInstanceConfigBuilder_ != null) {
+        secureSourceManagerInstanceConfigBuilder_.clear();
+      }
+      if (httpConfigBuilder_ != null) {
+        httpConfigBuilder_.clear();
+      }
       name_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1859,55 +2036,55 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.developerconnect.v1.Connection result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.installationState_ =
             installationStateBuilder_ == null
                 ? installationState_
                 : installationStateBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.disabled_ = disabled_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.cryptoKeyConfig_ =
             cryptoKeyConfigBuilder_ == null ? cryptoKeyConfig_ : cryptoKeyConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.gitProxyConfig_ =
             gitProxyConfigBuilder_ == null ? gitProxyConfig_ : gitProxyConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
@@ -1936,6 +2113,12 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       if (connectionConfigCase_ == 18 && bitbucketCloudConfigBuilder_ != null) {
         result.connectionConfig_ = bitbucketCloudConfigBuilder_.build();
       }
+      if (connectionConfigCase_ == 20 && secureSourceManagerInstanceConfigBuilder_ != null) {
+        result.connectionConfig_ = secureSourceManagerInstanceConfigBuilder_.build();
+      }
+      if (connectionConfigCase_ == 21 && httpConfigBuilder_ != null) {
+        result.connectionConfig_ = httpConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1953,7 +2136,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1966,7 +2149,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         mergeDeleteTime(other.getDeleteTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       if (other.hasInstallationState()) {
         mergeInstallationState(other.getInstallationState());
       }
@@ -1977,15 +2160,15 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         setReconciling(other.getReconciling());
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasCryptoKeyConfig()) {
@@ -2025,6 +2208,16 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
             mergeBitbucketCloudConfig(other.getBitbucketCloudConfig());
             break;
           }
+        case SECURE_SOURCE_MANAGER_INSTANCE_CONFIG:
+          {
+            mergeSecureSourceManagerInstanceConfig(other.getSecureSourceManagerInstanceConfig());
+            break;
+          }
+        case HTTP_CONFIG:
+          {
+            mergeHttpConfig(other.getHttpConfig());
+            break;
+          }
         case CONNECTIONCONFIG_NOT_SET:
           {
             break;
@@ -2059,21 +2252,21 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26
             case 34:
@@ -2085,7 +2278,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 34
             case 42:
@@ -2099,19 +2292,19 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetInstallationStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 50
             case 56:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 56
             case 64:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 64
             case 74:
@@ -2123,26 +2316,26 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 74
             case 82:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 98
             case 106:
@@ -2164,7 +2357,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCryptoKeyConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 122
             case 130:
@@ -2194,9 +2387,24 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetGitProxyConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetSecureSourceManagerInstanceConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                connectionConfigCase_ = 20;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetHttpConfigFieldBuilder().getBuilder(), extensionRegistry);
+                connectionConfigCase_ = 21;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3618,6 +3826,503 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       return bitbucketCloudConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig,
+            com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig.Builder,
+            com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfigOrBuilder>
+        secureSourceManagerInstanceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     *
+     * @return Whether the secureSourceManagerInstanceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecureSourceManagerInstanceConfig() {
+      return connectionConfigCase_ == 20;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     *
+     * @return The secureSourceManagerInstanceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+        getSecureSourceManagerInstanceConfig() {
+      if (secureSourceManagerInstanceConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 20) {
+          return (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+              connectionConfig_;
+        }
+        return com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+            .getDefaultInstance();
+      } else {
+        if (connectionConfigCase_ == 20) {
+          return secureSourceManagerInstanceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    public Builder setSecureSourceManagerInstanceConfig(
+        com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig value) {
+      if (secureSourceManagerInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionConfig_ = value;
+        onChanged();
+      } else {
+        secureSourceManagerInstanceConfigBuilder_.setMessage(value);
+      }
+      connectionConfigCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    public Builder setSecureSourceManagerInstanceConfig(
+        com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig.Builder
+            builderForValue) {
+      if (secureSourceManagerInstanceConfigBuilder_ == null) {
+        connectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        secureSourceManagerInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      connectionConfigCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    public Builder mergeSecureSourceManagerInstanceConfig(
+        com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig value) {
+      if (secureSourceManagerInstanceConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 20
+            && connectionConfig_
+                != com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+                    .getDefaultInstance()) {
+          connectionConfig_ =
+              com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig.newBuilder(
+                      (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+                          connectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionConfigCase_ == 20) {
+          secureSourceManagerInstanceConfigBuilder_.mergeFrom(value);
+        } else {
+          secureSourceManagerInstanceConfigBuilder_.setMessage(value);
+        }
+      }
+      connectionConfigCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    public Builder clearSecureSourceManagerInstanceConfig() {
+      if (secureSourceManagerInstanceConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 20) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionConfigCase_ == 20) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+        }
+        secureSourceManagerInstanceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    public com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig.Builder
+        getSecureSourceManagerInstanceConfigBuilder() {
+      return internalGetSecureSourceManagerInstanceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfigOrBuilder
+        getSecureSourceManagerInstanceConfigOrBuilder() {
+      if ((connectionConfigCase_ == 20) && (secureSourceManagerInstanceConfigBuilder_ != null)) {
+        return secureSourceManagerInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionConfigCase_ == 20) {
+          return (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+              connectionConfig_;
+        }
+        return com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to an instance of Secure Source Manager.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig secure_source_manager_instance_config = 20;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig,
+            com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig.Builder,
+            com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfigOrBuilder>
+        internalGetSecureSourceManagerInstanceConfigFieldBuilder() {
+      if (secureSourceManagerInstanceConfigBuilder_ == null) {
+        if (!(connectionConfigCase_ == 20)) {
+          connectionConfig_ =
+              com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig
+                  .getDefaultInstance();
+        }
+        secureSourceManagerInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig,
+                com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig.Builder,
+                com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfigOrBuilder>(
+                (com.google.cloud.developerconnect.v1.SecureSourceManagerInstanceConfig)
+                    connectionConfig_,
+                getParentForChildren(),
+                isClean());
+        connectionConfig_ = null;
+      }
+      connectionConfigCase_ = 20;
+      onChanged();
+      return secureSourceManagerInstanceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig,
+            com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.Builder,
+            com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfigOrBuilder>
+        httpConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the httpConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpConfig() {
+      return connectionConfigCase_ == 21;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The httpConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig getHttpConfig() {
+      if (httpConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 21) {
+          return (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_;
+        }
+        return com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.getDefaultInstance();
+      } else {
+        if (connectionConfigCase_ == 21) {
+          return httpConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHttpConfig(
+        com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig value) {
+      if (httpConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionConfig_ = value;
+        onChanged();
+      } else {
+        httpConfigBuilder_.setMessage(value);
+      }
+      connectionConfigCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHttpConfig(
+        com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.Builder builderForValue) {
+      if (httpConfigBuilder_ == null) {
+        connectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpConfigBuilder_.setMessage(builderForValue.build());
+      }
+      connectionConfigCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHttpConfig(
+        com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig value) {
+      if (httpConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 21
+            && connectionConfig_
+                != com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig
+                    .getDefaultInstance()) {
+          connectionConfig_ =
+              com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.newBuilder(
+                      (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig)
+                          connectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionConfigCase_ == 21) {
+          httpConfigBuilder_.mergeFrom(value);
+        } else {
+          httpConfigBuilder_.setMessage(value);
+        }
+      }
+      connectionConfigCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHttpConfig() {
+      if (httpConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 21) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionConfigCase_ == 21) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+        }
+        httpConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.Builder
+        getHttpConfigBuilder() {
+      return internalGetHttpConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfigOrBuilder
+        getHttpConfigOrBuilder() {
+      if ((connectionConfigCase_ == 21) && (httpConfigBuilder_ != null)) {
+        return httpConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionConfigCase_ == 21) {
+          return (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_;
+        }
+        return com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for connections to an HTTP service provider.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.developerconnect.v1.GenericHTTPEndpointConfig http_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig,
+            com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.Builder,
+            com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfigOrBuilder>
+        internalGetHttpConfigFieldBuilder() {
+      if (httpConfigBuilder_ == null) {
+        if (!(connectionConfigCase_ == 21)) {
+          connectionConfig_ =
+              com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.getDefaultInstance();
+        }
+        httpConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig,
+                com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig.Builder,
+                com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfigOrBuilder>(
+                (com.google.cloud.developerconnect.v1.GenericHTTPEndpointConfig) connectionConfig_,
+                getParentForChildren(),
+                isClean());
+        connectionConfig_ = null;
+      }
+      connectionConfigCase_ = 21;
+      onChanged();
+      return httpConfigBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -3686,7 +4391,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3705,7 +4410,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3729,7 +4434,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3755,7 +4460,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3801,7 +4506,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3823,7 +4528,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3841,7 +4546,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3852,7 +4557,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3870,7 +4575,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3892,7 +4597,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -3967,7 +4672,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -4013,7 +4718,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4035,7 +4740,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4053,7 +4758,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -4064,7 +4769,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4082,7 +4787,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -4104,7 +4809,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4179,7 +4884,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4225,7 +4930,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4247,7 +4952,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4265,7 +4970,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && deleteTime_ != null
             && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getDeleteTimeBuilder().mergeFrom(value);
@@ -4276,7 +4981,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         deleteTimeBuilder_.mergeFrom(value);
       }
       if (deleteTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4294,7 +4999,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDeleteTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       deleteTime_ = null;
       if (deleteTimeBuilder_ != null) {
         deleteTimeBuilder_.dispose();
@@ -4316,7 +5021,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetDeleteTimeFieldBuilder().getBuilder();
     }
@@ -4387,7 +5092,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return labels_;
     }
@@ -4477,7 +5182,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4502,7 +5207,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -4523,7 +5228,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -4538,7 +5243,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -4563,7 +5268,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return Whether the installationState field is set.
      */
     public boolean hasInstallationState() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4610,7 +5315,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         installationStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4633,7 +5338,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         installationStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4652,7 +5357,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     public Builder mergeInstallationState(
         com.google.cloud.developerconnect.v1.InstallationState value) {
       if (installationStateBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && installationState_ != null
             && installationState_
                 != com.google.cloud.developerconnect.v1.InstallationState.getDefaultInstance()) {
@@ -4664,7 +5369,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         installationStateBuilder_.mergeFrom(value);
       }
       if (installationState_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -4682,7 +5387,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearInstallationState() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       installationState_ = null;
       if (installationStateBuilder_ != null) {
         installationStateBuilder_.dispose();
@@ -4705,7 +5410,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.developerconnect.v1.InstallationState.Builder
         getInstallationStateBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetInstallationStateFieldBuilder().getBuilder();
     }
@@ -4797,7 +5502,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4816,7 +5521,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       disabled_ = false;
       onChanged();
       return this;
@@ -4857,7 +5562,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4875,7 +5580,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -4901,7 +5606,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return annotations_;
     }
@@ -4995,7 +5700,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -5021,7 +5726,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -5043,7 +5748,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 
@@ -5059,7 +5764,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 
@@ -5134,7 +5839,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5154,7 +5859,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5179,7 +5884,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5255,7 +5960,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5275,7 +5980,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5300,7 +6005,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5327,7 +6032,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return Whether the cryptoKeyConfig field is set.
      */
     public boolean hasCryptoKeyConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5375,7 +6080,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         cryptoKeyConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5399,7 +6104,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         cryptoKeyConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5419,7 +6124,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
     public Builder mergeCryptoKeyConfig(
         com.google.cloud.developerconnect.v1.CryptoKeyConfig value) {
       if (cryptoKeyConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && cryptoKeyConfig_ != null
             && cryptoKeyConfig_
                 != com.google.cloud.developerconnect.v1.CryptoKeyConfig.getDefaultInstance()) {
@@ -5431,7 +6136,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         cryptoKeyConfigBuilder_.mergeFrom(value);
       }
       if (cryptoKeyConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -5450,7 +6155,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCryptoKeyConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       cryptoKeyConfig_ = null;
       if (cryptoKeyConfigBuilder_ != null) {
         cryptoKeyConfigBuilder_.dispose();
@@ -5474,7 +6179,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.developerconnect.v1.CryptoKeyConfig.Builder
         getCryptoKeyConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetCryptoKeyConfigFieldBuilder().getBuilder();
     }
@@ -5554,7 +6259,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * @return Whether the gitProxyConfig field is set.
      */
     public boolean hasGitProxyConfig() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5604,7 +6309,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         gitProxyConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5629,7 +6334,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
       } else {
         gitProxyConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5649,7 +6354,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGitProxyConfig(com.google.cloud.developerconnect.v1.GitProxyConfig value) {
       if (gitProxyConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && gitProxyConfig_ != null
             && gitProxyConfig_
                 != com.google.cloud.developerconnect.v1.GitProxyConfig.getDefaultInstance()) {
@@ -5661,7 +6366,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
         gitProxyConfigBuilder_.mergeFrom(value);
       }
       if (gitProxyConfig_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -5681,7 +6386,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGitProxyConfig() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       gitProxyConfig_ = null;
       if (gitProxyConfigBuilder_ != null) {
         gitProxyConfigBuilder_.dispose();
@@ -5705,7 +6410,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.developerconnect.v1.GitProxyConfig.Builder getGitProxyConfigBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetGitProxyConfigFieldBuilder().getBuilder();
     }

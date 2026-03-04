@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -170,6 +171,21 @@ public class InsightsConfigServiceSettings extends ClientSettings<InsightsConfig
       deleteInsightsConfigOperationSettings() {
     return ((InsightsConfigServiceStubSettings) getStubSettings())
         .deleteInsightsConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDeploymentEvent. */
+  public UnaryCallSettings<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventSettings() {
+    return ((InsightsConfigServiceStubSettings) getStubSettings()).getDeploymentEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentEvents. */
+  public PagedCallSettings<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          ListDeploymentEventsPagedResponse>
+      listDeploymentEventsSettings() {
+    return ((InsightsConfigServiceStubSettings) getStubSettings()).listDeploymentEventsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -347,6 +363,21 @@ public class InsightsConfigServiceSettings extends ClientSettings<InsightsConfig
     public OperationCallSettings.Builder<DeleteInsightsConfigRequest, Empty, OperationMetadata>
         deleteInsightsConfigOperationSettings() {
       return getStubSettingsBuilder().deleteInsightsConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentEvent. */
+    public UnaryCallSettings.Builder<GetDeploymentEventRequest, DeploymentEvent>
+        getDeploymentEventSettings() {
+      return getStubSettingsBuilder().getDeploymentEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentEvents. */
+    public PagedCallSettings.Builder<
+            ListDeploymentEventsRequest,
+            ListDeploymentEventsResponse,
+            ListDeploymentEventsPagedResponse>
+        listDeploymentEventsSettings() {
+      return getStubSettingsBuilder().listDeploymentEventsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
