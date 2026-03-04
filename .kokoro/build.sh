@@ -118,6 +118,7 @@ case ${JOB_TYPE} in
       echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
       mvn verify -Penable-integration-tests \
+        --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
@@ -176,6 +177,7 @@ case ${JOB_TYPE} in
       pushd "${BUILD_SUBDIR}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
       mvn test -Pnative \
+        --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
