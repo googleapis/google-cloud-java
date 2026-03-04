@@ -447,7 +447,7 @@ function install_modules() {
     #
     #   mvn install --projects java-kms/google-cloud-kms --also-make
     #      Correctly builds dependencies without building dependents.
-    mvn install --projects "$all_submodules" --also-make \
+    mvn install --projects "$all_submodules,$always_install_deps" --also-make \
       -B -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
