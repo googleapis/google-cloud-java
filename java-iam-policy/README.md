@@ -1,6 +1,6 @@
-# Google IAM Client for Java
+# Google IAM Policy Client for Java
 
-Java idiomatic client for [IAM][product-docs].
+Java idiomatic client for [IAM Policy][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-policy</artifactId>
-  <version>1.83.0</version>
+  <version>1.84.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-iam-policy:1.83.0'
+implementation 'com.google.cloud:google-iam-policy:1.84.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.83.0"
+libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.84.0"
 ```
 
 ## Authentication
@@ -64,14 +64,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired IAM APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the IAM API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired IAM Policy APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the IAM Policy API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the IAM [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google IAM.
+You will need a [Google Cloud Platform Console][developer-console] project with the IAM Policy [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google IAM Policy.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -81,13 +81,13 @@ You will need to [enable billing][enable-billing] to use Google IAM.
 You'll need to obtain the `google-iam-policy` library.  See the [Quickstart](#quickstart) section
 to add `google-iam-policy` as a dependency in your code.
 
-## About IAM
+## About IAM Policy
 
 
-[IAM][product-docs] n/a
+[IAM Policy][product-docs] n/a
 
-See the [IAM client library docs][javadocs] to learn how to
-use this IAM Client Library.
+See the [IAM Policy client library docs][javadocs] to learn how to
+use this IAM Policy Client Library.
 
 
 
@@ -100,7 +100,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-IAM uses both gRPC and HTTP/JSON for the transport layer.
+IAM Policy uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -175,7 +175,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-iam-policy.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-iam-policy/1.83.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-iam-policy/1.84.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -188,7 +188,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=iam.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=iam-policy.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 
