@@ -34,7 +34,18 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.array;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayContains;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayContainsAll;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayContainsAny;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayFirst;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayFirstN;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayGet;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayIndexOf;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayIndexOfAll;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayLast;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayLastIndexOf;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayLastN;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayMaximum;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayMaximumN;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayMinimum;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayMinimumN;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.arrayReverse;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.ceil;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.concat;
@@ -80,6 +91,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.unixSec
 import static com.google.cloud.firestore.pipeline.expressions.Expression.vectorLength;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.xor;
 import static com.google.common.truth.Truth.assertThat;
+import static java.util.Collections.emptyList;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
 
@@ -918,6 +930,603 @@ public class ITPipelineTest extends ITBaseTest {
 
     // All documents have 3 tags in the test dataset
     assertThat(data(results)).hasSize(10);
+  }
+
+  @Test
+  public void testArrayFirst() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayFirst("tags").equal("adventure"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(field("tags").arrayFirst().equal("adventure"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    // Test with empty/null/non-existent arrays
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(map("empty", emptyList(), "nullval", Expression.nullValue())))
+            .select(
+                arrayFirst("empty").as("emptyResult"),
+                arrayFirst("nullval").as("nullResult"),
+                arrayFirst("nonExistent").as("absentResult"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                // no emptyResult as arrayFirst returns UNSET for empty arrays
+                map("nullResult", null, "absentResult", null)));
+  }
+
+  @Test
+  public void testArrayFirstN() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayFirstN("tags", 2).equal(Lists.newArrayList("adventure", "magic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(
+                field("tags")
+                    .arrayFirstN(4)
+                    .equal(Lists.newArrayList("adventure", "magic", "epic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    // Test with empty/null/non-existent arrays
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(map("empty", emptyList(), "nullval", Expression.nullValue())))
+            .select(
+                arrayFirstN("empty", 2).as("emptyResult"),
+                arrayFirstN("nullval", 2).as("nullResult"),
+                arrayFirstN("nonExistent", 2).as("absentResult"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("emptyResult", emptyList(), "nullResult", null, "absentResult", null)));
+  }
+
+  @Test
+  public void testArrayLast() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayLast("tags").equal("epic"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(field("tags").arrayLast().equal("epic"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    // Test with empty/null/non-existent arrays
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(map("empty", emptyList(), "nullval", Expression.nullValue())))
+            .select(
+                arrayLast("empty").as("emptyResult"),
+                arrayLast("nullval").as("nullResult"),
+                arrayLast("nonExistent").as("absentResult"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                // no emptyResult as arrayLast returns UNSET for empty arrays
+                map("nullResult", null, "absentResult", null)));
+  }
+
+  @Test
+  public void testArrayLastN() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayLastN("tags", 2).equal(Lists.newArrayList("magic", "epic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(
+                field("tags").arrayLastN(4).equal(Lists.newArrayList("adventure", "magic", "epic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    // Test with empty/null/non-existent arrays
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(map("empty", emptyList(), "nullval", Expression.nullValue())))
+            .select(
+                arrayLastN("empty", 2).as("emptyResult"),
+                arrayLastN("nullval", 2).as("nullResult"),
+                arrayLastN("nonExistent", 2).as("absentResult"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("emptyResult", emptyList(), "nullResult", null, "absentResult", null)));
+  }
+
+  @Test
+  public void testArrayMinimum() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayMinimum("tags").equal("adventure"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("title", "The Hitchhiker's Guide to the Galaxy"),
+                map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(field("tags").arrayMinimum().equal("adventure"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("title", "The Hitchhiker's Guide to the Galaxy"),
+                map("title", "The Lord of the Rings")));
+
+    // Test with empty/null/non-existent arrays
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(
+                    map(
+                        "empty",
+                        emptyList(),
+                        "nullval",
+                        Expression.nullValue(),
+                        "mixed",
+                        Lists.newArrayList(1, "2", 3, "10"))))
+            .select(
+                arrayMinimum("empty").as("emptyResult"),
+                arrayMinimum("nullval").as("nullResult"),
+                arrayMinimum("nonExistent").as("absentResult"),
+                arrayMinimum("mixed").as("mixedResult"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "emptyResult",
+                    null,
+                    "nullResult",
+                    null,
+                    "absentResult",
+                    null,
+                    "mixedResult",
+                    1L)));
+  }
+
+  @Test
+  public void testArrayMinimumN() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayMinimumN("tags", 2).equal(Lists.newArrayList("adventure", "epic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(
+                field("tags")
+                    .arrayMinimumN(4)
+                    .equal(Lists.newArrayList("adventure", "epic", "magic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+  }
+
+  @Test
+  public void testArrayMaximum() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayMaximum("tags").equal("magic"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(field("tags").arrayMaximum().equal("magic"))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    // Test with empty/null/non-existent and mixed types
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(
+                    map(
+                        "empty",
+                        emptyList(),
+                        "nullval",
+                        Expression.nullValue(),
+                        "mixed",
+                        Lists.newArrayList(1, "2", 3, "10"))))
+            .select(
+                arrayMaximum("empty").as("emptyResult"),
+                arrayMaximum("nullval").as("nullResult"),
+                arrayMaximum("nonExistent").as("absentResult"),
+                arrayMaximum("mixed").as("mixedResult"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "emptyResult",
+                    null,
+                    "nullResult",
+                    null,
+                    "absentResult",
+                    null,
+                    "mixedResult",
+                    "2")));
+  }
+
+  @Test
+  public void testArrayMaximumN() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(arrayMaximumN("tags", 2).equal(Lists.newArrayList("magic", "epic")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(
+                field("tags")
+                    .arrayMaximumN(4)
+                    .equal(Lists.newArrayList("magic", "epic", "adventure")))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("title", "The Lord of the Rings")));
+  }
+
+  @Test
+  public void testArrayIndexOf() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .select(
+                arrayIndexOf("tags", "adventure").as("indexFirst"),
+                arrayIndexOf(field("tags"), "magic").as("indexSecond"),
+                field("tags").arrayIndexOf("epic").as("indexLast"),
+                arrayIndexOf("tags", "nonexistent").as("indexNone"),
+                arrayIndexOf("empty", "anything").as("indexEmpty"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "indexFirst",
+                    0L,
+                    "indexSecond",
+                    1L,
+                    "indexLast",
+                    2L,
+                    "indexNone",
+                    -1L,
+                    "indexEmpty",
+                    null)));
+
+    // Test with duplicate values
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(Expression.map(map("arr", Lists.newArrayList(1, 2, 3, 2, 1))))
+            .select(arrayIndexOf("arr", 2).as("firstIndex"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("firstIndex", 1L)));
+
+    // Test with null value
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(map("arr", Lists.newArrayList(1, null, 3, 2, 1), "nullArr", null)))
+            .select(
+                arrayIndexOf("arr", null).as("nullIndex"),
+                arrayIndexOf("nullArr", null).as("nullIndexNull"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(Lists.newArrayList(map("nullIndex", 1L, "nullIndexNull", null)));
+  }
+
+  @Test
+  public void testArrayLastIndexOf() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .select(
+                arrayLastIndexOf("tags", "adventure").as("lastIndexFirst"),
+                arrayLastIndexOf(field("tags"), "magic").as("lastIndexSecond"),
+                field("tags").arrayLastIndexOf("epic").as("lastIndexLast"),
+                arrayLastIndexOf("tags", "nonexistent").as("lastIndexNone"),
+                arrayLastIndexOf("empty", "anything").as("lastIndexEmpty"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "lastIndexFirst",
+                    0L,
+                    "lastIndexSecond",
+                    1L,
+                    "lastIndexLast",
+                    2L,
+                    "lastIndexNone",
+                    -1L,
+                    "lastIndexEmpty",
+                    null)));
+
+    // Test with duplicate values
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(Expression.map(map("arr", Lists.newArrayList(1, 2, 3, 2, 1))))
+            .select(arrayLastIndexOf("arr", 2).as("lastIndex"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results)).isEqualTo(Lists.newArrayList(map("lastIndex", 3L)));
+
+    // Test with null value
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(map("arr", Lists.newArrayList(1, null, 3, 2, 1), "nullArr", null)))
+            .select(
+                arrayLastIndexOf("arr", null).as("nullIndex"),
+                arrayLastIndexOf("nullArr", null).as("nullIndexNull"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(Lists.newArrayList(map("nullIndex", 1L, "nullIndexNull", null)));
+  }
+
+  @Test
+  public void testArrayIndexOfAll() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .select(
+                arrayIndexOfAll("tags", "adventure").as("indicesFirst"),
+                arrayIndexOfAll(field("tags"), "magic").as("indicesSecond"),
+                field("tags").arrayIndexOfAll("epic").as("indicesLast"),
+                arrayIndexOfAll("tags", "nonexistent").as("indicesNone"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "indicesFirst",
+                    Lists.newArrayList(0L),
+                    "indicesSecond",
+                    Lists.newArrayList(1L),
+                    "indicesLast",
+                    Lists.newArrayList(2L),
+                    "indicesNone",
+                    Lists.newArrayList())));
+
+    // Test with duplicate values
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(Expression.map(map("arr", Lists.newArrayList(1, 2, 3, 2, 1))))
+            .select(arrayIndexOfAll("arr", 2).as("indices"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(Lists.newArrayList(map("indices", Lists.newArrayList(1L, 3L))));
+
+    // Test with null values
+    results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Lord of the Rings"))
+            .replaceWith(
+                Expression.map(
+                    map("arr", Lists.newArrayList(1, null, 3, null, 1), "nullArr", null)))
+            .select(
+                arrayIndexOfAll("arr", null).as("indices"),
+                arrayIndexOfAll("nullArr", null).as("indicesNull"),
+                arrayIndexOfAll("nonExistentArray", null).as("indicesNonExistent"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "indices",
+                    Lists.newArrayList(1L, 3L),
+                    "indicesNull",
+                    null,
+                    "indicesNonExistent",
+                    null)));
   }
 
   @Test
