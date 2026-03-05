@@ -1965,7 +1965,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The entry agent to handle the session. If not specified, the
    * session will be handled by the [root
    * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-   * `projects/{project}/locations/{location}/agents/{agent}`
+   * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>
    *
    * <code>
@@ -1994,7 +1994,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The entry agent to handle the session. If not specified, the
    * session will be handled by the [root
    * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-   * `projects/{project}/locations/{location}/agents/{agent}`
+   * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>
    *
    * <code>
@@ -2136,6 +2136,27 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int USE_TOOL_FAKES_FIELD_NUMBER = 14;
+  private boolean useToolFakes_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to use tool fakes for the session.
+   * If this field is set, the agent will attempt use tool fakes instead of
+   * calling the real tools.
+   * </pre>
+   *
+   * <code>bool use_tool_fakes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useToolFakes.
+   */
+  @java.lang.Override
+  public boolean getUseToolFakes() {
+    return useToolFakes_;
+  }
+
   public static final int REMOTE_DIALOGFLOW_QUERY_PARAMETERS_FIELD_NUMBER = 15;
   private com.google.cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParameters
       remoteDialogflowQueryParameters_;
@@ -2247,6 +2268,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryAgent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, entryAgent_);
     }
+    if (useToolFakes_ != false) {
+      output.writeBool(14, useToolFakes_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getRemoteDialogflowQueryParameters());
     }
@@ -2280,6 +2304,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryAgent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, entryAgent_);
+    }
+    if (useToolFakes_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, useToolFakes_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -2315,6 +2342,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     if (!getEntryAgent().equals(other.getEntryAgent())) return false;
     if (!getDeployment().equals(other.getDeployment())) return false;
     if (!getTimeZone().equals(other.getTimeZone())) return false;
+    if (getUseToolFakes() != other.getUseToolFakes()) return false;
     if (hasRemoteDialogflowQueryParameters() != other.hasRemoteDialogflowQueryParameters())
       return false;
     if (hasRemoteDialogflowQueryParameters()) {
@@ -2352,6 +2380,8 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDeployment().hashCode();
     hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getTimeZone().hashCode();
+    hash = (37 * hash) + USE_TOOL_FAKES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseToolFakes());
     if (hasRemoteDialogflowQueryParameters()) {
       hash = (37 * hash) + REMOTE_DIALOGFLOW_QUERY_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getRemoteDialogflowQueryParameters().hashCode();
@@ -2529,6 +2559,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       entryAgent_ = "";
       deployment_ = "";
       timeZone_ = "";
+      useToolFakes_ = false;
       remoteDialogflowQueryParameters_ = null;
       if (remoteDialogflowQueryParametersBuilder_ != null) {
         remoteDialogflowQueryParametersBuilder_.dispose();
@@ -2609,6 +2640,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         result.timeZone_ = timeZone_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.useToolFakes_ = useToolFakes_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.remoteDialogflowQueryParameters_ =
             remoteDialogflowQueryParametersBuilder_ == null
                 ? remoteDialogflowQueryParameters_
@@ -2682,6 +2716,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         timeZone_ = other.timeZone_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.getUseToolFakes() != false) {
+        setUseToolFakes(other.getUseToolFakes());
       }
       if (other.hasRemoteDialogflowQueryParameters()) {
         mergeRemoteDialogflowQueryParameters(other.getRemoteDialogflowQueryParameters());
@@ -2763,12 +2800,18 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 98
+            case 112:
+              {
+                useToolFakes_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 112
             case 122:
               {
                 input.readMessage(
                     internalGetRemoteDialogflowQueryParametersFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 122
             default:
@@ -3837,7 +3880,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The entry agent to handle the session. If not specified, the
      * session will be handled by the [root
      * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-     * `projects/{project}/locations/{location}/agents/{agent}`
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
      * </pre>
      *
      * <code>
@@ -3865,7 +3908,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The entry agent to handle the session. If not specified, the
      * session will be handled by the [root
      * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-     * `projects/{project}/locations/{location}/agents/{agent}`
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
      * </pre>
      *
      * <code>
@@ -3893,7 +3936,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The entry agent to handle the session. If not specified, the
      * session will be handled by the [root
      * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-     * `projects/{project}/locations/{location}/agents/{agent}`
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
      * </pre>
      *
      * <code>
@@ -3920,7 +3963,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The entry agent to handle the session. If not specified, the
      * session will be handled by the [root
      * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-     * `projects/{project}/locations/{location}/agents/{agent}`
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
      * </pre>
      *
      * <code>
@@ -3943,7 +3986,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The entry agent to handle the session. If not specified, the
      * session will be handled by the [root
      * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-     * `projects/{project}/locations/{location}/agents/{agent}`
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
      * </pre>
      *
      * <code>
@@ -4221,6 +4264,68 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean useToolFakes_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to use tool fakes for the session.
+     * If this field is set, the agent will attempt use tool fakes instead of
+     * calling the real tools.
+     * </pre>
+     *
+     * <code>bool use_tool_fakes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useToolFakes.
+     */
+    @java.lang.Override
+    public boolean getUseToolFakes() {
+      return useToolFakes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to use tool fakes for the session.
+     * If this field is set, the agent will attempt use tool fakes instead of
+     * calling the real tools.
+     * </pre>
+     *
+     * <code>bool use_tool_fakes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useToolFakes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseToolFakes(boolean value) {
+
+      useToolFakes_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to use tool fakes for the session.
+     * If this field is set, the agent will attempt use tool fakes instead of
+     * calling the real tools.
+     * </pre>
+     *
+     * <code>bool use_tool_fakes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseToolFakes() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      useToolFakes_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParameters
         remoteDialogflowQueryParameters_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -4247,7 +4352,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the remoteDialogflowQueryParameters field is set.
      */
     public boolean hasRemoteDialogflowQueryParameters() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -4304,7 +4409,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       } else {
         remoteDialogflowQueryParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4332,7 +4437,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       } else {
         remoteDialogflowQueryParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4355,7 +4460,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeRemoteDialogflowQueryParameters(
         com.google.cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParameters value) {
       if (remoteDialogflowQueryParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && remoteDialogflowQueryParameters_ != null
             && remoteDialogflowQueryParameters_
                 != com.google.cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParameters
@@ -4368,7 +4473,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         remoteDialogflowQueryParametersBuilder_.mergeFrom(value);
       }
       if (remoteDialogflowQueryParameters_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -4390,7 +4495,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRemoteDialogflowQueryParameters() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       remoteDialogflowQueryParameters_ = null;
       if (remoteDialogflowQueryParametersBuilder_ != null) {
         remoteDialogflowQueryParametersBuilder_.dispose();
@@ -4417,7 +4522,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParameters.Builder
         getRemoteDialogflowQueryParametersBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetRemoteDialogflowQueryParametersFieldBuilder().getBuilder();
     }

@@ -647,7 +647,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("app", String.valueOf(request.getApp()));
+                      builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
                 .build();

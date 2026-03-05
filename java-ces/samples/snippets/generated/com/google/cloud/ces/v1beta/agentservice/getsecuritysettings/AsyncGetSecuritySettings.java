@@ -16,30 +16,35 @@
 
 package com.google.cloud.ces.v1beta.samples;
 
-// [START ces_v1beta_generated_EvaluationService_UploadEvaluationAudio_AppnameBytestring_sync]
-import com.google.cloud.ces.v1beta.AppName;
-import com.google.cloud.ces.v1beta.EvaluationServiceClient;
-import com.google.cloud.ces.v1beta.UploadEvaluationAudioResponse;
-import com.google.protobuf.ByteString;
+// [START ces_v1beta_generated_AgentService_GetSecuritySettings_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.ces.v1beta.AgentServiceClient;
+import com.google.cloud.ces.v1beta.GetSecuritySettingsRequest;
+import com.google.cloud.ces.v1beta.SecuritySettings;
+import com.google.cloud.ces.v1beta.SecuritySettingsName;
 
-public class SyncUploadEvaluationAudioAppnameBytestring {
+public class AsyncGetSecuritySettings {
 
   public static void main(String[] args) throws Exception {
-    syncUploadEvaluationAudioAppnameBytestring();
+    asyncGetSecuritySettings();
   }
 
-  public static void syncUploadEvaluationAudioAppnameBytestring() throws Exception {
+  public static void asyncGetSecuritySettings() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
-      AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
-      ByteString audioContent = ByteString.EMPTY;
-      UploadEvaluationAudioResponse response =
-          evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
+    try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+      GetSecuritySettingsRequest request =
+          GetSecuritySettingsRequest.newBuilder()
+              .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+              .build();
+      ApiFuture<SecuritySettings> future =
+          agentServiceClient.getSecuritySettingsCallable().futureCall(request);
+      // Do something.
+      SecuritySettings response = future.get();
     }
   }
 }
-// [END ces_v1beta_generated_EvaluationService_UploadEvaluationAudio_AppnameBytestring_sync]
+// [END ces_v1beta_generated_AgentService_GetSecuritySettings_async]

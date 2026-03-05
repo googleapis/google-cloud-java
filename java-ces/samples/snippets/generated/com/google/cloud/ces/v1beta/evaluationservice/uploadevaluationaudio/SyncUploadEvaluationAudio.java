@@ -17,7 +17,7 @@
 package com.google.cloud.ces.v1beta.samples;
 
 // [START ces_v1beta_generated_EvaluationService_UploadEvaluationAudio_sync]
-import com.google.cloud.ces.v1beta.AppName;
+import com.google.cloud.ces.v1beta.EvaluationName;
 import com.google.cloud.ces.v1beta.EvaluationServiceClient;
 import com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest;
 import com.google.cloud.ces.v1beta.UploadEvaluationAudioResponse;
@@ -38,8 +38,10 @@ public class SyncUploadEvaluationAudio {
     try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
       UploadEvaluationAudioRequest request =
           UploadEvaluationAudioRequest.newBuilder()
-              .setApp(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+              .setName(
+                  EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString())
               .setAudioContent(ByteString.EMPTY)
+              .setPreviousAudioGcsUri("previousAudioGcsUri-117973292")
               .build();
       UploadEvaluationAudioResponse response =
           evaluationServiceClient.uploadEvaluationAudio(request);

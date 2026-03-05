@@ -81,6 +81,7 @@ import com.google.cloud.ces.v1beta.GetConversationRequest;
 import com.google.cloud.ces.v1beta.GetDeploymentRequest;
 import com.google.cloud.ces.v1beta.GetExampleRequest;
 import com.google.cloud.ces.v1beta.GetGuardrailRequest;
+import com.google.cloud.ces.v1beta.GetSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.GetToolRequest;
 import com.google.cloud.ces.v1beta.GetToolsetRequest;
 import com.google.cloud.ces.v1beta.Guardrail;
@@ -109,6 +110,7 @@ import com.google.cloud.ces.v1beta.ListToolsetsResponse;
 import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RestoreAppVersionRequest;
 import com.google.cloud.ces.v1beta.RestoreAppVersionResponse;
+import com.google.cloud.ces.v1beta.SecuritySettings;
 import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
@@ -116,6 +118,7 @@ import com.google.cloud.ces.v1beta.UpdateAppRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
+import com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.UpdateToolRequest;
 import com.google.cloud.ces.v1beta.UpdateToolsetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -412,6 +415,81 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
               (ImportAppRequest request, Operation response) ->
                   HttpJsonOperationSnapshot.create(response))
           .build();
+
+  private static final ApiMethodDescriptor<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsMethodDescriptor =
+          ApiMethodDescriptor.<GetSecuritySettingsRequest, SecuritySettings>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/GetSecuritySettings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSecuritySettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/securitySettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSecuritySettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSecuritySettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecuritySettings>newBuilder()
+                      .setDefaultInstance(SecuritySettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSecuritySettingsRequest, SecuritySettings>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/UpdateSecuritySettings")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSecuritySettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{securitySettings.name=projects/*/locations/*/securitySettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSecuritySettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "securitySettings.name",
+                                request.getSecuritySettings().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSecuritySettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("securitySettings", request.getSecuritySettings(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecuritySettings>newBuilder()
+                      .setDefaultInstance(SecuritySettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<ListAgentsRequest, ListAgentsResponse>
       listAgentsMethodDescriptor =
@@ -1997,6 +2075,10 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   private final UnaryCallable<ImportAppRequest, Operation> importAppCallable;
   private final OperationCallable<ImportAppRequest, ImportAppResponse, OperationMetadata>
       importAppOperationCallable;
+  private final UnaryCallable<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsCallable;
+  private final UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsCallable;
   private final UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable;
   private final UnaryCallable<ListAgentsRequest, ListAgentsPagedResponse> listAgentsPagedCallable;
   private final UnaryCallable<GetAgentRequest, Agent> getAgentCallable;
@@ -2216,6 +2298,32 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetSecuritySettingsRequest, SecuritySettings>
+        getSecuritySettingsTransportSettings =
+            HttpJsonCallSettings.<GetSecuritySettingsRequest, SecuritySettings>newBuilder()
+                .setMethodDescriptor(getSecuritySettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
+        updateSecuritySettingsTransportSettings =
+            HttpJsonCallSettings.<UpdateSecuritySettingsRequest, SecuritySettings>newBuilder()
+                .setMethodDescriptor(updateSecuritySettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "security_settings.name",
+                          String.valueOf(request.getSecuritySettings().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListAgentsRequest, ListAgentsResponse> listAgentsTransportSettings =
         HttpJsonCallSettings.<ListAgentsRequest, ListAgentsResponse>newBuilder()
             .setMethodDescriptor(listAgentsMethodDescriptor)
@@ -2745,6 +2853,16 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
             settings.importAppOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getSecuritySettingsCallable =
+        callableFactory.createUnaryCallable(
+            getSecuritySettingsTransportSettings,
+            settings.getSecuritySettingsSettings(),
+            clientContext);
+    this.updateSecuritySettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateSecuritySettingsTransportSettings,
+            settings.updateSecuritySettingsSettings(),
+            clientContext);
     this.listAgentsCallable =
         callableFactory.createUnaryCallable(
             listAgentsTransportSettings, settings.listAgentsSettings(), clientContext);
@@ -2941,6 +3059,8 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
     methodDescriptors.add(deleteAppMethodDescriptor);
     methodDescriptors.add(exportAppMethodDescriptor);
     methodDescriptors.add(importAppMethodDescriptor);
+    methodDescriptors.add(getSecuritySettingsMethodDescriptor);
+    methodDescriptors.add(updateSecuritySettingsMethodDescriptor);
     methodDescriptors.add(listAgentsMethodDescriptor);
     methodDescriptors.add(getAgentMethodDescriptor);
     methodDescriptors.add(createAgentMethodDescriptor);
@@ -3052,6 +3172,17 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   public OperationCallable<ImportAppRequest, ImportAppResponse, OperationMetadata>
       importAppOperationCallable() {
     return importAppOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSecuritySettingsRequest, SecuritySettings> getSecuritySettingsCallable() {
+    return getSecuritySettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsCallable() {
+    return updateSecuritySettingsCallable;
   }
 
   @Override

@@ -40,7 +40,6 @@ public class SyncExecuteTool {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
-              .setVariables(Struct.newBuilder().build())
               .build();
       ExecuteToolResponse response = toolServiceClient.executeTool(request);
     }

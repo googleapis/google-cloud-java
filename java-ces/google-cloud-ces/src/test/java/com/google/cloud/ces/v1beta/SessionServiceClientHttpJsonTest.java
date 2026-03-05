@@ -101,6 +101,7 @@ public class SessionServiceClientHttpJsonTest {
                         AgentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[AGENT]").toString())
                     .setDeployment("deployment1939520197")
                     .setTimeZone("timeZone-2077180903")
+                    .setUseToolFakes(true)
                     .setRemoteDialogflowQueryParameters(
                         SessionConfig.RemoteDialogflowQueryParameters.newBuilder().build())
                     .build())
@@ -147,6 +148,7 @@ public class SessionServiceClientHttpJsonTest {
                           AgentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[AGENT]").toString())
                       .setDeployment("deployment1939520197")
                       .setTimeZone("timeZone-2077180903")
+                      .setUseToolFakes(true)
                       .setRemoteDialogflowQueryParameters(
                           SessionConfig.RemoteDialogflowQueryParameters.newBuilder().build())
                       .build())

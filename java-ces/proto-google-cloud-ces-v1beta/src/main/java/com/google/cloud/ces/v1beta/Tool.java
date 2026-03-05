@@ -93,6 +93,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     MCP_TOOL(16),
     FILE_SEARCH_TOOL(17),
     SYSTEM_TOOL(18),
+    AGENT_TOOL(23),
     WIDGET_TOOL(24),
     TOOLTYPE_NOT_SET(0);
     private final int value;
@@ -131,6 +132,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           return FILE_SEARCH_TOOL;
         case 18:
           return SYSTEM_TOOL;
+        case 23:
+          return AGENT_TOOL;
         case 24:
           return WIDGET_TOOL;
         case 0:
@@ -689,6 +692,66 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.ces.v1beta.SystemTool.getDefaultInstance();
   }
 
+  public static final int AGENT_TOOL_FIELD_NUMBER = 23;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentTool field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentTool() {
+    return toolTypeCase_ == 23;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentTool.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.AgentTool getAgentTool() {
+    if (toolTypeCase_ == 23) {
+      return (com.google.cloud.ces.v1beta.AgentTool) toolType_;
+    }
+    return com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.AgentToolOrBuilder getAgentToolOrBuilder() {
+    if (toolTypeCase_ == 23) {
+      return (com.google.cloud.ces.v1beta.AgentTool) toolType_;
+    }
+    return com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance();
+  }
+
   public static final int WIDGET_TOOL_FIELD_NUMBER = 24;
 
   /**
@@ -758,14 +821,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The unique identifier of the tool.
-   * Format:
-   * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-   * ## standalone tools.
+   * Identifier. The resource name of the tool. Format:
    *
-   * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-   * for tools retrieved from a toolset. These tools are dynamic and
-   * output-only, they cannot be referenced directly where a tool is expected.
+   * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+   * for standalone tools.
+   * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+   * for tools retrieved from a toolset.
+   *
+   * These tools are dynamic and output-only; they cannot be referenced directly
+   * where a tool is expected.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -789,14 +853,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The unique identifier of the tool.
-   * Format:
-   * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-   * ## standalone tools.
+   * Identifier. The resource name of the tool. Format:
    *
-   * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-   * for tools retrieved from a toolset. These tools are dynamic and
-   * output-only, they cannot be referenced directly where a tool is expected.
+   * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+   * for standalone tools.
+   * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+   * for tools retrieved from a toolset.
+   *
+   * These tools are dynamic and output-only; they cannot be referenced directly
+   * where a tool is expected.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1255,6 +1320,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(20, getToolFakeConfig());
     }
+    if (toolTypeCase_ == 23) {
+      output.writeMessage(23, (com.google.cloud.ces.v1beta.AgentTool) toolType_);
+    }
     if (toolTypeCase_ == 24) {
       output.writeMessage(24, (com.google.cloud.ces.v1beta.WidgetTool) toolType_);
     }
@@ -1337,6 +1405,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getToolFakeConfig());
     }
+    if (toolTypeCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.cloud.ces.v1beta.AgentTool) toolType_);
+    }
     if (toolTypeCase_ == 24) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1402,6 +1475,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         break;
       case 18:
         if (!getSystemTool().equals(other.getSystemTool())) return false;
+        break;
+      case 23:
+        if (!getAgentTool().equals(other.getAgentTool())) return false;
         break;
       case 24:
         if (!getWidgetTool().equals(other.getWidgetTool())) return false;
@@ -1478,6 +1554,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       case 18:
         hash = (37 * hash) + SYSTEM_TOOL_FIELD_NUMBER;
         hash = (53 * hash) + getSystemTool().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + AGENT_TOOL_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentTool().hashCode();
         break;
       case 24:
         hash = (37 * hash) + WIDGET_TOOL_FIELD_NUMBER;
@@ -1664,6 +1744,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (systemToolBuilder_ != null) {
         systemToolBuilder_.clear();
       }
+      if (agentToolBuilder_ != null) {
+        agentToolBuilder_.clear();
+      }
       if (widgetToolBuilder_ != null) {
         widgetToolBuilder_.clear();
       }
@@ -1725,31 +1808,31 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.ces.v1beta.Tool result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.executionType_ = executionType_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.generatedSummary_ = generatedSummary_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.toolFakeConfig_ =
             toolFakeConfigBuilder_ == null ? toolFakeConfig_ : toolFakeConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
@@ -1787,6 +1870,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (toolTypeCase_ == 18 && systemToolBuilder_ != null) {
         result.toolType_ = systemToolBuilder_.build();
       }
+      if (toolTypeCase_ == 23 && agentToolBuilder_ != null) {
+        result.toolType_ = agentToolBuilder_.build();
+      }
       if (toolTypeCase_ == 24 && widgetToolBuilder_ != null) {
         result.toolType_ = widgetToolBuilder_.build();
       }
@@ -1806,12 +1892,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.ces.v1beta.Tool.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.executionType_ != 0) {
@@ -1825,12 +1911,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getGeneratedSummary().isEmpty()) {
         generatedSummary_ = other.generatedSummary_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasToolFakeConfig()) {
@@ -1882,6 +1968,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
             mergeSystemTool(other.getSystemTool());
             break;
           }
+        case AGENT_TOOL:
+          {
+            mergeAgentTool(other.getAgentTool());
+            break;
+          }
         case WIDGET_TOOL:
           {
             mergeWidgetTool(other.getWidgetTool());
@@ -1921,7 +2012,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 10
             case 18:
@@ -1949,14 +2040,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 58
             case 66:
@@ -1983,25 +2074,25 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
             case 96:
               {
                 executionType_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 96
             case 106:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 114
             case 122:
               {
                 generatedSummary_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 122
             case 130:
@@ -2028,9 +2119,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetToolFakeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 162
+            case 186:
+              {
+                input.readMessage(
+                    internalGetAgentToolFieldBuilder().getBuilder(), extensionRegistry);
+                toolTypeCase_ = 23;
+                break;
+              } // case 186
             case 194:
               {
                 input.readMessage(
@@ -4200,6 +4298,241 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.AgentTool,
+            com.google.cloud.ces.v1beta.AgentTool.Builder,
+            com.google.cloud.ces.v1beta.AgentToolOrBuilder>
+        agentToolBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentTool field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentTool() {
+      return toolTypeCase_ == 23;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentTool.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.AgentTool getAgentTool() {
+      if (agentToolBuilder_ == null) {
+        if (toolTypeCase_ == 23) {
+          return (com.google.cloud.ces.v1beta.AgentTool) toolType_;
+        }
+        return com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance();
+      } else {
+        if (toolTypeCase_ == 23) {
+          return agentToolBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentTool(com.google.cloud.ces.v1beta.AgentTool value) {
+      if (agentToolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toolType_ = value;
+        onChanged();
+      } else {
+        agentToolBuilder_.setMessage(value);
+      }
+      toolTypeCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentTool(com.google.cloud.ces.v1beta.AgentTool.Builder builderForValue) {
+      if (agentToolBuilder_ == null) {
+        toolType_ = builderForValue.build();
+        onChanged();
+      } else {
+        agentToolBuilder_.setMessage(builderForValue.build());
+      }
+      toolTypeCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAgentTool(com.google.cloud.ces.v1beta.AgentTool value) {
+      if (agentToolBuilder_ == null) {
+        if (toolTypeCase_ == 23
+            && toolType_ != com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance()) {
+          toolType_ =
+              com.google.cloud.ces.v1beta.AgentTool.newBuilder(
+                      (com.google.cloud.ces.v1beta.AgentTool) toolType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          toolType_ = value;
+        }
+        onChanged();
+      } else {
+        if (toolTypeCase_ == 23) {
+          agentToolBuilder_.mergeFrom(value);
+        } else {
+          agentToolBuilder_.setMessage(value);
+        }
+      }
+      toolTypeCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAgentTool() {
+      if (agentToolBuilder_ == null) {
+        if (toolTypeCase_ == 23) {
+          toolTypeCase_ = 0;
+          toolType_ = null;
+          onChanged();
+        }
+      } else {
+        if (toolTypeCase_ == 23) {
+          toolTypeCase_ = 0;
+          toolType_ = null;
+        }
+        agentToolBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.AgentTool.Builder getAgentToolBuilder() {
+      return internalGetAgentToolFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.AgentToolOrBuilder getAgentToolOrBuilder() {
+      if ((toolTypeCase_ == 23) && (agentToolBuilder_ != null)) {
+        return agentToolBuilder_.getMessageOrBuilder();
+      } else {
+        if (toolTypeCase_ == 23) {
+          return (com.google.cloud.ces.v1beta.AgentTool) toolType_;
+        }
+        return com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.AgentTool,
+            com.google.cloud.ces.v1beta.AgentTool.Builder,
+            com.google.cloud.ces.v1beta.AgentToolOrBuilder>
+        internalGetAgentToolFieldBuilder() {
+      if (agentToolBuilder_ == null) {
+        if (!(toolTypeCase_ == 23)) {
+          toolType_ = com.google.cloud.ces.v1beta.AgentTool.getDefaultInstance();
+        }
+        agentToolBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.AgentTool,
+                com.google.cloud.ces.v1beta.AgentTool.Builder,
+                com.google.cloud.ces.v1beta.AgentToolOrBuilder>(
+                (com.google.cloud.ces.v1beta.AgentTool) toolType_,
+                getParentForChildren(),
+                isClean());
+        toolType_ = null;
+      }
+      toolTypeCase_ = 23;
+      onChanged();
+      return agentToolBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.ces.v1beta.WidgetTool,
             com.google.cloud.ces.v1beta.WidgetTool.Builder,
             com.google.cloud.ces.v1beta.WidgetToolOrBuilder>
@@ -4440,14 +4773,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The unique identifier of the tool.
-     * Format:
-     * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-     * ## standalone tools.
+     * Identifier. The resource name of the tool. Format:
      *
-     * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-     * for tools retrieved from a toolset. These tools are dynamic and
-     * output-only, they cannot be referenced directly where a tool is expected.
+     * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+     * for standalone tools.
+     * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+     * for tools retrieved from a toolset.
+     *
+     * These tools are dynamic and output-only; they cannot be referenced directly
+     * where a tool is expected.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -4470,14 +4804,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The unique identifier of the tool.
-     * Format:
-     * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-     * ## standalone tools.
+     * Identifier. The resource name of the tool. Format:
      *
-     * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-     * for tools retrieved from a toolset. These tools are dynamic and
-     * output-only, they cannot be referenced directly where a tool is expected.
+     * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+     * for standalone tools.
+     * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+     * for tools retrieved from a toolset.
+     *
+     * These tools are dynamic and output-only; they cannot be referenced directly
+     * where a tool is expected.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -4500,14 +4835,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The unique identifier of the tool.
-     * Format:
-     * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-     * ## standalone tools.
+     * Identifier. The resource name of the tool. Format:
      *
-     * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-     * for tools retrieved from a toolset. These tools are dynamic and
-     * output-only, they cannot be referenced directly where a tool is expected.
+     * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+     * for standalone tools.
+     * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+     * for tools retrieved from a toolset.
+     *
+     * These tools are dynamic and output-only; they cannot be referenced directly
+     * where a tool is expected.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -4520,7 +4856,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4529,14 +4865,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The unique identifier of the tool.
-     * Format:
-     * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-     * ## standalone tools.
+     * Identifier. The resource name of the tool. Format:
      *
-     * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-     * for tools retrieved from a toolset. These tools are dynamic and
-     * output-only, they cannot be referenced directly where a tool is expected.
+     * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+     * for standalone tools.
+     * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+     * for tools retrieved from a toolset.
+     *
+     * These tools are dynamic and output-only; they cannot be referenced directly
+     * where a tool is expected.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -4545,7 +4882,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4554,14 +4891,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The unique identifier of the tool.
-     * Format:
-     * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-     * ## standalone tools.
+     * Identifier. The resource name of the tool. Format:
      *
-     * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-     * for tools retrieved from a toolset. These tools are dynamic and
-     * output-only, they cannot be referenced directly where a tool is expected.
+     * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+     * for standalone tools.
+     * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+     * for tools retrieved from a toolset.
+     *
+     * These tools are dynamic and output-only; they cannot be referenced directly
+     * where a tool is expected.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -4575,7 +4913,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4651,7 +4989,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4671,7 +5009,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4696,7 +5034,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4737,7 +5075,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExecutionTypeValue(int value) {
       executionType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4780,7 +5118,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       executionType_ = value.getNumber();
       onChanged();
       return this;
@@ -4800,7 +5138,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExecutionType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       executionType_ = 0;
       onChanged();
       return this;
@@ -4827,7 +5165,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4873,7 +5211,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4895,7 +5233,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4913,7 +5251,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4924,7 +5262,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4942,7 +5280,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4964,7 +5302,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5039,7 +5377,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5085,7 +5423,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5107,7 +5445,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5125,7 +5463,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5136,7 +5474,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5154,7 +5492,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5176,7 +5514,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -5301,7 +5639,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5321,7 +5659,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5346,7 +5684,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5419,7 +5757,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       generatedSummary_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5438,7 +5776,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGeneratedSummary() {
       generatedSummary_ = getDefaultInstance().getGeneratedSummary();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5462,7 +5800,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       generatedSummary_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5488,7 +5826,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the toolFakeConfig field is set.
      */
     public boolean hasToolFakeConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5534,7 +5872,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         toolFakeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5557,7 +5895,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         toolFakeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5575,7 +5913,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeToolFakeConfig(com.google.cloud.ces.v1beta.ToolFakeConfig value) {
       if (toolFakeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && toolFakeConfig_ != null
             && toolFakeConfig_ != com.google.cloud.ces.v1beta.ToolFakeConfig.getDefaultInstance()) {
           getToolFakeConfigBuilder().mergeFrom(value);
@@ -5586,7 +5924,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         toolFakeConfigBuilder_.mergeFrom(value);
       }
       if (toolFakeConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -5604,7 +5942,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearToolFakeConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       toolFakeConfig_ = null;
       if (toolFakeConfigBuilder_ != null) {
         toolFakeConfigBuilder_.dispose();
@@ -5626,7 +5964,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.ToolFakeConfig.Builder getToolFakeConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return internalGetToolFakeConfigFieldBuilder().getBuilder();
     }

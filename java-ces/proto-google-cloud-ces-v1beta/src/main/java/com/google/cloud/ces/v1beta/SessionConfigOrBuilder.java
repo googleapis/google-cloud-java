@@ -239,7 +239,7 @@ public interface SessionConfigOrBuilder
    * Optional. The entry agent to handle the session. If not specified, the
    * session will be handled by the [root
    * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-   * `projects/{project}/locations/{location}/agents/{agent}`
+   * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>
    *
    * <code>
@@ -257,7 +257,7 @@ public interface SessionConfigOrBuilder
    * Optional. The entry agent to handle the session. If not specified, the
    * session will be handled by the [root
    * agent][google.cloud.ces.v1beta.App.root_agent] of the app. Format:
-   * `projects/{project}/locations/{location}/agents/{agent}`
+   * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>
    *
    * <code>
@@ -333,6 +333,21 @@ public interface SessionConfigOrBuilder
    * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to use tool fakes for the session.
+   * If this field is set, the agent will attempt use tool fakes instead of
+   * calling the real tools.
+   * </pre>
+   *
+   * <code>bool use_tool_fakes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useToolFakes.
+   */
+  boolean getUseToolFakes();
 
   /**
    *

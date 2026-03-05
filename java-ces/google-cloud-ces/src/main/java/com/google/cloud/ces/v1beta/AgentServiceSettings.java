@@ -190,6 +190,18 @@ public class AgentServiceSettings extends ClientSettings<AgentServiceSettings> {
     return ((AgentServiceStubSettings) getStubSettings()).importAppOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSecuritySettings. */
+  public UnaryCallSettings<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsSettings() {
+    return ((AgentServiceStubSettings) getStubSettings()).getSecuritySettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSecuritySettings. */
+  public UnaryCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsSettings() {
+    return ((AgentServiceStubSettings) getStubSettings()).updateSecuritySettingsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listAgents. */
   public PagedCallSettings<ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
       listAgentsSettings() {
@@ -606,6 +618,18 @@ public class AgentServiceSettings extends ClientSettings<AgentServiceSettings> {
     public OperationCallSettings.Builder<ImportAppRequest, ImportAppResponse, OperationMetadata>
         importAppOperationSettings() {
       return getStubSettingsBuilder().importAppOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSecuritySettings. */
+    public UnaryCallSettings.Builder<GetSecuritySettingsRequest, SecuritySettings>
+        getSecuritySettingsSettings() {
+      return getStubSettingsBuilder().getSecuritySettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSecuritySettings. */
+    public UnaryCallSettings.Builder<UpdateSecuritySettingsRequest, SecuritySettings>
+        updateSecuritySettingsSettings() {
+      return getStubSettingsBuilder().updateSecuritySettingsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listAgents. */

@@ -51,10 +51,10 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
- *   AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+ *   EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
  *   ByteString audioContent = ByteString.EMPTY;
  *   UploadEvaluationAudioResponse response =
- *       evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
+ *       evaluationServiceClient.uploadEvaluationAudio(name, audioContent);
  * }
  * }</pre>
  *
@@ -97,7 +97,6 @@
  *       ExecuteToolRequest.newBuilder()
  *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
  *           .setArgs(Struct.newBuilder().build())
- *           .setVariables(Struct.newBuilder().build())
  *           .build();
  *   ExecuteToolResponse response = toolServiceClient.executeTool(request);
  * }

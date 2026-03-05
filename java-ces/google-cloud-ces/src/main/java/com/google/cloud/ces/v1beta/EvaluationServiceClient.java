@@ -58,10 +58,10 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
- *   AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+ *   EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
  *   ByteString audioContent = ByteString.EMPTY;
  *   UploadEvaluationAudioResponse response =
- *       evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
+ *       evaluationServiceClient.uploadEvaluationAudio(name, audioContent);
  * }
  * }</pre>
  *
@@ -106,8 +106,8 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li><p> uploadEvaluationAudio(AppName app, ByteString audioContent)
- *           <li><p> uploadEvaluationAudio(String app, ByteString audioContent)
+ *           <li><p> uploadEvaluationAudio(EvaluationName name, ByteString audioContent)
+ *           <li><p> uploadEvaluationAudio(String name, ByteString audioContent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -1056,24 +1056,25 @@ public class EvaluationServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
-   *   AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+   *   EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
    *   ByteString audioContent = ByteString.EMPTY;
    *   UploadEvaluationAudioResponse response =
-   *       evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
+   *       evaluationServiceClient.uploadEvaluationAudio(name, audioContent);
    * }
    * }</pre>
    *
-   * @param app Required. The resource name of the App for which to upload the evaluation audio.
-   *     Format: `projects/{project}/locations/{location}/apps/{app}`
+   * @param name Required. The resource name of the Evaluation for which to upload the evaluation
+   *     audio. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
    * @param audioContent Required. The raw audio bytes. The format of the audio must be
    *     single-channel LINEAR16 with a sample rate of 16kHz (default InputAudioConfig).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadEvaluationAudioResponse uploadEvaluationAudio(
-      AppName app, ByteString audioContent) {
+      EvaluationName name, ByteString audioContent) {
     UploadEvaluationAudioRequest request =
         UploadEvaluationAudioRequest.newBuilder()
-            .setApp(app == null ? null : app.toString())
+            .setName(name == null ? null : name.toString())
             .setAudioContent(audioContent)
             .build();
     return uploadEvaluationAudio(request);
@@ -1094,23 +1095,28 @@ public class EvaluationServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
-   *   String app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString();
+   *   String name =
+   *       EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString();
    *   ByteString audioContent = ByteString.EMPTY;
    *   UploadEvaluationAudioResponse response =
-   *       evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
+   *       evaluationServiceClient.uploadEvaluationAudio(name, audioContent);
    * }
    * }</pre>
    *
-   * @param app Required. The resource name of the App for which to upload the evaluation audio.
-   *     Format: `projects/{project}/locations/{location}/apps/{app}`
+   * @param name Required. The resource name of the Evaluation for which to upload the evaluation
+   *     audio. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
    * @param audioContent Required. The raw audio bytes. The format of the audio must be
    *     single-channel LINEAR16 with a sample rate of 16kHz (default InputAudioConfig).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadEvaluationAudioResponse uploadEvaluationAudio(
-      String app, ByteString audioContent) {
+      String name, ByteString audioContent) {
     UploadEvaluationAudioRequest request =
-        UploadEvaluationAudioRequest.newBuilder().setApp(app).setAudioContent(audioContent).build();
+        UploadEvaluationAudioRequest.newBuilder()
+            .setName(name)
+            .setAudioContent(audioContent)
+            .build();
     return uploadEvaluationAudio(request);
   }
 
@@ -1131,8 +1137,10 @@ public class EvaluationServiceClient implements BackgroundResource {
    * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
    *   UploadEvaluationAudioRequest request =
    *       UploadEvaluationAudioRequest.newBuilder()
-   *           .setApp(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .setName(
+   *               EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString())
    *           .setAudioContent(ByteString.EMPTY)
+   *           .setPreviousAudioGcsUri("previousAudioGcsUri-117973292")
    *           .build();
    *   UploadEvaluationAudioResponse response =
    *       evaluationServiceClient.uploadEvaluationAudio(request);
@@ -1164,8 +1172,10 @@ public class EvaluationServiceClient implements BackgroundResource {
    * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
    *   UploadEvaluationAudioRequest request =
    *       UploadEvaluationAudioRequest.newBuilder()
-   *           .setApp(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .setName(
+   *               EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString())
    *           .setAudioContent(ByteString.EMPTY)
+   *           .setPreviousAudioGcsUri("previousAudioGcsUri-117973292")
    *           .build();
    *   ApiFuture<UploadEvaluationAudioResponse> future =
    *       evaluationServiceClient.uploadEvaluationAudioCallable().futureCall(request);

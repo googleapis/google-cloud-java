@@ -94,6 +94,7 @@ import com.google.cloud.ces.v1beta.GetConversationRequest;
 import com.google.cloud.ces.v1beta.GetDeploymentRequest;
 import com.google.cloud.ces.v1beta.GetExampleRequest;
 import com.google.cloud.ces.v1beta.GetGuardrailRequest;
+import com.google.cloud.ces.v1beta.GetSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.GetToolRequest;
 import com.google.cloud.ces.v1beta.GetToolsetRequest;
 import com.google.cloud.ces.v1beta.Guardrail;
@@ -122,6 +123,7 @@ import com.google.cloud.ces.v1beta.ListToolsetsResponse;
 import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RestoreAppVersionRequest;
 import com.google.cloud.ces.v1beta.RestoreAppVersionResponse;
+import com.google.cloud.ces.v1beta.SecuritySettings;
 import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
@@ -129,6 +131,7 @@ import com.google.cloud.ces.v1beta.UpdateAppRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
+import com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.UpdateToolRequest;
 import com.google.cloud.ces.v1beta.UpdateToolsetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -248,6 +251,10 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
   private final UnaryCallSettings<ImportAppRequest, Operation> importAppSettings;
   private final OperationCallSettings<ImportAppRequest, ImportAppResponse, OperationMetadata>
       importAppOperationSettings;
+  private final UnaryCallSettings<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsSettings;
+  private final UnaryCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsSettings;
   private final PagedCallSettings<ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
       listAgentsSettings;
   private final UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings;
@@ -953,6 +960,18 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     return importAppOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getSecuritySettings. */
+  public UnaryCallSettings<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsSettings() {
+    return getSecuritySettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSecuritySettings. */
+  public UnaryCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsSettings() {
+    return updateSecuritySettingsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listAgents. */
   public PagedCallSettings<ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
       listAgentsSettings() {
@@ -1320,6 +1339,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     exportAppOperationSettings = settingsBuilder.exportAppOperationSettings().build();
     importAppSettings = settingsBuilder.importAppSettings().build();
     importAppOperationSettings = settingsBuilder.importAppOperationSettings().build();
+    getSecuritySettingsSettings = settingsBuilder.getSecuritySettingsSettings().build();
+    updateSecuritySettingsSettings = settingsBuilder.updateSecuritySettingsSettings().build();
     listAgentsSettings = settingsBuilder.listAgentsSettings().build();
     getAgentSettings = settingsBuilder.getAgentSettings().build();
     createAgentSettings = settingsBuilder.createAgentSettings().build();
@@ -1391,6 +1412,10 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     private final OperationCallSettings.Builder<
             ImportAppRequest, ImportAppResponse, OperationMetadata>
         importAppOperationSettings;
+    private final UnaryCallSettings.Builder<GetSecuritySettingsRequest, SecuritySettings>
+        getSecuritySettingsSettings;
+    private final UnaryCallSettings.Builder<UpdateSecuritySettingsRequest, SecuritySettings>
+        updateSecuritySettingsSettings;
     private final PagedCallSettings.Builder<
             ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
         listAgentsSettings;
@@ -1522,6 +1547,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       exportAppOperationSettings = OperationCallSettings.newBuilder();
       importAppSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importAppOperationSettings = OperationCallSettings.newBuilder();
+      getSecuritySettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSecuritySettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAgentsSettings = PagedCallSettings.newBuilder(LIST_AGENTS_PAGE_STR_FACT);
       getAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1577,6 +1604,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
               deleteAppSettings,
               exportAppSettings,
               importAppSettings,
+              getSecuritySettingsSettings,
+              updateSecuritySettingsSettings,
               listAgentsSettings,
               getAgentSettings,
               createAgentSettings,
@@ -1637,6 +1666,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       exportAppOperationSettings = settings.exportAppOperationSettings.toBuilder();
       importAppSettings = settings.importAppSettings.toBuilder();
       importAppOperationSettings = settings.importAppOperationSettings.toBuilder();
+      getSecuritySettingsSettings = settings.getSecuritySettingsSettings.toBuilder();
+      updateSecuritySettingsSettings = settings.updateSecuritySettingsSettings.toBuilder();
       listAgentsSettings = settings.listAgentsSettings.toBuilder();
       getAgentSettings = settings.getAgentSettings.toBuilder();
       createAgentSettings = settings.createAgentSettings.toBuilder();
@@ -1693,6 +1724,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
               deleteAppSettings,
               exportAppSettings,
               importAppSettings,
+              getSecuritySettingsSettings,
+              updateSecuritySettingsSettings,
               listAgentsSettings,
               getAgentSettings,
               createAgentSettings,
@@ -1795,6 +1828,16 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
 
       builder
           .importAppSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSecuritySettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSecuritySettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2230,6 +2273,18 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     public OperationCallSettings.Builder<ImportAppRequest, ImportAppResponse, OperationMetadata>
         importAppOperationSettings() {
       return importAppOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSecuritySettings. */
+    public UnaryCallSettings.Builder<GetSecuritySettingsRequest, SecuritySettings>
+        getSecuritySettingsSettings() {
+      return getSecuritySettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSecuritySettings. */
+    public UnaryCallSettings.Builder<UpdateSecuritySettingsRequest, SecuritySettings>
+        updateSecuritySettingsSettings() {
+      return updateSecuritySettingsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listAgents. */

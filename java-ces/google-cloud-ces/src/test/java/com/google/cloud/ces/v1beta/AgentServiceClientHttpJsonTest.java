@@ -1071,6 +1071,166 @@ public class AgentServiceClientHttpJsonTest {
   }
 
   @Test
+  public void getSecuritySettingsTest() throws Exception {
+    SecuritySettings expectedResponse =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecuritySettingsName name = SecuritySettingsName.of("[PROJECT]", "[LOCATION]");
+
+    SecuritySettings actualResponse = client.getSecuritySettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSecuritySettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecuritySettingsName name = SecuritySettingsName.of("[PROJECT]", "[LOCATION]");
+      client.getSecuritySettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecuritySettingsTest2() throws Exception {
+    SecuritySettings expectedResponse =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7864/locations/location-7864/securitySettings";
+
+    SecuritySettings actualResponse = client.getSecuritySettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSecuritySettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7864/locations/location-7864/securitySettings";
+      client.getSecuritySettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSecuritySettingsTest() throws Exception {
+    SecuritySettings expectedResponse =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecuritySettings securitySettings =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SecuritySettings actualResponse = client.updateSecuritySettings(securitySettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSecuritySettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecuritySettings securitySettings =
+          SecuritySettings.newBuilder()
+              .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+              .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setEtag("etag3123477")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSecuritySettings(securitySettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listAgentsTest() throws Exception {
     Agent responsesElement = Agent.newBuilder().build();
     ListAgentsResponse expectedResponse =

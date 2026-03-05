@@ -73,6 +73,7 @@ import com.google.cloud.ces.v1beta.GetConversationRequest;
 import com.google.cloud.ces.v1beta.GetDeploymentRequest;
 import com.google.cloud.ces.v1beta.GetExampleRequest;
 import com.google.cloud.ces.v1beta.GetGuardrailRequest;
+import com.google.cloud.ces.v1beta.GetSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.GetToolRequest;
 import com.google.cloud.ces.v1beta.GetToolsetRequest;
 import com.google.cloud.ces.v1beta.Guardrail;
@@ -101,6 +102,7 @@ import com.google.cloud.ces.v1beta.ListToolsetsResponse;
 import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RestoreAppVersionRequest;
 import com.google.cloud.ces.v1beta.RestoreAppVersionResponse;
+import com.google.cloud.ces.v1beta.SecuritySettings;
 import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
@@ -108,6 +110,7 @@ import com.google.cloud.ces.v1beta.UpdateAppRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
+import com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.UpdateToolRequest;
 import com.google.cloud.ces.v1beta.UpdateToolsetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -195,6 +198,28 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsMethodDescriptor =
+          MethodDescriptor.<GetSecuritySettingsRequest, SecuritySettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/GetSecuritySettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSecuritySettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsMethodDescriptor =
+          MethodDescriptor.<UpdateSecuritySettingsRequest, SecuritySettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/UpdateSecuritySettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSecuritySettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListAgentsRequest, ListAgentsResponse>
       listAgentsMethodDescriptor =
@@ -661,6 +686,10 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
   private final UnaryCallable<ImportAppRequest, Operation> importAppCallable;
   private final OperationCallable<ImportAppRequest, ImportAppResponse, OperationMetadata>
       importAppOperationCallable;
+  private final UnaryCallable<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsCallable;
+  private final UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsCallable;
   private final UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable;
   private final UnaryCallable<ListAgentsRequest, ListAgentsPagedResponse> listAgentsPagedCallable;
   private final UnaryCallable<GetAgentRequest, Agent> getAgentCallable;
@@ -845,6 +874,30 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetSecuritySettingsRequest, SecuritySettings>
+        getSecuritySettingsTransportSettings =
+            GrpcCallSettings.<GetSecuritySettingsRequest, SecuritySettings>newBuilder()
+                .setMethodDescriptor(getSecuritySettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
+        updateSecuritySettingsTransportSettings =
+            GrpcCallSettings.<UpdateSecuritySettingsRequest, SecuritySettings>newBuilder()
+                .setMethodDescriptor(updateSecuritySettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "security_settings.name",
+                          String.valueOf(request.getSecuritySettings().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListAgentsRequest, ListAgentsResponse> listAgentsTransportSettings =
         GrpcCallSettings.<ListAgentsRequest, ListAgentsResponse>newBuilder()
             .setMethodDescriptor(listAgentsMethodDescriptor)
@@ -1330,6 +1383,16 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
             settings.importAppOperationSettings(),
             clientContext,
             operationsStub);
+    this.getSecuritySettingsCallable =
+        callableFactory.createUnaryCallable(
+            getSecuritySettingsTransportSettings,
+            settings.getSecuritySettingsSettings(),
+            clientContext);
+    this.updateSecuritySettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateSecuritySettingsTransportSettings,
+            settings.updateSecuritySettingsSettings(),
+            clientContext);
     this.listAgentsCallable =
         callableFactory.createUnaryCallable(
             listAgentsTransportSettings, settings.listAgentsSettings(), clientContext);
@@ -1581,6 +1644,17 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
   public OperationCallable<ImportAppRequest, ImportAppResponse, OperationMetadata>
       importAppOperationCallable() {
     return importAppOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSecuritySettingsRequest, SecuritySettings> getSecuritySettingsCallable() {
+    return getSecuritySettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsCallable() {
+    return updateSecuritySettingsCallable;
   }
 
   @Override
