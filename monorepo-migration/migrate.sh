@@ -553,6 +553,14 @@ if [[ "${SKIP_TESTS:-false}" != "true" ]]; then
     BUILD_SUBDIR="${SOURCE_REPO_NAME}" JOB_TYPE=test .kokoro/build.sh
 fi
 
+# 7.12 Apply manual changes
+if [[ -f "~/${SOURCE_REPO_NAME}.diff" ]]; then
+    echo "Applying diff from ${SOURCE_REPO_NAME}.diff..."
+    git apply "~/${SOURCE_REPO_NAME}.diff"
+    echo "Committing diff..."
+    git commit -am "manual changes"
+fi
+
 # 7.13 Squash commits
 if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
     echo "Squashing $COMMIT_COUNT commits..."
