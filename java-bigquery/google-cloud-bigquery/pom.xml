@@ -6,7 +6,7 @@
   <version>2.60.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   <packaging>jar</packaging>
   <name>BigQuery</name>
-  <url>https://github.com/googleapis/java-bigquery</url>
+  <url>https://github.com/googleapis/google-cloud-java</url>
   <description>BigQuery</description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -100,10 +100,12 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
+      <version>3.23.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
+      <version>3.23.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
     <dependency>
       <groupId>org.apache.arrow</groupId>
@@ -118,13 +120,11 @@
       <artifactId>arrow-memory-netty</artifactId>
     </dependency>
 
-    <!-- auto-value creates a class that uses an annotation from error_prone_annotations -->
     <dependency>
       <groupId>com.google.errorprone</groupId>
       <artifactId>error_prone_annotations</artifactId>
     </dependency>
 
-    <!-- OpenTelemetry -->
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-api</artifactId>
@@ -134,7 +134,6 @@
       <artifactId>opentelemetry-context</artifactId>
     </dependency>
 
-    <!-- Test dependencies -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
@@ -145,21 +144,19 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datacatalog</artifactId>
       <scope>test</scope>
+      <version>1.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigqueryconnection</artifactId>
       <scope>test</scope>
+      <version>2.89.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigqueryconnection-v1</artifactId>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-      <scope>test</scope>
+      <version>2.89.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -187,17 +184,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-datacatalog</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
       <scope>test</scope>
+      <version>1.93.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
     </dependency>
 
-    <!-- OpenTelemetry -->
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk</artifactId>

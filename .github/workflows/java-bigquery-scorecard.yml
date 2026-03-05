@@ -2,7 +2,7 @@
 # by a third-party and are governed by separate terms of service, privacy
 # policy, and support documentation.
 
-name: Scorecard supply-chain security
+name: java-bigquery Scorecard supply-chain security
 on:
   # For Branch-Protection check. Only the default branch is supported. See
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#branch-protection
@@ -17,8 +17,24 @@ on:
 # Declare default permissions as read only.
 permissions: read-all
 
+env:
+  BUILD_SUBDIR: java-bigquery
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-bigquery/**'
   analysis:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: Scorecard analysis
     runs-on: ubuntu-latest
     permissions:

@@ -19,9 +19,11 @@ excluded_modules=(
   'google-cloud-pom-parent'
   'java-vertexai'
   'java-logging'
+  'java-bigquery'
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
+  'java-bigquery'
 )
 
 function retry_with_backoff {

@@ -56,14 +56,14 @@ public class ConnImplBenchmark {
   public void setUp() throws IOException {
     java.util.logging.Logger.getGlobal().setLevel(Level.ALL);
 
-    connectionSettingsReadAPIEnabled = ConnectionSettings.newBuilder()
+    connectionSettingsReadAPIEnabled =
+        ConnectionSettings.newBuilder()
             .setUseReadAPI(true)
             .setMaxResults(500L)
             .setJobTimeoutMs(Long.MAX_VALUE)
             .build();
-    connectionSettingsReadAPIDisabled = ConnectionSettings.newBuilder()
-            .setUseReadAPI(false)
-            .build();
+    connectionSettingsReadAPIDisabled =
+        ConnectionSettings.newBuilder().setUseReadAPI(false).build();
   }
 
   @Benchmark

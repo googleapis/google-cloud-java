@@ -164,6 +164,7 @@ jobs:
         
         # java/com/google : This is the standard package
         # samples         : Samples are not shipped as a library
+        # benchmark       : Benchmarking tests are not shipped as a library
         # grafeas         : java-grafeas is known to have special package name
         # cloud-build v2  : java_package was not configured when we published
         #                   the Cloud Build V2 client library
@@ -171,6 +172,7 @@ jobs:
         invalid_files=$(find . -name '*.java' \
             |grep --invert-match 'java/com/google' \
             |grep --invert-match samples \
+            |grep --invert-match benchmark \
             |grep --invert-match grafeas \
             |grep --invert-match 'cloud-build.*v2' \
             |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
