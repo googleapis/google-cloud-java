@@ -33,6 +33,18 @@ public class TelemetryConstants {
   public static final String ATTRIBUTES_KEY_DEFERRED = "Deferred";
   public static final String ATTRIBUTES_KEY_MORE_RESULTS = "more_results";
 
+  /** Attribute key for the gRPC status code (e.g. "OK", "ABORTED", "UNAVAILABLE"). */
+  public static final String ATTRIBUTES_KEY_STATUS = "status";
+
+  /** Attribute key for the RPC method name (e.g. "Transaction.Run"). */
+  public static final String ATTRIBUTES_KEY_METHOD = "method";
+
+  /** Attribute key for the GCP project ID. */
+  public static final String ATTRIBUTES_KEY_PROJECT_ID = "project_id";
+
+  /** Attribute key for the Datastore database ID. */
+  public static final String ATTRIBUTES_KEY_DATABASE_ID = "database_id";
+
   /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
   // Format is not SnakeCase to keep backward compatibility with the existing values TraceUtil spans
   public static final String METHOD_ALLOCATE_IDS = "AllocateIds";
