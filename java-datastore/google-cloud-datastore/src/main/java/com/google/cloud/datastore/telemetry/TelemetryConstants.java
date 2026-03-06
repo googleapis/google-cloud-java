@@ -18,7 +18,13 @@ package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
 
-/** Internal telemetry constants shared between OpenTelemetry tracing and metrics. */
+/**
+ * Internal telemetry constants shared between OpenTelemetry tracing and metrics.
+ *
+ * <p><b>Warning:</b> This is intended to be an internal API and is not intended for external use.
+ * This is public solely for implementation purposes and does not promise any backwards
+ * compatibility.
+ */
 @InternalApi
 public class TelemetryConstants {
   static final String SERVICE_NAME = "datastore.googleapis.com";

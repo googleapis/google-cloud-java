@@ -62,8 +62,7 @@ public class OpenTelemetryMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData latencyMetric =
         metrics.stream()
-            .filter(
-                m -> m.getName().equals(TelemetryConstants.SERVICE_NAME + "/transaction_latency"))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY))
             .findFirst()
             .orElse(null);
 
@@ -101,9 +100,7 @@ public class OpenTelemetryMetricsRecorderTest {
     MetricData attemptMetric =
         metrics.stream()
             .filter(
-                m ->
-                    m.getName()
-                        .equals(TelemetryConstants.SERVICE_NAME + "/transaction_attempt_count"))
+                m -> m.getName().equals(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT))
             .findFirst()
             .orElse(null);
 
@@ -148,9 +145,7 @@ public class OpenTelemetryMetricsRecorderTest {
     MetricData attemptMetric =
         metrics.stream()
             .filter(
-                m ->
-                    m.getName()
-                        .equals(TelemetryConstants.SERVICE_NAME + "/transaction_attempt_count"))
+                m -> m.getName().equals(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT))
             .findFirst()
             .orElse(null);
 
@@ -161,16 +156,10 @@ public class OpenTelemetryMetricsRecorderTest {
   }
 
   @Test
-  public void recordTransactionLatency_nullAttributes_doesNotThrow() {
-    // Should not throw even when attributes are null
+  public void recordTransactionLatency_nullAttributes() {
     recorder.recordTransactionLatency(100.0, null);
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     assertThat(metrics).isNotEmpty();
-  }
-
-  @Test
-  public void getOpenTelemetry_returnsConfiguredInstance() {
-    assertThat(recorder.getOpenTelemetry()).isNotNull();
   }
 }

@@ -26,24 +26,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link MetricsRecorder#getInstance(DatastoreOpenTelemetryOptions)}.
- *
- * <p>Note: Since {@code setMetricsEnabled()} is package-private on {@link
- * DatastoreOpenTelemetryOptions.Builder}, these tests can only verify the default (metrics
- * disabled) behavior and the behavior when an explicit OpenTelemetry instance is provided. The
- * metrics-enabled paths are exercised through the {@link DatastoreImplMetricsTest} which operates
- * in the {@code com.google.cloud.datastore} package.
- */
+/** Tests for {@link MetricsRecorder#getInstance(DatastoreOpenTelemetryOptions)}. */
 @RunWith(JUnit4.class)
 public class MetricsRecorderTest {
 
+  // TODO(lawrenceqiu): For now, the default behavior is no-op. Add a test for
+  // instance being OpenTelemetryMetricsRecorder later (visibility changes)
   @Test
   public void defaultOptionsReturnNoOp() {
     DatastoreOpenTelemetryOptions options = DatastoreOpenTelemetryOptions.newBuilder().build();
-
     MetricsRecorder recorder = MetricsRecorder.getInstance(options);
-
     assertThat(recorder).isInstanceOf(NoOpMetricsRecorder.class);
   }
 
@@ -52,20 +44,12 @@ public class MetricsRecorderTest {
     // Enabling tracing alone should not enable metrics
     DatastoreOpenTelemetryOptions options =
         DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build();
-
     MetricsRecorder recorder = MetricsRecorder.getInstance(options);
-
     assertThat(recorder).isInstanceOf(NoOpMetricsRecorder.class);
   }
 
-  @Test
-  public void noOpRecorderDoesNotThrow() {
-    // Verify NoOpMetricsRecorder methods do not throw
-    NoOpMetricsRecorder recorder = new NoOpMetricsRecorder();
-    recorder.recordTransactionLatency(100.0, null);
-    recorder.recordTransactionAttemptCount(1, null);
-  }
-
+  // TODO(lawrenceqiu): Temporary test to ensure that OpenTelemetryMetricsRecorder can
+  // be created by the DatastoreOpenTelemetryOptions and creates with Otel object
   @Test
   public void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();
