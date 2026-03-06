@@ -131,9 +131,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   /**
-   * A wrapper around {@link ReadWriteTransactionCallable} that adds OpenTelemetry tracing context
-   * propagation. All transaction logic (begin, run, commit, rollback, metrics recording) is
-   * delegated to the underlying {@link ReadWriteTransactionCallable}.
+   * A Tracing callable that adds OpenTelemetry tracing context. Intended to be used for
+   * transactions and wraps {@link ReadWriteTransactionCallable} as the delegate. All transaction
+   * logic (begin, run, commit, rollback, metrics recording) is handled in the delegate (this solely
+   * handles tracing).
    */
   static class TracedReadWriteTransactionCallable<T> implements Callable<T> {
     private final ReadWriteTransactionCallable<T> delegate;
@@ -144,10 +145,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         @Nullable com.google.cloud.datastore.telemetry.TraceUtil.Span parentSpan) {
       this.delegate = delegate;
       this.parentSpan = parentSpan;
-    }
-
-    ReadWriteTransactionCallable<T> getDelegate() {
-      return delegate;
     }
 
     @Override
@@ -192,18 +189,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       this.transaction = null;
     }
 
-    Datastore getDatastore() {
-      return datastore;
-    }
-
-    TransactionOptions getOptions() {
-      return options;
-    }
-
-    Transaction getTransaction() {
-      return transaction;
-    }
-
     void setPrevTransactionId(ByteString transactionId) {
       TransactionOptions.ReadWrite readWrite =
           TransactionOptions.ReadWrite.newBuilder().setPreviousTransaction(transactionId).build();
@@ -221,19 +206,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         return value;
       } catch (Exception ex) {
         attemptStatus = DatastoreException.extractStatusCode(ex);
-        // An exception here can originate from either callable.run() (before commit was attempted)
-        // or from transaction.commit() itself. In both cases the transaction is still active.
-        // isActive() returns false if the transaction was already committed or rolled back, so
-        // it is safe to use as the sole guard here without tracking a separate committed flag.
+        // An exception here can stem from either `callable.run()` (before commit was attempted)
+        // or from `transaction.commit()`. If there is an exception thrown from either call site,
+        // then the transaction is still active. Check if it is still active (e.g. not commited)
+        // and roll back the transaction.
         if (transaction.isActive()) {
           transaction.rollback();
         }
         throw DatastoreException.propagateUserException(ex);
       } finally {
         recordAttempt(attemptStatus);
-        // transaction.isActive() returns false after both a successful commit or a completed
-        // rollback, so it already guards against rolling back a committed transaction or
-        // rolling back a transaction that has already been rolled back.
+        // If the transaction is active, then commit the rollback. If it was already successfully
+        // rolled back, the transaction is inactive (prevents rolling back an already rolled back
+        // transaction).
         if (transaction.isActive()) {
           transaction.rollback();
         }

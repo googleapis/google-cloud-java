@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
@@ -36,11 +37,13 @@ import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
 import java.util.Optional;
 import org.easymock.EasyMock;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -54,29 +57,31 @@ import org.junit.runners.JUnit4;
 public class DatastoreImplMetricsTest {
 
   private static final String PROJECT_ID = "test-project";
-  private static final String LATENCY_METRIC_NAME = "datastore.googleapis.com/transaction_latency";
-  private static final String ATTEMPT_COUNT_METRIC_NAME =
-      "datastore.googleapis.com/transaction_attempt_count";
+  private static final String DATABASE_ID = "test-database";
 
-  private InMemoryMetricReader metricReader;
-  private DatastoreRpcFactory rpcFactoryMock;
-  private DatastoreRpc rpcMock;
-  private DatastoreOptions datastoreOptions;
+  private static InMemoryMetricReader metricReader;
+  private static DatastoreRpcFactory rpcFactoryMock;
+  private static DatastoreRpc rpcMock;
+  private static Datastore datastore;
 
-  @Before
-  public void setUp() {
-    metricReader = InMemoryMetricReader.create();
+  @BeforeClass
+  public static void setUpClass() {
+    // Use delta temporality so each collectAllMetrics() call returns only new data and resets.
+    metricReader = InMemoryMetricReader.createDelta();
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     OpenTelemetrySdk openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
     rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
-    rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    // Use a regular (non-strict) mock for rpcMock so that anyTimes() expectations work without
+    // enforcing call order — needed for retry tests with unpredictable call counts.
+    rpcMock = EasyMock.createMock(DatastoreRpc.class);
 
-    datastoreOptions =
+    DatastoreOptions datastoreOptions =
         DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
+            .setDatabaseId(DATABASE_ID)
             .setCredentials(NoCredentials.getInstance())
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .setServiceRpcFactory(rpcFactoryMock)
@@ -88,70 +93,108 @@ public class DatastoreImplMetricsTest {
             .build();
 
     EasyMock.expect(rpcFactoryMock.create(datastoreOptions)).andReturn(rpcMock);
+    EasyMock.replay(rpcFactoryMock);
+    datastore = datastoreOptions.getService();
+    EasyMock.verify(rpcFactoryMock);
+  }
+
+  @Before
+  public void setUp() {
+    // Drain any metrics accumulated during @BeforeClass or previous tests.
+    metricReader.collectAllMetrics();
+    EasyMock.reset(rpcMock);
   }
 
   @Test
   public void runInTransaction_recordsLatencyOnSuccess() {
-    // Mock a successful transaction: begin -> commit
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
         .andReturn(CommitResponse.newBuilder().build());
-    EasyMock.replay(rpcFactoryMock, rpcMock);
+    EasyMock.replay(rpcMock);
 
-    Datastore datastore = datastoreOptions.getService();
     datastore.runInTransaction(transaction -> null);
 
-    // Verify latency metric was recorded with status OK
-    Optional<MetricData> latencyMetric = findMetric(LATENCY_METRIC_NAME);
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    Optional<MetricData> latencyMetric =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY);
     assertThat(latencyMetric.isPresent()).isTrue();
 
     HistogramPointData point =
         latencyMetric.get().getHistogramData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
     assertThat(point.getCount()).isEqualTo(1);
-    assertThat(point.getSum()).isAtLeast(0.0);
-    assertThat(point.getAttributes().get(AttributeKey.stringKey("status"))).isEqualTo("OK");
-    assertThat(point.getAttributes().get(AttributeKey.stringKey("method")))
-        .isEqualTo(TelemetryConstants.METHOD_TRANSACTION_RUN);
-    assertThat(point.getAttributes().get(AttributeKey.stringKey("project_id")))
-        .isEqualTo(PROJECT_ID);
-    assertThat(point.getAttributes().get(AttributeKey.stringKey("database_id"))).isNotNull();
 
-    EasyMock.verify(rpcFactoryMock, rpcMock);
+    assertThat(
+            dataContainsStringAttribute(
+                point, TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString()))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                point,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_RUN))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                point, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                point, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
+    EasyMock.verify(rpcMock);
   }
 
   @Test
   public void runInTransaction_recordsPerAttemptCountOnSuccess() {
-    // Mock a successful transaction: begin -> commit
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
         .andReturn(CommitResponse.newBuilder().build());
-    EasyMock.replay(rpcFactoryMock, rpcMock);
+    EasyMock.replay(rpcMock);
 
-    Datastore datastore = datastoreOptions.getService();
     datastore.runInTransaction(transaction -> null);
 
-    // Verify attempt count was recorded once with status OK
-    Optional<MetricData> attemptMetric = findMetric(ATTEMPT_COUNT_METRIC_NAME);
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    Optional<MetricData> attemptMetric =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT);
     assertThat(attemptMetric.isPresent()).isTrue();
 
     LongPointData point =
-        attemptMetric.get().getLongSumData().getPoints().stream()
-            .filter(p -> "OK".equals(p.getAttributes().get(AttributeKey.stringKey("status"))))
-            .findFirst()
-            .orElse(null);
+        attemptMetric.get().getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
     assertThat(point.getValue()).isEqualTo(1);
-    assertThat(point.getAttributes().get(AttributeKey.stringKey("method")))
-        .isEqualTo(TelemetryConstants.METHOD_TRANSACTION_COMMIT);
 
-    EasyMock.verify(rpcFactoryMock, rpcMock);
+    assertThat(
+            dataContainsStringAttribute(
+                point, TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString()))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                point,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_COMMIT))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                point, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                point, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
+    EasyMock.verify(rpcMock);
   }
 
   @Test
   public void runInTransaction_recordsPerAttemptOnRetry() {
+    String abortedStatusCodeString = StatusCode.Code.ABORTED.toString();
+    String okStatusCodeString = StatusCode.Code.OK.toString();
     // First attempt: begin -> ABORTED -> rollback
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
@@ -163,9 +206,7 @@ public class DatastoreImplMetricsTest {
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
         .andReturn(CommitResponse.newBuilder().build());
-    EasyMock.replay(rpcFactoryMock, rpcMock);
-
-    Datastore datastore = datastoreOptions.getService();
+    EasyMock.replay(rpcMock);
 
     TransactionOptions options =
         TransactionOptions.newBuilder()
@@ -180,7 +221,7 @@ public class DatastoreImplMetricsTest {
           public Integer run(DatastoreReaderWriter transaction) {
             attempts++;
             if (attempts < 2) {
-              throw new DatastoreException(10, "", "ABORTED", false, null);
+              throw new DatastoreException(10, "", abortedStatusCodeString, false, null);
             }
             return attempts;
           }
@@ -189,123 +230,255 @@ public class DatastoreImplMetricsTest {
     Integer result = datastore.runInTransaction(callable, options);
     assertThat(result).isEqualTo(2);
 
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
     // Verify attempt count has two data points: one with ABORTED and one with OK
-    Optional<MetricData> attemptMetric = findMetric(ATTEMPT_COUNT_METRIC_NAME);
+    Optional<MetricData> attemptMetric =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT);
     assertThat(attemptMetric.isPresent()).isTrue();
     assertThat(attemptMetric.get().getLongSumData().getPoints()).hasSize(2);
 
-    // Verify ABORTED attempt
+    // Find the first point (this would match to ABORTED)
     LongPointData abortedPoint =
         attemptMetric.get().getLongSumData().getPoints().stream()
-            .filter(p -> "ABORTED".equals(p.getAttributes().get(AttributeKey.stringKey("status"))))
+            .filter(
+                p ->
+                    abortedStatusCodeString.equals(
+                        p.getAttributes()
+                            .get(AttributeKey.stringKey(TelemetryConstants.ATTRIBUTES_KEY_STATUS))))
             .findFirst()
             .orElse(null);
     assertThat(abortedPoint).isNotNull();
     assertThat(abortedPoint.getValue()).isEqualTo(1);
 
-    // Verify OK attempt
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, abortedStatusCodeString))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_COMMIT))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
     LongPointData okPoint =
         attemptMetric.get().getLongSumData().getPoints().stream()
-            .filter(p -> "OK".equals(p.getAttributes().get(AttributeKey.stringKey("status"))))
+            .filter(
+                p ->
+                    okStatusCodeString.equals(
+                        p.getAttributes()
+                            .get(AttributeKey.stringKey(TelemetryConstants.ATTRIBUTES_KEY_STATUS))))
             .findFirst()
             .orElse(null);
     assertThat(okPoint).isNotNull();
     assertThat(okPoint.getValue()).isEqualTo(1);
 
+    assertThat(
+            dataContainsStringAttribute(
+                okPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, okStatusCodeString))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                okPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_COMMIT))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                okPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                okPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
     // Verify latency was recorded with OK (overall transaction succeeded)
-    Optional<MetricData> latencyMetric = findMetric(LATENCY_METRIC_NAME);
+    Optional<MetricData> latencyMetric =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY);
     assertThat(latencyMetric.isPresent()).isTrue();
     HistogramPointData latencyPoint =
         latencyMetric.get().getHistogramData().getPoints().stream().findFirst().orElse(null);
     assertThat(latencyPoint).isNotNull();
-    assertThat(latencyPoint.getAttributes().get(AttributeKey.stringKey("status"))).isEqualTo("OK");
+    assertThat(
+            latencyPoint
+                .getAttributes()
+                .get(AttributeKey.stringKey(TelemetryConstants.ATTRIBUTES_KEY_STATUS)))
+        .isEqualTo(okStatusCodeString);
 
-    EasyMock.verify(rpcFactoryMock, rpcMock);
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, okStatusCodeString))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_RUN))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
+    EasyMock.verify(rpcMock);
   }
 
   @Test
-  public void runInTransaction_recordsGrpcStatusCodeOnFailure() {
-    // This test uses a separate set of nice mocks since the retry loop makes
-    // multiple begin/rollback calls whose exact count depends on retry settings.
-    DatastoreRpcFactory localRpcFactoryMock = EasyMock.createNiceMock(DatastoreRpcFactory.class);
-    DatastoreRpc localRpcMock = EasyMock.createNiceMock(DatastoreRpc.class);
+  public void runInTransaction_recordsStatusCodeOnFailure() {
+    String abortedStatusCodeString = StatusCode.Code.ABORTED.toString();
+    String cancelledStatusCodeString = StatusCode.Code.CANCELLED.toString();
 
-    InMemoryMetricReader localMetricReader = InMemoryMetricReader.create();
-    SdkMeterProvider localMeterProvider =
-        SdkMeterProvider.builder().registerMetricReader(localMetricReader).build();
-    OpenTelemetrySdk localOpenTelemetry =
-        OpenTelemetrySdk.builder().setMeterProvider(localMeterProvider).build();
-
-    DatastoreOptions localOptions =
-        DatastoreOptions.newBuilder()
-            .setProjectId(PROJECT_ID)
-            .setCredentials(NoCredentials.getInstance())
-            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
-            .setServiceRpcFactory(localRpcFactoryMock)
-            .setOpenTelemetryOptions(
-                DatastoreOpenTelemetryOptions.newBuilder()
-                    .setMetricsEnabled(true)
-                    .setOpenTelemetry(localOpenTelemetry)
-                    .build())
-            .build();
-
-    EasyMock.expect(localRpcFactoryMock.create(localOptions)).andReturn(localRpcMock);
-    EasyMock.expect(
-            localRpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
+    // The retry loop makes multiple begin/rollback calls with unpredictable counts, so use
+    // anyTimes() rather than exact expectations.
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance())
         .anyTimes();
-    EasyMock.expect(localRpcMock.rollback(EasyMock.anyObject(RollbackRequest.class)))
+    EasyMock.expect(rpcMock.rollback(EasyMock.anyObject(RollbackRequest.class)))
         .andReturn(RollbackResponse.getDefaultInstance())
         .anyTimes();
-    EasyMock.replay(localRpcFactoryMock, localRpcMock);
+    EasyMock.replay(rpcMock);
 
-    Datastore datastore = localOptions.getService();
+    Datastore.TransactionCallable<Integer> callable =
+        new Datastore.TransactionCallable<Integer>() {
+          private int attempts = 0;
 
-    Datastore.TransactionCallable<Void> callable =
-        transaction -> {
-          throw new DatastoreException(10, "ABORTED", "ABORTED", false, null);
+          @Override
+          public Integer run(DatastoreReaderWriter transaction) {
+            attempts++;
+            if (attempts < 2) {
+              throw new DatastoreException(10, "", abortedStatusCodeString, false, null);
+            }
+            throw new DatastoreException(1, "", cancelledStatusCodeString, false, null);
+          }
         };
 
     assertThrows(DatastoreException.class, () -> datastore.runInTransaction(callable));
 
-    // Verify that attempt count was recorded with ABORTED status
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    // Verify attempt count was recorded with ABORTED status
     Optional<MetricData> attemptMetric =
-        localMetricReader.collectAllMetrics().stream()
-            .filter(m -> m.getName().equals(ATTEMPT_COUNT_METRIC_NAME))
-            .findFirst();
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT);
     assertThat(attemptMetric.isPresent()).isTrue();
 
+    Collection<LongPointData> transactionAttemptCountData =
+        attemptMetric.get().getLongSumData().getPoints();
     LongPointData abortedPoint =
-        attemptMetric.get().getLongSumData().getPoints().stream()
-            .filter(p -> "ABORTED".equals(p.getAttributes().get(AttributeKey.stringKey("status"))))
+        transactionAttemptCountData.stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p, TelemetryConstants.ATTRIBUTES_KEY_STATUS, abortedStatusCodeString))
             .findFirst()
             .orElse(null);
     assertThat(abortedPoint).isNotNull();
     assertThat(abortedPoint.getValue()).isAtLeast(1);
 
-    // Verify that latency was recorded with the failure status code
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, abortedStatusCodeString))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_COMMIT))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
+    LongPointData cancelledPoint =
+        transactionAttemptCountData.stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p, TelemetryConstants.ATTRIBUTES_KEY_STATUS, cancelledStatusCodeString))
+            .findFirst()
+            .orElse(null);
+    assertThat(cancelledPoint).isNotNull();
+    assertThat(cancelledPoint.getValue()).isAtLeast(1);
+
+    assertThat(
+            dataContainsStringAttribute(
+                cancelledPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_STATUS,
+                cancelledStatusCodeString))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                cancelledPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_COMMIT))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                cancelledPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                cancelledPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
+    // Verify latency was recorded with the failure status code
     Optional<MetricData> latencyMetric =
-        localMetricReader.collectAllMetrics().stream()
-            .filter(m -> m.getName().equals(LATENCY_METRIC_NAME))
-            .findFirst();
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY);
     assertThat(latencyMetric.isPresent()).isTrue();
     HistogramPointData latencyPoint =
-        latencyMetric.get().getHistogramData().getPoints().stream().findFirst().orElse(null);
+        latencyMetric.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p, TelemetryConstants.ATTRIBUTES_KEY_STATUS, cancelledStatusCodeString))
+            .findFirst()
+            .orElse(null);
     assertThat(latencyPoint).isNotNull();
-    assertThat(latencyPoint.getAttributes().get(AttributeKey.stringKey("status")))
-        .isEqualTo("ABORTED");
+
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, cancelledStatusCodeString))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                TelemetryConstants.METHOD_TRANSACTION_RUN))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
   }
 
   @Test
   public void runInTransaction_withTransactionOptions_recordsMetrics() {
-    // Verify metrics are recorded when calling the overload with TransactionOptions
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
         .andReturn(CommitResponse.newBuilder().build());
-    EasyMock.replay(rpcFactoryMock, rpcMock);
-
-    Datastore datastore = datastoreOptions.getService();
+    EasyMock.replay(rpcMock);
 
     TransactionOptions options =
         TransactionOptions.newBuilder()
@@ -313,21 +486,26 @@ public class DatastoreImplMetricsTest {
             .build();
     datastore.runInTransaction(transaction -> null, options);
 
-    // Verify both metrics were recorded
-    assertThat(findMetric(LATENCY_METRIC_NAME).isPresent()).isTrue();
-    assertThat(findMetric(ATTEMPT_COUNT_METRIC_NAME).isPresent()).isTrue();
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
 
-    EasyMock.verify(rpcFactoryMock, rpcMock);
+    Optional<MetricData> transactionLatencyMetric =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY);
+    assertThat(transactionLatencyMetric.isPresent()).isTrue();
+    Optional<MetricData> transactionAttemptCountMetric =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT);
+    assertThat(transactionAttemptCountMetric.isPresent()).isTrue();
+
+    EasyMock.verify(rpcMock);
   }
 
-  /**
-   * Finds a specific metric by name from the in-memory metric reader.
-   *
-   * @param metricName The fully qualified name of the metric to find.
-   * @return An {@link Optional} containing the {@link MetricData} if found.
-   */
-  private Optional<MetricData> findMetric(String metricName) {
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+  private static Optional<MetricData> findMetric(
+      Collection<MetricData> metrics, String metricName) {
     return metrics.stream().filter(m -> m.getName().equals(metricName)).findFirst();
+  }
+
+  private static boolean dataContainsStringAttribute(
+      PointData p, String attributeKey, String matchedAttributeValue) {
+    String attributeValue = p.getAttributes().get(AttributeKey.stringKey(attributeKey));
+    return matchedAttributeValue.equals(attributeValue);
   }
 }

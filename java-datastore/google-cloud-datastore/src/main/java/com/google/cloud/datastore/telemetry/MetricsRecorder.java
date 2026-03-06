@@ -26,8 +26,9 @@ import javax.annotation.Nonnull;
 /**
  * Interface to record specific metric operations.
  *
- * <p><b>Warning:</b> This is an internal API and is not intended for external use. Do not implement
- * or extend this interface.
+ * <p><b>Warning:</b> This is intended to be an internal API and is not intended for external use.
+ * This is public solely for implementation purposes and does not promise any backwards
+ * compatibility.
  */
 @InternalExtensionOnly
 public interface MetricsRecorder {

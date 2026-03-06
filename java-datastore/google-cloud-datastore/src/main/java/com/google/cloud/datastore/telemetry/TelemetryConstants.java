@@ -45,6 +45,14 @@ public class TelemetryConstants {
   /** Attribute key for the Datastore database ID. */
   public static final String ATTRIBUTES_KEY_DATABASE_ID = "database_id";
 
+  /** Metric name for the total latency of a transaction. */
+  public static final String METRIC_NAME_TRANSACTION_LATENCY =
+      SERVICE_NAME + "/transaction_latency";
+
+  /** Metric name for the number of attempts a transaction took. */
+  public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
+      SERVICE_NAME + "/transaction_attempt_count";
+
   /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
   // Format is not SnakeCase to keep backward compatibility with the existing values TraceUtil spans
   public static final String METHOD_ALLOCATE_IDS = "AllocateIds";
