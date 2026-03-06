@@ -68,8 +68,7 @@ public class OpenTelemetryMetricsRecorderTest {
             .orElse(null);
 
     assertThat(latencyMetric).isNotNull();
-    assertThat(latencyMetric.getDescription())
-        .isEqualTo("Total latency of transaction operations");
+    assertThat(latencyMetric.getDescription()).isEqualTo("Total latency of transaction operations");
     assertThat(latencyMetric.getUnit()).isEqualTo("ms");
 
     HistogramPointData point =

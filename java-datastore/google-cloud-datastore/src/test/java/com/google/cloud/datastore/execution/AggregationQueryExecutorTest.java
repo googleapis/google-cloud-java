@@ -63,10 +63,7 @@ public class AggregationQueryExecutorTest {
     mockRpc = EasyMock.createStrictMock(DatastoreRpc.class);
     datastoreOptions =
         DatastoreOptions.newBuilder().setProjectId("project-id").setNamespace(NAMESPACE).build();
-    queryExecutor =
-        new AggregationQueryExecutor(
-            mockRpc,
-            datastoreOptions);
+    queryExecutor = new AggregationQueryExecutor(mockRpc, datastoreOptions);
   }
 
   @Test
