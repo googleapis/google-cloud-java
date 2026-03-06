@@ -41,7 +41,9 @@ public class AggregationQueryExecutor
   private final AggregationQueryRequestProtoPreparer protoPreparer;
   private final AggregationQueryResponseTransformer responseTransformer;
 
-  public AggregationQueryExecutor(DatastoreRpc datastoreRpc, DatastoreOptions datastoreOptions) {
+  public AggregationQueryExecutor(
+      DatastoreRpc datastoreRpc,
+      DatastoreOptions datastoreOptions) {
     this.datastoreRpc = datastoreRpc;
     this.protoPreparer = new AggregationQueryRequestProtoPreparer(datastoreOptions);
     this.responseTransformer = new AggregationQueryResponseTransformer();

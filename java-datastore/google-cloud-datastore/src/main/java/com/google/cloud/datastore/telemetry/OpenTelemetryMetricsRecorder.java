@@ -42,7 +42,7 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
     this.transactionLatency =
         meter
             .histogramBuilder(TelemetryConstants.SERVICE_NAME + "/transaction_latency")
-            .setDescription("Total latency for successful transaction operations")
+            .setDescription("Total latency of transaction operations")
             .setUnit("ms")
             .build();
 
