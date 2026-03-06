@@ -77,7 +77,7 @@ jobs:
       run: .kokoro/build.sh
       env:
         JOB_TYPE: test
-        JOB_NAME: units-8-runtime-${{matrix.java}}
+        JOB_NAME: units-11-runtime-8
   windows:
     runs-on: windows-latest
     steps:
