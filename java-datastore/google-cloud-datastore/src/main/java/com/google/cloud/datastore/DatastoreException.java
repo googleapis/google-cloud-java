@@ -176,7 +176,7 @@ public final class DatastoreException extends BaseHttpServiceException {
    * @param throwable the throwable to extract the status code from
    * @return the status code name, or "UNKNOWN" if not determinable
    */
-  public static String extractStatusCode(Throwable throwable) {
+  static String extractStatusCode(Throwable throwable) {
     Throwable current = throwable;
     while (current != null) {
       if (current instanceof DatastoreException) {
