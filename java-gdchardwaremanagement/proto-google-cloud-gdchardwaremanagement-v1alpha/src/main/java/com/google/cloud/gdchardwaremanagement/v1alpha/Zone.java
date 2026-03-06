@@ -163,6 +163,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The Zone is offline.
+     * </pre>
+     *
+     * <code>OFFLINE = 9;</code>
+     */
+    OFFLINE(9),
+    /**
+     *
+     *
+     * <pre>
      * The Zone failed in factory turnup checks.
      * </pre>
      *
@@ -272,6 +282,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The Zone is offline.
+     * </pre>
+     *
+     * <code>OFFLINE = 9;</code>
+     */
+    public static final int OFFLINE_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
      * The Zone failed in factory turnup checks.
      * </pre>
      *
@@ -337,6 +358,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
           return CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED;
         case 6:
           return READY_FOR_SITE_TURNUP;
+        case 9:
+          return OFFLINE;
         case 7:
           return CUSTOMER_FACTORY_TURNUP_CHECKS_FAILED;
         case 3:
