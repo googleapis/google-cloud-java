@@ -16,40 +16,30 @@
 
 package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_MemoryBankService_CreateMemory_LRO_async]
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.CreateMemoryOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.CreateMemoryRequest;
+// [START aiplatform_v1beta1_generated_MemoryBankService_CreateMemory_StringMemoryString_sync]
 import com.google.cloud.aiplatform.v1beta1.Memory;
 import com.google.cloud.aiplatform.v1beta1.MemoryBankServiceClient;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
 
-public class AsyncCreateMemoryLRO {
+public class SyncCreateMemoryStringMemoryString {
 
   public static void main(String[] args) throws Exception {
-    asyncCreateMemoryLRO();
+    syncCreateMemoryStringMemoryString();
   }
 
-  public static void asyncCreateMemoryLRO() throws Exception {
+  public static void syncCreateMemoryStringMemoryString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
-      CreateMemoryRequest request =
-          CreateMemoryRequest.newBuilder()
-              .setParent(
-                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
-                      .toString())
-              .setMemory(Memory.newBuilder().build())
-              .setMemoryId("memoryId-637040132")
-              .build();
-      OperationFuture<Memory, CreateMemoryOperationMetadata> future =
-          memoryBankServiceClient.createMemoryOperationCallable().futureCall(request);
-      // Do something.
-      Memory response = future.get();
+      String parent =
+          ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
+      Memory memory = Memory.newBuilder().build();
+      String memoryId = "memoryId-637040132";
+      Memory response = memoryBankServiceClient.createMemoryAsync(parent, memory, memoryId).get();
     }
   }
 }
-// [END aiplatform_v1beta1_generated_MemoryBankService_CreateMemory_LRO_async]
+// [END aiplatform_v1beta1_generated_MemoryBankService_CreateMemory_StringMemoryString_sync]

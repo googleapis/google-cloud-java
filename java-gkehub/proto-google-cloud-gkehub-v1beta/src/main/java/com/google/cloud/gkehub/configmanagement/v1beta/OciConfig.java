@@ -212,7 +212,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Type of secret configured for access to the OCI repo.
-   * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+   * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+   * `none`.
    * The validation of this is case-sensitive.
    * </pre>
    *
@@ -238,7 +239,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Type of secret configured for access to the OCI repo.
-   * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+   * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+   * `none`.
    * The validation of this is case-sensitive.
    * </pre>
    *
@@ -269,7 +271,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The Google Cloud Service Account Email used for auth when
-   * secret_type is gcpServiceAccount.
+   * secret_type is `gcpserviceaccount`.
    * </pre>
    *
    * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -294,7 +296,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The Google Cloud Service Account Email used for auth when
-   * secret_type is gcpServiceAccount.
+   * secret_type is `gcpserviceaccount`.
    * </pre>
    *
    * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1014,7 +1016,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Type of secret configured for access to the OCI repo.
-     * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+     * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+     * `none`.
      * The validation of this is case-sensitive.
      * </pre>
      *
@@ -1039,7 +1042,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Type of secret configured for access to the OCI repo.
-     * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+     * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+     * `none`.
      * The validation of this is case-sensitive.
      * </pre>
      *
@@ -1064,7 +1068,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Type of secret configured for access to the OCI repo.
-     * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+     * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+     * `none`.
      * The validation of this is case-sensitive.
      * </pre>
      *
@@ -1088,7 +1093,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Type of secret configured for access to the OCI repo.
-     * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+     * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+     * `none`.
      * The validation of this is case-sensitive.
      * </pre>
      *
@@ -1108,7 +1114,8 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Type of secret configured for access to the OCI repo.
-     * Must be one of gcenode, gcpserviceaccount, k8sserviceaccount or none.
+     * Must be one of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or
+     * `none`.
      * The validation of this is case-sensitive.
      * </pre>
      *
@@ -1135,7 +1142,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The Google Cloud Service Account Email used for auth when
-     * secret_type is gcpServiceAccount.
+     * secret_type is `gcpserviceaccount`.
      * </pre>
      *
      * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1159,7 +1166,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The Google Cloud Service Account Email used for auth when
-     * secret_type is gcpServiceAccount.
+     * secret_type is `gcpserviceaccount`.
      * </pre>
      *
      * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1183,7 +1190,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The Google Cloud Service Account Email used for auth when
-     * secret_type is gcpServiceAccount.
+     * secret_type is `gcpserviceaccount`.
      * </pre>
      *
      * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1206,7 +1213,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The Google Cloud Service Account Email used for auth when
-     * secret_type is gcpServiceAccount.
+     * secret_type is `gcpserviceaccount`.
      * </pre>
      *
      * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1225,7 +1232,7 @@ public final class OciConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The Google Cloud Service Account Email used for auth when
-     * secret_type is gcpServiceAccount.
+     * secret_type is `gcpserviceaccount`.
      * </pre>
      *
      * <code>string gcp_service_account_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

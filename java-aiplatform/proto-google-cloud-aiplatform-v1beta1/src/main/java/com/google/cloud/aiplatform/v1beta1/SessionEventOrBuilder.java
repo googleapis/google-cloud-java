@@ -328,4 +328,41 @@ public interface SessionEventOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.EventMetadataOrBuilder getEventMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Weakly typed raw event data in proto struct format.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the rawEvent field is set.
+   */
+  boolean hasRawEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Weakly typed raw event data in proto struct format.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The rawEvent.
+   */
+  com.google.protobuf.Struct getRawEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Weakly typed raw event data in proto struct format.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getRawEventOrBuilder();
 }

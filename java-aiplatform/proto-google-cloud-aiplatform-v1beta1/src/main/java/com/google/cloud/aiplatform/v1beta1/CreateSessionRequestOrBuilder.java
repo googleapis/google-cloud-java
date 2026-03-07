@@ -102,4 +102,42 @@ public interface CreateSessionRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SessionOrBuilder getSessionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user defined ID to use for session, which will become the
+   * final component of the session resource name. If not provided, Vertex AI
+   * will generate a value for this ID.
+   *
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9-]`. The first character must be a letter, and the last character
+   * must be a letter or number.
+   * </pre>
+   *
+   * <code>string session_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sessionId.
+   */
+  java.lang.String getSessionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user defined ID to use for session, which will become the
+   * final component of the session resource name. If not provided, Vertex AI
+   * will generate a value for this ID.
+   *
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9-]`. The first character must be a letter, and the last character
+   * must be a letter or number.
+   * </pre>
+   *
+   * <code>string session_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sessionId.
+   */
+  com.google.protobuf.ByteString getSessionIdBytes();
 }

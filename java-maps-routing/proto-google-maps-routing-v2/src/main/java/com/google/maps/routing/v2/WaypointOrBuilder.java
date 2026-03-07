@@ -151,6 +151,51 @@ public interface WaypointOrBuilder
    *
    *
    * <pre>
+   * A token that identifies a
+   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * obtained from the `SearchDestinations` method of the Geocoding API.
+   * </pre>
+   *
+   * <code>string navigation_point_token = 8;</code>
+   *
+   * @return Whether the navigationPointToken field is set.
+   */
+  boolean hasNavigationPointToken();
+
+  /**
+   *
+   *
+   * <pre>
+   * A token that identifies a
+   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * obtained from the `SearchDestinations` method of the Geocoding API.
+   * </pre>
+   *
+   * <code>string navigation_point_token = 8;</code>
+   *
+   * @return The navigationPointToken.
+   */
+  java.lang.String getNavigationPointToken();
+
+  /**
+   *
+   *
+   * <pre>
+   * A token that identifies a
+   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * obtained from the `SearchDestinations` method of the Geocoding API.
+   * </pre>
+   *
+   * <code>string navigation_point_token = 8;</code>
+   *
+   * @return The bytes for navigationPointToken.
+   */
+  com.google.protobuf.ByteString getNavigationPointTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Marks this waypoint as a milestone rather a stopping point. For
    * each non-via waypoint in the request, the response appends an entry to the
    * [`legs`][google.maps.routing.v2.Route.legs]

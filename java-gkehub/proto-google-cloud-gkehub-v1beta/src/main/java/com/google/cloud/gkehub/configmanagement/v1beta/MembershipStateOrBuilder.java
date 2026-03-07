@@ -326,4 +326,32 @@ public interface MembershipStateOrBuilder
    */
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerStateOrBuilder
       getHierarchyControllerStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Kubernetes API server version of the cluster.
+   * </pre>
+   *
+   * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kubernetesApiServerVersion.
+   */
+  java.lang.String getKubernetesApiServerVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Kubernetes API server version of the cluster.
+   * </pre>
+   *
+   * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for kubernetesApiServerVersion.
+   */
+  com.google.protobuf.ByteString getKubernetesApiServerVersionBytes();
 }

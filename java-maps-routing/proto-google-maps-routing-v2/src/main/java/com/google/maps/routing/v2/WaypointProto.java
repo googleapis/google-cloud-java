@@ -55,17 +55,18 @@ public final class WaypointProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n%google/maps/routing/v2/waypoint.proto\022"
           + "\026google.maps.routing.v2\032%google/maps/rou"
-          + "ting/v2/location.proto\"\265\001\n\010Waypoint\0224\n\010l"
+          + "ting/v2/location.proto\"\327\001\n\010Waypoint\0224\n\010l"
           + "ocation\030\001 \001(\0132 .google.maps.routing.v2.L"
           + "ocationH\000\022\022\n\010place_id\030\002 \001(\tH\000\022\021\n\007address"
-          + "\030\007 \001(\tH\000\022\013\n\003via\030\003 \001(\010\022\030\n\020vehicle_stopove"
-          + "r\030\004 \001(\010\022\024\n\014side_of_road\030\005 \001(\010B\017\n\rlocatio"
-          + "n_typeB\277\001\n\032com.google.maps.routing.v2B\rW"
-          + "aypointProtoP\001Z:cloud.google.com/go/maps"
-          + "/routing/apiv2/routingpb;routingpb\242\002\005GMR"
-          + "V2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\Map"
-          + "s\\Routing\\V2\352\002\031Google::Maps::Routing::V2"
-          + "b\006proto3"
+          + "\030\007 \001(\tH\000\022 \n\026navigation_point_token\030\010 \001(\t"
+          + "H\000\022\013\n\003via\030\003 \001(\010\022\030\n\020vehicle_stopover\030\004 \001("
+          + "\010\022\024\n\014side_of_road\030\005 \001(\010B\017\n\rlocation_type"
+          + "B\277\001\n\032com.google.maps.routing.v2B\rWaypoin"
+          + "tProtoP\001Z:cloud.google.com/go/maps/routi"
+          + "ng/apiv2/routingpb;routingpb\242\002\005GMRV2\252\002\026G"
+          + "oogle.Maps.Routing.V2\312\002\026Google\\Maps\\Rout"
+          + "ing\\V2\352\002\031Google::Maps::Routing::V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,6 +82,7 @@ public final class WaypointProto extends com.google.protobuf.GeneratedFile {
               "Location",
               "PlaceId",
               "Address",
+              "NavigationPointToken",
               "Via",
               "VehicleStopover",
               "SideOfRoad",

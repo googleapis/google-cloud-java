@@ -573,6 +573,55 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
         : eventMetadata_;
   }
 
+  public static final int RAW_EVENT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Struct rawEvent_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Weakly typed raw event data in proto struct format.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the rawEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasRawEvent() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Weakly typed raw event data in proto struct format.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The rawEvent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getRawEvent() {
+    return rawEvent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : rawEvent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Weakly typed raw event data in proto struct format.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getRawEventOrBuilder() {
+    return rawEvent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : rawEvent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -614,6 +663,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(11, getEventMetadata());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(12, getRawEvent());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -649,6 +701,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEventMetadata());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getRawEvent());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -687,6 +742,10 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
     if (hasEventMetadata()) {
       if (!getEventMetadata().equals(other.getEventMetadata())) return false;
     }
+    if (hasRawEvent() != other.hasRawEvent()) return false;
+    if (hasRawEvent()) {
+      if (!getRawEvent().equals(other.getRawEvent())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -723,6 +782,10 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
     if (hasEventMetadata()) {
       hash = (37 * hash) + EVENT_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getEventMetadata().hashCode();
+    }
+    if (hasRawEvent()) {
+      hash = (37 * hash) + RAW_EVENT_FIELD_NUMBER;
+      hash = (53 * hash) + getRawEvent().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -869,6 +932,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
         internalGetActionsFieldBuilder();
         internalGetTimestampFieldBuilder();
         internalGetEventMetadataFieldBuilder();
+        internalGetRawEventFieldBuilder();
       }
     }
 
@@ -900,6 +964,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
       if (eventMetadataBuilder_ != null) {
         eventMetadataBuilder_.dispose();
         eventMetadataBuilder_ = null;
+      }
+      rawEvent_ = null;
+      if (rawEventBuilder_ != null) {
+        rawEventBuilder_.dispose();
+        rawEventBuilder_ = null;
       }
       return this;
     }
@@ -970,6 +1039,10 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
             eventMetadataBuilder_ == null ? eventMetadata_ : eventMetadataBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.rawEvent_ = rawEventBuilder_ == null ? rawEvent_ : rawEventBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1022,6 +1095,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEventMetadata()) {
         mergeEventMetadata(other.getEventMetadata());
+      }
+      if (other.hasRawEvent()) {
+        mergeRawEvent(other.getRawEvent());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1105,6 +1181,13 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetRawEventFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2525,6 +2608,205 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessage
         eventMetadata_ = null;
       }
       return eventMetadataBuilder_;
+    }
+
+    private com.google.protobuf.Struct rawEvent_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        rawEventBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rawEvent field is set.
+     */
+    public boolean hasRawEvent() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rawEvent.
+     */
+    public com.google.protobuf.Struct getRawEvent() {
+      if (rawEventBuilder_ == null) {
+        return rawEvent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : rawEvent_;
+      } else {
+        return rawEventBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRawEvent(com.google.protobuf.Struct value) {
+      if (rawEventBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rawEvent_ = value;
+      } else {
+        rawEventBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRawEvent(com.google.protobuf.Struct.Builder builderForValue) {
+      if (rawEventBuilder_ == null) {
+        rawEvent_ = builderForValue.build();
+      } else {
+        rawEventBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRawEvent(com.google.protobuf.Struct value) {
+      if (rawEventBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && rawEvent_ != null
+            && rawEvent_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getRawEventBuilder().mergeFrom(value);
+        } else {
+          rawEvent_ = value;
+        }
+      } else {
+        rawEventBuilder_.mergeFrom(value);
+      }
+      if (rawEvent_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRawEvent() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      rawEvent_ = null;
+      if (rawEventBuilder_ != null) {
+        rawEventBuilder_.dispose();
+        rawEventBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getRawEventBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetRawEventFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getRawEventOrBuilder() {
+      if (rawEventBuilder_ != null) {
+        return rawEventBuilder_.getMessageOrBuilder();
+      } else {
+        return rawEvent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : rawEvent_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Weakly typed raw event data in proto struct format.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct raw_event = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetRawEventFieldBuilder() {
+      if (rawEventBuilder_ == null) {
+        rawEventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getRawEvent(), getParentForChildren(), isClean());
+        rawEvent_ = null;
+      }
+      return rawEventBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.SessionEvent)

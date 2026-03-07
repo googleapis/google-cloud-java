@@ -16,35 +16,30 @@
 
 package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_SessionService_CreateSession_sync]
-import com.google.cloud.aiplatform.v1beta1.CreateSessionRequest;
+// [START aiplatform_v1beta1_generated_SessionService_CreateSession_StringSessionString_sync]
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
 import com.google.cloud.aiplatform.v1beta1.Session;
 import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
-public class SyncCreateSession {
+public class SyncCreateSessionStringSessionString {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSession();
+    syncCreateSessionStringSessionString();
   }
 
-  public static void syncCreateSession() throws Exception {
+  public static void syncCreateSessionStringSessionString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-      CreateSessionRequest request =
-          CreateSessionRequest.newBuilder()
-              .setParent(
-                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
-                      .toString())
-              .setSession(Session.newBuilder().build())
-              .setSessionId("sessionId607796817")
-              .build();
-      Session response = sessionServiceClient.createSessionAsync(request).get();
+      String parent =
+          ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
+      Session session = Session.newBuilder().build();
+      String sessionId = "sessionId607796817";
+      Session response = sessionServiceClient.createSessionAsync(parent, session, sessionId).get();
     }
   }
 }
-// [END aiplatform_v1beta1_generated_SessionService_CreateSession_sync]
+// [END aiplatform_v1beta1_generated_SessionService_CreateSession_StringSessionString_sync]

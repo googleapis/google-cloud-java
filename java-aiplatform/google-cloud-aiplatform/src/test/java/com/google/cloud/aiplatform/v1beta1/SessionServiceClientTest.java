@@ -225,6 +225,128 @@ public class SessionServiceClientTest {
   }
 
   @Test
+  public void createSessionTest3() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setSessionState(Struct.newBuilder().build())
+            .setUserId("userId-836030906")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSessionService.addResponse(resultOperation);
+
+    ReasoningEngineName parent =
+        ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+    Session session = Session.newBuilder().build();
+    String sessionId = "sessionId607796817";
+
+    Session actualResponse = client.createSessionAsync(parent, session, sessionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSessionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSessionRequest actualRequest = ((CreateSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(session, actualRequest.getSession());
+    Assert.assertEquals(sessionId, actualRequest.getSessionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSessionExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessionService.addException(exception);
+
+    try {
+      ReasoningEngineName parent =
+          ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+      Session session = Session.newBuilder().build();
+      String sessionId = "sessionId607796817";
+      client.createSessionAsync(parent, session, sessionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createSessionTest4() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setSessionState(Struct.newBuilder().build())
+            .setUserId("userId-836030906")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSessionService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Session session = Session.newBuilder().build();
+    String sessionId = "sessionId607796817";
+
+    Session actualResponse = client.createSessionAsync(parent, session, sessionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSessionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSessionRequest actualRequest = ((CreateSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(session, actualRequest.getSession());
+    Assert.assertEquals(sessionId, actualRequest.getSessionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSessionExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessionService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Session session = Session.newBuilder().build();
+      String sessionId = "sessionId607796817";
+      client.createSessionAsync(parent, session, sessionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getSessionTest() throws Exception {
     Session expectedResponse =
         Session.newBuilder()

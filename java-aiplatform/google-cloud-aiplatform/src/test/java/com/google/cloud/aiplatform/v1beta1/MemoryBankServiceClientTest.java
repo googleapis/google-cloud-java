@@ -128,22 +128,21 @@ public class MemoryBankServiceClientTest {
             .build();
     mockMemoryBankService.addResponse(resultOperation);
 
-    CreateMemoryRequest request =
-        CreateMemoryRequest.newBuilder()
-            .setParent(
-                ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString())
-            .setMemory(Memory.newBuilder().build())
-            .build();
+    ReasoningEngineName parent =
+        ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+    Memory memory = Memory.newBuilder().build();
+    String memoryId = "memoryId-637040132";
 
-    Memory actualResponse = client.createMemoryAsync(request).get();
+    Memory actualResponse = client.createMemoryAsync(parent, memory, memoryId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockMemoryBankService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateMemoryRequest actualRequest = ((CreateMemoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getMemory(), actualRequest.getMemory());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(memory, actualRequest.getMemory());
+    Assert.assertEquals(memoryId, actualRequest.getMemoryId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -156,14 +155,71 @@ public class MemoryBankServiceClientTest {
     mockMemoryBankService.addException(exception);
 
     try {
-      CreateMemoryRequest request =
-          CreateMemoryRequest.newBuilder()
-              .setParent(
-                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
-                      .toString())
-              .setMemory(Memory.newBuilder().build())
-              .build();
-      client.createMemoryAsync(request).get();
+      ReasoningEngineName parent =
+          ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+      Memory memory = Memory.newBuilder().build();
+      String memoryId = "memoryId-637040132";
+      client.createMemoryAsync(parent, memory, memoryId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMemoryTest2() throws Exception {
+    Memory expectedResponse =
+        Memory.newBuilder()
+            .setName(
+                MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setFact("fact3135084")
+            .putAllScope(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMemoryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemoryBankService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Memory memory = Memory.newBuilder().build();
+    String memoryId = "memoryId-637040132";
+
+    Memory actualResponse = client.createMemoryAsync(parent, memory, memoryId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemoryBankService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMemoryRequest actualRequest = ((CreateMemoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(memory, actualRequest.getMemory());
+    Assert.assertEquals(memoryId, actualRequest.getMemoryId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMemoryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemoryBankService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Memory memory = Memory.newBuilder().build();
+      String memoryId = "memoryId-637040132";
+      client.createMemoryAsync(parent, memory, memoryId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
