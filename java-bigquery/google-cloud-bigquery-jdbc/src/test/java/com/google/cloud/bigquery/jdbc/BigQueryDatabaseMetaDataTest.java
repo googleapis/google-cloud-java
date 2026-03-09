@@ -16,13 +16,13 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
@@ -44,8 +44,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.regex.Pattern;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryDatabaseMetaDataTest {
 
@@ -53,7 +53,7 @@ public class BigQueryDatabaseMetaDataTest {
   private BigQueryDatabaseMetaData dbMetadata;
   private BigQuery bigqueryClient;
 
-  @Before
+  @BeforeEach
   public void setUp() throws SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
     bigqueryClient = mock(BigQuery.class);
@@ -161,12 +161,12 @@ public class BigQueryDatabaseMetaDataTest {
 
   @Test
   public void testNeedsListing() {
-    assertTrue("Null pattern should require listing", dbMetadata.needsListing(null));
-    assertTrue("Pattern with % should require listing", dbMetadata.needsListing("abc%def"));
-    assertTrue("Pattern with _ should require listing", dbMetadata.needsListing("abc_def"));
-    assertTrue("Pattern with both wildcards", dbMetadata.needsListing("a%c_d%f"));
-    assertFalse("Empty pattern should not require listing", dbMetadata.needsListing(""));
-    assertFalse("Pattern without wildcards", dbMetadata.needsListing("exactName"));
+    assertTrue(dbMetadata.needsListing(null), "Null pattern should require listing");
+    assertTrue(dbMetadata.needsListing("abc%def"), "Pattern with % should require listing");
+    assertTrue(dbMetadata.needsListing("abc_def"), "Pattern with _ should require listing");
+    assertTrue(dbMetadata.needsListing("a%c_d%f"), "Pattern with both wildcards");
+    assertFalse(dbMetadata.needsListing(""), "Empty pattern should not require listing");
+    assertFalse(dbMetadata.needsListing("exactName"), "Pattern without wildcards");
   }
 
   @Test
@@ -616,7 +616,7 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(6, results.size());
 
     // 1. Null cat, sch_b, table_0, TABLE
-    assertTrue("Row 0 TABLE_CAT should be null", results.get(0).get("TABLE_CAT").isNull());
+    assertTrue(results.get(0).get("TABLE_CAT").isNull(), "Row 0 TABLE_CAT should be null");
     assertEquals("sch_b", results.get(0).get("TABLE_SCHEM").getStringValue());
     assertEquals("table_0", results.get(0).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(0).get("TABLE_TYPE").getStringValue());
@@ -641,7 +641,7 @@ public class BigQueryDatabaseMetaDataTest {
 
     // 5. cat_a, null, view_0, VIEW
     assertEquals("cat_a", results.get(4).get("TABLE_CAT").getStringValue());
-    assertTrue("Row 4 TABLE_SCHEM should be null", results.get(4).get("TABLE_SCHEM").isNull());
+    assertTrue(results.get(4).get("TABLE_SCHEM").isNull(), "Row 4 TABLE_SCHEM should be null");
     assertEquals("view_0", results.get(4).get("TABLE_NAME").getStringValue());
     assertEquals("VIEW", results.get(4).get("TABLE_TYPE").getStringValue());
 
@@ -734,7 +734,7 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(5, results.size());
 
     // 1. Null catalog, schema_x
-    assertTrue("Row 0 TABLE_CATALOG should be null", results.get(0).get("TABLE_CATALOG").isNull());
+    assertTrue(results.get(0).get("TABLE_CATALOG").isNull(), "Row 0 TABLE_CATALOG should be null");
     assertEquals("schema_x", results.get(0).get("TABLE_SCHEM").getStringValue());
 
     // 2. proj_a, schema_c
@@ -913,14 +913,14 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(6, results.size());
 
     // 1. Null cat, sch_y, proc_gamma, proc_gamma_spec
-    assertTrue("Row 0 PROC_CAT should be null", results.get(0).get("PROCEDURE_CAT").isNull());
+    assertTrue(results.get(0).get("PROCEDURE_CAT").isNull(), "Row 0 PROC_CAT should be null");
     assertEquals("sch_y", results.get(0).get("PROCEDURE_SCHEM").getStringValue());
     assertEquals("proc_gamma", results.get(0).get("PROCEDURE_NAME").getStringValue());
     assertEquals("proc_gamma_spec", results.get(0).get("SPECIFIC_NAME").getStringValue());
 
     // 2. cat_a, Null schem, proc_delta, proc_delta_spec
     assertEquals("cat_a", results.get(1).get("PROCEDURE_CAT").getStringValue());
-    assertTrue("Row 1 PROC_SCHEM should be null", results.get(1).get("PROCEDURE_SCHEM").isNull());
+    assertTrue(results.get(1).get("PROCEDURE_SCHEM").isNull(), "Row 1 PROC_SCHEM should be null");
     assertEquals("proc_delta", results.get(1).get("PROCEDURE_NAME").getStringValue());
     assertEquals("proc_delta_spec", results.get(1).get("SPECIFIC_NAME").getStringValue());
 
@@ -1004,11 +1004,11 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(results);
     List<Routine> resultList = new ArrayList<>(results);
 
-    assertEquals("Should contain only matching routines", 2, resultList.size());
-    assertTrue("Should contain proc_abc", resultList.contains(proc1));
-    assertTrue("Should contain proc_xyz", resultList.contains(proc2));
-    assertFalse("Should not contain func_123", resultList.contains(func1));
-    assertFalse("Should not contain another_proc", resultList.contains(otherProc));
+    assertEquals(2, resultList.size(), "Should contain only matching routines");
+    assertTrue(resultList.contains(proc1), "Should contain proc_abc");
+    assertTrue(resultList.contains(proc2), "Should contain proc_xyz");
+    assertFalse(resultList.contains(func1), "Should not contain func_123");
+    assertFalse(resultList.contains(otherProc), "Should not contain another_proc");
   }
 
   @Test
@@ -1045,9 +1045,9 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(results);
     List<Routine> resultList = new ArrayList<>(results);
 
-    assertEquals("Should contain all routines when pattern is null", 2, resultList.size());
-    assertTrue("Should contain proc_abc", resultList.contains(proc1));
-    assertTrue("Should contain func_123", resultList.contains(func1));
+    assertEquals(2, resultList.size(), "Should contain all routines when pattern is null");
+    assertTrue(resultList.contains(proc1), "Should contain proc_abc");
+    assertTrue(resultList.contains(func1), "Should contain func_123");
   }
 
   @Test
@@ -1617,18 +1617,15 @@ public class BigQueryDatabaseMetaDataTest {
   public void testDefineGetTableTypesSchema() {
     Schema schema = BigQueryDatabaseMetaData.defineGetTableTypesSchema();
 
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Should have one column", 1, fields.size());
+    assertEquals(1, fields.size(), "Should have one column");
 
     Field tableTypeField = fields.get("TABLE_TYPE");
-    assertNotNull("TABLE_TYPE field should exist", tableTypeField);
-    assertEquals("Field name should be TABLE_TYPE", "TABLE_TYPE", tableTypeField.getName());
-    assertEquals(
-        "Field type should be STRING",
-        StandardSQLTypeName.STRING,
-        tableTypeField.getType().getStandardType());
-    assertEquals("Field mode should be REQUIRED", Field.Mode.REQUIRED, tableTypeField.getMode());
+    assertNotNull(tableTypeField, "TABLE_TYPE field should exist");
+    assertEquals("TABLE_TYPE", tableTypeField.getName(), "Field name should be TABLE_TYPE");
+    assertEquals(StandardSQLTypeName.STRING, tableTypeField.getType().getStandardType(), "Field type should be STRING");
+    assertEquals(Field.Mode.REQUIRED, tableTypeField.getMode(), "Field mode should be REQUIRED");
   }
 
   @Test
@@ -1636,39 +1633,33 @@ public class BigQueryDatabaseMetaDataTest {
     Schema schema = BigQueryDatabaseMetaData.defineGetTableTypesSchema();
     List<FieldValueList> rows = BigQueryDatabaseMetaData.prepareGetTableTypesRows(schema);
 
-    assertNotNull("Rows list should not be null", rows);
+    assertNotNull(rows, "Rows list should not be null");
     String[] expectedTableTypes = {"EXTERNAL", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW"};
-    assertEquals(
-        "Should have " + expectedTableTypes.length + " rows",
-        expectedTableTypes.length,
-        rows.size());
+    assertEquals(expectedTableTypes.length, rows.size(), "Should have " + expectedTableTypes.length + " rows");
 
     Set<String> foundTypes = new HashSet<>();
     for (int i = 0; i < rows.size(); i++) {
       FieldValueList row = rows.get(i);
-      assertEquals("Row " + i + " should have 1 field value", 1, row.size());
-      assertFalse("FieldValue in row " + i + " should not be SQL NULL", row.get(0).isNull());
+      assertEquals(1, row.size(), "Row " + i + " should have 1 field value");
+      assertFalse(row.get(0).isNull(), "FieldValue in row " + i + " should not be SQL NULL");
 
       String tableType = row.get(0).getStringValue();
       foundTypes.add(tableType);
     }
 
-    assertEquals(
-        "All expected table types should be present and correctly mapped",
-        new HashSet<>(Arrays.asList(expectedTableTypes)),
-        foundTypes);
+    assertEquals(new HashSet<>(Arrays.asList(expectedTableTypes)), foundTypes, "All expected table types should be present and correctly mapped");
   }
 
   @Test
   public void testGetTableTypes() throws SQLException {
     try (ResultSet rs = dbMetadata.getTableTypes()) {
-      assertNotNull("ResultSet from getTableTypes() should not be null", rs);
+      assertNotNull(rs, "ResultSet from getTableTypes() should not be null");
 
       ResultSetMetaData rsmd = rs.getMetaData();
-      assertNotNull("ResultSetMetaData should not be null", rsmd);
-      assertEquals("Should have one column", 1, rsmd.getColumnCount());
-      assertEquals("Column name should be TABLE_TYPE", "TABLE_TYPE", rsmd.getColumnName(1));
-      assertEquals("Column type should be NVARCHAR", Types.NVARCHAR, rsmd.getColumnType(1));
+      assertNotNull(rsmd, "ResultSetMetaData should not be null");
+      assertEquals(1, rsmd.getColumnCount(), "Should have one column");
+      assertEquals("TABLE_TYPE", rsmd.getColumnName(1), "Column name should be TABLE_TYPE");
+      assertEquals(Types.NVARCHAR, rsmd.getColumnType(1), "Column type should be NVARCHAR");
 
       List<String> actualTableTypes = new ArrayList<>();
       while (rs.next()) {
@@ -1676,22 +1667,20 @@ public class BigQueryDatabaseMetaDataTest {
       }
 
       String[] expectedTableTypes = {"EXTERNAL", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW"};
-      assertEquals(
-          "Number of table types should match", expectedTableTypes.length, actualTableTypes.size());
+      assertEquals(expectedTableTypes.length, actualTableTypes.size(), "Number of table types should match");
 
       Set<String> expectedSet = new HashSet<>(Arrays.asList(expectedTableTypes));
       Set<String> actualSet = new HashSet<>(actualTableTypes);
-      assertEquals(
-          "All expected table types should be present in the ResultSet", expectedSet, actualSet);
+      assertEquals(expectedSet, actualSet, "All expected table types should be present in the ResultSet");
     }
   }
 
   @Test
   public void testDefineGetSuperTablesSchema() {
     Schema schema = dbMetadata.defineGetSuperTablesSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 4 fields", 4, fields.size());
+    assertEquals(4, fields.size(), "Schema should have 4 fields");
 
     Field tableCat = fields.get("TABLE_CAT");
     assertNotNull(tableCat);
@@ -1722,12 +1711,12 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetSuperTables_ReturnsEmptyResultSetWithCorrectMetadata() throws SQLException {
     try (ResultSet rs =
         dbMetadata.getSuperTables("testCatalog", "testSchemaPattern", "testTableNamePattern")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty (next() should return false)", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty (next() should return false)");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertNotNull("ResultSetMetaData should not be null", metaData);
-      assertEquals("ResultSetMetaData should have 4 columns", 4, metaData.getColumnCount());
+      assertNotNull(metaData, "ResultSetMetaData should not be null");
+      assertEquals(4, metaData.getColumnCount(), "ResultSetMetaData should have 4 columns");
 
       // Column 1: TABLE_CAT
       assertEquals("TABLE_CAT", metaData.getColumnName(1));
@@ -1754,9 +1743,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetSuperTypesSchema() {
     Schema schema = dbMetadata.defineGetSuperTypesSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 6 fields", 6, fields.size());
+    assertEquals(6, fields.size(), "Schema should have 6 fields");
 
     Field typeCat = fields.get("TYPE_CAT");
     assertNotNull(typeCat);
@@ -1799,12 +1788,12 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetSuperTypes_ReturnsEmptyResultSetWithCorrectMetadata() throws SQLException {
     try (ResultSet rs =
         dbMetadata.getSuperTypes("testCatalog", "testSchemaPattern", "testTypeNamePattern")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty (next() should return false)", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty (next() should return false)");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertNotNull("ResultSetMetaData should not be null", metaData);
-      assertEquals("ResultSetMetaData should have 6 columns", 6, metaData.getColumnCount());
+      assertNotNull(metaData, "ResultSetMetaData should not be null");
+      assertEquals(6, metaData.getColumnCount(), "ResultSetMetaData should have 6 columns");
 
       // Column 1: TYPE_CAT
       assertEquals("TYPE_CAT", metaData.getColumnName(1));
@@ -1841,9 +1830,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetAttributesSchema() {
     Schema schema = dbMetadata.defineGetAttributesSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 21 fields", 21, fields.size());
+    assertEquals(21, fields.size(), "Schema should have 21 fields");
 
     assertEquals("TYPE_CAT", fields.get(0).getName());
     assertEquals(StandardSQLTypeName.STRING, fields.get(0).getType().getStandardType());
@@ -1874,11 +1863,11 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetAttributes_ReturnsEmptyResultSet() throws SQLException {
     try (ResultSet rs =
         dbMetadata.getAttributes("testCat", "testSchema", "testType", "testAttr%")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 21 columns", 21, metaData.getColumnCount());
+      assertEquals(21, metaData.getColumnCount(), "ResultSetMetaData should have 21 columns");
 
       assertEquals("TYPE_CAT", metaData.getColumnName(1));
       assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
@@ -1909,9 +1898,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetBestRowIdentifierSchema() {
     Schema schema = dbMetadata.defineGetBestRowIdentifierSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 8 fields", 8, fields.size());
+    assertEquals(8, fields.size(), "Schema should have 8 fields");
 
     assertEquals("SCOPE", fields.get(0).getName());
     assertEquals(StandardSQLTypeName.INT64, fields.get(0).getType().getStandardType());
@@ -1947,11 +1936,11 @@ public class BigQueryDatabaseMetaDataTest {
     try (ResultSet rs =
         dbMetadata.getBestRowIdentifier(
             "testCat", "testSchema", "testTable", testScope, testNullable)) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 8 columns", 8, metaData.getColumnCount());
+      assertEquals(8, metaData.getColumnCount(), "ResultSetMetaData should have 8 columns");
 
       assertEquals("SCOPE", metaData.getColumnName(1));
       assertEquals(Types.BIGINT, metaData.getColumnType(1));
@@ -1978,9 +1967,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetUDTsSchema() {
     Schema schema = dbMetadata.defineGetUDTsSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 7 fields", 7, fields.size());
+    assertEquals(7, fields.size(), "Schema should have 7 fields");
 
     assertEquals("TYPE_NAME", fields.get("TYPE_NAME").getName());
     assertEquals(StandardSQLTypeName.STRING, fields.get("TYPE_NAME").getType().getStandardType());
@@ -2003,11 +1992,11 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetUDTs_ReturnsEmptyResultSet() throws SQLException {
     int[] types = {Types.STRUCT, Types.DISTINCT};
     try (ResultSet rs = dbMetadata.getUDTs("testCat", "testSchema%", "testType%", types)) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 7 columns", 7, metaData.getColumnCount());
+      assertEquals(7, metaData.getColumnCount(), "ResultSetMetaData should have 7 columns");
 
       assertEquals("TYPE_NAME", metaData.getColumnName(3));
       assertEquals(Types.NVARCHAR, metaData.getColumnType(3));
@@ -2026,9 +2015,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetIndexInfoSchema() {
     Schema schema = dbMetadata.defineGetIndexInfoSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 13 fields", 13, fields.size());
+    assertEquals(13, fields.size(), "Schema should have 13 fields");
 
     assertEquals("TABLE_NAME", fields.get(2).getName());
     assertEquals(StandardSQLTypeName.STRING, fields.get(2).getType().getStandardType());
@@ -2050,11 +2039,11 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetIndexInfo_ReturnsEmptyResultSetWithCorrectMetadata() throws SQLException {
     try (ResultSet rs = dbMetadata.getIndexInfo("testCat", "testSchema", "testTable", true, true)) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 13 columns", 13, metaData.getColumnCount());
+      assertEquals(13, metaData.getColumnCount(), "ResultSetMetaData should have 13 columns");
 
       assertEquals("TABLE_NAME", metaData.getColumnName(3));
       assertEquals(Types.NVARCHAR, metaData.getColumnType(3));
@@ -2077,9 +2066,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetTablePrivilegesSchema() {
     Schema schema = dbMetadata.defineGetTablePrivilegesSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 7 fields", 7, fields.size());
+    assertEquals(7, fields.size(), "Schema should have 7 fields");
 
     assertEquals("TABLE_CAT", fields.get(0).getName());
     assertEquals(StandardSQLTypeName.STRING, fields.get(0).getType().getStandardType());
@@ -2106,11 +2095,11 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetTablePrivileges_ReturnsEmptyResultSetWithCorrectMetadata()
       throws SQLException {
     try (ResultSet rs = dbMetadata.getTablePrivileges("testCat", "testSchema%", "testTable%")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 7 columns", 7, metaData.getColumnCount());
+      assertEquals(7, metaData.getColumnCount(), "ResultSetMetaData should have 7 columns");
 
       assertEquals("TABLE_CAT", metaData.getColumnName(1));
       assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
@@ -2137,9 +2126,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetColumnPrivilegesSchema() {
     Schema schema = dbMetadata.defineGetColumnPrivilegesSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 8 fields", 8, fields.size());
+    assertEquals(8, fields.size(), "Schema should have 8 fields");
 
     assertEquals("TABLE_SCHEM", fields.get(1).getName());
     assertEquals(StandardSQLTypeName.STRING, fields.get(1).getType().getStandardType());
@@ -2167,11 +2156,11 @@ public class BigQueryDatabaseMetaDataTest {
       throws SQLException {
     try (ResultSet rs =
         dbMetadata.getColumnPrivileges("testCat", "testSchema", "testTable", "testCol%")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 8 columns", 8, metaData.getColumnCount());
+      assertEquals(8, metaData.getColumnCount(), "ResultSetMetaData should have 8 columns");
 
       assertEquals("TABLE_SCHEM", metaData.getColumnName(2));
       assertEquals(Types.NVARCHAR, metaData.getColumnType(2));
@@ -2198,9 +2187,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetVersionColumnsSchema() {
     Schema schema = dbMetadata.defineGetVersionColumnsSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 8 fields", 8, fields.size());
+    assertEquals(8, fields.size(), "Schema should have 8 fields");
 
     assertEquals("SCOPE", fields.get(0).getName());
     assertEquals(StandardSQLTypeName.INT64, fields.get(0).getType().getStandardType());
@@ -2226,11 +2215,11 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetVersionColumns_ReturnsEmptyResultSetWithCorrectMetadata() throws SQLException {
     try (ResultSet rs = dbMetadata.getVersionColumns("testCat", "testSchema", "testTable")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 8 columns", 8, metaData.getColumnCount());
+      assertEquals(8, metaData.getColumnCount(), "ResultSetMetaData should have 8 columns");
 
       assertEquals("SCOPE", metaData.getColumnName(1));
       assertEquals(Types.BIGINT, metaData.getColumnType(1));
@@ -2257,9 +2246,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetPseudoColumnsSchema() {
     Schema schema = dbMetadata.defineGetPseudoColumnsSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 12 fields", 12, fields.size());
+    assertEquals(12, fields.size(), "Schema should have 12 fields");
 
     assertEquals("TABLE_NAME", fields.get(2).getName());
     assertEquals(StandardSQLTypeName.STRING, fields.get(2).getType().getStandardType());
@@ -2289,11 +2278,11 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetPseudoColumns_ReturnsEmptyResultSet() throws SQLException {
     try (ResultSet rs = dbMetadata.getPseudoColumns("testCat", "testSchema%", "testTable%", "%")) {
-      assertNotNull("ResultSet should not be null", rs);
-      assertFalse("ResultSet should be empty", rs.next());
+      assertNotNull(rs, "ResultSet should not be null");
+      assertFalse(rs.next(), "ResultSet should be empty");
 
       ResultSetMetaData metaData = rs.getMetaData();
-      assertEquals("ResultSetMetaData should have 12 columns", 12, metaData.getColumnCount());
+      assertEquals(12, metaData.getColumnCount(), "ResultSetMetaData should have 12 columns");
 
       assertEquals("TABLE_NAME", metaData.getColumnName(3));
       assertEquals(Types.NVARCHAR, metaData.getColumnType(3));
@@ -2515,9 +2504,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetTypeInfoSchema() {
     Schema schema = dbMetadata.defineGetTypeInfoSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 18 fields", 18, fields.size());
+    assertEquals(18, fields.size(), "Schema should have 18 fields");
 
     Field typeName = fields.get("TYPE_NAME");
     assertNotNull(typeName);
@@ -2556,15 +2545,15 @@ public class BigQueryDatabaseMetaDataTest {
     FieldList schemaFields = typeInfoSchema.getFields();
     List<FieldValueList> rows = dbMetadata.prepareGetTypeInfoRows(schemaFields);
 
-    assertNotNull("Rows list should not be null", rows);
-    assertEquals("Should have 17 rows for 17 types", 17, rows.size());
+    assertNotNull(rows, "Rows list should not be null");
+    assertEquals(17, rows.size(), "Should have 17 rows for 17 types");
 
     // INT64 (should be BIGINT in JDBC)
     Optional<FieldValueList> int64RowOpt =
         rows.stream()
             .filter(row -> "INT64".equals(row.get("TYPE_NAME").getStringValue()))
             .findFirst();
-    assertTrue("INT64 type info row should exist", int64RowOpt.isPresent());
+    assertTrue(int64RowOpt.isPresent(), "INT64 type info row should exist");
     FieldValueList int64Row = int64RowOpt.get();
     assertEquals(String.valueOf(Types.BIGINT), int64Row.get("DATA_TYPE").getStringValue());
     assertEquals("19", int64Row.get("PRECISION").getStringValue());
@@ -2578,7 +2567,7 @@ public class BigQueryDatabaseMetaDataTest {
         rows.stream()
             .filter(row -> "BOOL".equals(row.get("TYPE_NAME").getStringValue()))
             .findFirst();
-    assertTrue("BOOL type info row should exist", boolRowOpt.isPresent());
+    assertTrue(boolRowOpt.isPresent(), "BOOL type info row should exist");
     FieldValueList boolRow = boolRowOpt.get();
     assertEquals(String.valueOf(Types.BOOLEAN), boolRow.get("DATA_TYPE").getStringValue());
     assertEquals("1", boolRow.get("PRECISION").getStringValue());
@@ -2592,7 +2581,7 @@ public class BigQueryDatabaseMetaDataTest {
         rows.stream()
             .filter(row -> "STRING".equals(row.get("TYPE_NAME").getStringValue()))
             .findFirst();
-    assertTrue("STRING type info row should exist", stringRowOpt.isPresent());
+    assertTrue(stringRowOpt.isPresent(), "STRING type info row should exist");
     FieldValueList stringRow = stringRowOpt.get();
     assertEquals(String.valueOf(Types.NVARCHAR), stringRow.get("DATA_TYPE").getStringValue());
     assertTrue(stringRow.get("PRECISION").isNull()); // Precision is null for STRING
@@ -2608,11 +2597,11 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetTypeInfo() throws SQLException {
     try (ResultSet rs = dbMetadata.getTypeInfo()) {
-      assertNotNull("ResultSet from getTypeInfo() should not be null", rs);
+      assertNotNull(rs, "ResultSet from getTypeInfo() should not be null");
 
       ResultSetMetaData rsmd = rs.getMetaData();
-      assertNotNull("ResultSetMetaData should not be null", rsmd);
-      assertEquals("Should have 18 columns", 18, rsmd.getColumnCount());
+      assertNotNull(rsmd, "ResultSetMetaData should not be null");
+      assertEquals(18, rsmd.getColumnCount(), "Should have 18 columns");
       assertEquals("TYPE_NAME", rsmd.getColumnName(1));
       assertEquals("DATA_TYPE", rsmd.getColumnName(2));
       assertEquals("PRECISION", rsmd.getColumnName(3));
@@ -2627,12 +2616,12 @@ public class BigQueryDatabaseMetaDataTest {
           assertEquals(19, rs.getInt("PRECISION"));
         }
       }
-      assertEquals("Should have 17 rows for 17 types", 17, rowCount);
+      assertEquals(17, rowCount, "Should have 17 rows for 17 types");
 
       // Verify sorting by DATA_TYPE
       List<Integer> sortedDataTypes = new ArrayList<>(dataTypes);
       Collections.sort(sortedDataTypes);
-      assertEquals("Results should be sorted by DATA_TYPE", sortedDataTypes, dataTypes);
+      assertEquals(sortedDataTypes, dataTypes, "Results should be sorted by DATA_TYPE");
     }
   }
 
@@ -2795,9 +2784,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetClientInfoPropertiesSchema() {
     Schema schema = dbMetadata.defineGetClientInfoPropertiesSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Schema should have 4 fields", 4, fields.size());
+    assertEquals(4, fields.size(), "Schema should have 4 fields");
 
     Field nameField = fields.get("NAME");
     assertNotNull(nameField);
@@ -2827,11 +2816,11 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetClientInfoProperties() throws SQLException {
     try (ResultSet rs = dbMetadata.getClientInfoProperties()) {
-      assertNotNull("ResultSet from getClientInfoProperties() should not be null", rs);
+      assertNotNull(rs, "ResultSet from getClientInfoProperties() should not be null");
 
       ResultSetMetaData rsmd = rs.getMetaData();
-      assertNotNull("ResultSetMetaData should not be null", rsmd);
-      assertEquals("Should have 4 columns", 4, rsmd.getColumnCount());
+      assertNotNull(rsmd, "ResultSetMetaData should not be null");
+      assertEquals(4, rsmd.getColumnCount(), "Should have 4 columns");
       assertEquals("NAME", rsmd.getColumnName(1));
       assertEquals(Types.NVARCHAR, rsmd.getColumnType(1));
       assertEquals("MAX_LEN", rsmd.getColumnName(2));
@@ -2851,7 +2840,7 @@ public class BigQueryDatabaseMetaDataTest {
         actualRows.add(row);
       }
 
-      assertEquals("Should return 3 client info properties", 3, actualRows.size());
+      assertEquals(3, actualRows.size(), "Should return 3 client info properties");
 
       Map<String, Object> appNameRow = actualRows.get(0);
       assertEquals("ApplicationName", appNameRow.get("NAME"));
@@ -2872,18 +2861,15 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testDefineGetCatalogsSchema() {
     Schema schema = dbMetadata.defineGetCatalogsSchema();
-    assertNotNull("Schema should not be null", schema);
+    assertNotNull(schema, "Schema should not be null");
     FieldList fields = schema.getFields();
-    assertEquals("Should have one column", 1, fields.size());
+    assertEquals(1, fields.size(), "Should have one column");
 
     Field tableCatField = fields.get("TABLE_CAT");
-    assertNotNull("TABLE_CAT field should exist", tableCatField);
-    assertEquals("Field name should be TABLE_CAT", "TABLE_CAT", tableCatField.getName());
-    assertEquals(
-        "Field type should be STRING",
-        StandardSQLTypeName.STRING,
-        tableCatField.getType().getStandardType());
-    assertEquals("Field mode should be REQUIRED", Field.Mode.REQUIRED, tableCatField.getMode());
+    assertNotNull(tableCatField, "TABLE_CAT field should exist");
+    assertEquals("TABLE_CAT", tableCatField.getName(), "Field name should be TABLE_CAT");
+    assertEquals(StandardSQLTypeName.STRING, tableCatField.getType().getStandardType(), "Field type should be STRING");
+    assertEquals(Field.Mode.REQUIRED, tableCatField.getMode(), "Field mode should be REQUIRED");
   }
 
   @Test
@@ -2898,22 +2884,19 @@ public class BigQueryDatabaseMetaDataTest {
     List<FieldValueList> rowsWithCatalog =
         dbMetadata.prepareGetCatalogsRows(schemaFields, testCatalogName);
 
-    assertNotNull("Rows list should not be null when catalog name is provided", rowsWithCatalog);
-    assertEquals("Should have one row when a catalog name is provided", 1, rowsWithCatalog.size());
+    assertNotNull(rowsWithCatalog, "Rows list should not be null when catalog name is provided");
+    assertEquals(1, rowsWithCatalog.size(), "Should have one row when a catalog name is provided");
     FieldValueList row = rowsWithCatalog.get(0);
-    assertEquals("Row should have 1 field value", 1, row.size());
-    assertFalse("FieldValue in row should not be SQL NULL", row.get(0).isNull());
-    assertEquals(
-        "TABLE_CAT should match the provided catalog name",
-        testCatalogName.get(0),
-        row.get(0).getStringValue());
+    assertEquals(1, row.size(), "Row should have 1 field value");
+    assertFalse(row.get(0).isNull(), "FieldValue in row should not be SQL NULL");
+    assertEquals(testCatalogName.get(0), row.get(0).getStringValue(), "TABLE_CAT should match the provided catalog name");
 
     // Test with empty catalog name list
     List<String> testEmptyCatalogList = new ArrayList<>();
     List<FieldValueList> rowsWithNullCatalog =
         dbMetadata.prepareGetCatalogsRows(schemaFields, testEmptyCatalogList);
-    assertNotNull("Rows list should not be null when catalog name is null", rowsWithNullCatalog);
-    assertTrue("Should have zero rows when catalog name is null", rowsWithNullCatalog.isEmpty());
+    assertNotNull(rowsWithNullCatalog, "Rows list should not be null when catalog name is null");
+    assertTrue(rowsWithNullCatalog.isEmpty(), "Should have zero rows when catalog name is null");
   }
 
   @Test
@@ -2924,8 +2907,7 @@ public class BigQueryDatabaseMetaDataTest {
 
     ResultSet rs = spiedDbMetadata.getSchemas();
 
-    assertSame(
-        "The returned ResultSet should be the one from the two-argument method", mockResultSet, rs);
+    assertSame(mockResultSet, rs, "The returned ResultSet should be the one from the two-argument method");
     verify(spiedDbMetadata, times(1)).getSchemas(null, null);
   }
 

@@ -30,7 +30,7 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyMap;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
@@ -48,15 +48,15 @@ import java.util.ArrayList;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 public class BigQueryArrowArrayOfStructTest {
 
   private Array array;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     FieldList profileSchema =
         FieldList.of(
@@ -198,7 +198,7 @@ public class BigQueryArrowArrayOfStructTest {
     assertThat(exception2.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
-  private void ensureArrayIsInvalid(ThrowingRunnable block) {
+  private void ensureArrayIsInvalid(Executable block) {
     Exception exception = assertThrows(IllegalStateException.class, block);
     assertThat(exception.getMessage()).isEqualTo(INVALID_ARRAY);
   }

@@ -18,12 +18,12 @@ package com.google.cloud.bigquery.jdbc.it;
 
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.Arrays.asList;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
@@ -52,9 +52,9 @@ import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class ITNightlyBigQueryTest {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -91,14 +91,14 @@ public class ITNightlyBigQueryTest {
           + PROJECT_ID
           + ";OAUTHTYPE=3";
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() throws SQLException {
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
     bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws SQLException {
     bigQueryStatement.close();
     bigQueryConnection.close();
@@ -793,9 +793,7 @@ public class ITNightlyBigQueryTest {
     status = statement.execute(selectQuery);
     assertTrue(status);
     connection.rollback();
-    assertTrue(
-        "After rollback() in manual commit mode, a new transaction should be started.",
-        connection.isTransactionStarted());
+    assertTrue(connection.isTransactionStarted(), "After rollback() in manual commit mode, a new transaction should be started.");
 
     // Separate query to check if transaction rollback worked
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);

@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -30,8 +30,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Properties;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryConnectionTest {
 
@@ -42,7 +42,7 @@ public class BigQueryConnectionTest {
           + "OAuthType=2;OAuthAccessToken=redacted;ProjectId=project;";
   private String expectedVersion;
 
-  @Before
+  @BeforeEach
   public void setUp() throws IOException {
     // Read the expected version from the dependencies.properties file once.
     expectedVersion = getExpectedVersion();
@@ -275,9 +275,7 @@ public class BigQueryConnectionTest {
             + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
             + "OAuthClientSecret=redactedToken;";
     try (BigQueryConnection connectionDefault = new BigQueryConnection(urlDefault)) {
-      assertFalse(
-          "Default value for FilterTablesOnDefaultDataset should be false",
-          connectionDefault.isFilterTablesOnDefaultDataset());
+      assertFalse(connectionDefault.isFilterTablesOnDefaultDataset(), "Default value for FilterTablesOnDefaultDataset should be false");
     } catch (SQLException | IOException e) {
       throw new BigQueryJdbcException(e);
     }
@@ -290,9 +288,7 @@ public class BigQueryConnectionTest {
             + "OAuthClientSecret=redactedToken;"
             + "FilterTablesOnDefaultDataset=1;";
     try (BigQueryConnection connectionTrue = new BigQueryConnection(urlTrue)) {
-      assertTrue(
-          "FilterTablesOnDefaultDataset should be true when set to 1",
-          connectionTrue.isFilterTablesOnDefaultDataset());
+      assertTrue(connectionTrue.isFilterTablesOnDefaultDataset(), "FilterTablesOnDefaultDataset should be true when set to 1");
     } catch (SQLException | IOException e) {
       throw new BigQueryJdbcException(e);
     }
@@ -308,10 +304,7 @@ public class BigQueryConnectionTest {
             + "OAuthClientSecret=redactedToken;"
             + "RequestGoogleDriveScope=1;";
     try (BigQueryConnection connectionEnabled = new BigQueryConnection(urlEnabled)) {
-      assertEquals(
-          "RequestGoogleDriveScope should be enabled when set to 1",
-          1,
-          connectionEnabled.isRequestGoogleDriveScope());
+      assertEquals(1, connectionEnabled.isRequestGoogleDriveScope(), "RequestGoogleDriveScope should be enabled when set to 1");
     } catch (SQLException | IOException e) {
       throw new BigQueryJdbcException(e);
     }
@@ -324,10 +317,7 @@ public class BigQueryConnectionTest {
             + "OAuthClientSecret=redactedToken;"
             + "RequestGoogleDriveScope=0;";
     try (BigQueryConnection connectionDisabled = new BigQueryConnection(urlDisabled)) {
-      assertEquals(
-          "RequestGoogleDriveScope should be disabled when set to 0",
-          0,
-          connectionDisabled.isRequestGoogleDriveScope());
+      assertEquals(0, connectionDisabled.isRequestGoogleDriveScope(), "RequestGoogleDriveScope should be disabled when set to 0");
     } catch (SQLException | IOException e) {
       throw new BigQueryJdbcException(e);
     }
@@ -342,10 +332,7 @@ public class BigQueryConnectionTest {
             + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
             + "OAuthClientSecret=redactedToken;";
     try (BigQueryConnection connectionDefault = new BigQueryConnection(urlDefault)) {
-      assertEquals(
-          "Should use the default value when the property is not set",
-          BigQueryJdbcUrlUtility.DEFAULT_METADATA_FETCH_THREAD_COUNT_VALUE,
-          connectionDefault.getMetadataFetchThreadCount());
+      assertEquals(BigQueryJdbcUrlUtility.DEFAULT_METADATA_FETCH_THREAD_COUNT_VALUE, connectionDefault.getMetadataFetchThreadCount(), "Should use the default value when the property is not set");
     }
 
     // Test Case 2: Should use the custom value when a valid integer is provided.
@@ -356,10 +343,7 @@ public class BigQueryConnectionTest {
             + "OAuthClientSecret=redactedToken;"
             + "MetaDataFetchThreadCount=16;";
     try (BigQueryConnection connectionCustom = new BigQueryConnection(urlCustom)) {
-      assertEquals(
-          "Should use the custom value when a valid integer is provided",
-          16,
-          connectionCustom.getMetadataFetchThreadCount());
+      assertEquals(16, connectionCustom.getMetadataFetchThreadCount(), "Should use the custom value when a valid integer is provided");
     }
   }
 

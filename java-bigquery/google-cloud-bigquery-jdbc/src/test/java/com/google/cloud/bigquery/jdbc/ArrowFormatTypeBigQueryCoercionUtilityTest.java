@@ -36,12 +36,12 @@ import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.api.Test;
 
 public class ArrowFormatTypeBigQueryCoercionUtilityTest {
 
-  @Rule public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private static final Range RANGE_DATE =
       Range.newBuilder()

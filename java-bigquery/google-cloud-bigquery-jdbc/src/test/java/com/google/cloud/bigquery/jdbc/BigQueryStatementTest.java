@@ -18,8 +18,8 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchema;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
@@ -65,9 +65,9 @@ import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
@@ -124,7 +124,7 @@ public class BigQueryStatementTest {
     return job;
   }
 
-  @Before
+  @BeforeEach
   public void setUp() throws IOException, SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
@@ -181,7 +181,7 @@ public class BigQueryStatementTest {
     assertThat(bigQueryStatement).isNotNull();
   }
 
-  @Ignore
+  @Disabled
   public void testExecFastQueryPath() throws SQLException, InterruptedException {
     JobIdWrapper jobIdWrapper = new JobIdWrapper(jobId, null, null);
     BigQueryStatement bigQueryStatementSpy = Mockito.spy(bigQueryStatement);

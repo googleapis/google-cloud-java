@@ -30,12 +30,13 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(MockitoJUnitRunner.class)
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+@ExtendWith(MockitoExtension.class)
 public class BigQueryResultSetMetadataTest {
 
   private BigQueryStatement statement;
@@ -106,7 +107,7 @@ public class BigQueryResultSetMetadataTest {
 
   private ResultSetMetaData resultSetMetaDataNested;
 
-  @Before
+  @BeforeEach
   public void setUp() throws SQLException {
     statement = mock(BigQueryStatement.class);
     Thread[] workerThreads = {new Thread()};

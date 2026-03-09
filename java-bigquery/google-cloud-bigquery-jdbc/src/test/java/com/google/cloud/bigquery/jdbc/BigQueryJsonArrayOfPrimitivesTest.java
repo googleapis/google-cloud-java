@@ -36,7 +36,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.time.Month.MARCH;
 import static java.util.Arrays.copyOfRange;
 import static java.util.Collections.emptyMap;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
@@ -61,44 +61,21 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
-import org.junit.Before;
-import org.junit.ClassRule;
-import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.function.Executable;
 
-@RunWith(Parameterized.class)
+
 public class BigQueryJsonArrayOfPrimitivesTest {
 
-  private final Field schema;
-  private final FieldValue arrayValues;
-  private final Object[] expected;
-  private final int javaSqlTypeCode;
-  private Array array;
-  private final StandardSQLTypeName currentType;
+  @RegisterExtension
+  public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
-  @ClassRule public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
-  public BigQueryJsonArrayOfPrimitivesTest(
-      StandardSQLTypeName currentType,
-      Tuple<Field, FieldValue> schemaAndValue,
-      Object[] expected,
-      int javaSqlTypeCode) {
-    this.currentType = currentType;
-    this.schema = schemaAndValue.x();
-    this.arrayValues = schemaAndValue.y();
-    this.expected = expected;
-    this.javaSqlTypeCode = javaSqlTypeCode;
-  }
 
-  @Before
-  public void setUp() {
-    array = new BigQueryJsonArray(this.schema, this.arrayValues);
-  }
-
-  @Parameters(name = "{index}: primitive array of {0}")
+  
   public static Collection<Object[]> data() {
     timeZoneRule.enforce();
     LocalDateTime aTimeStamp = LocalDateTime.of(2023, MARCH, 30, 11, 14, 19, 820227000);
@@ -229,48 +206,58 @@ public class BigQueryJsonArrayOfPrimitivesTest {
         });
   }
 
-  @Test
-  public void getArray() throws SQLException {
-    assertThat(array.getArray()).isEqualTo(this.expected);
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getArray(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
+    assertThat(array.getArray()).isEqualTo(expected);
   }
 
-  @Test
-  public void getSlicedArray() throws SQLException {
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getSlicedArray(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
     int fromIndex = 1;
     int toIndexExclusive = 3;
     Object[] expectedSlicedArray =
-        copyOfRange(this.expected, fromIndex, toIndexExclusive); // copying index(1,2)
+        copyOfRange(expected, fromIndex, toIndexExclusive); // copying index(1,2)
 
     // the first element is at index 1
     assertThat(array.getArray(fromIndex + 1, 2)).isEqualTo(expectedSlicedArray);
   }
 
-  @Test
-  public void getSlicedArrayWhenCountIsGreaterThanOriginalArrayLength() {
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getSlicedArrayWhenCountIsGreaterThanOriginalArrayLength(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
     IllegalArgumentException illegalArgumentException =
         assertThrows(IllegalArgumentException.class, () -> array.getArray(2, 10));
     assertThat(illegalArgumentException.getMessage())
         .isEqualTo("The array index is out of range: 12, number of elements: 4.");
   }
 
-  @Test
-  public void getResultSet() throws SQLException {
-    ResultSet resultSet = this.array.getResultSet();
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getResultSet(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
+    ResultSet resultSet = array.getResultSet();
     Tuple<ArrayList<Object>, ArrayList<Object>> indexAndValues =
         nestedResultSetToColumnLists(resultSet);
     ArrayList<Object> indexList = indexAndValues.x();
     ArrayList<Object> columnValues = indexAndValues.y();
 
     assertThat(indexList.toArray()).isEqualTo(new Object[] {1, 2, 3, 4});
-    assertThat(columnValues.toArray()).isEqualTo(this.expected);
+    assertThat(columnValues.toArray()).isEqualTo(expected);
   }
 
-  @Test
-  public void getSlicedResultSet() throws SQLException {
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getSlicedResultSet(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
     int fromIndex = 1;
     int toIndexExclusive = 3;
     Object[] expectedSlicedArray =
-        copyOfRange(this.expected, fromIndex, toIndexExclusive); // copying index(1,2)
+        copyOfRange(expected, fromIndex, toIndexExclusive); // copying index(1,2)
 
     // the first element is at index 1
     ResultSet resultSet = array.getResultSet(fromIndex + 1, 2);
@@ -284,27 +271,35 @@ public class BigQueryJsonArrayOfPrimitivesTest {
     assertThat(columnValues.toArray()).isEqualTo(expectedSlicedArray);
   }
 
-  @Test
-  public void getSlicedResultSetWhenCountIsGreaterThanOriginalArrayLength() {
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getSlicedResultSetWhenCountIsGreaterThanOriginalArrayLength(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
     IllegalArgumentException illegalArgumentException =
         assertThrows(IllegalArgumentException.class, () -> array.getResultSet(2, 10));
     assertThat(illegalArgumentException.getMessage())
         .isEqualTo("The array index is out of range: 12, number of elements: 4.");
   }
 
-  @Test
-  public void getBaseTypeName() throws SQLException {
-    assertThat(array.getBaseTypeName()).isEqualTo(this.currentType.name());
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getBaseTypeName(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
+    assertThat(array.getBaseTypeName()).isEqualTo(currentType.name());
   }
 
-  @Test
-  public void getBaseType() throws SQLException {
-    assertThat(array.getBaseType()).isEqualTo(this.javaSqlTypeCode);
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getBaseType(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
+    assertThat(array.getBaseType()).isEqualTo(javaSqlTypeCode);
   }
 
-  @Test
-  public void free() throws SQLException {
-    this.array.free();
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void free(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
+    array.free();
 
     ensureArrayIsInvalid(() -> array.getArray());
     ensureArrayIsInvalid(() -> array.getArray(1, 2));
@@ -314,8 +309,10 @@ public class BigQueryJsonArrayOfPrimitivesTest {
     ensureArrayIsInvalid(() -> array.getBaseType());
   }
 
-  @Test
-  public void getArrayWithCustomTypeMappingsIsNotSupported() {
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getArrayWithCustomTypeMappingsIsNotSupported(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
     Exception exception1 =
         assertThrows(SQLFeatureNotSupportedException.class, () -> array.getArray(emptyMap()));
     Exception exception2 =
@@ -324,8 +321,10 @@ public class BigQueryJsonArrayOfPrimitivesTest {
     assertThat(exception2.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
-  @Test
-  public void getResultSetWithCustomTypeMappingsIsNotSupported() {
+  @ParameterizedTest(name = "{index}: primitive array of {0}")
+  @MethodSource("data")
+  public void getResultSetWithCustomTypeMappingsIsNotSupported(StandardSQLTypeName currentType, Tuple<Field, FieldValue> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+    Array array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
     Exception exception1 =
         assertThrows(SQLFeatureNotSupportedException.class, () -> array.getResultSet(emptyMap()));
     Exception exception2 =
@@ -335,7 +334,7 @@ public class BigQueryJsonArrayOfPrimitivesTest {
     assertThat(exception2.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
-  private void ensureArrayIsInvalid(ThrowingRunnable block) {
+  private void ensureArrayIsInvalid(Executable block) {
     Exception exception = assertThrows(IllegalStateException.class, block);
     assertThat(exception.getMessage()).isEqualTo(INVALID_ARRAY);
   }

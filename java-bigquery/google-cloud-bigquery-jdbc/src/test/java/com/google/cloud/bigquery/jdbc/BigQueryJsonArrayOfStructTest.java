@@ -24,7 +24,7 @@ import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.nestedResultSet
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyMap;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
@@ -42,16 +42,16 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Struct;
 import java.sql.Types;
 import java.util.ArrayList;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 public class BigQueryJsonArrayOfStructTest {
 
   private Array array;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     FieldList profileSchema =
         FieldList.of(
@@ -197,8 +197,8 @@ public class BigQueryJsonArrayOfStructTest {
     assertThat(exception2.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
-  private void ensureArrayIsInvalid(ThrowingRunnable block) {
-    Exception exception = Assert.assertThrows(IllegalStateException.class, block);
+  private void ensureArrayIsInvalid(Executable block) {
+    Exception exception = Assertions.assertThrows(IllegalStateException.class, block);
     assertThat(exception.getMessage()).isEqualTo(INVALID_ARRAY);
   }
 }
