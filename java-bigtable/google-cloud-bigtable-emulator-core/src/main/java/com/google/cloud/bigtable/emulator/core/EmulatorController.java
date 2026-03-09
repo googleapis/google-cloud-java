@@ -44,6 +44,8 @@ public class EmulatorController {
 
   private final Path executable;
   private Process process;
+  private Thread stdoutThread;
+  private Thread stderrThread;
   private boolean isStopped = true;
   private Thread shutdownHook;
 
@@ -127,8 +129,8 @@ public class EmulatorController {
         throw e;
       }
     }
-    pipeStreamToLog(process.getInputStream(), Level.INFO);
-    pipeStreamToLog(process.getErrorStream(), Level.WARNING);
+    Thread stdoutThread = pipeStreamToLog(process.getInputStream(), Level.INFO);
+    Thread stderrThread = pipeStreamToLog(process.getErrorStream(), Level.WARNING);
     isStopped = false;
 
     shutdownHook =
@@ -164,6 +166,23 @@ public class EmulatorController {
     } finally {
       isStopped = true;
       process.destroy();
+
+      try {
+        process.waitFor();
+        if (stdoutThread != null) {
+          stdoutThread.join();
+        }
+        if (stderrThread != null) {
+          stderrThread.join();
+        }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        LOGGER.log(Level.WARNING, "Interrupted while waiting for emulator to stop", e);
+      } finally {
+        stdoutThread = null;
+        stderrThread = null;
+        process = null;
+      }
     }
   }
 
@@ -239,7 +258,7 @@ public class EmulatorController {
   }
 
   /** Creates a thread that will pipe an {@link InputStream} to this class' Logger. */
-  private static void pipeStreamToLog(final InputStream stream, final Level level) {
+  private static Thread pipeStreamToLog(final InputStream stream, final Level level) {
     final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 
     Thread thread =
@@ -258,6 +277,7 @@ public class EmulatorController {
             });
     thread.setDaemon(true);
     thread.start();
+    return thread;
   }
   // </editor-fold>
 }
