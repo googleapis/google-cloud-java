@@ -21,9 +21,12 @@ import com.google.api.core.InternalApi;
 /** Internal telemetry constants shared between OpenTelemetry tracing and metrics. */
 @InternalApi
 public class TelemetryConstants {
-  static final String SERVICE_NAME = "datastore.googleapis.com";
+  public static final String SERVICE_NAME = "datastore.googleapis.com";
   static final String METER_NAME = "com.google.cloud.datastore";
 
+  public static final String ATTRIBUTES_KEY_PROJECT_ID = "project_id";
+  public static final String ATTRIBUTES_KEY_DATABASE_ID = "database_id";
+  public static final String ATTRIBUTES_KEY_TRANSPORT = "transport";
   public static final String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
   public static final String ATTRIBUTES_KEY_TRANSACTIONAL = "transactional";
   public static final String ATTRIBUTES_KEY_TRANSACTION_ID = "transaction_id";
