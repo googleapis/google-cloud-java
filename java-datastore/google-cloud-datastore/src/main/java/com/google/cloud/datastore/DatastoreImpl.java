@@ -44,6 +44,7 @@ import com.google.cloud.ExceptionHandler;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.execution.AggregationQueryExecutor;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.MetricsRecorder;
@@ -215,7 +216,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         }
         throw DatastoreException.propagateUserException(ex);
       } finally {
-        recordAttempt(attemptStatus);
+        recordAttempt(attemptStatus, datastore.getOptions().getTransportOptions());
         // If the transaction is active, then commit the rollback. If it was already successfully
         // rolled back, the transaction is inactive (prevents rolling back an already rolled back
         // transaction).
@@ -233,7 +234,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
      * Records a single transaction commit attempt with the given status code. This is called once
      * per invocation of {@link #call()}, capturing the outcome of each individual commit attempt.
      */
-    private void recordAttempt(String status) {
+    private void recordAttempt(String status, TransportOptions transportOptions) {
       Map<String, String> attributes = new HashMap<>();
       attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
       attributes.put(
@@ -242,6 +243,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, datastore.getOptions().getProjectId());
       attributes.put(
           TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, datastore.getOptions().getDatabaseId());
+      attributes.put(
+          TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
+          TelemetryConstants.getTransportName(transportOptions));
       metricsRecorder.recordTransactionAttemptCount(1, attributes);
     }
   }
@@ -284,6 +288,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_TRANSACTION_RUN);
       attributes.put(TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, getOptions().getProjectId());
       attributes.put(TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, getOptions().getDatabaseId());
+      attributes.put(
+          TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
+          TelemetryConstants.getTransportName(getOptions().getTransportOptions()));
       metricsRecorder.recordTransactionLatency(latencyMs, attributes);
       span.end();
     }

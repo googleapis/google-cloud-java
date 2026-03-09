@@ -17,6 +17,8 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
 
 /**
  * Internal telemetry constants shared between OpenTelemetry tracing and metrics.
@@ -51,13 +53,17 @@ public class TelemetryConstants {
   /** Attribute key for the Datastore database ID. */
   public static final String ATTRIBUTES_KEY_DATABASE_ID = "database_id";
 
+  public static final String ATTRIBUTES_KEY_LIBRARY_VERSION = "library_version";
+
+  public static final String ATTRIBUTES_KEY_TRANSPORT = "transport";
+
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
-      SERVICE_NAME + "/transaction_latency";
+      SERVICE_NAME + "/client/transaction_latency";
 
   /** Metric name for the number of attempts a transaction took. */
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
-      SERVICE_NAME + "/transaction_attempt_count";
+      SERVICE_NAME + "/client/transaction_attempt_count";
 
   /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
   // Format is not SnakeCase to keep backward compatibility with the existing values TraceUtil spans
@@ -81,4 +87,12 @@ public class TelemetryConstants {
   public static final String METHOD_SUBMIT = "submit";
 
   private TelemetryConstants() {}
+
+  public static String getTransportName(TransportOptions transportOptions) {
+    if (transportOptions instanceof GrpcTransportOptions) {
+      return "grpc";
+    } else {
+      return "http";
+    }
+  }
 }
