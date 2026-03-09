@@ -160,4 +160,33 @@ public final class DatastoreException extends BaseHttpServiceException {
   static DatastoreException propagateUserException(Exception ex) {
     throw new DatastoreException(BaseServiceException.UNKNOWN_CODE, ex.getMessage(), null, ex);
   }
+
+  /**
+   * Extracts the status code name from the given throwable. Walks the exception cause chain looking
+   * for a {@link DatastoreException} that carries a reason string representing the status code
+   * (e.g. "ABORTED", "UNAVAILABLE"). The reason is set from {@link
+   * com.google.api.gax.rpc.StatusCode.Code} which is transport-neutral, supporting both gRPC and
+   * HttpJson. Falls back to "UNKNOWN" if the status cannot be determined.
+   *
+   * <p>Note: Some {@link DatastoreException} instances are constructed without a reason (e.g. via
+   * {@link DatastoreException#DatastoreException(int, String, Throwable)}). If all {@link
+   * DatastoreException} instances in the cause chain have a null or empty reason, this method
+   * returns "UNKNOWN" even if the underlying error carries a meaningful status.
+   *
+   * @param throwable the throwable to extract the status code from
+   * @return the status code name, or "UNKNOWN" if not determinable
+   */
+  static String extractStatusCode(Throwable throwable) {
+    Throwable current = throwable;
+    while (current != null) {
+      if (current instanceof DatastoreException) {
+        String reason = ((DatastoreException) current).getReason();
+        if (!Strings.isNullOrEmpty(reason)) {
+          return reason;
+        }
+      }
+      current = current.getCause();
+    }
+    return StatusCode.Code.UNKNOWN.toString();
+  }
 }
