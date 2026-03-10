@@ -28,7 +28,7 @@ unittest: |
 
 # Important: By default, this command will skip unittests.
 # To include unit tests, run: make integration-test skipSurefire=false
-integration-test: .check-env
+integration-test:
 	mvn -B -ntp \
 		-Penable-integration-tests \
 		-DtrimStackTrace=false \
@@ -45,7 +45,7 @@ unit-test-coverage:
 	BUILD_DIR=$$(mvn -B -ntp help:evaluate -Dexpression=project.build.directory -q -DforceStdout); \
 	cd $$BUILD_DIR/site && zip -r $$OLDPWD/jacoco-unittests.zip jacoco && cd $$OLDPWD
 
-full-coverage: .check-env
+full-coverage:
 	$(MAKE) integration-test skipSurefire=false test=ITBigQueryJDBCTest,ITNightlyBigQueryTest
 	mvn -B -ntp jacoco:report
 	BUILD_DIR=$$(mvn -B -ntp  help:evaluate -Dexpression=project.build.directory -q -DforceStdout); \
