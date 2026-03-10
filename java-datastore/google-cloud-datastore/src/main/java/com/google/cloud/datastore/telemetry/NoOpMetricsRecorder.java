@@ -33,4 +33,24 @@ class NoOpMetricsRecorder implements MetricsRecorder {
   public void recordTransactionAttemptCount(long count, Map<String, String> attributes) {
     /* No-Op OTel Operation */
   }
+
+  @Override
+  public void recordAttemptLatency(double latencyMs, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordAttemptCount(long count, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordOperationLatency(double latencyMs, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordOperationCount(long count, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
 }

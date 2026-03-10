@@ -65,34 +65,64 @@ public class TelemetryConstants {
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
       SERVICE_NAME + "/client/transaction_attempt_count";
 
-  /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
-  // Format is not SnakeCase to keep backward compatibility with the existing values TraceUtil spans
-  public static final String METHOD_ALLOCATE_IDS = "AllocateIds";
-  public static final String METHOD_BEGIN_TRANSACTION = "Transaction.Begin";
-  public static final String METHOD_COMMIT = "Commit";
-  public static final String METHOD_LOOKUP = "Lookup";
-  public static final String METHOD_RESERVE_IDS = "ReserveIds";
-  public static final String METHOD_RUN_QUERY = "RunQuery";
-  public static final String METHOD_TRANSACTION_COMMIT = "Transaction.Commit";
-  public static final String METHOD_TRANSACTION_LOOKUP = "Transaction.Lookup";
-  public static final String METHOD_TRANSACTION_RUN = "Transaction.Run";
-  public static final String METHOD_TRANSACTION_RUN_QUERY = "Transaction.RunQuery";
-  public static final String METHOD_TRANSACTION_ROLLBACK = "Transaction.Rollback";
-  public static final String METHOD_TRANSACTION_RUN_AGGREGATION_QUERY =
-      "Transaction.RunAggregationQuery";
-  public static final String METHOD_ADD = "add";
-  public static final String METHOD_PUT = "put";
-  public static final String METHOD_UPDATE = "update";
-  public static final String METHOD_DELETE = "delete";
-  public static final String METHOD_SUBMIT = "submit";
+  /** Metric name for the total latency of an operation (one full RPC call including retries). */
+  public static final String METRIC_NAME_OPERATION_LATENCY =
+      SERVICE_NAME + "/operation_latency";
 
-  private TelemetryConstants() {}
+  /** Metric name for the latency of a single RPC attempt. */
+  public static final String METRIC_NAME_ATTEMPT_LATENCY =
+      SERVICE_NAME + "/attempt_latency";
+
+  /** Metric name for the count of operations. */
+  public static final String METRIC_NAME_OPERATION_COUNT =
+      SERVICE_NAME + "/operation_count";
+
+  /** Metric name for the count of RPC attempts. */
+  public static final String METRIC_NAME_ATTEMPT_COUNT =
+      SERVICE_NAME + "/attempt_count";
+
+
+  // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
+  // method name.
+  static final String METHOD_SERVICE_NAME = "Datastore";
+
+  //
+  public static final String METHOD_ALLOCATE_IDS = METHOD_SERVICE_NAME + ".AllocateIds";
+  public static final String METHOD_BEGIN_TRANSACTION = METHOD_SERVICE_NAME + ".BeginTransaction";
+  public static final String METHOD_COMMIT = METHOD_SERVICE_NAME + ".Commit";
+  public static final String METHOD_LOOKUP = METHOD_SERVICE_NAME + ".Lookup";
+  public static final String METHOD_RESERVE_IDS = METHOD_SERVICE_NAME + ".ReserveIds";
+  public static final String METHOD_ROLLBACK = METHOD_SERVICE_NAME + ".Rollback";
+  public static final String METHOD_RUN_QUERY = METHOD_SERVICE_NAME + ".RunQuery";
+  public static final String METHOD_RUN_AGGREGATION_QUERY = METHOD_SERVICE_NAME + ".RunAggregationQuery";
+
+  // These metrics capture the specific transaction related
+  public static final String METHOD_TRANSACTION_COMMIT = METHOD_SERVICE_NAME + ".Transaction.Commit";
+  public static final String METHOD_TRANSACTION_RUN = METHOD_SERVICE_NAME + ".Transaction.Run";
+
+
+  public enum Transport {
+    GRPC("grpc"),
+    HTTP("http");
+
+    private final String transport;
+
+    Transport(String transport) {
+      this.transport = transport;
+    }
+
+    public String getTransport() {
+      return transport;
+    }
+  }
 
   public static String getTransportName(TransportOptions transportOptions) {
     if (transportOptions instanceof GrpcTransportOptions) {
-      return "grpc";
+      return Transport.GRPC.getTransport();
     } else {
-      return "http";
+      return Transport.HTTP.getTransport();
     }
   }
+
+  private TelemetryConstants() {}
 }

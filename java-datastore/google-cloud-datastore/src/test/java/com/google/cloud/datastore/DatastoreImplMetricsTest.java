@@ -24,10 +24,14 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
+import com.google.datastore.v1.AllocateIdsRequest;
+import com.google.datastore.v1.AllocateIdsResponse;
 import com.google.datastore.v1.BeginTransactionRequest;
 import com.google.datastore.v1.BeginTransactionResponse;
 import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
+import com.google.datastore.v1.LookupRequest;
+import com.google.datastore.v1.LookupResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.TransactionOptions;
@@ -494,6 +498,229 @@ public class DatastoreImplMetricsTest {
     Optional<MetricData> transactionAttemptCountMetric =
         findMetric(metrics, TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT);
     assertThat(transactionAttemptCountMetric.isPresent()).isTrue();
+
+    EasyMock.verify(rpcMock);
+  }
+
+  @Test
+  public void lookup_recordsOperationAndAttemptMetrics() {
+    EasyMock.expect(rpcMock.lookup(EasyMock.anyObject(LookupRequest.class)))
+        .andReturn(LookupResponse.getDefaultInstance());
+    EasyMock.replay(rpcMock);
+
+    // Use get() which triggers lookup internally
+    datastore.get(
+        Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build());
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    // Verify operation latency
+    Optional<MetricData> operationLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+    assertThat(operationLatency.isPresent()).isTrue();
+    HistogramPointData opLatencyPoint =
+        operationLatency.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_LOOKUP))
+            .findFirst()
+            .orElse(null);
+    assertThat(opLatencyPoint).isNotNull();
+    assertThat(opLatencyPoint.getCount()).isEqualTo(1);
+    assertThat(
+            dataContainsStringAttribute(
+                opLatencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_STATUS,
+                StatusCode.Code.OK.toString()))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                opLatencyPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
+        .isTrue();
+    assertThat(
+            dataContainsStringAttribute(
+                opLatencyPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+        .isTrue();
+
+    // Verify operation count
+    Optional<MetricData> operationCount =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_COUNT);
+    assertThat(operationCount.isPresent()).isTrue();
+
+    // Verify attempt latency
+    Optional<MetricData> attemptLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY);
+    assertThat(attemptLatency.isPresent()).isTrue();
+    HistogramPointData attLatencyPoint =
+        attemptLatency.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_LOOKUP))
+            .findFirst()
+            .orElse(null);
+    assertThat(attLatencyPoint).isNotNull();
+    assertThat(attLatencyPoint.getCount()).isEqualTo(1);
+
+    // Verify attempt count
+    Optional<MetricData> attemptCount =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT);
+    assertThat(attemptCount.isPresent()).isTrue();
+
+    EasyMock.verify(rpcMock);
+  }
+
+  @Test
+  public void commit_recordsOperationAndAttemptMetrics() {
+    EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcMock);
+
+    Key key = Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build();
+    datastore.delete(key);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    // Verify operation latency for commit
+    Optional<MetricData> operationLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+    assertThat(operationLatency.isPresent()).isTrue();
+    HistogramPointData opLatencyPoint =
+        operationLatency.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_COMMIT))
+            .findFirst()
+            .orElse(null);
+    assertThat(opLatencyPoint).isNotNull();
+    assertThat(opLatencyPoint.getCount()).isEqualTo(1);
+    assertThat(
+            dataContainsStringAttribute(
+                opLatencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_STATUS,
+                StatusCode.Code.OK.toString()))
+        .isTrue();
+
+    // Verify attempt latency for commit
+    Optional<MetricData> attemptLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY);
+    assertThat(attemptLatency.isPresent()).isTrue();
+    HistogramPointData attLatencyPoint =
+        attemptLatency.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_COMMIT))
+            .findFirst()
+            .orElse(null);
+    assertThat(attLatencyPoint).isNotNull();
+
+    EasyMock.verify(rpcMock);
+  }
+
+  @Test
+  public void lookup_recordsFailureStatusOnError() {
+    EasyMock.expect(rpcMock.lookup(EasyMock.anyObject(LookupRequest.class)))
+        .andThrow(
+            new DatastoreException(
+                14, "Unavailable", StatusCode.Code.UNAVAILABLE.toString(), false, null))
+        .anyTimes();
+    EasyMock.replay(rpcMock);
+
+    assertThrows(
+        DatastoreException.class,
+        () ->
+            datastore.get(
+                Key.newBuilder(PROJECT_ID, "Kind", "name")
+                    .setDatabaseId(DATABASE_ID)
+                    .build()));
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    // Verify operation latency with UNAVAILABLE status
+    Optional<MetricData> operationLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+    assertThat(operationLatency.isPresent()).isTrue();
+    HistogramPointData opLatencyPoint =
+        operationLatency.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_LOOKUP))
+            .findFirst()
+            .orElse(null);
+    assertThat(opLatencyPoint).isNotNull();
+    assertThat(
+            dataContainsStringAttribute(
+                opLatencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_STATUS,
+                StatusCode.Code.UNAVAILABLE.toString()))
+        .isTrue();
+
+    // Verify attempt metrics were also recorded with UNAVAILABLE
+    Optional<MetricData> attemptCount =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT);
+    assertThat(attemptCount.isPresent()).isTrue();
+
+    EasyMock.verify(rpcMock);
+  }
+
+  @Test
+  public void allocateIds_recordsOperationAndAttemptMetrics() {
+    EasyMock.expect(rpcMock.allocateIds(EasyMock.anyObject(AllocateIdsRequest.class)))
+        .andReturn(
+            AllocateIdsResponse.newBuilder()
+                .addKeys(
+                    com.google.datastore.v1.Key.newBuilder()
+                        .addPath(
+                            com.google.datastore.v1.Key.PathElement.newBuilder()
+                                .setKind("Kind")
+                                .setId(123)))
+                .build());
+    EasyMock.replay(rpcMock);
+
+    IncompleteKey key =
+        IncompleteKey.newBuilder(PROJECT_ID, "Kind").setDatabaseId(DATABASE_ID).build();
+    datastore.allocateId(key);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    Optional<MetricData> operationLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+    assertThat(operationLatency.isPresent()).isTrue();
+    HistogramPointData point =
+        operationLatency.get().getHistogramData().getPoints().stream()
+            .filter(
+                p ->
+                    dataContainsStringAttribute(
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_ALLOCATE_IDS))
+            .findFirst()
+            .orElse(null);
+    assertThat(point).isNotNull();
+    assertThat(
+            dataContainsStringAttribute(
+                point,
+                TelemetryConstants.ATTRIBUTES_KEY_STATUS,
+                StatusCode.Code.OK.toString()))
+        .isTrue();
+
+    Optional<MetricData> attemptLatency =
+        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY);
+    assertThat(attemptLatency.isPresent()).isTrue();
 
     EasyMock.verify(rpcMock);
   }
