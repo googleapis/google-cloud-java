@@ -18,13 +18,13 @@ package com.google.cloud.datastore;
 import static com.google.cloud.BaseService.EXCEPTION_HANDLER;
 
 import com.google.api.core.InternalApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.MetricsRecorder;
+import com.google.cloud.datastore.telemetry.NoOpMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.common.base.Preconditions;
@@ -65,27 +65,84 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
   private final MetricsRecorder metricsRecorder;
   private final boolean isHttpTransport;
 
+  /**
+   * @deprecated use {@link Builder}
+   */
+  @Deprecated
   public RetryAndTraceDatastoreRpcDecorator(
       DatastoreRpc datastoreRpc,
       TraceUtil otelTraceUtil,
       RetrySettings retrySettings,
       DatastoreOptions datastoreOptions) {
-    this(datastoreRpc, otelTraceUtil, retrySettings, datastoreOptions, null, false);
-  }
-
-  public RetryAndTraceDatastoreRpcDecorator(
-      DatastoreRpc datastoreRpc,
-      TraceUtil otelTraceUtil,
-      RetrySettings retrySettings,
-      DatastoreOptions datastoreOptions,
-      MetricsRecorder metricsRecorder,
-      boolean isHttpTransport) {
     this.datastoreRpc = datastoreRpc;
     this.retrySettings = retrySettings;
     this.datastoreOptions = datastoreOptions;
     this.otelTraceUtil = otelTraceUtil;
-    this.metricsRecorder = Preconditions.checkNotNull(metricsRecorder);
-    this.isHttpTransport = isHttpTransport;
+    this.metricsRecorder = new NoOpMetricsRecorder();
+    this.isHttpTransport = false;
+  }
+
+  private RetryAndTraceDatastoreRpcDecorator(Builder builder) {
+    this.datastoreRpc = builder.datastoreRpc;
+    this.otelTraceUtil = builder.otelTraceUtil;
+    this.retrySettings = builder.retrySettings;
+    this.datastoreOptions = builder.datastoreOptions;
+    this.metricsRecorder = builder.metricsRecorder;
+    this.isHttpTransport = builder.isHttpTransport;
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public static class Builder {
+    private DatastoreRpc datastoreRpc;
+    private TraceUtil otelTraceUtil;
+    private RetrySettings retrySettings;
+    private DatastoreOptions datastoreOptions;
+    private MetricsRecorder metricsRecorder = new NoOpMetricsRecorder();
+    private boolean isHttpTransport = false;
+
+    private Builder() {}
+
+    public Builder setDatastoreRpc(DatastoreRpc datastoreRpc) {
+      Preconditions.checkNotNull(datastoreRpc, "datastoreRpc is required");
+      this.datastoreRpc = datastoreRpc;
+      return this;
+    }
+
+    public Builder setTraceUtil(TraceUtil otelTraceUtil) {
+      Preconditions.checkNotNull(otelTraceUtil, "otelTraceUtil is required");
+      this.otelTraceUtil = otelTraceUtil;
+      return this;
+    }
+
+    public Builder setRetrySettings(RetrySettings retrySettings) {
+      Preconditions.checkNotNull(retrySettings, "retrySettings is required");
+      this.retrySettings = retrySettings;
+      return this;
+    }
+
+    public Builder setDatastoreOptions(DatastoreOptions datastoreOptions) {
+      Preconditions.checkNotNull(datastoreOptions, "datastoreOptions is required");
+      this.datastoreOptions = datastoreOptions;
+      return this;
+    }
+
+    public Builder setMetricsRecorder(MetricsRecorder metricsRecorder) {
+      Preconditions.checkNotNull(metricsRecorder, "metricsRecorder can not be null");
+      this.metricsRecorder = metricsRecorder;
+      return this;
+    }
+
+    public Builder setIsHttpTransport(boolean isHttpTransport) {
+      this.isHttpTransport = isHttpTransport;
+      return this;
+    }
+
+    public RetryAndTraceDatastoreRpcDecorator build() {
+      return new RetryAndTraceDatastoreRpcDecorator(this);
+    }
   }
 
   @Override
@@ -201,10 +258,8 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
-    attributes.put(
-        TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, datastoreOptions.getProjectId());
-    attributes.put(
-        TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, datastoreOptions.getDatabaseId());
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, datastoreOptions.getProjectId());
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, datastoreOptions.getDatabaseId());
     attributes.put(
         TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
         TelemetryConstants.getTransportName(datastoreOptions.getTransportOptions()));

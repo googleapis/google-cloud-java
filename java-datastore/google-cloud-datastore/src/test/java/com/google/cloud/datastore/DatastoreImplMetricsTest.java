@@ -509,8 +509,7 @@ public class DatastoreImplMetricsTest {
     EasyMock.replay(rpcMock);
 
     // Use get() which triggers lookup internally
-    datastore.get(
-        Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build());
+    datastore.get(Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build());
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
 
@@ -641,9 +640,7 @@ public class DatastoreImplMetricsTest {
         DatastoreException.class,
         () ->
             datastore.get(
-                Key.newBuilder(PROJECT_ID, "Kind", "name")
-                    .setDatabaseId(DATABASE_ID)
-                    .build()));
+                Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build()));
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
 
@@ -713,9 +710,7 @@ public class DatastoreImplMetricsTest {
     assertThat(point).isNotNull();
     assertThat(
             dataContainsStringAttribute(
-                point,
-                TelemetryConstants.ATTRIBUTES_KEY_STATUS,
-                StatusCode.Code.OK.toString()))
+                point, TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString()))
         .isTrue();
 
     Optional<MetricData> attemptLatency =

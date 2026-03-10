@@ -212,8 +212,7 @@ public class OpenTelemetryMetricsRecorderTest {
     assertThat(metric).isNotNull();
     assertThat(metric.getDescription()).isEqualTo("Number of RPC attempts");
 
-    LongPointData point =
-        metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
+    LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
     assertThat(point.getValue()).isEqualTo(1);
   }
@@ -234,7 +233,8 @@ public class OpenTelemetryMetricsRecorderTest {
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Total latency of an operation including retries");
+    assertThat(metric.getDescription())
+        .isEqualTo("Total latency of an operation including retries");
     assertThat(metric.getUnit()).isEqualTo("ms");
 
     HistogramPointData point =
@@ -263,8 +263,7 @@ public class OpenTelemetryMetricsRecorderTest {
     assertThat(metric).isNotNull();
     assertThat(metric.getDescription()).isEqualTo("Number of operations");
 
-    LongPointData point =
-        metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
+    LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
     assertThat(point.getValue()).isEqualTo(1);
   }

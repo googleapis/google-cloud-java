@@ -66,21 +66,16 @@ public class TelemetryConstants {
       SERVICE_NAME + "/client/transaction_attempt_count";
 
   /** Metric name for the total latency of an operation (one full RPC call including retries). */
-  public static final String METRIC_NAME_OPERATION_LATENCY =
-      SERVICE_NAME + "/operation_latency";
+  public static final String METRIC_NAME_OPERATION_LATENCY = SERVICE_NAME + "/operation_latency";
 
   /** Metric name for the latency of a single RPC attempt. */
-  public static final String METRIC_NAME_ATTEMPT_LATENCY =
-      SERVICE_NAME + "/attempt_latency";
+  public static final String METRIC_NAME_ATTEMPT_LATENCY = SERVICE_NAME + "/attempt_latency";
 
   /** Metric name for the count of operations. */
-  public static final String METRIC_NAME_OPERATION_COUNT =
-      SERVICE_NAME + "/operation_count";
+  public static final String METRIC_NAME_OPERATION_COUNT = SERVICE_NAME + "/operation_count";
 
   /** Metric name for the count of RPC attempts. */
-  public static final String METRIC_NAME_ATTEMPT_COUNT =
-      SERVICE_NAME + "/attempt_count";
-
+  public static final String METRIC_NAME_ATTEMPT_COUNT = SERVICE_NAME + "/attempt_count";
 
   // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
   // method name.
@@ -94,12 +89,13 @@ public class TelemetryConstants {
   public static final String METHOD_RESERVE_IDS = METHOD_SERVICE_NAME + ".ReserveIds";
   public static final String METHOD_ROLLBACK = METHOD_SERVICE_NAME + ".Rollback";
   public static final String METHOD_RUN_QUERY = METHOD_SERVICE_NAME + ".RunQuery";
-  public static final String METHOD_RUN_AGGREGATION_QUERY = METHOD_SERVICE_NAME + ".RunAggregationQuery";
+  public static final String METHOD_RUN_AGGREGATION_QUERY =
+      METHOD_SERVICE_NAME + ".RunAggregationQuery";
 
   // These metrics capture the specific transaction related
-  public static final String METHOD_TRANSACTION_COMMIT = METHOD_SERVICE_NAME + ".Transaction.Commit";
+  public static final String METHOD_TRANSACTION_COMMIT =
+      METHOD_SERVICE_NAME + ".Transaction.Commit";
   public static final String METHOD_TRANSACTION_RUN = METHOD_SERVICE_NAME + ".Transaction.Run";
-
 
   public enum Transport {
     GRPC("grpc"),
