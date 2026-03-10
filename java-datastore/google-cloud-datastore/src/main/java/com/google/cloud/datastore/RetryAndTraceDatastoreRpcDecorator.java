@@ -210,12 +210,9 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     Stopwatch stopwatch = isHttpTransport ? Stopwatch.createStarted() : null;
     String operationStatus = StatusCode.Code.OK.toString();
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
-      Callable<O> callable = block;
-      if (isHttpTransport) {
-        callable =
-            TelemetryUtils.attemptMetricsCallable(
-                block, metricsRecorder, datastoreOptions, isHttpTransport, methodName);
-      }
+      Callable<O> callable =
+          TelemetryUtils.attemptMetricsCallable(
+              block, metricsRecorder, datastoreOptions, isHttpTransport, methodName);
       return RetryHelper.runWithRetries(
           callable, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
     } catch (RetryHelperException e) {
