@@ -126,7 +126,9 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
-    assertNotNull(System.getenv(varName), "Environment variable " + varName + " is required to perform these tests.");
+    assertNotNull(
+        System.getenv(varName),
+        "Environment variable " + varName + " is required to perform these tests.");
     return value;
   }
 
@@ -2318,7 +2320,10 @@ public class ITBigQueryJDBCTest extends ITBase {
       int rowCount = 0;
       while (rsAll.next()) {
         rowCount++;
-        assertEquals(expectedCatalog, rsAll.getString("TABLE_CATALOG"), "TABLE_CATALOG should match the connection's project ID");
+        assertEquals(
+            expectedCatalog,
+            rsAll.getString("TABLE_CATALOG"),
+            "TABLE_CATALOG should match the connection's project ID");
         String schemaName = rsAll.getString("TABLE_SCHEM");
         assertNotNull(schemaName, "TABLE_SCHEM should not be null");
         if (DATASET.equals(schemaName)
@@ -2402,7 +2407,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertTrue(rsSchemaWildcard.next(), "Should find function with schema wildcard");
     assertEquals(testSchema, rsSchemaWildcard.getString("FUNCTION_SCHEM"));
     assertEquals("complex_scalar_sql_udf", rsSchemaWildcard.getString("FUNCTION_NAME"));
-    assertFalse(rsSchemaWildcard.next(), "Should only find one row for this schema wildcard and specific function");
+    assertFalse(
+        rsSchemaWildcard.next(),
+        "Should only find one row for this schema wildcard and specific function");
     rsSchemaWildcard.close();
 
     // Test 5: Non-existent function
@@ -3347,8 +3354,12 @@ public class ITBigQueryJDBCTest extends ITBase {
           foundCatalogs.add(catalogsRs.getString("TABLE_CAT"));
         }
       }
-      assertTrue(foundCatalogs.contains(PROJECT_ID), "getCatalogs() should contain the primary project ID");
-      assertTrue(foundCatalogs.contains(additionalProjectsValue), "getCatalogs() should contain the additional project ID");
+      assertTrue(
+          foundCatalogs.contains(PROJECT_ID),
+          "getCatalogs() should contain the primary project ID");
+      assertTrue(
+          foundCatalogs.contains(additionalProjectsValue),
+          "getCatalogs() should contain the additional project ID");
 
       // 2. Test getSchemas()
       Set<String> catalogsForSchemasFromAll = new HashSet<>();
@@ -3364,9 +3375,15 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         }
       }
-      assertTrue(catalogsForSchemasFromAll.contains(PROJECT_ID), "getSchemas() should list datasets from the primary project");
-      assertTrue(catalogsForSchemasFromAll.contains(additionalProjectsValue), "getSchemas() should list datasets from the additional project");
-      assertTrue(foundAdditionalDataset, "Known dataset from additional project not found in getSchemas()");
+      assertTrue(
+          catalogsForSchemasFromAll.contains(PROJECT_ID),
+          "getSchemas() should list datasets from the primary project");
+      assertTrue(
+          catalogsForSchemasFromAll.contains(additionalProjectsValue),
+          "getSchemas() should list datasets from the additional project");
+      assertTrue(
+          foundAdditionalDataset,
+          "Known dataset from additional project not found in getSchemas()");
 
     } catch (SQLException e) {
       System.err.println("SQL Error during AdditionalProjects test: " + e.getMessage());

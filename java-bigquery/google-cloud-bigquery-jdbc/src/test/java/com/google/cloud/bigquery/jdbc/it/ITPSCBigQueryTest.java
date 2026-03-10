@@ -49,7 +49,9 @@ public class ITPSCBigQueryTest {
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
-    assertNotNull(System.getenv(varName), "Environment variable " + varName + " is required to perform these tests.");
+    assertNotNull(
+        System.getenv(varName),
+        "Environment variable " + varName + " is required to perform these tests.");
     return value;
   }
 

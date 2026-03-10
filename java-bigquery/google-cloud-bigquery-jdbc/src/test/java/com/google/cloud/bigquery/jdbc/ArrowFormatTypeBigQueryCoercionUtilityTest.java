@@ -36,8 +36,8 @@ import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
-import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class ArrowFormatTypeBigQueryCoercionUtilityTest {
 

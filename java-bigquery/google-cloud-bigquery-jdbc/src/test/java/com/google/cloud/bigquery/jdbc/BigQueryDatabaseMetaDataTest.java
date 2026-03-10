@@ -1624,7 +1624,10 @@ public class BigQueryDatabaseMetaDataTest {
     Field tableTypeField = fields.get("TABLE_TYPE");
     assertNotNull(tableTypeField, "TABLE_TYPE field should exist");
     assertEquals("TABLE_TYPE", tableTypeField.getName(), "Field name should be TABLE_TYPE");
-    assertEquals(StandardSQLTypeName.STRING, tableTypeField.getType().getStandardType(), "Field type should be STRING");
+    assertEquals(
+        StandardSQLTypeName.STRING,
+        tableTypeField.getType().getStandardType(),
+        "Field type should be STRING");
     assertEquals(Field.Mode.REQUIRED, tableTypeField.getMode(), "Field mode should be REQUIRED");
   }
 
@@ -1635,7 +1638,10 @@ public class BigQueryDatabaseMetaDataTest {
 
     assertNotNull(rows, "Rows list should not be null");
     String[] expectedTableTypes = {"EXTERNAL", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW"};
-    assertEquals(expectedTableTypes.length, rows.size(), "Should have " + expectedTableTypes.length + " rows");
+    assertEquals(
+        expectedTableTypes.length,
+        rows.size(),
+        "Should have " + expectedTableTypes.length + " rows");
 
     Set<String> foundTypes = new HashSet<>();
     for (int i = 0; i < rows.size(); i++) {
@@ -1647,7 +1653,10 @@ public class BigQueryDatabaseMetaDataTest {
       foundTypes.add(tableType);
     }
 
-    assertEquals(new HashSet<>(Arrays.asList(expectedTableTypes)), foundTypes, "All expected table types should be present and correctly mapped");
+    assertEquals(
+        new HashSet<>(Arrays.asList(expectedTableTypes)),
+        foundTypes,
+        "All expected table types should be present and correctly mapped");
   }
 
   @Test
@@ -1667,11 +1676,13 @@ public class BigQueryDatabaseMetaDataTest {
       }
 
       String[] expectedTableTypes = {"EXTERNAL", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW"};
-      assertEquals(expectedTableTypes.length, actualTableTypes.size(), "Number of table types should match");
+      assertEquals(
+          expectedTableTypes.length, actualTableTypes.size(), "Number of table types should match");
 
       Set<String> expectedSet = new HashSet<>(Arrays.asList(expectedTableTypes));
       Set<String> actualSet = new HashSet<>(actualTableTypes);
-      assertEquals(expectedSet, actualSet, "All expected table types should be present in the ResultSet");
+      assertEquals(
+          expectedSet, actualSet, "All expected table types should be present in the ResultSet");
     }
   }
 
@@ -2868,7 +2879,10 @@ public class BigQueryDatabaseMetaDataTest {
     Field tableCatField = fields.get("TABLE_CAT");
     assertNotNull(tableCatField, "TABLE_CAT field should exist");
     assertEquals("TABLE_CAT", tableCatField.getName(), "Field name should be TABLE_CAT");
-    assertEquals(StandardSQLTypeName.STRING, tableCatField.getType().getStandardType(), "Field type should be STRING");
+    assertEquals(
+        StandardSQLTypeName.STRING,
+        tableCatField.getType().getStandardType(),
+        "Field type should be STRING");
     assertEquals(Field.Mode.REQUIRED, tableCatField.getMode(), "Field mode should be REQUIRED");
   }
 
@@ -2889,7 +2903,10 @@ public class BigQueryDatabaseMetaDataTest {
     FieldValueList row = rowsWithCatalog.get(0);
     assertEquals(1, row.size(), "Row should have 1 field value");
     assertFalse(row.get(0).isNull(), "FieldValue in row should not be SQL NULL");
-    assertEquals(testCatalogName.get(0), row.get(0).getStringValue(), "TABLE_CAT should match the provided catalog name");
+    assertEquals(
+        testCatalogName.get(0),
+        row.get(0).getStringValue(),
+        "TABLE_CAT should match the provided catalog name");
 
     // Test with empty catalog name list
     List<String> testEmptyCatalogList = new ArrayList<>();
@@ -2907,7 +2924,8 @@ public class BigQueryDatabaseMetaDataTest {
 
     ResultSet rs = spiedDbMetadata.getSchemas();
 
-    assertSame(mockResultSet, rs, "The returned ResultSet should be the one from the two-argument method");
+    assertSame(
+        mockResultSet, rs, "The returned ResultSet should be the one from the two-argument method");
     verify(spiedDbMetadata, times(1)).getSchemas(null, null);
   }
 

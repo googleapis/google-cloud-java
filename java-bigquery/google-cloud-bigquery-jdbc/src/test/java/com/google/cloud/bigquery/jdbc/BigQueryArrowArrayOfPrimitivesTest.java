@@ -62,20 +62,15 @@ import java.util.Collection;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.api.function.Executable;
-
 
 public class BigQueryArrowArrayOfPrimitivesTest {
 
-  @RegisterExtension
-  public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+  @RegisterExtension public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
-
-  
   public static Collection<Object[]> data() {
     timeZoneRule.enforce();
     LocalDateTime aTimeStamp = LocalDateTime.of(2023, MARCH, 30, 11, 14, 19, 820227000);
@@ -232,14 +227,24 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getArray(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void getArray(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     assertThat(array.getArray()).isEqualTo(expected);
   }
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getSlicedArray(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void getSlicedArray(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     int fromIndex = 1;
     int toIndexExclusive = 3;
@@ -252,7 +257,11 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getSlicedArrayWhenCountIsGreaterThanOriginalArrayLength(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+  public void getSlicedArrayWhenCountIsGreaterThanOriginalArrayLength(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode) {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     IllegalArgumentException illegalArgumentException =
         assertThrows(IllegalArgumentException.class, () -> array.getArray(2, 10));
@@ -262,7 +271,12 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getResultSet(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void getResultSet(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     ResultSet resultSet = array.getResultSet();
     Tuple<ArrayList<Object>, ArrayList<Object>> indexAndValues =
@@ -276,7 +290,12 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getSlicedResultSet(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void getSlicedResultSet(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     int fromIndex = 1;
     int toIndexExclusive = 3;
@@ -297,7 +316,11 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getSlicedResultSetWhenCountIsGreaterThanOriginalArrayLength(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+  public void getSlicedResultSetWhenCountIsGreaterThanOriginalArrayLength(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode) {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     IllegalArgumentException illegalArgumentException =
         assertThrows(IllegalArgumentException.class, () -> array.getResultSet(2, 10));
@@ -307,21 +330,36 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getBaseTypeName(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void getBaseTypeName(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     assertThat(array.getBaseTypeName()).isEqualTo(currentType.name());
   }
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getBaseType(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void getBaseType(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     assertThat(array.getBaseType()).isEqualTo(javaSqlTypeCode);
   }
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void free(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode)  throws SQLException {
+  public void free(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode)
+      throws SQLException {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     array.free();
 
@@ -335,7 +373,11 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getArrayWithCustomTypeMappingsIsNotSupported(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+  public void getArrayWithCustomTypeMappingsIsNotSupported(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode) {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     Exception exception1 =
         assertThrows(SQLFeatureNotSupportedException.class, () -> array.getArray(emptyMap()));
@@ -347,7 +389,11 @@ public class BigQueryArrowArrayOfPrimitivesTest {
 
   @ParameterizedTest(name = "{index}: primitive array of {0}")
   @MethodSource("data")
-  public void getResultSetWithCustomTypeMappingsIsNotSupported(StandardSQLTypeName currentType, Tuple<Field, JsonStringArrayList<?>> schemaAndValue, Object[] expected, int javaSqlTypeCode) {
+  public void getResultSetWithCustomTypeMappingsIsNotSupported(
+      StandardSQLTypeName currentType,
+      Tuple<Field, JsonStringArrayList<?>> schemaAndValue,
+      Object[] expected,
+      int javaSqlTypeCode) {
     Array array = new BigQueryArrowArray(schemaAndValue.x(), schemaAndValue.y());
     Exception exception1 =
         assertThrows(SQLFeatureNotSupportedException.class, () -> array.getResultSet(emptyMap()));

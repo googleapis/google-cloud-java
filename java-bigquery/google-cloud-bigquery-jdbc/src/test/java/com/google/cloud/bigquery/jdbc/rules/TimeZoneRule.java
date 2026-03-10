@@ -23,7 +23,8 @@ import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-public class TimeZoneRule implements BeforeAllCallback, AfterAllCallback, BeforeEachCallback, AfterEachCallback {
+public class TimeZoneRule
+    implements BeforeAllCallback, AfterAllCallback, BeforeEachCallback, AfterEachCallback {
 
   private final String timeZoneId;
   private TimeZone defaultTimeZone;
@@ -58,9 +59,7 @@ public class TimeZoneRule implements BeforeAllCallback, AfterAllCallback, Before
     }
   }
 
-  /**
-   * Public method to enforce the rule manually
-   */
+  /** Public method to enforce the rule manually */
   public void enforce() {
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
   }

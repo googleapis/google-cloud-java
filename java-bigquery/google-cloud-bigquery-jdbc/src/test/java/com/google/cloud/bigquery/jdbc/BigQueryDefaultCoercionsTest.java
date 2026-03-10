@@ -26,10 +26,9 @@ import java.util.Collection;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-
 public class BigQueryDefaultCoercionsTest {
 
-    // migrated
+  // migrated
   public static Collection<Object[]> data() {
     return Arrays.asList(
         new Object[][] {

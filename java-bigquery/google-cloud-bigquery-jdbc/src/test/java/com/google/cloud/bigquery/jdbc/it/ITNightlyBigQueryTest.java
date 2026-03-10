@@ -793,7 +793,9 @@ public class ITNightlyBigQueryTest {
     status = statement.execute(selectQuery);
     assertTrue(status);
     connection.rollback();
-    assertTrue(connection.isTransactionStarted(), "After rollback() in manual commit mode, a new transaction should be started.");
+    assertTrue(
+        connection.isTransactionStarted(),
+        "After rollback() in manual commit mode, a new transaction should be started.");
 
     // Separate query to check if transaction rollback worked
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);

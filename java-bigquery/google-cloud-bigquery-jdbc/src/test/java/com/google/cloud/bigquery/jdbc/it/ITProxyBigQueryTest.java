@@ -30,11 +30,12 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+
 public class ITProxyBigQueryTest {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static final String PROXY_HOST = "34.94.167.18";
@@ -206,7 +207,8 @@ public class ITProxyBigQueryTest {
 
     @ParameterizedTest
     @MethodSource("ProxyParameters")
-    public void testMissingProxyParameterThrowsIllegalArgument(String ProxyHost, String ProxyPort, String ProxyUid, String ProxyPwd) {
+    public void testMissingProxyParameterThrowsIllegalArgument(
+        String ProxyHost, String ProxyPort, String ProxyUid, String ProxyPwd) {
       String connection_uri =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "ProjectId="
