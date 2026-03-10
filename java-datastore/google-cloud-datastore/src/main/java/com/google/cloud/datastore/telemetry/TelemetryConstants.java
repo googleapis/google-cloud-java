@@ -29,7 +29,10 @@ import com.google.cloud.grpc.GrpcTransportOptions;
  */
 @InternalApi
 public class TelemetryConstants {
-  static final String SERVICE_NAME = "datastore.googleapis.com";
+
+  // TODO(lawrenceqiu): For now, use `custom.googleapis.com` until metrics can be written to
+  // datastore domain
+  public static final String SERVICE_NAME = "custom.googleapis.com";
   static final String METER_NAME = "com.google.cloud.datastore";
 
   public static final String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
@@ -65,23 +68,37 @@ public class TelemetryConstants {
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
       SERVICE_NAME + "/client/transaction_attempt_count";
 
-  /** Metric name for the total latency of an operation (one full RPC call including retries). */
+  /**
+   * Metric name for the total latency of an operation (one full RPC call including retries). Note:
+   * This does not have the /client prefix to match Gax's format.
+   */
   public static final String METRIC_NAME_OPERATION_LATENCY = SERVICE_NAME + "/operation_latency";
 
-  /** Metric name for the latency of a single RPC attempt. */
+  /**
+   * Metric name for the latency of a single RPC attempt. Note: This does not have the /client
+   * prefix to match Gax's format.
+   */
   public static final String METRIC_NAME_ATTEMPT_LATENCY = SERVICE_NAME + "/attempt_latency";
 
-  /** Metric name for the count of operations. */
+  /**
+   * Metric name for the count of operations. Note: This does not have the /client prefix to match
+   * Gax's format.
+   */
   public static final String METRIC_NAME_OPERATION_COUNT = SERVICE_NAME + "/operation_count";
 
-  /** Metric name for the count of RPC attempts. */
+  /**
+   * Metric name for the count of RPC attempts. Note: This does not have the /client prefix to match
+   * Gax's format.
+   */
   public static final String METRIC_NAME_ATTEMPT_COUNT = SERVICE_NAME + "/attempt_count";
 
   // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
   // method name.
   static final String METHOD_SERVICE_NAME = "Datastore";
 
-  //
+  // The follow method name formats are not in SnakeCase to match the method name convention in Gax.
+  // The format is {ServiceName}.{MethodName}. For these methods, include `Transaction`
+  // to denote that the metrics are related specifically to transactions.
   public static final String METHOD_ALLOCATE_IDS = METHOD_SERVICE_NAME + ".AllocateIds";
   public static final String METHOD_BEGIN_TRANSACTION = METHOD_SERVICE_NAME + ".BeginTransaction";
   public static final String METHOD_COMMIT = METHOD_SERVICE_NAME + ".Commit";

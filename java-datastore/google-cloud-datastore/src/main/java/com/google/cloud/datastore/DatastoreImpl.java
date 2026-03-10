@@ -122,7 +122,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 .setRetrySettings(retrySettings)
                 .setDatastoreOptions(options)
                 .setMetricsRecorder(metricsRecorder)
-                .setIsHttpTransport(isHttpTransport)
                 .build(),
             options);
   }
@@ -827,8 +826,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   /**
-   * Method to build a map of attributes to be used across both operation and attempt level
-   * metrics.
+   * Method to build a map of attributes to be used across both operation and attempt level metrics.
    *
    * @param methodName The name of the API method.
    * @param status The status of the operation or attempt.
@@ -847,8 +845,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   /**
-   * Method to record operation level metrics for HttpJson transport. This method should
-   * be called after the entire operation across all retry attempts has completed.
+   * Method to record operation level metrics for HttpJson transport. This method should be called
+   * after the entire operation across all retry attempts has completed.
    *
    * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
    * @param methodName The name of the API method.
