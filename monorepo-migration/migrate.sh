@@ -74,14 +74,26 @@ echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
     git clone "$SOURCE_REPO_URL" "$SOURCE_DIR"
+fi
+
+if [ "$SKIP_SOURCE_UPDATE" == "true" ]; then
+    echo "Skipping source update"
 else
-    echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
-    cd "$SOURCE_DIR"
+    pushd "$SOURCE_DIR"
     git fetch origin
     git checkout -f "main"
     git reset --hard origin/main
     git clean -fd
-    cd - > /dev/null
+
+    # 1.1 Modify history of the split repo to move files to the destination target directory
+    FILTER_WORKDIR="$(mktemp -d -t code-migration-XXXXXXXXXX)"
+    echo "Moving files to destination path: ${SOURCE_REPO_NAME}"
+    git filter-branch \
+      --force \
+      --prune-empty \
+      --tree-filter \
+        "git submodule update --init --recursive; find . -mindepth 2 -name .git -exec rm -rf {} +; git submodule update --init --recursive; find . -mindepth 2 -name .git -exec rm -rf {} +; shopt -s dotglob; mkdir -p ${FILTER_WORKDIR}/migrated-source; mv * ${FILTER_WORKDIR}/migrated-source; mkdir -p ${SOURCE_REPO_NAME}; { mv ${FILTER_WORKDIR}/migrated-source/* ${SOURCE_REPO_NAME} || echo 'No files to move' ; }"
+    popd
 fi
 
 # 1.5 Extract CODEOWNERS from source repository as default
@@ -170,11 +182,8 @@ git fetch "$SOURCE_REPO_NAME"
 
 # 5. Merge the histories using 'ours' strategy to keep monorepo content
 echo "Merging histories (strategy: ours)..."
-git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours --no-commit -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
-
-# 6. Read the tree from the source repo into the desired subdirectory
-echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
-git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
+# git merge --allow-unrelated-histories -s ours --no-ff "$SOURCE_REPO_NAME/main" --no-commit -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+git merge --allow-unrelated-histories --no-commit "$SOURCE_REPO_NAME/main" -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 
 # 6.5 Remove common files from the root of the migrated library
 echo "Removing common files from the root of $SOURCE_REPO_NAME/..."
@@ -585,7 +594,7 @@ fi
 
 # 8. Cleanup
 echo "Cleaning up temporary source clone..."
-rm -rf "$SOURCE_DIR"
+# rm -rf "$SOURCE_DIR"
 
 echo "Migration complete!"
 echo "The migrated codebase is available in: $TARGET_DIR"
