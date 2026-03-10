@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -101,9 +100,677 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
-/** For internal use only. */
-@Generated("by gapic-generator")
-@InternalApi
+/**
+ * Service Description: Service for creating, configuring, and deleting Cloud Bigtable Instances and
+ * Clusters. Provides access to the Instance and Cluster schemas only, not the tables' metadata or
+ * data stored in those tables.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+ *     BaseBigtableInstanceAdminClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
+ *   Instance response = baseBigtableInstanceAdminClient.getInstance(name);
+ * }
+ * }</pre>
+ *
+ * <p>Note: close() needs to be called on the BaseBigtableInstanceAdminClient object to clean up
+ * resources such as threads. In the example above, try-with-resources is used, which automatically
+ * calls close().
+ *
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateInstance</td>
+ *      <td><p> Create an instance within a project.
+ * <p>  Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createInstanceAsync(CreateInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createInstanceAsync(ProjectName parent, String instanceId, Instance instance, Map&lt;String, Cluster&gt; clusters)
+ *           <li><p> createInstanceAsync(String parent, String instanceId, Instance instance, Map&lt;String, Cluster&gt; clusters)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createInstanceOperationCallable()
+ *           <li><p> createInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetInstance</td>
+ *      <td><p> Gets information about an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getInstance(GetInstanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getInstance(InstanceName name)
+ *           <li><p> getInstance(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListInstances</td>
+ *      <td><p> Lists information about instances in a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listInstances(ListInstancesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listInstances(ProjectName parent)
+ *           <li><p> listInstances(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateInstance</td>
+ *      <td><p> Updates an instance within a project. This method updates only the display name and type for an Instance. To update other Instance properties, such as labels, use PartialUpdateInstance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateInstance(Instance request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PartialUpdateInstance</td>
+ *      <td><p> Partially updates an instance within a project. This method can modify all fields of an Instance and is the preferred way to update an Instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> partialUpdateInstanceAsync(PartialUpdateInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> partialUpdateInstanceAsync(Instance instance, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> partialUpdateInstanceOperationCallable()
+ *           <li><p> partialUpdateInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteInstance</td>
+ *      <td><p> Delete an instance from a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteInstance(DeleteInstanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteInstance(InstanceName name)
+ *           <li><p> deleteInstance(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCluster</td>
+ *      <td><p> Creates a cluster within an instance.
+ * <p>  Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createClusterAsync(CreateClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createClusterAsync(InstanceName parent, String clusterId, Cluster cluster)
+ *           <li><p> createClusterAsync(String parent, String clusterId, Cluster cluster)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createClusterOperationCallable()
+ *           <li><p> createClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCluster</td>
+ *      <td><p> Gets information about a cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCluster(GetClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCluster(ClusterName name)
+ *           <li><p> getCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListClusters</td>
+ *      <td><p> Lists information about clusters in an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listClusters(ListClustersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listClusters(InstanceName parent)
+ *           <li><p> listClusters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listClustersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCluster</td>
+ *      <td><p> Updates a cluster within an instance.
+ * <p>  Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config. In order to update it, you must use PartialUpdateCluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateClusterAsync(Cluster request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateClusterOperationCallable()
+ *           <li><p> updateClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PartialUpdateCluster</td>
+ *      <td><p> Partially updates a cluster within a project. This method is the preferred way to update a Cluster.
+ * <p>  To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the update_mask.
+ * <p>  To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set a serve_node count via the update_mask.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> partialUpdateClusterAsync(PartialUpdateClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> partialUpdateClusterAsync(Cluster cluster, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> partialUpdateClusterOperationCallable()
+ *           <li><p> partialUpdateClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCluster</td>
+ *      <td><p> Deletes a cluster from an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCluster(DeleteClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteCluster(ClusterName name)
+ *           <li><p> deleteCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAppProfile</td>
+ *      <td><p> Creates an app profile within an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAppProfile(CreateAppProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAppProfile(InstanceName parent, String appProfileId, AppProfile appProfile)
+ *           <li><p> createAppProfile(String parent, String appProfileId, AppProfile appProfile)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAppProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAppProfile</td>
+ *      <td><p> Gets information about an app profile.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAppProfile(GetAppProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAppProfile(AppProfileName name)
+ *           <li><p> getAppProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAppProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAppProfiles</td>
+ *      <td><p> Lists information about app profiles in an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAppProfiles(ListAppProfilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAppProfiles(InstanceName parent)
+ *           <li><p> listAppProfiles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAppProfilesPagedCallable()
+ *           <li><p> listAppProfilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAppProfile</td>
+ *      <td><p> Updates an app profile within an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAppProfileAsync(UpdateAppProfileRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAppProfileAsync(AppProfile appProfile, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAppProfileOperationCallable()
+ *           <li><p> updateAppProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAppProfile</td>
+ *      <td><p> Deletes an app profile from an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAppProfile(DeleteAppProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAppProfile(AppProfileName name)
+ *           <li><p> deleteAppProfile(String name)
+ *           <li><p> deleteAppProfile(AppProfileName name, boolean ignoreWarnings)
+ *           <li><p> deleteAppProfile(String name, boolean ignoreWarnings)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAppProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on an instance resource. Replaces any existing policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that the caller has on the specified instance resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHotTablets</td>
+ *      <td><p> Lists hot tablets in a cluster, within the time range provided. Hot tablets are ordered based on CPU usage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHotTablets(ListHotTabletsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHotTablets(ClusterName parent)
+ *           <li><p> listHotTablets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHotTabletsPagedCallable()
+ *           <li><p> listHotTabletsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateLogicalView</td>
+ *      <td><p> Creates a logical view within an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createLogicalViewAsync(CreateLogicalViewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createLogicalViewAsync(InstanceName parent, LogicalView logicalView, String logicalViewId)
+ *           <li><p> createLogicalViewAsync(String parent, LogicalView logicalView, String logicalViewId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createLogicalViewOperationCallable()
+ *           <li><p> createLogicalViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLogicalView</td>
+ *      <td><p> Gets information about a logical view.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLogicalView(GetLogicalViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getLogicalView(LogicalViewName name)
+ *           <li><p> getLogicalView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLogicalViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLogicalViews</td>
+ *      <td><p> Lists information about logical views in an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLogicalViews(ListLogicalViewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listLogicalViews(InstanceName parent)
+ *           <li><p> listLogicalViews(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLogicalViewsPagedCallable()
+ *           <li><p> listLogicalViewsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateLogicalView</td>
+ *      <td><p> Updates a logical view within an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateLogicalViewAsync(UpdateLogicalViewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateLogicalViewAsync(LogicalView logicalView, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateLogicalViewOperationCallable()
+ *           <li><p> updateLogicalViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteLogicalView</td>
+ *      <td><p> Deletes a logical view from an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteLogicalView(DeleteLogicalViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteLogicalView(LogicalViewName name)
+ *           <li><p> deleteLogicalView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteLogicalViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateMaterializedView</td>
+ *      <td><p> Creates a materialized view within an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createMaterializedViewAsync(CreateMaterializedViewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createMaterializedViewAsync(InstanceName parent, MaterializedView materializedView, String materializedViewId)
+ *           <li><p> createMaterializedViewAsync(String parent, MaterializedView materializedView, String materializedViewId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createMaterializedViewOperationCallable()
+ *           <li><p> createMaterializedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMaterializedView</td>
+ *      <td><p> Gets information about a materialized view.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMaterializedView(GetMaterializedViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMaterializedView(MaterializedViewName name)
+ *           <li><p> getMaterializedView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMaterializedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMaterializedViews</td>
+ *      <td><p> Lists information about materialized views in an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMaterializedViews(ListMaterializedViewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMaterializedViews(InstanceName parent)
+ *           <li><p> listMaterializedViews(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMaterializedViewsPagedCallable()
+ *           <li><p> listMaterializedViewsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateMaterializedView</td>
+ *      <td><p> Updates a materialized view within an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMaterializedViewAsync(UpdateMaterializedViewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateMaterializedViewAsync(MaterializedView materializedView, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMaterializedViewOperationCallable()
+ *           <li><p> updateMaterializedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteMaterializedView</td>
+ *      <td><p> Deletes a materialized view from an instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteMaterializedView(DeleteMaterializedViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteMaterializedView(MaterializedViewName name)
+ *           <li><p> deleteMaterializedView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteMaterializedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of
+ * BaseBigtableInstanceAdminSettings to create(). For example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BaseBigtableInstanceAdminSettings baseBigtableInstanceAdminSettings =
+ *     BaseBigtableInstanceAdminSettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+ *     BaseBigtableInstanceAdminClient.create(baseBigtableInstanceAdminSettings);
+ * }</pre>
+ *
+ * <p>To customize the endpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BaseBigtableInstanceAdminSettings baseBigtableInstanceAdminSettings =
+ *     BaseBigtableInstanceAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+ *     BaseBigtableInstanceAdminClient.create(baseBigtableInstanceAdminSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ */
+@Generated("by gapic-generator-java")
 public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   private final BaseBigtableInstanceAdminSettings settings;
   private final BigtableInstanceAdminStub stub;

@@ -28,20 +28,6 @@ data_internal_only = [
     "owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java",
 ]
 
-# Paths are relative to the destination, which is the current working directory
-admin_internal_only = [
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminCallableFactory.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClient.java',
-    'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient.java',
-]
-
 # TODO: try to move the GAPIC surface hiding to the gapic-generator:
 # https://github.com/googleapis/gapic-generator/issues/2742
 def make_internal_only(sources):
@@ -63,15 +49,6 @@ def make_internal_only(sources):
 for library in s.get_staging_dirs():
   # put any special-case replacements here
   make_internal_only(data_internal_only)
-
-  # Generate admin client
-  #todo: fix in synthtool removing comments with method
-  java.remove_method(f'owl-bot-staging/v2/grpc-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BigtableInstanceAdminGrpc.java', "public UnaryCallSettings<Instance, Instance> updateInstanceSettings()")
-  java.remove_method(f'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "/** Returns the builder for the settings used for calls to updateInstance. */")
-  java.remove_method(f'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings()")
-  java.remove_method(f'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "/** Returns the object with the settings used for calls to updateInstance. */")
-  java.remove_method(f'owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "public UnaryCallSettings<Instance, Instance> updateInstanceSettings()")
-  make_internal_only(admin_internal_only)
 
   # googleapis-gen copy of bigtable has some files that are not part of the existing library.
   # owlbot copies them over. If you don't want to keep them, uncomment the deletions below.

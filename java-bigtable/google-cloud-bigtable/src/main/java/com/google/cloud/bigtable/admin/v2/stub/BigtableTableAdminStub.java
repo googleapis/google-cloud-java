@@ -22,7 +22,6 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.Li
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -92,9 +91,12 @@ import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
-/** For internal use only. */
-@Generated("by gapic-generator")
-@InternalApi
+/**
+ * Base stub class for the BigtableTableAdmin service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
 public abstract class BigtableTableAdminStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {

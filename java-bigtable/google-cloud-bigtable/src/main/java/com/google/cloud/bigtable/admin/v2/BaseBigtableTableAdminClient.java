@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -109,9 +108,762 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
-/** For internal use only. */
-@Generated("by gapic-generator")
-@InternalApi
+/**
+ * Service Description: Service for creating, configuring, and deleting Cloud Bigtable tables.
+ *
+ * <p>Provides access to the table schemas only, not the data stored within the tables.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+ *     BaseBigtableTableAdminClient.create()) {
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+ *   String tableId = "tableId-1552905847";
+ *   Table table = Table.newBuilder().build();
+ *   Table response = baseBigtableTableAdminClient.createTable(parent, tableId, table);
+ * }
+ * }</pre>
+ *
+ * <p>Note: close() needs to be called on the BaseBigtableTableAdminClient object to clean up
+ * resources such as threads. In the example above, try-with-resources is used, which automatically
+ * calls close().
+ *
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTable</td>
+ *      <td><p> Creates a new table in the specified instance. The table can be created with a full set of initial column families, specified in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTable(CreateTableRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createTable(InstanceName parent, String tableId, Table table)
+ *           <li><p> createTable(String parent, String tableId, Table table)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTableFromSnapshot</td>
+ *      <td><p> Creates a new table from the specified snapshot. The target table must not exist. The snapshot and the table must be in the same instance.
+ * <p>  Note: This is a private alpha release of Cloud Bigtable snapshots. This feature is not currently available to most Cloud Bigtable customers. This feature might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTableFromSnapshotAsync(CreateTableFromSnapshotRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createTableFromSnapshotAsync(InstanceName parent, String tableId, SnapshotName sourceSnapshot)
+ *           <li><p> createTableFromSnapshotAsync(InstanceName parent, String tableId, String sourceSnapshot)
+ *           <li><p> createTableFromSnapshotAsync(String parent, String tableId, SnapshotName sourceSnapshot)
+ *           <li><p> createTableFromSnapshotAsync(String parent, String tableId, String sourceSnapshot)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTableFromSnapshotOperationCallable()
+ *           <li><p> createTableFromSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListTables</td>
+ *      <td><p> Lists all tables served from a specified instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTables(ListTablesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTables(InstanceName parent)
+ *           <li><p> listTables(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTablesPagedCallable()
+ *           <li><p> listTablesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTable</td>
+ *      <td><p> Gets metadata information about the specified table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTable(GetTableRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTable(TableName name)
+ *           <li><p> getTable(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTable</td>
+ *      <td><p> Updates a specified table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTableAsync(UpdateTableRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateTableAsync(Table table, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTableOperationCallable()
+ *           <li><p> updateTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTable</td>
+ *      <td><p> Permanently deletes a specified table and all of its data.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTable(DeleteTableRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTable(TableName name)
+ *           <li><p> deleteTable(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UndeleteTable</td>
+ *      <td><p> Restores a specified table which was accidentally deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> undeleteTableAsync(UndeleteTableRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> undeleteTableAsync(TableName name)
+ *           <li><p> undeleteTableAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> undeleteTableOperationCallable()
+ *           <li><p> undeleteTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAuthorizedView</td>
+ *      <td><p> Creates a new AuthorizedView in a table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAuthorizedViewAsync(CreateAuthorizedViewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAuthorizedViewAsync(TableName parent, AuthorizedView authorizedView, String authorizedViewId)
+ *           <li><p> createAuthorizedViewAsync(String parent, AuthorizedView authorizedView, String authorizedViewId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAuthorizedViewOperationCallable()
+ *           <li><p> createAuthorizedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAuthorizedViews</td>
+ *      <td><p> Lists all AuthorizedViews from a specific table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAuthorizedViews(ListAuthorizedViewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAuthorizedViews(TableName parent)
+ *           <li><p> listAuthorizedViews(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAuthorizedViewsPagedCallable()
+ *           <li><p> listAuthorizedViewsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAuthorizedView</td>
+ *      <td><p> Gets information from a specified AuthorizedView.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAuthorizedView(GetAuthorizedViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAuthorizedView(AuthorizedViewName name)
+ *           <li><p> getAuthorizedView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAuthorizedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAuthorizedView</td>
+ *      <td><p> Updates an AuthorizedView in a table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAuthorizedViewAsync(UpdateAuthorizedViewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAuthorizedViewAsync(AuthorizedView authorizedView, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAuthorizedViewOperationCallable()
+ *           <li><p> updateAuthorizedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAuthorizedView</td>
+ *      <td><p> Permanently deletes a specified AuthorizedView.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAuthorizedView(DeleteAuthorizedViewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAuthorizedView(AuthorizedViewName name)
+ *           <li><p> deleteAuthorizedView(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAuthorizedViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ModifyColumnFamilies</td>
+ *      <td><p> Performs a series of column family modifications on the specified table. Either all or none of the modifications will occur before this method returns, but data requests received prior to that point may see a table where only some modifications have taken effect.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> modifyColumnFamilies(ModifyColumnFamiliesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> modifyColumnFamilies(TableName name, List&lt;ModifyColumnFamiliesRequest.Modification&gt; modifications)
+ *           <li><p> modifyColumnFamilies(String name, List&lt;ModifyColumnFamiliesRequest.Modification&gt; modifications)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> modifyColumnFamiliesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DropRowRange</td>
+ *      <td><p> Permanently drop/delete a row range from a specified table. The request can specify whether to delete all rows in a table, or only those that match a particular prefix.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> dropRowRange(DropRowRangeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> dropRowRangeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateConsistencyToken</td>
+ *      <td><p> Generates a consistency token for a Table, which can be used in CheckConsistency to check whether mutations to the table that finished before this call started have been replicated. The tokens will be available for 90 days.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateConsistencyToken(GenerateConsistencyTokenRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateConsistencyToken(TableName name)
+ *           <li><p> generateConsistencyToken(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateConsistencyTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CheckConsistency</td>
+ *      <td><p> Checks replication consistency based on a consistency token, that is, if replication has caught up based on the conditions specified in the token and the check request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> checkConsistency(CheckConsistencyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> checkConsistency(TableName name, String consistencyToken)
+ *           <li><p> checkConsistency(String name, String consistencyToken)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> checkConsistencyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SnapshotTable</td>
+ *      <td><p> Creates a new snapshot in the specified cluster from the specified source table. The cluster and the table must be in the same instance.
+ * <p>  Note: This is a private alpha release of Cloud Bigtable snapshots. This feature is not currently available to most Cloud Bigtable customers. This feature might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> snapshotTableAsync(SnapshotTableRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> snapshotTableAsync(TableName name, ClusterName cluster, String snapshotId, String description)
+ *           <li><p> snapshotTableAsync(TableName name, String cluster, String snapshotId, String description)
+ *           <li><p> snapshotTableAsync(String name, ClusterName cluster, String snapshotId, String description)
+ *           <li><p> snapshotTableAsync(String name, String cluster, String snapshotId, String description)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> snapshotTableOperationCallable()
+ *           <li><p> snapshotTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSnapshot</td>
+ *      <td><p> Gets metadata information about the specified snapshot.
+ * <p>  Note: This is a private alpha release of Cloud Bigtable snapshots. This feature is not currently available to most Cloud Bigtable customers. This feature might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSnapshot(GetSnapshotRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSnapshot(SnapshotName name)
+ *           <li><p> getSnapshot(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSnapshots</td>
+ *      <td><p> Lists all snapshots associated with the specified cluster.
+ * <p>  Note: This is a private alpha release of Cloud Bigtable snapshots. This feature is not currently available to most Cloud Bigtable customers. This feature might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSnapshots(ListSnapshotsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSnapshots(ClusterName parent)
+ *           <li><p> listSnapshots(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSnapshotsPagedCallable()
+ *           <li><p> listSnapshotsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSnapshot</td>
+ *      <td><p> Permanently deletes the specified snapshot.
+ * <p>  Note: This is a private alpha release of Cloud Bigtable snapshots. This feature is not currently available to most Cloud Bigtable customers. This feature might be changed in backward-incompatible ways and is not recommended for production use. It is not subject to any SLA or deprecation policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSnapshot(DeleteSnapshotRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSnapshot(SnapshotName name)
+ *           <li><p> deleteSnapshot(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBackup</td>
+ *      <td><p> Starts creating a new Cloud Bigtable Backup.  The returned backup [long-running operation][google.longrunning.Operation] can be used to track creation of the backup. The [metadata][google.longrunning.Operation.metadata] field type is [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The [response][google.longrunning.Operation.response] field type is [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the creation and delete the backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBackupAsync(CreateBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createBackupAsync(ClusterName parent, String backupId, Backup backup)
+ *           <li><p> createBackupAsync(String parent, String backupId, Backup backup)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBackupOperationCallable()
+ *           <li><p> createBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackup</td>
+ *      <td><p> Gets metadata on a pending or completed Cloud Bigtable Backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackup(GetBackupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackup(BackupName name)
+ *           <li><p> getBackup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBackup</td>
+ *      <td><p> Updates a pending or completed Cloud Bigtable Backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBackup(UpdateBackupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateBackup(Backup backup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBackup</td>
+ *      <td><p> Deletes a pending or completed Cloud Bigtable backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBackup(DeleteBackupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteBackup(BackupName name)
+ *           <li><p> deleteBackup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackups</td>
+ *      <td><p> Lists Cloud Bigtable backups. Returns both completed and pending backups.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackups(ListBackupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackups(ClusterName parent)
+ *           <li><p> listBackups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupsPagedCallable()
+ *           <li><p> listBackupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestoreTable</td>
+ *      <td><p> Create a new table by restoring from a completed backup.  The returned table [long-running operation][google.longrunning.Operation] can be used to track the progress of the operation, and to cancel it.  The [metadata][google.longrunning.Operation.metadata] field type is [RestoreTableMetadata][google.bigtable.admin.v2.RestoreTableMetadata].  The [response][google.longrunning.Operation.response] type is [Table][google.bigtable.admin.v2.Table], if successful.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreTableAsync(RestoreTableRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreTableOperationCallable()
+ *           <li><p> restoreTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CopyBackup</td>
+ *      <td><p> Copy a Cloud Bigtable backup to a new backup in the destination cluster located in the destination instance and project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> copyBackupAsync(CopyBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> copyBackupAsync(ClusterName parent, String backupId, BackupName sourceBackup, Timestamp expireTime)
+ *           <li><p> copyBackupAsync(ClusterName parent, String backupId, String sourceBackup, Timestamp expireTime)
+ *           <li><p> copyBackupAsync(String parent, String backupId, BackupName sourceBackup, Timestamp expireTime)
+ *           <li><p> copyBackupAsync(String parent, String backupId, String sourceBackup, Timestamp expireTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> copyBackupOperationCallable()
+ *           <li><p> copyBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on a Bigtable resource. Replaces any existing policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that the caller has on the specified Bigtable resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSchemaBundle</td>
+ *      <td><p> Creates a new schema bundle in the specified table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSchemaBundleAsync(CreateSchemaBundleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSchemaBundleAsync(TableName parent, String schemaBundleId, SchemaBundle schemaBundle)
+ *           <li><p> createSchemaBundleAsync(String parent, String schemaBundleId, SchemaBundle schemaBundle)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSchemaBundleOperationCallable()
+ *           <li><p> createSchemaBundleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSchemaBundle</td>
+ *      <td><p> Updates a schema bundle in the specified table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSchemaBundleAsync(UpdateSchemaBundleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateSchemaBundleAsync(SchemaBundle schemaBundle, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSchemaBundleOperationCallable()
+ *           <li><p> updateSchemaBundleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSchemaBundle</td>
+ *      <td><p> Gets metadata information about the specified schema bundle.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSchemaBundle(GetSchemaBundleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSchemaBundle(SchemaBundleName name)
+ *           <li><p> getSchemaBundle(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSchemaBundleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSchemaBundles</td>
+ *      <td><p> Lists all schema bundles associated with the specified table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSchemaBundles(ListSchemaBundlesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSchemaBundles(TableName parent)
+ *           <li><p> listSchemaBundles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSchemaBundlesPagedCallable()
+ *           <li><p> listSchemaBundlesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSchemaBundle</td>
+ *      <td><p> Deletes a schema bundle in the specified table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSchemaBundle(DeleteSchemaBundleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSchemaBundle(SchemaBundleName name)
+ *           <li><p> deleteSchemaBundle(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSchemaBundleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of BaseBigtableTableAdminSettings
+ * to create(). For example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BaseBigtableTableAdminSettings baseBigtableTableAdminSettings =
+ *     BaseBigtableTableAdminSettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+ *     BaseBigtableTableAdminClient.create(baseBigtableTableAdminSettings);
+ * }</pre>
+ *
+ * <p>To customize the endpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BaseBigtableTableAdminSettings baseBigtableTableAdminSettings =
+ *     BaseBigtableTableAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+ *     BaseBigtableTableAdminClient.create(baseBigtableTableAdminSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ */
+@Generated("by gapic-generator-java")
 public class BaseBigtableTableAdminClient implements BackgroundResource {
   private final BaseBigtableTableAdminSettings settings;
   private final BigtableTableAdminStub stub;

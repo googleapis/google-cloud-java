@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigtable.admin.v2.stub;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
@@ -37,9 +36,12 @@ import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
-/** For internal use only. */
-@Generated("by gapic-generator")
-@InternalApi
+/**
+ * gRPC callable factory implementation for the BigtableInstanceAdmin service API.
+ *
+ * <p>This class is for advanced usage.
+ */
+@Generated("by gapic-generator-java")
 public class GrpcBigtableInstanceAdminCallableFactory implements GrpcStubCallableFactory {
 
   @Override
