@@ -826,6 +826,14 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
   }
 
+  /**
+   * Method to build a map of attributes to be used across both operation and attempt level
+   * metrics.
+   *
+   * @param methodName The name of the API method.
+   * @param status The status of the operation or attempt.
+   * @return The map of attributes.
+   */
   private Map<String, String> buildMetricAttributes(String methodName, String status) {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
@@ -838,6 +846,14 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return attributes;
   }
 
+  /**
+   * Method to record operation level metrics for HttpJson transport. This method should
+   * be called after the entire operation across all retry attempts has completed.
+   *
+   * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
+   * @param methodName The name of the API method.
+   * @param status The final status of the operation after all retries.
+   */
   private void recordOperationMetrics(
       Stopwatch operationStopwatch, String methodName, String status) {
     if (isHttpTransport) {
@@ -848,12 +864,22 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
   }
 
+  /**
+   * Wraps a callable with logic to record attempt-level metrics for HttpJson transport. Attempt
+   * metrics are recorded for each individual execution of the callable, regardless of whether it
+   * succeeds or fails.
+   *
+   * @param callable The original callable to execute.
+   * @param methodName The name of the API method.
+   * @param <T> The return type of the callable.
+   * @return A wrapped callable that includes attempt-level metrics recording.
+   */
   private <T> Callable<T> attemptMetricsCallable(Callable<T> callable, String methodName) {
     if (!isHttpTransport) {
       return callable;
     }
     return () -> {
-      Stopwatch sw = Stopwatch.createStarted();
+      Stopwatch stopwatch = Stopwatch.createStarted();
       String status = StatusCode.Code.OK.toString();
       try {
         return callable.call();
@@ -862,7 +888,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         throw e;
       } finally {
         Map<String, String> attributes = buildMetricAttributes(methodName, status);
-        metricsRecorder.recordAttemptLatency(sw.elapsed(TimeUnit.MILLISECONDS), attributes);
+        metricsRecorder.recordAttemptLatency(stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
         metricsRecorder.recordAttemptCount(1, attributes);
       }
     };
