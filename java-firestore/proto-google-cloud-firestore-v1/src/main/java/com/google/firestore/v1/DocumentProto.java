@@ -105,7 +105,7 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\004 \001(\0132\032.google.protobuf.Timestamp\032I\n"
           + "\013FieldsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022)\n"
-          + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\301\004\n"
+          + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\345\004\n"
           + "\005Value\0220\n\n"
           + "null_value\030\013 \001(\0162\032.google.protobuf.NullValueH\000\022\027\n\r"
           + "boolean_value\030\001 \001(\010H\000\022\027\n\r"
@@ -119,7 +119,8 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
           + "\017geo_point_value\030\010 \001(\0132\023.google.type.LatLngH\000\0226\n"
           + "\013array_value\030\t \001(\0132\037.google.firestore.v1.ArrayValueH\000\0222\n"
           + "\tmap_value\030\006 \001(\0132\035.google.firestore.v1.MapValueH\000\022\037\n"
-          + "\025field_reference_value\030\023 \001(\tH\000\0227\n"
+          + "\025field_reference_value\030\023 \001(\tH\000\022\"\n"
+          + "\030variable_reference_value\030\026 \001(\tH\000\0227\n"
           + "\016function_value\030\024 \001(\0132\035.google.firestore.v1.FunctionH\000\0227\n"
           + "\016pipeline_value\030\025 \001(\0132\035.google.firestore.v1.PipelineH\000B\014\n\n"
           + "value_type\"8\n\n"
@@ -133,8 +134,8 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
           + "\010Function\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022-\n"
           + "\004args\030\002 \003(\0132\032.google.firestore.v1.ValueB\003\340A\001\022@\n"
-          + "\007options\030\003 \003(\0132"
-          + "*.google.firestore.v1.Function.OptionsEntryB\003\340A\001\032J\n"
+          + "\007options\030\003 \003(\0132*.go"
+          + "ogle.firestore.v1.Function.OptionsEntryB\003\340A\001\032J\n"
           + "\014OptionsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022)\n"
           + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\244\002\n"
@@ -150,10 +151,9 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
           + "\003key\030\001 \001(\t\022)\n"
           + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001B\305\001\n"
           + "\027com.google.firestore.v1B\r"
-          + "DocumentProtoP\001Z;cloud.google.com/go/firestore/apiv1/firestorepb;firest"
-          + "orepb\242\002\004GCFS\252\002\031Google.Cloud.Firestore.V1"
-          + "\312\002\031Google\\Cloud\\Firestore\\V1\352\002\034Google::C"
-          + "loud::Firestore::V1b\006proto3"
+          + "DocumentProtoP\001Z;cloud.google.com/go/firestore/apiv1/firestorepb;firestorep"
+          + "b\242\002\004GCFS\252\002\031Google.Cloud.Firestore.V1\312\002\031G"
+          + "oogle\\Cloud\\Firestore\\V1\352\002\034Google::Cloud::Firestore::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -196,6 +196,7 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
               "ArrayValue",
               "MapValue",
               "FieldReferenceValue",
+              "VariableReferenceValue",
               "FunctionValue",
               "PipelineValue",
               "ValueType",

@@ -504,6 +504,57 @@ public interface ValueOrBuilder
    *
    *
    * <pre>
+   * Pointer to a variable defined elsewhere in a pipeline.
+   *
+   * Unlike `field_reference_value` which references a field within a
+   * document, this refers to a variable, defined in a separate namespace than
+   * the fields of a document.
+   * </pre>
+   *
+   * <code>string variable_reference_value = 22;</code>
+   *
+   * @return Whether the variableReferenceValue field is set.
+   */
+  boolean hasVariableReferenceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pointer to a variable defined elsewhere in a pipeline.
+   *
+   * Unlike `field_reference_value` which references a field within a
+   * document, this refers to a variable, defined in a separate namespace than
+   * the fields of a document.
+   * </pre>
+   *
+   * <code>string variable_reference_value = 22;</code>
+   *
+   * @return The variableReferenceValue.
+   */
+  java.lang.String getVariableReferenceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pointer to a variable defined elsewhere in a pipeline.
+   *
+   * Unlike `field_reference_value` which references a field within a
+   * document, this refers to a variable, defined in a separate namespace than
+   * the fields of a document.
+   * </pre>
+   *
+   * <code>string variable_reference_value = 22;</code>
+   *
+   * @return The bytes for variableReferenceValue.
+   */
+  com.google.protobuf.ByteString getVariableReferenceValueBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A value that represents an unevaluated expression.
    *
    * **Requires:**

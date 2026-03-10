@@ -88,6 +88,7 @@ public final class Value extends com.google.protobuf.GeneratedMessage
     ARRAY_VALUE(9),
     MAP_VALUE(6),
     FIELD_REFERENCE_VALUE(19),
+    VARIABLE_REFERENCE_VALUE(22),
     FUNCTION_VALUE(20),
     PIPELINE_VALUE(21),
     VALUETYPE_NOT_SET(0);
@@ -133,6 +134,8 @@ public final class Value extends com.google.protobuf.GeneratedMessage
           return MAP_VALUE;
         case 19:
           return FIELD_REFERENCE_VALUE;
+        case 22:
+          return VARIABLE_REFERENCE_VALUE;
         case 20:
           return FUNCTION_VALUE;
         case 21:
@@ -857,6 +860,91 @@ public final class Value extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int VARIABLE_REFERENCE_VALUE_FIELD_NUMBER = 22;
+
+  /**
+   *
+   *
+   * <pre>
+   * Pointer to a variable defined elsewhere in a pipeline.
+   *
+   * Unlike `field_reference_value` which references a field within a
+   * document, this refers to a variable, defined in a separate namespace than
+   * the fields of a document.
+   * </pre>
+   *
+   * <code>string variable_reference_value = 22;</code>
+   *
+   * @return Whether the variableReferenceValue field is set.
+   */
+  public boolean hasVariableReferenceValue() {
+    return valueTypeCase_ == 22;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Pointer to a variable defined elsewhere in a pipeline.
+   *
+   * Unlike `field_reference_value` which references a field within a
+   * document, this refers to a variable, defined in a separate namespace than
+   * the fields of a document.
+   * </pre>
+   *
+   * <code>string variable_reference_value = 22;</code>
+   *
+   * @return The variableReferenceValue.
+   */
+  public java.lang.String getVariableReferenceValue() {
+    java.lang.Object ref = "";
+    if (valueTypeCase_ == 22) {
+      ref = valueType_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (valueTypeCase_ == 22) {
+        valueType_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Pointer to a variable defined elsewhere in a pipeline.
+   *
+   * Unlike `field_reference_value` which references a field within a
+   * document, this refers to a variable, defined in a separate namespace than
+   * the fields of a document.
+   * </pre>
+   *
+   * <code>string variable_reference_value = 22;</code>
+   *
+   * @return The bytes for variableReferenceValue.
+   */
+  public com.google.protobuf.ByteString getVariableReferenceValueBytes() {
+    java.lang.Object ref = "";
+    if (valueTypeCase_ == 22) {
+      ref = valueType_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (valueTypeCase_ == 22) {
+        valueType_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FUNCTION_VALUE_FIELD_NUMBER = 20;
 
   /**
@@ -1045,6 +1133,9 @@ public final class Value extends com.google.protobuf.GeneratedMessage
     if (valueTypeCase_ == 21) {
       output.writeMessage(21, (com.google.firestore.v1.Pipeline) valueType_);
     }
+    if (valueTypeCase_ == 22) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 22, valueType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1118,6 +1209,9 @@ public final class Value extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, (com.google.firestore.v1.Pipeline) valueType_);
     }
+    if (valueTypeCase_ == 22) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(22, valueType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1171,6 +1265,9 @@ public final class Value extends com.google.protobuf.GeneratedMessage
         break;
       case 19:
         if (!getFieldReferenceValue().equals(other.getFieldReferenceValue())) return false;
+        break;
+      case 22:
+        if (!getVariableReferenceValue().equals(other.getVariableReferenceValue())) return false;
         break;
       case 20:
         if (!getFunctionValue().equals(other.getFunctionValue())) return false;
@@ -1243,6 +1340,10 @@ public final class Value extends com.google.protobuf.GeneratedMessage
       case 19:
         hash = (37 * hash) + FIELD_REFERENCE_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getFieldReferenceValue().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + VARIABLE_REFERENCE_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getVariableReferenceValue().hashCode();
         break;
       case 20:
         hash = (37 * hash) + FUNCTION_VALUE_FIELD_NUMBER;
@@ -1553,6 +1654,13 @@ public final class Value extends com.google.protobuf.GeneratedMessage
             onChanged();
             break;
           }
+        case VARIABLE_REFERENCE_VALUE:
+          {
+            valueTypeCase_ = 22;
+            valueType_ = other.valueType_;
+            onChanged();
+            break;
+          }
         case FUNCTION_VALUE:
           {
             mergeFunctionValue(other.getFunctionValue());
@@ -1688,6 +1796,13 @@ public final class Value extends com.google.protobuf.GeneratedMessage
                 valueTypeCase_ = 21;
                 break;
               } // case 170
+            case 178:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                valueTypeCase_ = 22;
+                valueType_ = s;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3547,6 +3662,169 @@ public final class Value extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       valueTypeCase_ = 19;
+      valueType_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pointer to a variable defined elsewhere in a pipeline.
+     *
+     * Unlike `field_reference_value` which references a field within a
+     * document, this refers to a variable, defined in a separate namespace than
+     * the fields of a document.
+     * </pre>
+     *
+     * <code>string variable_reference_value = 22;</code>
+     *
+     * @return Whether the variableReferenceValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasVariableReferenceValue() {
+      return valueTypeCase_ == 22;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pointer to a variable defined elsewhere in a pipeline.
+     *
+     * Unlike `field_reference_value` which references a field within a
+     * document, this refers to a variable, defined in a separate namespace than
+     * the fields of a document.
+     * </pre>
+     *
+     * <code>string variable_reference_value = 22;</code>
+     *
+     * @return The variableReferenceValue.
+     */
+    @java.lang.Override
+    public java.lang.String getVariableReferenceValue() {
+      java.lang.Object ref = "";
+      if (valueTypeCase_ == 22) {
+        ref = valueType_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (valueTypeCase_ == 22) {
+          valueType_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pointer to a variable defined elsewhere in a pipeline.
+     *
+     * Unlike `field_reference_value` which references a field within a
+     * document, this refers to a variable, defined in a separate namespace than
+     * the fields of a document.
+     * </pre>
+     *
+     * <code>string variable_reference_value = 22;</code>
+     *
+     * @return The bytes for variableReferenceValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getVariableReferenceValueBytes() {
+      java.lang.Object ref = "";
+      if (valueTypeCase_ == 22) {
+        ref = valueType_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (valueTypeCase_ == 22) {
+          valueType_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pointer to a variable defined elsewhere in a pipeline.
+     *
+     * Unlike `field_reference_value` which references a field within a
+     * document, this refers to a variable, defined in a separate namespace than
+     * the fields of a document.
+     * </pre>
+     *
+     * <code>string variable_reference_value = 22;</code>
+     *
+     * @param value The variableReferenceValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVariableReferenceValue(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      valueTypeCase_ = 22;
+      valueType_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pointer to a variable defined elsewhere in a pipeline.
+     *
+     * Unlike `field_reference_value` which references a field within a
+     * document, this refers to a variable, defined in a separate namespace than
+     * the fields of a document.
+     * </pre>
+     *
+     * <code>string variable_reference_value = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVariableReferenceValue() {
+      if (valueTypeCase_ == 22) {
+        valueTypeCase_ = 0;
+        valueType_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pointer to a variable defined elsewhere in a pipeline.
+     *
+     * Unlike `field_reference_value` which references a field within a
+     * document, this refers to a variable, defined in a separate namespace than
+     * the fields of a document.
+     * </pre>
+     *
+     * <code>string variable_reference_value = 22;</code>
+     *
+     * @param value The bytes for variableReferenceValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVariableReferenceValueBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      valueTypeCase_ = 22;
       valueType_ = value;
       onChanged();
       return this;
