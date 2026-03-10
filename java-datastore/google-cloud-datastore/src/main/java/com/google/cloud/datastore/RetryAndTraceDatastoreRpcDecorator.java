@@ -27,6 +27,7 @@ import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.MetricsRecorder;
 import com.google.cloud.datastore.telemetry.NoOpMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
+import com.google.cloud.datastore.telemetry.TelemetryUtils;
 import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.Preconditions;
@@ -48,10 +49,7 @@ import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 
 /**
  * An implementation of {@link DatastoreRpc} which acts as a Decorator and decorates the underlying
@@ -208,14 +206,15 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
   }
 
   <O> O invokeRpc(Callable<O> block, String startSpan, String methodName) {
-    com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(startSpan);
-    Stopwatch operationStopwatch =
-        isHttpTransport && methodName != null ? Stopwatch.createStarted() : null;
+    TraceUtil.Span span = otelTraceUtil.startSpan(startSpan);
+    Stopwatch stopwatch = isHttpTransport ? Stopwatch.createStarted() : null;
     String operationStatus = StatusCode.Code.OK.toString();
-    try (com.google.cloud.datastore.telemetry.TraceUtil.Scope ignored = span.makeCurrent()) {
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
       Callable<O> callable = block;
-      if (isHttpTransport && methodName != null) {
-        callable = withAttemptMetrics(block, methodName);
+      if (isHttpTransport) {
+        callable =
+            TelemetryUtils.attemptMetricsCallable(
+                block, metricsRecorder, datastoreOptions, isHttpTransport, methodName);
       }
       return RetryHelper.runWithRetries(
           callable, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
@@ -224,42 +223,14 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       span.end(e);
       throw DatastoreException.translateAndThrow(e);
     } finally {
-      if (isHttpTransport && methodName != null) {
-        Map<String, String> attrs = buildMetricAttributes(methodName, operationStatus);
-        metricsRecorder.recordOperationLatency(
-            operationStopwatch.elapsed(TimeUnit.MILLISECONDS), attrs);
-        metricsRecorder.recordOperationCount(1, attrs);
-      }
+      TelemetryUtils.recordOperationMetrics(
+          metricsRecorder,
+          datastoreOptions,
+          isHttpTransport,
+          stopwatch,
+          methodName,
+          operationStatus);
       span.end();
     }
-  }
-
-  private <T> Callable<T> withAttemptMetrics(Callable<T> callable, String methodName) {
-    return () -> {
-      Stopwatch sw = Stopwatch.createStarted();
-      String status = StatusCode.Code.OK.toString();
-      try {
-        return callable.call();
-      } catch (Exception e) {
-        status = DatastoreException.extractStatusCode(e);
-        throw e;
-      } finally {
-        Map<String, String> attrs = buildMetricAttributes(methodName, status);
-        metricsRecorder.recordAttemptLatency(sw.elapsed(TimeUnit.MILLISECONDS), attrs);
-        metricsRecorder.recordAttemptCount(1, attrs);
-      }
-    };
-  }
-
-  private Map<String, String> buildMetricAttributes(String methodName, String status) {
-    Map<String, String> attributes = new HashMap<>();
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, datastoreOptions.getProjectId());
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, datastoreOptions.getDatabaseId());
-    attributes.put(
-        TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
-        TelemetryConstants.getTransportName(datastoreOptions.getTransportOptions()));
-    return attributes;
   }
 }

@@ -50,6 +50,7 @@ import com.google.cloud.datastore.execution.AggregationQueryExecutor;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.MetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
+import com.google.cloud.datastore.telemetry.TelemetryUtils;
 import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.cloud.datastore.telemetry.TraceUtil.Scope;
 import com.google.cloud.http.HttpTransportOptions;
@@ -809,86 +810,26 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     Stopwatch operationStopwatch = isHttpTransport ? Stopwatch.createStarted() : null;
     String operationStatus = StatusCode.Code.OK.toString();
 
-    Callable<T> attemptMetricsCallable = attemptMetricsCallable(callable, methodName);
+    DatastoreOptions options = getOptions();
+    callable =
+        TelemetryUtils.attemptMetricsCallable(
+            callable, metricsRecorder, options, isHttpTransport, methodName);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
-          attemptMetricsCallable, retrySettings, exceptionHandler, getOptions().getClock());
+          callable, retrySettings, exceptionHandler, options.getClock());
     } catch (RetryHelperException e) {
       operationStatus = DatastoreException.extractStatusCode(e);
       span.end(e);
       throw DatastoreException.translateAndThrow(e);
     } finally {
-      if (isHttpTransport) {
-        recordOperationMetrics(operationStopwatch, methodName, operationStatus);
-      }
+      TelemetryUtils.recordOperationMetrics(
+          metricsRecorder,
+          options,
+          isHttpTransport,
+          operationStopwatch,
+          methodName,
+          operationStatus);
       span.end();
     }
-  }
-
-  /**
-   * Method to build a map of attributes to be used across both operation and attempt level metrics.
-   *
-   * @param methodName The name of the API method.
-   * @param status The status of the operation or attempt.
-   * @return The map of attributes.
-   */
-  private Map<String, String> buildMetricAttributes(String methodName, String status) {
-    Map<String, String> attributes = new HashMap<>();
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, getOptions().getProjectId());
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, getOptions().getDatabaseId());
-    attributes.put(
-        TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
-        TelemetryConstants.getTransportName(getOptions().getTransportOptions()));
-    return attributes;
-  }
-
-  /**
-   * Method to record operation level metrics for HttpJson transport. This method should be called
-   * after the entire operation across all retry attempts has completed.
-   *
-   * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
-   * @param methodName The name of the API method.
-   * @param status The final status of the operation after all retries.
-   */
-  private void recordOperationMetrics(
-      Stopwatch operationStopwatch, String methodName, String status) {
-    if (isHttpTransport) {
-      Map<String, String> attributes = buildMetricAttributes(methodName, status);
-      metricsRecorder.recordOperationLatency(
-          operationStopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
-      metricsRecorder.recordOperationCount(1, attributes);
-    }
-  }
-
-  /**
-   * Wraps a callable with logic to record attempt-level metrics for HttpJson transport. Attempt
-   * metrics are recorded for each individual execution of the callable, regardless of whether it
-   * succeeds or fails.
-   *
-   * @param callable The original callable to execute.
-   * @param methodName The name of the API method.
-   * @param <T> The return type of the callable.
-   * @return A wrapped callable that includes attempt-level metrics recording.
-   */
-  private <T> Callable<T> attemptMetricsCallable(Callable<T> callable, String methodName) {
-    if (!isHttpTransport) {
-      return callable;
-    }
-    return () -> {
-      Stopwatch stopwatch = Stopwatch.createStarted();
-      String status = StatusCode.Code.OK.toString();
-      try {
-        return callable.call();
-      } catch (Exception e) {
-        status = DatastoreException.extractStatusCode(e);
-        throw e;
-      } finally {
-        Map<String, String> attributes = buildMetricAttributes(methodName, status);
-        metricsRecorder.recordAttemptLatency(stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
-        metricsRecorder.recordAttemptCount(1, attributes);
-      }
-    };
   }
 }
