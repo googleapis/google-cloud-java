@@ -269,11 +269,19 @@ case ${JOB_TYPE} in
         exit 1
     fi
 
+    # The lint property is to activate the benchmark profile that declares the
+    # benchmark module in java-bigquery/benchmark. This module is not needed during
+    # other builds or releases.
     mvn -B -ntp \
       -T 1C \
       ${MODULE_FILTER} \
+      -Dlint \
       com.spotify.fmt:fmt-maven-plugin:check
-    mvn -B -ntp ${MODULE_FILTER} checkstyle:check@checkstyle
+    mvn -B -ntp \
+      -T 1C \
+      ${MODULE_FILTER} \
+      -Dlint \
+      checkstyle:check@checkstyle
 
     if [[ -n "${BUILD_SUBDIR}" ]]
     then

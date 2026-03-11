@@ -41,14 +41,14 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
 
     this.transactionLatency =
         meter
-            .histogramBuilder(TelemetryConstants.SERVICE_NAME + "/transaction_latency")
-            .setDescription("Total latency for successful transaction operations")
+            .histogramBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY)
+            .setDescription("Total latency of transaction operations")
             .setUnit("ms")
             .build();
 
     this.transactionAttemptCount =
         meter
-            .counterBuilder(TelemetryConstants.SERVICE_NAME + "/transaction_attempt_count")
+            .counterBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT)
             .setDescription("Number of attempts to commit a transaction")
             .build();
   }

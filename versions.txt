@@ -974,3 +974,5 @@ proto-google-cloud-ces-v1beta:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-ces-v1beta:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-vectorsearch-v1:0.7.0:0.8.0-SNAPSHOT
 grpc-google-cloud-vectorsearch-v1:0.7.0:0.8.0-SNAPSHOT
+google-cloud-bigquery:2.60.0:2.60.1-SNAPSHOT
+google-cloud-bigquery-jdbc:0.4.0:0.4.1-SNAPSHOT

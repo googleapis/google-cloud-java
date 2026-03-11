@@ -8,3 +8,4 @@
 # java-vertexai has maintainers
 /java-vertexai/   @googleapis/vertexai-team @googleapis/cloud-sdk-java-team
 /java-bigquerystorage/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
+/java-bigquery/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team

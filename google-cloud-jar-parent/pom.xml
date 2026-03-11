@@ -126,6 +126,12 @@
         <version>3.4</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-bigquery</artifactId>
+        <version>v2-rev20251012-2.0.0</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 

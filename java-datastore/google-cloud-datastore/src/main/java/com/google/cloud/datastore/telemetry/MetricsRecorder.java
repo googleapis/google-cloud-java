@@ -16,14 +16,22 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import java.util.Map;
 import javax.annotation.Nonnull;
 
-/** Interface to record specific metric operations. */
-interface MetricsRecorder {
+/**
+ * Interface to record specific metric operations.
+ *
+ * <p><b>Warning:</b> This is intended to be an internal API and is not intended for external use.
+ * This is public solely for implementation purposes and does not promise any backwards
+ * compatibility.
+ */
+@InternalExtensionOnly
+public interface MetricsRecorder {
   /** Records the total latency of a transaction in milliseconds. */
   void recordTransactionLatency(double latencyMs, Map<String, String> attributes);
 
