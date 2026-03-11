@@ -206,13 +206,6 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-opentelemetry</artifactId>
-      <!-- TODO: remove this after next release (2.72.0). This is necessary to workaround a late downgrade of otel in cloud-shared-deps -->
-      <exclusions>
-        <exclusion>
-          <groupId>io.opentelemetry</groupId>
-          <artifactId>opentelemetry-api</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -306,27 +299,11 @@
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
       <scope>test</scope>
-      <exclusions>
-        <!-- TODO: consider a different approach -->
-        <!-- exclude to resolve conflict with guava -->
-        <exclusion>
-          <groupId>org.checkerframework</groupId>
-          <artifactId>checker-qual</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.truth.extensions</groupId>
       <artifactId>truth-proto-extension</artifactId>
       <scope>test</scope>
-      <exclusions>
-        <!-- TODO: consider a different approach -->
-        <!-- exclude to resolve conflict with guava -->
-        <exclusion>
-          <groupId>org.checkerframework</groupId>
-          <artifactId>checker-qual</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
