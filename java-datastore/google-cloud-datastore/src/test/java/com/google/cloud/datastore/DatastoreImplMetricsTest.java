@@ -69,11 +69,11 @@ public class DatastoreImplMetricsTest {
   private final TelemetryConstants.Transport transport;
 
   /**
-   * We parameterize this test to run against both GRPC and HTTP transports.
-   * This ensures that Datastore-specific transaction and commit metrics are correctly
-   * recorded for both transports, while verifying that operation and attempt metrics 
-   * are only manually recorded for HTTP (since GAX handles them natively for gRPC).
-   * Parameterizing allows us to automatically test both transports for any new metrics added.
+   * We parameterize this test to run against both GRPC and HTTP transports. This ensures that
+   * Datastore-specific transaction and commit metrics are correctly recorded for both transports,
+   * while verifying that operation and attempt metrics are only manually recorded for HTTP (since
+   * GAX handles them natively for gRPC). Parameterizing allows us to automatically test both
+   * transports for any new metrics added.
    */
   @Parameters(name = "transport={0}")
   public static List<TelemetryConstants.Transport> data() {
@@ -98,7 +98,8 @@ public class DatastoreImplMetricsTest {
     // enforcing call order — needed for retry tests with unpredictable call counts.
     rpcMock = EasyMock.createMock(DatastoreRpc.class);
 
-    DatastoreOptions.Builder builder = DatastoreOptions.newBuilder()
+    DatastoreOptions.Builder builder =
+        DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
             .setCredentials(NoCredentials.getInstance())
