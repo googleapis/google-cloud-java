@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.65.0 (2026-03-11)
+
+### Features
+
+* Add a new field to support Dataplex integration configuration ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+
+
+
 ## 0.64.0 (2026-02-25)
 
 ### Dependencies

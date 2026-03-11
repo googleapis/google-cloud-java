@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.82.0 (2026-03-11)
+
+* No change
+
+
 ## 2.81.0 (2026-02-25)
 
 ### Dependencies

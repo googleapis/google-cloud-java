@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.72.0 (2026-03-11)
+
+### Features
+
+* add a new Waypoint source to accept a token that identifies a Navigation Point obtained from the `SearchDestinations` method of the Geocoding API ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+
+
+
 ## 1.71.0 (2026-02-25)
 
 ### Dependencies
