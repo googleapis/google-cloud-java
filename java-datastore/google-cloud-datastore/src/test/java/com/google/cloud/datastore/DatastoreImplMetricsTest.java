@@ -41,32 +41,51 @@ import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import org.easymock.EasyMock;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 /**
  * Tests for transaction metrics recording in {@link DatastoreImpl}. These tests verify that
  * transaction latency and per-attempt metrics are correctly recorded via the {@link
  * com.google.cloud.datastore.telemetry.MetricsRecorder}.
  */
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 public class DatastoreImplMetricsTest {
 
   private static final String PROJECT_ID = "test-project";
   private static final String DATABASE_ID = "test-database";
 
-  private static InMemoryMetricReader metricReader;
-  private static DatastoreRpc rpcMock;
-  private static Datastore datastore;
+  private InMemoryMetricReader metricReader;
+  private DatastoreRpc rpcMock;
+  private Datastore datastore;
+  private final TelemetryConstants.Transport transport;
 
-  @BeforeClass
-  public static void setUpClass() {
+  /**
+   * We parameterize this test to run against both GRPC and HTTP transports.
+   * This ensures that Datastore-specific transaction and commit metrics are correctly
+   * recorded for both transports, while verifying that operation and attempt metrics 
+   * are only manually recorded for HTTP (since GAX handles them natively for gRPC).
+   * Parameterizing allows us to automatically test both transports for any new metrics added.
+   */
+  @Parameters(name = "transport={0}")
+  public static List<TelemetryConstants.Transport> data() {
+    return Arrays.asList(TelemetryConstants.Transport.GRPC, TelemetryConstants.Transport.HTTP);
+  }
+
+  public DatastoreImplMetricsTest(TelemetryConstants.Transport transport) {
+    this.transport = transport;
+  }
+
+  @Before
+  public void setUp() {
     // Use delta temporality so each collectAllMetrics() call returns only new data and resets.
     metricReader = InMemoryMetricReader.createDelta();
     SdkMeterProvider meterProvider =
@@ -79,8 +98,7 @@ public class DatastoreImplMetricsTest {
     // enforcing call order — needed for retry tests with unpredictable call counts.
     rpcMock = EasyMock.createMock(DatastoreRpc.class);
 
-    DatastoreOptions datastoreOptions =
-        DatastoreOptions.newBuilder()
+    DatastoreOptions.Builder builder = DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
             .setCredentials(NoCredentials.getInstance())
@@ -90,20 +108,22 @@ public class DatastoreImplMetricsTest {
                 DatastoreOpenTelemetryOptions.newBuilder()
                     .setMetricsEnabled(true)
                     .setOpenTelemetry(openTelemetry)
-                    .build())
-            .build();
+                    .build());
+
+    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
+      builder.setTransportOptions(com.google.cloud.grpc.GrpcTransportOptions.newBuilder().build());
+    } else {
+      builder.setTransportOptions(com.google.cloud.http.HttpTransportOptions.newBuilder().build());
+    }
+
+    DatastoreOptions datastoreOptions = builder.build();
 
     EasyMock.expect(rpcFactoryMock.create(datastoreOptions)).andReturn(rpcMock);
     EasyMock.replay(rpcFactoryMock);
     datastore = datastoreOptions.getService();
     EasyMock.verify(rpcFactoryMock);
-  }
 
-  @Before
-  public void setUp() {
-    // Drain any metrics accumulated during @BeforeClass or previous tests.
-    metricReader.collectAllMetrics();
-    EasyMock.reset(rpcMock);
+    metricReader.collectAllMetrics(); // drain initialization
   }
 
   @Test
@@ -512,6 +532,19 @@ public class DatastoreImplMetricsTest {
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
 
+    // Gax already records operation and attempt metrics natively for the gRPC transport.
+    // DatastoreImpl explicitly avoids recording them here to prevent double-counting.
+    // Since this unit test bypasses the GAX networking layer by mocking DatastoreRpc,
+    // we assert that no local duplicate metrics are emitted by DatastoreImpl for gRPC,
+    // and skip the rest of the assertions.
+    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
+      Optional<MetricData> operationLatency =
+          findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+      assertThat(operationLatency.isPresent()).isFalse();
+      EasyMock.verify(rpcMock);
+      return;
+    }
+
     // Verify operation latency
     Optional<MetricData> operationLatency =
         findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
@@ -596,6 +629,19 @@ public class DatastoreImplMetricsTest {
                 Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build()));
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
+
+    // Gax already records operation and attempt metrics natively for the gRPC transport.
+    // DatastoreImpl explicitly avoids recording them here to prevent double-counting.
+    // Since this unit test bypasses the GAX networking layer by mocking DatastoreRpc,
+    // we assert that no local duplicate metrics are emitted by DatastoreImpl for gRPC,
+    // and skip the rest of the assertions.
+    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
+      Optional<MetricData> operationLatency =
+          findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+      assertThat(operationLatency.isPresent()).isFalse();
+      EasyMock.verify(rpcMock);
+      return;
+    }
 
     // Verify operation latency with UNAVAILABLE status
     Optional<MetricData> operationLatency =
