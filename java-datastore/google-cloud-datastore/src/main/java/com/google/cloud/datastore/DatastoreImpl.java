@@ -811,12 +811,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     String operationStatus = StatusCode.Code.OK.toString();
 
     DatastoreOptions options = getOptions();
-    callable =
+    Callable<T> attemptCallable =
         TelemetryUtils.attemptMetricsCallable(
             callable, metricsRecorder, options, isHttpTransport, methodName);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
-          callable, retrySettings, exceptionHandler, options.getClock());
+          attemptCallable, retrySettings, exceptionHandler, options.getClock());
     } catch (RetryHelperException e) {
       operationStatus = DatastoreException.extractStatusCode(e);
       span.end(e);
