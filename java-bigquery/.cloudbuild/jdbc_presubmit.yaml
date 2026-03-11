@@ -27,9 +27,7 @@ steps:
   id: "IT Tests"
   timeout: 2000s
   entrypoint: 'bash'
-  args: ['.kokoro/build.sh']
-  env:
-  - 'JOB_TYPE=${_JOB_TYPE}'
+  args: ['java-bigquery/.cloudbuild/scripts/jdbc-presubmit.sh']
   secretEnv: ['SA_EMAIL', 'KMS_RESOURCE_PATH', 'SA_SECRET']
 availableSecrets:
   secretManager:
