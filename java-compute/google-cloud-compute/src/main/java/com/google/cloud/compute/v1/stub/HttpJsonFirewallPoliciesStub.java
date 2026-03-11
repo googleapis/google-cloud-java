@@ -576,6 +576,12 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListAssociationsFirewallPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasIncludeInheritedPolicies()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "includeInheritedPolicies",
+                                  request.getIncludeInheritedPolicies());
+                            }
                             if (request.hasTargetResource()) {
                               serializer.putQueryParam(
                                   fields, "targetResource", request.getTargetResource());

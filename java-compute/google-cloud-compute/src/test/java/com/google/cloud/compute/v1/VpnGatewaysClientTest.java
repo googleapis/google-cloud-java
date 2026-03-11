@@ -221,6 +221,7 @@ public class VpnGatewaysClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setParams(VpnGatewayParams.newBuilder().build())
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStackType("stackType1727939042")

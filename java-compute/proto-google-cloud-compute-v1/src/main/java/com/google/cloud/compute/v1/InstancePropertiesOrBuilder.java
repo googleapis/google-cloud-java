@@ -779,7 +779,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -794,7 +794,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -813,7 +813,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -828,7 +828,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -847,7 +847,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -1119,4 +1119,29 @@ public interface InstancePropertiesOrBuilder
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    */
   com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  boolean hasWorkloadIdentityConfig();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  com.google.cloud.compute.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   */
+  com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder getWorkloadIdentityConfigOrBuilder();
 }

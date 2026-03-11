@@ -157,6 +157,34 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
+   * Optional. If true, DNS resolution will be enabled over this interface. Only valid
+   * with network_attachment.
+   * </pre>
+   *
+   * <code>optional bool enable_vpc_scoped_dns = 283425868;</code>
+   *
+   * @return Whether the enableVpcScopedDns field is set.
+   */
+  boolean hasEnableVpcScopedDns();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, DNS resolution will be enabled over this interface. Only valid
+   * with network_attachment.
+   * </pre>
+   *
+   * <code>optional bool enable_vpc_scoped_dns = 283425868;</code>
+   *
+   * @return The enableVpcScopedDns.
+   */
+  boolean getEnableVpcScopedDns();
+
+  /**
+   *
+   *
+   * <pre>
    * Fingerprint hash of contents stored in this network interface.
    * This field will be ignored when inserting an Instance or
    * adding a NetworkInterface. An up-to-date

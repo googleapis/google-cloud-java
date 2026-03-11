@@ -321,6 +321,103 @@ public final class AgentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.GetSecuritySettingsRequest,
+          com.google.cloud.ces.v1beta.SecuritySettings>
+      getGetSecuritySettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSecuritySettings",
+      requestType = com.google.cloud.ces.v1beta.GetSecuritySettingsRequest.class,
+      responseType = com.google.cloud.ces.v1beta.SecuritySettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.GetSecuritySettingsRequest,
+          com.google.cloud.ces.v1beta.SecuritySettings>
+      getGetSecuritySettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.GetSecuritySettingsRequest,
+            com.google.cloud.ces.v1beta.SecuritySettings>
+        getGetSecuritySettingsMethod;
+    if ((getGetSecuritySettingsMethod = AgentServiceGrpc.getGetSecuritySettingsMethod) == null) {
+      synchronized (AgentServiceGrpc.class) {
+        if ((getGetSecuritySettingsMethod = AgentServiceGrpc.getGetSecuritySettingsMethod)
+            == null) {
+          AgentServiceGrpc.getGetSecuritySettingsMethod =
+              getGetSecuritySettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.GetSecuritySettingsRequest,
+                          com.google.cloud.ces.v1beta.SecuritySettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSecuritySettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.GetSecuritySettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.SecuritySettings.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentServiceMethodDescriptorSupplier("GetSecuritySettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetSecuritySettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest,
+          com.google.cloud.ces.v1beta.SecuritySettings>
+      getUpdateSecuritySettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSecuritySettings",
+      requestType = com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest.class,
+      responseType = com.google.cloud.ces.v1beta.SecuritySettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest,
+          com.google.cloud.ces.v1beta.SecuritySettings>
+      getUpdateSecuritySettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest,
+            com.google.cloud.ces.v1beta.SecuritySettings>
+        getUpdateSecuritySettingsMethod;
+    if ((getUpdateSecuritySettingsMethod = AgentServiceGrpc.getUpdateSecuritySettingsMethod)
+        == null) {
+      synchronized (AgentServiceGrpc.class) {
+        if ((getUpdateSecuritySettingsMethod = AgentServiceGrpc.getUpdateSecuritySettingsMethod)
+            == null) {
+          AgentServiceGrpc.getUpdateSecuritySettingsMethod =
+              getUpdateSecuritySettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest,
+                          com.google.cloud.ces.v1beta.SecuritySettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSecuritySettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.SecuritySettings.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentServiceMethodDescriptorSupplier("UpdateSecuritySettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSecuritySettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.ces.v1beta.ListAgentsRequest,
           com.google.cloud.ces.v1beta.ListAgentsResponse>
       getListAgentsMethod;
@@ -2263,6 +2360,36 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Retrieves the security settings for the project and location.
+     * </pre>
+     */
+    default void getSecuritySettings(
+        com.google.cloud.ces.v1beta.GetSecuritySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.SecuritySettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSecuritySettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the security settings for the project and location.
+     * </pre>
+     */
+    default void updateSecuritySettings(
+        com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.SecuritySettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSecuritySettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists agents in the given app.
      * </pre>
      */
@@ -2969,6 +3096,40 @@ public final class AgentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportAppMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the security settings for the project and location.
+     * </pre>
+     */
+    public void getSecuritySettings(
+        com.google.cloud.ces.v1beta.GetSecuritySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.SecuritySettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSecuritySettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the security settings for the project and location.
+     * </pre>
+     */
+    public void updateSecuritySettings(
+        com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.SecuritySettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSecuritySettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -3736,6 +3897,34 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Retrieves the security settings for the project and location.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.SecuritySettings getSecuritySettings(
+        com.google.cloud.ces.v1beta.GetSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the security settings for the project and location.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.SecuritySettings updateSecuritySettings(
+        com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists agents in the given app.
      * </pre>
      */
@@ -4392,6 +4581,32 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Retrieves the security settings for the project and location.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.SecuritySettings getSecuritySettings(
+        com.google.cloud.ces.v1beta.GetSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the security settings for the project and location.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.SecuritySettings updateSecuritySettings(
+        com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists agents in the given app.
      * </pre>
      */
@@ -5040,6 +5255,34 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Retrieves the security settings for the project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.ces.v1beta.SecuritySettings>
+        getSecuritySettings(com.google.cloud.ces.v1beta.GetSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSecuritySettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the security settings for the project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.ces.v1beta.SecuritySettings>
+        updateSecuritySettings(com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSecuritySettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists agents in the given app.
      * </pre>
      */
@@ -5595,47 +5838,49 @@ public final class AgentServiceGrpc {
   private static final int METHODID_DELETE_APP = 4;
   private static final int METHODID_EXPORT_APP = 5;
   private static final int METHODID_IMPORT_APP = 6;
-  private static final int METHODID_LIST_AGENTS = 7;
-  private static final int METHODID_GET_AGENT = 8;
-  private static final int METHODID_CREATE_AGENT = 9;
-  private static final int METHODID_UPDATE_AGENT = 10;
-  private static final int METHODID_DELETE_AGENT = 11;
-  private static final int METHODID_LIST_EXAMPLES = 12;
-  private static final int METHODID_GET_EXAMPLE = 13;
-  private static final int METHODID_CREATE_EXAMPLE = 14;
-  private static final int METHODID_UPDATE_EXAMPLE = 15;
-  private static final int METHODID_DELETE_EXAMPLE = 16;
-  private static final int METHODID_LIST_TOOLS = 17;
-  private static final int METHODID_GET_TOOL = 18;
-  private static final int METHODID_LIST_CONVERSATIONS = 19;
-  private static final int METHODID_GET_CONVERSATION = 20;
-  private static final int METHODID_DELETE_CONVERSATION = 21;
-  private static final int METHODID_BATCH_DELETE_CONVERSATIONS = 22;
-  private static final int METHODID_CREATE_TOOL = 23;
-  private static final int METHODID_UPDATE_TOOL = 24;
-  private static final int METHODID_DELETE_TOOL = 25;
-  private static final int METHODID_LIST_GUARDRAILS = 26;
-  private static final int METHODID_GET_GUARDRAIL = 27;
-  private static final int METHODID_CREATE_GUARDRAIL = 28;
-  private static final int METHODID_UPDATE_GUARDRAIL = 29;
-  private static final int METHODID_DELETE_GUARDRAIL = 30;
-  private static final int METHODID_LIST_DEPLOYMENTS = 31;
-  private static final int METHODID_GET_DEPLOYMENT = 32;
-  private static final int METHODID_CREATE_DEPLOYMENT = 33;
-  private static final int METHODID_UPDATE_DEPLOYMENT = 34;
-  private static final int METHODID_DELETE_DEPLOYMENT = 35;
-  private static final int METHODID_LIST_TOOLSETS = 36;
-  private static final int METHODID_GET_TOOLSET = 37;
-  private static final int METHODID_CREATE_TOOLSET = 38;
-  private static final int METHODID_UPDATE_TOOLSET = 39;
-  private static final int METHODID_DELETE_TOOLSET = 40;
-  private static final int METHODID_LIST_APP_VERSIONS = 41;
-  private static final int METHODID_GET_APP_VERSION = 42;
-  private static final int METHODID_CREATE_APP_VERSION = 43;
-  private static final int METHODID_DELETE_APP_VERSION = 44;
-  private static final int METHODID_RESTORE_APP_VERSION = 45;
-  private static final int METHODID_LIST_CHANGELOGS = 46;
-  private static final int METHODID_GET_CHANGELOG = 47;
+  private static final int METHODID_GET_SECURITY_SETTINGS = 7;
+  private static final int METHODID_UPDATE_SECURITY_SETTINGS = 8;
+  private static final int METHODID_LIST_AGENTS = 9;
+  private static final int METHODID_GET_AGENT = 10;
+  private static final int METHODID_CREATE_AGENT = 11;
+  private static final int METHODID_UPDATE_AGENT = 12;
+  private static final int METHODID_DELETE_AGENT = 13;
+  private static final int METHODID_LIST_EXAMPLES = 14;
+  private static final int METHODID_GET_EXAMPLE = 15;
+  private static final int METHODID_CREATE_EXAMPLE = 16;
+  private static final int METHODID_UPDATE_EXAMPLE = 17;
+  private static final int METHODID_DELETE_EXAMPLE = 18;
+  private static final int METHODID_LIST_TOOLS = 19;
+  private static final int METHODID_GET_TOOL = 20;
+  private static final int METHODID_LIST_CONVERSATIONS = 21;
+  private static final int METHODID_GET_CONVERSATION = 22;
+  private static final int METHODID_DELETE_CONVERSATION = 23;
+  private static final int METHODID_BATCH_DELETE_CONVERSATIONS = 24;
+  private static final int METHODID_CREATE_TOOL = 25;
+  private static final int METHODID_UPDATE_TOOL = 26;
+  private static final int METHODID_DELETE_TOOL = 27;
+  private static final int METHODID_LIST_GUARDRAILS = 28;
+  private static final int METHODID_GET_GUARDRAIL = 29;
+  private static final int METHODID_CREATE_GUARDRAIL = 30;
+  private static final int METHODID_UPDATE_GUARDRAIL = 31;
+  private static final int METHODID_DELETE_GUARDRAIL = 32;
+  private static final int METHODID_LIST_DEPLOYMENTS = 33;
+  private static final int METHODID_GET_DEPLOYMENT = 34;
+  private static final int METHODID_CREATE_DEPLOYMENT = 35;
+  private static final int METHODID_UPDATE_DEPLOYMENT = 36;
+  private static final int METHODID_DELETE_DEPLOYMENT = 37;
+  private static final int METHODID_LIST_TOOLSETS = 38;
+  private static final int METHODID_GET_TOOLSET = 39;
+  private static final int METHODID_CREATE_TOOLSET = 40;
+  private static final int METHODID_UPDATE_TOOLSET = 41;
+  private static final int METHODID_DELETE_TOOLSET = 42;
+  private static final int METHODID_LIST_APP_VERSIONS = 43;
+  private static final int METHODID_GET_APP_VERSION = 44;
+  private static final int METHODID_CREATE_APP_VERSION = 45;
+  private static final int METHODID_DELETE_APP_VERSION = 46;
+  private static final int METHODID_RESTORE_APP_VERSION = 47;
+  private static final int METHODID_LIST_CHANGELOGS = 48;
+  private static final int METHODID_GET_CHANGELOG = 49;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5689,6 +5934,18 @@ public final class AgentServiceGrpc {
           serviceImpl.importApp(
               (com.google.cloud.ces.v1beta.ImportAppRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_SECURITY_SETTINGS:
+          serviceImpl.getSecuritySettings(
+              (com.google.cloud.ces.v1beta.GetSecuritySettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.SecuritySettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SECURITY_SETTINGS:
+          serviceImpl.updateSecuritySettings(
+              (com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.SecuritySettings>)
+                  responseObserver);
           break;
         case METHODID_LIST_AGENTS:
           serviceImpl.listAgents(
@@ -5974,6 +6231,20 @@ public final class AgentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.ces.v1beta.ImportAppRequest, com.google.longrunning.Operation>(
                     service, METHODID_IMPORT_APP)))
+        .addMethod(
+            getGetSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.GetSecuritySettingsRequest,
+                    com.google.cloud.ces.v1beta.SecuritySettings>(
+                    service, METHODID_GET_SECURITY_SETTINGS)))
+        .addMethod(
+            getUpdateSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest,
+                    com.google.cloud.ces.v1beta.SecuritySettings>(
+                    service, METHODID_UPDATE_SECURITY_SETTINGS)))
         .addMethod(
             getListAgentsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -6286,6 +6557,8 @@ public final class AgentServiceGrpc {
                       .addMethod(getDeleteAppMethod())
                       .addMethod(getExportAppMethod())
                       .addMethod(getImportAppMethod())
+                      .addMethod(getGetSecuritySettingsMethod())
+                      .addMethod(getUpdateSecuritySettingsMethod())
                       .addMethod(getListAgentsMethod())
                       .addMethod(getGetAgentMethod())
                       .addMethod(getCreateAgentMethod())

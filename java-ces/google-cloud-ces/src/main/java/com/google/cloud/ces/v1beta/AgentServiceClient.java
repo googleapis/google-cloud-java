@@ -213,6 +213,43 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetSecuritySettings</td>
+ *      <td><p> Retrieves the security settings for the project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSecuritySettings(GetSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSecuritySettings(SecuritySettingsName name)
+ *           <li><p> getSecuritySettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSecuritySettings</td>
+ *      <td><p> Updates the security settings for the project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSecuritySettings(UpdateSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSecuritySettings(SecuritySettings securitySettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListAgents</td>
  *      <td><p> Lists agents in the given app.</td>
  *      <td>
@@ -2231,6 +2268,215 @@ public class AgentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportAppRequest, Operation> importAppCallable() {
     return stub.importAppCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   SecuritySettingsName name = SecuritySettingsName.of("[PROJECT]", "[LOCATION]");
+   *   SecuritySettings response = agentServiceClient.getSecuritySettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the security settings to retrieve. Format:
+   *     `projects/{project}/locations/{location}/securitySettings`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecuritySettings getSecuritySettings(SecuritySettingsName name) {
+    GetSecuritySettingsRequest request =
+        GetSecuritySettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSecuritySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   String name = SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString();
+   *   SecuritySettings response = agentServiceClient.getSecuritySettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the security settings to retrieve. Format:
+   *     `projects/{project}/locations/{location}/securitySettings`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecuritySettings getSecuritySettings(String name) {
+    GetSecuritySettingsRequest request =
+        GetSecuritySettingsRequest.newBuilder().setName(name).build();
+    return getSecuritySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   GetSecuritySettingsRequest request =
+   *       GetSecuritySettingsRequest.newBuilder()
+   *           .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   SecuritySettings response = agentServiceClient.getSecuritySettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecuritySettings getSecuritySettings(GetSecuritySettingsRequest request) {
+    return getSecuritySettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   GetSecuritySettingsRequest request =
+   *       GetSecuritySettingsRequest.newBuilder()
+   *           .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<SecuritySettings> future =
+   *       agentServiceClient.getSecuritySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   SecuritySettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSecuritySettingsRequest, SecuritySettings>
+      getSecuritySettingsCallable() {
+    return stub.getSecuritySettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SecuritySettings response =
+   *       agentServiceClient.updateSecuritySettings(securitySettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param securitySettings Required. The security settings to update.
+   * @param updateMask Optional. Field mask is used to control which fields get updated. If the mask
+   *     is not present, all fields will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecuritySettings updateSecuritySettings(
+      SecuritySettings securitySettings, FieldMask updateMask) {
+    UpdateSecuritySettingsRequest request =
+        UpdateSecuritySettingsRequest.newBuilder()
+            .setSecuritySettings(securitySettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSecuritySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   UpdateSecuritySettingsRequest request =
+   *       UpdateSecuritySettingsRequest.newBuilder()
+   *           .setSecuritySettings(SecuritySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SecuritySettings response = agentServiceClient.updateSecuritySettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecuritySettings updateSecuritySettings(UpdateSecuritySettingsRequest request) {
+    return updateSecuritySettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the security settings for the project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   UpdateSecuritySettingsRequest request =
+   *       UpdateSecuritySettingsRequest.newBuilder()
+   *           .setSecuritySettings(SecuritySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SecuritySettings> future =
+   *       agentServiceClient.updateSecuritySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   SecuritySettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsCallable() {
+    return stub.updateSecuritySettingsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

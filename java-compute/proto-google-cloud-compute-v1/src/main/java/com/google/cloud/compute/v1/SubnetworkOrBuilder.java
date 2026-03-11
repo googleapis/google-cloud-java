@@ -30,9 +30,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether this subnetwork's ranges can conflict with existing static routes.
+   * Whether this subnetwork's ranges can conflict with existing custom routes.
    * Setting this to true allows this subnetwork's primary and secondary ranges
-   * to overlap with (and contain) static routes that have already been
+   * to overlap with (and contain) custom routes that have already been
    * configured on the corresponding network.
    *
    * For example if a static route has range 10.1.0.0/16, a subnet
@@ -48,8 +48,6 @@ public interface SubnetworkOrBuilder
    *
    * The default value is false and applies to all existing subnetworks and
    * automatically created subnetworks.
-   *
-   * This field cannot be set to true at resource creation time.
    * </pre>
    *
    * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -62,9 +60,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether this subnetwork's ranges can conflict with existing static routes.
+   * Whether this subnetwork's ranges can conflict with existing custom routes.
    * Setting this to true allows this subnetwork's primary and secondary ranges
-   * to overlap with (and contain) static routes that have already been
+   * to overlap with (and contain) custom routes that have already been
    * configured on the corresponding network.
    *
    * For example if a static route has range 10.1.0.0/16, a subnet
@@ -80,8 +78,6 @@ public interface SubnetworkOrBuilder
    *
    * The default value is false and applies to all existing subnetworks and
    * automatically created subnetworks.
-   *
-   * This field cannot be set to true at resource creation time.
    * </pre>
    *
    * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -1145,6 +1141,48 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
+   * Configures subnet mask resolution for this subnetwork.
+   * Check the ResolveSubnetMask enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string resolve_subnet_mask = 517696699;</code>
+   *
+   * @return Whether the resolveSubnetMask field is set.
+   */
+  boolean hasResolveSubnetMask();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configures subnet mask resolution for this subnetwork.
+   * Check the ResolveSubnetMask enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string resolve_subnet_mask = 517696699;</code>
+   *
+   * @return The resolveSubnetMask.
+   */
+  java.lang.String getResolveSubnetMask();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configures subnet mask resolution for this subnetwork.
+   * Check the ResolveSubnetMask enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string resolve_subnet_mask = 517696699;</code>
+   *
+   * @return The bytes for resolveSubnetMask.
+   */
+  com.google.protobuf.ByteString getResolveSubnetMaskBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The role of subnetwork. Currently, this field is only used when
    * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
    * subnetwork is one that is currently being used for Envoy-based load
@@ -1205,7 +1243,7 @@ public interface SubnetworkOrBuilder
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request.
+   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
    * </pre>
    *
    * <code>
@@ -1221,7 +1259,7 @@ public interface SubnetworkOrBuilder
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request.
+   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
    * </pre>
    *
    * <code>
@@ -1237,7 +1275,7 @@ public interface SubnetworkOrBuilder
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request.
+   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
    * </pre>
    *
    * <code>
@@ -1253,7 +1291,7 @@ public interface SubnetworkOrBuilder
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request.
+   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
    * </pre>
    *
    * <code>
@@ -1270,7 +1308,7 @@ public interface SubnetworkOrBuilder
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request.
+   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
    * </pre>
    *
    * <code>

@@ -104,6 +104,26 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
       internal_static_google_cloud_aiplatform_v1beta1_Claim_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Claim_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AskContextsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AskContextsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AskContextsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AskContextsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -118,13 +138,15 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
           + "orm.v1beta1\032\034google/api/annotations.prot"
           + "o\032\027google/api/client.proto\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032-google/cloud/aiplatform/v1beta1/content.proto\032*google/cloud/aiplatform/v"
-          + "1beta1/tool.proto\0325google/cloud/aiplatform/v1beta1/vertex_rag_data.proto\"\232\002\n"
+          + ".proto\032-google/cloud/aiplatform/v1beta1/content.proto\032/google/cloud/aiplatform/v"
+          + "1beta1/operation.proto\032*google/cloud/aiplatform/v1beta1/tool.proto\0325google/cloud"
+          + "/aiplatform/v1beta1/vertex_rag_data.prot"
+          + "o\032#google/longrunning/operations.proto\"\232\002\n"
           + "\010RagQuery\022\023\n"
           + "\004text\030\001 \001(\tB\003\340A\001H\000\022\037\n"
           + "\020similarity_top_k\030\002 \001(\005B\005\030\001\340A\001\022I\n"
-          + "\007ranking\030\004 \001(\01321.g"
-          + "oogle.cloud.aiplatform.v1beta1.RagQuery.RankingB\005\030\001\340A\001\022V\n"
+          + "\007ranking\030\004 \001"
+          + "(\01321.google.cloud.aiplatform.v1beta1.RagQuery.RankingB\005\030\001\340A\001\022V\n"
           + "\024rag_retrieval_config\030\006"
           + " \001(\01323.google.cloud.aiplatform.v1beta1.RagRetrievalConfigB\003\340A\001\032,\n"
           + "\007Ranking\022\027\n"
@@ -132,27 +154,28 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
           + "\006_alphaB\007\n"
           + "\005query\"\337\004\n"
           + "\027RetrieveContextsRequest\022c\n"
-          + "\020vertex_rag_store\030\002 \001(\0132G.google.cloud.aiplatform.v1"
-          + "beta1.RetrieveContextsRequest.VertexRagStoreH\000\0229\n"
+          + "\020vertex_rag_store\030\002 \001(\0132G.google.cloud.aiplatf"
+          + "orm.v1beta1.RetrieveContextsRequest.VertexRagStoreH\000\0229\n"
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022=\n"
-          + "\005query\030\003 \001(\013"
-          + "2).google.cloud.aiplatform.v1beta1.RagQueryB\003\340A\002\032\325\002\n"
+          + "\005query\030\003"
+          + " \001(\0132).google.cloud.aiplatform.v1beta1.RagQueryB\003\340A\002\032\325\002\n"
           + "\016VertexRagStore\022\032\n"
           + "\013rag_corpora\030\001 \003(\tB\005\030\001\340A\001\022o\n\r"
-          + "rag_resources\030\003 \003(\0132S.google.cloud.aiplatform.v1beta1.Retriev"
-          + "eContextsRequest.VertexRagStore.RagResourceB\003\340A\001\022-\n"
+          + "rag_resources\030\003 \003(\0132S.google.cloud.aiplatform.v1beta1.R"
+          + "etrieveContextsRequest.VertexRagStore.RagResourceB\003\340A\001\022-\n"
           + "\031vector_distance_threshold\030\002"
           + " \001(\001B\005\030\001\340A\001H\000\210\001\001\032i\n"
           + "\013RagResource\022?\n\n"
           + "rag_corpus\030\001 \001(\tB+\340A\001\372A%\n"
           + "#aiplatform.googleapis.com/RagCorpus\022\031\n"
           + "\014rag_file_ids\030\002 \003(\tB\003\340A\001B\034\n"
-          + "\032_vector_distance_thresholdB\r\n"
+          + "\032_vector_distance_thresholdB\r"
+          + "\n"
           + "\013data_source\"\253\002\n"
           + "\013RagContexts\022F\n"
-          + "\010contexts\030\001 \003("
-          + "\01324.google.cloud.aiplatform.v1beta1.RagContexts.Context\032\323\001\n"
+          + "\010contexts\030\001"
+          + " \003(\01324.google.cloud.aiplatform.v1beta1.RagContexts.Context\032\323\001\n"
           + "\007Context\022\022\n\n"
           + "source_uri\030\001 \001(\t\022\033\n"
           + "\023source_display_name\030\005 \001(\t\022\014\n"
@@ -163,34 +186,34 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
           + "\005chunk\030\007 \001(\0132).google.cloud.aiplatform.v1beta1.RagChunkB\010\n"
           + "\006_score\"Z\n"
           + "\030RetrieveContextsResponse\022>\n"
-          + "\010contexts\030\001 \001(\0132,.go"
-          + "ogle.cloud.aiplatform.v1beta1.RagContexts\"\375\002\n"
+          + "\010contexts\030\001 \001("
+          + "\0132,.google.cloud.aiplatform.v1beta1.RagContexts\"\375\002\n"
           + "\024AugmentPromptRequest\022P\n"
           + "\020vertex_rag_store\030\004"
           + " \001(\0132/.google.cloud.aiplatform.v1beta1.VertexRagStoreB\003\340A\001H\000\0229\n"
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022?\n"
-          + "\010contents\030\002"
-          + " \003(\0132(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\001\022O\n"
-          + "\005model\030\003"
-          + " \001(\0132;.google.cloud.aiplatform.v1beta1.AugmentPromptRequest.ModelB\003\340A\001\0327\n"
+          + "\010contents\030\002 \003(\0132(.google"
+          + ".cloud.aiplatform.v1beta1.ContentB\003\340A\001\022O\n"
+          + "\005model\030\003 \001(\0132;.google.cloud.aiplatform."
+          + "v1beta1.AugmentPromptRequest.ModelB\003\340A\001\0327\n"
           + "\005Model\022\022\n"
           + "\005model\030\001 \001(\tB\003\340A\001\022\032\n\r"
           + "model_version\030\002 \001(\tB\003\340A\001B\r\n"
           + "\013data_source\"\221\001\n"
           + "\025AugmentPromptResponse\022B\n"
-          + "\020augmented_prompt\030\001 \003(\0132(."
-          + "google.cloud.aiplatform.v1beta1.Content\0224\n"
+          + "\020augmented_prompt\030\001 "
+          + "\003(\0132(.google.cloud.aiplatform.v1beta1.Content\0224\n"
           + "\005facts\030\002 \003(\0132%.google.cloud.aiplatform.v1beta1.Fact\"\361\002\n"
           + "\031CorroborateContentRequest\0229\n"
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022C\n"
-          + "\007content\030\002 \001(\0132"
-          + "(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\001H\000\210\001\001\0229\n"
+          + "\007content\030\002"
+          + " \001(\0132(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\001H\000\210\001\001\0229\n"
           + "\005facts\030\003"
           + " \003(\0132%.google.cloud.aiplatform.v1beta1.FactB\003\340A\001\022^\n\n"
-          + "parameters\030\004 \001(\0132E.google.cloud.aiplatform.v1b"
-          + "eta1.CorroborateContentRequest.ParametersB\003\340A\001\032-\n\n"
+          + "parameters\030\004 \001(\0132E.google.cloud.aiplatfo"
+          + "rm.v1beta1.CorroborateContentRequest.ParametersB\003\340A\001\032-\n\n"
           + "Parameters\022\037\n"
           + "\022citation_threshold\030\001 \001(\001B\003\340A\001B\n\n"
           + "\010_content\"\216\001\n"
@@ -221,28 +244,57 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
           + "\005score\030\004 \001(\002H\002\210\001\001B\016\n"
           + "\014_start_indexB\014\n\n"
           + "_end_indexB\010\n"
-          + "\006_score2\223\006\n"
+          + "\006_score\"\311\001\n"
+          + "\022AskContextsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022=\n"
+          + "\005query\030\002"
+          + " \001(\0132).google.cloud.aiplatform.v1beta1.RagQueryB\003\340A\002\0229\n"
+          + "\005tools\030\003 \003(\0132%.google.cloud.aiplatform.v1beta1.ToolB\003\340A\001\"g\n"
+          + "\023AskContextsResponse\022\020\n"
+          + "\010response\030\001 \001(\t\022>\n"
+          + "\010contexts\030\002"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.RagContexts\"\323\001\n"
+          + "\034AsyncRetrieveContextsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022=\n"
+          + "\005query\030\002"
+          + " \001(\0132).google.cloud.aiplatform.v1beta1.RagQueryB\003\340A\002\0229\n"
+          + "\005tools\030\003 \003(\0132%.google.cloud.aiplatform.v1beta1.ToolB\003\340A\001\"_\n"
+          + "\035AsyncRetrieveContextsResponse\022>\n"
+          + "\010contexts\030\001 \001(\0132,.google.cloud.aiplatform.v1beta1.RagContexts\"}\n"
+          + "&AsyncRetrieveContextsOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001"
+          + " \001(\01329.google.cloud.aiplatform.v1beta1.GenericOperationMetadata2\373\t\n"
           + "\020VertexRagService\022\334\001\n"
-          + "\020RetrieveContexts\0228.google.cloud.aiplatform.v1beta1.Retri"
-          + "eveContextsRequest\0329.google.cloud.aiplat"
-          + "form.v1beta1.RetrieveContextsResponse\"S\332"
-          + "A\014parent,query\202\323\344\223\002>\"9/v1beta1/{parent=p"
-          + "rojects/*/locations/*}:retrieveContexts:\001*\022\341\001\n\r"
-          + "AugmentPrompt\0225.google.cloud.aiplatform.v1beta1.AugmentPromptRequest\0326.go"
-          + "ogle.cloud.aiplatform.v1beta1.AugmentPro"
-          + "mptResponse\"a\332A\035parent,model,vertex_rag_"
-          + "store\202\323\344\223\002;\"6/v1beta1/{parent=projects/*/locations/*}:augmentPrompt:\001*\022\354\001\n"
-          + "\022CorroborateContent\022:.google.cloud.aiplatform."
-          + "v1beta1.CorroborateContentRequest\032;.google.cloud.aiplatform.v1beta1.CorroborateC"
-          + "ontentResponse\"]\332A\024parent,content,facts\202"
-          + "\323\344\223\002@\";/v1beta1/{parent=projects/*/locat"
-          + "ions/*}:corroborateContent:\001*\032M\312A\031aiplat"
-          + "form.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\354\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\025VertexRagS"
-          + "erviceProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatform"
-          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
-          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
-          + ":Cloud::AIPlatform::V1beta1b\006proto3"
+          + "\020RetrieveContexts\0228.google.cloud.aiplatform.v1beta1.RetrieveCont"
+          + "extsRequest\0329.google.cloud.aiplatform.v1"
+          + "beta1.RetrieveContextsResponse\"S\332A\014paren"
+          + "t,query\202\323\344\223\002>\"9/v1beta1/{parent=projects/*/locations/*}:retrieveContexts:\001*\022\341\001\n\r"
+          + "AugmentPrompt\0225.google.cloud.aiplatform.v1beta1.AugmentPromptRequest\0326.google.cl"
+          + "oud.aiplatform.v1beta1.AugmentPromptResp"
+          + "onse\"a\332A\035parent,model,vertex_rag_store\202\323"
+          + "\344\223\002;\"6/v1beta1/{parent=projects/*/locations/*}:augmentPrompt:\001*\022\354\001\n"
+          + "\022CorroborateContent\022:.google.cloud.aiplatform.v1beta1"
+          + ".CorroborateContentRequest\032;.google.cloud.aiplatform.v1beta1.CorroborateContentR"
+          + "esponse\"]\332A\024parent,content,facts\202\323\344\223\002@\";"
+          + "/v1beta1/{parent=projects/*/locations/*}:corroborateContent:\001*\022\310\001\n"
+          + "\013AskContexts\0223.google.cloud.aiplatform.v1beta1.AskCont"
+          + "extsRequest\0324.google.cloud.aiplatform.v1"
+          + "beta1.AskContextsResponse\"N\332A\014parent,que"
+          + "ry\202\323\344\223\0029\"4/v1beta1/{parent=projects/*/locations/*}:askContexts:\001*\022\232\002\n"
+          + "\025AsyncRetrieveContexts\022=.google.cloud.aiplatform.v1"
+          + "beta1.AsyncRetrieveContextsRequest\032\035.google.longrunning.Operation\"\242\001\312AG\n"
+          + "\035AsyncRetrieveContextsResponse\022&AsyncRetrieveCon"
+          + "textsOperationMetadata\332A\014parent,query\202\323\344"
+          + "\223\002C\">/v1beta1/{parent=projects/*/locatio"
+          + "ns/*}:asyncRetrieveContexts:\001*\032M\312A\031aipla"
+          + "tform.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\354\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\025VertexRag"
+          + "ServiceProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -253,8 +305,10 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ToolProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.VertexRagDataProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_RagQuery_descriptor =
         getDescriptor().getMessageType(0);
@@ -394,14 +448,56 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {
               "StartIndex", "EndIndex", "FactIndexes", "Score",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_AskContextsRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_aiplatform_v1beta1_AskContextsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AskContextsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Query", "Tools",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AskContextsResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_aiplatform_v1beta1_AskContextsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AskContextsResponse_descriptor,
+            new java.lang.String[] {
+              "Response", "Contexts",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Query", "Tools",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsResponse_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsResponse_descriptor,
+            new java.lang.String[] {
+              "Contexts",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsOperationMetadata_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AsyncRetrieveContextsOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ToolProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.VertexRagDataProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -410,6 +506,7 @@ public final class VertexRagServiceProto extends com.google.protobuf.GeneratedFi
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

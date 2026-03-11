@@ -2060,6 +2060,31 @@ public interface InstanceOrBuilder
   com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  boolean hasWorkloadIdentityConfig();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  com.google.cloud.compute.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   */
+  com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder getWorkloadIdentityConfigOrBuilder();
+
+  /**
    *
    *
    * <pre>

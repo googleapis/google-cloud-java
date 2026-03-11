@@ -1265,6 +1265,66 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     return maxUtilization_;
   }
 
+  public static final int ORCHESTRATION_INFO_FIELD_NUMBER = 441144300;
+  private com.google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestrationInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   *
+   * @return Whether the orchestrationInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrchestrationInfo() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   *
+   * @return The orchestrationInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendBackendOrchestrationInfo getOrchestrationInfo() {
+    return orchestrationInfo_ == null
+        ? com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.getDefaultInstance()
+        : orchestrationInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendBackendOrchestrationInfoOrBuilder
+      getOrchestrationInfoOrBuilder() {
+    return orchestrationInfo_ == null
+        ? com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.getDefaultInstance()
+        : orchestrationInfo_;
+  }
+
   public static final int PREFERENCE_FIELD_NUMBER = 150781147;
 
   @SuppressWarnings("serial")
@@ -1293,7 +1353,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPreference() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1399,7 +1459,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeFloat(148192199, maxUtilization_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 150781147, preference_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1419,6 +1479,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 430286217, balancingMode_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(441144300, getOrchestrationInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1453,7 +1516,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(148192199, maxUtilization_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(150781147, preference_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1477,6 +1540,11 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(430286217, balancingMode_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              441144300, getOrchestrationInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1546,6 +1614,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       if (java.lang.Float.floatToIntBits(getMaxUtilization())
           != java.lang.Float.floatToIntBits(other.getMaxUtilization())) return false;
     }
+    if (hasOrchestrationInfo() != other.hasOrchestrationInfo()) return false;
+    if (hasOrchestrationInfo()) {
+      if (!getOrchestrationInfo().equals(other.getOrchestrationInfo())) return false;
+    }
     if (hasPreference() != other.hasPreference()) return false;
     if (hasPreference()) {
       if (!getPreference().equals(other.getPreference())) return false;
@@ -1612,6 +1684,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (hasMaxUtilization()) {
       hash = (37 * hash) + MAX_UTILIZATION_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxUtilization());
+    }
+    if (hasOrchestrationInfo()) {
+      hash = (37 * hash) + ORCHESTRATION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getOrchestrationInfo().hashCode();
     }
     if (hasPreference()) {
       hash = (37 * hash) + PREFERENCE_FIELD_NUMBER;
@@ -1746,10 +1822,20 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.compute.v1.Backend.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetCustomMetricsFieldBuilder();
+        internalGetOrchestrationInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1775,6 +1861,11 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       maxRatePerEndpoint_ = 0F;
       maxRatePerInstance_ = 0F;
       maxUtilization_ = 0F;
+      orchestrationInfo_ = null;
+      if (orchestrationInfoBuilder_ != null) {
+        orchestrationInfoBuilder_.dispose();
+        orchestrationInfoBuilder_ = null;
+      }
       preference_ = "";
       return this;
     }
@@ -1874,8 +1965,15 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.preference_ = preference_;
+        result.orchestrationInfo_ =
+            orchestrationInfoBuilder_ == null
+                ? orchestrationInfo_
+                : orchestrationInfoBuilder_.build();
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.preference_ = preference_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1961,9 +2059,12 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       if (other.hasMaxUtilization()) {
         setMaxUtilization(other.getMaxUtilization());
       }
+      if (other.hasOrchestrationInfo()) {
+        mergeOrchestrationInfo(other.getOrchestrationInfo());
+      }
       if (other.hasPreference()) {
         preference_ = other.preference_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2037,7 +2138,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
             case 1206249178:
               {
                 preference_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1206249178
             case 1735236832:
@@ -2084,6 +2185,13 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case -852677558
+            case -765812894:
+              {
+                input.readMessage(
+                    internalGetOrchestrationInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -765812894
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3858,6 +3966,225 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestrationInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.BackendBackendOrchestrationInfo,
+            com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.Builder,
+            com.google.cloud.compute.v1.BackendBackendOrchestrationInfoOrBuilder>
+        orchestrationInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     *
+     * @return Whether the orchestrationInfo field is set.
+     */
+    public boolean hasOrchestrationInfo() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     *
+     * @return The orchestrationInfo.
+     */
+    public com.google.cloud.compute.v1.BackendBackendOrchestrationInfo getOrchestrationInfo() {
+      if (orchestrationInfoBuilder_ == null) {
+        return orchestrationInfo_ == null
+            ? com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.getDefaultInstance()
+            : orchestrationInfo_;
+      } else {
+        return orchestrationInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    public Builder setOrchestrationInfo(
+        com.google.cloud.compute.v1.BackendBackendOrchestrationInfo value) {
+      if (orchestrationInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        orchestrationInfo_ = value;
+      } else {
+        orchestrationInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    public Builder setOrchestrationInfo(
+        com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.Builder builderForValue) {
+      if (orchestrationInfoBuilder_ == null) {
+        orchestrationInfo_ = builderForValue.build();
+      } else {
+        orchestrationInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    public Builder mergeOrchestrationInfo(
+        com.google.cloud.compute.v1.BackendBackendOrchestrationInfo value) {
+      if (orchestrationInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && orchestrationInfo_ != null
+            && orchestrationInfo_
+                != com.google.cloud.compute.v1.BackendBackendOrchestrationInfo
+                    .getDefaultInstance()) {
+          getOrchestrationInfoBuilder().mergeFrom(value);
+        } else {
+          orchestrationInfo_ = value;
+        }
+      } else {
+        orchestrationInfoBuilder_.mergeFrom(value);
+      }
+      if (orchestrationInfo_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    public Builder clearOrchestrationInfo() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      orchestrationInfo_ = null;
+      if (orchestrationInfoBuilder_ != null) {
+        orchestrationInfoBuilder_.dispose();
+        orchestrationInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.Builder
+        getOrchestrationInfoBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return internalGetOrchestrationInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendBackendOrchestrationInfoOrBuilder
+        getOrchestrationInfoOrBuilder() {
+      if (orchestrationInfoBuilder_ != null) {
+        return orchestrationInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return orchestrationInfo_ == null
+            ? com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.getDefaultInstance()
+            : orchestrationInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the resource or system that manages the backend.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.BackendBackendOrchestrationInfo orchestration_info = 441144300;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.BackendBackendOrchestrationInfo,
+            com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.Builder,
+            com.google.cloud.compute.v1.BackendBackendOrchestrationInfoOrBuilder>
+        internalGetOrchestrationInfoFieldBuilder() {
+      if (orchestrationInfoBuilder_ == null) {
+        orchestrationInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.BackendBackendOrchestrationInfo,
+                com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.Builder,
+                com.google.cloud.compute.v1.BackendBackendOrchestrationInfoOrBuilder>(
+                getOrchestrationInfo(), getParentForChildren(), isClean());
+        orchestrationInfo_ = null;
+      }
+      return orchestrationInfoBuilder_;
+    }
+
     private java.lang.Object preference_ = "";
 
     /**
@@ -3882,7 +4209,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return Whether the preference field is set.
      */
     public boolean hasPreference() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -3978,7 +4305,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       preference_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4006,7 +4333,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPreference() {
       preference_ = getDefaultInstance().getPreference();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4039,7 +4366,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       preference_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

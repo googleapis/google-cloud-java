@@ -445,6 +445,46 @@ public interface InstantSnapshotOrBuilder
    *
    *
    * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.InstantSnapshotParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.InstantSnapshotParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] URL of the region where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.

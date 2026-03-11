@@ -985,6 +985,62 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.MachineImageParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional parameters that are passed in the request, but are
+   * not persisted in the resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional parameters that are passed in the request, but are
+   * not persisted in the resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.MachineImageParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.MachineImageParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional parameters that are passed in the request, but are
+   * not persisted in the resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.MachineImageParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.MachineImageParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int SATISFIES_PZI_FIELD_NUMBER = 480964257;
   private boolean satisfiesPzi_ = false;
 
@@ -1001,7 +1057,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSatisfiesPzi() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1036,7 +1092,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1154,7 +1210,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1329,7 +1385,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSourceInstance() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1412,7 +1468,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSourceInstanceProperties() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1477,7 +1533,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1618,7 +1674,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTotalStorageBytes() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1663,13 +1719,16 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(78313862, getParams());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeInt64(81855468, totalStorageBytes_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1685,7 +1744,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(385550813, guestFlush_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 396315705, sourceInstance_);
     }
     for (int i = 0; i < savedDisks_.size(); i++) {
@@ -1694,16 +1753,16 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(475195641, getSourceInstanceProperties());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(480964257, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -1732,13 +1791,16 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(81855468, totalStorageBytes_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1762,7 +1824,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(385550813, guestFlush_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(396315705, sourceInstance_);
     }
     for (int i = 0; i < savedDisks_.size(); i++) {
@@ -1772,18 +1834,18 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               475195641, getSourceInstanceProperties());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964257, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1853,6 +1915,10 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
     if (hasSatisfiesPzi()) {
@@ -1936,6 +2002,10 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasSatisfiesPzi()) {
       hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
@@ -2146,6 +2216,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetInstancePropertiesFieldBuilder();
         internalGetMachineImageEncryptionKeyFieldBuilder();
+        internalGetParamsFieldBuilder();
         internalGetSavedDisksFieldBuilder();
         internalGetSourceDiskEncryptionKeysFieldBuilder();
         internalGetSourceInstancePropertiesFieldBuilder();
@@ -2174,6 +2245,11 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         machineImageEncryptionKeyBuilder_ = null;
       }
       name_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       satisfiesPzi_ = false;
       satisfiesPzs_ = false;
       if (savedDisksBuilder_ == null) {
@@ -2182,7 +2258,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         savedDisks_ = null;
         savedDisksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = "";
       if (sourceDiskEncryptionKeysBuilder_ == null) {
         sourceDiskEncryptionKeys_ = java.util.Collections.emptyList();
@@ -2190,7 +2266,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         sourceDiskEncryptionKeys_ = null;
         sourceDiskEncryptionKeysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       sourceInstance_ = "";
       sourceInstanceProperties_ = null;
       if (sourceInstancePropertiesBuilder_ != null) {
@@ -2237,19 +2313,19 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.MachineImage result) {
       if (savedDisksBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           savedDisks_ = java.util.Collections.unmodifiableList(savedDisks_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.savedDisks_ = savedDisks_;
       } else {
         result.savedDisks_ = savedDisksBuilder_.build();
       }
       if (sourceDiskEncryptionKeysBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           sourceDiskEncryptionKeys_ =
               java.util.Collections.unmodifiableList(sourceDiskEncryptionKeys_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.sourceDiskEncryptionKeys_ = sourceDiskEncryptionKeys_;
       } else {
@@ -2307,39 +2383,43 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.satisfiesPzi_ = satisfiesPzi_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.sourceInstance_ = sourceInstance_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.sourceInstance_ = sourceInstance_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.sourceInstanceProperties_ =
             sourceInstancePropertiesBuilder_ == null
                 ? sourceInstanceProperties_
                 : sourceInstancePropertiesBuilder_.build();
-        to_bitField0_ |= 0x00002000;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.status_ = status_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         storageLocations_.makeImmutable();
         result.storageLocations_ = storageLocations_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.totalStorageBytes_ = totalStorageBytes_;
-        to_bitField0_ |= 0x00008000;
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2395,6 +2475,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (other.hasSatisfiesPzi()) {
         setSatisfiesPzi(other.getSatisfiesPzi());
       }
@@ -2405,7 +2488,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         if (!other.savedDisks_.isEmpty()) {
           if (savedDisks_.isEmpty()) {
             savedDisks_ = other.savedDisks_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureSavedDisksIsMutable();
             savedDisks_.addAll(other.savedDisks_);
@@ -2418,7 +2501,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
             savedDisksBuilder_.dispose();
             savedDisksBuilder_ = null;
             savedDisks_ = other.savedDisks_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             savedDisksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSavedDisksFieldBuilder()
@@ -2430,14 +2513,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (sourceDiskEncryptionKeysBuilder_ == null) {
         if (!other.sourceDiskEncryptionKeys_.isEmpty()) {
           if (sourceDiskEncryptionKeys_.isEmpty()) {
             sourceDiskEncryptionKeys_ = other.sourceDiskEncryptionKeys_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureSourceDiskEncryptionKeysIsMutable();
             sourceDiskEncryptionKeys_.addAll(other.sourceDiskEncryptionKeys_);
@@ -2450,7 +2533,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
             sourceDiskEncryptionKeysBuilder_.dispose();
             sourceDiskEncryptionKeysBuilder_ = null;
             sourceDiskEncryptionKeys_ = other.sourceDiskEncryptionKeys_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             sourceDiskEncryptionKeysBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSourceDiskEncryptionKeysFieldBuilder()
@@ -2462,7 +2545,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSourceInstance()) {
         sourceInstance_ = other.sourceInstance_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasSourceInstanceProperties()) {
@@ -2470,13 +2553,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00080000;
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -2536,10 +2619,16 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 244202930
+            case 626510898:
+              {
+                input.readMessage(internalGetParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 626510898
             case 654843744:
               {
                 totalStorageBytes_ = input.readInt64();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 654843744
             case 1424998602:
@@ -2551,7 +2640,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1450082194
             case 1722841322:
@@ -2591,7 +2680,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
             case -1124441654:
               {
                 sourceInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1124441654
             case -1115572750:
@@ -2616,7 +2705,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -645248918
             case -493402166:
@@ -2624,19 +2713,19 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetSourceInstancePropertiesFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -493402166
             case -447253240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -447253240
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -447253160
             case -293404678:
@@ -4270,6 +4359,210 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.compute.v1.MachineImageParams params_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.MachineImageParams,
+            com.google.cloud.compute.v1.MachineImageParams.Builder,
+            com.google.cloud.compute.v1.MachineImageParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.MachineImageParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.MachineImageParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.MachineImageParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    public Builder setParams(
+        com.google.cloud.compute.v1.MachineImageParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.MachineImageParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.MachineImageParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.MachineImageParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.MachineImageParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.MachineImageParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional parameters that are passed in the request, but are
+     * not persisted in the resource.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.MachineImageParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.MachineImageParams,
+            com.google.cloud.compute.v1.MachineImageParams.Builder,
+            com.google.cloud.compute.v1.MachineImageParamsOrBuilder>
+        internalGetParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.MachineImageParams,
+                com.google.cloud.compute.v1.MachineImageParams.Builder,
+                com.google.cloud.compute.v1.MachineImageParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
+    }
+
     private boolean satisfiesPzi_;
 
     /**
@@ -4285,7 +4578,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4319,7 +4612,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4336,7 +4629,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       satisfiesPzi_ = false;
       onChanged();
       return this;
@@ -4357,7 +4650,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4391,7 +4684,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4408,7 +4701,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -4418,9 +4711,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureSavedDisksIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         savedDisks_ = new java.util.ArrayList<com.google.cloud.compute.v1.SavedDisk>(savedDisks_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4656,7 +4949,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder clearSavedDisks() {
       if (savedDisksBuilder_ == null) {
         savedDisks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         savedDisksBuilder_.clear();
@@ -4792,7 +5085,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.SavedDisk,
                 com.google.cloud.compute.v1.SavedDisk.Builder,
                 com.google.cloud.compute.v1.SavedDiskOrBuilder>(
-                savedDisks_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                savedDisks_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         savedDisks_ = null;
       }
       return savedDisksBuilder_;
@@ -4812,7 +5105,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4878,7 +5171,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4896,7 +5189,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4919,7 +5212,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4928,11 +5221,11 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         sourceDiskEncryptionKeys_ = java.util.Collections.emptyList();
 
     private void ensureSourceDiskEncryptionKeysIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         sourceDiskEncryptionKeys_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SourceDiskEncryptionKey>(
                 sourceDiskEncryptionKeys_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -5207,7 +5500,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder clearSourceDiskEncryptionKeys() {
       if (sourceDiskEncryptionKeysBuilder_ == null) {
         sourceDiskEncryptionKeys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         sourceDiskEncryptionKeysBuilder_.clear();
@@ -5370,7 +5663,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.SourceDiskEncryptionKey.Builder,
                 com.google.cloud.compute.v1.SourceDiskEncryptionKeyOrBuilder>(
                 sourceDiskEncryptionKeys_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         sourceDiskEncryptionKeys_ = null;
@@ -5398,7 +5691,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return Whether the sourceInstance field is set.
      */
     public boolean hasSourceInstance() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5482,7 +5775,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       sourceInstance_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5506,7 +5799,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSourceInstance() {
       sourceInstance_ = getDefaultInstance().getSourceInstance();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5535,7 +5828,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       sourceInstance_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5563,7 +5856,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return Whether the sourceInstanceProperties field is set.
      */
     public boolean hasSourceInstanceProperties() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5614,7 +5907,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       } else {
         sourceInstancePropertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5639,7 +5932,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       } else {
         sourceInstancePropertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5660,7 +5953,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder mergeSourceInstanceProperties(
         com.google.cloud.compute.v1.SourceInstanceProperties value) {
       if (sourceInstancePropertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && sourceInstanceProperties_ != null
             && sourceInstanceProperties_
                 != com.google.cloud.compute.v1.SourceInstanceProperties.getDefaultInstance()) {
@@ -5672,7 +5965,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         sourceInstancePropertiesBuilder_.mergeFrom(value);
       }
       if (sourceInstanceProperties_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -5692,7 +5985,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSourceInstanceProperties() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       sourceInstanceProperties_ = null;
       if (sourceInstancePropertiesBuilder_ != null) {
         sourceInstancePropertiesBuilder_.dispose();
@@ -5717,7 +6010,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.compute.v1.SourceInstanceProperties.Builder
         getSourceInstancePropertiesBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetSourceInstancePropertiesFieldBuilder().getBuilder();
     }
@@ -5791,7 +6084,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5860,7 +6153,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5879,7 +6172,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5903,7 +6196,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5915,7 +6208,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       if (!storageLocations_.isModifiable()) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
     }
 
     /**
@@ -6005,7 +6298,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.set(index, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6029,7 +6322,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6050,7 +6343,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder addAllStorageLocations(java.lang.Iterable<java.lang.String> values) {
       ensureStorageLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storageLocations_);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6069,7 +6362,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStorageLocations() {
       storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       ;
       onChanged();
       return this;
@@ -6095,7 +6388,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6115,7 +6408,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTotalStorageBytes() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6149,7 +6442,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
     public Builder setTotalStorageBytes(long value) {
 
       totalStorageBytes_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6166,7 +6459,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTotalStorageBytes() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       totalStorageBytes_ = 0L;
       onChanged();
       return this;

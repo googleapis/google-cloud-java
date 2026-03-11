@@ -167,7 +167,7 @@ public interface DatabaseOrBuilder
    * <code>bool is_template = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Database.is_template is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1761
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1772
    * @return The isTemplate.
    */
   @java.lang.Deprecated

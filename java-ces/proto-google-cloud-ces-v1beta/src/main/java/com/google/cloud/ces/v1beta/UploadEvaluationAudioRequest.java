@@ -53,8 +53,9 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
   }
 
   private UploadEvaluationAudioRequest() {
-    app_ = "";
+    name_ = "";
     audioContent_ = com.google.protobuf.ByteString.EMPTY;
+    previousAudioGcsUri_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,34 +73,35 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
             com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest.Builder.class);
   }
 
-  public static final int APP_FIELD_NUMBER = 1;
+  public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object app_ = "";
+  private volatile java.lang.Object name_ = "";
 
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the App for which to upload the evaluation
-   * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+   * Required. The resource name of the Evaluation for which to upload the
+   * evaluation audio. Format:
+   * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
    * </pre>
    *
    * <code>
-   * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The app.
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getApp() {
-    java.lang.Object ref = app_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      app_ = s;
+      name_ = s;
       return s;
     }
   }
@@ -108,23 +110,24 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The resource name of the App for which to upload the evaluation
-   * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+   * Required. The resource name of the Evaluation for which to upload the
+   * evaluation audio. Format:
+   * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
    * </pre>
    *
    * <code>
-   * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for app.
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getAppBytes() {
-    java.lang.Object ref = app_;
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      app_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -152,6 +155,61 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     return audioContent_;
   }
 
+  public static final int PREVIOUS_AUDIO_GCS_URI_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object previousAudioGcsUri_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage URI of the previously uploaded audio
+   * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+   * </pre>
+   *
+   * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The previousAudioGcsUri.
+   */
+  @java.lang.Override
+  public java.lang.String getPreviousAudioGcsUri() {
+    java.lang.Object ref = previousAudioGcsUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      previousAudioGcsUri_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage URI of the previously uploaded audio
+   * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+   * </pre>
+   *
+   * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for previousAudioGcsUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPreviousAudioGcsUriBytes() {
+    java.lang.Object ref = previousAudioGcsUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      previousAudioGcsUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -166,11 +224,14 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(app_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, app_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (!audioContent_.isEmpty()) {
       output.writeBytes(2, audioContent_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(previousAudioGcsUri_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, previousAudioGcsUri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -181,11 +242,14 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(app_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, app_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
     if (!audioContent_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, audioContent_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(previousAudioGcsUri_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, previousAudioGcsUri_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -203,8 +267,9 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest other =
         (com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest) obj;
 
-    if (!getApp().equals(other.getApp())) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!getAudioContent().equals(other.getAudioContent())) return false;
+    if (!getPreviousAudioGcsUri().equals(other.getPreviousAudioGcsUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -216,10 +281,12 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + APP_FIELD_NUMBER;
-    hash = (53 * hash) + getApp().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + AUDIO_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getAudioContent().hashCode();
+    hash = (37 * hash) + PREVIOUS_AUDIO_GCS_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getPreviousAudioGcsUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -362,8 +429,9 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      app_ = "";
+      name_ = "";
       audioContent_ = com.google.protobuf.ByteString.EMPTY;
+      previousAudioGcsUri_ = "";
       return this;
     }
 
@@ -401,10 +469,13 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     private void buildPartial0(com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.app_ = app_;
+        result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.audioContent_ = audioContent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.previousAudioGcsUri_ = previousAudioGcsUri_;
       }
     }
 
@@ -421,13 +492,18 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest other) {
       if (other == com.google.cloud.ces.v1beta.UploadEvaluationAudioRequest.getDefaultInstance())
         return this;
-      if (!other.getApp().isEmpty()) {
-        app_ = other.app_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAudioContent().isEmpty()) {
         setAudioContent(other.getAudioContent());
+      }
+      if (!other.getPreviousAudioGcsUri().isEmpty()) {
+        previousAudioGcsUri_ = other.previousAudioGcsUri_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -457,7 +533,7 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
               break;
             case 10:
               {
-                app_ = input.readStringRequireUtf8();
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -467,6 +543,12 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                previousAudioGcsUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -486,28 +568,29 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
 
     private int bitField0_;
 
-    private java.lang.Object app_ = "";
+    private java.lang.Object name_ = "";
 
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the App for which to upload the evaluation
-     * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+     * Required. The resource name of the Evaluation for which to upload the
+     * evaluation audio. Format:
+     * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
      * </pre>
      *
      * <code>
-     * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The app.
+     * @return The name.
      */
-    public java.lang.String getApp() {
-      java.lang.Object ref = app_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        app_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -518,22 +601,23 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the App for which to upload the evaluation
-     * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+     * Required. The resource name of the Evaluation for which to upload the
+     * evaluation audio. Format:
+     * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
      * </pre>
      *
      * <code>
-     * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The bytes for app.
+     * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getAppBytes() {
-      java.lang.Object ref = app_;
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        app_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -544,22 +628,23 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the App for which to upload the evaluation
-     * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+     * Required. The resource name of the Evaluation for which to upload the
+     * evaluation audio. Format:
+     * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
      * </pre>
      *
      * <code>
-     * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The app to set.
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setApp(java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      app_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -569,18 +654,19 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the App for which to upload the evaluation
-     * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+     * Required. The resource name of the Evaluation for which to upload the
+     * evaluation audio. Format:
+     * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
      * </pre>
      *
      * <code>
-     * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearApp() {
-      app_ = getDefaultInstance().getApp();
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -590,23 +676,24 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the App for which to upload the evaluation
-     * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
+     * Required. The resource name of the Evaluation for which to upload the
+     * evaluation audio. Format:
+     * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
      * </pre>
      *
      * <code>
-     * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The bytes for app to set.
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setAppBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      app_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -672,6 +759,122 @@ public final class UploadEvaluationAudioRequest extends com.google.protobuf.Gene
     public Builder clearAudioContent() {
       bitField0_ = (bitField0_ & ~0x00000002);
       audioContent_ = getDefaultInstance().getAudioContent();
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object previousAudioGcsUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage URI of the previously uploaded audio
+     * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+     * </pre>
+     *
+     * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The previousAudioGcsUri.
+     */
+    public java.lang.String getPreviousAudioGcsUri() {
+      java.lang.Object ref = previousAudioGcsUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previousAudioGcsUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage URI of the previously uploaded audio
+     * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+     * </pre>
+     *
+     * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for previousAudioGcsUri.
+     */
+    public com.google.protobuf.ByteString getPreviousAudioGcsUriBytes() {
+      java.lang.Object ref = previousAudioGcsUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        previousAudioGcsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage URI of the previously uploaded audio
+     * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+     * </pre>
+     *
+     * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The previousAudioGcsUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreviousAudioGcsUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      previousAudioGcsUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage URI of the previously uploaded audio
+     * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+     * </pre>
+     *
+     * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreviousAudioGcsUri() {
+      previousAudioGcsUri_ = getDefaultInstance().getPreviousAudioGcsUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage URI of the previously uploaded audio
+     * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
+     * </pre>
+     *
+     * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for previousAudioGcsUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreviousAudioGcsUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      previousAudioGcsUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

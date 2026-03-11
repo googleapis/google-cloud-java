@@ -221,6 +221,7 @@ public class InstantSnapshotsClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setParams(InstantSnapshotParams.newBuilder().build())
             .setRegion("region-934795532")
             .setResourceStatus(InstantSnapshotResourceStatus.newBuilder().build())
             .setSatisfiesPzi(true)

@@ -160,6 +160,32 @@ public interface ResourceStatusEffectiveInstanceMetadataOrBuilder
    *
    *
    * <pre>
+   * Effective gce-container-declaration value at Instance level.
+   * </pre>
+   *
+   * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+   *
+   * @return Whether the gceContainerDeclarationMetadataValue field is set.
+   */
+  boolean hasGceContainerDeclarationMetadataValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Effective gce-container-declaration value at Instance level.
+   * </pre>
+   *
+   * <code>optional bool gce_container_declaration_metadata_value = 219617210;</code>
+   *
+   * @return The gceContainerDeclarationMetadataValue.
+   */
+  boolean getGceContainerDeclarationMetadataValue();
+
+  /**
+   *
+   *
+   * <pre>
    * Effective serial-port-enable value at Instance level.
    * </pre>
    *

@@ -54,6 +54,7 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
 
   private CreateMemoryRequest() {
     parent_ = "";
+    memoryId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -192,6 +193,71 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
         : memory_;
   }
 
+  public static final int MEMORY_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object memoryId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user defined ID to use for memory, which will become the
+   * final component of the memory resource name. If not provided, Vertex AI
+   * will generate a value for this ID.
+   *
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9-]`. The first character must be a letter, and the last character
+   * must be a letter or number.
+   * </pre>
+   *
+   * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The memoryId.
+   */
+  @java.lang.Override
+  public java.lang.String getMemoryId() {
+    java.lang.Object ref = memoryId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      memoryId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user defined ID to use for memory, which will become the
+   * final component of the memory resource name. If not provided, Vertex AI
+   * will generate a value for this ID.
+   *
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9-]`. The first character must be a letter, and the last character
+   * must be a letter or number.
+   * </pre>
+   *
+   * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for memoryId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMemoryIdBytes() {
+    java.lang.Object ref = memoryId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      memoryId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -212,6 +278,9 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getMemory());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(memoryId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, memoryId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -226,6 +295,9 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMemory());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(memoryId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, memoryId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,6 +320,7 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
     if (hasMemory()) {
       if (!getMemory().equals(other.getMemory())) return false;
     }
+    if (!getMemoryId().equals(other.getMemoryId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -265,6 +338,8 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + MEMORY_FIELD_NUMBER;
       hash = (53 * hash) + getMemory().hashCode();
     }
+    hash = (37 * hash) + MEMORY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMemoryId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +497,7 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
         memoryBuilder_.dispose();
         memoryBuilder_ = null;
       }
+      memoryId_ = "";
       return this;
     }
 
@@ -466,6 +542,9 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
         result.memory_ = memoryBuilder_ == null ? memory_ : memoryBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.memoryId_ = memoryId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -489,6 +568,11 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasMemory()) {
         mergeMemory(other.getMemory());
+      }
+      if (!other.getMemoryId().isEmpty()) {
+        memoryId_ = other.memoryId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -528,6 +612,12 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                memoryId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -888,6 +978,147 @@ public final class CreateMemoryRequest extends com.google.protobuf.GeneratedMess
         memory_ = null;
       }
       return memoryBuilder_;
+    }
+
+    private java.lang.Object memoryId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user defined ID to use for memory, which will become the
+     * final component of the memory resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9-]`. The first character must be a letter, and the last character
+     * must be a letter or number.
+     * </pre>
+     *
+     * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The memoryId.
+     */
+    public java.lang.String getMemoryId() {
+      java.lang.Object ref = memoryId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        memoryId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user defined ID to use for memory, which will become the
+     * final component of the memory resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9-]`. The first character must be a letter, and the last character
+     * must be a letter or number.
+     * </pre>
+     *
+     * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for memoryId.
+     */
+    public com.google.protobuf.ByteString getMemoryIdBytes() {
+      java.lang.Object ref = memoryId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        memoryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user defined ID to use for memory, which will become the
+     * final component of the memory resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9-]`. The first character must be a letter, and the last character
+     * must be a letter or number.
+     * </pre>
+     *
+     * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The memoryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMemoryId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      memoryId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user defined ID to use for memory, which will become the
+     * final component of the memory resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9-]`. The first character must be a letter, and the last character
+     * must be a letter or number.
+     * </pre>
+     *
+     * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMemoryId() {
+      memoryId_ = getDefaultInstance().getMemoryId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user defined ID to use for memory, which will become the
+     * final component of the memory resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9-]`. The first character must be a letter, and the last character
+     * must be a letter or number.
+     * </pre>
+     *
+     * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for memoryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMemoryIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      memoryId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.CreateMemoryRequest)

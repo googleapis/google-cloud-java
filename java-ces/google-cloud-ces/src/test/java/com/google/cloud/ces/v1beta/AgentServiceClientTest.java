@@ -971,6 +971,136 @@ public class AgentServiceClientTest {
   }
 
   @Test
+  public void getSecuritySettingsTest() throws Exception {
+    SecuritySettings expectedResponse =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockAgentService.addResponse(expectedResponse);
+
+    SecuritySettingsName name = SecuritySettingsName.of("[PROJECT]", "[LOCATION]");
+
+    SecuritySettings actualResponse = client.getSecuritySettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSecuritySettingsRequest actualRequest = ((GetSecuritySettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSecuritySettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentService.addException(exception);
+
+    try {
+      SecuritySettingsName name = SecuritySettingsName.of("[PROJECT]", "[LOCATION]");
+      client.getSecuritySettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecuritySettingsTest2() throws Exception {
+    SecuritySettings expectedResponse =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockAgentService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SecuritySettings actualResponse = client.getSecuritySettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSecuritySettingsRequest actualRequest = ((GetSecuritySettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSecuritySettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSecuritySettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSecuritySettingsTest() throws Exception {
+    SecuritySettings expectedResponse =
+        SecuritySettings.newBuilder()
+            .setName(SecuritySettingsName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEndpointControlPolicy(EndpointControlPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockAgentService.addResponse(expectedResponse);
+
+    SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SecuritySettings actualResponse = client.updateSecuritySettings(securitySettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSecuritySettingsRequest actualRequest =
+        ((UpdateSecuritySettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(securitySettings, actualRequest.getSecuritySettings());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSecuritySettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentService.addException(exception);
+
+    try {
+      SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSecuritySettings(securitySettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listAgentsTest() throws Exception {
     Agent responsesElement = Agent.newBuilder().build();
     ListAgentsResponse expectedResponse =

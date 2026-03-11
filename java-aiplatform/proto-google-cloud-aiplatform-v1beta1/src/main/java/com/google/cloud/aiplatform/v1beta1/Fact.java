@@ -363,7 +363,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessage
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
    * @return Whether the vectorDistance field is set.
    */
   @java.lang.Override
@@ -382,7 +382,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessage
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
    * @return The vectorDistance.
    */
   @java.lang.Override
@@ -1520,7 +1520,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessage
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
      * @return Whether the vectorDistance field is set.
      */
     @java.lang.Override
@@ -1539,7 +1539,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessage
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
      * @return The vectorDistance.
      */
     @java.lang.Override
@@ -1558,7 +1558,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessage
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
      * @param value The vectorDistance to set.
      * @return This builder for chaining.
      */
@@ -1581,7 +1581,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessage
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

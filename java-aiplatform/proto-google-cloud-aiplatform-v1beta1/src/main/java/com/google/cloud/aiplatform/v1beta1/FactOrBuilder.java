@@ -192,7 +192,7 @@ public interface FactOrBuilder
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
    * @return Whether the vectorDistance field is set.
    */
   @java.lang.Deprecated
@@ -208,7 +208,7 @@ public interface FactOrBuilder
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=343
    * @return The vectorDistance.
    */
   @java.lang.Deprecated

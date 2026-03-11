@@ -95,7 +95,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Normal speed, no slowdown is detected.
+     * Normal speed, no traffic delays.
      * </pre>
      *
      * <code>NORMAL = 1;</code>
@@ -105,7 +105,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Slowdown detected, but no traffic jam formed.
+     * Slowdown detected, medium amount of traffic.
      * </pre>
      *
      * <code>SLOW = 2;</code>
@@ -115,7 +115,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Traffic jam detected.
+     * Traffic delays.
      * </pre>
      *
      * <code>TRAFFIC_JAM = 3;</code>
@@ -149,7 +149,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Normal speed, no slowdown is detected.
+     * Normal speed, no traffic delays.
      * </pre>
      *
      * <code>NORMAL = 1;</code>
@@ -160,7 +160,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Slowdown detected, but no traffic jam formed.
+     * Slowdown detected, medium amount of traffic.
      * </pre>
      *
      * <code>SLOW = 2;</code>
@@ -171,7 +171,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Traffic jam detected.
+     * Traffic delays.
      * </pre>
      *
      * <code>TRAFFIC_JAM = 3;</code>

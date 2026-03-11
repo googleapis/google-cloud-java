@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,6 +45,11 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AskContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.AskContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.AsyncRetrieveContextsResponse;
 import com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest;
 import com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse;
 import com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest;
@@ -60,7 +69,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -113,6 +124,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for asyncRetrieveContexts:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VertexRagServiceStubSettings.Builder vertexRagServiceSettingsBuilder =
+ *     VertexRagServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * vertexRagServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -127,6 +164,14 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       augmentPromptSettings;
   private final UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentSettings;
+  private final UnaryCallSettings<AskContextsRequest, AskContextsResponse> askContextsSettings;
+  private final UnaryCallSettings<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsSettings;
+  private final OperationCallSettings<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -202,6 +247,26 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
   public UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentSettings() {
     return corroborateContentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to askContexts. */
+  public UnaryCallSettings<AskContextsRequest, AskContextsResponse> askContextsSettings() {
+    return askContextsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asyncRetrieveContexts. */
+  public UnaryCallSettings<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsSettings() {
+    return asyncRetrieveContextsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asyncRetrieveContexts. */
+  public OperationCallSettings<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationSettings() {
+    return asyncRetrieveContextsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -315,6 +380,10 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
     retrieveContextsSettings = settingsBuilder.retrieveContextsSettings().build();
     augmentPromptSettings = settingsBuilder.augmentPromptSettings().build();
     corroborateContentSettings = settingsBuilder.corroborateContentSettings().build();
+    askContextsSettings = settingsBuilder.askContextsSettings().build();
+    asyncRetrieveContextsSettings = settingsBuilder.asyncRetrieveContextsSettings().build();
+    asyncRetrieveContextsOperationSettings =
+        settingsBuilder.asyncRetrieveContextsOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -331,6 +400,15 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
         augmentPromptSettings;
     private final UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
         corroborateContentSettings;
+    private final UnaryCallSettings.Builder<AskContextsRequest, AskContextsResponse>
+        askContextsSettings;
+    private final UnaryCallSettings.Builder<AsyncRetrieveContextsRequest, Operation>
+        asyncRetrieveContextsSettings;
+    private final OperationCallSettings.Builder<
+            AsyncRetrieveContextsRequest,
+            AsyncRetrieveContextsResponse,
+            AsyncRetrieveContextsOperationMetadata>
+        asyncRetrieveContextsOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -369,6 +447,9 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       retrieveContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       augmentPromptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       corroborateContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      askContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      asyncRetrieveContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      asyncRetrieveContextsOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -380,6 +461,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
               retrieveContextsSettings,
               augmentPromptSettings,
               corroborateContentSettings,
+              askContextsSettings,
+              asyncRetrieveContextsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -394,6 +477,10 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       retrieveContextsSettings = settings.retrieveContextsSettings.toBuilder();
       augmentPromptSettings = settings.augmentPromptSettings.toBuilder();
       corroborateContentSettings = settings.corroborateContentSettings.toBuilder();
+      askContextsSettings = settings.askContextsSettings.toBuilder();
+      asyncRetrieveContextsSettings = settings.asyncRetrieveContextsSettings.toBuilder();
+      asyncRetrieveContextsOperationSettings =
+          settings.asyncRetrieveContextsOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -405,6 +492,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
               retrieveContextsSettings,
               augmentPromptSettings,
               corroborateContentSettings,
+              askContextsSettings,
+              asyncRetrieveContextsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -441,6 +530,16 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .askContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .asyncRetrieveContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -464,6 +563,32 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .asyncRetrieveContextsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AsyncRetrieveContextsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AsyncRetrieveContextsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AsyncRetrieveContextsOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -499,6 +624,27 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
     public UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
         corroborateContentSettings() {
       return corroborateContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to askContexts. */
+    public UnaryCallSettings.Builder<AskContextsRequest, AskContextsResponse>
+        askContextsSettings() {
+      return askContextsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asyncRetrieveContexts. */
+    public UnaryCallSettings.Builder<AsyncRetrieveContextsRequest, Operation>
+        asyncRetrieveContextsSettings() {
+      return asyncRetrieveContextsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asyncRetrieveContexts. */
+    public OperationCallSettings.Builder<
+            AsyncRetrieveContextsRequest,
+            AsyncRetrieveContextsResponse,
+            AsyncRetrieveContextsOperationMetadata>
+        asyncRetrieveContextsOperationSettings() {
+      return asyncRetrieveContextsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

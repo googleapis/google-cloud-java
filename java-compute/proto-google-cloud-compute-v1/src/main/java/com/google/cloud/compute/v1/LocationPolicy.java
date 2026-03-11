@@ -54,6 +54,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
 
   private LocationPolicy() {
     targetShape_ = "";
+    zones_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -336,6 +337,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -364,6 +372,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -382,6 +397,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -407,6 +429,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -498,6 +527,100 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ZONES_FIELD_NUMBER = 116085319;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration> zones_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration>
+      getZonesList() {
+    return zones_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder>
+      getZonesOrBuilderList() {
+    return zones_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  @java.lang.Override
+  public int getZonesCount() {
+    return zones_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LocationPolicyZoneConfiguration getZones(int index) {
+    return zones_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder getZonesOrBuilder(
+      int index) {
+    return zones_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -512,6 +635,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < zones_.size(); i++) {
+      output.writeMessage(116085319, zones_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 338621299, targetShape_);
     }
@@ -526,6 +652,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < zones_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(116085319, zones_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(338621299, targetShape_);
     }
@@ -562,6 +691,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
     if (hasTargetShape()) {
       if (!getTargetShape().equals(other.getTargetShape())) return false;
     }
+    if (!getZonesList().equals(other.getZonesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -580,6 +710,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
     if (hasTargetShape()) {
       hash = (37 * hash) + TARGET_SHAPE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetShape().hashCode();
+    }
+    if (getZonesCount() > 0) {
+      hash = (37 * hash) + ZONES_FIELD_NUMBER;
+      hash = (53 * hash) + getZonesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -746,6 +880,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       internalGetMutableLocations().clear();
       targetShape_ = "";
+      if (zonesBuilder_ == null) {
+        zones_ = java.util.Collections.emptyList();
+      } else {
+        zones_ = null;
+        zonesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -773,11 +914,24 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.LocationPolicy buildPartial() {
       com.google.cloud.compute.v1.LocationPolicy result =
           new com.google.cloud.compute.v1.LocationPolicy(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.LocationPolicy result) {
+      if (zonesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          zones_ = java.util.Collections.unmodifiableList(zones_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.zones_ = zones_;
+      } else {
+        result.zones_ = zonesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.LocationPolicy result) {
@@ -812,6 +966,33 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (zonesBuilder_ == null) {
+        if (!other.zones_.isEmpty()) {
+          if (zones_.isEmpty()) {
+            zones_ = other.zones_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureZonesIsMutable();
+            zones_.addAll(other.zones_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.zones_.isEmpty()) {
+          if (zonesBuilder_.isEmpty()) {
+            zonesBuilder_.dispose();
+            zonesBuilder_ = null;
+            zones_ = other.zones_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            zonesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetZonesFieldBuilder()
+                    : null;
+          } else {
+            zonesBuilder_.addAllMessages(other.zones_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -838,6 +1019,20 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 928682554:
+              {
+                com.google.cloud.compute.v1.LocationPolicyZoneConfiguration m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.parser(),
+                        extensionRegistry);
+                if (zonesBuilder_ == null) {
+                  ensureZonesIsMutable();
+                  zones_.add(m);
+                } else {
+                  zonesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 928682554
             case -1585996902:
               {
                 targetShape_ = input.readStringRequireUtf8();
@@ -946,6 +1141,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -975,6 +1177,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -994,6 +1203,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -1020,6 +1236,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -1053,6 +1276,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -1082,6 +1312,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -1108,6 +1345,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -1135,6 +1379,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
      * Location configurations mapped by location name.
      * Currently only zone names are supported and must be represented as valid
      * internal URLs, such as zones/us-central1-a.
+     * The bulkInsert operation doesn't create instances in an AI zone, even if
+     * an AI zone is available in the specified region. For example, if you set a
+     * DENY preference for us-central1-a, Compute Engine will consider
+     * us-central1-b and us-central1-c for instance creation, but not
+     * us-central1-ai1a. Also, you can't use the locations[] configuration to
+     * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+     * operations, use the locationPolicy.zones[] field.
      * </pre>
      *
      * <code>
@@ -1287,6 +1538,442 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration> zones_ =
+        java.util.Collections.emptyList();
+
+    private void ensureZonesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        zones_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration>(
+                zones_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.LocationPolicyZoneConfiguration,
+            com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder,
+            com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder>
+        zonesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration>
+        getZonesList() {
+      if (zonesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(zones_);
+      } else {
+        return zonesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public int getZonesCount() {
+      if (zonesBuilder_ == null) {
+        return zones_.size();
+      } else {
+        return zonesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyZoneConfiguration getZones(int index) {
+      if (zonesBuilder_ == null) {
+        return zones_.get(index);
+      } else {
+        return zonesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder setZones(
+        int index, com.google.cloud.compute.v1.LocationPolicyZoneConfiguration value) {
+      if (zonesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureZonesIsMutable();
+        zones_.set(index, value);
+        onChanged();
+      } else {
+        zonesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder setZones(
+        int index,
+        com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder builderForValue) {
+      if (zonesBuilder_ == null) {
+        ensureZonesIsMutable();
+        zones_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        zonesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder addZones(com.google.cloud.compute.v1.LocationPolicyZoneConfiguration value) {
+      if (zonesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureZonesIsMutable();
+        zones_.add(value);
+        onChanged();
+      } else {
+        zonesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder addZones(
+        int index, com.google.cloud.compute.v1.LocationPolicyZoneConfiguration value) {
+      if (zonesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureZonesIsMutable();
+        zones_.add(index, value);
+        onChanged();
+      } else {
+        zonesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder addZones(
+        com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder builderForValue) {
+      if (zonesBuilder_ == null) {
+        ensureZonesIsMutable();
+        zones_.add(builderForValue.build());
+        onChanged();
+      } else {
+        zonesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder addZones(
+        int index,
+        com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder builderForValue) {
+      if (zonesBuilder_ == null) {
+        ensureZonesIsMutable();
+        zones_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        zonesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder addAllZones(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.LocationPolicyZoneConfiguration>
+            values) {
+      if (zonesBuilder_ == null) {
+        ensureZonesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
+        onChanged();
+      } else {
+        zonesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder clearZones() {
+      if (zonesBuilder_ == null) {
+        zones_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        zonesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public Builder removeZones(int index) {
+      if (zonesBuilder_ == null) {
+        ensureZonesIsMutable();
+        zones_.remove(index);
+        onChanged();
+      } else {
+        zonesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder getZonesBuilder(
+        int index) {
+      return internalGetZonesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder getZonesOrBuilder(
+        int index) {
+      if (zonesBuilder_ == null) {
+        return zones_.get(index);
+      } else {
+        return zonesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder>
+        getZonesOrBuilderList() {
+      if (zonesBuilder_ != null) {
+        return zonesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(zones_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder addZonesBuilder() {
+      return internalGetZonesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder addZonesBuilder(
+        int index) {
+      return internalGetZonesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The bulkInsert operation applies any preferences set in the locations
+     * field to the specific zones listed in the zones field if the same zones
+     * are specified in both fields.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder>
+        getZonesBuilderList() {
+      return internalGetZonesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.LocationPolicyZoneConfiguration,
+            com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder,
+            com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder>
+        internalGetZonesFieldBuilder() {
+      if (zonesBuilder_ == null) {
+        zonesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.LocationPolicyZoneConfiguration,
+                com.google.cloud.compute.v1.LocationPolicyZoneConfiguration.Builder,
+                com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder>(
+                zones_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        zones_ = null;
+      }
+      return zonesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.LocationPolicy)

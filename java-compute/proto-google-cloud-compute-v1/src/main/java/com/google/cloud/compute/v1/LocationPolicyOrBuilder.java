@@ -33,6 +33,13 @@ public interface LocationPolicyOrBuilder
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -47,6 +54,13 @@ public interface LocationPolicyOrBuilder
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -66,6 +80,13 @@ public interface LocationPolicyOrBuilder
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -81,6 +102,13 @@ public interface LocationPolicyOrBuilder
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -99,6 +127,13 @@ public interface LocationPolicyOrBuilder
    * Location configurations mapped by location name.
    * Currently only zone names are supported and must be represented as valid
    * internal URLs, such as zones/us-central1-a.
+   * The bulkInsert operation doesn't create instances in an AI zone, even if
+   * an AI zone is available in the specified region. For example, if you set a
+   * DENY preference for us-central1-a, Compute Engine will consider
+   * us-central1-b and us-central1-c for instance creation, but not
+   * us-central1-ai1a. Also, you can't use the locations[] configuration to
+   * allow instance creation in an AI zone. To include an AI zone in bulkInsert
+   * operations, use the locationPolicy.zones[] field.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -147,4 +182,75 @@ public interface LocationPolicyOrBuilder
    * @return The bytes for targetShape.
    */
   com.google.protobuf.ByteString getTargetShapeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.LocationPolicyZoneConfiguration> getZonesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  com.google.cloud.compute.v1.LocationPolicyZoneConfiguration getZones(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  int getZonesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder>
+      getZonesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The bulkInsert operation applies any preferences set in the locations
+   * field to the specific zones listed in the zones field if the same zones
+   * are specified in both fields.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocationPolicyZoneConfiguration zones = 116085319;
+   * </code>
+   */
+  com.google.cloud.compute.v1.LocationPolicyZoneConfigurationOrBuilder getZonesOrBuilder(int index);
 }

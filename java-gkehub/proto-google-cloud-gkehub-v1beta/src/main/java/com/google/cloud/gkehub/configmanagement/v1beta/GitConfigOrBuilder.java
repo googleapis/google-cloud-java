@@ -150,8 +150,8 @@ public interface GitConfigOrBuilder
    *
    * <pre>
    * Required. Type of secret configured for access to the Git repo.
-   * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
-   * githubapp or none.
+   * Must be one of `ssh`, `cookiefile`, `gcenode`, `token`,
+   * `gcpserviceaccount`, `githubapp` or `none`.
    * The validation of this is case-sensitive.
    * </pre>
    *
@@ -166,8 +166,8 @@ public interface GitConfigOrBuilder
    *
    * <pre>
    * Required. Type of secret configured for access to the Git repo.
-   * Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount,
-   * githubapp or none.
+   * Must be one of `ssh`, `cookiefile`, `gcenode`, `token`,
+   * `gcpserviceaccount`, `githubapp` or `none`.
    * The validation of this is case-sensitive.
    * </pre>
    *
@@ -182,7 +182,8 @@ public interface GitConfigOrBuilder
    *
    * <pre>
    * Optional. URL for the HTTPS proxy to be used when communicating with the
-   * Git repo.
+   * Git repo. Only specify when secret_type is `cookiefile`, `token`, or
+   * `none`.
    * </pre>
    *
    * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -196,7 +197,8 @@ public interface GitConfigOrBuilder
    *
    * <pre>
    * Optional. URL for the HTTPS proxy to be used when communicating with the
-   * Git repo.
+   * Git repo. Only specify when secret_type is `cookiefile`, `token`, or
+   * `none`.
    * </pre>
    *
    * <code>string https_proxy = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -210,7 +212,7 @@ public interface GitConfigOrBuilder
    *
    * <pre>
    * Optional. The Google Cloud Service Account Email used for auth when
-   * secret_type is gcpServiceAccount.
+   * secret_type is `gcpserviceaccount`.
    * </pre>
    *
    * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -224,7 +226,7 @@ public interface GitConfigOrBuilder
    *
    * <pre>
    * Optional. The Google Cloud Service Account Email used for auth when
-   * secret_type is gcpServiceAccount.
+   * secret_type is `gcpserviceaccount`.
    * </pre>
    *
    * <code>string gcp_service_account_email = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

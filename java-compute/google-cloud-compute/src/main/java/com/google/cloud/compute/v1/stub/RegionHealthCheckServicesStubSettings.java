@@ -52,6 +52,8 @@ import com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthCheckServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -162,6 +164,9 @@ public class RegionHealthCheckServicesStubSettings
   private final UnaryCallSettings<PatchRegionHealthCheckServiceRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionHealthCheckServiceRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListRegionHealthCheckServicesRequest, HealthCheckServicesList, HealthCheckService>
@@ -271,6 +276,13 @@ public class RegionHealthCheckServicesStubSettings
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<
+          TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public RegionHealthCheckServicesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -361,6 +373,7 @@ public class RegionHealthCheckServicesStubSettings
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for RegionHealthCheckServicesStubSettings. */
@@ -387,6 +400,9 @@ public class RegionHealthCheckServicesStubSettings
     private final OperationCallSettings.Builder<
             PatchRegionHealthCheckServiceRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -445,10 +461,16 @@ public class RegionHealthCheckServicesStubSettings
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, patchSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              patchSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -463,10 +485,16 @@ public class RegionHealthCheckServicesStubSettings
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, patchSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              patchSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -504,6 +532,11 @@ public class RegionHealthCheckServicesStubSettings
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -649,6 +682,13 @@ public class RegionHealthCheckServicesStubSettings
     public OperationCallSettings.Builder<PatchRegionHealthCheckServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

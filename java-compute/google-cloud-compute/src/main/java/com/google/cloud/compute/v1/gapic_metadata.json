@@ -2123,6 +2123,36 @@
         }
       }
     },
+    "RegionHealthAggregationPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionHealthAggregationPoliciesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "RegionHealthCheckServices": {
       "clients": {
         "grpc": {
@@ -2142,6 +2172,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2721,6 +2754,24 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReservationSlots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReservationSlotsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }

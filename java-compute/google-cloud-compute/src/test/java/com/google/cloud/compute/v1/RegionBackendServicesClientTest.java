@@ -195,6 +195,7 @@ public class RegionBackendServicesClientTest {
             .setNetwork("network1843485230")
             .setNetworkPassThroughLbTrafficPolicy(
                 BackendServiceNetworkPassThroughLbTrafficPolicy.newBuilder().build())
+            .setOrchestrationInfo(BackendServiceOrchestrationInfo.newBuilder().build())
             .setOutlierDetection(OutlierDetection.newBuilder().build())
             .setParams(BackendServiceParams.newBuilder().build())
             .setPort(3446913)

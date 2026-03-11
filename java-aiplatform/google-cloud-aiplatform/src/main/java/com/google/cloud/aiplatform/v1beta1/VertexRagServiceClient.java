@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.VertexRagServiceStub;
@@ -37,6 +39,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -127,6 +131,45 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> corroborateContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AskContexts</td>
+ *      <td><p> Agentic Retrieval Ask API for RAG.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> askContexts(AskContextsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> askContexts(LocationName parent, RagQuery query)
+ *           <li><p> askContexts(String parent, RagQuery query)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> askContextsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AsyncRetrieveContexts</td>
+ *      <td><p> Asynchronous API to retrieves relevant contexts for a query.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> asyncRetrieveContextsAsync(AsyncRetrieveContextsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> asyncRetrieveContextsAsync(LocationName parent, RagQuery query)
+ *           <li><p> asyncRetrieveContextsAsync(String parent, RagQuery query)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> asyncRetrieveContextsOperationCallable()
+ *           <li><p> asyncRetrieveContextsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -251,6 +294,7 @@ import javax.annotation.Generated;
 public class VertexRagServiceClient implements BackgroundResource {
   private final VertexRagServiceSettings settings;
   private final VertexRagServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of VertexRagServiceClient with default settings. */
   public static final VertexRagServiceClient create() throws IOException {
@@ -282,11 +326,13 @@ public class VertexRagServiceClient implements BackgroundResource {
   protected VertexRagServiceClient(VertexRagServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((VertexRagServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected VertexRagServiceClient(VertexRagServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final VertexRagServiceSettings getSettings() {
@@ -295,6 +341,14 @@ public class VertexRagServiceClient implements BackgroundResource {
 
   public VertexRagServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -708,6 +762,301 @@ public class VertexRagServiceClient implements BackgroundResource {
   public final UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentCallable() {
     return stub.corroborateContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Agentic Retrieval Ask API for RAG.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   RagQuery query = RagQuery.newBuilder().build();
+   *   AskContextsResponse response = vertexRagServiceClient.askContexts(parent, query);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to retrieve RagContexts.
+   *     The users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param query Required. Single RAG retrieve query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AskContextsResponse askContexts(LocationName parent, RagQuery query) {
+    AskContextsRequest request =
+        AskContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuery(query)
+            .build();
+    return askContexts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Agentic Retrieval Ask API for RAG.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   RagQuery query = RagQuery.newBuilder().build();
+   *   AskContextsResponse response = vertexRagServiceClient.askContexts(parent, query);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to retrieve RagContexts.
+   *     The users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param query Required. Single RAG retrieve query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AskContextsResponse askContexts(String parent, RagQuery query) {
+    AskContextsRequest request =
+        AskContextsRequest.newBuilder().setParent(parent).setQuery(query).build();
+    return askContexts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Agentic Retrieval Ask API for RAG.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AskContextsRequest request =
+   *       AskContextsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery(RagQuery.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .build();
+   *   AskContextsResponse response = vertexRagServiceClient.askContexts(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AskContextsResponse askContexts(AskContextsRequest request) {
+    return askContextsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Agentic Retrieval Ask API for RAG.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AskContextsRequest request =
+   *       AskContextsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery(RagQuery.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .build();
+   *   ApiFuture<AskContextsResponse> future =
+   *       vertexRagServiceClient.askContextsCallable().futureCall(request);
+   *   // Do something.
+   *   AskContextsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AskContextsRequest, AskContextsResponse> askContextsCallable() {
+    return stub.askContextsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API to retrieves relevant contexts for a query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   RagQuery query = RagQuery.newBuilder().build();
+   *   AsyncRetrieveContextsResponse response =
+   *       vertexRagServiceClient.asyncRetrieveContextsAsync(parent, query).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to retrieve RagContexts.
+   *     The users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param query Required. Single RAG retrieve query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          AsyncRetrieveContextsResponse, AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsAsync(LocationName parent, RagQuery query) {
+    AsyncRetrieveContextsRequest request =
+        AsyncRetrieveContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuery(query)
+            .build();
+    return asyncRetrieveContextsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API to retrieves relevant contexts for a query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   RagQuery query = RagQuery.newBuilder().build();
+   *   AsyncRetrieveContextsResponse response =
+   *       vertexRagServiceClient.asyncRetrieveContextsAsync(parent, query).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location from which to retrieve RagContexts.
+   *     The users must have permission to make a call in the project. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param query Required. Single RAG retrieve query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          AsyncRetrieveContextsResponse, AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsAsync(String parent, RagQuery query) {
+    AsyncRetrieveContextsRequest request =
+        AsyncRetrieveContextsRequest.newBuilder().setParent(parent).setQuery(query).build();
+    return asyncRetrieveContextsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API to retrieves relevant contexts for a query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AsyncRetrieveContextsRequest request =
+   *       AsyncRetrieveContextsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery(RagQuery.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .build();
+   *   AsyncRetrieveContextsResponse response =
+   *       vertexRagServiceClient.asyncRetrieveContextsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          AsyncRetrieveContextsResponse, AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsAsync(AsyncRetrieveContextsRequest request) {
+    return asyncRetrieveContextsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API to retrieves relevant contexts for a query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AsyncRetrieveContextsRequest request =
+   *       AsyncRetrieveContextsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery(RagQuery.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .build();
+   *   OperationFuture<AsyncRetrieveContextsResponse, AsyncRetrieveContextsOperationMetadata>
+   *       future =
+   *           vertexRagServiceClient.asyncRetrieveContextsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AsyncRetrieveContextsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationCallable() {
+    return stub.asyncRetrieveContextsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API to retrieves relevant contexts for a query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+   *   AsyncRetrieveContextsRequest request =
+   *       AsyncRetrieveContextsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery(RagQuery.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagServiceClient.asyncRetrieveContextsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsCallable() {
+    return stub.asyncRetrieveContextsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

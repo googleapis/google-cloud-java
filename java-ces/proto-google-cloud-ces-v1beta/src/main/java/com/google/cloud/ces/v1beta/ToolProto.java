@@ -57,17 +57,17 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + "\"google/cloud/ces/v1beta/tool.proto\022\027go"
           + "ogle.cloud.ces.v1beta\032\037google/api/field_"
           + "behavior.proto\032\031google/api/resource.prot"
-          + "o\032-google/cloud/ces/v1beta/client_function.proto\032$google/cloud/ces/v1beta/common"
-          + ".proto\032,google/cloud/ces/v1beta/connector_tool.proto\032-google/cloud/ces/v1beta/da"
-          + "ta_store_tool.proto\032#google/cloud/ces/v1beta/fakes.proto\032.google/cloud/ces/v1bet"
-          + "a/file_search_tool.proto\0320google/cloud/ces/v1beta/google_search_tool.proto\032&goog"
-          + "le/cloud/ces/v1beta/mcp_tool.proto\032+google/cloud/ces/v1beta/open_api_tool.proto\032"
-          + "-google/cloud/ces/v1beta/python_function.proto\032)google/cloud/ces/v1beta/system_t"
-          + "ool.proto\032)google/cloud/ces/v1beta/widge"
-          + "t_tool.proto\032\037google/protobuf/timestamp.proto\"\216\t\n"
+          + "o\032(google/cloud/ces/v1beta/agent_tool.proto\032-google/cloud/ces/v1beta/client_func"
+          + "tion.proto\032$google/cloud/ces/v1beta/common.proto\032,google/cloud/ces/v1beta/connec"
+          + "tor_tool.proto\032-google/cloud/ces/v1beta/data_store_tool.proto\032#google/cloud/ces/"
+          + "v1beta/fakes.proto\032.google/cloud/ces/v1beta/file_search_tool.proto\0320google/cloud"
+          + "/ces/v1beta/google_search_tool.proto\032&google/cloud/ces/v1beta/mcp_tool.proto\032+go"
+          + "ogle/cloud/ces/v1beta/open_api_tool.proto\032-google/cloud/ces/v1beta/python_functi"
+          + "on.proto\032)google/cloud/ces/v1beta/system_tool.proto\032)google/cloud/ces/v1beta/wid"
+          + "get_tool.proto\032\037google/protobuf/timestamp.proto\"\315\t\n"
           + "\004Tool\022G\n"
-          + "\017client_function\030\002 \001(\0132"
-          + "\'.google.cloud.ces.v1beta.ClientFunctionB\003\340A\001H\000\022B\n\r"
+          + "\017client_function\030\002 \001("
+          + "\0132\'.google.cloud.ces.v1beta.ClientFunctionB\003\340A\001H\000\022B\n\r"
           + "open_api_tool\030\003"
           + " \001(\0132$.google.cloud.ces.v1beta.OpenApiToolB\003\340A\001H\000\022L\n"
           + "\022google_search_tool\030\005"
@@ -76,14 +76,16 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132&.google.cloud.ces.v1beta.ConnectorToolB\003\340A\001H\000\022F\n"
           + "\017data_store_tool\030\n"
           + " \001(\0132&.google.cloud.ces.v1beta.DataStoreToolB\003\340A\001H\000\022G\n"
-          + "\017python_function\030\013 \001("
-          + "\0132\'.google.cloud.ces.v1beta.PythonFunctionB\003\340A\001H\000\0229\n"
+          + "\017python_function\030\013 "
+          + "\001(\0132\'.google.cloud.ces.v1beta.PythonFunctionB\003\340A\001H\000\0229\n"
           + "\010mcp_tool\030\020 \001(\0132"
           + " .google.cloud.ces.v1beta.McpToolB\003\340A\001H\000\022H\n"
           + "\020file_search_tool\030\021"
           + " \001(\0132\'.google.cloud.ces.v1beta.FileSearchToolB\003\340A\001H\000\022?\n"
-          + "\013system_tool\030\022 "
-          + "\001(\0132#.google.cloud.ces.v1beta.SystemToolB\003\340A\001H\000\022?\n"
+          + "\013system_tool\030\022"
+          + " \001(\0132#.google.cloud.ces.v1beta.SystemToolB\003\340A\001H\000\022=\n\n"
+          + "agent_tool\030\027"
+          + " \001(\0132\".google.cloud.ces.v1beta.AgentToolB\003\340A\001H\000\022?\n"
           + "\013widget_tool\030\030"
           + " \001(\0132#.google.cloud.ces.v1beta.WidgetToolB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
@@ -96,13 +98,13 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
           + "\004etag\030\016 \001(\t\022\036\n"
           + "\021generated_summary\030\017 \001(\tB\003\340A\003\022F\n"
-          + "\020tool_fake_config\030\024"
-          + " \001(\0132\'.google.cloud.ces.v1beta.ToolFakeConfigB\003\340A\001:j\352Ag\n"
-          + "\027ces.googleapis.com/Tool\022?projects/{project}/locations/{locat"
-          + "ion}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
+          + "\020tool_fake_config\030\024 \001(\0132\'.googl"
+          + "e.cloud.ces.v1beta.ToolFakeConfigB\003\340A\001:j\352Ag\n"
+          + "\027ces.googleapis.com/Tool\022?projects/{"
+          + "project}/locations/{location}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
           + "\ttool_typeBY\n"
-          + "\033com.google.cloud.ces.v1betaB\tToolProtoP\001Z-cloud.google.com/go/"
-          + "ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\tToolProtoP\001Z-cloud.google.com/go/ces/apiv1beta/c"
+          + "espb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,6 +112,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.AgentToolProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ClientFunctionProto.getDescriptor(),
               com.google.cloud.ces.v1beta.CommonProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ConnectorToolProto.getDescriptor(),
@@ -138,6 +141,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
               "McpTool",
               "FileSearchTool",
               "SystemTool",
+              "AgentTool",
               "WidgetTool",
               "Name",
               "DisplayName",
@@ -152,6 +156,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.ces.v1beta.AgentToolProto.getDescriptor();
     com.google.cloud.ces.v1beta.ClientFunctionProto.getDescriptor();
     com.google.cloud.ces.v1beta.CommonProto.getDescriptor();
     com.google.cloud.ces.v1beta.ConnectorToolProto.getDescriptor();

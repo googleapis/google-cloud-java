@@ -143,6 +143,32 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
      * @return The returnBoundingBoxes.
      */
     boolean getReturnBoundingBoxes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include image annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageAnnotation.
+     */
+    boolean getEnableImageAnnotation();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include table annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableAnnotation.
+     */
+    boolean getEnableTableAnnotation();
   }
 
   /**
@@ -945,6 +971,44 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       return returnBoundingBoxes_;
     }
 
+    public static final int ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER = 4;
+    private boolean enableImageAnnotation_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include image annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageAnnotation.
+     */
+    @java.lang.Override
+    public boolean getEnableImageAnnotation() {
+      return enableImageAnnotation_;
+    }
+
+    public static final int ENABLE_TABLE_ANNOTATION_FIELD_NUMBER = 6;
+    private boolean enableTableAnnotation_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include table annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableAnnotation.
+     */
+    @java.lang.Override
+    public boolean getEnableTableAnnotation() {
+      return enableTableAnnotation_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -968,6 +1032,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       if (returnBoundingBoxes_ != false) {
         output.writeBool(3, returnBoundingBoxes_);
       }
+      if (enableImageAnnotation_ != false) {
+        output.writeBool(4, enableImageAnnotation_);
+      }
+      if (enableTableAnnotation_ != false) {
+        output.writeBool(6, enableTableAnnotation_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -985,6 +1055,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       }
       if (returnBoundingBoxes_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, returnBoundingBoxes_);
+      }
+      if (enableImageAnnotation_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableImageAnnotation_);
+      }
+      if (enableTableAnnotation_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableTableAnnotation_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1008,6 +1084,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       }
       if (getReturnImages() != other.getReturnImages()) return false;
       if (getReturnBoundingBoxes() != other.getReturnBoundingBoxes()) return false;
+      if (getEnableImageAnnotation() != other.getEnableImageAnnotation()) return false;
+      if (getEnableTableAnnotation() != other.getEnableTableAnnotation()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1027,6 +1105,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnImages());
       hash = (37 * hash) + RETURN_BOUNDING_BOXES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnBoundingBoxes());
+      hash = (37 * hash) + ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageAnnotation());
+      hash = (37 * hash) + ENABLE_TABLE_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableAnnotation());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1184,6 +1266,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
         }
         returnImages_ = false;
         returnBoundingBoxes_ = false;
+        enableImageAnnotation_ = false;
+        enableTableAnnotation_ = false;
         return this;
       }
 
@@ -1234,6 +1318,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.returnBoundingBoxes_ = returnBoundingBoxes_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableImageAnnotation_ = enableImageAnnotation_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.enableTableAnnotation_ = enableTableAnnotation_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1259,6 +1349,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
         }
         if (other.getReturnBoundingBoxes() != false) {
           setReturnBoundingBoxes(other.getReturnBoundingBoxes());
+        }
+        if (other.getEnableImageAnnotation() != false) {
+          setEnableImageAnnotation(other.getEnableImageAnnotation());
+        }
+        if (other.getEnableTableAnnotation() != false) {
+          setEnableTableAnnotation(other.getEnableTableAnnotation());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1305,6 +1401,18 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 32:
+                {
+                  enableImageAnnotation_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 48:
+                {
+                  enableTableAnnotation_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1660,6 +1768,118 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessage
       public Builder clearReturnBoundingBoxes() {
         bitField0_ = (bitField0_ & ~0x00000004);
         returnBoundingBoxes_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableImageAnnotation_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include image annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableImageAnnotation() {
+        return enableImageAnnotation_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include image annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableImageAnnotation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableImageAnnotation(boolean value) {
+
+        enableImageAnnotation_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include image annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableImageAnnotation() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        enableImageAnnotation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableTableAnnotation_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableTableAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableTableAnnotation() {
+        return enableTableAnnotation_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableTableAnnotation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableTableAnnotation(boolean value) {
+
+        enableTableAnnotation_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableTableAnnotation() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        enableTableAnnotation_ = false;
         onChanged();
         return this;
       }

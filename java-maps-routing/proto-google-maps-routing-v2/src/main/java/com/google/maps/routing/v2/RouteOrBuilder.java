@@ -585,8 +585,8 @@ public interface RouteOrBuilder
    *
    * <pre>
    * An opaque token that can be passed to [Navigation
-   * SDK](https://developers.google.com/maps/documentation/navigation) to
-   * reconstruct the route during navigation, and, in the event of rerouting,
+   * SDK](https://developers.google.com/maps/documentation/mobility/driver-sdk/navigation)
+   * to reconstruct the route during navigation, and, in the event of rerouting,
    * honor the original intention when the route was created. Treat this token
    * as an opaque blob.  Don't compare its value across requests as its value
    * may change even if the service returns the exact same route.
@@ -608,8 +608,8 @@ public interface RouteOrBuilder
    *
    * <pre>
    * An opaque token that can be passed to [Navigation
-   * SDK](https://developers.google.com/maps/documentation/navigation) to
-   * reconstruct the route during navigation, and, in the event of rerouting,
+   * SDK](https://developers.google.com/maps/documentation/mobility/driver-sdk/navigation)
+   * to reconstruct the route during navigation, and, in the event of rerouting,
    * honor the original intention when the route was created. Treat this token
    * as an opaque blob.  Don't compare its value across requests as its value
    * may change even if the service returns the exact same route.

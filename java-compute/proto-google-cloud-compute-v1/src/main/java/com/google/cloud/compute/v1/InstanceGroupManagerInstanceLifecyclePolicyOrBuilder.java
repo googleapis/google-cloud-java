@@ -166,4 +166,76 @@ public interface InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
    * @return The bytes for forceUpdateOnRepair.
    */
   com.google.protobuf.ByteString getForceUpdateOnRepairBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Check the OnFailedHealthCheck enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string on_failed_health_check = 39807943;</code>
+   *
+   * @return Whether the onFailedHealthCheck field is set.
+   */
+  boolean hasOnFailedHealthCheck();
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Check the OnFailedHealthCheck enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string on_failed_health_check = 39807943;</code>
+   *
+   * @return The onFailedHealthCheck.
+   */
+  java.lang.String getOnFailedHealthCheck();
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on an unhealthy VM. A VM is marked as
+   * unhealthy when the application running on that VM fails a health check.
+   * Valid values are:
+   *
+   * - DEFAULT_ACTION (default): MIG uses the same action
+   * configured for instanceLifecyclePolicy.defaultActionOnFailure field.
+   * - REPAIR: MIG automatically repairs an unhealthy VM by
+   * recreating it.
+   * - DO_NOTHING: MIG doesn't repair an unhealthy VM.
+   * For more information, see
+   * About repairing VMs in a MIG.
+   * Check the OnFailedHealthCheck enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string on_failed_health_check = 39807943;</code>
+   *
+   * @return The bytes for onFailedHealthCheck.
+   */
+  com.google.protobuf.ByteString getOnFailedHealthCheckBytes();
 }

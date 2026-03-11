@@ -551,6 +551,46 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.VpnTunnelParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.VpnTunnelParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * URL of the peer side external VPN gateway to which this VPN tunnel is
    * connected.
    * Provided by the client when the VPN tunnel is created.

@@ -32,10 +32,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Contains information about tolls on the specific `RouteLeg`.
    * This field is only populated if we expect there are tolls on the
-   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * `RouteLeg` and `TOLLS` is included in the request's
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
+   * If this field is set but the estimated_price subfield is not
    * populated, we expect that road contains tolls but we do not know an
-   * estimated price. If this field does not exist, then there is no toll on the
-   * `RouteLeg`.
+   * estimated price. If `toll_info` does not exist, then there is no toll on
+   * the `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -50,10 +52,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Contains information about tolls on the specific `RouteLeg`.
    * This field is only populated if we expect there are tolls on the
-   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * `RouteLeg` and `TOLLS` is included in the request's
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
+   * If this field is set but the estimated_price subfield is not
    * populated, we expect that road contains tolls but we do not know an
-   * estimated price. If this field does not exist, then there is no toll on the
-   * `RouteLeg`.
+   * estimated price. If `toll_info` does not exist, then there is no toll on
+   * the `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -68,10 +72,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Contains information about tolls on the specific `RouteLeg`.
    * This field is only populated if we expect there are tolls on the
-   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * `RouteLeg` and `TOLLS` is included in the request's
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
+   * If this field is set but the estimated_price subfield is not
    * populated, we expect that road contains tolls but we do not know an
-   * estimated price. If this field does not exist, then there is no toll on the
-   * `RouteLeg`.
+   * estimated price. If `toll_info` does not exist, then there is no toll on
+   * the `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -82,8 +88,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Speed reading intervals detailing traffic density. Applicable in case of
-   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * Speed reading intervals indicating traffic density. This field is only
+   * populated for requests when the request has a `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`
+   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
+   * value, and `TRAFFIC_ON_POLYLINE` is included in the
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
    * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
@@ -102,8 +112,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Speed reading intervals detailing traffic density. Applicable in case of
-   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * Speed reading intervals indicating traffic density. This field is only
+   * populated for requests when the request has a `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`
+   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
+   * value, and `TRAFFIC_ON_POLYLINE` is included in the
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
    * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
@@ -122,8 +136,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Speed reading intervals detailing traffic density. Applicable in case of
-   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * Speed reading intervals indicating traffic density. This field is only
+   * populated for requests when the request has a `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`
+   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
+   * value, and `TRAFFIC_ON_POLYLINE` is included in the
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
    * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
@@ -142,8 +160,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Speed reading intervals detailing traffic density. Applicable in case of
-   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * Speed reading intervals indicating traffic density. This field is only
+   * populated for requests when the request has a `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`
+   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
+   * value, and `TRAFFIC_ON_POLYLINE` is included in the
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
    * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
@@ -163,8 +185,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Speed reading intervals detailing traffic density. Applicable in case of
-   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * Speed reading intervals indicating traffic density. This field is only
+   * populated for requests when the request has a `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`
+   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
+   * value, and `TRAFFIC_ON_POLYLINE` is included in the
+   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
    * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.

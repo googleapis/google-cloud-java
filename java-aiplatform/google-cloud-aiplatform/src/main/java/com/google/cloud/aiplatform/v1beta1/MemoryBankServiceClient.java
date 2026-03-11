@@ -86,6 +86,11 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> createMemoryAsync(CreateMemoryRequest request)
  *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createMemoryAsync(ReasoningEngineName parent, Memory memory, String memoryId)
+ *           <li><p> createMemoryAsync(String parent, Memory memory, String memoryId)
+ *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> createMemoryOperationCallable()
@@ -401,12 +406,97 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
+   *   ReasoningEngineName parent =
+   *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+   *   Memory memory = Memory.newBuilder().build();
+   *   String memoryId = "memoryId-637040132";
+   *   Memory response = memoryBankServiceClient.createMemoryAsync(parent, memory, memoryId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the ReasoningEngine to create the Memory under.
+   *     Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
+   * @param memory Required. The Memory to be created.
+   * @param memoryId Optional. The user defined ID to use for memory, which will become the final
+   *     component of the memory resource name. If not provided, Vertex AI will generate a value for
+   *     this ID.
+   *     <p>This value may be up to 63 characters, and valid characters are `[a-z0-9-]`. The first
+   *     character must be a letter, and the last character must be a letter or number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Memory, CreateMemoryOperationMetadata> createMemoryAsync(
+      ReasoningEngineName parent, Memory memory, String memoryId) {
+    CreateMemoryRequest request =
+        CreateMemoryRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMemory(memory)
+            .setMemoryId(memoryId)
+            .build();
+    return createMemoryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Memory.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
+   *   String parent =
+   *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
+   *   Memory memory = Memory.newBuilder().build();
+   *   String memoryId = "memoryId-637040132";
+   *   Memory response = memoryBankServiceClient.createMemoryAsync(parent, memory, memoryId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the ReasoningEngine to create the Memory under.
+   *     Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
+   * @param memory Required. The Memory to be created.
+   * @param memoryId Optional. The user defined ID to use for memory, which will become the final
+   *     component of the memory resource name. If not provided, Vertex AI will generate a value for
+   *     this ID.
+   *     <p>This value may be up to 63 characters, and valid characters are `[a-z0-9-]`. The first
+   *     character must be a letter, and the last character must be a letter or number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Memory, CreateMemoryOperationMetadata> createMemoryAsync(
+      String parent, Memory memory, String memoryId) {
+    CreateMemoryRequest request =
+        CreateMemoryRequest.newBuilder()
+            .setParent(parent)
+            .setMemory(memory)
+            .setMemoryId(memoryId)
+            .build();
+    return createMemoryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Memory.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
    *   CreateMemoryRequest request =
    *       CreateMemoryRequest.newBuilder()
    *           .setParent(
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setMemory(Memory.newBuilder().build())
+   *           .setMemoryId("memoryId-637040132")
    *           .build();
    *   Memory response = memoryBankServiceClient.createMemoryAsync(request).get();
    * }
@@ -439,6 +529,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setMemory(Memory.newBuilder().build())
+   *           .setMemoryId("memoryId-637040132")
    *           .build();
    *   OperationFuture<Memory, CreateMemoryOperationMetadata> future =
    *       memoryBankServiceClient.createMemoryOperationCallable().futureCall(request);
@@ -471,6 +562,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setMemory(Memory.newBuilder().build())
+   *           .setMemoryId("memoryId-637040132")
    *           .build();
    *   ApiFuture<Operation> future =
    *       memoryBankServiceClient.createMemoryCallable().futureCall(request);

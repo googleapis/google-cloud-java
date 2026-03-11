@@ -102,4 +102,42 @@ public interface CreateMemoryRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.MemoryOrBuilder getMemoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user defined ID to use for memory, which will become the
+   * final component of the memory resource name. If not provided, Vertex AI
+   * will generate a value for this ID.
+   *
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9-]`. The first character must be a letter, and the last character
+   * must be a letter or number.
+   * </pre>
+   *
+   * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The memoryId.
+   */
+  java.lang.String getMemoryId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user defined ID to use for memory, which will become the
+   * final component of the memory resource name. If not provided, Vertex AI
+   * will generate a value for this ID.
+   *
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9-]`. The first character must be a letter, and the last character
+   * must be a letter or number.
+   * </pre>
+   *
+   * <code>string memory_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for memoryId.
+   */
+  com.google.protobuf.ByteString getMemoryIdBytes();
 }

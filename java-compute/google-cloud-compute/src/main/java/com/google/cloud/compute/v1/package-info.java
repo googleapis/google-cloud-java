@@ -1221,6 +1221,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= RegionHealthAggregationPoliciesClient =======================
+ *
+ * <p>Service Description: The RegionHealthAggregationPolicies API.
+ *
+ * <p>Sample for RegionHealthAggregationPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionHealthAggregationPoliciesClient regionHealthAggregationPoliciesClient =
+ *     RegionHealthAggregationPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String healthAggregationPolicy = "healthAggregationPolicy755484600";
+ *   HealthAggregationPolicy response =
+ *       regionHealthAggregationPoliciesClient.get(project, region, healthAggregationPolicy);
+ * }
+ * }</pre>
+ *
  * <p>======================= RegionHealthCheckServicesClient =======================
  *
  * <p>Service Description: The RegionHealthCheckServices API.
@@ -1666,6 +1688,28 @@
  *   String reservationBlock = "reservationBlock-1897000927";
  *   ReservationBlocksGetResponse response =
  *       reservationBlocksClient.get(project, zone, reservation, reservationBlock);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ReservationSlotsClient =======================
+ *
+ * <p>Service Description: The ReservationSlots API.
+ *
+ * <p>Sample for ReservationSlotsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReservationSlotsClient reservationSlotsClient = ReservationSlotsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String parentName = "parentName-244870571";
+ *   String reservationSlot = "reservationSlot-337781782";
+ *   ReservationSlotsGetResponse response =
+ *       reservationSlotsClient.get(project, zone, parentName, reservationSlot);
  * }
  * }</pre>
  *

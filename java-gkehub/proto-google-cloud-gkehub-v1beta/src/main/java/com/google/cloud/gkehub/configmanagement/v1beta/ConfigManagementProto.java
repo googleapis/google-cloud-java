@@ -53,6 +53,14 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSync_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_configmanagement_v1beta_DeploymentOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_configmanagement_v1beta_DeploymentOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_configmanagement_v1beta_ContainerOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gkehub_configmanagement_v1beta_ContainerOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_configmanagement_v1beta_GitConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gkehub_configmanagement_v1beta_GitConfig_fieldAccessorTable;
@@ -164,7 +172,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
       "\n"
           + "Bgoogle/cloud/gkehub/v1beta/configmanagement/configmanagement.proto\022+google.clo"
           + "ud.gkehub.configmanagement.v1beta\032\037googl"
-          + "e/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\361\004\n"
+          + "e/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\235\005\n"
           + "\017MembershipState\022\031\n"
           + "\014cluster_name\030\001 \001(\tB\003\340A\003\022Y\n"
           + "\017membership_spec\030\002"
@@ -178,36 +186,50 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
           + "\016binauthz_state\030\006 \001(\0132:.google."
           + "cloud.gkehub.configmanagement.v1beta.BinauthzStateB\003\340A\003\022n\n"
           + "\032hierarchy_controller_state\030\007 \001(\0132E.google.cloud.gkehub.config"
-          + "management.v1beta.HierarchyControllerStateB\003\340A\003\"\357\004\n"
+          + "management.v1beta.HierarchyControllerStateB\003\340A\003\022*\n"
+          + "\035kubernetes_api_server_version\030\010 \001(\tB\003\340A\003\"\361\004\n"
           + "\016MembershipSpec\022Q\n"
           + "\013config_sync\030\001"
           + " \001(\01327.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncB\003\340A\001\022_\n"
-          + "\021policy_controller\030\002 \001(\0132=.google.cloud.gkehub.c"
-          + "onfigmanagement.v1beta.PolicyControllerB\005\030\001\340A\001\022T\n"
-          + "\010binauthz\030\003 \001(\0132;.google.cloud."
-          + "gkehub.configmanagement.v1beta.BinauthzConfigB\005\030\001\340A\001\022k\n"
-          + "\024hierarchy_controller\030\004 \001(\0132F.google.cloud.gkehub.configmanagemen"
-          + "t.v1beta.HierarchyControllerConfigB\005\030\001\340A\001\022\024\n"
+          + "\021policy_controller\030\002 \001(\0132=.google.cloud.gkeh"
+          + "ub.configmanagement.v1beta.PolicyControllerB\005\030\001\340A\001\022T\n"
+          + "\010binauthz\030\003 \001(\0132;.google.cl"
+          + "oud.gkehub.configmanagement.v1beta.BinauthzConfigB\005\030\001\340A\001\022k\n"
+          + "\024hierarchy_controller\030\004 \001(\0132F.google.cloud.gkehub.configmanag"
+          + "ement.v1beta.HierarchyControllerConfigB\005\030\001\340A\001\022\024\n"
           + "\007version\030\n"
           + " \001(\tB\003\340A\001\022\024\n"
-          + "\007cluster\030\013 \001(\tB\003\340A\001\022_\n\n"
-          + "management\030\014 \001(\0162F.google.cloud"
-          + ".gkehub.configmanagement.v1beta.MembershipSpec.ManagementB\003\340A\001\"Y\n\n"
+          + "\007cluster\030\013 \001(\tB\003\340A\001\022a\n\n"
+          + "management\030\014 \001(\0162F.google.c"
+          + "loud.gkehub.configmanagement.v1beta.MembershipSpec.ManagementB\005\030\001\340A\001\"Y\n\n"
           + "Management\022\032\n"
           + "\026MANAGEMENT_UNSPECIFIED\020\000\022\030\n"
           + "\024MANAGEMENT_AUTOMATIC\020\001\022\025\n"
-          + "\021MANAGEMENT_MANUAL\020\002\"\232\002\n\n"
+          + "\021MANAGEMENT_MANUAL\020\002\"\376\002\n\n"
           + "ConfigSync\022H\n"
-          + "\003git\030\007 \001(\01326.google.cloud.gke"
-          + "hub.configmanagement.v1beta.GitConfigB\003\340A\001\022\032\n\r"
+          + "\003git\030\007 \001(\01326.google.clo"
+          + "ud.gkehub.configmanagement.v1beta.GitConfigB\003\340A\001\022\032\n\r"
           + "source_format\030\010 \001(\tB\003\340A\001\022\031\n"
           + "\007enabled\030\n"
           + " \001(\010B\003\340A\001H\000\210\001\001\022\032\n\r"
           + "prevent_drift\030\013 \001(\010B\003\340A\001\022H\n"
-          + "\003oci\030\014 \001(\01326.google.cloud.gkehub"
-          + ".configmanagement.v1beta.OciConfigB\003\340A\001\022\031\n"
-          + "\014stop_syncing\030\020 \001(\010B\003\340A\001B\n\n"
-          + "\010_enabled\"\346\001\n"
+          + "\003oci\030\014 \001(\01326.google.cloud."
+          + "gkehub.configmanagement.v1beta.OciConfigB\003\340A\001\022\031\n"
+          + "\014stop_syncing\030\020 \001(\010B\003\340A\001\022b\n"
+          + "\024deployment_overrides\030\021 \003(\0132?.google.cloud.gk"
+          + "ehub.configmanagement.v1beta.DeploymentOverrideB\003\340A\001B\n\n"
+          + "\010_enabled\"\256\001\n"
+          + "\022DeploymentOverride\022\034\n"
+          + "\017deployment_name\030\001 \001(\tB\003\340A\002\022!\n"
+          + "\024deployment_namespace\030\002 \001(\tB\003\340A\002\022W\n\n"
+          + "containers\030\003 \003(\0132>.google.cloud.gkehub.confi"
+          + "gmanagement.v1beta.ContainerOverrideB\003\340A\001\"\232\001\n"
+          + "\021ContainerOverride\022\033\n"
+          + "\016container_name\030\001 \001(\tB\003\340A\002\022\030\n"
+          + "\013cpu_request\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tcpu_limit\030\003 \001(\tB\003\340A\001\022\033\n"
+          + "\016memory_request\030\004 \001(\tB\003\340A\001\022\031\n"
+          + "\014memory_limit\030\005 \001(\tB\003\340A\001\"\346\001\n"
           + "\tGitConfig\022\026\n"
           + "\tsync_repo\030\001 \001(\tB\003\340A\002\022\030\n"
           + "\013sync_branch\030\002 \001(\tB\003\340A\001\022\027\n\n"
@@ -433,6 +455,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "PolicyControllerState",
               "BinauthzState",
               "HierarchyControllerState",
+              "KubernetesApiServerVersion",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_MembershipSpec_descriptor =
         getDescriptor().getMessageType(1);
@@ -454,10 +477,32 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSync_descriptor,
             new java.lang.String[] {
-              "Git", "SourceFormat", "Enabled", "PreventDrift", "Oci", "StopSyncing",
+              "Git",
+              "SourceFormat",
+              "Enabled",
+              "PreventDrift",
+              "Oci",
+              "StopSyncing",
+              "DeploymentOverrides",
+            });
+    internal_static_google_cloud_gkehub_configmanagement_v1beta_DeploymentOverride_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_gkehub_configmanagement_v1beta_DeploymentOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_configmanagement_v1beta_DeploymentOverride_descriptor,
+            new java.lang.String[] {
+              "DeploymentName", "DeploymentNamespace", "Containers",
+            });
+    internal_static_google_cloud_gkehub_configmanagement_v1beta_ContainerOverride_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_gkehub_configmanagement_v1beta_ContainerOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_configmanagement_v1beta_ContainerOverride_descriptor,
+            new java.lang.String[] {
+              "ContainerName", "CpuRequest", "CpuLimit", "MemoryRequest", "MemoryLimit",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_GitConfig_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_GitConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_GitConfig_descriptor,
@@ -472,7 +517,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "GcpServiceAccountEmail",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_OciConfig_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_OciConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_OciConfig_descriptor,
@@ -480,7 +525,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "SyncRepo", "PolicyDir", "SyncWaitSecs", "SecretType", "GcpServiceAccountEmail",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyController_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyController_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyController_descriptor,
@@ -496,7 +541,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "UpdateTime",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerMonitoring_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerMonitoring_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerMonitoring_descriptor,
@@ -504,7 +549,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Backends",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzConfig_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzConfig_descriptor,
@@ -512,7 +557,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Enabled",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerConfig_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerConfig_descriptor,
@@ -520,7 +565,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Enabled", "EnablePodTreeLabels", "EnableHierarchicalResourceQuota",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerDeploymentState_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerDeploymentState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerDeploymentState_descriptor,
@@ -528,7 +573,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Hnc", "Extension",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerVersion_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerVersion_descriptor,
@@ -536,7 +581,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Hnc", "Extension",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerState_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_HierarchyControllerState_descriptor,
@@ -544,7 +589,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Version", "State",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_OperatorState_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_OperatorState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_OperatorState_descriptor,
@@ -552,7 +597,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Version", "DeploymentState", "Errors",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_InstallError_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_InstallError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_InstallError_descriptor,
@@ -560,7 +605,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "ErrorMessage",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncState_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncState_descriptor,
@@ -576,7 +621,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "CrCount",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncError_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncError_descriptor,
@@ -584,7 +629,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "ErrorMessage",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncVersion_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncVersion_descriptor,
@@ -600,7 +645,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "OtelCollector",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncDeploymentState_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncDeploymentState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_ConfigSyncDeploymentState_descriptor,
@@ -616,7 +661,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "OtelCollector",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_SyncState_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_SyncState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_SyncState_descriptor,
@@ -630,7 +675,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Errors",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_SyncError_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_SyncError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_SyncError_descriptor,
@@ -638,7 +683,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Code", "ErrorMessage", "ErrorResources",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ErrorResource_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_ErrorResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_ErrorResource_descriptor,
@@ -646,7 +691,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "SourcePath", "ResourceName", "ResourceNamespace", "ResourceGvk",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_GroupVersionKind_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_GroupVersionKind_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_GroupVersionKind_descriptor,
@@ -654,7 +699,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Group", "Version", "Kind",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerState_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerState_descriptor,
@@ -662,7 +707,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Version", "DeploymentState", "Migration",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerVersion_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerVersion_descriptor,
@@ -670,7 +715,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Version",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerMigration_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerMigration_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_PolicyControllerMigration_descriptor,
@@ -678,7 +723,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Stage", "CopyTime",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzState_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzState_descriptor,
@@ -686,7 +731,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "Webhook", "Version",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzVersion_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_BinauthzVersion_descriptor,
@@ -694,7 +739,7 @@ public final class ConfigManagementProto extends com.google.protobuf.GeneratedFi
               "WebhookVersion",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1beta_GatekeeperDeploymentState_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_gkehub_configmanagement_v1beta_GatekeeperDeploymentState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1beta_GatekeeperDeploymentState_descriptor,

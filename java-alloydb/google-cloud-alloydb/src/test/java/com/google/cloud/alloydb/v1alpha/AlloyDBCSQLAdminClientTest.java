@@ -129,6 +129,7 @@ public class AlloyDBCSQLAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -209,6 +210,7 @@ public class AlloyDBCSQLAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

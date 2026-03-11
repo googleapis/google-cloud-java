@@ -327,7 +327,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    * <code>bool is_template = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Database.is_template is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1761
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1772
    * @return The isTemplate.
    */
   @java.lang.Override
@@ -1409,7 +1409,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Database.is_template is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=1761
+     *     google/cloud/alloydb/v1beta/resources.proto;l=1772
      * @return The isTemplate.
      */
     @java.lang.Override
@@ -1430,7 +1430,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Database.is_template is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=1761
+     *     google/cloud/alloydb/v1beta/resources.proto;l=1772
      * @param value The isTemplate to set.
      * @return This builder for chaining.
      */
@@ -1455,7 +1455,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Database.is_template is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=1761
+     *     google/cloud/alloydb/v1beta/resources.proto;l=1772
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

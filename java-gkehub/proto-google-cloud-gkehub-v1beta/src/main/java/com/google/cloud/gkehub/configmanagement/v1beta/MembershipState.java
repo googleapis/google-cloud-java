@@ -53,6 +53,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
 
   private MembershipState() {
     clusterName_ = "";
+    kubernetesApiServerVersion_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -500,6 +501,61 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
         : hierarchyControllerState_;
   }
 
+  public static final int KUBERNETES_API_SERVER_VERSION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kubernetesApiServerVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Kubernetes API server version of the cluster.
+   * </pre>
+   *
+   * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kubernetesApiServerVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getKubernetesApiServerVersion() {
+    java.lang.Object ref = kubernetesApiServerVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kubernetesApiServerVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Kubernetes API server version of the cluster.
+   * </pre>
+   *
+   * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for kubernetesApiServerVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKubernetesApiServerVersionBytes() {
+    java.lang.Object ref = kubernetesApiServerVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kubernetesApiServerVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -535,6 +591,9 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(7, getHierarchyControllerState());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kubernetesApiServerVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, kubernetesApiServerVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -567,6 +626,10 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, getHierarchyControllerState());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kubernetesApiServerVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(8, kubernetesApiServerVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -609,6 +672,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
     if (hasHierarchyControllerState()) {
       if (!getHierarchyControllerState().equals(other.getHierarchyControllerState())) return false;
     }
+    if (!getKubernetesApiServerVersion().equals(other.getKubernetesApiServerVersion()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -646,6 +711,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + HIERARCHY_CONTROLLER_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getHierarchyControllerState().hashCode();
     }
+    hash = (37 * hash) + KUBERNETES_API_SERVER_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getKubernetesApiServerVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -832,6 +899,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
         hierarchyControllerStateBuilder_.dispose();
         hierarchyControllerStateBuilder_ = null;
       }
+      kubernetesApiServerVersion_ = "";
       return this;
     }
 
@@ -908,6 +976,9 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
                 : hierarchyControllerStateBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.kubernetesApiServerVersion_ = kubernetesApiServerVersion_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -948,6 +1019,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasHierarchyControllerState()) {
         mergeHierarchyControllerState(other.getHierarchyControllerState());
+      }
+      if (!other.getKubernetesApiServerVersion().isEmpty()) {
+        kubernetesApiServerVersion_ = other.kubernetesApiServerVersion_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1024,6 +1100,12 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                kubernetesApiServerVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2504,6 +2586,122 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessage
         hierarchyControllerState_ = null;
       }
       return hierarchyControllerStateBuilder_;
+    }
+
+    private java.lang.Object kubernetesApiServerVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Kubernetes API server version of the cluster.
+     * </pre>
+     *
+     * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The kubernetesApiServerVersion.
+     */
+    public java.lang.String getKubernetesApiServerVersion() {
+      java.lang.Object ref = kubernetesApiServerVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kubernetesApiServerVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Kubernetes API server version of the cluster.
+     * </pre>
+     *
+     * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for kubernetesApiServerVersion.
+     */
+    public com.google.protobuf.ByteString getKubernetesApiServerVersionBytes() {
+      java.lang.Object ref = kubernetesApiServerVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kubernetesApiServerVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Kubernetes API server version of the cluster.
+     * </pre>
+     *
+     * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The kubernetesApiServerVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKubernetesApiServerVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kubernetesApiServerVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Kubernetes API server version of the cluster.
+     * </pre>
+     *
+     * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKubernetesApiServerVersion() {
+      kubernetesApiServerVersion_ = getDefaultInstance().getKubernetesApiServerVersion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Kubernetes API server version of the cluster.
+     * </pre>
+     *
+     * <code>string kubernetes_api_server_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for kubernetesApiServerVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKubernetesApiServerVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kubernetesApiServerVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.gkehub.configmanagement.v1beta.MembershipState)

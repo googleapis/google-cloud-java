@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -38,6 +39,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -91,6 +93,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for asyncRetrieveContexts:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VertexRagServiceSettings.Builder vertexRagServiceSettingsBuilder =
+ *     VertexRagServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * vertexRagServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSettings> {
@@ -110,6 +138,27 @@ public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSet
   public UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentSettings() {
     return ((VertexRagServiceStubSettings) getStubSettings()).corroborateContentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to askContexts. */
+  public UnaryCallSettings<AskContextsRequest, AskContextsResponse> askContextsSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings()).askContextsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncRetrieveContexts. */
+  public UnaryCallSettings<AsyncRetrieveContextsRequest, Operation>
+      asyncRetrieveContextsSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings()).asyncRetrieveContextsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncRetrieveContexts. */
+  public OperationCallSettings<
+          AsyncRetrieveContextsRequest,
+          AsyncRetrieveContextsResponse,
+          AsyncRetrieveContextsOperationMetadata>
+      asyncRetrieveContextsOperationSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings())
+        .asyncRetrieveContextsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -251,6 +300,27 @@ public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSet
     public UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
         corroborateContentSettings() {
       return getStubSettingsBuilder().corroborateContentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to askContexts. */
+    public UnaryCallSettings.Builder<AskContextsRequest, AskContextsResponse>
+        askContextsSettings() {
+      return getStubSettingsBuilder().askContextsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncRetrieveContexts. */
+    public UnaryCallSettings.Builder<AsyncRetrieveContextsRequest, Operation>
+        asyncRetrieveContextsSettings() {
+      return getStubSettingsBuilder().asyncRetrieveContextsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncRetrieveContexts. */
+    public OperationCallSettings.Builder<
+            AsyncRetrieveContextsRequest,
+            AsyncRetrieveContextsResponse,
+            AsyncRetrieveContextsOperationMetadata>
+        asyncRetrieveContextsOperationSettings() {
+      return getStubSettingsBuilder().asyncRetrieveContextsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

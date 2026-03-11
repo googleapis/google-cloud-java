@@ -68,11 +68,11 @@ public interface PairIdInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Descriptive name of the publisher to be displayed in the UI for a
+   * Required. Descriptive name of the publisher to be displayed in the UI for a
    * better targeting experience.
    * </pre>
    *
-   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the publisherName field is set.
    */
@@ -82,11 +82,11 @@ public interface PairIdInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Descriptive name of the publisher to be displayed in the UI for a
+   * Required. Descriptive name of the publisher to be displayed in the UI for a
    * better targeting experience.
    * </pre>
    *
-   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The publisherName.
    */
@@ -96,11 +96,11 @@ public interface PairIdInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Descriptive name of the publisher to be displayed in the UI for a
+   * Required. Descriptive name of the publisher to be displayed in the UI for a
    * better targeting experience.
    * </pre>
    *
-   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for publisherName.
    */
@@ -110,12 +110,29 @@ public interface PairIdInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. This field denotes the percentage of membership match of this
+   * Required. This field denotes the percentage of membership match of this
    * user list with the corresponding publisher's first party data. Must be
    * between 0 and 100 inclusive.
    * </pre>
    *
-   * <code>int32 match_rate_percentage = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the matchRatePercentage field is set.
+   */
+  boolean hasMatchRatePercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. This field denotes the percentage of membership match of this
+   * user list with the corresponding publisher's first party data. Must be
+   * between 0 and 100 inclusive.
+   * </pre>
+   *
+   * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The matchRatePercentage.
    */
@@ -125,12 +142,28 @@ public interface PairIdInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The count of the advertiser's first party data records that
-   * have been uploaded to a clean room provider. This does not signify the size
-   * of a PAIR user list.
+   * Optional. The count of the advertiser's first party data records that have
+   * been uploaded to a clean room provider. This does not signify the size of a
+   * PAIR user list.
    * </pre>
    *
-   * <code>int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advertiserIdentifierCount field is set.
+   */
+  boolean hasAdvertiserIdentifierCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The count of the advertiser's first party data records that have
+   * been uploaded to a clean room provider. This does not signify the size of a
+   * PAIR user list.
+   * </pre>
+   *
+   * <code>optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The advertiserIdentifierCount.

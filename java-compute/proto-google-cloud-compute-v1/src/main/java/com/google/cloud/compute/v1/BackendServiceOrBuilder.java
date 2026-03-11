@@ -2185,6 +2185,50 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * Information about the resource or system that manages the backend service.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   *
+   * @return Whether the orchestrationInfo field is set.
+   */
+  boolean hasOrchestrationInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend service.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   *
+   * @return The orchestrationInfo.
+   */
+  com.google.cloud.compute.v1.BackendServiceOrchestrationInfo getOrchestrationInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the resource or system that manages the backend service.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceOrchestrationInfo orchestration_info = 441144300;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceOrchestrationInfoOrBuilder
+      getOrchestrationInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings controlling the ejection of unhealthy backend endpoints from the
    * load balancing pool of each individual proxy instance that processes the
    * traffic for the given backend service. If not set, this feature is

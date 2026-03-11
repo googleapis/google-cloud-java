@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-package com.google.cloud.ces.v1beta.samples;
+package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START ces_v1beta_generated_EvaluationService_UploadEvaluationAudio_AppnameBytestring_sync]
-import com.google.cloud.ces.v1beta.AppName;
-import com.google.cloud.ces.v1beta.EvaluationServiceClient;
-import com.google.cloud.ces.v1beta.UploadEvaluationAudioResponse;
-import com.google.protobuf.ByteString;
+// [START aiplatform_v1beta1_generated_SessionService_CreateSession_StringSessionString_sync]
+import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
+import com.google.cloud.aiplatform.v1beta1.Session;
+import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
-public class SyncUploadEvaluationAudioAppnameBytestring {
+public class SyncCreateSessionStringSessionString {
 
   public static void main(String[] args) throws Exception {
-    syncUploadEvaluationAudioAppnameBytestring();
+    syncCreateSessionStringSessionString();
   }
 
-  public static void syncUploadEvaluationAudioAppnameBytestring() throws Exception {
+  public static void syncCreateSessionStringSessionString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
-      AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
-      ByteString audioContent = ByteString.EMPTY;
-      UploadEvaluationAudioResponse response =
-          evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
+    try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+      String parent =
+          ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
+      Session session = Session.newBuilder().build();
+      String sessionId = "sessionId607796817";
+      Session response = sessionServiceClient.createSessionAsync(parent, session, sessionId).get();
     }
   }
 }
-// [END ces_v1beta_generated_EvaluationService_UploadEvaluationAudio_AppnameBytestring_sync]
+// [END aiplatform_v1beta1_generated_SessionService_CreateSession_StringSessionString_sync]

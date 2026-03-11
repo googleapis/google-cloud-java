@@ -43,6 +43,7 @@ public class AsyncCreateMemory {
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
               .setMemory(Memory.newBuilder().build())
+              .setMemoryId("memoryId-637040132")
               .build();
       ApiFuture<Operation> future =
           memoryBankServiceClient.createMemoryCallable().futureCall(request);

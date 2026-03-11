@@ -88,7 +88,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentName = "parentName-6933";
+    String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
     String reservationSubBlock = "reservationSubBlock-8367";
 
     ReservationSubBlocksGetResponse actualResponse =
@@ -120,7 +120,7 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentName = "parentName-6933";
+      String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
       String reservationSubBlock = "reservationSubBlock-8367";
       client.get(project, zone, parentName, reservationSubBlock);
       Assert.fail("No exception raised");
@@ -143,7 +143,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentResource = "parentResource-6766";
+    String parentResource = "reservations/reservation-7496/reservationBlocks/reservationBlock-7496";
     String resource = "resource-756";
 
     Policy actualResponse = client.getIamPolicy(project, zone, parentResource, resource);
@@ -174,7 +174,8 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentResource = "parentResource-6766";
+      String parentResource =
+          "reservations/reservation-7496/reservationBlocks/reservationBlock-7496";
       String resource = "resource-756";
       client.getIamPolicy(project, zone, parentResource, resource);
       Assert.fail("No exception raised");
@@ -195,7 +196,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentName = "parentName-6933";
+    String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
 
     ListPagedResponse pagedListResponse = client.list(project, zone, parentName);
 
@@ -229,7 +230,7 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentName = "parentName-6933";
+      String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
       client.list(project, zone, parentName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -274,7 +275,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentName = "parentName-6933";
+    String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
     String reservationSubBlock = "reservationSubBlock-8367";
 
     Operation actualResponse =
@@ -306,7 +307,7 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentName = "parentName-6933";
+      String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
       String reservationSubBlock = "reservationSubBlock-8367";
       client.performMaintenanceAsync(project, zone, parentName, reservationSubBlock).get();
       Assert.fail("No exception raised");
@@ -351,7 +352,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentName = "parentName-6933";
+    String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
     String reservationSubBlock = "reservationSubBlock-8367";
     ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource =
         ReservationSubBlocksReportFaultyRequest.newBuilder().build();
@@ -392,7 +393,7 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentName = "parentName-6933";
+      String parentName = "reservations/reservation-4037/reservationBlocks/reservationBlock-4037";
       String reservationSubBlock = "reservationSubBlock-8367";
       ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource =
           ReservationSubBlocksReportFaultyRequest.newBuilder().build();
@@ -423,7 +424,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentResource = "parentResource-6766";
+    String parentResource = "reservations/reservation-7496/reservationBlocks/reservationBlock-7496";
     String resource = "resource-756";
     ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource =
         ZoneSetNestedPolicyRequest.newBuilder().build();
@@ -458,7 +459,8 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentResource = "parentResource-6766";
+      String parentResource =
+          "reservations/reservation-7496/reservationBlocks/reservationBlock-7496";
       String resource = "resource-756";
       ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource =
           ZoneSetNestedPolicyRequest.newBuilder().build();
@@ -478,7 +480,7 @@ public class ReservationSubBlocksClientTest {
 
     String project = "project-6911";
     String zone = "zone-5246";
-    String parentResource = "parentResource-6766";
+    String parentResource = "reservations/reservation-7496/reservationBlocks/reservationBlock-7496";
     String resource = "resource-756";
     TestPermissionsRequest testPermissionsRequestResource =
         TestPermissionsRequest.newBuilder().build();
@@ -513,7 +515,8 @@ public class ReservationSubBlocksClientTest {
     try {
       String project = "project-6911";
       String zone = "zone-5246";
-      String parentResource = "parentResource-6766";
+      String parentResource =
+          "reservations/reservation-7496/reservationBlocks/reservationBlock-7496";
       String resource = "resource-756";
       TestPermissionsRequest testPermissionsRequestResource =
           TestPermissionsRequest.newBuilder().build();

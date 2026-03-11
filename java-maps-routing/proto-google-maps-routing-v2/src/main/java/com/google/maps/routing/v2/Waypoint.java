@@ -81,6 +81,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     LOCATION(1),
     PLACE_ID(2),
     ADDRESS(7),
+    NAVIGATION_POINT_TOKEN(8),
     LOCATIONTYPE_NOT_SET(0);
     private final int value;
 
@@ -106,6 +107,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
           return PLACE_ID;
         case 7:
           return ADDRESS;
+        case 8:
+          return NAVIGATION_POINT_TOKEN;
         case 0:
           return LOCATIONTYPE_NOT_SET;
         default:
@@ -328,6 +331,85 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int NAVIGATION_POINT_TOKEN_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * A token that identifies a
+   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * obtained from the `SearchDestinations` method of the Geocoding API.
+   * </pre>
+   *
+   * <code>string navigation_point_token = 8;</code>
+   *
+   * @return Whether the navigationPointToken field is set.
+   */
+  public boolean hasNavigationPointToken() {
+    return locationTypeCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A token that identifies a
+   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * obtained from the `SearchDestinations` method of the Geocoding API.
+   * </pre>
+   *
+   * <code>string navigation_point_token = 8;</code>
+   *
+   * @return The navigationPointToken.
+   */
+  public java.lang.String getNavigationPointToken() {
+    java.lang.Object ref = "";
+    if (locationTypeCase_ == 8) {
+      ref = locationType_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (locationTypeCase_ == 8) {
+        locationType_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A token that identifies a
+   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * obtained from the `SearchDestinations` method of the Geocoding API.
+   * </pre>
+   *
+   * <code>string navigation_point_token = 8;</code>
+   *
+   * @return The bytes for navigationPointToken.
+   */
+  public com.google.protobuf.ByteString getNavigationPointTokenBytes() {
+    java.lang.Object ref = "";
+    if (locationTypeCase_ == 8) {
+      ref = locationType_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (locationTypeCase_ == 8) {
+        locationType_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VIA_FIELD_NUMBER = 3;
   private boolean via_ = false;
 
@@ -437,6 +519,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     if (locationTypeCase_ == 7) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, locationType_);
     }
+    if (locationTypeCase_ == 8) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, locationType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -466,6 +551,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     if (locationTypeCase_ == 7) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, locationType_);
     }
+    if (locationTypeCase_ == 8) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, locationType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -494,6 +582,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
         break;
       case 7:
         if (!getAddress().equals(other.getAddress())) return false;
+        break;
+      case 8:
+        if (!getNavigationPointToken().equals(other.getNavigationPointToken())) return false;
         break;
       case 0:
       default:
@@ -527,6 +618,10 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
       case 7:
         hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
         hash = (53 * hash) + getAddress().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + NAVIGATION_POINT_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getNavigationPointToken().hashCode();
         break;
       case 0:
       default:
@@ -715,13 +810,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.maps.routing.v2.Waypoint result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.via_ = via_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.vehicleStopover_ = vehicleStopover_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.sideOfRoad_ = sideOfRoad_;
       }
     }
@@ -775,6 +870,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
             onChanged();
             break;
           }
+        case NAVIGATION_POINT_TOKEN:
+          {
+            locationTypeCase_ = 8;
+            locationType_ = other.locationType_;
+            onChanged();
+            break;
+          }
         case LOCATIONTYPE_NOT_SET:
           {
             break;
@@ -823,19 +925,19 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
             case 24:
               {
                 via_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 32:
               {
                 vehicleStopover_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 40:
               {
                 sideOfRoad_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 58:
@@ -845,6 +947,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
                 locationType_ = s;
                 break;
               } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                locationTypeCase_ = 8;
+                locationType_ = s;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1388,6 +1497,157 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A token that identifies a
+     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * obtained from the `SearchDestinations` method of the Geocoding API.
+     * </pre>
+     *
+     * <code>string navigation_point_token = 8;</code>
+     *
+     * @return Whether the navigationPointToken field is set.
+     */
+    @java.lang.Override
+    public boolean hasNavigationPointToken() {
+      return locationTypeCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token that identifies a
+     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * obtained from the `SearchDestinations` method of the Geocoding API.
+     * </pre>
+     *
+     * <code>string navigation_point_token = 8;</code>
+     *
+     * @return The navigationPointToken.
+     */
+    @java.lang.Override
+    public java.lang.String getNavigationPointToken() {
+      java.lang.Object ref = "";
+      if (locationTypeCase_ == 8) {
+        ref = locationType_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (locationTypeCase_ == 8) {
+          locationType_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token that identifies a
+     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * obtained from the `SearchDestinations` method of the Geocoding API.
+     * </pre>
+     *
+     * <code>string navigation_point_token = 8;</code>
+     *
+     * @return The bytes for navigationPointToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNavigationPointTokenBytes() {
+      java.lang.Object ref = "";
+      if (locationTypeCase_ == 8) {
+        ref = locationType_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (locationTypeCase_ == 8) {
+          locationType_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token that identifies a
+     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * obtained from the `SearchDestinations` method of the Geocoding API.
+     * </pre>
+     *
+     * <code>string navigation_point_token = 8;</code>
+     *
+     * @param value The navigationPointToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNavigationPointToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      locationTypeCase_ = 8;
+      locationType_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token that identifies a
+     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * obtained from the `SearchDestinations` method of the Geocoding API.
+     * </pre>
+     *
+     * <code>string navigation_point_token = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNavigationPointToken() {
+      if (locationTypeCase_ == 8) {
+        locationTypeCase_ = 0;
+        locationType_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token that identifies a
+     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * obtained from the `SearchDestinations` method of the Geocoding API.
+     * </pre>
+     *
+     * <code>string navigation_point_token = 8;</code>
+     *
+     * @param value The bytes for navigationPointToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNavigationPointTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      locationTypeCase_ = 8;
+      locationType_ = value;
+      onChanged();
+      return this;
+    }
+
     private boolean via_;
 
     /**
@@ -1441,7 +1701,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     public Builder setVia(boolean value) {
 
       via_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1468,7 +1728,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVia() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       via_ = false;
       onChanged();
       return this;
@@ -1517,7 +1777,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     public Builder setVehicleStopover(boolean value) {
 
       vehicleStopover_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1539,7 +1799,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVehicleStopover() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       vehicleStopover_ = false;
       onChanged();
       return this;
@@ -1588,7 +1848,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
     public Builder setSideOfRoad(boolean value) {
 
       sideOfRoad_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1610,7 +1870,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSideOfRoad() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       sideOfRoad_ = false;
       onChanged();
       return this;

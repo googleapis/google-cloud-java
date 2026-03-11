@@ -69,7 +69,7 @@ public interface GetConversationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GetConversationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/agent_service.proto;l=1144
+   *     google/cloud/ces/v1beta/agent_service.proto;l=1164
    * @return The enum numeric value on the wire for source.
    */
   @java.lang.Deprecated
@@ -88,7 +88,7 @@ public interface GetConversationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GetConversationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/agent_service.proto;l=1144
+   *     google/cloud/ces/v1beta/agent_service.proto;l=1164
    * @return The source.
    */
   @java.lang.Deprecated

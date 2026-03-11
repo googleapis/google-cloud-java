@@ -1628,7 +1628,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -1656,7 +1656,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -1674,7 +1674,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -1700,7 +1700,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values
+   * Input only. Resource manager tags to be bound to the instance. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
    * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -2064,6 +2064,48 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return tags_ == null ? com.google.cloud.compute.v1.Tags.getDefaultInstance() : tags_;
   }
 
+  public static final int WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 338198811;
+  private com.google.cloud.compute.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadIdentityConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder
+      getWorkloadIdentityConfigOrBuilder() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2114,6 +2156,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < serviceAccounts_.size(); i++) {
       output.writeMessage(277537328, serviceAccounts_.get(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(338198811, getWorkloadIdentityConfig());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output,
@@ -2204,6 +2249,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               277537328, serviceAccounts_.get(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              338198811, getWorkloadIdentityConfig());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetResourceManagerTags().getMap().entrySet()) {
@@ -2337,6 +2387,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (hasTags()) {
       if (!getTags().equals(other.getTags())) return false;
     }
+    if (hasWorkloadIdentityConfig() != other.hasWorkloadIdentityConfig()) return false;
+    if (hasWorkloadIdentityConfig()) {
+      if (!getWorkloadIdentityConfig().equals(other.getWorkloadIdentityConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2431,6 +2485,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (hasTags()) {
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getTags().hashCode();
+    }
+    if (hasWorkloadIdentityConfig()) {
+      hash = (37 * hash) + WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadIdentityConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2610,6 +2668,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         internalGetServiceAccountsFieldBuilder();
         internalGetShieldedInstanceConfigFieldBuilder();
         internalGetTagsFieldBuilder();
+        internalGetWorkloadIdentityConfigFieldBuilder();
       }
     }
 
@@ -2693,6 +2752,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (tagsBuilder_ != null) {
         tagsBuilder_.dispose();
         tagsBuilder_ = null;
+      }
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
       }
       return this;
     }
@@ -2853,6 +2917,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.tags_ = tagsBuilder_ == null ? tags_ : tagsBuilder_.build();
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.workloadIdentityConfig_ =
+            workloadIdentityConfigBuilder_ == null
+                ? workloadIdentityConfig_
+                : workloadIdentityConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3043,6 +3114,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (other.hasTags()) {
         mergeTags(other.getTags());
       }
+      if (other.hasWorkloadIdentityConfig()) {
+        mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3167,6 +3241,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case -2074668670
+            case -1589376806:
+              {
+                input.readMessage(
+                    internalGetWorkloadIdentityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case -1589376806
             case -1273597982:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -6585,7 +6667,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -6613,7 +6695,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -6631,7 +6713,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -6657,7 +6739,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -6689,7 +6771,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -6717,7 +6799,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -6742,7 +6824,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values
+     * Input only. Resource manager tags to be bound to the instance. Tag keys and values
      * have the same definition as resource
      * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
      * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
@@ -8021,6 +8103,170 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         tags_ = null;
       }
       return tagsBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.WorkloadIdentityConfig,
+            com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder,
+            com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder>
+        workloadIdentityConfigBuilder_;
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     *
+     * @return Whether the workloadIdentityConfig field is set.
+     */
+    public boolean hasWorkloadIdentityConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     *
+     * @return The workloadIdentityConfig.
+     */
+    public com.google.cloud.compute.v1.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      } else {
+        return workloadIdentityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.cloud.compute.v1.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadIdentityConfig_ = value;
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder builderForValue) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = builderForValue.build();
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder mergeWorkloadIdentityConfig(
+        com.google.cloud.compute.v1.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && workloadIdentityConfig_ != null
+            && workloadIdentityConfig_
+                != com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()) {
+          getWorkloadIdentityConfigBuilder().mergeFrom(value);
+        } else {
+          workloadIdentityConfig_ = value;
+        }
+      } else {
+        workloadIdentityConfigBuilder_.mergeFrom(value);
+      }
+      if (workloadIdentityConfig_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public Builder clearWorkloadIdentityConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder
+        getWorkloadIdentityConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return internalGetWorkloadIdentityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder
+        getWorkloadIdentityConfigOrBuilder() {
+      if (workloadIdentityConfigBuilder_ != null) {
+        return workloadIdentityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.compute.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      }
+    }
+
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.WorkloadIdentityConfig workload_identity_config = 338198811;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.WorkloadIdentityConfig,
+            com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder,
+            com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder>
+        internalGetWorkloadIdentityConfigFieldBuilder() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.WorkloadIdentityConfig,
+                com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder,
+                com.google.cloud.compute.v1.WorkloadIdentityConfigOrBuilder>(
+                getWorkloadIdentityConfig(), getParentForChildren(), isClean());
+        workloadIdentityConfig_ = null;
+      }
+      return workloadIdentityConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.InstanceProperties)

@@ -68,6 +68,7 @@ import com.google.cloud.ces.v1beta.GetConversationRequest;
 import com.google.cloud.ces.v1beta.GetDeploymentRequest;
 import com.google.cloud.ces.v1beta.GetExampleRequest;
 import com.google.cloud.ces.v1beta.GetGuardrailRequest;
+import com.google.cloud.ces.v1beta.GetSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.GetToolRequest;
 import com.google.cloud.ces.v1beta.GetToolsetRequest;
 import com.google.cloud.ces.v1beta.Guardrail;
@@ -96,6 +97,7 @@ import com.google.cloud.ces.v1beta.ListToolsetsResponse;
 import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RestoreAppVersionRequest;
 import com.google.cloud.ces.v1beta.RestoreAppVersionResponse;
+import com.google.cloud.ces.v1beta.SecuritySettings;
 import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
@@ -103,6 +105,7 @@ import com.google.cloud.ces.v1beta.UpdateAppRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
+import com.google.cloud.ces.v1beta.UpdateSecuritySettingsRequest;
 import com.google.cloud.ces.v1beta.UpdateToolRequest;
 import com.google.cloud.ces.v1beta.UpdateToolsetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -181,6 +184,15 @@ public abstract class AgentServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportAppRequest, Operation> importAppCallable() {
     throw new UnsupportedOperationException("Not implemented: importAppCallable()");
+  }
+
+  public UnaryCallable<GetSecuritySettingsRequest, SecuritySettings> getSecuritySettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSecuritySettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
+      updateSecuritySettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSecuritySettingsCallable()");
   }
 
   public UnaryCallable<ListAgentsRequest, ListAgentsPagedResponse> listAgentsPagedCallable() {

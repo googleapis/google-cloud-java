@@ -938,6 +938,62 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.TargetVpnGatewayParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.TargetVpnGatewayParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.TargetVpnGatewayParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.TargetVpnGatewayParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.TargetVpnGatewayParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int REGION_FIELD_NUMBER = 138946292;
 
   @SuppressWarnings("serial")
@@ -958,7 +1014,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1031,7 +1087,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1102,7 +1158,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1259,16 +1315,19 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(78313862, getParams());
+    }
     for (int i = 0; i < tunnels_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 104561931, tunnels_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1281,7 +1340,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -1307,6 +1366,9 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < tunnels_.size(); i++) {
@@ -1315,13 +1377,13 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getTunnelsList().size();
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1338,7 +1400,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1396,6 +1458,10 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (hasNetwork() != other.hasNetwork()) return false;
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1456,6 +1522,10 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (hasNetwork()) {
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1629,10 +1699,19 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.compute.v1.TargetVpnGateway.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetParamsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1648,6 +1727,11 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().clear();
       name_ = "";
       network_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       region_ = "";
       selfLink_ = "";
       status_ = "";
@@ -1726,18 +1810,22 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.region_ = region_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         tunnels_.makeImmutable();
         result.tunnels_ = tunnels_;
       }
@@ -1801,25 +1889,28 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.tunnels_.isEmpty()) {
         if (tunnels_.isEmpty()) {
           tunnels_ = other.tunnels_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureTunnelsIsMutable();
           tunnels_.addAll(other.tunnels_);
@@ -1876,6 +1967,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 244202930
+            case 626510898:
+              {
+                input.readMessage(internalGetParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 626510898
             case 836495450:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1886,7 +1983,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1111570338
             case 1424998602:
@@ -1898,7 +1995,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1450082194
             case 1862979954:
@@ -1923,7 +2020,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -645248918
             case -293404678:
@@ -3271,6 +3368,210 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.compute.v1.TargetVpnGatewayParams params_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.TargetVpnGatewayParams,
+            com.google.cloud.compute.v1.TargetVpnGatewayParams.Builder,
+            com.google.cloud.compute.v1.TargetVpnGatewayParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.TargetVpnGatewayParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.TargetVpnGatewayParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.TargetVpnGatewayParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    public Builder setParams(
+        com.google.cloud.compute.v1.TargetVpnGatewayParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.TargetVpnGatewayParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.TargetVpnGatewayParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.TargetVpnGatewayParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.TargetVpnGatewayParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.TargetVpnGatewayParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.TargetVpnGatewayParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.TargetVpnGatewayParams,
+            com.google.cloud.compute.v1.TargetVpnGatewayParams.Builder,
+            com.google.cloud.compute.v1.TargetVpnGatewayParamsOrBuilder>
+        internalGetParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.TargetVpnGatewayParams,
+                com.google.cloud.compute.v1.TargetVpnGatewayParams.Builder,
+                com.google.cloud.compute.v1.TargetVpnGatewayParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
+    }
+
     private java.lang.Object region_ = "";
 
     /**
@@ -3287,7 +3588,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3359,7 +3660,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3379,7 +3680,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3404,7 +3705,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3423,7 +3724,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3489,7 +3790,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3507,7 +3808,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3530,7 +3831,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3551,7 +3852,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3623,7 +3924,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3643,7 +3944,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3668,7 +3969,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3680,7 +3981,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (!tunnels_.isModifiable()) {
         tunnels_ = new com.google.protobuf.LazyStringArrayList(tunnels_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
 
     /**
@@ -3775,7 +4076,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       ensureTunnelsIsMutable();
       tunnels_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3800,7 +4101,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       ensureTunnelsIsMutable();
       tunnels_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3822,7 +4123,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     public Builder addAllTunnels(java.lang.Iterable<java.lang.String> values) {
       ensureTunnelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tunnels_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3842,7 +4143,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTunnels() {
       tunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -3869,7 +4170,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTunnelsIsMutable();
       tunnels_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

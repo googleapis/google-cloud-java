@@ -30,6 +30,36 @@ public interface ListAssociationsFirewallPolicyRequestOrBuilder
    *
    *
    * <pre>
+   * If set to "true", the response will contain a list of all associations for
+   * the containing folders and the containing organization of the target. The
+   * parameter has no effect if the target is an organization.
+   * </pre>
+   *
+   * <code>optional bool include_inherited_policies = 32280076;</code>
+   *
+   * @return Whether the includeInheritedPolicies field is set.
+   */
+  boolean hasIncludeInheritedPolicies();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to "true", the response will contain a list of all associations for
+   * the containing folders and the containing organization of the target. The
+   * parameter has no effect if the target is an organization.
+   * </pre>
+   *
+   * <code>optional bool include_inherited_policies = 32280076;</code>
+   *
+   * @return The includeInheritedPolicies.
+   */
+  boolean getIncludeInheritedPolicies();
+
+  /**
+   *
+   *
+   * <pre>
    * The target resource to list associations. It is an organization, or a
    * folder.
    * </pre>

@@ -1010,7 +1010,7 @@
           "libraryClient": "MemoryBankServiceClient",
           "rpcs": {
             "CreateMemory": {
-              "methods": ["createMemoryAsync", "createMemoryOperationCallable", "createMemoryCallable"]
+              "methods": ["createMemoryAsync", "createMemoryAsync", "createMemoryAsync", "createMemoryOperationCallable", "createMemoryCallable"]
             },
             "DeleteMemory": {
               "methods": ["deleteMemoryAsync", "deleteMemoryAsync", "deleteMemoryAsync", "deleteMemoryOperationCallable", "deleteMemoryCallable"]
@@ -1754,7 +1754,7 @@
               "methods": ["appendEvent", "appendEvent", "appendEvent", "appendEventCallable"]
             },
             "CreateSession": {
-              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
+              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
             },
             "DeleteSession": {
               "methods": ["deleteSessionAsync", "deleteSessionAsync", "deleteSessionAsync", "deleteSessionOperationCallable", "deleteSessionCallable"]
@@ -2008,6 +2008,12 @@
         "grpc": {
           "libraryClient": "VertexRagServiceClient",
           "rpcs": {
+            "AskContexts": {
+              "methods": ["askContexts", "askContexts", "askContexts", "askContextsCallable"]
+            },
+            "AsyncRetrieveContexts": {
+              "methods": ["asyncRetrieveContextsAsync", "asyncRetrieveContextsAsync", "asyncRetrieveContextsAsync", "asyncRetrieveContextsOperationCallable", "asyncRetrieveContextsCallable"]
+            },
             "AugmentPrompt": {
               "methods": ["augmentPrompt", "augmentPrompt", "augmentPrompt", "augmentPromptCallable"]
             },

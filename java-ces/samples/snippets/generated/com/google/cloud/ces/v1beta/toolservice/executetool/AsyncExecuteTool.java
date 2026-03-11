@@ -41,7 +41,6 @@ public class AsyncExecuteTool {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
-              .setVariables(Struct.newBuilder().build())
               .build();
       ApiFuture<ExecuteToolResponse> future =
           toolServiceClient.executeToolCallable().futureCall(request);

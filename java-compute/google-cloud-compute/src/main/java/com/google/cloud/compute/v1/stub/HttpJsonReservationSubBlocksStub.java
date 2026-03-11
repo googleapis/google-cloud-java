@@ -76,7 +76,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetReservationSubBlockRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks/{reservationSubBlock}",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*}/reservationSubBlocks/{reservationSubBlock}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetReservationSubBlockRequest> serializer =
@@ -116,7 +116,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyReservationSubBlockRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource}/reservationSubBlocks/{resource}/getIamPolicy",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource=reservations/*/reservationBlocks/*}/reservationSubBlocks/{resource}/getIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyReservationSubBlockRequest> serializer =
@@ -161,7 +161,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListReservationSubBlocksRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*}/reservationSubBlocks",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListReservationSubBlocksRequest> serializer =
@@ -216,7 +216,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                   ProtoMessageRequestFormatter
                       .<PerformMaintenanceReservationSubBlockRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks/{reservationSubBlock}/performMaintenance",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*}/reservationSubBlocks/{reservationSubBlock}/performMaintenance",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<PerformMaintenanceReservationSubBlockRequest>
@@ -269,7 +269,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ReportFaultyReservationSubBlockRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks/{reservationSubBlock}/reportFaulty",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*}/reservationSubBlocks/{reservationSubBlock}/reportFaulty",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ReportFaultyReservationSubBlockRequest> serializer =
@@ -328,7 +328,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyReservationSubBlockRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource}/reservationSubBlocks/{resource}/setIamPolicy",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource=reservations/*/reservationBlocks/*}/reservationSubBlocks/{resource}/setIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyReservationSubBlockRequest> serializer =
@@ -374,7 +374,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                   ProtoMessageRequestFormatter
                       .<TestIamPermissionsReservationSubBlockRequest>newBuilder()
                       .setPath(
-                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource}/reservationSubBlocks/{resource}/testIamPermissions",
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource=reservations/*/reservationBlocks/*}/reservationSubBlocks/{resource}/testIamPermissions",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsReservationSubBlockRequest>
