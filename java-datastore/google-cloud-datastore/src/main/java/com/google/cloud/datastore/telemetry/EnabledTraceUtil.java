@@ -243,7 +243,8 @@ public class EnabledTraceUtil implements TraceUtil {
     @Override
     @SuppressWarnings("MustBeClosedChecker")
     public Scope makeCurrent() {
-      // context.makeCurrent() opens a ThreadLocal scope that binds this context to the current thread.
+      // context.makeCurrent() opens a ThreadLocal scope that binds this context to the current
+      // thread.
       // We explicitly leave this unclosed and suppress MustBeClosedChecker so that the returned
       // TraceUtil.Scope can manage the lifecycle instead, allowing the caller's try-with-resources
       // to control when the ThreadLocal context is restored.
