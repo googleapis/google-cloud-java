@@ -29,7 +29,10 @@ import com.google.cloud.grpc.GrpcTransportOptions;
  */
 @InternalApi
 public class TelemetryConstants {
-  static final String SERVICE_NAME = "datastore.googleapis.com";
+
+  // TODO(lawrenceqiu): For now, use `custom.googleapis.com` until metrics can be written to
+  // datastore domain
+  public static final String SERVICE_NAME = "custom.googleapis.com";
   static final String METER_NAME = "com.google.cloud.datastore";
 
   public static final String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
@@ -65,26 +68,11 @@ public class TelemetryConstants {
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
       SERVICE_NAME + "/client/transaction_attempt_count";
 
-  /* TODO(lawrenceqiu): For now, these are a duplicate of method names in TraceUtil. Those will use these eventually */
-  // Format is not SnakeCase to keep backward compatibility with the existing values TraceUtil spans
-  public static final String METHOD_ALLOCATE_IDS = "AllocateIds";
-  public static final String METHOD_BEGIN_TRANSACTION = "Transaction.Begin";
-  public static final String METHOD_COMMIT = "Commit";
-  public static final String METHOD_LOOKUP = "Lookup";
-  public static final String METHOD_RESERVE_IDS = "ReserveIds";
-  public static final String METHOD_RUN_QUERY = "RunQuery";
-  public static final String METHOD_TRANSACTION_COMMIT = "Transaction.Commit";
-  public static final String METHOD_TRANSACTION_LOOKUP = "Transaction.Lookup";
-  public static final String METHOD_TRANSACTION_RUN = "Transaction.Run";
-  public static final String METHOD_TRANSACTION_RUN_QUERY = "Transaction.RunQuery";
-  public static final String METHOD_TRANSACTION_ROLLBACK = "Transaction.Rollback";
-  public static final String METHOD_TRANSACTION_RUN_AGGREGATION_QUERY =
-      "Transaction.RunAggregationQuery";
-  public static final String METHOD_ADD = "add";
-  public static final String METHOD_PUT = "put";
-  public static final String METHOD_UPDATE = "update";
-  public static final String METHOD_DELETE = "delete";
-  public static final String METHOD_SUBMIT = "submit";
+  // Format is not SnakeCase to match the method name convention in Gax.
+  // The format is {ServiceName}.{MethodName}. For these methods, include `Transaction`
+  // to denote that the metrics are related specifically to transactions.
+  public static final String METHOD_TRANSACTION_COMMIT = "Datastore.Transaction.Commit";
+  public static final String METHOD_TRANSACTION_RUN = "Datastore.Transaction.Run";
 
   private TelemetryConstants() {}
 
