@@ -94,4 +94,18 @@ public interface FileLocationOrBuilder
    * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
    */
   io.grafeas.v1.LayerDetailsOrBuilder getLayerDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Line number in the file where the package was found.
+   * Optional field that only applies to source repository scanning.
+   * </pre>
+   *
+   * <code>int32 line_number = 3;</code>
+   *
+   * @return The lineNumber.
+   */
+  int getLineNumber();
 }

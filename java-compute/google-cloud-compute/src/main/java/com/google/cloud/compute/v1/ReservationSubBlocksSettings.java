@@ -87,7 +87,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for performMaintenance:
+ * configure the RetrySettings for getVersion:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -123,6 +123,17 @@ public class ReservationSubBlocksSettings extends ClientSettings<ReservationSubB
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicySettings() {
     return ((ReservationSubBlocksStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getVersion. */
+  public UnaryCallSettings<GetVersionReservationSubBlockRequest, Operation> getVersionSettings() {
+    return ((ReservationSubBlocksStubSettings) getStubSettings()).getVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getVersion. */
+  public OperationCallSettings<GetVersionReservationSubBlockRequest, Operation, Operation>
+      getVersionOperationSettings() {
+    return ((ReservationSubBlocksStubSettings) getStubSettings()).getVersionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -276,6 +287,18 @@ public class ReservationSubBlocksSettings extends ClientSettings<ReservationSubB
     public UnaryCallSettings.Builder<GetIamPolicyReservationSubBlockRequest, Policy>
         getIamPolicySettings() {
       return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getVersion. */
+    public UnaryCallSettings.Builder<GetVersionReservationSubBlockRequest, Operation>
+        getVersionSettings() {
+      return getStubSettingsBuilder().getVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getVersion. */
+    public OperationCallSettings.Builder<GetVersionReservationSubBlockRequest, Operation, Operation>
+        getVersionOperationSettings() {
+      return getStubSettingsBuilder().getVersionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

@@ -53,6 +53,7 @@ public final class ServiceAttachmentConsumerProjectLimit
   }
 
   private ServiceAttachmentConsumerProjectLimit() {
+    endpointUrl_ = "";
     networkUrl_ = "";
     projectIdOrNum_ = "";
   }
@@ -110,6 +111,75 @@ public final class ServiceAttachmentConsumerProjectLimit
     return connectionLimit_;
   }
 
+  public static final int ENDPOINT_URL_FIELD_NUMBER = 223428549;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpointUrl_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL for the PSC endpoint to accept
+   * </pre>
+   *
+   * <code>optional string endpoint_url = 223428549;</code>
+   *
+   * @return Whether the endpointUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndpointUrl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL for the PSC endpoint to accept
+   * </pre>
+   *
+   * <code>optional string endpoint_url = 223428549;</code>
+   *
+   * @return The endpointUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getEndpointUrl() {
+    java.lang.Object ref = endpointUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endpointUrl_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL for the PSC endpoint to accept
+   * </pre>
+   *
+   * <code>optional string endpoint_url = 223428549;</code>
+   *
+   * @return The bytes for endpointUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEndpointUrlBytes() {
+    java.lang.Object ref = endpointUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      endpointUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NETWORK_URL_FIELD_NUMBER = 207194078;
 
   @SuppressWarnings("serial")
@@ -128,7 +198,7 @@ public final class ServiceAttachmentConsumerProjectLimit
    */
   @java.lang.Override
   public boolean hasNetworkUrl() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -197,7 +267,7 @@ public final class ServiceAttachmentConsumerProjectLimit
    */
   @java.lang.Override
   public boolean hasProjectIdOrNum() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -265,10 +335,13 @@ public final class ServiceAttachmentConsumerProjectLimit
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(131403546, connectionLimit_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 207194078, networkUrl_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 223428549, endpointUrl_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 349783336, projectIdOrNum_);
     }
     getUnknownFields().writeTo(output);
@@ -283,10 +356,13 @@ public final class ServiceAttachmentConsumerProjectLimit
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(131403546, connectionLimit_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(207194078, networkUrl_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(223428549, endpointUrl_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(349783336, projectIdOrNum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -308,6 +384,10 @@ public final class ServiceAttachmentConsumerProjectLimit
     if (hasConnectionLimit() != other.hasConnectionLimit()) return false;
     if (hasConnectionLimit()) {
       if (getConnectionLimit() != other.getConnectionLimit()) return false;
+    }
+    if (hasEndpointUrl() != other.hasEndpointUrl()) return false;
+    if (hasEndpointUrl()) {
+      if (!getEndpointUrl().equals(other.getEndpointUrl())) return false;
     }
     if (hasNetworkUrl() != other.hasNetworkUrl()) return false;
     if (hasNetworkUrl()) {
@@ -331,6 +411,10 @@ public final class ServiceAttachmentConsumerProjectLimit
     if (hasConnectionLimit()) {
       hash = (37 * hash) + CONNECTION_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getConnectionLimit();
+    }
+    if (hasEndpointUrl()) {
+      hash = (37 * hash) + ENDPOINT_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointUrl().hashCode();
     }
     if (hasNetworkUrl()) {
       hash = (37 * hash) + NETWORK_URL_FIELD_NUMBER;
@@ -483,6 +567,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       super.clear();
       bitField0_ = 0;
       connectionLimit_ = 0;
+      endpointUrl_ = "";
       networkUrl_ = "";
       projectIdOrNum_ = "";
       return this;
@@ -529,12 +614,16 @@ public final class ServiceAttachmentConsumerProjectLimit
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.networkUrl_ = networkUrl_;
+        result.endpointUrl_ = endpointUrl_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.projectIdOrNum_ = projectIdOrNum_;
+        result.networkUrl_ = networkUrl_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.projectIdOrNum_ = projectIdOrNum_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -557,14 +646,19 @@ public final class ServiceAttachmentConsumerProjectLimit
       if (other.hasConnectionLimit()) {
         setConnectionLimit(other.getConnectionLimit());
       }
+      if (other.hasEndpointUrl()) {
+        endpointUrl_ = other.endpointUrl_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasNetworkUrl()) {
         networkUrl_ = other.networkUrl_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasProjectIdOrNum()) {
         projectIdOrNum_ = other.projectIdOrNum_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -602,13 +696,19 @@ public final class ServiceAttachmentConsumerProjectLimit
             case 1657552626:
               {
                 networkUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1657552626
+            case 1787428394:
+              {
+                endpointUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1787428394
             case -1496700606:
               {
                 projectIdOrNum_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1496700606
             default:
@@ -706,6 +806,132 @@ public final class ServiceAttachmentConsumerProjectLimit
       return this;
     }
 
+    private java.lang.Object endpointUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the PSC endpoint to accept
+     * </pre>
+     *
+     * <code>optional string endpoint_url = 223428549;</code>
+     *
+     * @return Whether the endpointUrl field is set.
+     */
+    public boolean hasEndpointUrl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the PSC endpoint to accept
+     * </pre>
+     *
+     * <code>optional string endpoint_url = 223428549;</code>
+     *
+     * @return The endpointUrl.
+     */
+    public java.lang.String getEndpointUrl() {
+      java.lang.Object ref = endpointUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpointUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the PSC endpoint to accept
+     * </pre>
+     *
+     * <code>optional string endpoint_url = 223428549;</code>
+     *
+     * @return The bytes for endpointUrl.
+     */
+    public com.google.protobuf.ByteString getEndpointUrlBytes() {
+      java.lang.Object ref = endpointUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpointUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the PSC endpoint to accept
+     * </pre>
+     *
+     * <code>optional string endpoint_url = 223428549;</code>
+     *
+     * @param value The endpointUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      endpointUrl_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the PSC endpoint to accept
+     * </pre>
+     *
+     * <code>optional string endpoint_url = 223428549;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointUrl() {
+      endpointUrl_ = getDefaultInstance().getEndpointUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the PSC endpoint to accept
+     * </pre>
+     *
+     * <code>optional string endpoint_url = 223428549;</code>
+     *
+     * @param value The bytes for endpointUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      endpointUrl_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object networkUrl_ = "";
 
     /**
@@ -720,7 +946,7 @@ public final class ServiceAttachmentConsumerProjectLimit
      * @return Whether the networkUrl field is set.
      */
     public boolean hasNetworkUrl() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -786,7 +1012,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         throw new NullPointerException();
       }
       networkUrl_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -804,7 +1030,7 @@ public final class ServiceAttachmentConsumerProjectLimit
      */
     public Builder clearNetworkUrl() {
       networkUrl_ = getDefaultInstance().getNetworkUrl();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -827,7 +1053,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       }
       checkByteStringIsUtf8(value);
       networkUrl_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -846,7 +1072,7 @@ public final class ServiceAttachmentConsumerProjectLimit
      * @return Whether the projectIdOrNum field is set.
      */
     public boolean hasProjectIdOrNum() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -912,7 +1138,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         throw new NullPointerException();
       }
       projectIdOrNum_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -930,7 +1156,7 @@ public final class ServiceAttachmentConsumerProjectLimit
      */
     public Builder clearProjectIdOrNum() {
       projectIdOrNum_ = getDefaultInstance().getProjectIdOrNum();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -953,7 +1179,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       }
       checkByteStringIsUtf8(value);
       projectIdOrNum_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

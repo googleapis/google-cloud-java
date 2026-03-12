@@ -34,6 +34,7 @@ public interface SubscriptionCostOrBuilder
    * Supported values are:
    * * "`month`"
    * * "`year`"
+   * * "`week`"
    * </pre>
    *
    * <code>.google.shopping.merchant.products.v1.SubscriptionPeriod period = 1;</code>
@@ -50,6 +51,7 @@ public interface SubscriptionCostOrBuilder
    * Supported values are:
    * * "`month`"
    * * "`year`"
+   * * "`week`"
    * </pre>
    *
    * <code>.google.shopping.merchant.products.v1.SubscriptionPeriod period = 1;</code>

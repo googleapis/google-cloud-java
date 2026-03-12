@@ -30,7 +30,7 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * This can be set to true only if the protocol isTCP.
+   * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
    *
    * The default is false.
    * </pre>
@@ -45,7 +45,7 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * This can be set to true only if the protocol isTCP.
+   * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
    *
    * The default is false.
    * </pre>

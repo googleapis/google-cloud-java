@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,10 +45,13 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.HealthCheckService;
+import com.google.cloud.compute.v1.HealthCheckServiceAggregatedList;
 import com.google.cloud.compute.v1.HealthCheckServicesList;
+import com.google.cloud.compute.v1.HealthCheckServicesScopedList;
 import com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -61,6 +65,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -150,6 +155,11 @@ public class RegionHealthCheckServicesStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteRegionHealthCheckServiceRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
       deleteOperationSettings;
@@ -167,6 +177,53 @@ public class RegionHealthCheckServicesStubSettings
   private final UnaryCallSettings<
           TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          Map.Entry<String, HealthCheckServicesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListRegionHealthCheckServicesRequest,
+              HealthCheckServiceAggregatedList,
+              Map.Entry<String, HealthCheckServicesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListRegionHealthCheckServicesRequest injectToken(
+                AggregatedListRegionHealthCheckServicesRequest payload, String token) {
+              return AggregatedListRegionHealthCheckServicesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListRegionHealthCheckServicesRequest injectPageSize(
+                AggregatedListRegionHealthCheckServicesRequest payload, int pageSize) {
+              return AggregatedListRegionHealthCheckServicesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListRegionHealthCheckServicesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(HealthCheckServiceAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, HealthCheckServicesScopedList>> extractResources(
+                HealthCheckServiceAggregatedList payload) {
+              return payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListRegionHealthCheckServicesRequest, HealthCheckServicesList, HealthCheckService>
@@ -211,6 +268,34 @@ public class RegionHealthCheckServicesStubSettings
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListRegionHealthCheckServicesRequest,
+              HealthCheckServiceAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListRegionHealthCheckServicesRequest,
+                        HealthCheckServiceAggregatedList>
+                    callable,
+                AggregatedListRegionHealthCheckServicesRequest request,
+                ApiCallContext context,
+                ApiFuture<HealthCheckServiceAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListRegionHealthCheckServicesRequest,
+                      HealthCheckServiceAggregatedList,
+                      Map.Entry<String, HealthCheckServicesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRegionHealthCheckServicesRequest, HealthCheckServicesList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -230,6 +315,15 @@ public class RegionHealthCheckServicesStubSettings
               return ListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListRegionHealthCheckServicesRequest,
+          HealthCheckServiceAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionHealthCheckServiceRequest, Operation> deleteSettings() {
@@ -365,6 +459,7 @@ public class RegionHealthCheckServicesStubSettings
   protected RegionHealthCheckServicesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -380,6 +475,11 @@ public class RegionHealthCheckServicesStubSettings
   public static class Builder
       extends StubSettings.Builder<RegionHealthCheckServicesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final PagedCallSettings.Builder<
+            AggregatedListRegionHealthCheckServicesRequest,
+            HealthCheckServiceAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteRegionHealthCheckServiceRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<
@@ -410,12 +510,12 @@ public class RegionHealthCheckServicesStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -424,14 +524,6 @@ public class RegionHealthCheckServicesStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
-              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
@@ -443,6 +535,14 @@ public class RegionHealthCheckServicesStubSettings
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -453,6 +553,7 @@ public class RegionHealthCheckServicesStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -465,6 +566,7 @@ public class RegionHealthCheckServicesStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -477,6 +579,7 @@ public class RegionHealthCheckServicesStubSettings
     protected Builder(RegionHealthCheckServicesStubSettings settings) {
       super(settings);
 
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -489,6 +592,7 @@ public class RegionHealthCheckServicesStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -510,6 +614,11 @@ public class RegionHealthCheckServicesStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -631,6 +740,15 @@ public class RegionHealthCheckServicesStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListRegionHealthCheckServicesRequest,
+            HealthCheckServiceAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */

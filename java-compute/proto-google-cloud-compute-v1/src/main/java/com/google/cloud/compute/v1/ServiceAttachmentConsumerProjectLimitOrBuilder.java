@@ -58,6 +58,45 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    *
    *
    * <pre>
+   * The URL for the PSC endpoint to accept
+   * </pre>
+   *
+   * <code>optional string endpoint_url = 223428549;</code>
+   *
+   * @return Whether the endpointUrl field is set.
+   */
+  boolean hasEndpointUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL for the PSC endpoint to accept
+   * </pre>
+   *
+   * <code>optional string endpoint_url = 223428549;</code>
+   *
+   * @return The endpointUrl.
+   */
+  java.lang.String getEndpointUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL for the PSC endpoint to accept
+   * </pre>
+   *
+   * <code>optional string endpoint_url = 223428549;</code>
+   *
+   * @return The bytes for endpointUrl.
+   */
+  com.google.protobuf.ByteString getEndpointUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The network URL for the network to set the limit for.
    * </pre>
    *

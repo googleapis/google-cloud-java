@@ -69,4 +69,49 @@ public interface QueryDataContextOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.DatasourceReferencesOrBuilder
       getDatasourceReferencesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parameterizedSecureViewParameters field is set.
+   */
+  boolean hasParameterizedSecureViewParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parameterizedSecureViewParameters.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+      getParameterizedSecureViewParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParametersOrBuilder
+      getParameterizedSecureViewParametersOrBuilder();
 }

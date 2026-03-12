@@ -495,6 +495,53 @@ public final class VectorSearchServiceGrpc {
     return getImportDataObjectsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest,
+          com.google.longrunning.Operation>
+      getExportDataObjectsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportDataObjects",
+      requestType = com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest,
+          com.google.longrunning.Operation>
+      getExportDataObjectsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest,
+            com.google.longrunning.Operation>
+        getExportDataObjectsMethod;
+    if ((getExportDataObjectsMethod = VectorSearchServiceGrpc.getExportDataObjectsMethod) == null) {
+      synchronized (VectorSearchServiceGrpc.class) {
+        if ((getExportDataObjectsMethod = VectorSearchServiceGrpc.getExportDataObjectsMethod)
+            == null) {
+          VectorSearchServiceGrpc.getExportDataObjectsMethod =
+              getExportDataObjectsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportDataObjects"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VectorSearchServiceMethodDescriptorSupplier("ExportDataObjects"))
+                      .build();
+        }
+      }
+    }
+    return getExportDataObjectsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VectorSearchServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VectorSearchServiceStub> factory =
@@ -702,6 +749,20 @@ public final class VectorSearchServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportDataObjectsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Long-Running Operation to export DataObjects from a Collection.
+     * </pre>
+     */
+    default void exportDataObjects(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportDataObjectsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -906,6 +967,22 @@ public final class VectorSearchServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Long-Running Operation to export DataObjects from a Collection.
+     * </pre>
+     */
+    public void exportDataObjects(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportDataObjectsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1070,6 +1147,20 @@ public final class VectorSearchServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDataObjectsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Long-Running Operation to export DataObjects from a Collection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportDataObjects(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportDataObjectsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1224,6 +1315,19 @@ public final class VectorSearchServiceGrpc {
         com.google.cloud.vectorsearch.v1.ImportDataObjectsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportDataObjectsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Long-Running Operation to export DataObjects from a Collection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportDataObjects(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDataObjectsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1384,6 +1488,19 @@ public final class VectorSearchServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportDataObjectsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Long-Running Operation to export DataObjects from a Collection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportDataObjects(com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportDataObjectsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_COLLECTIONS = 0;
@@ -1396,6 +1513,7 @@ public final class VectorSearchServiceGrpc {
   private static final int METHODID_CREATE_INDEX = 7;
   private static final int METHODID_DELETE_INDEX = 8;
   private static final int METHODID_IMPORT_DATA_OBJECTS = 9;
+  private static final int METHODID_EXPORT_DATA_OBJECTS = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1467,6 +1585,11 @@ public final class VectorSearchServiceGrpc {
         case METHODID_IMPORT_DATA_OBJECTS:
           serviceImpl.importDataObjects(
               (com.google.cloud.vectorsearch.v1.ImportDataObjectsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_DATA_OBJECTS:
+          serviceImpl.exportDataObjects(
+              (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1549,6 +1672,12 @@ public final class VectorSearchServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.vectorsearch.v1.ImportDataObjectsRequest,
                     com.google.longrunning.Operation>(service, METHODID_IMPORT_DATA_OBJECTS)))
+        .addMethod(
+            getExportDataObjectsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_DATA_OBJECTS)))
         .build();
   }
 
@@ -1610,6 +1739,7 @@ public final class VectorSearchServiceGrpc {
                       .addMethod(getCreateIndexMethod())
                       .addMethod(getDeleteIndexMethod())
                       .addMethod(getImportDataObjectsMethod())
+                      .addMethod(getExportDataObjectsMethod())
                       .build();
         }
       }

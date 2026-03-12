@@ -208,6 +208,38 @@ public final class VertexRagDataProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_cloud_aiplatform_v1beta1_RagEngineConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RagEngineConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagDataSchema_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagDataSchema_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_ListConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_ListConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_SearchStrategy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_SearchStrategy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UserSpecifiedMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UserSpecifiedMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_MetadataValue_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_MetadataValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_MetadataList_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_MetadataList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -432,42 +464,42 @@ public final class VertexRagDataProto extends com.google.protobuf.GeneratedFile 
           + ".cloud.aiplatform.v1beta1.GoogleDriveSourceH\001\022 \n"
           + "\026inline_metadata_source\030\006 \001(\tH\001B\030\n"
           + "\026metadata_schema_sourceB\021\n"
-          + "\017metadata_source\"\220\003\n"
+          + "\017metadata_source\"\227\003\n"
           + "\023UploadRagFileConfig\022\\\n"
           + "\030rag_file_chunking_config\030\001 \001(\01326.google.cloud.ai"
           + "platform.v1beta1.RagFileChunkingConfigB\002\030\001\022d\n"
           + "\036rag_file_transformation_config\030\003 \001"
-          + "(\0132<.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig\022X\n"
-          + "\030rag_file_metadata_config\030\004"
-          + " \001(\01326.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig\022[\n"
-          + "\027rag_file_parsing_config\030\005 \001(\01325.google.clo"
-          + "ud.aiplatform.v1beta1.RagFileParsingConfigB\003\340A\001\"\252\n\n"
+          + "(\0132<.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig\022_\n"
+          + "\030rag_file_metadata_config\030\004 \001(\01326.google.cloud.aiplat"
+          + "form.v1beta1.RagFileMetadataConfigB\005\030\001\340A\001\022[\n"
+          + "\027rag_file_parsing_config\030\005 \001(\01325.goo"
+          + "gle.cloud.aiplatform.v1beta1.RagFileParsingConfigB\003\340A\001\"\256\n\n"
           + "\024ImportRagFilesConfig\022@\n\n"
           + "gcs_source\030\002 \001(\0132*.google.cloud.aiplatform.v1beta1.GcsSourceH\000\022Q\n"
           + "\023google_drive_source\030\003"
           + " \001(\01322.google.cloud.aiplatform.v1beta1.GoogleDriveSourceH\000\022D\n"
-          + "\014slack_source\030\006 "
-          + "\001(\0132,.google.cloud.aiplatform.v1beta1.SlackSourceH\000\022B\n"
-          + "\013jira_source\030\007 \001(\0132+.googl"
-          + "e.cloud.aiplatform.v1beta1.JiraSourceH\000\022Q\n"
+          + "\014slack_source\030\006"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.SlackSourceH\000\022B\n"
+          + "\013jira_source\030\007 \001(\0132"
+          + "+.google.cloud.aiplatform.v1beta1.JiraSourceH\000\022Q\n"
           + "\023share_point_sources\030\r"
           + " \001(\01322.google.cloud.aiplatform.v1beta1.SharePointSourcesH\000\022W\n"
-          + "\030partial_failure_gcs_sink\030\013 \001(\0132/.g"
-          + "oogle.cloud.aiplatform.v1beta1.GcsDestinationB\002\030\001H\001\022a\n"
+          + "\030partial_failure_gcs_sink\030\013 "
+          + "\001(\0132/.google.cloud.aiplatform.v1beta1.GcsDestinationB\002\030\001H\001\022a\n"
           + "\035partial_failure_bigquery_sink\030\014"
           + " \001(\01324.google.cloud.aiplatform.v1beta1.BigQueryDestinationB\002\030\001H\001\022Q\n"
-          + "\026import_result_gcs_sink\030\016"
-          + " \001(\0132/.google.cloud.aiplatform.v1beta1.GcsDestinationH\002\022[\n"
-          + "\033import_result_bigquery_sink\030\017 \001(\01324.google."
-          + "cloud.aiplatform.v1beta1.BigQueryDestinationH\002\022\\\n"
-          + "\030rag_file_chunking_config\030\004 \001(\013"
-          + "26.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigB\002\030\001\022d\n"
-          + "\036rag_file_transformation_config\030\020 \001(\0132<.google.cloud.aipl"
-          + "atform.v1beta1.RagFileTransformationConfig\022[\n"
-          + "\027rag_file_parsing_config\030\010 \001(\01325.go"
-          + "ogle.cloud.aiplatform.v1beta1.RagFileParsingConfigB\003\340A\001\022X\n"
+          + "\026import_result_gcs_sink\030\016 \001(\0132/.google.c"
+          + "loud.aiplatform.v1beta1.GcsDestinationH\002\022[\n"
+          + "\033import_result_bigquery_sink\030\017 \001(\01324."
+          + "google.cloud.aiplatform.v1beta1.BigQueryDestinationH\002\022\\\n"
+          + "\030rag_file_chunking_config\030\004"
+          + " \001(\01326.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigB\002\030\001\022d\n"
+          + "\036rag_file_transformation_config\030\020 \001(\0132<.google.clo"
+          + "ud.aiplatform.v1beta1.RagFileTransformationConfig\022[\n"
+          + "\027rag_file_parsing_config\030\010 \001"
+          + "(\01325.google.cloud.aiplatform.v1beta1.RagFileParsingConfigB\003\340A\001\022\\\n"
           + "\030rag_file_metadata_config\030\021"
-          + " \001(\01326.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig\022+\n"
+          + " \001(\01326.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigB\002\030\001\022+\n"
           + "\036max_embedding_requests_per_min\030\005 \001(\005B\003\340A\001\0222\n"
           + "%global_max_embedding_requests_per_min\030\022 \001(\005B\003\340A\001\022\031\n"
           + "\021rebuild_ann_index\030\023 \001(\010B\017\n\r"
@@ -475,45 +507,110 @@ public final class VertexRagDataProto extends com.google.protobuf.GeneratedFile 
           + "\024partial_failure_sinkB\024\n"
           + "\022import_result_sink\"\364\006\n"
           + "\022RagManagedDbConfig\022X\n\n"
-          + "enterprise\030\001 \001(\0132>.google.cloud.aiplatfor"
-          + "m.v1beta1.RagManagedDbConfig.EnterpriseB\002\030\001H\000\022P\n"
-          + "\006scaled\030\004 \001(\0132:.google.cloud.aip"
-          + "latform.v1beta1.RagManagedDbConfig.ScaledB\002\030\001H\000\022N\n"
-          + "\005basic\030\002 \001(\01329.google.cloud.ai"
-          + "platform.v1beta1.RagManagedDbConfig.BasicB\002\030\001H\000\022^\n\r"
-          + "unprovisioned\030\003 \001(\0132A.google."
-          + "cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedB\002\030\001H\000\022T\n\n"
-          + "serverless\030\005 "
-          + "\001(\0132>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ServerlessH\001\022N\n"
-          + "\007spanner\030\006"
-          + " \001(\0132;.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.SpannerH\001\032\020\n\n"
+          + "enterprise\030\001 \001(\0132>.google.clou"
+          + "d.aiplatform.v1beta1.RagManagedDbConfig.EnterpriseB\002\030\001H\000\022P\n"
+          + "\006scaled\030\004 \001(\0132:.googl"
+          + "e.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledB\002\030\001H\000\022N\n"
+          + "\005basic\030\002 \001(\01329.goog"
+          + "le.cloud.aiplatform.v1beta1.RagManagedDbConfig.BasicB\002\030\001H\000\022^\n\r"
+          + "unprovisioned\030\003 \001("
+          + "\0132A.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedB\002\030\001H\000\022T\n\n"
+          + "serverless\030\005 \001(\0132>.google.cloud.aiplatform"
+          + ".v1beta1.RagManagedDbConfig.ServerlessH\001\022N\n"
+          + "\007spanner\030\006 \001(\0132;.google.cloud.aiplatf"
+          + "orm.v1beta1.RagManagedDbConfig.SpannerH\001\032\020\n\n"
           + "Enterprise:\002\030\001\032\010\n"
           + "\006Scaled\032\007\n"
-          + "\005Basic\032\017\n\r"
+          + "\005Basic\032\017\n"
+          + "\r"
           + "Unprovisioned\032\207\002\n"
           + "\007Spanner\022L\n"
-          + "\006scaled\030\001 \001(\0132:.google"
-          + ".cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledH\000\022J\n"
-          + "\005basic\030\002 \001(\01329.google.cl"
-          + "oud.aiplatform.v1beta1.RagManagedDbConfig.BasicH\000\022Z\n\r"
-          + "unprovisioned\030\003 \001(\0132A.googl"
-          + "e.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedH\000B\006\n"
+          + "\006scaled\030\001 \001"
+          + "(\0132:.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledH\000\022J\n"
+          + "\005basic\030\002 \001(\0132"
+          + "9.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.BasicH\000\022Z\n\r"
+          + "unprovisioned\030\003 "
+          + "\001(\0132A.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedH\000B\006\n"
           + "\004tier\032\014\n\n"
           + "ServerlessB\006\n"
           + "\004tierB\006\n"
           + "\004mode\"\206\002\n"
           + "\017RagEngineConfig\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022R\n"
-          + "\025rag_managed_db_config\030\002"
-          + " \001(\01323.google.cloud.aiplatform.v1beta1.RagManagedDbConfig:\213\001\352A\207\001\n"
-          + ")aiplatform.googleapis.com/RagEngineConfig\0227projec"
-          + "ts/{project}/locations/{location}/ragEng"
-          + "ineConfig*\020ragEngineConfigs2\017ragEngineConfigB\351\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\022VertexRagDataProtoP\001ZCcloud.google"
-          + ".com/go/aiplatform/apiv1beta1/aiplatform"
-          + "pb;aiplatformpb\252\002\037Google.Cloud.AIPlatfor"
-          + "m.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1be"
-          + "ta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "\025rag_managed_db_config\030\002 \001(\01323.google.cloud.aipl"
+          + "atform.v1beta1.RagManagedDbConfig:\213\001\352A\207\001\n"
+          + ")aiplatform.googleapis.com/RagEngineConfig\0227projects/{project}/locations/{locat"
+          + "ion}/ragEngineConfig*\020ragEngineConfigs2\017ragEngineConfig\"\270\002\n\r"
+          + "RagDataSchema\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\020\n"
+          + "\003key\030\002 \001(\tB\003\340A\002\022Q\n"
+          + "\016schema_details\030\003 \001(\01329.google.cloud.aiplatform"
+          + ".v1beta1.RagMetadataSchemaDetails:\256\001\352A\252\001\n"
+          + "\'aiplatform.googleapis.com/RagDataSchema\022`projects/{project}/locations/{locatio"
+          + "n}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}*\016ragDataSchemas2\r"
+          + "ragDataSchema\"\342\007\n"
+          + "\030RagMetadataSchemaDetails\022U\n"
+          + "\004type\030\001 \001(\0162B.google.cloud.aiplatform."
+          + "v1beta1.RagMetadataSchemaDetails.DataTypeH\000\210\001\001\022Y\n"
+          + "\013list_config\030\002 \001(\0132D.google.clo"
+          + "ud.aiplatform.v1beta1.RagMetadataSchemaDetails.ListConfig\022_\n"
+          + "\013granularity\030\003 \001(\0162E"
+          + ".google.cloud.aiplatform.v1beta1.RagMetadataSchemaDetails.GranularityH\001\210\001\001\022f\n"
+          + "\017search_strategy\030\004 \001(\0132H.google.cloud.aipla"
+          + "tform.v1beta1.RagMetadataSchemaDetails.SearchStrategyH\002\210\001\001\032]\n\n"
+          + "ListConfig\022O\n"
+          + "\014value_schema\030\001"
+          + " \001(\01329.google.cloud.aiplatform.v1beta1.RagMetadataSchemaDetails\032\206\002\n"
+          + "\016SearchStrategy\022~\n"
+          + "\024search_strategy_type\030\001 \001(\0162[.google.cloud.aiplatform.v1beta1.Rag"
+          + "MetadataSchemaDetails.SearchStrategy.SearchStrategyTypeH\000\210\001\001\"[\n"
+          + "\022SearchStrategyType\022$\n"
+          + " SEARCH_STRATEGY_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tNO_SEARCH\020\001\022\020\n"
+          + "\014EXACT_SEARCH\020\002B\027\n"
+          + "\025_search_strategy_type\"n\n"
+          + "\010DataType\022\031\n"
+          + "\025DATA_TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\007INTEGER\020\001\022\t\n"
+          + "\005FLOAT\020\002\022\n\n"
+          + "\006STRING\020\003\022\014\n"
+          + "\010DATETIME\020\004\022\013\n"
+          + "\007BOOLEAN\020\005\022\010\n"
+          + "\004LIST\020\006\"F\n"
+          + "\013Granularity\022\033\n"
+          + "\027GRANULARITY_UNSPECIFIED\020\000\022\032\n"
+          + "\026GRANULARITY_FILE_LEVEL\020\001B\007\n"
+          + "\005_typeB\016\n"
+          + "\014_granularityB\022\n"
+          + "\020_search_strategy\"\261\002\n"
+          + "\013RagMetadata\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022W\n"
+          + "\027user_specified_metadata\030\002 \001(\01326.go"
+          + "ogle.cloud.aiplatform.v1beta1.UserSpecifiedMetadata:\265\001\352A\261\001\n"
+          + "%aiplatform.googleapis.com/RagMetadata\022nprojects/{project}/lo"
+          + "cations/{location}/ragCorpora/{rag_corpu"
+          + "s}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}*\013ragMetadata2\013ragMetadata\"h\n"
+          + "\025UserSpecifiedMetadata\022\020\n"
+          + "\003key\030\001 \001(\tB\003\340A\002\022=\n"
+          + "\005value\030\002"
+          + " \001(\0132..google.cloud.aiplatform.v1beta1.MetadataValue\"\316\001\n\r"
+          + "MetadataValue\022\023\n"
+          + "\tint_value\030\001 \001(\003H\000\022\025\n"
+          + "\013float_value\030\002 \001(\002H\000\022\023\n"
+          + "\tstr_value\030\003 \001(\tH\000\022\030\n"
+          + "\016datetime_value\030\004 \001(\tH\000\022\024\n\n"
+          + "bool_value\030\005 \001(\010H\000\022C\n\n"
+          + "list_value\030\006"
+          + " \001(\0132-.google.cloud.aiplatform.v1beta1.MetadataListH\000B\007\n"
+          + "\005value\"N\n"
+          + "\014MetadataList\022>\n"
+          + "\006values\030\001"
+          + " \003(\0132..google.cloud.aiplatform.v1beta1.MetadataValueB\351\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\022VertexRa"
+          + "gDataProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -947,6 +1044,78 @@ public final class VertexRagDataProto extends com.google.protobuf.GeneratedFile 
             internal_static_google_cloud_aiplatform_v1beta1_RagEngineConfig_descriptor,
             new java.lang.String[] {
               "Name", "RagManagedDbConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RagDataSchema_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_cloud_aiplatform_v1beta1_RagDataSchema_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagDataSchema_descriptor,
+            new java.lang.String[] {
+              "Name", "Key", "SchemaDetails",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_descriptor,
+            new java.lang.String[] {
+              "Type", "ListConfig", "Granularity", "SearchStrategy",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_ListConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_ListConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_ListConfig_descriptor,
+            new java.lang.String[] {
+              "ValueSchema",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_SearchStrategy_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_SearchStrategy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagMetadataSchemaDetails_SearchStrategy_descriptor,
+            new java.lang.String[] {
+              "SearchStrategyType",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadata_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_cloud_aiplatform_v1beta1_RagMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagMetadata_descriptor,
+            new java.lang.String[] {
+              "Name", "UserSpecifiedMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UserSpecifiedMetadata_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_cloud_aiplatform_v1beta1_UserSpecifiedMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UserSpecifiedMetadata_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_MetadataValue_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_cloud_aiplatform_v1beta1_MetadataValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_MetadataValue_descriptor,
+            new java.lang.String[] {
+              "IntValue",
+              "FloatValue",
+              "StrValue",
+              "DatetimeValue",
+              "BoolValue",
+              "ListValue",
+              "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_MetadataList_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_cloud_aiplatform_v1beta1_MetadataList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_MetadataList_descriptor,
+            new java.lang.String[] {
+              "Values",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

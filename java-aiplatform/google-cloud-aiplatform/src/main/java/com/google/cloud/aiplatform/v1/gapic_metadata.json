@@ -1493,7 +1493,7 @@
               "methods": ["appendEvent", "appendEvent", "appendEvent", "appendEventCallable"]
             },
             "CreateSession": {
-              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
+              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
             },
             "DeleteSession": {
               "methods": ["deleteSessionAsync", "deleteSessionAsync", "deleteSessionAsync", "deleteSessionOperationCallable", "deleteSessionCallable"]

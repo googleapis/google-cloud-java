@@ -1244,6 +1244,53 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
+   * The policy that specifies how the MIG creates its VMs to achieve the target
+   * size.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerTargetSizePolicy target_size_policy = 128773506;
+   * </code>
+   *
+   * @return Whether the targetSizePolicy field is set.
+   */
+  boolean hasTargetSizePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The policy that specifies how the MIG creates its VMs to achieve the target
+   * size.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerTargetSizePolicy target_size_policy = 128773506;
+   * </code>
+   *
+   * @return The targetSizePolicy.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerTargetSizePolicy getTargetSizePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The policy that specifies how the MIG creates its VMs to achieve the target
+   * size.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerTargetSizePolicy target_size_policy = 128773506;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerTargetSizePolicyOrBuilder
+      getTargetSizePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The target number of stopped instances for this managed instance group.
    * This number changes when you:
    *
