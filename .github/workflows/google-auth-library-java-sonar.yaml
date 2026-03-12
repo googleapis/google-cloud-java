@@ -1,12 +1,28 @@
-name: SonarCloud
+name: google-auth-library-java SonarCloud
 on:
   push:
     branches:
     - main
   pull_request:
     types: [opened, synchronize, reopened]
+env:
+  BUILD_SUBDIR: google-auth-library-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'google-auth-library-java/**'
   build:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     name: Build
     runs-on: ubuntu-22.04
     # Sonar Token can't be passed to PRs from forks. Disable Sonar workflow unless PR is from a branch.

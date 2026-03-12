@@ -3,9 +3,25 @@ on:
     types: [ labeled ]
     branches:
     - main
-name: downstream
+name: google-auth-library-java downstream
+env:
+  BUILD_SUBDIR: google-auth-library-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'google-auth-library-java/**'
   dependencies:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     if: ${{ github.event.label.name == 'downstream-check:run' }}
     runs-on: ubuntu-latest
     strategy:
