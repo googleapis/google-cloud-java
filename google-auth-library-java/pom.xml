@@ -11,12 +11,13 @@
   <description>Client libraries providing authentication and
     authorization to enable calling Google APIs.
   </description>
-  <url>https://github.com/googleapis/google-auth-library-java</url>
+  <url>https://github.com/googleapis/google-cloud-java</url>
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.17.0</version>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.81.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
   <distributionManagement>
@@ -45,7 +46,6 @@
     <url>http://www.google.com/</url>
   </organization>
 
-
   <developers>
     <developer>
       <name>Jeff Ching</name>
@@ -69,7 +69,7 @@
     <developerConnection>
       scm:git:https://github.com/googleapis/google-auth-library-java.git
     </developerConnection>
-    <url>https://github.com/googleapis/google-auth-library-java</url>
+    <url>https://github.com/googleapis/google-cloud-java</url>
   </scm>
 
   <properties>
@@ -93,38 +93,10 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-credentials</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-cloudshell</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>4.11.0</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-junit-jupiter</artifactId>
         <version>4.11.0</version>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-bom</artifactId>
-        <version>${project.google.http.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.appengine</groupId>
@@ -132,102 +104,11 @@
         <version>${project.appengine.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${project.guava.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>com.google.j2objc</groupId>
-            <artifactId>j2objc-annotations</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>com.google.errorprone</groupId>
-            <artifactId>error_prone_annotations</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>jsr305</artifactId>
-        <version>${project.findbugs.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
         <version>${project.junit.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.appengine</groupId>
-        <artifactId>appengine</artifactId>
-        <version>${project.appengine.version}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>${project.version}</version>
-        <type>test-jar</type>
-        <classifier>testlib</classifier>
-      </dependency>
-      <dependency>
-        <groupId>com.google.errorprone</groupId>
-        <artifactId>error_prone_annotations</artifactId>
-        <version>${project.error-prone.version}</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java</artifactId>
-        <version>${project.protobuf.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>dev.cel</groupId>
-        <artifactId>cel</artifactId>
-        <version>${project.cel.version}</version>
-        <exclusions>
-          <!-- CEL's version for guava, findbugs and errorprone is causing build errors -->
-          <!-- so we are excluding them here. -->
-          <exclusion>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>annotations</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>com.google.errorprone</groupId>
-            <artifactId>error_prone_annotations</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>com.google.crypto.tink</groupId>
-        <artifactId>tink</artifactId>
-        <version>${project.tink.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>api-common</artifactId>
-        <version>${project.api-common.version}</version>
-        <exclusions>
-          <exclusion>
-            <!-- We exclude guava due to incompabilities between x.x.x-android (auth) and
-            x.x.x-jre (api-common).
-            TODO: Remove this once https://github.com/googleapis/google-auth-library-java/issues/1799
-            has been solved. -->
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -416,57 +297,12 @@
             <ignoredUnusedDeclaredDependency>junit:junit</ignoredUnusedDeclaredDependency>
             <!-- maven-dependency-plugin cannot detect the runtime usage of junit-jupiter-engine for executing JUnit 5+ tests. -->
             <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
     </plugins>
   </build>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.11.2</version>
-        <reportSets>
-          <reportSet>
-            <id>html</id>
-            <reports>
-              <report>aggregate</report>
-              <report>javadoc</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-        <configuration>
-          <failOnError>false</failOnError>
-          <doclint>none</doclint>
-          <source>8</source>
-          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-          <doctitle>Google Auth Library for Java ${project.version}</doctitle>
-          <overview>${basedir}/overview.html</overview>
-          <groups>
-            <group>
-              <title>google-auth-library-credentials</title>
-              <packages>com.google.auth*</packages>
-            </group>
-            <group>
-              <title>google-auth-library-oauth2-http</title>
-              <packages>com.google.auth.http*:com.google.auth.oauth2*</packages>
-            </group>
-            <group>
-              <title>google-auth-library-appengine</title>
-              <packages>com.google.auth.appengine*</packages>
-            </group>
-          </groups>
-          <links>
-            <link>http://download.oracle.com/javase/7/docs/api/</link>
-            <link>http://cloud.google.com/appengine/docs/java/javadoc</link>
-          </links>
-          <windowtitle>google-auth-library ${project.version}</windowtitle>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
 
   <profiles>
     <profile>
