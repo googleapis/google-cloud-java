@@ -379,6 +379,11 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
         if [ -f "$workflow" ]; then
             filename=$(basename "$workflow")
 
+            if [ "${filename}" == "ci.yaml" && "${SKIP_CI_WORKFLOW}" == "true" ]; then
+                echo "Skipping ci.yaml workflow as requested by user"
+                continue
+            fi
+
             # Skip redundant workflows as requested by user
             case "$filename" in
                 "hermetic_library_generation.yaml" | "update_generation_config.yaml" | \
