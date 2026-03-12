@@ -18,7 +18,6 @@
   </build>
 
   <dependencies>
-    <!-- Compile and Runtime Dependencies -->
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-oauth2-http</artifactId>
@@ -56,9 +55,6 @@
       <artifactId>tink</artifactId>
     </dependency>
 
-    <!-- Test Dependencies -->
-    <!-- Tests are written with JUnit 5, but failsafe (ITs) runs with junit-platform-47 -->
-    <!-- This dependency is needed until that config is removed from upstream shared-deps -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
