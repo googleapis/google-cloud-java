@@ -125,8 +125,7 @@ public class HttpBigQueryRpcTest {
     SpanData rpcSpan =
         spans.stream().filter(span -> span.getName().equals(spanName)).findFirst().orElse(null);
     assertNotNull(rpcSpan);
-    assertEquals(
-        service, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.service")));
+    assertEquals(service, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.service")));
     assertEquals(method, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.method")));
     assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
   }
@@ -408,8 +407,7 @@ public class HttpBigQueryRpcTest {
 
       rpc.deleteRoutineSkipExceptionTranslation("test-project", "test-dataset", "test-routine");
 
-      verifyRequest(
-          "DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listRoutines", "RoutineService", "ListRoutines");
     }
@@ -862,8 +860,7 @@ public class HttpBigQueryRpcTest {
 
       rpc.deleteRoutineSkipExceptionTranslation("test-project", "test-dataset", "test-routine");
 
-      verifyRequest(
-          "DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
       verifyNoSpans();
     }
 
