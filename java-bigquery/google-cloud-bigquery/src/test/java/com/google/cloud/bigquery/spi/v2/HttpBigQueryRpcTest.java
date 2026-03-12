@@ -77,8 +77,7 @@ public class HttpBigQueryRpcTest {
   private Tracer tracer;
   private HttpTransport mockTransport;
 
-  @BeforeEach
-  public void setUp() {
+  public void setUpServer() {
     spanExporter = InMemorySpanExporter.create();
     SdkTracerProvider tracerProvider =
         SdkTracerProvider.builder()
@@ -189,6 +188,7 @@ public class HttpBigQueryRpcTest {
 
     @BeforeEach
     public void setUp() {
+      setUpServer();
       rpc = createRpc(true);
     }
 
@@ -867,6 +867,7 @@ public class HttpBigQueryRpcTest {
 
     @BeforeEach
     public void setUp() {
+      setUpServer();
       rpc = createRpc(false);
     }
 
