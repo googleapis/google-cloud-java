@@ -569,7 +569,9 @@ if [[ -f "~/${SOURCE_REPO_NAME}.diff" ]]; then
     echo "Applying diff from ${SOURCE_REPO_NAME}.diff..."
     git apply "~/${SOURCE_REPO_NAME}.diff"
     echo "Committing diff..."
+    git add .
     git commit -am "manual changes"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 7.13 Squash commits
