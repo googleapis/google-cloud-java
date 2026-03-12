@@ -30,6 +30,7 @@ check_command git
 check_command python3
 check_command mvn
 check_command jq
+check_command git-filter-repo
 
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
@@ -86,13 +87,9 @@ else
     git clean -fd
 
     # 1.1 Modify history of the split repo to move files to the destination target directory
-    FILTER_WORKDIR="$(mktemp -d -t code-migration-XXXXXXXXXX)"
     echo "Moving files to destination path: ${SOURCE_REPO_NAME}"
-    git filter-branch \
-      --force \
-      --prune-empty \
-      --tree-filter \
-        "git submodule update --init --recursive; find . -mindepth 2 -name .git -exec rm -rf {} +; git submodule update --init --recursive; find . -mindepth 2 -name .git -exec rm -rf {} +; shopt -s dotglob; mkdir -p ${FILTER_WORKDIR}/migrated-source; mv * ${FILTER_WORKDIR}/migrated-source; mkdir -p ${SOURCE_REPO_NAME}; { mv ${FILTER_WORKDIR}/migrated-source/* ${SOURCE_REPO_NAME} || echo 'No files to move' ; }"
+    git filter-repo \
+      --to-subdirectory-filter  "${SOURCE_REPO_NAME}" --force
     popd
 fi
 
