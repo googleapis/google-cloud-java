@@ -61,6 +61,14 @@ import org.junit.jupiter.api.Test;
 
 public class HttpBigQueryRpcTest {
 
+  private static final String PROJECT_ID = "test-project";
+  private static final String DATASET_ID = "test-dataset";
+  private static final String TABLE_ID = "test-table";
+  private static final String MODEL_ID = "test-model";
+  private static final String ROUTINE_ID = "test-routine";
+  private static final String JOB_ID = "test-job";
+  private static final String LOCATION = "test-location";
+
   private InMemorySpanExporter spanExporter;
   private MockLowLevelHttpResponse mockResponse;
   private String lastRequestMethod;
@@ -102,7 +110,7 @@ public class HttpBigQueryRpcTest {
   private HttpBigQueryRpc createRpc(boolean enableTracing) {
     BigQueryOptions options =
         BigQueryOptions.newBuilder()
-            .setProjectId("test-project")
+            .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .setEnableOpenTelemetryTracing(enableTracing)
             .setOpenTelemetryTracer(tracer)
@@ -185,28 +193,36 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetDataset() throws Exception {
+    public void testGetDatasetTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\",\"datasetReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\"}}");
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
 
-      rpc.getDatasetSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getDataset",
           "DatasetService",
           "GetDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", "test-project:test-dataset"));
+          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
     }
 
     @Test
-    public void testListDatasets() throws Exception {
+    public void testListDatasetsTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#datasetList\",\"datasets\":[], \"nextPageToken\":\"next-page-token\"}");
 
-      rpc.listDatasetsSkipExceptionTranslation("test-project", new HashMap<>());
+      rpc.listDatasetsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
           "DatasetService",
@@ -215,30 +231,31 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateDataset() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
+    public void testCreateDatasetTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       Dataset dataset = new Dataset();
       dataset.setDatasetReference(
-          new DatasetReference().setProjectId("test-project").setDatasetId("test-dataset"));
+          new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
       rpc.createSkipExceptionTranslation(dataset, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/datasets");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createDataset",
           "DatasetService",
           "InsertDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", "test-project:test-dataset"));
+          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
     }
 
     @Test
-    public void testDeleteDataset() throws Exception {
+    public void testDeleteDatasetTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteDatasetSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.deleteDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset");
+      verifyRequest("DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.deleteDataset",
           "DatasetService",
@@ -247,47 +264,54 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testPatchDataset() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
+    public void testPatchDatasetTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       Dataset dataset = new Dataset();
       dataset.setDatasetReference(
-          new DatasetReference().setProjectId("test-project").setDatasetId("test-dataset"));
+          new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
       rpc.patchSkipExceptionTranslation(dataset, new HashMap<>());
 
-      verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset");
+      verifyRequest("PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
           "DatasetService",
           "PatchDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", "test-project:test-dataset"));
+          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
     }
 
     @Test
-    public void testGetTable() throws Exception {
+    public void testGetTableTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
+          "{\"kind\":\"bigquery#table\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "."
+              + TABLE_ID
+              + "\"}");
 
-      rpc.getTableSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-table", new HashMap<>());
+      rpc.getTableSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table");
+      verifyRequest(
+          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getTable",
           "TableService",
           "GetTable",
           Collections.singletonMap(
-              "bq.rpc.response.table.id", "test-project:test-dataset.test-table"));
+              "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
     }
 
     @Test
-    public void testListTables() throws Exception {
+    public void testListTablesTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#tableList\",\"tables\":[], \"nextPageToken\":\"next-page-token\"}");
 
-      rpc.listTablesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.listTablesSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listTables",
           "TableService",
@@ -296,85 +320,105 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateTable() throws Exception {
+    public void testCreateTableTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
+          "{\"kind\":\"bigquery#table\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "."
+              + TABLE_ID
+              + "\"}");
 
       Table table = new Table();
       table.setTableReference(
           new TableReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setTableId("test-table"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setTableId(TABLE_ID));
       rpc.createSkipExceptionTranslation(table, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/datasets/test-dataset/tables");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createTable",
           "TableService",
           "InsertTable",
           Collections.singletonMap(
-              "bq.rpc.response.table.id", "test-project:test-dataset.test-table"));
+              "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
     }
 
     @Test
-    public void testDeleteTable() throws Exception {
+    public void testDeleteTableTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteTableSkipExceptionTranslation("test-project", "test-dataset", "test-table");
+      rpc.deleteTableSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID);
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/tables/test-table");
+      verifyRequest(
+          "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.deleteTable", "TableService", "DeleteTable", null);
     }
 
     @Test
-    public void testPatchTable() throws Exception {
+    public void testPatchTableTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
+          "{\"kind\":\"bigquery#table\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "."
+              + TABLE_ID
+              + "\"}");
 
       Table table = new Table();
       table.setTableReference(
           new TableReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setTableId("test-table"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setTableId(TABLE_ID));
       rpc.patchSkipExceptionTranslation(table, new HashMap<>());
 
-      verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset/tables/test-table");
+      verifyRequest(
+          "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.patchTable",
           "TableService",
           "PatchTable",
           Collections.singletonMap(
-              "bq.rpc.response.table.id", "test-project:test-dataset.test-table"));
+              "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
     }
 
     @Test
-    public void testGetModel() throws Exception {
+    public void testGetModelTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
+          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"modelId\":\""
+              + MODEL_ID
+              + "\"}}");
 
-      rpc.getModelSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-model", new HashMap<>());
+      rpc.getModelSkipExceptionTranslation(PROJECT_ID, DATASET_ID, MODEL_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/models/test-model");
+      verifyRequest(
+          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getModel",
           "ModelService",
           "GetModel",
-          Collections.singletonMap("bq.rpc.response.model.id", "test-model"));
+          Collections.singletonMap("bq.rpc.response.model.id", MODEL_ID));
     }
 
     @Test
-    public void testListModels() throws Exception {
+    public void testListModelsTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#modelList\",\"models\":[], \"nextPageToken\":\"next-page-token\"}");
 
-      rpc.listModelsSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.listModelsSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/models");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listModels",
           "ModelService",
@@ -383,62 +427,76 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testPatchModel() throws Exception {
+    public void testPatchModelTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
+          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"modelId\":\""
+              + MODEL_ID
+              + "\"}}");
 
       Model model = new Model();
       model.setModelReference(
           new ModelReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setModelId("test-model"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setModelId(MODEL_ID));
       rpc.patchSkipExceptionTranslation(model, new HashMap<>());
 
-      verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset/models/test-model");
+      verifyRequest(
+          "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.patchModel",
           "ModelService",
           "PatchModel",
-          Collections.singletonMap("bq.rpc.response.model.id", "test-model"));
+          Collections.singletonMap("bq.rpc.response.model.id", MODEL_ID));
     }
 
     @Test
-    public void testDeleteModel() throws Exception {
+    public void testDeleteModelTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteModelSkipExceptionTranslation("test-project", "test-dataset", "test-model");
+      rpc.deleteModelSkipExceptionTranslation(PROJECT_ID, DATASET_ID, MODEL_ID);
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/models/test-model");
+      verifyRequest(
+          "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.deleteModel", "ModelService", "DeleteModel", null);
     }
 
     @Test
-    public void testGetRoutine() throws Exception {
+    public void testGetRoutineTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
+          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"routineId\":\""
+              + ROUTINE_ID
+              + "\"}}");
 
-      rpc.getRoutineSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-routine", new HashMap<>());
+      rpc.getRoutineSkipExceptionTranslation(PROJECT_ID, DATASET_ID, ROUTINE_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest(
+          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getRoutine",
           "RoutineService",
           "GetRoutine",
-          Collections.singletonMap("bq.rpc.response.routine.id", "test-routine"));
+          Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
     }
 
     @Test
-    public void testListRoutines() throws Exception {
+    public void testListRoutinesTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routineList\",\"routines\":[], \"nextPageToken\":\"next-page-token\"}");
 
-      rpc.listRoutinesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.listRoutinesSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/routines");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
           "RoutineService",
@@ -447,34 +505,42 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateRoutine() throws Exception {
+    public void testCreateRoutineTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
+          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"routineId\":\""
+              + ROUTINE_ID
+              + "\"}}");
 
       Routine routine = new Routine();
       routine.setRoutineReference(
           new RoutineReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setRoutineId("test-routine"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setRoutineId(ROUTINE_ID));
       rpc.createSkipExceptionTranslation(routine, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/datasets/test-dataset/routines");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createRoutine",
           "RoutineService",
           "InsertRoutine",
-          Collections.singletonMap("bq.rpc.response.routine.id", "test-routine"));
+          Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
     }
 
     @Test
-    public void testDeleteRoutine() throws Exception {
+    public void testDeleteRoutineTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteRoutineSkipExceptionTranslation("test-project", "test-dataset", "test-routine");
+      rpc.deleteRoutineSkipExceptionTranslation(PROJECT_ID, DATASET_ID, ROUTINE_ID);
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest(
+          "DELETE",
+          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
           "RoutineService",
@@ -483,59 +549,76 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testUpdateRoutine() throws Exception {
+    public void testUpdateRoutineTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
+          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"routineId\":\""
+              + ROUTINE_ID
+              + "\"}}");
 
       Routine routine = new Routine();
       routine.setRoutineReference(
           new RoutineReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setRoutineId("test-routine"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setRoutineId(ROUTINE_ID));
       rpc.updateSkipExceptionTranslation(routine, new HashMap<>());
 
-      verifyRequest("PUT", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest(
+          "PUT", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.updateRoutine",
           "RoutineService",
           "UpdateRoutine",
-          Collections.singletonMap("bq.rpc.response.routine.id", "test-routine"));
+          Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
     }
 
     @Test
-    public void testInsertAll() throws Exception {
+    public void testInsertAllTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataInsertAllResponse\"}");
 
       TableDataInsertAllRequest request = new TableDataInsertAllRequest();
-      rpc.insertAllSkipExceptionTranslation("test-project", "test-dataset", "test-table", request);
+      rpc.insertAllSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, request);
 
       verifyRequest(
-          "POST", "/projects/test-project/datasets/test-dataset/tables/test-table/insertAll");
+          "POST",
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + "/insertAll");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.insertAll", "TableDataService", "InsertAll", null);
     }
 
     @Test
-    public void testListTableData() throws Exception {
+    public void testListTableDataTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
-      rpc.listTableDataSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-table", new HashMap<>());
+      rpc.listTableDataSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table/data");
+      verifyRequest(
+          "GET",
+          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listTableData", "TableDataService", "List", null);
     }
 
     @Test
-    public void testListTableDataWithRowLimit() throws Exception {
+    public void testListTableDataWithRowLimitTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataWithRowLimitSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-table", 10, null);
+          PROJECT_ID, DATASET_ID, TABLE_ID, 10, null);
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table/data");
+      verifyRequest(
+          "GET",
+          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listTableDataWithRowLimit",
           "TableDataService",
@@ -544,44 +627,51 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetJob() throws Exception {
+    public void testGetJobTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
-      rpc.getJobSkipExceptionTranslation(
-          "test-project", "test-job", "test-location", new HashMap<>());
+      rpc.getJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/jobs/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       Map<String, String> attributes = new HashMap<>();
-      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getJob", "JobService", "GetJob", attributes);
     }
 
     @Test
-    public void testGetQueryJob() throws Exception {
+    public void testGetQueryJobTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
-      rpc.getQueryJobSkipExceptionTranslation("test-project", "test-job", "test-location");
+      rpc.getQueryJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
-      verifyRequest("GET", "/projects/test-project/jobs/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       Map<String, String> attributes = new HashMap<>();
-      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getQueryJob", "JobService", "GetJob", attributes);
     }
 
     @Test
-    public void testListJobs() throws Exception {
+    public void testListJobsTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#jobList\",\"jobs\":[], \"nextPageToken\":\"next-page-token\"}");
 
-      rpc.listJobsSkipExceptionTranslation("test-project", new HashMap<>());
+      rpc.listJobsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/jobs");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listJobs",
           "JobService",
@@ -590,34 +680,42 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateJob() throws Exception {
+    public void testCreateJobTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
       Job job = new Job();
-      job.setJobReference(new JobReference().setProjectId("test-project").setJobId("test-job"));
+      job.setJobReference(new JobReference().setProjectId(PROJECT_ID).setJobId(JOB_ID));
       rpc.createSkipExceptionTranslation(job, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/jobs");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs");
       Map<String, String> attributes = new HashMap<>();
-      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createJob", "JobService", "InsertJob", attributes);
     }
 
     @Test
-    public void testCreateJobForQuery() throws Exception {
+    public void testCreateJobForQueryTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
       Job job = new Job();
-      job.setJobReference(new JobReference().setProjectId("test-project").setJobId("test-job"));
+      job.setJobReference(new JobReference().setProjectId(PROJECT_ID).setJobId(JOB_ID));
       rpc.createJobForQuerySkipExceptionTranslation(job);
 
-      verifyRequest("POST", "/projects/test-project/jobs");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs");
       Map<String, String> attributes = new HashMap<>();
-      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery",
@@ -627,36 +725,35 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCancelJob() throws Exception {
+    public void testCancelJobTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#jobCancelResponse\"}");
 
-      rpc.cancelSkipExceptionTranslation("test-project", "test-job", "test-location");
+      rpc.cancelSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
-      verifyRequest("POST", "/projects/test-project/jobs/test-job/cancel");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID + "/cancel");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.cancelJob", "JobService", "CancelJob", null);
     }
 
     @Test
-    public void testDeleteJob() throws Exception {
+    public void testDeleteJobTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteJobSkipExceptionTranslation("test-project", "test-job", "test-location");
+      rpc.deleteJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
-      verifyRequest("DELETE", "/projects/test-project/jobs/test-job");
+      verifyRequest("DELETE", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.deleteJob", "JobService", "DeleteJob", null);
     }
 
     @Test
-    public void testGetQueryResults() throws Exception {
+    public void testGetQueryResultsTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
-      rpc.getQueryResultsSkipExceptionTranslation(
-          "test-project", "test-job", "test-location", new HashMap<>());
+      rpc.getQueryResultsSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/queries/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getQueryResults",
           "JobService",
@@ -665,13 +762,13 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetQueryResultsWithRowLimit() throws Exception {
+    public void testGetQueryResultsWithRowLimitTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsWithRowLimitSkipExceptionTranslation(
-          "test-project", "test-job", "test-location", 10, 1000L);
+          PROJECT_ID, JOB_ID, LOCATION, 10, 1000L);
 
-      verifyRequest("GET", "/projects/test-project/queries/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getQueryResultsWithRowLimit",
           "JobService",
@@ -680,24 +777,32 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testQueryRpc() throws Exception {
+    public void testQueryRpcTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#queryResponse\"}");
 
-      rpc.queryRpcSkipExceptionTranslation("test-project", new QueryRequest());
+      rpc.queryRpcSkipExceptionTranslation(PROJECT_ID, new QueryRequest());
 
-      verifyRequest("POST", "/projects/test-project/queries");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/queries");
       verifySpan("com.google.cloud.bigquery.BigQueryRpc.queryRpc", "JobService", "Query", null);
     }
 
     @Test
-    public void testGetIamPolicy() throws Exception {
+    public void testGetIamPolicyTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.getIamPolicySkipExceptionTranslation(
-          "projects/test-project/datasets/test-dataset/tables/test-table", new HashMap<>());
+          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+          new HashMap<>());
 
       verifyRequest(
-          "POST", "/projects/test-project/datasets/test-dataset/tables/test-table:getIamPolicy");
+          "POST",
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + ":getIamPolicy");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getIamPolicy",
           "TableService",
@@ -706,16 +811,23 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testSetIamPolicy() throws Exception {
+    public void testSetIamPolicyTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.setIamPolicySkipExceptionTranslation(
-          "projects/test-project/datasets/test-dataset/tables/test-table",
+          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
           new Policy(),
           new HashMap<>());
 
       verifyRequest(
-          "POST", "/projects/test-project/datasets/test-dataset/tables/test-table:setIamPolicy");
+          "POST",
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + ":setIamPolicy");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
           "TableService",
@@ -724,17 +836,23 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testTestIamPermissions() throws Exception {
+    public void testTestIamPermissionsTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#testIamPermissionsResponse\"}");
 
       rpc.testIamPermissionsSkipExceptionTranslation(
-          "projects/test-project/datasets/test-dataset/tables/test-table",
+          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
           Arrays.asList("p1", "p2"),
           new HashMap<>());
 
       verifyRequest(
           "POST",
-          "/projects/test-project/datasets/test-dataset/tables/test-table:testIamPermissions");
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + ":testIamPermissions");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
           "TableService",
@@ -753,431 +871,541 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetDataset() throws Exception {
+    public void testGetDatasetNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\",\"datasetReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\"}}");
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
 
-      rpc.getDatasetSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testListDatasets() throws Exception {
+    public void testListDatasetsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#datasetList\",\"datasets\":[]}");
 
-      rpc.listDatasetsSkipExceptionTranslation("test-project", new HashMap<>());
+      rpc.listDatasetsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets");
       verifyNoSpans();
     }
 
     @Test
-    public void testCreateDataset() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
+    public void testCreateDatasetNoTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       Dataset dataset = new Dataset();
       dataset.setDatasetReference(
-          new DatasetReference().setProjectId("test-project").setDatasetId("test-dataset"));
+          new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
       rpc.createSkipExceptionTranslation(dataset, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/datasets");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets");
       verifyNoSpans();
     }
 
     @Test
-    public void testDeleteDataset() throws Exception {
+    public void testDeleteDatasetNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteDatasetSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.deleteDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset");
+      verifyRequest("DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testPatchDataset() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
+    public void testPatchDatasetNoTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       Dataset dataset = new Dataset();
       dataset.setDatasetReference(
-          new DatasetReference().setProjectId("test-project").setDatasetId("test-dataset"));
+          new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
       rpc.patchSkipExceptionTranslation(dataset, new HashMap<>());
 
-      verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset");
+      verifyRequest("PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testGetTable() throws Exception {
+    public void testGetTableNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
+          "{\"kind\":\"bigquery#table\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "."
+              + TABLE_ID
+              + "\"}");
 
-      rpc.getTableSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-table", new HashMap<>());
+      rpc.getTableSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table");
+      verifyRequest(
+          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testListTables() throws Exception {
+    public void testListTablesNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableList\",\"tables\":[]}");
 
-      rpc.listTablesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.listTablesSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables");
       verifyNoSpans();
     }
 
     @Test
-    public void testCreateTable() throws Exception {
+    public void testCreateTableNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
+          "{\"kind\":\"bigquery#table\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "."
+              + TABLE_ID
+              + "\"}");
 
       Table table = new Table();
       table.setTableReference(
           new TableReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setTableId("test-table"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setTableId(TABLE_ID));
       rpc.createSkipExceptionTranslation(table, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/datasets/test-dataset/tables");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables");
       verifyNoSpans();
     }
 
     @Test
-    public void testDeleteTable() throws Exception {
+    public void testDeleteTableNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteTableSkipExceptionTranslation("test-project", "test-dataset", "test-table");
+      rpc.deleteTableSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID);
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/tables/test-table");
+      verifyRequest(
+          "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testPatchTable() throws Exception {
+    public void testPatchTableNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
+          "{\"kind\":\"bigquery#table\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "."
+              + TABLE_ID
+              + "\"}");
 
       Table table = new Table();
       table.setTableReference(
           new TableReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setTableId("test-table"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setTableId(TABLE_ID));
       rpc.patchSkipExceptionTranslation(table, new HashMap<>());
 
-      verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset/tables/test-table");
+      verifyRequest(
+          "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testGetModel() throws Exception {
+    public void testGetModelNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
+          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"modelId\":\""
+              + MODEL_ID
+              + "\"}}");
 
-      rpc.getModelSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-model", new HashMap<>());
+      rpc.getModelSkipExceptionTranslation(PROJECT_ID, DATASET_ID, MODEL_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/models/test-model");
+      verifyRequest(
+          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testListModels() throws Exception {
+    public void testListModelsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#modelList\",\"models\":[]}");
 
-      rpc.listModelsSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.listModelsSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/models");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models");
       verifyNoSpans();
     }
 
     @Test
-    public void testPatchModel() throws Exception {
+    public void testPatchModelNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
+          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"modelId\":\""
+              + MODEL_ID
+              + "\"}}");
 
       Model model = new Model();
       model.setModelReference(
           new ModelReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setModelId("test-model"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setModelId(MODEL_ID));
       rpc.patchSkipExceptionTranslation(model, new HashMap<>());
 
-      verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset/models/test-model");
+      verifyRequest(
+          "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testDeleteModel() throws Exception {
+    public void testDeleteModelNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteModelSkipExceptionTranslation("test-project", "test-dataset", "test-model");
+      rpc.deleteModelSkipExceptionTranslation(PROJECT_ID, DATASET_ID, MODEL_ID);
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/models/test-model");
+      verifyRequest(
+          "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testGetRoutine() throws Exception {
+    public void testGetRoutineNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
+          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"routineId\":\""
+              + ROUTINE_ID
+              + "\"}}");
 
-      rpc.getRoutineSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-routine", new HashMap<>());
+      rpc.getRoutineSkipExceptionTranslation(PROJECT_ID, DATASET_ID, ROUTINE_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest(
+          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testListRoutines() throws Exception {
+    public void testListRoutinesNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#routineList\",\"routines\":[]}");
 
-      rpc.listRoutinesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
+      rpc.listRoutinesSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/routines");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines");
       verifyNoSpans();
     }
 
     @Test
-    public void testCreateRoutine() throws Exception {
+    public void testCreateRoutineNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
+          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"routineId\":\""
+              + ROUTINE_ID
+              + "\"}}");
 
       Routine routine = new Routine();
       routine.setRoutineReference(
           new RoutineReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setRoutineId("test-routine"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setRoutineId(ROUTINE_ID));
       rpc.createSkipExceptionTranslation(routine, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/datasets/test-dataset/routines");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines");
       verifyNoSpans();
     }
 
     @Test
-    public void testDeleteRoutine() throws Exception {
+    public void testDeleteRoutineNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteRoutineSkipExceptionTranslation("test-project", "test-dataset", "test-routine");
+      rpc.deleteRoutineSkipExceptionTranslation(PROJECT_ID, DATASET_ID, ROUTINE_ID);
 
-      verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest(
+          "DELETE",
+          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testUpdateRoutine() throws Exception {
+    public void testUpdateRoutineNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
+          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\",\"routineId\":\""
+              + ROUTINE_ID
+              + "\"}}");
 
       Routine routine = new Routine();
       routine.setRoutineReference(
           new RoutineReference()
-              .setProjectId("test-project")
-              .setDatasetId("test-dataset")
-              .setRoutineId("test-routine"));
+              .setProjectId(PROJECT_ID)
+              .setDatasetId(DATASET_ID)
+              .setRoutineId(ROUTINE_ID));
       rpc.updateSkipExceptionTranslation(routine, new HashMap<>());
 
-      verifyRequest("PUT", "/projects/test-project/datasets/test-dataset/routines/test-routine");
+      verifyRequest(
+          "PUT", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testInsertAll() throws Exception {
+    public void testInsertAllNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataInsertAllResponse\"}");
 
       TableDataInsertAllRequest request = new TableDataInsertAllRequest();
-      rpc.insertAllSkipExceptionTranslation("test-project", "test-dataset", "test-table", request);
+      rpc.insertAllSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, request);
 
       verifyRequest(
-          "POST", "/projects/test-project/datasets/test-dataset/tables/test-table/insertAll");
+          "POST",
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + "/insertAll");
       verifyNoSpans();
     }
 
     @Test
-    public void testListTableData() throws Exception {
+    public void testListTableDataNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
-      rpc.listTableDataSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-table", new HashMap<>());
+      rpc.listTableDataSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table/data");
+      verifyRequest(
+          "GET",
+          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
       verifyNoSpans();
     }
 
     @Test
-    public void testListTableDataWithRowLimit() throws Exception {
+    public void testListTableDataWithRowLimitNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataWithRowLimitSkipExceptionTranslation(
-          "test-project", "test-dataset", "test-table", 10, null);
+          PROJECT_ID, DATASET_ID, TABLE_ID, 10, null);
 
-      verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table/data");
+      verifyRequest(
+          "GET",
+          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
       verifyNoSpans();
     }
 
     @Test
-    public void testGetJob() throws Exception {
+    public void testGetJobNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
-      rpc.getJobSkipExceptionTranslation(
-          "test-project", "test-job", "test-location", new HashMap<>());
+      rpc.getJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/jobs/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testGetQueryJob() throws Exception {
+    public void testGetQueryJobNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
-      rpc.getQueryJobSkipExceptionTranslation("test-project", "test-job", "test-location");
+      rpc.getQueryJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
-      verifyRequest("GET", "/projects/test-project/jobs/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testListJobs() throws Exception {
+    public void testListJobsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#jobList\",\"jobs\":[]}");
 
-      rpc.listJobsSkipExceptionTranslation("test-project", new HashMap<>());
+      rpc.listJobsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/jobs");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs");
       verifyNoSpans();
     }
 
     @Test
-    public void testCreateJob() throws Exception {
+    public void testCreateJobNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
       Job job = new Job();
-      job.setJobReference(new JobReference().setProjectId("test-project").setJobId("test-job"));
+      job.setJobReference(new JobReference().setProjectId(PROJECT_ID).setJobId(JOB_ID));
       rpc.createSkipExceptionTranslation(job, new HashMap<>());
 
-      verifyRequest("POST", "/projects/test-project/jobs");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs");
       verifyNoSpans();
     }
 
     @Test
-    public void testCreateJobForQuery() throws Exception {
+    public void testCreateJobForQueryNoTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
+          "{\"kind\":\"bigquery#job\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + JOB_ID
+              + "\",\"status\":{\"state\":\"DONE\"}}");
 
       Job job = new Job();
-      job.setJobReference(new JobReference().setProjectId("test-project").setJobId("test-job"));
+      job.setJobReference(new JobReference().setProjectId(PROJECT_ID).setJobId(JOB_ID));
       rpc.createJobForQuerySkipExceptionTranslation(job);
 
-      verifyRequest("POST", "/projects/test-project/jobs");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs");
       verifyNoSpans();
     }
 
     @Test
-    public void testCancelJob() throws Exception {
+    public void testCancelJobNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#jobCancelResponse\"}");
 
-      rpc.cancelSkipExceptionTranslation("test-project", "test-job", "test-location");
+      rpc.cancelSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
-      verifyRequest("POST", "/projects/test-project/jobs/test-job/cancel");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID + "/cancel");
       verifyNoSpans();
     }
 
     @Test
-    public void testDeleteJob() throws Exception {
+    public void testDeleteJobNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
-      rpc.deleteJobSkipExceptionTranslation("test-project", "test-job", "test-location");
+      rpc.deleteJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
-      verifyRequest("DELETE", "/projects/test-project/jobs/test-job");
+      verifyRequest("DELETE", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testGetQueryResults() throws Exception {
+    public void testGetQueryResultsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
-      rpc.getQueryResultsSkipExceptionTranslation(
-          "test-project", "test-job", "test-location", new HashMap<>());
+      rpc.getQueryResultsSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION, new HashMap<>());
 
-      verifyRequest("GET", "/projects/test-project/queries/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testGetQueryResultsWithRowLimit() throws Exception {
+    public void testGetQueryResultsWithRowLimitNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsWithRowLimitSkipExceptionTranslation(
-          "test-project", "test-job", "test-location", 10, 1000L);
+          PROJECT_ID, JOB_ID, LOCATION, 10, 1000L);
 
-      verifyRequest("GET", "/projects/test-project/queries/test-job");
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifyNoSpans();
     }
 
     @Test
-    public void testQueryRpc() throws Exception {
+    public void testQueryRpcNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#queryResponse\"}");
 
-      rpc.queryRpcSkipExceptionTranslation("test-project", new QueryRequest());
+      rpc.queryRpcSkipExceptionTranslation(PROJECT_ID, new QueryRequest());
 
-      verifyRequest("POST", "/projects/test-project/queries");
+      verifyRequest("POST", "/projects/" + PROJECT_ID + "/queries");
       verifyNoSpans();
     }
 
     @Test
-    public void testGetIamPolicy() throws Exception {
+    public void testGetIamPolicyNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.getIamPolicySkipExceptionTranslation(
-          "projects/test-project/datasets/test-dataset/tables/test-table", new HashMap<>());
+          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+          new HashMap<>());
 
       verifyRequest(
-          "POST", "/projects/test-project/datasets/test-dataset/tables/test-table:getIamPolicy");
+          "POST",
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + ":getIamPolicy");
       verifyNoSpans();
     }
 
     @Test
-    public void testSetIamPolicy() throws Exception {
+    public void testSetIamPolicyNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.setIamPolicySkipExceptionTranslation(
-          "projects/test-project/datasets/test-dataset/tables/test-table",
+          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
           new Policy(),
           new HashMap<>());
 
       verifyRequest(
-          "POST", "/projects/test-project/datasets/test-dataset/tables/test-table:setIamPolicy");
+          "POST",
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + ":setIamPolicy");
       verifyNoSpans();
     }
 
     @Test
-    public void testTestIamPermissions() throws Exception {
+    public void testTestIamPermissionsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#testIamPermissionsResponse\"}");
 
       rpc.testIamPermissionsSkipExceptionTranslation(
-          "projects/test-project/datasets/test-dataset/tables/test-table",
+          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
           Arrays.asList("p1", "p2"),
           new HashMap<>());
 
       verifyRequest(
           "POST",
-          "/projects/test-project/datasets/test-dataset/tables/test-table:testIamPermissions");
+          "/projects/"
+              + PROJECT_ID
+              + "/datasets/"
+              + DATASET_ID
+              + "/tables/"
+              + TABLE_ID
+              + ":testIamPermissions");
       verifyNoSpans();
     }
   }
