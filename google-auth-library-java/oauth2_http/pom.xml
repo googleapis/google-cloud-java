@@ -23,7 +23,7 @@
 
   <profiles>
     <profile>
-      <id>native-test</id>
+      <id>native</id>
       <build>
         <plugins>
           <plugin>
@@ -112,7 +112,6 @@
           <artifactId>slf4j-api</artifactId>
           <version>${project.slf4j.version}</version>
         </dependency>
-        <!--    Logback  for testing -->
         <dependency>
           <groupId>ch.qos.logback</groupId>
           <artifactId>logback-classic</artifactId>
@@ -298,8 +297,6 @@
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
     </dependency>
-    <!-- Tests are written with JUnit 5, but failsafe (ITs) runs with junit-platform-47 -->
-    <!-- This dependency is needed until that config is removed from upstream shared-deps -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
