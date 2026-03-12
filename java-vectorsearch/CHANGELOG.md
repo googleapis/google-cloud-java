@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.8.0 (2026-03-11)
+
+### ⚠ BREAKING CHANGES
+
+* Removed field DenseScannParams from SearchHint
+* Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker`
+* Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker`
+
+### Bug Fixes
+
+* Removed field DenseScannParams from SearchHint ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+
+
+
 ## 0.7.0 (2026-02-25)
 
 ### Dependencies

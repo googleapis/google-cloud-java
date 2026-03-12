@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.27.0 (2026-03-11)
+
+### Features
+
+* add new transformation `update_object_custom_context` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+
+
+
 ## 0.26.0 (2026-02-25)
 
 ### Dependencies
