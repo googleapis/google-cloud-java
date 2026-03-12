@@ -54,6 +54,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -119,7 +120,8 @@ public class HttpBigQueryRpcTest {
     mockResponse.setContent(content);
   }
 
-  private void verifySpan(String spanName, String service, String method) {
+  private void verifySpan(
+      String spanName, String service, String method, Map<String, String> attributes) {
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).isNotEmpty();
     SpanData rpcSpan =
@@ -128,6 +130,13 @@ public class HttpBigQueryRpcTest {
     assertEquals(service, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.service")));
     assertEquals(method, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.method")));
     assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
+
+    if (attributes != null) {
+      for (Map.Entry<String, String> entry : attributes.entrySet()) {
+        assertEquals(
+            entry.getValue(), rpcSpan.getAttributes().get(AttributeKey.stringKey(entry.getKey())));
+      }
+    }
   }
 
   private void verifyNoSpans() {
@@ -176,7 +185,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetDataset() throws Exception {
+    public void testGetDatasetTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\",\"datasetReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\"}}");
 
@@ -184,22 +193,29 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getDataset", "DatasetService", "GetDataset");
+          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+          "DatasetService",
+          "GetDataset",
+          Collections.singletonMap("bq.rpc.response.dataset.id", "test-project:test-dataset"));
     }
 
     @Test
-    public void testListDatasets() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#datasetList\",\"datasets\":[]}");
+    public void testListDatasetsTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#datasetList\",\"datasets\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listDatasetsSkipExceptionTranslation("test-project", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listDatasets", "DatasetService", "ListDatasets");
+          "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
+          "DatasetService",
+          "ListDatasets",
+          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
-    public void testCreateDataset() throws Exception {
+    public void testCreateDatasetTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
 
       Dataset dataset = new Dataset();
@@ -209,11 +225,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("POST", "/projects/test-project/datasets");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createDataset", "DatasetService", "InsertDataset");
+          "com.google.cloud.bigquery.BigQueryRpc.createDataset",
+          "DatasetService",
+          "InsertDataset",
+          Collections.singletonMap("bq.rpc.response.dataset.id", "test-project:test-dataset"));
     }
 
     @Test
-    public void testDeleteDataset() throws Exception {
+    public void testDeleteDatasetTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -221,11 +240,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteDataset", "DatasetService", "DeleteDataset");
+          "com.google.cloud.bigquery.BigQueryRpc.deleteDataset",
+          "DatasetService",
+          "DeleteDataset",
+          null);
     }
 
     @Test
-    public void testPatchDataset() throws Exception {
+    public void testPatchDatasetTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
 
       Dataset dataset = new Dataset();
@@ -235,11 +257,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.patchDataset", "DatasetService", "PatchDataset");
+          "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
+          "DatasetService",
+          "PatchDataset",
+          Collections.singletonMap("bq.rpc.response.dataset.id", "test-project:test-dataset"));
     }
 
     @Test
-    public void testGetTable() throws Exception {
+    public void testGetTableTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
 
@@ -247,21 +272,31 @@ public class HttpBigQueryRpcTest {
           "test-project", "test-dataset", "test-table", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.getTable", "TableService", "GetTable");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getTable",
+          "TableService",
+          "GetTable",
+          Collections.singletonMap(
+              "bq.rpc.response.table.id", "test-project:test-dataset.test-table"));
     }
 
     @Test
-    public void testListTables() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#tableList\",\"tables\":[]}");
+    public void testListTablesTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#tableList\",\"tables\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listTablesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.listTables", "TableService", "ListTables");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.listTables",
+          "TableService",
+          "ListTables",
+          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
-    public void testCreateTable() throws Exception {
+    public void testCreateTableTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
 
@@ -275,11 +310,15 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("POST", "/projects/test-project/datasets/test-dataset/tables");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createTable", "TableService", "InsertTable");
+          "com.google.cloud.bigquery.BigQueryRpc.createTable",
+          "TableService",
+          "InsertTable",
+          Collections.singletonMap(
+              "bq.rpc.response.table.id", "test-project:test-dataset.test-table"));
     }
 
     @Test
-    public void testDeleteTable() throws Exception {
+    public void testDeleteTableTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -287,11 +326,11 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/tables/test-table");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteTable", "TableService", "DeleteTable");
+          "com.google.cloud.bigquery.BigQueryRpc.deleteTable", "TableService", "DeleteTable", null);
     }
 
     @Test
-    public void testPatchTable() throws Exception {
+    public void testPatchTableTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
 
@@ -304,11 +343,16 @@ public class HttpBigQueryRpcTest {
       rpc.patchSkipExceptionTranslation(table, new HashMap<>());
 
       verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset/tables/test-table");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.patchTable", "TableService", "PatchTable");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.patchTable",
+          "TableService",
+          "PatchTable",
+          Collections.singletonMap(
+              "bq.rpc.response.table.id", "test-project:test-dataset.test-table"));
     }
 
     @Test
-    public void testGetModel() throws Exception {
+    public void testGetModelTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
 
@@ -316,21 +360,30 @@ public class HttpBigQueryRpcTest {
           "test-project", "test-dataset", "test-model", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/models/test-model");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.getModel", "ModelService", "GetModel");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getModel",
+          "ModelService",
+          "GetModel",
+          Collections.singletonMap("bq.rpc.response.model.id", "test-model"));
     }
 
     @Test
-    public void testListModels() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#modelList\",\"models\":[]}");
+    public void testListModelsTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#modelList\",\"models\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listModelsSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/models");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.listModels", "ModelService", "ListModels");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.listModels",
+          "ModelService",
+          "ListModels",
+          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
-    public void testPatchModel() throws Exception {
+    public void testPatchModelTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
 
@@ -343,11 +396,15 @@ public class HttpBigQueryRpcTest {
       rpc.patchSkipExceptionTranslation(model, new HashMap<>());
 
       verifyRequest("PATCH", "/projects/test-project/datasets/test-dataset/models/test-model");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.patchModel", "ModelService", "PatchModel");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.patchModel",
+          "ModelService",
+          "PatchModel",
+          Collections.singletonMap("bq.rpc.response.model.id", "test-model"));
     }
 
     @Test
-    public void testDeleteModel() throws Exception {
+    public void testDeleteModelTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -355,11 +412,11 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/models/test-model");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteModel", "ModelService", "DeleteModel");
+          "com.google.cloud.bigquery.BigQueryRpc.deleteModel", "ModelService", "DeleteModel", null);
     }
 
     @Test
-    public void testGetRoutine() throws Exception {
+    public void testGetRoutineTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
 
@@ -368,22 +425,29 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/routines/test-routine");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getRoutine", "RoutineService", "GetRoutine");
+          "com.google.cloud.bigquery.BigQueryRpc.getRoutine",
+          "RoutineService",
+          "GetRoutine",
+          Collections.singletonMap("bq.rpc.response.routine.id", "test-routine"));
     }
 
     @Test
-    public void testListRoutines() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#routineList\",\"routines\":[]}");
+    public void testListRoutinesTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#routineList\",\"routines\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listRoutinesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/routines");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listRoutines", "RoutineService", "ListRoutines");
+          "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
+          "RoutineService",
+          "ListRoutines",
+          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
-    public void testCreateRoutine() throws Exception {
+    public void testCreateRoutineTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
 
@@ -397,11 +461,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("POST", "/projects/test-project/datasets/test-dataset/routines");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createRoutine", "RoutineService", "InsertRoutine");
+          "com.google.cloud.bigquery.BigQueryRpc.createRoutine",
+          "RoutineService",
+          "InsertRoutine",
+          Collections.singletonMap("bq.rpc.response.routine.id", "test-routine"));
     }
 
     @Test
-    public void testDeleteRoutine() throws Exception {
+    public void testDeleteRoutineTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -409,11 +476,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("DELETE", "/projects/test-project/datasets/test-dataset/routines/test-routine");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listRoutines", "RoutineService", "ListRoutines");
+          "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
+          "RoutineService",
+          "ListRoutines",
+          null);
     }
 
     @Test
-    public void testUpdateRoutine() throws Exception {
+    public void testUpdateRoutineTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
 
@@ -427,11 +497,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("PUT", "/projects/test-project/datasets/test-dataset/routines/test-routine");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.updateRoutine", "RoutineService", "UpdateRoutine");
+          "com.google.cloud.bigquery.BigQueryRpc.updateRoutine",
+          "RoutineService",
+          "UpdateRoutine",
+          Collections.singletonMap("bq.rpc.response.routine.id", "test-routine"));
     }
 
     @Test
-    public void testInsertAll() throws Exception {
+    public void testInsertAllTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataInsertAllResponse\"}");
 
       TableDataInsertAllRequest request = new TableDataInsertAllRequest();
@@ -440,22 +513,23 @@ public class HttpBigQueryRpcTest {
       verifyRequest(
           "POST", "/projects/test-project/datasets/test-dataset/tables/test-table/insertAll");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.insertAll", "TableDataService", "InsertAll");
+          "com.google.cloud.bigquery.BigQueryRpc.insertAll", "TableDataService", "InsertAll", null);
     }
 
     @Test
-    public void testListTableData() throws Exception {
+    public void testListTableDataTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataSkipExceptionTranslation(
           "test-project", "test-dataset", "test-table", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/datasets/test-dataset/tables/test-table/data");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.listTableData", "TableDataService", "List");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.listTableData", "TableDataService", "List", null);
     }
 
     @Test
-    public void testListTableDataWithRowLimit() throws Exception {
+    public void testListTableDataWithRowLimitTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataWithRowLimitSkipExceptionTranslation(
@@ -465,11 +539,12 @@ public class HttpBigQueryRpcTest {
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listTableDataWithRowLimit",
           "TableDataService",
-          "List");
+          "List",
+          null);
     }
 
     @Test
-    public void testGetJob() throws Exception {
+    public void testGetJobTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -477,32 +552,45 @@ public class HttpBigQueryRpcTest {
           "test-project", "test-job", "test-location", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/jobs/test-job");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.getJob", "JobService", "GetJob");
+      Map<String, String> attributes = new HashMap<>();
+      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.status.state", "DONE");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getJob", "JobService", "GetJob", attributes);
     }
 
     @Test
-    public void testGetQueryJob() throws Exception {
+    public void testGetQueryJobTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
       rpc.getQueryJobSkipExceptionTranslation("test-project", "test-job", "test-location");
 
       verifyRequest("GET", "/projects/test-project/jobs/test-job");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.getQueryJob", "JobService", "GetJob");
+      Map<String, String> attributes = new HashMap<>();
+      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.status.state", "DONE");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getQueryJob", "JobService", "GetJob", attributes);
     }
 
     @Test
-    public void testListJobs() throws Exception {
-      setMockResponse("{\"kind\":\"bigquery#jobList\",\"jobs\":[]}");
+    public void testListJobsTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#jobList\",\"jobs\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listJobsSkipExceptionTranslation("test-project", new HashMap<>());
 
       verifyRequest("GET", "/projects/test-project/jobs");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.listJobs", "JobService", "ListJobs");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.listJobs",
+          "JobService",
+          "ListJobs",
+          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
-    public void testCreateJob() throws Exception {
+    public void testCreateJobTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -511,11 +599,15 @@ public class HttpBigQueryRpcTest {
       rpc.createSkipExceptionTranslation(job, new HashMap<>());
 
       verifyRequest("POST", "/projects/test-project/jobs");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.createJob", "JobService", "InsertJob");
+      Map<String, String> attributes = new HashMap<>();
+      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.status.state", "DONE");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.createJob", "JobService", "InsertJob", attributes);
     }
 
     @Test
-    public void testCreateJobForQuery() throws Exception {
+    public void testCreateJobForQueryTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -524,33 +616,41 @@ public class HttpBigQueryRpcTest {
       rpc.createJobForQuerySkipExceptionTranslation(job);
 
       verifyRequest("POST", "/projects/test-project/jobs");
+      Map<String, String> attributes = new HashMap<>();
+      attributes.put("bq.rpc.response.job.id", "test-project:test-job");
+      attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery", "JobService", "InsertJob");
+          "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery",
+          "JobService",
+          "InsertJob",
+          attributes);
     }
 
     @Test
-    public void testCancelJob() throws Exception {
+    public void testCancelJobTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#jobCancelResponse\"}");
 
       rpc.cancelSkipExceptionTranslation("test-project", "test-job", "test-location");
 
       verifyRequest("POST", "/projects/test-project/jobs/test-job/cancel");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.cancelJob", "JobService", "CancelJob");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.cancelJob", "JobService", "CancelJob", null);
     }
 
     @Test
-    public void testDeleteJob() throws Exception {
+    public void testDeleteJobTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
       rpc.deleteJobSkipExceptionTranslation("test-project", "test-job", "test-location");
 
       verifyRequest("DELETE", "/projects/test-project/jobs/test-job");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.deleteJob", "JobService", "DeleteJob");
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.deleteJob", "JobService", "DeleteJob", null);
     }
 
     @Test
-    public void testGetQueryResults() throws Exception {
+    public void testGetQueryResultsTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsSkipExceptionTranslation(
@@ -558,11 +658,14 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("GET", "/projects/test-project/queries/test-job");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getQueryResults", "JobService", "GetQueryResults");
+          "com.google.cloud.bigquery.BigQueryRpc.getQueryResults",
+          "JobService",
+          "GetQueryResults",
+          null);
     }
 
     @Test
-    public void testGetQueryResultsWithRowLimit() throws Exception {
+    public void testGetQueryResultsWithRowLimitTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsWithRowLimitSkipExceptionTranslation(
@@ -572,21 +675,22 @@ public class HttpBigQueryRpcTest {
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getQueryResultsWithRowLimit",
           "JobService",
-          "GetQueryResults");
+          "GetQueryResults",
+          null);
     }
 
     @Test
-    public void testQueryRpc() throws Exception {
+    public void testQueryRpcTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#queryResponse\"}");
 
       rpc.queryRpcSkipExceptionTranslation("test-project", new QueryRequest());
 
       verifyRequest("POST", "/projects/test-project/queries");
-      verifySpan("com.google.cloud.bigquery.BigQueryRpc.queryRpc", "JobService", "Query");
+      verifySpan("com.google.cloud.bigquery.BigQueryRpc.queryRpc", "JobService", "Query", null);
     }
 
     @Test
-    public void testGetIamPolicy() throws Exception {
+    public void testGetIamPolicyTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.getIamPolicySkipExceptionTranslation(
@@ -595,11 +699,14 @@ public class HttpBigQueryRpcTest {
       verifyRequest(
           "POST", "/projects/test-project/datasets/test-dataset/tables/test-table:getIamPolicy");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getIamPolicy", "TableService", "GetIamPolicy");
+          "com.google.cloud.bigquery.BigQueryRpc.getIamPolicy",
+          "TableService",
+          "GetIamPolicy",
+          null);
     }
 
     @Test
-    public void testSetIamPolicy() throws Exception {
+    public void testSetIamPolicyTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.setIamPolicySkipExceptionTranslation(
@@ -610,11 +717,14 @@ public class HttpBigQueryRpcTest {
       verifyRequest(
           "POST", "/projects/test-project/datasets/test-dataset/tables/test-table:setIamPolicy");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy", "TableService", "SetIamPolicy");
+          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
+          "TableService",
+          "SetIamPolicy",
+          null);
     }
 
     @Test
-    public void testTestIamPermissions() throws Exception {
+    public void testTestIamPermissionsTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#testIamPermissionsResponse\"}");
 
       rpc.testIamPermissionsSkipExceptionTranslation(
@@ -626,7 +736,10 @@ public class HttpBigQueryRpcTest {
           "POST",
           "/projects/test-project/datasets/test-dataset/tables/test-table:testIamPermissions");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy", "TableService", "SetIamPolicy");
+          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
+          "TableService",
+          "SetIamPolicy",
+          null);
     }
   }
 
@@ -640,7 +753,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetDataset() throws Exception {
+    public void testGetDatasetNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\",\"datasetReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\"}}");
 
@@ -651,7 +764,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListDatasets() throws Exception {
+    public void testListDatasetsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#datasetList\",\"datasets\":[]}");
 
       rpc.listDatasetsSkipExceptionTranslation("test-project", new HashMap<>());
@@ -661,7 +774,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateDataset() throws Exception {
+    public void testCreateDatasetNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
 
       Dataset dataset = new Dataset();
@@ -674,7 +787,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testDeleteDataset() throws Exception {
+    public void testDeleteDatasetNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -685,7 +798,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testPatchDataset() throws Exception {
+    public void testPatchDatasetNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#dataset\",\"id\":\"test-project:test-dataset\"}");
 
       Dataset dataset = new Dataset();
@@ -698,7 +811,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetTable() throws Exception {
+    public void testGetTableNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
 
@@ -710,7 +823,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListTables() throws Exception {
+    public void testListTablesNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableList\",\"tables\":[]}");
 
       rpc.listTablesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
@@ -720,7 +833,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateTable() throws Exception {
+    public void testCreateTableNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
 
@@ -737,7 +850,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testDeleteTable() throws Exception {
+    public void testDeleteTableNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -748,7 +861,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testPatchTable() throws Exception {
+    public void testPatchTableNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#table\",\"id\":\"test-project:test-dataset.test-table\"}");
 
@@ -765,7 +878,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetModel() throws Exception {
+    public void testGetModelNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
 
@@ -777,7 +890,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListModels() throws Exception {
+    public void testListModelsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#modelList\",\"models\":[]}");
 
       rpc.listModelsSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
@@ -787,7 +900,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testPatchModel() throws Exception {
+    public void testPatchModelNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"modelId\":\"test-model\"}}");
 
@@ -804,7 +917,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testDeleteModel() throws Exception {
+    public void testDeleteModelNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -815,7 +928,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetRoutine() throws Exception {
+    public void testGetRoutineNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
 
@@ -827,7 +940,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListRoutines() throws Exception {
+    public void testListRoutinesNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#routineList\",\"routines\":[]}");
 
       rpc.listRoutinesSkipExceptionTranslation("test-project", "test-dataset", new HashMap<>());
@@ -837,7 +950,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateRoutine() throws Exception {
+    public void testCreateRoutineNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
 
@@ -854,7 +967,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testDeleteRoutine() throws Exception {
+    public void testDeleteRoutineNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -865,7 +978,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testUpdateRoutine() throws Exception {
+    public void testUpdateRoutineNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\"test-project\",\"datasetId\":\"test-dataset\",\"routineId\":\"test-routine\"}}");
 
@@ -882,7 +995,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testInsertAll() throws Exception {
+    public void testInsertAllNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataInsertAllResponse\"}");
 
       TableDataInsertAllRequest request = new TableDataInsertAllRequest();
@@ -894,7 +1007,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListTableData() throws Exception {
+    public void testListTableDataNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataSkipExceptionTranslation(
@@ -905,7 +1018,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListTableDataWithRowLimit() throws Exception {
+    public void testListTableDataWithRowLimitNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataWithRowLimitSkipExceptionTranslation(
@@ -916,7 +1029,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetJob() throws Exception {
+    public void testGetJobNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -928,7 +1041,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetQueryJob() throws Exception {
+    public void testGetQueryJobNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -939,7 +1052,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testListJobs() throws Exception {
+    public void testListJobsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#jobList\",\"jobs\":[]}");
 
       rpc.listJobsSkipExceptionTranslation("test-project", new HashMap<>());
@@ -949,7 +1062,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateJob() throws Exception {
+    public void testCreateJobNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -962,7 +1075,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCreateJobForQuery() throws Exception {
+    public void testCreateJobForQueryNoTelemetry() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#job\",\"id\":\"test-project:test-job\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -975,7 +1088,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testCancelJob() throws Exception {
+    public void testCancelJobNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#jobCancelResponse\"}");
 
       rpc.cancelSkipExceptionTranslation("test-project", "test-job", "test-location");
@@ -985,7 +1098,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testDeleteJob() throws Exception {
+    public void testDeleteJobNoTelemetry() throws Exception {
       setMockResponse("");
       mockResponse.setStatusCode(204);
 
@@ -996,7 +1109,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetQueryResults() throws Exception {
+    public void testGetQueryResultsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsSkipExceptionTranslation(
@@ -1007,7 +1120,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetQueryResultsWithRowLimit() throws Exception {
+    public void testGetQueryResultsWithRowLimitNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsWithRowLimitSkipExceptionTranslation(
@@ -1018,7 +1131,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testQueryRpc() throws Exception {
+    public void testQueryRpcNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#queryResponse\"}");
 
       rpc.queryRpcSkipExceptionTranslation("test-project", new QueryRequest());
@@ -1028,7 +1141,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testGetIamPolicy() throws Exception {
+    public void testGetIamPolicyNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.getIamPolicySkipExceptionTranslation(
@@ -1040,7 +1153,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testSetIamPolicy() throws Exception {
+    public void testSetIamPolicyNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.setIamPolicySkipExceptionTranslation(
@@ -1054,7 +1167,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testTestIamPermissions() throws Exception {
+    public void testTestIamPermissionsNoTelemetry() throws Exception {
       setMockResponse("{\"kind\":\"bigquery#testIamPermissionsResponse\"}");
 
       rpc.testIamPermissionsSkipExceptionTranslation(
