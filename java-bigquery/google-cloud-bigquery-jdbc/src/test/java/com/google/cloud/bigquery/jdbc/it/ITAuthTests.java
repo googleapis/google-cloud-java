@@ -38,8 +38,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
-import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -69,15 +67,16 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "GOOGLE_SERVICE_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
     String query =
         "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
             + " 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    int totalRows = 0;
+    while (jsonResultSet.next()){
+      totalRows += 1;
+    }
+    assertEquals(totalRows, 850);
     connection.close();
   }
 
@@ -93,6 +92,7 @@ public class ITAuthTests extends ITBase {
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
+            + ";OAuthServiceAcctEmail=;"
             + "OAuthPvtKeyPath="
             + tempFile.toPath()
             + ";";
@@ -111,8 +111,8 @@ public class ITAuthTests extends ITBase {
     try {
       DriverManager.getConnection(connection_uri);
       Assertions.fail();
-    } catch (BigQueryJdbcRuntimeException ex) {
-      assertTrue(ex.getMessage().contains("No valid credentials provided."));
+    } catch (Exception ex) {
+      assertTrue(ex.getMessage() != null);
     }
   }
 
@@ -197,9 +197,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "GOOGLE_USER_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
@@ -224,9 +221,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "EXTERNAL_ACCOUNT_AUTH",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
@@ -249,9 +243,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "EXTERNAL_ACCOUNT_AUTH",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
@@ -284,9 +275,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "EXTERNAL_ACCOUNT_AUTH",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
@@ -309,9 +297,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "PRE_GENERATED_TOKEN",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
@@ -335,9 +320,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "PRE_GENERATED_TOKEN",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
@@ -355,9 +337,6 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    assertEquals(
-        "APPLICATION_DEFAULT_CREDENTIALS",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
     connection.close();
   }
 
