@@ -1,0 +1,29 @@
+bumpMinorPreMajor: true
+handleGHRelease: true
+releaseType: java-yoshi
+branches:
+  - branch: 0.25.2-sp
+    releaseType: java-lts
+  - branch: java7
+  - branch: 1.2.x
+    releaseType: java-backport
+  - branch: 1.12.x
+    releaseType: java-backport
+  - branch: 1.6.x
+    releaseType: java-backport
+  - branch: 1.19.x
+    releaseType: java-backport
+  - branch: 1.20.x
+    releaseType: java-backport
+  - branch: 1.23.x
+    releaseType: java-backport
+  - branch: 1.33.x
+    releaseType: java-backport
+  - branch: 1.36.x
+    releaseType: java-backport
+  - branch: protobuf-4.x-rc
+    manifest: true
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    branch: 1.42.x

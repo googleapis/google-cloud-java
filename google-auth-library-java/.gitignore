@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings
+.factorypath
+
+# Intellij
+*.iml
+*.factorypath
+.idea/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store

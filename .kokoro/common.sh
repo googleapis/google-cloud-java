@@ -23,6 +23,7 @@ excluded_modules=(
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
+  'google-auth-library-java'
 )
 
 function retry_with_backoff {

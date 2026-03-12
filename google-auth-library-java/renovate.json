@@ -1,0 +1,70 @@
+{
+  "extends": [
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":updateNotScheduled",
+    ":automergeDisabled",
+    ":ignoreModulesAndTests",
+    ":maintainLockFilesDisabled",
+    ":dependencyDashboard"
+  ],
+  "ignorePaths": [
+    ".kokoro/requirements.txt"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "maven": {
+    "enabled": false
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.kokoro/presubmit/graalvm-native.*.cfg$"
+      ],
+      "matchStrings": [
+        "docker_image: \"us-docker.pkg.dev/java-graalvm-ci-prod/graalvm-integration-testing/graalvm.*:(?<currentValue>.*?)\""
+      ],
+      "depNameTemplate": "com.google.cloud:google-cloud-shared-config",
+      "datasourceTemplate": "maven"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "enabled": false,
+      "matchPackageNames": [
+        "*"
+      ]
+    },
+    {
+      "versioning": "docker",
+      "matchPackageNames": [
+        "/^com.google.guava:/"
+      ]
+    },
+    {
+      "groupName": "AppEngine packages",
+      "matchPackageNames": [
+        "/^com.google.appengine:appengine-/"
+      ]
+    },
+    {
+      "groupName": "AutoValue packages",
+      "matchPackageNames": [
+        "/^com.google.auto.value:auto-/"
+      ]
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": [
+        "/^com.google.protobuf:/"
+      ]
+    }
+  ]
+}

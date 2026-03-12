@@ -1,0 +1,70 @@
+# Code owners file.
+# This file controls who is tagged for review for any given pull request.
+
+# For syntax help see:
+# https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
+
+# The @googleapis/cloud-sdk-java-team is the default owner for changes in this repo
+*                                   @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-auth-team
+
+# The java-samples-reviewers team is the default owner for samples changes
+samples/**/*.java                   @googleapis/java-samples-reviewers
+
+# Generated snippets should not be owned by samples reviewers
+samples/snippets/generated/         @googleapis/cloud-sdk-java-team
+
+# 3PI-related files and related base classes - joint ownership between cloud-sdk-auth-team, aion-team, and cloud-java-team
+oauth2_http/java/com/google/auth/oauth2/ActingParty.java                      		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/AwsCredentials.java                   		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/AwsSecurityCredentialsSupplier.java   		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/AwsDates.java                         		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/AwsRequestSignature.java              		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/AwsRequestSigner.java                 		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/AwsSecurityCredentials.java           		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/CredentialAccessBoundary.java         		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/DefaultCredentialsProvider.java       		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/DownscopedCredentials.java            		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/EnvironmentProvider.java              		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/ExecutableHandler.java                		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/ExecutableResponse.java               		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/ExternalAccountCredentials.java       		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/FileIdentityPoolSubjectTokenSupplier.java 	    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/GoogleCredentials.java                		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/IdentityPoolCredentials.java          		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/IdentityPoolSubjectTokenSupplier.java		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/ImpersonatedCredentials.java          		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/InternalAwsSecurityCredentialsSupplier.java	    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/OAuth2Credentials.java                		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/OAuth2CredentialsWithRefresh.java     		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/OAuthException.java                   		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/PluggableAuthCredentials.java         		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/PluggableAuthException.java           		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/PluggableAuthHandler.java             		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/StsRequestHandler.java                		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/StsTokenExchangeRequest.java          		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/StsTokenExchangeResponse.java         		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/SystemEnvironmentProvider.java        		    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/java/com/google/auth/oauth2/UrlIdentityPoolSubjectTokenSupplier.java	    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/AwsCredentialsTest.java                           @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/AwsRequestSignerTest.java                         @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/CredentialAccessBoundaryTest.java                 @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/DefaultCredentialsProviderTest.java               @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/DownscopedCredentialsTest.java                    @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/ExecutableResponseTest.java                       @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/ExternalAccountCredentialsTest.java               @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/ITDownscopingTest.java                            @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/ITWorkloadIdentityFederationTest.java             @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/IdentityPoolCredentialsTest.java                  @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/ImpersonatedCredentialsTest.java                  @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/InternalAwsSecurityCredentialsSupplierTest.java	@googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/MockExternalAccountCredentialsTransport.java      @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/MockStsTransport.java                             @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/OAuth2CredentialsTest.java                        @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/OAuth2CredentialsWithRefreshTest.java             @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/OAuthExceptionTest.java                           @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/PluggableAuthCredentialsTest.java                 @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/PluggableAuthExceptionTest.java                   @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/PluggableAuthHandlerTest.java                     @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/StsRequestHandlerTest.java                        @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+oauth2_http/javatests/com/google/auth/TestEnvironmentProvider.java                      @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
+README.md                                                                               @googleapis/cloud-sdk-auth-team @googleapis/aion-team @googleapis/cloud-sdk-java-team
