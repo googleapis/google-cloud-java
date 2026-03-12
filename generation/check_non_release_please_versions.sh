@@ -12,6 +12,7 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*java-datastore.* ]] || \
       [[ "${pomFile}" =~ .*java-logging-logback.* ]] || \
       [[ "${pomFile}" =~ .*java-bigquery.* ]] || \
+      [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
