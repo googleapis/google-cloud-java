@@ -43,3 +43,4 @@ jobs:
         base_ref: ${{ github.base_ref }}
         head_ref: ${{ github.head_ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+        image_tag: 2.67.1-SNAPSHOT  # {x-version-update:gapic-generator-java:current}
