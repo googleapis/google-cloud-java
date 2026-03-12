@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util.ext
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
+import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
@@ -33,6 +34,7 @@ import com.google.common.math.IntMath;
 import io.grpc.Deadline;
 import io.grpc.Status;
 import java.time.Duration;
+import java.util.Optional;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -398,6 +400,22 @@ class BuiltinMetricsTracer extends BigtableTracer {
           sidebandData.getResponseParams(),
           code,
           sidebandData.getGfeTiming());
+    }
+
+    boolean seenServer =
+        Optional.ofNullable(sidebandData.getPeerInfo())
+            .map(pe -> pe.getApplicationFrontendId() != 0)
+            .orElse(false);
+
+    seenServer =
+        seenServer
+            || Optional.ofNullable(sidebandData.getResponseParams())
+                .map(rp -> !ResponseParams.getDefaultInstance().equals(rp))
+                .orElse(false);
+
+    seenServer = seenServer || (sidebandData.getGfeTiming() != null);
+
+    if (seenServer) {
       recorder.connectivityErrorCount.record(
           clientInfo, tableId, methodInfo, sidebandData.getResponseParams(), code, 0);
     } else {
