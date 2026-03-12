@@ -110,7 +110,7 @@
                       <pattern>com</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.com</shadedPattern>
                       <excludes>
-                        <exclude>com.google.cloud.bigquery.jdbc.*</exclude>
+                        <exclude>com.google.cloud.bigquery.*</exclude>
                       </excludes>
                     </relocation>
                     <relocation>
