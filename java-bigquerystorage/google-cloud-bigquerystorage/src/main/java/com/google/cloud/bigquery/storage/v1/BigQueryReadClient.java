@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Service Description: BigQuery Read API.
+ *  Service Description: BigQuery Read API.
  *
  * <p>The Read API can be used to read data from BigQuery.
  *
