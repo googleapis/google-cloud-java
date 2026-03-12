@@ -104,9 +104,9 @@
                 plus the test classes themselves. When running, the ACTUAL JDBC driver jar
                 will be placed on the classpath. 
               -->
+              <createDependencyReducedPom>false</createDependencyReducedPom>
               <artifactSet>
                 <excludes>
-                  <exclude>com.google.cloud:google-cloud-bigquery-jdbc:jar</exclude>
                   <exclude>com.google.cloud:google-cloud-bigquery</exclude>
                   <exclude>com.google.cloud:google-cloud-bigquerystorage</exclude>
                   <exclude>io.grpc:*</exclude>
@@ -120,6 +120,7 @@
                     <exclude>META-INF/*.SF</exclude>
                     <exclude>META-INF/*.DSA</exclude>
                     <exclude>META-INF/*.RSA</exclude>
+                    <exclude>META-INF/services/java.sql.Driver</exclude>
                   </excludes>
                 </filter>
               </filters>
