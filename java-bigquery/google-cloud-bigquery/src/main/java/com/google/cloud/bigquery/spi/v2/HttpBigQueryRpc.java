@@ -131,62 +131,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     }
   }
 
-  /** Functional interface for span operations that can throw IOException. */
-  @FunctionalInterface
-  private interface SpanOperation<T> {
-    T execute(Span span) throws IOException;
-  }
-
-  /**
-   * Helper method to execute an operation with OpenTelemetry span wrapping. Handles span creation,
-   * scope management, and cleanup.
-   *
-   * @param options Optional map of options for setting additional span attributes. Can be null.
-   */
-  private <T> T executeWithSpan(
-      String spanName,
-      String service,
-      String method,
-      Map<Option, ?> options,
-      SpanOperation<T> operation)
-      throws IOException {
-
-    if (!this.options.isOpenTelemetryTracingEnabled()
-        || this.options.getOpenTelemetryTracer() == null) {
-      return operation.execute(null);
-    }
-
-    SpanBuilder builder =
-        this.options
-            .getOpenTelemetryTracer()
-            .spanBuilder(spanName)
-            .setSpanKind(SpanKind.CLIENT)
-            .setAttribute("bq.rpc.service", service)
-            .setAttribute("bq.rpc.method", method)
-            .setAttribute("bq.rpc.system", "http");
-
-    if (options != null) {
-      builder.setAllAttributes(otelAttributesFromOptions(options));
-    }
-
-    Span span = builder.startSpan();
-
-    try (Scope scope = span.makeCurrent()) {
-      return operation.execute(span);
-    } finally {
-      span.end();
-    }
-  }
-
-  /**
-   * Overloaded method span creation for that invokes executeWithSpan with null options.
-   */
-  private <T> T executeWithSpan(
-          String spanName, String service, String method, SpanOperation<T> operation)
-          throws IOException {
-    return executeWithSpan(spanName, service, method, null, operation);
-  }
-
   @Override
   public Dataset getDataset(String projectId, String datasetId, Map<Option, ?> options) {
     try {
@@ -1756,6 +1700,61 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         span -> {
           return bqTestRequest.execute();
         });
+  }
+
+  /**
+   * Helper method to execute an operation with OpenTelemetry tracer span wrapping the execute
+   * command.
+   *
+   * <p>If isOpenTelemetryTracingEnabled == true handles span creation, scope management, and
+   * cleanup, otherwise only executes the operation.
+   */
+  private <T> T executeWithSpan(
+      String spanName,
+      String service,
+      String method,
+      Map<Option, ?> options,
+      SpanOperation<T> operation)
+      throws IOException {
+
+    if (!this.options.isOpenTelemetryTracingEnabled()
+        || this.options.getOpenTelemetryTracer() == null) {
+      return operation.execute(null);
+    }
+
+    SpanBuilder builder =
+        this.options
+            .getOpenTelemetryTracer()
+            .spanBuilder(spanName)
+            .setSpanKind(SpanKind.CLIENT)
+            .setAttribute("bq.rpc.service", service)
+            .setAttribute("bq.rpc.method", method)
+            .setAttribute("bq.rpc.system", "http");
+
+    if (options != null) {
+      builder.setAllAttributes(otelAttributesFromOptions(options));
+    }
+
+    Span span = builder.startSpan();
+
+    try (Scope scope = span.makeCurrent()) {
+      return operation.execute(span);
+    } finally {
+      span.end();
+    }
+  }
+
+  /** Overloaded method for executeWithSpan with null options parameter. */
+  private <T> T executeWithSpan(
+      String spanName, String service, String method, SpanOperation<T> operation)
+      throws IOException {
+    return executeWithSpan(spanName, service, method, null, operation);
+  }
+
+  /** Functional interface for span operations that can throw IOException. */
+  @FunctionalInterface
+  private interface SpanOperation<T> {
+    T execute(Span span) throws IOException;
   }
 
   private static Attributes otelAttributesFromOptions(Map<Option, ?> options) {

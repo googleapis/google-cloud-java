@@ -19,7 +19,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.google.api.client.googleapis.testing.auth.oauth2.MockGoogleCredential;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
@@ -30,8 +29,6 @@ import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.DatasetList;
 import com.google.api.services.bigquery.model.DatasetReference;
-import com.google.auth.Credentials;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
 import io.opentelemetry.api.trace.Tracer;
@@ -43,8 +40,6 @@ import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.junit.jupiter.api.Test;
 
 public class HttpBigQueryRpcTest {
@@ -116,13 +111,11 @@ public class HttpBigQueryRpcTest {
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
             .setTransportOptions(
-                BigQueryOptions.getDefaultHttpTransportOptions()
-                    .toBuilder()
+                BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
                     .setHttpTransportFactory(() -> mockTransport)
                     .build())
             .build();
     HttpBigQueryRpc rpc = new HttpBigQueryRpc(options);
-
 
     Dataset result = rpc.getDataset("test-project", "test-dataset", new HashMap<>());
 
@@ -147,12 +140,21 @@ public class HttpBigQueryRpcTest {
     // Verify span attributes are set correctly
     assertEquals(
         "DatasetService",
-        rpcSpan.getAttributes().asMap().get(io.opentelemetry.api.common.AttributeKey.stringKey("bq.rpc.service")));
+        rpcSpan
+            .getAttributes()
+            .asMap()
+            .get(io.opentelemetry.api.common.AttributeKey.stringKey("bq.rpc.service")));
     assertEquals(
         "GetDataset",
-        rpcSpan.getAttributes().asMap().get(io.opentelemetry.api.common.AttributeKey.stringKey("bq.rpc.method")));
+        rpcSpan
+            .getAttributes()
+            .asMap()
+            .get(io.opentelemetry.api.common.AttributeKey.stringKey("bq.rpc.method")));
     assertEquals(
         "http",
-        rpcSpan.getAttributes().asMap().get(io.opentelemetry.api.common.AttributeKey.stringKey("bq.rpc.system")));
+        rpcSpan
+            .getAttributes()
+            .asMap()
+            .get(io.opentelemetry.api.common.AttributeKey.stringKey("bq.rpc.system")));
   }
 }
