@@ -41,4 +41,4 @@ jobs:
         mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip
     - name: Check the BOM content satisfies the upper-bound-check test case
       run: mvn -B -V -ntp verify -Dcheckstyle.skip
-      working-directory: java-shared-dependencies/upper-bound-check
+      working-directory: sdk-plaform-java/java-shared-dependencies/upper-bound-check

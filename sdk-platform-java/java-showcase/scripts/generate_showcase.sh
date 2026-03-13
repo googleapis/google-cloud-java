@@ -5,9 +5,9 @@ set -ex
 
 trap cleanup ERR
 
-readonly ROOT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../.."
+readonly ROOT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../../.."
 pushd "${ROOT_DIR}"
-source "${ROOT_DIR}/java-showcase/scripts/showcase_utilities.sh"
+source "${ROOT_DIR}/sdk-platform-java/java-showcase/scripts/showcase_utilities.sh"
 
 cleanup() {
   if [[ -z "${api_def_dir}" ]]; then
@@ -53,7 +53,7 @@ popd
 append_showcase_to_api_defs "${api_def_dir}"
 
 echo "building docker image"
-DOCKER_BUILDKIT=1 docker build --file .cloudbuild/library_generation/library_generation.Dockerfile --iidfile image-id .
+DOCKER_BUILDKIT=1 docker build --file sdk-platform-java/.cloudbuild/library_generation/library_generation.Dockerfile --iidfile image-id .
 
 if [[ "${replace}" == "true" ]]; then
   generated_files_dir="${ROOT_DIR}"
@@ -65,11 +65,13 @@ else
   # we prepare the temp folder with the minimal setup to perform an incremental
   # generation.
   pushd "${ROOT_DIR}"
-  cp -r generation_config.yaml java-showcase/ versions.txt "${generated_files_dir}"
+  cp -r generation_config.yaml sdk-platform-java/java-showcase/ versions.txt "${generated_files_dir}"
   popd #ROOT_DIR
 fi
 
+pushd sdk-platform-java
 GENERATOR_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout -pl gapic-generator-java)
+popd
 
 echo "generating showcase"
 workspace_name="/workspace"

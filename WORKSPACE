@@ -8,7 +8,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # over the generator dependencies.
 local_repository(
    name = "com_google_api_gax_java",
-   path = "gax-java",
+   path = "sdk-platform-java/gax-java",
 )
 
 load("@com_google_api_gax_java//:repository_rules.bzl", "com_google_api_gax_java_properties")

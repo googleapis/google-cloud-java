@@ -42,9 +42,10 @@ jobs:
         java-version: 17
         distribution: temurin
         cache: maven
-    - name: Install Maven modules to local Maven repository
+    - name: Install sdk-platform-modules to local Maven repository
       run: |
         mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
+      working-directory: sdk-platform-java
     - name: Check Java 8 compatibility for class files
       shell: bash
       run: |
@@ -60,3 +61,4 @@ jobs:
           fi
         done
         echo "All class files are compatible with Java 8."
+      working-directory: sdk-platform-java

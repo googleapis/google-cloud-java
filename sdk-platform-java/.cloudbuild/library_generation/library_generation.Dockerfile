@@ -19,7 +19,7 @@
 FROM docker.io/library/maven:3.9.9-eclipse-temurin-17-alpine@sha256:969014ee8852c9910ff5ef09de17541c2587819364b79d7dc044634dfb8a3388 AS ggj-build
 
 WORKDIR /sdk-platform-java
-COPY . .
+COPY sdk-platform-java/ .
 # {x-version-update-start:gapic-generator-java:current}
 ENV DOCKER_GAPIC_GENERATOR_VERSION="2.67.1-SNAPSHOT"
 # {x-version-update-end}
@@ -48,8 +48,8 @@ RUN apt update && apt install -y curl unzip rsync jq nodejs npm git openjdk-17-j
 SHELL [ "/bin/bash", "-c" ]
 
 # copy source code
-COPY hermetic_build/common /src/common
-COPY hermetic_build/library_generation /src/library_generation
+COPY sdk-platform-java/hermetic_build/common /src/common
+COPY sdk-platform-java/hermetic_build/library_generation /src/library_generation
 
 # install protoc
 WORKDIR /protoc
