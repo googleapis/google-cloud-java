@@ -5,6 +5,6 @@
 <module name="Checker">
   <module name="RegexpHeader">
     <property name="fileExtensions" value="java"/>
-    <property name="headerFile" value="./api-common-java/java.header"/>
+    <property name="headerFile" value="./sdk-platform-java/api-common-java/java.header"/>
   </module>
 </module>

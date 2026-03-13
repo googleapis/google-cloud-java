@@ -3,9 +3,7 @@ on:
     branches:
       - main
   pull_request:
-name: sdk-platform-java ci
-env:
-  BUILD_SUBDIR: sdk-platform-java
+name: sdk-platform-java-ci
 jobs:
   filter:
     runs-on: ubuntu-latest
@@ -25,7 +23,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        java: [ 11, 17]
+        java: [ 11, 17 ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -38,6 +36,7 @@ jobs:
         run: |
           mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
               -Dfmt.skip -DenableTestCoverage
+        working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
@@ -48,13 +47,15 @@ jobs:
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
           GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
           GOOGLE_SDK_JAVA_LOGGING: true
+        working-directory: sdk-platform-java
       - run: bazelisk version
       - name: Install Maven modules
         run: |
           mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+        working-directory: sdk-platform-java
       - name: Integration Tests
         run: |
-          bazelisk --batch test //test/integration/...
+          bazelisk --batch test //sdk-platform-java/test/integration/...
       - name: Gradle Build Generated Storage Client Library
         run: |
           echo "Building Storage lib from generated source..."
@@ -64,7 +65,6 @@ jobs:
           pushd /tmp/java-storage/google-cloud-storage-v2-java
           ./gradlew clean build publishToMavenLocal sourcesJar allJars
           popd
-
       - name: Gradle Build Generated Compute Client Library
         run: |
           echo "Building Compute lib from generated source..."
@@ -92,6 +92,7 @@ jobs:
         run: |
           mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
               -Dfmt.skip -DenableTestCoverage
+        working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
@@ -102,13 +103,15 @@ jobs:
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
           GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
           GOOGLE_SDK_JAVA_LOGGING: true
+        working-directory: sdk-platform-java
       - run: bazelisk version
       - name: Install Maven modules
         run: |
           mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip
+        working-directory: sdk-platform-java
       - name: Integration Tests
         run: |
-          bazelisk --batch test //test/integration/...
+          bazelisk --batch test //sdk-platform-java/test/integration/...
   build-java-25:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -127,6 +130,7 @@ jobs:
         run: |
           mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
               -Dfmt.skip -DenableTestCoverage
+        working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
@@ -137,14 +141,16 @@ jobs:
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
           GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
           GOOGLE_SDK_JAVA_LOGGING: true
+        working-directory: sdk-platform-java
       - run: bazelisk version
       - name: Install Maven modules
         run: |
           mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+        working-directory: sdk-platform-java
       - name: Integration Tests
         # note need to set shouldInstallTestSecurityManager=false due to https://github.com/bazelbuild/bazel/issues/24354
         run: |
-          bazelisk --batch test //test/integration/... --jvmopt=-Dcom.google.testing.junit.runner.shouldInstallTestSecurityManager=false
+          bazelisk --batch test //sdk-platform-java/test/integration/... --jvmopt=-Dcom.google.testing.junit.runner.shouldInstallTestSecurityManager=false
   build-java8-except-gapic-generator-java:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -174,6 +180,7 @@ jobs:
           mvn verify --batch-mode --no-transfer-progress -Dcheckstyle.skip \
               -Dfmt.skip \
               -Djvm="${JAVA8_HOME}/bin/java"
+        working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Compile with Java 17 and run tests with Java 8 (Env Var Tests)
         shell: bash
@@ -192,6 +199,7 @@ jobs:
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
           GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
           GOOGLE_SDK_JAVA_LOGGING: true
+        working-directory: sdk-platform-java
 
   build-java8-gapic-generator-java:
     needs: filter
@@ -208,7 +216,8 @@ jobs:
       - name: Install all modules using Java 11
         shell: bash
         run: |
-          mvn -V -B -ntp clean install -DskipTests -Dfmt.skip
+          mvn -V -B -ntp clean install -DskipTests -Dfmt.skip -Dcheckstyle.skip
+        working-directory: sdk-platform-java
       - uses: actions/setup-java@v3
         with:
           java-version: 8
@@ -218,10 +227,11 @@ jobs:
         shell: bash
         run: |
           mvn -V -B -ntp surefire:test --projects 'gapic-generator-java'
+        working-directory: sdk-platform-java
       - run: bazelisk version
       - name: Integration Tests
         run: |
-          bazelisk --batch test //test/integration/...
+          bazelisk --batch test //sdk-platform-java/test/integration/...
       - name: Gradle Build Generated Storage Client Library
         run: |
           echo "Building Storage lib from generated source..."
@@ -231,7 +241,6 @@ jobs:
           pushd /tmp/java-storage/google-cloud-storage-v2-java
           ./gradlew clean build publishToMavenLocal sourcesJar allJars
           popd
-
       - name: Gradle Build Generated Compute Client Library
         run: |
           echo "Building Compute lib from generated source..."
@@ -241,39 +250,6 @@ jobs:
           pushd /tmp/java-compute/google-cloud-compute-small-v1-java
           ./gradlew clean build publishToMavenLocal sourcesJar allJars
           popd
-
-  lint:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          java-version: 17
-          distribution: temurin
-          cache: maven
-      - run: java -version
-      - name: Java Linter
-        # Exclude the root project
-        run: mvn -B -ntp fmt:check
-
-  compatibility:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          java-version: 11
-          distribution: temurin
-          cache: maven
-      - run: java -version
-      - name: Compatibility check
-        #  package jar so that gapic-generator-java module can use
-        #  testlib modules of gax
-        run: mvn package clirr:check -DskipTests -Dfmt.skip
 
   build-java8-showcase:
     needs: filter
@@ -291,13 +267,14 @@ jobs:
         shell: bash
         run: |
           mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+        working-directory: sdk-platform-java
       - uses: actions/setup-java@v3
         with:
           java-version: 8
           distribution: temurin
       - run: java -version
       - name: Parse showcase version
-        working-directory: java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
       - name: Install showcase server
         run: |
@@ -309,7 +286,7 @@ jobs:
                 ./gapic-showcase run &
                 cd -
       - name: Showcase integration tests
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
               mvn verify \
                 -P enable-integration-tests \
@@ -317,7 +294,7 @@ jobs:
                 --no-transfer-progress
         # The `slf4j1_logback` profile brings logging dependency and compiles logging tests, require env var to be set
       - name: Showcase integration tests - Logging SLF4J 1.x
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
              mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,slf4j1_logback' \
               --batch-mode \
@@ -328,20 +305,20 @@ jobs:
         # The `disabledLogging` profile tests logging disabled when logging dependency present,
         # do not set env var for this step
       - name: Showcase integration tests - Logging disabed
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,disabledLogging'  \
             --batch-mode \
             --no-transfer-progress
       - name: Showcase integration tests - Protobuf gen code 3.25.8
-        working-directory: java-showcase-3.25.8
+        working-directory: sdk-platform-java/java-showcase-3.25.8
         run: |
           mvn verify \
             -P enable-integration-tests \
             --batch-mode \
             --no-transfer-progress
       - name: Showcase integration tests - Protobuf gen code 3.21.0
-        working-directory: java-showcase-3.21.0
+        working-directory: sdk-platform-java/java-showcase-3.21.0
         run: |
           mvn verify \
             -P enable-integration-tests \
@@ -364,15 +341,16 @@ jobs:
       - name: Install Maven modules
         run: |
           mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+        working-directory: sdk-platform-java        
       - name: Showcase golden tests
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn test \
             -P enable-golden-tests \
             --batch-mode \
             --no-transfer-progress
       - name: Parse showcase version
-        working-directory: java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
       - name: Install showcase server
         run: |
@@ -384,7 +362,7 @@ jobs:
           ./gapic-showcase run &
           cd -
       - name: Showcase integration tests
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn verify \
             -P enable-integration-tests \
@@ -392,7 +370,7 @@ jobs:
             --no-transfer-progress
       # The `slf4j2_logback` profile brings logging dependency and compiles logging tests, require env var to be set
       - name: Showcase integration tests - Logging SLF4J 2.x
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,slf4j2_logback' \
             --batch-mode \
@@ -402,7 +380,7 @@ jobs:
           GOOGLE_SDK_JAVA_LOGGING: true
     # The `slf4j1_logback` profile brings logging dependency and compiles logging tests, require env var to be set
       - name: Showcase integration tests - Logging SLF4J 1.x
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,slf4j1_logback' \
             --batch-mode \
@@ -413,13 +391,13 @@ jobs:
     # The `disabledLogging` profile tests logging disabled when logging dependency present,
     # do not set env var for this step
       - name: Showcase integration tests - Logging disabed
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,disabledLogging'  \
             --batch-mode \
             --no-transfer-progress
       - name: Showcase integration tests - Protobuf 3 compatibility with third party library Tensorflow
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn clean verify -P 'enable-integration-tests,protobuf3,showcase'  \
             --batch-mode \
@@ -427,8 +405,7 @@ jobs:
 
   showcase-clirr:
     needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    if: ${{ github.base_ref != '' }} # Only execute on pull_request trigger event
+    if: ${{ (needs.filter.outputs.library == 'true') && github.base_ref != '' }} # Only execute on pull_request trigger event
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout @ target branch
@@ -440,20 +417,24 @@ jobs:
           java-version: 17
           distribution: temurin
           cache: maven
-      - name: Install sdk-platform-java and showcase to local maven repository
+      - name: Install Maven modules
         run: |
-          mvn install -B -ntp -T 1C -DskipTests
-          cd java-showcase
+          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+        working-directory: sdk-platform-java
+      - name: Install showcase to local maven repository
+        run: |
           mvn install -B -ntp -T 1C -DskipTests
           SHOWCASE_CLIENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo "SHOWCASE_CLIENT_VERSION=$SHOWCASE_CLIENT_VERSION" >> "$GITHUB_ENV"
+        working-directory: sdk-platform-java/java-showcase
       - name: Checkout sdk-platform-java @ PR merge commit
         uses: actions/checkout@v3
       - name: Install sdk-platform-java @ PR merge commit
         run: mvn install -B -ntp -T 1C -DskipTests
+        working-directory: sdk-platform-java
         # Showcase golden test ensures that src changes are already reflected in the PR.
       - name: Clirr check
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase
         run: |
           mvn versions:set -B -ntp -DnewVersion=local
           mvn clirr:check -B -ntp -DcomparisonVersion=$SHOWCASE_CLIENT_VERSION
@@ -471,11 +452,23 @@ jobs:
         cache: maven
     - name: Install Maven modules to local Maven repository
       run: |
-        mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+        mvn install \
+          -B -ntp \
+          -Dorg.slf4j.simpleLogger.showDateTime=true \
+          -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+          -DskipTests \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -Dcheckstyle.skip=true \
+          -Dflatten.skip=true \
+          -Danimal.sniffer.skip=true \
+          -Dmaven.wagon.http.retryHandler.count=5 \
+          -T 1C
+      working-directory: sdk-platform-java
     - name: Validate gapic-generator-java-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@47ad868794c5d38ee7eb95d69371a7a79f84d890
       with:
-        bom-path: gapic-generator-java-bom/pom.xml
+        bom-path: sdk-platform-java/gapic-generator-java-bom/pom.xml
 
   unmanaged_dependency_check:
     needs: filter
@@ -493,14 +486,15 @@ jobs:
     - name: Unit Tests
       run: |
         mvn test --batch-mode --no-transfer-progress
-      working-directory: java-shared-dependencies/unmanaged-dependency-check
+      working-directory: sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
     - name: Install Maven modules
       run: |
         mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
+      working-directory: sdk-platform-java
     - name: Unmanaged dependency check
-      uses: ./java-shared-dependencies/unmanaged-dependency-check
+      uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
       with:
-        bom-path: gapic-generator-java-bom/pom.xml
+        bom-path: sdk-platform-java/gapic-generator-java-bom/pom.xml
 
   dependency_analyzer_unit_test:
     needs: filter
@@ -518,4 +512,4 @@ jobs:
     - name: Unit Tests
       run: |
         mvn test --batch-mode --no-transfer-progress
-      working-directory: java-shared-dependencies/dependency-analyzer
+      working-directory: sdk-platform-java/java-shared-dependencies/dependency-analyzer

@@ -48,7 +48,7 @@ API_GAPIC_TARGETS = {
 
 [sh_test(
     name = lib_name,
-    srcs = ["//scripts:diff_gen_and_golden.sh"],
+    srcs = ["//sdk-platform-java/scripts:diff_gen_and_golden.sh"],
     args = [lib_name],
     data = [
         ":%s_goldens_files" % lib_name,
@@ -58,7 +58,7 @@ API_GAPIC_TARGETS = {
 
 [sh_binary(
     name = "update_%s" % lib_name,
-    srcs = ["//scripts:update_golden.sh"],
+    srcs = ["//sdk-platform-java/scripts:update_golden.sh"],
     args = [lib_name],
     data = [
         ":%s_goldens_files" % lib_name,

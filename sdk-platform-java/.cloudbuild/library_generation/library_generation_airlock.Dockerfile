@@ -19,7 +19,7 @@
 FROM us-docker.pkg.dev/artifact-foundry-prod/docker-3p-trusted/maven@sha256:d3f04985c6a68415e36c0a6468d0f8316f27d4dbee77bc459257ba444224bd9f AS ggj-build
 
 WORKDIR /sdk-platform-java
-COPY . .
+COPY sdk-platform-java/ .
 # {x-version-update-start:gapic-generator-java:current}
 ENV DOCKER_GAPIC_GENERATOR_VERSION="2.67.1-SNAPSHOT"
 # {x-version-update-end}
@@ -49,8 +49,8 @@ RUN apt update && apt install -y curl unzip rsync jq nodejs npm git openjdk-17-j
 SHELL [ "/bin/bash", "-c" ]
 
 # copy source code
-COPY hermetic_build/common /src/common
-COPY hermetic_build/library_generation /src/library_generation
+COPY sdk-platform-java/hermetic_build/common /src/common
+COPY sdk-platform-java/hermetic_build/library_generation /src/library_generation
 
 # install protoc
 WORKDIR /protoc

@@ -34,7 +34,7 @@ steps:
       "-t", "${_PUBLIC_SHA_IMAGE_ID}",
       "-t", "${_PUBLIC_LATEST_IMAGE_ID}",
       "-t", "${_PUBLIC_VERSIONED_IMAGE_ID}",
-      "-f", ".cloudbuild/library_generation/library_generation_airlock.Dockerfile",
+      "-f", "sdk-platform-java/.cloudbuild/library_generation/library_generation_airlock.Dockerfile",
       "."
     ]
     id: library-generation-build
