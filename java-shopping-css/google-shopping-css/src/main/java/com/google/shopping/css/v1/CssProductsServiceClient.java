@@ -231,7 +231,8 @@ public class CssProductsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the CSS product to retrieve.
+   * @param name Required. The name of the CSS product to retrieve. Format:
+   *     `accounts/{account}/cssProducts/{css_product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CssProduct getCssProduct(CssProductName name) {
@@ -260,7 +261,8 @@ public class CssProductsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the CSS product to retrieve.
+   * @param name Required. The name of the CSS product to retrieve. Format:
+   *     `accounts/{account}/cssProducts/{css_product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CssProduct getCssProduct(String name) {
