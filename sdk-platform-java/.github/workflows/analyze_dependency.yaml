@@ -1,0 +1,43 @@
+name: Run dependency analyzer
+on:
+  workflow_dispatch:
+    inputs:
+      system:
+        description: the package management system
+        required: true
+        type: choice
+        default: maven
+        options:
+        - maven
+      name:
+        description: the name of the dependency
+        required: true
+        type: string
+      version:
+        description: the version of the dependency
+        required: true
+        type: string
+jobs:
+  Run-dependency-analyzer:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 17
+        cache: maven
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v4.5
+      with:
+        maven-version: 3.8.2
+    - name: Install dependency analyzer
+      shell: bash
+      run: |
+        mvn clean install -V --batch-mode --no-transfer-progress -DskipTests
+      working-directory: java-shared-dependencies/dependency-analyzer
+    - name: Check dependency information
+      shell: bash
+      run: |
+        mvn exec:java -Ddep.system=${{ github.event.inputs.system }} -Ddep.name=${{ github.event.inputs.name }} -Ddep.version=${{ github.event.inputs.version }}
+      working-directory: java-shared-dependencies/dependency-analyzer

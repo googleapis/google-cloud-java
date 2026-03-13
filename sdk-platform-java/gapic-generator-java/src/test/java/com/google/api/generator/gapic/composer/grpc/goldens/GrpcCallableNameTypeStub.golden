@@ -1,0 +1,179 @@
+package com.google.test.callablenamingtype.stub;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.test.callablenamingtype.ApiOperation;
+import com.google.test.callablenamingtype.GetApiOperationRequest;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the CallableNameTypeService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class GrpcCallableNameTypeServiceStub extends CallableNameTypeServiceStub {
+  private static final MethodDescriptor<GetApiOperationRequest, ApiOperation>
+      getApiOperationMethodDescriptor =
+          MethodDescriptor.<GetApiOperationRequest, ApiOperation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.test.naming.CallableNameTypeService/GetApiOperation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetApiOperationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ApiOperation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetApiOperationRequest, ApiOperation>
+      apiPagedMethodDescriptor =
+          MethodDescriptor.<GetApiOperationRequest, ApiOperation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.test.naming.CallableNameTypeService/ApiPaged")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetApiOperationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ApiOperation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<GetApiOperationRequest, ApiOperation> getApiOperationCallable;
+  private final UnaryCallable<GetApiOperationRequest, ApiOperation> apiPagedCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcCallableNameTypeServiceStub create(
+      CallableNameTypeServiceStubSettings settings) throws IOException {
+    return new GrpcCallableNameTypeServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcCallableNameTypeServiceStub create(ClientContext clientContext)
+      throws IOException {
+    return new GrpcCallableNameTypeServiceStub(
+        CallableNameTypeServiceStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcCallableNameTypeServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcCallableNameTypeServiceStub(
+        CallableNameTypeServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcCallableNameTypeServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcCallableNameTypeServiceStub(
+      CallableNameTypeServiceStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcCallableNameTypeServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcCallableNameTypeServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcCallableNameTypeServiceStub(
+      CallableNameTypeServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<GetApiOperationRequest, ApiOperation> getApiOperationTransportSettings =
+        GrpcCallSettings.<GetApiOperationRequest, ApiOperation>newBuilder()
+            .setMethodDescriptor(getApiOperationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetApiOperationRequest, ApiOperation> apiPagedTransportSettings =
+        GrpcCallSettings.<GetApiOperationRequest, ApiOperation>newBuilder()
+            .setMethodDescriptor(apiPagedMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+
+    this.getApiOperationCallable =
+        callableFactory.createUnaryCallable(
+            getApiOperationTransportSettings, settings.getApiOperationSettings(), clientContext);
+    this.apiPagedCallable =
+        callableFactory.createUnaryCallable(
+            apiPagedTransportSettings, settings.apiPagedSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<GetApiOperationRequest, ApiOperation> getApiOperationCallable() {
+    return getApiOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetApiOperationRequest, ApiOperation> apiPagedCallable() {
+    return apiPagedCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

@@ -1,0 +1,189 @@
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/field_info.proto";
+import "google/api/resource.proto";
+import "google/longrunning/operations.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
+
+package google.selective.generate.v1beta1;
+
+option java_package = "com.google.selective.generate.v1beta1";
+option java_multiple_files = true;
+option java_outer_classname = "SelectiveApiGenerationOuterClass";
+
+// resource not tied to message
+option (google.api.resource_definition) = {
+  type: "showcase.googleapis.com/AnythingGoes"
+  pattern: "*"
+};
+
+// This proto is used to test selective api generation
+// covered scenarios:
+//  - A service with several rpcs, all of them should be generated as public methods
+//  - A service with several rpcs, part of them should be generated as public methods
+//  - A service with several rpcs, none of them should be generated as public methods
+// This proto should be tested side-by-side with yaml files:
+//  - selective_api_generation_v1beta1.yaml or  - selective_api_generation_generate_omitted_v1beta1.yaml
+
+service EchoServiceShouldGenerateAllAsUsual {
+  option (google.api.default_host) = "localhost:7469";
+
+  rpc EchoShouldGenerateAsUsual(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "";
+  }
+
+  rpc ChatShouldGenerateAsUsual(stream EchoRequest) returns (stream EchoResponse);
+
+  rpc ChatAgainShouldGenerateAsUsual(stream EchoRequest) returns (stream EchoResponse) {
+    option (google.api.method_signature) = "content";
+  }
+}
+
+service EchoServiceShouldGeneratePartialUsual {
+  option (google.api.default_host) = "localhost:7469";
+
+  rpc EchoShouldGenerateAsUsual(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "";
+  }
+
+  rpc ChatShouldGenerateAsUsual(stream EchoRequest) returns (stream EchoResponse);
+
+  rpc ChatAgainShouldGenerateAsUsual(stream EchoRequest) returns (stream EchoResponse) {
+    option (google.api.method_signature) = "content";
+  }
+
+  rpc ChatShouldGenerateAsInternal(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "";
+  };
+
+  rpc EchoShouldGenerateAsInternal(stream EchoRequest) returns (stream EchoResponse);
+}
+
+service EchoServiceShouldGenerateAllInternal {
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.oauth_scopes) =
+    "https://www.googleapis.com/auth/cloud-platform";
+
+  rpc EchoShouldGenerateAsInternal(EchoRequest) returns (EchoResponse) {
+    option (google.api.method_signature) = "content";
+  }
+
+  rpc ChatShouldGenerateAsInternal(stream EchoRequest) returns (stream EchoResponse) {
+    option (google.api.method_signature) = "content";
+  }
+}
+
+// resource name used for message EchoRequest.
+message Foobar {
+  option (google.api.resource) = {
+    type: "showcase.googleapis.com/Foobar"
+    pattern: "projects/{project}/foobars/{foobar}"
+  };
+
+  string name = 1;
+  string info = 2;
+}
+
+// resource name used only for message EchoRequestWithFoobarbaz.
+// should not be generated with selective generation when
+// AnExcludedMethod is not config as included.
+message Foobarbaz {
+  option (google.api.resource) = {
+    type: "showcase.googleapis.com/Foobarbaz"
+    pattern: "projects/{project}/foobarsbaz/{foobarbaz}"
+    pattern: "projects/{project}/chocolate/variants/{variant}/foobars/{foobar}"
+  };
+
+  string name = 1;
+  string info = 2;
+}
+
+// RPCs in inclusion list and not in the list both relies on this request message.
+message EchoRequest {
+  string name = 5 [
+    (google.api.resource_reference).type = "showcase.googleapis.com/Foobar",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  string parent = 6 [
+    (google.api.resource_reference).child_type =
+      "showcase.googleapis.com/AnythingGoes",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  oneof response {
+    // The content to be echoed by the server.
+    string content = 1;
+
+    // The error to be thrown by the server.
+    google.rpc.Status error = 2;
+  }
+
+  Foobar foobar = 4;
+}
+
+// This request message is used by AnExcludedMethod rpc.
+// To demonstrate that if AnExcludedMethod is not included in generation,
+// then the resource name Foobarbaz, which is only used by this method,
+// should not be generated.
+message EchoRequestWithFoobarbaz {
+  string name = 5 [
+    (google.api.resource_reference).type = "showcase.googleapis.com/Foobarbaz",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  string parent = 6 [
+    (google.api.resource_reference).child_type =
+      "showcase.googleapis.com/AnythingGoes",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  oneof response {
+    // The content to be echoed by the server.
+    string content = 1;
+
+    // The error to be thrown by the server.
+    google.rpc.Status error = 2;
+  }
+
+  Foobarbaz foobar = 4;
+}
+
+message EchoResponse {
+  // The content specified in the request.
+  string content = 1;
+}

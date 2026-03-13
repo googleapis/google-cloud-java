@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.example.library.v1",
+  "libraryPackage": "com.google.cloud.example.library.v1",
+  "services": {
+    "LibraryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LibraryServiceClient",
+          "rpcs": {
+            "CreateBook": {
+              "methods": ["createBook", "createBook", "createBook", "createBookCallable"]
+            },
+            "CreateShelf": {
+              "methods": ["createShelf", "createShelf", "createShelfCallable"]
+            },
+            "DeleteBook": {
+              "methods": ["deleteBook", "deleteBook", "deleteBook", "deleteBookCallable"]
+            },
+            "DeleteShelf": {
+              "methods": ["deleteShelf", "deleteShelf", "deleteShelf", "deleteShelfCallable"]
+            },
+            "GetBook": {
+              "methods": ["getBook", "getBook", "getBook", "getBookCallable"]
+            },
+            "GetShelf": {
+              "methods": ["getShelf", "getShelf", "getShelf", "getShelfCallable"]
+            },
+            "ListBooks": {
+              "methods": ["listBooks", "listBooks", "listBooks", "listBooksPagedCallable", "listBooksCallable"]
+            },
+            "ListShelves": {
+              "methods": ["listShelves", "listShelvesPagedCallable", "listShelvesCallable"]
+            },
+            "MergeShelves": {
+              "methods": ["mergeShelves", "mergeShelves", "mergeShelves", "mergeShelves", "mergeShelves", "mergeShelvesCallable"]
+            },
+            "MoveBook": {
+              "methods": ["moveBook", "moveBook", "moveBook", "moveBook", "moveBook", "moveBookCallable"]
+            },
+            "UpdateBook": {
+              "methods": ["updateBook", "updateBook", "updateBookCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

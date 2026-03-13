@@ -1,0 +1,65 @@
+on:
+  pull_request:
+    # Runs on PRs targeting main, but will be filtered for Release PRs
+    branches:
+      - 'main'
+  workflow_dispatch:
+    inputs:
+      protobuf_runtime_versions:
+        description: 'Comma separated list of Protobuf-Java versions (i.e. "3.25.x","4.x.y").
+                      Note: Surround each version in the list with quotes ("")'
+        required: true
+  schedule:
+    - cron: '0 1 * * *' # Nightly at 1am
+
+name: Downstream Protobuf Compatibility Check Nightly
+jobs:
+  downstream-protobuf-test:
+    # This job runs if any of the three conditions match:
+    # 1. PR is raised from Release-Please (PR comes from branch: release-please--branches-main)
+    # 2. Job is invoked by the nightly job (scheduled event)
+    # 3. Job is manually invoked via Github UI (workflow_dispatch event)
+    if: github.head_ref == 'release-please--branches--main' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - google-cloud-java
+          - java-bigtable
+          - java-bigquery
+          - java-bigquerystorage
+          - java-datastore
+          - java-firestore
+          - java-logging
+          - java-logging-logback
+          - java-pubsub
+          - java-pubsublite
+          - java-spanner-jdbc
+          - java-spanner
+          - java-storage
+          - java-storage-nio
+        # Default Protobuf-Java versions to use are specified here. Without this, the nightly workflow won't know
+        # which values to use and would resolve to ''.
+        protobuf-version: ${{ fromJSON(format('[{0}]', inputs.protobuf_runtime_versions || '"4.33.5"')) }}
+    steps:
+      - name: Checkout sdk-platform-java repo
+        uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 8
+          distribution: temurin
+      - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
+      # Java Client Libraries are compiled with Java 11 and target Java 8. Java 11 is required because GraalVM
+      # minimum support is for Java 11.
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 11
+          distribution: temurin
+      - name: Print Protobuf-Java testing version
+        run: echo "Testing with Protobuf-Java v${{ matrix.protobuf-version }}"
+      - name: Perform downstream source compatibility testing
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" PROTOBUF_RUNTIME_VERSION="${{ matrix.protobuf-version }}" ./.kokoro/nightly/downstream-protobuf-source-compatibility.sh
+      - name: Perform downstream binary compatibility testing
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" PROTOBUF_RUNTIME_VERSION="${{ matrix.protobuf-version }}" ./.kokoro/nightly/downstream-protobuf-binary-compatibility.sh
+

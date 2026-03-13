@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api-ads</groupId>
+  <artifactId>ad-manager-bom</artifactId>
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
+  </parent>
+
+  <name>Google Google Ad Manager API BOM</name>
+  <description>
+    BOM for Google Ad Manager API
+  </description>
+
+  <properties>
+    <maven.antrun.skip>true</maven.antrun.skip>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.api-ads</groupId>
+        <artifactId>ad-manager</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api-ads.api.grpc</groupId>
+        <artifactId>proto-ad-manager-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
