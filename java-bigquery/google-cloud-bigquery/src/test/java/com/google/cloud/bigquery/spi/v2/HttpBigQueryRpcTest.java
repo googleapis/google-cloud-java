@@ -877,6 +877,35 @@ public class HttpBigQueryRpcTest {
           "TestIamPermissions",
           null);
     }
+
+    @Test
+    public void testOtelAttributesFromOptionsGetAddedtoSpan() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
+
+      Map<BigQueryRpc.Option, Object> options = new HashMap<>();
+      options.put(BigQueryRpc.Option.FIELDS, "foo,bar");
+
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, options);
+
+      Map<String, String> expectedAttributes = new HashMap<>();
+      expectedAttributes.put("FIELDS", "foo,bar");
+      expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
+
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+          "DatasetService",
+          "GetDataset",
+          expectedAttributes);
+    }
   }
 
   @Nested

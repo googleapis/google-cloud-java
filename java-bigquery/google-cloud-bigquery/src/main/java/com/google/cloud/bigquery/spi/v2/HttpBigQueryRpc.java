@@ -70,6 +70,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
@@ -1758,10 +1759,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   private static Attributes otelAttributesFromOptions(Map<Option, ?> options) {
-    Attributes attributes = Attributes.builder().build();
+    AttributesBuilder builder = Attributes.builder();
     for (Map.Entry<Option, ?> entry : options.entrySet()) {
-      attributes.toBuilder().put(entry.getKey().toString(), entry.getValue().toString());
+      builder.put(entry.getKey().toString(), entry.getValue().toString());
     }
-    return attributes;
+    return builder.build();
   }
 }
