@@ -1,0 +1,332 @@
+// Copyright 2022 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/routing.proto";
+import "google/api/client.proto";
+import "google/protobuf/empty.proto";
+
+package google.explicit.dynamic.routing.header;
+
+option java_package = "com.google.explicit.dynamic.routing.header";
+option java_multiple_files = true;
+
+// This service is meant for testing all scenarios related to
+// explicit dynamic routing headers feature, including but not limited to all examples in routing.proto
+// All test cases in this proto assumes that the configured routing annotation is well formatted and passes all validation
+service ExplicitDynamicRoutingHeaderTesting {
+
+  option (google.api.default_host) = "localhost:7469";
+
+  //Example 1
+  // Extracting a field from the request to put into the routing header
+  // unchanged, with the key equal to the field name.
+  rpc Example1Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      //take the `app_profile_id`
+      routing_parameters {
+        field: "app_profile_id"
+      }
+    };
+  }
+  // Example 2
+  // Extracting a field from the request to put into the routing header
+  // unchanged, with the key different from the field name.
+  rpc Example2Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      // Take the `app_profile_id`, but name it `routing_id` in the header.
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=**}"
+      }
+    };
+  }
+
+  // Example 3
+  //
+  // Extracting a field from the request to put into the routing
+  // header, while matching a path template syntax on the field's value.
+  rpc Example3Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=projects/*/instances/*/**}"
+      }
+    };
+  }
+
+  // Example 3c
+  //
+  //Multiple alternative conflictingly named path templates are
+  // specified. The one that matches is used to construct the header.
+  rpc Example3CTest(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=regions/*/zones/*/**}"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=projects/*/instances/*/**}"
+      }
+    };
+  }
+
+  // Example 4
+  //
+  // Extracting a single routing header key-value pair by matching a
+  // template syntax on (a part of) a single request field.
+  rpc Example4Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/*}/**"
+      }
+    };
+  }
+
+  // Example 5
+  //
+  // Extracting a single routing header key-value pair by matching
+  // several conflictingly named path templates on (parts of) a single request
+  // field. The last template to match "wins" the conflict.
+  rpc Example5Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      // If the `table_name` does not have instances information,
+      // take just the project id for routing.
+      // Otherwise take project + instance.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/*}/**"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/*/instances/*}/**"
+      }
+    };
+  }
+
+  // Example 6
+  //
+  // Extracting multiple routing header key-value pairs by matching
+  // several non-conflicting path templates on (parts of) a single request field.
+  rpc Example6Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      // The routing code needs two keys instead of one composite
+      // but works only for the tables with the "project-instance" name
+      // syntax.
+
+      routing_parameters {
+        field: "table_name"
+        path_template: "{project_id=projects/*}/instances/*/**"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "projects/*/{instance_id=instances/*}/**"
+      }
+    };
+  }
+
+  // Example 7
+  //
+  // Extracting multiple routing header key-value pairs by matching
+  // several path templates on multiple request fields.
+  rpc Example7Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      // The routing needs both `project_id` and `routing_id`
+      // (from the `app_profile_id` field) for routing.
+
+      routing_parameters {
+        field: "table_name"
+        path_template: "{project_id=projects/*}/**"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=**}"
+      }
+    };
+  }
+
+  // Example 8
+  //
+  // Extracting a single routing header key-value pair by matching
+  // several conflictingly named path templates on several request fields. The
+  // last template to match "wins" the conflict.
+  rpc Example8Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      // The `routing_id` can be a project id or a region id depending on
+      // the table name format, but only if the `app_profile_id` is not set.
+      // If `app_profile_id` is set it should be used instead.
+
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/*}/**"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=regions/*}/**"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=**}"
+      }
+    };
+  }
+
+  // Example 9
+  //
+  // Bringing it all together.
+  rpc Example9Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      // For routing both `table_location` and a `routing_id` are needed.
+      //
+      // table_location can be either an instance id or a region+zone id.
+      //
+      // For `routing_id`, take the value of `app_profile_id`
+      // - If it's in the format `profiles/<profile_id>`, send
+      // just the `<profile_id>` part.
+      // - If it's any other literal, send it as is.
+      // If the `app_profile_id` is empty, and the `table_name` starts with
+      // the project_id, send that instead.
+
+      routing_parameters {
+        field: "table_name"
+        path_template: "projects/*/{table_location=instances/*}/tables/*"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_location=regions/*/zones/*}/tables/*"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/*}/**"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=**}"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "profiles/{routing_id=*}"
+      }
+    };
+  }
+
+  //We should ignore http annotation if both http and routing header annotations are configured,
+  rpc BackwardsCompatible1Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      get: "/v1beta1/{table_name=tests/*}"
+    };
+
+    option (google.api.routing) = {
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/*}/**"
+      }
+    };
+  }
+
+  //We should ignore http annotation even routing header annotation has no routing parameters
+  rpc BackwardsCompatible2Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      get: "/v1beta1/{table_name=tests/*}"
+    };
+
+    option (google.api.routing) = {
+
+    };
+  }
+
+  //Http annotation should still work for implicit routing headers as before if routing annotation is not configured.
+  rpc BackwardsCompatible3Test(Request) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      get: "/v1beta1/{table_name=tests/*}"
+    };
+  }
+
+  rpc NestedFieldTest(RequestWithNestedField) returns (google.protobuf.Empty) {
+    option (google.api.routing) = {
+      routing_parameters {
+        field: "nested_field.another_nested_field.name"
+        path_template: "{routing_id=projects/*}/**"
+      }
+    };
+  }
+
+  // This method echoes the request. This method exercises
+  // including a non-proto3-optional enum field in the URL path while sending the
+  // entire request object in the REST body.
+  rpc ImplicitRoutingHeaderWithEnumTest(EnumRequest) returns (EnumResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/{info.enum_test}"
+      body: "*"
+    };
+  }
+}
+
+message EnumRequest {
+  string name = 1;
+  EnumMessage info = 2;
+}
+
+message EnumResponse {
+  EnumRequest request = 1;
+}
+
+message EnumMessage {
+  enum EnumValues {
+    ENUM_VALUE_1 = 0;
+    ENUM_VALUE_2 = 1;
+    ENUM_VALUE_3 = 2;
+    ENUM_VALUE_4 = 3;
+  }
+  // scalar types
+  EnumValues enum_test = 22;
+}
+
+// Example message:
+//
+//     {
+//       table_name: projects/proj_foo/instances/instance_bar/table/table_baz,
+//       app_profile_id: profiles/prof_qux
+//     }
+message Request {
+  // The name of the Table
+  // Values can be of the following formats:
+  // - `projects/<project>/tables/<table>`
+  // - `projects/<project>/instances/<instance>/tables/<table>`
+  // - `region/<region>/zones/<zone>/tables/<table>`
+  string table_name = 1;
+
+  // This value specifies routing for replication.
+  // It can be in the following formats:
+  // - `profiles/<profile_id>`
+  // - a legacy `profile_id` that can be any string
+  string app_profile_id = 2;
+}
+
+message RequestWithNestedField {
+  NestedField nested_field = 1;
+}
+
+message NestedField {
+  AnotherNestedField another_nested_field = 1;
+}
+
+message AnotherNestedField {
+  string name = 1;
+}
+

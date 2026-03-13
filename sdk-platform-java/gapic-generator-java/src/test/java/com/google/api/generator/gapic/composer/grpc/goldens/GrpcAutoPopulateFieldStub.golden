@@ -1,0 +1,286 @@
+package com.google.auto.populate.field.stub;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientStreamingCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.populate.field.AutoPopulateFieldTestingEchoRequest;
+import com.google.auto.populate.field.AutoPopulateFieldTestingEchoResponse;
+import com.google.auto.populate.field.AutoPopulateFieldTestingExpandRequest;
+import com.google.common.base.Strings;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the AutoPopulateFieldTesting service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class GrpcAutoPopulateFieldTestingStub extends AutoPopulateFieldTestingStub {
+  private static final MethodDescriptor<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingEchoMethodDescriptor =
+          MethodDescriptor
+              .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.auto.populate.field.AutoPopulateFieldTesting/AutoPopulateFieldTestingEcho")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingExpandMethodDescriptor =
+          MethodDescriptor
+              .<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.auto.populate.field.AutoPopulateFieldTesting/AutoPopulateFieldTestingExpand")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingExpandRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingCollectMethodDescriptor =
+          MethodDescriptor
+              .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(
+                  "google.auto.populate.field.AutoPopulateFieldTesting/AutoPopulateFieldTestingCollect")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingChatMethodDescriptor =
+          MethodDescriptor
+              .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.auto.populate.field.AutoPopulateFieldTesting/AutoPopulateFieldTestingChat")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutoPopulateFieldTestingEchoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingEchoCallable;
+  private final ServerStreamingCallable<
+          AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingExpandCallable;
+  private final ClientStreamingCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingCollectCallable;
+  private final BidiStreamingCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingChatCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcAutoPopulateFieldTestingStub create(
+      AutoPopulateFieldTestingStubSettings settings) throws IOException {
+    return new GrpcAutoPopulateFieldTestingStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcAutoPopulateFieldTestingStub create(ClientContext clientContext)
+      throws IOException {
+    return new GrpcAutoPopulateFieldTestingStub(
+        AutoPopulateFieldTestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcAutoPopulateFieldTestingStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcAutoPopulateFieldTestingStub(
+        AutoPopulateFieldTestingStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcAutoPopulateFieldTestingStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcAutoPopulateFieldTestingStub(
+      AutoPopulateFieldTestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcAutoPopulateFieldTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcAutoPopulateFieldTestingStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcAutoPopulateFieldTestingStub(
+      AutoPopulateFieldTestingStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+        autoPopulateFieldTestingEchoTransportSettings =
+            GrpcCallSettings
+                .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                    newBuilder()
+                .setMethodDescriptor(autoPopulateFieldTestingEchoMethodDescriptor)
+                .setRequestMutator(
+                    request -> {
+                      AutoPopulateFieldTestingEchoRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      if (Strings.isNullOrEmpty(request.getSecondRequestId())) {
+                        requestBuilder.setSecondRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
+                .build();
+    GrpcCallSettings<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+        autoPopulateFieldTestingExpandTransportSettings =
+            GrpcCallSettings
+                .<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+                    newBuilder()
+                .setMethodDescriptor(autoPopulateFieldTestingExpandMethodDescriptor)
+                .build();
+    GrpcCallSettings<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+        autoPopulateFieldTestingCollectTransportSettings =
+            GrpcCallSettings
+                .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                    newBuilder()
+                .setMethodDescriptor(autoPopulateFieldTestingCollectMethodDescriptor)
+                .build();
+    GrpcCallSettings<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+        autoPopulateFieldTestingChatTransportSettings =
+            GrpcCallSettings
+                .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+                    newBuilder()
+                .setMethodDescriptor(autoPopulateFieldTestingChatMethodDescriptor)
+                .build();
+
+    this.autoPopulateFieldTestingEchoCallable =
+        callableFactory.createUnaryCallable(
+            autoPopulateFieldTestingEchoTransportSettings,
+            settings.autoPopulateFieldTestingEchoSettings(),
+            clientContext);
+    this.autoPopulateFieldTestingExpandCallable =
+        callableFactory.createServerStreamingCallable(
+            autoPopulateFieldTestingExpandTransportSettings,
+            settings.autoPopulateFieldTestingExpandSettings(),
+            clientContext);
+    this.autoPopulateFieldTestingCollectCallable =
+        callableFactory.createClientStreamingCallable(
+            autoPopulateFieldTestingCollectTransportSettings,
+            settings.autoPopulateFieldTestingCollectSettings(),
+            clientContext);
+    this.autoPopulateFieldTestingChatCallable =
+        callableFactory.createBidiStreamingCallable(
+            autoPopulateFieldTestingChatTransportSettings,
+            settings.autoPopulateFieldTestingChatSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingEchoCallable() {
+    return autoPopulateFieldTestingEchoCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<
+          AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingExpandCallable() {
+    return autoPopulateFieldTestingExpandCallable;
+  }
+
+  @Override
+  public ClientStreamingCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingCollectCallable() {
+    return autoPopulateFieldTestingCollectCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
+      autoPopulateFieldTestingChatCallable() {
+    return autoPopulateFieldTestingChatCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

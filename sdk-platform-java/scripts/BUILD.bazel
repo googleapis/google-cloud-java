@@ -1,0 +1,3 @@
+package(default_visibility = ["//test/integration:__pkg__"])
+
+exports_files(["diff_gen_and_golden.sh", "update_golden.sh"])

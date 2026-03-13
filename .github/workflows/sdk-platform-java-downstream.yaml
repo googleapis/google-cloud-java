@@ -1,0 +1,77 @@
+on:
+  pull_request:
+    # Changes to these directories do not directly affect the downstream libraries
+    paths-ignore:
+      - gapic-generator-java/**
+      - library_generation/**
+      - showcase/**
+      - test/**
+
+name: sdk-platform-java Downstream Check
+env:
+  BUILD_SUBDIR: sdk-platform-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+  downstream-compatibility:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - google-cloud-java
+          - java-bigtable
+          - java-bigquery
+          - java-firestore
+          - java-pubsub
+          - java-pubsublite
+          - java-spanner-jdbc
+          - java-spanner
+          - java-storage
+          - java-storage-nio
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: mvn -version
+      - name: Install xmllint
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install libxml2-utils
+      - name: Test helper scripts
+        run: ./.kokoro/presubmit/common_test.sh
+      - name: Perform downstream compatibility testing
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" ./.kokoro/presubmit/downstream-compatibility.sh
+  downstream-compatibility-spring-generator:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: mvn -version
+      - name: Install xmllint
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install libxml2-utils
+      - name: Perform downstream compatibility testing
+        run: ./.kokoro/presubmit/downstream-compatibility-spring.sh
