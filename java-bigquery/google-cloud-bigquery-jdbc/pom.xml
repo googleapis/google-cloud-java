@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
   <url>https://github.com/googleapis/google-cloud-java-jdbc</url>
@@ -152,7 +152,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-parent</artifactId>
-    <version>2.61.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -162,7 +162,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.23.0</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.24.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -194,7 +194,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.23.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.24.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
 
     <dependency>
