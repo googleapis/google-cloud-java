@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.spi.v2;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
@@ -50,6 +51,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -97,7 +99,10 @@ public class HttpBigQueryRpcTest {
             lastRequest =
                 new MockLowLevelHttpRequest() {
                   @Override
-                  public LowLevelHttpResponse execute() {
+                  public LowLevelHttpResponse execute() throws IOException {
+                    if (mockResponse.getContent() == null) {
+                      throw new IOException("Simulated network error");
+                    }
                     return mockResponse;
                   }
                 };
@@ -190,6 +195,19 @@ public class HttpBigQueryRpcTest {
     public void setUp() {
       setUpServer();
       rpc = createRpc(true);
+    }
+
+    @Test
+    public void testSpanEndOnError() {
+      assertThrows(
+          IOException.class,
+          () -> {
+            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+          });
+
+      // Verify that span was ended (collected) despite the error
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getDataset", "DatasetService", "GetDataset", null);
     }
 
     @Test
@@ -542,9 +560,9 @@ public class HttpBigQueryRpcTest {
           "DELETE",
           "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
+          "com.google.cloud.bigquery.BigQueryRpc.deleteRoutine",
           "RoutineService",
-          "ListRoutines",
+          "DeleteRoutine",
           null);
     }
 
@@ -854,9 +872,9 @@ public class HttpBigQueryRpcTest {
               + TABLE_ID
               + ":testIamPermissions");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
+          "com.google.cloud.bigquery.BigQueryRpc.testIamPermissions",
           "TableService",
-          "SetIamPolicy",
+          "TestIamPermissions",
           null);
     }
   }
