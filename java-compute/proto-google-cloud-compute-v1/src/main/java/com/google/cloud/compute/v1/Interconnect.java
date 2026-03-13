@@ -1146,7 +1146,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * To be deprecated.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Interconnect.Subzone}
@@ -3787,7 +3788,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * To be deprecated.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -3804,7 +3806,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * To be deprecated.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -3829,7 +3832,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * To be deprecated.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -11164,7 +11168,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * To be deprecated.
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
      * Check the Subzone enum for the list of possible values.
      * </pre>
      *
@@ -11180,7 +11185,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * To be deprecated.
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
      * Check the Subzone enum for the list of possible values.
      * </pre>
      *
@@ -11204,7 +11210,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * To be deprecated.
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
      * Check the Subzone enum for the list of possible values.
      * </pre>
      *
@@ -11228,7 +11235,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * To be deprecated.
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
      * Check the Subzone enum for the list of possible values.
      * </pre>
      *
@@ -11251,7 +11259,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * To be deprecated.
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
      * Check the Subzone enum for the list of possible values.
      * </pre>
      *
@@ -11270,7 +11279,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * To be deprecated.
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
      * Check the Subzone enum for the list of possible values.
      * </pre>
      *

@@ -85,22 +85,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    * The range of IP addresses belonging to this subnetwork secondary range.
    * Provide this property when you create the subnetwork. Ranges must be
    * unique and non-overlapping with all primary and secondary IP ranges
-   * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-   * the range can be any range listed in theValid
+   * within a network. Only IPv4 is supported. The range can be any range
+   * listed in theValid
    * ranges list.
-   *
-   * For IPv6:
-   * The range must have a /64 prefix length.
-   * The range must be omitted, for auto-allocation from Google-defined ULA
-   * IPv6 range.
-   * For BYOGUA internal IPv6 secondary range, the range may be specified
-   * along with the `ipCollection` field.
-   * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-   * within the range of the PDP referenced by the `ipCollection` field for
-   * allocation.
-   * If `ipCollection` field is specified, but ip_cidr_range is not,
-   * the range is auto-allocated from the PDP referenced by the `ipCollection`
-   * field.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -119,22 +106,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    * The range of IP addresses belonging to this subnetwork secondary range.
    * Provide this property when you create the subnetwork. Ranges must be
    * unique and non-overlapping with all primary and secondary IP ranges
-   * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-   * the range can be any range listed in theValid
+   * within a network. Only IPv4 is supported. The range can be any range
+   * listed in theValid
    * ranges list.
-   *
-   * For IPv6:
-   * The range must have a /64 prefix length.
-   * The range must be omitted, for auto-allocation from Google-defined ULA
-   * IPv6 range.
-   * For BYOGUA internal IPv6 secondary range, the range may be specified
-   * along with the `ipCollection` field.
-   * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-   * within the range of the PDP referenced by the `ipCollection` field for
-   * allocation.
-   * If `ipCollection` field is specified, but ip_cidr_range is not,
-   * the range is auto-allocated from the PDP referenced by the `ipCollection`
-   * field.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -161,22 +135,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    * The range of IP addresses belonging to this subnetwork secondary range.
    * Provide this property when you create the subnetwork. Ranges must be
    * unique and non-overlapping with all primary and secondary IP ranges
-   * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-   * the range can be any range listed in theValid
+   * within a network. Only IPv4 is supported. The range can be any range
+   * listed in theValid
    * ranges list.
-   *
-   * For IPv6:
-   * The range must have a /64 prefix length.
-   * The range must be omitted, for auto-allocation from Google-defined ULA
-   * IPv6 range.
-   * For BYOGUA internal IPv6 secondary range, the range may be specified
-   * along with the `ipCollection` field.
-   * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-   * within the range of the PDP referenced by the `ipCollection` field for
-   * allocation.
-   * If `ipCollection` field is specified, but ip_cidr_range is not,
-   * the range is auto-allocated from the PDP referenced by the `ipCollection`
-   * field.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -206,7 +167,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    * <pre>
    * The name associated with this subnetwork secondary range, used when adding
-   * an alias IP/IPv6 range to a VM instance.
+   * an alias IP range to a VM instance.
    * The name must be 1-63 characters long, and comply withRFC1035.
    * The name must be unique within the subnetwork.
    * </pre>
@@ -225,7 +186,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    * <pre>
    * The name associated with this subnetwork secondary range, used when adding
-   * an alias IP/IPv6 range to a VM instance.
+   * an alias IP range to a VM instance.
    * The name must be 1-63 characters long, and comply withRFC1035.
    * The name must be unique within the subnetwork.
    * </pre>
@@ -252,7 +213,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    * <pre>
    * The name associated with this subnetwork secondary range, used when adding
-   * an alias IP/IPv6 range to a VM instance.
+   * an alias IP range to a VM instance.
    * The name must be 1-63 characters long, and comply withRFC1035.
    * The name must be unique within the subnetwork.
    * </pre>
@@ -283,7 +244,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The URL of the reserved internal range. Only IPv4 is supported.
+   * The URL of the reserved internal range.
    * </pre>
    *
    * <code>optional string reserved_internal_range = 286248754;</code>
@@ -299,7 +260,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The URL of the reserved internal range. Only IPv4 is supported.
+   * The URL of the reserved internal range.
    * </pre>
    *
    * <code>optional string reserved_internal_range = 286248754;</code>
@@ -323,7 +284,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The URL of the reserved internal range. Only IPv4 is supported.
+   * The URL of the reserved internal range.
    * </pre>
    *
    * <code>optional string reserved_internal_range = 286248754;</code>
@@ -731,22 +692,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * The range of IP addresses belonging to this subnetwork secondary range.
      * Provide this property when you create the subnetwork. Ranges must be
      * unique and non-overlapping with all primary and secondary IP ranges
-     * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-     * the range can be any range listed in theValid
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
      * ranges list.
-     *
-     * For IPv6:
-     * The range must have a /64 prefix length.
-     * The range must be omitted, for auto-allocation from Google-defined ULA
-     * IPv6 range.
-     * For BYOGUA internal IPv6 secondary range, the range may be specified
-     * along with the `ipCollection` field.
-     * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-     * within the range of the PDP referenced by the `ipCollection` field for
-     * allocation.
-     * If `ipCollection` field is specified, but ip_cidr_range is not,
-     * the range is auto-allocated from the PDP referenced by the `ipCollection`
-     * field.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -764,22 +712,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * The range of IP addresses belonging to this subnetwork secondary range.
      * Provide this property when you create the subnetwork. Ranges must be
      * unique and non-overlapping with all primary and secondary IP ranges
-     * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-     * the range can be any range listed in theValid
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
      * ranges list.
-     *
-     * For IPv6:
-     * The range must have a /64 prefix length.
-     * The range must be omitted, for auto-allocation from Google-defined ULA
-     * IPv6 range.
-     * For BYOGUA internal IPv6 secondary range, the range may be specified
-     * along with the `ipCollection` field.
-     * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-     * within the range of the PDP referenced by the `ipCollection` field for
-     * allocation.
-     * If `ipCollection` field is specified, but ip_cidr_range is not,
-     * the range is auto-allocated from the PDP referenced by the `ipCollection`
-     * field.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -805,22 +740,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * The range of IP addresses belonging to this subnetwork secondary range.
      * Provide this property when you create the subnetwork. Ranges must be
      * unique and non-overlapping with all primary and secondary IP ranges
-     * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-     * the range can be any range listed in theValid
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
      * ranges list.
-     *
-     * For IPv6:
-     * The range must have a /64 prefix length.
-     * The range must be omitted, for auto-allocation from Google-defined ULA
-     * IPv6 range.
-     * For BYOGUA internal IPv6 secondary range, the range may be specified
-     * along with the `ipCollection` field.
-     * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-     * within the range of the PDP referenced by the `ipCollection` field for
-     * allocation.
-     * If `ipCollection` field is specified, but ip_cidr_range is not,
-     * the range is auto-allocated from the PDP referenced by the `ipCollection`
-     * field.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -846,22 +768,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * The range of IP addresses belonging to this subnetwork secondary range.
      * Provide this property when you create the subnetwork. Ranges must be
      * unique and non-overlapping with all primary and secondary IP ranges
-     * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-     * the range can be any range listed in theValid
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
      * ranges list.
-     *
-     * For IPv6:
-     * The range must have a /64 prefix length.
-     * The range must be omitted, for auto-allocation from Google-defined ULA
-     * IPv6 range.
-     * For BYOGUA internal IPv6 secondary range, the range may be specified
-     * along with the `ipCollection` field.
-     * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-     * within the range of the PDP referenced by the `ipCollection` field for
-     * allocation.
-     * If `ipCollection` field is specified, but ip_cidr_range is not,
-     * the range is auto-allocated from the PDP referenced by the `ipCollection`
-     * field.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -886,22 +795,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * The range of IP addresses belonging to this subnetwork secondary range.
      * Provide this property when you create the subnetwork. Ranges must be
      * unique and non-overlapping with all primary and secondary IP ranges
-     * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-     * the range can be any range listed in theValid
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
      * ranges list.
-     *
-     * For IPv6:
-     * The range must have a /64 prefix length.
-     * The range must be omitted, for auto-allocation from Google-defined ULA
-     * IPv6 range.
-     * For BYOGUA internal IPv6 secondary range, the range may be specified
-     * along with the `ipCollection` field.
-     * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-     * within the range of the PDP referenced by the `ipCollection` field for
-     * allocation.
-     * If `ipCollection` field is specified, but ip_cidr_range is not,
-     * the range is auto-allocated from the PDP referenced by the `ipCollection`
-     * field.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -922,22 +818,9 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * The range of IP addresses belonging to this subnetwork secondary range.
      * Provide this property when you create the subnetwork. Ranges must be
      * unique and non-overlapping with all primary and secondary IP ranges
-     * within a network. Both IPv4 and IPv6 ranges are supported. For IPv4,
-     * the range can be any range listed in theValid
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
      * ranges list.
-     *
-     * For IPv6:
-     * The range must have a /64 prefix length.
-     * The range must be omitted, for auto-allocation from Google-defined ULA
-     * IPv6 range.
-     * For BYOGUA internal IPv6 secondary range, the range may be specified
-     * along with the `ipCollection` field.
-     * If an `ipCollection` is specified, the requested ip_cidr_range must lie
-     * within the range of the PDP referenced by the `ipCollection` field for
-     * allocation.
-     * If `ipCollection` field is specified, but ip_cidr_range is not,
-     * the range is auto-allocated from the PDP referenced by the `ipCollection`
-     * field.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -963,7 +846,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      * <pre>
      * The name associated with this subnetwork secondary range, used when adding
-     * an alias IP/IPv6 range to a VM instance.
+     * an alias IP range to a VM instance.
      * The name must be 1-63 characters long, and comply withRFC1035.
      * The name must be unique within the subnetwork.
      * </pre>
@@ -981,7 +864,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      * <pre>
      * The name associated with this subnetwork secondary range, used when adding
-     * an alias IP/IPv6 range to a VM instance.
+     * an alias IP range to a VM instance.
      * The name must be 1-63 characters long, and comply withRFC1035.
      * The name must be unique within the subnetwork.
      * </pre>
@@ -1007,7 +890,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      * <pre>
      * The name associated with this subnetwork secondary range, used when adding
-     * an alias IP/IPv6 range to a VM instance.
+     * an alias IP range to a VM instance.
      * The name must be 1-63 characters long, and comply withRFC1035.
      * The name must be unique within the subnetwork.
      * </pre>
@@ -1033,7 +916,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      * <pre>
      * The name associated with this subnetwork secondary range, used when adding
-     * an alias IP/IPv6 range to a VM instance.
+     * an alias IP range to a VM instance.
      * The name must be 1-63 characters long, and comply withRFC1035.
      * The name must be unique within the subnetwork.
      * </pre>
@@ -1058,7 +941,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      * <pre>
      * The name associated with this subnetwork secondary range, used when adding
-     * an alias IP/IPv6 range to a VM instance.
+     * an alias IP range to a VM instance.
      * The name must be 1-63 characters long, and comply withRFC1035.
      * The name must be unique within the subnetwork.
      * </pre>
@@ -1079,7 +962,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      * <pre>
      * The name associated with this subnetwork secondary range, used when adding
-     * an alias IP/IPv6 range to a VM instance.
+     * an alias IP range to a VM instance.
      * The name must be 1-63 characters long, and comply withRFC1035.
      * The name must be unique within the subnetwork.
      * </pre>
@@ -1106,7 +989,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The URL of the reserved internal range. Only IPv4 is supported.
+     * The URL of the reserved internal range.
      * </pre>
      *
      * <code>optional string reserved_internal_range = 286248754;</code>
@@ -1121,7 +1004,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The URL of the reserved internal range. Only IPv4 is supported.
+     * The URL of the reserved internal range.
      * </pre>
      *
      * <code>optional string reserved_internal_range = 286248754;</code>
@@ -1144,7 +1027,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The URL of the reserved internal range. Only IPv4 is supported.
+     * The URL of the reserved internal range.
      * </pre>
      *
      * <code>optional string reserved_internal_range = 286248754;</code>
@@ -1167,7 +1050,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The URL of the reserved internal range. Only IPv4 is supported.
+     * The URL of the reserved internal range.
      * </pre>
      *
      * <code>optional string reserved_internal_range = 286248754;</code>
@@ -1189,7 +1072,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The URL of the reserved internal range. Only IPv4 is supported.
+     * The URL of the reserved internal range.
      * </pre>
      *
      * <code>optional string reserved_internal_range = 286248754;</code>
@@ -1207,7 +1090,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The URL of the reserved internal range. Only IPv4 is supported.
+     * The URL of the reserved internal range.
      * </pre>
      *
      * <code>optional string reserved_internal_range = 286248754;</code>

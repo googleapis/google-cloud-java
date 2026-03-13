@@ -1,21 +1,5 @@
 # Changelog
 
-## 0.76.0 (2026-03-11)
-
-* No change
-
-
-## 0.75.0 (2026-02-25)
-
-### Features
-
-* Add support for project level key usage tracking ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
-
-### Dependencies
-
-* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
-
-
 ## 0.72.0 (2026-01-29)
 
 ### Dependencies

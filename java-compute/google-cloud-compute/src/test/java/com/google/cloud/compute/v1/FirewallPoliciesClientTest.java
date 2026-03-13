@@ -745,7 +745,6 @@ public class FirewallPoliciesClientTest {
     try {
       ListAssociationsFirewallPolicyRequest request =
           ListAssociationsFirewallPolicyRequest.newBuilder()
-              .setIncludeInheritedPolicies(true)
               .setTargetResource("targetResource-1933150017")
               .build();
       client.listAssociations(request);

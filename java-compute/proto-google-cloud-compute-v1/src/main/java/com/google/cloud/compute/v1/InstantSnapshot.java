@@ -1185,62 +1185,6 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int PARAMS_FIELD_NUMBER = 78313862;
-  private com.google.cloud.compute.v1.InstantSnapshotParams params_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Input only. Additional params passed with the request, but not persisted
-   * as part of resource payload.
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-   *
-   * @return Whether the params field is set.
-   */
-  @java.lang.Override
-  public boolean hasParams() {
-    return ((bitField0_ & 0x00000100) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Input only. Additional params passed with the request, but not persisted
-   * as part of resource payload.
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-   *
-   * @return The params.
-   */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.InstantSnapshotParams getParams() {
-    return params_ == null
-        ? com.google.cloud.compute.v1.InstantSnapshotParams.getDefaultInstance()
-        : params_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Input only. Additional params passed with the request, but not persisted
-   * as part of resource payload.
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.InstantSnapshotParamsOrBuilder getParamsOrBuilder() {
-    return params_ == null
-        ? com.google.cloud.compute.v1.InstantSnapshotParams.getDefaultInstance()
-        : params_;
-  }
-
   public static final int REGION_FIELD_NUMBER = 138946292;
 
   @SuppressWarnings("serial")
@@ -1261,7 +1205,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1334,7 +1278,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasResourceStatus() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1392,7 +1336,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSatisfiesPzi() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1427,7 +1371,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1464,7 +1408,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1533,7 +1477,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1624,7 +1568,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSourceDisk() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1739,7 +1683,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSourceDiskId() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1813,7 +1757,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1886,7 +1830,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1964,28 +1908,25 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeMessage(78313862, getParams());
-    }
-    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(249429315, getResourceStatus());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1997,19 +1938,19 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 451753793, sourceDisk_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 454190809, sourceDiskId_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(480964257, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -2032,28 +1973,25 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
-    }
-    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(249429315, getResourceStatus());
     }
@@ -2066,19 +2004,19 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(451753793, sourceDisk_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(454190809, sourceDiskId_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964257, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2139,10 +2077,6 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
-    }
-    if (hasParams() != other.hasParams()) return false;
-    if (hasParams()) {
-      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -2230,10 +2164,6 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-    }
-    if (hasParams()) {
-      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
-      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -2440,7 +2370,6 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        internalGetParamsFieldBuilder();
         internalGetResourceStatusFieldBuilder();
       }
     }
@@ -2458,11 +2387,6 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       labelFingerprint_ = "";
       internalGetMutableLabels().clear();
       name_ = "";
-      params_ = null;
-      if (paramsBuilder_ != null) {
-        paramsBuilder_.dispose();
-        paramsBuilder_ = null;
-      }
       region_ = "";
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
@@ -2551,49 +2475,45 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.region_ = region_;
+        result.resourceStatus_ =
+            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.resourceStatus_ =
-            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
+        result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.satisfiesPzi_ = satisfiesPzi_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.sourceDisk_ = sourceDisk_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.sourceDisk_ = sourceDisk_;
+        result.sourceDiskId_ = sourceDiskId_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.sourceDiskId_ = sourceDiskId_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.status_ = status_;
-        to_bitField0_ |= 0x00020000;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.zone_ = zone_;
-        to_bitField0_ |= 0x00040000;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2648,12 +2568,9 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
-      if (other.hasParams()) {
-        mergeParams(other.getParams());
-      }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasResourceStatus()) {
@@ -2667,32 +2584,32 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasSourceDisk()) {
         sourceDisk_ = other.sourceDisk_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSourceDiskId()) {
         sourceDiskId_ = other.sourceDiskId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2742,7 +2659,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 29957474
             case 244202930:
@@ -2754,19 +2671,13 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 356167698
-            case 626510898:
-              {
-                input.readMessage(internalGetParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 626510898
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1111570338
             case 1424998602:
@@ -2778,14 +2689,14 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1450082194
             case 1995434522:
               {
                 input.readMessage(
                     internalGetResourceStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1995434522
             case -1872541030:
@@ -2809,31 +2720,31 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
             case -680936950:
               {
                 sourceDisk_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -680936950
             case -661440822:
               {
                 sourceDiskId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -661440822
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -645248918
             case -447253240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -447253240
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -447253160
             case -293404678:
@@ -4065,210 +3976,6 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.cloud.compute.v1.InstantSnapshotParams params_;
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.cloud.compute.v1.InstantSnapshotParams,
-            com.google.cloud.compute.v1.InstantSnapshotParams.Builder,
-            com.google.cloud.compute.v1.InstantSnapshotParamsOrBuilder>
-        paramsBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     *
-     * @return Whether the params field is set.
-     */
-    public boolean hasParams() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     *
-     * @return The params.
-     */
-    public com.google.cloud.compute.v1.InstantSnapshotParams getParams() {
-      if (paramsBuilder_ == null) {
-        return params_ == null
-            ? com.google.cloud.compute.v1.InstantSnapshotParams.getDefaultInstance()
-            : params_;
-      } else {
-        return paramsBuilder_.getMessage();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    public Builder setParams(com.google.cloud.compute.v1.InstantSnapshotParams value) {
-      if (paramsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        params_ = value;
-      } else {
-        paramsBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    public Builder setParams(
-        com.google.cloud.compute.v1.InstantSnapshotParams.Builder builderForValue) {
-      if (paramsBuilder_ == null) {
-        params_ = builderForValue.build();
-      } else {
-        paramsBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    public Builder mergeParams(com.google.cloud.compute.v1.InstantSnapshotParams value) {
-      if (paramsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
-            && params_ != null
-            && params_ != com.google.cloud.compute.v1.InstantSnapshotParams.getDefaultInstance()) {
-          getParamsBuilder().mergeFrom(value);
-        } else {
-          params_ = value;
-        }
-      } else {
-        paramsBuilder_.mergeFrom(value);
-      }
-      if (params_ != null) {
-        bitField0_ |= 0x00000200;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      params_ = null;
-      if (paramsBuilder_ != null) {
-        paramsBuilder_.dispose();
-        paramsBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    public com.google.cloud.compute.v1.InstantSnapshotParams.Builder getParamsBuilder() {
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return internalGetParamsFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    public com.google.cloud.compute.v1.InstantSnapshotParamsOrBuilder getParamsOrBuilder() {
-      if (paramsBuilder_ != null) {
-        return paramsBuilder_.getMessageOrBuilder();
-      } else {
-        return params_ == null
-            ? com.google.cloud.compute.v1.InstantSnapshotParams.getDefaultInstance()
-            : params_;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Input only. Additional params passed with the request, but not persisted
-     * as part of resource payload.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstantSnapshotParams params = 78313862;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.cloud.compute.v1.InstantSnapshotParams,
-            com.google.cloud.compute.v1.InstantSnapshotParams.Builder,
-            com.google.cloud.compute.v1.InstantSnapshotParamsOrBuilder>
-        internalGetParamsFieldBuilder() {
-      if (paramsBuilder_ == null) {
-        paramsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilder<
-                com.google.cloud.compute.v1.InstantSnapshotParams,
-                com.google.cloud.compute.v1.InstantSnapshotParams.Builder,
-                com.google.cloud.compute.v1.InstantSnapshotParamsOrBuilder>(
-                getParams(), getParentForChildren(), isClean());
-        params_ = null;
-      }
-      return paramsBuilder_;
-    }
-
     private java.lang.Object region_ = "";
 
     /**
@@ -4285,7 +3992,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -4357,7 +4064,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4377,7 +4084,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4402,7 +4109,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4428,7 +4135,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the resourceStatus field is set.
      */
     public boolean hasResourceStatus() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -4475,7 +4182,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       } else {
         resourceStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4498,7 +4205,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       } else {
         resourceStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4517,7 +4224,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     public Builder mergeResourceStatus(
         com.google.cloud.compute.v1.InstantSnapshotResourceStatus value) {
       if (resourceStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && resourceStatus_ != null
             && resourceStatus_
                 != com.google.cloud.compute.v1.InstantSnapshotResourceStatus.getDefaultInstance()) {
@@ -4529,7 +4236,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         resourceStatusBuilder_.mergeFrom(value);
       }
       if (resourceStatus_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4547,7 +4254,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearResourceStatus() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
         resourceStatusBuilder_.dispose();
@@ -4570,7 +4277,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.compute.v1.InstantSnapshotResourceStatus.Builder
         getResourceStatusBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetResourceStatusFieldBuilder().getBuilder();
     }
@@ -4640,7 +4347,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4674,7 +4381,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4691,7 +4398,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       satisfiesPzi_ = false;
       onChanged();
       return this;
@@ -4712,7 +4419,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4746,7 +4453,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4763,7 +4470,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -4783,7 +4490,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4849,7 +4556,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4867,7 +4574,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4890,7 +4597,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4909,7 +4616,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4975,7 +4682,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4993,7 +4700,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5016,7 +4723,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5057,7 +4764,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the sourceDisk field is set.
      */
     public boolean hasSourceDisk() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5189,7 +4896,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       sourceDisk_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5229,7 +4936,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSourceDisk() {
       sourceDisk_ = getDefaultInstance().getSourceDisk();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5274,7 +4981,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       sourceDisk_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5295,7 +5002,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the sourceDiskId field is set.
      */
     public boolean hasSourceDiskId() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5367,7 +5074,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       sourceDiskId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5387,7 +5094,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSourceDiskId() {
       sourceDiskId_ = getDefaultInstance().getSourceDiskId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5412,7 +5119,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       sourceDiskId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5432,7 +5139,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5501,7 +5208,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5520,7 +5227,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5544,7 +5251,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5565,7 +5272,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5637,7 +5344,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5657,7 +5364,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5682,7 +5389,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

@@ -25,7 +25,7 @@ package com.google.cloud.compute.v1;
  *
  * <pre>
  * Properties of the SKU instances being reserved.
- * Next ID: 10
+ * Next ID: 9
  * </pre>
  *
  * Protobuf type {@code
@@ -731,7 +731,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    * <pre>
    * Properties of the SKU instances being reserved.
-   * Next ID: 10
+   * Next ID: 9
    * </pre>
    *
    * Protobuf type {@code

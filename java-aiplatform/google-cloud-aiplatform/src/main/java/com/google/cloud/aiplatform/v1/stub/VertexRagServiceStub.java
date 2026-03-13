@@ -19,13 +19,7 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.VertexRagServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.aiplatform.v1.AskContextsRequest;
-import com.google.cloud.aiplatform.v1.AskContextsResponse;
-import com.google.cloud.aiplatform.v1.AsyncRetrieveContextsOperationMetadata;
-import com.google.cloud.aiplatform.v1.AsyncRetrieveContextsRequest;
-import com.google.cloud.aiplatform.v1.AsyncRetrieveContextsResponse;
 import com.google.cloud.aiplatform.v1.AugmentPromptRequest;
 import com.google.cloud.aiplatform.v1.AugmentPromptResponse;
 import com.google.cloud.aiplatform.v1.CorroborateContentRequest;
@@ -41,8 +35,6 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import com.google.longrunning.Operation;
-import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -53,10 +45,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class VertexRagServiceStub implements BackgroundResource {
-
-  public OperationsStub getOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
-  }
 
   public UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable() {
@@ -70,23 +58,6 @@ public abstract class VertexRagServiceStub implements BackgroundResource {
   public UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
       corroborateContentCallable() {
     throw new UnsupportedOperationException("Not implemented: corroborateContentCallable()");
-  }
-
-  public UnaryCallable<AskContextsRequest, AskContextsResponse> askContextsCallable() {
-    throw new UnsupportedOperationException("Not implemented: askContextsCallable()");
-  }
-
-  public OperationCallable<
-          AsyncRetrieveContextsRequest,
-          AsyncRetrieveContextsResponse,
-          AsyncRetrieveContextsOperationMetadata>
-      asyncRetrieveContextsOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: asyncRetrieveContextsOperationCallable()");
-  }
-
-  public UnaryCallable<AsyncRetrieveContextsRequest, Operation> asyncRetrieveContextsCallable() {
-    throw new UnsupportedOperationException("Not implemented: asyncRetrieveContextsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

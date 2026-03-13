@@ -180,12 +180,12 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UploadEvaluationAudioRequest>newBuilder()
                       .setPath(
-                          "/v1beta/{name=projects/*/locations/*/apps/*/evaluations/*}:uploadEvaluationAudio",
+                          "/v1beta/{app=projects/*/locations/*/apps/*}:uploadEvaluationAudio",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UploadEvaluationAudioRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
+                            serializer.putPathParam(fields, "app", request.getApp());
                             return fields;
                           })
                       .setQueryParamsExtractor(
@@ -199,7 +199,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                                  .toBody("*", request.toBuilder().clearApp().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UploadEvaluationAudioResponse>newBuilder()
@@ -1584,7 +1584,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
+                      builder.add("app", String.valueOf(request.getApp()));
                       return builder.build();
                     })
                 .build();

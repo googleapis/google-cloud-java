@@ -127,86 +127,6 @@ public interface ExecuteToolRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The variables that are available for the tool execution.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return Whether the variables field is set.
-   */
-  boolean hasVariables();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The variables that are available for the tool execution.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The variables.
-   */
-  com.google.protobuf.Struct getVariables();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The variables that are available for the tool execution.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  com.google.protobuf.StructOrBuilder getVariablesOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The
-   * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
-   * for details) to be passed to the Python tool.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return Whether the context field is set.
-   */
-  boolean hasContext();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The
-   * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
-   * for details) to be passed to the Python tool.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The context.
-   */
-  com.google.protobuf.Struct getContext();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The
-   * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
-   * for details) to be passed to the Python tool.
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  com.google.protobuf.StructOrBuilder getContextOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Required. The resource name of the app which the tool/toolset belongs to.
    * Format: `projects/{project}/locations/{location}/apps/{app}`
    * </pre>
@@ -275,8 +195,42 @@ public interface ExecuteToolRequestOrBuilder
    */
   com.google.protobuf.StructOrBuilder getArgsOrBuilder();
 
-  com.google.cloud.ces.v1beta.ExecuteToolRequest.ToolIdentifierCase getToolIdentifierCase();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The variables that are available for the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the variables field is set.
+   */
+  boolean hasVariables();
 
-  com.google.cloud.ces.v1beta.ExecuteToolRequest.ToolExecutionContextCase
-      getToolExecutionContextCase();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The variables that are available for the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The variables.
+   */
+  com.google.protobuf.Struct getVariables();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The variables that are available for the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getVariablesOrBuilder();
+
+  com.google.cloud.ces.v1beta.ExecuteToolRequest.ToolIdentifierCase getToolIdentifierCase();
 }

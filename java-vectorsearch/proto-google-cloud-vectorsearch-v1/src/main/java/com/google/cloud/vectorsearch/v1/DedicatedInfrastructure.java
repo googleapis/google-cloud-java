@@ -251,7 +251,7 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. The minimum number of replicas. If not set or set to `0`,
-     * defaults to `2`. Must be &gt;= `1` and &lt;= `1000`.
+     * defaults to `2`. Must be &gt;= `2` and &lt;= `1000`.
      * </pre>
      *
      * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,12 +264,9 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The maximum number of replicas.  Must be &gt;=
+     * Optional. The maximum number of replicas. If not set or set to `0`,
+     * defaults to the greater of `min_replica_count` and `5`. Must be &gt;=
      * `min_replica_count` and &lt;= `1000`.
-     * For the v1beta version, if not set or set to `0`, defaults to
-     * the greater of `min_replica_count` and `5`.
-     * For all other versions, if not set or set to `0`, defaults to
-     * the greater of `min_replica_count` and `2`.
      * </pre>
      *
      * <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -335,7 +332,7 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. The minimum number of replicas. If not set or set to `0`,
-     * defaults to `2`. Must be &gt;= `1` and &lt;= `1000`.
+     * defaults to `2`. Must be &gt;= `2` and &lt;= `1000`.
      * </pre>
      *
      * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -354,12 +351,9 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The maximum number of replicas.  Must be &gt;=
+     * Optional. The maximum number of replicas. If not set or set to `0`,
+     * defaults to the greater of `min_replica_count` and `5`. Must be &gt;=
      * `min_replica_count` and &lt;= `1000`.
-     * For the v1beta version, if not set or set to `0`, defaults to
-     * the greater of `min_replica_count` and `5`.
-     * For all other versions, if not set or set to `0`, defaults to
-     * the greater of `min_replica_count` and `2`.
      * </pre>
      *
      * <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -727,7 +721,7 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
        *
        * <pre>
        * Optional. The minimum number of replicas. If not set or set to `0`,
-       * defaults to `2`. Must be &gt;= `1` and &lt;= `1000`.
+       * defaults to `2`. Must be &gt;= `2` and &lt;= `1000`.
        * </pre>
        *
        * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -744,7 +738,7 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
        *
        * <pre>
        * Optional. The minimum number of replicas. If not set or set to `0`,
-       * defaults to `2`. Must be &gt;= `1` and &lt;= `1000`.
+       * defaults to `2`. Must be &gt;= `2` and &lt;= `1000`.
        * </pre>
        *
        * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -765,7 +759,7 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
        *
        * <pre>
        * Optional. The minimum number of replicas. If not set or set to `0`,
-       * defaults to `2`. Must be &gt;= `1` and &lt;= `1000`.
+       * defaults to `2`. Must be &gt;= `2` and &lt;= `1000`.
        * </pre>
        *
        * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -785,12 +779,9 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Optional. The maximum number of replicas.  Must be &gt;=
+       * Optional. The maximum number of replicas. If not set or set to `0`,
+       * defaults to the greater of `min_replica_count` and `5`. Must be &gt;=
        * `min_replica_count` and &lt;= `1000`.
-       * For the v1beta version, if not set or set to `0`, defaults to
-       * the greater of `min_replica_count` and `5`.
-       * For all other versions, if not set or set to `0`, defaults to
-       * the greater of `min_replica_count` and `2`.
        * </pre>
        *
        * <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -806,12 +797,9 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Optional. The maximum number of replicas.  Must be &gt;=
+       * Optional. The maximum number of replicas. If not set or set to `0`,
+       * defaults to the greater of `min_replica_count` and `5`. Must be &gt;=
        * `min_replica_count` and &lt;= `1000`.
-       * For the v1beta version, if not set or set to `0`, defaults to
-       * the greater of `min_replica_count` and `5`.
-       * For all other versions, if not set or set to `0`, defaults to
-       * the greater of `min_replica_count` and `2`.
        * </pre>
        *
        * <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -831,12 +819,9 @@ public final class DedicatedInfrastructure extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Optional. The maximum number of replicas.  Must be &gt;=
+       * Optional. The maximum number of replicas. If not set or set to `0`,
+       * defaults to the greater of `min_replica_count` and `5`. Must be &gt;=
        * `min_replica_count` and &lt;= `1000`.
-       * For the v1beta version, if not set or set to `0`, defaults to
-       * the greater of `min_replica_count` and `5`.
-       * For all other versions, if not set or set to `0`, defaults to
-       * the greater of `min_replica_count` and `2`.
        * </pre>
        *
        * <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

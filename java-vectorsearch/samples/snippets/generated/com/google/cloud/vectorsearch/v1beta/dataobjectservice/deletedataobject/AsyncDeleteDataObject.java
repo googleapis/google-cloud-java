@@ -41,7 +41,6 @@ public class AsyncDeleteDataObject {
               .setName(
                   DataObjectName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATAOBJECT]")
                       .toString())
-              .setEtag("etag3123477")
               .build();
       ApiFuture<Empty> future =
           dataObjectServiceClient.deleteDataObjectCallable().futureCall(request);

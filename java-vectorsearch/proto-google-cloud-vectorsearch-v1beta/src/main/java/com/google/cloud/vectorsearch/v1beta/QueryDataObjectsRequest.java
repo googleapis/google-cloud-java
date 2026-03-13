@@ -250,8 +250,7 @@ public final class QueryDataObjectsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. The standard list page size. Default is 100.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * Optional. The standard list page size.
    * </pre>
    *
    * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1310,8 +1309,7 @@ public final class QueryDataObjectsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The standard list page size. Default is 100.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * Optional. The standard list page size.
      * </pre>
      *
      * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1327,8 +1325,7 @@ public final class QueryDataObjectsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The standard list page size. Default is 100.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * Optional. The standard list page size.
      * </pre>
      *
      * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1348,8 +1345,7 @@ public final class QueryDataObjectsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The standard list page size. Default is 100.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * Optional. The standard list page size.
      * </pre>
      *
      * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

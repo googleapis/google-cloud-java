@@ -104,13 +104,13 @@ public interface VectorOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use `dense` or `sparse` instead.
+   * The values of the vector.
    * </pre>
    *
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
    * @return A list containing the values.
    */
   @java.lang.Deprecated
@@ -120,13 +120,13 @@ public interface VectorOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use `dense` or `sparse` instead.
+   * The values of the vector.
    * </pre>
    *
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
    * @return The count of values.
    */
   @java.lang.Deprecated
@@ -136,13 +136,13 @@ public interface VectorOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use `dense` or `sparse` instead.
+   * The values of the vector.
    * </pre>
    *
    * <code>repeated float values = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Vector.values is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=81
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=76
    * @param index The index of the element to return.
    * @return The values at the given index.
    */

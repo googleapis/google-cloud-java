@@ -31,7 +31,6 @@ import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.v1.GrpcDatastoreRpc;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
-import com.google.cloud.datastore.telemetry.MetricsRecorder;
 import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
@@ -65,7 +64,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private final transient @Nonnull DatastoreOpenTelemetryOptions openTelemetryOptions;
   private final transient @Nonnull com.google.cloud.datastore.telemetry.TraceUtil traceUtil;
-  private final transient @Nonnull MetricsRecorder metricsRecorder;
 
   public static class DefaultDatastoreFactory implements DatastoreFactory {
 
@@ -104,11 +102,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   @Nonnull
   public DatastoreOpenTelemetryOptions getOpenTelemetryOptions() {
     return openTelemetryOptions;
-  }
-
-  @Nonnull
-  MetricsRecorder getMetricsRecorder() {
-    return metricsRecorder;
   }
 
   public static class Builder extends ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
@@ -223,7 +216,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
             ? builder.openTelemetryOptions
             : DatastoreOpenTelemetryOptions.newBuilder().build();
     this.traceUtil = com.google.cloud.datastore.telemetry.TraceUtil.getInstance(this);
-    this.metricsRecorder = MetricsRecorder.getInstance(openTelemetryOptions);
 
     namespace = MoreObjects.firstNonNull(builder.namespace, defaultNamespace());
     databaseId = MoreObjects.firstNonNull(builder.databaseId, DEFAULT_DATABASE_ID);

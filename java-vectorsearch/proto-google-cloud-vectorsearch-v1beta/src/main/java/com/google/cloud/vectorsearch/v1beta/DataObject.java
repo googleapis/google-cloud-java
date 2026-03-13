@@ -54,7 +54,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
   private DataObject() {
     name_ = "";
     dataObjectId_ = "";
-    etag_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -160,11 +159,16 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
    * Output only. The id of the dataObject.
    * </pre>
    *
-   * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
    * @return The dataObjectId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getDataObjectId() {
     java.lang.Object ref = dataObjectId_;
     if (ref instanceof java.lang.String) {
@@ -184,11 +188,16 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
    * Output only. The id of the dataObject.
    * </pre>
    *
-   * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
    * @return The bytes for dataObjectId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getDataObjectIdBytes() {
     java.lang.Object ref = dataObjectId_;
     if (ref instanceof java.lang.String) {
@@ -479,59 +488,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
-  public static final int ETAG_FIELD_NUMBER = 8;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object etag_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The etag of the dataObject.
-   * </pre>
-   *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The etag.
-   */
-  @java.lang.Override
-  public java.lang.String getEtag() {
-    java.lang.Object ref = etag_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      etag_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The etag of the dataObject.
-   * </pre>
-   *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for etag.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getEtagBytes() {
-    java.lang.Object ref = etag_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      etag_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -563,9 +519,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetVectors(), VectorsDefaultEntryHolder.defaultEntry, 7);
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, etag_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -601,9 +554,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, vectors__);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, etag_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -635,7 +585,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
       if (!getData().equals(other.getData())) return false;
     }
     if (!internalGetVectors().equals(other.internalGetVectors())) return false;
-    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -667,8 +616,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + VECTORS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetVectors().hashCode();
     }
-    hash = (37 * hash) + ETAG_FIELD_NUMBER;
-    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -860,7 +807,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
         dataBuilder_ = null;
       }
       internalGetMutableVectors().clear();
-      etag_ = "";
       return this;
     }
 
@@ -919,9 +865,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.vectors_ = internalGetVectors().build(VectorsDefaultEntryHolder.defaultEntry);
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.etag_ = etag_;
-      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -959,11 +902,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableVectors().mergeFrom(other.internalGetVectors());
       bitField0_ |= 0x00000020;
-      if (!other.getEtag().isEmpty()) {
-        etag_ = other.etag_;
-        bitField0_ |= 0x00000040;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1036,12 +974,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
-            case 66:
-              {
-                etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1206,10 +1138,15 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the dataObject.
      * </pre>
      *
-     * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
      * @return The dataObjectId.
      */
+    @java.lang.Deprecated
     public java.lang.String getDataObjectId() {
       java.lang.Object ref = dataObjectId_;
       if (!(ref instanceof java.lang.String)) {
@@ -1229,10 +1166,15 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the dataObject.
      * </pre>
      *
-     * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
      * @return The bytes for dataObjectId.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getDataObjectIdBytes() {
       java.lang.Object ref = dataObjectId_;
       if (ref instanceof String) {
@@ -1252,11 +1194,16 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the dataObject.
      * </pre>
      *
-     * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
      * @param value The dataObjectId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDataObjectId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1274,10 +1221,15 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the dataObject.
      * </pre>
      *
-     * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDataObjectId() {
       dataObjectId_ = getDefaultInstance().getDataObjectId();
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1292,11 +1244,16 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the dataObject.
      * </pre>
      *
-     * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+     *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
      * @param value The bytes for dataObjectId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDataObjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2181,117 +2138,6 @@ public final class DataObject extends com.google.protobuf.GeneratedMessage
         builderMap.put(key, entry);
       }
       return (com.google.cloud.vectorsearch.v1beta.Vector.Builder) entry;
-    }
-
-    private java.lang.Object etag_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The etag of the dataObject.
-     * </pre>
-     *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The etag.
-     */
-    public java.lang.String getEtag() {
-      java.lang.Object ref = etag_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        etag_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The etag of the dataObject.
-     * </pre>
-     *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for etag.
-     */
-    public com.google.protobuf.ByteString getEtagBytes() {
-      java.lang.Object ref = etag_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        etag_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The etag of the dataObject.
-     * </pre>
-     *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The etag to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEtag(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      etag_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The etag of the dataObject.
-     * </pre>
-     *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearEtag() {
-      etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The etag of the dataObject.
-     * </pre>
-     *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for etag to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      etag_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.DataObject)

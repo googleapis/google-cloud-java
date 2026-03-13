@@ -75,7 +75,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     purpose_ = "";
     region_ = "";
     reservedInternalRange_ = "";
-    resolveSubnetMask_ = "";
     role_ = "";
     secondaryIpRanges_ = java.util.Collections.emptyList();
     selfLink_ = "";
@@ -943,178 +942,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configures subnet mask resolution for this subnetwork.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.ResolveSubnetMask}
-   */
-  public enum ResolveSubnetMask implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * A value indicating that the enum field is not set.
-     * </pre>
-     *
-     * <code>UNDEFINED_RESOLVE_SUBNET_MASK = 0;</code>
-     */
-    UNDEFINED_RESOLVE_SUBNET_MASK(0),
-    /**
-     *
-     *
-     * <pre>
-     * All ranges assigned to the VM NIC will respond to ARP.
-     * </pre>
-     *
-     * <code>ARP_ALL_RANGES = 445655380;</code>
-     */
-    ARP_ALL_RANGES(445655380),
-    /**
-     *
-     *
-     * <pre>
-     * Only the primary range of the VM NIC will respond to ARP.
-     * </pre>
-     *
-     * <code>ARP_PRIMARY_RANGE = 120210048;</code>
-     */
-    ARP_PRIMARY_RANGE(120210048),
-    UNRECOGNIZED(-1),
-    ;
-
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-          /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 2,
-          /* suffix= */ "",
-          "ResolveSubnetMask");
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A value indicating that the enum field is not set.
-     * </pre>
-     *
-     * <code>UNDEFINED_RESOLVE_SUBNET_MASK = 0;</code>
-     */
-    public static final int UNDEFINED_RESOLVE_SUBNET_MASK_VALUE = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * All ranges assigned to the VM NIC will respond to ARP.
-     * </pre>
-     *
-     * <code>ARP_ALL_RANGES = 445655380;</code>
-     */
-    public static final int ARP_ALL_RANGES_VALUE = 445655380;
-
-    /**
-     *
-     *
-     * <pre>
-     * Only the primary range of the VM NIC will respond to ARP.
-     * </pre>
-     *
-     * <code>ARP_PRIMARY_RANGE = 120210048;</code>
-     */
-    public static final int ARP_PRIMARY_RANGE_VALUE = 120210048;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ResolveSubnetMask valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static ResolveSubnetMask forNumber(int value) {
-      switch (value) {
-        case 0:
-          return UNDEFINED_RESOLVE_SUBNET_MASK;
-        case 445655380:
-          return ARP_ALL_RANGES;
-        case 120210048:
-          return ARP_PRIMARY_RANGE;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ResolveSubnetMask>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<ResolveSubnetMask>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ResolveSubnetMask>() {
-              public ResolveSubnetMask findValueByNumber(int number) {
-                return ResolveSubnetMask.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(4);
-    }
-
-    private static final ResolveSubnetMask[] VALUES = values();
-
-    public static ResolveSubnetMask valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ResolveSubnetMask(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Subnetwork.ResolveSubnetMask)
-  }
-
-  /**
-   *
-   *
-   * <pre>
    * The role of subnetwork. Currently, this field is only used when
    * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
    * subnetwork is one that is currently being used for Envoy-based load
@@ -1261,7 +1088,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(5);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final Role[] VALUES = values();
@@ -1464,7 +1291,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(6);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final StackType[] VALUES = values();
@@ -1637,7 +1464,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(7);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final State[] VALUES = values();
@@ -1669,9 +1496,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Whether this subnetwork's ranges can conflict with existing custom routes.
+   * Whether this subnetwork's ranges can conflict with existing static routes.
    * Setting this to true allows this subnetwork's primary and secondary ranges
-   * to overlap with (and contain) custom routes that have already been
+   * to overlap with (and contain) static routes that have already been
    * configured on the corresponding network.
    *
    * For example if a static route has range 10.1.0.0/16, a subnet
@@ -1687,6 +1514,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    *
    * The default value is false and applies to all existing subnetworks and
    * automatically created subnetworks.
+   *
+   * This field cannot be set to true at resource creation time.
    * </pre>
    *
    * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -1702,9 +1531,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Whether this subnetwork's ranges can conflict with existing custom routes.
+   * Whether this subnetwork's ranges can conflict with existing static routes.
    * Setting this to true allows this subnetwork's primary and secondary ranges
-   * to overlap with (and contain) custom routes that have already been
+   * to overlap with (and contain) static routes that have already been
    * configured on the corresponding network.
    *
    * For example if a static route has range 10.1.0.0/16, a subnet
@@ -1720,6 +1549,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    *
    * The default value is false and applies to all existing subnetworks and
    * automatically created subnetworks.
+   *
+   * This field cannot be set to true at resource creation time.
    * </pre>
    *
    * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -3381,78 +3212,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int RESOLVE_SUBNET_MASK_FIELD_NUMBER = 517696699;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object resolveSubnetMask_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * Configures subnet mask resolution for this subnetwork.
-   * Check the ResolveSubnetMask enum for the list of possible values.
-   * </pre>
-   *
-   * <code>optional string resolve_subnet_mask = 517696699;</code>
-   *
-   * @return Whether the resolveSubnetMask field is set.
-   */
-  @java.lang.Override
-  public boolean hasResolveSubnetMask() {
-    return ((bitField0_ & 0x01000000) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Configures subnet mask resolution for this subnetwork.
-   * Check the ResolveSubnetMask enum for the list of possible values.
-   * </pre>
-   *
-   * <code>optional string resolve_subnet_mask = 517696699;</code>
-   *
-   * @return The resolveSubnetMask.
-   */
-  @java.lang.Override
-  public java.lang.String getResolveSubnetMask() {
-    java.lang.Object ref = resolveSubnetMask_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      resolveSubnetMask_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Configures subnet mask resolution for this subnetwork.
-   * Check the ResolveSubnetMask enum for the list of possible values.
-   * </pre>
-   *
-   * <code>optional string resolve_subnet_mask = 517696699;</code>
-   *
-   * @return The bytes for resolveSubnetMask.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getResolveSubnetMaskBytes() {
-    java.lang.Object ref = resolveSubnetMask_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      resolveSubnetMask_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int ROLE_FIELD_NUMBER = 3506294;
 
   @SuppressWarnings("serial")
@@ -3477,7 +3236,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRole() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -3552,7 +3311,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -3572,7 +3331,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -3592,7 +3351,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -3611,7 +3370,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -3630,7 +3389,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    * An array of configurations for secondary IP ranges for VM instances
    * contained in this subnetwork. The primary IP of such VM must belong to the
    * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-   * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -3661,7 +3420,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -3735,7 +3494,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -3819,7 +3578,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
 
   /**
@@ -4043,7 +3802,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUtilizationDetails() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
@@ -4110,7 +3869,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3506294, role_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -4132,10 +3891,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       output.writeMessage(125404453, getUtilizationDetails());
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
@@ -4180,14 +3939,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < systemReservedInternalIpv6Ranges_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 432294995, systemReservedInternalIpv6Ranges_.getRaw(i));
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -4198,9 +3957,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 506270056, internalIpv6Prefix_);
-    }
-    if (((bitField0_ & 0x01000000) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 517696699, resolveSubnetMask_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4220,7 +3976,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3506294, role_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -4250,10 +4006,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               125404453, getUtilizationDetails());
@@ -4305,7 +4061,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(425908881, stackType_);
     }
     {
@@ -4316,7 +4072,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getSystemReservedInternalIpv6RangesList().size();
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -4328,9 +4084,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(506270056, internalIpv6Prefix_);
-    }
-    if (((bitField0_ & 0x01000000) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(517696699, resolveSubnetMask_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4443,10 +4196,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (hasReservedInternalRange() != other.hasReservedInternalRange()) return false;
     if (hasReservedInternalRange()) {
       if (!getReservedInternalRange().equals(other.getReservedInternalRange())) return false;
-    }
-    if (hasResolveSubnetMask() != other.hasResolveSubnetMask()) return false;
-    if (hasResolveSubnetMask()) {
-      if (!getResolveSubnetMask().equals(other.getResolveSubnetMask())) return false;
     }
     if (hasRole() != other.hasRole()) return false;
     if (hasRole()) {
@@ -4580,10 +4329,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     if (hasReservedInternalRange()) {
       hash = (37 * hash) + RESERVED_INTERNAL_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getReservedInternalRange().hashCode();
-    }
-    if (hasResolveSubnetMask()) {
-      hash = (37 * hash) + RESOLVE_SUBNET_MASK_FIELD_NUMBER;
-      hash = (53 * hash) + getResolveSubnetMask().hashCode();
     }
     if (hasRole()) {
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
@@ -4774,7 +4519,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      bitField1_ = 0;
       allowSubnetCidrRoutesOverlap_ = false;
       creationTimestamp_ = "";
       description_ = "";
@@ -4807,7 +4551,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       purpose_ = "";
       region_ = "";
       reservedInternalRange_ = "";
-      resolveSubnetMask_ = "";
       role_ = "";
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
@@ -4815,7 +4558,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         secondaryIpRanges_ = null;
         secondaryIpRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       selfLink_ = "";
       stackType_ = "";
       state_ = "";
@@ -4857,18 +4600,15 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
-      if (bitField1_ != 0) {
-        buildPartial1(result);
-      }
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Subnetwork result) {
       if (secondaryIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)) {
+        if (((bitField0_ & 0x02000000) != 0)) {
           secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x02000000);
         }
         result.secondaryIpRanges_ = secondaryIpRanges_;
       } else {
@@ -4976,45 +4716,35 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.resolveSubnetMask_ = resolveSubnetMask_;
+        result.role_ = role_;
         to_bitField0_ |= 0x01000000;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.role_ = role_;
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.stackType_ = stackType_;
+        result.state_ = state_;
         to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x10000000;
-      }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
         systemReservedExternalIpv6Ranges_.makeImmutable();
         result.systemReservedExternalIpv6Ranges_ = systemReservedExternalIpv6Ranges_;
       }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         systemReservedInternalIpv6Ranges_.makeImmutable();
         result.systemReservedInternalIpv6Ranges_ = systemReservedInternalIpv6Ranges_;
       }
-      result.bitField0_ |= to_bitField0_;
-    }
-
-    private void buildPartial1(com.google.cloud.compute.v1.Subnetwork result) {
-      int from_bitField1_ = bitField1_;
-      int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.utilizationDetails_ =
             utilizationDetailsBuilder_ == null
                 ? utilizationDetails_
                 : utilizationDetailsBuilder_.build();
-        to_bitField0_ |= 0x20000000;
+        to_bitField0_ |= 0x10000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5139,21 +4869,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00800000;
         onChanged();
       }
-      if (other.hasResolveSubnetMask()) {
-        resolveSubnetMask_ = other.resolveSubnetMask_;
-        bitField0_ |= 0x01000000;
-        onChanged();
-      }
       if (other.hasRole()) {
         role_ = other.role_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (secondaryIpRangesBuilder_ == null) {
         if (!other.secondaryIpRanges_.isEmpty()) {
           if (secondaryIpRanges_.isEmpty()) {
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
           } else {
             ensureSecondaryIpRangesIsMutable();
             secondaryIpRanges_.addAll(other.secondaryIpRanges_);
@@ -5166,7 +4891,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
             secondaryIpRangesBuilder_.dispose();
             secondaryIpRangesBuilder_ = null;
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
             secondaryIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSecondaryIpRangesFieldBuilder()
@@ -5178,23 +4903,23 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (!other.systemReservedExternalIpv6Ranges_.isEmpty()) {
         if (systemReservedExternalIpv6Ranges_.isEmpty()) {
           systemReservedExternalIpv6Ranges_ = other.systemReservedExternalIpv6Ranges_;
-          bitField0_ |= 0x40000000;
+          bitField0_ |= 0x20000000;
         } else {
           ensureSystemReservedExternalIpv6RangesIsMutable();
           systemReservedExternalIpv6Ranges_.addAll(other.systemReservedExternalIpv6Ranges_);
@@ -5204,7 +4929,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       if (!other.systemReservedInternalIpv6Ranges_.isEmpty()) {
         if (systemReservedInternalIpv6Ranges_.isEmpty()) {
           systemReservedInternalIpv6Ranges_ = other.systemReservedInternalIpv6Ranges_;
-          bitField0_ |= 0x80000000;
+          bitField0_ |= 0x40000000;
         } else {
           ensureSystemReservedInternalIpv6RangesIsMutable();
           systemReservedInternalIpv6Ranges_.addAll(other.systemReservedInternalIpv6Ranges_);
@@ -5261,7 +4986,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
             case 28050354:
               {
                 role_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 28050354
             case 244202930:
@@ -5304,14 +5029,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 878060682
             case 1003235626:
               {
                 input.readMessage(
                     internalGetUtilizationDetailsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000001;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 1003235626
             case 1093271322:
@@ -5410,7 +5135,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case -887696246
             case -836607334:
@@ -5423,7 +5148,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case -645248918
             case -616028214:
@@ -5444,12 +5169,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case -244806846
-            case -153393702:
-              {
-                resolveSubnetMask_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
-                break;
-              } // case -153393702
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5468,7 +5187,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
-    private int bitField1_;
 
     private boolean allowSubnetCidrRoutesOverlap_;
 
@@ -5476,9 +5194,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether this subnetwork's ranges can conflict with existing custom routes.
+     * Whether this subnetwork's ranges can conflict with existing static routes.
      * Setting this to true allows this subnetwork's primary and secondary ranges
-     * to overlap with (and contain) custom routes that have already been
+     * to overlap with (and contain) static routes that have already been
      * configured on the corresponding network.
      *
      * For example if a static route has range 10.1.0.0/16, a subnet
@@ -5494,6 +5212,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      * The default value is false and applies to all existing subnetworks and
      * automatically created subnetworks.
+     *
+     * This field cannot be set to true at resource creation time.
      * </pre>
      *
      * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -5509,9 +5229,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether this subnetwork's ranges can conflict with existing custom routes.
+     * Whether this subnetwork's ranges can conflict with existing static routes.
      * Setting this to true allows this subnetwork's primary and secondary ranges
-     * to overlap with (and contain) custom routes that have already been
+     * to overlap with (and contain) static routes that have already been
      * configured on the corresponding network.
      *
      * For example if a static route has range 10.1.0.0/16, a subnet
@@ -5527,6 +5247,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      * The default value is false and applies to all existing subnetworks and
      * automatically created subnetworks.
+     *
+     * This field cannot be set to true at resource creation time.
      * </pre>
      *
      * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -5542,9 +5264,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether this subnetwork's ranges can conflict with existing custom routes.
+     * Whether this subnetwork's ranges can conflict with existing static routes.
      * Setting this to true allows this subnetwork's primary and secondary ranges
-     * to overlap with (and contain) custom routes that have already been
+     * to overlap with (and contain) static routes that have already been
      * configured on the corresponding network.
      *
      * For example if a static route has range 10.1.0.0/16, a subnet
@@ -5560,6 +5282,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      * The default value is false and applies to all existing subnetworks and
      * automatically created subnetworks.
+     *
+     * This field cannot be set to true at resource creation time.
      * </pre>
      *
      * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -5579,9 +5303,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether this subnetwork's ranges can conflict with existing custom routes.
+     * Whether this subnetwork's ranges can conflict with existing static routes.
      * Setting this to true allows this subnetwork's primary and secondary ranges
-     * to overlap with (and contain) custom routes that have already been
+     * to overlap with (and contain) static routes that have already been
      * configured on the corresponding network.
      *
      * For example if a static route has range 10.1.0.0/16, a subnet
@@ -5597,6 +5321,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      * The default value is false and applies to all existing subnetworks and
      * automatically created subnetworks.
+     *
+     * This field cannot be set to true at resource creation time.
      * </pre>
      *
      * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
@@ -8883,138 +8609,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private java.lang.Object resolveSubnetMask_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Configures subnet mask resolution for this subnetwork.
-     * Check the ResolveSubnetMask enum for the list of possible values.
-     * </pre>
-     *
-     * <code>optional string resolve_subnet_mask = 517696699;</code>
-     *
-     * @return Whether the resolveSubnetMask field is set.
-     */
-    public boolean hasResolveSubnetMask() {
-      return ((bitField0_ & 0x01000000) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Configures subnet mask resolution for this subnetwork.
-     * Check the ResolveSubnetMask enum for the list of possible values.
-     * </pre>
-     *
-     * <code>optional string resolve_subnet_mask = 517696699;</code>
-     *
-     * @return The resolveSubnetMask.
-     */
-    public java.lang.String getResolveSubnetMask() {
-      java.lang.Object ref = resolveSubnetMask_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        resolveSubnetMask_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Configures subnet mask resolution for this subnetwork.
-     * Check the ResolveSubnetMask enum for the list of possible values.
-     * </pre>
-     *
-     * <code>optional string resolve_subnet_mask = 517696699;</code>
-     *
-     * @return The bytes for resolveSubnetMask.
-     */
-    public com.google.protobuf.ByteString getResolveSubnetMaskBytes() {
-      java.lang.Object ref = resolveSubnetMask_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        resolveSubnetMask_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Configures subnet mask resolution for this subnetwork.
-     * Check the ResolveSubnetMask enum for the list of possible values.
-     * </pre>
-     *
-     * <code>optional string resolve_subnet_mask = 517696699;</code>
-     *
-     * @param value The resolveSubnetMask to set.
-     * @return This builder for chaining.
-     */
-    public Builder setResolveSubnetMask(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      resolveSubnetMask_ = value;
-      bitField0_ |= 0x01000000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Configures subnet mask resolution for this subnetwork.
-     * Check the ResolveSubnetMask enum for the list of possible values.
-     * </pre>
-     *
-     * <code>optional string resolve_subnet_mask = 517696699;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearResolveSubnetMask() {
-      resolveSubnetMask_ = getDefaultInstance().getResolveSubnetMask();
-      bitField0_ = (bitField0_ & ~0x01000000);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Configures subnet mask resolution for this subnetwork.
-     * Check the ResolveSubnetMask enum for the list of possible values.
-     * </pre>
-     *
-     * <code>optional string resolve_subnet_mask = 517696699;</code>
-     *
-     * @param value The bytes for resolveSubnetMask to set.
-     * @return This builder for chaining.
-     */
-    public Builder setResolveSubnetMaskBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      resolveSubnetMask_ = value;
-      bitField0_ |= 0x01000000;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object role_ = "";
 
     /**
@@ -9035,7 +8629,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -9119,7 +8713,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       role_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9143,7 +8737,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRole() {
       role_ = getDefaultInstance().getRole();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -9172,7 +8766,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       role_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9181,11 +8775,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         secondaryIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureSecondaryIpRangesIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x02000000) != 0)) {
         secondaryIpRanges_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SubnetworkSecondaryRange>(
                 secondaryIpRanges_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
       }
     }
 
@@ -9202,7 +8796,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9225,7 +8819,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9247,7 +8841,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9269,7 +8863,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9298,7 +8892,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9324,7 +8918,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9353,7 +8947,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9382,7 +8976,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9408,7 +9002,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9434,7 +9028,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9460,7 +9054,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9470,7 +9064,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     public Builder clearSecondaryIpRanges() {
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         onChanged();
       } else {
         secondaryIpRangesBuilder_.clear();
@@ -9485,7 +9079,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9510,7 +9104,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9529,7 +9123,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9552,7 +9146,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9575,7 +9169,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9595,7 +9189,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9616,7 +9210,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * An array of configurations for secondary IP ranges for VM instances
      * contained in this subnetwork. The primary IP of such VM must belong to the
      * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
-     * primary or secondary ranges. This field can be updated with apatch request. Supports both IPv4 and IPv6 ranges.
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -9640,7 +9234,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.SubnetworkSecondaryRange.Builder,
                 com.google.cloud.compute.v1.SubnetworkSecondaryRangeOrBuilder>(
                 secondaryIpRanges_,
-                ((bitField0_ & 0x04000000) != 0),
+                ((bitField0_ & 0x02000000) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryIpRanges_ = null;
@@ -9662,7 +9256,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -9728,7 +9322,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -9746,7 +9340,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -9769,7 +9363,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -9793,7 +9387,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -9874,7 +9468,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -9897,7 +9491,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -9925,7 +9519,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -9949,7 +9543,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -10030,7 +9624,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10053,7 +9647,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -10081,7 +9675,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10094,7 +9688,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         systemReservedExternalIpv6Ranges_ =
             new com.google.protobuf.LazyStringArrayList(systemReservedExternalIpv6Ranges_);
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x20000000;
     }
 
     /**
@@ -10184,7 +9778,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       ensureSystemReservedExternalIpv6RangesIsMutable();
       systemReservedExternalIpv6Ranges_.set(index, value);
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10208,7 +9802,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       ensureSystemReservedExternalIpv6RangesIsMutable();
       systemReservedExternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10231,7 +9825,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       ensureSystemReservedExternalIpv6RangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, systemReservedExternalIpv6Ranges_);
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10250,7 +9844,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSystemReservedExternalIpv6Ranges() {
       systemReservedExternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       ;
       onChanged();
       return this;
@@ -10276,7 +9870,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSystemReservedExternalIpv6RangesIsMutable();
       systemReservedExternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10289,7 +9883,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         systemReservedInternalIpv6Ranges_ =
             new com.google.protobuf.LazyStringArrayList(systemReservedInternalIpv6Ranges_);
       }
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x40000000;
     }
 
     /**
@@ -10379,7 +9973,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       ensureSystemReservedInternalIpv6RangesIsMutable();
       systemReservedInternalIpv6Ranges_.set(index, value);
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -10403,7 +9997,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       }
       ensureSystemReservedInternalIpv6RangesIsMutable();
       systemReservedInternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -10426,7 +10020,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       ensureSystemReservedInternalIpv6RangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, systemReservedInternalIpv6Ranges_);
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -10445,7 +10039,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSystemReservedInternalIpv6Ranges() {
       systemReservedInternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       ;
       onChanged();
       return this;
@@ -10471,7 +10065,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSystemReservedInternalIpv6RangesIsMutable();
       systemReservedInternalIpv6Ranges_.add(value);
-      bitField0_ |= 0x80000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -10498,7 +10092,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * @return Whether the utilizationDetails field is set.
      */
     public boolean hasUtilizationDetails() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -10547,7 +10141,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       } else {
         utilizationDetailsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -10571,7 +10165,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
       } else {
         utilizationDetailsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000001;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -10591,7 +10185,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
     public Builder mergeUtilizationDetails(
         com.google.cloud.compute.v1.SubnetworkUtilizationDetails value) {
       if (utilizationDetailsBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x80000000) != 0)
             && utilizationDetails_ != null
             && utilizationDetails_
                 != com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()) {
@@ -10603,7 +10197,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
         utilizationDetailsBuilder_.mergeFrom(value);
       }
       if (utilizationDetails_ != null) {
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -10622,7 +10216,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUtilizationDetails() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x80000000);
       utilizationDetails_ = null;
       if (utilizationDetailsBuilder_ != null) {
         utilizationDetailsBuilder_.dispose();
@@ -10646,7 +10240,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder
         getUtilizationDetailsBuilder() {
-      bitField1_ |= 0x00000001;
+      bitField0_ |= 0x80000000;
       onChanged();
       return internalGetUtilizationDetailsFieldBuilder().getBuilder();
     }

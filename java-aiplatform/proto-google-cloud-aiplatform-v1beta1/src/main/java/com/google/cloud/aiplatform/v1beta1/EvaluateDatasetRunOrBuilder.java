@@ -58,34 +58,6 @@ public interface EvaluateDatasetRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the evaluation run. Format:
-   * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
-   * </pre>
-   *
-   * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The evaluationRun.
-   */
-  java.lang.String getEvaluationRun();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The resource name of the evaluation run. Format:
-   * `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run_id}`.
-   * </pre>
-   *
-   * <code>string evaluation_run = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for evaluationRun.
-   */
-  com.google.protobuf.ByteString getEvaluationRunBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Output only. The checkpoint id used in the evaluation run. Only populated
    * when evaluating checkpoints.
    * </pre>
@@ -114,7 +86,7 @@ public interface EvaluateDatasetRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Results for EvaluationService.
+   * Output only. Results for EvaluationService.EvaluateDataset.
    * </pre>
    *
    * <code>
@@ -129,7 +101,7 @@ public interface EvaluateDatasetRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Results for EvaluationService.
+   * Output only. Results for EvaluationService.EvaluateDataset.
    * </pre>
    *
    * <code>
@@ -144,7 +116,7 @@ public interface EvaluateDatasetRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Results for EvaluationService.
+   * Output only. Results for EvaluationService.EvaluateDataset.
    * </pre>
    *
    * <code>

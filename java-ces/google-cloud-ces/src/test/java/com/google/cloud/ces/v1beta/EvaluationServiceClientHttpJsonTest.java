@@ -203,15 +203,15 @@ public class EvaluationServiceClientHttpJsonTest {
     UploadEvaluationAudioResponse expectedResponse =
         UploadEvaluationAudioResponse.newBuilder()
             .setAudioGcsUri("audioGcsUri83075659")
-            .setTranscript("transcript-1729759306")
-            .setDuration(Duration.newBuilder().build())
+            .setAudioTranscript("audioTranscript946674732")
+            .setAudioDuration(Duration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+    AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
     ByteString audioContent = ByteString.EMPTY;
 
-    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(name, audioContent);
+    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(app, audioContent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -237,9 +237,9 @@ public class EvaluationServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+      AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
       ByteString audioContent = ByteString.EMPTY;
-      client.uploadEvaluationAudio(name, audioContent);
+      client.uploadEvaluationAudio(app, audioContent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -251,16 +251,15 @@ public class EvaluationServiceClientHttpJsonTest {
     UploadEvaluationAudioResponse expectedResponse =
         UploadEvaluationAudioResponse.newBuilder()
             .setAudioGcsUri("audioGcsUri83075659")
-            .setTranscript("transcript-1729759306")
-            .setDuration(Duration.newBuilder().build())
+            .setAudioTranscript("audioTranscript946674732")
+            .setAudioDuration(Duration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name =
-        "projects/project-7899/locations/location-7899/apps/app-7899/evaluations/evaluation-7899";
+    String app = "projects/project-4468/locations/location-4468/apps/app-4468";
     ByteString audioContent = ByteString.EMPTY;
 
-    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(name, audioContent);
+    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(app, audioContent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -286,10 +285,9 @@ public class EvaluationServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name =
-          "projects/project-7899/locations/location-7899/apps/app-7899/evaluations/evaluation-7899";
+      String app = "projects/project-4468/locations/location-4468/apps/app-4468";
       ByteString audioContent = ByteString.EMPTY;
-      client.uploadEvaluationAudio(name, audioContent);
+      client.uploadEvaluationAudio(app, audioContent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -367,7 +367,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Update the specified disk with the data included in the request. Update is performed only on selected fields included as part of update-mask.</td>
+ *      <td><p> Update the specified disk with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: user_license.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2597,7 +2597,8 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask.
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
    *
    * <p>Sample code:
    *
@@ -2637,7 +2638,8 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask.
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
    *
    * <p>Sample code:
    *
@@ -2672,7 +2674,8 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask.
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
    *
    * <p>Sample code:
    *
@@ -2708,7 +2711,8 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask.
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
    *
    * <p>Sample code:
    *

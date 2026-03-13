@@ -30,11 +30,10 @@ public interface ExportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp create_time = 1;</code>
    *
    * @return Whether the createTime field is set.
    */
@@ -44,11 +43,10 @@ public interface ExportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp create_time = 1;</code>
    *
    * @return The createTime.
    */
@@ -58,11 +56,10 @@ public interface ExportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp create_time = 1;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -70,11 +67,10 @@ public interface ExportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation finished.
+   * The time the operation finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp finish_time = 2;</code>
    *
    * @return Whether the finishTime field is set.
    */
@@ -84,11 +80,10 @@ public interface ExportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation finished.
+   * The time the operation finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp finish_time = 2;</code>
    *
    * @return The finishTime.
    */
@@ -98,11 +93,10 @@ public interface ExportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation finished.
+   * The time the operation finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp finish_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp finish_time = 2;</code>
    */
   com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder();
 }

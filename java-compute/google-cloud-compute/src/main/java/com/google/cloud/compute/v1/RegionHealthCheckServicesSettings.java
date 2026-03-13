@@ -160,13 +160,6 @@ public class RegionHealthCheckServicesSettings
     return ((RegionHealthCheckServicesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<
-          TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((RegionHealthCheckServicesStubSettings) getStubSettings()).testIamPermissionsSettings();
-  }
-
   public static final RegionHealthCheckServicesSettings create(
       RegionHealthCheckServicesStubSettings stub) throws IOException {
     return new RegionHealthCheckServicesSettings.Builder(stub.toBuilder()).build();
@@ -314,13 +307,6 @@ public class RegionHealthCheckServicesSettings
     public OperationCallSettings.Builder<PatchRegionHealthCheckServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<
-            TestIamPermissionsRegionHealthCheckServiceRequest, TestPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

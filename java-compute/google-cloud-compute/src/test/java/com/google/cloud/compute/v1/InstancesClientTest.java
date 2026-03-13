@@ -891,7 +891,6 @@ public class InstancesClientTest {
             .setStatus("status-892481550")
             .setStatusMessage("statusMessage-958704715")
             .setTags(Tags.newBuilder().build())
-            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);

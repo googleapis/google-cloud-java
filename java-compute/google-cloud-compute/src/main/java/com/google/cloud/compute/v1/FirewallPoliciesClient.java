@@ -1630,7 +1630,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListAssociationsFirewallPolicyRequest request =
    *       ListAssociationsFirewallPolicyRequest.newBuilder()
-   *           .setIncludeInheritedPolicies(true)
    *           .setTargetResource("targetResource-1933150017")
    *           .build();
    *   FirewallPoliciesListAssociationsResponse response =
@@ -1661,7 +1660,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListAssociationsFirewallPolicyRequest request =
    *       ListAssociationsFirewallPolicyRequest.newBuilder()
-   *           .setIncludeInheritedPolicies(true)
    *           .setTargetResource("targetResource-1933150017")
    *           .build();
    *   ApiFuture<FirewallPoliciesListAssociationsResponse> future =

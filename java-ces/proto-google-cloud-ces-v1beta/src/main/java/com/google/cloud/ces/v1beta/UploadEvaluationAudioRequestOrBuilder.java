@@ -30,35 +30,33 @@ public interface UploadEvaluationAudioRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Evaluation for which to upload the
-   * evaluation audio. Format:
-   * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
+   * Required. The resource name of the App for which to upload the evaluation
+   * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The name.
+   * @return The app.
    */
-  java.lang.String getName();
+  java.lang.String getApp();
 
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the Evaluation for which to upload the
-   * evaluation audio. Format:
-   * `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
+   * Required. The resource name of the App for which to upload the evaluation
+   * audio. Format: `projects/{project}/locations/{location}/apps/{app}`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string app = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for name.
+   * @return The bytes for app.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString getAppBytes();
 
   /**
    *
@@ -74,32 +72,4 @@ public interface UploadEvaluationAudioRequestOrBuilder
    * @return The audioContent.
    */
   com.google.protobuf.ByteString getAudioContent();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The Google Cloud Storage URI of the previously uploaded audio
-   * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
-   * </pre>
-   *
-   * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The previousAudioGcsUri.
-   */
-  java.lang.String getPreviousAudioGcsUri();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The Google Cloud Storage URI of the previously uploaded audio
-   * file to be deleted. Format: `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`
-   * </pre>
-   *
-   * <code>string previous_audio_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for previousAudioGcsUri.
-   */
-  com.google.protobuf.ByteString getPreviousAudioGcsUriBytes();
 }

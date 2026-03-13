@@ -40,7 +40,6 @@ public class SyncDeleteDataObject {
               .setName(
                   DataObjectName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATAOBJECT]")
                       .toString())
-              .setEtag("etag3123477")
               .build();
       dataObjectServiceClient.deleteDataObject(request);
     }

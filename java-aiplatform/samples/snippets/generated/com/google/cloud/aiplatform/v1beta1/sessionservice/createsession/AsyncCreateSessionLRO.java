@@ -43,7 +43,6 @@ public class AsyncCreateSessionLRO {
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
               .setSession(Session.newBuilder().build())
-              .setSessionId("sessionId607796817")
               .build();
       OperationFuture<Session, CreateSessionOperationMetadata> future =
           sessionServiceClient.createSessionOperationCallable().futureCall(request);

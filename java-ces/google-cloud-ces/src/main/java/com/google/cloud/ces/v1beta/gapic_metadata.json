@@ -94,9 +94,6 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
-            "GetSecuritySettings": {
-              "methods": ["getSecuritySettings", "getSecuritySettings", "getSecuritySettings", "getSecuritySettingsCallable"]
-            },
             "GetTool": {
               "methods": ["getTool", "getTool", "getTool", "getToolCallable"]
             },
@@ -156,9 +153,6 @@
             },
             "UpdateGuardrail": {
               "methods": ["updateGuardrail", "updateGuardrail", "updateGuardrailCallable"]
-            },
-            "UpdateSecuritySettings": {
-              "methods": ["updateSecuritySettings", "updateSecuritySettings", "updateSecuritySettingsCallable"]
             },
             "UpdateTool": {
               "methods": ["updateTool", "updateTool", "updateToolCallable"]

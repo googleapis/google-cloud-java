@@ -259,7 +259,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] State for the peering.
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkPeering.State}
@@ -1223,7 +1225,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] State for the peering.
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1240,7 +1244,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] State for the peering.
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1265,7 +1271,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] State for the peering.
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3395,7 +3403,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] State for the peering.
+     * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+     * peering is `ACTIVE` when there's a matching configuration in the peer
+     * network.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3411,7 +3421,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] State for the peering.
+     * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+     * peering is `ACTIVE` when there's a matching configuration in the peer
+     * network.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3435,7 +3447,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] State for the peering.
+     * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+     * peering is `ACTIVE` when there's a matching configuration in the peer
+     * network.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3459,7 +3473,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] State for the peering.
+     * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+     * peering is `ACTIVE` when there's a matching configuration in the peer
+     * network.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3482,7 +3498,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] State for the peering.
+     * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+     * peering is `ACTIVE` when there's a matching configuration in the peer
+     * network.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3501,7 +3519,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] State for the peering.
+     * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+     * peering is `ACTIVE` when there's a matching configuration in the peer
+     * network.
      * Check the State enum for the list of possible values.
      * </pre>
      *

@@ -80,12 +80,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.vectorsearch.v1beta.DataObject> getDataObjectsList() {
@@ -96,12 +94,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder>
@@ -113,12 +109,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   @java.lang.Override
   public int getDataObjectsCount() {
@@ -129,12 +123,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.vectorsearch.v1beta.DataObject getDataObjects(int index) {
@@ -145,12 +137,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder getDataObjectsOrBuilder(
@@ -548,12 +538,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public java.util.List<com.google.cloud.vectorsearch.v1beta.DataObject> getDataObjectsList() {
       if (dataObjectsBuilder_ == null) {
@@ -567,12 +555,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public int getDataObjectsCount() {
       if (dataObjectsBuilder_ == null) {
@@ -586,12 +572,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public com.google.cloud.vectorsearch.v1beta.DataObject getDataObjects(int index) {
       if (dataObjectsBuilder_ == null) {
@@ -605,12 +589,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder setDataObjects(
         int index, com.google.cloud.vectorsearch.v1beta.DataObject value) {
@@ -631,12 +613,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder setDataObjects(
         int index, com.google.cloud.vectorsearch.v1beta.DataObject.Builder builderForValue) {
@@ -654,12 +634,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder addDataObjects(com.google.cloud.vectorsearch.v1beta.DataObject value) {
       if (dataObjectsBuilder_ == null) {
@@ -679,12 +657,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder addDataObjects(
         int index, com.google.cloud.vectorsearch.v1beta.DataObject value) {
@@ -705,12 +681,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder addDataObjects(
         com.google.cloud.vectorsearch.v1beta.DataObject.Builder builderForValue) {
@@ -728,12 +702,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder addDataObjects(
         int index, com.google.cloud.vectorsearch.v1beta.DataObject.Builder builderForValue) {
@@ -751,12 +723,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder addAllDataObjects(
         java.lang.Iterable<? extends com.google.cloud.vectorsearch.v1beta.DataObject> values) {
@@ -774,12 +744,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder clearDataObjects() {
       if (dataObjectsBuilder_ == null) {
@@ -796,12 +764,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public Builder removeDataObjects(int index) {
       if (dataObjectsBuilder_ == null) {
@@ -818,12 +784,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public com.google.cloud.vectorsearch.v1beta.DataObject.Builder getDataObjectsBuilder(
         int index) {
@@ -834,12 +798,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder getDataObjectsOrBuilder(
         int index) {
@@ -854,12 +816,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public java.util.List<? extends com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder>
         getDataObjectsOrBuilderList() {
@@ -874,12 +834,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public com.google.cloud.vectorsearch.v1beta.DataObject.Builder addDataObjectsBuilder() {
       return internalGetDataObjectsFieldBuilder()
@@ -890,12 +848,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public com.google.cloud.vectorsearch.v1beta.DataObject.Builder addDataObjectsBuilder(
         int index) {
@@ -907,12 +863,10 @@ public final class BatchCreateDataObjectsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output only. DataObjects created.
+     * DataObjects created.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
      */
     public java.util.List<com.google.cloud.vectorsearch.v1beta.DataObject.Builder>
         getDataObjectsBuilderList() {

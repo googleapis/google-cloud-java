@@ -43,7 +43,6 @@ public class AsyncCreateSession {
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
               .setSession(Session.newBuilder().build())
-              .setSessionId("sessionId607796817")
               .build();
       ApiFuture<Operation> future =
           sessionServiceClient.createSessionCallable().futureCall(request);

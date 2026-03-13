@@ -30,12 +30,10 @@ public interface BatchCreateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   java.util.List<com.google.cloud.vectorsearch.v1beta.DataObject> getDataObjectsList();
 
@@ -43,12 +41,10 @@ public interface BatchCreateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   com.google.cloud.vectorsearch.v1beta.DataObject getDataObjects(int index);
 
@@ -56,12 +52,10 @@ public interface BatchCreateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   int getDataObjectsCount();
 
@@ -69,12 +63,10 @@ public interface BatchCreateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   java.util.List<? extends com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder>
       getDataObjectsOrBuilderList();
@@ -83,12 +75,10 @@ public interface BatchCreateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. DataObjects created.
+   * DataObjects created.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 1;</code>
    */
   com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder getDataObjectsOrBuilder(int index);
 }

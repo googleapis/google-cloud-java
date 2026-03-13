@@ -223,12 +223,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-   * be on the left hand side of each condition (for example: `display_name =
-   * "list 1"`). Fields must be specified using either all [camel
-   * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-   * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-   * camel case and snake case.
+   * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+   * the left hand side of each condition (for example: `display_name = "list
+   * 1"`).
    *
    * Supported operations:
    *
@@ -273,12 +270,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-   * be on the left hand side of each condition (for example: `display_name =
-   * "list 1"`). Fields must be specified using either all [camel
-   * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-   * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-   * camel case and snake case.
+   * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+   * the left hand side of each condition (for example: `display_name = "list
+   * 1"`).
    *
    * Supported operations:
    *
@@ -1027,12 +1021,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-     * be on the left hand side of each condition (for example: `display_name =
-     * "list 1"`). Fields must be specified using either all [camel
-     * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-     * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-     * camel case and snake case.
+     * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+     * the left hand side of each condition (for example: `display_name = "list
+     * 1"`).
      *
      * Supported operations:
      *
@@ -1076,12 +1067,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-     * be on the left hand side of each condition (for example: `display_name =
-     * "list 1"`). Fields must be specified using either all [camel
-     * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-     * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-     * camel case and snake case.
+     * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+     * the left hand side of each condition (for example: `display_name = "list
+     * 1"`).
      *
      * Supported operations:
      *
@@ -1125,12 +1113,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-     * be on the left hand side of each condition (for example: `display_name =
-     * "list 1"`). Fields must be specified using either all [camel
-     * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-     * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-     * camel case and snake case.
+     * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+     * the left hand side of each condition (for example: `display_name = "list
+     * 1"`).
      *
      * Supported operations:
      *
@@ -1173,12 +1158,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-     * be on the left hand side of each condition (for example: `display_name =
-     * "list 1"`). Fields must be specified using either all [camel
-     * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-     * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-     * camel case and snake case.
+     * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+     * the left hand side of each condition (for example: `display_name = "list
+     * 1"`).
      *
      * Supported operations:
      *
@@ -1217,12 +1199,9 @@ public final class ListUserListsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-     * be on the left hand side of each condition (for example: `display_name =
-     * "list 1"`). Fields must be specified using either all [camel
-     * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-     * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-     * camel case and snake case.
+     * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+     * the left hand side of each condition (for example: `display_name = "list
+     * 1"`).
      *
      * Supported operations:
      *

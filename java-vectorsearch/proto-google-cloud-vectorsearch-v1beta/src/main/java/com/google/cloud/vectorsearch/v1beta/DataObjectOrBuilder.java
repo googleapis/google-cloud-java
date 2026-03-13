@@ -69,10 +69,15 @@ public interface DataObjectOrBuilder
    * Output only. The id of the dataObject.
    * </pre>
    *
-   * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
    * @return The dataObjectId.
    */
+  @java.lang.Deprecated
   java.lang.String getDataObjectId();
 
   /**
@@ -82,10 +87,15 @@ public interface DataObjectOrBuilder
    * Output only. The id of the dataObject.
    * </pre>
    *
-   * <code>string data_object_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string data_object_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.vectorsearch.v1beta.DataObject.data_object_id is deprecated. See
+   *     google/cloud/vectorsearch/v1beta/data_object.proto;l=46
    * @return The bytes for dataObjectId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getDataObjectIdBytes();
 
   /**
@@ -277,30 +287,4 @@ public interface DataObjectOrBuilder
    * </code>
    */
   com.google.cloud.vectorsearch.v1beta.Vector getVectorsOrThrow(java.lang.String key);
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The etag of the dataObject.
-   * </pre>
-   *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The etag.
-   */
-  java.lang.String getEtag();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The etag of the dataObject.
-   * </pre>
-   *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for etag.
-   */
-  com.google.protobuf.ByteString getEtagBytes();
 }

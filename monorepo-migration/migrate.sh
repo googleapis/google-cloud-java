@@ -29,6 +29,8 @@ check_command() {
 check_command git
 check_command python3
 check_command mvn
+check_command jq
+check_command git-filter-repo
 
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
@@ -56,6 +58,7 @@ FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
+UPDATE_DEP_MGMT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_dependency_management.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -72,14 +75,22 @@ echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
     git clone "$SOURCE_REPO_URL" "$SOURCE_DIR"
+fi
+
+if [ "$SKIP_SOURCE_UPDATE" == "true" ]; then
+    echo "Skipping source update"
 else
-    echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
-    cd "$SOURCE_DIR"
+    pushd "$SOURCE_DIR"
     git fetch origin
     git checkout -f "main"
     git reset --hard origin/main
     git clean -fd
-    cd - > /dev/null
+
+    # 1.1 Modify history of the split repo to move files to the destination target directory
+    echo "Moving files to destination path: ${SOURCE_REPO_NAME}"
+    git filter-repo \
+      --to-subdirectory-filter  "${SOURCE_REPO_NAME}" --force
+    popd
 fi
 
 # 1.5 Extract CODEOWNERS from source repository as default
@@ -147,7 +158,8 @@ fi
 
 
 # 2.5 Create a new feature branch for the migration
-BRANCH_NAME="migrate-$SOURCE_REPO_NAME"
+BRANCH_NAME_SUFFIX="${BRANCH_NAME_SUFFIX:-}"
+BRANCH_NAME="migrate-${SOURCE_REPO_NAME}${BRANCH_NAME_SUFFIX}"
 echo "Creating feature branch: $BRANCH_NAME"
 if git rev-parse --verify "$BRANCH_NAME" >/dev/null 2>&1; then
     git branch -D "$BRANCH_NAME"
@@ -167,11 +179,8 @@ git fetch "$SOURCE_REPO_NAME"
 
 # 5. Merge the histories using 'ours' strategy to keep monorepo content
 echo "Merging histories (strategy: ours)..."
-git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours --no-commit -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
-
-# 6. Read the tree from the source repo into the desired subdirectory
-echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
-git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
+# git merge --allow-unrelated-histories -s ours --no-ff "$SOURCE_REPO_NAME/main" --no-commit -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+git merge --allow-unrelated-histories --no-commit "$SOURCE_REPO_NAME/main" -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 
 # 6.5 Remove common files from the root of the migrated library
 echo "Removing common files from the root of $SOURCE_REPO_NAME/..."
@@ -180,7 +189,154 @@ rm -f "$SOURCE_REPO_NAME/renovate.json"
 rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
 rm -rf "$SOURCE_REPO_NAME/.kokoro"
+git checkout -- "$SOURCE_REPO_NAME/.kokoro/presubmit/*.sh" || true
 # rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
+
+# 6.6 Create split integration config if needed
+SOURCE_INTEGRATION_CFG="$SOURCE_DIR/.kokoro/presubmit/integration.cfg"
+if [ -f "$SOURCE_INTEGRATION_CFG" ]; then
+    echo "Creating split integration config for $SOURCE_REPO_NAME..."
+    SHORT_NAME="${SOURCE_REPO_NAME#java-}"
+    TARGET_INTEGRATION_CFG=".kokoro/presubmit/${SHORT_NAME}-integration.cfg"
+    
+    cp "$SOURCE_INTEGRATION_CFG" "$TARGET_INTEGRATION_CFG"
+
+    # Replace JOB_TYPE with integration-single. Robustly handle multi-line or single-line.
+    perl -0777 -i -pe 's/(key:\s*"JOB_TYPE"\s*value:\s*")[^"]*(")/$1integration-single$2/g' "$TARGET_INTEGRATION_CFG"
+
+    # Append BUILD_SUBDIR
+    cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "BUILD_SUBDIR"
+  value: "$SOURCE_REPO_NAME"
+}
+EOF
+
+    if [ -n "$INTEGRATION_TEST_ARGS" ]; then
+        cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "INTEGRATION_TEST_ARGS"
+  value: "$INTEGRATION_TEST_ARGS"
+}
+EOF
+    fi
+
+    if [ -n "$EXTRA_KOKORO_ENVS" ]; then
+        OLD_IFS="$IFS"
+        IFS=','
+        for env in $EXTRA_KOKORO_ENVS; do
+            key="${env%%=*}"
+            value="${env#*=}"
+            cat <<EOF >> "$TARGET_INTEGRATION_CFG"
+
+env_vars: {
+  key: "$key"
+  value: "$value"
+}
+EOF
+        done
+        IFS="$OLD_IFS"
+    fi
+
+    if [ "${TEST_WITH_EXISTING:-false}" = "true" ]; then
+        echo "Copying to logging-integration.cfg for testing..."
+        cp "$TARGET_INTEGRATION_CFG" ".kokoro/presubmit/logging-integration.cfg"
+        git add ".kokoro/presubmit/logging-integration.cfg"
+    fi
+
+    echo "Committing split integration config..."
+    git add "$TARGET_INTEGRATION_CFG"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split integration config"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 6.6b Create split GraalVM config if needed
+SOURCE_GRAALVM_CFG="$SOURCE_DIR/.kokoro/presubmit/graalvm-native-a.cfg"
+if [ -f "$SOURCE_GRAALVM_CFG" ]; then
+    echo "Creating split GraalVM config for $SOURCE_REPO_NAME..."
+    SHORT_NAME="${SOURCE_REPO_NAME#java-}"
+    TARGET_GRAALVM_CFG=".kokoro/presubmit/${SHORT_NAME}-graalvm-native-presubmit.cfg"
+    
+    cp "$SOURCE_GRAALVM_CFG" "$TARGET_GRAALVM_CFG"
+
+    # Replace JOB_TYPE with graalvm-single. Robustly handle multi-line or single-line.
+    perl -0777 -i -pe 's/(key:\s*"JOB_TYPE"\s*value:\s*")[^"]*(")/$1graalvm-single$2/g' "$TARGET_GRAALVM_CFG"
+
+    # Append BUILD_SUBDIR
+    cat <<EOF >> "$TARGET_GRAALVM_CFG"
+
+env_vars: {
+  key: "BUILD_SUBDIR"
+  value: "$SOURCE_REPO_NAME"
+}
+EOF
+
+    if [ -n "$INTEGRATION_TEST_ARGS" ]; then
+        cat <<EOF >> "$TARGET_GRAALVM_CFG"
+
+env_vars: {
+  key: "INTEGRATION_TEST_ARGS"
+  value: "$INTEGRATION_TEST_ARGS"
+}
+EOF
+    fi
+
+    if [ -n "$EXTRA_KOKORO_ENVS" ]; then
+        OLD_IFS="$IFS"
+        IFS=','
+        for env in $EXTRA_KOKORO_ENVS; do
+            key="${env%%=*}"
+            value="${env#*=}"
+            cat <<EOF >> "$TARGET_GRAALVM_CFG"
+
+env_vars: {
+  key: "$key"
+  value: "$value"
+}
+EOF
+        done
+        IFS="$OLD_IFS"
+    fi
+
+    if [ "${TEST_WITH_EXISTING:-false}" = "true" ]; then
+        echo "Copying to logging-graalvm-native-presubmit.cfg for testing..."
+        cp "$TARGET_GRAALVM_CFG" ".kokoro/presubmit/logging-graalvm-native-presubmit.cfg"
+        git add ".kokoro/presubmit/logging-graalvm-native-presubmit.cfg"
+    fi
+
+    echo "Committing split GraalVM config..."
+    git add "$TARGET_GRAALVM_CFG"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): create split GraalVM config"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 6.7 Update excluded_modules in .kokoro/common.sh
+COMMON_SH=".kokoro/common.sh"
+if [ -f "$COMMON_SH" ]; then
+    echo "Updating excluded_modules in $COMMON_SH..."
+    # Insert the new module name before the closing parenthesis of the excluded_modules array
+    sed -i "/^excluded_modules=(/,/^)/ s/^)/  '$SOURCE_REPO_NAME'\n)/" "$COMMON_SH"
+
+    echo "Committing excluded_modules update..."
+    git add "$COMMON_SH"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add to excluded_modules in .kokoro/common.sh"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 6.8 Update .repo-metadata.json if it exists
+REPO_METADATA="$SOURCE_REPO_NAME/.repo-metadata.json"
+if [ -f "$REPO_METADATA" ]; then
+    echo "Updating $REPO_METADATA..."
+    # Update "repo" to googleapis/google-cloud-java and "repo_short" to google-cloud-java
+    jq '.repo = "googleapis/google-cloud-java" | .repo_short = "google-cloud-java"' "$REPO_METADATA" > "${REPO_METADATA}.tmp" && mv "${REPO_METADATA}.tmp" "$REPO_METADATA"
+
+    echo "Committing $REPO_METADATA update..."
+    git add "$REPO_METADATA"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update .repo-metadata.json"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
 rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
@@ -223,6 +379,11 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
         if [ -f "$workflow" ]; then
             filename=$(basename "$workflow")
 
+            if [ "${filename}" == "ci.yaml" && "${SKIP_CI_WORKFLOW}" == "true" ]; then
+                echo "Skipping ci.yaml workflow as requested by user"
+                continue
+            fi
+
             # Skip redundant workflows as requested by user
             case "$filename" in
                 "hermetic_library_generation.yaml" | "update_generation_config.yaml" | \
@@ -243,6 +404,7 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     
     # Cleanup empty .github directory if it exists
     rm -rf "$SOURCE_REPO_NAME/.github"
+    git checkout -- "$SOURCE_REPO_NAME/.github/scripts" || true
     git add -- "$SOURCE_REPO_NAME/.github"
     
     echo "Committing workflow migration..."
@@ -263,6 +425,19 @@ if [ -f "$SOURCE_CONFIG" ]; then
     echo "Committing generation_config.yaml update..."
     git add generation_config.yaml "$SOURCE_CONFIG"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add library to generation_config.yaml"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 7.6b Update generation/check_non_release_please_versions.sh
+CHECK_VERSIONS_SCRIPT="generation/check_non_release_please_versions.sh"
+if [ -f "$CHECK_VERSIONS_SCRIPT" ]; then
+    echo "Updating exclusions in $CHECK_VERSIONS_SCRIPT..."
+    # Insert the new module name before the .github exclusion
+    sed -i "/\.github\*\./ i \      [[ \"\${pomFile}\" =~ .*$SOURCE_REPO_NAME.* ]] || \\\\" "$CHECK_VERSIONS_SCRIPT"
+
+    echo "Committing $CHECK_VERSIONS_SCRIPT update..."
+    git add "$CHECK_VERSIONS_SCRIPT"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add to exclusions in $CHECK_VERSIONS_SCRIPT"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
@@ -323,10 +498,34 @@ fi
 # git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
 # COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
+# 7.10 Modernize pom.xml files and extract google-api-services dependencies
+modernize_and_extract() {
+    local pom_file="$1"
+    shift
+    local cmd_output
+    cmd_output=$(python3 "$MODERNIZE_POM_SCRIPT" "$pom_file" "$@" 2>&1)
+    echo "$cmd_output" | grep -v "EXTRACT_DEP:" || true
+    
+    # Process extracted dependencies
+    echo "$cmd_output" | grep "EXTRACT_DEP:" | while read -r line; do
+        dep_info="${line#EXTRACT_DEP:}"
+        IFS=':' read -r gid aid ver <<< "$dep_info"
+        echo "Extracting $gid:$aid:$ver to parent POM..."
+        python3 "$UPDATE_DEP_MGMT_SCRIPT" "google-cloud-jar-parent/pom.xml" "$gid" "$aid" "$ver"
+        
+        # Commit parent POM change if anything changed
+        if git diff --name-only | grep -q "google-cloud-jar-parent/pom.xml"; then
+            git add "google-cloud-jar-parent/pom.xml"
+            git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): manage $aid in parent POM"
+            COMMIT_COUNT=$((COMMIT_COUNT + 1))
+        fi
+    done
+}
+
 # 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
-python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$SOURCE_REPO_NAME"
+modernize_and_extract "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME"
 
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
@@ -340,7 +539,7 @@ echo "Modernizing BOM pom.xml..."
 while read -r bom_pom; do
     echo "Modernizing BOM: $bom_pom"
     # BOMs should inherit from google-cloud-pom-parent
-    python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" "$SOURCE_REPO_NAME" "google-cloud-pom-parent" "../../google-cloud-pom-parent/pom.xml"
+    modernize_and_extract "$bom_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --parent-artifactId "google-cloud-pom-parent" --relative-path "../../google-cloud-pom-parent/pom.xml"
     
     echo "Committing BOM pom.xml modernization for $bom_pom..."
     git add "$bom_pom"
@@ -348,10 +547,32 @@ while read -r bom_pom; do
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples")
 
+# 7.12b Modernize other pom.xml files
+echo "Modernizing other pom.xml files..."
+while read -r other_pom; do
+    echo "Modernizing submodule POM: $other_pom"
+    # Preserve the existing parent, but update everything else
+    modernize_and_extract "$other_pom" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" --keep-parent
+    
+    echo "Committing submodule pom.xml modernization for $other_pom..."
+    git add "$other_pom" && git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize submodule pom.xml" && COMMIT_COUNT=$((COMMIT_COUNT + 1)) || true
+done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep -v "\-bom/pom.xml" | grep -v "samples" | grep -v "test_data")
+
 # 7.11 Verify compilation
 echo "Verifying compilation..."
-BUILD_SUBDIR="${SOURCE_REPO_NAME}" JOB_TYPE=test .kokoro/build.sh
-# (cd "$SOURCE_REPO_NAME" && mvn compile -DskipTests -T 1C)
+if [[ "${SKIP_TESTS:-false}" != "true" ]]; then
+    BUILD_SUBDIR="${SOURCE_REPO_NAME}" JOB_TYPE=test .kokoro/build.sh
+fi
+
+# 7.12 Apply manual changes
+if [[ -f "~/${SOURCE_REPO_NAME}.diff" ]]; then
+    echo "Applying diff from ${SOURCE_REPO_NAME}.diff..."
+    git apply "~/${SOURCE_REPO_NAME}.diff"
+    echo "Committing diff..."
+    git add .
+    git commit -am "manual changes"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
 
 # 7.13 Squash commits
 if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
@@ -370,14 +591,14 @@ if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
         # then commit --amend adds those staged changes to C1.
         
         git reset --soft "HEAD~$((COMMIT_COUNT - 1))"
-        git commit --amend --no-edit --no-gpg-sign
+        git commit --amend --no-edit --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
         echo "Squashed everything into one commit."
     fi
 fi
 
 # 8. Cleanup
 echo "Cleaning up temporary source clone..."
-rm -rf "$SOURCE_DIR"
+# rm -rf "$SOURCE_DIR"
 
 echo "Migration complete!"
 echo "The migrated codebase is available in: $TARGET_DIR"

@@ -17,7 +17,7 @@
 package com.google.cloud.ces.v1beta.samples;
 
 // [START ces_v1beta_generated_EvaluationService_UploadEvaluationAudio_StringBytestring_sync]
-import com.google.cloud.ces.v1beta.EvaluationName;
+import com.google.cloud.ces.v1beta.AppName;
 import com.google.cloud.ces.v1beta.EvaluationServiceClient;
 import com.google.cloud.ces.v1beta.UploadEvaluationAudioResponse;
 import com.google.protobuf.ByteString;
@@ -35,11 +35,10 @@ public class SyncUploadEvaluationAudioStringBytestring {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
-      String name =
-          EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString();
+      String app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString();
       ByteString audioContent = ByteString.EMPTY;
       UploadEvaluationAudioResponse response =
-          evaluationServiceClient.uploadEvaluationAudio(name, audioContent);
+          evaluationServiceClient.uploadEvaluationAudio(app, audioContent);
     }
   }
 }

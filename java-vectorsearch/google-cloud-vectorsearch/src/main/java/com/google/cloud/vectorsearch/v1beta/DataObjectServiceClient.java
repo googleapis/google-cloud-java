@@ -953,7 +953,6 @@ public class DataObjectServiceClient implements BackgroundResource {
    *           .setName(
    *               DataObjectName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATAOBJECT]")
    *                   .toString())
-   *           .setEtag("etag3123477")
    *           .build();
    *   dataObjectServiceClient.deleteDataObject(request);
    * }
@@ -984,7 +983,6 @@ public class DataObjectServiceClient implements BackgroundResource {
    *           .setName(
    *               DataObjectName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATAOBJECT]")
    *                   .toString())
-   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Empty> future =
    *       dataObjectServiceClient.deleteDataObjectCallable().futureCall(request);

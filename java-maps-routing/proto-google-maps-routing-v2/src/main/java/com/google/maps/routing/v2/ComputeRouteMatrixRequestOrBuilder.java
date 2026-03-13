@@ -586,7 +586,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * traffic. This setting affects the value returned in the duration field in
    * the [RouteMatrixElement][google.maps.routing.v2.RouteMatrixElement] which
    * contains the predicted time in traffic based on historical averages.
-   * `TrafficModel` is only available for requests that have set
    * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
    * `TRAFFIC_AWARE_OPTIMAL` and
    * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
@@ -610,7 +609,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * traffic. This setting affects the value returned in the duration field in
    * the [RouteMatrixElement][google.maps.routing.v2.RouteMatrixElement] which
    * contains the predicted time in traffic based on historical averages.
-   * `TrafficModel` is only available for requests that have set
    * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
    * `TRAFFIC_AWARE_OPTIMAL` and
    * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.

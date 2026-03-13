@@ -55,6 +55,7 @@ import javax.annotation.Generated;
  *       ExecuteToolRequest.newBuilder()
  *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
  *           .setArgs(Struct.newBuilder().build())
+ *           .setVariables(Struct.newBuilder().build())
  *           .build();
  *   ExecuteToolResponse response = toolServiceClient.executeTool(request);
  * }
@@ -263,6 +264,7 @@ public class ToolServiceClient implements BackgroundResource {
    *       ExecuteToolRequest.newBuilder()
    *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
    *           .setArgs(Struct.newBuilder().build())
+   *           .setVariables(Struct.newBuilder().build())
    *           .build();
    *   ExecuteToolResponse response = toolServiceClient.executeTool(request);
    * }
@@ -292,6 +294,7 @@ public class ToolServiceClient implements BackgroundResource {
    *       ExecuteToolRequest.newBuilder()
    *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
    *           .setArgs(Struct.newBuilder().build())
+   *           .setVariables(Struct.newBuilder().build())
    *           .build();
    *   ApiFuture<ExecuteToolResponse> future =
    *       toolServiceClient.executeToolCallable().futureCall(request);

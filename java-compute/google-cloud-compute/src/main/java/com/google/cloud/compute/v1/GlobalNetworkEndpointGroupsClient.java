@@ -144,9 +144,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a network endpoint group in the specified project using the parameters that are included in the request.
- * <p>  Note: Use the following APIs to manage network endpoint groups:
- * <p>     -    To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity    NEGs): zonal    API    -    To manage NEGs with regional scope (such as regional internet NEGs,    serverless NEGs, Private Service Connect NEGs): regional    API    -    To manage NEGs with global scope (such as global internet NEGs):global    API</td>
+ *      <td><p> Creates a network endpoint group in the specified project using the parameters that are included in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -847,13 +845,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
-   * <p>Note: Use the following APIs to manage network endpoint groups:
-   *
-   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
-   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
-   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
-   * NEGs):global API
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -892,13 +883,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
-   * <p>Note: Use the following APIs to manage network endpoint groups:
-   *
-   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
-   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
-   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
-   * NEGs):global API
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -932,13 +916,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
    *
-   * <p>Note: Use the following APIs to manage network endpoint groups:
-   *
-   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
-   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
-   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
-   * NEGs):global API
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -971,13 +948,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
   /**
    * Creates a network endpoint group in the specified project using the parameters that are
    * included in the request.
-   *
-   * <p>Note: Use the following APIs to manage network endpoint groups:
-   *
-   * <p>- To manage NEGs with zonal scope (such as zonal NEGs, hybrid connectivity NEGs): zonal API
-   * - To manage NEGs with regional scope (such as regional internet NEGs, serverless NEGs, Private
-   * Service Connect NEGs): regional API - To manage NEGs with global scope (such as global internet
-   * NEGs):global API
    *
    * <p>Sample code:
    *

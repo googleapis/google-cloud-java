@@ -166,12 +166,11 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deprecated: Enum is unused in the Data Manager API.
+   * Country code is not valid.
    * </pre>
    *
-   * <code>INVALID_COUNTRY_CODE = 13 [deprecated = true];</code>
+   * <code>INVALID_COUNTRY_CODE = 13;</code>
    */
-  @java.lang.Deprecated
   INVALID_COUNTRY_CODE(13),
   /**
    *
@@ -1036,16 +1035,6 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK = 98;</code>
    */
   UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK(98),
-  /**
-   *
-   *
-   * <pre>
-   * The user list membership duration is too long.
-   * </pre>
-   *
-   * <code>MEMBERSHIP_DURATION_TOO_LONG = 99;</code>
-   */
-  MEMBERSHIP_DURATION_TOO_LONG(99),
   UNRECOGNIZED(-1),
   ;
 
@@ -1206,12 +1195,12 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deprecated: Enum is unused in the Data Manager API.
+   * Country code is not valid.
    * </pre>
    *
-   * <code>INVALID_COUNTRY_CODE = 13 [deprecated = true];</code>
+   * <code>INVALID_COUNTRY_CODE = 13;</code>
    */
-  @java.lang.Deprecated public static final int INVALID_COUNTRY_CODE_VALUE = 13;
+  public static final int INVALID_COUNTRY_CODE_VALUE = 13;
 
   /**
    *
@@ -2161,17 +2150,6 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK_VALUE = 98;
 
-  /**
-   *
-   *
-   * <pre>
-   * The user list membership duration is too long.
-   * </pre>
-   *
-   * <code>MEMBERSHIP_DURATION_TOO_LONG = 99;</code>
-   */
-  public static final int MEMBERSHIP_DURATION_TOO_LONG_VALUE = 99;
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2394,8 +2372,6 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return UNSUPPORTED_ACCOUNT_TYPES_FOR_USER_LIST_TYPE;
       case 98:
         return UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK;
-      case 99:
-        return MEMBERSHIP_DURATION_TOO_LONG;
       default:
         return null;
     }

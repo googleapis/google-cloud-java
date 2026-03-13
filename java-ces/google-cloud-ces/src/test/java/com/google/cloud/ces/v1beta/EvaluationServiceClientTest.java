@@ -204,15 +204,15 @@ public class EvaluationServiceClientTest {
     UploadEvaluationAudioResponse expectedResponse =
         UploadEvaluationAudioResponse.newBuilder()
             .setAudioGcsUri("audioGcsUri83075659")
-            .setTranscript("transcript-1729759306")
-            .setDuration(Duration.newBuilder().build())
+            .setAudioTranscript("audioTranscript946674732")
+            .setAudioDuration(Duration.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
-    EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+    AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
     ByteString audioContent = ByteString.EMPTY;
 
-    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(name, audioContent);
+    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(app, audioContent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
@@ -220,7 +220,7 @@ public class EvaluationServiceClientTest {
     UploadEvaluationAudioRequest actualRequest =
         ((UploadEvaluationAudioRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(app.toString(), actualRequest.getApp());
     Assert.assertEquals(audioContent, actualRequest.getAudioContent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -234,9 +234,9 @@ public class EvaluationServiceClientTest {
     mockEvaluationService.addException(exception);
 
     try {
-      EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+      AppName app = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
       ByteString audioContent = ByteString.EMPTY;
-      client.uploadEvaluationAudio(name, audioContent);
+      client.uploadEvaluationAudio(app, audioContent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -248,15 +248,15 @@ public class EvaluationServiceClientTest {
     UploadEvaluationAudioResponse expectedResponse =
         UploadEvaluationAudioResponse.newBuilder()
             .setAudioGcsUri("audioGcsUri83075659")
-            .setTranscript("transcript-1729759306")
-            .setDuration(Duration.newBuilder().build())
+            .setAudioTranscript("audioTranscript946674732")
+            .setAudioDuration(Duration.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String app = "app96801";
     ByteString audioContent = ByteString.EMPTY;
 
-    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(name, audioContent);
+    UploadEvaluationAudioResponse actualResponse = client.uploadEvaluationAudio(app, audioContent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
@@ -264,7 +264,7 @@ public class EvaluationServiceClientTest {
     UploadEvaluationAudioRequest actualRequest =
         ((UploadEvaluationAudioRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(app, actualRequest.getApp());
     Assert.assertEquals(audioContent, actualRequest.getAudioContent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -278,9 +278,9 @@ public class EvaluationServiceClientTest {
     mockEvaluationService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String app = "app96801";
       ByteString audioContent = ByteString.EMPTY;
-      client.uploadEvaluationAudio(name, audioContent);
+      client.uploadEvaluationAudio(app, audioContent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

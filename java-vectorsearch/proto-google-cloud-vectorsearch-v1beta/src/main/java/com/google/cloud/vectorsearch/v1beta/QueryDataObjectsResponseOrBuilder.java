@@ -30,12 +30,10 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of dataObjects that match the query.
+   * The list of dataObjects that match the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4;</code>
    */
   java.util.List<com.google.cloud.vectorsearch.v1beta.DataObject> getDataObjectsList();
 
@@ -43,12 +41,10 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of dataObjects that match the query.
+   * The list of dataObjects that match the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4;</code>
    */
   com.google.cloud.vectorsearch.v1beta.DataObject getDataObjects(int index);
 
@@ -56,12 +52,10 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of dataObjects that match the query.
+   * The list of dataObjects that match the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4;</code>
    */
   int getDataObjectsCount();
 
@@ -69,12 +63,10 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of dataObjects that match the query.
+   * The list of dataObjects that match the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4;</code>
    */
   java.util.List<? extends com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder>
       getDataObjectsOrBuilderList();
@@ -83,12 +75,10 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of dataObjects that match the query.
+   * The list of dataObjects that match the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.vectorsearch.v1beta.DataObject data_objects = 4;</code>
    */
   com.google.cloud.vectorsearch.v1beta.DataObjectOrBuilder getDataObjectsOrBuilder(int index);
 
@@ -96,12 +86,12 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. A token to retrieve next page of results.
+   * A token to retrieve next page of results.
    * Pass to [DataObjectSearchService.QueryDataObjectsRequest.page_token][] to
    * obtain that page.
    * </pre>
    *
-   * <code>string next_page_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string next_page_token = 3;</code>
    *
    * @return The nextPageToken.
    */
@@ -111,12 +101,12 @@ public interface QueryDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. A token to retrieve next page of results.
+   * A token to retrieve next page of results.
    * Pass to [DataObjectSearchService.QueryDataObjectsRequest.page_token][] to
    * obtain that page.
    * </pre>
    *
-   * <code>string next_page_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string next_page_token = 3;</code>
    *
    * @return The bytes for nextPageToken.
    */

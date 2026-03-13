@@ -317,21 +317,20 @@ message PairIdInfo {
     (google.api.field_behavior) = IMMUTABLE
   ];
 
-  // Required. Descriptive name of the publisher to be displayed in the UI for a
+  // Optional. Descriptive name of the publisher to be displayed in the UI for a
   // better targeting experience.
-  optional string publisher_name = 2 [(google.api.field_behavior) = REQUIRED];
+  optional string publisher_name = 2 [(google.api.field_behavior) = OPTIONAL];
 
-  // Required. This field denotes the percentage of membership match of this
+  // Output only. This field denotes the percentage of membership match of this
   // user list with the corresponding publisher's first party data. Must be
   // between 0 and 100 inclusive.
-  optional int32 match_rate_percentage = 3
-      [(google.api.field_behavior) = REQUIRED];
+  int32 match_rate_percentage = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. The count of the advertiser's first party data records that have
-  // been uploaded to a clean room provider. This does not signify the size of a
-  // PAIR user list.
-  optional int64 advertiser_identifier_count = 4
-      [(google.api.field_behavior) = OPTIONAL];
+  // Output only. The count of the advertiser's first party data records that
+  // have been uploaded to a clean room provider. This does not signify the size
+  // of a PAIR user list.
+  int64 advertiser_identifier_count = 4
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Required. Immutable. Identifies a unique advertiser to publisher
   // relationship with one clean room provider or across multiple clean room

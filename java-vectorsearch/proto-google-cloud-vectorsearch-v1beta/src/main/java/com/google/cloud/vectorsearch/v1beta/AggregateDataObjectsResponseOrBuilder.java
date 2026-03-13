@@ -30,12 +30,10 @@ public interface AggregateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The aggregated results of the query.
+   * The aggregated results of the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
    */
   java.util.List<com.google.protobuf.Struct> getAggregateResultsList();
 
@@ -43,12 +41,10 @@ public interface AggregateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The aggregated results of the query.
+   * The aggregated results of the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
    */
   com.google.protobuf.Struct getAggregateResults(int index);
 
@@ -56,12 +52,10 @@ public interface AggregateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The aggregated results of the query.
+   * The aggregated results of the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
    */
   int getAggregateResultsCount();
 
@@ -69,12 +63,10 @@ public interface AggregateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The aggregated results of the query.
+   * The aggregated results of the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
    */
   java.util.List<? extends com.google.protobuf.StructOrBuilder> getAggregateResultsOrBuilderList();
 
@@ -82,12 +74,10 @@ public interface AggregateDataObjectsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The aggregated results of the query.
+   * The aggregated results of the query.
    * </pre>
    *
-   * <code>
-   * repeated .google.protobuf.Struct aggregate_results = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.protobuf.Struct aggregate_results = 1;</code>
    */
   com.google.protobuf.StructOrBuilder getAggregateResultsOrBuilder(int index);
 }

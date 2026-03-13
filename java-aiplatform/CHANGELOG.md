@@ -1,30 +1,5 @@
 # Changelog
 
-## 3.88.0 (2026-03-11)
-
-### Features
-
-* A new field `inference_generation_config` is added to message `.google.cloud.aiplatform.v1beta1.EvaluationConfig` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
-* add AskContexts and AsyncRetrieveContexts APIs to VertexRagService ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
-* add AskContexts and AsyncRetrieveContexts APIs to VertexRagService ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
-* Add custom session id field to create session v1beta1 ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
-
-
-
-## 3.87.0 (2026-02-25)
-
-### Features
-
-* Add `traffic_type, tool_use_prompt_tokens_details` to message `GenerateContentResponse.UsageMetadata` ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
-* Add image_spec to Reasoning Engine public protos ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
-* Add image_spec to Reasoning Engine public protos ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
-* Add transcription fields to Session Service ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
-
-### Dependencies
-
-* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
-
-
 ## 3.84.0 (2026-01-29)
 
 ### Features

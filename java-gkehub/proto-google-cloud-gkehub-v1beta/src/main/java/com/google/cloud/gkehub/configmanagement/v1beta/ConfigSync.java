@@ -53,7 +53,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
 
   private ConfigSync() {
     sourceFormat_ = "";
-    deploymentOverrides_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,10 +139,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-   * `unstructured` mode. Defaults to `hierarchical`. See
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-   * for an explanation.
+   * Optional. Specifies whether the Config Sync Repo is
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
    * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -167,10 +164,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-   * `unstructured` mode. Defaults to `hierarchical`. See
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-   * for an explanation.
+   * Optional. Specifies whether the Config Sync Repo is
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
    * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -197,13 +192,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Enables the installation of Config Sync.
-   * If set to true, the Feature will manage Config Sync resources,
-   * and apply the other ConfigSync fields if they exist.
-   * If set to false, the Feature will ignore all other ConfigSync fields and
-   * delete the Config Sync resources.
-   * If omitted, ConfigSync is considered enabled if the git or oci field is
-   * present.
+   * Optional. Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
    * </pre>
    *
    * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -219,13 +214,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Enables the installation of Config Sync.
-   * If set to true, the Feature will manage Config Sync resources,
-   * and apply the other ConfigSync fields if they exist.
-   * If set to false, the Feature will ignore all other ConfigSync fields and
-   * delete the Config Sync resources.
-   * If omitted, ConfigSync is considered enabled if the git or oci field is
-   * present.
+   * Optional. Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
    * </pre>
    *
    * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -245,10 +240,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Set to true to enable the Config Sync admission webhook to
-   * prevent drifts. If set to false, disables the Config Sync admission webhook
-   * and does not prevent drifts. Defaults to false. See
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/prevent-config-drift
-   * for details.
+   * prevent drifts. If set to `false`, disables the Config Sync admission
+   * webhook and does not prevent drifts.
    * </pre>
    *
    * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -339,132 +332,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
     return stopSyncing_;
   }
 
-  public static final int DEPLOYMENT_OVERRIDES_FIELD_NUMBER = 17;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride>
-      deploymentOverrides_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for deployment overrides.
-   * Applies only to Config Sync deployments with containers that are not a root
-   * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-   * `resource-group-controller-manager`, `admission-webhook`.
-   * To override a root or namespace reconciler, use the rootsync or reposync
-   * fields at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-   * instead.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride>
-      getDeploymentOverridesList() {
-    return deploymentOverrides_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for deployment overrides.
-   * Applies only to Config Sync deployments with containers that are not a root
-   * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-   * `resource-group-controller-manager`, `admission-webhook`.
-   * To override a root or namespace reconciler, use the rootsync or reposync
-   * fields at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-   * instead.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder>
-      getDeploymentOverridesOrBuilderList() {
-    return deploymentOverrides_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for deployment overrides.
-   * Applies only to Config Sync deployments with containers that are not a root
-   * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-   * `resource-group-controller-manager`, `admission-webhook`.
-   * To override a root or namespace reconciler, use the rootsync or reposync
-   * fields at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-   * instead.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public int getDeploymentOverridesCount() {
-    return deploymentOverrides_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for deployment overrides.
-   * Applies only to Config Sync deployments with containers that are not a root
-   * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-   * `resource-group-controller-manager`, `admission-webhook`.
-   * To override a root or namespace reconciler, use the rootsync or reposync
-   * fields at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-   * instead.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride getDeploymentOverrides(
-      int index) {
-    return deploymentOverrides_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for deployment overrides.
-   * Applies only to Config Sync deployments with containers that are not a root
-   * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-   * `resource-group-controller-manager`, `admission-webhook`.
-   * To override a root or namespace reconciler, use the rootsync or reposync
-   * fields at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-   * instead.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder
-      getDeploymentOverridesOrBuilder(int index) {
-    return deploymentOverrides_.get(index);
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -497,9 +364,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
     if (stopSyncing_ != false) {
       output.writeBool(16, stopSyncing_);
     }
-    for (int i = 0; i < deploymentOverrides_.size(); i++) {
-      output.writeMessage(17, deploymentOverrides_.get(i));
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -526,10 +390,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
     }
     if (stopSyncing_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, stopSyncing_);
-    }
-    for (int i = 0; i < deploymentOverrides_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(17, deploymentOverrides_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -562,7 +422,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
       if (!getOci().equals(other.getOci())) return false;
     }
     if (getStopSyncing() != other.getStopSyncing()) return false;
-    if (!getDeploymentOverridesList().equals(other.getDeploymentOverridesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -592,10 +451,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + STOP_SYNCING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStopSyncing());
-    if (getDeploymentOverridesCount() > 0) {
-      hash = (37 * hash) + DEPLOYMENT_OVERRIDES_FIELD_NUMBER;
-      hash = (53 * hash) + getDeploymentOverridesList().hashCode();
-    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -740,7 +595,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetGitFieldBuilder();
         internalGetOciFieldBuilder();
-        internalGetDeploymentOverridesFieldBuilder();
       }
     }
 
@@ -762,13 +616,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
         ociBuilder_ = null;
       }
       stopSyncing_ = false;
-      if (deploymentOverridesBuilder_ == null) {
-        deploymentOverrides_ = java.util.Collections.emptyList();
-      } else {
-        deploymentOverrides_ = null;
-        deploymentOverridesBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -796,25 +643,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync result =
           new com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync result) {
-      if (deploymentOverridesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
-          deploymentOverrides_ = java.util.Collections.unmodifiableList(deploymentOverrides_);
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.deploymentOverrides_ = deploymentOverrides_;
-      } else {
-        result.deploymentOverrides_ = deploymentOverridesBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync result) {
@@ -876,33 +709,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
       }
       if (other.getStopSyncing() != false) {
         setStopSyncing(other.getStopSyncing());
-      }
-      if (deploymentOverridesBuilder_ == null) {
-        if (!other.deploymentOverrides_.isEmpty()) {
-          if (deploymentOverrides_.isEmpty()) {
-            deploymentOverrides_ = other.deploymentOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000040);
-          } else {
-            ensureDeploymentOverridesIsMutable();
-            deploymentOverrides_.addAll(other.deploymentOverrides_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.deploymentOverrides_.isEmpty()) {
-          if (deploymentOverridesBuilder_.isEmpty()) {
-            deploymentOverridesBuilder_.dispose();
-            deploymentOverridesBuilder_ = null;
-            deploymentOverrides_ = other.deploymentOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000040);
-            deploymentOverridesBuilder_ =
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
-                    ? internalGetDeploymentOverridesFieldBuilder()
-                    : null;
-          } else {
-            deploymentOverridesBuilder_.addAllMessages(other.deploymentOverrides_);
-          }
-        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -966,20 +772,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 128
-            case 138:
-              {
-                com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride m =
-                    input.readMessage(
-                        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.parser(),
-                        extensionRegistry);
-                if (deploymentOverridesBuilder_ == null) {
-                  ensureDeploymentOverridesIsMutable();
-                  deploymentOverrides_.add(m);
-                } else {
-                  deploymentOverridesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1219,10 +1011,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-     * `unstructured` mode. Defaults to `hierarchical`. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-     * for an explanation.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
      * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1245,10 +1035,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-     * `unstructured` mode. Defaults to `hierarchical`. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-     * for an explanation.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
      * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1271,10 +1059,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-     * `unstructured` mode. Defaults to `hierarchical`. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-     * for an explanation.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
      * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1296,10 +1082,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-     * `unstructured` mode. Defaults to `hierarchical`. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-     * for an explanation.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
      * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1317,10 +1101,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Specifies whether the Config Sync repo is in `hierarchical` or
-     * `unstructured` mode. Defaults to `hierarchical`. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/configs#organize-configs
-     * for an explanation.
+     * Optional. Specifies whether the Config Sync Repo is
+     * in "hierarchical" or "unstructured" mode.
      * </pre>
      *
      * <code>string source_format = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1345,13 +1127,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Enables the installation of Config Sync.
-     * If set to true, the Feature will manage Config Sync resources,
-     * and apply the other ConfigSync fields if they exist.
-     * If set to false, the Feature will ignore all other ConfigSync fields and
-     * delete the Config Sync resources.
-     * If omitted, ConfigSync is considered enabled if the git or oci field is
-     * present.
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
      * </pre>
      *
      * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1367,13 +1149,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Enables the installation of Config Sync.
-     * If set to true, the Feature will manage Config Sync resources,
-     * and apply the other ConfigSync fields if they exist.
-     * If set to false, the Feature will ignore all other ConfigSync fields and
-     * delete the Config Sync resources.
-     * If omitted, ConfigSync is considered enabled if the git or oci field is
-     * present.
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
      * </pre>
      *
      * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1389,13 +1171,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Enables the installation of Config Sync.
-     * If set to true, the Feature will manage Config Sync resources,
-     * and apply the other ConfigSync fields if they exist.
-     * If set to false, the Feature will ignore all other ConfigSync fields and
-     * delete the Config Sync resources.
-     * If omitted, ConfigSync is considered enabled if the git or oci field is
-     * present.
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
      * </pre>
      *
      * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1415,13 +1197,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Enables the installation of Config Sync.
-     * If set to true, the Feature will manage Config Sync resources,
-     * and apply the other ConfigSync fields if they exist.
-     * If set to false, the Feature will ignore all other ConfigSync fields and
-     * delete the Config Sync resources.
-     * If omitted, ConfigSync is considered enabled if the git or oci field is
-     * present.
+     * Optional. Enables the installation of ConfigSync.
+     * If set to true, ConfigSync resources will be created and the other
+     * ConfigSync fields will be applied if exist.
+     * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+     * resources will be deleted.
+     * If omitted, ConfigSync resources will be managed depends on the presence
+     * of the git or oci field.
      * </pre>
      *
      * <code>optional bool enabled = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1442,10 +1224,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Set to true to enable the Config Sync admission webhook to
-     * prevent drifts. If set to false, disables the Config Sync admission webhook
-     * and does not prevent drifts. Defaults to false. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/prevent-config-drift
-     * for details.
+     * prevent drifts. If set to `false`, disables the Config Sync admission
+     * webhook and does not prevent drifts.
      * </pre>
      *
      * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1462,10 +1242,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Set to true to enable the Config Sync admission webhook to
-     * prevent drifts. If set to false, disables the Config Sync admission webhook
-     * and does not prevent drifts. Defaults to false. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/prevent-config-drift
-     * for details.
+     * prevent drifts. If set to `false`, disables the Config Sync admission
+     * webhook and does not prevent drifts.
      * </pre>
      *
      * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1486,10 +1264,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Set to true to enable the Config Sync admission webhook to
-     * prevent drifts. If set to false, disables the Config Sync admission webhook
-     * and does not prevent drifts. Defaults to false. See
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/prevent-config-drift
-     * for details.
+     * prevent drifts. If set to `false`, disables the Config Sync admission
+     * webhook and does not prevent drifts.
      * </pre>
      *
      * <code>bool prevent_drift = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1774,564 +1550,6 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessage
       stopSyncing_ = false;
       onChanged();
       return this;
-    }
-
-    private java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride>
-        deploymentOverrides_ = java.util.Collections.emptyList();
-
-    private void ensureDeploymentOverridesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
-        deploymentOverrides_ =
-            new java.util.ArrayList<
-                com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride>(
-                deploymentOverrides_);
-        bitField0_ |= 0x00000040;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride,
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder,
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder>
-        deploymentOverridesBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride>
-        getDeploymentOverridesList() {
-      if (deploymentOverridesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(deploymentOverrides_);
-      } else {
-        return deploymentOverridesBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public int getDeploymentOverridesCount() {
-      if (deploymentOverridesBuilder_ == null) {
-        return deploymentOverrides_.size();
-      } else {
-        return deploymentOverridesBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride
-        getDeploymentOverrides(int index) {
-      if (deploymentOverridesBuilder_ == null) {
-        return deploymentOverrides_.get(index);
-      } else {
-        return deploymentOverridesBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setDeploymentOverrides(
-        int index, com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride value) {
-      if (deploymentOverridesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.set(index, value);
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setDeploymentOverrides(
-        int index,
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder
-            builderForValue) {
-      if (deploymentOverridesBuilder_ == null) {
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addDeploymentOverrides(
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride value) {
-      if (deploymentOverridesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.add(value);
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addDeploymentOverrides(
-        int index, com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride value) {
-      if (deploymentOverridesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.add(index, value);
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addDeploymentOverrides(
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder
-            builderForValue) {
-      if (deploymentOverridesBuilder_ == null) {
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.add(builderForValue.build());
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addDeploymentOverrides(
-        int index,
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder
-            builderForValue) {
-      if (deploymentOverridesBuilder_ == null) {
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addAllDeploymentOverrides(
-        java.lang.Iterable<
-                ? extends com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride>
-            values) {
-      if (deploymentOverridesBuilder_ == null) {
-        ensureDeploymentOverridesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deploymentOverrides_);
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearDeploymentOverrides() {
-      if (deploymentOverridesBuilder_ == null) {
-        deploymentOverrides_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder removeDeploymentOverrides(int index) {
-      if (deploymentOverridesBuilder_ == null) {
-        ensureDeploymentOverridesIsMutable();
-        deploymentOverrides_.remove(index);
-        onChanged();
-      } else {
-        deploymentOverridesBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder
-        getDeploymentOverridesBuilder(int index) {
-      return internalGetDeploymentOverridesFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder
-        getDeploymentOverridesOrBuilder(int index) {
-      if (deploymentOverridesBuilder_ == null) {
-        return deploymentOverrides_.get(index);
-      } else {
-        return deploymentOverridesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<
-            ? extends com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder>
-        getDeploymentOverridesOrBuilderList() {
-      if (deploymentOverridesBuilder_ != null) {
-        return deploymentOverridesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(deploymentOverrides_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder
-        addDeploymentOverridesBuilder() {
-      return internalGetDeploymentOverridesFieldBuilder()
-          .addBuilder(
-              com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder
-        addDeploymentOverridesBuilder(int index) {
-      return internalGetDeploymentOverridesFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for deployment overrides.
-     * Applies only to Config Sync deployments with containers that are not a root
-     * or namespace reconciler: `reconciler-manager`, `otel-collector`,
-     * `resource-group-controller-manager`, `admission-webhook`.
-     * To override a root or namespace reconciler, use the rootsync or reposync
-     * fields at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields#override-resources
-     * instead.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride deployment_overrides = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder>
-        getDeploymentOverridesBuilderList() {
-      return internalGetDeploymentOverridesFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride,
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder,
-            com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder>
-        internalGetDeploymentOverridesFieldBuilder() {
-      if (deploymentOverridesBuilder_ == null) {
-        deploymentOverridesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilder<
-                com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride,
-                com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverride.Builder,
-                com.google.cloud.gkehub.configmanagement.v1beta.DeploymentOverrideOrBuilder>(
-                deploymentOverrides_,
-                ((bitField0_ & 0x00000040) != 0),
-                getParentForChildren(),
-                isClean());
-        deploymentOverrides_ = null;
-      }
-      return deploymentOverridesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.gkehub.configmanagement.v1beta.ConfigSync)

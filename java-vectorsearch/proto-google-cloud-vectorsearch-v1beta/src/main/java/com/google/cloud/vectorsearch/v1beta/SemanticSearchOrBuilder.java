@@ -84,11 +84,11 @@ public interface SemanticSearchOrBuilder
    *
    *
    * <pre>
-   * Required. The task type of the query embedding.
+   * Optional. The task type of the query embedding.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for taskType.
@@ -99,11 +99,11 @@ public interface SemanticSearchOrBuilder
    *
    *
    * <pre>
-   * Required. The task type of the query embedding.
+   * Optional. The task type of the query embedding.
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The taskType.

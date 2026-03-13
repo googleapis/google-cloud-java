@@ -80,11 +80,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Contains information about tolls on the route. This field is only populated
-   * if tolls are expected on the route and `TOLLS` is included in the request's
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * If this field is set, but the `estimatedPrice` subfield is not populated,
-   * then the route contains tolls, but the estimated price is unknown. If
-   * `toll_info` is not set, then there are no tolls expected on the route.
+   * if tolls are expected on the route. If this field is set, but the
+   * `estimatedPrice` subfield is not populated, then the route contains tolls,
+   * but the estimated price is unknown. If this field is not set, then there
+   * are no tolls expected on the route.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -101,11 +100,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Contains information about tolls on the route. This field is only populated
-   * if tolls are expected on the route and `TOLLS` is included in the request's
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * If this field is set, but the `estimatedPrice` subfield is not populated,
-   * then the route contains tolls, but the estimated price is unknown. If
-   * `toll_info` is not set, then there are no tolls expected on the route.
+   * if tolls are expected on the route. If this field is set, but the
+   * `estimatedPrice` subfield is not populated, then the route contains tolls,
+   * but the estimated price is unknown. If this field is not set, then there
+   * are no tolls expected on the route.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -122,11 +120,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Contains information about tolls on the route. This field is only populated
-   * if tolls are expected on the route and `TOLLS` is included in the request's
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * If this field is set, but the `estimatedPrice` subfield is not populated,
-   * then the route contains tolls, but the estimated price is unknown. If
-   * `toll_info` is not set, then there are no tolls expected on the route.
+   * if tolls are expected on the route. If this field is set, but the
+   * `estimatedPrice` subfield is not populated, then the route contains tolls,
+   * but the estimated price is unknown. If this field is not set, then there
+   * are no tolls expected on the route.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -145,14 +142,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Speed reading intervals indicating traffic density. This field is only
-   * populated for requests when the request has a `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`
-   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-   * value, and `TRAFFIC_ON_POLYLINE` is included in the
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * The intervals cover the entire polyline of the route without overlap. The
-   * start point of a specified interval is the same as the end point of the
+   * Speed reading intervals detailing traffic density. Applicable in case of
+   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
    * Example:
@@ -173,14 +166,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Speed reading intervals indicating traffic density. This field is only
-   * populated for requests when the request has a `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`
-   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-   * value, and `TRAFFIC_ON_POLYLINE` is included in the
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * The intervals cover the entire polyline of the route without overlap. The
-   * start point of a specified interval is the same as the end point of the
+   * Speed reading intervals detailing traffic density. Applicable in case of
+   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
    * Example:
@@ -201,14 +190,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Speed reading intervals indicating traffic density. This field is only
-   * populated for requests when the request has a `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`
-   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-   * value, and `TRAFFIC_ON_POLYLINE` is included in the
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * The intervals cover the entire polyline of the route without overlap. The
-   * start point of a specified interval is the same as the end point of the
+   * Speed reading intervals detailing traffic density. Applicable in case of
+   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
    * Example:
@@ -228,14 +213,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Speed reading intervals indicating traffic density. This field is only
-   * populated for requests when the request has a `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`
-   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-   * value, and `TRAFFIC_ON_POLYLINE` is included in the
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * The intervals cover the entire polyline of the route without overlap. The
-   * start point of a specified interval is the same as the end point of the
+   * Speed reading intervals detailing traffic density. Applicable in case of
+   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
    * Example:
@@ -255,14 +236,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Speed reading intervals indicating traffic density. This field is only
-   * populated for requests when the request has a `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`
-   * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-   * value, and `TRAFFIC_ON_POLYLINE` is included in the
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-   * The intervals cover the entire polyline of the route without overlap. The
-   * start point of a specified interval is the same as the end point of the
+   * Speed reading intervals detailing traffic density. Applicable in case of
+   * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+   * The intervals cover the entire polyline of the route without overlap.
+   * The start point of a specified interval is the same as the end point of the
    * preceding interval.
    *
    * Example:
@@ -287,9 +264,6 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The predicted fuel consumption in microliters.
-   * This field is only populated when `FUEL_CONSUMPTION` is included in the
-   * request's
-   * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
    * </pre>
    *
    * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -878,11 +852,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -898,11 +871,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -924,11 +896,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -952,11 +923,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -977,11 +947,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -1010,11 +979,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -1035,11 +1003,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -1055,11 +1022,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -1079,11 +1045,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Contains information about tolls on the route. This field is only populated
-     * if tolls are expected on the route and `TOLLS` is included in the request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * If this field is set, but the `estimatedPrice` subfield is not populated,
-     * then the route contains tolls, but the estimated price is unknown. If
-     * `toll_info` is not set, then there are no tolls expected on the route.
+     * if tolls are expected on the route. If this field is set, but the
+     * `estimatedPrice` subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -1127,14 +1092,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1159,14 +1120,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1190,14 +1147,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1221,14 +1174,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1259,14 +1208,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1294,14 +1239,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1331,14 +1272,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1369,14 +1306,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1404,14 +1337,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1439,14 +1368,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1474,14 +1399,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1508,14 +1429,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1542,14 +1459,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1570,14 +1483,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1602,14 +1511,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1634,14 +1539,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1663,14 +1564,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1692,14 +1589,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Speed reading intervals indicating traffic density. This field is only
-     * populated for requests when the request has a `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`
-     * [ComputeRoutesRequest.routing_preference][google.maps.routing.v2.ComputeRoutesRequest.routing_preference]
-     * value, and `TRAFFIC_ON_POLYLINE` is included in the
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
-     * The intervals cover the entire polyline of the route without overlap. The
-     * start point of a specified interval is the same as the end point of the
+     * Speed reading intervals detailing traffic density. Applicable in case of
+     * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
+     * The intervals cover the entire polyline of the route without overlap.
+     * The start point of a specified interval is the same as the end point of the
      * preceding interval.
      *
      * Example:
@@ -1743,9 +1636,6 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The predicted fuel consumption in microliters.
-     * This field is only populated when `FUEL_CONSUMPTION` is included in the
-     * request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
      * </pre>
      *
      * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -1762,9 +1652,6 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The predicted fuel consumption in microliters.
-     * This field is only populated when `FUEL_CONSUMPTION` is included in the
-     * request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
      * </pre>
      *
      * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -1785,9 +1672,6 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The predicted fuel consumption in microliters.
-     * This field is only populated when `FUEL_CONSUMPTION` is included in the
-     * request's
-     * [ComputeRoutesRequest.extra_computations][google.maps.routing.v2.ComputeRoutesRequest.extra_computations].
      * </pre>
      *
      * <code>int64 fuel_consumption_microliters = 5;</code>

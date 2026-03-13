@@ -41,7 +41,6 @@ public class SyncCreateSession {
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
               .setSession(Session.newBuilder().build())
-              .setSessionId("sessionId607796817")
               .build();
       Session response = sessionServiceClient.createSessionAsync(request).get();
     }

@@ -42,7 +42,6 @@ import com.google.cloud.datastore.ReadOption;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.cloud.datastore.Transaction;
-import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
 import com.google.common.base.Preconditions;
 import com.google.testing.junit.testparameterinjector.TestParameter;
@@ -406,11 +405,11 @@ public class ITTracingTest {
             span,
             SPAN_NAME_LOOKUP + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DEFERRED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, false)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, "")
+                .put(ATTRIBUTES_KEY_RECEIVED, 0)
+                .put(ATTRIBUTES_KEY_MISSING, 1)
+                .put(ATTRIBUTES_KEY_DEFERRED, 0)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, false)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, "")
                 .build()));
   }
 
@@ -490,9 +489,9 @@ public class ITTracingTest {
             spanData,
             SPAN_NAME_COMMIT + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, response.size())
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, false)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, "")
+                .put(ATTRIBUTES_KEY_DOCUMENT_COUNT, response.size())
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, false)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, "")
                 .build()));
 
     // Clean Up test span context to verify update spans
@@ -525,9 +524,9 @@ public class ITTracingTest {
             spanData,
             SPAN_NAME_COMMIT + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, false)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, "")
+                .put(ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, false)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, "")
                 .build()));
 
     // Clean Up test span context to verify update spans
@@ -547,9 +546,9 @@ public class ITTracingTest {
             spanData,
             SPAN_NAME_COMMIT + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, false)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, "")
+                .put(ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, false)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, "")
                 .build()));
   }
 
@@ -587,13 +586,11 @@ public class ITTracingTest {
             span,
             SPAN_NAME_RUN_QUERY + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, false)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY,
-                    "READ_CONSISTENCY_UNSPECIFIED")
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID, "")
+                .put(ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, false)
+                .put(ATTRIBUTES_KEY_READ_CONSISTENCY, "READ_CONSISTENCY_UNSPECIFIED")
+                .put(ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, "")
                 .build()));
   }
 
@@ -680,13 +677,11 @@ public class ITTracingTest {
             span,
             SPAN_NAME_TRANSACTION_LOOKUP + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DEFERRED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
+                .put(ATTRIBUTES_KEY_DEFERRED, 0)
+                .put(ATTRIBUTES_KEY_MISSING, 1)
+                .put(ATTRIBUTES_KEY_RECEIVED, 0)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, true)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
                 .build()));
 
     assertSpanHierarchy(SPAN_NAME_TRANSACTION_COMMIT);
@@ -696,11 +691,9 @@ public class ITTracingTest {
             span,
             SPAN_NAME_TRANSACTION_COMMIT + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
+                .put(ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, true)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
                 .build()));
   }
 
@@ -742,15 +735,11 @@ public class ITTracingTest {
             span,
             SPAN_NAME_TRANSACTION_RUN_QUERY + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY,
-                    "READ_CONSISTENCY_UNSPECIFIED")
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
+                .put(ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, true)
+                .put(ATTRIBUTES_KEY_READ_CONSISTENCY, "READ_CONSISTENCY_UNSPECIFIED")
+                .put(ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
                 .build()));
   }
 
@@ -800,13 +789,11 @@ public class ITTracingTest {
             span,
             SPAN_NAME_TRANSACTION_LOOKUP + " complete.",
             Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DEFERRED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
+                .put(ATTRIBUTES_KEY_DEFERRED, 0)
+                .put(ATTRIBUTES_KEY_MISSING, 0)
+                .put(ATTRIBUTES_KEY_RECEIVED, 1)
+                .put(ATTRIBUTES_KEY_TRANSACTIONAL, true)
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
                 .build()));
 
     assertSpanHierarchy(SPAN_NAME_ROLLBACK);
@@ -816,9 +803,7 @@ public class ITTracingTest {
             span,
             SPAN_NAME_ROLLBACK,
             Attributes.builder()
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
+                .put(ATTRIBUTES_KEY_TRANSACTION_ID, transaction.getTransactionId().toStringUtf8())
                 .build()));
   }
 

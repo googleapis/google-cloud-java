@@ -322,7 +322,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
-   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=104
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
    * @return Whether the policyController field is set.
    */
   @java.lang.Override
@@ -345,7 +345,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
-   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=104
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
    * @return The policyController.
    */
   @java.lang.Override
@@ -385,8 +385,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Deprecated: Binauthz configuration will be ignored and should not
-   * be set.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
    * <code>
@@ -394,7 +394,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is deprecated.
-   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=109
+   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
    * @return Whether the binauthz field is set.
    */
   @java.lang.Override
@@ -407,8 +407,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Deprecated: Binauthz configuration will be ignored and should not
-   * be set.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
    * <code>
@@ -416,7 +416,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is deprecated.
-   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=109
+   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
    * @return The binauthz.
    */
   @java.lang.Override
@@ -431,8 +431,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Deprecated: Binauthz configuration will be ignored and should not
-   * be set.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
    * <code>
@@ -467,7 +467,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller is
-   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=116
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
    * @return Whether the hierarchyController field is set.
    */
   @java.lang.Override
@@ -491,7 +491,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller is
-   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=116
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
    * @return The hierarchyController.
    */
   @java.lang.Override
@@ -537,10 +537,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Version of Config Sync to install. Defaults to the latest
-   * supported Config Sync version if the config_sync field is enabled. See
-   * supported versions at
-   * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+   * Optional. Version of ACM installed.
    * </pre>
    *
    * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -564,10 +561,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Version of Config Sync to install. Defaults to the latest
-   * supported Config Sync version if the config_sync field is enabled. See
-   * supported versions at
-   * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+   * Optional. Version of ACM installed.
    * </pre>
    *
    * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -596,14 +590,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-specified cluster name used by the Config Sync
-   * cluster-name-selector annotation or ClusterSelector object, for applying
-   * configs to only a subset of clusters. Read more about the
-   * cluster-name-selector annotation and ClusterSelector object at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-   * Only set this field if a name different from the cluster's fleet membership
-   * name is used by the Config Sync cluster-name-selector annotation or
-   * ClusterSelector.
+   * Optional. The user-specified cluster name used by Config Sync
+   * cluster-name-selector annotation or ClusterSelector, for applying configs
+   * to only a subset of clusters. Omit this field if the cluster's fleet
+   * membership name is used by Config Sync cluster-name-selector annotation or
+   * ClusterSelector. Set this field if a name different from the cluster's
+   * fleet membership name is used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector.
    * </pre>
    *
    * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -627,14 +620,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-specified cluster name used by the Config Sync
-   * cluster-name-selector annotation or ClusterSelector object, for applying
-   * configs to only a subset of clusters. Read more about the
-   * cluster-name-selector annotation and ClusterSelector object at
-   * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-   * Only set this field if a name different from the cluster's fleet membership
-   * name is used by the Config Sync cluster-name-selector annotation or
-   * ClusterSelector.
+   * Optional. The user-specified cluster name used by Config Sync
+   * cluster-name-selector annotation or ClusterSelector, for applying configs
+   * to only a subset of clusters. Omit this field if the cluster's fleet
+   * membership name is used by Config Sync cluster-name-selector annotation or
+   * ClusterSelector. Set this field if a name different from the cluster's
+   * fleet membership name is used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector.
    * </pre>
    *
    * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -661,20 +653,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-   * unavailable, and Config Sync only supports manual upgrades.
+   * Optional. Enables automatic Feature management.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
    * @return The enum numeric value on the wire for management.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public int getManagementValue() {
     return management_;
   }
@@ -683,20 +671,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-   * unavailable, and Config Sync only supports manual upgrades.
+   * Optional. Enables automatic Feature management.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
    * @return The management.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management getManagement() {
     com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management result =
         com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management.forNumber(
@@ -1462,7 +1446,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=104
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
      * @return Whether the policyController field is set.
      */
     @java.lang.Deprecated
@@ -1484,7 +1468,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=104
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
      * @return The policyController.
      */
     @java.lang.Deprecated
@@ -1701,8 +1685,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1710,7 +1694,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=109
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
      * @return Whether the binauthz field is set.
      */
     @java.lang.Deprecated
@@ -1722,8 +1706,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1731,7 +1715,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=109
+     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
      * @return The binauthz.
      */
     @java.lang.Deprecated
@@ -1749,8 +1733,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1777,8 +1761,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1802,8 +1786,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1837,8 +1821,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1861,8 +1845,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1881,8 +1865,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1905,8 +1889,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: Binauthz configuration will be ignored and should not
-     * be set.
+     * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+     * will be ignored and should not be set.
      * </pre>
      *
      * <code>
@@ -1954,7 +1938,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller
      *     is deprecated. See
-     *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=116
+     *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
      * @return Whether the hierarchyController field is set.
      */
     @java.lang.Deprecated
@@ -1978,7 +1962,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller
      *     is deprecated. See
-     *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=116
+     *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
      * @return The hierarchyController.
      */
     @java.lang.Deprecated
@@ -2201,10 +2185,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Version of Config Sync to install. Defaults to the latest
-     * supported Config Sync version if the config_sync field is enabled. See
-     * supported versions at
-     * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+     * Optional. Version of ACM installed.
      * </pre>
      *
      * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2227,10 +2208,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Version of Config Sync to install. Defaults to the latest
-     * supported Config Sync version if the config_sync field is enabled. See
-     * supported versions at
-     * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+     * Optional. Version of ACM installed.
      * </pre>
      *
      * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2253,10 +2231,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Version of Config Sync to install. Defaults to the latest
-     * supported Config Sync version if the config_sync field is enabled. See
-     * supported versions at
-     * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+     * Optional. Version of ACM installed.
      * </pre>
      *
      * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2278,10 +2253,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Version of Config Sync to install. Defaults to the latest
-     * supported Config Sync version if the config_sync field is enabled. See
-     * supported versions at
-     * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+     * Optional. Version of ACM installed.
      * </pre>
      *
      * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2299,10 +2271,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Version of Config Sync to install. Defaults to the latest
-     * supported Config Sync version if the config_sync field is enabled. See
-     * supported versions at
-     * https://cloud.google.com/kubernetes-engine/config-sync/docs/get-support-config-sync#version_support_policy.
+     * Optional. Version of ACM installed.
      * </pre>
      *
      * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2327,14 +2296,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-specified cluster name used by the Config Sync
-     * cluster-name-selector annotation or ClusterSelector object, for applying
-     * configs to only a subset of clusters. Read more about the
-     * cluster-name-selector annotation and ClusterSelector object at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-     * Only set this field if a name different from the cluster's fleet membership
-     * name is used by the Config Sync cluster-name-selector annotation or
-     * ClusterSelector.
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
      * </pre>
      *
      * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2357,14 +2325,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-specified cluster name used by the Config Sync
-     * cluster-name-selector annotation or ClusterSelector object, for applying
-     * configs to only a subset of clusters. Read more about the
-     * cluster-name-selector annotation and ClusterSelector object at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-     * Only set this field if a name different from the cluster's fleet membership
-     * name is used by the Config Sync cluster-name-selector annotation or
-     * ClusterSelector.
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
      * </pre>
      *
      * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2387,14 +2354,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-specified cluster name used by the Config Sync
-     * cluster-name-selector annotation or ClusterSelector object, for applying
-     * configs to only a subset of clusters. Read more about the
-     * cluster-name-selector annotation and ClusterSelector object at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-     * Only set this field if a name different from the cluster's fleet membership
-     * name is used by the Config Sync cluster-name-selector annotation or
-     * ClusterSelector.
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
      * </pre>
      *
      * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2416,14 +2382,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-specified cluster name used by the Config Sync
-     * cluster-name-selector annotation or ClusterSelector object, for applying
-     * configs to only a subset of clusters. Read more about the
-     * cluster-name-selector annotation and ClusterSelector object at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-     * Only set this field if a name different from the cluster's fleet membership
-     * name is used by the Config Sync cluster-name-selector annotation or
-     * ClusterSelector.
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
      * </pre>
      *
      * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2441,14 +2406,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-specified cluster name used by the Config Sync
-     * cluster-name-selector annotation or ClusterSelector object, for applying
-     * configs to only a subset of clusters. Read more about the
-     * cluster-name-selector annotation and ClusterSelector object at
-     * https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/cluster-scoped-objects#limiting-configs.
-     * Only set this field if a name different from the cluster's fleet membership
-     * name is used by the Config Sync cluster-name-selector annotation or
-     * ClusterSelector.
+     * Optional. The user-specified cluster name used by Config Sync
+     * cluster-name-selector annotation or ClusterSelector, for applying configs
+     * to only a subset of clusters. Omit this field if the cluster's fleet
+     * membership name is used by Config Sync cluster-name-selector annotation or
+     * ClusterSelector. Set this field if a name different from the cluster's
+     * fleet membership name is used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector.
      * </pre>
      *
      * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2473,20 +2437,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-     * unavailable, and Config Sync only supports manual upgrades.
+     * Optional. Enables automatic Feature management.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
      * @return The enum numeric value on the wire for management.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public int getManagementValue() {
       return management_;
     }
@@ -2495,20 +2455,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-     * unavailable, and Config Sync only supports manual upgrades.
+     * Optional. Enables automatic Feature management.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
      * @param value The enum numeric value on the wire for management to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder setManagementValue(int value) {
       management_ = value;
       bitField0_ |= 0x00000040;
@@ -2520,20 +2476,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-     * unavailable, and Config Sync only supports manual upgrades.
+     * Optional. Enables automatic Feature management.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
      * @return The management.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management
         getManagement() {
       com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management result =
@@ -2548,20 +2500,16 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-     * unavailable, and Config Sync only supports manual upgrades.
+     * Optional. Enables automatic Feature management.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
      * @param value The management to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder setManagement(
         com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management value) {
       if (value == null) {
@@ -2577,19 +2525,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Deprecated: From version 1.21.0, automatic Feature management is
-     * unavailable, and Config Sync only supports manual upgrades.
+     * Optional. Enables automatic Feature management.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.management is
-     *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=137
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder clearManagement() {
       bitField0_ = (bitField0_ & ~0x00000040);
       management_ = 0;

@@ -36,7 +36,6 @@ import com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse;
 import com.google.cloud.bigquery.storage.v1.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.common.collect.ImmutableList;
-import java.time.Duration;
 import java.util.List;
 
 /**
@@ -112,12 +111,7 @@ public class EnhancedBigQueryReadStubSettings
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    // Configure a default keep-alive value to prevent idle connections from dropping.
-    // Some CreateReadSession calls may be long-running (10+ min).
-    return BigQueryReadStubSettings.defaultGrpcTransportProviderBuilder()
-        .setKeepAliveTimeDuration(Duration.ofMinutes(1))
-        .setKeepAliveTimeoutDuration(Duration.ofMinutes(1))
-        .setKeepAliveWithoutCalls(true);
+    return BigQueryReadStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {

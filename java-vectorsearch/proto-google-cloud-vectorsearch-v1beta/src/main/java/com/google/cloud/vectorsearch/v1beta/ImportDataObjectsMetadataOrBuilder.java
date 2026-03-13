@@ -30,11 +30,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp create_time = 1;</code>
    *
    * @return Whether the createTime field is set.
    */
@@ -44,11 +43,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp create_time = 1;</code>
    *
    * @return The createTime.
    */
@@ -58,11 +56,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * The time the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp create_time = 1;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -70,11 +67,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was last updated.
+   * The time the operation was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp update_time = 2;</code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -84,11 +80,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was last updated.
+   * The time the operation was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp update_time = 2;</code>
    *
    * @return The updateTime.
    */
@@ -98,11 +93,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the operation was last updated.
+   * The time the operation was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp update_time = 2;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -110,10 +104,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Number of DataObjects that were processed successfully.
+   * Number of DataObjects that were processed successfully.
    * </pre>
    *
-   * <code>int64 success_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 success_count = 3;</code>
    *
    * @return The successCount.
    */
@@ -123,10 +117,10 @@ public interface ImportDataObjectsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Number of DataObjects that failed during processing.
+   * Number of DataObjects that failed during processing.
    * </pre>
    *
-   * <code>int64 failure_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 failure_count = 4;</code>
    *
    * @return The failureCount.
    */

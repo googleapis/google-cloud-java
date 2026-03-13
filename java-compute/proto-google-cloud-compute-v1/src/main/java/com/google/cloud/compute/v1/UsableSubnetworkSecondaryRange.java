@@ -82,7 +82,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * <pre>
    * The range of IP addresses belonging to this subnetwork secondary range.
-   * Can be Ipv4 or Ipv6 range.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -99,7 +98,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * <pre>
    * The range of IP addresses belonging to this subnetwork secondary range.
-   * Can be Ipv4 or Ipv6 range.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -124,7 +122,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * <pre>
    * The range of IP addresses belonging to this subnetwork secondary range.
-   * Can be Ipv4 or Ipv6 range.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -578,7 +575,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * <pre>
      * The range of IP addresses belonging to this subnetwork secondary range.
-     * Can be Ipv4 or Ipv6 range.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -594,7 +590,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * <pre>
      * The range of IP addresses belonging to this subnetwork secondary range.
-     * Can be Ipv4 or Ipv6 range.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -618,7 +613,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * <pre>
      * The range of IP addresses belonging to this subnetwork secondary range.
-     * Can be Ipv4 or Ipv6 range.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -642,7 +636,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * <pre>
      * The range of IP addresses belonging to this subnetwork secondary range.
-     * Can be Ipv4 or Ipv6 range.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -665,7 +658,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * <pre>
      * The range of IP addresses belonging to this subnetwork secondary range.
-     * Can be Ipv4 or Ipv6 range.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -684,7 +676,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * <pre>
      * The range of IP addresses belonging to this subnetwork secondary range.
-     * Can be Ipv4 or Ipv6 range.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>

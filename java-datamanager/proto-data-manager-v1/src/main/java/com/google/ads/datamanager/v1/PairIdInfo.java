@@ -130,11 +130,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Descriptive name of the publisher to be displayed in the UI for a
+   * Optional. Descriptive name of the publisher to be displayed in the UI for a
    * better targeting experience.
    * </pre>
    *
-   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the publisherName field is set.
    */
@@ -147,11 +147,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Descriptive name of the publisher to be displayed in the UI for a
+   * Optional. Descriptive name of the publisher to be displayed in the UI for a
    * better targeting experience.
    * </pre>
    *
-   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The publisherName.
    */
@@ -172,11 +172,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Descriptive name of the publisher to be displayed in the UI for a
+   * Optional. Descriptive name of the publisher to be displayed in the UI for a
    * better targeting experience.
    * </pre>
    *
-   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for publisherName.
    */
@@ -200,32 +200,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. This field denotes the percentage of membership match of this
+   * Output only. This field denotes the percentage of membership match of this
    * user list with the corresponding publisher's first party data. Must be
    * between 0 and 100 inclusive.
    * </pre>
    *
-   * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   *
-   * @return Whether the matchRatePercentage field is set.
-   */
-  @java.lang.Override
-  public boolean hasMatchRatePercentage() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. This field denotes the percentage of membership match of this
-   * user list with the corresponding publisher's first party data. Must be
-   * between 0 and 100 inclusive.
-   * </pre>
-   *
-   * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>int32 match_rate_percentage = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The matchRatePercentage.
    */
@@ -241,31 +221,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The count of the advertiser's first party data records that have
-   * been uploaded to a clean room provider. This does not signify the size of a
-   * PAIR user list.
+   * Output only. The count of the advertiser's first party data records that
+   * have been uploaded to a clean room provider. This does not signify the size
+   * of a PAIR user list.
    * </pre>
    *
-   * <code>optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the advertiserIdentifierCount field is set.
-   */
-  @java.lang.Override
-  public boolean hasAdvertiserIdentifierCount() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The count of the advertiser's first party data records that have
-   * been uploaded to a clean room provider. This does not signify the size of a
-   * PAIR user list.
-   * </pre>
-   *
-   * <code>optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The advertiserIdentifierCount.
@@ -297,7 +258,7 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCleanRoomIdentifier() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -376,13 +337,13 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, publisherName_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (matchRatePercentage_ != 0) {
       output.writeInt32(3, matchRatePercentage_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (advertiserIdentifierCount_ != 0L) {
       output.writeInt64(4, advertiserIdentifierCount_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, cleanRoomIdentifier_);
     }
     getUnknownFields().writeTo(output);
@@ -400,13 +361,13 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, publisherName_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (matchRatePercentage_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, matchRatePercentage_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (advertiserIdentifierCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, advertiserIdentifierCount_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, cleanRoomIdentifier_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -432,14 +393,8 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
     if (hasPublisherName()) {
       if (!getPublisherName().equals(other.getPublisherName())) return false;
     }
-    if (hasMatchRatePercentage() != other.hasMatchRatePercentage()) return false;
-    if (hasMatchRatePercentage()) {
-      if (getMatchRatePercentage() != other.getMatchRatePercentage()) return false;
-    }
-    if (hasAdvertiserIdentifierCount() != other.hasAdvertiserIdentifierCount()) return false;
-    if (hasAdvertiserIdentifierCount()) {
-      if (getAdvertiserIdentifierCount() != other.getAdvertiserIdentifierCount()) return false;
-    }
+    if (getMatchRatePercentage() != other.getMatchRatePercentage()) return false;
+    if (getAdvertiserIdentifierCount() != other.getAdvertiserIdentifierCount()) return false;
     if (hasCleanRoomIdentifier() != other.hasCleanRoomIdentifier()) return false;
     if (hasCleanRoomIdentifier()) {
       if (!getCleanRoomIdentifier().equals(other.getCleanRoomIdentifier())) return false;
@@ -463,14 +418,10 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PUBLISHER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getPublisherName().hashCode();
     }
-    if (hasMatchRatePercentage()) {
-      hash = (37 * hash) + MATCH_RATE_PERCENTAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMatchRatePercentage();
-    }
-    if (hasAdvertiserIdentifierCount()) {
-      hash = (37 * hash) + ADVERTISER_IDENTIFIER_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAdvertiserIdentifierCount());
-    }
+    hash = (37 * hash) + MATCH_RATE_PERCENTAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMatchRatePercentage();
+    hash = (37 * hash) + ADVERTISER_IDENTIFIER_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAdvertiserIdentifierCount());
     if (hasCleanRoomIdentifier()) {
       hash = (37 * hash) + CLEAN_ROOM_IDENTIFIER_FIELD_NUMBER;
       hash = (53 * hash) + getCleanRoomIdentifier().hashCode();
@@ -669,15 +620,13 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.matchRatePercentage_ = matchRatePercentage_;
-        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.advertiserIdentifierCount_ = advertiserIdentifierCount_;
-        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.cleanRoomIdentifier_ = cleanRoomIdentifier_;
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -702,10 +651,10 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasMatchRatePercentage()) {
+      if (other.getMatchRatePercentage() != 0) {
         setMatchRatePercentage(other.getMatchRatePercentage());
       }
-      if (other.hasAdvertiserIdentifierCount()) {
+      if (other.getAdvertiserIdentifierCount() != 0L) {
         setAdvertiserIdentifierCount(other.getAdvertiserIdentifierCount());
       }
       if (other.hasCleanRoomIdentifier()) {
@@ -890,11 +839,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Descriptive name of the publisher to be displayed in the UI for a
+     * Optional. Descriptive name of the publisher to be displayed in the UI for a
      * better targeting experience.
      * </pre>
      *
-     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the publisherName field is set.
      */
@@ -906,11 +855,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Descriptive name of the publisher to be displayed in the UI for a
+     * Optional. Descriptive name of the publisher to be displayed in the UI for a
      * better targeting experience.
      * </pre>
      *
-     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The publisherName.
      */
@@ -930,11 +879,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Descriptive name of the publisher to be displayed in the UI for a
+     * Optional. Descriptive name of the publisher to be displayed in the UI for a
      * better targeting experience.
      * </pre>
      *
-     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for publisherName.
      */
@@ -954,11 +903,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Descriptive name of the publisher to be displayed in the UI for a
+     * Optional. Descriptive name of the publisher to be displayed in the UI for a
      * better targeting experience.
      * </pre>
      *
-     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The publisherName to set.
      * @return This builder for chaining.
@@ -977,11 +926,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Descriptive name of the publisher to be displayed in the UI for a
+     * Optional. Descriptive name of the publisher to be displayed in the UI for a
      * better targeting experience.
      * </pre>
      *
-     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -996,11 +945,11 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Descriptive name of the publisher to be displayed in the UI for a
+     * Optional. Descriptive name of the publisher to be displayed in the UI for a
      * better targeting experience.
      * </pre>
      *
-     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string publisher_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for publisherName to set.
      * @return This builder for chaining.
@@ -1022,32 +971,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. This field denotes the percentage of membership match of this
+     * Output only. This field denotes the percentage of membership match of this
      * user list with the corresponding publisher's first party data. Must be
      * between 0 and 100 inclusive.
      * </pre>
      *
-     * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     *
-     * @return Whether the matchRatePercentage field is set.
-     */
-    @java.lang.Override
-    public boolean hasMatchRatePercentage() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. This field denotes the percentage of membership match of this
-     * user list with the corresponding publisher's first party data. Must be
-     * between 0 and 100 inclusive.
-     * </pre>
-     *
-     * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>int32 match_rate_percentage = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The matchRatePercentage.
      */
@@ -1060,13 +989,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. This field denotes the percentage of membership match of this
+     * Output only. This field denotes the percentage of membership match of this
      * user list with the corresponding publisher's first party data. Must be
      * between 0 and 100 inclusive.
      * </pre>
      *
-     * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>int32 match_rate_percentage = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The matchRatePercentage to set.
      * @return This builder for chaining.
@@ -1083,13 +1011,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. This field denotes the percentage of membership match of this
+     * Output only. This field denotes the percentage of membership match of this
      * user list with the corresponding publisher's first party data. Must be
      * between 0 and 100 inclusive.
      * </pre>
      *
-     * <code>optional int32 match_rate_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>int32 match_rate_percentage = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1106,33 +1033,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The count of the advertiser's first party data records that have
-     * been uploaded to a clean room provider. This does not signify the size of a
-     * PAIR user list.
+     * Output only. The count of the advertiser's first party data records that
+     * have been uploaded to a clean room provider. This does not signify the size
+     * of a PAIR user list.
      * </pre>
      *
-     * <code>
-     * optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the advertiserIdentifierCount field is set.
-     */
-    @java.lang.Override
-    public boolean hasAdvertiserIdentifierCount() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The count of the advertiser's first party data records that have
-     * been uploaded to a clean room provider. This does not signify the size of a
-     * PAIR user list.
-     * </pre>
-     *
-     * <code>
-     * optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The advertiserIdentifierCount.
@@ -1146,13 +1052,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The count of the advertiser's first party data records that have
-     * been uploaded to a clean room provider. This does not signify the size of a
-     * PAIR user list.
+     * Output only. The count of the advertiser's first party data records that
+     * have been uploaded to a clean room provider. This does not signify the size
+     * of a PAIR user list.
      * </pre>
      *
-     * <code>
-     * optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The advertiserIdentifierCount to set.
@@ -1170,13 +1075,12 @@ public final class PairIdInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The count of the advertiser's first party data records that have
-     * been uploaded to a clean room provider. This does not signify the size of a
-     * PAIR user list.
+     * Output only. The count of the advertiser's first party data records that
+     * have been uploaded to a clean room provider. This does not signify the size
+     * of a PAIR user list.
      * </pre>
      *
-     * <code>
-     * optional int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>int64 advertiser_identifier_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.

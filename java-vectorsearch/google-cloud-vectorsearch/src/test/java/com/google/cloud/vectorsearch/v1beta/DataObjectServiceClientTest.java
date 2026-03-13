@@ -104,7 +104,6 @@ public class DataObjectServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
-            .setEtag("etag3123477")
             .build();
     mockDataObjectService.addResponse(expectedResponse);
 
@@ -156,7 +155,6 @@ public class DataObjectServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
-            .setEtag("etag3123477")
             .build();
     mockDataObjectService.addResponse(expectedResponse);
 
@@ -256,7 +254,6 @@ public class DataObjectServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
-            .setEtag("etag3123477")
             .build();
     mockDataObjectService.addResponse(expectedResponse);
 
@@ -304,7 +301,6 @@ public class DataObjectServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
-            .setEtag("etag3123477")
             .build();
     mockDataObjectService.addResponse(expectedResponse);
 
@@ -350,7 +346,6 @@ public class DataObjectServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setData(Struct.newBuilder().build())
             .putAllVectors(new HashMap<String, Vector>())
-            .setEtag("etag3123477")
             .build();
     mockDataObjectService.addResponse(expectedResponse);
 

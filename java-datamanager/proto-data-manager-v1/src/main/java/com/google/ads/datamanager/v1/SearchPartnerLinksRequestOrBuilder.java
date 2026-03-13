@@ -118,12 +118,9 @@ public interface SearchPartnerLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-   * be on the left hand side of each condition (for example: `partner_link_id =
-   * 123456789`). Fields must be specified using either all [camel
-   * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-   * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-   * camel case and snake case.
+   * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+   * the left hand side of each condition (for example: `partner_link_id =
+   * 123456789`).
    *
    * Supported operations:
    *
@@ -140,8 +137,8 @@ public interface SearchPartnerLinksRequestOrBuilder
    * - `partner_account.account_id`
    *
    * Example:
-   * `owning_account.account_type = "GOOGLE_ADS" AND partner_account.account_id
-   * = 987654321`
+   * `owning_account.account_type = "GOOGLE_ADS" OR partner_account.account_id =
+   * 987654321`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,12 +151,9 @@ public interface SearchPartnerLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A [filter string](https://google.aip.dev/160). All fields need to
-   * be on the left hand side of each condition (for example: `partner_link_id =
-   * 123456789`). Fields must be specified using either all [camel
-   * case](https://en.wikipedia.org/wiki/Camel_case) or all [snake
-   * case](https://en.wikipedia.org/wiki/Snake_case). Don't use a combination of
-   * camel case and snake case.
+   * Optional. A [filter string](//google.aip.dev/160). All fields need to be on
+   * the left hand side of each condition (for example: `partner_link_id =
+   * 123456789`).
    *
    * Supported operations:
    *
@@ -176,8 +170,8 @@ public interface SearchPartnerLinksRequestOrBuilder
    * - `partner_account.account_id`
    *
    * Example:
-   * `owning_account.account_type = "GOOGLE_ADS" AND partner_account.account_id
-   * = 987654321`
+   * `owning_account.account_type = "GOOGLE_ADS" OR partner_account.account_id =
+   * 987654321`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
