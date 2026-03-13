@@ -1,9 +1,25 @@
 on:
   pull_request:
 
-name: verify_library_generation
+name: sdk-platform-java verify_library_generation
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   should-run-library-generation-tests:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     outputs:
       should_run: ${{ steps.get_changed_directories.outputs.should_run }}
@@ -39,6 +55,8 @@ jobs:
         head_repo_name: ${{ github.event.pull_request.head.repo.full_name  }}
         base_repo: ${{ github.repository }}
   library-generation-unit-tests:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     needs: should-run-library-generation-tests
     if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
@@ -67,6 +85,8 @@ jobs:
         set -x
         python -m unittest discover -s hermetic_build -p "*unit_tests.py"
   library-generation-lint-shell:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     needs: should-run-library-generation-tests
     if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
@@ -81,6 +101,8 @@ jobs:
         ignore_paths: 
           .kokoro
   library-generation-lint-python:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     needs: should-run-library-generation-tests
     if: needs.should-run-library-generation-tests.outputs.should_run == 'true'

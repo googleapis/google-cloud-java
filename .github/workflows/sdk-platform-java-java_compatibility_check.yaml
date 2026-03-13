@@ -15,9 +15,25 @@
 # downstream client libraries before they are released.
 on:
   pull_request:
-name: Java 8 compatibility check
+name: sdk-platform-java Java 8 compatibility check
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   java8-compatibility-check:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4

@@ -7,9 +7,25 @@ on:
       - showcase/**
       - test/**
 
-name: Downstream Check
+name: sdk-platform-java Downstream Check
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   downstream-compatibility:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
@@ -41,6 +57,8 @@ jobs:
       - name: Perform downstream compatibility testing
         run: REPOS_UNDER_TEST="${{ matrix.repo }}" ./.kokoro/presubmit/downstream-compatibility.sh
   downstream-compatibility-spring-generator:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false

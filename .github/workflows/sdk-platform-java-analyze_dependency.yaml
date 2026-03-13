@@ -1,4 +1,4 @@
-name: Run dependency analyzer
+name: sdk-platform-java Run dependency analyzer
 on:
   workflow_dispatch:
     inputs:
@@ -17,8 +17,24 @@ on:
         description: the version of the dependency
         required: true
         type: string
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   Run-dependency-analyzer:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4

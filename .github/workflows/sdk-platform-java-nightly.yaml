@@ -1,4 +1,4 @@
-name: Nightly
+name: sdk-platform-java Nightly
 on:
   workflow_dispatch:
   schedule:
@@ -6,8 +6,24 @@ on:
 defaults:
   run:
     shell: bash
+env:
+  BUILD_SUBDIR: sdk-platform-java
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
   nightly:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -34,6 +50,8 @@ jobs:
             --title "Nightly build for Java ${{ matrix.java }} on ${{ matrix.os }} failed." \
             --body "The build has failed : https://github.com/googleapis/gapic-generator-java/actions/runs/${GITHUB_RUN_ID}"
   nightly-java8: # Compile with JDK 11. Run tests with JDK 8.
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     strategy:
       fail-fast: false
       matrix:
