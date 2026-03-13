@@ -861,7 +861,7 @@ public class HttpBigQueryRpcTest {
     }
 
     @Test
-    public void testOtelAttributesFromOptions() throws Exception {
+    public void testOtelAttributesFromOptionsGetAddedtoSpan() throws Exception {
       setMockResponse(
           "{\"kind\":\"bigquery#dataset\",\"id\":\""
               + PROJECT_ID
