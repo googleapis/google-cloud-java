@@ -27,12 +27,13 @@ import io.opentelemetry.sdk.metrics.data.DoublePointData;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.metrics.data.MetricDataType;
+import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.junit.Assert;
 
 @InternalApi
 public class BuiltinMetricsTestUtils {
@@ -77,6 +78,9 @@ public class BuiltinMetricsTestUtils {
   }
 
   public static long getAggregatedValue(MetricData metricData, Attributes attributes) {
+    assertThat(metricData.getData().getPoints().stream().map(PointData::getAttributes))
+        .contains(attributes);
+
     switch (metricData.getType()) {
       case HISTOGRAM:
         HistogramPointData hd =
@@ -98,6 +102,9 @@ public class BuiltinMetricsTestUtils {
   }
 
   public static double getAggregatedDoubleValue(MetricData metricData, Attributes attributes) {
+    assertThat(metricData.getData().getPoints().stream().map(PointData::getAttributes))
+        .contains(attributes);
+
     switch (metricData.getType()) {
       case HISTOGRAM:
         HistogramPointData hd =
@@ -140,23 +147,8 @@ public class BuiltinMetricsTestUtils {
   }
 
   public static void verifyAttributes(MetricData metricData, Attributes attributes) {
-    switch (metricData.getType()) {
-      case HISTOGRAM:
-        List<HistogramPointData> hd =
-            metricData.getHistogramData().getPoints().stream()
-                .filter(pd -> pd.getAttributes().equals(attributes))
-                .collect(Collectors.toList());
-        assertThat(hd).isNotEmpty();
-        break;
-      case LONG_SUM:
-        List<LongPointData> ld =
-            metricData.getLongSumData().getPoints().stream()
-                .filter(pd -> pd.getAttributes().equals(attributes))
-                .collect(Collectors.toList());
-        assertThat(ld).isNotEmpty();
-        break;
-      default:
-        Assert.fail("Unexpected type");
-    }
+    assertThat(metricData.getType()).isAnyOf(MetricDataType.HISTOGRAM, MetricDataType.LONG_SUM);
+    assertThat(metricData.getData().getPoints().stream().map(PointData::getAttributes))
+        .contains(attributes);
   }
 }

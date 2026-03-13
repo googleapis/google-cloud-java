@@ -101,7 +101,7 @@ public class ExecuteQueryRetryTest {
         .setRefreshingChannel(false)
         .build();
     // Remove log noise from client side metrics
-    settings.setMetricsProvider(NoopMetricsProvider.INSTANCE);
+    settings.setMetricsProvider(NoopMetricsProvider.INSTANCE).disableInternalMetrics();
     return settings;
   }
 

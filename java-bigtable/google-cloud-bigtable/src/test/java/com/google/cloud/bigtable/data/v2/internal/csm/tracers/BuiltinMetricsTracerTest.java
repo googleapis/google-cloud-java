@@ -60,6 +60,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLate
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRemainingDeadline;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRetryCount;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableServerLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.ClientSchema;
 import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -167,6 +168,14 @@ public class BuiltinMetricsTracerTest {
           .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
           .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
           .put(MetricLabels.APP_PROFILE_KEY, APP_PROFILE_ID)
+          .build();
+
+  private Attributes expectedClientSchemaBaseAttributes =
+      Attributes.builder()
+          .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
+          .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
+          .put(MetricLabels.APP_PROFILE_KEY, APP_PROFILE_ID)
+          .put(MetricLabels.CLIENT_NAME, "java-bigtable/" + Version.VERSION)
           .build();
 
   private InMemoryMetricReader metricReader;
@@ -395,6 +404,7 @@ public class BuiltinMetricsTracerTest {
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
             .build();
 
     MetricData serverLatenciesMetricData = getMetricData(metricReader, TableServerLatency.NAME);
@@ -405,7 +415,7 @@ public class BuiltinMetricsTracerTest {
     MetricData connectivityErrorCountMetricData =
         getMetricData(metricReader, TableConnectivityErrorCount.NAME);
     Attributes expected1 =
-        expectedBaseAttributes.toBuilder()
+        expectedClientSchemaBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
             .put(TableSchema.TABLE_ID_KEY, TABLE)
             .put(TableSchema.ZONE_ID_KEY, "global")
@@ -414,7 +424,7 @@ public class BuiltinMetricsTracerTest {
             .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
             .build();
     Attributes expected2 =
-        expectedBaseAttributes.toBuilder()
+        expectedClientSchemaBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
             .put(TableSchema.TABLE_ID_KEY, TABLE)
             .put(TableSchema.ZONE_ID_KEY, ZONE)
@@ -842,7 +852,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
@@ -851,7 +861,8 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(ClientSchema.CLIENT_NAME, "java-bigtable/" + Version.VERSION)
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .put(MetricLabels.APPLIED_KEY, true)
               .put(MetricLabels.STATUS_KEY, "OK")
@@ -874,7 +885,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
@@ -883,7 +894,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .put(MetricLabels.APPLIED_KEY, true)
               .put(MetricLabels.STATUS_KEY, "OK")
@@ -906,7 +917,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
@@ -916,7 +927,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .put(MetricLabels.APPLIED_KEY, true)
               .put(MetricLabels.STATUS_KEY, "OK")
@@ -940,7 +951,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
@@ -950,7 +961,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .put(MetricLabels.APPLIED_KEY, true)
               .put(MetricLabels.STATUS_KEY, "OK")
@@ -975,7 +986,7 @@ public class BuiltinMetricsTracerTest {
       MetricData targetQpsMetric =
           getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
       Attributes targetQpsAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
@@ -985,7 +996,7 @@ public class BuiltinMetricsTracerTest {
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
-          expectedBaseAttributes.toBuilder()
+          expectedClientSchemaBaseAttributes.toBuilder()
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
               .put(MetricLabels.APPLIED_KEY, true)
               .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")

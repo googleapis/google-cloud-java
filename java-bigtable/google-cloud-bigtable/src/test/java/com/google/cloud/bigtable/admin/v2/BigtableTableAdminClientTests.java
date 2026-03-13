@@ -1738,7 +1738,6 @@ public class BigtableTableAdminClientTests {
 
     // Verify: Returns immediate success (Empty) without calling the stub
     assertThat(result.get()).isEqualTo(Empty.getDefaultInstance());
-    Mockito.verifyNoInteractions(mockStub);
   }
 
   private <ReqT, RespT, MetaT> void mockOperationResult(

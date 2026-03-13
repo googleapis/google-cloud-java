@@ -193,6 +193,7 @@ public class EnhancedBigtableStubTest {
             .setAppProfileId(APP_PROFILE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics()
             .build()
             .getStubSettings();
 
@@ -266,6 +267,7 @@ public class EnhancedBigtableStubTest {
             .setEndpoint("batch-bigtable.googleapis.com:443")
             .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
             .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics()
             // Use a fixed channel that will ignore the default endpoint and connect to the emulator
             .setTransportChannelProvider(
                 FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel)))

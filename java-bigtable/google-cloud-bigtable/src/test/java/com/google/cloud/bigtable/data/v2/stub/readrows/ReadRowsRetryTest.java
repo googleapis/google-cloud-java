@@ -88,7 +88,8 @@ public class ReadRowsRetryTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
-            .setMetricsProvider(NoopMetricsProvider.INSTANCE);
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics();
 
     settings
         .stubSettings()

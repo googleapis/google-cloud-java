@@ -71,7 +71,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class BigtableCloudMonitoringExporterTest2 {
+class BigtableCloudMonitoringExporter2Test {
   private static final TableName tableName =
       TableName.of("fake-project", "fake-instance", "fake-table");
   private static final String appProfileId = "default";

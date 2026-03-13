@@ -64,7 +64,8 @@ public class MutateRowsRetryTest {
             .setProjectId("fake-project")
             .setInstanceId("fake-instance")
             .setCredentialsProvider(NoCredentialsProvider.create())
-            .setMetricsProvider(NoopMetricsProvider.INSTANCE);
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics();
 
     settings
         .stubSettings()

@@ -186,6 +186,7 @@ public class BigtableDataClientFactoryTest {
             BigtableDataClientFactory.create(
                 defaultSettings.toBuilder()
                     .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+                    .disableInternalMetrics()
                     .build());
         BigtableDataClient ignored1 = factory.createForInstance("project1", "instance1");
         BigtableDataClient ignored2 = factory.createForInstance("project2", "instance2");

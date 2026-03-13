@@ -412,6 +412,7 @@ public class BigtableCloudMonitoringExporterTest {
                 .put(ClientSchema.INSTANCE_ID_KEY.getKey(), instanceId)
                 .put(ClientSchema.APP_PROFILE_KEY.getKey(), appProfileId)
                 .put(ClientSchema.CLIENT_NAME.getKey(), clientName)
+                .put(MetricLabels.CLIENT_UID.getKey(), taskId)
                 .build());
   }
 

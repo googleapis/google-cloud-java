@@ -102,6 +102,7 @@ public class SkipTrailersTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics()
             .setCredentialsProvider(NoCredentialsProvider.create());
     clientBuilder.stubSettings().setTracerFactory(tracerFactory);
 
