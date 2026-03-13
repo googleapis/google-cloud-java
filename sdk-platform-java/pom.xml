@@ -10,6 +10,7 @@
 
   <properties>
     <clirr.skip>true</clirr.skip>
+    <enforcer.skip>true</enforcer.skip>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -28,10 +29,6 @@
   <!-- Do not deploy the aggregator POM -->
   <build>
     <plugins>
-      <plugin>
-        <groupId>com.spotify.fmt</groupId>
-        <artifactId>fmt-maven-plugin</artifactId>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>

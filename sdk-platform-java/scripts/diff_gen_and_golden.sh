@@ -24,5 +24,5 @@ find src -type f -name 'PlaceholderFile.java' -delete
 find src -type d -empty -delete
 # This will not print diff_output to the console unless `--test_output=all` option
 # is enabled, it only emits the comparison results to the test.log.
-diff -ru test/integration/goldens/${API_NAME}/src src
-diff -ru test/integration/goldens/${API_NAME}/samples samples
+diff -ru sdk-platform-java/test/integration/goldens/${API_NAME}/src src
+diff -ru sdk-platform-java/test/integration/goldens/${API_NAME}/samples samples

@@ -24,7 +24,7 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/wrappers.proto";
-import "test/integration/apis/kms/v1/resources.proto";
+import "sdk-platform-java/test/integration/apis/kms/v1/resources.proto";
 
 option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Kms.V1";

@@ -55,20 +55,23 @@ jobs:
         shell: bash
         run: |
           if [[ -n "${{ env.DEPENDENCIES_LIST }}" ]]; then
-            ./.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
+            .github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
           else
-            ./.github/scripts/test_dependency_compatibility.sh
+            .github/scripts/test_dependency_compatibility.sh
           fi
+        working-directory: sdk-platform-java
 
       # Install the modules for showcase (Shared-Deps is required to run showcase)
       - name: Install sdk-platform-java's modules
         # gapic-generator-java requires Java 8 and is irrelevant for this CI
         run: mvn -q -B -ntp install --projects '!gapic-generator-java' -Dcheckstyle.skip -Dfmt.skip -DskipTests -Dclirr.skip -T 1C
+        working-directory: sdk-platform-java
 
       # Set up local showcase server to run the showcase ITs
       - name: Parse showcase version
-        working-directory: java-showcase/gapic-showcase
+        working-directory: sdk-plaform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
+        working-directory: sdk-platform-java
       - name: Install showcase server
         run: |
           sudo mkdir -p /usr/src/showcase
@@ -78,6 +81,7 @@ jobs:
           tar -xf showcase-*
           ./gapic-showcase run &
           cd -
+        working-directory: sdk-platform-java
 
       # Run Showcase's Integration Tests
       - name: Perform Dependency Compatibility Integration Testing (Showcase Tests)
@@ -85,8 +89,8 @@ jobs:
         # Need to cd out of the directory to get the scripts as this step is run inside the java-showcase directory
         run: |
           if [[ -n "${{ env.DEPENDENCIES_LIST }}" ]]; then
-            ../.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
+            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
           else
-            ../.github/scripts/test_dependency_compatibility.sh -f ../dependencies.txt
+            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -f ../dependencies.txt
           fi
-        working-directory: java-showcase
+        working-directory: sdk-platform-java/java-showcase

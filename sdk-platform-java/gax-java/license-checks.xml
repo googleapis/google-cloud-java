@@ -5,6 +5,6 @@
 <module name="Checker">
   <module name="RegexpHeader">
     <property name="fileExtensions" value="java"/>
-    <property name="headerFile" value="./gax-java/java.header"/>
+    <property name="headerFile" value="./sdk-platform-java/gax-java/java.header"/>
   </module>
 </module>
