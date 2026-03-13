@@ -70,6 +70,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanKind;
 import java.io.IOException;
@@ -1196,10 +1197,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       deleteRoutine =
           this.options
               .getOpenTelemetryTracer()
-              .spanBuilder("com.google.cloud.bigquery.BigQueryRpc.listRoutines")
+              .spanBuilder("com.google.cloud.bigquery.BigQueryRpc.deleteRoutine")
               .setSpanKind(SpanKind.CLIENT)
               .setAttribute("bq.rpc.service", "RoutineService")
-              .setAttribute("bq.rpc.method", "ListRoutines")
+              .setAttribute("bq.rpc.method", "DeleteRoutine")
               .setAttribute("bq.rpc.system", "http")
               .startSpan();
     }
@@ -1987,10 +1988,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       testIamPermissions =
           this.options
               .getOpenTelemetryTracer()
-              .spanBuilder("com.google.cloud.bigquery.BigQueryRpc.setIamPolicy")
+              .spanBuilder("com.google.cloud.bigquery.BigQueryRpc.testIamPermissions")
               .setSpanKind(SpanKind.CLIENT)
               .setAttribute("bq.rpc.service", "TableService")
-              .setAttribute("bq.rpc.method", "SetIamPolicy")
+              .setAttribute("bq.rpc.method", "TestIamPermissions")
               .setAttribute("bq.rpc.system", "http")
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
@@ -2004,10 +2005,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   private static Attributes otelAttributesFromOptions(Map<Option, ?> options) {
-    Attributes attributes = Attributes.builder().build();
+    AttributesBuilder builder = Attributes.builder();
     for (Map.Entry<Option, ?> entry : options.entrySet()) {
-      attributes.toBuilder().put(entry.getKey().toString(), entry.getValue().toString());
+      builder.put(entry.getKey().toString(), entry.getValue().toString());
     }
-    return attributes;
+    return builder.build();
   }
 }

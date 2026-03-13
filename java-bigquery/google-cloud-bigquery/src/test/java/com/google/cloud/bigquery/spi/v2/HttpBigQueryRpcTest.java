@@ -542,9 +542,9 @@ public class HttpBigQueryRpcTest {
           "DELETE",
           "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
+          "com.google.cloud.bigquery.BigQueryRpc.deleteRoutine",
           "RoutineService",
-          "ListRoutines",
+          "DeleteRoutine",
           null);
     }
 
@@ -854,10 +854,39 @@ public class HttpBigQueryRpcTest {
               + TABLE_ID
               + ":testIamPermissions");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
+          "com.google.cloud.bigquery.BigQueryRpc.testIamPermissions",
           "TableService",
-          "SetIamPolicy",
+          "TestIamPermissions",
           null);
+    }
+
+    @Test
+    public void testOtelAttributesFromOptions() throws Exception {
+      setMockResponse(
+              "{\"kind\":\"bigquery#dataset\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "\",\"datasetReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\"}}");
+
+      Map<BigQueryRpc.Option, Object> options = new HashMap<>();
+      options.put(BigQueryRpc.Option.FIELDS, "foo,bar");
+
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, options);
+
+      Map<String, String> expectedAttributes = new HashMap<>();
+      expectedAttributes.put("FIELDS", "foo,bar");
+      expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
+
+      verifySpan(
+              "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+              "DatasetService",
+              "GetDataset",
+              expectedAttributes);
     }
   }
 
