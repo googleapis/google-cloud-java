@@ -863,15 +863,15 @@ public class HttpBigQueryRpcTest {
     @Test
     public void testOtelAttributesFromOptions() throws Exception {
       setMockResponse(
-              "{\"kind\":\"bigquery#dataset\",\"id\":\""
-                      + PROJECT_ID
-                      + ":"
-                      + DATASET_ID
-                      + "\",\"datasetReference\":{\"projectId\":\""
-                      + PROJECT_ID
-                      + "\",\"datasetId\":\""
-                      + DATASET_ID
-                      + "\"}}");
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
 
       Map<BigQueryRpc.Option, Object> options = new HashMap<>();
       options.put(BigQueryRpc.Option.FIELDS, "foo,bar");
@@ -883,10 +883,10 @@ public class HttpBigQueryRpcTest {
       expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
 
       verifySpan(
-              "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-              "DatasetService",
-              "GetDataset",
-              expectedAttributes);
+          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+          "DatasetService",
+          "GetDataset",
+          expectedAttributes);
     }
   }
 
