@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.93.0 (2026-03-11)
+
+* No change
+
+
 ## 1.92.0 (2026-02-25)
 
 ### Dependencies

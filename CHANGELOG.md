@@ -1,5 +1,48 @@
 # Changelog
 
+## [1.81.0](https://github.com/googleapis/google-cloud-java/compare/v1.80.0...v1.81.0) (2026-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* [vectorsearch] Removed field DenseScannParams from SearchHint
+* [vectorsearch] Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker`
+* [vectorsearch] Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker`
+* [auditmanager] Update existing packaging option `cloud.google.com/go/auditmanager/apiv1/auditmanagerpb;auditmanagerpb` for `go_package`
+
+### Features
+
+* [aiplatform] A new field `inference_generation_config` is added to message `.google.cloud.aiplatform.v1beta1.EvaluationConfig` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* [aiplatform] add AskContexts and AsyncRetrieveContexts APIs to VertexRagService ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [aiplatform] add AskContexts and AsyncRetrieveContexts APIs to VertexRagService ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [aiplatform] Add custom session id field to create session v1beta1 ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [alloydb] Add a new field to support Dataplex integration configuration ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [ces] update public libraries for CES v1beta ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [compute] Update Compute Engine v1 API to revision 20260213 ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [document-ai] Added a field for enabling image and table annotation for layout parser processor ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [gdchardwaremanagement] Add `OFFLINE` state to Zone resources ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [gkehub] A new field `kubernetes_api_server_version` is added to message `.google.cloud.gkehub.configmanagement.v1beta.MembershipState` ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [maps-routing] add a new Waypoint source to accept a token that identifies a Navigation Point obtained from the `SearchDestinations` method of the Geocoding API ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [network-management] Add API fields related to GKE Pods and Network Policies ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* [storagebatchoperations] add new transformation `update_object_custom_context` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* add email and skip-kokoro flags to release bot ([#12050](https://github.com/googleapis/google-cloud-java/issues/12050)) ([12e2e94](https://github.com/googleapis/google-cloud-java/commit/12e2e94140e2a96686f5e070846e5e4215d05b14))
+* **jdbc:** centralize connection properties from `BigQueryConnection` and `DataSource` ([#4116](https://github.com/googleapis/google-cloud-java/issues/4116)) ([d3b8bde](https://github.com/googleapis/google-cloud-java/commit/d3b8bded8d1cce9777fa5b40d72c0d6f7b9637a7))
+
+
+### Bug Fixes
+
+* [auditmanager] Update existing packaging option `cloud.google.com/go/auditmanager/apiv1/auditmanagerpb;auditmanagerpb` for `go_package` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* [vectorsearch] Removed field DenseScannParams from SearchHint ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* [vectorsearch] Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* [vectorsearch] Removed obsolete field `vertex` from message `.google.cloud.vectorsearch.v1.Ranker` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* Configure defualt keep alive pings for BQ Storage Read API RPCs ([#12037](https://github.com/googleapis/google-cloud-java/issues/12037)) ([a808bbe](https://github.com/googleapis/google-cloud-java/commit/a808bbef93e7ff870f37ba462fd8c5237b48987a))
+* **jdbc:** various perf improvements ([#4114](https://github.com/googleapis/google-cloud-java/issues/4114)) ([0137e4b](https://github.com/googleapis/google-cloud-java/commit/0137e4b418ff9cefcbece1c6d9d8ef491a50819b))
+
+
+### Documentation
+
+* [errorreporting] update the reference link for ErrorGroupStats ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+
 ## [1.80.0](https://github.com/googleapis/google-cloud-java/compare/v1.79.0...v1.80.0) (2026-02-25)
 
 

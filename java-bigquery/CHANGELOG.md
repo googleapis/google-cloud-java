@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.61.0 (2026-03-11)
+
+* No change
+
+
 ## [2.60.0](https://github.com/googleapis/java-bigquery/compare/v2.59.0...v2.60.0) (2026-02-26)
 
 
