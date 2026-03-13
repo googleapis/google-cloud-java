@@ -1,0 +1,3 @@
+# See https://github.com/bazelbuild/bazelisk
+# Version required for Java 24 support (https://github.com/bazelbuild/bazel/commit/806a6e82320956b63f1351ebe2b0da8483f36f19).
+USE_BAZEL_VERSION=7.7.0

@@ -1,0 +1,130 @@
+on:
+  pull_request:
+
+name: sdk-platform-java verify_library_generation
+env:
+  BUILD_SUBDIR: sdk-platform-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+  should-run-library-generation-tests:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    outputs:
+      should_run: ${{ steps.get_changed_directories.outputs.should_run }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: get changed directories in the pull request
+      id: get_changed_directories
+      shell: bash
+      run: |
+        set -ex
+        # PRs that come from a fork need to be handled differently
+        if [[ ${head_repo_name} == ${base_repo} ]]; then
+          git checkout ${base_ref}
+          git checkout ${head_ref}
+          changed_directories="$(git diff --name-only ${base_ref} ${head_ref})"
+        else
+          git remote add fork ${head_repo_url}
+          git fetch fork # create a mapping of the fork
+          git checkout -b "${head_ref}" fork/${head_ref}
+          changed_directories="$(git diff --name-only "fork/${head_ref}" "origin/${base_ref}")"
+        fi
+        if [[ ${changed_directories} =~ "hermetic_build/" ]] || [[ ${changed_directories} =~ ".cloudbuild/library_generation/" ]]; then
+          echo "should_run=true" >> $GITHUB_OUTPUT
+        else
+          echo "should_run=false" >> $GITHUB_OUTPUT
+        fi
+      env:
+        base_ref: ${{ github.event.pull_request.base.ref }}
+        head_ref: ${{ github.event.pull_request.head.ref }}
+        head_repo_url: ${{ github.event.pull_request.head.repo.html_url }}
+        head_repo_name: ${{ github.event.pull_request.head.repo.full_name  }}
+        base_repo: ${{ github.repository }}
+  library-generation-unit-tests:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    needs: should-run-library-generation-tests
+    if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: install python modules and dependencies
+      shell: bash
+      run: |
+        set -ex
+        pip install --upgrade pip
+        pip install --require-hashes -r hermetic_build/common/requirements.txt
+        pip install hermetic_build/common
+        pip install --require-hashes -r hermetic_build/library_generation/requirements.txt
+        pip install hermetic_build/library_generation
+        pip install --require-hashes -r hermetic_build/release_note_generation/requirements.txt
+        pip install hermetic_build/release_note_generation
+    - name: Run shell unit tests
+      run: |
+        set -x
+        hermetic_build/library_generation/tests/generate_library_unit_tests.sh
+    - name: Run python unit tests
+      run: |
+        set -x
+        python -m unittest discover -s hermetic_build -p "*unit_tests.py"
+  library-generation-lint-shell:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    needs: should-run-library-generation-tests
+    if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@2.0.0
+      with:
+        scandir: 'hermetic_build'
+        format: tty
+        severity: error
+        ignore_paths: 
+          .kokoro
+  library-generation-lint-python:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    needs: should-run-library-generation-tests
+    if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: install python dependencies
+      shell: bash
+      run: |
+        set -ex
+        pip install --upgrade pip
+        pip install --require-hashes -r hermetic_build/common/requirements.txt
+        pip install hermetic_build/common
+        pip install --require-hashes -r hermetic_build/library_generation/requirements.txt
+        pip install hermetic_build/library_generation
+        pip install --require-hashes -r hermetic_build/release_note_generation/requirements.txt
+        pip install hermetic_build/release_note_generation
+    - name: Lint
+      shell: bash
+      run: |
+        # exclude generated golden files
+        # exclude owlbot until further refaction
+        black --check hermetic_build --exclude "(library_generation/tests/resources/goldens)"

@@ -1,0 +1,98 @@
+load("//:gax_java.bzl", "google_java_format", "google_java_format_verification", "java_tests")
+
+_JAVA_COPTS = [
+    "-source",
+    "1.8",
+    "-target",
+    "1.8",
+]
+
+_COMPILE_DEPS = [
+    "@com_google_api_api_common//jar",
+    "@com_google_api_grpc_proto_google_common_protos//jar",
+    "@com_google_protobuf_java//jar",
+    "@com_google_auth_google_auth_library_credentials//jar",
+    "@com_google_auth_google_auth_library_oauth2_http//jar",
+    "@com_google_auto_value_auto_value//jar",
+    "@com_google_auto_value_auto_value_annotations//jar",
+    "@com_google_code_findbugs_jsr305//jar",
+    "@com_google_errorprone_error_prone_annotations//jar",
+    "@com_google_guava_guava//jar",
+    "@io_opentelemetry_opentelemetry_api//jar",
+    "@io_opentelemetry_opentelemetry_context//jar",
+    "@io_opencensus_opencensus_api//jar",
+    "@io_opencensus_opencensus_contrib_http_util//jar",
+    "@io_grpc_grpc_java//context:context",
+    "@org_threeten_threetenbp//jar",
+    "@com_google_http_client_google_http_client//jar",
+    "@com_google_http_client_google_http_client_gson//jar",
+    "@com_google_code_gson_gson//jar",
+    "@com_google_guava_failureaccess//jar",
+    "@javax_annotation_javax_annotation_api//jar",
+    "@org_graalvm_sdk//jar",
+    "@org_slf4j_slf4j_api//jar",
+    "@com_google_protobuf_protobuf_java_util//jar"
+]
+
+_TEST_COMPILE_DEPS = [
+    "@org_junit_jupiter_junit_jupiter_api//jar",
+    "@org_junit_jupiter_junit_jupiter_params//jar",
+    "@org_mockito_mockito_core//jar",
+    "@org_mockito_mockito_junit_jupiter//jar",
+    "@com_google_truth_truth//jar",
+    "@org_hamcrest_hamcrest_core//jar",
+    "@net_bytebuddy_byte_buddy//jar",
+    "@org_objenesis_objenesis//jar",
+    "@com_googlecode_java_diff_utils_diffutils//jar",
+    "@io_opentelemetry_opentelemetry_sdk_testing//jar",
+    "@io_opentelemetry_opentelemetry_sdk//jar",
+    "@io_opentelemetry_opentelemetry_sdk_metrics//jar",
+    "@io_opentelemetry_opentelemetry_sdk_common//jar",
+    "@com_google_guava_guava_testlib//jar",
+]
+
+java_library(
+    name = "gax",
+    srcs = glob(["src/main/java/**/*.java"]),
+    javacopts = _JAVA_COPTS,
+    plugins = ["//:auto_value_plugin"],
+    resources = ["//:dependencies.properties"],
+    visibility = ["//visibility:public"],
+    deps = _COMPILE_DEPS,
+)
+
+java_library(
+    name = "gax_testlib",
+    srcs = glob(["src/test/java/**/*.java"]),
+    javacopts = _JAVA_COPTS,
+    plugins = ["//:auto_value_plugin"],
+    resources = glob([
+        "src/test/resources/com/google/api/gax/rpc/mtls/mtls_context_aware_metadata.json",
+        "src/test/resources/com/google/api/gax/rpc/mtls/mtlsCertAndKey.pem",
+    ]),
+    visibility = ["//visibility:public"],
+    deps = [":gax"] + _COMPILE_DEPS + _TEST_COMPILE_DEPS,
+)
+
+java_tests(
+    name = "gax_tests",
+    size = "small",
+    srcs = glob(
+        include = ["src/test/java/**/*Test.java"],
+        exclude = ["src/test/java/**/Abstract*Test.java"],
+    ),
+    runtime_deps = [":gax_testlib"],
+)
+
+google_java_format(
+    name = "google_java_format",
+    srcs = glob(["src/**/*.java"]),
+    formatter = "//:google_java_format_binary",
+)
+
+#Uncomment once java formatter is upgraded to 1.6+
+#google_java_format_verification(
+#    name = "google_java_format_verification",
+#    srcs = glob(["src/**/*.java"]),
+#    formatter = "//:google_java_format_binary",
+#)

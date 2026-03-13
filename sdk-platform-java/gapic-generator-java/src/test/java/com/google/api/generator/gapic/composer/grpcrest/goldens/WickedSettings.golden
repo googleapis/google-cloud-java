@@ -1,0 +1,203 @@
+package com.google.showcase.v1beta1;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
+import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.showcase.v1beta1.stub.WickedStubSettings;
+import java.io.IOException;
+import java.util.List;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Settings class to configure an instance of {@link WickedClient}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ *   <li>The default service address (localhost) and default port (7469) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of craftEvilPlan:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * WickedSettings.Builder wickedSettingsBuilder = WickedSettings.newBuilder();
+ * wickedSettingsBuilder
+ *     .craftEvilPlanSettings()
+ *     .setRetrySettings(
+ *         wickedSettingsBuilder
+ *             .craftEvilPlanSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
+ *             .build());
+ * WickedSettings wickedSettings = wickedSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class WickedSettings extends ClientSettings<WickedSettings> {
+
+  /** Returns the object with the settings used for calls to craftEvilPlan. */
+  public UnaryCallSettings<EvilRequest, EvilResponse> craftEvilPlanSettings() {
+    return ((WickedStubSettings) getStubSettings()).craftEvilPlanSettings();
+  }
+
+  /** Returns the object with the settings used for calls to brainstormEvilPlans. */
+  public StreamingCallSettings<EvilRequest, EvilResponse> brainstormEvilPlansSettings() {
+    return ((WickedStubSettings) getStubSettings()).brainstormEvilPlansSettings();
+  }
+
+  /** Returns the object with the settings used for calls to persuadeEvilPlan. */
+  public StreamingCallSettings<EvilRequest, EvilResponse> persuadeEvilPlanSettings() {
+    return ((WickedStubSettings) getStubSettings()).persuadeEvilPlanSettings();
+  }
+
+  public static final WickedSettings create(WickedStubSettings stub) throws IOException {
+    return new WickedSettings.Builder(stub.toBuilder()).build();
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return WickedStubSettings.defaultExecutorProviderBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return WickedStubSettings.getDefaultEndpoint();
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return WickedStubSettings.getDefaultServiceScopes();
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return WickedStubSettings.defaultCredentialsProviderBuilder();
+  }
+
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return WickedStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return WickedStubSettings.defaultTransportChannelProvider();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return WickedStubSettings.defaultApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new gRPC builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected WickedSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+  }
+
+  /** Builder for WickedSettings. */
+  public static class Builder extends ClientSettings.Builder<WickedSettings, Builder> {
+
+    protected Builder() throws IOException {
+      this(((ClientContext) null));
+    }
+
+    protected Builder(ClientContext clientContext) {
+      super(WickedStubSettings.newBuilder(clientContext));
+    }
+
+    protected Builder(WickedSettings settings) {
+      super(settings.getStubSettings().toBuilder());
+    }
+
+    protected Builder(WickedStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
+
+    private static Builder createDefault() {
+      return new Builder(WickedStubSettings.newBuilder());
+    }
+
+    public WickedStubSettings.Builder getStubSettingsBuilder() {
+      return ((WickedStubSettings.Builder) getStubSettings());
+    }
+
+    /**
+     * Applies the given settings updater function to all of the unary API methods in this service.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
+     */
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
+      return this;
+    }
+
+    /** Returns the builder for the settings used for calls to craftEvilPlan. */
+    public UnaryCallSettings.Builder<EvilRequest, EvilResponse> craftEvilPlanSettings() {
+      return getStubSettingsBuilder().craftEvilPlanSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to brainstormEvilPlans. */
+    public StreamingCallSettings.Builder<EvilRequest, EvilResponse> brainstormEvilPlansSettings() {
+      return getStubSettingsBuilder().brainstormEvilPlansSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to persuadeEvilPlan. */
+    public StreamingCallSettings.Builder<EvilRequest, EvilResponse> persuadeEvilPlanSettings() {
+      return getStubSettingsBuilder().persuadeEvilPlanSettings();
+    }
+
+    @Override
+    public WickedSettings build() throws IOException {
+      return new WickedSettings(this);
+    }
+  }
+}
