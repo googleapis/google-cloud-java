@@ -38,7 +38,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.time.Month.MARCH;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyMap;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
@@ -65,18 +65,18 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class BigQueryJsonStructTest {
 
-  @Rule public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private Struct structWithPrimitiveValues;
   private Struct structWithNullValue;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     List<Tuple<Field, FieldValue>> schemaAndValues =
         Arrays.asList(

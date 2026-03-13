@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryJdbcParameterTest {
 

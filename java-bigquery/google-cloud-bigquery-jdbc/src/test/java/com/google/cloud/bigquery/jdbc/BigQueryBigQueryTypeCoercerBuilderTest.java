@@ -19,7 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.bigquery.jdbc.TestType.Text;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryBigQueryTypeCoercerBuilderTest {
 

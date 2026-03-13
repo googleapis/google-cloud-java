@@ -19,14 +19,14 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.util.concurrent.ThreadFactory;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryThreadFactoryTest {
 
   private static ThreadFactory JDBC_THREAD_FACTORY;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     JDBC_THREAD_FACTORY = new BigQueryThreadFactory("BigQuery-Thread-");
   }

@@ -16,15 +16,15 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import java.sql.SQLException;
 import javax.sql.PooledConnection;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class PooledConnectionDataSourceTest {
   private static final Long LISTENER_POOL_SIZE = 20L;
