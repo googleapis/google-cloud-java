@@ -23,6 +23,17 @@ if [ -z "$branch" ]; then
     exit 1
 fi
 
+WORKING_DIR="$(realpath ~/migration-work/google-cloud-java-target)"
+
+# create workspace
+if [ ! -d "$WORKING_DIR" ]; then
+    echo "Workspace doesn't exist -- cloning google-cloud-java into $WORKING_DIR..."
+    mkdir -p "$WORKING_DIR"
+    git clone "git@github.com:googleapis/google-cloud-java.git" "$WORKING_DIR"
+fi
+
+pushd "$WORKING_DIR"
+
 diff_file=$(mktemp)
 new_branch="${branch}-2"
 
@@ -31,6 +42,7 @@ git fetch origin
 
 # cleanup from previous runs, if necessary
 echo "Deleting $new_branch if it exists..."
+git checkout main
 git branch -D "$new_branch" || true
 
 # ensure branch is up-to-date with main-backup
@@ -51,3 +63,5 @@ echo "Applying diff to $new_branch..."
 git apply "$diff_file"
 git add .
 git commit -am "chore: rebase $branch to main"
+
+popd
