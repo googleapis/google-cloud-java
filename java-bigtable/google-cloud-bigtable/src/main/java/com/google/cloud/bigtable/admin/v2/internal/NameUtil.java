@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.internal;
 
 import com.google.api.core.InternalApi;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
@@ -51,6 +52,10 @@ public class NameUtil {
 
   public static String formatTableName(String projectId, String instanceId, String tableId) {
     return formatInstanceName(projectId, instanceId) + "/tables/" + tableId;
+  }
+
+  public static String formatTableName(String projectId, String instanceId, TableId tableId) {
+    return formatInstanceName(projectId, instanceId) + "/tables/" + tableId.getTableId();
   }
 
   public static String formatMaterializedViewName(

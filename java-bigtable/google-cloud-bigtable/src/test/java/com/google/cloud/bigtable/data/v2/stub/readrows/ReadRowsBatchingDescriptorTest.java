@@ -25,6 +25,7 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.List;
@@ -47,7 +48,7 @@ public class ReadRowsBatchingDescriptorTest {
   private static final Row ROW_KEY_2_RESPONSE =
       Row.create(ByteString.copyFromUtf8("row-key-2"), ImmutableList.of(ROW_CELL));
 
-  private ReadRowsBatchingDescriptor underTest = new ReadRowsBatchingDescriptor();
+  private final ReadRowsBatchingDescriptor underTest = new ReadRowsBatchingDescriptor();
 
   @Test
   public void splitResponseTest() throws Exception {
@@ -108,7 +109,7 @@ public class ReadRowsBatchingDescriptorTest {
   @Test
   public void requestBuilderTest() {
     BatchingRequestBuilder<ByteString, Query> requestBuilder =
-        underTest.newRequestBuilder(Query.create("table-Id"));
+        underTest.newRequestBuilder(Query.create(TableId.of("table-Id")));
     requestBuilder.add(ByteString.copyFromUtf8("row-key-1"));
     requestBuilder.add(ByteString.copyFromUtf8("row-key-2"));
 

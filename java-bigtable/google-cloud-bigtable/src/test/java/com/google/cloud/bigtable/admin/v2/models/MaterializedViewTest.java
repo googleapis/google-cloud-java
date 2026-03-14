@@ -83,11 +83,12 @@ public class MaterializedViewTest {
 
     assertThat(materializedView)
         .isNotEqualTo(
-            com.google.bigtable.admin.v2.MaterializedView.newBuilder()
-                .setName(materializedViewName.toString())
-                .setDeletionProtection(false)
-                .setQuery("SELECT 1 FROM Table")
-                .build());
+            MaterializedView.fromProto(
+                com.google.bigtable.admin.v2.MaterializedView.newBuilder()
+                    .setName(materializedViewName.toString())
+                    .setDeletionProtection(false)
+                    .setQuery("SELECT 1 FROM Table")
+                    .build()));
   }
 
   @Test

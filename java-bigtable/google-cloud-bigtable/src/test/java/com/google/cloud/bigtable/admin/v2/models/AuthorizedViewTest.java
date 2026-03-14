@@ -148,12 +148,13 @@ public class AuthorizedViewTest {
 
     assertThat(authorizedView)
         .isNotEqualTo(
-            com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
-                .setName(authorizedViewName.toString())
-                .setDeletionProtection(false)
-                .setSubsetView(
-                    com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder().build())
-                .build());
+            AuthorizedView.fromProto(
+                com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+                    .setName(authorizedViewName.toString())
+                    .setDeletionProtection(false)
+                    .setSubsetView(
+                        com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder().build())
+                    .build()));
   }
 
   @Test

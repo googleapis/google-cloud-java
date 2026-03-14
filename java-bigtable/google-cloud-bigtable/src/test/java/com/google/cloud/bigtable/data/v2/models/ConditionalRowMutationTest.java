@@ -38,7 +38,7 @@ import org.junit.runners.JUnit4;
 public class ConditionalRowMutationTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
   private static final String AUTHORIZED_VIEW_ID = "fake-authorized-view";
 
   private static final String APP_PROFILE_ID = "fake-profile";
@@ -61,7 +61,8 @@ public class ConditionalRowMutationTest {
     assertThat(actualProto)
         .isEqualTo(
             CheckAndMutateRowRequest.newBuilder()
-                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+                .setTableName(
+                    NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID.getTableId()))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRowKey(TEST_KEY)
                 .build());
@@ -78,7 +79,7 @@ public class ConditionalRowMutationTest {
             CheckAndMutateRowRequest.newBuilder()
                 .setAuthorizedViewName(
                     NameUtil.formatAuthorizedViewName(
-                        PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+                        PROJECT_ID, INSTANCE_ID, TABLE_ID.getTableId(), AUTHORIZED_VIEW_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRowKey(TEST_KEY)
                 .build());
@@ -276,7 +277,7 @@ public class ConditionalRowMutationTest {
 
     assertThat(overriddenRequest).isNotEqualTo(protoRequest);
     assertThat(overriddenRequest.getTableName())
-        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID.getTableId()));
     assertThat(overriddenRequest.getAuthorizedViewName()).isEmpty();
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
 
@@ -299,7 +300,8 @@ public class ConditionalRowMutationTest {
     assertThat(overriddenRequest.getTableName()).isEmpty();
     assertThat(overriddenRequest.getAuthorizedViewName())
         .matches(
-            NameUtil.formatAuthorizedViewName(projectId, instanceId, TABLE_ID, AUTHORIZED_VIEW_ID));
+            NameUtil.formatAuthorizedViewName(
+                projectId, instanceId, TABLE_ID.getTableId(), AUTHORIZED_VIEW_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
   }
 }

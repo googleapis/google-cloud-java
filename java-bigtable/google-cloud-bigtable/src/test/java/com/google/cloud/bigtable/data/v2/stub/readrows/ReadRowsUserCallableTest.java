@@ -19,6 +19,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.common.truth.Truth;
 import org.junit.Test;
@@ -35,7 +36,7 @@ public class ReadRowsUserCallableTest {
     ServerStreamingStashCallable<ReadRowsRequest, Row> innerCallable =
         new ServerStreamingStashCallable<>();
     ReadRowsUserCallable<Row> callable = new ReadRowsUserCallable<>(innerCallable, REQUEST_CONTEXT);
-    Query query = Query.create("fake-table");
+    Query query = Query.create(TableId.of("fake-table"));
 
     callable.call(query);
 

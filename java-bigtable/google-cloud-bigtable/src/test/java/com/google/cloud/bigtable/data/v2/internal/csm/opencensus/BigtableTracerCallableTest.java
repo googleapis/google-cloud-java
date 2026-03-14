@@ -46,7 +46,6 @@ import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
-import com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.ForwardingServerCall.SimpleForwardingServerCall;
 import io.grpc.Metadata;
@@ -74,7 +73,7 @@ public class BigtableTracerCallableTest {
   private Server server;
   private Server serverNoHeader;
 
-  private FakeService fakeService = new FakeService();
+  private final FakeService fakeService = new FakeService();
 
   private final StatsComponent localStats = new SimpleStatsComponent();
   private EnhancedBigtableStub stub;
@@ -84,7 +83,7 @@ public class BigtableTracerCallableTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
 
   private static final long WAIT_FOR_METRICS_TIME_MS = 1_000;
 
@@ -92,7 +91,7 @@ public class BigtableTracerCallableTest {
 
   @Before
   public void setUp() throws Exception {
-    RpcViews.registerBigtableClientGfeViews(localStats.getViewManager());
+    setupRpcViews();
 
     // Create a server that'll inject a server-timing header with a random number and a stub that
     // connects to this server.
@@ -158,6 +157,12 @@ public class BigtableTracerCallableTest {
                 noHeaderSettings.getStubSettings(),
                 Tags.getTagger(),
                 localStats.getStatsRecorder()));
+  }
+
+  @SuppressWarnings("deprecation")
+  private void setupRpcViews() {
+    com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientGfeViews(
+        localStats.getViewManager());
   }
 
   @After
@@ -232,7 +237,7 @@ public class BigtableTracerCallableTest {
 
   @Test
   public void testGFELatencySampleRowKeys() throws InterruptedException {
-    stub.sampleRowKeysCallable().call(TABLE_ID);
+    stub.sampleRowKeysCallableWithRequest().call(SampleRowKeysRequest.create(TABLE_ID));
 
     Thread.sleep(WAIT_FOR_METRICS_TIME_MS);
     long latency =
@@ -250,7 +255,7 @@ public class BigtableTracerCallableTest {
 
   @Test
   public void testGFELatencySampleRowKeysWithRequest() throws InterruptedException {
-    stub.sampleRowKeysCallableWithRequest().call(SampleRowKeysRequest.create(TableId.of(TABLE_ID)));
+    stub.sampleRowKeysCallableWithRequest().call(SampleRowKeysRequest.create(TABLE_ID));
 
     Thread.sleep(WAIT_FOR_METRICS_TIME_MS);
     long latency =
@@ -389,7 +394,7 @@ public class BigtableTracerCallableTest {
   @Test
   public void testMetricsWithErrorResponse() throws InterruptedException {
     try {
-      stub.readRowsCallable().call(Query.create("random-table-id")).iterator().next();
+      stub.readRowsCallable().call(Query.create(TableId.of("random-table-id"))).iterator().next();
       fail("readrows should throw exception");
     } catch (Exception e) {
       assertThat(e).isInstanceOf(UnavailableException.class);
@@ -413,7 +418,7 @@ public class BigtableTracerCallableTest {
 
   private class FakeService extends BigtableImplBase {
     private final String defaultTableName =
-        NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+        NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID.getTableId());
 
     @Override
     public void readRows(ReadRowsRequest request, StreamObserver<ReadRowsResponse> observer) {

@@ -27,6 +27,7 @@ import javax.annotation.Nonnull;
  * @see com.google.bigtable.admin.v2.Type
  */
 @BetaApi
+@SuppressWarnings("SameNameButDifferent")
 public interface Type {
   /**
    * These types are marker types that allow types to be used as the input to aggregate function.

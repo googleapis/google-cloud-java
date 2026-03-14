@@ -37,6 +37,7 @@ import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
@@ -74,7 +75,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Answers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
@@ -84,7 +84,7 @@ public class MetricsTracerTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
   private static final long SLEEP_VARIABILITY = 15;
 
   private static final ReadRowsResponse DEFAULT_READ_ROWS_RESPONSES =
@@ -110,6 +110,7 @@ public class MetricsTracerTest {
   private EnhancedBigtableStub stub;
   private BigtableDataSettings settings;
 
+  @SuppressWarnings("deprecation")
   @Before
   public void setUp() throws Exception {
     server = FakeServiceBuilder.create(mockService).start();
@@ -145,18 +146,16 @@ public class MetricsTracerTest {
     final long sleepTime = 50;
 
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) throws Throwable {
-                @SuppressWarnings("unchecked")
-                StreamObserver<ReadRowsResponse> observer =
-                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
-                Thread.sleep(sleepTime);
-                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
-                observer.onCompleted();
-                return null;
-              }
-            })
+            (Answer<Void>)
+                invocation -> {
+                  @SuppressWarnings("unchecked")
+                  StreamObserver<ReadRowsResponse> observer =
+                      (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
+                  Thread.sleep(sleepTime);
+                  observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+                  observer.onCompleted();
+                  return null;
+                })
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
 
@@ -182,16 +181,13 @@ public class MetricsTracerTest {
   @Test
   public void testReadRowsOpCount() throws InterruptedException {
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) {
-                @SuppressWarnings("unchecked")
-                StreamObserver<ReadRowsResponse> observer =
-                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
-                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
-                observer.onCompleted();
-                return null;
-              }
+            invocation -> {
+              @SuppressWarnings("unchecked")
+              StreamObserver<ReadRowsResponse> observer =
+                  (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
+              observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+              observer.onCompleted();
+              return null;
             })
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
@@ -276,24 +272,21 @@ public class MetricsTracerTest {
     final AtomicInteger callCount = new AtomicInteger(0);
 
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) {
-                @SuppressWarnings("unchecked")
-                StreamObserver<ReadRowsResponse> observer =
-                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
+            invocation -> {
+              @SuppressWarnings("unchecked")
+              StreamObserver<ReadRowsResponse> observer =
+                  (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
 
-                // First call will trigger a transient error
-                if (callCount.getAndIncrement() == 0) {
-                  observer.onError(new StatusRuntimeException(Status.UNAVAILABLE));
-                  return null;
-                }
-
-                // Next attempt will return a row
-                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
-                observer.onCompleted();
+              // First call will trigger a transient error
+              if (callCount.getAndIncrement() == 0) {
+                observer.onError(new StatusRuntimeException(Status.UNAVAILABLE));
                 return null;
               }
+
+              // Next attempt will return a row
+              observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+              observer.onCompleted();
+              return null;
             })
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
@@ -321,25 +314,22 @@ public class MetricsTracerTest {
     final AtomicInteger callCount = new AtomicInteger(0);
 
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) throws Throwable {
-                @SuppressWarnings("unchecked")
-                StreamObserver<ReadRowsResponse> observer =
-                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
+            invocation -> {
+              @SuppressWarnings("unchecked")
+              StreamObserver<ReadRowsResponse> observer =
+                  (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
 
-                Thread.sleep(sleepTime);
+              Thread.sleep(sleepTime);
 
-                // First attempt will return a transient error
-                if (callCount.getAndIncrement() == 0) {
-                  observer.onError(new StatusRuntimeException(Status.UNAVAILABLE));
-                  return null;
-                }
-                // Next attempt will be ok
-                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
-                observer.onCompleted();
+              // First attempt will return a transient error
+              if (callCount.getAndIncrement() == 0) {
+                observer.onError(new StatusRuntimeException(Status.UNAVAILABLE));
                 return null;
               }
+              // Next attempt will be ok
+              observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+              observer.onCompleted();
+              return null;
             })
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
@@ -389,16 +379,13 @@ public class MetricsTracerTest {
   @Test
   public void testBatchReadRowsThrottledTime() throws Exception {
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) {
-                @SuppressWarnings("unchecked")
-                StreamObserver<ReadRowsResponse> observer =
-                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
-                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
-                observer.onCompleted();
-                return null;
-              }
+            invocation -> {
+              @SuppressWarnings("unchecked")
+              StreamObserver<ReadRowsResponse> observer =
+                  (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
+              observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+              observer.onCompleted();
+              return null;
             })
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
@@ -437,21 +424,18 @@ public class MetricsTracerTest {
     when(flowController.getMaxRequestBytesLimit()).thenReturn(null);
 
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) {
-                MutateRowsRequest request = (MutateRowsRequest) invocation.getArguments()[0];
-                @SuppressWarnings("unchecked")
-                StreamObserver<MutateRowsResponse> observer =
-                    (StreamObserver<MutateRowsResponse>) invocation.getArguments()[1];
-                MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
-                for (int i = 0; i < request.getEntriesCount(); i++) {
-                  builder.addEntriesBuilder().setIndex(i);
-                }
-                observer.onNext(builder.build());
-                observer.onCompleted();
-                return null;
+            invocation -> {
+              MutateRowsRequest request = (MutateRowsRequest) invocation.getArguments()[0];
+              @SuppressWarnings("unchecked")
+              StreamObserver<MutateRowsResponse> observer =
+                  (StreamObserver<MutateRowsResponse>) invocation.getArguments()[1];
+              MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+              for (int i = 0; i < request.getEntriesCount(); i++) {
+                builder.addEntriesBuilder().setIndex(i);
               }
+              observer.onNext(builder.build());
+              observer.onCompleted();
+              return null;
             })
         .when(mockService)
         .mutateRows(any(MutateRowsRequest.class), any());

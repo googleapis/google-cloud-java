@@ -190,6 +190,7 @@ public class BulkReadIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(
+            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

@@ -27,6 +27,7 @@ import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
@@ -45,7 +46,7 @@ public class ReadModifyWriteIT {
 
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowKey = UUID.randomUUID().toString();
 
@@ -78,7 +79,7 @@ public class ReadModifyWriteIT {
 
     AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
 
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowKey = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
 
@@ -136,6 +137,7 @@ public class ReadModifyWriteIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(
+            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

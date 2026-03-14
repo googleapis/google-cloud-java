@@ -153,11 +153,11 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
   @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
   @AutoValue.Builder
   abstract static class Builder {
-    abstract Builder setRowKey(@Nonnull ByteString rowKey);
+    abstract Builder setRowKey(ByteString rowKey);
 
-    abstract Builder setType(@Nonnull MutationType type);
+    abstract Builder setType(MutationType type);
 
-    abstract Builder setSourceClusterId(@Nonnull String sourceClusterId);
+    abstract Builder setSourceClusterId(String sourceClusterId);
 
     abstract Builder setCommitTime(java.time.Instant commitTimestamp);
 
@@ -165,7 +165,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
 
     abstract ImmutableList.Builder<Entry> entriesBuilder();
 
-    abstract Builder setToken(@Nonnull String token);
+    abstract Builder setToken(String token);
 
     abstract Builder setEstimatedLowWatermarkTime(java.time.Instant estimatedLowWatermark);
 
@@ -205,7 +205,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
   }
 
   public RowMutation toRowMutation(@Nonnull String tableId) {
-    RowMutation rowMutation = RowMutation.create(tableId, getRowKey());
+    RowMutation rowMutation = RowMutation.create(TableId.of(tableId), getRowKey());
     for (Entry entry : getEntries()) {
       if (entry instanceof DeleteFamily) {
         rowMutation.deleteFamily(((DeleteFamily) entry).getFamilyName());

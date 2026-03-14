@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -30,6 +31,7 @@ import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateSchemaBundleRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -57,7 +59,7 @@ public class BigtableSchemaBundleIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableSchemaBundleIT.class.getName());
-  private static final int[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+  private static final long[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
   // Location: `google-cloud-bigtable/src/test/resources/proto_schema_bundle.pb`
   private static final String TEST_PROTO_SCHEMA_BUNDLE = "proto_schema_bundle.pb";
   // Location:
@@ -150,7 +152,9 @@ public class BigtableSchemaBundleIT {
     // Create a schema bundle.
     CreateSchemaBundleRequest request = createSchemaBundleRequest(SchemaBundleId);
 
-    SchemaBundle response = tableAdmin.createSchemaBundle(request);
+    SchemaBundle response;
+
+    SchemaBundle ignored = tableAdmin.createSchemaBundle(request);
 
     // Update the schema bundle.
     byte[] content =
@@ -193,8 +197,10 @@ public class BigtableSchemaBundleIT {
   private static Table createAndPopulateTestTable(
       BigtableTableAdminClient tableAdmin, BigtableDataClient dataClient)
       throws InterruptedException {
-    String tableId = PrefixGenerator.newPrefix("BigtableSchemaBundleIT#createAndPopulateTestTable");
-    Table testTable = tableAdmin.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
+    TableId tableId =
+        TableId.of(PrefixGenerator.newPrefix("BigtableSchemaBundleIT#createAndPopulateTestTable"));
+    Table testTable =
+        tableAdmin.createTable(CreateTableRequest.of(tableId.getTableId()).addFamily("cf1"));
 
     // Populate test data.
     byte[] rowBytes = new byte[1024];
@@ -203,9 +209,10 @@ public class BigtableSchemaBundleIT {
 
     try (Batcher<RowMutationEntry, Void> batcher = dataClient.newBulkMutationBatcher(tableId)) {
       for (int i = 0; i < 10; i++) {
-        batcher.add(
-            RowMutationEntry.create("test-row-" + i)
-                .setCell("cf1", ByteString.EMPTY, ByteString.copyFrom(rowBytes)));
+        ApiFuture<Void> ignored =
+            batcher.add(
+                RowMutationEntry.create("test-row-" + i)
+                    .setCell("cf1", ByteString.EMPTY, ByteString.copyFrom(rowBytes)));
       }
     }
     return testTable;

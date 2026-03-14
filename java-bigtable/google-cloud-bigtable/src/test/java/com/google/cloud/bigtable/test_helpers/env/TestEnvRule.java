@@ -69,9 +69,6 @@ import org.junit.runners.model.Statement;
 public class TestEnvRule implements TestRule {
 
   private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());
-  private static final Boolean BIGTABLE_ENABLE_VERBOSE_GRPC_LOGS =
-      Boolean.getBoolean("bigtable.enable-grpc-logs");
-  private static final String BIGTABLE_GRPC_LOG_DIR = System.getProperty("bigtable.grpc-log-dir");
   private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
   private static final String ENV_PROPERTY = "bigtable.env";
   private static final String env = System.getProperty(ENV_PROPERTY, "emulator");
@@ -85,6 +82,7 @@ public class TestEnvRule implements TestRule {
   @Override
   public Statement apply(final Statement base, final Description description) {
     return new Statement() {
+      @Override
       public void evaluate() throws Throwable {
         TestEnvRule.this.before(description);
 
@@ -207,6 +205,7 @@ public class TestEnvRule implements TestRule {
               .updateAuthorizedView(
                   UpdateAuthorizedViewRequest.of(tableId, viewId).setDeletionProtection(false));
         } catch (NotFoundException ignored) {
+          // nothing to clean up, the view was already deleted
         }
       }
     }
@@ -231,7 +230,7 @@ public class TestEnvRule implements TestRule {
             .getInstanceAdminClient()
             .deleteAppProfile(env().getInstanceId(), appProfile.getId(), true);
       } catch (NotFoundException ignored) {
-
+        // nothing to clean up, the app profile was already deleted
       }
     }
   }
@@ -254,10 +253,12 @@ public class TestEnvRule implements TestRule {
       try {
         deleteBackups(env().getTableAdminClient(), cluster.getId());
       } catch (NotFoundException ignored) {
+        // nothing to clean up, the backup was already deleted
       }
       try {
         env().getInstanceAdminClient().deleteCluster(env().getInstanceId(), cluster.getId());
       } catch (NotFoundException ignored) {
+        // nothing to clean up, the cluster was already deleted
       }
     }
   }
@@ -276,6 +277,7 @@ public class TestEnvRule implements TestRule {
                 UpdateMaterializedViewRequest.of(instanceId, materializedView.getId())
                     .setDeletionProtection(false));
       } catch (NotFoundException ignored) {
+        // nothing to clean up, the materialized view was already deleted
       }
     }
     // Unprotected LogicalViews.
@@ -287,6 +289,7 @@ public class TestEnvRule implements TestRule {
                 UpdateLogicalViewRequest.of(instanceId, logicalView.getId())
                     .setDeletionProtection(false));
       } catch (NotFoundException ignored) {
+        // nothing to clean up, the logical view was already deleted
       }
     }
   }
@@ -306,7 +309,7 @@ public class TestEnvRule implements TestRule {
       try {
         deleteInstance(instance.getId());
       } catch (NotFoundException ignored) {
-
+        // nothing to clean up, the instance was already deleted
       }
     }
   }
@@ -331,7 +334,7 @@ public class TestEnvRule implements TestRule {
           try {
             env().getInstanceAdminClient().deleteCluster(instanceId, cluster.getId());
           } catch (NotFoundException ignored) {
-
+            // nothing to clean up, the cluster was already deleted
           }
         }
         isFirstCluster = false;
@@ -342,7 +345,7 @@ public class TestEnvRule implements TestRule {
     try {
       env().getInstanceAdminClient().deleteInstance(instanceId);
     } catch (NotFoundException ignored) {
-
+      // nothing to clean up, the instance was already deleted
     }
   }
 

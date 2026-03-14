@@ -48,6 +48,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.rpc.Status;
 import io.grpc.Metadata;
@@ -69,11 +70,11 @@ import org.junit.runners.JUnit4;
 public class HeadersTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
 
   private static final String INSTANCE_NAME =
       "projects%2F" + PROJECT_ID + "%2Finstances%2F" + INSTANCE_ID;
-  private static final String TABLE_NAME = INSTANCE_NAME + "%2Ftables%2F" + TABLE_ID;
+  private static final String TABLE_NAME = INSTANCE_NAME + "%2Ftables%2F" + TABLE_ID.getTableId();
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final String TEST_FIXED_HEADER_STRING = "test_fixed_header";
 
@@ -85,7 +86,7 @@ public class HeadersTest {
       Metadata.Key.of(TEST_FIXED_HEADER_STRING, Metadata.ASCII_STRING_MARSHALLER);
 
   private Server server;
-  private BlockingQueue<Metadata> sentMetadata = new ArrayBlockingQueue<>(10);
+  private final BlockingQueue<Metadata> sentMetadata = new ArrayBlockingQueue<>(10);
 
   private BigtableDataClient client;
 

@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamRequest.Builder;
@@ -37,9 +38,7 @@ import java.io.ObjectOutputStream;
 import java.time.Instant;
 import java.util.Collections;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -52,8 +51,6 @@ public class ReadChangeStreamQueryTest {
   private RequestContext requestContext;
   private static final Instant FAKE_START_TIME = Instant.ofEpochSecond(1L, 1000L);
   private static final Instant FAKE_END_TIME = Instant.ofEpochSecond(1L, 2000L);
-
-  @Rule public ExpectedException expect = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -188,7 +185,7 @@ public class ReadChangeStreamQueryTest {
     assertThat(actualProto).isEqualTo(expectedProto.build());
   }
 
-  @Test(expected = IllegalStateException.class)
+  @Test
   public void createWithStartTimeAndContinuationTokensTest() {
     StreamContinuationToken tokenProto =
         StreamContinuationToken.newBuilder()
@@ -203,12 +200,16 @@ public class ReadChangeStreamQueryTest {
             .setToken("random-token")
             .build();
     ChangeStreamContinuationToken token = ChangeStreamContinuationToken.fromProto(tokenProto);
-    ReadChangeStreamQuery query =
-        ReadChangeStreamQuery.create(TABLE_ID)
-            .startTime(FAKE_START_TIME)
-            .continuationTokens(Collections.singletonList(token));
-    expect.expect(IllegalArgumentException.class);
-    expect.expectMessage("startTime and continuationTokens can't be specified together");
+    IllegalStateException e =
+        assertThrows(
+            IllegalStateException.class,
+            () ->
+                ReadChangeStreamQuery.create(TABLE_ID)
+                    .startTime(FAKE_START_TIME)
+                    .continuationTokens(Collections.singletonList(token)));
+    assertThat(e)
+        .hasMessageThat()
+        .isEqualTo("startTime and continuationTokens can't be specified together");
   }
 
   @Test
@@ -286,12 +287,14 @@ public class ReadChangeStreamQueryTest {
     assertThat(query.toProto(requestContext)).isEqualTo(request);
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFromProtoWithEmptyTableId() {
-    ReadChangeStreamQuery.fromProto(ReadChangeStreamRequest.getDefaultInstance());
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ReadChangeStreamQuery.fromProto(ReadChangeStreamRequest.getDefaultInstance()));
 
-    expect.expect(IllegalArgumentException.class);
-    expect.expectMessage("Invalid table name:");
+    assertThat(e).hasMessageThat().startsWith("Invalid table name:");
   }
 
   @Test

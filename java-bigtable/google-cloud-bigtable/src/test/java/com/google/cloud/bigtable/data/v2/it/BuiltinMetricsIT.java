@@ -33,6 +33,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.MetricLa
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.test_helpers.env.CloudEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
@@ -135,7 +136,6 @@ public class BuiltinMetricsIT {
 
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
-    CustomOpenTelemetryMetricsProvider.setupSdkMeterProvider(meterProvider);
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
 
@@ -182,9 +182,11 @@ public class BuiltinMetricsIT {
 
     // Send a MutateRow and ReadRows request and measure the latencies for these requests.
     clientDefault.mutateRow(
-        RowMutation.create(tableDefault.getId(), "a-new-key").setCell("cf", "q", "abc"));
+        RowMutation.create(TableId.of(tableDefault.getId()), "a-new-key")
+            .setCell("cf", "q", "abc"));
     ArrayList<Row> rows =
-        Lists.newArrayList(clientDefault.readRows(Query.create(tableDefault.getId()).limit(10)));
+        Lists.newArrayList(
+            clientDefault.readRows(Query.create(TableId.of(tableDefault.getId())).limit(10)));
 
     // This stopwatch is used for to limit fetching of metric data in verifyMetrics
     Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
@@ -243,10 +245,11 @@ public class BuiltinMetricsIT {
     Instant start = Instant.now().minus(Duration.ofSeconds(10));
     // Send a MutateRow and ReadRows request and measure the latencies for these requests.
     clientCustomOtel.mutateRow(
-        RowMutation.create(tableCustomOtel.getId(), "a-new-key").setCell("cf", "q", "abc"));
+        RowMutation.create(TableId.of(tableCustomOtel.getId()), "a-new-key")
+            .setCell("cf", "q", "abc"));
     ArrayList<Row> rows =
         Lists.newArrayList(
-            clientCustomOtel.readRows(Query.create(tableCustomOtel.getId()).limit(10)));
+            clientCustomOtel.readRows(Query.create(TableId.of(tableCustomOtel.getId())).limit(10)));
 
     // This stopwatch is used for to limit fetching of metric data in verifyMetrics
     Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
@@ -368,7 +371,7 @@ public class BuiltinMetricsIT {
                                           .build()))
                               < 0)
               .collect(Collectors.toList());
-      if (point.size() > 0) {
+      if (!point.isEmpty()) {
         long actualValue = (long) point.get(0).getValue().getDistributionValue().getMean();
         assertWithMessage(
                 ts.getMetric().getType()

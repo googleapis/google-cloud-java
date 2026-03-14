@@ -21,6 +21,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestU
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.verifyAttributes;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.util.Lists;
 import com.google.api.core.ApiFunction;
@@ -119,7 +120,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -154,23 +154,24 @@ public class BuiltinMetricsTracerTest {
   private final FakeService fakeService = new FakeService();
   private Server server;
 
+  private OpenTelemetrySdk otel;
   private EnhancedBigtableStub stub;
 
-  private int batchElementCount = 2;
+  private static final int batchElementCount = 2;
 
-  private ClientInfo clientInfo =
+  private final ClientInfo clientInfo =
       ClientInfo.builder()
           .setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
           .setAppProfileId(APP_PROFILE_ID)
           .build();
-  private Attributes expectedBaseAttributes =
+  private final Attributes expectedBaseAttributes =
       Attributes.builder()
           .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
           .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
           .put(MetricLabels.APP_PROFILE_KEY, APP_PROFILE_ID)
           .build();
 
-  private Attributes expectedClientSchemaBaseAttributes =
+  private final Attributes expectedClientSchemaBaseAttributes =
       Attributes.builder()
           .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
           .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
@@ -191,8 +192,7 @@ public class BuiltinMetricsTracerTest {
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
 
-    OpenTelemetrySdk otel =
-        OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
+    otel = OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
     MetricRegistry mr = new MetricRegistry();
 
     BuiltinMetricsTracerFactory facotry =
@@ -298,12 +298,13 @@ public class BuiltinMetricsTracerTest {
   public void tearDown() {
     stub.close();
     server.shutdown();
+    otel.close();
   }
 
   @Test
   public void testReadRowsOperationLatencies() {
     Stopwatch stopwatch = Stopwatch.createStarted();
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)).iterator());
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TableId.of(TABLE))).iterator());
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
     Attributes expectedAttributes =
@@ -352,7 +353,7 @@ public class BuiltinMetricsTracerTest {
     Stopwatch firstResponseTimer = Stopwatch.createStarted();
     stub.readRowsCallable()
         .call(
-            Query.create(FIRST_RESPONSE_TABLE_ID),
+            Query.create(TableId.of(FIRST_RESPONSE_TABLE_ID)),
             new ResponseObserver<Row>() {
               @Override
               public void onStart(StreamController controller) {}
@@ -365,7 +366,8 @@ public class BuiltinMetricsTracerTest {
                 }
                 try {
                   Thread.sleep(100);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException ignored) {
+                  // dont really care
                 }
               }
 
@@ -394,7 +396,7 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testGfeMetrics() {
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)));
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TableId.of(TABLE))));
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
@@ -442,22 +444,23 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testReadRowsApplicationLatencyWithAutoFlowControl() throws Exception {
-    final SettableApiFuture future = SettableApiFuture.create();
+    final SettableApiFuture<Void> future = SettableApiFuture.create();
     final AtomicInteger counter = new AtomicInteger(0);
     // For auto flow control, application latency is the time application spent in onResponse.
     stub.readRowsCallable()
         .call(
-            Query.create(TABLE),
+            Query.create(TableId.of(TABLE)),
             new ResponseObserver<Row>() {
               @Override
               public void onStart(StreamController streamController) {}
 
               @Override
               public void onResponse(Row row) {
+                counter.getAndIncrement();
                 try {
-                  counter.getAndIncrement();
                   Thread.sleep(APPLICATION_LATENCY);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException ignored) {
+                  // dont really care
                 }
               }
 
@@ -505,8 +508,7 @@ public class BuiltinMetricsTracerTest {
   public void testReadRowsApplicationLatencyWithManualFlowControl() throws Exception {
     int counter = 0;
 
-    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TABLE)).iterator();
-
+    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TableId.of(TABLE))).iterator();
     while (rows.hasNext()) {
       counter++;
       Thread.sleep(APPLICATION_LATENCY);
@@ -545,7 +547,7 @@ public class BuiltinMetricsTracerTest {
   @Test
   public void testRetryCount() throws InterruptedException {
     stub.mutateRowCallable()
-        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
+        .call(RowMutation.create(TableId.of(TABLE), "random-row").setCell("cf", "q", "value"));
 
     MetricData metricData = getMetricData(metricReader, TableRetryCount.NAME);
     Attributes expectedAttributes =
@@ -565,7 +567,7 @@ public class BuiltinMetricsTracerTest {
   @Test
   public void testMutateRowAttemptsTagValues() throws InterruptedException {
     stub.mutateRowCallable()
-        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
+        .call(RowMutation.create(TableId.of(TABLE), "random-row").setCell("cf", "q", "value"));
 
     outstandingRpcCounter.waitUntilRpcsDone();
     MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
@@ -605,7 +607,7 @@ public class BuiltinMetricsTracerTest {
       batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
     }
 
-    Assert.assertThrows(BatchingException.class, batcher::close);
+    assertThrows(BatchingException.class, batcher::close);
 
     MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
@@ -633,7 +635,7 @@ public class BuiltinMetricsTracerTest {
       batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
     }
 
-    Assert.assertThrows(BatchingException.class, batcher::close);
+    assertThrows(BatchingException.class, batcher::close);
 
     MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
@@ -653,7 +655,7 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testReadRowsAttemptsTagValues() {
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create("fake-table")).iterator());
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TableId.of(TABLE))).iterator());
 
     MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
@@ -717,7 +719,8 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testQueuedOnChannelServerStreamLatencies() throws Exception {
-    ApiFuture<List<Row>> f = stub.readRowsCallable().all().futureCall(Query.create(TABLE));
+    ApiFuture<List<Row>> f =
+        stub.readRowsCallable().all().futureCall(Query.create(TableId.of(TABLE)));
     Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
     f.get();
 
@@ -743,7 +746,7 @@ public class BuiltinMetricsTracerTest {
   public void testQueuedOnChannelUnaryLatencies() throws Exception {
     ApiFuture<Void> f =
         stub.mutateRowCallable()
-            .futureCall(RowMutation.create(TABLE, "a-key").setCell("f", "q", "v"));
+            .futureCall(RowMutation.create(TableId.of(TABLE), "a-key").setCell("f", "q", "v"));
     Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
     f.get();
 
@@ -768,11 +771,11 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testPermanentFailure() {
-    try {
-      Lists.newArrayList(stub.readRowsCallable().call(Query.create(BAD_TABLE_ID)).iterator());
-      Assert.fail("Request should throw not found error");
-    } catch (NotFoundException e) {
-    }
+    assertThrows(
+        NotFoundException.class,
+        () ->
+            Lists.newArrayList(
+                stub.readRowsCallable().call(Query.create(TableId.of(BAD_TABLE_ID))).iterator()));
 
     MetricData attemptLatency = getMetricData(metricReader, TableAttemptLatency.NAME);
 
@@ -795,7 +798,7 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testRemainingDeadline() {
-    stub.readRowsCallable().all().call(Query.create(TABLE));
+    stub.readRowsCallable().all().call(Query.create(TableId.of(TABLE)));
     MetricData deadlineMetric = getMetricData(metricReader, TableRemainingDeadline.NAME);
 
     Attributes retryAttributes =
@@ -1053,7 +1056,8 @@ public class BuiltinMetricsTracerTest {
           (ServerCallStreamObserver<ReadRowsResponse>) responseObserver;
       try {
         Thread.sleep(SERVER_LATENCY);
-      } catch (InterruptedException e) {
+      } catch (InterruptedException ignored) {
+        // dont care
       }
       if (attemptCounter.getAndIncrement() == 0) {
         target.onError(new StatusRuntimeException(Status.UNAVAILABLE));
@@ -1095,7 +1099,8 @@ public class BuiltinMetricsTracerTest {
       }
       try {
         Thread.sleep(SERVER_LATENCY);
-      } catch (InterruptedException e) {
+      } catch (InterruptedException ignored) {
+        // dont care
       }
       MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
       String receivedRowkey = "";
@@ -1198,7 +1203,7 @@ public class BuiltinMetricsTracerTest {
     }
   }
 
-  class DelayProxyDetector implements ProxyDetector {
+  static class DelayProxyDetector implements ProxyDetector {
     private volatile Instant lastProxyDelay = null;
 
     @Nullable
@@ -1207,8 +1212,8 @@ public class BuiltinMetricsTracerTest {
       lastProxyDelay = Instant.now();
       try {
         Thread.sleep(CHANNEL_BLOCKING_LATENCY.toMillis());
-      } catch (InterruptedException e) {
-
+      } catch (InterruptedException ignored) {
+        // dont care
       }
       return null;
     }

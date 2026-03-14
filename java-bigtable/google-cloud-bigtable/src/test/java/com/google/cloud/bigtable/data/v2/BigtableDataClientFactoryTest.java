@@ -22,6 +22,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
@@ -35,6 +36,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.base.Preconditions;
 import com.google.common.io.BaseEncoding;
@@ -82,10 +84,8 @@ public class BigtableDataClientFactoryTest {
   private CredentialsProvider credentialsProvider;
   private ExecutorProvider executorProvider;
   private WatchdogProvider watchdogProvider;
-  private ApiClock apiClock;
   private BigtableDataSettings defaultSettings;
 
-  private final BlockingQueue<Attributes> setUpAttributes = new LinkedBlockingDeque<>();
   private final BlockingQueue<Attributes> terminateAttributes = new LinkedBlockingDeque<>();
   private final BlockingQueue<Metadata> requestMetadata = new LinkedBlockingDeque<>();
   private final ConcurrentMap<SocketAddress, Boolean> warmedChannels = new ConcurrentHashMap<>();
@@ -117,12 +117,6 @@ public class BigtableDataClientFactoryTest {
                 })
             .addTransportFilter(
                 new ServerTransportFilter() {
-                  @Override
-                  public Attributes transportReady(Attributes transportAttrs) {
-                    setUpAttributes.add(transportAttrs);
-                    return super.transportReady(transportAttrs);
-                  }
-
                   @Override
                   public void transportTerminated(Attributes transportAttrs) {
                     terminateAttributes.add(transportAttrs);
@@ -161,7 +155,7 @@ public class BigtableDataClientFactoryTest {
             new BuilderAnswer<>(
                 WatchdogProvider.class, builder.stubSettings().getStreamWatchdogProvider()));
 
-    apiClock = builder.stubSettings().getClock();
+    ApiClock apiClock = builder.stubSettings().getClock();
 
     builder
         .stubSettings()
@@ -207,7 +201,7 @@ public class BigtableDataClientFactoryTest {
     try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
         BigtableDataClient client = factory.createDefault()) {
 
-      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
     }
 
     assertThat(service.lastRequest.getTableName())
@@ -220,7 +214,7 @@ public class BigtableDataClientFactoryTest {
     try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
         BigtableDataClient client = factory.createForAppProfile("other-app-profile")) {
 
-      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
     }
 
     assertThat(service.lastRequest.getTableName())
@@ -234,7 +228,7 @@ public class BigtableDataClientFactoryTest {
     try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
         BigtableDataClient client = factory.createForInstance("other-project", "other-instance")) {
 
-      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
     }
 
     assertThat(service.lastRequest.getTableName())
@@ -249,7 +243,7 @@ public class BigtableDataClientFactoryTest {
         BigtableDataClient client =
             factory.createForInstance("other-project", "other-instance", "other-app-profile")) {
 
-      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
     }
 
     assertThat(service.lastRequest.getTableName())
@@ -271,11 +265,11 @@ public class BigtableDataClientFactoryTest {
         .stubSettings()
         .setCredentialsProvider(credentialsProvider)
         .setStreamWatchdogProvider(watchdogProvider)
-        .setExecutorProvider(executorProvider);
+        .setBackgroundExecutorProvider(executorProvider);
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) builder.stubSettings().getTransportChannelProvider();
     InstantiatingGrpcChannelProvider.Builder channelProviderBuilder = channelProvider.toBuilder();
-    channelProviderBuilder.setPoolSize(poolSize);
+    channelProviderBuilder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(poolSize));
     builder.stubSettings().setTransportChannelProvider(channelProviderBuilder.build());
 
     BigtableDataClientFactory factory = BigtableDataClientFactory.create(builder.build());
@@ -307,12 +301,13 @@ public class BigtableDataClientFactoryTest {
         BigtableDataClient client = factory.createDefault()) {
 
       requestMetadata.clear();
-      client.mutateRow(RowMutation.create("some-table", "some-key").deleteRow());
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
     }
 
     Metadata metadata = requestMetadata.take();
     String encodedValue =
         metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    assertThat(encodedValue).isNotNull();
     FeatureFlags featureFlags =
         FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedValue));
 
@@ -332,13 +327,17 @@ public class BigtableDataClientFactoryTest {
       BigtableDataClient client1 = factory.createDefault();
       BigtableDataClient client2 = factory.createForAppProfile("app-profile");
 
-      try (BatcherImpl batcher1 = (BatcherImpl) client1.newBulkMutationBatcher("my-table");
-          BatcherImpl batcher2 = (BatcherImpl) client1.newBulkMutationBatcher("my-table")) {
+      try (BatcherImpl<?, ?, ?, ?> batcher1 =
+              (BatcherImpl<?, ?, ?, ?>) client1.newBulkMutationBatcher(TableId.of("my-table"));
+          BatcherImpl<?, ?, ?, ?> batcher2 =
+              (BatcherImpl<?, ?, ?, ?>) client1.newBulkMutationBatcher(TableId.of("my-table"))) {
         assertThat(batcher1.getFlowController()).isSameInstanceAs(batcher2.getFlowController());
       }
 
-      try (BatcherImpl batcher1 = (BatcherImpl) client1.newBulkMutationBatcher("my-table");
-          BatcherImpl batcher2 = (BatcherImpl) client2.newBulkMutationBatcher("my-table")) {
+      try (BatcherImpl<?, ?, ?, ?> batcher1 =
+              (BatcherImpl<?, ?, ?, ?>) client1.newBulkMutationBatcher(TableId.of("my-table"));
+          BatcherImpl<?, ?, ?, ?> batcher2 =
+              (BatcherImpl<?, ?, ?, ?>) client2.newBulkMutationBatcher(TableId.of("my-table"))) {
         assertThat(batcher1.getFlowController()).isNotSameInstanceAs(batcher2.getFlowController());
       }
     }
@@ -347,30 +346,17 @@ public class BigtableDataClientFactoryTest {
   private static class FakeBigtableService extends BigtableGrpc.BigtableImplBase {
 
     volatile MutateRowRequest lastRequest;
-    BlockingQueue<ReadRowsRequest> readRowsRequests = new LinkedBlockingDeque<>();
-    BlockingQueue<PingAndWarmRequest> pingAndWarmRequests = new LinkedBlockingDeque<>();
 
-    private ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
-        new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
-          @Override
-          public ReadRowsResponse apply(ReadRowsRequest readRowsRequest) {
-            return ReadRowsResponse.getDefaultInstance();
-          }
-        };
+    private final ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
+        readRowsRequest -> ReadRowsResponse.getDefaultInstance();
 
-    private ApiFunction<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallback =
-        new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
-          @Override
-          public PingAndWarmResponse apply(PingAndWarmRequest pingAndWarmRequest) {
-            return PingAndWarmResponse.getDefaultInstance();
-          }
-        };
+    private final ApiFunction<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallback =
+        pingAndWarmRequest -> PingAndWarmResponse.getDefaultInstance();
 
     @Override
     public void readRows(
         ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
       try {
-        readRowsRequests.add(request);
         responseObserver.onNext(readRowsCallback.apply(request));
         responseObserver.onCompleted();
       } catch (RuntimeException e) {
@@ -389,13 +375,12 @@ public class BigtableDataClientFactoryTest {
     @Override
     public void pingAndWarm(
         PingAndWarmRequest request, StreamObserver<PingAndWarmResponse> responseObserver) {
-      pingAndWarmRequests.add(request);
       responseObserver.onNext(pingAndWarmCallback.apply(request));
       responseObserver.onCompleted();
     }
   }
 
-  private static class BuilderAnswer<T> implements Answer {
+  private static class BuilderAnswer<T> implements Answer<T> {
 
     private final Class<T> targetClass;
     private T targetInstance;
@@ -405,8 +390,9 @@ public class BigtableDataClientFactoryTest {
       this.targetInstance = targetInstance;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Object answer(InvocationOnMock invocation) throws Throwable {
+    public T answer(InvocationOnMock invocation) throws Throwable {
       Method method = invocation.getMethod();
       Object r = invocation.getMethod().invoke(targetInstance, invocation.getArguments());
 
@@ -415,7 +401,7 @@ public class BigtableDataClientFactoryTest {
         this.targetInstance = castToTarget(r);
         r = invocation.getMock();
       }
-      return r;
+      return (T) r;
     }
 
     @SuppressWarnings("unchecked")

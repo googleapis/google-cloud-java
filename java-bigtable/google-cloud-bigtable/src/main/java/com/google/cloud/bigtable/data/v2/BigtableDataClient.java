@@ -1783,10 +1783,9 @@ public class BigtableDataClient implements AutoCloseable {
    *     GrpcCallContext)} instead.
    */
   @Deprecated
-  @BetaApi("This surface is likely to change as the batching surface evolves.")
   public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(
       @Nonnull String tableId, @Nullable GrpcCallContext ctx) {
-    return stub.newMutateRowsBatcher(tableId, ctx);
+    return stub.newMutateRowsBatcher(TableId.of(tableId), ctx);
   }
 
   /**

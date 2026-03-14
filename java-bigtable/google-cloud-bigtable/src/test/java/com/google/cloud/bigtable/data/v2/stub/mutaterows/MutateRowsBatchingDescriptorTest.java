@@ -33,9 +33,11 @@ import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.collect.ImmutableList;
 import io.grpc.Status;
-import java.util.Arrays;
+import io.grpc.Status.Code;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import org.junit.Test;
@@ -44,6 +46,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutateRowsBatchingDescriptorTest {
+  private static final TableId TABLE_ID = TableId.of("fake-table");
   private static final String ROW_KEY = "fake-row-key";
   private static final String FAMILY = "fake-family";
   private static final String QUALIFIER = "fake-qualifier";
@@ -65,7 +68,7 @@ public class MutateRowsBatchingDescriptorTest {
   public void requestBuilderTest() {
     MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
     long timestamp = 10_000L;
-    BulkMutation bulkMutation = BulkMutation.create("fake-table");
+    BulkMutation bulkMutation = BulkMutation.create(TABLE_ID);
     BatchingRequestBuilder<RowMutationEntry, BulkMutation> requestBuilder =
         underTest.newRequestBuilder(bulkMutation);
     requestBuilder.add(
@@ -76,7 +79,7 @@ public class MutateRowsBatchingDescriptorTest {
     BulkMutation actualBulkMutation = requestBuilder.build();
     assertThat(actualBulkMutation.toProto(requestContext))
         .isEqualTo(
-            BulkMutation.create("fake-table")
+            BulkMutation.create(TABLE_ID)
                 .add(ROW_KEY, Mutation.create().setCell(FAMILY, QUALIFIER, timestamp, VALUE))
                 .add("rowKey-2", Mutation.create().setCell("family-2", "q", 20_000L, "some-value"))
                 .toProto(requestContext));
@@ -119,14 +122,11 @@ public class MutateRowsBatchingDescriptorTest {
     MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
     underTest.splitResponse(
         MutateRowsAttemptResult.create(
-            Arrays.asList(
+            Collections.singletonList(
                 FailedMutation.create(
                     0,
                     ApiExceptionFactory.createException(
-                        "error message",
-                        null,
-                        GrpcStatusCode.of(io.grpc.Status.Code.INTERNAL),
-                        false))),
+                        "error message", null, GrpcStatusCode.of(Code.INTERNAL), false))),
             true),
         batchResponse);
     assertThat(batchResponse.get(0).getResultFuture().isDone()).isTrue();

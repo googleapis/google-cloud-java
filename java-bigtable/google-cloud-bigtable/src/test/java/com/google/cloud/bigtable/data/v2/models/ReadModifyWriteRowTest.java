@@ -35,8 +35,9 @@ import org.junit.runners.JUnit4;
 public class ReadModifyWriteRowTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
-  private static final String TABLE_ID = "fake-table";
-  private static final String AUTHORIZED_VIEW_ID = "fake-authorized-view";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
+  private static final AuthorizedViewId AUTHORIZED_VIEW_ID =
+      AuthorizedViewId.of(TABLE_ID, "fake-authorized-view");
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
@@ -74,7 +75,7 @@ public class ReadModifyWriteRowTest {
 
     // Test ReadModifyWriteRow on an authorized view.
     mutation =
-        ReadModifyWriteRow.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), "fake-key")
+        ReadModifyWriteRow.create(AUTHORIZED_VIEW_ID, "fake-key")
             .append(
                 "fake-family",
                 ByteString.copyFromUtf8("fake-qualifier"),
@@ -86,8 +87,7 @@ public class ReadModifyWriteRowTest {
     expected =
         ReadModifyWriteRowRequest.newBuilder()
             .setAuthorizedViewName(
-                NameUtil.formatAuthorizedViewName(
-                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+                NameUtil.formatAuthorizedViewName(PROJECT_ID, INSTANCE_ID, AUTHORIZED_VIEW_ID))
             .setAppProfileId(APP_PROFILE_ID)
             .setRowKey(ByteString.copyFromUtf8("fake-key"))
             .addRules(
@@ -134,7 +134,7 @@ public class ReadModifyWriteRowTest {
 
     // Test ReadModifyWriteRow on an authorized view.
     mutation =
-        ReadModifyWriteRow.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), "fake-key")
+        ReadModifyWriteRow.create(AUTHORIZED_VIEW_ID, "fake-key")
             .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
             .increment("fake-family", "fake-qualifier-str", 2);
 
@@ -144,8 +144,7 @@ public class ReadModifyWriteRowTest {
         .isEqualTo(
             ReadModifyWriteRowRequest.newBuilder()
                 .setAuthorizedViewName(
-                    NameUtil.formatAuthorizedViewName(
-                        PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+                    NameUtil.formatAuthorizedViewName(PROJECT_ID, INSTANCE_ID, AUTHORIZED_VIEW_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRowKey(ByteString.copyFromUtf8("fake-key"))
                 .addRules(
@@ -181,7 +180,7 @@ public class ReadModifyWriteRowTest {
 
     // Test ReadModifyWriteRow on an authorized view.
     expected =
-        ReadModifyWriteRow.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), "fake-key")
+        ReadModifyWriteRow.create(AUTHORIZED_VIEW_ID, "fake-key")
             .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
             .append("fake-family", "a", "b");
 
@@ -223,7 +222,7 @@ public class ReadModifyWriteRowTest {
 
     // Test ReadModifyWriteRow on an authorized view.
     expected =
-        ReadModifyWriteRow.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), "row-key")
+        ReadModifyWriteRow.create(AUTHORIZED_VIEW_ID, "row-key")
             .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
             .append("fake-family", "fake-qualifier", "fake-value");
 
@@ -238,8 +237,7 @@ public class ReadModifyWriteRowTest {
     assertThat(overriddenRequest).isNotEqualTo(protoRequest);
     assertThat(overriddenRequest.getTableName()).isEmpty();
     assertThat(overriddenRequest.getAuthorizedViewName())
-        .matches(
-            NameUtil.formatAuthorizedViewName(projectId, instanceId, TABLE_ID, AUTHORIZED_VIEW_ID));
+        .matches(NameUtil.formatAuthorizedViewName(projectId, instanceId, AUTHORIZED_VIEW_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
   }
 }

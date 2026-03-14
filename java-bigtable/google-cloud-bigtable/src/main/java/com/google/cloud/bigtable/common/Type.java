@@ -42,6 +42,7 @@ import javax.annotation.Nonnull;
  */
 @BetaApi
 @InternalApi
+@SuppressWarnings({"SameNameButDifferent", "JavaLangClash"})
 public interface Type {
 
   @AutoValue
@@ -57,7 +58,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -74,7 +75,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -91,7 +92,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -108,7 +109,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -125,7 +126,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -142,7 +143,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -159,7 +160,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -176,7 +177,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -241,7 +242,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name();
     }
   }
@@ -324,7 +325,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name() + "{fields=" + fields.toString() + "}";
     }
   }
@@ -349,7 +350,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name() + "{elementType=" + getElementType().getCode() + "}";
     }
   }
@@ -381,7 +382,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name()
           + "{keyType="
           + getKeyType().toString()
@@ -422,7 +423,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name() + "{message=" + getMessageName() + "}";
     }
   }
@@ -531,7 +532,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name()
           + "{messageName="
           + getMessageName()
@@ -577,7 +578,7 @@ public interface Type {
     }
 
     @Override
-    public java.lang.String toString() {
+    public final java.lang.String toString() {
       return getCode().name()
           + "{enumName="
           + getEnumName()

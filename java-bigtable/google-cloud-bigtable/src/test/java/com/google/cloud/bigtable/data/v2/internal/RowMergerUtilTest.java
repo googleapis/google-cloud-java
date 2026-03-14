@@ -26,14 +26,13 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
 import java.util.List;
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class RowMergerUtilTest extends TestCase {
+public class RowMergerUtilTest {
 
   @Test
   public void testEmpty() {

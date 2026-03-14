@@ -136,7 +136,8 @@ public class BulkMutateIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(
+            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 
   @Test
@@ -236,7 +237,7 @@ public class BulkMutateIT {
           Batcher<RowMutationEntry, Void> batcherOutsideAuthorizedView =
               client.newBulkMutationBatcher(
                   AuthorizedViewId.of(
-                      testEnvRule.env().getTableId(), testAuthorizedView.getId()))) {
+                      testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId()))) {
         String keyOutsideAuthorizedView = UUID.randomUUID() + "-outside-authorized-view";
         RowMutationEntry rowMutationEntry = RowMutationEntry.create(keyOutsideAuthorizedView);
         rowMutationEntry.setCell(
@@ -252,6 +253,7 @@ public class BulkMutateIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(
+            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

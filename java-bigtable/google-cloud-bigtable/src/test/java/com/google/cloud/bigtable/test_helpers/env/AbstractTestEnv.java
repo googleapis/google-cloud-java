@@ -22,6 +22,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -80,9 +81,8 @@ public abstract class AbstractTestEnv {
       byId.put(cluster.getId(), cluster);
     }
 
-    Cluster cluster = null;
+    Cluster cluster = byId.get(getInstanceId());
 
-    cluster = byId.get(getInstanceId());
     if (cluster == null) {
       // gcloud-devel setup
       cluster = byId.get(getInstanceId() + "-cluster");
@@ -100,7 +100,7 @@ public abstract class AbstractTestEnv {
     return primaryClusterId;
   }
 
-  public abstract String getTableId();
+  public abstract TableId getTableId();
 
   public abstract String getKmsKeyName();
 

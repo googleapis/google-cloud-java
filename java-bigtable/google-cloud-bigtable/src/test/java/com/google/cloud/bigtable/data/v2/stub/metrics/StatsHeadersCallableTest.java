@@ -68,14 +68,14 @@ import org.junit.runners.JUnit4;
 public class StatsHeadersCallableTest {
   private Server server;
 
-  private FakeService fakeService = new FakeService();
+  private final FakeService fakeService = new FakeService();
 
   private EnhancedBigtableStub stub;
 
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
 
   private final int attemptCounts = 3;
   private MetadataInterceptor metadataInterceptor;
@@ -137,19 +137,18 @@ public class StatsHeadersCallableTest {
     verifyHeaders(attemptCounts, startTimestamp);
   }
 
+  @Deprecated
   @Test
   public void testSampleRowKeysHeaders() throws Exception {
     long startTimestamp = System.currentTimeMillis() * 1000;
-    stub.sampleRowKeysCallable().call(TABLE_ID).get(0);
+    stub.sampleRowKeysCallable().call(TABLE_ID.getTableId()).get(0);
     verifyHeaders(attemptCounts, startTimestamp);
   }
 
   @Test
   public void testSampleRowKeysWithRequestHeaders() throws Exception {
     long startTimestamp = System.currentTimeMillis() * 1000;
-    stub.sampleRowKeysCallableWithRequest()
-        .call(SampleRowKeysRequest.create(TableId.of(TABLE_ID)))
-        .get(0);
+    stub.sampleRowKeysCallableWithRequest().call(SampleRowKeysRequest.create(TABLE_ID)).get(0);
     verifyHeaders(attemptCounts, startTimestamp);
   }
 

@@ -46,8 +46,8 @@ public final class BigtableTransportChannelProvider implements TransportChannelP
   private BigtableTransportChannelProvider(
       InstantiatingGrpcChannelProvider instantiatingGrpcChannelProvider,
       ChannelPrimer channelPrimer,
-      ChannelPoolMetricsTracer channelPoolMetricsTracer,
-      ScheduledExecutorService backgroundExecutor) {
+      @Nullable ChannelPoolMetricsTracer channelPoolMetricsTracer,
+      @Nullable ScheduledExecutorService backgroundExecutor) {
     delegate = Preconditions.checkNotNull(instantiatingGrpcChannelProvider);
     this.channelPrimer = channelPrimer;
     this.channelPoolMetricsTracer = channelPoolMetricsTracer;
@@ -59,6 +59,7 @@ public final class BigtableTransportChannelProvider implements TransportChannelP
     return delegate.shouldAutoClose();
   }
 
+  @SuppressWarnings("deprecation")
   @Override
   public boolean needsExecutor() {
     return delegate.needsExecutor();
@@ -164,7 +165,7 @@ public final class BigtableTransportChannelProvider implements TransportChannelP
             btPoolSettings, channelFactory, channelPrimer, backgroundExecutor);
 
     if (channelPoolMetricsTracer != null) {
-      channelPoolMetricsTracer.registerChannelInsightsProvider(btChannelPool::getChannelInfos);
+      channelPoolMetricsTracer.registerChannelInsightsProvider(btChannelPool);
       channelPoolMetricsTracer.registerLoadBalancingStrategy(
           btPoolSettings.getLoadBalancingStrategy());
     }

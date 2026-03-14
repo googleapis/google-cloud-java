@@ -37,7 +37,7 @@ import org.junit.runners.JUnit4;
 public class BulkMutationTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
   private static final String AUTHORIZED_VIEW_ID = "fake-authorized-view";
   private static final String APP_PROFILE = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
@@ -61,7 +61,7 @@ public class BulkMutationTest {
 
     MutateRowsRequest.Builder expected =
         MutateRowsRequest.newBuilder()
-            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID.getTableId()))
             .setAppProfileId(APP_PROFILE);
     TextFormat.merge(
         "entries {"
@@ -116,7 +116,7 @@ public class BulkMutationTest {
         .clearTableName()
         .setAuthorizedViewName(
             NameUtil.formatAuthorizedViewName(
-                PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+                PROJECT_ID, INSTANCE_ID, TABLE_ID.getTableId(), AUTHORIZED_VIEW_ID))
         .setAppProfileId(APP_PROFILE);
 
     assertThat(actual).isEqualTo(expected.build());
@@ -257,7 +257,7 @@ public class BulkMutationTest {
 
     assertThat(overriddenRequest).isNotEqualTo(protoRequest);
     assertThat(overriddenRequest.getTableName())
-        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID.getTableId()));
     assertThat(overriddenRequest.getAuthorizedViewName()).isEmpty();
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
 
@@ -280,7 +280,8 @@ public class BulkMutationTest {
     assertThat(overriddenRequest.getTableName()).isEmpty();
     assertThat(overriddenRequest.getAuthorizedViewName())
         .matches(
-            NameUtil.formatAuthorizedViewName(projectId, instanceId, TABLE_ID, AUTHORIZED_VIEW_ID));
+            NameUtil.formatAuthorizedViewName(
+                projectId, instanceId, TABLE_ID.getTableId(), AUTHORIZED_VIEW_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
   }
 

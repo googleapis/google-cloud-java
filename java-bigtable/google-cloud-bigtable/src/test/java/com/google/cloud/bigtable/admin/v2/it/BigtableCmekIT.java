@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
+import com.google.cloud.bigtable.admin.v2.models.StaticClusterSize;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.common.Status;
 import com.google.cloud.bigtable.common.Status.Code;
@@ -61,7 +62,7 @@ import org.threeten.bp.temporal.ChronoUnit;
 @RunWith(JUnit4.class)
 public class BigtableCmekIT {
 
-  private static final int[] BACKOFF_DURATION = {5, 10, 50, 100, 150, 200, 250, 300};
+  private static final long[] BACKOFF_DURATION = {5, 10, 50, 100, 150, 200, 250, 300};
   private static final Logger LOGGER = Logger.getLogger(BigtableCmekIT.class.getName());
   private static final String TEST_TABLE_ID = "test-table-for-cmek-it";
   private static final String BACKUP_ID = "test-table-for-cmek-it-backup";
@@ -143,7 +144,7 @@ public class BigtableCmekIT {
     instanceAdmin.createCluster(
         CreateClusterRequest.of(instanceId, clusterId2)
             .setZone(zones.get(1))
-            .setServeNodes(1)
+            .setScalingMode(StaticClusterSize.of(1))
             .setStorageType(StorageType.SSD)
             .setKmsKeyName(kmsKeyName));
 
@@ -155,7 +156,7 @@ public class BigtableCmekIT {
       instanceAdmin.createCluster(
           CreateClusterRequest.of(instanceId, clusterId3)
               .setZone(otherZone)
-              .setServeNodes(1)
+              .setScalingMode(StaticClusterSize.of(1))
               .setStorageType(StorageType.SSD)
               .setKmsKeyName(kmsKeyName));
       Assert.fail("should have thrown an error");

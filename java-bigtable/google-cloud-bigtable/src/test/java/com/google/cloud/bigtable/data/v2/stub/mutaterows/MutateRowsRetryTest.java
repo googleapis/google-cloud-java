@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.collect.Queues;
 import io.grpc.Status;
@@ -52,7 +53,7 @@ public class MutateRowsRetryTest {
   private FakeBigtableService service;
   private BigtableDataClient client;
 
-  private AtomicInteger attemptCounter = new AtomicInteger();
+  private final AtomicInteger attemptCounter = new AtomicInteger();
 
   @Before
   public void setUp() throws IOException {
@@ -93,7 +94,7 @@ public class MutateRowsRetryTest {
 
     try {
       client.bulkMutateRows(
-          BulkMutation.create("fake-table")
+          BulkMutation.create(TableId.of("fake-table"))
               .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v")));
     } catch (ApiException e) {
       Assert.fail("Rst stream errors should be retried");

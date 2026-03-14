@@ -32,6 +32,7 @@ import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
@@ -48,7 +49,7 @@ public class CheckAndMutateIT {
 
   @Test
   public void test() throws Exception {
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String rowKey = UUID.randomUUID().toString();
 
@@ -91,7 +92,7 @@ public class CheckAndMutateIT {
 
     AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
 
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String rowKey = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
     BigtableDataClient dataClient = testEnvRule.env().getDataClient();
@@ -156,6 +157,7 @@ public class CheckAndMutateIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(
+            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

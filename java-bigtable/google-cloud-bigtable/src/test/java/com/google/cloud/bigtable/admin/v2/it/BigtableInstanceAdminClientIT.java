@@ -116,7 +116,7 @@ public class BigtableInstanceAdminClientIT {
             .addCluster(newClusterId2, testEnvRule.env().getSecondaryZone(), 1, StorageType.SSD)
             .setDisplayName("Multi-Cluster-Instance-Test")
             .addLabel("state", "readytodelete")
-            .setType(Type.PRODUCTION));
+            .setType(Instance.Type.PRODUCTION));
 
     try {
       assertThat(client.exists(newInstanceId)).isTrue();
@@ -207,7 +207,7 @@ public class BigtableInstanceAdminClientIT {
             .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
             .setDisplayName("Priority-Instance-Test")
             .addLabel("state", "readytodelete")
-            .setType(Type.PRODUCTION));
+            .setType(Instance.Type.PRODUCTION));
 
     try {
       assertThat(client.exists(newInstanceId)).isTrue();
@@ -387,7 +387,7 @@ public class BigtableInstanceAdminClientIT {
         CreateClusterRequest.of(newInstanceId, newClusterId)
             .setZone(testEnvRule.env().getSecondaryZone())
             .setStorageType(StorageType.SSD)
-            .setServeNodes(3));
+            .setScalingMode(StaticClusterSize.of(3)));
     try {
       assertThat(client.getCluster(newInstanceId, newClusterId)).isNotNull();
 

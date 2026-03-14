@@ -31,6 +31,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
@@ -51,7 +52,7 @@ public class RowMutationEntryBatcherIT {
   @Test
   public void testNewBatcher() throws Exception {
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowPrefix = UUID.randomUUID().toString();
 
@@ -91,7 +92,7 @@ public class RowMutationEntryBatcherIT {
     AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowPrefix = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
 
@@ -138,6 +139,7 @@ public class RowMutationEntryBatcherIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(
+            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

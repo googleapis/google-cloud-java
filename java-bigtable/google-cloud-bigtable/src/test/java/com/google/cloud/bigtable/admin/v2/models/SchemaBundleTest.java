@@ -109,13 +109,14 @@ public class SchemaBundleTest {
 
     assertThat(schemaBundle)
         .isNotEqualTo(
-            com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
-                .setName(schemaBundleName.toString())
-                .setProtoSchema(
-                    com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
-                        .setProtoDescriptors(ByteString.copyFromUtf8("schema"))
-                        .build())
-                .build());
+            SchemaBundle.fromProto(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setName(schemaBundleName.toString())
+                    .setProtoSchema(
+                        com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                            .setProtoDescriptors(ByteString.copyFromUtf8("schema2"))
+                            .build())
+                    .build()));
   }
 
   @Test

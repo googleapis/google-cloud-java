@@ -51,11 +51,11 @@ public class BigtableMaterializedViewIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableMaterializedViewIT.class.getName());
-  private static final int[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+  private static final long[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
   private BigtableInstanceAdminClient client;
   private Table testTable;
-  private String instanceId = testEnvRule.env().getInstanceId();
+  private final String instanceId = testEnvRule.env().getInstanceId();
 
   // TODO: Update this test once emulator supports InstanceAdmin operation
   // https://github.com/googleapis/google-cloud-go/issues/1069

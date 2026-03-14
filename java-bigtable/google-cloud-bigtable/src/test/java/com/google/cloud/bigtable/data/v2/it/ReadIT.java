@@ -41,6 +41,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
@@ -86,7 +87,7 @@ public class ReadIT {
   @Test
   public void isRowExists() throws Exception {
     String rowKey = prefix + "-test-row-key";
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     testEnvRule
         .env()
         .getDataClient()
@@ -111,7 +112,7 @@ public class ReadIT {
         .isNotInstanceOf(EmulatorEnv.class);
 
     BigtableDataClient dataClient = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String rowKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-isRowExistsOnAuthorizedView";
     String rowKeyOutsideAuthorizedView = prefix + "-isRowExistsOnAuthorizedView";
 
@@ -149,7 +150,7 @@ public class ReadIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
+        .deleteAuthorizedView(tableId.getTableId(), testAuthorizedView.getId());
   }
 
   @Test
@@ -176,7 +177,7 @@ public class ReadIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     BigtableDataClient dataClient = testEnvRule.env().getDataClient();
     String uniqueKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-readEmptyOnAuthorizedView";
     String uniqueKeyOutsideAuthorizedView = prefix + "-readEmptyOnAuthorizedView";
@@ -215,7 +216,7 @@ public class ReadIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
+        .deleteAuthorizedView(tableId.getTableId(), testAuthorizedView.getId());
   }
 
   @Test
@@ -247,7 +248,7 @@ public class ReadIT {
                       ByteString.copyFromUtf8("my-value")))));
     }
 
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
 
     // Sync
     Query query = Query.create(tableId).range(uniqueKey + "-0", uniqueKey + "-" + numRows);
@@ -284,7 +285,7 @@ public class ReadIT {
     List<Row> expectedRows = Lists.newArrayList();
     String uniqueKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-readOnAuthorizedView";
     String uniqueKeyOutsideAuthorizedView = prefix + "-readOnAuthorizedView";
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     BigtableDataClient dataClient = testEnvRule.env().getDataClient();
 
     AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
@@ -386,13 +387,13 @@ public class ReadIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
+        .deleteAuthorizedView(tableId.getTableId(), testAuthorizedView.getId());
   }
 
   @Test
   public void rangeQueries() {
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String uniqueKey = prefix + "-range-queries";
     String keyA = uniqueKey + "-" + "a";
@@ -468,7 +469,7 @@ public class ReadIT {
         .isNotInstanceOf(EmulatorEnv.class);
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String uniqueKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-rangeQueriesOnAuthorizedView";
     String keyA = uniqueKey + "-" + "a";
@@ -552,7 +553,7 @@ public class ReadIT {
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
+        .deleteAuthorizedView(tableId.getTableId(), testAuthorizedView.getId());
   }
 
   @Test
@@ -562,7 +563,7 @@ public class ReadIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String uniqueKey = prefix + "-rev-queries";
     String keyA = uniqueKey + "-" + "a";
@@ -646,7 +647,7 @@ public class ReadIT {
         .isNotInstanceOf(EmulatorEnv.class);
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableId();
+    TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String uniqueKey = prefix + "-rev-queries2";
 
@@ -686,12 +687,14 @@ public class ReadIT {
         ((InstantiatingGrpcChannelProvider)
                 settingsBuilder.stubSettings().getTransportChannelProvider())
             .toBuilder();
+    @SuppressWarnings("rawtypes")
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
         transport.getChannelConfigurator();
 
     // Randomly camp the deadline to force a timeout to force a retry
     transport.setChannelConfigurator(
-        (ManagedChannelBuilder c) -> {
+        (@SuppressWarnings("rawtypes")
+            ManagedChannelBuilder c) -> {
           if (oldConfigurator != null) {
             c = oldConfigurator.apply(c);
           }

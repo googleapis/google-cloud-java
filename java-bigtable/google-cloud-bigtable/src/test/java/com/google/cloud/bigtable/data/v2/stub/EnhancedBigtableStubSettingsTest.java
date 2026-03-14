@@ -221,7 +221,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     builder
@@ -280,7 +279,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     builder
@@ -368,7 +366,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     builder
@@ -416,7 +413,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     builder
@@ -466,7 +462,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     long flowControlSetting = 10L;
@@ -574,7 +569,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     BatchingSettings batchingSettings = BatchingSettings.newBuilder().build();
@@ -780,7 +774,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     builder
@@ -845,7 +838,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setInitialRpcTimeout(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(1)
             .setMaxRpcTimeout(Duration.ofSeconds(10))
-            .setJittered(true)
             .build();
 
     builder

@@ -152,11 +152,11 @@ public class EnhancedBigtableStubTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
-  private static final String TABLE_ID = "fake-table";
+  private static final TableId TABLE_ID = TableId.of("fake-table");
   private static final String TABLE_NAME =
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
   private static final String APP_PROFILE_ID = "app-profile-id";
-  private static final String WAIT_TIME_TABLE_ID = "test-wait-timeout";
+  private static final TableId WAIT_TIME_TABLE_ID = TableId.of("test-wait-timeout");
   private static final String WAIT_TIME_QUERY = "test-wait-timeout";
   private static final Duration WATCHDOG_CHECK_DURATION = Duration.ofMillis(100);
   private static final PrepareResponse PREPARE_RESPONSE =
@@ -229,12 +229,13 @@ public class EnhancedBigtableStubTest {
             .setJwtAudience(expectedAudience)
             .build();
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
-      stub.readRowCallable().futureCall(Query.create("fake-table")).get();
+      stub.readRowCallable().futureCall(Query.create(TABLE_ID)).get();
     }
     // Send rpc and grab the credentials sent
     Metadata metadata = metadataInterceptor.headers.take();
 
     String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+    assertThat(authValue).isNotNull();
     String expectedPrefix = "Bearer ";
     assertThat(authValue).startsWith(expectedPrefix);
     String jwtStr = authValue.substring(expectedPrefix.length());
@@ -279,12 +280,13 @@ public class EnhancedBigtableStubTest {
     Metadata metadata;
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
       // Send rpc and grab the credentials sent
-      stub.readRowCallable().futureCall(Query.create("fake-table")).get();
+      stub.readRowCallable().futureCall(Query.create(TABLE_ID)).get();
       metadata = metadataInterceptor.headers.take();
     }
     channel.shutdown();
 
     String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+    assertThat(authValue).isNotNull();
     String expectedPrefix = "Bearer ";
     assertThat(authValue).startsWith(expectedPrefix);
     String jwtStr = authValue.substring(expectedPrefix.length());
@@ -294,11 +296,12 @@ public class EnhancedBigtableStubTest {
 
   @Test
   public void testFeatureFlags() throws InterruptedException, IOException, ExecutionException {
-    enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
+    enhancedBigtableStub.readRowCallable().futureCall(Query.create(TABLE_ID)).get();
     Metadata metadata = metadataInterceptor.headers.take();
 
     String encodedFeatureFlags =
         metadata.get(Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    assertThat(encodedFeatureFlags).isNotNull();
     FeatureFlags featureFlags =
         FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
 
@@ -318,6 +321,7 @@ public class EnhancedBigtableStubTest {
 
       String encodedFeatureFlags =
           metadata.get(Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+      assertThat(encodedFeatureFlags).isNotNull();
       FeatureFlags featureFlags =
           FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
 
@@ -380,12 +384,13 @@ public class EnhancedBigtableStubTest {
 
   @Test
   public void testMutateRowRequestParams() throws ExecutionException, InterruptedException {
-    RowMutation req = RowMutation.create(TableId.of(TABLE_ID), "my-key").deleteRow();
+    RowMutation req = RowMutation.create(TABLE_ID, "my-key").deleteRow();
 
     ApiFuture<Void> f = enhancedBigtableStub.mutateRowCallable().futureCall(req, null);
     f.get();
 
     Metadata reqMetadata = metadataInterceptor.headers.poll(1, TimeUnit.SECONDS);
+    assertThat(reqMetadata).isNotNull();
 
     // RequestParamsExtractor
     String reqParams =
@@ -413,9 +418,9 @@ public class EnhancedBigtableStubTest {
               return null;
             })
         .when(fakeDataService)
-        .mutateRow(Mockito.any(), Mockito.any(StreamObserver.class));
+        .mutateRow(Mockito.any(), Mockito.any());
 
-    RowMutation req = RowMutation.create(TableId.of(TABLE_ID), "my-key").deleteRow();
+    RowMutation req = RowMutation.create(TABLE_ID, "my-key").deleteRow();
     ApiFuture<Void> f = enhancedBigtableStub.mutateRowCallable().futureCall(req, null);
 
     ExecutionException e = assertThrows(ExecutionException.class, f::get);
@@ -457,6 +462,7 @@ public class EnhancedBigtableStubTest {
     f.get();
 
     Metadata reqMetadata = metadataInterceptor.headers.poll(1, TimeUnit.SECONDS);
+    assertThat(reqMetadata).isNotNull();
 
     // RequestParamsExtractor
     String reqParams =
@@ -487,7 +493,7 @@ public class EnhancedBigtableStubTest {
               return null;
             })
         .when(fakeDataService)
-        .prepareQuery(Mockito.any(), Mockito.any(StreamObserver.class));
+        .prepareQuery(Mockito.any(), Mockito.any());
     com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest req =
         com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest.create(
             "SELECT * FROM TABLE", new HashMap<>());
@@ -504,7 +510,7 @@ public class EnhancedBigtableStubTest {
     ServerStreamingCallable<Query, Row> streamingCallable =
         enhancedBigtableStub.createReadRowsCallable(new DefaultRowAdapter());
 
-    Query request = Query.create("table-id").rowKey("row-key");
+    Query request = Query.create(TableId.of("table-id")).rowKey("row-key");
     streamingCallable.call(request).iterator().next();
     ReadRowsRequest expected =
         request.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID));
@@ -549,7 +555,7 @@ public class EnhancedBigtableStubTest {
     ServerStreamingCallable<Query, Row> streamingCallable =
         enhancedBigtableStub.createReadRowsCallable(new DefaultRowAdapter());
 
-    Query request = Query.create("table-id").rowKey("row-key");
+    Query request = Query.create(TABLE_ID).rowKey("row-key");
     streamingCallable.call(request).iterator().next();
 
     assertThat(metadataInterceptor.headers).hasSize(1);
@@ -584,11 +590,12 @@ public class EnhancedBigtableStubTest {
               .spanBuilder("fake-parent-span")
               .setSampler(Samplers.alwaysSample())
               .startScopedSpan()) {
-        enhancedBigtableStub.readRowCallable().call(Query.create("table-id").rowKey("row-key"));
+        enhancedBigtableStub.readRowCallable().call(Query.create(TABLE_ID).rowKey("row-key"));
       }
 
       for (int i = 0; i < 100; i++) {
         SpanData spanData = spans.poll(10, TimeUnit.SECONDS);
+        assertThat(spanData).isNotNull();
         if ("Bigtable.ReadRow".equals(spanData.getName())) {
           foundSpanData = spanData;
           break;
@@ -645,8 +652,10 @@ public class EnhancedBigtableStubTest {
 
       // Creating 2 batchers from the same stub, they should share the same FlowController and
       // FlowControlEventStats
-      try (BatcherImpl batcher1 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table1", null);
-          BatcherImpl batcher2 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table2", null)) {
+      try (BatcherImpl<?, ?, ?, ?> batcher1 =
+              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher("my-table1", null);
+          BatcherImpl<?, ?, ?, ?> batcher2 =
+              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher("my-table2", null)) {
         assertThat(batcher1.getFlowController()).isNotNull();
         assertThat(batcher1.getFlowController().getFlowControlEventStats()).isNotNull();
         assertThat(batcher1).isNotSameInstanceAs(batcher2);
@@ -670,8 +679,10 @@ public class EnhancedBigtableStubTest {
 
       // Creating 2 batchers from different stubs, they should not share the same FlowController and
       // FlowControlEventStats
-      try (BatcherImpl batcher1 = (BatcherImpl) stub1.newMutateRowsBatcher("my-table1", null);
-          BatcherImpl batcher2 = (BatcherImpl) stub2.newMutateRowsBatcher("my-table2", null)) {
+      try (BatcherImpl<?, ?, ?, ?> batcher1 =
+              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher("my-table1", null);
+          BatcherImpl<?, ?, ?, ?> batcher2 =
+              (BatcherImpl<?, ?, ?, ?>) stub2.newMutateRowsBatcher("my-table2", null)) {
         assertThat(batcher1.getFlowController()).isNotNull();
         assertThat(batcher1.getFlowController().getFlowControlEventStats()).isNotNull();
         assertThat(batcher1.getFlowController()).isNotSameInstanceAs(batcher2.getFlowController());
@@ -688,7 +699,8 @@ public class EnhancedBigtableStubTest {
                     .build()
                     .getStubSettings()); ) {
 
-      try (BatcherImpl batcher = (BatcherImpl) stub2.newMutateRowsBatcher("my-table", null)) {
+      try (BatcherImpl<?, ?, ?, ?> batcher =
+          (BatcherImpl<?, ?, ?, ?>) stub2.newMutateRowsBatcher("my-table", null)) {
         assertThat(batcher.getFlowController().getMaxElementCountLimit()).isEqualTo(100L);
         assertThat(batcher.getFlowController().getCurrentElementCountLimit()).isEqualTo(100L);
         assertThat(batcher.getFlowController().getMinElementCountLimit()).isEqualTo(100L);
@@ -739,7 +751,7 @@ public class EnhancedBigtableStubTest {
 
       // Send a batch
       try (Batcher<ByteString, Row> batcher =
-          stub.newBulkReadRowsBatcher(Query.create("table1"), clientCtx)) {
+          stub.newBulkReadRowsBatcher(Query.create(TABLE_ID), clientCtx)) {
         batcher.add(ByteString.copyFromUtf8("key")).get();
       }
 
@@ -753,7 +765,7 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testBulkMutationFlowControlFeatureFlagIsSet() throws Exception {
     BulkMutation bulkMutation =
-        BulkMutation.create("my-table")
+        BulkMutation.create(TABLE_ID)
             .add(RowMutationEntry.create("row-key").setCell("cf", "q", "value"));
 
     // Test the header is set when the feature is enabled
@@ -775,7 +787,7 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testBulkMutationFlowControlFeatureFlagIsNotSet() throws Exception {
     BulkMutation bulkMutation =
-        BulkMutation.create("my-table")
+        BulkMutation.create(TABLE_ID)
             .add(RowMutationEntry.create("row-key").setCell("cf", "q", "value"));
 
     EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
@@ -820,7 +832,8 @@ public class EnhancedBigtableStubTest {
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
       ServerStream<ChangeStreamRecord> results =
-          stub.readChangeStreamCallable().call(ReadChangeStreamQuery.create(WAIT_TIME_TABLE_ID));
+          stub.readChangeStreamCallable()
+              .call(ReadChangeStreamQuery.create(WAIT_TIME_TABLE_ID.getTableId()));
       WatchdogTimeoutException ex =
           assertThrows(WatchdogTimeoutException.class, () -> results.iterator().next());
       assertThat(ex).hasMessageThat().contains("Canceled due to timeout waiting for next response");
@@ -858,9 +871,8 @@ public class EnhancedBigtableStubTest {
               return null;
             })
         .when(fakeDataService)
-        .mutateRows(Mockito.any(MutateRowsRequest.class), Mockito.any(StreamObserver.class));
-    BatchingException batchingException =
-        assertThrows(BatchingException.class, () -> batcher.close());
+        .mutateRows(Mockito.any(MutateRowsRequest.class), Mockito.any());
+    BatchingException batchingException = assertThrows(BatchingException.class, batcher::close);
     assertThat(batchingException.getMessage())
         .contains(
             "Batching finished with 1 partial failures. The 1 partial failures contained 1 entries"
@@ -881,11 +893,10 @@ public class EnhancedBigtableStubTest {
               return null;
             })
         .when(fakeDataService)
-        .mutateRows(Mockito.any(MutateRowsRequest.class), Mockito.any(StreamObserver.class));
+        .mutateRows(Mockito.any(MutateRowsRequest.class), Mockito.any());
 
     batcher.add(RowMutationEntry.create("key0").deleteRow());
-    BatchingException batchingException =
-        assertThrows(BatchingException.class, () -> batcher.close());
+    BatchingException batchingException = assertThrows(BatchingException.class, batcher::close);
     assertThat(batchingException.getMessage())
         .contains(
             "Batching finished with 1 batches failed to apply due to: 1 ApiException(1"
@@ -920,19 +931,20 @@ public class EnhancedBigtableStubTest {
     settings.setStreamWatchdogProvider(
         InstantiatingWatchdogProvider.create().withCheckInterval(WATCHDOG_CHECK_DURATION));
 
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
-    Iterator<SqlRow> iterator =
-        stub.executeQueryCallable()
-            .call(WAIT_TIME_PREPARED_STATEMENT.bind().build())
-            .rows()
-            .iterator();
-    WatchdogTimeoutException e = assertThrows(WatchdogTimeoutException.class, iterator::next);
-    assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
+    Iterator<SqlRow> iterator;
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      iterator =
+          stub.executeQueryCallable()
+              .call(WAIT_TIME_PREPARED_STATEMENT.bind().build())
+              .rows()
+              .iterator();
+      WatchdogTimeoutException e = assertThrows(WatchdogTimeoutException.class, iterator::next);
+      assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
+    }
   }
 
   @Test
-  public void testExecuteQueryWaitTimeoutWorksWithMetadataFuture()
-      throws IOException, InterruptedException {
+  public void testExecuteQueryWaitTimeoutWorksWithMetadataFuture() throws IOException {
     EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
     // Set a shorter wait timeout and make watchdog checks more frequently
     settings.executeQuerySettings().setWaitTimeout(WATCHDOG_CHECK_DURATION.dividedBy(2));
@@ -1012,7 +1024,6 @@ public class EnhancedBigtableStubTest {
     final BlockingQueue<ReadModifyWriteRowRequest> rmwRequests = Queues.newLinkedBlockingDeque();
     final BlockingQueue<PrepareQueryRequest> prepareRequests = Queues.newLinkedBlockingDeque();
 
-    @SuppressWarnings("unchecked")
     ReadRowsRequest popLastRequest() throws InterruptedException {
       return requests.poll(1, TimeUnit.SECONDS);
     }
@@ -1066,11 +1077,10 @@ public class EnhancedBigtableStubTest {
     @Override
     public void readRows(
         ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
-      if (request.getTableName().contains(WAIT_TIME_TABLE_ID)) {
+      if (request.getTableName().contains(WAIT_TIME_TABLE_ID.getTableId())) {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
-        } catch (Exception e) {
-
+        } catch (Exception ignored) {
         }
       }
       requests.add(request);
@@ -1092,11 +1102,10 @@ public class EnhancedBigtableStubTest {
     public void readChangeStream(
         ReadChangeStreamRequest request,
         StreamObserver<ReadChangeStreamResponse> responseObserver) {
-      if (request.getTableName().contains(WAIT_TIME_TABLE_ID)) {
+      if (request.getTableName().contains(WAIT_TIME_TABLE_ID.getTableId())) {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
-        } catch (Exception e) {
-
+        } catch (Exception ignored) {
         }
       }
       readChangeReadStreamRequests.add(request);
@@ -1119,8 +1128,7 @@ public class EnhancedBigtableStubTest {
       if (request.getPreparedQuery().startsWith(ByteString.copyFromUtf8(WAIT_TIME_QUERY))) {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
-        } catch (Exception e) {
-
+        } catch (Exception ignored) {
         }
       }
       executeQueryRequests.add(request);
@@ -1134,8 +1142,7 @@ public class EnhancedBigtableStubTest {
       if (request.getQuery().contains(WAIT_TIME_QUERY)) {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
-        } catch (Exception e) {
-
+        } catch (Exception ignored) {
         }
       }
       prepareRequests.add(request);

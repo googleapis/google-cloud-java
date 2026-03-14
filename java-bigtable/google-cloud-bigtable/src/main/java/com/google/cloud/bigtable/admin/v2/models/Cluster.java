@@ -214,6 +214,7 @@ public class Cluster {
     return null;
   }
 
+  @SuppressWarnings("EqualsGetClass")
   @Override
   public boolean equals(Object o) {
     if (this == o) {

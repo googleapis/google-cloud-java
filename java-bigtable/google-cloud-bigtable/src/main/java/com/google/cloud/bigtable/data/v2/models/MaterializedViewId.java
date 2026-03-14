@@ -35,7 +35,7 @@ public abstract class MaterializedViewId implements TargetId {
     return new AutoValue_MaterializedViewId(materializedViewId);
   }
 
-  abstract String getMaterializedViewId();
+  public abstract String getMaterializedViewId();
 
   @Override
   @InternalApi

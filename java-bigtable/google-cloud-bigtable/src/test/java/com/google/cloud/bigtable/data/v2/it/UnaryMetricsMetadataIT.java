@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableAttemptLatenc
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -72,7 +73,7 @@ public class UnaryMetricsMetadataIT {
 
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
-    CustomOpenTelemetryMetricsProvider.setupSdkMeterProvider(meterProvider);
+
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
 
@@ -150,14 +151,13 @@ public class UnaryMetricsMetadataIT {
         client
             .mutateRowCallable()
             .futureCall(
-                RowMutation.create("non-exist-table", rowKey).setCell(familyId, "q", "myVal"));
+                RowMutation.create(TableId.of("non-exist-table"), rowKey)
+                    .setCell(familyId, "q", "myVal"));
 
     try {
       future.get(1, TimeUnit.MINUTES);
     } catch (ExecutionException e) {
-      if (e.getCause() instanceof NotFoundException) {
-        // ignore NotFoundException
-      } else {
+      if (!(e.getCause() instanceof NotFoundException)) {
         throw e;
       }
     }

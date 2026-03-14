@@ -61,6 +61,7 @@ import com.google.cloud.bigtable.admin.v2.models.LogicalView;
 import com.google.cloud.bigtable.admin.v2.models.MaterializedView;
 import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
+import com.google.cloud.bigtable.admin.v2.models.StaticClusterSize;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
@@ -75,6 +76,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.Status.Code;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -94,12 +96,12 @@ import org.mockito.junit.MockitoRule;
 import org.mockito.quality.Strictness;
 import org.mockito.stubbing.Answer;
 
-@RunWith(JUnit4.class)
 /**
  * Tests for {@link BigtableInstanceAdminClient}. This test class uses Mockito so it has been
  * explicitly excluded from Native Image testing by not following the naming convention of (IT* and
  * *ClientTest).
  */
+@RunWith(JUnit4.class)
 public class BigtableInstanceAdminClientTests {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
@@ -623,7 +625,7 @@ public class BigtableInstanceAdminClientTests {
         adminClient.createCluster(
             CreateClusterRequest.of(INSTANCE_ID, CLUSTER_ID)
                 .setZone("us-east1-c")
-                .setServeNodes(3)
+                .setScalingMode(StaticClusterSize.of(3))
                 .setStorageType(StorageType.SSD));
     // Verify
     assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
@@ -1522,7 +1524,7 @@ public class BigtableInstanceAdminClientTests {
         .isEqualTo(
             Policy.newBuilder()
                 .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
-                .setEtag(BaseEncoding.base64().encode("my-etag".getBytes()))
+                .setEtag(BaseEncoding.base64().encode("my-etag".getBytes(StandardCharsets.UTF_8)))
                 .build());
   }
 
@@ -1567,7 +1569,7 @@ public class BigtableInstanceAdminClientTests {
         .isEqualTo(
             Policy.newBuilder()
                 .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
-                .setEtag(BaseEncoding.base64().encode("my-etag".getBytes()))
+                .setEtag(BaseEncoding.base64().encode("my-etag".getBytes(StandardCharsets.UTF_8)))
                 .build());
   }
 

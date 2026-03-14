@@ -58,6 +58,7 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.collect.Lists;
 import io.grpc.ForwardingServerCall;
 import io.grpc.Metadata;
@@ -95,6 +96,7 @@ public class CookiesHolderTest {
   private static final Metadata.Key<String> BAD_KEY =
       Metadata.Key.of("x-goog-cbt-not-cookie", Metadata.ASCII_STRING_MARSHALLER);
 
+  private static final TableId TABLE_ID = TableId.of("fake-table");
   private static final String testHeaderCookie = "header-cookie";
   private static final String testCookie = "test-routing-cookie";
   private static final String routingCookie1Header = "should-be-overridden";
@@ -188,7 +190,7 @@ public class CookiesHolderTest {
   @Test
   public void testReadRows() {
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -210,7 +212,7 @@ public class CookiesHolderTest {
 
   @Test
   public void testReadRow() {
-    client.readRow("fake-table", "key");
+    client.readRow(TABLE_ID, "key");
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -233,8 +235,7 @@ public class CookiesHolderTest {
   @Test
   public void testMutateRows() {
     client.bulkMutateRows(
-        BulkMutation.create("fake-table")
-            .add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
+        BulkMutation.create(TABLE_ID).add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -256,7 +257,7 @@ public class CookiesHolderTest {
 
   @Test
   public void testMutateRow() {
-    client.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v"));
+    client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v"));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -279,7 +280,7 @@ public class CookiesHolderTest {
   @Test
   public void testSampleRowKeys() {
 
-    client.sampleRowKeys("fake-table");
+    client.sampleRowKeys(TABLE_ID);
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -374,7 +375,7 @@ public class CookiesHolderTest {
     fakeService.returnCookie = false;
 
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -392,7 +393,7 @@ public class CookiesHolderTest {
   public void testNoCookieSucceedReadRow() {
     fakeService.returnCookie = false;
 
-    client.readRow("fake-table", "key");
+    client.readRow(TABLE_ID, "key");
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -410,8 +411,7 @@ public class CookiesHolderTest {
     fakeService.returnCookie = false;
 
     client.bulkMutateRows(
-        BulkMutation.create("fake-table")
-            .add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
+        BulkMutation.create(TABLE_ID).add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -428,7 +428,7 @@ public class CookiesHolderTest {
   public void testNoCookieSucceedMutateRow() {
     fakeService.returnCookie = false;
 
-    client.mutateRow(RowMutation.create("fake-table", "key").setCell("cf", "q", "v"));
+    client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v"));
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -445,7 +445,7 @@ public class CookiesHolderTest {
   public void testNoCookieSucceedSampleRowKeys() {
     fakeService.returnCookie = false;
 
-    client.sampleRowKeys("fake-table");
+    client.sampleRowKeys(TABLE_ID);
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
     assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -555,7 +555,8 @@ public class CookiesHolderTest {
 
       try (BigtableDataClient client = BigtableDataClient.create(settings.build())) {
         @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-        ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
+        ArrayList<Row> ignored =
+            Lists.newArrayList(client.readRows(Query.create(TableId.of("table"))));
 
         Metadata lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
 
@@ -576,27 +577,25 @@ public class CookiesHolderTest {
     // explicitly added to the methods list. It requires that any newly method is exercised in this
     // test. This is enforced by introspecting grpc method descriptors.
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("fake-table")));
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
 
     fakeService.count.set(0);
-    client.mutateRow(RowMutation.create("fake-table", "key").setCell("cf", "q", "v"));
+    client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v"));
 
     fakeService.count.set(0);
     client.bulkMutateRows(
-        BulkMutation.create("fake-table")
-            .add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
+        BulkMutation.create(TABLE_ID).add(RowMutationEntry.create("key").setCell("cf", "q", "v")));
 
     fakeService.count.set(0);
-    client.sampleRowKeys("fake-table");
+    client.sampleRowKeys(TABLE_ID);
 
     fakeService.count.set(0);
     client.checkAndMutateRow(
-        ConditionalRowMutation.create("fake-table", "key")
+        ConditionalRowMutation.create(TABLE_ID, "key")
             .then(Mutation.create().setCell("cf", "q", "v")));
 
     fakeService.count.set(0);
-    client.readModifyWriteRow(
-        ReadModifyWriteRow.create("fake-table", "key").append("cf", "q", "v"));
+    client.readModifyWriteRow(ReadModifyWriteRow.create(TABLE_ID, "key").append("cf", "q", "v"));
 
     fakeService.count.set(0);
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
@@ -629,7 +628,7 @@ public class CookiesHolderTest {
       BigtableDataClient client2 = factory.createForAppProfile("app-profile");
 
       @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-      ArrayList<Row> ignored = Lists.newArrayList(client1.readRows(Query.create("fake-table")));
+      ArrayList<Row> ignored = Lists.newArrayList(client1.readRows(Query.create(TABLE_ID)));
 
       assertThat(fakeService.count.get()).isGreaterThan(1);
       assertThat(serverMetadata).hasSize(fakeService.count.get());
@@ -651,7 +650,7 @@ public class CookiesHolderTest {
       serverMetadata.clear();
 
       @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-      ArrayList<Row> ignored2 = Lists.newArrayList(client2.readRows(Query.create("fake-table")));
+      ArrayList<Row> ignored2 = Lists.newArrayList(client2.readRows(Query.create(TABLE_ID)));
 
       assertThat(fakeService.count.get()).isGreaterThan(1);
       assertThat(serverMetadata).hasSize(fakeService.count.get());

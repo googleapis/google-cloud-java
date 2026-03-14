@@ -41,10 +41,12 @@ public class ClientPerConnectionErrorCount extends MetricWrapper<ClientSchema> {
           .addAll(Buckets.generateGeometricSeq(1, 64))
           .addAll(Buckets.generateGeometricSeq(125, 1_000_000L))
           .build();
+
   // This metric migrated from gce/gke schemas to bigtable_client
   // So a lot of the metric labels overlap with the resource labels.
   // we need special handling since the logic in MetricWrapper assumes that there is no
   // overlap.
+  @SuppressWarnings("deprecation")
   private static final Set<AttributeKey<?>> METRIC_LABELS =
       ImmutableSet.of(
           MetricLabels.BIGTABLE_PROJECT_ID_KEY,
@@ -96,6 +98,7 @@ public class ClientPerConnectionErrorCount extends MetricWrapper<ClientSchema> {
     }
 
     public void record(ClientInfo clientInfo, long value) {
+      @SuppressWarnings("deprecation")
       Attributes attributes =
           getSchema()
               .createResourceAttrs(clientInfo)

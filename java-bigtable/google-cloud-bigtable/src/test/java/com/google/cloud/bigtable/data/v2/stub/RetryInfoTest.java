@@ -98,15 +98,15 @@ public class RetryInfoTest {
 
   private static final Metadata.Key<byte[]> ERROR_DETAILS_KEY =
       Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER);
+  private static final TableId TABLE_ID = TableId.of("table");
 
   private final Set<String> methods = new HashSet<>();
 
   private FakeBigtableService service;
   private Server server;
   private BigtableDataClient client;
-  private BigtableDataSettings.Builder settings;
 
-  private AtomicInteger attemptCounter = new AtomicInteger();
+  private final AtomicInteger attemptCounter = new AtomicInteger();
   private com.google.protobuf.Duration defaultDelay =
       com.google.protobuf.Duration.newBuilder().setSeconds(2).setNanos(0).build();
 
@@ -136,7 +136,7 @@ public class RetryInfoTest {
         };
     server = FakeServiceBuilder.create(service).intercept(serverInterceptor).start();
 
-    settings =
+    BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId("fake-project")
             .setInstanceId("fake-instance");
@@ -157,14 +157,13 @@ public class RetryInfoTest {
   @Test
   public void testAllMethods() {
     // Verify retry info is handled correctly for all the methods in data API.
-    verifyRetryInfoIsUsed(() -> client.readRow(TableId.of("table"), "row"), true);
+    verifyRetryInfoIsUsed(() -> client.readRow(TABLE_ID, "row"), true);
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
         () -> {
           @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-          ArrayList<Row> ignored =
-              Lists.newArrayList(client.readRows(Query.create(TableId.of("table"))));
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
         },
         true);
 
@@ -172,25 +171,22 @@ public class RetryInfoTest {
     verifyRetryInfoIsUsed(
         () ->
             client.bulkMutateRows(
-                BulkMutation.create(TableId.of("fake-table"))
+                BulkMutation.create(TABLE_ID)
                     .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
         true);
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
-        () ->
-            client.mutateRow(
-                RowMutation.create(TableId.of("fake-table"), "key").setCell("cf", "q", "v")),
-        true);
+        () -> client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v")), true);
 
     attemptCounter.set(0);
-    verifyRetryInfoIsUsed(() -> client.sampleRowKeys(TableId.of("table")), true);
+    verifyRetryInfoIsUsed(() -> client.sampleRowKeys(TABLE_ID), true);
 
     attemptCounter.set(0);
     verifyRetryInfoIsUsed(
         () ->
             client.checkAndMutateRow(
-                ConditionalRowMutation.create("table", "key")
+                ConditionalRowMutation.create(TABLE_ID, "key")
                     .condition(Filters.FILTERS.value().regex("old-value"))
                     .then(Mutation.create().setCell("cf", "q", "v"))),
         true);
@@ -199,7 +195,7 @@ public class RetryInfoTest {
     verifyRetryInfoIsUsed(
         () ->
             client.readModifyWriteRow(
-                ReadModifyWriteRow.create("table", "row").append("cf", "q", "v")),
+                ReadModifyWriteRow.create(TABLE_ID, "row").append("cf", "q", "v")),
         true);
 
     attemptCounter.set(0);
@@ -240,12 +236,12 @@ public class RetryInfoTest {
 
   @Test
   public void testReadRowNonRetryableErrorWithRetryInfo() {
-    verifyRetryInfoIsUsed(() -> client.readRow("table", "row"), false);
+    verifyRetryInfoIsUsed(() -> client.readRow(TABLE_ID, "row"), false);
   }
 
   @Test
   public void testReadRowServerNotReturningRetryInfo() {
-    verifyNoRetryInfo(() -> client.readRow("table", "row"), true);
+    verifyNoRetryInfo(() -> client.readRow(TABLE_ID, "row"), true);
   }
 
   @Test
@@ -253,7 +249,7 @@ public class RetryInfoTest {
     verifyRetryInfoIsUsed(
         () -> {
           @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
         },
         false);
   }
@@ -263,7 +259,7 @@ public class RetryInfoTest {
     verifyNoRetryInfo(
         () -> {
           @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create("table")));
+          ArrayList<Row> ignored = Lists.newArrayList(client.readRows(Query.create(TABLE_ID)));
         },
         true);
   }
@@ -273,7 +269,7 @@ public class RetryInfoTest {
     verifyRetryInfoIsUsed(
         () ->
             client.bulkMutateRows(
-                BulkMutation.create("fake-table")
+                BulkMutation.create(TABLE_ID)
                     .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
         false);
   }
@@ -283,7 +279,7 @@ public class RetryInfoTest {
     verifyNoRetryInfo(
         () ->
             client.bulkMutateRows(
-                BulkMutation.create("fake-table")
+                BulkMutation.create(TABLE_ID)
                     .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
         true);
   }
@@ -291,23 +287,23 @@ public class RetryInfoTest {
   @Test
   public void testMutateRowNonRetryableErrorWithRetryInfo() {
     verifyRetryInfoIsUsed(
-        () -> client.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")), false);
+        () -> client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v")), false);
   }
 
   @Test
   public void testMutateRowServerNotReturningRetryInfo() {
     verifyNoRetryInfo(
-        () -> client.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")), true);
+        () -> client.mutateRow(RowMutation.create(TABLE_ID, "key").setCell("cf", "q", "v")), true);
   }
 
   @Test
   public void testSampleRowKeysNonRetryableErrorWithRetryInfo() {
-    verifyRetryInfoIsUsed(() -> client.sampleRowKeys("table"), false);
+    verifyRetryInfoIsUsed(() -> client.sampleRowKeys(TABLE_ID), false);
   }
 
   @Test
   public void testSampleRowKeysServerNotReturningRetryInfo() {
-    verifyNoRetryInfo(() -> client.sampleRowKeys("table"), true);
+    verifyNoRetryInfo(() -> client.sampleRowKeys(TABLE_ID), true);
   }
 
   @Test
@@ -315,7 +311,7 @@ public class RetryInfoTest {
     verifyNoRetryInfo(
         () ->
             client.checkAndMutateRow(
-                ConditionalRowMutation.create("table", "key")
+                ConditionalRowMutation.create(TABLE_ID, "key")
                     .condition(Filters.FILTERS.value().regex("old-value"))
                     .then(Mutation.create().setCell("cf", "q", "v"))),
         false);
@@ -326,7 +322,7 @@ public class RetryInfoTest {
     verifyNoRetryInfo(
         () ->
             client.readModifyWriteRow(
-                ReadModifyWriteRow.create("table", "row").append("cf", "q", "v")),
+                ReadModifyWriteRow.create(TABLE_ID, "row").append("cf", "q", "v")),
         false);
   }
 
@@ -390,7 +386,8 @@ public class RetryInfoTest {
     if (retryableError) {
       enqueueRetryableExceptionWithDelay(defaultDelay);
     } else {
-      enqueueNonRetryableExceptionWithDelay(defaultDelay);
+      @SuppressWarnings("ThrowableNotThrown")
+      ApiException ignored = enqueueNonRetryableExceptionWithDelay(defaultDelay);
     }
     Stopwatch stopwatch = Stopwatch.createStarted();
     runnable.run();

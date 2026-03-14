@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.Instance;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
@@ -64,7 +63,7 @@ public class UpdateInstanceRequest {
    */
   @SuppressWarnings("WeakerAccess")
   public UpdateInstanceRequest setProductionType() {
-    builder.getInstanceBuilder().setType(Type.PRODUCTION);
+    builder.getInstanceBuilder().setType(Instance.Type.PRODUCTION);
     updateFieldMask(Instance.TYPE_FIELD_NUMBER);
 
     return this;

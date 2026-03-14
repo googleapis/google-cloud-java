@@ -223,6 +223,7 @@ public final class AppProfile {
       return proto;
     }
 
+    @SuppressWarnings("EqualsGetClass")
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -320,6 +321,7 @@ public final class AppProfile {
       return proto;
     }
 
+    @SuppressWarnings("EqualsGetClass")
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -426,6 +428,7 @@ public final class AppProfile {
       return proto;
     }
 
+    @SuppressWarnings("EqualsGetClass")
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -527,6 +530,7 @@ public final class AppProfile {
       return proto;
     }
 
+    @SuppressWarnings("EqualsGetClass")
     @Override
     public boolean equals(Object o) {
       if (this == o) {

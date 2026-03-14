@@ -89,7 +89,6 @@ public class TableTest {
     assertThat(result.getColumnFamilies()).hasSize(3);
     assertThat(result.isAutomatedBackupEnabled()).isTrue();
     assertEquals(
-        result.getAutomatedBackupPolicy().viewConfig(),
         "AutomatedBackupPolicy{com.google.bigtable.admin.v2.Table$AutomatedBackupPolicy.retention_period=seconds:"
             + " 1\n"
             + //
@@ -99,7 +98,8 @@ public class TableTest {
             + //
             "nanos: 99\n"
             + //
-            "}");
+            "}",
+        result.getAutomatedBackupPolicy().viewConfig());
     assertThat(result.isDeletionProtected()).isTrue();
 
     for (Entry<String, ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {

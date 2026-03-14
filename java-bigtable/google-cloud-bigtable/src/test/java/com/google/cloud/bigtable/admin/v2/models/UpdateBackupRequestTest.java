@@ -29,8 +29,6 @@ import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class UpdateBackupRequestTest {
-
-  private static final String TABLE_ID = "my-table";
   private static final String BACKUP_ID = "my-backup";
   private static final String PROJECT_ID = "my-project";
   private static final String INSTANCE_ID = "my-instance";

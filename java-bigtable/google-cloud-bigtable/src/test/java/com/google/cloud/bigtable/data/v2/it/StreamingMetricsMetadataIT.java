@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLate
 import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -72,7 +73,7 @@ public class StreamingMetricsMetadataIT {
 
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
-    CustomOpenTelemetryMetricsProvider.setupSdkMeterProvider(meterProvider);
+
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
 
@@ -93,7 +94,9 @@ public class StreamingMetricsMetadataIT {
     String uniqueKey = prefix + "-read";
 
     Query query = Query.create(testEnvRule.env().getTableId()).rowKey(uniqueKey);
-    ArrayList<Row> rows = Lists.newArrayList(client.readRows(query));
+    // consume the iterator
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    ArrayList<Row> ignored = Lists.newArrayList(client.readRows(query));
 
     ApiFuture<List<Cluster>> clustersFuture =
         testEnvRule
@@ -137,7 +140,7 @@ public class StreamingMetricsMetadataIT {
 
   @Test
   public void testFailure() {
-    Query query = Query.create("non-exist-table");
+    Query query = Query.create(TableId.of("non-exist-table"));
     try {
       @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
       ArrayList<Row> ignored = Lists.newArrayList(client.readRows(query));

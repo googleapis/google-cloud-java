@@ -22,6 +22,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.bigtable.emulator.v2.Emulator;
 import com.google.common.base.Strings;
@@ -33,7 +34,7 @@ public class EmulatorEnv extends AbstractTestEnv {
 
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
-  private static final String TABLE_ID = "default-table";
+  private static final TableId TABLE_ID = TableId.of("default-table");
 
   private Emulator emulator;
   private BigtableTableAdminClient tableAdminClient;
@@ -77,7 +78,8 @@ public class EmulatorEnv extends AbstractTestEnv {
 
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings);
 
-    tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(getFamilyId()));
+    tableAdminClient.createTable(
+        CreateTableRequest.of(TABLE_ID.getTableId()).addFamily(getFamilyId()));
   }
 
   @Override
@@ -113,7 +115,7 @@ public class EmulatorEnv extends AbstractTestEnv {
   }
 
   @Override
-  public String getTableId() {
+  public TableId getTableId() {
     return TABLE_ID;
   }
 

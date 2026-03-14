@@ -58,7 +58,7 @@ public class ExecuteQueryIT {
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
   private static BigtableDataClient dataClient;
-  private static String tableId;
+  private static TableId tableId;
   private static String schemaBundleId;
   private static String cf;
   private static String uniquePrefix;
@@ -84,17 +84,17 @@ public class ExecuteQueryIT {
     schemaBundleId = UUID.randomUUID() + "-bundle";
 
     dataClient.mutateRow(
-        RowMutation.create(TableId.of(tableId), uniquePrefix + "a")
+        RowMutation.create(tableId, uniquePrefix + "a")
             .setCell(cf, ByteString.copyFromUtf8("qual"), 1000, ByteString.copyFromUtf8("old"))
             .setCell(cf, ByteString.copyFromUtf8("qual2"), 1000, ByteString.copyFromUtf8("old2")));
     // Overwrite the previous values. Used for testing with_history
     dataClient.mutateRow(
-        RowMutation.create(TableId.of(tableId), uniquePrefix + "a")
+        RowMutation.create(tableId, uniquePrefix + "a")
             .setCell(cf, ByteString.copyFromUtf8("qual"), 10000, ByteString.copyFromUtf8("val"))
             .setCell(cf, ByteString.copyFromUtf8("qual2"), 10000, ByteString.copyFromUtf8("val2"))
             .setCell(cf, ByteString.copyFromUtf8("qual3"), 10000, ByteString.copyFromUtf8("val3")));
     dataClient.mutateRow(
-        RowMutation.create(TableId.of(tableId), uniquePrefix + "b")
+        RowMutation.create(tableId, uniquePrefix + "b")
             .setCell(cf, ByteString.copyFromUtf8("qual"), 10000, ByteString.copyFromUtf8("bval"))
             .setCell(
                 cf, ByteString.copyFromUtf8("qual2"), 10000, ByteString.copyFromUtf8("bval2")));
@@ -104,7 +104,7 @@ public class ExecuteQueryIT {
   public void selectStar() {
     PreparedStatement preparedStatement =
         dataClient.prepareStatement(
-            "SELECT * FROM " + tableId + " WHERE _key LIKE '" + uniquePrefix + "%'",
+            "SELECT * FROM " + tableId.getTableId() + " WHERE _key LIKE '" + uniquePrefix + "%'",
             new HashMap<>());
     BoundStatement statement = preparedStatement.bind().build();
     try (ResultSet rs = dataClient.executeQuery(statement)) {
@@ -131,7 +131,7 @@ public class ExecuteQueryIT {
     PreparedStatement preparedStatement =
         dataClient.prepareStatement(
             "SELECT * FROM `"
-                + tableId
+                + tableId.getTableId()
                 + "`(with_history => true) WHERE _key LIKE '"
                 + uniquePrefix
                 + "%'",
@@ -191,7 +191,7 @@ public class ExecuteQueryIT {
                     + " `"
                     + schemaBundleId
                     + ".com.google.cloud.bigtable.data.v2.test.Genre`) as enumCol FROM `"
-                    + tableId
+                    + tableId.getTableId()
                     + "` WHERE _key='"
                     + uniquePrefix
                     + "a' LIMIT 1",
@@ -256,8 +256,6 @@ public class ExecuteQueryIT {
       assertThat(rs.getProtoEnum("enumCol", Genre::forNumber)).isEqualTo(Genre.JAZZ);
       assertThat(rs.getProtoEnum(12, Genre::forNumber)).isEqualTo(Genre.JAZZ);
       assertThat(rs.next()).isFalse();
-    } catch (AssertionError e) {
-      throw e;
     } finally {
       deleteTestSchemaBundle();
     }
@@ -403,7 +401,7 @@ public class ExecuteQueryIT {
     PreparedStatement preparedStatement =
         dataClient.prepareStatement(
             "SELECT cf['qual'] AS neverNull, cf['qual3'] AS maybeNull FROM "
-                + tableId
+                + tableId.getTableId()
                 + " WHERE _key LIKE '"
                 + uniquePrefix
                 + "%'",
@@ -427,7 +425,10 @@ public class ExecuteQueryIT {
   }
 
   private static void deleteTestSchemaBundle() {
-    testEnvRule.env().getTableAdminClient().deleteSchemaBundle(tableId, schemaBundleId);
+    testEnvRule
+        .env()
+        .getTableAdminClient()
+        .deleteSchemaBundle(tableId.getTableId(), schemaBundleId);
   }
 
   private static void createTestSchemaBundle() throws Exception {
@@ -437,7 +438,7 @@ public class ExecuteQueryIT {
             .addFile(Album.getDescriptor().getFile().toProto())
             .build();
     CreateSchemaBundleRequest request =
-        CreateSchemaBundleRequest.of(tableId, schemaBundleId)
+        CreateSchemaBundleRequest.of(tableId.getTableId(), schemaBundleId)
             .setProtoSchema(fileDescriptorSet.toByteString());
     testEnvRule.env().getTableAdminClient().createSchemaBundle(request);
   }

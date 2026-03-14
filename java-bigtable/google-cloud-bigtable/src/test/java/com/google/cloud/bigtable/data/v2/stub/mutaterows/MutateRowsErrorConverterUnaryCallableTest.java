@@ -24,8 +24,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.MutateRowsErrorConverterUnaryCallable;
-import java.util.Arrays;
+import io.grpc.Status.Code;
+import java.util.Collections;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -41,6 +43,8 @@ import org.mockito.junit.MockitoRule;
 
 @RunWith(JUnit4.class)
 public class MutateRowsErrorConverterUnaryCallableTest {
+  private static final TableId TABLE_ID = TableId.of("fake-table");
+
   @Mock private UnaryCallable<BulkMutation, MutateRowsAttemptResult> innerCallable;
   @Captor private ArgumentCaptor<BulkMutation> innerMutation;
   private SettableApiFuture<MutateRowsAttemptResult> innerResult;
@@ -63,7 +67,7 @@ public class MutateRowsErrorConverterUnaryCallableTest {
 
     Throwable unexpectedError = null;
     try {
-      callable.call(BulkMutation.create("fake-table"));
+      callable.call(BulkMutation.create(TABLE_ID));
     } catch (Throwable t) {
       unexpectedError = t;
     }
@@ -77,16 +81,16 @@ public class MutateRowsErrorConverterUnaryCallableTest {
 
     innerResult.set(
         MutateRowsAttemptResult.create(
-            Arrays.asList(
+            Collections.singletonList(
                 FailedMutation.create(
                     0,
                     ApiExceptionFactory.createException(
-                        null, GrpcStatusCode.of(io.grpc.Status.Code.INTERNAL), false))),
+                        null, GrpcStatusCode.of(Code.INTERNAL), false))),
             true));
 
     MutateRowsException exception =
         Assert.assertThrows(
-            MutateRowsException.class, () -> callable.call(BulkMutation.create("fake-table")));
+            MutateRowsException.class, () -> callable.call(BulkMutation.create(TABLE_ID)));
 
     assertThat(exception).isInstanceOf(MutateRowsException.class);
     assertThat((exception).isRetryable()).isTrue();
@@ -100,8 +104,7 @@ public class MutateRowsErrorConverterUnaryCallableTest {
     innerResult.setException(new Exception("RPC error"));
 
     Exception exception =
-        Assert.assertThrows(
-            Exception.class, () -> callable.call(BulkMutation.create("fake-table")));
+        Assert.assertThrows(Exception.class, () -> callable.call(BulkMutation.create(TABLE_ID)));
 
     assertThat(exception).isInstanceOf(Exception.class);
   }

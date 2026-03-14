@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.Instance;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.FieldMask;
@@ -98,7 +97,7 @@ public class UpdateInstanceRequestTest {
             .setInstance(
                 Instance.newBuilder()
                     .setName("projects/my-project/instances/my-instance")
-                    .setType(Type.PRODUCTION))
+                    .setType(Instance.Type.PRODUCTION))
             .build();
 
     assertThat(actual).isEqualTo(expected);

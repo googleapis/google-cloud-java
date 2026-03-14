@@ -18,7 +18,7 @@ package com.google.cloud.bigtable.data.v2.it;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
-import com.google.api.core.ApiFunction;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -72,12 +72,12 @@ public class DirectPathFallbackIT {
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
-  private AtomicBoolean blackholeDpAddr = new AtomicBoolean();
-  private AtomicInteger numBlocked = new AtomicInteger();
-  private AtomicInteger numDpAddrRead = new AtomicInteger();
+  private final AtomicBoolean blackholeDpAddr = new AtomicBoolean();
+  private final AtomicInteger numBlocked = new AtomicInteger();
+  private final AtomicInteger numDpAddrRead = new AtomicInteger();
 
-  private ChannelFactory<NioSocketChannel> channelFactory;
-  private EventLoopGroup eventLoopGroup;
+  private final ChannelFactory<NioSocketChannel> channelFactory;
+  private final EventLoopGroup eventLoopGroup;
   private BigtableDataClient instrumentedClient;
 
   public DirectPathFallbackIT() {
@@ -103,18 +103,15 @@ public class DirectPathFallbackIT {
     InstantiatingGrpcChannelProvider instrumentedTransportChannelProvider =
         defaultTransportProvider.toBuilder()
             .setAttemptDirectPath(true)
-            .setPoolSize(1)
+            .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
             .setChannelConfigurator(
-                new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                  @Override
-                  public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
-                    injectNettyChannelHandler(builder);
+                builder -> {
+                  injectNettyChannelHandler(builder);
 
-                    // Fail fast when blackhole is active
-                    builder.keepAliveTime(1, TimeUnit.SECONDS);
-                    builder.keepAliveTimeout(1, TimeUnit.SECONDS);
-                    return builder;
-                  }
+                  // Fail fast when blackhole is active
+                  builder.keepAliveTime(1, TimeUnit.SECONDS);
+                  builder.keepAliveTimeout(1, TimeUnit.SECONDS);
+                  return builder;
                 })
             .build();
 

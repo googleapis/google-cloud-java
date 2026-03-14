@@ -32,17 +32,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.Instant;
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ChangeStreamRecordTest {
-
-  @Rule public ExpectedException expect = ExpectedException.none();
 
   @Test
   public void heartbeatSerializationTest() throws IOException, ClassNotFoundException {
@@ -189,7 +184,7 @@ public class ChangeStreamRecordTest {
   }
 
   // Tests that an OK CloseStream should not have continuation tokens.
-  @Test(expected = IllegalStateException.class)
+  @Test
   public void closeStreamOkWithContinuationTokenShouldFail() {
     Status status = Status.newBuilder().setCode(0).build();
     RowRange rowRange =
@@ -206,22 +201,20 @@ public class ChangeStreamRecordTest {
                     .setToken(token))
             .setStatus(status)
             .build();
-    Assert.assertThrows(
-        IllegalStateException.class, (ThrowingRunnable) CloseStream.fromProto(closeStreamProto));
+    Assert.assertThrows(IllegalStateException.class, () -> CloseStream.fromProto(closeStreamProto));
   }
 
   // Tests that a non-OK CloseStream should have continuation tokens.
-  @Test(expected = IllegalStateException.class)
+  @Test
   public void closeStreamErrorWithoutContinuationTokenShouldFail() {
     Status status = Status.newBuilder().setCode(11).build();
     ReadChangeStreamResponse.CloseStream closeStreamProto =
         ReadChangeStreamResponse.CloseStream.newBuilder().setStatus(status).build();
-    Assert.assertThrows(
-        IllegalStateException.class, (ThrowingRunnable) CloseStream.fromProto(closeStreamProto));
+    Assert.assertThrows(IllegalStateException.class, () -> CloseStream.fromProto(closeStreamProto));
   }
 
   // Tests that the number of continuation tokens should match the number of new partitions.
-  @Test(expected = IllegalStateException.class)
+  @Test
   public void closeStreamTokenAndNewPartitionCountMismatchedTest() {
     Status status = Status.newBuilder().setCode(11).build();
     RowRange rowRange =
@@ -240,8 +233,7 @@ public class ChangeStreamRecordTest {
             .addNewPartitions(StreamPartition.newBuilder().setRowRange(rowRange))
             .setStatus(status)
             .build();
-    Assert.assertThrows(
-        IllegalStateException.class, (ThrowingRunnable) CloseStream.fromProto(closeStreamProto));
+    Assert.assertThrows(IllegalStateException.class, () -> CloseStream.fromProto(closeStreamProto));
   }
 
   // Tests that number of continuation tokens and new partitions don't need to match if new

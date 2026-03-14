@@ -80,11 +80,12 @@ public class LogicalViewTest {
 
     assertThat(logicalView)
         .isNotEqualTo(
-            com.google.bigtable.admin.v2.LogicalView.newBuilder()
-                .setName(logicalViewName.toString())
-                .setQuery("SELECT 2 FROM Table")
-                .setDeletionProtection(true)
-                .build());
+            LogicalView.fromProto(
+                com.google.bigtable.admin.v2.LogicalView.newBuilder()
+                    .setName(logicalViewName.toString())
+                    .setQuery("SELECT 2 FROM Table")
+                    .setDeletionProtection(true)
+                    .build()));
   }
 
   @Test

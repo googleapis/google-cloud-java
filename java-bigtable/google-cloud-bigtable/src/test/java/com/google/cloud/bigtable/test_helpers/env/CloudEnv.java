@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
@@ -91,7 +92,7 @@ public class CloudEnv extends AbstractTestEnv {
 
   private final String projectId;
   private final String instanceId;
-  private final String tableId;
+  private final TableId tableId;
   private final String kmsKeyName;
 
   private final BigtableDataSettings.Builder dataSettings;
@@ -112,7 +113,7 @@ public class CloudEnv extends AbstractTestEnv {
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
         getOptionalProperty(APP_PROFILE_PROPERTY_NAME),
-        getRequiredProperty(TABLE_PROPERTY_NAME),
+        TableId.of(getRequiredProperty(TABLE_PROPERTY_NAME)),
         getOptionalProperty(TRACING_COOKIE_PROPERTY_NAME));
   }
 
@@ -124,7 +125,7 @@ public class CloudEnv extends AbstractTestEnv {
       String projectId,
       String instanceId,
       @Nullable String appProfileId,
-      String tableId,
+      TableId tableId,
       @Nullable String tracingCookie) {
     this.projectId = projectId;
     this.instanceId = instanceId;
@@ -175,7 +176,7 @@ public class CloudEnv extends AbstractTestEnv {
                 .build());
   }
 
-  private void configureConnection(StubSettings.Builder stubSettings) {
+  private void configureConnection(StubSettings.Builder<?, ?> stubSettings) {
     // Build an remote address restricting interceptor
     final ClientInterceptor interceptor;
 
@@ -283,7 +284,7 @@ public class CloudEnv extends AbstractTestEnv {
           String reqParams =
               headers.get(
                   Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
-          if (!reqParams.contains("app_profile_id=" + appProfileId)) {
+          if (reqParams == null || !reqParams.contains("app_profile_id=" + appProfileId)) {
             responseListener.onClose(
                 Status.FAILED_PRECONDITION.withDescription(
                     "Integration test was configured to run with app profile: "
@@ -392,7 +393,7 @@ public class CloudEnv extends AbstractTestEnv {
   }
 
   @Override
-  public String getTableId() {
+  public TableId getTableId() {
     return tableId;
   }
 

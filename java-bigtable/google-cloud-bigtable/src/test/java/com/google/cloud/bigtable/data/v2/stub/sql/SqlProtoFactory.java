@@ -592,13 +592,11 @@ public class SqlProtoFactory {
 
     private PreparedQueryData initialPlan;
     private PreparedQueryData planOnRefresh;
-    private Map<String, SqlType<?>> paramTypes;
 
     public FakePreparedStatement() {
       super(DEFAULT_INITIAL_RESPONSE, new HashMap<>(), null, null);
       this.initialPlan = DEFAULT_INITIAL_PLAN;
       this.planOnRefresh = DEFAULT_PLAN_ON_REFRESH;
-      this.paramTypes = new HashMap<>();
     }
 
     public FakePreparedStatement(
@@ -607,7 +605,6 @@ public class SqlProtoFactory {
       this.initialPlan = PreparedQueryData.create(ApiFutures.immediateFuture(prepareResponse));
       // Don't expect an refresh using this configuration
       this.planOnRefresh = null;
-      this.paramTypes = paramTypes;
     }
 
     FakePreparedStatement withUpdatedPlans(

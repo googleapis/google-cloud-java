@@ -107,6 +107,7 @@ public final class Status implements Serializable {
     return proto;
   }
 
+  @Override
   public String toString() {
     return proto.toString();
   }

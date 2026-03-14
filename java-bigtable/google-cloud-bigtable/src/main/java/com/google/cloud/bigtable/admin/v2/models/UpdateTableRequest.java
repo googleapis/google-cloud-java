@@ -159,7 +159,13 @@ public class UpdateTableRequest {
     if (this == o) return true;
     if (!(o instanceof UpdateTableRequest)) return false;
     UpdateTableRequest that = (UpdateTableRequest) o;
-    return Objects.equals(requestBuilder, that.requestBuilder);
+    if (requestBuilder == that.requestBuilder) {
+      return true;
+    }
+    if (requestBuilder == null || that.requestBuilder == null) {
+      return false;
+    }
+    return Objects.equals(requestBuilder.build(), that.requestBuilder.build());
   }
 
   @Override

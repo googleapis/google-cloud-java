@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
@@ -74,7 +73,7 @@ public final class CreateInstanceRequest {
 
     builder.setInstanceId(instanceId);
     builder.getInstanceBuilder().setDisplayName(instanceId);
-    builder.getInstanceBuilder().setType(Type.PRODUCTION);
+    builder.getInstanceBuilder().setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION);
   }
 
   /**
@@ -156,7 +155,7 @@ public final class CreateInstanceRequest {
     CreateClusterRequest clusterRequest =
         CreateClusterRequest.of("ignored-instance-id", clusterId)
             .setZone(zone)
-            .setServeNodes(serveNodes)
+            .setScalingMode(StaticClusterSize.of(serveNodes))
             .setStorageType(storageType);
     clusterRequests.add(clusterRequest);
 
@@ -212,7 +211,7 @@ public final class CreateInstanceRequest {
     CreateClusterRequest clusterRequest =
         CreateClusterRequest.of("ignored-instance-id", clusterId)
             .setZone(zone)
-            .setServeNodes(serveNodes)
+            .setScalingMode(StaticClusterSize.of(serveNodes))
             .setStorageType(storageType)
             .setKmsKeyName(kmsKeyName);
     clusterRequests.add(clusterRequest);

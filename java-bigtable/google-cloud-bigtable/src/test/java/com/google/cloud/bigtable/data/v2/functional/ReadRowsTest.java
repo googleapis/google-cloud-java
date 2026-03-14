@@ -24,6 +24,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
@@ -89,13 +90,13 @@ public class ReadRowsTest {
       Assert.assertThrows(
           InternalException.class,
           () -> {
-            for (Row ignored : client.readRows(Query.create("fake-table"))) {}
+            for (Row ignored : client.readRows(Query.create(TableId.of("fake-table")))) {}
           });
     }
   }
 
   static class FakeService extends BigtableGrpc.BigtableImplBase {
-    private List<ReadRowsResponse> readRowsResponses =
+    private final List<ReadRowsResponse> readRowsResponses =
         Collections.synchronizedList(new ArrayList<>());
 
     @Override

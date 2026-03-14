@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
@@ -86,7 +87,7 @@ public class EnhancedBigtableStubCloseRetryTest {
   @Test
   public void outstandingRequestsFinishAfterClose() throws Exception {
     final ApiFuture<List<Row>> resultFuture =
-        stub.readRowsCallable().all().futureCall(Query.create("table1"));
+        stub.readRowsCallable().all().futureCall(Query.create(TableId.of("table1")));
 
     // wait for the first request to hit the server
     requests.take();

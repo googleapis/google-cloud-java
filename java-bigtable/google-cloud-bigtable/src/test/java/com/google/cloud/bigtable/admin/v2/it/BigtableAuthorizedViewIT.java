@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.NotFoundException;
@@ -35,6 +36,7 @@ import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -56,7 +58,7 @@ public class BigtableAuthorizedViewIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableAuthorizedViewIT.class.getName());
-  private static final int[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+  private static final long[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
   private static BigtableTableAdminClient tableAdmin;
   private static BigtableDataClient dataClient;
@@ -254,9 +256,11 @@ public class BigtableAuthorizedViewIT {
   private static Table createAndPopulateTestTable(
       BigtableTableAdminClient tableAdmin, BigtableDataClient dataClient)
       throws InterruptedException {
-    String tableId =
-        PrefixGenerator.newPrefix("BigtableAuthorizedViewIT#createAndPopulateTestTable");
-    Table testTable = tableAdmin.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
+    TableId tableId =
+        TableId.of(
+            PrefixGenerator.newPrefix("BigtableAuthorizedViewIT#createAndPopulateTestTable"));
+    Table testTable =
+        tableAdmin.createTable(CreateTableRequest.of(tableId.getTableId()).addFamily("cf1"));
 
     // Populate test data.
     byte[] rowBytes = new byte[1024];
@@ -265,9 +269,10 @@ public class BigtableAuthorizedViewIT {
 
     try (Batcher<RowMutationEntry, Void> batcher = dataClient.newBulkMutationBatcher(tableId)) {
       for (int i = 0; i < 10; i++) {
-        batcher.add(
-            RowMutationEntry.create("test-row-" + i)
-                .setCell("cf1", ByteString.EMPTY, ByteString.copyFrom(rowBytes)));
+        ApiFuture<Void> ignored =
+            batcher.add(
+                RowMutationEntry.create("test-row-" + i)
+                    .setCell("cf1", ByteString.EMPTY, ByteString.copyFrom(rowBytes)));
       }
     }
     return testTable;

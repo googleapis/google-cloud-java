@@ -730,7 +730,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
    *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
    * </ul>
+   *
+   * @deprecated Please use {@link #newMutateRowsBatcher(TargetId, GrpcCallContext)}
    */
+  @Deprecated
   public Batcher<RowMutationEntry, Void> newMutateRowsBatcher(
       @Nonnull String tableId, @Nullable GrpcCallContext ctx) {
     return new BatcherImpl<>(

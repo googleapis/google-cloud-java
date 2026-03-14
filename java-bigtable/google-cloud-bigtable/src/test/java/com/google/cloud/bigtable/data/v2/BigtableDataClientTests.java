@@ -21,7 +21,6 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.Batcher;
-import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -68,18 +67,17 @@ import org.mockito.junit.MockitoRule;
 import org.mockito.quality.Strictness;
 import org.mockito.stubbing.Answer;
 
-@RunWith(JUnit4.class)
 /**
  * Tests for {@link BigtableDataClient}. This test class uses Mockito so it has been explicitly
  * excluded from Native Image testing by not following the naming convention of (IT* and
  * *ClientTest).
  */
+@RunWith(JUnit4.class)
 public class BigtableDataClientTests {
 
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
   @Mock private EnhancedBigtableStub mockStub;
-  @Mock private ClientContext mockContext;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
@@ -124,7 +122,7 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
     Query expectedQuery =
-        Query.create("fake-table")
+        Query.create(TableId.of("fake-table"))
             .rowKey("fake-row-key")
             .filter(
                 FILTERS
@@ -136,9 +134,10 @@ public class BigtableDataClientTests {
         .thenReturn(ApiFutures.immediateFuture(row))
         .thenReturn(ApiFutures.<Row>immediateFuture(null));
 
-    boolean result = bigtableDataClient.exists("fake-table", "fake-row-key");
+    boolean result = bigtableDataClient.exists(TableId.of("fake-table"), "fake-row-key");
     boolean anotherResult =
-        bigtableDataClient.exists("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+        bigtableDataClient.exists(
+            TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"));
 
     assertThat(result).isTrue();
     assertThat(anotherResult).isFalse();
@@ -182,7 +181,7 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
     Query expectedQuery =
-        Query.create("fake-table")
+        Query.create(TableId.of("fake-table"))
             .rowKey("fake-row-key")
             .filter(
                 FILTERS
@@ -196,10 +195,12 @@ public class BigtableDataClientTests {
         .thenReturn(ApiFutures.<Row>immediateFuture(null));
 
     ApiFuture<Boolean> result =
-        bigtableDataClient.existsAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+        bigtableDataClient.existsAsync(
+            TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"));
     assertThat(result.get()).isTrue();
 
-    ApiFuture<Boolean> anotherResult = bigtableDataClient.existsAsync("fake-table", "fake-row-key");
+    ApiFuture<Boolean> anotherResult =
+        bigtableDataClient.existsAsync(TableId.of("fake-table"), "fake-row-key");
     assertThat(anotherResult.get()).isFalse();
 
     Mockito.verify(mockReadRowCallable, Mockito.times(2)).futureCall(expectedQuery);
@@ -262,9 +263,10 @@ public class BigtableDataClientTests {
   public void proxyReadRowAsyncTest() {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
-    bigtableDataClient.readRowAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+    bigtableDataClient.readRowAsync(
+        TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"));
     Mockito.verify(mockReadRowCallable)
-        .futureCall(Query.create("fake-table").rowKey("fake-row-key"));
+        .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key"));
   }
 
   @Test
@@ -284,9 +286,9 @@ public class BigtableDataClientTests {
   public void proxyReadRowStrAsyncTest() {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
-    bigtableDataClient.readRowAsync("fake-table", "fake-row-key");
+    bigtableDataClient.readRowAsync(TableId.of("fake-table"), "fake-row-key");
     Mockito.verify(mockReadRowCallable)
-        .futureCall(Query.create("fake-table").rowKey("fake-row-key"));
+        .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key"));
   }
 
   @Test
@@ -311,10 +313,11 @@ public class BigtableDataClientTests {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    bigtableDataClient.readRowAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"), filter);
+    bigtableDataClient.readRowAsync(
+        TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"), filter);
 
     Mockito.verify(mockReadRowCallable)
-        .futureCall(Query.create("fake-table").rowKey("fake-row-key").filter(filter));
+        .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key").filter(filter));
   }
 
   @Test
@@ -349,10 +352,10 @@ public class BigtableDataClientTests {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    bigtableDataClient.readRowAsync("fake-table", "fake-row-key", filter);
+    bigtableDataClient.readRowAsync(TableId.of("fake-table"), "fake-row-key", filter);
 
     Mockito.verify(mockReadRowCallable)
-        .futureCall(Query.create("fake-table").rowKey("fake-row-key").filter(filter));
+        .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key").filter(filter));
   }
 
   @Test
@@ -381,11 +384,14 @@ public class BigtableDataClientTests {
 
     Row expectedRow =
         Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
-    Mockito.when(mockReadRowCallable.futureCall(Query.create("fake-table").rowKey("fake-row-key")))
+    Mockito.when(
+            mockReadRowCallable.futureCall(
+                Query.create(TableId.of("fake-table")).rowKey("fake-row-key")))
         .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
     Row actualRow =
-        bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+        bigtableDataClient.readRow(
+            TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"));
 
     assertThat(actualRow).isEqualTo(expectedRow);
   }
@@ -416,10 +422,12 @@ public class BigtableDataClientTests {
 
     Row expectedRow =
         Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
-    Mockito.when(mockReadRowCallable.futureCall(Query.create("fake-table").rowKey("fake-row-key")))
+    Mockito.when(
+            mockReadRowCallable.futureCall(
+                Query.create(TableId.of("fake-table")).rowKey("fake-row-key")))
         .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
-    Row actualRow = bigtableDataClient.readRow("fake-table", "fake-row-key");
+    Row actualRow = bigtableDataClient.readRow(TableId.of("fake-table"), "fake-row-key");
 
     assertThat(actualRow).isEqualTo(expectedRow);
   }
@@ -458,11 +466,12 @@ public class BigtableDataClientTests {
         Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
     Mockito.when(
             mockReadRowCallable.futureCall(
-                Query.create("fake-table").rowKey("fake-row-key").filter(filter)))
+                Query.create(TableId.of("fake-table")).rowKey("fake-row-key").filter(filter)))
         .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
     Row actualRow =
-        bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"), filter);
+        bigtableDataClient.readRow(
+            TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"), filter);
 
     assertThat(actualRow).isEqualTo(expectedRow);
   }
@@ -510,10 +519,10 @@ public class BigtableDataClientTests {
         Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
     Mockito.when(
             mockReadRowCallable.futureCall(
-                Query.create("fake-table").rowKey("fake-row-key").filter(filter)))
+                Query.create(TableId.of("fake-table")).rowKey("fake-row-key").filter(filter)))
         .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
-    Row actualRow = bigtableDataClient.readRow("fake-table", "fake-row-key", filter);
+    Row actualRow = bigtableDataClient.readRow(TableId.of("fake-table"), "fake-row-key", filter);
 
     assertThat(actualRow).isEqualTo(expectedRow);
   }
@@ -548,7 +557,7 @@ public class BigtableDataClientTests {
   public void proxyReadRowsSyncTest() {
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
 
-    Query query = Query.create("fake-table");
+    Query query = Query.create(TableId.of("fake-table"));
     bigtableDataClient.readRows(query);
 
     Mockito.verify(mockReadRowsCallable).call(query);
@@ -568,7 +577,7 @@ public class BigtableDataClientTests {
   public void proxyReadRowsAsyncTest() {
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
 
-    Query query = Query.create("fake-table");
+    Query query = Query.create(TableId.of("fake-table"));
     @SuppressWarnings("unchecked")
     ResponseObserver<Row> mockObserver = Mockito.mock(ResponseObserver.class);
     bigtableDataClient.readRowsAsync(query, mockObserver);
@@ -633,6 +642,7 @@ public class BigtableDataClientTests {
     Mockito.verify(mockReadChangeStreamCallable).call(query, mockObserver);
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void proxySampleRowKeysCallableTest() {
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
@@ -641,6 +651,7 @@ public class BigtableDataClientTests {
         .isSameInstanceAs(mockSampleRowKeysCallable);
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void proxySampleRowKeysTest() {
     Mockito.when(mockStub.sampleRowKeysCallableWithRequest())
@@ -663,6 +674,7 @@ public class BigtableDataClientTests {
             SampleRowKeysRequest.create(AuthorizedViewId.of("fake-table", "fake-authorized-view")));
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void sampleRowKeysTest() {
     Mockito.when(mockStub.sampleRowKeysCallableWithRequest())
@@ -704,7 +716,7 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
 
     RowMutation request =
-        RowMutation.create("fake-table", "some-key")
+        RowMutation.create(TableId.of("fake-table"), "some-key")
             .setCell("some-family", "fake-qualifier", "fake-value");
 
     bigtableDataClient.mutateRowAsync(request);
@@ -728,10 +740,11 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
     Mockito.when(mockMutateRowCallable.futureCall(ArgumentMatchers.any(RowMutation.class)))
         .thenAnswer(
-            (Answer) invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
 
     RowMutation request =
-        RowMutation.create("fake-table", "some-key")
+        RowMutation.create(TableId.of("fake-table"), "some-key")
             .setCell("some-family", "fake-qualifier", "fake-value");
 
     bigtableDataClient.mutateRow(request);
@@ -743,7 +756,8 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
     Mockito.when(mockMutateRowCallable.futureCall(ArgumentMatchers.any(RowMutation.class)))
         .thenAnswer(
-            (Answer) invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
 
     RowMutation request =
         RowMutation.create(AuthorizedViewId.of("fake-table", "fake-authorized-view"), "some-key")
@@ -758,7 +772,7 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.bulkMutateRowsCallable()).thenReturn(mockBulkMutateRowsCallable);
 
     BulkMutation request =
-        BulkMutation.create("fake-table")
+        BulkMutation.create(TableId.of("fake-table"))
             .add(
                 "fake-key",
                 Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
@@ -787,10 +801,11 @@ public class BigtableDataClientTests {
 
     Mockito.when(mockBulkMutateRowsCallable.futureCall(ArgumentMatchers.any(BulkMutation.class)))
         .thenAnswer(
-            (Answer) invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
 
     BulkMutation request =
-        BulkMutation.create("fake-table")
+        BulkMutation.create(TableId.of("fake-table"))
             .add(
                 "fake-key",
                 Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
@@ -805,7 +820,8 @@ public class BigtableDataClientTests {
 
     Mockito.when(mockBulkMutateRowsCallable.futureCall(ArgumentMatchers.any(BulkMutation.class)))
         .thenAnswer(
-            (Answer) invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> ApiFutures.immediateFuture(Empty.getDefaultInstance()));
 
     BulkMutation request =
         BulkMutation.create(AuthorizedViewId.of("fake-table", "fake-authorized-view"))
@@ -819,12 +835,12 @@ public class BigtableDataClientTests {
 
   @Test
   public void proxyNewBulkMutationBatcherTest() {
-    Mockito.when(mockStub.newMutateRowsBatcher(Mockito.any(String.class), Mockito.any()))
+    Mockito.when(mockStub.newMutateRowsBatcher(Mockito.any(TableId.class), Mockito.any()))
         .thenReturn(mockBulkMutationBatcher);
 
     ApiFuture<Void> expectedResponse = ApiFutures.immediateFuture(null);
     Batcher<RowMutationEntry, Void> batcher =
-        bigtableDataClient.newBulkMutationBatcher("fake-table");
+        bigtableDataClient.newBulkMutationBatcher(TableId.of("fake-table"));
     RowMutationEntry request =
         RowMutationEntry.create("some-key").setCell("some-family", "fake-qualifier", "fake-value");
     Mockito.when(mockBulkMutationBatcher.add(request)).thenReturn(expectedResponse);
@@ -832,7 +848,7 @@ public class BigtableDataClientTests {
     ApiFuture<Void> actualRes = batcher.add(request);
     assertThat(actualRes).isSameInstanceAs(expectedResponse);
 
-    Mockito.verify(mockStub).newMutateRowsBatcher(Mockito.any(String.class), Mockito.any());
+    Mockito.verify(mockStub).newMutateRowsBatcher(Mockito.any(TableId.class), Mockito.any());
   }
 
   @Test
@@ -864,7 +880,8 @@ public class BigtableDataClientTests {
             Row.create(ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList()));
     ByteString request = ByteString.copyFromUtf8("fake-row-key");
 
-    Batcher<ByteString, Row> batcher = bigtableDataClient.newBulkReadRowsBatcher("fake-table");
+    Batcher<ByteString, Row> batcher =
+        bigtableDataClient.newBulkReadRowsBatcher(TableId.of("fake-table"));
     Mockito.when(mockBulkReadRowsBatcher.add(request)).thenReturn(expectedResponse);
 
     ApiFuture<Row> actualResponse = batcher.add(request);
@@ -905,7 +922,8 @@ public class BigtableDataClientTests {
     ByteString request = ByteString.copyFromUtf8("fake-row-key");
 
     Batcher<ByteString, Row> batcher =
-        bigtableDataClient.newBulkReadRowsBatcher("fake-table", FILTERS.key().regex("fake-row"));
+        bigtableDataClient.newBulkReadRowsBatcher(
+            TableId.of("fake-table"), FILTERS.key().regex("fake-row"));
     Mockito.when(mockBulkReadRowsBatcher.add(request)).thenReturn(expectedResponse);
 
     ApiFuture<Row> actualResponse = batcher.add(request);
@@ -947,7 +965,7 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
 
     ConditionalRowMutation mutation =
-        ConditionalRowMutation.create("fake-table", "fake-key")
+        ConditionalRowMutation.create(TableId.of("fake-table"), "fake-key")
             .then(Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
     bigtableDataClient.checkAndMutateRowAsync(mutation);
 
@@ -976,7 +994,7 @@ public class BigtableDataClientTests {
                 ArgumentMatchers.any(ConditionalRowMutation.class)))
         .thenReturn(ApiFutures.immediateFuture(Boolean.TRUE));
     ConditionalRowMutation mutation =
-        ConditionalRowMutation.create("fake-table", "fake-key")
+        ConditionalRowMutation.create(TableId.of("fake-table"), "fake-key")
             .then(Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
     bigtableDataClient.checkAndMutateRow(mutation);
 
@@ -1005,7 +1023,7 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
 
     ReadModifyWriteRow request =
-        ReadModifyWriteRow.create("fake-table", "some-key")
+        ReadModifyWriteRow.create(TableId.of("fake-table"), "some-key")
             .append("fake-family", "fake-qualifier", "suffix");
     bigtableDataClient.readModifyWriteRowAsync(request);
     Mockito.verify(mockReadModifyWriteRowCallable).futureCall(request);
@@ -1035,7 +1053,7 @@ public class BigtableDataClientTests {
                 Row.create(
                     ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
     ReadModifyWriteRow request =
-        ReadModifyWriteRow.create("fake-table", "some-key")
+        ReadModifyWriteRow.create(TableId.of("fake-table"), "some-key")
             .append("fake-family", "fake-qualifier", "suffix");
     bigtableDataClient.readModifyWriteRow(request);
     Mockito.verify(mockReadModifyWriteRowCallable).futureCall(request);

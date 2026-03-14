@@ -61,7 +61,7 @@ public class LargeRowIT {
 
   private BigtableTableAdminClient tableAdminClient;
   private Table table;
-  private String familyId = "cf";
+  private final String familyId = "cf";
 
   @Before
   public void setup() {
@@ -122,7 +122,7 @@ public class LargeRowIT {
         .isNotInstanceOf(EmulatorEnv.class);
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = table.getId();
+    TableId tableId = TableId.of(table.getId());
     String familyId = this.familyId;
     long timestampMicros = System.currentTimeMillis() * 1_000;
 
@@ -192,10 +192,8 @@ public class LargeRowIT {
 
     for (int i = 0; i < 100; i++) {
       ByteString qualifier = ByteString.copyFromUtf8("qualifier1_" + "_" + i);
-      client.mutateRow(
-          RowMutation.create(TableId.of(tableId), "r2").setCell(familyId, qualifier, largeValue));
-      client.mutateRow(
-          RowMutation.create(TableId.of(tableId), "r3").setCell(familyId, qualifier, largeValue));
+      client.mutateRow(RowMutation.create(tableId, "r2").setCell(familyId, qualifier, largeValue));
+      client.mutateRow(RowMutation.create(tableId, "r3").setCell(familyId, qualifier, largeValue));
     }
 
     // sync

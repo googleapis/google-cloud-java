@@ -17,12 +17,11 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -35,7 +34,6 @@ public class SampleRowKeysRequestTest {
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
-  @Rule public ExpectedException expect = ExpectedException.none();
 
   @Test
   public void toProtoTest() {
@@ -103,50 +101,68 @@ public class SampleRowKeysRequestTest {
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFromProtoWithInvalidTableId() {
-    SampleRowKeysRequest.fromProto(
-        com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance().toBuilder()
-            .setTableName("invalid-name")
-            .build());
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                SampleRowKeysRequest.fromProto(
+                    com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance().toBuilder()
+                        .setTableName("invalid-name")
+                        .build()));
 
-    expect.expect(IllegalArgumentException.class);
-    expect.expectMessage("Invalid table name:");
+    assertThat(e).hasMessageThat().startsWith("Invalid table name:");
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFromProtoWithInvalidAuthorizedViewId() {
-    SampleRowKeysRequest.fromProto(
-        com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance().toBuilder()
-            .setAuthorizedViewName("invalid-name")
-            .build());
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                SampleRowKeysRequest.fromProto(
+                    com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance().toBuilder()
+                        .setAuthorizedViewName("invalid-name")
+                        .build()));
 
-    expect.expect(IllegalArgumentException.class);
-    expect.expectMessage("Invalid authorized view name:");
+    assertThat(e).hasMessageThat().startsWith("Invalid authorized view name:");
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFromProtoWithEmptyTableAndAuthorizedViewId() {
-    SampleRowKeysRequest.fromProto(
-        com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance());
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                SampleRowKeysRequest.fromProto(
+                    com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance()));
 
-    expect.expect(IllegalArgumentException.class);
-    expect.expectMessage("Either table name or authorized view name must be specified");
+    assertThat(e)
+        .hasMessageThat()
+        .startsWith(
+            "Either table name, authorized view name or materialized view name must be specified.");
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testFromProtoWithBothTableAndAuthorizedViewId() {
-    SampleRowKeysRequest.fromProto(
-        com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance().toBuilder()
-            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
-            .setAuthorizedViewName(
-                NameUtil.formatAuthorizedViewName(
-                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
-            .build());
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                SampleRowKeysRequest.fromProto(
+                    com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance().toBuilder()
+                        .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+                        .setAuthorizedViewName(
+                            NameUtil.formatAuthorizedViewName(
+                                PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+                        .build()));
 
-    expect.expect(IllegalArgumentException.class);
-    expect.expectMessage(
-        "Table name and authorized view name cannot be specified at the same time");
+    assertThat(e)
+        .hasMessageThat()
+        .startsWith(
+            "Only one of table name, authorized view name and materialized view name can be"
+                + " specified at the same time.");
   }
 
   @Test

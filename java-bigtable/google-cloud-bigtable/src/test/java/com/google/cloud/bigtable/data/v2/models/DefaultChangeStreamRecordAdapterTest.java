@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenInstant;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
@@ -29,9 +30,7 @@ import com.google.rpc.Status;
 import java.time.Instant;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -44,8 +43,6 @@ public class DefaultChangeStreamRecordAdapterTest {
   private static final Instant FAKE_LOW_WATERMARK = Instant.ofEpochSecond(0L, 2000L);
   private static final org.threeten.bp.Instant FAKE_LOW_WATERMARK_THREETEN =
       toThreetenInstant(FAKE_LOW_WATERMARK);
-
-  @Rule public ExpectedException expect = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -84,12 +81,15 @@ public class DefaultChangeStreamRecordAdapterTest {
     Assert.assertEquals(adapter.getTokenFromHeartbeat(heartbeatRecord), "heartbeat-token");
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void getTokenFromHeartbeatInvalidTypeTest() {
     ChangeStreamRecord closeStreamRecord =
         CloseStream.fromProto(ReadChangeStreamResponse.CloseStream.getDefaultInstance());
-    adapter.getTokenFromHeartbeat(closeStreamRecord);
-    expect.expectMessage("record is not a Heartbeat.");
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class, () -> adapter.getTokenFromHeartbeat(closeStreamRecord));
+    assertThat(e).hasMessageThat().isEqualTo("record is not a Heartbeat.");
   }
 
   @Test
@@ -122,12 +122,15 @@ public class DefaultChangeStreamRecordAdapterTest {
         "change-stream-mutation-token");
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void getTokenFromChangeStreamMutationInvalidTypeTest() {
     ChangeStreamRecord closeStreamRecord =
         CloseStream.fromProto(ReadChangeStreamResponse.CloseStream.getDefaultInstance());
-    adapter.getTokenFromChangeStreamMutation(closeStreamRecord);
-    expect.expectMessage("record is not a ChangeStreamMutation.");
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> adapter.getTokenFromChangeStreamMutation(closeStreamRecord));
+    assertThat(e).hasMessageThat().isEqualTo("record is not a ChangeStreamMutation.");
   }
 
   @Test

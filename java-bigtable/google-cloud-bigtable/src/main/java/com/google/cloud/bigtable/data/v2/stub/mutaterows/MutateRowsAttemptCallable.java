@@ -111,7 +111,7 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
   // Everything needed to build a retry request
   @Nullable private List<Integer> originalIndexes;
   @Nonnull private final Set<StatusCode.Code> retryableCodes;
-  @Nullable private final List<FailedMutation> permanentFailures;
+  @Nonnull private final List<FailedMutation> permanentFailures;
   @Nonnull private final RetryAlgorithm<MutateRowsRequest> retryAlgorithm;
   @Nonnull private TimedAttemptSettings attemptSettings;
 
@@ -148,7 +148,8 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
     this.callContext = Preconditions.checkNotNull(callContext, "callContext");
     this.retryableCodes = Preconditions.checkNotNull(retryableCodes, "retryableCodes");
     this.retryAlgorithm = retryAlgorithm;
-    this.attemptSettings = retryAlgorithm.createFirstAttempt();
+    // TODO: pass in the callContext so that the retry setting can be overridden per call
+    this.attemptSettings = retryAlgorithm.createFirstAttempt(null);
 
     permanentFailures = Lists.newArrayList();
   }

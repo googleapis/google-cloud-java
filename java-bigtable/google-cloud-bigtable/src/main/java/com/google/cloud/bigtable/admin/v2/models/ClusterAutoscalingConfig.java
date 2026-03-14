@@ -177,6 +177,7 @@ public class ClusterAutoscalingConfig {
     return this.builder.build();
   }
 
+  @SuppressWarnings({"EqualsGetClass", "ObjectEqualsForPrimitives"})
   @Override
   public boolean equals(Object o) {
     if (this == o) {
