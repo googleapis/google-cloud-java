@@ -166,7 +166,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getDataset",
             "DatasetService",
             "GetDataset",
@@ -208,7 +208,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
             "DatasetService",
             "ListDatasets",
@@ -257,7 +257,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.createDataset",
             "DatasetService",
             "InsertDataset",
@@ -299,7 +299,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.createTable",
             "TableService",
             "InsertTable",
@@ -339,7 +339,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.createRoutine",
             "RoutineService",
             "InsertRoutine",
@@ -382,7 +382,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.createJob", "JobService", "InsertJob", options),
         span -> {
           Job jobResponse = bqCreateRequest.execute();
@@ -419,7 +419,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery",
             "JobService",
             "InsertJob",
@@ -464,7 +464,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.deleteDataset",
             "DatasetService",
             "DeleteDataset",
@@ -506,7 +506,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
             "DatasetService",
             "PatchDataset",
@@ -550,7 +550,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.patchTable",
             "TableService",
             "PatchTable",
@@ -596,7 +596,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getTable", "TableService", "GetTable", options),
         span -> {
           Table tableResponse = bqGetRequest.execute();
@@ -641,7 +641,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listTables",
             "TableService",
             "ListTables",
@@ -704,7 +704,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.deleteTable",
             "TableService",
             "DeleteTable",
@@ -743,7 +743,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.patchModel",
             "ModelService",
             "PatchModel",
@@ -789,7 +789,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getModel", "ModelService", "GetModel", options),
         span -> {
           Model modelResponse = bqGetRequest.execute();
@@ -828,7 +828,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listModels",
             "ModelService",
             "ListModels",
@@ -875,7 +875,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.deleteModel",
             "ModelService",
             "DeleteModel",
@@ -916,7 +916,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.updateRoutine",
             "RoutineService",
             "UpdateRoutine",
@@ -962,7 +962,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getRoutine",
             "RoutineService",
             "GetRoutine",
@@ -1004,7 +1004,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
             "RoutineService",
             "ListRoutines",
@@ -1050,7 +1050,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.deleteRoutine",
             "RoutineService",
             "DeleteRoutine",
@@ -1087,7 +1087,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.insertAll",
             "TableDataService",
             "InsertAll",
@@ -1127,7 +1127,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listTableData",
             "TableDataService",
             "List",
@@ -1177,7 +1177,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listTableDataWithRowLimit",
             "TableDataService",
             "List",
@@ -1220,7 +1220,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan("com.google.cloud.bigquery.BigQueryRpc.getJob", "JobService", "GetJob", options),
+        createRpcTracingSpan("com.google.cloud.bigquery.BigQueryRpc.getJob", "JobService", "GetJob", options),
         span -> {
           Job jobResponse = bqGetRequest.execute();
           if (span != null) {
@@ -1257,7 +1257,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getQueryJob", "JobService", "GetJob", null),
         span -> {
           Job jobResponse = bqGetRequest.execute();
@@ -1308,7 +1308,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.listJobs", "JobService", "ListJobs", options),
         span -> {
           if (span != null) {
@@ -1373,7 +1373,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.cancelJob", "JobService", "CancelJob", null),
         span -> {
           bqCancelRequest.execute();
@@ -1402,7 +1402,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.deleteJob", "JobService", "DeleteJob", null),
         span -> {
           bqDeleteRequest.execute();
@@ -1443,7 +1443,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getQueryResults",
             "JobService",
             "GetQueryResults",
@@ -1486,7 +1486,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getQueryResultsWithRowLimit",
             "JobService",
             "GetQueryResults",
@@ -1518,7 +1518,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan("com.google.cloud.bigquery.BigQueryRpc.queryRpc", "JobService", "Query", null),
+        createRpcTracingSpan("com.google.cloud.bigquery.BigQueryRpc.queryRpc", "JobService", "Query", null),
         span -> {
           return queryRequest.execute();
         });
@@ -1641,7 +1641,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.getIamPolicy",
             "TableService",
             "GetIamPolicy",
@@ -1673,7 +1673,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
             "TableService",
             "SetIamPolicy",
@@ -1706,7 +1706,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     return executeWithSpan(
-        createSpan(
+        createRpcTracingSpan(
             "com.google.cloud.bigquery.BigQueryRpc.testIamPermissions",
             "TableService",
             "TestIamPermissions",
@@ -1717,11 +1717,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   /**
-   * Helper method to create an OpenTelemetry tracer span with common rpc attributes.
+   * Helper method to create an OpenTelemetry tracer span with common rpc trace attributes.
    *
    * <p>If isOpenTelemetryTracingEnabled == true creates and returns span, otherwise returns null.
    */
-  private Span createSpan(String spanName, String service, String method, Map<Option, ?> options) {
+  private Span createRpcTracingSpan(String spanName, String service, String method, Map<Option, ?> options) {
     if (!this.options.isOpenTelemetryTracingEnabled()
         || this.options.getOpenTelemetryTracer() == null) {
       return null;
