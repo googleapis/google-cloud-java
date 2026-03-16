@@ -33,6 +33,8 @@ public final class BigQueryTelemetryTracer {
   public static final String BQ_GCP_CLIENT_ARTIFACT = "google-cloud-bigquery";
   public static final String BQ_GCP_CLIENT_LANGUAGE = "java";
 
+  // TODO: migrate to use gax attributes keys
+  // https://github.com/googleapis/google-cloud-java/issues/12099
   // Common GCP Attributes
   public static final AttributeKey<String> GCP_CLIENT_SERVICE =
       AttributeKey.stringKey("gcp.client.service");

@@ -1788,8 +1788,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     return builder.build();
   }
 
-  /* Temporary development gate for HttpTracingRequestInitializer rollout:
-  must be explicitly enabled with the system property
+  /**
+   * Temporary development gate for HttpTracingRequestInitializer rollout: must be explicitly
+   * enabled with the system property. tracking ticket for removal:
+   * https://github.com/googleapis/google-cloud-java/issues/12100
    */
   static boolean isHttpTracingEnabled() {
     return Boolean.parseBoolean(System.getProperty(HTTP_TRACING_DEV_GATE_PROPERTY));

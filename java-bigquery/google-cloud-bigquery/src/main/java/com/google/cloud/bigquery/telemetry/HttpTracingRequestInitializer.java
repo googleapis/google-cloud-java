@@ -33,6 +33,8 @@ import java.io.IOException;
 @InternalApi
 public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
+  // TODO: migrate to use gax attributes keys
+  // https://github.com/googleapis/google-cloud-java/issues/12099
   // HTTP Specific Telemetry Attributes
   public static final AttributeKey<String> HTTP_REQUEST_METHOD =
       AttributeKey.stringKey("http.request.method");

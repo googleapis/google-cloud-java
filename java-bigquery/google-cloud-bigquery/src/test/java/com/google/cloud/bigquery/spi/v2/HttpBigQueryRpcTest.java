@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.spi.v2;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -44,6 +45,8 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
+import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -943,9 +946,8 @@ public class HttpBigQueryRpcTest {
                 .findFirst()
                 .orElse(null);
         assertNotNull(rpcSpan);
-        assertEquals(
-            "http", rpcSpan.getAttributes().get(AttributeKey.stringKey("rpc.system.name")));
-        assertNotNull(rpcSpan.getAttributes().get(AttributeKey.stringKey("server.address")));
+        assertEquals("http", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
+        assertNotNull(rpcSpan.getAttributes().get(HttpTracingRequestInitializer.URL_DOMAIN));
       } finally {
         System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       }
@@ -987,8 +989,8 @@ public class HttpBigQueryRpcTest {
                 .findFirst()
                 .orElse(null);
         assertNotNull(rpcSpan);
-        assertThat(rpcSpan.getAttributes().get(AttributeKey.stringKey("rpc.system.name"))).isNull();
-        assertThat(rpcSpan.getAttributes().get(AttributeKey.stringKey("server.address"))).isNull();
+        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
+        assertNull(rpcSpan.getAttributes().get(HttpTracingRequestInitializer.URL_DOMAIN));
       } finally {
         System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       }
