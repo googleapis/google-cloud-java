@@ -97,10 +97,10 @@ fi
 if [ -z "$CODEOWNER" ]; then
     echo "Attempting to find default CODEOWNER from source repository..."
     CODEOWNERS_FILE=""
-    if [ -f "$SOURCE_DIR/.github/CODEOWNERS" ]; then
-        CODEOWNERS_FILE="$SOURCE_DIR/.github/CODEOWNERS"
-    elif [ -f "$SOURCE_DIR/CODEOWNERS" ]; then
-        CODEOWNERS_FILE="$SOURCE_DIR/CODEOWNERS"
+    if [ -f "$SOURCE_DIR/$SOURCE_REPO_NAME/.github/CODEOWNERS" ]; then
+        CODEOWNERS_FILE="$SOURCE_DIR/$SOURCE_REPO_NAME/.github/CODEOWNERS"
+    elif [ -f "$SOURCE_DIR/$SOURCE_REPO_NAME/CODEOWNERS" ]; then
+        CODEOWNERS_FILE="$SOURCE_DIR/$SOURCE_REPO_NAME/CODEOWNERS"
     fi
 
     DEFAULT_CODEOWNER=""
@@ -193,7 +193,7 @@ git checkout -- "$SOURCE_REPO_NAME/.kokoro/presubmit/*.sh" || true
 # rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
 
 # 6.6 Create split integration config if needed
-SOURCE_INTEGRATION_CFG="$SOURCE_DIR/.kokoro/presubmit/integration.cfg"
+SOURCE_INTEGRATION_CFG="$SOURCE_DIR/$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg"
 if [ -f "$SOURCE_INTEGRATION_CFG" ]; then
     echo "Creating split integration config for $SOURCE_REPO_NAME..."
     SHORT_NAME="${SOURCE_REPO_NAME#java-}"
@@ -253,7 +253,7 @@ EOF
 fi
 
 # 6.6b Create split GraalVM config if needed
-SOURCE_GRAALVM_CFG="$SOURCE_DIR/.kokoro/presubmit/graalvm-native-a.cfg"
+SOURCE_GRAALVM_CFG="$SOURCE_DIR/$SOURCE_REPO_NAME/.kokoro/presubmit/graalvm-native-a.cfg"
 if [ -f "$SOURCE_GRAALVM_CFG" ]; then
     echo "Creating split GraalVM config for $SOURCE_REPO_NAME..."
     SHORT_NAME="${SOURCE_REPO_NAME#java-}"
