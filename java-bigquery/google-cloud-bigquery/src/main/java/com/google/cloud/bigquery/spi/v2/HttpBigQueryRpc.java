@@ -1092,9 +1092,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableDataService",
             "InsertAll",
             null),
-        span -> {
-          return insertAllRequest.execute();
-        });
+        span -> insertAllRequest.execute());
   }
 
   @Override
