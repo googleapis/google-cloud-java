@@ -51,6 +51,7 @@ import org.mockito.quality.Strictness;
 import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
+@Deprecated
 public class AwaitConsistencyCallableTest {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 

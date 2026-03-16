@@ -69,7 +69,7 @@ final class DynamicFlowControlStats {
     return lastAdjustedTimestampMs.compareAndSet(last, now);
   }
 
-  private class DecayingAverage {
+  private static class DecayingAverage {
     private double decayConstant;
     private double mean;
     private double weightedCount;

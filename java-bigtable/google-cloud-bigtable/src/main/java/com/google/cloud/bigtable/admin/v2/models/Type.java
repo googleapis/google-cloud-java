@@ -52,8 +52,9 @@ public interface Type {
         return Aggregate.fromProto(source.getAggregateType());
       case KIND_NOT_SET:
         return Raw.create();
+      default:
+        throw new UnsupportedOperationException();
     }
-    throw new UnsupportedOperationException();
   }
 
   /** The raw type denotes the absence of a type. */
@@ -204,8 +205,9 @@ public interface Type {
             return BigEndianBytes.create();
           case ENCODING_NOT_SET:
             return BigEndianBytes.create();
+          default:
+            throw new UnsupportedOperationException();
         }
-        throw new UnsupportedOperationException();
       }
 
       @AutoValue

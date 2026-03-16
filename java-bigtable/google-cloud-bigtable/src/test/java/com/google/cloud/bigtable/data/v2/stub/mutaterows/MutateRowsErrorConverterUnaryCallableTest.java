@@ -93,7 +93,7 @@ public class MutateRowsErrorConverterUnaryCallableTest {
             MutateRowsException.class, () -> callable.call(BulkMutation.create(TABLE_ID)));
 
     assertThat(exception).isInstanceOf(MutateRowsException.class);
-    assertThat((exception).isRetryable()).isTrue();
+    assertThat(exception.isRetryable()).isTrue();
   }
 
   @Test

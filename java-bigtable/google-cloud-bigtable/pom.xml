@@ -427,7 +427,7 @@
                 <compilerArgs>
                   <arg>-XDcompilePolicy=simple</arg>
                   <arg>--should-stop=ifError=FLOW</arg>
-                  <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:MissingSummary:OFF -Xep:InlineMeSuggester:OFF -Xep:AutoValueImmutableFields:OFF -Xep:ObjectEqualsForPrimitives:OFF</arg>
+                  <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:MissingSummary:OFF -Xep:InlineMeSuggester:OFF -Xep:AutoValueImmutableFields:OFF -Xep:ObjectEqualsForPrimitives:OFF -Xep:JavaDurationGetSecondsToToSeconds:OFF</arg>
 
                   <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                   <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>

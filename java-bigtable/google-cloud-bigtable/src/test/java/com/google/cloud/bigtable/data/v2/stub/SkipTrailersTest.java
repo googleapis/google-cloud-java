@@ -62,7 +62,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -172,7 +171,8 @@ public class SkipTrailersTest {
     try {
       future.get(1, TimeUnit.MINUTES);
     } catch (TimeoutException e) {
-      Assert.fail("timed out waiting for the trailer optimization future to resolve");
+      throw new AssertionError(
+          "timed out waiting for the trailer optimization future to resolve", e);
     }
 
     // The tracer will be notified in parallel to the future being resolved

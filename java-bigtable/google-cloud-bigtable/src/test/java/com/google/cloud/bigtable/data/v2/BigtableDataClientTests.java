@@ -263,8 +263,10 @@ public class BigtableDataClientTests {
   public void proxyReadRowAsyncTest() {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
-    bigtableDataClient.readRowAsync(
-        TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"));
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(
+            TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"));
     Mockito.verify(mockReadRowCallable)
         .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key"));
   }
@@ -273,9 +275,11 @@ public class BigtableDataClientTests {
   public void proxyReadRowOnAuthorizedViewAsyncTest() {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
-    bigtableDataClient.readRowAsync(
-        AuthorizedViewId.of("fake-table", "fake-authorized-view"),
-        ByteString.copyFromUtf8("fake-row-key"));
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(
+            AuthorizedViewId.of("fake-table", "fake-authorized-view"),
+            ByteString.copyFromUtf8("fake-row-key"));
     Mockito.verify(mockReadRowCallable)
         .futureCall(
             Query.create(AuthorizedViewId.of("fake-table", "fake-authorized-view"))
@@ -286,7 +290,9 @@ public class BigtableDataClientTests {
   public void proxyReadRowStrAsyncTest() {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
-    bigtableDataClient.readRowAsync(TableId.of("fake-table"), "fake-row-key");
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(TableId.of("fake-table"), "fake-row-key");
     Mockito.verify(mockReadRowCallable)
         .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key"));
   }
@@ -295,8 +301,10 @@ public class BigtableDataClientTests {
   public void proxyReadRowOnAuthorizedViewStrAsyncTest() {
     Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
 
-    bigtableDataClient.readRowAsync(
-        AuthorizedViewId.of("fake-table", "fake-authorized-view"), "fake-row-key");
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(
+            AuthorizedViewId.of("fake-table", "fake-authorized-view"), "fake-row-key");
     Mockito.verify(mockReadRowCallable)
         .futureCall(
             Query.create(AuthorizedViewId.of("fake-table", "fake-authorized-view"))
@@ -313,8 +321,11 @@ public class BigtableDataClientTests {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    bigtableDataClient.readRowAsync(
-        TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"), filter);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(
+            TableId.of("fake-table"), ByteString.copyFromUtf8("fake-row-key"), filter);
 
     Mockito.verify(mockReadRowCallable)
         .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key").filter(filter));
@@ -330,10 +341,13 @@ public class BigtableDataClientTests {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    bigtableDataClient.readRowAsync(
-        AuthorizedViewId.of("fake-table", "fake-authorized-view"),
-        ByteString.copyFromUtf8("fake-row-key"),
-        filter);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(
+            AuthorizedViewId.of("fake-table", "fake-authorized-view"),
+            ByteString.copyFromUtf8("fake-row-key"),
+            filter);
 
     Mockito.verify(mockReadRowCallable)
         .futureCall(
@@ -352,7 +366,10 @@ public class BigtableDataClientTests {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    bigtableDataClient.readRowAsync(TableId.of("fake-table"), "fake-row-key", filter);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(TableId.of("fake-table"), "fake-row-key", filter);
 
     Mockito.verify(mockReadRowCallable)
         .futureCall(Query.create(TableId.of("fake-table")).rowKey("fake-row-key").filter(filter));
@@ -368,8 +385,11 @@ public class BigtableDataClientTests {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    bigtableDataClient.readRowAsync(
-        AuthorizedViewId.of("fake-table", "fake-authorized-view"), "fake-row-key", filter);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<Row> ignored =
+        bigtableDataClient.readRowAsync(
+            AuthorizedViewId.of("fake-table", "fake-authorized-view"), "fake-row-key", filter);
 
     Mockito.verify(mockReadRowCallable)
         .futureCall(
@@ -651,24 +671,30 @@ public class BigtableDataClientTests {
         .isSameInstanceAs(mockSampleRowKeysCallable);
   }
 
-  @SuppressWarnings("deprecation")
   @Test
+  @SuppressWarnings({"deprecation"})
   public void proxySampleRowKeysTest() {
     Mockito.when(mockStub.sampleRowKeysCallableWithRequest())
         .thenReturn(mockSampleRowKeysCallableWithRequest);
 
-    bigtableDataClient.sampleRowKeysAsync("fake-table");
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.sampleRowKeysAsync("fake-table");
+
     Mockito.verify(mockSampleRowKeysCallableWithRequest)
         .futureCall(SampleRowKeysRequest.create(TableId.of("fake-table")));
   }
 
   @Test
+  @SuppressWarnings({"deprecation"})
   public void proxySampleRowKeysOnAuthorizedViewTest() {
     Mockito.when(mockStub.sampleRowKeysCallableWithRequest())
         .thenReturn(mockSampleRowKeysCallableWithRequest);
 
-    bigtableDataClient.sampleRowKeysAsync(
-        AuthorizedViewId.of("fake-table", "fake-authorized-view"));
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored =
+        bigtableDataClient.sampleRowKeysAsync(
+            AuthorizedViewId.of("fake-table", "fake-authorized-view"));
+
     Mockito.verify(mockSampleRowKeysCallableWithRequest)
         .futureCall(
             SampleRowKeysRequest.create(AuthorizedViewId.of("fake-table", "fake-authorized-view")));
@@ -712,6 +738,7 @@ public class BigtableDataClientTests {
   }
 
   @Test
+  @SuppressWarnings({"deprecation"})
   public void proxyMutateRowTest() {
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
 
@@ -719,7 +746,9 @@ public class BigtableDataClientTests {
         RowMutation.create(TableId.of("fake-table"), "some-key")
             .setCell("some-family", "fake-qualifier", "fake-value");
 
-    bigtableDataClient.mutateRowAsync(request);
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.mutateRowAsync(request);
+
     Mockito.verify(mockMutateRowCallable).futureCall(request);
   }
 
@@ -731,7 +760,9 @@ public class BigtableDataClientTests {
         RowMutation.create(AuthorizedViewId.of("fake-table", "fake-authorized-view"), "some-key")
             .setCell("some-family", "fake-qualifier", "fake-value");
 
-    bigtableDataClient.mutateRowAsync(request);
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.mutateRowAsync(request);
+
     Mockito.verify(mockMutateRowCallable).futureCall(request);
   }
 
@@ -777,7 +808,9 @@ public class BigtableDataClientTests {
                 "fake-key",
                 Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
 
-    bigtableDataClient.bulkMutateRowsAsync(request);
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.bulkMutateRowsAsync(request);
+
     Mockito.verify(mockBulkMutateRowsCallable).futureCall(request);
   }
 
@@ -791,7 +824,9 @@ public class BigtableDataClientTests {
                 "fake-key",
                 Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
 
-    bigtableDataClient.bulkMutateRowsAsync(request);
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.bulkMutateRowsAsync(request);
+
     Mockito.verify(mockBulkMutateRowsCallable).futureCall(request);
   }
 
@@ -967,7 +1002,9 @@ public class BigtableDataClientTests {
     ConditionalRowMutation mutation =
         ConditionalRowMutation.create(TableId.of("fake-table"), "fake-key")
             .then(Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
-    bigtableDataClient.checkAndMutateRowAsync(mutation);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.checkAndMutateRowAsync(mutation);
 
     Mockito.verify(mockCheckAndMutateRowCallable).futureCall(mutation);
   }
@@ -980,7 +1017,9 @@ public class BigtableDataClientTests {
         ConditionalRowMutation.create(
                 AuthorizedViewId.of("fake-table", "fake-authorized-view"), "fake-key")
             .then(Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
-    bigtableDataClient.checkAndMutateRowAsync(mutation);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.checkAndMutateRowAsync(mutation);
 
     Mockito.verify(mockCheckAndMutateRowCallable).futureCall(mutation);
   }
@@ -1013,6 +1052,7 @@ public class BigtableDataClientTests {
         ConditionalRowMutation.create(
                 AuthorizedViewId.of("fake-table", "fake-authorized-view"), "fake-key")
             .then(Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value"));
+
     bigtableDataClient.checkAndMutateRow(mutation);
 
     Mockito.verify(mockCheckAndMutateRowCallable).futureCall(mutation);
@@ -1025,7 +1065,10 @@ public class BigtableDataClientTests {
     ReadModifyWriteRow request =
         ReadModifyWriteRow.create(TableId.of("fake-table"), "some-key")
             .append("fake-family", "fake-qualifier", "suffix");
-    bigtableDataClient.readModifyWriteRowAsync(request);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.readModifyWriteRowAsync(request);
+
     Mockito.verify(mockReadModifyWriteRowCallable).futureCall(request);
   }
 
@@ -1037,7 +1080,10 @@ public class BigtableDataClientTests {
         ReadModifyWriteRow.create(
                 AuthorizedViewId.of("fake-table", "fake-authorized-view"), "some-key")
             .append("fake-family", "fake-qualifier", "suffix");
-    bigtableDataClient.readModifyWriteRowAsync(request);
+
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.readModifyWriteRowAsync(request);
+
     Mockito.verify(mockReadModifyWriteRowCallable).futureCall(request);
   }
 

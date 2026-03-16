@@ -37,6 +37,7 @@ public class FakeStatusCode implements StatusCode {
   }
 
   @Override
+  @SuppressWarnings("EqualsGetClass")
   public boolean equals(Object o) {
     if (this == o) {
       return true;

@@ -136,7 +136,7 @@ public class BuiltinMetricsTracerTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
-  private static final String TABLE = "fake-table";
+  private static final TableId TABLE = TableId.of("fake-table");
 
   private static final String BAD_TABLE_ID = "non-exist-table";
   private static final String FIRST_RESPONSE_TABLE_ID = "first-response";
@@ -304,13 +304,13 @@ public class BuiltinMetricsTracerTest {
   @Test
   public void testReadRowsOperationLatencies() {
     Stopwatch stopwatch = Stopwatch.createStarted();
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TableId.of(TABLE))).iterator());
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)).iterator());
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -335,7 +335,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -396,12 +396,12 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testGfeMetrics() {
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TableId.of(TABLE))));
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)));
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
@@ -419,7 +419,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expected1 =
         expectedClientSchemaBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, "global")
             .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -428,7 +428,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expected2 =
         expectedClientSchemaBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -449,7 +449,7 @@ public class BuiltinMetricsTracerTest {
     // For auto flow control, application latency is the time application spent in onResponse.
     stub.readRowsCallable()
         .call(
-            Query.create(TableId.of(TABLE)),
+            Query.create(TABLE),
             new ResponseObserver<Row>() {
               @Override
               public void onStart(StreamController streamController) {}
@@ -483,7 +483,7 @@ public class BuiltinMetricsTracerTest {
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
@@ -508,7 +508,7 @@ public class BuiltinMetricsTracerTest {
   public void testReadRowsApplicationLatencyWithManualFlowControl() throws Exception {
     int counter = 0;
 
-    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TableId.of(TABLE))).iterator();
+    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TABLE)).iterator();
     while (rows.hasNext()) {
       counter++;
       Thread.sleep(APPLICATION_LATENCY);
@@ -520,7 +520,7 @@ public class BuiltinMetricsTracerTest {
 
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
@@ -547,12 +547,12 @@ public class BuiltinMetricsTracerTest {
   @Test
   public void testRetryCount() throws InterruptedException {
     stub.mutateRowCallable()
-        .call(RowMutation.create(TableId.of(TABLE), "random-row").setCell("cf", "q", "value"));
+        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
     MetricData metricData = getMetricData(metricReader, TableRetryCount.NAME);
     Attributes expectedAttributes =
         expectedBaseAttributes.toBuilder()
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
@@ -567,7 +567,7 @@ public class BuiltinMetricsTracerTest {
   @Test
   public void testMutateRowAttemptsTagValues() throws InterruptedException {
     stub.mutateRowCallable()
-        .call(RowMutation.create(TableId.of(TABLE), "random-row").setCell("cf", "q", "value"));
+        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
     outstandingRpcCounter.waitUntilRpcsDone();
     MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
@@ -575,7 +575,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expected1 =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, "global")
             .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
             .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
@@ -586,7 +586,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expected2 =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
@@ -600,11 +600,11 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testMutateRowsPartialError() throws InterruptedException {
-    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TableId.of(TABLE), null);
+    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null);
     int numMutations = 6;
     for (int i = 0; i < numMutations; i++) {
       String key = i % 2 == 0 ? "key" : "fail-key";
-      batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
+      ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
     }
 
     assertThrows(BatchingException.class, batcher::close);
@@ -614,7 +614,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expected =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
@@ -632,7 +632,7 @@ public class BuiltinMetricsTracerTest {
     int numMutations = 6;
     for (int i = 0; i < numMutations; i++) {
       String key = i % 2 == 0 ? "key" : "fail-key";
-      batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
+      ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
     }
 
     assertThrows(BatchingException.class, batcher::close);
@@ -655,14 +655,14 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testReadRowsAttemptsTagValues() {
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TableId.of(TABLE))).iterator());
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)).iterator());
 
     MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
 
     Attributes expected1 =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, "global")
             .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -673,7 +673,7 @@ public class BuiltinMetricsTracerTest {
     Attributes expected2 =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -689,7 +689,8 @@ public class BuiltinMetricsTracerTest {
   public void testBatchBlockingLatencies() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
       for (int i = 0; i < 6; i++) {
-        batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
+        ApiFuture<Void> ignored =
+            batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
       }
 
       // closing the batcher to trigger the third flush
@@ -701,7 +702,7 @@ public class BuiltinMetricsTracerTest {
 
       Attributes expectedAttributes =
           expectedBaseAttributes.toBuilder()
-              .put(TableSchema.TABLE_ID_KEY, TABLE)
+              .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
               .put(TableSchema.ZONE_ID_KEY, ZONE)
               .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
               .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
@@ -719,8 +720,7 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testQueuedOnChannelServerStreamLatencies() throws Exception {
-    ApiFuture<List<Row>> f =
-        stub.readRowsCallable().all().futureCall(Query.create(TableId.of(TABLE)));
+    ApiFuture<List<Row>> f = stub.readRowsCallable().all().futureCall(Query.create(TABLE));
     Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
     f.get();
 
@@ -728,7 +728,7 @@ public class BuiltinMetricsTracerTest {
 
     Attributes attributes =
         expectedBaseAttributes.toBuilder()
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -746,7 +746,7 @@ public class BuiltinMetricsTracerTest {
   public void testQueuedOnChannelUnaryLatencies() throws Exception {
     ApiFuture<Void> f =
         stub.mutateRowCallable()
-            .futureCall(RowMutation.create(TableId.of(TABLE), "a-key").setCell("f", "q", "v"));
+            .futureCall(RowMutation.create(TABLE, "a-key").setCell("f", "q", "v"));
     Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
     f.get();
 
@@ -755,7 +755,7 @@ public class BuiltinMetricsTracerTest {
 
     Attributes attributes =
         expectedBaseAttributes.toBuilder()
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
@@ -798,13 +798,13 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testRemainingDeadline() {
-    stub.readRowsCallable().all().call(Query.create(TableId.of(TABLE)));
+    stub.readRowsCallable().all().call(Query.create(TABLE));
     MetricData deadlineMetric = getMetricData(metricReader, TableRemainingDeadline.NAME);
 
     Attributes retryAttributes =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
             .put(TableSchema.ZONE_ID_KEY, "global")
             .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
@@ -824,7 +824,7 @@ public class BuiltinMetricsTracerTest {
     Attributes okAttributes =
         expectedBaseAttributes.toBuilder()
             .put(MetricLabels.STATUS_KEY, "OK")
-            .put(TableSchema.TABLE_ID_KEY, TABLE)
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
             .put(TableSchema.ZONE_ID_KEY, ZONE)
             .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
             .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
@@ -846,8 +846,10 @@ public class BuiltinMetricsTracerTest {
   @Test
   public void testBatchWriteFlowControlTargetQpsIncreased() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
-      batcher.add(
-          RowMutationEntry.create("batch-write-flow-control-success-12").setCell("f", "q", "v"));
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-12")
+                  .setCell("f", "q", "v"));
 
       // closing the batcher to trigger the flush
       batcher.close();
@@ -860,7 +862,7 @@ public class BuiltinMetricsTracerTest {
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       double expected_qps = 12;
-      assertThat(expected_qps).isEqualTo(actual_qps);
+      assertThat(actual_qps).isEqualTo(expected_qps);
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
@@ -872,15 +874,17 @@ public class BuiltinMetricsTracerTest {
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       double expected_factor_mean = 1.2;
-      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
     }
   }
 
   @Test
   public void testBatchWriteFlowControlTargetQpsDecreased() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
-      batcher.add(
-          RowMutationEntry.create("batch-write-flow-control-success-08").setCell("f", "q", "v"));
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-08")
+                  .setCell("f", "q", "v"));
 
       // closing the batcher to trigger the flush
       batcher.close();
@@ -893,7 +897,7 @@ public class BuiltinMetricsTracerTest {
               .build();
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       double expected_qps = 8.0;
-      assertThat(expected_qps).isEqualTo(actual_qps);
+      assertThat(actual_qps).isEqualTo(expected_qps);
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
@@ -904,15 +908,17 @@ public class BuiltinMetricsTracerTest {
               .build();
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       double expected_factor_mean = 0.8;
-      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
     }
   }
 
   @Test
   public void testBatchWriteFlowControlTargetQpsCappedOnMaxFactor() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
-      batcher.add(
-          RowMutationEntry.create("batch-write-flow-control-success-18").setCell("f", "q", "v"));
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-18")
+                  .setCell("f", "q", "v"));
 
       // closing the batcher to trigger the flush
       batcher.close();
@@ -926,7 +932,7 @@ public class BuiltinMetricsTracerTest {
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // Factor is 1.8 but capped at 1.3 so updated QPS is 13.
       double expected_qps = 13;
-      assertThat(expected_qps).isEqualTo(actual_qps);
+      assertThat(actual_qps).isEqualTo(expected_qps);
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
@@ -938,15 +944,17 @@ public class BuiltinMetricsTracerTest {
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       // Factor is 1.8 but capped at 1.3
       double expected_factor_mean = 1.3;
-      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
     }
   }
 
   @Test
   public void testBatchWriteFlowControlTargetQpsCappedOnMinFactor() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
-      batcher.add(
-          RowMutationEntry.create("batch-write-flow-control-success-05").setCell("f", "q", "v"));
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-05")
+                  .setCell("f", "q", "v"));
 
       // closing the batcher to trigger the flush
       batcher.close();
@@ -960,7 +968,7 @@ public class BuiltinMetricsTracerTest {
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // Factor is 0.5 but capped at 0.7 so updated QPS is 7.
       double expected_qps = 7;
-      assertThat(expected_qps).isEqualTo(actual_qps);
+      assertThat(actual_qps).isEqualTo(expected_qps);
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
@@ -972,16 +980,17 @@ public class BuiltinMetricsTracerTest {
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       // Factor is 0.5 but capped at 0.7
       double expected_factor_mean = 0.7;
-      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
     }
   }
 
   @Test
   public void testBatchWriteFlowControlTargetQpsDecreasedForError() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
-      batcher.add(
-          RowMutationEntry.create("batch-write-flow-control-fail-unavailable")
-              .setCell("f", "q", "v"));
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-fail-unavailable")
+                  .setCell("f", "q", "v"));
 
       // closing the batcher to trigger the flush
       batcher.close();
@@ -995,7 +1004,7 @@ public class BuiltinMetricsTracerTest {
       double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
       // On error, min factor is applied.
       double expected_qps = 7;
-      assertThat(expected_qps).isEqualTo(actual_qps);
+      assertThat(actual_qps).isEqualTo(expected_qps);
 
       MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
       Attributes factorAttributes =
@@ -1007,7 +1016,7 @@ public class BuiltinMetricsTracerTest {
       double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
       // On error, min factor is applied.
       double expected_factor_mean = 0.7;
-      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
     }
   }
 

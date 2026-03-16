@@ -82,7 +82,8 @@ public class BigtableUnaryOperationCallableTest {
             false);
     callable.logger = Mockito.mock(Logger.class);
 
-    ApiFuture<String> f = callable.futureCall("fake");
+    @SuppressWarnings("UnusedVariable")
+    ApiFuture<String> ignored = callable.futureCall("fake");
     MockServerStreamingCall<String, String> call = inner.popLastCall();
     call.getController().getObserver().onResponse("first");
     call.getController().getObserver().onResponse("second");

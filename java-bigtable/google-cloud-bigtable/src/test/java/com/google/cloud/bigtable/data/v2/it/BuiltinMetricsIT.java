@@ -184,7 +184,7 @@ public class BuiltinMetricsIT {
     clientDefault.mutateRow(
         RowMutation.create(TableId.of(tableDefault.getId()), "a-new-key")
             .setCell("cf", "q", "abc"));
-    ArrayList<Row> rows =
+    ArrayList<Row> ignored =
         Lists.newArrayList(
             clientDefault.readRows(Query.create(TableId.of(tableDefault.getId())).limit(10)));
 
@@ -247,7 +247,7 @@ public class BuiltinMetricsIT {
     clientCustomOtel.mutateRow(
         RowMutation.create(TableId.of(tableCustomOtel.getId()), "a-new-key")
             .setCell("cf", "q", "abc"));
-    ArrayList<Row> rows =
+    ArrayList<Row> ignored =
         Lists.newArrayList(
             clientCustomOtel.readRows(Query.create(TableId.of(tableCustomOtel.getId())).limit(10)));
 

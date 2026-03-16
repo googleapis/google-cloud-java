@@ -196,6 +196,7 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
         try {
           return ResponseParams.parseFrom(responseParams);
         } catch (InvalidProtocolBufferException e) {
+          // Fail silently and return null
         }
       }
       return null;

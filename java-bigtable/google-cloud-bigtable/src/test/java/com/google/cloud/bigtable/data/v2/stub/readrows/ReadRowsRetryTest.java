@@ -31,7 +31,6 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.bigtable.v2.RowRange;
-import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
@@ -56,6 +55,7 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.grpc.testing.GrpcServerRule;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -148,7 +148,8 @@ public class ReadRowsRetryTest {
             .setReason("LargeRowReadError")
             .setDomain("bigtable.googleapis.com")
             .putMetadata(
-                "rowKeyBase64Encoded", Base64.getEncoder().encodeToString(rowKey.getBytes()))
+                "rowKeyBase64Encoded",
+                Base64.getEncoder().encodeToString(rowKey.getBytes(StandardCharsets.UTF_8)))
             .build();
 
     Any packedErrorInfo = Any.pack(errorInfo);
@@ -160,11 +161,11 @@ public class ReadRowsRetryTest {
     byte[] status =
         com.google.rpc.Status.newBuilder().addDetails(Any.pack(errorInfo)).build().toByteArray();
     trailers.put(ERROR_DETAILS_KEY, status);
-    return (new UnavailableException(
+    return new UnavailableException(
         new StatusRuntimeException(Status.FAILED_PRECONDITION, trailers),
         GrpcStatusCode.of(Code.FAILED_PRECONDITION),
         false,
-        errorDetails));
+        errorDetails);
   }
 
   @Test
@@ -172,7 +173,6 @@ public class ReadRowsRetryTest {
     // Large rows is r2 for range r1 to r8
     ApiException largeRowExceptionWithTrailersR2 = createLargeRowException("r2");
 
-    List<Range<String>> rangeList;
     List<String> actualResults;
 
     // TEST - range end is large row || row limit
@@ -709,19 +709,13 @@ public class ReadRowsRetryTest {
     }
 
     RpcExpectation expectRequestForMultipleRowRanges(List<Range<String>> rowRanges) {
-      RowSet.Builder rowRange = requestBuilder.getRowsBuilder();
       for (Range<String> range : rowRanges) {
         rowRangeBuilder(range);
       }
       return this;
     }
 
-    /**
-     * Build Row Range
-     *
-     * @param range
-     * @return
-     */
+    /** Build Row Range */
     RowRange rowRangeBuilder(Range<String> range) {
 
       RowRange.Builder rowRange = requestBuilder.getRowsBuilder().addRowRangesBuilder();

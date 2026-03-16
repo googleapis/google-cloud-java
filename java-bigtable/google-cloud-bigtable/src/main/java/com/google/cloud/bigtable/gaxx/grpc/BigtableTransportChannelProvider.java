@@ -66,6 +66,7 @@ public final class BigtableTransportChannelProvider implements TransportChannelP
   }
 
   @Override
+  @Deprecated
   public BigtableTransportChannelProvider withExecutor(ScheduledExecutorService executor) {
     return withExecutor((Executor) executor);
   }

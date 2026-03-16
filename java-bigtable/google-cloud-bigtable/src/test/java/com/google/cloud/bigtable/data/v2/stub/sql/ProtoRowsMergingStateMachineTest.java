@@ -170,6 +170,7 @@ public final class ProtoRowsMergingStateMachineTest {
     }
 
     @Test
+    @SuppressWarnings("InlineMeInliner")
     public void stateMachine_mergesPartialBatches_withRandomChunks() {
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(

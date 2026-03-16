@@ -139,7 +139,8 @@ public class RetryInfoTest {
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId("fake-project")
-            .setInstanceId("fake-instance");
+            .setInstanceId("fake-instance")
+            .setRefreshingChannel(false);
 
     this.client = BigtableDataClient.create(settings.build());
   }
@@ -395,34 +396,6 @@ public class RetryInfoTest {
 
     assertThat(attemptCounter.get()).isEqualTo(2);
     assertThat(stopwatch.elapsed()).isAtLeast(Duration.ofSeconds(defaultDelay.getSeconds()));
-  }
-
-  // Test the case where server returns retry info but client disabled handling of retry info
-  private void verifyRetryInfoCanBeDisabled(Runnable runnable) {
-    enqueueRetryableExceptionWithDelay(defaultDelay);
-    Stopwatch stopwatch = Stopwatch.createStarted();
-    runnable.run();
-    stopwatch.stop();
-
-    assertThat(attemptCounter.get()).isEqualTo(2);
-    assertThat(stopwatch.elapsed()).isLessThan(Duration.ofSeconds(defaultDelay.getSeconds()));
-
-    attemptCounter.set(0);
-    ApiException expectedApiException = enqueueNonRetryableExceptionWithDelay(defaultDelay);
-    ApiException actualException =
-        assertThrows("non retryable operations should fail", ApiException.class, runnable::run);
-    if (actualException instanceof MutateRowsException) {
-      assertThat(
-              ((MutateRowsException) actualException)
-                  .getFailedMutations()
-                  .get(0)
-                  .getError()
-                  .getStatusCode())
-          .isEqualTo(expectedApiException.getStatusCode());
-    } else {
-      assertThat(actualException.getStatusCode()).isEqualTo(expectedApiException.getStatusCode());
-    }
-    assertThat(attemptCounter.get()).isEqualTo(1);
   }
 
   // Test the case where server does not return retry info

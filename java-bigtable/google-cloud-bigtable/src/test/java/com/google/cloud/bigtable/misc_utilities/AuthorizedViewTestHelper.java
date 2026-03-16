@@ -68,7 +68,7 @@ public class AuthorizedViewTestHelper {
                 + retryCount);
         // Exponential backoff delay starting at 100ms.
         double expSleep = 100 * Math.pow(2, retryCount);
-        Thread.sleep((long) Math.min(expSleep, TimeUnit.MINUTES.toMillis(1)));
+        Thread.sleep(Math.min((long) expSleep, TimeUnit.MINUTES.toMillis(1)));
       }
     }
   }

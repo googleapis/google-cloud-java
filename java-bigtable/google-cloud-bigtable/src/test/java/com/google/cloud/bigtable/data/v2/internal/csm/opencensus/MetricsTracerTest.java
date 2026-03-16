@@ -20,6 +20,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.FlowController;
@@ -41,7 +42,6 @@ import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
-import com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableMap;
@@ -80,6 +80,7 @@ import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
+@Deprecated
 public class MetricsTracerTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
@@ -110,12 +111,12 @@ public class MetricsTracerTest {
   private EnhancedBigtableStub stub;
   private BigtableDataSettings settings;
 
-  @SuppressWarnings("deprecation")
   @Before
   public void setUp() throws Exception {
     server = FakeServiceBuilder.create(mockService).start();
 
-    RpcViews.registerBigtableClientViews(localStats.getViewManager());
+    com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientViews(
+        localStats.getViewManager());
 
     settings =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
@@ -192,10 +193,14 @@ public class MetricsTracerTest {
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
 
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    @SuppressWarnings({"UnusedVariable", "MismatchedQueryAndUpdateOfCollection"})
     ArrayList<Row> ignored =
         Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE_ID)));
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    @SuppressWarnings({
+      "UnusedVariable",
+      "MismatchedQueryAndUpdateOfCollection",
+      "ModifiedButNotUsed"
+    })
     ArrayList<Row> ignored2 =
         Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE_ID)));
 
@@ -213,6 +218,7 @@ public class MetricsTracerTest {
   }
 
   @Test
+  @SuppressWarnings("FutureReturnValueIgnored")
   public void testReadRowsFirstRow() throws InterruptedException {
     final long beforeSleep = 50;
     final long afterSleep = 50;
@@ -392,7 +398,7 @@ public class MetricsTracerTest {
 
     try (Batcher<ByteString, Row> batcher =
         stub.newBulkReadRowsBatcher(Query.create(TABLE_ID), GrpcCallContext.createDefault())) {
-      batcher.add(ByteString.copyFromUtf8("row1"));
+      ApiFuture<Row> ignored = batcher.add(ByteString.copyFromUtf8("row1"));
     }
 
     long throttledTimeMetric =
@@ -452,7 +458,7 @@ public class MetricsTracerTest {
             flowController,
             defaultContext)) {
 
-      batcher.add(RowMutationEntry.create("key").deleteRow());
+      ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create("key").deleteRow());
     }
 
     long throttledTimeMetric =
@@ -465,10 +471,5 @@ public class MetricsTracerTest {
             INSTANCE_ID,
             APP_PROFILE_ID);
     assertThat(throttledTimeMetric).isAtLeast(throttled);
-  }
-
-  @SuppressWarnings("unchecked")
-  private static <T> StreamObserver<T> anyObserver(Class<T> returnType) {
-    return (StreamObserver<T>) any(returnType);
   }
 }

@@ -70,10 +70,8 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   private final ChannelFactory channelFactory;
 
   private final ChannelPrimer channelPrimer;
-  private final ScheduledExecutorService executor;
   private final Object entryWriteLock = new Object();
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
-  private final ChannelPoolHealthChecker channelPoolHealthChecker;
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
   private final Random rng = new Random();
@@ -108,9 +106,9 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     this.channelFactory = channelFactory;
     this.channelPrimer = channelPrimer;
     Clock systemClock = Clock.systemUTC();
-    this.channelPoolHealthChecker =
+    ChannelPoolHealthChecker channelPoolHealthChecker =
         new ChannelPoolHealthChecker(entries::get, channelPrimer, executor, systemClock);
-    this.channelPoolHealthChecker.start();
+    channelPoolHealthChecker.start();
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
@@ -138,8 +136,6 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
             String.format(
                 "Unknown load balancing strategy %s", settings.getLoadBalancingStrategy()));
     }
-
-    this.executor = executor;
 
     if (!settings.isStaticSize()) {
       this.resizeFuture =

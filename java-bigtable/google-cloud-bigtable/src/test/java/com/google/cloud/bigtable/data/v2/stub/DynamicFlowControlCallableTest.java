@@ -244,7 +244,9 @@ public class DynamicFlowControlCallableTest {
     // very high latency with deadline exceeded exception, limits should be decreased
     Map<String, List<String>> extraHeaders = new HashMap<>();
     extraHeaders.put(LATENCY_HEADER, Arrays.asList(String.valueOf(DEADLINE_EXCEEDED_LATENCY)));
-    callableToTest.futureCall(request, context.withExtraHeaders(extraHeaders));
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored =
+        callableToTest.futureCall(request, context.withExtraHeaders(extraHeaders));
     assertThat(flowController.getCurrentElementCountLimit())
         .isEqualTo(
             INITIAL_ELEMENT

@@ -424,11 +424,6 @@ class BuiltinMetricsTracer extends BigtableTracer {
     }
   }
 
-  private static double convertToMs(long nanoSeconds) {
-    double toMs = 1e-6;
-    return nanoSeconds * toMs;
-  }
-
   @Override
   public void setBatchWriteFlowControlTargetQps(double targetQps) {
     recorder.batchWriteFlowControlTargetQps.record(clientInfo, methodInfo, targetQps);

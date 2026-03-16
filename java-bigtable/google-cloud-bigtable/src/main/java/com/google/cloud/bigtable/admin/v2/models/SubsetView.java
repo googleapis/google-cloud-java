@@ -105,6 +105,7 @@ public class SubsetView implements AuthorizedViewType {
   }
 
   @Override
+  @SuppressWarnings("EqualsGetClass")
   public boolean equals(Object o) {
     if (this == o) {
       return true;

@@ -45,7 +45,6 @@ public class AuthorizedViewIdTest {
     assertThat(authorizedViewId).isEqualTo(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID));
     assertThat(authorizedViewId)
         .isNotEqualTo(AuthorizedViewId.of(TABLE_ID, "another-authorized-view"));
-    assertThat(authorizedViewId).isNotEqualTo(TableId.of(TABLE_ID));
   }
 
   @Test

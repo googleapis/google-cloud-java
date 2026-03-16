@@ -668,7 +668,10 @@ public class ReadIT {
         random.nextBytes(valueBytes);
         ByteString value = ByteString.copyFrom(valueBytes);
 
-        batcher.add(RowMutationEntry.create(key).setCell(familyId, qualifier, timestamp, value));
+        @SuppressWarnings("UnusedVariable")
+        ApiFuture<Void> ignored =
+            batcher.add(
+                RowMutationEntry.create(key).setCell(familyId, qualifier, timestamp, value));
         expectedResults.add(
             Row.create(
                 key,

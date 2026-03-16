@@ -635,6 +635,7 @@ public class BigtableTableAdminClientTests {
   }
 
   @Test
+  @Deprecated
   public void testAwaitReplication() {
     // Setup
     Mockito.when(mockStub.awaitReplicationCallable()).thenReturn(mockAwaitReplicationCallable);

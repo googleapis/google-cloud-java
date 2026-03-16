@@ -37,6 +37,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import javax.annotation.Nullable;
 
 class MetricsTracer extends BigtableTracer {
@@ -55,17 +56,15 @@ class MetricsTracer extends BigtableTracer {
   private final AtomicBoolean opFinished = new AtomicBoolean();
   private final Stopwatch operationTimer = Stopwatch.createStarted();
   private final Stopwatch firstResponsePerOpTimer = Stopwatch.createStarted();
-  private long operationResponseCount = 0;
 
   // Attempt level metrics
   private int attemptCount = 0;
   private Stopwatch attemptTimer;
-  private long attemptResponseCount = 0;
 
   private volatile int attempt = 0;
 
   private volatile boolean reportBatchingLatency = false;
-  private volatile long batchThrottledLatency = 0;
+  private final AtomicLong batchThrottledLatency = new AtomicLong(0);
   private MetadataExtractorInterceptor.SidebandData sidebandData;
 
   MetricsTracer(
@@ -145,7 +144,6 @@ class MetricsTracer extends BigtableTracer {
     attempt = attemptNumber;
     attemptCount++;
     attemptTimer = Stopwatch.createStarted();
-    attemptResponseCount = 0;
   }
 
   @Override
@@ -200,11 +198,11 @@ class MetricsTracer extends BigtableTracer {
     }
 
     if (reportBatchingLatency) {
-      measures.put(RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME, batchThrottledLatency);
+      measures.put(RpcMeasureConstants.BIGTABLE_BATCH_THROTTLED_TIME, batchThrottledLatency.get());
 
       // Reset batch throttling latency for next attempt. This can't be done in attemptStarted
       // because batching flow control will add batching latency before the attempt has started.
-      batchThrottledLatency = 0;
+      batchThrottledLatency.set(0);
     }
 
     // Patch the throwable until it's fixed in gax. When an attempt failed,
@@ -228,8 +226,6 @@ class MetricsTracer extends BigtableTracer {
     if (firstResponsePerOpTimer.isRunning()) {
       firstResponsePerOpTimer.stop();
     }
-    attemptResponseCount++;
-    operationResponseCount++;
   }
 
   @Override
@@ -245,7 +241,7 @@ class MetricsTracer extends BigtableTracer {
   @Override
   public void batchRequestThrottled(long totalThrottledMs) {
     reportBatchingLatency = true;
-    batchThrottledLatency += totalThrottledMs;
+    batchThrottledLatency.addAndGet(totalThrottledMs);
   }
 
   private TagContextBuilder newTagCtxBuilder() {

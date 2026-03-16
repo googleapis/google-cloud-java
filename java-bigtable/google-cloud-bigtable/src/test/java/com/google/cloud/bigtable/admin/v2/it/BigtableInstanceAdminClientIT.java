@@ -29,7 +29,6 @@ import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
-import com.google.cloud.bigtable.admin.v2.models.Instance.Type;
 import com.google.cloud.bigtable.admin.v2.models.StaticClusterSize;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
@@ -258,7 +257,7 @@ public class BigtableInstanceAdminClientIT {
             .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
             .setDisplayName("Priority-Instance-Test")
             .addLabel("state", "readytodelete")
-            .setType(Type.PRODUCTION));
+            .setType(Instance.Type.PRODUCTION));
 
     try {
       assertThat(client.exists(newInstanceId)).isTrue();
@@ -297,7 +296,7 @@ public class BigtableInstanceAdminClientIT {
             .addCluster(newClusterId2, testEnvRule.env().getSecondaryZone(), 1, StorageType.SSD)
             .setDisplayName("Row-Affinity-Instance-Test")
             .addLabel("state", "readytodelete")
-            .setType(Type.PRODUCTION));
+            .setType(Instance.Type.PRODUCTION));
 
     try {
       assertThat(client.exists(newInstanceId)).isTrue();
@@ -352,7 +351,7 @@ public class BigtableInstanceAdminClientIT {
             .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 3, StorageType.SSD)
             .setDisplayName("Fresh-Instance-Name")
             .addLabel("state", "readytodelete")
-            .setType(Type.PRODUCTION));
+            .setType(Instance.Type.PRODUCTION));
 
     try {
       assertThat(client.exists(newInstanceId)).isTrue();
@@ -426,7 +425,7 @@ public class BigtableInstanceAdminClientIT {
               .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.HDD)
               .setDisplayName("Multi-Cluster-Instance-Test")
               .addLabel("state", "readytodelete")
-              .setType(Type.PRODUCTION));
+              .setType(Instance.Type.PRODUCTION));
 
       String clusterId = prefixGenerator.newPrefix();
       CreateClusterRequest createClusterRequest =
@@ -463,7 +462,7 @@ public class BigtableInstanceAdminClientIT {
               .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
               .setDisplayName("Multi-Cluster-Instance-Test")
               .addLabel("state", "readytodelete")
-              .setType(Type.PRODUCTION));
+              .setType(Instance.Type.PRODUCTION));
 
       String clusterId = prefixGenerator.newPrefix();
       CreateClusterRequest createClusterRequest =
@@ -604,7 +603,7 @@ public class BigtableInstanceAdminClientIT {
               .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
               .setDisplayName("Multi-Cluster-Instance-Test")
               .addLabel("state", "readytodelete")
-              .setType(Type.PRODUCTION));
+              .setType(Instance.Type.PRODUCTION));
 
       String clusterId = prefixGenerator.newPrefix();
       CreateClusterRequest createClusterRequest =

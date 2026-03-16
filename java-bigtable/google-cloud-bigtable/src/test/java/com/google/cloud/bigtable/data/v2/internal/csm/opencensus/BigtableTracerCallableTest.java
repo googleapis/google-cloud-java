@@ -416,7 +416,7 @@ public class BigtableTracerCallableTest {
     assertThat(missingCount).isEqualTo(attempts);
   }
 
-  private class FakeService extends BigtableImplBase {
+  private static class FakeService extends BigtableImplBase {
     private final String defaultTableName =
         NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID.getTableId());
 

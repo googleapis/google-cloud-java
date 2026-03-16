@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.cloud.bigtable.data.v2.stub.BigtableChannelPrimer;
+import com.google.cloud.bigtable.data.v2.stub.NoOpChannelPrimer;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPool.Entry;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -99,6 +100,10 @@ class ChannelPoolHealthChecker {
   }
 
   void start() {
+    if (channelPrimer instanceof NoOpChannelPrimer) {
+      return;
+    }
+
     if (!(channelPrimer instanceof BigtableChannelPrimer)) {
       logger.log(
           Level.WARNING,

@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.stub.changestream;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
-import com.google.bigtable.v2.ReadChangeStreamRequest.Builder;
 import com.google.bigtable.v2.StreamContinuationToken;
 import com.google.bigtable.v2.StreamContinuationTokens;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecordAdapter;
@@ -85,7 +84,7 @@ public class ReadChangeStreamResumptionStrategy<ChangeStreamRecordT>
       return originalRequest;
     }
 
-    Builder builder = originalRequest.toBuilder();
+    ReadChangeStreamRequest.Builder builder = originalRequest.toBuilder();
     // We need to clear the start_from and use the updated continuation_tokens
     // to resume the request.
     // The partition should always be the same as the one from the original request,

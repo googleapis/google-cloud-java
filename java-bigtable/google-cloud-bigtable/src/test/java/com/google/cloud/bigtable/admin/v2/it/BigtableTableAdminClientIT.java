@@ -224,9 +224,9 @@ public class BigtableTableAdminClientIT {
   }
 
   @Test
-  public void awaitReplication() {
+  public void awaitConsistency() {
     tableAdmin.createTable(CreateTableRequest.of(tableId));
-    tableAdmin.awaitReplication(tableId);
+    tableAdmin.awaitConsistency(ConsistencyRequest.forReplication(tableId));
   }
 
   /**

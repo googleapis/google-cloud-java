@@ -23,6 +23,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import java.time.Duration;
+import java.util.Locale;
 import java.util.logging.Logger;
 
 /**
@@ -151,7 +152,7 @@ public abstract class BigtableChannelPoolSettings {
       return DEFAULT_LOAD_BALANCING_STRATEGY;
     }
     try {
-      return LoadBalancingStrategy.valueOf(strategyString.trim().toUpperCase());
+      return LoadBalancingStrategy.valueOf(strategyString.trim().toUpperCase(Locale.ENGLISH));
     } catch (IllegalArgumentException e) {
       throw new IllegalStateException(
           String.format("Invalid load-balancing strategy %s", strategyString));

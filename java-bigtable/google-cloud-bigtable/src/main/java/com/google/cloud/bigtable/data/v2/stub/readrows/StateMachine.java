@@ -106,7 +106,7 @@ final class StateMachine<RowT> {
    * Initialize a new state machine that's ready for a new row.
    *
    * @param adapter The adapter that will build the final row.
-   * @param reversed
+   * @param reversed if the results will be streamed in reverse lexicographic order.
    */
   StateMachine(RowBuilder<RowT> adapter, boolean reversed) {
     this.adapter = adapter;

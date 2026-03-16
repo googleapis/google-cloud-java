@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.stub.readrows;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
 import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
@@ -105,7 +104,7 @@ public class ReadRowsResumptionStrategy<RowT>
       return ReadRowsRetryCompletedCallable.FULFILLED_REQUEST_MARKER;
     }
 
-    Builder builder = originalRequest.toBuilder().setRows(remaining);
+    ReadRowsRequest.Builder builder = originalRequest.toBuilder().setRows(remaining);
 
     if (originalRequest.getRowsLimit() > 0) {
       Preconditions.checkState(

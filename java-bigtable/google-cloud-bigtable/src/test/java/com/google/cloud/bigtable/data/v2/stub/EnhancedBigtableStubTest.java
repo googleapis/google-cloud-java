@@ -109,7 +109,6 @@ import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
-import io.grpc.Metadata.Key;
 import io.grpc.MethodDescriptor;
 import io.grpc.Server;
 import io.grpc.ServerCall;
@@ -234,7 +233,8 @@ public class EnhancedBigtableStubTest {
     // Send rpc and grab the credentials sent
     Metadata metadata = metadataInterceptor.headers.take();
 
-    String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+    String authValue =
+        metadata.get(Metadata.Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
     assertThat(authValue).isNotNull();
     String expectedPrefix = "Bearer ";
     assertThat(authValue).startsWith(expectedPrefix);
@@ -285,7 +285,8 @@ public class EnhancedBigtableStubTest {
     }
     channel.shutdown();
 
-    String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
+    String authValue =
+        metadata.get(Metadata.Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
     assertThat(authValue).isNotNull();
     String expectedPrefix = "Bearer ";
     assertThat(authValue).startsWith(expectedPrefix);
@@ -300,7 +301,7 @@ public class EnhancedBigtableStubTest {
     Metadata metadata = metadataInterceptor.headers.take();
 
     String encodedFeatureFlags =
-        metadata.get(Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+        metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
     assertThat(encodedFeatureFlags).isNotNull();
     FeatureFlags featureFlags =
         FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
@@ -320,7 +321,7 @@ public class EnhancedBigtableStubTest {
       Metadata metadata = metadataInterceptor.headers.take();
 
       String encodedFeatureFlags =
-          metadata.get(Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+          metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
       assertThat(encodedFeatureFlags).isNotNull();
       FeatureFlags featureFlags =
           FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedFeatureFlags));
@@ -394,7 +395,7 @@ public class EnhancedBigtableStubTest {
 
     // RequestParamsExtractor
     String reqParams =
-        reqMetadata.get(Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
+        reqMetadata.get(Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
     assertThat(reqParams).contains("table_name=" + TABLE_NAME.replace("/", "%2F"));
     assertThat(reqParams).contains(String.format("app_profile_id=%s", APP_PROFILE_ID));
 
@@ -466,7 +467,7 @@ public class EnhancedBigtableStubTest {
 
     // RequestParamsExtractor
     String reqParams =
-        reqMetadata.get(Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
+        reqMetadata.get(Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
     assertThat(reqParams).contains("name=" + INSTANCE_NAME.replace("/", "%2F"));
     assertThat(reqParams).contains(String.format("app_profile_id=%s", APP_PROFILE_ID));
 
@@ -653,9 +654,9 @@ public class EnhancedBigtableStubTest {
       // Creating 2 batchers from the same stub, they should share the same FlowController and
       // FlowControlEventStats
       try (BatcherImpl<?, ?, ?, ?> batcher1 =
-              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher("my-table1", null);
+              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher(TableId.of("my-table1"), null);
           BatcherImpl<?, ?, ?, ?> batcher2 =
-              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher("my-table2", null)) {
+              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher(TableId.of("my-table2"), null)) {
         assertThat(batcher1.getFlowController()).isNotNull();
         assertThat(batcher1.getFlowController().getFlowControlEventStats()).isNotNull();
         assertThat(batcher1).isNotSameInstanceAs(batcher2);
@@ -680,9 +681,9 @@ public class EnhancedBigtableStubTest {
       // Creating 2 batchers from different stubs, they should not share the same FlowController and
       // FlowControlEventStats
       try (BatcherImpl<?, ?, ?, ?> batcher1 =
-              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher("my-table1", null);
+              (BatcherImpl<?, ?, ?, ?>) stub1.newMutateRowsBatcher(TableId.of("my-table1"), null);
           BatcherImpl<?, ?, ?, ?> batcher2 =
-              (BatcherImpl<?, ?, ?, ?>) stub2.newMutateRowsBatcher("my-table2", null)) {
+              (BatcherImpl<?, ?, ?, ?>) stub2.newMutateRowsBatcher(TableId.of("my-table2"), null)) {
         assertThat(batcher1.getFlowController()).isNotNull();
         assertThat(batcher1.getFlowController().getFlowControlEventStats()).isNotNull();
         assertThat(batcher1.getFlowController()).isNotSameInstanceAs(batcher2.getFlowController());
@@ -700,7 +701,7 @@ public class EnhancedBigtableStubTest {
                     .getStubSettings()); ) {
 
       try (BatcherImpl<?, ?, ?, ?> batcher =
-          (BatcherImpl<?, ?, ?, ?>) stub2.newMutateRowsBatcher("my-table", null)) {
+          (BatcherImpl<?, ?, ?, ?>) stub2.newMutateRowsBatcher(TableId.of("my-table"), null)) {
         assertThat(batcher.getFlowController().getMaxElementCountLimit()).isEqualTo(100L);
         assertThat(batcher.getFlowController().getCurrentElementCountLimit()).isEqualTo(100L);
         assertThat(batcher.getFlowController().getMinElementCountLimit()).isEqualTo(100L);
@@ -724,7 +725,7 @@ public class EnhancedBigtableStubTest {
 
       // Send a batch
       try (Batcher<RowMutationEntry, Void> batcher =
-          stub.newMutateRowsBatcher("table1", clientCtx)) {
+          stub.newMutateRowsBatcher(TableId.of("table1"), clientCtx)) {
         batcher.add(RowMutationEntry.create("key").deleteRow()).get();
       }
 
@@ -843,10 +844,13 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testBatchMutationsPartialFailure() {
     Batcher<RowMutationEntry, Void> batcher =
-        enhancedBigtableStub.newMutateRowsBatcher("table1", GrpcCallContext.createDefault());
+        enhancedBigtableStub.newMutateRowsBatcher(
+            TableId.of("table1"), GrpcCallContext.createDefault());
 
-    batcher.add(RowMutationEntry.create("key0").deleteRow());
-    batcher.add(RowMutationEntry.create("key1").deleteRow());
+    @SuppressWarnings("UnusedVariable")
+    ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create("key0").deleteRow());
+    @SuppressWarnings("UnusedVariable")
+    ApiFuture<Void> ignored1 = batcher.add(RowMutationEntry.create("key1").deleteRow());
 
     Mockito.doAnswer(
             invocationOnMock -> {
@@ -884,7 +888,7 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testBatchMutationRPCErrorCode() {
     Batcher<RowMutationEntry, Void> batcher =
-        enhancedBigtableStub.newMutateRowsBatcher("table1", GrpcCallContext.createDefault());
+        enhancedBigtableStub.newMutateRowsBatcher(TABLE_ID, GrpcCallContext.createDefault());
 
     Mockito.doAnswer(
             invocationOnMock -> {
@@ -895,7 +899,8 @@ public class EnhancedBigtableStubTest {
         .when(fakeDataService)
         .mutateRows(Mockito.any(MutateRowsRequest.class), Mockito.any());
 
-    batcher.add(RowMutationEntry.create("key0").deleteRow());
+    @SuppressWarnings("UnusedVariable")
+    ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create("key0").deleteRow());
     BatchingException batchingException = assertThrows(BatchingException.class, batcher::close);
     assertThat(batchingException.getMessage())
         .contains(
@@ -1081,6 +1086,7 @@ public class EnhancedBigtableStubTest {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
         } catch (Exception ignored) {
+          // dont care about interruption
         }
       }
       requests.add(request);
@@ -1106,6 +1112,7 @@ public class EnhancedBigtableStubTest {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
         } catch (Exception ignored) {
+          // dont care about interruption
         }
       }
       readChangeReadStreamRequests.add(request);
@@ -1129,6 +1136,7 @@ public class EnhancedBigtableStubTest {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
         } catch (Exception ignored) {
+          // dont care about interruption
         }
       }
       executeQueryRequests.add(request);
@@ -1143,6 +1151,7 @@ public class EnhancedBigtableStubTest {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
         } catch (Exception ignored) {
+          // dont care about interruption
         }
       }
       prepareRequests.add(request);

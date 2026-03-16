@@ -21,9 +21,10 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.retrying.ExponentialPollAlgorithm;
 import com.google.api.gax.retrying.NonCancellableFuture;
-import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.RetryingContext;
 import com.google.api.gax.retrying.RetryingExecutor;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
@@ -149,7 +150,7 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
     private final RequestT request;
 
     private volatile RetryingFuture<ResponseT> externalFuture;
-    private volatile ApiCallContext callContext;
+    private final ApiCallContext callContext;
 
     AttemptCallable(
         UnaryCallable<RequestT, ResponseT> callable, RequestT request, ApiCallContext callContext) {
@@ -186,13 +187,30 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
    * handle this.
    */
   private static class PollResultAlgorithm
-      implements ResultRetryAlgorithm<CheckConsistencyResponse> {
+      implements ResultRetryAlgorithmWithContext<CheckConsistencyResponse> {
+
     @Override
     public TimedAttemptSettings createNextAttempt(
         Throwable prevThrowable,
         CheckConsistencyResponse prevResponse,
         TimedAttemptSettings prevSettings) {
       return null;
+    }
+
+    @Override
+    public TimedAttemptSettings createNextAttempt(
+        RetryingContext context,
+        Throwable previousThrowable,
+        CheckConsistencyResponse previousResponse,
+        TimedAttemptSettings previousSettings) {
+      return null;
+    }
+
+    @Override
+    public boolean shouldRetry(
+        RetryingContext context, Throwable previousThrowable, CheckConsistencyResponse prevResponse)
+        throws CancellationException {
+      return prevResponse != null && !prevResponse.getConsistent();
     }
 
     @Override

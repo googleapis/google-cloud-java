@@ -1042,6 +1042,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * @throws com.google.api.gax.retrying.PollException when polling exceeds the total timeout
    */
   @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  @Deprecated
   public void awaitReplication(String tableId) {
     // TODO(igorbernstein2): remove usage of typesafe names
     com.google.bigtable.admin.v2.TableName tableName =
@@ -1667,6 +1668,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
+  @Deprecated
   public ApiFuture<Void> awaitReplicationAsync(final String tableId) {
     // TODO(igorbernstein2): remove usage of typesafe names
     com.google.bigtable.admin.v2.TableName tableName =

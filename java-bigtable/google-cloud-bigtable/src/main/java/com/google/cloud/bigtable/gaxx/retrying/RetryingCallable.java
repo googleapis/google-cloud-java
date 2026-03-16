@@ -36,15 +36,16 @@ public class RetryingCallable<RequestT, ResponseT> extends UnaryCallable<Request
       ApiCallContext callContextPrototype,
       UnaryCallable<RequestT, ResponseT> callable,
       RetryingExecutorWithContext<ResponseT> executor) {
-    this.callContextPrototype = (ApiCallContext) Preconditions.checkNotNull(callContextPrototype);
-    this.callable = (UnaryCallable) Preconditions.checkNotNull(callable);
-    this.executor = (RetryingExecutorWithContext) Preconditions.checkNotNull(executor);
+    this.callContextPrototype = Preconditions.checkNotNull(callContextPrototype);
+    this.callable = Preconditions.checkNotNull(callable);
+    this.executor = Preconditions.checkNotNull(executor);
   }
 
+  @Override
   public RetryingFuture<ResponseT> futureCall(RequestT request, ApiCallContext inputContext) {
     ApiCallContext context = this.callContextPrototype.nullToSelf(inputContext);
     AttemptCallable<RequestT, ResponseT> retryCallable =
-        new AttemptCallable(this.callable, request, context);
+        new AttemptCallable<>(this.callable, request, context);
     RetryingFuture<ResponseT> retryingFuture =
         this.executor.createFuture(retryCallable, inputContext);
     retryCallable.setExternalFuture(retryingFuture);
@@ -52,6 +53,7 @@ public class RetryingCallable<RequestT, ResponseT> extends UnaryCallable<Request
     return retryingFuture;
   }
 
+  @Override
   public String toString() {
     return String.format("retrying(%s)", this.callable);
   }

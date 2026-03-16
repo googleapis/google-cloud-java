@@ -41,8 +41,10 @@ public abstract class AbstractProtoStructReader implements StructReader {
   abstract List<Value> values();
 
   // Force subclasses to override equals and hashcode. We need this for tests.
+  @Override
   public abstract boolean equals(Object other);
 
+  @Override
   public abstract int hashCode();
 
   /**

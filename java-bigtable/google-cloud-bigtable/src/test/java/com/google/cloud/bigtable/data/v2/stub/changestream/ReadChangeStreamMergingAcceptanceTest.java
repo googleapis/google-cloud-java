@@ -24,7 +24,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
-import com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.Type;
+import com.google.bigtable.v2.ReadChangeStreamResponse.DataChange;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.StreamContinuationToken;
 import com.google.bigtable.v2.StreamPartition;
@@ -49,6 +49,7 @@ import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -90,7 +91,7 @@ public class ReadChangeStreamMergingAcceptanceTest {
         .that(dataJson)
         .isNotNull();
 
-    InputStreamReader reader = new InputStreamReader(dataJson);
+    InputStreamReader reader = new InputStreamReader(dataJson, StandardCharsets.UTF_8);
     ChangeStreamTestFile.Builder testBuilder = ChangeStreamTestFile.newBuilder();
     JsonFormat.parser().merge(reader, testBuilder);
     ChangeStreamTestFile testDefinition = testBuilder.build();
@@ -195,12 +196,12 @@ public class ReadChangeStreamMergingAcceptanceTest {
           ReadChangeStreamTest.TestChangeStreamMutation.Builder builder =
               ReadChangeStreamTest.TestChangeStreamMutation.newBuilder();
           builder.setRowKey(changeStreamMutation.getRowKey());
-          Type type = Type.UNRECOGNIZED;
+          DataChange.Type type = DataChange.Type.UNRECOGNIZED;
           if (changeStreamMutation.getType() == ChangeStreamMutation.MutationType.USER) {
-            type = Type.USER;
+            type = DataChange.Type.USER;
           } else if (changeStreamMutation.getType()
               == ChangeStreamMutation.MutationType.GARBAGE_COLLECTION) {
-            type = Type.GARBAGE_COLLECTION;
+            type = DataChange.Type.GARBAGE_COLLECTION;
           }
           builder.setType(type);
           if (changeStreamMutation.getSourceClusterId() != null) {

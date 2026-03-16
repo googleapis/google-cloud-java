@@ -21,6 +21,7 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.prepare
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -43,9 +44,11 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
+import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
@@ -58,6 +61,7 @@ import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.stub.StreamObserver;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import org.junit.After;
@@ -133,20 +137,22 @@ public class HeadersTest {
 
   @Test
   public void sampleRowKeysTest() {
-    client.sampleRowKeysAsync(TABLE_ID);
+    @SuppressWarnings("UnusedVariable")
+    ApiFuture<List<KeyOffset>> ignored = client.sampleRowKeysAsync(TABLE_ID);
     verifyHeaderSent();
   }
 
   @Test
   public void mutateRowTest() {
-    client.mutateRowAsync(RowMutation.create(TABLE_ID, "fake-key").deleteRow());
+    ApiFuture<Void> ignored =
+        client.mutateRowAsync(RowMutation.create(TABLE_ID, "fake-key").deleteRow());
     verifyHeaderSent();
   }
 
   @Test
   public void mutateRowsTest() throws InterruptedException {
     try (Batcher<RowMutationEntry, Void> batcher = client.newBulkMutationBatcher(TABLE_ID)) {
-      batcher.add(RowMutationEntry.create("fake-key").deleteRow());
+      ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create("fake-key").deleteRow());
     } catch (RuntimeException e) {
       // Ignore the errors: none of the methods are actually implemented
     }
@@ -155,15 +161,18 @@ public class HeadersTest {
 
   @Test
   public void checkAndMutateRowTest() {
-    client.checkAndMutateRowAsync(
-        ConditionalRowMutation.create(TABLE_ID, "fake-key").then(Mutation.create().deleteRow()));
+    ApiFuture<Boolean> ignored =
+        client.checkAndMutateRowAsync(
+            ConditionalRowMutation.create(TABLE_ID, "fake-key")
+                .then(Mutation.create().deleteRow()));
     verifyHeaderSent();
   }
 
   @Test
   public void readModifyWriteTest() {
-    client.readModifyWriteRowAsync(
-        ReadModifyWriteRow.create(TABLE_ID, "fake-key").increment("cf", "q", 1));
+    ApiFuture<Row> ignored =
+        client.readModifyWriteRowAsync(
+            ReadModifyWriteRow.create(TABLE_ID, "fake-key").increment("cf", "q", 1));
     verifyHeaderSent();
   }
 

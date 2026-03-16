@@ -562,6 +562,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   }
 
   /** Returns a builder containing all the values of this settings class. */
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -936,6 +937,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public EnhancedBigtableStubSettings build() {
       Preconditions.checkState(projectId != null, "Project id must be set");
       Preconditions.checkState(instanceId != null, "Instance id must be set");

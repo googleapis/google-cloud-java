@@ -306,7 +306,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .withRetrySettings(perOpSettings.readRowSettings.getRetrySettings()),
         clientContext.getTracerFactory(),
         getSpanName("ReadRow"),
-        /* allowNoResponses= */ true);
+        /* allowNoResponse= */ true);
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
@@ -524,7 +524,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * Simple wrapper around {@link #createSampleRowKeysCallableWithRequest()} to provide backwards
    * compatibility
    *
-   * @deprecated
+   * @deprecated Please use {@link #createSampleRowKeysCallableWithRequest()}
    */
   @Deprecated
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {

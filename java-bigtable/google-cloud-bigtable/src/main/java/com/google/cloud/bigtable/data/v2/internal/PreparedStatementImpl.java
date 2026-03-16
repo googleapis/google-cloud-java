@@ -20,7 +20,6 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
-import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement.Builder;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
@@ -76,7 +75,7 @@ public class PreparedStatementImpl implements PreparedStatement {
 
   @Override
   public BoundStatement.Builder bind() {
-    return new Builder(this, paramTypes);
+    return new BoundStatement.Builder(this, paramTypes);
   }
 
   /**

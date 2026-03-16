@@ -622,7 +622,7 @@ public class SqlProtoFactory {
     }
 
     @Override
-    public PreparedQueryData markExpiredAndStartRefresh(
+    public synchronized PreparedQueryData markExpiredAndStartRefresh(
         PreparedQueryVersion expiredPreparedQueryVersion) {
       return planOnRefresh;
     }

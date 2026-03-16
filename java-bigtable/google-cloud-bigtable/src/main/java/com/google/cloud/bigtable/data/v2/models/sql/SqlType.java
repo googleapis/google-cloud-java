@@ -102,11 +102,13 @@ public interface SqlType<T> extends Serializable {
       /**
        * @return the name of the field. Returns an empty string for fields without names.
        */
+      @Override
       String name();
 
       /**
        * @return the {@link SqlType} of the field
        */
+      @Override
       SqlType<?> type();
     }
 
@@ -160,6 +162,7 @@ public interface SqlType<T> extends Serializable {
    * @param <T> Java type of the protobuf enum
    */
   @BetaApi("This feature is currently experimental and can change in the future")
+  @SuppressWarnings("JavaLangClash")
   interface Enum<T extends ProtocolMessageEnum> extends SqlType<T> {
 
     /**

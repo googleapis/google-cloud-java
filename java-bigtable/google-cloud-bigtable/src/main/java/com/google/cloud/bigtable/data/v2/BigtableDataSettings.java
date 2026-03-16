@@ -146,38 +146,34 @@ public final class BigtableDataSettings {
   }
 
   /**
-   * @deprecated OpenCensus support is deprecated and will be removed in a future version
-   * Enables OpenCensus metric aggregations.
+   * @deprecated OpenCensus support is deprecated and will be removed in a future version Enables
+   *     OpenCensus metric aggregations.
+   *     <p>This will register Bigtable client relevant {@link io.opencensus.stats.View}s. When
+   *     coupled with an exporter, it allows users to monitor client behavior.
+   *     <p>Please note that in addition to calling this method, the application must:
+   *     <ul>
+   *       <li>Include openensus-impl dependency on the classpath
+   *       <li>Configure an exporter like opencensus-exporter-stats-stackdriver
+   *     </ul>
+   *     <p>Example usage for maven:
+   *     <pre>{@code
+   * <dependency>
+   *   <groupId>io.opencensus</groupId>
+   *   <artifactId>opencensus-impl</artifactId>
+   *   <version>${opencensus.version}</version>
+   *   <scope>runtime</scope>
+   * </dependency>
    *
-   * <p>This will register Bigtable client relevant {@link io.opencensus.stats.View}s. When coupled
-   * with an exporter, it allows users to monitor client behavior.
-   *
-   * <p>Please note that in addition to calling this method, the application must:
-   * <ul>
-   *   <li>Include openensus-impl dependency on the classpath
-   *   <li>Configure an exporter like opencensus-exporter-stats-stackdriver
-   * </ul>
-   *
-   * <p>Example usage for maven:
-   * <pre>{@code
-   *   <dependency>
-   *     <groupId>io.opencensus</groupId>
-   *     <artifactId>opencensus-impl</artifactId>
-   *     <version>${opencensus.version}</version>
-   *     <scope>runtime</scope>
-   *   </dependency>
-   *
-   *   <dependency>
-   *     <groupId>io.opencensus</groupId>
-   *     <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
-   *     <version>${opencensus.version}</version>
-   *   </dependency>
-   * </pre>
-   *
-   * Java:
-   * <pre>{@code
-   *   StackdriverStatsExporter.createAndRegister();
-   *   BigtableDataSettings.enableOpenCensusStats();
+   * <dependency>
+   *   <groupId>io.opencensus</groupId>
+   *   <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
+   *   <version>${opencensus.version}</version>
+   * </dependency>
+   * }</pre>
+   *     Java:
+   *     <pre>{@code
+   * StackdriverStatsExporter.createAndRegister();
+   * BigtableDataSettings.enableOpenCensusStats();
    * }</pre>
    */
   @Deprecated

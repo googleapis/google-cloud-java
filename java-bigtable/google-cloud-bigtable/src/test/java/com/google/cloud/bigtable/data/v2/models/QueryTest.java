@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
@@ -113,7 +112,7 @@ public class QueryTest {
             .range(ByteString.copyFromUtf8("byte-begin"), ByteString.copyFromUtf8("byte-end"))
             .range(ByteStringRange.create("range-begin", "range-end"));
 
-    Builder expectedProto = expectedReadFromTableProtoBuilder();
+    ReadRowsRequest.Builder expectedProto = expectedReadFromTableProtoBuilder();
     expectedProto
         .getRowsBuilder()
         .addRowRanges(
@@ -204,7 +203,7 @@ public class QueryTest {
     // Table query test.
     Query query = Query.create(TABLE_ID).filter(FILTERS.key().regex(".*"));
 
-    Builder expectedProto =
+    ReadRowsRequest.Builder expectedProto =
         expectedReadFromTableProtoBuilder()
             .setFilter(RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")));
 
@@ -227,7 +226,7 @@ public class QueryTest {
     // Table query test.
     Query query = Query.create(TABLE_ID).limit(10);
 
-    Builder expectedProto = expectedReadFromTableProtoBuilder().setRowsLimit(10);
+    ReadRowsRequest.Builder expectedProto = expectedReadFromTableProtoBuilder().setRowsLimit(10);
 
     ReadRowsRequest actualProto = query.toProto(requestContext);
     assertThat(actualProto).isEqualTo(expectedProto.build());
@@ -633,7 +632,7 @@ public class QueryTest {
 
     Query nextQuery = paginator.getNextQuery();
 
-    Builder expectedProto =
+    ReadRowsRequest.Builder expectedProto =
         expectedReadFromTableProtoBuilder()
             .setRows(
                 RowSet.newBuilder()
@@ -707,7 +706,7 @@ public class QueryTest {
 
     Query nextQuery = paginator.getNextQuery();
 
-    Builder expectedProto =
+    ReadRowsRequest.Builder expectedProto =
         expectedReadFromTableProtoBuilder()
             .setRows(
                 RowSet.newBuilder()
@@ -781,7 +780,7 @@ public class QueryTest {
 
     Query nextQuery = paginator.getNextQuery();
 
-    Builder expectedProto =
+    ReadRowsRequest.Builder expectedProto =
         expectedReadFromTableProtoBuilder()
             .setRows(
                 RowSet.newBuilder()

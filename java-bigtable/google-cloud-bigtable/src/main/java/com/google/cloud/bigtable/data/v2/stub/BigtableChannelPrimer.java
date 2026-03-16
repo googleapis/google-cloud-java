@@ -111,6 +111,7 @@ public class BigtableChannelPrimer implements ChannelPrimer {
     }
   }
 
+  @Override
   public ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(ManagedChannel managedChannel) {
     ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
         managedChannel.newCall(

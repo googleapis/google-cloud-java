@@ -302,7 +302,7 @@ public class CookiesHolderTest {
 
   @Test
   public void testReadChangeStream() {
-    for (ChangeStreamRecord record :
+    for (ChangeStreamRecord ignored :
         client.readChangeStream(ReadChangeStreamQuery.create("table"))) {}
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
@@ -462,7 +462,7 @@ public class CookiesHolderTest {
   public void testNoCookieSucceedReadChangeStream() {
     fakeService.returnCookie = false;
 
-    for (ChangeStreamRecord record :
+    for (ChangeStreamRecord ignored :
         client.readChangeStream(ReadChangeStreamQuery.create("table"))) {}
 
     assertThat(fakeService.count.get()).isGreaterThan(1);
@@ -598,12 +598,17 @@ public class CookiesHolderTest {
     client.readModifyWriteRow(ReadModifyWriteRow.create(TABLE_ID, "key").append("cf", "q", "v"));
 
     fakeService.count.set(0);
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    @SuppressWarnings({
+      "MismatchedQueryAndUpdateOfCollection",
+      "UnusedVariable",
+      "ModifiedButNotUsed"
+    })
     ArrayList<Range.ByteStringRange> ignored2 =
         Lists.newArrayList(client.generateInitialChangeStreamPartitions("fake-table"));
 
     fakeService.count.set(0);
-    for (ChangeStreamRecord record :
+    for (@SuppressWarnings("UnusedVariable")
+    ChangeStreamRecord ignored1 :
         client.readChangeStream(ReadChangeStreamQuery.create("fake-table"))) {}
 
     fakeService.count.set(0);
@@ -649,7 +654,11 @@ public class CookiesHolderTest {
       fakeService.count.set(0);
       serverMetadata.clear();
 
-      @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+      @SuppressWarnings({
+        "MismatchedQueryAndUpdateOfCollection",
+        "UnusedVariable",
+        "ModifiedButNotUsed"
+      })
       ArrayList<Row> ignored2 = Lists.newArrayList(client2.readRows(Query.create(TABLE_ID)));
 
       assertThat(fakeService.count.get()).isGreaterThan(1);

@@ -18,8 +18,8 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
 
-@InternalApi
 /** Expand StreamResumptionStrategy to also process the error. */
+@InternalApi
 public abstract class BigtableStreamResumptionStrategy<RequestT, ResponseT>
     implements StreamResumptionStrategy<RequestT, ResponseT> {
 

@@ -67,7 +67,7 @@ public class EntryTest {
   public void deleteFamilyTest() {
     Entry deleteFamilyEntry = DeleteFamily.create("fake-family");
     DeleteFamily deleteFamily = (DeleteFamily) deleteFamilyEntry;
-    assertThat("fake-family").isEqualTo(deleteFamily.getFamilyName());
+    assertThat(deleteFamily.getFamilyName()).isEqualTo("fake-family");
   }
 
   @Test
@@ -78,10 +78,10 @@ public class EntryTest {
             ByteString.copyFromUtf8("fake-qualifier"),
             Range.TimestampRange.create(1000L, 2000L));
     DeleteCells deleteCells = (DeleteCells) deleteCellEntry;
-    assertThat("fake-family").isEqualTo(deleteCells.getFamilyName());
-    assertThat(ByteString.copyFromUtf8("fake-qualifier")).isEqualTo(deleteCells.getQualifier());
-    assertThat(Range.TimestampRange.create(1000L, 2000L))
-        .isEqualTo(deleteCells.getTimestampRange());
+    assertThat(deleteCells.getFamilyName()).isEqualTo("fake-family");
+    assertThat(deleteCells.getQualifier()).isEqualTo(ByteString.copyFromUtf8("fake-qualifier"));
+    assertThat(deleteCells.getTimestampRange())
+        .isEqualTo(Range.TimestampRange.create(1000L, 2000L));
   }
 
   @Test
@@ -93,9 +93,9 @@ public class EntryTest {
             1000,
             ByteString.copyFromUtf8("fake-value"));
     SetCell setCell = (SetCell) setCellEntry;
-    assertThat("fake-family").isEqualTo(setCell.getFamilyName());
-    assertThat(ByteString.copyFromUtf8("fake-qualifier")).isEqualTo(setCell.getQualifier());
-    assertThat(1000).isEqualTo(setCell.getTimestamp());
-    assertThat(ByteString.copyFromUtf8("fake-value")).isEqualTo(setCell.getValue());
+    assertThat(setCell.getFamilyName()).isEqualTo("fake-family");
+    assertThat(setCell.getQualifier()).isEqualTo(ByteString.copyFromUtf8("fake-qualifier"));
+    assertThat(setCell.getTimestamp()).isEqualTo(1000);
+    assertThat(setCell.getValue()).isEqualTo(ByteString.copyFromUtf8("fake-value"));
   }
 }

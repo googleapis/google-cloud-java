@@ -78,7 +78,7 @@ public class DefaultChangeStreamRecordAdapterTest {
                 .setContinuationToken(
                     StreamContinuationToken.newBuilder().setToken("heartbeat-token").build())
                 .build());
-    Assert.assertEquals(adapter.getTokenFromHeartbeat(heartbeatRecord), "heartbeat-token");
+    Assert.assertEquals("heartbeat-token", adapter.getTokenFromHeartbeat(heartbeatRecord));
   }
 
   @Test
@@ -118,8 +118,8 @@ public class DefaultChangeStreamRecordAdapterTest {
             .setEstimatedLowWatermarkTime(FAKE_LOW_WATERMARK)
             .build();
     Assert.assertEquals(
-        adapter.getTokenFromChangeStreamMutation(changeStreamMutationRecord),
-        "change-stream-mutation-token");
+        "change-stream-mutation-token",
+        adapter.getTokenFromChangeStreamMutation(changeStreamMutationRecord));
   }
 
   @Test

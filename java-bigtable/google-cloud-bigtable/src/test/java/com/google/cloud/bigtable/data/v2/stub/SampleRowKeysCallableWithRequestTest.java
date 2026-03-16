@@ -56,7 +56,8 @@ public class SampleRowKeysCallableWithRequestTest {
 
   @Test
   public void requestIsCorrect() {
-    callable.futureCall(SampleRowKeysRequest.create(TableId.of("my-table")));
+    ApiFuture<List<KeyOffset>> ignored =
+        callable.futureCall(SampleRowKeysRequest.create(TableId.of("my-table")));
 
     assertThat(inner.request)
         .isEqualTo(

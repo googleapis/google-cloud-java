@@ -74,7 +74,7 @@ public class Callables {
         innerCallable, retryingExecutor, settings.getResumptionStrategy());
   }
 
-  public static <RequestT, ResponseT, RowT>
+  public static <RequestT, ResponseT>
       ServerStreamingCallable<RequestT, ResponseT> retryingForLargeRows(
           ServerStreamingCallable<RequestT, ResponseT> innerCallable,
           ServerStreamingCallSettings<RequestT, ResponseT> callSettings,

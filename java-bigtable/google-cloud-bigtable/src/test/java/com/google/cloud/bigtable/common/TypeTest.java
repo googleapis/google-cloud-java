@@ -102,6 +102,7 @@ public class TypeTest {
   }
 
   @Test
+  @SuppressWarnings("TruthIncompatibleType")
   public void map_equals() {
     assertThat(Type.Map.create(Type.Bytes.create(), Type.String.create()))
         .isEqualTo(Type.Map.create(Type.Bytes.create(), Type.String.create()));

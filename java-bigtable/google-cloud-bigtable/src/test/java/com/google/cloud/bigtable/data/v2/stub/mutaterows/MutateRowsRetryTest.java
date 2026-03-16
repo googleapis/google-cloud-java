@@ -97,10 +97,10 @@ public class MutateRowsRetryTest {
           BulkMutation.create(TableId.of("fake-table"))
               .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v")));
     } catch (ApiException e) {
-      Assert.fail("Rst stream errors should be retried");
+      throw new AssertionError("Rst stream errors should be retried", e);
     }
 
-    Assert.assertEquals(attemptCounter.get(), 2);
+    Assert.assertEquals(2, attemptCounter.get());
   }
 
   private class FakeBigtableService extends BigtableGrpc.BigtableImplBase {

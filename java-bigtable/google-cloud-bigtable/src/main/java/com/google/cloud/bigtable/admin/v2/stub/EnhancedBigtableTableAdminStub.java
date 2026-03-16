@@ -56,7 +56,7 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
 
   private final TableAdminRequestContext requestContext;
 
-  private final AwaitReplicationCallable awaitReplicationCallable;
+  @Deprecated private final AwaitReplicationCallable awaitReplicationCallable;
 
   private final AwaitConsistencyCallable awaitConsistencyCallable;
   private final OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
@@ -85,6 +85,7 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
         createOptimizeRestoredTableOperationBaseCallable();
   }
 
+  @Deprecated
   private AwaitReplicationCallable createAwaitReplicationCallable() {
     return AwaitReplicationCallable.create(awaitConsistencyCallable);
   }
@@ -207,6 +208,7 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
         unusedInitialCallSettings, operationCallSettings, clientContext, getOperationsStub());
   }
 
+  @Deprecated
   public UnaryCallable<TableName, Void> awaitReplicationCallable() {
     return awaitReplicationCallable;
   }

@@ -33,7 +33,7 @@ import com.google.protobuf.ByteString.ByteIterator;
  */
 @InternalApi
 public final class RegexUtil {
-  private static final byte[] NULL_BYTES = "\\x00".getBytes();
+  private static final byte[] NULL_BYTES = {0};
 
   private RegexUtil() {}
 

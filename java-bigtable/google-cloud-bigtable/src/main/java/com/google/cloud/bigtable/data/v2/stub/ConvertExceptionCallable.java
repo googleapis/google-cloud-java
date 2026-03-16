@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Throwables;
+import java.util.Locale;
 
 /**
  * This callable converts the "Received rst stream" exception into a retryable {@link ApiException}.
@@ -43,7 +44,7 @@ final class ConvertExceptionCallable<RequestT, ResponseT>
     innerCallable.call(request, observer, context);
   }
 
-  private class ConvertExceptionResponseObserver<ResponseT>
+  private static class ConvertExceptionResponseObserver<ResponseT>
       extends SafeResponseObserver<ResponseT> {
 
     private final ResponseObserver<ResponseT> outerObserver;
@@ -74,7 +75,7 @@ final class ConvertExceptionCallable<RequestT, ResponseT>
     }
   }
 
-  private Throwable convertException(Throwable t) {
+  private static Throwable convertException(Throwable t) {
     // Long lived connections sometimes are disconnected via an RST frame or a goaway. These errors
     // are transient and should be retried.
     if (isRstStreamError(t) || isGoAway(t) || isRetriableAuthError(t)) {
@@ -83,7 +84,7 @@ final class ConvertExceptionCallable<RequestT, ResponseT>
     return t;
   }
 
-  private boolean isRetriableAuthError(Throwable t) {
+  private static boolean isRetriableAuthError(Throwable t) {
     if (t instanceof InternalException && t.getMessage() != null) {
       String error = t.getMessage();
       return error.contains("Authentication backend internal server error. Please retry");
@@ -91,15 +92,15 @@ final class ConvertExceptionCallable<RequestT, ResponseT>
     return false;
   }
 
-  private boolean isRstStreamError(Throwable t) {
+  private static boolean isRstStreamError(Throwable t) {
     if (t instanceof InternalException && t.getMessage() != null) {
-      String error = t.getMessage().toLowerCase();
+      String error = t.getMessage().toLowerCase(Locale.ENGLISH);
       return error.contains("rst_stream") || error.contains("rst stream");
     }
     return false;
   }
 
-  private boolean isGoAway(Throwable t) {
+  private static boolean isGoAway(Throwable t) {
     if (t instanceof InternalException) {
       Throwable rootCause = Throwables.getRootCause(t);
       String rootCauseMessage = rootCause.getMessage();

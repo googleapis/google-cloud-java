@@ -73,7 +73,8 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
     }
   }
 
-  private class BigtableTracerResponseObserver<ResponseT> extends SafeResponseObserver<ResponseT> {
+  private static class BigtableTracerResponseObserver<ResponseT>
+      extends SafeResponseObserver<ResponseT> {
     private final BigtableTracer tracer;
     private final ResponseObserver<ResponseT> outerObserver;
 
@@ -108,7 +109,7 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
     }
   }
 
-  private class TracedStreamController implements StreamController {
+  private static class TracedStreamController implements StreamController {
     private final StreamController innerController;
     private final BigtableTracer tracer;
 

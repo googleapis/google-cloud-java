@@ -41,7 +41,6 @@ import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
 import com.google.protobuf.util.Timestamps;
 import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.common.InstrumentationScopeInfo;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
@@ -66,8 +65,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Answers;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -88,9 +85,6 @@ class BigtableCloudMonitoringExporter2Test {
   private Attributes attributes;
   private Resource resource;
   private InstrumentationScopeInfo scope;
-
-  @Mock(answer = Answers.RETURNS_DEEP_STUBS)
-  private MeterProvider meterProvider;
 
   @BeforeEach
   public void setUp() {

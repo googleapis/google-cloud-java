@@ -41,6 +41,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
+import com.google.protobuf.util.Timestamps;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.common.InstrumentationScopeInfo;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
@@ -131,7 +132,10 @@ public class BigtableCloudMonitoringExporterTest {
   }
 
   @After
-  public void tearDown() {}
+  public void tearDown() {
+    exporter.close();
+    fakeMetricServiceClient.close();
+  }
 
   @Test
   public void testExportingSumData() {
@@ -184,9 +188,10 @@ public class BigtableCloudMonitoringExporterTest {
             MetricLabels.CLIENT_UID.getKey(),
             taskId);
     assertThat(timeSeries.getPoints(0).getValue().getInt64Value()).isEqualTo(fakeValue);
-    assertThat(timeSeries.getPoints(0).getInterval().getStartTime().getNanos())
+    assertThat(Timestamps.toNanos(timeSeries.getPoints(0).getInterval().getStartTime()))
         .isEqualTo(startEpoch);
-    assertThat(timeSeries.getPoints(0).getInterval().getEndTime().getNanos()).isEqualTo(endEpoch);
+    assertThat(Timestamps.toNanos(timeSeries.getPoints(0).getInterval().getEndTime()))
+        .isEqualTo(endEpoch);
   }
 
   @Test
@@ -249,9 +254,10 @@ public class BigtableCloudMonitoringExporterTest {
             taskId);
     Distribution distribution = timeSeries.getPoints(0).getValue().getDistributionValue();
     assertThat(distribution.getCount()).isEqualTo(3);
-    assertThat(timeSeries.getPoints(0).getInterval().getStartTime().getNanos())
+    assertThat(Timestamps.toNanos(timeSeries.getPoints(0).getInterval().getStartTime()))
         .isEqualTo(startEpoch);
-    assertThat(timeSeries.getPoints(0).getInterval().getEndTime().getNanos()).isEqualTo(endEpoch);
+    assertThat(Timestamps.toNanos(timeSeries.getPoints(0).getInterval().getEndTime()))
+        .isEqualTo(endEpoch);
   }
 
   @Test
@@ -326,9 +332,10 @@ public class BigtableCloudMonitoringExporterTest {
               MetricLabels.CLIENT_UID.getKey(),
               taskId);
       assertThat(timeSeries.getPoints(0).getValue().getInt64Value()).isEqualTo(i);
-      assertThat(timeSeries.getPoints(0).getInterval().getStartTime().getNanos())
+      assertThat(Timestamps.toNanos(timeSeries.getPoints(0).getInterval().getStartTime()))
           .isEqualTo(startEpoch);
-      assertThat(timeSeries.getPoints(0).getInterval().getEndTime().getNanos()).isEqualTo(endEpoch);
+      assertThat(Timestamps.toNanos(timeSeries.getPoints(0).getInterval().getEndTime()))
+          .isEqualTo(endEpoch);
     }
   }
 

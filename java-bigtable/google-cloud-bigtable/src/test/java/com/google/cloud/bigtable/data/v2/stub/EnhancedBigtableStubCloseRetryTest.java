@@ -37,7 +37,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -54,7 +53,6 @@ public class EnhancedBigtableStubCloseRetryTest {
 
   private ExecutorService testExecutor;
   private BlockingQueue<ReadRowsRequest> requests;
-  private AtomicInteger numRequests;
 
   private Server server;
   private EnhancedBigtableStub stub;
@@ -63,7 +61,6 @@ public class EnhancedBigtableStubCloseRetryTest {
   public void setUp() throws Exception {
     testExecutor = Executors.newCachedThreadPool();
     requests = new ArrayBlockingQueue<>(10);
-    numRequests = new AtomicInteger();
 
     server = FakeServiceBuilder.create(new FakeBigtable()).start();
 

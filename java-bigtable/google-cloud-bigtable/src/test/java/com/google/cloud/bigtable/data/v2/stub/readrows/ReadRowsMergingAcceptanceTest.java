@@ -35,6 +35,7 @@ import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -70,7 +71,7 @@ public class ReadRowsMergingAcceptanceTest {
         .that(dataJson)
         .isNotNull();
 
-    InputStreamReader reader = new InputStreamReader(dataJson);
+    InputStreamReader reader = new InputStreamReader(dataJson, StandardCharsets.UTF_8);
     TestFile.Builder testBuilder = TestFile.newBuilder();
     JsonFormat.parser().merge(reader, testBuilder);
     TestFile testDefinition = testBuilder.build();

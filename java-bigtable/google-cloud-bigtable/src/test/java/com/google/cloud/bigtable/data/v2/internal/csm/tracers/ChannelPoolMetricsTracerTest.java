@@ -171,7 +171,7 @@ public class ChannelPoolMetricsTracerTest {
     // Arrange
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
     tracker.registerLoadBalancingStrategy(LoadBalancingStrategy.LEAST_IN_FLIGHT);
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
 
     // Outstanding RPCs
     when(mockInsight1.getOutstandingUnaryRpcs()).thenReturn(5);
@@ -229,7 +229,7 @@ public class ChannelPoolMetricsTracerTest {
     // Arrange
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
     tracker.registerLoadBalancingStrategy(LoadBalancingStrategy.ROUND_ROBIN);
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
 
     // First run
     when(mockInsight1.getOutstandingUnaryRpcs()).thenReturn(1);
@@ -291,7 +291,7 @@ public class ChannelPoolMetricsTracerTest {
   public void testErrorMetricsOnlyRecordedForAllChannels() {
     // Arrange
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
 
     // Insight 1: Active (has successes)
     when(mockInsight1.getAndResetErrorCount()).thenReturn(0L);
@@ -320,7 +320,7 @@ public class ChannelPoolMetricsTracerTest {
   public void testDefaultLbPolicy() {
     // Arrange: Only register insights provider, not LB strategy
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
     runTrackerTask();
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
@@ -337,7 +337,7 @@ public class ChannelPoolMetricsTracerTest {
 
   @Test
   public void testNoMetricsIfChannelInsightsProviderInactive() {
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
     runTrackerTask();
     assertThat(metricReader.collectAllMetrics()).isEmpty();
   }
@@ -346,7 +346,7 @@ public class ChannelPoolMetricsTracerTest {
   public void testNoMetricsIfChannelInsightsEmpty() {
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
     when(mockInsightsProvider.getChannelInfos()).thenReturn(ImmutableList.of());
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
     runTrackerTask();
     assertThat(metricReader.collectAllMetrics()).isEmpty();
   }
@@ -355,7 +355,7 @@ public class ChannelPoolMetricsTracerTest {
   public void testNoMetricsIfChannelInsightsNull() {
     tracker.registerChannelInsightsProvider(mockInsightsProvider);
     when(mockInsightsProvider.getChannelInfos()).thenReturn(null);
-    tracker.start(mockScheduler);
+    ScheduledFuture<?> ignored = tracker.start(mockScheduler);
     runTrackerTask();
     assertThat(metricReader.collectAllMetrics()).isEmpty();
   }

@@ -77,12 +77,11 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
 
   /** Internal implementation detail for {@link DefaultRowAdapter}. */
   @InternalApi()
-  public class DefaultRowBuilder implements RowBuilder<Row> {
+  public static class DefaultRowBuilder implements RowBuilder<Row> {
     private ByteString currentKey;
     private TreeMap<String, ImmutableList.Builder<RowCell>> cellsByFamily;
     private ImmutableList.Builder<RowCell> currentFamilyCells;
     private String previousFamily;
-    private int totalCellCount;
 
     private String family;
     private ByteString qualifier;
@@ -134,7 +133,6 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
 
       RowCell rowCell = RowCell.create(family, qualifier, timestamp, labels, value);
       currentFamilyCells.add(rowCell);
-      totalCellCount++;
     }
 
     /** {@inheritDoc} */
@@ -143,7 +141,7 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
       final ImmutableList<RowCell> sortedCells;
 
       // Optimization: If there are no cells, then just return the static empty list.
-      if (cellsByFamily.size() == 0) {
+      if (cellsByFamily.isEmpty()) {
         sortedCells = ImmutableList.of();
       } else if (cellsByFamily.size() == 1) {
         // Optimization: If there is a single family, avoid copies and return that one list.
@@ -170,7 +168,6 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
       cellsByFamily = new TreeMap<>();
       currentFamilyCells = null;
       previousFamily = null;
-      totalCellCount = 0;
 
       family = null;
       qualifier = null;

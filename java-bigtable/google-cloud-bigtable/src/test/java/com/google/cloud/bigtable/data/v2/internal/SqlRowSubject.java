@@ -24,11 +24,8 @@ import javax.annotation.Nullable;
 /** Truth subject for {@link ProtoSqlRow}. Intended for ease-of-use in testing. */
 public final class SqlRowSubject extends Subject {
 
-  private final @Nullable SqlRow actual;
-
   private SqlRowSubject(FailureMetadata metadata, @Nullable SqlRow actual) {
     super(metadata, actual);
-    this.actual = actual;
   }
 
   public static Factory<SqlRowSubject, SqlRow> sqlRow() {

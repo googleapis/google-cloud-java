@@ -36,6 +36,7 @@ import io.grpc.netty.shaded.io.netty.channel.EventLoopGroup;
 import io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup;
 import io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel;
 import io.grpc.netty.shaded.io.netty.util.ReferenceCountUtil;
+import io.grpc.netty.shaded.io.netty.util.concurrent.Future;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -132,7 +133,7 @@ public class DirectPathFallbackIT {
       instrumentedClient.close();
     }
     if (eventLoopGroup != null) {
-      eventLoopGroup.shutdownGracefully();
+      Future<?> ignored = eventLoopGroup.shutdownGracefully();
     }
   }
 
@@ -225,7 +226,8 @@ public class DirectPathFallbackIT {
         super.connect(ctx, remoteAddress, localAddress, promise);
       } else {
         // Fail the connection fast
-        promise.setFailure(new IOException("fake error"));
+        @SuppressWarnings("UnusedVariable")
+        ChannelPromise ignored = promise.setFailure(new IOException("fake error"));
       }
     }
 

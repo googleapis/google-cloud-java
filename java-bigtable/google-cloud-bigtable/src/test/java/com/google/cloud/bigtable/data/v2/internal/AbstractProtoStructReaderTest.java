@@ -1034,7 +1034,7 @@ public class AbstractProtoStructReaderTest {
       duplicatedValues.addAll(values);
       TestProtoStruct row = TestProtoStruct.create(metadata, duplicatedValues);
 
-      assertThat(expectedJavaValue).isEqualTo(getByIndex.apply(row, index));
+      assertThat(getByIndex.apply(row, index)).isEqualTo(expectedJavaValue);
     }
   }
 }

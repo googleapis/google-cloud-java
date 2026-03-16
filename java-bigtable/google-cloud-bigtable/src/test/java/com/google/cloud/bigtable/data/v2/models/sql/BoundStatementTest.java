@@ -827,9 +827,7 @@ public class BoundStatementTest {
     IllegalArgumentException eLong =
         assertThrows(IllegalArgumentException.class, () -> builder.setLongParam("bytesParam", 1L));
     assertThat(eLong.getMessage()).contains("Invalid type passed for query param");
-    IllegalArgumentException eDouble =
-        assertThrows(
-            IllegalArgumentException.class, () -> builder.setDoubleParam("bytesParam", 1.1d));
+    assertThrows(IllegalArgumentException.class, () -> builder.setDoubleParam("bytesParam", 1.1d));
     assertThat(eLong.getMessage()).contains("Invalid type passed for query param");
     IllegalArgumentException eFloat =
         assertThrows(

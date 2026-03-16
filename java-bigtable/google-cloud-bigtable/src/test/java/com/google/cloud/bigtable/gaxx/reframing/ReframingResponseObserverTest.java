@@ -290,32 +290,33 @@ public class ReframingResponseObserverTest {
 
     final CountDownLatch latch = new CountDownLatch(2);
 
-    executor.submit(
-        new Runnable() {
-          @Override
-          public void run() {
-            while (!outerObserver.isDone()) {
-              outerObserver.popNextResponse();
-            }
-            latch.countDown();
-          }
-        });
-
-    executor.submit(
-        new Runnable() {
-          @Override
-          public void run() {
-            while (!innerController.isCancelled()) {
-              if (innerController.popLastPull() > 0) {
-                innerController.getObserver().onResponse("a");
+    @SuppressWarnings("UnusedVariable")
+    Future<?> ignored =
+        executor.submit(
+            () -> {
+              while (!outerObserver.isDone()) {
+                outerObserver.popNextResponse();
               }
-            }
-            innerController
-                .getObserver()
-                .onError(new RuntimeException("Some other upstream error"));
-            latch.countDown();
-          }
-        });
+              latch.countDown();
+            });
+
+    @SuppressWarnings("UnusedVariable")
+    Future<?> ignored2 =
+        executor.submit(
+            new Runnable() {
+              @Override
+              public void run() {
+                while (!innerController.isCancelled()) {
+                  if (innerController.popLastPull() > 0) {
+                    innerController.getObserver().onResponse("a");
+                  }
+                }
+                innerController
+                    .getObserver()
+                    .onError(new RuntimeException("Some other upstream error"));
+                latch.countDown();
+              }
+            });
 
     outerObserver.getController().cancel();
 

@@ -27,12 +27,14 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.util.concurrent.SettableFuture;
 import io.grpc.Server;
 import io.grpc.stub.StreamObserver;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -81,19 +83,14 @@ public class EnhancedBigtableStubCloseTest {
   @Test
   public void outstandingRequestsFinishAfterClose() throws Exception {
     ApiFuture<List<Row>> resultFuture =
-        stub.readRowsCallable().all().futureCall(Query.create("table1"));
+        stub.readRowsCallable().all().futureCall(Query.create(TableId.of("table1")));
 
     // Wait for the server to receive the request
     requestReceivedBarrier.get(1, MINUTES);
     // Close the client - must happen in a separate thread because close will block until all
     // requests have completed, which can't happen until the clientClosedBarrier is released.
-    testExecutor.submit(
-        new Runnable() {
-          @Override
-          public void run() {
-            stub.close();
-          }
-        });
+    @SuppressWarnings("UnusedVariable")
+    Future<?> ignored = testExecutor.submit(() -> stub.close());
     Thread.sleep(200); // give the closer a chance to run
     clientClosedBarrier.set(null);
 

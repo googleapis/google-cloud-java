@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.changestream;
 
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
-import com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.Type;
+import com.google.bigtable.v2.ReadChangeStreamResponse.DataChange;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecordAdapter.ChangeStreamRecordBuilder;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.cloud.bigtable.data.v2.models.Value;
@@ -329,7 +329,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
           validate(
               dataChange.getChunksCount() > 0,
               "AWAITING_NEW_STREAM_RECORD: First data change missing mods.");
-          if (dataChange.getType() == Type.GARBAGE_COLLECTION) {
+          if (dataChange.getType() == DataChange.Type.GARBAGE_COLLECTION) {
             validate(
                 dataChange.getSourceClusterId().isEmpty(),
                 "AWAITING_NEW_STREAM_RECORD: GC mutation shouldn't have source cluster id.");
@@ -339,7 +339,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                     dataChange.getCommitTimestamp().getSeconds(),
                     dataChange.getCommitTimestamp().getNanos()),
                 dataChange.getTiebreaker());
-          } else if (dataChange.getType() == Type.USER) {
+          } else if (dataChange.getType() == DataChange.Type.USER) {
             validate(
                 !dataChange.getSourceClusterId().isEmpty(),
                 "AWAITING_NEW_STREAM_RECORD: User initiated data change missing source cluster"

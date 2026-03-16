@@ -349,6 +349,7 @@ public final class Query implements Serializable {
     return query;
   }
 
+  @Override
   public Query clone() {
     Query query = Query.create(targetId);
     query.builder = this.builder.clone();

@@ -22,6 +22,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.BatchingSettings;
@@ -74,7 +75,8 @@ public class BulkMutateIT {
       long initial = batcher.getFlowController().getCurrentElementCountLimit();
       for (long i = 0; i < initial * 3; i++) {
         String key = rowPrefix + "test-key" + i;
-        batcher.add(RowMutationEntry.create(key).setCell(familyId, "qualifier", i));
+        ApiFuture<Void> ignored =
+            batcher.add(RowMutationEntry.create(key).setCell(familyId, "qualifier", i));
       }
       batcher.flush();
       assertThat(events.getLastFlowControlEvent()).isNotNull();
@@ -117,9 +119,10 @@ public class BulkMutateIT {
 
       String familyId = testEnvRule.env().getFamilyId();
 
-      batcher.add(
-          RowMutationEntry.create(rowPrefix + "test-key")
-              .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create(rowPrefix + "test-key")
+                  .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
       batcher.flush();
 
       // Query a key to make sure the write succeeded
@@ -172,7 +175,7 @@ public class BulkMutateIT {
         for (long j = 0; j < 50001; j++) {
           rowMutationEntry.setCell(familyId, "q" + j + i, j);
         }
-        batcher.add(rowMutationEntry);
+        ApiFuture<Void> ignored = batcher.add(rowMutationEntry);
       }
       batcher.flush();
       // Query a key to make sure the write succeeded
@@ -219,7 +222,7 @@ public class BulkMutateIT {
         for (long j = 0; j < 50001; j++) {
           rowMutationEntry.setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER + j + i, j);
         }
-        batcher.add(rowMutationEntry);
+        ApiFuture<Void> ignored = batcher.add(rowMutationEntry);
       }
       batcher.flush();
       // Query a key to make sure the write succeeded
@@ -242,7 +245,8 @@ public class BulkMutateIT {
         RowMutationEntry rowMutationEntry = RowMutationEntry.create(keyOutsideAuthorizedView);
         rowMutationEntry.setCell(
             testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "test-value");
-        batcherOutsideAuthorizedView.add(rowMutationEntry);
+        @SuppressWarnings("UnusedVariable")
+        ApiFuture<Void> ignored = batcherOutsideAuthorizedView.add(rowMutationEntry);
         batcherOutsideAuthorizedView.flush();
       }
       fail("Should not be able to apply bulk mutation on rows outside authorized view");

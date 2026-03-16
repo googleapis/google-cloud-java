@@ -65,6 +65,7 @@ import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
@@ -261,17 +262,19 @@ public class PlanRefreshingCallableTest {
     // This deadline is used for the prepare call and the ultimate execute call after
     // that completes. It needs to leave a lot of margin for error for the scheduler below to
     // be slower than expected to resolve. Previously 100ms deadline was not enough.
-    Duration originalAttemptTimeout = Duration.ofMillis(5000);
-    scheduler.schedule(
-        () -> {
-          prepareFuture.set(
-              PrepareResponse.fromProto(
-                  prepareResponse(
-                      ByteString.copyFromUtf8("initialPlan"),
-                      metadata(columnMetadata("strCol", stringType())))));
-        },
-        50,
-        TimeUnit.MILLISECONDS);
+    Duration originalAttemptTimeout = Duration.ofSeconds(5);
+    @SuppressWarnings("UnusedVariable")
+    ScheduledFuture<?> ignored =
+        scheduler.schedule(
+            () -> {
+              prepareFuture.set(
+                  PrepareResponse.fromProto(
+                      prepareResponse(
+                          ByteString.copyFromUtf8("initialPlan"),
+                          metadata(columnMetadata("strCol", stringType())))));
+            },
+            50,
+            TimeUnit.MILLISECONDS);
     ApiCallContext context =
         GrpcCallContext.createDefault().withTimeoutDuration(originalAttemptTimeout);
     // prepare takes 50 ms to resolve. Despite that the execute timeout should be around 100ms from

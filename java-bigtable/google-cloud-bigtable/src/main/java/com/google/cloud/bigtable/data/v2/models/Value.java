@@ -127,7 +127,8 @@ public abstract class Value implements Serializable {
         return RawValue.create(source.getRawValue());
       case RAW_TIMESTAMP_MICROS:
         return RawTimestamp.create(source.getRawTimestampMicros());
+      default:
+        throw new UnsupportedOperationException();
     }
-    throw new UnsupportedOperationException();
   }
 }

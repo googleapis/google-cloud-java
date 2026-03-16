@@ -145,6 +145,7 @@ public class StreamingMetricsMetadataIT {
       @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
       ArrayList<Row> ignored = Lists.newArrayList(client.readRows(query));
     } catch (NotFoundException ignored) {
+      // dont care
     }
 
     Collection<MetricData> allMetricData = metricReader.collectAllMetrics();

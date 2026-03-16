@@ -107,6 +107,7 @@ class RateLimitingServerStreamingCallable
     private final AtomicReference<Instant> nextRateUpdateTime =
         new AtomicReference<>(Instant.now());
 
+    @SuppressWarnings("LongDoubleConversion")
     public ConditionalRateLimiter(long defaultQps) {
       limiter = RateLimiter.create(defaultQps);
       logger.info(

@@ -397,6 +397,7 @@ public class CloudEnv extends AbstractTestEnv {
     return tableId;
   }
 
+  @Override
   public String getKmsKeyName() {
     return kmsKeyName;
   }

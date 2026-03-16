@@ -714,7 +714,7 @@ public class FiltersTest {
   private static void checkClassDeclaresSerialVersionUid(Class cls) {
     String uid = "serialVersionUID";
     for (Field field : cls.getDeclaredFields()) {
-      if (field.getName() == uid) {
+      if (uid.equals(field.getName())) {
         int modifiers = field.getModifiers();
         assertWithMessage(field + " is not static").that(Modifier.isStatic(modifiers)).isTrue();
         assertWithMessage(field + " is not final").that(Modifier.isFinal(modifiers)).isTrue();

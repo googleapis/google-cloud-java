@@ -48,6 +48,7 @@ public final class ReadRowsRetryCompletedCallable<RowT>
   }
 
   @Override
+  @SuppressWarnings("ReferenceEquality")
   public void call(
       ReadRowsRequest request, ResponseObserver<RowT> responseObserver, ApiCallContext context) {
 

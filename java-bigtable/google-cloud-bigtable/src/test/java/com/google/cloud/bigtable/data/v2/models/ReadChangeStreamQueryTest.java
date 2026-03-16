@@ -19,7 +19,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.v2.ReadChangeStreamRequest;
-import com.google.bigtable.v2.ReadChangeStreamRequest.Builder;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.StreamContinuationToken;
 import com.google.bigtable.v2.StreamContinuationTokens;
@@ -71,7 +70,7 @@ public class ReadChangeStreamQueryTest {
     ReadChangeStreamQuery query1 =
         ReadChangeStreamQuery.create(TABLE_ID).streamPartition("simple-begin", "simple-end");
     ReadChangeStreamRequest actualProto1 = query1.toProto(requestContext);
-    Builder expectedProto1 = expectedProtoBuilder();
+    ReadChangeStreamRequest.Builder expectedProto1 = expectedProtoBuilder();
     expectedProto1.setPartition(
         StreamPartition.newBuilder()
             .setRowRange(
@@ -88,7 +87,7 @@ public class ReadChangeStreamQueryTest {
             .streamPartition(
                 ByteString.copyFromUtf8("byte-begin"), ByteString.copyFromUtf8("byte-end"));
     ReadChangeStreamRequest actualProto2 = query2.toProto(requestContext);
-    Builder expectedProto2 = expectedProtoBuilder();
+    ReadChangeStreamRequest.Builder expectedProto2 = expectedProtoBuilder();
     expectedProto2.setPartition(
         StreamPartition.newBuilder()
             .setRowRange(
@@ -104,7 +103,7 @@ public class ReadChangeStreamQueryTest {
         ReadChangeStreamQuery.create(TABLE_ID)
             .streamPartition(ByteStringRange.create("range-begin", "range-end"));
     ReadChangeStreamRequest actualProto3 = query3.toProto(requestContext);
-    Builder expectedProto3 = expectedProtoBuilder();
+    ReadChangeStreamRequest.Builder expectedProto3 = expectedProtoBuilder();
     expectedProto3.setPartition(
         StreamPartition.newBuilder()
             .setRowRange(
@@ -120,7 +119,7 @@ public class ReadChangeStreamQueryTest {
   public void startTimeTest() {
     ReadChangeStreamQuery query = ReadChangeStreamQuery.create(TABLE_ID).startTime(FAKE_START_TIME);
 
-    Builder expectedProto =
+    ReadChangeStreamRequest.Builder expectedProto =
         expectedProtoBuilder()
             .setStartTime(
                 Timestamp.newBuilder()
@@ -135,7 +134,7 @@ public class ReadChangeStreamQueryTest {
   public void endTimeTest() {
     ReadChangeStreamQuery query = ReadChangeStreamQuery.create(TABLE_ID).endTime(FAKE_END_TIME);
 
-    Builder expectedProto =
+    ReadChangeStreamRequest.Builder expectedProto =
         expectedProtoBuilder()
             .setEndTime(
                 Timestamp.newBuilder()
@@ -151,7 +150,7 @@ public class ReadChangeStreamQueryTest {
     ReadChangeStreamQuery query =
         ReadChangeStreamQuery.create(TABLE_ID).heartbeatDuration(java.time.Duration.ofSeconds(5));
 
-    Builder expectedProto =
+    ReadChangeStreamRequest.Builder expectedProto =
         expectedProtoBuilder().setHeartbeatDuration(Duration.newBuilder().setSeconds(5).build());
 
     ReadChangeStreamRequest actualProto = query.toProto(requestContext);
@@ -176,7 +175,7 @@ public class ReadChangeStreamQueryTest {
     ReadChangeStreamQuery query =
         ReadChangeStreamQuery.create(TABLE_ID).continuationTokens(Collections.singletonList(token));
 
-    Builder expectedProto =
+    ReadChangeStreamRequest.Builder expectedProto =
         expectedProtoBuilder()
             .setContinuationTokens(
                 StreamContinuationTokens.newBuilder().addTokens(tokenProto).build());

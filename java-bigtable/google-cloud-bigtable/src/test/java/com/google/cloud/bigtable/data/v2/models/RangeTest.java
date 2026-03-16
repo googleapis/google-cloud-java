@@ -315,6 +315,6 @@ public class RangeTest {
     ByteString serialized = ByteStringRange.serializeToByteString(expected);
     ByteStringRange deserialized = ByteStringRange.toByteStringRange(serialized);
 
-    assertThat(expected).isEqualTo(deserialized);
+    assertThat(deserialized).isEqualTo(expected);
   }
 }

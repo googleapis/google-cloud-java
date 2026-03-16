@@ -18,7 +18,7 @@ package com.google.cloud.bigtable.data.v2.stub;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiClock;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -73,7 +73,7 @@ public class DynamicFlowControlStatsTest {
   public void testConcurrentUpdates() throws InterruptedException, ExecutionException {
     final DynamicFlowControlStats stats = new DynamicFlowControlStats();
     ExecutorService executor = Executors.newCachedThreadPool();
-    List<Future<?>> futures = new LinkedList<>();
+    List<Future<?>> futures = new ArrayList<>();
     for (int i = 1; i <= 50; i++) {
       final long latency = i;
       Runnable r =

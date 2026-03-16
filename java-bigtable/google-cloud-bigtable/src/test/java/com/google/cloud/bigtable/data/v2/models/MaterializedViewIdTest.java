@@ -44,7 +44,6 @@ public class MaterializedViewIdTest {
 
     assertThat(authorizedViewId).isEqualTo(MaterializedViewId.of(MATERIALIZED_VIEW_ID));
     assertThat(authorizedViewId).isNotEqualTo(MaterializedViewId.of("another-materialized-view"));
-    assertThat(authorizedViewId).isNotEqualTo(TableId.of(TABLE_ID));
   }
 
   @Test

@@ -70,7 +70,7 @@ public class ExecuteQueryCallableTest {
     }
 
     @Override
-    public PreparedQueryData markExpiredAndStartRefresh(
+    public synchronized PreparedQueryData markExpiredAndStartRefresh(
         PreparedQueryVersion expiredPreparedQueryVersion) {
       return getLatestPrepareResponse();
     }
@@ -127,7 +127,7 @@ public class ExecuteQueryCallableTest {
     SqlServerStream stream = stub.executeQueryCallable().call(PREPARED_STATEMENT.bind().build());
     // We don't care about this, just assert we get a response
     boolean rowReceived = false;
-    for (SqlRow sqlRow : stream.rows()) {
+    for (@SuppressWarnings("UnusedVariable") SqlRow ignored : stream.rows()) {
       rowReceived = true;
     }
     assertThat(rowReceived).isTrue();
