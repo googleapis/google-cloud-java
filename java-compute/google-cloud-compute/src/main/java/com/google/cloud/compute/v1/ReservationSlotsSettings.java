@@ -86,7 +86,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for update:
+ * configure the RetrySettings for getVersion:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -116,6 +116,17 @@ public class ReservationSlotsSettings extends ClientSettings<ReservationSlotsSet
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetReservationSlotRequest, ReservationSlotsGetResponse> getSettings() {
     return ((ReservationSlotsStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getVersion. */
+  public UnaryCallSettings<GetVersionReservationSlotRequest, Operation> getVersionSettings() {
+    return ((ReservationSlotsStubSettings) getStubSettings()).getVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getVersion. */
+  public OperationCallSettings<GetVersionReservationSlotRequest, Operation, Operation>
+      getVersionOperationSettings() {
+    return ((ReservationSlotsStubSettings) getStubSettings()).getVersionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -237,6 +248,18 @@ public class ReservationSlotsSettings extends ClientSettings<ReservationSlotsSet
     public UnaryCallSettings.Builder<GetReservationSlotRequest, ReservationSlotsGetResponse>
         getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getVersion. */
+    public UnaryCallSettings.Builder<GetVersionReservationSlotRequest, Operation>
+        getVersionSettings() {
+      return getStubSettingsBuilder().getVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getVersion. */
+    public OperationCallSettings.Builder<GetVersionReservationSlotRequest, Operation, Operation>
+        getVersionOperationSettings() {
+      return getStubSettingsBuilder().getVersionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

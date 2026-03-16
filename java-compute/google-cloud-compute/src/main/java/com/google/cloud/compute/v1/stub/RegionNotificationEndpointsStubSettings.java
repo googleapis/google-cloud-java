@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,12 +45,15 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.InsertRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
+import com.google.cloud.compute.v1.NotificationEndpointAggregatedList;
 import com.google.cloud.compute.v1.NotificationEndpointList;
+import com.google.cloud.compute.v1.NotificationEndpointsScopedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
@@ -60,6 +64,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -149,6 +154,11 @@ public class RegionNotificationEndpointsStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteRegionNotificationEndpointRequest, Operation>
       deleteSettings;
   private final OperationCallSettings<DeleteRegionNotificationEndpointRequest, Operation, Operation>
@@ -165,6 +175,54 @@ public class RegionNotificationEndpointsStubSettings
   private final UnaryCallSettings<
           TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          Map.Entry<String, NotificationEndpointsScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListRegionNotificationEndpointsRequest,
+              NotificationEndpointAggregatedList,
+              Map.Entry<String, NotificationEndpointsScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListRegionNotificationEndpointsRequest injectToken(
+                AggregatedListRegionNotificationEndpointsRequest payload, String token) {
+              return AggregatedListRegionNotificationEndpointsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListRegionNotificationEndpointsRequest injectPageSize(
+                AggregatedListRegionNotificationEndpointsRequest payload, int pageSize) {
+              return AggregatedListRegionNotificationEndpointsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                AggregatedListRegionNotificationEndpointsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(NotificationEndpointAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, NotificationEndpointsScopedList>> extractResources(
+                NotificationEndpointAggregatedList payload) {
+              return payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListRegionNotificationEndpointsRequest, NotificationEndpointList, NotificationEndpoint>
@@ -212,6 +270,34 @@ public class RegionNotificationEndpointsStubSettings
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListRegionNotificationEndpointsRequest,
+              NotificationEndpointAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListRegionNotificationEndpointsRequest,
+                        NotificationEndpointAggregatedList>
+                    callable,
+                AggregatedListRegionNotificationEndpointsRequest request,
+                ApiCallContext context,
+                ApiFuture<NotificationEndpointAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListRegionNotificationEndpointsRequest,
+                      NotificationEndpointAggregatedList,
+                      Map.Entry<String, NotificationEndpointsScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -233,6 +319,15 @@ public class RegionNotificationEndpointsStubSettings
               return ListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionNotificationEndpointRequest, Operation> deleteSettings() {
@@ -358,6 +453,7 @@ public class RegionNotificationEndpointsStubSettings
   protected RegionNotificationEndpointsStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -371,6 +467,11 @@ public class RegionNotificationEndpointsStubSettings
   public static class Builder
       extends StubSettings.Builder<RegionNotificationEndpointsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final PagedCallSettings.Builder<
+            AggregatedListRegionNotificationEndpointsRequest,
+            NotificationEndpointAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteRegionNotificationEndpointRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<
@@ -397,12 +498,12 @@ public class RegionNotificationEndpointsStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -411,14 +512,6 @@ public class RegionNotificationEndpointsStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
-              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
@@ -430,6 +523,14 @@ public class RegionNotificationEndpointsStubSettings
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -440,6 +541,7 @@ public class RegionNotificationEndpointsStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -450,6 +552,7 @@ public class RegionNotificationEndpointsStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -461,6 +564,7 @@ public class RegionNotificationEndpointsStubSettings
     protected Builder(RegionNotificationEndpointsStubSettings settings) {
       super(settings);
 
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -471,6 +575,7 @@ public class RegionNotificationEndpointsStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -491,6 +596,11 @@ public class RegionNotificationEndpointsStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -582,6 +692,15 @@ public class RegionNotificationEndpointsStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListRegionNotificationEndpointsRequest,
+            NotificationEndpointAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */

@@ -21,7 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -61,12 +63,14 @@ import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
+import com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
 import com.google.cloud.dataplex.v1.EntryLink;
@@ -76,6 +80,7 @@ import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
@@ -85,9 +90,16 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsResponse;
 import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
 import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
+import com.google.cloud.dataplex.v1.LookupContextRequest;
+import com.google.cloud.dataplex.v1.LookupContextResponse;
+import com.google.cloud.dataplex.v1.LookupEntryLinksRequest;
+import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
@@ -95,8 +107,10 @@ import com.google.cloud.dataplex.v1.SearchEntriesResponse;
 import com.google.cloud.dataplex.v1.SearchEntriesResult;
 import com.google.cloud.dataplex.v1.UpdateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.UpdateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -105,6 +119,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -192,7 +211,12 @@ import javax.annotation.Generated;
 public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateEntryTypeRequest, Operation> createEntryTypeSettings;
   private final OperationCallSettings<CreateEntryTypeRequest, EntryType, OperationMetadata>
@@ -252,12 +276,35 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listMetadataJobsSettings;
   private final UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings;
   private final UnaryCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings;
+  private final UnaryCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings;
   private final UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings;
+  private final PagedCallSettings<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+      lookupEntryLinksSettings;
+  private final UnaryCallSettings<LookupContextRequest, LookupContextResponse>
+      lookupContextSettings;
   private final UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings;
+  private final UnaryCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedSettings;
+  private final OperationCallSettings<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationSettings;
+  private final UnaryCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedSettings;
+  private final PagedCallSettings<
+          ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsSettings;
+  private final UnaryCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedSettings;
+  private final OperationCallSettings<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationSettings;
+  private final UnaryCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedSettings;
+  private final OperationCallSettings<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListEntryTypesRequest, ListEntryTypesResponse, EntryType>
       LIST_ENTRY_TYPES_PAGE_STR_DESC =
@@ -476,6 +523,81 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink>
+      LOOKUP_ENTRY_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public LookupEntryLinksRequest injectToken(
+                LookupEntryLinksRequest payload, String token) {
+              return LookupEntryLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public LookupEntryLinksRequest injectPageSize(
+                LookupEntryLinksRequest payload, int pageSize) {
+              return LookupEntryLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(LookupEntryLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(LookupEntryLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EntryLink> extractResources(LookupEntryLinksResponse payload) {
+              return payload.getEntryLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed>
+      LIST_METADATA_FEEDS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMetadataFeedsRequest injectToken(
+                ListMetadataFeedsRequest payload, String token) {
+              return ListMetadataFeedsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMetadataFeedsRequest injectPageSize(
+                ListMetadataFeedsRequest payload, int pageSize) {
+              return ListMetadataFeedsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMetadataFeedsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMetadataFeedsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MetadataFeed> extractResources(ListMetadataFeedsResponse payload) {
+              return payload.getMetadataFeedsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -612,6 +734,46 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
                       PageContext.create(
                           callable, LIST_METADATA_JOBS_PAGE_STR_DESC, request, context);
               return ListMetadataJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+      LOOKUP_ENTRY_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>() {
+            @Override
+            public ApiFuture<LookupEntryLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse> callable,
+                LookupEntryLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<LookupEntryLinksResponse> futureResponse) {
+              PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink>
+                  pageContext =
+                      PageContext.create(
+                          callable, LOOKUP_ENTRY_LINKS_PAGE_STR_DESC, request, context);
+              return LookupEntryLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+      LIST_METADATA_FEEDS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMetadataFeedsRequest,
+              ListMetadataFeedsResponse,
+              ListMetadataFeedsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMetadataFeedsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse> callable,
+                ListMetadataFeedsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMetadataFeedsResponse> futureResponse) {
+              PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_METADATA_FEEDS_PAGE_STR_DESC, request, context);
+              return ListMetadataFeedsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -837,14 +999,76 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     return createEntryLinkSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateEntryLink. */
+  public UnaryCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings() {
+    return updateEntryLinkSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteEntryLink. */
   public UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
     return deleteEntryLinkSettings;
   }
 
+  /** Returns the object with the settings used for calls to lookupEntryLinks. */
+  public PagedCallSettings<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+      lookupEntryLinksSettings() {
+    return lookupEntryLinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to lookupContext. */
+  public UnaryCallSettings<LookupContextRequest, LookupContextResponse> lookupContextSettings() {
+    return lookupContextSettings;
+  }
+
   /** Returns the object with the settings used for calls to getEntryLink. */
   public UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
     return getEntryLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataFeed. */
+  public UnaryCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedSettings() {
+    return createMetadataFeedSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataFeed. */
+  public OperationCallSettings<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationSettings() {
+    return createMetadataFeedOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMetadataFeed. */
+  public UnaryCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedSettings() {
+    return getMetadataFeedSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMetadataFeeds. */
+  public PagedCallSettings<
+          ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsSettings() {
+    return listMetadataFeedsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMetadataFeed. */
+  public UnaryCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedSettings() {
+    return deleteMetadataFeedSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMetadataFeed. */
+  public OperationCallSettings<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationSettings() {
+    return deleteMetadataFeedOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMetadataFeed. */
+  public UnaryCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedSettings() {
+    return updateMetadataFeedSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMetadataFeed. */
+  public OperationCallSettings<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationSettings() {
+    return updateMetadataFeedOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -856,6 +1080,22 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public CatalogServiceStub createStub() throws IOException {
@@ -1007,10 +1247,27 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     listMetadataJobsSettings = settingsBuilder.listMetadataJobsSettings().build();
     cancelMetadataJobSettings = settingsBuilder.cancelMetadataJobSettings().build();
     createEntryLinkSettings = settingsBuilder.createEntryLinkSettings().build();
+    updateEntryLinkSettings = settingsBuilder.updateEntryLinkSettings().build();
     deleteEntryLinkSettings = settingsBuilder.deleteEntryLinkSettings().build();
+    lookupEntryLinksSettings = settingsBuilder.lookupEntryLinksSettings().build();
+    lookupContextSettings = settingsBuilder.lookupContextSettings().build();
     getEntryLinkSettings = settingsBuilder.getEntryLinkSettings().build();
+    createMetadataFeedSettings = settingsBuilder.createMetadataFeedSettings().build();
+    createMetadataFeedOperationSettings =
+        settingsBuilder.createMetadataFeedOperationSettings().build();
+    getMetadataFeedSettings = settingsBuilder.getMetadataFeedSettings().build();
+    listMetadataFeedsSettings = settingsBuilder.listMetadataFeedsSettings().build();
+    deleteMetadataFeedSettings = settingsBuilder.deleteMetadataFeedSettings().build();
+    deleteMetadataFeedOperationSettings =
+        settingsBuilder.deleteMetadataFeedOperationSettings().build();
+    updateMetadataFeedSettings = settingsBuilder.updateMetadataFeedSettings().build();
+    updateMetadataFeedOperationSettings =
+        settingsBuilder.updateMetadataFeedOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for CatalogServiceStubSettings. */
@@ -1095,13 +1352,43 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         cancelMetadataJobSettings;
     private final UnaryCallSettings.Builder<CreateEntryLinkRequest, EntryLink>
         createEntryLinkSettings;
+    private final UnaryCallSettings.Builder<UpdateEntryLinkRequest, EntryLink>
+        updateEntryLinkSettings;
     private final UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink>
         deleteEntryLinkSettings;
+    private final PagedCallSettings.Builder<
+            LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+        lookupEntryLinksSettings;
+    private final UnaryCallSettings.Builder<LookupContextRequest, LookupContextResponse>
+        lookupContextSettings;
     private final UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings;
+    private final UnaryCallSettings.Builder<CreateMetadataFeedRequest, Operation>
+        createMetadataFeedSettings;
+    private final OperationCallSettings.Builder<
+            CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        createMetadataFeedOperationSettings;
+    private final UnaryCallSettings.Builder<GetMetadataFeedRequest, MetadataFeed>
+        getMetadataFeedSettings;
+    private final PagedCallSettings.Builder<
+            ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+        listMetadataFeedsSettings;
+    private final UnaryCallSettings.Builder<DeleteMetadataFeedRequest, Operation>
+        deleteMetadataFeedSettings;
+    private final OperationCallSettings.Builder<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+        deleteMetadataFeedOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateMetadataFeedRequest, Operation>
+        updateMetadataFeedSettings;
+    private final OperationCallSettings.Builder<
+            UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        updateMetadataFeedOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1234,10 +1521,24 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listMetadataJobsSettings = PagedCallSettings.newBuilder(LIST_METADATA_JOBS_PAGE_STR_FACT);
       cancelMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      lookupEntryLinksSettings = PagedCallSettings.newBuilder(LOOKUP_ENTRY_LINKS_PAGE_STR_FACT);
+      lookupContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createMetadataFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createMetadataFeedOperationSettings = OperationCallSettings.newBuilder();
+      getMetadataFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMetadataFeedsSettings = PagedCallSettings.newBuilder(LIST_METADATA_FEEDS_PAGE_STR_FACT);
+      deleteMetadataFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMetadataFeedOperationSettings = OperationCallSettings.newBuilder();
+      updateMetadataFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMetadataFeedOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1268,10 +1569,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               listMetadataJobsSettings,
               cancelMetadataJobSettings,
               createEntryLinkSettings,
+              updateEntryLinkSettings,
               deleteEntryLinkSettings,
+              lookupEntryLinksSettings,
+              lookupContextSettings,
               getEntryLinkSettings,
+              createMetadataFeedSettings,
+              getMetadataFeedSettings,
+              listMetadataFeedsSettings,
+              deleteMetadataFeedSettings,
+              updateMetadataFeedSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -1315,10 +1627,27 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listMetadataJobsSettings = settings.listMetadataJobsSettings.toBuilder();
       cancelMetadataJobSettings = settings.cancelMetadataJobSettings.toBuilder();
       createEntryLinkSettings = settings.createEntryLinkSettings.toBuilder();
+      updateEntryLinkSettings = settings.updateEntryLinkSettings.toBuilder();
       deleteEntryLinkSettings = settings.deleteEntryLinkSettings.toBuilder();
+      lookupEntryLinksSettings = settings.lookupEntryLinksSettings.toBuilder();
+      lookupContextSettings = settings.lookupContextSettings.toBuilder();
       getEntryLinkSettings = settings.getEntryLinkSettings.toBuilder();
+      createMetadataFeedSettings = settings.createMetadataFeedSettings.toBuilder();
+      createMetadataFeedOperationSettings =
+          settings.createMetadataFeedOperationSettings.toBuilder();
+      getMetadataFeedSettings = settings.getMetadataFeedSettings.toBuilder();
+      listMetadataFeedsSettings = settings.listMetadataFeedsSettings.toBuilder();
+      deleteMetadataFeedSettings = settings.deleteMetadataFeedSettings.toBuilder();
+      deleteMetadataFeedOperationSettings =
+          settings.deleteMetadataFeedOperationSettings.toBuilder();
+      updateMetadataFeedSettings = settings.updateMetadataFeedSettings.toBuilder();
+      updateMetadataFeedOperationSettings =
+          settings.updateMetadataFeedOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1349,10 +1678,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               listMetadataJobsSettings,
               cancelMetadataJobSettings,
               createEntryLinkSettings,
+              updateEntryLinkSettings,
               deleteEntryLinkSettings,
+              lookupEntryLinksSettings,
+              lookupContextSettings,
               getEntryLinkSettings,
+              createMetadataFeedSettings,
+              getMetadataFeedSettings,
+              listMetadataFeedsSettings,
+              deleteMetadataFeedSettings,
+              updateMetadataFeedSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1516,12 +1856,52 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .updateEntryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteEntryLinkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .lookupEntryLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .lookupContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getEntryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createMetadataFeedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getMetadataFeedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listMetadataFeedsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteMetadataFeedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateMetadataFeedSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1532,6 +1912,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1761,6 +2156,78 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(MetadataJob.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createMetadataFeedOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateMetadataFeedRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MetadataFeed.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteMetadataFeedOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteMetadataFeedRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateMetadataFeedOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateMetadataFeedRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MetadataFeed.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -2007,14 +2474,81 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       return createEntryLinkSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateEntryLink. */
+    public UnaryCallSettings.Builder<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings() {
+      return updateEntryLinkSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteEntryLink. */
     public UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
       return deleteEntryLinkSettings;
     }
 
+    /** Returns the builder for the settings used for calls to lookupEntryLinks. */
+    public PagedCallSettings.Builder<
+            LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+        lookupEntryLinksSettings() {
+      return lookupEntryLinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to lookupContext. */
+    public UnaryCallSettings.Builder<LookupContextRequest, LookupContextResponse>
+        lookupContextSettings() {
+      return lookupContextSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getEntryLink. */
     public UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
       return getEntryLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataFeed. */
+    public UnaryCallSettings.Builder<CreateMetadataFeedRequest, Operation>
+        createMetadataFeedSettings() {
+      return createMetadataFeedSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataFeed. */
+    public OperationCallSettings.Builder<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        createMetadataFeedOperationSettings() {
+      return createMetadataFeedOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadataFeed. */
+    public UnaryCallSettings.Builder<GetMetadataFeedRequest, MetadataFeed>
+        getMetadataFeedSettings() {
+      return getMetadataFeedSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMetadataFeeds. */
+    public PagedCallSettings.Builder<
+            ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+        listMetadataFeedsSettings() {
+      return listMetadataFeedsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMetadataFeed. */
+    public UnaryCallSettings.Builder<DeleteMetadataFeedRequest, Operation>
+        deleteMetadataFeedSettings() {
+      return deleteMetadataFeedSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMetadataFeed. */
+    public OperationCallSettings.Builder<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+        deleteMetadataFeedOperationSettings() {
+      return deleteMetadataFeedOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMetadataFeed. */
+    public UnaryCallSettings.Builder<UpdateMetadataFeedRequest, Operation>
+        updateMetadataFeedSettings() {
+      return updateMetadataFeedSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMetadataFeed. */
+    public OperationCallSettings.Builder<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        updateMetadataFeedOperationSettings() {
+      return updateMetadataFeedOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
@@ -2027,6 +2561,22 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -221,6 +221,18 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_LookupEntryRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_LookupContextRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_LookupContextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_LookupContextRequest_OptionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_LookupContextRequest_OptionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_LookupContextResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_LookupContextResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_SearchEntriesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_SearchEntriesRequest_fieldAccessorTable;
@@ -305,17 +317,73 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_EntryLink_EntryReference_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_EntryLink_AspectsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_EntryLink_AspectsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_CreateEntryLinkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_CreateEntryLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_UpdateEntryLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_UpdateEntryLinkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DeleteEntryLinkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DeleteEntryLinkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_LookupEntryLinksRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_LookupEntryLinksRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_LookupEntryLinksResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_LookupEntryLinksResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_GetEntryLinkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_GetEntryLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_Scope_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_Scope_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_Filters_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_Filters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_MetadataFeed_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_CreateMetadataFeedRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_CreateMetadataFeedRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_GetMetadataFeedRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_GetMetadataFeedRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_ListMetadataFeedsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_ListMetadataFeedsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_ListMetadataFeedsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_ListMetadataFeedsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DeleteMetadataFeedRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DeleteMetadataFeedRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_UpdateMetadataFeedRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_UpdateMetadataFeedRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -630,7 +698,18 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\014aspect_types\030\003 \003(\tB\003\340A\001\022\022\n"
           + "\005paths\030\004 \003(\tB\003\340A\001\0224\n"
           + "\005entry\030\005 \001(\tB%\340A\002\372A\037\n"
-          + "\035dataplex.googleapis.com/Entry\"\335\001\n"
+          + "\035dataplex.googleapis.com/Entry\"\346\001\n"
+          + "\024LookupContextRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\0228\n"
+          + "\tresources\030\002 \003(\tB%\340A\002\372A\037\n"
+          + "\035dataplex.googleapis.com/Entry\022Q\n"
+          + "\007options\030\004 \003(\0132;.g"
+          + "oogle.cloud.dataplex.v1.LookupContextRequest.OptionsEntryB\003\340A\001\032.\n"
+          + "\014OptionsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"(\n"
+          + "\025LookupContextResponse\022\017\n"
+          + "\007context\030\001 \001(\t\"\335\001\n"
           + "\024SearchEntriesRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022\022\n"
@@ -643,11 +722,11 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\023SearchEntriesResult\022\033\n"
           + "\017linked_resource\030\010 \001(\tB\002\030\001\0227\n"
           + "\016dataplex_entry\030\t \001(\0132\037.google.cloud.dataplex.v1.Entry\022L\n"
-          + "\010snippets\030\014 \001(\01326.google.c"
-          + "loud.dataplex.v1.SearchEntriesResult.SnippetsB\002\030\001\032K\n"
+          + "\010snippets\030\014 \001(\01326.google.cloud."
+          + "dataplex.v1.SearchEntriesResult.SnippetsB\002\030\001\032K\n"
           + "\010Snippets\022;\n"
-          + "\016dataplex_entry\030\001"
-          + " \001(\0132\037.google.cloud.dataplex.v1.EntryB\002\030\001:\002\030\001\"\231\001\n"
+          + "\016dataplex_entry\030\001 \001(\013"
+          + "2\037.google.cloud.dataplex.v1.EntryB\002\030\001:\002\030\001\"\231\001\n"
           + "\025SearchEntriesResponse\022>\n"
           + "\007results\030\001"
           + " \003(\0132-.google.cloud.dataplex.v1.SearchEntriesResult\022\022\n\n"
@@ -690,18 +769,18 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022F\n"
           + "\006labels\030\005"
           + " \003(\01321.google.cloud.dataplex.v1.MetadataJob.LabelsEntryB\003\340A\001\022=\n"
-          + "\004type\030\006 \001(\016"
-          + "2*.google.cloud.dataplex.v1.MetadataJob.TypeB\003\340A\002\022J\n"
-          + "\013import_spec\030d \001(\01323.google."
-          + "cloud.dataplex.v1.MetadataJob.ImportJobSpecH\000\022J\n"
-          + "\013export_spec\030e \001(\01323.google.clou"
-          + "d.dataplex.v1.MetadataJob.ExportJobSpecH\000\022T\n\r"
-          + "import_result\030\310\001 \001(\01325.google.cloud"
-          + ".dataplex.v1.MetadataJob.ImportJobResultB\003\340A\003H\001\022T\n\r"
-          + "export_result\030\311\001 \001(\01325.google"
-          + ".cloud.dataplex.v1.MetadataJob.ExportJobResultB\003\340A\003H\001\022A\n"
-          + "\006status\030\007 \001(\0132,.google.c"
-          + "loud.dataplex.v1.MetadataJob.StatusB\003\340A\003\032\311\002\n"
+          + "\004type\030\006 \001(\0162*.go"
+          + "ogle.cloud.dataplex.v1.MetadataJob.TypeB\003\340A\002\022J\n"
+          + "\013import_spec\030d \001(\01323.google.cloud"
+          + ".dataplex.v1.MetadataJob.ImportJobSpecH\000\022J\n"
+          + "\013export_spec\030e"
+          + " \001(\01323.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecH\000\022T\n\r"
+          + "import_result\030\310\001 \001(\01325.google.cloud.data"
+          + "plex.v1.MetadataJob.ImportJobResultB\003\340A\003H\001\022T\n\r"
+          + "export_result\030\311\001 \001(\01325.google.clou"
+          + "d.dataplex.v1.MetadataJob.ExportJobResultB\003\340A\003H\001\022A\n"
+          + "\006status\030\007"
+          + " \001(\0132,.google.cloud.dataplex.v1.MetadataJob.StatusB\003\340A\003\032\311\002\n"
           + "\017ImportJobResult\022\034\n"
           + "\017deleted_entries\030\001 \001(\003B\003\340A\003\022\034\n"
           + "\017updated_entries\030\002 \001(\003B\003\340A\003\022\034\n"
@@ -719,14 +798,14 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\022source_storage_uri\030\001 \001(\tB\003\340A\001\022;\n"
           + "\022source_create_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022V\n"
-          + "\005scope\030\002 \001(\0132B.google.cloud.dataple"
-          + "x.v1.MetadataJob.ImportJobSpec.ImportJobScopeB\003\340A\002\022Z\n"
-          + "\017entry_sync_mode\030\003 \001(\0162<.go"
-          + "ogle.cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncModeB\003\340A\002\022[\n"
-          + "\020aspect_sync_mode\030\004"
-          + " \001(\0162<.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncModeB\003\340A\002\022T\n"
-          + "\tlog_level\030\006 \001(\0162<.google.cloud.dataplex.v"
-          + "1.MetadataJob.ImportJobSpec.LogLevelB\003\340A\001\032\327\002\n"
+          + "\005scope\030\002 \001(\0132B.google.cloud.dataplex.v1."
+          + "MetadataJob.ImportJobSpec.ImportJobScopeB\003\340A\002\022Z\n"
+          + "\017entry_sync_mode\030\003 \001(\0162<.google."
+          + "cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncModeB\003\340A\002\022[\n"
+          + "\020aspect_sync_mode\030\004 "
+          + "\001(\0162<.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncModeB\003\340A\002\022T\n"
+          + "\tlog_level\030\006"
+          + " \001(\0162<.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.LogLevelB\003\340A\001\032\327\002\n"
           + "\016ImportJobScope\022@\n"
           + "\014entry_groups\030\001 \003(\tB*\340A\002\372A$\n"
           + "\"dataplex.googleapis.com/EntryGroup\022>\n"
@@ -748,8 +827,8 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\005DEBUG\020\001\022\010\n"
           + "\004INFO\020\002\032\257\003\n\r"
           + "ExportJobSpec\022V\n"
-          + "\005scope\030\002 \001(\0132B.g"
-          + "oogle.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeB\003\340A\002\022\030\n"
+          + "\005scope\030\002 \001(\0132B.google"
+          + ".cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeB\003\340A\002\022\030\n"
           + "\013output_path\030\003 \001(\tB\003\340A\002\032\253\002\n"
           + "\016ExportJobScope\022\032\n"
           + "\022organization_level\030\001 \001(\010\022B\n"
@@ -762,8 +841,8 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\014aspect_types\030\005 \003(\tB\'\372A$\n"
           + "\"dataplex.googleapis.com/AspectType\032\312\002\n"
           + "\006Status\022F\n"
-          + "\005state\030\001 \001(\01622.google.cloud.d"
-          + "ataplex.v1.MetadataJob.Status.StateB\003\340A\003\022\024\n"
+          + "\005state\030\001"
+          + " \001(\01622.google.cloud.dataplex.v1.MetadataJob.Status.StateB\003\340A\003\022\024\n"
           + "\007message\030\002 \001(\tB\003\340A\003\022\037\n"
           + "\022completion_percent\030\003 \001(\005B\003\340A\003\0224\n"
           + "\013update_time\030\004"
@@ -778,48 +857,144 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\006FAILED\020\006\022\031\n"
           + "\025SUCCEEDED_WITH_ERRORS\020\007\032-\n"
           + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r"
-          + "\n"
+          + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"4\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006IMPORT\020\001\022\n\n"
           + "\006EXPORT\020\002:l\352Ai\n"
-          + "#dataplex.googleapis.com/MetadataJob\022Bproje"
-          + "cts/{project}/locations/{location}/metadataJobs/{metadataJob}B\006\n"
+          + "#dataplex.googleapis.com/MetadataJob\022Bprojects/{"
+          + "project}/locations/{location}/metadataJobs/{metadataJob}B\006\n"
           + "\004specB\010\n"
-          + "\006result\"\202\005\n"
+          + "\006result\"\237\006\n"
           + "\tEntryLink\022=\n"
           + "\004name\030\001 \001(\tB/\340A\003\340A\005\340A\010\372A#\n"
           + "!dataplex.googleapis.com/EntryLink\022\037\n"
           + "\017entry_link_type\030\002 \001(\tB\006\340A\002\340A\005\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022Q\n"
+          + "\013update_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022F\n"
+          + "\007aspects\030\006 \003(\01320.google.c"
+          + "loud.dataplex.v1.EntryLink.AspectsEntryB\003\340A\001\022T\n"
           + "\020entry_references\030\n"
-          + " \003(\01322.google.cloud.dataplex.v1.EntryLink.EntryReferenceB\003\340A\002\032\271\001\n"
+          + " \003(\01322.google."
+          + "cloud.dataplex.v1.EntryLink.EntryReferenceB\006\340A\002\340A\005\032\271\001\n"
           + "\016EntryReference\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\002\340A\005\022\021\n"
           + "\004path\030\002 \001(\tB\003\340A\005\022M\n"
-          + "\004type\030\003 \001(\01627.google.cloud.dataplex.v"
-          + "1.EntryLink.EntryReference.TypeB\006\340A\002\340A\005\"/\n"
+          + "\004type\030\003"
+          + " \001(\01627.google.cloud.dataplex.v1.EntryLink.EntryReference.TypeB\006\340A\002\340A\005\"/\n"
           + "\004Type\022\017\n"
           + "\013UNSPECIFIED\020\000\022\n\n"
           + "\006SOURCE\020\002\022\n\n"
-          + "\006TARGET\020\003:\231\001\352A\225\001\n"
-          + "!dataplex.googleapis.com/EntryLink\022Yprojects/{project}/locations"
-          + "/{location}/entryGroups/{entry_group}/entryLinks/{entry_link}*\n"
+          + "\006TARGET\020\003\032P\n"
+          + "\014AspectsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022/\n"
+          + "\005value\030\002 \001(\0132"
+          + " .google.cloud.dataplex.v1.Aspect:\0028\001:\231\001\352A\225\001\n"
+          + "!dataplex.googleapis.com/EntryLink\022Yprojects/{project}/locations/{locati"
+          + "on}/entryGroups/{entry_group}/entryLinks/{entry_link}*\n"
           + "entryLinks2\tentryLink\"\256\001\n"
           + "\026CreateEntryLinkRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"dataplex.googleapis.com/EntryGroup\022\032\n\r"
           + "entry_link_id\030\002 \001(\tB\003\340A\002\022<\n\n"
-          + "entry_link\030\003 \001(\0132#.google.cloud.dataplex.v1.EntryLinkB\003\340A\002\"Q\n"
+          + "entry_link\030\003"
+          + " \001(\0132#.google.cloud.dataplex.v1.EntryLinkB\003\340A\002\"\214\001\n"
+          + "\026UpdateEntryLinkRequest\022<\n\n"
+          + "entry_link\030\001"
+          + " \001(\0132#.google.cloud.dataplex.v1.EntryLinkB\003\340A\002\022\032\n\r"
+          + "allow_missing\030\003 \001(\010B\003\340A\001\022\030\n"
+          + "\013aspect_keys\030\005 \003(\tB\003\340A\001\"Q\n"
           + "\026DeleteEntryLinkRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!dataplex.googleapis.com/EntryLink\"N\n"
+          + "!dataplex.googleapis.com/EntryLink\"\265\002\n"
+          + "\027LookupEntryLinksRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\0224\n"
+          + "\005entry\030\002 \001(\tB%\340A\002\372A\037\n"
+          + "\035dataplex.googleapis.com/Entry\022O\n\n"
+          + "entry_mode\030\003 \001(\016"
+          + "2;.google.cloud.dataplex.v1.LookupEntryLinksRequest.EntryMode\022\030\n"
+          + "\020entry_link_types\030\004 \003(\t\022\021\n"
+          + "\tpage_size\030\005 \001(\005\022\022\n\n"
+          + "page_token\030\006 \001(\t\"?\n"
+          + "\tEntryMode\022\032\n"
+          + "\026ENTRY_MODE_UNSPECIFIED\020\000\022\n\n"
+          + "\006SOURCE\020\001\022\n\n"
+          + "\006TARGET\020\002\"m\n"
+          + "\030LookupEntryLinksResponse\0228\n"
+          + "\013entry_links\030\001 \003(\0132#.google.cloud.dataplex.v1.EntryLink\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"N\n"
           + "\023GetEntryLinkRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!dataplex.googleapis.com/EntryLink*Q\n"
+          + "!dataplex.googleapis.com/EntryLink\"\310\010\n"
+          + "\014MetadataFeed\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
+          + "\003uid\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022@\n"
+          + "\005scope\030\003"
+          + " \001(\0132,.google.cloud.dataplex.v1.MetadataFeed.ScopeB\003\340A\002\022D\n"
+          + "\007filters\030\004"
+          + " \001(\0132..google.cloud.dataplex.v1.MetadataFeed.FiltersB\003\340A\001\0224\n"
+          + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022G\n"
+          + "\006labels\030\010 \003(\01322.google.cloud."
+          + "dataplex.v1.MetadataFeed.LabelsEntryB\003\340A\001\022\033\n"
+          + "\014pubsub_topic\030d \001(\tB\003\340A\001H\000\032\261\001\n"
+          + "\005Scope",
+      "\022\037\n"
+          + "\022organization_level\030\001 \001(\010B\003\340A\001\022E\n"
+          + "\010projects\030\002 \003(\tB3\340A\001\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022@\n"
+          + "\014entry_groups\030\003 \003(\tB*\340A\001\372A$\n"
+          + "\"dataplex.googleapis.com/EntryGroup\032\260\002\n"
+          + "\007Filters\022>\n"
+          + "\013entry_types\030\001 \003(\tB)\340A\001\372A#\n"
+          + "!dataplex.googleapis.com/EntryType\022@\n"
+          + "\014aspect_types\030\002 \003(\tB*\340A\001\372A$\n"
+          + "\"dataplex.googleapis.com/AspectType\022T\n"
+          + "\014change_types\030\003 \003(\01629.google.cloud.dataplex.v"
+          + "1.MetadataFeed.Filters.ChangeTypeB\003\340A\001\"M\n\n"
+          + "ChangeType\022\033\n"
+          + "\027CHANGE_TYPE_UNSPECIFIED\020\000\022\n\n"
+          + "\006CREATE\020\001\022\n\n"
+          + "\006UPDATE\020\002\022\n\n"
+          + "\006DELETE\020\003\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\216\001\352A\212\001\n"
+          + "$dataplex.googleapis.com/MetadataFeed\022Eprojects/{project}/locations/"
+          + "{location}/metadataFeeds/{metadata_feed}*\r"
+          + "metadataFeeds2\014metadataFeedB\n\n"
+          + "\010endpoint\"\325\001\n"
+          + "\031CreateMetadataFeedRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022B\n\r"
+          + "metadata_feed\030\002 \001(\0132&.goog"
+          + "le.cloud.dataplex.v1.MetadataFeedB\003\340A\002\022\035\n"
+          + "\020metadata_feed_id\030\003 \001(\tB\003\340A\001\022\032\n\r"
+          + "validate_only\030\004 \001(\010B\003\340A\001\"T\n"
+          + "\026GetMetadataFeedRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$dataplex.googleapis.com/MetadataFeed\"\262\001\n"
+          + "\030ListMetadataFeedsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\216\001\n"
+          + "\031ListMetadataFeedsResponse\022>\n"
+          + "\016metadata_feeds\030\001 \003(\0132&.google.cloud.dataplex.v1.MetadataFeed\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"W\n"
+          + "\031DeleteMetadataFeedRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$dataplex.googleapis.com/MetadataFeed\"\261\001\n"
+          + "\031UpdateMetadataFeedRequest\022B\n\r"
+          + "metadata_feed\030\001"
+          + " \001(\0132&.google.cloud.dataplex.v1.MetadataFeedB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\032\n\r"
+          + "validate_only\030\003 \001(\010B\003\340A\001*Q\n"
           + "\tEntryView\022\032\n"
           + "\026ENTRY_VIEW_UNSPECIFIED\020\000\022\t\n"
           + "\005BASIC\020\001\022\010\n"
@@ -829,153 +1004,165 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\016TransferStatus\022\037\n"
           + "\033TRANSFER_STATUS_UNSPECIFIED\020\000\022\034\n"
           + "\030TRANSFER_STATUS_MIGRATED\020\001\022\037\n"
-          + "\033TRANSFER_STATUS_TRANSFERRED\020\0022\336-\n"
+          + "\033TRANSFER_STATUS_TRANSFERRED\020\0022\217<\n"
           + "\016CatalogService\022\352\001\n"
-          + "\017CreateEntryType\0220.google.cloud.data"
-          + "plex.v1.CreateEntryTypeRequest\032\035.google.longrunning.Operation\"\205\001\312A\036\n"
-          + "\tEntryType\022\021OperationMetadata\332A\037parent,entry_type,en"
-          + "try_type_id\202\323\344\223\002<\"./v1/{parent=projects/*/locations/*}/entryTypes:\n"
+          + "\017CreateEntryType\0220.google.cloud.dataplex.v"
+          + "1.CreateEntryTypeRequest\032\035.google.longrunning.Operation\"\205\001\312A\036\n"
+          + "\tEntryType\022\021OperationMetadata\332A\037parent,entry_type,entry_ty"
+          + "pe_id\202\323\344\223\002<\"./v1/{parent=projects/*/locations/*}/entryTypes:\n"
           + "entry_type\022\354\001\n"
-          + "\017UpdateEntryType\0220.google.cloud.dataple"
-          + "x.v1.UpdateEntryTypeRequest\032\035.google.longrunning.Operation\"\207\001\312A\036\n"
-          + "\tEntryType\022\021OperationMetadata\332A\026entry_type,update_mask\202"
-          + "\323\344\223\002G29/v1/{entry_type.name=projects/*/locations/*/entryTypes/*}:\n"
+          + "\017UpdateEntryType\0220.google.cloud.dataplex.v1.U"
+          + "pdateEntryTypeRequest\032\035.google.longrunning.Operation\"\207\001\312A\036\n"
+          + "\tEntryType\022\021Operation"
+          + "Metadata\332A\026entry_type,update_mask\202\323\344\223\002G2"
+          + "9/v1/{entry_type.name=projects/*/locations/*/entryTypes/*}:\n"
           + "entry_type\022\316\001\n"
-          + "\017DeleteEntryType\0220.google.cloud.dataplex"
-          + ".v1.DeleteEntryTypeRequest\032\035.google.longrunning.Operation\"j\312A*\n"
-          + "\025google.protobuf."
-          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0020*./"
-          + "v1/{name=projects/*/locations/*/entryTypes/*}\022\264\001\n"
-          + "\016ListEntryTypes\022/.google.cloud.dataplex.v1.ListEntryTypesRequest\0320.goog"
-          + "le.cloud.dataplex.v1.ListEntryTypesRespo"
-          + "nse\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/entryTypes\022\241\001\n"
-          + "\014GetEntryType\022-.google.cloud.dataplex.v1.GetEntr"
-          + "yTypeRequest\032#.google.cloud.dataplex.v1."
-          + "EntryType\"=\332A\004name\202\323\344\223\0020\022./v1/{name=projects/*/locations/*/entryTypes/*}\022\361\001\n"
-          + "\020CreateAspectType\0221.google.cloud.dataplex.v1"
-          + ".CreateAspectTypeRequest\032\035.google.longrunning.Operation\"\212\001\312A\037\n\n"
-          + "AspectType\022\021OperationMetadata\332A!parent,aspect_type,aspect",
-      "_type_id\202\323\344\223\002>\"//v1/{parent=projects/*/l"
-          + "ocations/*}/aspectTypes:\013aspect_type\022\363\001\n"
-          + "\020UpdateAspectType\0221.google.cloud.dataple"
-          + "x.v1.UpdateAspectTypeRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\214\001\312A\037\n\nAspectType\022\021O"
-          + "perationMetadata\332A\027aspect_type,update_ma"
-          + "sk\202\323\344\223\002J2;/v1/{aspect_type.name=projects"
-          + "/*/locations/*/aspectTypes/*}:\013aspect_ty"
-          + "pe\022\321\001\n\020DeleteAspectType\0221.google.cloud.d"
-          + "ataplex.v1.DeleteAspectTypeRequest\032\035.goo"
-          + "gle.longrunning.Operation\"k\312A*\n\025google.p"
-          + "rotobuf.Empty\022\021OperationMetadata\332A\004name\202"
-          + "\323\344\223\0021*//v1/{name=projects/*/locations/*/"
-          + "aspectTypes/*}\022\270\001\n\017ListAspectTypes\0220.goo"
-          + "gle.cloud.dataplex.v1.ListAspectTypesReq"
-          + "uest\0321.google.cloud.dataplex.v1.ListAspe"
-          + "ctTypesResponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{p"
-          + "arent=projects/*/locations/*}/aspectType"
-          + "s\022\245\001\n\rGetAspectType\022..google.cloud.datap"
-          + "lex.v1.GetAspectTypeRequest\032$.google.clo"
-          + "ud.dataplex.v1.AspectType\">\332A\004name\202\323\344\223\0021"
-          + "\022//v1/{name=projects/*/locations/*/aspec"
-          + "tTypes/*}\022\361\001\n\020CreateEntryGroup\0221.google."
-          + "cloud.dataplex.v1.CreateEntryGroupReques"
-          + "t\032\035.google.longrunning.Operation\"\212\001\312A\037\n\n"
-          + "EntryGroup\022\021OperationMetadata\332A!parent,e"
-          + "ntry_group,entry_group_id\202\323\344\223\002>\"//v1/{pa"
-          + "rent=projects/*/locations/*}/entryGroups"
-          + ":\013entry_group\022\363\001\n\020UpdateEntryGroup\0221.goo"
-          + "gle.cloud.dataplex.v1.UpdateEntryGroupRe"
-          + "quest\032\035.google.longrunning.Operation\"\214\001\312"
-          + "A\037\n\nEntryGroup\022\021OperationMetadata\332A\027entr"
-          + "y_group,update_mask\202\323\344\223\002J2;/v1/{entry_gr"
-          + "oup.name=projects/*/locations/*/entryGro"
-          + "ups/*}:\013entry_group\022\321\001\n\020DeleteEntryGroup"
-          + "\0221.google.cloud.dataplex.v1.DeleteEntryG"
-          + "roupRequest\032\035.google.longrunning.Operati"
-          + "on\"k\312A*\n\025google.protobuf.Empty\022\021Operatio"
-          + "nMetadata\332A\004name\202\323\344\223\0021*//v1/{name=projec"
-          + "ts/*/locations/*/entryGroups/*}\022\270\001\n\017List"
-          + "EntryGroups\0220.google.cloud.dataplex.v1.L"
-          + "istEntryGroupsRequest\0321.google.cloud.dat"
-          + "aplex.v1.ListEntryGroupsResponse\"@\332A\006par"
-          + "ent\202\323\344\223\0021\022//v1/{parent=projects/*/locati"
-          + "ons/*}/entryGroups\022\245\001\n\rGetEntryGroup\022..g"
-          + "oogle.cloud.dataplex.v1.GetEntryGroupReq"
-          + "uest\032$.google.cloud.dataplex.v1.EntryGro"
-          + "up\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/"
-          + "locations/*/entryGroups/*}\022\276\001\n\013CreateEnt"
-          + "ry\022,.google.cloud.dataplex.v1.CreateEntr"
-          + "yRequest\032\037.google.cloud.dataplex.v1.Entr"
-          + "y\"`\332A\025parent,entry,entry_id\202\323\344\223\002B\"9/v1/{"
-          + "parent=projects/*/locations/*/entryGroup"
-          + "s/*}/entries:\005entry\022\301\001\n\013UpdateEntry\022,.go"
-          + "ogle.cloud.dataplex.v1.UpdateEntryReques"
-          + "t\032\037.google.cloud.dataplex.v1.Entry\"c\332A\021e"
-          + "ntry,update_mask\202\323\344\223\002I2@/v1/{entry.name="
-          + "projects/*/locations/*/entryGroups/*/ent"
-          + "ries/**}:\005entry\022\247\001\n\013DeleteEntry\022,.google"
-          + ".cloud.dataplex.v1.DeleteEntryRequest\032\037."
-          + "google.cloud.dataplex.v1.Entry\"I\332A\004name\202"
-          + "\323\344\223\002<*:/v1/{name=projects/*/locations/*/"
-          + "entryGroups/*/entries/**}\022\266\001\n\013ListEntrie"
-          + "s\022,.google.cloud.dataplex.v1.ListEntries"
-          + "Request\032-.google.cloud.dataplex.v1.ListE"
-          + "ntriesResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1/{pa"
-          + "rent=projects/*/locations/*/entryGroups/"
-          + "*}/entries\022\241\001\n\010GetEntry\022).google.cloud.d"
-          + "ataplex.v1.GetEntryRequest\032\037.google.clou"
-          + "d.dataplex.v1.Entry\"I\332A\004name\202\323\344\223\002<\022:/v1/"
-          + "{name=projects/*/locations/*/entryGroups"
-          + "/*/entries/**}\022\223\001\n\013LookupEntry\022,.google."
-          + "cloud.dataplex.v1.LookupEntryRequest\032\037.g"
-          + "oogle.cloud.dataplex.v1.Entry\"5\202\323\344\223\002/\022-/"
-          + "v1/{name=projects/*/locations/*}:lookupE"
-          + "ntry\022\266\001\n\rSearchEntries\022..google.cloud.da"
-          + "taplex.v1.SearchEntriesRequest\032/.google."
-          + "cloud.dataplex.v1.SearchEntriesResponse\""
-          + "D\332A\nname,query\202\323\344\223\0021\"//v1/{name=projects"
-          + "/*/locations/*}:searchEntries\022\370\001\n\021Create"
-          + "MetadataJob\0222.google.cloud.dataplex.v1.C"
-          + "reateMetadataJobRequest\032\035.google.longrun"
-          + "ning.Operation\"\217\001\312A \n\013MetadataJob\022\021Opera"
-          + "tionMetadata\332A#parent,metadata_job,metad"
-          + "ata_job_id\202\323\344\223\002@\"0/v1/{parent=projects/*"
-          + "/locations/*}/metadataJobs:\014metadata_job"
-          + "\022\251\001\n\016GetMetadataJob\022/.google.cloud.datap"
-          + "lex.v1.GetMetadataJobRequest\032%.google.cl"
-          + "oud.dataplex.v1.MetadataJob\"?\332A\004name\202\323\344\223"
-          + "\0022\0220/v1/{name=projects/*/locations/*/met"
-          + "adataJobs/*}\022\274\001\n\020ListMetadataJobs\0221.goog"
-          + "le.cloud.dataplex.v1.ListMetadataJobsReq"
-          + "uest\0322.google.cloud.dataplex.v1.ListMeta"
-          + "dataJobsResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{"
-          + "parent=projects/*/locations/*}/metadataJ"
-          + "obs\022\252\001\n\021CancelMetadataJob\0222.google.cloud"
-          + ".dataplex.v1.CancelMetadataJobRequest\032\026."
-          + "google.protobuf.Empty\"I\332A\004name\202\323\344\223\002<\"7/v"
-          + "1/{name=projects/*/locations/*/metadataJ"
-          + "obs/*}:cancel:\001*\022\334\001\n\017CreateEntryLink\0220.g"
-          + "oogle.cloud.dataplex.v1.CreateEntryLinkR"
-          + "equest\032#.google.cloud.dataplex.v1.EntryL"
-          + "ink\"r\332A\037parent,entry_link,entry_link_id\202"
-          + "\323\344\223\002J\"</v1/{parent=projects/*/locations/"
-          + "*/entryGroups/*}/entryLinks:\nentry_link\022"
-          + "\265\001\n\017DeleteEntryLink\0220.google.cloud.datap"
-          + "lex.v1.DeleteEntryLinkRequest\032#.google.c"
-          + "loud.dataplex.v1.EntryLink\"K\332A\004name\202\323\344\223\002"
-          + ">*</v1/{name=projects/*/locations/*/entr"
-          + "yGroups/*/entryLinks/*}\022\257\001\n\014GetEntryLink"
-          + "\022-.google.cloud.dataplex.v1.GetEntryLink"
-          + "Request\032#.google.cloud.dataplex.v1.Entry"
-          + "Link\"K\332A\004name\202\323\344\223\002>\022</v1/{name=projects/"
-          + "*/locations/*/entryGroups/*/entryLinks/*"
-          + "}\032K\312A\027dataplex.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\274"
-          + "\001\n\034com.google.cloud.dataplex.v1B\014Catalog"
-          + "ProtoP\001Z8cloud.google.com/go/dataplex/ap"
-          + "iv1/dataplexpb;dataplexpb\252\002\030Google.Cloud"
-          + ".Dataplex.V1\312\002\030Google\\Cloud\\Dataplex\\V1\352"
-          + "\002\033Google::Cloud::Dataplex::V1b\006proto3"
+          + "\017DeleteEntryType\0220.google.cloud.dataplex.v1.De"
+          + "leteEntryTypeRequest\032\035.google.longrunning.Operation\"j\312A*\n"
+          + "\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\0020*./v1/{na"
+          + "me=projects/*/locations/*/entryTypes/*}\022\264\001\n"
+          + "\016ListEntryTypes\022/.google.cloud.dataplex.v1.ListEntryTypesRequest\0320.google.clo"
+          + "ud.dataplex.v1.ListEntryTypesResponse\"?\332"
+          + "A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/entryTypes\022\241\001\n"
+          + "\014GetEntryType\022-.google.cloud.dataplex.v1.GetEntryTypeR"
+          + "equest\032#.google.cloud.dataplex.v1.EntryT"
+          + "ype\"=\332A\004name\202\323\344\223\0020\022./v1/{name=projects/*/locations/*/entryTypes/*}\022\361\001\n"
+          + "\020CreateAspectType\0221.google.cloud.dataplex.v1.Creat"
+          + "eAspectTypeRequest\032\035.google.longrunning.Operation\"\212\001\312A\037\n\n"
+          + "AspectType\022\021OperationMetadata\332A!parent,aspect_type,aspect_type_"
+          + "id\202\323\344\223\002>\"//v1/{parent=projects/*/locations/*}/aspectTypes:\013aspect_type\022\363\001\n"
+          + "\020UpdateAspectType\0221.google.cloud.dataplex.v1.U"
+          + "pdateAspectTypeRequest\032\035.google.longrunning.Operation\"\214\001\312A\037\n\n"
+          + "AspectType\022\021OperationMetadata\332A\027aspect_type,update_mask\202\323\344\223"
+          + "\002J2;/v1/{aspect_type.name=projects/*/locations/*/aspectTypes/*}:\013aspect_type\022\321\001\n"
+          + "\020DeleteAspectType\0221.google.cloud.dataple"
+          + "x.v1.DeleteAspectTypeRequest\032\035.google.longrunning.Operation\"k\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0021*"
+          + "//v1/{name=projects/*/locations/*/aspectTypes/*}\022\270\001\n"
+          + "\017ListAspectTypes\0220.google.cloud.dataplex.v1.ListAspectTypesRequest\0321"
+          + ".google.cloud.dataplex.v1.ListAspectType"
+          + "sResponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/aspectTypes\022\245\001\n\r"
+          + "GetAspectType\022..google.cloud.dataplex.v1.GetAspectTypeRequest\032$.google.cloud.dat"
+          + "aplex.v1.AspectType\">\332A\004name\202\323\344\223\0021\022//v1/"
+          + "{name=projects/*/locations/*/aspectTypes/*}\022\361\001\n"
+          + "\020CreateEntryGroup\0221.google.cloud."
+          + "dataplex.v1.CreateEntryGroupRequest\032\035.google.longrunning.Operation\"\212\001\312A\037\n\n"
+          + "EntryGroup\022\021OperationMetadata\332A!parent,entry_g"
+          + "roup,entry_group_id\202\323\344\223\002>\"//v1/{parent=p"
+          + "rojects/*/locations/*}/entryGroups:\013entry_group\022\363\001\n"
+          + "\020UpdateEntryGroup\0221.google.cl"
+          + "oud.dataplex.v1.UpdateEntryGroupRequest\032\035.google.longrunning.Operation\"\214\001\312A\037\n\n"
+          + "EntryGroup\022\021OperationMetadata\332A\027entry_grou"
+          + "p,update_mask\202\323\344\223\002J2;/v1/{entry_group.na"
+          + "me=projects/*/locations/*/entryGroups/*}:\013entry_group\022\321\001\n"
+          + "\020DeleteEntryGroup\0221.google.cloud.dataplex.v1.DeleteEntryGroupRe"
+          + "quest\032\035.google.longrunning.Operation\"k\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetad"
+          + "ata\332A\004name\202\323\344\223\0021*//v1/{name=projects/*/locations/*/entryGroups/*}\022\270\001\n"
+          + "\017ListEntryGroups\0220.google.cloud.dataplex.v1.ListEnt"
+          + "ryGroupsRequest\0321.google.cloud.dataplex."
+          + "v1.ListEntryGroupsResponse\"@\332A\006parent\202\323\344"
+          + "\223\0021\022//v1/{parent=projects/*/locations/*}/entryGroups\022\245\001\n\r"
+          + "GetEntryGroup\022..google.cloud.dataplex.v1.GetEntryGroupRequest\032$"
+          + ".google.cloud.dataplex.v1.EntryGroup\">\332A"
+          + "\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/entryGroups/*}\022\276\001\n"
+          + "\013CreateEntry\022,.google.cloud.dataplex.v1.CreateEntryReque"
+          + "st\032\037.google.cloud.dataplex.v1.Entry\"`\332A\025"
+          + "parent,entry,entry_id\202\323\344\223\002B\"9/v1/{parent"
+          + "=projects/*/locations/*/entryGroups/*}/entries:\005entry\022\301\001\n"
+          + "\013UpdateEntry\022,.google.cloud.dataplex.v1.UpdateEntryRequest\032\037.go"
+          + "ogle.cloud.dataplex.v1.Entry\"c\332A\021entry,u"
+          + "pdate_mask\202\323\344\223\002I2@/v1/{entry.name=projec"
+          + "ts/*/locations/*/entryGroups/*/entries/**}:\005entry\022\247\001\n"
+          + "\013DeleteEntry\022,.google.cloud.dataplex.v1.DeleteEntryRequest\032\037.google"
+          + ".cloud.dataplex.v1.Entry\"I\332A\004name\202\323\344\223\002<*"
+          + ":/v1/{name=projects/*/locations/*/entryGroups/*/entries/**}\022\266\001\n"
+          + "\013ListEntries\022,.google.cloud.dataplex.v1.ListEntriesReques"
+          + "t\032-.google.cloud.dataplex.v1.ListEntries"
+          + "Response\"J\332A\006parent\202\323\344\223\002;\0229/v1/{parent=p"
+          + "rojects/*/locations/*/entryGroups/*}/entries\022\241\001\n"
+          + "\010GetEntry\022).google.cloud.dataplex.v1.GetEntryRequest\032\037.google.cloud.data"
+          + "plex.v1.Entry\"I\332A\004name\202\323\344\223\002<\022:/v1/{name="
+          + "projects/*/locations/*/entryGroups/*/entries/**}\022\223\001\n"
+          + "\013LookupEntry\022,.google.cloud.dataplex.v1.LookupEntryRequest\032\037.google."
+          + "cloud.dataplex.v1.Entry\"5\202\323\344\223\002/\022-/v1/{na"
+          + "me=projects/*/locations/*}:lookupEntry\022\266\001\n\r"
+          + "SearchEntries\022..google.cloud.dataplex"
+          + ".v1.SearchEntriesRequest\032/.google.cloud.dataplex.v1.SearchEntriesResponse\"D\332A\n"
+          + "name,query\202\323\344\223\0021\"//v1/{name=projects/*/locations/*}:searchEntries\022\370\001\n"
+          + "\021CreateMetadataJob\0222.google.cloud.dataplex.v1.CreateM"
+          + "etadataJobRequest\032\035.google.longrunning.Operation\"\217\001\312A \n"
+          + "\013MetadataJob\022\021OperationMetadata\332A#parent,metadata_job,metadata_jo"
+          + "b_id\202\323\344\223\002@\"0/v1/{parent=projects/*/locations/*}/metadataJobs:\014metadata_job\022\251\001\n"
+          + "\016GetMetadataJob\022/.google.cloud.dataplex.v1"
+          + ".GetMetadataJobRequest\032%.google.cloud.da"
+          + "taplex.v1.MetadataJob\"?\332A\004name\202\323\344\223\0022\0220/v"
+          + "1/{name=projects/*/locations/*/metadataJobs/*}\022\274\001\n"
+          + "\020ListMetadataJobs\0221.google.cloud.dataplex.v1.ListMetadataJobsRequest\0322"
+          + ".google.cloud.dataplex.v1.ListMetadataJo"
+          + "bsResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{parent"
+          + "=projects/*/locations/*}/metadataJobs\022\252\001\n"
+          + "\021CancelMetadataJob\0222.google.cloud.datap"
+          + "lex.v1.CancelMetadataJobRequest\032\026.google"
+          + ".protobuf.Empty\"I\332A\004name\202\323\344\223\002<\"7/v1/{nam"
+          + "e=projects/*/locations/*/metadataJobs/*}:cancel:\001*\022\334\001\n"
+          + "\017CreateEntryLink\0220.google.cloud.dataplex.v1.CreateEntryLinkRequest"
+          + "\032#.google.cloud.dataplex.v1.EntryLink\"r\332"
+          + "A\037parent,entry_link,entry_link_id\202\323\344\223\002J\""
+          + "</v1/{parent=projects/*/locations/*/entryGroups/*}/entryLinks:\n"
+          + "entry_link\022\323\001\n"
+          + "\017UpdateEntryLink\0220.google.cloud.dataplex.v1"
+          + ".UpdateEntryLinkRequest\032#.google.cloud.dataplex.v1.EntryLink\"i\332A\n"
+          + "entry_link\202\323\344\223\002"
+          + "V2H/v1/{entry_link.name=projects/*/locations/*/entryGroups/*/entryLinks/**}:\n"
+          + "entry_link\022\265\001\n"
+          + "\017DeleteEntryLink\0220.google.cloud.dataplex.v1.DeleteEntryLinkRequest\032#."
+          + "google.cloud.dataplex.v1.EntryLink\"K\332A\004n"
+          + "ame\202\323\344\223\002>*</v1/{name=projects/*/locations/*/entryGroups/*/entryLinks/*}\022\265\001\n"
+          + "\020LookupEntryLinks\0221.google.cloud.dataplex.v1."
+          + "LookupEntryLinksRequest\0322.google.cloud.d"
+          + "ataplex.v1.LookupEntryLinksResponse\":\202\323\344"
+          + "\223\0024\0222/v1/{name=projects/*/locations/*}:lookupEntryLinks\022\254\001\n\r"
+          + "LookupContext\022..google.cloud.dataplex.v1.LookupContextReques"
+          + "t\032/.google.cloud.dataplex.v1.LookupConte"
+          + "xtResponse\":\202\323\344\223\0024\"//v1/{name=projects/*/locations/*}:lookupContext:\001*\022\257\001\n"
+          + "\014GetEntryLink\022-.google.cloud.dataplex.v1.GetEn"
+          + "tryLinkRequest\032#.google.cloud.dataplex.v"
+          + "1.EntryLink\"K\332A\004name\202\323\344\223\002>\022</v1/{name=pr"
+          + "ojects/*/locations/*/entryGroups/*/entryLinks/*}\022\377\001\n"
+          + "\022CreateMetadataFeed\0223.google.cloud.dataplex.v1.CreateMetadataFeedReq"
+          + "uest\032\035.google.longrunning.Operation\"\224\001\312A!\n"
+          + "\014MetadataFeed\022\021OperationMetadata\332A%par"
+          + "ent,metadata_feed,metadata_feed_id\202\323\344\223\002B"
+          + "\"1/v1/{parent=projects/*/locations/*}/metadataFeeds:\r"
+          + "metadata_feed\022\255\001\n"
+          + "\017GetMetadataFeed\0220.google.cloud.dataplex.v1.GetMet"
+          + "adataFeedRequest\032&.google.cloud.dataplex"
+          + ".v1.MetadataFeed\"@\332A\004name\202\323\344\223\0023\0221/v1/{na"
+          + "me=projects/*/locations/*/metadataFeeds/*}\022\300\001\n"
+          + "\021ListMetadataFeeds\0222.google.cloud.dataplex.v1.ListMetadataFeedsRequest\0323.g"
+          + "oogle.cloud.dataplex.v1.ListMetadataFeed"
+          + "sResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1/{parent="
+          + "projects/*/locations/*}/metadataFeeds\022\327\001\n"
+          + "\022DeleteMetadataFeed\0223.google.cloud.data"
+          + "plex.v1.DeleteMetadataFeedRequest\032\035.google.longrunning.Operation\"m\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323"
+          + "\344\223\0023*1/v1/{name=projects/*/locations/*/metadataFeeds/*}\022\201\002\n"
+          + "\022UpdateMetadataFeed\0223.google.cloud.dataplex.v1.UpdateMetadata"
+          + "FeedRequest\032\035.google.longrunning.Operation\"\226\001\312A!\n"
+          + "\014MetadataFeed\022\021OperationMetadat"
+          + "a\332A\031metadata_feed,update_mask\202\323\344\223\002P2?/v1"
+          + "/{metadata_feed.name=projects/*/locations/*/metadataFeeds/*}:\r"
+          + "metadata_feed\032\353\001\312A\027dataplex.googleapis.com\322A\315\001https://www."
+          + "googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-platfor"
+          + "m.read-only,https://www.googleapis.com/a"
+          + "uth/dataplex.read-write,https://www.googleapis.com/auth/dataplex.readonlyB\274\001\n"
+          + "\034com.google.cloud.dataplex.v1B\014CatalogProto"
+          + "P\001Z8cloud.google.com/go/dataplex/apiv1/d"
+          + "ataplexpb;dataplexpb\252\002\030Google.Cloud.Data"
+          + "plex.V1\312\002\030Google\\Cloud\\Dataplex\\V1\352\002\033Goo"
+          + "gle::Cloud::Dataplex::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1416,8 +1603,32 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name", "View", "AspectTypes", "Paths", "Entry",
             });
-    internal_static_google_cloud_dataplex_v1_SearchEntriesRequest_descriptor =
+    internal_static_google_cloud_dataplex_v1_LookupContextRequest_descriptor =
         getDescriptor().getMessageType(32);
+    internal_static_google_cloud_dataplex_v1_LookupContextRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_LookupContextRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Resources", "Options",
+            });
+    internal_static_google_cloud_dataplex_v1_LookupContextRequest_OptionsEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_LookupContextRequest_descriptor.getNestedType(0);
+    internal_static_google_cloud_dataplex_v1_LookupContextRequest_OptionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_LookupContextRequest_OptionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataplex_v1_LookupContextResponse_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_cloud_dataplex_v1_LookupContextResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_LookupContextResponse_descriptor,
+            new java.lang.String[] {
+              "Context",
+            });
+    internal_static_google_cloud_dataplex_v1_SearchEntriesRequest_descriptor =
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_dataplex_v1_SearchEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_SearchEntriesRequest_descriptor,
@@ -1425,7 +1636,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Name", "Query", "PageSize", "PageToken", "OrderBy", "Scope", "SemanticSearch",
             });
     internal_static_google_cloud_dataplex_v1_SearchEntriesResult_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_dataplex_v1_SearchEntriesResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_SearchEntriesResult_descriptor,
@@ -1441,7 +1652,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "DataplexEntry",
             });
     internal_static_google_cloud_dataplex_v1_SearchEntriesResponse_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_dataplex_v1_SearchEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_SearchEntriesResponse_descriptor,
@@ -1449,7 +1660,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Results", "TotalSize", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_dataplex_v1_ImportItem_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_dataplex_v1_ImportItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ImportItem_descriptor,
@@ -1457,7 +1668,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Entry", "EntryLink", "UpdateMask", "AspectKeys",
             });
     internal_static_google_cloud_dataplex_v1_CreateMetadataJobRequest_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_dataplex_v1_CreateMetadataJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_CreateMetadataJobRequest_descriptor,
@@ -1465,7 +1676,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Parent", "MetadataJob", "MetadataJobId", "ValidateOnly",
             });
     internal_static_google_cloud_dataplex_v1_GetMetadataJobRequest_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_dataplex_v1_GetMetadataJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_GetMetadataJobRequest_descriptor,
@@ -1473,7 +1684,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataplex_v1_ListMetadataJobsRequest_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(40);
     internal_static_google_cloud_dataplex_v1_ListMetadataJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListMetadataJobsRequest_descriptor,
@@ -1481,7 +1692,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_dataplex_v1_ListMetadataJobsResponse_descriptor =
-        getDescriptor().getMessageType(39);
+        getDescriptor().getMessageType(41);
     internal_static_google_cloud_dataplex_v1_ListMetadataJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListMetadataJobsResponse_descriptor,
@@ -1489,7 +1700,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "MetadataJobs", "NextPageToken", "UnreachableLocations",
             });
     internal_static_google_cloud_dataplex_v1_CancelMetadataJobRequest_descriptor =
-        getDescriptor().getMessageType(40);
+        getDescriptor().getMessageType(42);
     internal_static_google_cloud_dataplex_v1_CancelMetadataJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_CancelMetadataJobRequest_descriptor,
@@ -1497,7 +1708,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataplex_v1_MetadataJob_descriptor =
-        getDescriptor().getMessageType(41);
+        getDescriptor().getMessageType(43);
     internal_static_google_cloud_dataplex_v1_MetadataJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_MetadataJob_descriptor,
@@ -1601,12 +1812,12 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_dataplex_v1_EntryLink_descriptor =
-        getDescriptor().getMessageType(42);
+        getDescriptor().getMessageType(44);
     internal_static_google_cloud_dataplex_v1_EntryLink_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_EntryLink_descriptor,
             new java.lang.String[] {
-              "Name", "EntryLinkType", "CreateTime", "UpdateTime", "EntryReferences",
+              "Name", "EntryLinkType", "CreateTime", "UpdateTime", "Aspects", "EntryReferences",
             });
     internal_static_google_cloud_dataplex_v1_EntryLink_EntryReference_descriptor =
         internal_static_google_cloud_dataplex_v1_EntryLink_descriptor.getNestedType(0);
@@ -1616,29 +1827,149 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name", "Path", "Type",
             });
+    internal_static_google_cloud_dataplex_v1_EntryLink_AspectsEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_EntryLink_descriptor.getNestedType(1);
+    internal_static_google_cloud_dataplex_v1_EntryLink_AspectsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_EntryLink_AspectsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_dataplex_v1_CreateEntryLinkRequest_descriptor =
-        getDescriptor().getMessageType(43);
+        getDescriptor().getMessageType(45);
     internal_static_google_cloud_dataplex_v1_CreateEntryLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_CreateEntryLinkRequest_descriptor,
             new java.lang.String[] {
               "Parent", "EntryLinkId", "EntryLink",
             });
+    internal_static_google_cloud_dataplex_v1_UpdateEntryLinkRequest_descriptor =
+        getDescriptor().getMessageType(46);
+    internal_static_google_cloud_dataplex_v1_UpdateEntryLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_UpdateEntryLinkRequest_descriptor,
+            new java.lang.String[] {
+              "EntryLink", "AllowMissing", "AspectKeys",
+            });
     internal_static_google_cloud_dataplex_v1_DeleteEntryLinkRequest_descriptor =
-        getDescriptor().getMessageType(44);
+        getDescriptor().getMessageType(47);
     internal_static_google_cloud_dataplex_v1_DeleteEntryLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DeleteEntryLinkRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_dataplex_v1_LookupEntryLinksRequest_descriptor =
+        getDescriptor().getMessageType(48);
+    internal_static_google_cloud_dataplex_v1_LookupEntryLinksRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_LookupEntryLinksRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Entry", "EntryMode", "EntryLinkTypes", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_dataplex_v1_LookupEntryLinksResponse_descriptor =
+        getDescriptor().getMessageType(49);
+    internal_static_google_cloud_dataplex_v1_LookupEntryLinksResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_LookupEntryLinksResponse_descriptor,
+            new java.lang.String[] {
+              "EntryLinks", "NextPageToken",
+            });
     internal_static_google_cloud_dataplex_v1_GetEntryLinkRequest_descriptor =
-        getDescriptor().getMessageType(45);
+        getDescriptor().getMessageType(50);
     internal_static_google_cloud_dataplex_v1_GetEntryLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_GetEntryLinkRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_descriptor =
+        getDescriptor().getMessageType(51);
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_MetadataFeed_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "Uid",
+              "Scope",
+              "Filters",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "PubsubTopic",
+              "Endpoint",
+            });
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_Scope_descriptor =
+        internal_static_google_cloud_dataplex_v1_MetadataFeed_descriptor.getNestedType(0);
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_Scope_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_MetadataFeed_Scope_descriptor,
+            new java.lang.String[] {
+              "OrganizationLevel", "Projects", "EntryGroups",
+            });
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_Filters_descriptor =
+        internal_static_google_cloud_dataplex_v1_MetadataFeed_descriptor.getNestedType(1);
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_Filters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_MetadataFeed_Filters_descriptor,
+            new java.lang.String[] {
+              "EntryTypes", "AspectTypes", "ChangeTypes",
+            });
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_LabelsEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_MetadataFeed_descriptor.getNestedType(2);
+    internal_static_google_cloud_dataplex_v1_MetadataFeed_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_MetadataFeed_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataplex_v1_CreateMetadataFeedRequest_descriptor =
+        getDescriptor().getMessageType(52);
+    internal_static_google_cloud_dataplex_v1_CreateMetadataFeedRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_CreateMetadataFeedRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "MetadataFeed", "MetadataFeedId", "ValidateOnly",
+            });
+    internal_static_google_cloud_dataplex_v1_GetMetadataFeedRequest_descriptor =
+        getDescriptor().getMessageType(53);
+    internal_static_google_cloud_dataplex_v1_GetMetadataFeedRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_GetMetadataFeedRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_dataplex_v1_ListMetadataFeedsRequest_descriptor =
+        getDescriptor().getMessageType(54);
+    internal_static_google_cloud_dataplex_v1_ListMetadataFeedsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_ListMetadataFeedsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_dataplex_v1_ListMetadataFeedsResponse_descriptor =
+        getDescriptor().getMessageType(55);
+    internal_static_google_cloud_dataplex_v1_ListMetadataFeedsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_ListMetadataFeedsResponse_descriptor,
+            new java.lang.String[] {
+              "MetadataFeeds", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_dataplex_v1_DeleteMetadataFeedRequest_descriptor =
+        getDescriptor().getMessageType(56);
+    internal_static_google_cloud_dataplex_v1_DeleteMetadataFeedRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DeleteMetadataFeedRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_dataplex_v1_UpdateMetadataFeedRequest_descriptor =
+        getDescriptor().getMessageType(57);
+    internal_static_google_cloud_dataplex_v1_UpdateMetadataFeedRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_UpdateMetadataFeedRequest_descriptor,
+            new java.lang.String[] {
+              "MetadataFeed", "UpdateMask", "ValidateOnly",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

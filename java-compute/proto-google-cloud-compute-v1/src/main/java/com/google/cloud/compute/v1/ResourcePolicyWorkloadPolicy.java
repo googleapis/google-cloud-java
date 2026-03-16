@@ -53,6 +53,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
 
   private ResourcePolicyWorkloadPolicy() {
     acceleratorTopology_ = "";
+    acceleratorTopologyMode_ = "";
     maxTopologyDistance_ = "";
     type_ = "";
   }
@@ -70,6 +71,184 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.class,
             com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.AcceleratorTopologyMode}
+   */
+  public enum AcceleratorTopologyMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ACCELERATOR_TOPOLOGY_MODE = 0;</code>
+     */
+    UNDEFINED_ACCELERATOR_TOPOLOGY_MODE(0),
+    /**
+     *
+     *
+     * <pre>
+     * The interconnected chips are pre-configured at the time of VM creation.
+     * </pre>
+     *
+     * <code>AUTO_CONNECT = 491872826;</code>
+     */
+    AUTO_CONNECT(491872826),
+    /**
+     *
+     *
+     * <pre>
+     * The interconnected chips are connected on demand. At the time of VM
+     * creation, the chips are not connected.
+     * </pre>
+     *
+     * <code>PROVISION_ONLY = 399134966;</code>
+     */
+    PROVISION_ONLY(399134966),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AcceleratorTopologyMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ACCELERATOR_TOPOLOGY_MODE = 0;</code>
+     */
+    public static final int UNDEFINED_ACCELERATOR_TOPOLOGY_MODE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The interconnected chips are pre-configured at the time of VM creation.
+     * </pre>
+     *
+     * <code>AUTO_CONNECT = 491872826;</code>
+     */
+    public static final int AUTO_CONNECT_VALUE = 491872826;
+
+    /**
+     *
+     *
+     * <pre>
+     * The interconnected chips are connected on demand. At the time of VM
+     * creation, the chips are not connected.
+     * </pre>
+     *
+     * <code>PROVISION_ONLY = 399134966;</code>
+     */
+    public static final int PROVISION_ONLY_VALUE = 399134966;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AcceleratorTopologyMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AcceleratorTopologyMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ACCELERATOR_TOPOLOGY_MODE;
+        case 491872826:
+          return AUTO_CONNECT;
+        case 399134966:
+          return PROVISION_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AcceleratorTopologyMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AcceleratorTopologyMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AcceleratorTopologyMode>() {
+              public AcceleratorTopologyMode findValueByNumber(int number) {
+                return AcceleratorTopologyMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final AcceleratorTopologyMode[] VALUES = values();
+
+    public static AcceleratorTopologyMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AcceleratorTopologyMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.AcceleratorTopologyMode)
   }
 
   /**
@@ -244,7 +423,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDescriptor()
           .getEnumTypes()
-          .get(0);
+          .get(1);
     }
 
     private static final MaxTopologyDistance[] VALUES = values();
@@ -418,7 +597,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy.getDescriptor()
           .getEnumTypes()
-          .get(1);
+          .get(2);
     }
 
     private static final Type[] VALUES = values();
@@ -515,6 +694,81 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     }
   }
 
+  public static final int ACCELERATOR_TOPOLOGY_MODE_FIELD_NUMBER = 284293791;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acceleratorTopologyMode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * Check the AcceleratorTopologyMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string accelerator_topology_mode = 284293791;</code>
+   *
+   * @return Whether the acceleratorTopologyMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceleratorTopologyMode() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * Check the AcceleratorTopologyMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string accelerator_topology_mode = 284293791;</code>
+   *
+   * @return The acceleratorTopologyMode.
+   */
+  @java.lang.Override
+  public java.lang.String getAcceleratorTopologyMode() {
+    java.lang.Object ref = acceleratorTopologyMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      acceleratorTopologyMode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * Check the AcceleratorTopologyMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string accelerator_topology_mode = 284293791;</code>
+   *
+   * @return The bytes for acceleratorTopologyMode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAcceleratorTopologyModeBytes() {
+    java.lang.Object ref = acceleratorTopologyMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      acceleratorTopologyMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MAX_TOPOLOGY_DISTANCE_FIELD_NUMBER = 7521706;
 
   @SuppressWarnings("serial")
@@ -534,7 +788,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasMaxTopologyDistance() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -606,7 +860,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -673,11 +927,14 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3575610, type_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7521706, maxTopologyDistance_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 284293791, acceleratorTopologyMode_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 389323203, acceleratorTopology_);
@@ -691,11 +948,16 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3575610, type_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7521706, maxTopologyDistance_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              284293791, acceleratorTopologyMode_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
@@ -721,6 +983,10 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     if (hasAcceleratorTopology()) {
       if (!getAcceleratorTopology().equals(other.getAcceleratorTopology())) return false;
     }
+    if (hasAcceleratorTopologyMode() != other.hasAcceleratorTopologyMode()) return false;
+    if (hasAcceleratorTopologyMode()) {
+      if (!getAcceleratorTopologyMode().equals(other.getAcceleratorTopologyMode())) return false;
+    }
     if (hasMaxTopologyDistance() != other.hasMaxTopologyDistance()) return false;
     if (hasMaxTopologyDistance()) {
       if (!getMaxTopologyDistance().equals(other.getMaxTopologyDistance())) return false;
@@ -743,6 +1009,10 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
     if (hasAcceleratorTopology()) {
       hash = (37 * hash) + ACCELERATOR_TOPOLOGY_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorTopology().hashCode();
+    }
+    if (hasAcceleratorTopologyMode()) {
+      hash = (37 * hash) + ACCELERATOR_TOPOLOGY_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorTopologyMode().hashCode();
     }
     if (hasMaxTopologyDistance()) {
       hash = (37 * hash) + MAX_TOPOLOGY_DISTANCE_FIELD_NUMBER;
@@ -894,6 +1164,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
       super.clear();
       bitField0_ = 0;
       acceleratorTopology_ = "";
+      acceleratorTopologyMode_ = "";
       maxTopologyDistance_ = "";
       type_ = "";
       return this;
@@ -938,12 +1209,16 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.maxTopologyDistance_ = maxTopologyDistance_;
+        result.acceleratorTopologyMode_ = acceleratorTopologyMode_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.type_ = type_;
+        result.maxTopologyDistance_ = maxTopologyDistance_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -966,14 +1241,19 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasAcceleratorTopologyMode()) {
+        acceleratorTopologyMode_ = other.acceleratorTopologyMode_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasMaxTopologyDistance()) {
         maxTopologyDistance_ = other.maxTopologyDistance_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1005,15 +1285,21 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 28604882
             case 60173650:
               {
                 maxTopologyDistance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 60173650
+            case -2020616966:
+              {
+                acceleratorTopologyMode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -2020616966
             case -1180381670:
               {
                 acceleratorTopology_ = input.readStringRequireUtf8();
@@ -1171,6 +1457,144 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
       return this;
     }
 
+    private java.lang.Object acceleratorTopologyMode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the connection mode for the accelerator topology. If not
+     * specified, the default is AUTO_CONNECT.
+     * Check the AcceleratorTopologyMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string accelerator_topology_mode = 284293791;</code>
+     *
+     * @return Whether the acceleratorTopologyMode field is set.
+     */
+    public boolean hasAcceleratorTopologyMode() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the connection mode for the accelerator topology. If not
+     * specified, the default is AUTO_CONNECT.
+     * Check the AcceleratorTopologyMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string accelerator_topology_mode = 284293791;</code>
+     *
+     * @return The acceleratorTopologyMode.
+     */
+    public java.lang.String getAcceleratorTopologyMode() {
+      java.lang.Object ref = acceleratorTopologyMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        acceleratorTopologyMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the connection mode for the accelerator topology. If not
+     * specified, the default is AUTO_CONNECT.
+     * Check the AcceleratorTopologyMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string accelerator_topology_mode = 284293791;</code>
+     *
+     * @return The bytes for acceleratorTopologyMode.
+     */
+    public com.google.protobuf.ByteString getAcceleratorTopologyModeBytes() {
+      java.lang.Object ref = acceleratorTopologyMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        acceleratorTopologyMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the connection mode for the accelerator topology. If not
+     * specified, the default is AUTO_CONNECT.
+     * Check the AcceleratorTopologyMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string accelerator_topology_mode = 284293791;</code>
+     *
+     * @param value The acceleratorTopologyMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorTopologyMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      acceleratorTopologyMode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the connection mode for the accelerator topology. If not
+     * specified, the default is AUTO_CONNECT.
+     * Check the AcceleratorTopologyMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string accelerator_topology_mode = 284293791;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAcceleratorTopologyMode() {
+      acceleratorTopologyMode_ = getDefaultInstance().getAcceleratorTopologyMode();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the connection mode for the accelerator topology. If not
+     * specified, the default is AUTO_CONNECT.
+     * Check the AcceleratorTopologyMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string accelerator_topology_mode = 284293791;</code>
+     *
+     * @param value The bytes for acceleratorTopologyMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorTopologyModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      acceleratorTopologyMode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object maxTopologyDistance_ = "";
 
     /**
@@ -1186,7 +1610,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      * @return Whether the maxTopologyDistance field is set.
      */
     public boolean hasMaxTopologyDistance() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1255,7 +1679,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       maxTopologyDistance_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1274,7 +1698,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      */
     public Builder clearMaxTopologyDistance() {
       maxTopologyDistance_ = getDefaultInstance().getMaxTopologyDistance();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1298,7 +1722,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       maxTopologyDistance_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1318,7 +1742,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1387,7 +1811,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1406,7 +1830,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1430,7 +1854,7 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

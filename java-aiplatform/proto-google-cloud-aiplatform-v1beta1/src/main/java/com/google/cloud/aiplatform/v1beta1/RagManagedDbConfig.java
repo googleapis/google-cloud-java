@@ -3756,7 +3756,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=833
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=836
    * @return Whether the enterprise field is set.
    */
   @java.lang.Override
@@ -3777,7 +3777,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=833
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=836
    * @return The enterprise.
    */
   @java.lang.Override
@@ -3825,7 +3825,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=837
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=840
    * @return Whether the scaled field is set.
    */
   @java.lang.Override
@@ -3847,7 +3847,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=837
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=840
    * @return The scaled.
    */
   @java.lang.Override
@@ -3895,7 +3895,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=841
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=844
    * @return Whether the basic field is set.
    */
   @java.lang.Override
@@ -3916,7 +3916,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=841
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=844
    * @return The basic.
    */
   @java.lang.Override
@@ -3963,7 +3963,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=845
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=848
    * @return Whether the unprovisioned field is set.
    */
   @java.lang.Override
@@ -3985,7 +3985,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=845
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=848
    * @return The unprovisioned.
    */
   @java.lang.Override
@@ -4711,7 +4711,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=833
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=836
      * @return Whether the enterprise field is set.
      */
     @java.lang.Override
@@ -4732,7 +4732,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=833
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=836
      * @return The enterprise.
      */
     @java.lang.Override
@@ -4971,7 +4971,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=837
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=840
      * @return Whether the scaled field is set.
      */
     @java.lang.Override
@@ -4993,7 +4993,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=837
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=840
      * @return The scaled.
      */
     @java.lang.Override
@@ -5234,7 +5234,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=841
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=844
      * @return Whether the basic field is set.
      */
     @java.lang.Override
@@ -5256,7 +5256,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=841
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=844
      * @return The basic.
      */
     @java.lang.Override
@@ -5494,7 +5494,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=845
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=848
      * @return Whether the unprovisioned field is set.
      */
     @java.lang.Override
@@ -5516,7 +5516,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=845
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=848
      * @return The unprovisioned.
      */
     @java.lang.Override

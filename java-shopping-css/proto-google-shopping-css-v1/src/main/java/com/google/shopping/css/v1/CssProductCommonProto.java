@@ -93,7 +93,7 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "/google/shopping/css/v1/css_product_com"
           + "mon.proto\022\026google.shopping.css.v1\032\037googl"
           + "e/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\032"
-          + " google/shopping/type/types.proto\"\240\022\n\n"
+          + " google/shopping/type/types.proto\"\274\023\n\n"
           + "Attributes\022\025\n"
           + "\010cpp_link\030\001 \001(\tH\000\210\001\001\022\034\n"
           + "\017cpp_mobile_link\030\002 \001(\tH\001\210\001\001\022\035\n"
@@ -151,7 +151,11 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "\032headline_offer_installment\0303"
           + " \001(\01320.google.shopping.css.v1.HeadlineOfferInstallment\022_\n"
           + " headline_offer_subscription_cost\0304 \001(\01325.g"
-          + "oogle.shopping.css.v1.HeadlineOfferSubscriptionCostB\013\n"
+          + "oogle.shopping.css.v1.HeadlineOfferSubscriptionCost\022\031\n"
+          + "\014review_count\0306 \001(\003H\037\210\001\001\022\027\n\n"
+          + "min_rating\0307 \001(\003H \210\001\001\022\027\n\n"
+          + "max_rating\0308 \001(\003H!\210\001\001\022\023\n"
+          + "\006rating\0309 \001(\001H\"\210\001\001B\013\n"
           + "\t_cpp_linkB\022\n"
           + "\020_cpp_mobile_linkB\023\n"
           + "\021_cpp_ads_redirectB\023\n"
@@ -159,7 +163,8 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "\031_headline_offer_conditionB\026\n"
           + "\024_headline_offer_linkB\035\n"
           + "\033_headline_offer_mobile_linkB\010\n"
-          + "\006_titleB\r\n"
+          + "\006_titleB\r"
+          + "\n"
           + "\013_image_linkB\016\n"
           + "\014_descriptionB\010\n"
           + "\006_brandB\006\n"
@@ -182,7 +187,11 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "\017_custom_label_1B\021\n"
           + "\017_custom_label_2B\021\n"
           + "\017_custom_label_3B\021\n"
-          + "\017_custom_label_4\">\n\r"
+          + "\017_custom_label_4B\017\n\r"
+          + "_review_countB\r\n"
+          + "\013_min_ratingB\r\n"
+          + "\013_max_ratingB\t\n"
+          + "\007_rating\">\n\r"
           + "Certification\022\014\n"
           + "\004name\030\001 \001(\t\022\021\n"
           + "\tauthority\030\002 \001(\t\022\014\n"
@@ -198,10 +207,10 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "\005value\030\001 \001(\001B\003\340A\002\022\021\n"
           + "\004unit\030\002 \001(\tB\003\340A\002\"\261\005\n"
           + "\020CssProductStatus\022X\n"
-          + "\024destination_statuses\030\003 \003(\0132:.google."
-          + "shopping.css.v1.CssProductStatus.DestinationStatus\022R\n"
-          + "\021item_level_issues\030\004 \003(\01327."
-          + "google.shopping.css.v1.CssProductStatus.ItemLevelIssue\0221\n\r"
+          + "\024destination_statuses\030\003 \003(\0132:.google.shop"
+          + "ping.css.v1.CssProductStatus.DestinationStatus\022R\n"
+          + "\021item_level_issues\030\004 \003(\01327.goog"
+          + "le.shopping.css.v1.CssProductStatus.ItemLevelIssue\0221\n\r"
           + "creation_date\030\005 \001(\0132\032.google.protobuf.Timestamp\0224\n"
           + "\020last_update_date\030\006 \001(\0132\032.google.protobuf.Timestamp\022:\n"
           + "\026google_expiration_date\030\007 \001(\0132\032.google.protobuf.Timestamp\032~\n"
@@ -212,7 +221,8 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "\025disapproved_countries\030\004 \003(\t\032\311\001\n"
           + "\016ItemLevelIssue\022\014\n"
           + "\004code\030\001 \001(\t\022\023\n"
-          + "\013servability\030\002 \001(\t\022\022\n\n"
+          + "\013servability\030\002 \001(\t\022\022\n"
+          + "\n"
           + "resolution\030\003 \001(\t\022\021\n"
           + "\tattribute\030\004 \001(\t\022\023\n"
           + "\013destination\030\005 \001(\t\022\023\n"
@@ -232,10 +242,10 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
           + "\037SUBSCRIPTION_PERIOD_UNSPECIFIED\020\000\022\t\n"
           + "\005MONTH\020\001\022\010\n"
           + "\004YEAR\020\002B\267\001\n"
-          + "\032com.google.shopping.css.v1B\025CssProductCommonProtoP\001Z2cloud.goo"
-          + "gle.com/go/shopping/css/apiv1/csspb;cssp"
-          + "b\252\002\026Google.Shopping.Css.V1\312\002\026Google\\Shop"
-          + "ping\\Css\\V1\352\002\031Google::Shopping::Css::V1b\006proto3"
+          + "\032com.google.shopping.css.v1B\025CssProductCommonProtoP\001Z2cloud.google."
+          + "com/go/shopping/css/apiv1/csspb;csspb\252\002\026"
+          + "Google.Shopping.Css.V1\312\002\026Google\\Shopping"
+          + "\\Css\\V1\352\002\031Google::Shopping::Css::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -301,6 +311,10 @@ public final class CssProductCommonProto extends com.google.protobuf.GeneratedFi
               "CustomLabel4",
               "HeadlineOfferInstallment",
               "HeadlineOfferSubscriptionCost",
+              "ReviewCount",
+              "MinRating",
+              "MaxRating",
+              "Rating",
             });
     internal_static_google_shopping_css_v1_Certification_descriptor =
         getDescriptor().getMessageType(1);

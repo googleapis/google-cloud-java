@@ -176,6 +176,26 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
     return layerDetails_ == null ? io.grafeas.v1.LayerDetails.getDefaultInstance() : layerDetails_;
   }
 
+  public static final int LINE_NUMBER_FIELD_NUMBER = 3;
+  private int lineNumber_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Line number in the file where the package was found.
+   * Optional field that only applies to source repository scanning.
+   * </pre>
+   *
+   * <code>int32 line_number = 3;</code>
+   *
+   * @return The lineNumber.
+   */
+  @java.lang.Override
+  public int getLineNumber() {
+    return lineNumber_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -196,6 +216,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getLayerDetails());
     }
+    if (lineNumber_ != 0) {
+      output.writeInt32(3, lineNumber_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -210,6 +233,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLayerDetails());
+    }
+    if (lineNumber_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, lineNumber_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -231,6 +257,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
     if (hasLayerDetails()) {
       if (!getLayerDetails().equals(other.getLayerDetails())) return false;
     }
+    if (getLineNumber() != other.getLineNumber()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -248,6 +275,8 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + LAYER_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getLayerDetails().hashCode();
     }
+    hash = (37 * hash) + LINE_NUMBER_FIELD_NUMBER;
+    hash = (53 * hash) + getLineNumber();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -399,6 +428,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
         layerDetailsBuilder_.dispose();
         layerDetailsBuilder_ = null;
       }
+      lineNumber_ = 0;
       return this;
     }
 
@@ -442,6 +472,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
             layerDetailsBuilder_ == null ? layerDetails_ : layerDetailsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lineNumber_ = lineNumber_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -464,6 +497,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasLayerDetails()) {
         mergeLayerDetails(other.getLayerDetails());
+      }
+      if (other.getLineNumber() != 0) {
+        setLineNumber(other.getLineNumber());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -504,6 +540,12 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                lineNumber_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -840,6 +882,65 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessage
         layerDetails_ = null;
       }
       return layerDetailsBuilder_;
+    }
+
+    private int lineNumber_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Line number in the file where the package was found.
+     * Optional field that only applies to source repository scanning.
+     * </pre>
+     *
+     * <code>int32 line_number = 3;</code>
+     *
+     * @return The lineNumber.
+     */
+    @java.lang.Override
+    public int getLineNumber() {
+      return lineNumber_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Line number in the file where the package was found.
+     * Optional field that only applies to source repository scanning.
+     * </pre>
+     *
+     * <code>int32 line_number = 3;</code>
+     *
+     * @param value The lineNumber to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLineNumber(int value) {
+
+      lineNumber_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Line number in the file where the package was found.
+     * Optional field that only applies to source repository scanning.
+     * </pre>
+     *
+     * <code>int32 line_number = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLineNumber() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      lineNumber_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1.FileLocation)

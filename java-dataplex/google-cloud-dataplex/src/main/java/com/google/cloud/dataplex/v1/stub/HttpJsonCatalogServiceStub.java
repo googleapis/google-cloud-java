@@ -21,7 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.HttpRule;
@@ -47,12 +49,14 @@ import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
+import com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
 import com.google.cloud.dataplex.v1.EntryLink;
@@ -62,6 +66,7 @@ import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
@@ -71,22 +76,36 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsResponse;
 import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
 import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
+import com.google.cloud.dataplex.v1.LookupContextRequest;
+import com.google.cloud.dataplex.v1.LookupContextResponse;
+import com.google.cloud.dataplex.v1.LookupEntryLinksRequest;
+import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
 import com.google.cloud.dataplex.v1.UpdateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.UpdateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -114,6 +133,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
           .add(EntryGroup.getDescriptor())
           .add(MetadataJob.getDescriptor())
           .add(EntryType.getDescriptor())
+          .add(MetadataFeed.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateEntryTypeRequest, Operation>
@@ -1164,6 +1184,48 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateEntryLinkRequest, EntryLink>
+      updateEntryLinkMethodDescriptor =
+          ApiMethodDescriptor.<UpdateEntryLinkRequest, EntryLink>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/UpdateEntryLink")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateEntryLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1/{entryLink.name=projects/*/locations/*/entryGroups/*/entryLinks/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "entryLink.name", request.getEntryLink().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(
+                                fields, "aspectKeys", request.getAspectKeysList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("entryLink", request.getEntryLink(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EntryLink>newBuilder()
+                      .setDefaultInstance(EntryLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteEntryLinkRequest, EntryLink>
       deleteEntryLinkMethodDescriptor =
           ApiMethodDescriptor.<DeleteEntryLinkRequest, EntryLink>newBuilder()
@@ -1194,6 +1256,84 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<EntryLink>newBuilder()
                       .setDefaultInstance(EntryLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksMethodDescriptor =
+          ApiMethodDescriptor.<LookupEntryLinksRequest, LookupEntryLinksResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/LookupEntryLinks")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LookupEntryLinksRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}:lookupEntryLinks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LookupEntryLinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LookupEntryLinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "entry", request.getEntry());
+                            serializer.putQueryParam(
+                                fields, "entryLinkTypes", request.getEntryLinkTypesList());
+                            serializer.putQueryParam(
+                                fields, "entryMode", request.getEntryModeValue());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<LookupEntryLinksResponse>newBuilder()
+                      .setDefaultInstance(LookupEntryLinksResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<LookupContextRequest, LookupContextResponse>
+      lookupContextMethodDescriptor =
+          ApiMethodDescriptor.<LookupContextRequest, LookupContextResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/LookupContext")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LookupContextRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}:lookupContext",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LookupContextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LookupContextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<LookupContextResponse>newBuilder()
+                      .setDefaultInstance(LookupContextResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1230,6 +1370,203 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setDefaultInstance(EntryLink.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateMetadataFeedRequest, Operation>
+      createMetadataFeedMethodDescriptor =
+          ApiMethodDescriptor.<CreateMetadataFeedRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateMetadataFeed")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateMetadataFeedRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/metadataFeeds",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "metadataFeedId", request.getMetadataFeedId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("metadataFeed", request.getMetadataFeed(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateMetadataFeedRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetMetadataFeedRequest, MetadataFeed>
+      getMetadataFeedMethodDescriptor =
+          ApiMethodDescriptor.<GetMetadataFeedRequest, MetadataFeed>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetMetadataFeed")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetMetadataFeedRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/metadataFeeds/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MetadataFeed>newBuilder()
+                      .setDefaultInstance(MetadataFeed.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsMethodDescriptor =
+          ApiMethodDescriptor.<ListMetadataFeedsRequest, ListMetadataFeedsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/ListMetadataFeeds")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListMetadataFeedsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/metadataFeeds",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMetadataFeedsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMetadataFeedsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListMetadataFeedsResponse>newBuilder()
+                      .setDefaultInstance(ListMetadataFeedsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteMetadataFeedRequest, Operation>
+      deleteMetadataFeedMethodDescriptor =
+          ApiMethodDescriptor.<DeleteMetadataFeedRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/DeleteMetadataFeed")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteMetadataFeedRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/metadataFeeds/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteMetadataFeedRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateMetadataFeedRequest, Operation>
+      updateMetadataFeedMethodDescriptor =
+          ApiMethodDescriptor.<UpdateMetadataFeedRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/UpdateMetadataFeed")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateMetadataFeedRequest>newBuilder()
+                      .setPath(
+                          "/v1/{metadataFeed.name=projects/*/locations/*/metadataFeeds/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "metadataFeed.name", request.getMetadataFeed().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMetadataFeedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("metadataFeed", request.getMetadataFeed(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateMetadataFeedRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -1300,6 +1637,174 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateEntryTypeRequest, Operation> createEntryTypeCallable;
   private final OperationCallable<CreateEntryTypeRequest, EntryType, OperationMetadata>
       createEntryTypeOperationCallable;
@@ -1362,12 +1867,36 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
       listMetadataJobsPagedCallable;
   private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
   private final UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable;
+  private final UnaryCallable<UpdateEntryLinkRequest, EntryLink> updateEntryLinkCallable;
   private final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable;
+  private final UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksCallable;
+  private final UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksPagedResponse>
+      lookupEntryLinksPagedCallable;
+  private final UnaryCallable<LookupContextRequest, LookupContextResponse> lookupContextCallable;
   private final UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable;
+  private final UnaryCallable<CreateMetadataFeedRequest, Operation> createMetadataFeedCallable;
+  private final OperationCallable<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationCallable;
+  private final UnaryCallable<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedCallable;
+  private final UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsCallable;
+  private final UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsPagedCallable;
+  private final UnaryCallable<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedCallable;
+  private final OperationCallable<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationCallable;
+  private final UnaryCallable<UpdateMetadataFeedRequest, Operation> updateMetadataFeedCallable;
+  private final OperationCallable<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1760,6 +2289,17 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkTransportSettings =
+        HttpJsonCallSettings.<UpdateEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(updateEntryLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entry_link.name", String.valueOf(request.getEntryLink().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkTransportSettings =
         HttpJsonCallSettings.<DeleteEntryLinkRequest, EntryLink>newBuilder()
             .setMethodDescriptor(deleteEntryLinkMethodDescriptor)
@@ -1771,6 +2311,30 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<LookupEntryLinksRequest, LookupEntryLinksResponse>
+        lookupEntryLinksTransportSettings =
+            HttpJsonCallSettings.<LookupEntryLinksRequest, LookupEntryLinksResponse>newBuilder()
+                .setMethodDescriptor(lookupEntryLinksMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<LookupContextRequest, LookupContextResponse>
+        lookupContextTransportSettings =
+            HttpJsonCallSettings.<LookupContextRequest, LookupContextResponse>newBuilder()
+                .setMethodDescriptor(lookupContextMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkTransportSettings =
         HttpJsonCallSettings.<GetEntryLinkRequest, EntryLink>newBuilder()
             .setMethodDescriptor(getEntryLinkMethodDescriptor)
@@ -1779,6 +2343,63 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedTransportSettings =
+        HttpJsonCallSettings.<CreateMetadataFeedRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMetadataFeedMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedTransportSettings =
+        HttpJsonCallSettings.<GetMetadataFeedRequest, MetadataFeed>newBuilder()
+            .setMethodDescriptor(getMetadataFeedMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+        listMetadataFeedsTransportSettings =
+            HttpJsonCallSettings.<ListMetadataFeedsRequest, ListMetadataFeedsResponse>newBuilder()
+                .setMethodDescriptor(listMetadataFeedsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedTransportSettings =
+        HttpJsonCallSettings.<DeleteMetadataFeedRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteMetadataFeedMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedTransportSettings =
+        HttpJsonCallSettings.<UpdateMetadataFeedRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMetadataFeedMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "metadata_feed.name", String.valueOf(request.getMetadataFeed().getName()));
                   return builder.build();
                 })
             .build();
@@ -1805,6 +2426,40 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createEntryTypeCallable =
         callableFactory.createUnaryCallable(
@@ -1969,12 +2624,70 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     this.createEntryLinkCallable =
         callableFactory.createUnaryCallable(
             createEntryLinkTransportSettings, settings.createEntryLinkSettings(), clientContext);
+    this.updateEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            updateEntryLinkTransportSettings, settings.updateEntryLinkSettings(), clientContext);
     this.deleteEntryLinkCallable =
         callableFactory.createUnaryCallable(
             deleteEntryLinkTransportSettings, settings.deleteEntryLinkSettings(), clientContext);
+    this.lookupEntryLinksCallable =
+        callableFactory.createUnaryCallable(
+            lookupEntryLinksTransportSettings, settings.lookupEntryLinksSettings(), clientContext);
+    this.lookupEntryLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            lookupEntryLinksTransportSettings, settings.lookupEntryLinksSettings(), clientContext);
+    this.lookupContextCallable =
+        callableFactory.createUnaryCallable(
+            lookupContextTransportSettings, settings.lookupContextSettings(), clientContext);
     this.getEntryLinkCallable =
         callableFactory.createUnaryCallable(
             getEntryLinkTransportSettings, settings.getEntryLinkSettings(), clientContext);
+    this.createMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            createMetadataFeedTransportSettings,
+            settings.createMetadataFeedSettings(),
+            clientContext);
+    this.createMetadataFeedOperationCallable =
+        callableFactory.createOperationCallable(
+            createMetadataFeedTransportSettings,
+            settings.createMetadataFeedOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataFeedTransportSettings, settings.getMetadataFeedSettings(), clientContext);
+    this.listMetadataFeedsCallable =
+        callableFactory.createUnaryCallable(
+            listMetadataFeedsTransportSettings,
+            settings.listMetadataFeedsSettings(),
+            clientContext);
+    this.listMetadataFeedsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMetadataFeedsTransportSettings,
+            settings.listMetadataFeedsSettings(),
+            clientContext);
+    this.deleteMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            deleteMetadataFeedTransportSettings,
+            settings.deleteMetadataFeedSettings(),
+            clientContext);
+    this.deleteMetadataFeedOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteMetadataFeedTransportSettings,
+            settings.deleteMetadataFeedOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            updateMetadataFeedTransportSettings,
+            settings.updateMetadataFeedSettings(),
+            clientContext);
+    this.updateMetadataFeedOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMetadataFeedTransportSettings,
+            settings.updateMetadataFeedOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1984,6 +2697,17 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2019,10 +2743,21 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     methodDescriptors.add(listMetadataJobsMethodDescriptor);
     methodDescriptors.add(cancelMetadataJobMethodDescriptor);
     methodDescriptors.add(createEntryLinkMethodDescriptor);
+    methodDescriptors.add(updateEntryLinkMethodDescriptor);
     methodDescriptors.add(deleteEntryLinkMethodDescriptor);
+    methodDescriptors.add(lookupEntryLinksMethodDescriptor);
+    methodDescriptors.add(lookupContextMethodDescriptor);
     methodDescriptors.add(getEntryLinkMethodDescriptor);
+    methodDescriptors.add(createMetadataFeedMethodDescriptor);
+    methodDescriptors.add(getMetadataFeedMethodDescriptor);
+    methodDescriptors.add(listMetadataFeedsMethodDescriptor);
+    methodDescriptors.add(deleteMetadataFeedMethodDescriptor);
+    methodDescriptors.add(updateMetadataFeedMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2262,13 +2997,85 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateEntryLinkRequest, EntryLink> updateEntryLinkCallable() {
+    return updateEntryLinkCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
     return deleteEntryLinkCallable;
   }
 
   @Override
+  public UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksCallable() {
+    return lookupEntryLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksPagedResponse>
+      lookupEntryLinksPagedCallable() {
+    return lookupEntryLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupContextRequest, LookupContextResponse> lookupContextCallable() {
+    return lookupContextCallable;
+  }
+
+  @Override
   public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
     return getEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMetadataFeedRequest, Operation> createMetadataFeedCallable() {
+    return createMetadataFeedCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationCallable() {
+    return createMetadataFeedOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedCallable() {
+    return getMetadataFeedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsCallable() {
+    return listMetadataFeedsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsPagedCallable() {
+    return listMetadataFeedsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedCallable() {
+    return deleteMetadataFeedCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationCallable() {
+    return deleteMetadataFeedOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMetadataFeedRequest, Operation> updateMetadataFeedCallable() {
+    return updateMetadataFeedCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationCallable() {
+    return updateMetadataFeedOperationCallable;
   }
 
   @Override
@@ -2285,6 +3092,22 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

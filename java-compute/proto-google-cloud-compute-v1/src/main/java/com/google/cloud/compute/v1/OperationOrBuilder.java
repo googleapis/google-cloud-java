@@ -232,6 +232,32 @@ public interface OperationOrBuilder
   com.google.cloud.compute.v1.ErrorOrBuilder getErrorOrBuilder();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.GetVersionOperationMetadata get_version_operation_metadata = 173230167;
+   * </code>
+   *
+   * @return Whether the getVersionOperationMetadata field is set.
+   */
+  boolean hasGetVersionOperationMetadata();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.GetVersionOperationMetadata get_version_operation_metadata = 173230167;
+   * </code>
+   *
+   * @return The getVersionOperationMetadata.
+   */
+  com.google.cloud.compute.v1.GetVersionOperationMetadata getGetVersionOperationMetadata();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.GetVersionOperationMetadata get_version_operation_metadata = 173230167;
+   * </code>
+   */
+  com.google.cloud.compute.v1.GetVersionOperationMetadataOrBuilder
+      getGetVersionOperationMetadataOrBuilder();
+
+  /**
    *
    *
    * <pre>

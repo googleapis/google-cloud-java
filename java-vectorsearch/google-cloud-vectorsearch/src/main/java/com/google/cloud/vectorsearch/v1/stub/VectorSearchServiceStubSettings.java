@@ -59,6 +59,9 @@ import com.google.cloud.vectorsearch.v1.CreateCollectionRequest;
 import com.google.cloud.vectorsearch.v1.CreateIndexRequest;
 import com.google.cloud.vectorsearch.v1.DeleteCollectionRequest;
 import com.google.cloud.vectorsearch.v1.DeleteIndexRequest;
+import com.google.cloud.vectorsearch.v1.ExportDataObjectsMetadata;
+import com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest;
+import com.google.cloud.vectorsearch.v1.ExportDataObjectsResponse;
 import com.google.cloud.vectorsearch.v1.GetCollectionRequest;
 import com.google.cloud.vectorsearch.v1.GetIndexRequest;
 import com.google.cloud.vectorsearch.v1.ImportDataObjectsMetadata;
@@ -191,6 +194,10 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
   private final OperationCallSettings<
           ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
       importDataObjectsOperationSettings;
+  private final UnaryCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsSettings;
+  private final OperationCallSettings<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -442,6 +449,18 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     return importDataObjectsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportDataObjects. */
+  public UnaryCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsSettings() {
+    return exportDataObjectsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportDataObjects. */
+  public OperationCallSettings<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationSettings() {
+    return exportDataObjectsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -581,6 +600,9 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     importDataObjectsSettings = settingsBuilder.importDataObjectsSettings().build();
     importDataObjectsOperationSettings =
         settingsBuilder.importDataObjectsOperationSettings().build();
+    exportDataObjectsSettings = settingsBuilder.exportDataObjectsSettings().build();
+    exportDataObjectsOperationSettings =
+        settingsBuilder.exportDataObjectsOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -622,6 +644,11 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     private final OperationCallSettings.Builder<
             ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
         importDataObjectsOperationSettings;
+    private final UnaryCallSettings.Builder<ExportDataObjectsRequest, Operation>
+        exportDataObjectsSettings;
+    private final OperationCallSettings.Builder<
+            ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+        exportDataObjectsOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -697,6 +724,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       deleteIndexOperationSettings = OperationCallSettings.newBuilder();
       importDataObjectsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importDataObjectsOperationSettings = OperationCallSettings.newBuilder();
+      exportDataObjectsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportDataObjectsOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -712,6 +741,7 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               createIndexSettings,
               deleteIndexSettings,
               importDataObjectsSettings,
+              exportDataObjectsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -736,6 +766,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       deleteIndexOperationSettings = settings.deleteIndexOperationSettings.toBuilder();
       importDataObjectsSettings = settings.importDataObjectsSettings.toBuilder();
       importDataObjectsOperationSettings = settings.importDataObjectsOperationSettings.toBuilder();
+      exportDataObjectsSettings = settings.exportDataObjectsSettings.toBuilder();
+      exportDataObjectsOperationSettings = settings.exportDataObjectsOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -751,6 +783,7 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               createIndexSettings,
               deleteIndexSettings,
               importDataObjectsSettings,
+              exportDataObjectsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -829,6 +862,11 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .importDataObjectsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .exportDataObjectsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -984,6 +1022,32 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .exportDataObjectsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportDataObjectsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportDataObjectsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportDataObjectsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1095,6 +1159,19 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
             ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
         importDataObjectsOperationSettings() {
       return importDataObjectsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportDataObjects. */
+    public UnaryCallSettings.Builder<ExportDataObjectsRequest, Operation>
+        exportDataObjectsSettings() {
+      return exportDataObjectsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportDataObjects. */
+    public OperationCallSettings.Builder<
+            ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+        exportDataObjectsOperationSettings() {
+      return exportDataObjectsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

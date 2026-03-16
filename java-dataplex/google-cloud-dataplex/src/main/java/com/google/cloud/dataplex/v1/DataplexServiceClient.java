@@ -35,6 +35,11 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -606,126 +611,9 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> CreateEnvironment</td>
- *      <td><p> Create an environment resource.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> createEnvironmentAsync(CreateEnvironmentRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> createEnvironmentAsync(LakeName parent, Environment environment, String environmentId)
- *           <li><p> createEnvironmentAsync(String parent, Environment environment, String environmentId)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> createEnvironmentOperationCallable()
- *           <li><p> createEnvironmentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> UpdateEnvironment</td>
- *      <td><p> Update the environment resource.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> updateEnvironmentAsync(UpdateEnvironmentRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> updateEnvironmentAsync(Environment environment, FieldMask updateMask)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> updateEnvironmentOperationCallable()
- *           <li><p> updateEnvironmentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> DeleteEnvironment</td>
- *      <td><p> Delete the environment resource. All the child resources must have been deleted before environment deletion can be initiated.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> deleteEnvironmentAsync(DeleteEnvironmentRequest request)
- *      </ul>
- *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
- *      <ul>
- *           <li><p> deleteEnvironmentAsync(EnvironmentName name)
- *           <li><p> deleteEnvironmentAsync(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> deleteEnvironmentOperationCallable()
- *           <li><p> deleteEnvironmentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> ListEnvironments</td>
- *      <td><p> Lists environments under the given lake.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> listEnvironments(ListEnvironmentsRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> listEnvironments(LakeName parent)
- *           <li><p> listEnvironments(String parent)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> listEnvironmentsPagedCallable()
- *           <li><p> listEnvironmentsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> GetEnvironment</td>
- *      <td><p> Get environment resource.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> getEnvironment(GetEnvironmentRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> getEnvironment(EnvironmentName name)
- *           <li><p> getEnvironment(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> getEnvironmentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> ListSessions</td>
- *      <td><p> Lists session resources in an environment.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> listSessions(ListSessionsRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> listSessions(EnvironmentName parent)
- *           <li><p> listSessions(String parent)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> listSessionsPagedCallable()
- *           <li><p> listSessionsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -749,6 +637,50 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -4773,943 +4705,13 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
-   *   Environment environment = Environment.newBuilder().build();
-   *   String environmentId = "environmentId-950205810";
-   *   Environment response =
-   *       dataplexServiceClient.createEnvironmentAsync(parent, environment, environmentId).get();
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the parent lake:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
-   * @param environment Required. Environment resource.
-   * @param environmentId Required. Environment identifier.
-   *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the lake.
-   *     </ul>
-   *
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Environment, OperationMetadata> createEnvironmentAsync(
-      LakeName parent, Environment environment, String environmentId) {
-    CreateEnvironmentRequest request =
-        CreateEnvironmentRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setEnvironment(environment)
-            .setEnvironmentId(environmentId)
-            .build();
-    return createEnvironmentAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create an environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   String parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString();
-   *   Environment environment = Environment.newBuilder().build();
-   *   String environmentId = "environmentId-950205810";
-   *   Environment response =
-   *       dataplexServiceClient.createEnvironmentAsync(parent, environment, environmentId).get();
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the parent lake:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
-   * @param environment Required. Environment resource.
-   * @param environmentId Required. Environment identifier.
-   *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the lake.
-   *     </ul>
-   *
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Environment, OperationMetadata> createEnvironmentAsync(
-      String parent, Environment environment, String environmentId) {
-    CreateEnvironmentRequest request =
-        CreateEnvironmentRequest.newBuilder()
-            .setParent(parent)
-            .setEnvironment(environment)
-            .setEnvironmentId(environmentId)
-            .build();
-    return createEnvironmentAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create an environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   CreateEnvironmentRequest request =
-   *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString())
-   *           .setEnvironmentId("environmentId-950205810")
-   *           .setEnvironment(Environment.newBuilder().build())
-   *           .setValidateOnly(true)
-   *           .build();
-   *   Environment response = dataplexServiceClient.createEnvironmentAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Environment, OperationMetadata> createEnvironmentAsync(
-      CreateEnvironmentRequest request) {
-    return createEnvironmentOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create an environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   CreateEnvironmentRequest request =
-   *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString())
-   *           .setEnvironmentId("environmentId-950205810")
-   *           .setEnvironment(Environment.newBuilder().build())
-   *           .setValidateOnly(true)
-   *           .build();
-   *   OperationFuture<Environment, OperationMetadata> future =
-   *       dataplexServiceClient.createEnvironmentOperationCallable().futureCall(request);
-   *   // Do something.
-   *   Environment response = future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationCallable() {
-    return stub.createEnvironmentOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create an environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   CreateEnvironmentRequest request =
-   *       CreateEnvironmentRequest.newBuilder()
-   *           .setParent(LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString())
-   *           .setEnvironmentId("environmentId-950205810")
-   *           .setEnvironment(Environment.newBuilder().build())
-   *           .setValidateOnly(true)
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       dataplexServiceClient.createEnvironmentCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
-    return stub.createEnvironmentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   Environment environment = Environment.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Environment response =
-   *       dataplexServiceClient.updateEnvironmentAsync(environment, updateMask).get();
-   * }
-   * }</pre>
-   *
-   * @param environment Required. Update description. Only fields specified in `update_mask` are
-   *     updated.
-   * @param updateMask Required. Mask of fields to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Environment, OperationMetadata> updateEnvironmentAsync(
-      Environment environment, FieldMask updateMask) {
-    UpdateEnvironmentRequest request =
-        UpdateEnvironmentRequest.newBuilder()
-            .setEnvironment(environment)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateEnvironmentAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   UpdateEnvironmentRequest request =
-   *       UpdateEnvironmentRequest.newBuilder()
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .setEnvironment(Environment.newBuilder().build())
-   *           .setValidateOnly(true)
-   *           .build();
-   *   Environment response = dataplexServiceClient.updateEnvironmentAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Environment, OperationMetadata> updateEnvironmentAsync(
-      UpdateEnvironmentRequest request) {
-    return updateEnvironmentOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   UpdateEnvironmentRequest request =
-   *       UpdateEnvironmentRequest.newBuilder()
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .setEnvironment(Environment.newBuilder().build())
-   *           .setValidateOnly(true)
-   *           .build();
-   *   OperationFuture<Environment, OperationMetadata> future =
-   *       dataplexServiceClient.updateEnvironmentOperationCallable().futureCall(request);
-   *   // Do something.
-   *   Environment response = future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationCallable() {
-    return stub.updateEnvironmentOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update the environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   UpdateEnvironmentRequest request =
-   *       UpdateEnvironmentRequest.newBuilder()
-   *           .setUpdateMask(FieldMask.newBuilder().build())
-   *           .setEnvironment(Environment.newBuilder().build())
-   *           .setValidateOnly(true)
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       dataplexServiceClient.updateEnvironmentCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
-    return stub.updateEnvironmentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete the environment resource. All the child resources must have been deleted before
-   * environment deletion can be initiated.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   EnvironmentName name =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-   *   dataplexServiceClient.deleteEnvironmentAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the environment:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> deleteEnvironmentAsync(
-      EnvironmentName name) {
-    DeleteEnvironmentRequest request =
-        DeleteEnvironmentRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return deleteEnvironmentAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete the environment resource. All the child resources must have been deleted before
-   * environment deletion can be initiated.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   String name =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString();
-   *   dataplexServiceClient.deleteEnvironmentAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the environment:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> deleteEnvironmentAsync(String name) {
-    DeleteEnvironmentRequest request = DeleteEnvironmentRequest.newBuilder().setName(name).build();
-    return deleteEnvironmentAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete the environment resource. All the child resources must have been deleted before
-   * environment deletion can be initiated.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   DeleteEnvironmentRequest request =
-   *       DeleteEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   dataplexServiceClient.deleteEnvironmentAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Empty, OperationMetadata> deleteEnvironmentAsync(
-      DeleteEnvironmentRequest request) {
-    return deleteEnvironmentOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete the environment resource. All the child resources must have been deleted before
-   * environment deletion can be initiated.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   DeleteEnvironmentRequest request =
-   *       DeleteEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   OperationFuture<Empty, OperationMetadata> future =
-   *       dataplexServiceClient.deleteEnvironmentOperationCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationCallable() {
-    return stub.deleteEnvironmentOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete the environment resource. All the child resources must have been deleted before
-   * environment deletion can be initiated.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   DeleteEnvironmentRequest request =
-   *       DeleteEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Operation> future =
-   *       dataplexServiceClient.deleteEnvironmentCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
-    return stub.deleteEnvironmentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists environments under the given lake.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
-   *   for (Environment element : dataplexServiceClient.listEnvironments(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the parent lake:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEnvironmentsPagedResponse listEnvironments(LakeName parent) {
-    ListEnvironmentsRequest request =
-        ListEnvironmentsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listEnvironments(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists environments under the given lake.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   String parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString();
-   *   for (Environment element : dataplexServiceClient.listEnvironments(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the parent lake:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEnvironmentsPagedResponse listEnvironments(String parent) {
-    ListEnvironmentsRequest request =
-        ListEnvironmentsRequest.newBuilder().setParent(parent).build();
-    return listEnvironments(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists environments under the given lake.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   ListEnvironmentsRequest request =
-   *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .build();
-   *   for (Environment element : dataplexServiceClient.listEnvironments(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEnvironmentsPagedResponse listEnvironments(ListEnvironmentsRequest request) {
-    return listEnvironmentsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists environments under the given lake.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   ListEnvironmentsRequest request =
-   *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .build();
-   *   ApiFuture<Environment> future =
-   *       dataplexServiceClient.listEnvironmentsPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (Environment element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable() {
-    return stub.listEnvironmentsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists environments under the given lake.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   ListEnvironmentsRequest request =
-   *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .setOrderBy("orderBy-1207110587")
-   *           .build();
-   *   while (true) {
-   *     ListEnvironmentsResponse response =
-   *         dataplexServiceClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getEnvironmentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsCallable() {
-    return stub.listEnvironmentsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   EnvironmentName name =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-   *   Environment response = dataplexServiceClient.getEnvironment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the environment:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Environment getEnvironment(EnvironmentName name) {
-    GetEnvironmentRequest request =
-        GetEnvironmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getEnvironment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   String name =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString();
-   *   Environment response = dataplexServiceClient.getEnvironment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the environment:
-   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Environment getEnvironment(String name) {
-    GetEnvironmentRequest request = GetEnvironmentRequest.newBuilder().setName(name).build();
-    return getEnvironment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   GetEnvironmentRequest request =
-   *       GetEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   Environment response = dataplexServiceClient.getEnvironment(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Environment getEnvironment(GetEnvironmentRequest request) {
-    return getEnvironmentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get environment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   GetEnvironmentRequest request =
-   *       GetEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Environment> future =
-   *       dataplexServiceClient.getEnvironmentCallable().futureCall(request);
-   *   // Do something.
-   *   Environment response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
-    return stub.getEnvironmentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists session resources in an environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   EnvironmentName parent =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-   *   for (Session element : dataplexServiceClient.listSessions(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the parent environment:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSessionsPagedResponse listSessions(EnvironmentName parent) {
-    ListSessionsRequest request =
-        ListSessionsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listSessions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists session resources in an environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   String parent =
-   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString();
-   *   for (Session element : dataplexServiceClient.listSessions(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the parent environment:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSessionsPagedResponse listSessions(String parent) {
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setParent(parent).build();
-    return listSessions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists session resources in an environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   ListSessionsRequest request =
-   *       ListSessionsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .build();
-   *   for (Session element : dataplexServiceClient.listSessions(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSessionsPagedResponse listSessions(ListSessionsRequest request) {
-    return listSessionsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists session resources in an environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   ListSessionsRequest request =
-   *       ListSessionsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .build();
-   *   ApiFuture<Session> future =
-   *       dataplexServiceClient.listSessionsPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (Session element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
-      listSessionsPagedCallable() {
-    return stub.listSessionsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists session resources in an environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
-   *   ListSessionsRequest request =
-   *       ListSessionsRequest.newBuilder()
-   *           .setParent(
-   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-   *                   .toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
-   *           .build();
-   *   while (true) {
-   *     ListSessionsResponse response = dataplexServiceClient.listSessionsCallable().call(request);
-   *     for (Session element : response.getSessionsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
-    return stub.listSessionsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -5742,7 +4744,13 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -5776,7 +4784,13 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -5861,6 +4875,197 @@ public class DataplexServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = dataplexServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = dataplexServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = dataplexServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = dataplexServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = dataplexServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       dataplexServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -6452,158 +5657,6 @@ public class DataplexServiceClient implements BackgroundResource {
     protected ListJobsFixedSizeCollection createCollection(
         List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListEnvironmentsPagedResponse
-      extends AbstractPagedListResponse<
-          ListEnvironmentsRequest,
-          ListEnvironmentsResponse,
-          Environment,
-          ListEnvironmentsPage,
-          ListEnvironmentsFixedSizeCollection> {
-
-    public static ApiFuture<ListEnvironmentsPagedResponse> createAsync(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ApiFuture<ListEnvironmentsResponse> futureResponse) {
-      ApiFuture<ListEnvironmentsPage> futurePage =
-          ListEnvironmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new ListEnvironmentsPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private ListEnvironmentsPagedResponse(ListEnvironmentsPage page) {
-      super(page, ListEnvironmentsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListEnvironmentsPage
-      extends AbstractPage<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment, ListEnvironmentsPage> {
-
-    private ListEnvironmentsPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
-      super(context, response);
-    }
-
-    private static ListEnvironmentsPage createEmptyPage() {
-      return new ListEnvironmentsPage(null, null);
-    }
-
-    @Override
-    protected ListEnvironmentsPage createPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
-      return new ListEnvironmentsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListEnvironmentsPage> createPageAsync(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ApiFuture<ListEnvironmentsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListEnvironmentsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListEnvironmentsRequest,
-          ListEnvironmentsResponse,
-          Environment,
-          ListEnvironmentsPage,
-          ListEnvironmentsFixedSizeCollection> {
-
-    private ListEnvironmentsFixedSizeCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListEnvironmentsFixedSizeCollection createEmptyCollection() {
-      return new ListEnvironmentsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListEnvironmentsFixedSizeCollection createCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
-      return new ListEnvironmentsFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListSessionsPagedResponse
-      extends AbstractPagedListResponse<
-          ListSessionsRequest,
-          ListSessionsResponse,
-          Session,
-          ListSessionsPage,
-          ListSessionsFixedSizeCollection> {
-
-    public static ApiFuture<ListSessionsPagedResponse> createAsync(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ApiFuture<ListSessionsResponse> futureResponse) {
-      ApiFuture<ListSessionsPage> futurePage =
-          ListSessionsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new ListSessionsPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private ListSessionsPagedResponse(ListSessionsPage page) {
-      super(page, ListSessionsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListSessionsPage
-      extends AbstractPage<ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage> {
-
-    private ListSessionsPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
-      super(context, response);
-    }
-
-    private static ListSessionsPage createEmptyPage() {
-      return new ListSessionsPage(null, null);
-    }
-
-    @Override
-    protected ListSessionsPage createPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
-      return new ListSessionsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListSessionsPage> createPageAsync(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ApiFuture<ListSessionsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListSessionsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListSessionsRequest,
-          ListSessionsResponse,
-          Session,
-          ListSessionsPage,
-          ListSessionsFixedSizeCollection> {
-
-    private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListSessionsFixedSizeCollection createEmptyCollection() {
-      return new ListSessionsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListSessionsFixedSizeCollection createCollection(
-        List<ListSessionsPage> pages, int collectionSize) {
-      return new ListSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

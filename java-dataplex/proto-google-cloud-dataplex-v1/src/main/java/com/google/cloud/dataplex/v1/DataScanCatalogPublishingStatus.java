@@ -25,7 +25,8 @@ package com.google.cloud.dataplex.v1;
  *
  * <pre>
  * The status of publishing the data scan result as Dataplex Universal Catalog
- * metadata.
+ * metadata. Multiple DataScan log events may exist, each with different
+ * publishing information depending on the type of publishing triggered.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataScanCatalogPublishingStatus}
@@ -95,7 +96,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Publish to catalog completed successfully.
+     * Publishing to catalog completed successfully.
      * </pre>
      *
      * <code>SUCCEEDED = 1;</code>
@@ -111,6 +112,16 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      * <code>FAILED = 2;</code>
      */
     FAILED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Publishing to catalog was skipped.
+     * </pre>
+     *
+     * <code>SKIPPED = 3;</code>
+     */
+    SKIPPED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -139,7 +150,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Publish to catalog completed successfully.
+     * Publishing to catalog completed successfully.
      * </pre>
      *
      * <code>SUCCEEDED = 1;</code>
@@ -156,6 +167,17 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      * <code>FAILED = 2;</code>
      */
     public static final int FAILED_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Publishing to catalog was skipped.
+     * </pre>
+     *
+     * <code>SKIPPED = 3;</code>
+     */
+    public static final int SKIPPED_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -187,6 +209,8 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
           return SUCCEEDED;
         case 2:
           return FAILED;
+        case 3:
+          return SKIPPED;
         default:
           return null;
       }
@@ -249,7 +273,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Output only. Execution state for catalog publishing.
+   * Output only. Execution state for publishing.
    * </pre>
    *
    * <code>
@@ -267,7 +291,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Output only. Execution state for catalog publishing.
+   * Output only. Execution state for publishing.
    * </pre>
    *
    * <code>
@@ -455,7 +479,8 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
    *
    * <pre>
    * The status of publishing the data scan result as Dataplex Universal Catalog
-   * metadata.
+   * metadata. Multiple DataScan log events may exist, each with different
+   * publishing information depending on the type of publishing triggered.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataScanCatalogPublishingStatus}
@@ -608,7 +633,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. Execution state for catalog publishing.
+     * Output only. Execution state for publishing.
      * </pre>
      *
      * <code>
@@ -626,7 +651,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. Execution state for catalog publishing.
+     * Output only. Execution state for publishing.
      * </pre>
      *
      * <code>
@@ -647,7 +672,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. Execution state for catalog publishing.
+     * Output only. Execution state for publishing.
      * </pre>
      *
      * <code>
@@ -669,7 +694,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. Execution state for catalog publishing.
+     * Output only. Execution state for publishing.
      * </pre>
      *
      * <code>
@@ -694,7 +719,7 @@ public final class DataScanCatalogPublishingStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. Execution state for catalog publishing.
+     * Output only. Execution state for publishing.
      * </pre>
      *
      * <code>

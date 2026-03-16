@@ -55,6 +55,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   private ServiceAttachmentConnectedEndpoint() {
     consumerNetwork_ = "";
     endpoint_ = "";
+    endpointWithId_ = "";
     natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
     status_ = "";
   }
@@ -464,6 +465,75 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
   }
 
+  public static final int ENDPOINT_WITH_ID_FIELD_NUMBER = 444867210;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpointWithId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The url of a connected endpoint with resource id.
+   * </pre>
+   *
+   * <code>optional string endpoint_with_id = 444867210;</code>
+   *
+   * @return Whether the endpointWithId field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndpointWithId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The url of a connected endpoint with resource id.
+   * </pre>
+   *
+   * <code>optional string endpoint_with_id = 444867210;</code>
+   *
+   * @return The endpointWithId.
+   */
+  @java.lang.Override
+  public java.lang.String getEndpointWithId() {
+    java.lang.Object ref = endpointWithId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endpointWithId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The url of a connected endpoint with resource id.
+   * </pre>
+   *
+   * <code>optional string endpoint_with_id = 444867210;</code>
+   *
+   * @return The bytes for endpointWithId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEndpointWithIdBytes() {
+    java.lang.Object ref = endpointWithId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      endpointWithId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAT_IPS_FIELD_NUMBER = 117635086;
 
   @SuppressWarnings("serial")
@@ -553,7 +623,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasPropagatedConnectionCount() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -589,7 +659,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasPscConnectionId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -627,7 +697,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -700,17 +770,20 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 130489749, endpoint_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 254357221, consumerNetwork_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt64(292082397, pscConnectionId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeUInt32(324594130, propagatedConnectionCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 444867210, endpointWithId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -732,19 +805,22 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(130489749, endpoint_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(254357221, consumerNetwork_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               324594130, propagatedConnectionCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(444867210, endpointWithId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -769,6 +845,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (hasEndpoint() != other.hasEndpoint()) return false;
     if (hasEndpoint()) {
       if (!getEndpoint().equals(other.getEndpoint())) return false;
+    }
+    if (hasEndpointWithId() != other.hasEndpointWithId()) return false;
+    if (hasEndpointWithId()) {
+      if (!getEndpointWithId().equals(other.getEndpointWithId())) return false;
     }
     if (!getNatIpsList().equals(other.getNatIpsList())) return false;
     if (hasPropagatedConnectionCount() != other.hasPropagatedConnectionCount()) return false;
@@ -801,6 +881,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (hasEndpoint()) {
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getEndpoint().hashCode();
+    }
+    if (hasEndpointWithId()) {
+      hash = (37 * hash) + ENDPOINT_WITH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointWithId().hashCode();
     }
     if (getNatIpsCount() > 0) {
       hash = (37 * hash) + NAT_IPS_FIELD_NUMBER;
@@ -961,6 +1045,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       bitField0_ = 0;
       consumerNetwork_ = "";
       endpoint_ = "";
+      endpointWithId_ = "";
       natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       propagatedConnectionCount_ = 0;
       pscConnectionId_ = 0L;
@@ -1013,20 +1098,24 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endpointWithId_ = endpointWithId_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         natIps_.makeImmutable();
         result.natIps_ = natIps_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.propagatedConnectionCount_ = propagatedConnectionCount_;
-        to_bitField0_ |= 0x00000004;
-      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.pscConnectionId_ = pscConnectionId_;
+        result.propagatedConnectionCount_ = propagatedConnectionCount_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.status_ = status_;
+        result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1055,10 +1144,15 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasEndpointWithId()) {
+        endpointWithId_ = other.endpointWithId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.natIps_.isEmpty()) {
         if (natIps_.isEmpty()) {
           natIps_ = other.natIps_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         } else {
           ensureNatIpsIsMutable();
           natIps_.addAll(other.natIps_);
@@ -1073,7 +1167,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1118,7 +1212,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1450082194
             case 2034857770:
@@ -1130,15 +1224,21 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case -1958308120:
               {
                 pscConnectionId_ = input.readUInt64();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -1958308120
             case -1698214256:
               {
                 propagatedConnectionCount_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1698214256
+            case -736029614:
+              {
+                endpointWithId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -736029614
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1410,6 +1510,132 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       return this;
     }
 
+    private java.lang.Object endpointWithId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The url of a connected endpoint with resource id.
+     * </pre>
+     *
+     * <code>optional string endpoint_with_id = 444867210;</code>
+     *
+     * @return Whether the endpointWithId field is set.
+     */
+    public boolean hasEndpointWithId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The url of a connected endpoint with resource id.
+     * </pre>
+     *
+     * <code>optional string endpoint_with_id = 444867210;</code>
+     *
+     * @return The endpointWithId.
+     */
+    public java.lang.String getEndpointWithId() {
+      java.lang.Object ref = endpointWithId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpointWithId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The url of a connected endpoint with resource id.
+     * </pre>
+     *
+     * <code>optional string endpoint_with_id = 444867210;</code>
+     *
+     * @return The bytes for endpointWithId.
+     */
+    public com.google.protobuf.ByteString getEndpointWithIdBytes() {
+      java.lang.Object ref = endpointWithId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpointWithId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The url of a connected endpoint with resource id.
+     * </pre>
+     *
+     * <code>optional string endpoint_with_id = 444867210;</code>
+     *
+     * @param value The endpointWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointWithId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      endpointWithId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The url of a connected endpoint with resource id.
+     * </pre>
+     *
+     * <code>optional string endpoint_with_id = 444867210;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointWithId() {
+      endpointWithId_ = getDefaultInstance().getEndpointWithId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The url of a connected endpoint with resource id.
+     * </pre>
+     *
+     * <code>optional string endpoint_with_id = 444867210;</code>
+     *
+     * @param value The bytes for endpointWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointWithIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      endpointWithId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList natIps_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1417,7 +1643,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       if (!natIps_.isModifiable()) {
         natIps_ = new com.google.protobuf.LazyStringArrayList(natIps_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
     }
 
     /**
@@ -1507,7 +1733,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       ensureNatIpsIsMutable();
       natIps_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1531,7 +1757,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       ensureNatIpsIsMutable();
       natIps_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1552,7 +1778,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder addAllNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natIps_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1571,7 +1797,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearNatIps() {
       natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1597,7 +1823,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       checkByteStringIsUtf8(value);
       ensureNatIpsIsMutable();
       natIps_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1618,7 +1844,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasPropagatedConnectionCount() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1654,7 +1880,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder setPropagatedConnectionCount(int value) {
 
       propagatedConnectionCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1672,7 +1898,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPropagatedConnectionCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       propagatedConnectionCount_ = 0;
       onChanged();
       return this;
@@ -1693,7 +1919,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1727,7 +1953,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder setPscConnectionId(long value) {
 
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1744,7 +1970,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -1765,7 +1991,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1834,7 +2060,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1853,7 +2079,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1877,7 +2103,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

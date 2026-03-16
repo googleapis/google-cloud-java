@@ -30,6 +30,34 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
+   * Whether to discard local SSDs from the instance during restart
+   * default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return Whether the discardLocalSsd field is set.
+   */
+  boolean hasDiscardLocalSsd();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to discard local SSDs from the instance during restart
+   * default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return The discardLocalSsd.
+   */
+  boolean getDiscardLocalSsd();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the instance resource to update.
    * </pre>
    *

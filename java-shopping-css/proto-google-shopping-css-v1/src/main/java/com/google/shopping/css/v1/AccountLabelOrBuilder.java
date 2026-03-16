@@ -30,11 +30,11 @@ public interface AccountLabelOrBuilder
    *
    *
    * <pre>
-   * The resource name of the label.
+   * Identifier. The resource name of the label.
    * Format: accounts/{account}/labels/{label}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,11 +44,11 @@ public interface AccountLabelOrBuilder
    *
    *
    * <pre>
-   * The resource name of the label.
+   * Identifier. The resource name of the label.
    * Format: accounts/{account}/labels/{label}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

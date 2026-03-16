@@ -468,12 +468,12 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The dimension a rule belongs to. Results are also aggregated at
+   * Optional. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Custom dimension name is supported with all uppercase
    * letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dimension.
    */
@@ -483,12 +483,12 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The dimension a rule belongs to. Results are also aggregated at
+   * Optional. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Custom dimension name is supported with all uppercase
    * letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dimension.
    */
@@ -593,6 +593,83 @@ public interface DataQualityRuleOrBuilder
    * @return The suspended.
    */
   boolean getSuspended();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery> getDebugQueriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery getDebugQueries(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDebugQueriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>
+      getDebugQueriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder getDebugQueriesOrBuilder(
+      int index);
 
   com.google.cloud.dataplex.v1.DataQualityRule.RuleTypeCase getRuleTypeCase();
 }

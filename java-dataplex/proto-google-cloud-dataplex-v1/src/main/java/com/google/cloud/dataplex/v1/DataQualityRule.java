@@ -56,6 +56,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     dimension_ = "";
     name_ = "";
     description_ = "";
+    debugQueries_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6791,6 +6792,885 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface DebugQueryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.DebugQuery)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the description of the debug query.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the description of the debug query.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString getDescriptionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the SQL statement to be executed.
+     * </pre>
+     *
+     * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sqlStatement.
+     */
+    java.lang.String getSqlStatement();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the SQL statement to be executed.
+     * </pre>
+     *
+     * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for sqlStatement.
+     */
+    com.google.protobuf.ByteString getSqlStatementBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a SQL statement that is evaluated to return up to 10 scalar
+   * values that are used to debug rules. If the rule fails, the values can help
+   * diagnose the cause of the failure.
+   *
+   * The SQL statement must use [GoogleSQL
+   * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax),
+   * and must not contain any semicolons.
+   *
+   * You can use the data reference parameter `${data()}` to reference the
+   * source table with all of its precondition filters applied. Examples of
+   * precondition filters include row filters, incremental data filters, and
+   * sampling. For more information, see [Data reference
+   * parameter](https://cloud.google.com/dataplex/docs/auto-data-quality-overview#data-reference-parameter).
+   *
+   * You can also name results with an explicit alias using `[AS] alias`. For
+   * more information, see [BigQuery explicit
+   * aliases](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#explicit_alias_syntax).
+   *
+   * Example: `SELECT MIN(col1) AS min_col1, MAX(col1) AS max_col1 FROM
+   * ${data()}`
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.DebugQuery}
+   */
+  public static final class DebugQuery extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.DebugQuery)
+      DebugQueryOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DebugQuery");
+    }
+
+    // Use DebugQuery.newBuilder() to construct.
+    private DebugQuery(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DebugQuery() {
+      description_ = "";
+      sqlStatement_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.class,
+              com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder.class);
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the description of the debug query.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the description of the debug query.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SQL_STATEMENT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sqlStatement_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the SQL statement to be executed.
+     * </pre>
+     *
+     * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sqlStatement.
+     */
+    @java.lang.Override
+    public java.lang.String getSqlStatement() {
+      java.lang.Object ref = sqlStatement_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sqlStatement_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the SQL statement to be executed.
+     * </pre>
+     *
+     * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for sqlStatement.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSqlStatementBytes() {
+      java.lang.Object ref = sqlStatement_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sqlStatement_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, description_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sqlStatement_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, sqlStatement_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, description_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sqlStatement_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sqlStatement_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery other =
+          (com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery) obj;
+
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (!getSqlStatement().equals(other.getSqlStatement())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + SQL_STATEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getSqlStatement().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a SQL statement that is evaluated to return up to 10 scalar
+     * values that are used to debug rules. If the rule fails, the values can help
+     * diagnose the cause of the failure.
+     *
+     * The SQL statement must use [GoogleSQL
+     * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax),
+     * and must not contain any semicolons.
+     *
+     * You can use the data reference parameter `${data()}` to reference the
+     * source table with all of its precondition filters applied. Examples of
+     * precondition filters include row filters, incremental data filters, and
+     * sampling. For more information, see [Data reference
+     * parameter](https://cloud.google.com/dataplex/docs/auto-data-quality-overview#data-reference-parameter).
+     *
+     * You can also name results with an explicit alias using `[AS] alias`. For
+     * more information, see [BigQuery explicit
+     * aliases](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#explicit_alias_syntax).
+     *
+     * Example: `SELECT MIN(col1) AS min_col1, MAX(col1) AS max_col1 FROM
+     * ${data()}`
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.DebugQuery}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.DebugQuery)
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.class,
+                com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        description_ = "";
+        sqlStatement_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery build() {
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery buildPartial() {
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery result =
+            new com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sqlStatement_ = sqlStatement_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery other) {
+        if (other == com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.getDefaultInstance())
+          return this;
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getSqlStatement().isEmpty()) {
+          sqlStatement_ = other.sqlStatement_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  description_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  sqlStatement_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object description_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the description of the debug query.
+       *
+       * * The maximum length is 1,024 characters.
+       * </pre>
+       *
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the description of the debug query.
+       *
+       * * The maximum length is 1,024 characters.
+       * </pre>
+       *
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the description of the debug query.
+       *
+       * * The maximum length is 1,024 characters.
+       * </pre>
+       *
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        description_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the description of the debug query.
+       *
+       * * The maximum length is 1,024 characters.
+       * </pre>
+       *
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the description of the debug query.
+       *
+       * * The maximum length is 1,024 characters.
+       * </pre>
+       *
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sqlStatement_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the SQL statement to be executed.
+       * </pre>
+       *
+       * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The sqlStatement.
+       */
+      public java.lang.String getSqlStatement() {
+        java.lang.Object ref = sqlStatement_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sqlStatement_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the SQL statement to be executed.
+       * </pre>
+       *
+       * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for sqlStatement.
+       */
+      public com.google.protobuf.ByteString getSqlStatementBytes() {
+        java.lang.Object ref = sqlStatement_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sqlStatement_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the SQL statement to be executed.
+       * </pre>
+       *
+       * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The sqlStatement to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSqlStatement(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sqlStatement_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the SQL statement to be executed.
+       * </pre>
+       *
+       * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSqlStatement() {
+        sqlStatement_ = getDefaultInstance().getSqlStatement();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the SQL statement to be executed.
+       * </pre>
+       *
+       * <code>string sql_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for sqlStatement to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSqlStatementBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sqlStatement_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.DebugQuery)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.DebugQuery)
+    private static final com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DebugQuery> PARSER =
+        new com.google.protobuf.AbstractParser<DebugQuery>() {
+          @java.lang.Override
+          public DebugQuery parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DebugQuery> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DebugQuery> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int ruleTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -7505,12 +8385,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The dimension a rule belongs to. Results are also aggregated at
+   * Optional. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Custom dimension name is supported with all uppercase
    * letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dimension.
    */
@@ -7531,12 +8411,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The dimension a rule belongs to. Results are also aggregated at
+   * Optional. The dimension a rule belongs to. Results are also aggregated at
    * the dimension level. Custom dimension name is supported with all uppercase
    * letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dimension.
    */
@@ -7719,6 +8599,104 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     return suspended_;
   }
 
+  public static final int DEBUG_QUERIES_FIELD_NUMBER = 510;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery> debugQueries_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery>
+      getDebugQueriesList() {
+    return debugQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>
+      getDebugQueriesOrBuilderList() {
+    return debugQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDebugQueriesCount() {
+    return debugQueries_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery getDebugQueries(int index) {
+    return debugQueries_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the debug queries for this rule.
+   * Currently, only one query is supported, but this may be expanded in the
+   * future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder getDebugQueriesOrBuilder(
+      int index) {
+    return debugQueries_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7789,6 +8767,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     }
     if (suspended_ != false) {
       output.writeBool(506, suspended_);
+    }
+    for (int i = 0; i < debugQueries_.size(); i++) {
+      output.writeMessage(510, debugQueries_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -7868,6 +8849,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     if (suspended_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(506, suspended_);
     }
+    for (int i = 0; i < debugQueries_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(510, debugQueries_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7892,6 +8876,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (getSuspended() != other.getSuspended()) return false;
+    if (!getDebugQueriesList().equals(other.getDebugQueriesList())) return false;
     if (!getRuleTypeCase().equals(other.getRuleTypeCase())) return false;
     switch (ruleTypeCase_) {
       case 1:
@@ -7954,6 +8939,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + SUSPENDED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuspended());
+    if (getDebugQueriesCount() > 0) {
+      hash = (37 * hash) + DEBUG_QUERIES_FIELD_NUMBER;
+      hash = (53 * hash) + getDebugQueriesList().hashCode();
+    }
     switch (ruleTypeCase_) {
       case 1:
         hash = (37 * hash) + RANGE_EXPECTATION_FIELD_NUMBER;
@@ -8168,6 +9157,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       name_ = "";
       description_ = "";
       suspended_ = false;
+      if (debugQueriesBuilder_ == null) {
+        debugQueries_ = java.util.Collections.emptyList();
+      } else {
+        debugQueries_ = null;
+        debugQueriesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
       ruleTypeCase_ = 0;
       ruleType_ = null;
       return this;
@@ -8197,12 +9193,25 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataplex.v1.DataQualityRule buildPartial() {
       com.google.cloud.dataplex.v1.DataQualityRule result =
           new com.google.cloud.dataplex.v1.DataQualityRule(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.DataQualityRule result) {
+      if (debugQueriesBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          debugQueries_ = java.util.Collections.unmodifiableList(debugQueries_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.debugQueries_ = debugQueries_;
+      } else {
+        result.debugQueries_ = debugQueriesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule result) {
@@ -8302,6 +9311,33 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.getSuspended() != false) {
         setSuspended(other.getSuspended());
+      }
+      if (debugQueriesBuilder_ == null) {
+        if (!other.debugQueries_.isEmpty()) {
+          if (debugQueries_.isEmpty()) {
+            debugQueries_ = other.debugQueries_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureDebugQueriesIsMutable();
+            debugQueries_.addAll(other.debugQueries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.debugQueries_.isEmpty()) {
+          if (debugQueriesBuilder_.isEmpty()) {
+            debugQueriesBuilder_.dispose();
+            debugQueriesBuilder_ = null;
+            debugQueries_ = other.debugQueries_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            debugQueriesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDebugQueriesFieldBuilder()
+                    : null;
+          } else {
+            debugQueriesBuilder_.addAllMessages(other.debugQueries_);
+          }
+        }
       }
       switch (other.getRuleTypeCase()) {
         case RANGE_EXPECTATION:
@@ -8488,6 +9524,20 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case 4048
+            case 4082:
+              {
+                com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery m =
+                    input.readMessage(
+                        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.parser(),
+                        extensionRegistry);
+                if (debugQueriesBuilder_ == null) {
+                  ensureDebugQueriesIsMutable();
+                  debugQueries_.add(m);
+                } else {
+                  debugQueriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 4082
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10935,12 +11985,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The dimension a rule belongs to. Results are also aggregated at
+     * Optional. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Custom dimension name is supported with all uppercase
      * letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The dimension.
      */
@@ -10960,12 +12010,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The dimension a rule belongs to. Results are also aggregated at
+     * Optional. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Custom dimension name is supported with all uppercase
      * letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for dimension.
      */
@@ -10985,12 +12035,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The dimension a rule belongs to. Results are also aggregated at
+     * Optional. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Custom dimension name is supported with all uppercase
      * letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dimension to set.
      * @return This builder for chaining.
@@ -11009,12 +12059,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The dimension a rule belongs to. Results are also aggregated at
+     * Optional. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Custom dimension name is supported with all uppercase
      * letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -11029,12 +12079,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The dimension a rule belongs to. Results are also aggregated at
+     * Optional. The dimension a rule belongs to. Results are also aggregated at
      * the dimension level. Custom dimension name is supported with all uppercase
      * letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string dimension = 502 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for dimension to set.
      * @return This builder for chaining.
@@ -11440,6 +12490,459 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       suspended_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery> debugQueries_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDebugQueriesIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        debugQueries_ =
+            new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery>(
+                debugQueries_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery,
+            com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>
+        debugQueriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery>
+        getDebugQueriesList() {
+      if (debugQueriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(debugQueries_);
+      } else {
+        return debugQueriesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDebugQueriesCount() {
+      if (debugQueriesBuilder_ == null) {
+        return debugQueries_.size();
+      } else {
+        return debugQueriesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery getDebugQueries(int index) {
+      if (debugQueriesBuilder_ == null) {
+        return debugQueries_.get(index);
+      } else {
+        return debugQueriesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDebugQueries(
+        int index, com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery value) {
+      if (debugQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDebugQueriesIsMutable();
+        debugQueries_.set(index, value);
+        onChanged();
+      } else {
+        debugQueriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDebugQueries(
+        int index,
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder builderForValue) {
+      if (debugQueriesBuilder_ == null) {
+        ensureDebugQueriesIsMutable();
+        debugQueries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        debugQueriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDebugQueries(com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery value) {
+      if (debugQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDebugQueriesIsMutable();
+        debugQueries_.add(value);
+        onChanged();
+      } else {
+        debugQueriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDebugQueries(
+        int index, com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery value) {
+      if (debugQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDebugQueriesIsMutable();
+        debugQueries_.add(index, value);
+        onChanged();
+      } else {
+        debugQueriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDebugQueries(
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder builderForValue) {
+      if (debugQueriesBuilder_ == null) {
+        ensureDebugQueriesIsMutable();
+        debugQueries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        debugQueriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDebugQueries(
+        int index,
+        com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder builderForValue) {
+      if (debugQueriesBuilder_ == null) {
+        ensureDebugQueriesIsMutable();
+        debugQueries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        debugQueriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDebugQueries(
+        java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery>
+            values) {
+      if (debugQueriesBuilder_ == null) {
+        ensureDebugQueriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, debugQueries_);
+        onChanged();
+      } else {
+        debugQueriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDebugQueries() {
+      if (debugQueriesBuilder_ == null) {
+        debugQueries_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        debugQueriesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDebugQueries(int index) {
+      if (debugQueriesBuilder_ == null) {
+        ensureDebugQueriesIsMutable();
+        debugQueries_.remove(index);
+        onChanged();
+      } else {
+        debugQueriesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder getDebugQueriesBuilder(
+        int index) {
+      return internalGetDebugQueriesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder
+        getDebugQueriesOrBuilder(int index) {
+      if (debugQueriesBuilder_ == null) {
+        return debugQueries_.get(index);
+      } else {
+        return debugQueriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>
+        getDebugQueriesOrBuilderList() {
+      if (debugQueriesBuilder_ != null) {
+        return debugQueriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(debugQueries_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder
+        addDebugQueriesBuilder() {
+      return internalGetDebugQueriesFieldBuilder()
+          .addBuilder(com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder addDebugQueriesBuilder(
+        int index) {
+      return internalGetDebugQueriesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the debug queries for this rule.
+     * Currently, only one query is supported, but this may be expanded in the
+     * future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.DebugQuery debug_queries = 510 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder>
+        getDebugQueriesBuilderList() {
+      return internalGetDebugQueriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery,
+            com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>
+        internalGetDebugQueriesFieldBuilder() {
+      if (debugQueriesBuilder_ == null) {
+        debugQueriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery,
+                com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>(
+                debugQueries_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
+        debugQueries_ = null;
+      }
+      return debugQueriesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule)

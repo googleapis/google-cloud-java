@@ -18,12 +18,10 @@ package com.google.cloud.dataplex.v1.stub;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -47,18 +45,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.Asset;
 import com.google.cloud.dataplex.v1.CancelJobRequest;
 import com.google.cloud.dataplex.v1.CreateAssetRequest;
-import com.google.cloud.dataplex.v1.CreateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.CreateLakeRequest;
 import com.google.cloud.dataplex.v1.CreateTaskRequest;
 import com.google.cloud.dataplex.v1.CreateZoneRequest;
 import com.google.cloud.dataplex.v1.DeleteAssetRequest;
-import com.google.cloud.dataplex.v1.DeleteEnvironmentRequest;
 import com.google.cloud.dataplex.v1.DeleteLakeRequest;
 import com.google.cloud.dataplex.v1.DeleteTaskRequest;
 import com.google.cloud.dataplex.v1.DeleteZoneRequest;
-import com.google.cloud.dataplex.v1.Environment;
 import com.google.cloud.dataplex.v1.GetAssetRequest;
-import com.google.cloud.dataplex.v1.GetEnvironmentRequest;
 import com.google.cloud.dataplex.v1.GetJobRequest;
 import com.google.cloud.dataplex.v1.GetLakeRequest;
 import com.google.cloud.dataplex.v1.GetTaskRequest;
@@ -69,15 +63,11 @@ import com.google.cloud.dataplex.v1.ListActionsResponse;
 import com.google.cloud.dataplex.v1.ListAssetActionsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsRequest;
 import com.google.cloud.dataplex.v1.ListAssetsResponse;
-import com.google.cloud.dataplex.v1.ListEnvironmentsRequest;
-import com.google.cloud.dataplex.v1.ListEnvironmentsResponse;
 import com.google.cloud.dataplex.v1.ListJobsRequest;
 import com.google.cloud.dataplex.v1.ListJobsResponse;
 import com.google.cloud.dataplex.v1.ListLakeActionsRequest;
 import com.google.cloud.dataplex.v1.ListLakesRequest;
 import com.google.cloud.dataplex.v1.ListLakesResponse;
-import com.google.cloud.dataplex.v1.ListSessionsRequest;
-import com.google.cloud.dataplex.v1.ListSessionsResponse;
 import com.google.cloud.dataplex.v1.ListTasksRequest;
 import com.google.cloud.dataplex.v1.ListTasksResponse;
 import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
@@ -88,7 +78,6 @@ import com.google.cloud.dataplex.v1.RunTaskRequest;
 import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
-import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
 import com.google.cloud.dataplex.v1.UpdateLakeRequest;
 import com.google.cloud.dataplex.v1.UpdateTaskRequest;
 import com.google.cloud.dataplex.v1.UpdateZoneRequest;
@@ -98,6 +87,11 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -123,7 +117,6 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
           .add(Task.getDescriptor())
           .add(Zone.getDescriptor())
           .add(OperationMetadata.getDescriptor())
-          .add(Environment.getDescriptor())
           .add(Lake.getDescriptor())
           .add(Asset.getDescriptor())
           .build();
@@ -1152,240 +1145,6 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   .build())
           .build();
 
-  private static final ApiMethodDescriptor<CreateEnvironmentRequest, Operation>
-      createEnvironmentMethodDescriptor =
-          ApiMethodDescriptor.<CreateEnvironmentRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/CreateEnvironment")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<CreateEnvironmentRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*/lakes/*}/environments",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(
-                                fields, "environmentId", request.getEnvironmentId());
-                            serializer.putQueryParam(
-                                fields, "validateOnly", request.getValidateOnly());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (CreateEnvironmentRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<UpdateEnvironmentRequest, Operation>
-      updateEnvironmentMethodDescriptor =
-          ApiMethodDescriptor.<UpdateEnvironmentRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/UpdateEnvironment")
-              .setHttpMethod("PATCH")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UpdateEnvironmentRequest>newBuilder()
-                      .setPath(
-                          "/v1/{environment.name=projects/*/locations/*/lakes/*/environments/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields, "environment.name", request.getEnvironment().getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
-                            serializer.putQueryParam(
-                                fields, "validateOnly", request.getValidateOnly());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (UpdateEnvironmentRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<DeleteEnvironmentRequest, Operation>
-      deleteEnvironmentMethodDescriptor =
-          ApiMethodDescriptor.<DeleteEnvironmentRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/DeleteEnvironment")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteEnvironmentRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/lakes/*/environments/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (DeleteEnvironmentRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsMethodDescriptor =
-          ApiMethodDescriptor.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListEnvironments")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListEnvironmentsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*/lakes/*}/environments",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListEnvironmentsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListEnvironmentsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListEnvironmentsResponse>newBuilder()
-                      .setDefaultInstance(ListEnvironmentsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetEnvironmentRequest, Environment>
-      getEnvironmentMethodDescriptor =
-          ApiMethodDescriptor.<GetEnvironmentRequest, Environment>newBuilder()
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetEnvironment")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetEnvironmentRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/lakes/*/environments/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetEnvironmentRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Environment>newBuilder()
-                      .setDefaultInstance(Environment.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<ListSessionsRequest, ListSessionsResponse>
-      listSessionsMethodDescriptor =
-          ApiMethodDescriptor.<ListSessionsRequest, ListSessionsResponse>newBuilder()
-              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/ListSessions")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListSessionsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*/lakes/*/environments/*}/sessions",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListSessionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListSessionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListSessionsResponse>newBuilder()
-                      .setDefaultInstance(ListSessionsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1454,6 +1213,174 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/lakes/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataAttributeBindings/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryLinkTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/aspectTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/entryGroups/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/governanceRules/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/categories/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateLakeRequest, Operation> createLakeCallable;
   private final OperationCallable<CreateLakeRequest, Lake, OperationMetadata>
       createLakeOperationCallable;
@@ -1517,27 +1444,14 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
   private final UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
   private final UnaryCallable<CancelJobRequest, Empty> cancelJobCallable;
-  private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
-  private final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationCallable;
-  private final UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable;
-  private final OperationCallable<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationCallable;
-  private final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable;
-  private final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationCallable;
-  private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsCallable;
-  private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable;
-  private final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable;
-  private final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable;
-  private final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
-      listSessionsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1926,74 +1840,6 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
-        HttpJsonCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
-            .setMethodDescriptor(createEnvironmentMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
-        HttpJsonCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
-            .setMethodDescriptor(updateEnvironmentMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add(
-                      "environment.name", String.valueOf(request.getEnvironment().getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentTransportSettings =
-        HttpJsonCallSettings.<DeleteEnvironmentRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
-        listEnvironmentsTransportSettings =
-            HttpJsonCallSettings.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
-                .setMethodDescriptor(listEnvironmentsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
-        HttpJsonCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
-            .setMethodDescriptor(getEnvironmentMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
-        HttpJsonCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
-            .setMethodDescriptor(listSessionsMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2017,6 +1863,40 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createLakeCallable =
         callableFactory.createUnaryCallable(
@@ -2195,54 +2075,6 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
     this.cancelJobCallable =
         callableFactory.createUnaryCallable(
             cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
-    this.createEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            createEnvironmentTransportSettings,
-            settings.createEnvironmentSettings(),
-            clientContext);
-    this.createEnvironmentOperationCallable =
-        callableFactory.createOperationCallable(
-            createEnvironmentTransportSettings,
-            settings.createEnvironmentOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.updateEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            updateEnvironmentTransportSettings,
-            settings.updateEnvironmentSettings(),
-            clientContext);
-    this.updateEnvironmentOperationCallable =
-        callableFactory.createOperationCallable(
-            updateEnvironmentTransportSettings,
-            settings.updateEnvironmentOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.deleteEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            deleteEnvironmentTransportSettings,
-            settings.deleteEnvironmentSettings(),
-            clientContext);
-    this.deleteEnvironmentOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteEnvironmentTransportSettings,
-            settings.deleteEnvironmentOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.listEnvironmentsCallable =
-        callableFactory.createUnaryCallable(
-            listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
-    this.listEnvironmentsPagedCallable =
-        callableFactory.createPagedCallable(
-            listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
-    this.getEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            getEnvironmentTransportSettings, settings.getEnvironmentSettings(), clientContext);
-    this.listSessionsCallable =
-        callableFactory.createUnaryCallable(
-            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
-    this.listSessionsPagedCallable =
-        callableFactory.createPagedCallable(
-            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2252,6 +2084,17 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2287,14 +2130,11 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
     methodDescriptors.add(runTaskMethodDescriptor);
     methodDescriptors.add(getJobMethodDescriptor);
     methodDescriptors.add(cancelJobMethodDescriptor);
-    methodDescriptors.add(createEnvironmentMethodDescriptor);
-    methodDescriptors.add(updateEnvironmentMethodDescriptor);
-    methodDescriptors.add(deleteEnvironmentMethodDescriptor);
-    methodDescriptors.add(listEnvironmentsMethodDescriptor);
-    methodDescriptors.add(getEnvironmentMethodDescriptor);
-    methodDescriptors.add(listSessionsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2553,66 +2393,6 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
   }
 
   @Override
-  public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
-    return createEnvironmentCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationCallable() {
-    return createEnvironmentOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
-    return updateEnvironmentCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateEnvironmentRequest, Environment, OperationMetadata>
-      updateEnvironmentOperationCallable() {
-    return updateEnvironmentOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
-    return deleteEnvironmentCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationCallable() {
-    return deleteEnvironmentOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
-      listEnvironmentsCallable() {
-    return listEnvironmentsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable() {
-    return listEnvironmentsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
-    return getEnvironmentCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
-    return listSessionsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
-    return listSessionsPagedCallable;
-  }
-
-  @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
   }
@@ -2626,6 +2406,22 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

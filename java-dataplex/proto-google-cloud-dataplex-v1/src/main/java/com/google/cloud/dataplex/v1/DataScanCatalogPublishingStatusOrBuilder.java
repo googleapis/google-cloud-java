@@ -30,7 +30,7 @@ public interface DataScanCatalogPublishingStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. Execution state for catalog publishing.
+   * Output only. Execution state for publishing.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface DataScanCatalogPublishingStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. Execution state for catalog publishing.
+   * Output only. Execution state for publishing.
    * </pre>
    *
    * <code>

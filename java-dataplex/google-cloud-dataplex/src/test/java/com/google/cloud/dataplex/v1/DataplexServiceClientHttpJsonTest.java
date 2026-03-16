@@ -18,12 +18,10 @@ package com.google.cloud.dataplex.v1;
 
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListAssetsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZonesPagedResponse;
@@ -43,12 +41,22 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -2851,644 +2859,6 @@ public class DataplexServiceClientHttpJsonTest {
   }
 
   @Test
-  public void createEnvironmentTest() throws Exception {
-    Environment expectedResponse =
-        Environment.newBuilder()
-            .setName(
-                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
-            .setDisplayName("displayName1714148973")
-            .setUid("uid115792")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setState(State.forNumber(0))
-            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-            .setEndpoints(Environment.Endpoints.newBuilder().build())
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("createEnvironmentTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
-    Environment environment = Environment.newBuilder().build();
-    String environmentId = "environmentId-950205810";
-
-    Environment actualResponse =
-        client.createEnvironmentAsync(parent, environment, environmentId).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void createEnvironmentExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
-      Environment environment = Environment.newBuilder().build();
-      String environmentId = "environmentId-950205810";
-      client.createEnvironmentAsync(parent, environment, environmentId).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void createEnvironmentTest2() throws Exception {
-    Environment expectedResponse =
-        Environment.newBuilder()
-            .setName(
-                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
-            .setDisplayName("displayName1714148973")
-            .setUid("uid115792")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setState(State.forNumber(0))
-            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-            .setEndpoints(Environment.Endpoints.newBuilder().build())
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("createEnvironmentTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    String parent = "projects/project-8905/locations/location-8905/lakes/lake-8905";
-    Environment environment = Environment.newBuilder().build();
-    String environmentId = "environmentId-950205810";
-
-    Environment actualResponse =
-        client.createEnvironmentAsync(parent, environment, environmentId).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void createEnvironmentExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "projects/project-8905/locations/location-8905/lakes/lake-8905";
-      Environment environment = Environment.newBuilder().build();
-      String environmentId = "environmentId-950205810";
-      client.createEnvironmentAsync(parent, environment, environmentId).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void updateEnvironmentTest() throws Exception {
-    Environment expectedResponse =
-        Environment.newBuilder()
-            .setName(
-                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
-            .setDisplayName("displayName1714148973")
-            .setUid("uid115792")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setState(State.forNumber(0))
-            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-            .setEndpoints(Environment.Endpoints.newBuilder().build())
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("updateEnvironmentTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    Environment environment =
-        Environment.newBuilder()
-            .setName(
-                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
-            .setDisplayName("displayName1714148973")
-            .setUid("uid115792")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setState(State.forNumber(0))
-            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-            .setEndpoints(Environment.Endpoints.newBuilder().build())
-            .build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    Environment actualResponse = client.updateEnvironmentAsync(environment, updateMask).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void updateEnvironmentExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      Environment environment =
-          Environment.newBuilder()
-              .setName(
-                  EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]")
-                      .toString())
-              .setDisplayName("displayName1714148973")
-              .setUid("uid115792")
-              .setCreateTime(Timestamp.newBuilder().build())
-              .setUpdateTime(Timestamp.newBuilder().build())
-              .putAllLabels(new HashMap<String, String>())
-              .setDescription("description-1724546052")
-              .setState(State.forNumber(0))
-              .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-              .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-              .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-              .setEndpoints(Environment.Endpoints.newBuilder().build())
-              .build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateEnvironmentAsync(environment, updateMask).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void deleteEnvironmentTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteEnvironmentTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    EnvironmentName name = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-
-    client.deleteEnvironmentAsync(name).get();
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteEnvironmentExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      EnvironmentName name =
-          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-      client.deleteEnvironmentAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void deleteEnvironmentTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteEnvironmentTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockService.addResponse(resultOperation);
-
-    String name =
-        "projects/project-6992/locations/location-6992/lakes/lake-6992/environments/environment-6992";
-
-    client.deleteEnvironmentAsync(name).get();
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteEnvironmentExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-6992/locations/location-6992/lakes/lake-6992/environments/environment-6992";
-      client.deleteEnvironmentAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void listEnvironmentsTest() throws Exception {
-    Environment responsesElement = Environment.newBuilder().build();
-    ListEnvironmentsResponse expectedResponse =
-        ListEnvironmentsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEnvironments(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
-
-    ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
-
-    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listEnvironmentsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
-      client.listEnvironments(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listEnvironmentsTest2() throws Exception {
-    Environment responsesElement = Environment.newBuilder().build();
-    ListEnvironmentsResponse expectedResponse =
-        ListEnvironmentsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEnvironments(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent = "projects/project-8905/locations/location-8905/lakes/lake-8905";
-
-    ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
-
-    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listEnvironmentsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "projects/project-8905/locations/location-8905/lakes/lake-8905";
-      client.listEnvironments(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getEnvironmentTest() throws Exception {
-    Environment expectedResponse =
-        Environment.newBuilder()
-            .setName(
-                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
-            .setDisplayName("displayName1714148973")
-            .setUid("uid115792")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setState(State.forNumber(0))
-            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-            .setEndpoints(Environment.Endpoints.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    EnvironmentName name = EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-
-    Environment actualResponse = client.getEnvironment(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getEnvironmentExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      EnvironmentName name =
-          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-      client.getEnvironment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getEnvironmentTest2() throws Exception {
-    Environment expectedResponse =
-        Environment.newBuilder()
-            .setName(
-                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]").toString())
-            .setDisplayName("displayName1714148973")
-            .setUid("uid115792")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .putAllLabels(new HashMap<String, String>())
-            .setDescription("description-1724546052")
-            .setState(State.forNumber(0))
-            .setInfrastructureSpec(Environment.InfrastructureSpec.newBuilder().build())
-            .setSessionSpec(Environment.SessionSpec.newBuilder().build())
-            .setSessionStatus(Environment.SessionStatus.newBuilder().build())
-            .setEndpoints(Environment.Endpoints.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-6992/locations/location-6992/lakes/lake-6992/environments/environment-6992";
-
-    Environment actualResponse = client.getEnvironment(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getEnvironmentExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-6992/locations/location-6992/lakes/lake-6992/environments/environment-6992";
-      client.getEnvironment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listSessionsTest() throws Exception {
-    Session responsesElement = Session.newBuilder().build();
-    ListSessionsResponse expectedResponse =
-        ListSessionsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSessions(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    EnvironmentName parent =
-        EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-
-    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
-
-    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listSessionsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      EnvironmentName parent =
-          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ENVIRONMENT]");
-      client.listSessions(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listSessionsTest2() throws Exception {
-    Session responsesElement = Session.newBuilder().build();
-    ListSessionsResponse expectedResponse =
-        ListSessionsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSessions(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent =
-        "projects/project-353/locations/location-353/lakes/lake-353/environments/environment-353";
-
-    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
-
-    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listSessionsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent =
-          "projects/project-353/locations/location-353/lakes/lake-353/environments/environment-353";
-      client.listSessions(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =
@@ -3598,6 +2968,168 @@ public class DataplexServiceClientHttpJsonTest {
               .setName("projects/project-9062/locations/location-9062")
               .build();
       client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

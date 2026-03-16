@@ -35,6 +35,11 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -427,7 +432,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListEntries</td>
- *      <td><p> Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).</td>
+ *      <td><p> Lists Entries within an EntryGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -447,7 +452,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntry</td>
- *      <td><p> Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).</td>
+ *      <td><p> Gets an Entry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -466,7 +471,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupEntry</td>
- *      <td><p> Looks up an entry by name using the permission on the source system. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).</td>
+ *      <td><p> Looks up an entry by name using the permission on the source system.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -597,6 +602,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateEntryLink</td>
+ *      <td><p> Updates an Entry Link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEntryLink(UpdateEntryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateEntryLink(EntryLink entryLink)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEntryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteEntryLink</td>
  *      <td><p> Deletes an Entry Link.</td>
  *      <td>
@@ -612,6 +635,35 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteEntryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> LookupEntryLinks</td>
+ *      <td><p> Looks up Entry Links referencing the specified Entry.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> lookupEntryLinks(LookupEntryLinksRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> lookupEntryLinksPagedCallable()
+ *           <li><p> lookupEntryLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> LookupContext</td>
+ *      <td><p> Looks up LLM Context for the specified resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> lookupContext(LookupContextRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> lookupContextCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -635,8 +687,107 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateMetadataFeed</td>
+ *      <td><p> Creates a MetadataFeed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createMetadataFeedAsync(CreateMetadataFeedRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createMetadataFeedAsync(LocationName parent, MetadataFeed metadataFeed, String metadataFeedId)
+ *           <li><p> createMetadataFeedAsync(String parent, MetadataFeed metadataFeed, String metadataFeedId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createMetadataFeedOperationCallable()
+ *           <li><p> createMetadataFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMetadataFeed</td>
+ *      <td><p> Gets a MetadataFeed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMetadataFeed(GetMetadataFeedRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMetadataFeed(MetadataFeedName name)
+ *           <li><p> getMetadataFeed(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMetadataFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMetadataFeeds</td>
+ *      <td><p> Retrieve a list of MetadataFeeds.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMetadataFeeds(ListMetadataFeedsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMetadataFeeds(LocationName parent)
+ *           <li><p> listMetadataFeeds(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMetadataFeedsPagedCallable()
+ *           <li><p> listMetadataFeedsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteMetadataFeed</td>
+ *      <td><p> Deletes a MetadataFeed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteMetadataFeedAsync(DeleteMetadataFeedRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteMetadataFeedAsync(MetadataFeedName name)
+ *           <li><p> deleteMetadataFeedAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteMetadataFeedOperationCallable()
+ *           <li><p> deleteMetadataFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateMetadataFeed</td>
+ *      <td><p> Updates a MetadataFeed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMetadataFeedAsync(UpdateMetadataFeedRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateMetadataFeedAsync(MetadataFeed metadataFeed, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMetadataFeedOperationCallable()
+ *           <li><p> updateMetadataFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -660,6 +811,50 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -3339,10 +3534,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
-   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
-   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3374,10 +3566,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
-   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
-   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3406,10 +3595,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
-   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
-   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3442,10 +3628,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
-   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
-   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3478,10 +3661,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
-   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
-   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3520,10 +3700,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
-   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
-   * information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Gets an Entry.
    *
    * <p>Sample code:
    *
@@ -3551,10 +3728,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
-   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
-   * information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Gets an Entry.
    *
    * <p>Sample code:
    *
@@ -3581,10 +3755,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
-   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
-   * information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Gets an Entry.
    *
    * <p>Sample code:
    *
@@ -3616,10 +3787,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
-   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
-   * information, see [Changes to metadata stored in Dataplex Universal
-   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Gets an Entry.
    *
    * <p>Sample code:
    *
@@ -3650,10 +3818,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an entry by name using the permission on the source system. Caution: The Vertex AI,
-   * Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in
-   * Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored
-   * in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Looks up an entry by name using the permission on the source system.
    *
    * <p>Sample code:
    *
@@ -3686,10 +3851,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an entry by name using the permission on the source system. Caution: The Vertex AI,
-   * Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in
-   * Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored
-   * in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
+   * Looks up an entry by name using the permission on the source system.
    *
    * <p>Sample code:
    *
@@ -4649,6 +4811,93 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   EntryLink entryLink = EntryLink.newBuilder().build();
+   *   EntryLink response = catalogServiceClient.updateEntryLink(entryLink);
+   * }
+   * }</pre>
+   *
+   * @param entryLink Required. Entry Link resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink updateEntryLink(EntryLink entryLink) {
+    UpdateEntryLinkRequest request =
+        UpdateEntryLinkRequest.newBuilder().setEntryLink(entryLink).build();
+    return updateEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateEntryLinkRequest request =
+   *       UpdateEntryLinkRequest.newBuilder()
+   *           .setEntryLink(EntryLink.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .addAllAspectKeys(new ArrayList<String>())
+   *           .build();
+   *   EntryLink response = catalogServiceClient.updateEntryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink updateEntryLink(UpdateEntryLinkRequest request) {
+    return updateEntryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateEntryLinkRequest request =
+   *       UpdateEntryLinkRequest.newBuilder()
+   *           .setEntryLink(EntryLink.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .addAllAspectKeys(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<EntryLink> future =
+   *       catalogServiceClient.updateEntryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   EntryLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEntryLinkRequest, EntryLink> updateEntryLinkCallable() {
+    return stub.updateEntryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes an Entry Link.
    *
    * <p>Sample code:
@@ -4762,6 +5011,180 @@ public class CatalogServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
     return stub.deleteEntryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up Entry Links referencing the specified Entry.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LookupEntryLinksRequest request =
+   *       LookupEntryLinksRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setEntry(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .addAllEntryLinkTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EntryLink element : catalogServiceClient.lookupEntryLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupEntryLinksPagedResponse lookupEntryLinks(LookupEntryLinksRequest request) {
+    return lookupEntryLinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up Entry Links referencing the specified Entry.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LookupEntryLinksRequest request =
+   *       LookupEntryLinksRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setEntry(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .addAllEntryLinkTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EntryLink> future =
+   *       catalogServiceClient.lookupEntryLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EntryLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksPagedResponse>
+      lookupEntryLinksPagedCallable() {
+    return stub.lookupEntryLinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up Entry Links referencing the specified Entry.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LookupEntryLinksRequest request =
+   *       LookupEntryLinksRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setEntry(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .addAllEntryLinkTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     LookupEntryLinksResponse response =
+   *         catalogServiceClient.lookupEntryLinksCallable().call(request);
+   *     for (EntryLink element : response.getEntryLinksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksCallable() {
+    return stub.lookupEntryLinksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up LLM Context for the specified resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LookupContextRequest request =
+   *       LookupContextRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllResources(new ArrayList<String>())
+   *           .putAllOptions(new HashMap<String, String>())
+   *           .build();
+   *   LookupContextResponse response = catalogServiceClient.lookupContext(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupContextResponse lookupContext(LookupContextRequest request) {
+    return lookupContextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up LLM Context for the specified resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LookupContextRequest request =
+   *       LookupContextRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllResources(new ArrayList<String>())
+   *           .putAllOptions(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<LookupContextResponse> future =
+   *       catalogServiceClient.lookupContextCallable().futureCall(request);
+   *   // Do something.
+   *   LookupContextResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LookupContextRequest, LookupContextResponse> lookupContextCallable() {
+    return stub.lookupContextCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4882,7 +5305,742 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Creates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+   *   String metadataFeedId = "metadataFeedId1633421160";
+   *   MetadataFeed response =
+   *       catalogServiceClient.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @param metadataFeed Required. The metadata job resource.
+   * @param metadataFeedId Optional. The metadata job ID. If not provided, a unique ID is generated
+   *     with the prefix `metadata-job-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataFeed, OperationMetadata> createMetadataFeedAsync(
+      LocationName parent, MetadataFeed metadataFeed, String metadataFeedId) {
+    CreateMetadataFeedRequest request =
+        CreateMetadataFeedRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMetadataFeed(metadataFeed)
+            .setMetadataFeedId(metadataFeedId)
+            .build();
+    return createMetadataFeedAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+   *   String metadataFeedId = "metadataFeedId1633421160";
+   *   MetadataFeed response =
+   *       catalogServiceClient.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @param metadataFeed Required. The metadata job resource.
+   * @param metadataFeedId Optional. The metadata job ID. If not provided, a unique ID is generated
+   *     with the prefix `metadata-job-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataFeed, OperationMetadata> createMetadataFeedAsync(
+      String parent, MetadataFeed metadataFeed, String metadataFeedId) {
+    CreateMetadataFeedRequest request =
+        CreateMetadataFeedRequest.newBuilder()
+            .setParent(parent)
+            .setMetadataFeed(metadataFeed)
+            .setMetadataFeedId(metadataFeedId)
+            .build();
+    return createMetadataFeedAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateMetadataFeedRequest request =
+   *       CreateMetadataFeedRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setMetadataFeed(MetadataFeed.newBuilder().build())
+   *           .setMetadataFeedId("metadataFeedId1633421160")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MetadataFeed response = catalogServiceClient.createMetadataFeedAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataFeed, OperationMetadata> createMetadataFeedAsync(
+      CreateMetadataFeedRequest request) {
+    return createMetadataFeedOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateMetadataFeedRequest request =
+   *       CreateMetadataFeedRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setMetadataFeed(MetadataFeed.newBuilder().build())
+   *           .setMetadataFeedId("metadataFeedId1633421160")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<MetadataFeed, OperationMetadata> future =
+   *       catalogServiceClient.createMetadataFeedOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataFeed response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationCallable() {
+    return stub.createMetadataFeedOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateMetadataFeedRequest request =
+   *       CreateMetadataFeedRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setMetadataFeed(MetadataFeed.newBuilder().build())
+   *           .setMetadataFeedId("metadataFeedId1633421160")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       catalogServiceClient.createMetadataFeedCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMetadataFeedRequest, Operation> createMetadataFeedCallable() {
+    return stub.createMetadataFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+   *   MetadataFeed response = catalogServiceClient.getMetadataFeed(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata feed, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/MetadataFeeds/{metadata_feed_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetadataFeed getMetadataFeed(MetadataFeedName name) {
+    GetMetadataFeedRequest request =
+        GetMetadataFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetadataFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString();
+   *   MetadataFeed response = catalogServiceClient.getMetadataFeed(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata feed, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/MetadataFeeds/{metadata_feed_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetadataFeed getMetadataFeed(String name) {
+    GetMetadataFeedRequest request = GetMetadataFeedRequest.newBuilder().setName(name).build();
+    return getMetadataFeed(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetMetadataFeedRequest request =
+   *       GetMetadataFeedRequest.newBuilder()
+   *           .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+   *           .build();
+   *   MetadataFeed response = catalogServiceClient.getMetadataFeed(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetadataFeed getMetadataFeed(GetMetadataFeedRequest request) {
+    return getMetadataFeedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetMetadataFeedRequest request =
+   *       GetMetadataFeedRequest.newBuilder()
+   *           .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+   *           .build();
+   *   ApiFuture<MetadataFeed> future =
+   *       catalogServiceClient.getMetadataFeedCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataFeed response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedCallable() {
+    return stub.getMetadataFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a list of MetadataFeeds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (MetadataFeed element : catalogServiceClient.listMetadataFeeds(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetadataFeedsPagedResponse listMetadataFeeds(LocationName parent) {
+    ListMetadataFeedsRequest request =
+        ListMetadataFeedsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMetadataFeeds(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a list of MetadataFeeds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (MetadataFeed element : catalogServiceClient.listMetadataFeeds(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetadataFeedsPagedResponse listMetadataFeeds(String parent) {
+    ListMetadataFeedsRequest request =
+        ListMetadataFeedsRequest.newBuilder().setParent(parent).build();
+    return listMetadataFeeds(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a list of MetadataFeeds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListMetadataFeedsRequest request =
+   *       ListMetadataFeedsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (MetadataFeed element : catalogServiceClient.listMetadataFeeds(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetadataFeedsPagedResponse listMetadataFeeds(ListMetadataFeedsRequest request) {
+    return listMetadataFeedsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a list of MetadataFeeds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListMetadataFeedsRequest request =
+   *       ListMetadataFeedsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<MetadataFeed> future =
+   *       catalogServiceClient.listMetadataFeedsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MetadataFeed element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsPagedCallable() {
+    return stub.listMetadataFeedsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a list of MetadataFeeds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListMetadataFeedsRequest request =
+   *       ListMetadataFeedsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListMetadataFeedsResponse response =
+   *         catalogServiceClient.listMetadataFeedsCallable().call(request);
+   *     for (MetadataFeed element : response.getMetadataFeedsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsCallable() {
+    return stub.listMetadataFeedsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+   *   catalogServiceClient.deleteMetadataFeedAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata feed, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/MetadataFeeds/{metadata_feed_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteMetadataFeedAsync(
+      MetadataFeedName name) {
+    DeleteMetadataFeedRequest request =
+        DeleteMetadataFeedRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteMetadataFeedAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString();
+   *   catalogServiceClient.deleteMetadataFeedAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata feed, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/MetadataFeeds/{metadata_feed_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteMetadataFeedAsync(String name) {
+    DeleteMetadataFeedRequest request =
+        DeleteMetadataFeedRequest.newBuilder().setName(name).build();
+    return deleteMetadataFeedAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteMetadataFeedRequest request =
+   *       DeleteMetadataFeedRequest.newBuilder()
+   *           .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+   *           .build();
+   *   catalogServiceClient.deleteMetadataFeedAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteMetadataFeedAsync(
+      DeleteMetadataFeedRequest request) {
+    return deleteMetadataFeedOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteMetadataFeedRequest request =
+   *       DeleteMetadataFeedRequest.newBuilder()
+   *           .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       catalogServiceClient.deleteMetadataFeedOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationCallable() {
+    return stub.deleteMetadataFeedOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteMetadataFeedRequest request =
+   *       DeleteMetadataFeedRequest.newBuilder()
+   *           .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       catalogServiceClient.deleteMetadataFeedCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedCallable() {
+    return stub.deleteMetadataFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MetadataFeed response =
+   *       catalogServiceClient.updateMetadataFeedAsync(metadataFeed, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param metadataFeed Required. Update description. Only fields specified in `update_mask` are
+   *     updated.
+   * @param updateMask Optional. Mask of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataFeed, OperationMetadata> updateMetadataFeedAsync(
+      MetadataFeed metadataFeed, FieldMask updateMask) {
+    UpdateMetadataFeedRequest request =
+        UpdateMetadataFeedRequest.newBuilder()
+            .setMetadataFeed(metadataFeed)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMetadataFeedAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateMetadataFeedRequest request =
+   *       UpdateMetadataFeedRequest.newBuilder()
+   *           .setMetadataFeed(MetadataFeed.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MetadataFeed response = catalogServiceClient.updateMetadataFeedAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataFeed, OperationMetadata> updateMetadataFeedAsync(
+      UpdateMetadataFeedRequest request) {
+    return updateMetadataFeedOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateMetadataFeedRequest request =
+   *       UpdateMetadataFeedRequest.newBuilder()
+   *           .setMetadataFeed(MetadataFeed.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<MetadataFeed, OperationMetadata> future =
+   *       catalogServiceClient.updateMetadataFeedOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataFeed response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationCallable() {
+    return stub.updateMetadataFeedOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a MetadataFeed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateMetadataFeedRequest request =
+   *       UpdateMetadataFeedRequest.newBuilder()
+   *           .setMetadataFeed(MetadataFeed.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       catalogServiceClient.updateMetadataFeedCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMetadataFeedRequest, Operation> updateMetadataFeedCallable() {
+    return stub.updateMetadataFeedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -4915,7 +6073,13 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -4949,7 +6113,13 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -5033,6 +6203,197 @@ public class CatalogServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = catalogServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = catalogServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = catalogServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = catalogServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = catalogServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       catalogServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -5518,6 +6879,163 @@ public class CatalogServiceClient implements BackgroundResource {
     protected ListMetadataJobsFixedSizeCollection createCollection(
         List<ListMetadataJobsPage> pages, int collectionSize) {
       return new ListMetadataJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class LookupEntryLinksPagedResponse
+      extends AbstractPagedListResponse<
+          LookupEntryLinksRequest,
+          LookupEntryLinksResponse,
+          EntryLink,
+          LookupEntryLinksPage,
+          LookupEntryLinksFixedSizeCollection> {
+
+    public static ApiFuture<LookupEntryLinksPagedResponse> createAsync(
+        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        ApiFuture<LookupEntryLinksResponse> futureResponse) {
+      ApiFuture<LookupEntryLinksPage> futurePage =
+          LookupEntryLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new LookupEntryLinksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private LookupEntryLinksPagedResponse(LookupEntryLinksPage page) {
+      super(page, LookupEntryLinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class LookupEntryLinksPage
+      extends AbstractPage<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink, LookupEntryLinksPage> {
+
+    private LookupEntryLinksPage(
+        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        LookupEntryLinksResponse response) {
+      super(context, response);
+    }
+
+    private static LookupEntryLinksPage createEmptyPage() {
+      return new LookupEntryLinksPage(null, null);
+    }
+
+    @Override
+    protected LookupEntryLinksPage createPage(
+        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        LookupEntryLinksResponse response) {
+      return new LookupEntryLinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<LookupEntryLinksPage> createPageAsync(
+        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        ApiFuture<LookupEntryLinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class LookupEntryLinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          LookupEntryLinksRequest,
+          LookupEntryLinksResponse,
+          EntryLink,
+          LookupEntryLinksPage,
+          LookupEntryLinksFixedSizeCollection> {
+
+    private LookupEntryLinksFixedSizeCollection(
+        List<LookupEntryLinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static LookupEntryLinksFixedSizeCollection createEmptyCollection() {
+      return new LookupEntryLinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected LookupEntryLinksFixedSizeCollection createCollection(
+        List<LookupEntryLinksPage> pages, int collectionSize) {
+      return new LookupEntryLinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMetadataFeedsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMetadataFeedsRequest,
+          ListMetadataFeedsResponse,
+          MetadataFeed,
+          ListMetadataFeedsPage,
+          ListMetadataFeedsFixedSizeCollection> {
+
+    public static ApiFuture<ListMetadataFeedsPagedResponse> createAsync(
+        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
+        ApiFuture<ListMetadataFeedsResponse> futureResponse) {
+      ApiFuture<ListMetadataFeedsPage> futurePage =
+          ListMetadataFeedsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMetadataFeedsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMetadataFeedsPagedResponse(ListMetadataFeedsPage page) {
+      super(page, ListMetadataFeedsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMetadataFeedsPage
+      extends AbstractPage<
+          ListMetadataFeedsRequest,
+          ListMetadataFeedsResponse,
+          MetadataFeed,
+          ListMetadataFeedsPage> {
+
+    private ListMetadataFeedsPage(
+        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
+        ListMetadataFeedsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMetadataFeedsPage createEmptyPage() {
+      return new ListMetadataFeedsPage(null, null);
+    }
+
+    @Override
+    protected ListMetadataFeedsPage createPage(
+        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
+        ListMetadataFeedsResponse response) {
+      return new ListMetadataFeedsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMetadataFeedsPage> createPageAsync(
+        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
+        ApiFuture<ListMetadataFeedsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMetadataFeedsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMetadataFeedsRequest,
+          ListMetadataFeedsResponse,
+          MetadataFeed,
+          ListMetadataFeedsPage,
+          ListMetadataFeedsFixedSizeCollection> {
+
+    private ListMetadataFeedsFixedSizeCollection(
+        List<ListMetadataFeedsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMetadataFeedsFixedSizeCollection createEmptyCollection() {
+      return new ListMetadataFeedsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMetadataFeedsFixedSizeCollection createCollection(
+        List<ListMetadataFeedsPage> pages, int collectionSize) {
+      return new ListMetadataFeedsFixedSizeCollection(pages, collectionSize);
     }
   }
 
