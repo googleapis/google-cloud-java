@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.telemetry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -47,7 +48,6 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/** Unit tests for TracingHttpRequestInitializer */
 public class HttpTracingRequestInitializerTest {
 
   private static final String BASE_URL =
@@ -72,12 +72,12 @@ public class HttpTracingRequestInitializerTest {
         OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
     tracer = openTelemetry.getTracer("test-tracer");
     initializer = new HttpTracingRequestInitializer(null, tracer);
+    parentSpan = tracer.spanBuilder(SPAN_NAME).startSpan();
+    spanScope = parentSpan.makeCurrent();
   }
 
   @Test
   public void testRequestAttributesAreSetIfSpanExists() throws IOException {
-    parentSpan = tracer.spanBuilder(SPAN_NAME).startSpan();
-    spanScope = parentSpan.makeCurrent();
     HttpTransport transport = createTransport();
     HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
 
@@ -97,9 +97,7 @@ public class HttpTracingRequestInitializerTest {
 
   @Test
   public void testExistingParentAttributesAreNotAffectedByRequestAttributes() throws IOException {
-    parentSpan =
-        tracer.spanBuilder(SPAN_NAME).setAttribute("parent_attribute", "value").startSpan();
-    spanScope = parentSpan.makeCurrent();
+    parentSpan.setAttribute("parent_attribute", "value");
     HttpTransport transport = createTransport();
     HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
 
@@ -124,13 +122,18 @@ public class HttpTracingRequestInitializerTest {
         new HttpTracingRequestInitializer(delegateInitializer, tracer);
 
     HttpTransport transport = createTransport();
+    // close span before building the request so there is no current span during initialization
+    spanScope.close();
+    parentSpan.end();
+
     HttpRequest request = buildGetRequest(transport, tracingInitializer, BASE_URL);
 
     HttpResponse response = request.execute();
     response.disconnect();
 
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertEquals(0, spans.size());
+    assertEquals(1, spans.size());
+    assertNull(spans.get(0).getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
     verify(delegateInitializer, times(1)).initialize(any(HttpRequest.class));
   }
 

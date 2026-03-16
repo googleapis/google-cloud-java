@@ -1788,7 +1788,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     return builder.build();
   }
 
-  @InternalApi("Visible for testing")
   /* Temporary development gate for HttpTracingRequestInitializer rollout:
   must be explicitly enabled with the system property
    */

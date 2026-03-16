@@ -63,22 +63,17 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     if (delegate != null) {
       delegate.initialize(request);
     }
-
     if (tracer == null) {
       return;
     }
-
     // Get the current active span (created by HttpBigQueryRpc) and add HTTP attributes to it
     Span span = Span.current();
     if (!span.getSpanContext().isValid()) {
       // No active span to exists, skip instrumentation
       return;
     }
-
     String host = request.getUrl().getHost();
     Integer port = request.getUrl().getPort();
-
-    // Add initial HTTP attributes to the existing span
     addInitialHttpAttributesToSpan(span, host, port);
   }
 

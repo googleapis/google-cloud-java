@@ -21,10 +21,7 @@ import com.google.api.core.InternalApi;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 
-/**
- * General BigQuery Telemetry class that stores generic telemetry attributes and any associated
- * logic to calculate.
- */
+/** BigQuery Telemetry class that stores generic telemetry attributes and values */
 @BetaApi
 @InternalApi
 public final class BigQueryTelemetryTracer {
