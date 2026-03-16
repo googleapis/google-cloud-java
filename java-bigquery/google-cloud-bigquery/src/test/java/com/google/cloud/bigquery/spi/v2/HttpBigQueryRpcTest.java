@@ -46,7 +46,6 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
-import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -947,7 +946,7 @@ public class HttpBigQueryRpcTest {
                 .orElse(null);
         assertNotNull(rpcSpan);
         assertEquals("http", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
-        assertNotNull(rpcSpan.getAttributes().get(HttpTracingRequestInitializer.URL_DOMAIN));
+        assertNotNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
       } finally {
         System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       }
@@ -990,7 +989,7 @@ public class HttpBigQueryRpcTest {
                 .orElse(null);
         assertNotNull(rpcSpan);
         assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
-        assertNull(rpcSpan.getAttributes().get(HttpTracingRequestInitializer.URL_DOMAIN));
+        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
       } finally {
         System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       }
