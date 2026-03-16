@@ -22,24 +22,8 @@ import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Collectors;
 
 /**
  * HttpRequestInitializer that wraps a delegate initializer, intercepts all HTTP requests, adds
@@ -49,66 +33,63 @@ import java.util.stream.Collectors;
 @InternalApi
 public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
-    // HTTP Specific Telemetry Attributes
-    public static final AttributeKey<String> HTTP_REQUEST_METHOD =
-            AttributeKey.stringKey("http.request.method");
-    public static final AttributeKey<String> URL_FULL = AttributeKey.stringKey("url.full");
-    public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
-    public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
-    public static final AttributeKey<Long> HTTP_RESPONSE_STATUS_CODE =
-            AttributeKey.longKey("http.response.status_code");
-    public static final AttributeKey<Long> HTTP_REQUEST_RESEND_COUNT =
-            AttributeKey.longKey("http.request.resend_count");
-    public static final AttributeKey<Long> HTTP_REQUEST_BODY_SIZE =
-            AttributeKey.longKey("http.request.body.size");
-    public static final AttributeKey<Long> HTTP_RESPONSE_BODY_SIZE =
-            AttributeKey.longKey("http.response.body.size");
+  // HTTP Specific Telemetry Attributes
+  public static final AttributeKey<String> HTTP_REQUEST_METHOD =
+      AttributeKey.stringKey("http.request.method");
+  public static final AttributeKey<String> URL_FULL = AttributeKey.stringKey("url.full");
+  public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
+  public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
+  public static final AttributeKey<Long> HTTP_RESPONSE_STATUS_CODE =
+      AttributeKey.longKey("http.response.status_code");
+  public static final AttributeKey<Long> HTTP_REQUEST_RESEND_COUNT =
+      AttributeKey.longKey("http.request.resend_count");
+  public static final AttributeKey<Long> HTTP_REQUEST_BODY_SIZE =
+      AttributeKey.longKey("http.request.body.size");
+  public static final AttributeKey<Long> HTTP_RESPONSE_BODY_SIZE =
+      AttributeKey.longKey("http.response.body.size");
 
-    @VisibleForTesting static final String HTTP_RPC_SYSTEM_NAME = "http";
+  @VisibleForTesting static final String HTTP_RPC_SYSTEM_NAME = "http";
 
+  private final HttpRequestInitializer delegate;
+  private final Tracer tracer;
 
-    private final HttpRequestInitializer delegate;
-    private final Tracer tracer;
+  public HttpTracingRequestInitializer(HttpRequestInitializer delegate, Tracer tracer) {
+    this.delegate = delegate;
+    this.tracer = tracer;
+  }
 
-    public HttpTracingRequestInitializer(
-            HttpRequestInitializer delegate, Tracer tracer) {
-        this.delegate = delegate;
-        this.tracer = tracer;
+  @Override
+  public void initialize(HttpRequest request) throws IOException {
+    if (delegate != null) {
+      delegate.initialize(request);
     }
 
-    @Override
-    public void initialize(HttpRequest request) throws IOException {
-        if (delegate != null) {
-            delegate.initialize(request);
-        }
-
-        if (tracer == null) {
-            return;
-        }
-
-        // Get the current active span (created by HttpBigQueryRpc) and add HTTP attributes to it
-        Span span = Span.current();
-        if (!span.getSpanContext().isValid()) {
-            // No active span to exists, skip instrumentation
-            return;
-        }
-
-        String host = request.getUrl().getHost();
-        Integer port = request.getUrl().getPort();
-
-        // Add initial HTTP attributes to the existing span
-        addInitialHttpAttributesToSpan(span, host, port);
+    if (tracer == null) {
+      return;
     }
 
-    /** Add initial HTTP attributes to the existing active span */
-    private void addInitialHttpAttributesToSpan(
-            Span span, String host, Integer port) {
-        BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
-        span.setAttribute(BigQueryTelemetryTracer.RPC_SYSTEM_NAME, HTTP_RPC_SYSTEM_NAME);
-        span.setAttribute(BigQueryTelemetryTracer.SERVER_ADDRESS, host);
-        if (port != null && port > 0) {
-            span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, port.longValue());
-        }
-        // TODO add full sanitized url, url domain, request method
+    // Get the current active span (created by HttpBigQueryRpc) and add HTTP attributes to it
+    Span span = Span.current();
+    if (!span.getSpanContext().isValid()) {
+      // No active span to exists, skip instrumentation
+      return;
     }
+
+    String host = request.getUrl().getHost();
+    Integer port = request.getUrl().getPort();
+
+    // Add initial HTTP attributes to the existing span
+    addInitialHttpAttributesToSpan(span, host, port);
+  }
+
+  /** Add initial HTTP attributes to the existing active span */
+  private void addInitialHttpAttributesToSpan(Span span, String host, Integer port) {
+    BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
+    span.setAttribute(BigQueryTelemetryTracer.RPC_SYSTEM_NAME, HTTP_RPC_SYSTEM_NAME);
+    span.setAttribute(BigQueryTelemetryTracer.SERVER_ADDRESS, host);
+    if (port != null && port > 0) {
+      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, port.longValue());
+    }
+    // TODO add full sanitized url, url domain, request method
+  }
 }

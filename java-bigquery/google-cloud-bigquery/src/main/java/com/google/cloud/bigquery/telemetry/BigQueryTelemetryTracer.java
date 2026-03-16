@@ -20,9 +20,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.SpanBuilder;
-import io.opentelemetry.api.trace.SpanKind;
-import io.opentelemetry.api.trace.Tracer;
 
 /**
  * General BigQuery Telemetry class that stores generic telemetry attributes and any associated
@@ -32,47 +29,46 @@ import io.opentelemetry.api.trace.Tracer;
 @InternalApi
 public final class BigQueryTelemetryTracer {
 
-    private BigQueryTelemetryTracer() {}
+  private BigQueryTelemetryTracer() {}
 
-    public static final String BQ_GCP_CLIENT_SERVICE = "bigquery";
-    public static final String BQ_GCP_CLIENT_REPO = "googleapis/java-bigquery";
-    public static final String BQ_GCP_CLIENT_ARTIFACT = "google-cloud-bigquery";
-    public static final String BQ_GCP_CLIENT_LANGUAGE = "java";
+  public static final String BQ_GCP_CLIENT_SERVICE = "bigquery";
+  public static final String BQ_GCP_CLIENT_REPO = "googleapis/java-bigquery";
+  public static final String BQ_GCP_CLIENT_ARTIFACT = "google-cloud-bigquery";
+  public static final String BQ_GCP_CLIENT_LANGUAGE = "java";
 
-    // Common GCP Attributes
-    public static final AttributeKey<String> GCP_CLIENT_SERVICE =
-            AttributeKey.stringKey("gcp.client.service");
-    public static final AttributeKey<String> GCP_CLIENT_VERSION =
-            AttributeKey.stringKey("gcp.client.version");
-    public static final AttributeKey<String> GCP_CLIENT_REPO =
-            AttributeKey.stringKey("gcp.client.repo");
-    public static final AttributeKey<String> GCP_CLIENT_ARTIFACT =
-            AttributeKey.stringKey("gcp.client.artifact");
-    public static final AttributeKey<String> GCP_CLIENT_LANGUAGE =
-            AttributeKey.stringKey("gcp.client.language");
-    public static final AttributeKey<String> GCP_RESOURCE_ID =
-            AttributeKey.stringKey("gcp.resource.destination.id");
-    public static final AttributeKey<String> RPC_SYSTEM_NAME =
-            AttributeKey.stringKey("rpc.system.name");
+  // Common GCP Attributes
+  public static final AttributeKey<String> GCP_CLIENT_SERVICE =
+      AttributeKey.stringKey("gcp.client.service");
+  public static final AttributeKey<String> GCP_CLIENT_VERSION =
+      AttributeKey.stringKey("gcp.client.version");
+  public static final AttributeKey<String> GCP_CLIENT_REPO =
+      AttributeKey.stringKey("gcp.client.repo");
+  public static final AttributeKey<String> GCP_CLIENT_ARTIFACT =
+      AttributeKey.stringKey("gcp.client.artifact");
+  public static final AttributeKey<String> GCP_CLIENT_LANGUAGE =
+      AttributeKey.stringKey("gcp.client.language");
+  public static final AttributeKey<String> GCP_RESOURCE_ID =
+      AttributeKey.stringKey("gcp.resource.destination.id");
+  public static final AttributeKey<String> RPC_SYSTEM_NAME =
+      AttributeKey.stringKey("rpc.system.name");
 
-    // Common Error Attributes
-    public static final AttributeKey<String> ERROR_TYPE = AttributeKey.stringKey("error.type");
-    public static final AttributeKey<String> EXCEPTION_TYPE =
-            AttributeKey.stringKey("exception.type");
-    public static final AttributeKey<String> STATUS_MESSAGE =
-            AttributeKey.stringKey("status.message");
+  // Common Error Attributes
+  public static final AttributeKey<String> ERROR_TYPE = AttributeKey.stringKey("error.type");
+  public static final AttributeKey<String> EXCEPTION_TYPE =
+      AttributeKey.stringKey("exception.type");
+  public static final AttributeKey<String> STATUS_MESSAGE =
+      AttributeKey.stringKey("status.message");
 
-    // Common Server Attributes
-    public static final AttributeKey<String> SERVER_ADDRESS =
-            AttributeKey.stringKey("server.address");
-    public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
+  // Common Server Attributes
+  public static final AttributeKey<String> SERVER_ADDRESS =
+      AttributeKey.stringKey("server.address");
+  public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
 
-    public static void addCommonAttributeToSpan(Span span) {
-      span
-                .setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
-                .setAttribute(GCP_CLIENT_REPO, BQ_GCP_CLIENT_REPO)
-                .setAttribute(GCP_CLIENT_ARTIFACT, BQ_GCP_CLIENT_ARTIFACT)
-                .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE);
-        // TODO: add version
-    }
+  public static void addCommonAttributeToSpan(Span span) {
+    span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
+        .setAttribute(GCP_CLIENT_REPO, BQ_GCP_CLIENT_REPO)
+        .setAttribute(GCP_CLIENT_ARTIFACT, BQ_GCP_CLIENT_ARTIFACT)
+        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE);
+    // TODO: add version
+  }
 }

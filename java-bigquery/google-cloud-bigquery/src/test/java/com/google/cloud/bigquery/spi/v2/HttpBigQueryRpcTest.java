@@ -909,7 +909,8 @@ public class HttpBigQueryRpcTest {
 
     @Test
     public void testHttpTracingEnabled() throws Exception {
-      String originalProperty = System.getProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
+      String originalProperty =
+          System.getProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       try {
         System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
         HttpBigQueryRpc customRpc = createRpc(true);
@@ -936,16 +937,21 @@ public class HttpBigQueryRpcTest {
 
         List<SpanData> spans = spanExporter.getFinishedSpanItems();
         assertThat(spans).isNotEmpty();
-        SpanData rpcSpan = spans.stream()
-                .filter(span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+        SpanData rpcSpan =
+            spans.stream()
+                .filter(
+                    span ->
+                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
                 .findFirst()
                 .orElse(null);
         assertNotNull(rpcSpan);
-        assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("rpc.system.name")));
+        assertEquals(
+            "http", rpcSpan.getAttributes().get(AttributeKey.stringKey("rpc.system.name")));
         assertNotNull(rpcSpan.getAttributes().get(AttributeKey.stringKey("server.address")));
       } finally {
         if (originalProperty != null) {
-          System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", originalProperty);
+          System.setProperty(
+              "com.google.cloud.bigquery.http.tracing.dev.enabled", originalProperty);
         } else {
           System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
         }
@@ -954,7 +960,8 @@ public class HttpBigQueryRpcTest {
 
     @Test
     public void testHttpTracingDisabled() throws Exception {
-      String originalProperty = System.getProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
+      String originalProperty =
+          System.getProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       try {
         System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "false");
         HttpBigQueryRpc customRpc = createRpc(true);
@@ -981,8 +988,11 @@ public class HttpBigQueryRpcTest {
 
         List<SpanData> spans = spanExporter.getFinishedSpanItems();
         assertThat(spans).isNotEmpty();
-        SpanData rpcSpan = spans.stream()
-                .filter(span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+        SpanData rpcSpan =
+            spans.stream()
+                .filter(
+                    span ->
+                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
                 .findFirst()
                 .orElse(null);
         assertNotNull(rpcSpan);
@@ -990,7 +1000,8 @@ public class HttpBigQueryRpcTest {
         assertThat(rpcSpan.getAttributes().get(AttributeKey.stringKey("server.address"))).isNull();
       } finally {
         if (originalProperty != null) {
-          System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", originalProperty);
+          System.setProperty(
+              "com.google.cloud.bigquery.http.tracing.dev.enabled", originalProperty);
         } else {
           System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
         }

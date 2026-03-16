@@ -87,7 +87,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public static final String DEFAULT_PROJECTION = "full";
   private static final String BASE_RESUMABLE_URI = "upload/bigquery/v2/projects/";
   static final String HTTP_TRACING_DEV_GATE_PROPERTY =
-          "com.google.cloud.bigquery.http.tracing.dev.enabled";
+      "com.google.cloud.bigquery.http.tracing.dev.enabled";
   // see:
   // https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
   private static final int HTTP_RESUME_INCOMPLETE = 308;
@@ -116,18 +116,17 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     this.options = options;
 
     if (options.isOpenTelemetryTracingEnabled()
-            && options.getOpenTelemetryTracer() != null
-            && isHttpTracingEnabled()) {
+        && options.getOpenTelemetryTracer() != null
+        && isHttpTracingEnabled()) {
       initializer =
-              new HttpTracingRequestInitializer(
-                      initializer, options.getOpenTelemetryTracer());
+          new HttpTracingRequestInitializer(initializer, options.getOpenTelemetryTracer());
     }
 
     bigquery =
-            new Bigquery.Builder(transport, new GsonFactory(), initializer)
-                    .setRootUrl(options.getResolvedApiaryHost("bigquery"))
-                    .setApplicationName(options.getApplicationName())
-                    .build();
+        new Bigquery.Builder(transport, new GsonFactory(), initializer)
+            .setRootUrl(options.getResolvedApiaryHost("bigquery"))
+            .setApplicationName(options.getApplicationName())
+            .build();
   }
 
   private static BigQueryException translate(IOException exception) {
@@ -1794,7 +1793,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   must be explicitly enabled with the system property
    */
   static boolean isHttpTracingEnabled() {
-    return
-        Boolean.parseBoolean(System.getProperty(HTTP_TRACING_DEV_GATE_PROPERTY));
+    return Boolean.parseBoolean(System.getProperty(HTTP_TRACING_DEV_GATE_PROPERTY));
   }
 }
