@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /** Wrapper for {@link Table} protocol buffer object */
@@ -111,6 +112,7 @@ public final class Table {
     @InternalApi
     public static AutomatedBackupPolicy fromProto(
         com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy proto) {
+      Preconditions.checkNotNull(proto);
       return new AutomatedBackupPolicy(proto);
     }
 
@@ -143,7 +145,7 @@ public final class Table {
 
   private final Duration changeStreamRetention;
   private final boolean deletionProtection;
-  private static AutomatedBackupPolicy automatedBackupPolicy;
+  @Nullable private final AutomatedBackupPolicy automatedBackupPolicy;
 
   @InternalApi
   public static Table fromProto(@Nonnull com.google.bigtable.admin.v2.Table proto) {
@@ -170,10 +172,9 @@ public final class Table {
               proto.getChangeStreamConfig().getRetentionPeriod().getNanos());
     }
 
+    AutomatedBackupPolicy automatedBackupPolicy = null;
     if (proto.hasAutomatedBackupPolicy()) {
       automatedBackupPolicy = AutomatedBackupPolicy.fromProto(proto.getAutomatedBackupPolicy());
-    } else {
-      automatedBackupPolicy = null;
     }
 
     return new Table(
@@ -191,14 +192,14 @@ public final class Table {
       List<ColumnFamily> columnFamilies,
       Duration changeStreamRetention,
       boolean deletionProtection,
-      AutomatedBackupPolicy automatedBackupPolicy) {
+      @Nullable AutomatedBackupPolicy automatedBackupPolicy) {
     this.instanceId = tableName.getInstance();
     this.id = tableName.getTable();
     this.replicationStatesByClusterId = replicationStatesByClusterId;
     this.columnFamilies = columnFamilies;
     this.changeStreamRetention = changeStreamRetention;
     this.deletionProtection = deletionProtection;
-    Table.automatedBackupPolicy = automatedBackupPolicy;
+    this.automatedBackupPolicy = automatedBackupPolicy;
   }
 
   /** Gets the table's id. */
@@ -230,10 +231,11 @@ public final class Table {
 
   /** Returns whether this table has automated backups enabled. */
   public boolean isAutomatedBackupEnabled() {
-    return automatedBackupPolicy == null ? false : true;
+    return automatedBackupPolicy != null;
   }
 
   /** Returns the automated backup policy config. */
+  @Nullable
   public AutomatedBackupPolicy getAutomatedBackupPolicy() {
     return automatedBackupPolicy;
   }
@@ -253,7 +255,7 @@ public final class Table {
         && Objects.equal(columnFamilies, table.columnFamilies)
         && Objects.equal(changeStreamRetention, table.changeStreamRetention)
         && Objects.equal(deletionProtection, table.deletionProtection)
-        && Objects.equal(automatedBackupPolicy, Table.automatedBackupPolicy);
+        && Objects.equal(automatedBackupPolicy, table.automatedBackupPolicy);
   }
 
   @Override
