@@ -565,9 +565,10 @@ if [[ "${SKIP_TESTS:-false}" != "true" ]]; then
 fi
 
 # 7.12 Apply manual changes
-if [[ -f "~/${SOURCE_REPO_NAME}.diff" ]]; then
-    echo "Applying diff from ${SOURCE_REPO_NAME}.diff..."
-    git apply "~/${SOURCE_REPO_NAME}.diff"
+MANUAL_CHANGES_DIFF=$(realpath "~/${SOURCE_REPO_NAME}.diff")
+if [[ -f "${MANUAL_CHANGES_DIFF}" ]]; then
+    echo "Applying diff from ${MANUAL_CHANGES_DIFF}..."
+    git apply "${MANUAL_CHANGES_DIFF}"
     echo "Committing diff..."
     git add .
     git commit -am "manual changes"
