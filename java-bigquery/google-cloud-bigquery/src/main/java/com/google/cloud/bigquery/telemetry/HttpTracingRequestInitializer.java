@@ -73,7 +73,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       return;
     }
     String host = request.getUrl().getHost();
-    Integer port = request.getUrl().getPort();
+    int port = request.getUrl().getPort();
     addInitialHttpAttributesToSpan(span, host, port);
   }
 
