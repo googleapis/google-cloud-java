@@ -459,8 +459,8 @@ fi
 
 # 7.8 Migrate .OwlBot-hermetic.yaml
 echo "Migrating .OwlBot-hermetic.yaml..."
-if [ -f "$SOURCE_DIR/.github/.OwlBot-hermetic.yaml" ]; then
-    SOURCE_OWLBOT="$SOURCE_DIR/.github/.OwlBot-hermetic.yaml"
+if [ -f "$SOURCE_DIR/$SOURCE_REPO_NAME/.github/.OwlBot-hermetic.yaml" ]; then
+    SOURCE_OWLBOT="$SOURCE_DIR/$SOURCE_REPO_NAME/.github/.OwlBot-hermetic.yaml"
 else
     SOURCE_OWLBOT=""
 fi
