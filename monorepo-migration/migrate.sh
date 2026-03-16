@@ -478,10 +478,10 @@ fi
 
 # 7.8b Migrate owlbot.py
 echo "Migrating owlbot.py..."
-if [ -f "$SOURCE_DIR/owlbot.py" ]; then
+if [ -f "$SOURCE_DIR/$SOURCE_REPO_NAME/owlbot.py" ]; then
     TARGET_OWLBOT="$SOURCE_REPO_NAME/owlbot.py"
     
-    python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py"
+    python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/$SOURCE_REPO_NAME/owlbot.py"
 
     echo "Committing owlbot.py migration..."
     git add "$TARGET_OWLBOT"
@@ -565,7 +565,7 @@ if [[ "${SKIP_TESTS:-false}" != "true" ]]; then
 fi
 
 # 7.12 Apply manual changes
-MANUAL_CHANGES_DIFF=$(realpath "~/${SOURCE_REPO_NAME}.diff")
+MANUAL_CHANGES_DIFF=$(realpath "${HOME}/${SOURCE_REPO_NAME}.diff")
 if [[ -f "${MANUAL_CHANGES_DIFF}" ]]; then
     echo "Applying diff from ${MANUAL_CHANGES_DIFF}..."
     git apply "${MANUAL_CHANGES_DIFF}"
