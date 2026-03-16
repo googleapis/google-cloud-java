@@ -139,8 +139,7 @@ public class RetryInfoTest {
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId("fake-project")
-            .setInstanceId("fake-instance")
-            .setRefreshingChannel(false);
+            .setInstanceId("fake-instance");
 
     this.client = BigtableDataClient.create(settings.build());
   }

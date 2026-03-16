@@ -80,6 +80,7 @@ public class PreparedStatementImplTest {
   public void setUp() throws IOException {
     service = new TestBigtableSqlService();
     serverRule.getServiceRegistry().addService(service);
+
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilder()
             .setProjectId(TestBigtableSqlService.DEFAULT_PROJECT_ID)
@@ -91,8 +92,6 @@ public class PreparedStatementImplTest {
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(
                 GrpcTransportChannel.create(serverRule.getChannel())))
-        // Refreshing channel doesn't work with FixedTransportChannelProvider
-        .setRefreshingChannel(false)
         .build();
     // Remove log noise from client side metrics
     settings.setMetricsProvider(NoopMetricsProvider.INSTANCE).disableInternalMetrics();

@@ -63,7 +63,6 @@ public class EmulatorEnv extends AbstractTestEnv {
         BigtableDataSettings.newBuilderForEmulator(emulator.getPort())
             .setProjectId("fake-project")
             .setInstanceId("fake-instance")
-            .setRefreshingChannel(false)
             .setMetricsProvider(NoopMetricsProvider.INSTANCE)
             .disableInternalMetrics()
             .build();

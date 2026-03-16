@@ -97,8 +97,6 @@ public class ExecuteQueryRetryTest {
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(
                 GrpcTransportChannel.create(serverRule.getChannel())))
-        // Refreshing channel doesn't work with FixedTransportChannelProvider
-        .setRefreshingChannel(false)
         .build();
     // Remove log noise from client side metrics
     settings.setMetricsProvider(NoopMetricsProvider.INSTANCE).disableInternalMetrics();

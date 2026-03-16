@@ -151,7 +151,7 @@ public class BigtableClientContext {
       ChannelPrimer channelPrimer = NoOpChannelPrimer.create();
 
       // Inject channel priming if enabled
-      if (builder.isRefreshingChannel()) {
+      if (isRefreshingEnabled(builder)) {
         channelPrimer =
             BigtableChannelPrimer.create(
                 builder.getProjectId(),
@@ -180,6 +180,11 @@ public class BigtableClientContext {
       metrics.close();
       throw t;
     }
+  }
+
+  @SuppressWarnings("deprecation")
+  private static boolean isRefreshingEnabled(EnhancedBigtableStubSettings.Builder b) {
+    return b.isRefreshingChannel();
   }
 
   private static void configureGrpcOtel(

@@ -119,27 +119,31 @@ public final class BigtableDataSettings {
    * port number.
    */
   public static Builder newBuilderForEmulator(String hostname, int port) {
-    Builder builder = new Builder();
+    BigtableDataSettings.Builder builder = new BigtableDataSettings.Builder();
 
-    builder
-        .stubSettings()
-        .setCredentialsProvider(NoCredentialsProvider.create())
-        .setEndpoint(hostname + ":" + port)
-        // disable channel refreshing when creating an emulator
-        .setRefreshingChannel(false)
-        .setMetricsProvider(NoopMetricsProvider.INSTANCE) // disable exporting metrics for emulator
-        .disableInternalMetrics()
-        .setTransportChannelProvider(
-            InstantiatingGrpcChannelProvider.newBuilder()
-                .setMaxInboundMessageSize(256 * 1024 * 1024)
-                .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
-                .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                .setKeepAliveTimeDuration(
-                    java.time.Duration.ofSeconds(61)) // sends ping in this interval
-                .setKeepAliveTimeoutDuration(
-                    java.time.Duration.ofSeconds(
-                        10)) // wait this long before considering the connection dead
-                .build());
+    // TODO: remove the suppression once setRefreshingChannel is no longer necessary
+    @SuppressWarnings({"deprecation", "VariableUnused"})
+    EnhancedBigtableStubSettings.Builder ignored =
+        builder
+            .stubSettings()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setEndpoint(hostname + ":" + port)
+            // disable channel refreshing when creating an emulator
+            .setRefreshingChannel(false)
+            .setMetricsProvider(
+                NoopMetricsProvider.INSTANCE) // disable exporting metrics for emulator
+            .disableInternalMetrics()
+            .setTransportChannelProvider(
+                InstantiatingGrpcChannelProvider.newBuilder()
+                    .setMaxInboundMessageSize(256 * 1024 * 1024)
+                    .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .setKeepAliveTimeDuration(
+                        java.time.Duration.ofSeconds(61)) // sends ping in this interval
+                    .setKeepAliveTimeoutDuration(
+                        java.time.Duration.ofSeconds(
+                            10)) // wait this long before considering the connection dead
+                    .build());
 
     LOGGER.info("Connecting to the Bigtable emulator at " + hostname + ":" + port);
     return builder;

@@ -27,6 +27,8 @@ public class BigtableDataSettingsTest {
 
   @Test
   public void testToString() {
+    // TODO: figure out how avoid using setRefreshingChannel
+    @SuppressWarnings("deprecation")
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder()
             .setProjectId("our-project-2-12")

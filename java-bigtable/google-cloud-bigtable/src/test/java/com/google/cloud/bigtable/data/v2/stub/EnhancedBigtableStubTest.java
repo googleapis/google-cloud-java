@@ -261,6 +261,8 @@ public class EnhancedBigtableStubTest {
     ManagedChannel channel =
         ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
 
+    // TODO: remove this suppression when setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
     EnhancedBigtableStubSettings settings =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId("fake-project")
@@ -311,8 +313,9 @@ public class EnhancedBigtableStubTest {
   }
 
   @Test
-  public void testPingAndWarmFeatureFlags()
-      throws InterruptedException, IOException, ExecutionException {
+  public void testPingAndWarmFeatureFlags() throws InterruptedException, IOException {
+    // TODO: remove the suppression once setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
     EnhancedBigtableStubSettings settings =
         defaultSettings.toBuilder().setRefreshingChannel(true).build();
     try (EnhancedBigtableStub ignored = EnhancedBigtableStub.create(settings)) {
@@ -543,6 +546,8 @@ public class EnhancedBigtableStubTest {
 
   @Test
   public void testChannelPrimerConfigured() throws IOException {
+    // TODO: remove the suppression once setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
     EnhancedBigtableStubSettings settings =
         defaultSettings.toBuilder().setRefreshingChannel(true).build();
 
@@ -712,8 +717,7 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testCallContextPropagatedInMutationBatcher()
       throws IOException, InterruptedException, ExecutionException {
-    EnhancedBigtableStubSettings settings =
-        defaultSettings.toBuilder().setRefreshingChannel(true).build();
+    EnhancedBigtableStubSettings settings = defaultSettings.toBuilder().build();
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
       // clear the previous contexts
@@ -739,8 +743,7 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testCallContextPropagatedInReadBatcher()
       throws IOException, InterruptedException, ExecutionException {
-    EnhancedBigtableStubSettings settings =
-        defaultSettings.toBuilder().setRefreshingChannel(true).build();
+    EnhancedBigtableStubSettings settings = defaultSettings.toBuilder().build();
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
       // clear the previous contexts

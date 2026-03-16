@@ -68,8 +68,7 @@ public class EnhancedBigtableStubCloseRetryTest {
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setRefreshingChannel(false);
+            .setCredentialsProvider(NoCredentialsProvider.create());
 
     stub = EnhancedBigtableStub.create(settingBuilder.build().getStubSettings());
   }

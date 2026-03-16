@@ -234,7 +234,6 @@ public class BuiltinMetricsTracerTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
-            .setRefreshingChannel(false)
             .build();
     EnhancedBigtableStubSettings.Builder stubSettingsBuilder =
         settings.getStubSettings().toBuilder();

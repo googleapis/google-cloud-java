@@ -255,6 +255,8 @@ public class BigtableDataClientFactoryTest {
   @Test
   public void testCreateWithRefreshingChannel() throws Exception {
     int poolSize = 3;
+    // TODO: remove the suppression when setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
     BigtableDataSettings.Builder builder =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(DEFAULT_PROJECT_ID)

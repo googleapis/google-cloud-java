@@ -55,6 +55,7 @@ import org.mockito.Mockito;
 import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
+@SuppressWarnings("deprecation") // TODO: remove this
 public class EnhancedBigtableStubSettingsTest {
   @Test
   public void instanceNameIsRequiredTest() {
