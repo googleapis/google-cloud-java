@@ -57,8 +57,8 @@ import org.apache.arrow.vector.complex.impl.UnionListWriter;
 import org.apache.arrow.vector.types.pojo.FieldType;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryArrowResultSetTest {
 
@@ -194,7 +194,7 @@ public class BigQueryArrowResultSetTest {
     return jsonStringArrayList;
   }
 
-  @Before
+  @BeforeEach
   public void setUp() throws SQLException, IOException {
     buffer = new LinkedBlockingDeque<>();
     bufferWithTwoRows = new LinkedBlockingDeque<>();

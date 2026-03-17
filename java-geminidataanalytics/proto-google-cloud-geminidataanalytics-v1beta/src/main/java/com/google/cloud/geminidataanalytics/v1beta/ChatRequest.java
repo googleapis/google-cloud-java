@@ -55,6 +55,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     project_ = "";
     parent_ = "";
     messages_ = java.util.Collections.emptyList();
+    thinkingMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +71,177 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.geminidataanalytics.v1beta.ChatRequest.class,
             com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Mode of thinking for the agent.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode}
+   */
+  public enum ThinkingMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified thinking mode, agent will use THINKING mode by default.
+     * </pre>
+     *
+     * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
+     */
+    THINKING_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Fast mode, answers quickly.
+     * </pre>
+     *
+     * <code>FAST = 1;</code>
+     */
+    FAST(1),
+    /**
+     *
+     *
+     * <pre>
+     * Thinking mode, solves complex problems.
+     * </pre>
+     *
+     * <code>THINKING = 2;</code>
+     */
+    THINKING(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ThinkingMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified thinking mode, agent will use THINKING mode by default.
+     * </pre>
+     *
+     * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int THINKING_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fast mode, answers quickly.
+     * </pre>
+     *
+     * <code>FAST = 1;</code>
+     */
+    public static final int FAST_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Thinking mode, solves complex problems.
+     * </pre>
+     *
+     * <code>THINKING = 2;</code>
+     */
+    public static final int THINKING_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ThinkingMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ThinkingMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return THINKING_MODE_UNSPECIFIED;
+        case 1:
+          return FAST;
+        case 2:
+          return THINKING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ThinkingMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ThinkingMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ThinkingMode>() {
+          public ThinkingMode findValueByNumber(int number) {
+            return ThinkingMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.geminidataanalytics.v1beta.ChatRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ThinkingMode[] VALUES = values();
+
+    public static ThinkingMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ThinkingMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode)
   }
 
   private int contextProviderCase_ = 0;
@@ -415,7 +587,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
    * @return The project.
    */
   @java.lang.Override
@@ -444,7 +616,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
    * @return The bytes for project.
    */
   @java.lang.Override
@@ -603,6 +775,52 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     return messages_.get(index);
   }
 
+  public static final int THINKING_MODE_FIELD_NUMBER = 9;
+  private int thinkingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking mode to use for the agent loop.
+   * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for thinkingMode.
+   */
+  @java.lang.Override
+  public int getThinkingModeValue() {
+    return thinkingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking mode to use for the agent loop.
+   * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thinkingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode getThinkingMode() {
+    com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode result =
+        com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode.forNumber(
+            thinkingMode_);
+    return result == null
+        ? com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -625,6 +843,12 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, parent_);
+    }
+    if (thinkingMode_
+        != com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode
+            .THINKING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, thinkingMode_);
     }
     if (contextProviderCase_ == 101) {
       output.writeMessage(
@@ -662,6 +886,12 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, parent_);
+    }
+    if (thinkingMode_
+        != com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode
+            .THINKING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, thinkingMode_);
     }
     if (contextProviderCase_ == 101) {
       size +=
@@ -705,6 +935,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     if (!getProject().equals(other.getProject())) return false;
     if (!getParent().equals(other.getParent())) return false;
     if (!getMessagesList().equals(other.getMessagesList())) return false;
+    if (thinkingMode_ != other.thinkingMode_) return false;
     if (!getContextProviderCase().equals(other.getContextProviderCase())) return false;
     switch (contextProviderCase_) {
       case 101:
@@ -742,6 +973,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getMessagesList().hashCode();
     }
+    hash = (37 * hash) + THINKING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + thinkingMode_;
     switch (contextProviderCase_) {
       case 101:
         hash = (37 * hash) + INLINE_CONTEXT_FIELD_NUMBER;
@@ -924,6 +1157,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         messagesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      thinkingMode_ = 0;
       contextProviderCase_ = 0;
       contextProvider_ = null;
       return this;
@@ -982,6 +1216,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.thinkingMode_ = thinkingMode_;
       }
     }
 
@@ -1052,6 +1289,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
             messagesBuilder_.addAllMessages(other.messages_);
           }
         }
+      }
+      if (other.thinkingMode_ != 0) {
+        setThinkingModeValue(other.getThinkingModeValue());
       }
       switch (other.getContextProviderCase()) {
         case INLINE_CONTEXT:
@@ -1131,6 +1371,12 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 26
+            case 72:
+              {
+                thinkingMode_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
             case 810:
               {
                 input.readMessage(
@@ -2258,7 +2504,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
      * @return The project.
      */
     @java.lang.Deprecated
@@ -2286,7 +2532,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
      * @return The bytes for project.
      */
     @java.lang.Deprecated
@@ -2314,7 +2560,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
      * @param value The project to set.
      * @return This builder for chaining.
      */
@@ -2341,7 +2587,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2364,7 +2610,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
      * @param value The bytes for project to set.
      * @return This builder for chaining.
      */
@@ -2904,6 +3150,120 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         messages_ = null;
       }
       return messagesBuilder_;
+    }
+
+    private int thinkingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking mode to use for the agent loop.
+     * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for thinkingMode.
+     */
+    @java.lang.Override
+    public int getThinkingModeValue() {
+      return thinkingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking mode to use for the agent loop.
+     * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for thinkingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThinkingModeValue(int value) {
+      thinkingMode_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking mode to use for the agent loop.
+     * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thinkingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode getThinkingMode() {
+      com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode result =
+          com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode.forNumber(
+              thinkingMode_);
+      return result == null
+          ? com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking mode to use for the agent loop.
+     * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The thinkingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThinkingMode(
+        com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      thinkingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking mode to use for the agent loop.
+     * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThinkingMode() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      thinkingMode_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.ChatRequest)

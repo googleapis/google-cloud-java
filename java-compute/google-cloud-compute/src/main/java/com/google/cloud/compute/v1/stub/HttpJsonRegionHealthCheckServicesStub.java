@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.ListPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -32,9 +33,11 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.HealthCheckService;
+import com.google.cloud.compute.v1.HealthCheckServiceAggregatedList;
 import com.google.cloud.compute.v1.HealthCheckServicesList;
 import com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthCheckServicesRequest;
@@ -62,6 +65,72 @@ import javax.annotation.Generated;
 public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServicesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthCheckServices/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AggregatedListRegionHealthCheckServicesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/healthCheckServices",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListRegionHealthCheckServicesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListRegionHealthCheckServicesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<HealthCheckServiceAggregatedList>newBuilder()
+                      .setDefaultInstance(HealthCheckServiceAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DeleteRegionHealthCheckServiceRequest, Operation>
       deleteMethodDescriptor =
@@ -366,6 +435,12 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
                       .build())
               .build();
 
+  private final UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteRegionHealthCheckServiceRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
       deleteOperationCallable;
@@ -430,6 +505,21 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
     this.httpJsonOperationsStub =
         HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<
+            AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteRegionHealthCheckServiceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -517,6 +607,12 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
                     })
                 .build();
 
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -566,6 +662,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
@@ -573,6 +670,19 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListRegionHealthCheckServicesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override

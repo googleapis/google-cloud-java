@@ -33,6 +33,10 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
 
   private final DoubleHistogram transactionLatency;
   private final LongCounter transactionAttemptCount;
+  private final DoubleHistogram attemptLatency;
+  private final LongCounter attemptCount;
+  private final DoubleHistogram operationLatency;
+  private final LongCounter operationCount;
 
   OpenTelemetryMetricsRecorder(@Nonnull OpenTelemetry openTelemetry) {
     this.openTelemetry = openTelemetry;
@@ -51,6 +55,34 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
             .counterBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT)
             .setDescription("Number of attempts to commit a transaction")
             .build();
+
+    this.attemptLatency =
+        meter
+            .histogramBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY)
+            .setDescription("Latency of a single RPC attempt")
+            .setUnit("ms")
+            .build();
+
+    this.attemptCount =
+        meter
+            .counterBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT)
+            .setDescription("Number of RPC attempts")
+            .setUnit("1")
+            .build();
+
+    this.operationLatency =
+        meter
+            .histogramBuilder(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY)
+            .setDescription("Total latency of an operation including retries")
+            .setUnit("ms")
+            .build();
+
+    this.operationCount =
+        meter
+            .counterBuilder(TelemetryConstants.METRIC_NAME_OPERATION_COUNT)
+            .setDescription("Number of operations")
+            .setUnit("1")
+            .build();
   }
 
   OpenTelemetry getOpenTelemetry() {
@@ -65,6 +97,26 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
   @Override
   public void recordTransactionAttemptCount(long count, Map<String, String> attributes) {
     transactionAttemptCount.add(count, toOtelAttributes(attributes));
+  }
+
+  @Override
+  public void recordAttemptLatency(double latencyMs, Map<String, String> attributes) {
+    attemptLatency.record(latencyMs, toOtelAttributes(attributes));
+  }
+
+  @Override
+  public void recordAttemptCount(long count, Map<String, String> attributes) {
+    attemptCount.add(count, toOtelAttributes(attributes));
+  }
+
+  @Override
+  public void recordOperationLatency(double latencyMs, Map<String, String> attributes) {
+    operationLatency.record(latencyMs, toOtelAttributes(attributes));
+  }
+
+  @Override
+  public void recordOperationCount(long count, Map<String, String> attributes) {
+    operationCount.add(count, toOtelAttributes(attributes));
   }
 
   private static Attributes toOtelAttributes(Map<String, String> attributes) {

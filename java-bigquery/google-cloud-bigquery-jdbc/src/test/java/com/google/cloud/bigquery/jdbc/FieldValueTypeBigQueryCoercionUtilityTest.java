@@ -22,7 +22,7 @@ import static com.google.cloud.bigquery.FieldValue.Attribute.RECORD;
 import static com.google.cloud.bigquery.FieldValue.Attribute.REPEATED;
 import static com.google.cloud.bigquery.jdbc.BigQueryTypeCoercionUtility.INSTANCE;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.FieldElementType;
 import com.google.cloud.bigquery.FieldValue;
@@ -41,7 +41,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class FieldValueTypeBigQueryCoercionUtilityTest {
   private static final FieldValue STRING_VALUE = FieldValue.of(PRIMITIVE, "sample-string");

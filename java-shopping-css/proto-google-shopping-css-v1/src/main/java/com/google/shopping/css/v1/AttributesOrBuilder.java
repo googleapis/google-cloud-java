@@ -1217,7 +1217,7 @@ public interface AttributesOrBuilder
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -1232,7 +1232,7 @@ public interface AttributesOrBuilder
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -1247,7 +1247,7 @@ public interface AttributesOrBuilder
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -1263,7 +1263,7 @@ public interface AttributesOrBuilder
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -2137,4 +2137,134 @@ public interface AttributesOrBuilder
    */
   com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder
       getHeadlineOfferSubscriptionCostOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of reviews of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 review_count = 54;</code>
+   *
+   * @return Whether the reviewCount field is set.
+   */
+  boolean hasReviewCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of reviews of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 review_count = 54;</code>
+   *
+   * @return The reviewCount.
+   */
+  long getReviewCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 min_rating = 55;</code>
+   *
+   * @return Whether the minRating field is set.
+   */
+  boolean hasMinRating();
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 min_rating = 55;</code>
+   *
+   * @return The minRating.
+   */
+  long getMinRating();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 max_rating = 56;</code>
+   *
+   * @return Whether the maxRating field is set.
+   */
+  boolean hasMaxRating();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 max_rating = 56;</code>
+   *
+   * @return The maxRating.
+   */
+  long getMaxRating();
+
+  /**
+   *
+   *
+   * <pre>
+   * Average rating score of the product. The value must be within the
+   * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+   * product page, this rating is normalized to a scale of [1, 5] with one
+   * decimal place. If provided,
+   * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+   * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+   * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+   * required. This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional double rating = 57;</code>
+   *
+   * @return Whether the rating field is set.
+   */
+  boolean hasRating();
+
+  /**
+   *
+   *
+   * <pre>
+   * Average rating score of the product. The value must be within the
+   * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+   * product page, this rating is normalized to a scale of [1, 5] with one
+   * decimal place. If provided,
+   * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+   * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+   * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+   * required. This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional double rating = 57;</code>
+   *
+   * @return The rating.
+   */
+  double getRating();
 }

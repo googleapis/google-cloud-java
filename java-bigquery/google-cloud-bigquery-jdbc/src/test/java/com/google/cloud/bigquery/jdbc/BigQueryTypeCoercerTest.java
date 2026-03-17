@@ -17,7 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.jdbc.TestType.Text;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.function.Function;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryTypeCoercerTest {
 

@@ -75,32 +75,40 @@ public final class DataDocumentationProto extends com.google.protobuf.GeneratedF
     java.lang.String[] descriptorData = {
       "\n"
           + "1google/cloud/dataplex/v1/data_document"
-          + "ation.proto\022\030google.cloud.dataplex.v1\032\037google/api/field_behavior.proto\"\027\n"
-          + "\025DataDocumentationSpec\"\351\004\n"
+          + "ation.proto\022\030google.cloud.dataplex.v1\032\037google/api/field_behavior.proto\"\223\002\n"
+          + "\025DataDocumentationSpec\022\'\n"
+          + "\032catalog_publishing_enabled\030\002 \001(\010B\003\340A\001\022_\n"
+          + "\021generation_scopes\030\003"
+          + " \003(\0162?.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScopeB\003\340A\001\"p\n"
+          + "\017GenerationScope\022 \n"
+          + "\034GENERATION_SCOPE_UNSPECIFIED\020\000\022\007\n"
+          + "\003ALL\020\001\022!\n"
+          + "\035TABLE_AND_COLUMN_DESCRIPTIONS\020\002\022\017\n"
+          + "\013SQL_QUERIES\020\003\"\351\004\n"
           + "\027DataDocumentationResult\022Z\n"
-          + "\014table_result\030\010 \001(\0132=.google.cloud"
-          + ".dataplex.v1.DataDocumentationResult.TableResultB\003\340A\003H\000\032\325\001\n"
+          + "\014table_result\030\010 \001(\0132="
+          + ".google.cloud.dataplex.v1.DataDocumentationResult.TableResultB\003\340A\003H\000\032\325\001\n"
           + "\013TableResult\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\025\n"
           + "\010overview\030\002 \001(\tB\003\340A\003\022M\n"
-          + "\006schema\030\003"
-          + " \001(\01328.google.cloud.dataplex.v1.DataDocumentationResult.SchemaB\003\340A\003\022M\n"
-          + "\007queries\030\004"
-          + " \003(\01327.google.cloud.dataplex.v1.DataDocumentationResult.QueryB\003\340A\003\0323\n"
+          + "\006schema\030\003 \001(\01328.google.cloud.da"
+          + "taplex.v1.DataDocumentationResult.SchemaB\003\340A\003\022M\n"
+          + "\007queries\030\004 \003(\01327.google.cloud.da"
+          + "taplex.v1.DataDocumentationResult.QueryB\003\340A\003\0323\n"
           + "\005Query\022\020\n"
           + "\003sql\030\001 \001(\tB\003\340A\003\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\003\032V\n"
           + "\006Schema\022L\n"
-          + "\006fields\030\001 \003(\01327.google."
-          + "cloud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003\032\202\001\n"
+          + "\006fields\030\001 "
+          + "\003(\01327.google.cloud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003\032\202\001\n"
           + "\005Field\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\003\022L\n"
-          + "\006fields\030\003 "
-          + "\003(\01327.google.cloud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003B\010\n"
+          + "\006fields\030\003 \003(\01327.google.cloud.dataplex"
+          + ".v1.DataDocumentationResult.FieldB\003\340A\003B\010\n"
           + "\006resultBr\n"
-          + "\034com.google.cloud.dataplex.v1B\026DataDocumen"
-          + "tationProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "\034com.google.cloud.dataplex.v1B\026DataDocumentationProtoP\001Z8cloud.google"
+          + ".com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,7 +121,9 @@ public final class DataDocumentationProto extends com.google.protobuf.GeneratedF
     internal_static_google_cloud_dataplex_v1_DataDocumentationSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataDocumentationSpec_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "CatalogPublishingEnabled", "GenerationScopes",
+            });
     internal_static_google_cloud_dataplex_v1_DataDocumentationResult_descriptor =
         getDescriptor().getMessageType(1);
     internal_static_google_cloud_dataplex_v1_DataDocumentationResult_fieldAccessorTable =

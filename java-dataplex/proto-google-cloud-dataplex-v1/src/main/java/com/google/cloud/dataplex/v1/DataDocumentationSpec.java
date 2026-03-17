@@ -51,7 +51,9 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     super(builder);
   }
 
-  private DataDocumentationSpec() {}
+  private DataDocumentationSpec() {
+    generationScopes_ = emptyIntList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataDocumentationProto
@@ -68,6 +70,358 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
             com.google.cloud.dataplex.v1.DataDocumentationSpec.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The data documentation generation scope. This field contains the possible
+   * components of a data documentation scan which can be selectively generated.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope}
+   */
+  public enum GenerationScope implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified generation scope. If no generation scope is specified, all
+     * available documentation components will be generated.
+     * </pre>
+     *
+     * <code>GENERATION_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    GENERATION_SCOPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * All the possible results will be generated.
+     * </pre>
+     *
+     * <code>ALL = 1;</code>
+     */
+    ALL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Table and column descriptions will be generated.
+     * </pre>
+     *
+     * <code>TABLE_AND_COLUMN_DESCRIPTIONS = 2;</code>
+     */
+    TABLE_AND_COLUMN_DESCRIPTIONS(2),
+    /**
+     *
+     *
+     * <pre>
+     * SQL queries will be generated.
+     * </pre>
+     *
+     * <code>SQL_QUERIES = 3;</code>
+     */
+    SQL_QUERIES(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "GenerationScope");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified generation scope. If no generation scope is specified, all
+     * available documentation components will be generated.
+     * </pre>
+     *
+     * <code>GENERATION_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int GENERATION_SCOPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * All the possible results will be generated.
+     * </pre>
+     *
+     * <code>ALL = 1;</code>
+     */
+    public static final int ALL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Table and column descriptions will be generated.
+     * </pre>
+     *
+     * <code>TABLE_AND_COLUMN_DESCRIPTIONS = 2;</code>
+     */
+    public static final int TABLE_AND_COLUMN_DESCRIPTIONS_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * SQL queries will be generated.
+     * </pre>
+     *
+     * <code>SQL_QUERIES = 3;</code>
+     */
+    public static final int SQL_QUERIES_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static GenerationScope valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static GenerationScope forNumber(int value) {
+      switch (value) {
+        case 0:
+          return GENERATION_SCOPE_UNSPECIFIED;
+        case 1:
+          return ALL;
+        case 2:
+          return TABLE_AND_COLUMN_DESCRIPTIONS;
+        case 3:
+          return SQL_QUERIES;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<GenerationScope> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<GenerationScope>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<GenerationScope>() {
+              public GenerationScope findValueByNumber(int number) {
+                return GenerationScope.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataDocumentationSpec.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final GenerationScope[] VALUES = values();
+
+    public static GenerationScope valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private GenerationScope(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope)
+  }
+
+  public static final int CATALOG_PUBLISHING_ENABLED_FIELD_NUMBER = 2;
+  private boolean catalogPublishingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to publish result to Dataplex Catalog.
+   * </pre>
+   *
+   * <code>bool catalog_publishing_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The catalogPublishingEnabled.
+   */
+  @java.lang.Override
+  public boolean getCatalogPublishingEnabled() {
+    return catalogPublishingEnabled_;
+  }
+
+  public static final int GENERATION_SCOPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList generationScopes_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>
+      generationScopes_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>() {
+            public com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope convert(
+                int from) {
+              com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope result =
+                  com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope.forNumber(
+                      from);
+              return result == null
+                  ? com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the generationScopes.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>
+      getGenerationScopesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>(
+        generationScopes_, generationScopes_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of generationScopes.
+   */
+  @java.lang.Override
+  public int getGenerationScopesCount() {
+    return generationScopes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The generationScopes at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope getGenerationScopes(
+      int index) {
+    return generationScopes_converter_.convert(generationScopes_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for generationScopes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getGenerationScopesValueList() {
+    return generationScopes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of generationScopes at the given index.
+   */
+  @java.lang.Override
+  public int getGenerationScopesValue(int index) {
+    return generationScopes_.getInt(index);
+  }
+
+  private int generationScopesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -82,6 +436,17 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
+    if (catalogPublishingEnabled_ != false) {
+      output.writeBool(2, catalogPublishingEnabled_);
+    }
+    if (getGenerationScopesList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(generationScopesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < generationScopes_.size(); i++) {
+      output.writeEnumNoTag(generationScopes_.getInt(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -91,6 +456,22 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (catalogPublishingEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, catalogPublishingEnabled_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < generationScopes_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(generationScopes_.getInt(i));
+      }
+      size += dataSize;
+      if (!getGenerationScopesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      generationScopesMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -107,6 +488,8 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     com.google.cloud.dataplex.v1.DataDocumentationSpec other =
         (com.google.cloud.dataplex.v1.DataDocumentationSpec) obj;
 
+    if (getCatalogPublishingEnabled() != other.getCatalogPublishingEnabled()) return false;
+    if (!generationScopes_.equals(other.generationScopes_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -118,6 +501,12 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CATALOG_PUBLISHING_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCatalogPublishingEnabled());
+    if (getGenerationScopesCount() > 0) {
+      hash = (37 * hash) + GENERATION_SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + generationScopes_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -257,6 +646,9 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      catalogPublishingEnabled_ = false;
+      generationScopes_ = emptyIntList();
       return this;
     }
 
@@ -284,8 +676,22 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dataplex.v1.DataDocumentationSpec buildPartial() {
       com.google.cloud.dataplex.v1.DataDocumentationSpec result =
           new com.google.cloud.dataplex.v1.DataDocumentationSpec(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataDocumentationSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.catalogPublishingEnabled_ = catalogPublishingEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        generationScopes_.makeImmutable();
+        result.generationScopes_ = generationScopes_;
+      }
     }
 
     @java.lang.Override
@@ -301,6 +707,20 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.dataplex.v1.DataDocumentationSpec other) {
       if (other == com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance())
         return this;
+      if (other.getCatalogPublishingEnabled() != false) {
+        setCatalogPublishingEnabled(other.getCatalogPublishingEnabled());
+      }
+      if (!other.generationScopes_.isEmpty()) {
+        if (generationScopes_.isEmpty()) {
+          generationScopes_ = other.generationScopes_;
+          generationScopes_.makeImmutable();
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureGenerationScopesIsMutable();
+          generationScopes_.addAll(other.generationScopes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -327,6 +747,30 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
             case 0:
               done = true;
               break;
+            case 16:
+              {
+                catalogPublishingEnabled_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+            case 24:
+              {
+                int tmpRaw = input.readEnum();
+                ensureGenerationScopesIsMutable();
+                generationScopes_.addInt(tmpRaw);
+                break;
+              } // case 24
+            case 26:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureGenerationScopesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  generationScopes_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -341,6 +785,364 @@ public final class DataDocumentationSpec extends com.google.protobuf.GeneratedMe
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private boolean catalogPublishingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to publish result to Dataplex Catalog.
+     * </pre>
+     *
+     * <code>bool catalog_publishing_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The catalogPublishingEnabled.
+     */
+    @java.lang.Override
+    public boolean getCatalogPublishingEnabled() {
+      return catalogPublishingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to publish result to Dataplex Catalog.
+     * </pre>
+     *
+     * <code>bool catalog_publishing_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The catalogPublishingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCatalogPublishingEnabled(boolean value) {
+
+      catalogPublishingEnabled_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to publish result to Dataplex Catalog.
+     * </pre>
+     *
+     * <code>bool catalog_publishing_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCatalogPublishingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      catalogPublishingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList generationScopes_ = emptyIntList();
+
+    private void ensureGenerationScopesIsMutable() {
+      if (!generationScopes_.isModifiable()) {
+        generationScopes_ = makeMutableCopy(generationScopes_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the generationScopes.
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>
+        getGenerationScopesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>(
+          generationScopes_, generationScopes_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of generationScopes.
+     */
+    public int getGenerationScopesCount() {
+      return generationScopes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The generationScopes at the given index.
+     */
+    public com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope getGenerationScopes(
+        int index) {
+      return generationScopes_converter_.convert(generationScopes_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The generationScopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGenerationScopes(
+        int index, com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureGenerationScopesIsMutable();
+      generationScopes_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The generationScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGenerationScopes(
+        com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureGenerationScopesIsMutable();
+      generationScopes_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The generationScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllGenerationScopes(
+        java.lang.Iterable<
+                ? extends com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>
+            values) {
+      ensureGenerationScopesIsMutable();
+      for (com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope value : values) {
+        generationScopes_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGenerationScopes() {
+      generationScopes_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for generationScopes.
+     */
+    public java.util.List<java.lang.Integer> getGenerationScopesValueList() {
+      generationScopes_.makeImmutable();
+      return generationScopes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of generationScopes at the given index.
+     */
+    public int getGenerationScopesValue(int index) {
+      return generationScopes_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for generationScopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGenerationScopesValue(int index, int value) {
+      ensureGenerationScopesIsMutable();
+      generationScopes_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for generationScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGenerationScopesValue(int value) {
+      ensureGenerationScopesIsMutable();
+      generationScopes_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which components of the data documentation to generate.
+     * Any component that is required to generate the specified components will
+     * also be generated. If no generation scope is specified, all available
+     * documentation components will be generated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for generationScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllGenerationScopesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureGenerationScopesIsMutable();
+      for (int value : values) {
+        generationScopes_.addInt(value);
+      }
+      onChanged();
       return this;
     }
 

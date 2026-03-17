@@ -162,4 +162,109 @@ public class OpenTelemetryMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     assertThat(metrics).isNotEmpty();
   }
+
+  @Test
+  public void recordAttemptLatency_recordsHistogramWithAttributes() {
+    Map<String, String> attributes = new HashMap<>();
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_LOOKUP);
+
+    recorder.recordAttemptLatency(42.0, attributes);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    MetricData metric =
+        metrics.stream()
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(metric).isNotNull();
+    assertThat(metric.getDescription()).isEqualTo("Latency of a single RPC attempt");
+    assertThat(metric.getUnit()).isEqualTo("ms");
+
+    HistogramPointData point =
+        metric.getHistogramData().getPoints().stream().findFirst().orElse(null);
+    assertThat(point).isNotNull();
+    assertThat(point.getSum()).isEqualTo(42.0);
+    assertThat(point.getCount()).isEqualTo(1);
+    assertThat(
+            point
+                .getAttributes()
+                .get(AttributeKey.stringKey(TelemetryConstants.ATTRIBUTES_KEY_METHOD)))
+        .isEqualTo(TelemetryConstants.METHOD_LOOKUP);
+  }
+
+  @Test
+  public void recordAttemptCount_recordsCounterWithAttributes() {
+    Map<String, String> attributes = new HashMap<>();
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_COMMIT);
+
+    recorder.recordAttemptCount(1, attributes);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    MetricData metric =
+        metrics.stream()
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(metric).isNotNull();
+    assertThat(metric.getDescription()).isEqualTo("Number of RPC attempts");
+
+    LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
+    assertThat(point).isNotNull();
+    assertThat(point.getValue()).isEqualTo(1);
+  }
+
+  @Test
+  public void recordOperationLatency_recordsHistogramWithAttributes() {
+    Map<String, String> attributes = new HashMap<>();
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_RUN_QUERY);
+
+    recorder.recordOperationLatency(200.0, attributes);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    MetricData metric =
+        metrics.stream()
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(metric).isNotNull();
+    assertThat(metric.getDescription())
+        .isEqualTo("Total latency of an operation including retries");
+    assertThat(metric.getUnit()).isEqualTo("ms");
+
+    HistogramPointData point =
+        metric.getHistogramData().getPoints().stream().findFirst().orElse(null);
+    assertThat(point).isNotNull();
+    assertThat(point.getSum()).isEqualTo(200.0);
+    assertThat(point.getCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void recordOperationCount_recordsCounterWithAttributes() {
+    Map<String, String> attributes = new HashMap<>();
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
+    attributes.put(
+        TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_ALLOCATE_IDS);
+
+    recorder.recordOperationCount(1, attributes);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    MetricData metric =
+        metrics.stream()
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_OPERATION_COUNT))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(metric).isNotNull();
+    assertThat(metric.getDescription()).isEqualTo("Number of operations");
+
+    LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
+    assertThat(point).isNotNull();
+    assertThat(point.getValue()).isEqualTo(1);
+  }
 }

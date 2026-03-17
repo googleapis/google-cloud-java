@@ -17,11 +17,11 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
@@ -38,9 +38,9 @@ import java.security.PrivateKey;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
@@ -110,7 +110,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
     try {
       BigQueryJdbcOAuthUtility.getCredentials(oauthProperties, overrideProperties, null);
-      Assert.fail();
+      Assertions.fail();
     } catch (BigQueryJdbcRuntimeException e) {
       assertThat(e.getMessage()).contains("java.net.URISyntaxException");
     }
@@ -190,7 +190,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  @Ignore // For running locally only similar to our other JDBC tests.
+  @Disabled // For running locally only similar to our other JDBC tests.
   public void testGetCredentialsForApplicationDefault() {
     Map<String, String> authProperties =
         BigQueryJdbcOAuthUtility.parseOAuthProperties(

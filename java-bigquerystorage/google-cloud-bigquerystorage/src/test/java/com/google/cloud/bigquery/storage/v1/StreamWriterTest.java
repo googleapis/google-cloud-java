@@ -403,7 +403,10 @@ class StreamWriterTest {
         // First request received by server should have schema and stream name.
         assertTrue(serverRequest.getProtoRows().hasWriterSchema());
         assertEquals(TEST_STREAM_1, serverRequest.getWriteStream());
-        assertEquals("java-streamwriter " + TEST_TRACE_ID, serverRequest.getTraceId());
+        // The trace ID would look like "java-streamwriter:3.23.0 DATAFLOW:job_id" if
+        // StreamWriter.getFullTraceId contains the version (non SNAPSHOT version);
+        // otherwise it's "java-streamwriter DATAFLOW:job_id".
+        assertThat(serverRequest.getTraceId()).matches("java-streamwriter(:.+)? " + TEST_TRACE_ID);
       } else {
         // Following request should not have schema and stream name.
         assertFalse(serverRequest.getProtoRows().hasWriterSchema());

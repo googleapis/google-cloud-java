@@ -72,6 +72,51 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * Check the AcceleratorTopologyMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string accelerator_topology_mode = 284293791;</code>
+   *
+   * @return Whether the acceleratorTopologyMode field is set.
+   */
+  boolean hasAcceleratorTopologyMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * Check the AcceleratorTopologyMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string accelerator_topology_mode = 284293791;</code>
+   *
+   * @return The acceleratorTopologyMode.
+   */
+  java.lang.String getAcceleratorTopologyMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the connection mode for the accelerator topology. If not
+   * specified, the default is AUTO_CONNECT.
+   * Check the AcceleratorTopologyMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string accelerator_topology_mode = 284293791;</code>
+   *
+   * @return The bytes for acceleratorTopologyMode.
+   */
+  com.google.protobuf.ByteString getAcceleratorTopologyModeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>

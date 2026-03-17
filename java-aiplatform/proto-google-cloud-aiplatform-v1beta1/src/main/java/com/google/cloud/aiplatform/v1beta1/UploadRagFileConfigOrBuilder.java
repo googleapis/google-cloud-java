@@ -125,46 +125,59 @@ public interface UploadRagFileConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the metadata config for RagFiles.
+   * Optional. Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
    * Alteratively, inline metadata schema and metadata can be provided.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
    * @return Whether the ragFileMetadataConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasRagFileMetadataConfig();
 
   /**
    *
    *
    * <pre>
-   * Specifies the metadata config for RagFiles.
+   * Optional. Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
    * Alteratively, inline metadata schema and metadata can be provided.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
    * @return The ragFileMetadataConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig();
 
   /**
    *
    *
    * <pre>
-   * Specifies the metadata config for RagFiles.
+   * Optional. Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
    * Alteratively, inline metadata schema and metadata can be provided.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
       getRagFileMetadataConfigOrBuilder();
 

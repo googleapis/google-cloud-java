@@ -133,6 +133,185 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     return loginHint_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : loginHint_;
   }
 
+  public static final int CLIENT_ID_FIELD_NUMBER = 3;
+  private com.google.protobuf.StringValue clientId_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OAuth 2.0 client ID used in the OAuth flow.
+   * This allows for client sharing. The risks of client sharing
+   * are outlined here:
+   * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+   * </pre>
+   *
+   * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientId field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OAuth 2.0 client ID used in the OAuth flow.
+   * This allows for client sharing. The risks of client sharing
+   * are outlined here:
+   * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+   * </pre>
+   *
+   * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getClientId() {
+    return clientId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : clientId_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OAuth 2.0 client ID used in the OAuth flow.
+   * This allows for client sharing. The risks of client sharing
+   * are outlined here:
+   * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+   * </pre>
+   *
+   * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getClientIdOrBuilder() {
+    return clientId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : clientId_;
+  }
+
+  public static final int CLIENT_SECRET_FIELD_NUMBER = 4;
+  private com.google.protobuf.StringValue clientSecret_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. OAuth secret paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientSecret field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientSecret() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. OAuth secret paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientSecret.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getClientSecret() {
+    return clientSecret_ == null
+        ? com.google.protobuf.StringValue.getDefaultInstance()
+        : clientSecret_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. OAuth secret paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getClientSecretOrBuilder() {
+    return clientSecret_ == null
+        ? com.google.protobuf.StringValue.getDefaultInstance()
+        : clientSecret_;
+  }
+
+  public static final int CLIENT_SECRET_SHA256_FIELD_NUMBER = 6;
+  private com.google.protobuf.StringValue clientSecretSha256_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. OAuth secret SHA256 paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the clientSecretSha256 field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientSecretSha256() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. OAuth secret SHA256 paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clientSecretSha256.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getClientSecretSha256() {
+    return clientSecretSha256_ == null
+        ? com.google.protobuf.StringValue.getDefaultInstance()
+        : clientSecretSha256_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. OAuth secret SHA256 paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getClientSecretSha256OrBuilder() {
+    return clientSecretSha256_ == null
+        ? com.google.protobuf.StringValue.getDefaultInstance()
+        : clientSecretSha256_;
+  }
+
   public static final int PROGRAMMATIC_CLIENTS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -222,8 +401,17 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getLoginHint());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getClientId());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getClientSecret());
+    }
     for (int i = 0; i < programmaticClients_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, programmaticClients_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getClientSecretSha256());
     }
     getUnknownFields().writeTo(output);
   }
@@ -237,6 +425,12 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLoginHint());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getClientId());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getClientSecret());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < programmaticClients_.size(); i++) {
@@ -244,6 +438,9 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       }
       size += dataSize;
       size += 1 * getProgrammaticClientsList().size();
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getClientSecretSha256());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -264,6 +461,18 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     if (hasLoginHint()) {
       if (!getLoginHint().equals(other.getLoginHint())) return false;
     }
+    if (hasClientId() != other.hasClientId()) return false;
+    if (hasClientId()) {
+      if (!getClientId().equals(other.getClientId())) return false;
+    }
+    if (hasClientSecret() != other.hasClientSecret()) return false;
+    if (hasClientSecret()) {
+      if (!getClientSecret().equals(other.getClientSecret())) return false;
+    }
+    if (hasClientSecretSha256() != other.hasClientSecretSha256()) return false;
+    if (hasClientSecretSha256()) {
+      if (!getClientSecretSha256().equals(other.getClientSecretSha256())) return false;
+    }
     if (!getProgrammaticClientsList().equals(other.getProgrammaticClientsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -279,6 +488,18 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     if (hasLoginHint()) {
       hash = (37 * hash) + LOGIN_HINT_FIELD_NUMBER;
       hash = (53 * hash) + getLoginHint().hashCode();
+    }
+    if (hasClientId()) {
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+    }
+    if (hasClientSecret()) {
+      hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getClientSecret().hashCode();
+    }
+    if (hasClientSecretSha256()) {
+      hash = (37 * hash) + CLIENT_SECRET_SHA256_FIELD_NUMBER;
+      hash = (53 * hash) + getClientSecretSha256().hashCode();
     }
     if (getProgrammaticClientsCount() > 0) {
       hash = (37 * hash) + PROGRAMMATIC_CLIENTS_FIELD_NUMBER;
@@ -426,6 +647,9 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetLoginHintFieldBuilder();
+        internalGetClientIdFieldBuilder();
+        internalGetClientSecretFieldBuilder();
+        internalGetClientSecretSha256FieldBuilder();
       }
     }
 
@@ -437,6 +661,21 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       if (loginHintBuilder_ != null) {
         loginHintBuilder_.dispose();
         loginHintBuilder_ = null;
+      }
+      clientId_ = null;
+      if (clientIdBuilder_ != null) {
+        clientIdBuilder_.dispose();
+        clientIdBuilder_ = null;
+      }
+      clientSecret_ = null;
+      if (clientSecretBuilder_ != null) {
+        clientSecretBuilder_.dispose();
+        clientSecretBuilder_ = null;
+      }
+      clientSecretSha256_ = null;
+      if (clientSecretSha256Builder_ != null) {
+        clientSecretSha256Builder_.dispose();
+        clientSecretSha256Builder_ = null;
       }
       programmaticClients_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
@@ -481,6 +720,22 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientId_ = clientIdBuilder_ == null ? clientId_ : clientIdBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientSecret_ =
+            clientSecretBuilder_ == null ? clientSecret_ : clientSecretBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.clientSecretSha256_ =
+            clientSecretSha256Builder_ == null
+                ? clientSecretSha256_
+                : clientSecretSha256Builder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         programmaticClients_.makeImmutable();
         result.programmaticClients_ = programmaticClients_;
       }
@@ -502,10 +757,19 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       if (other.hasLoginHint()) {
         mergeLoginHint(other.getLoginHint());
       }
+      if (other.hasClientId()) {
+        mergeClientId(other.getClientId());
+      }
+      if (other.hasClientSecret()) {
+        mergeClientSecret(other.getClientSecret());
+      }
+      if (other.hasClientSecretSha256()) {
+        mergeClientSecretSha256(other.getClientSecretSha256());
+      }
       if (!other.programmaticClients_.isEmpty()) {
         if (programmaticClients_.isEmpty()) {
           programmaticClients_ = other.programmaticClients_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
         } else {
           ensureProgrammaticClientsIsMutable();
           programmaticClients_.addAll(other.programmaticClients_);
@@ -545,6 +809,20 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetClientIdFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetClientSecretFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -552,6 +830,13 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
                 programmaticClients_.add(s);
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetClientSecretSha256FieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -801,6 +1086,656 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       return loginHintBuilder_;
     }
 
+    private com.google.protobuf.StringValue clientId_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.StringValue,
+            com.google.protobuf.StringValue.Builder,
+            com.google.protobuf.StringValueOrBuilder>
+        clientIdBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientId field is set.
+     */
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientId.
+     */
+    public com.google.protobuf.StringValue getClientId() {
+      if (clientIdBuilder_ == null) {
+        return clientId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : clientId_;
+      } else {
+        return clientIdBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientId(com.google.protobuf.StringValue value) {
+      if (clientIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientId_ = value;
+      } else {
+        clientIdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientId(com.google.protobuf.StringValue.Builder builderForValue) {
+      if (clientIdBuilder_ == null) {
+        clientId_ = builderForValue.build();
+      } else {
+        clientIdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientId(com.google.protobuf.StringValue value) {
+      if (clientIdBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && clientId_ != null
+            && clientId_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getClientIdBuilder().mergeFrom(value);
+        } else {
+          clientId_ = value;
+        }
+      } else {
+        clientIdBuilder_.mergeFrom(value);
+      }
+      if (clientId_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientId() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      clientId_ = null;
+      if (clientIdBuilder_ != null) {
+        clientIdBuilder_.dispose();
+        clientIdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StringValue.Builder getClientIdBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetClientIdFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getClientIdOrBuilder() {
+      if (clientIdBuilder_ != null) {
+        return clientIdBuilder_.getMessageOrBuilder();
+      } else {
+        return clientId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : clientId_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth 2.0 client ID used in the OAuth flow.
+     * This allows for client sharing. The risks of client sharing
+     * are outlined here:
+     * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+     * </pre>
+     *
+     * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.StringValue,
+            com.google.protobuf.StringValue.Builder,
+            com.google.protobuf.StringValueOrBuilder>
+        internalGetClientIdFieldBuilder() {
+      if (clientIdBuilder_ == null) {
+        clientIdBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.StringValue,
+                com.google.protobuf.StringValue.Builder,
+                com.google.protobuf.StringValueOrBuilder>(
+                getClientId(), getParentForChildren(), isClean());
+        clientId_ = null;
+      }
+      return clientIdBuilder_;
+    }
+
+    private com.google.protobuf.StringValue clientSecret_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.StringValue,
+            com.google.protobuf.StringValue.Builder,
+            com.google.protobuf.StringValueOrBuilder>
+        clientSecretBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientSecret field is set.
+     */
+    public boolean hasClientSecret() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientSecret.
+     */
+    public com.google.protobuf.StringValue getClientSecret() {
+      if (clientSecretBuilder_ == null) {
+        return clientSecret_ == null
+            ? com.google.protobuf.StringValue.getDefaultInstance()
+            : clientSecret_;
+      } else {
+        return clientSecretBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientSecret(com.google.protobuf.StringValue value) {
+      if (clientSecretBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientSecret_ = value;
+      } else {
+        clientSecretBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientSecret(com.google.protobuf.StringValue.Builder builderForValue) {
+      if (clientSecretBuilder_ == null) {
+        clientSecret_ = builderForValue.build();
+      } else {
+        clientSecretBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientSecret(com.google.protobuf.StringValue value) {
+      if (clientSecretBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && clientSecret_ != null
+            && clientSecret_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getClientSecretBuilder().mergeFrom(value);
+        } else {
+          clientSecret_ = value;
+        }
+      } else {
+        clientSecretBuilder_.mergeFrom(value);
+      }
+      if (clientSecret_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientSecret() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      clientSecret_ = null;
+      if (clientSecretBuilder_ != null) {
+        clientSecretBuilder_.dispose();
+        clientSecretBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StringValue.Builder getClientSecretBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetClientSecretFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getClientSecretOrBuilder() {
+      if (clientSecretBuilder_ != null) {
+        return clientSecretBuilder_.getMessageOrBuilder();
+      } else {
+        return clientSecret_ == null
+            ? com.google.protobuf.StringValue.getDefaultInstance()
+            : clientSecret_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. OAuth secret paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.StringValue,
+            com.google.protobuf.StringValue.Builder,
+            com.google.protobuf.StringValueOrBuilder>
+        internalGetClientSecretFieldBuilder() {
+      if (clientSecretBuilder_ == null) {
+        clientSecretBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.StringValue,
+                com.google.protobuf.StringValue.Builder,
+                com.google.protobuf.StringValueOrBuilder>(
+                getClientSecret(), getParentForChildren(), isClean());
+        clientSecret_ = null;
+      }
+      return clientSecretBuilder_;
+    }
+
+    private com.google.protobuf.StringValue clientSecretSha256_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.StringValue,
+            com.google.protobuf.StringValue.Builder,
+            com.google.protobuf.StringValueOrBuilder>
+        clientSecretSha256Builder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the clientSecretSha256 field is set.
+     */
+    public boolean hasClientSecretSha256() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The clientSecretSha256.
+     */
+    public com.google.protobuf.StringValue getClientSecretSha256() {
+      if (clientSecretSha256Builder_ == null) {
+        return clientSecretSha256_ == null
+            ? com.google.protobuf.StringValue.getDefaultInstance()
+            : clientSecretSha256_;
+      } else {
+        return clientSecretSha256Builder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setClientSecretSha256(com.google.protobuf.StringValue value) {
+      if (clientSecretSha256Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientSecretSha256_ = value;
+      } else {
+        clientSecretSha256Builder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setClientSecretSha256(com.google.protobuf.StringValue.Builder builderForValue) {
+      if (clientSecretSha256Builder_ == null) {
+        clientSecretSha256_ = builderForValue.build();
+      } else {
+        clientSecretSha256Builder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeClientSecretSha256(com.google.protobuf.StringValue value) {
+      if (clientSecretSha256Builder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && clientSecretSha256_ != null
+            && clientSecretSha256_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getClientSecretSha256Builder().mergeFrom(value);
+        } else {
+          clientSecretSha256_ = value;
+        }
+      } else {
+        clientSecretSha256Builder_.mergeFrom(value);
+      }
+      if (clientSecretSha256_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearClientSecretSha256() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      clientSecretSha256_ = null;
+      if (clientSecretSha256Builder_ != null) {
+        clientSecretSha256Builder_.dispose();
+        clientSecretSha256Builder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.StringValue.Builder getClientSecretSha256Builder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetClientSecretSha256FieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getClientSecretSha256OrBuilder() {
+      if (clientSecretSha256Builder_ != null) {
+        return clientSecretSha256Builder_.getMessageOrBuilder();
+      } else {
+        return clientSecretSha256_ == null
+            ? com.google.protobuf.StringValue.getDefaultInstance()
+            : clientSecretSha256_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OAuth secret SHA256 paired with client ID.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.StringValue,
+            com.google.protobuf.StringValue.Builder,
+            com.google.protobuf.StringValueOrBuilder>
+        internalGetClientSecretSha256FieldBuilder() {
+      if (clientSecretSha256Builder_ == null) {
+        clientSecretSha256Builder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.StringValue,
+                com.google.protobuf.StringValue.Builder,
+                com.google.protobuf.StringValueOrBuilder>(
+                getClientSecretSha256(), getParentForChildren(), isClean());
+        clientSecretSha256_ = null;
+      }
+      return clientSecretSha256Builder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList programmaticClients_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -808,7 +1743,7 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       if (!programmaticClients_.isModifiable()) {
         programmaticClients_ = new com.google.protobuf.LazyStringArrayList(programmaticClients_);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
     }
 
     /**
@@ -898,7 +1833,7 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       }
       ensureProgrammaticClientsIsMutable();
       programmaticClients_.set(index, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -922,7 +1857,7 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       }
       ensureProgrammaticClientsIsMutable();
       programmaticClients_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -943,7 +1878,7 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
     public Builder addAllProgrammaticClients(java.lang.Iterable<java.lang.String> values) {
       ensureProgrammaticClientsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, programmaticClients_);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -962,7 +1897,7 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProgrammaticClients() {
       programmaticClients_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ;
       onChanged();
       return this;
@@ -988,7 +1923,7 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureProgrammaticClientsIsMutable();
       programmaticClients_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

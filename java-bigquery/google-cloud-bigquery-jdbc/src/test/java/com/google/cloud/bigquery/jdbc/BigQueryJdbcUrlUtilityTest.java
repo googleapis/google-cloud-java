@@ -17,15 +17,15 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryJdbcUrlUtilityTest {
 

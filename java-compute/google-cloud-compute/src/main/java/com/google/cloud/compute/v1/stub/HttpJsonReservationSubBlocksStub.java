@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetIamPolicyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
+import com.google.cloud.compute.v1.GetVersionReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
@@ -148,6 +149,65 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       .setDefaultInstance(Policy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetVersionReservationSubBlockRequest, Operation>
+      getVersionMethodDescriptor =
+          ApiMethodDescriptor.<GetVersionReservationSubBlockRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/GetVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetVersionReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*}/reservationSubBlocks/{reservationSubBlock}/getVersion",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetVersionReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservationSubBlock", request.getReservationSubBlock());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetVersionReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "reservationSubBlocksGetVersionRequestResource",
+                                      request.getReservationSubBlocksGetVersionRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (GetVersionReservationSubBlockRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -411,6 +471,9 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   private final UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable;
   private final UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<GetVersionReservationSubBlockRequest, Operation> getVersionCallable;
+  private final OperationCallable<GetVersionReservationSubBlockRequest, Operation, Operation>
+      getVersionOperationCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
       listCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ListPagedResponse> listPagedCallable;
@@ -504,6 +567,23 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetVersionReservationSubBlockRequest, Operation>
+        getVersionTransportSettings =
+            HttpJsonCallSettings.<GetVersionReservationSubBlockRequest, Operation>newBuilder()
+                .setMethodDescriptor(getVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_name", String.valueOf(request.getParentName()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "reservation_sub_block",
+                          String.valueOf(request.getReservationSubBlock()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
         listTransportSettings =
             HttpJsonCallSettings
@@ -592,6 +672,15 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.getVersionCallable =
+        callableFactory.createUnaryCallable(
+            getVersionTransportSettings, settings.getVersionSettings(), clientContext);
+    this.getVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            getVersionTransportSettings,
+            settings.getVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -636,6 +725,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(getVersionMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(reportFaultyMethodDescriptor);
@@ -653,6 +743,17 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   @Override
   public UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetVersionReservationSubBlockRequest, Operation> getVersionCallable() {
+    return getVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<GetVersionReservationSubBlockRequest, Operation, Operation>
+      getVersionOperationCallable() {
+    return getVersionOperationCallable;
   }
 
   @Override

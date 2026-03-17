@@ -20,10 +20,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
-  <url>https://github.com/googleapis/google-cloud-java-jdbc</url>
+  <url>https://github.com/googleapis/google-cloud-java</url>
   <description>JDBC for BigQuery</description>
 
   <properties>
@@ -153,7 +153,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-parent</artifactId>
-    <version>2.61.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -163,7 +163,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.23.0</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.24.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -180,6 +180,7 @@
       </exclusions>
     </dependency>
 
+    <!-- Transitive Dependencies  -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
@@ -195,7 +196,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.23.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.24.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
 
     <dependency>
@@ -269,22 +270,35 @@
       <artifactId>httpcore5</artifactId>
     </dependency>
 
+    <!--  Test Dependencies  -->
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.1.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>4.11.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

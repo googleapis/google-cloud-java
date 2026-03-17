@@ -196,4 +196,84 @@ public interface DataQualityRuleResultOrBuilder
    * @return The assertionRowCount.
    */
   long getAssertionRowCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the results of all debug queries for this rule.
+   * The number of result sets will correspond to the number of
+   * [debug_queries][google.cloud.dataplex.v1.DataQualityRule.debug_queries].
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet debug_queries_result_sets = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet>
+      getDebugQueriesResultSetsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the results of all debug queries for this rule.
+   * The number of result sets will correspond to the number of
+   * [debug_queries][google.cloud.dataplex.v1.DataQualityRule.debug_queries].
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet debug_queries_result_sets = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet getDebugQueriesResultSets(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the results of all debug queries for this rule.
+   * The number of result sets will correspond to the number of
+   * [debug_queries][google.cloud.dataplex.v1.DataQualityRule.debug_queries].
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet debug_queries_result_sets = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getDebugQueriesResultSetsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the results of all debug queries for this rule.
+   * The number of result sets will correspond to the number of
+   * [debug_queries][google.cloud.dataplex.v1.DataQualityRule.debug_queries].
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet debug_queries_result_sets = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSetOrBuilder>
+      getDebugQueriesResultSetsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the results of all debug queries for this rule.
+   * The number of result sets will correspond to the number of
+   * [debug_queries][google.cloud.dataplex.v1.DataQualityRule.debug_queries].
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSet debug_queries_result_sets = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSetOrBuilder
+      getDebugQueriesResultSetsOrBuilder(int index);
 }

@@ -18,7 +18,9 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagCorporaPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagDataSchemasPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagFilesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagMetadataPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -29,28 +31,49 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteRagFileRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagFileRequest;
+import com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListRagCorporaRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagCorporaResponse;
+import com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse;
+import com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest;
+import com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse;
 import com.google.cloud.aiplatform.v1beta1.RagCorpus;
+import com.google.cloud.aiplatform.v1beta1.RagDataSchema;
 import com.google.cloud.aiplatform.v1beta1.RagEngineConfig;
 import com.google.cloud.aiplatform.v1beta1.RagFile;
+import com.google.cloud.aiplatform.v1beta1.RagMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -222,6 +245,164 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateRagDataSchemaRequest, RagDataSchema>
+      createRagDataSchemaMethodDescriptor =
+          MethodDescriptor.<CreateRagDataSchemaRequest, RagDataSchema>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/CreateRagDataSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRagDataSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagDataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<BatchCreateRagDataSchemasRequest, Operation>
+      batchCreateRagDataSchemasMethodDescriptor =
+          MethodDescriptor.<BatchCreateRagDataSchemasRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/BatchCreateRagDataSchemas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateRagDataSchemasRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetRagDataSchemaRequest, RagDataSchema>
+      getRagDataSchemaMethodDescriptor =
+          MethodDescriptor.<GetRagDataSchemaRequest, RagDataSchema>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/GetRagDataSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRagDataSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagDataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
+      listRagDataSchemasMethodDescriptor =
+          MethodDescriptor.<ListRagDataSchemasRequest, ListRagDataSchemasResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/ListRagDataSchemas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRagDataSchemasRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRagDataSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteRagDataSchemaRequest, Empty>
+      deleteRagDataSchemaMethodDescriptor =
+          MethodDescriptor.<DeleteRagDataSchemaRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/DeleteRagDataSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRagDataSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<BatchDeleteRagDataSchemasRequest, Operation>
+      batchDeleteRagDataSchemasMethodDescriptor =
+          MethodDescriptor.<BatchDeleteRagDataSchemasRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/BatchDeleteRagDataSchemas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteRagDataSchemasRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateRagMetadataRequest, RagMetadata>
+      createRagMetadataMethodDescriptor =
+          MethodDescriptor.<CreateRagMetadataRequest, RagMetadata>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/CreateRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagMetadata.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<BatchCreateRagMetadataRequest, Operation>
+      batchCreateRagMetadataMethodDescriptor =
+          MethodDescriptor.<BatchCreateRagMetadataRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/BatchCreateRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateRagMetadataRequest, RagMetadata>
+      updateRagMetadataMethodDescriptor =
+          MethodDescriptor.<UpdateRagMetadataRequest, RagMetadata>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/UpdateRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagMetadata.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetRagMetadataRequest, RagMetadata>
+      getRagMetadataMethodDescriptor =
+          MethodDescriptor.<GetRagMetadataRequest, RagMetadata>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/GetRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagMetadata.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListRagMetadataRequest, ListRagMetadataResponse>
+      listRagMetadataMethodDescriptor =
+          MethodDescriptor.<ListRagMetadataRequest, ListRagMetadataResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/ListRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRagMetadataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteRagMetadataRequest, Empty>
+      deleteRagMetadataMethodDescriptor =
+          MethodDescriptor.<DeleteRagMetadataRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/DeleteRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<BatchDeleteRagMetadataRequest, Operation>
+      batchDeleteRagMetadataMethodDescriptor =
+          MethodDescriptor.<BatchDeleteRagMetadataRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/BatchDeleteRagMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteRagMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -307,6 +488,44 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
       updateRagEngineConfigOperationCallable;
   private final UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig>
       getRagEngineConfigCallable;
+  private final UnaryCallable<CreateRagDataSchemaRequest, RagDataSchema>
+      createRagDataSchemaCallable;
+  private final UnaryCallable<BatchCreateRagDataSchemasRequest, Operation>
+      batchCreateRagDataSchemasCallable;
+  private final OperationCallable<
+          BatchCreateRagDataSchemasRequest,
+          BatchCreateRagDataSchemasResponse,
+          BatchCreateRagDataSchemasOperationMetadata>
+      batchCreateRagDataSchemasOperationCallable;
+  private final UnaryCallable<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaCallable;
+  private final UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
+      listRagDataSchemasCallable;
+  private final UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasPagedResponse>
+      listRagDataSchemasPagedCallable;
+  private final UnaryCallable<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaCallable;
+  private final UnaryCallable<BatchDeleteRagDataSchemasRequest, Operation>
+      batchDeleteRagDataSchemasCallable;
+  private final OperationCallable<BatchDeleteRagDataSchemasRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagDataSchemasOperationCallable;
+  private final UnaryCallable<CreateRagMetadataRequest, RagMetadata> createRagMetadataCallable;
+  private final UnaryCallable<BatchCreateRagMetadataRequest, Operation>
+      batchCreateRagMetadataCallable;
+  private final OperationCallable<
+          BatchCreateRagMetadataRequest,
+          BatchCreateRagMetadataResponse,
+          BatchCreateRagMetadataOperationMetadata>
+      batchCreateRagMetadataOperationCallable;
+  private final UnaryCallable<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataCallable;
+  private final UnaryCallable<GetRagMetadataRequest, RagMetadata> getRagMetadataCallable;
+  private final UnaryCallable<ListRagMetadataRequest, ListRagMetadataResponse>
+      listRagMetadataCallable;
+  private final UnaryCallable<ListRagMetadataRequest, ListRagMetadataPagedResponse>
+      listRagMetadataPagedCallable;
+  private final UnaryCallable<DeleteRagMetadataRequest, Empty> deleteRagMetadataCallable;
+  private final UnaryCallable<BatchDeleteRagMetadataRequest, Operation>
+      batchDeleteRagMetadataCallable;
+  private final OperationCallable<BatchDeleteRagMetadataRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagMetadataOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -485,6 +704,144 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateRagDataSchemaRequest, RagDataSchema>
+        createRagDataSchemaTransportSettings =
+            GrpcCallSettings.<CreateRagDataSchemaRequest, RagDataSchema>newBuilder()
+                .setMethodDescriptor(createRagDataSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<BatchCreateRagDataSchemasRequest, Operation>
+        batchCreateRagDataSchemasTransportSettings =
+            GrpcCallSettings.<BatchCreateRagDataSchemasRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchCreateRagDataSchemasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaTransportSettings =
+        GrpcCallSettings.<GetRagDataSchemaRequest, RagDataSchema>newBuilder()
+            .setMethodDescriptor(getRagDataSchemaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
+        listRagDataSchemasTransportSettings =
+            GrpcCallSettings.<ListRagDataSchemasRequest, ListRagDataSchemasResponse>newBuilder()
+                .setMethodDescriptor(listRagDataSchemasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaTransportSettings =
+        GrpcCallSettings.<DeleteRagDataSchemaRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteRagDataSchemaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchDeleteRagDataSchemasRequest, Operation>
+        batchDeleteRagDataSchemasTransportSettings =
+            GrpcCallSettings.<BatchDeleteRagDataSchemasRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeleteRagDataSchemasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateRagMetadataRequest, RagMetadata> createRagMetadataTransportSettings =
+        GrpcCallSettings.<CreateRagMetadataRequest, RagMetadata>newBuilder()
+            .setMethodDescriptor(createRagMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchCreateRagMetadataRequest, Operation>
+        batchCreateRagMetadataTransportSettings =
+            GrpcCallSettings.<BatchCreateRagMetadataRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchCreateRagMetadataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataTransportSettings =
+        GrpcCallSettings.<UpdateRagMetadataRequest, RagMetadata>newBuilder()
+            .setMethodDescriptor(updateRagMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "rag_metadata.name", String.valueOf(request.getRagMetadata().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetRagMetadataRequest, RagMetadata> getRagMetadataTransportSettings =
+        GrpcCallSettings.<GetRagMetadataRequest, RagMetadata>newBuilder()
+            .setMethodDescriptor(getRagMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListRagMetadataRequest, ListRagMetadataResponse>
+        listRagMetadataTransportSettings =
+            GrpcCallSettings.<ListRagMetadataRequest, ListRagMetadataResponse>newBuilder()
+                .setMethodDescriptor(listRagMetadataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteRagMetadataRequest, Empty> deleteRagMetadataTransportSettings =
+        GrpcCallSettings.<DeleteRagMetadataRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteRagMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchDeleteRagMetadataRequest, Operation>
+        batchDeleteRagMetadataTransportSettings =
+            GrpcCallSettings.<BatchDeleteRagMetadataRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeleteRagMetadataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -619,6 +976,97 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
             getRagEngineConfigTransportSettings,
             settings.getRagEngineConfigSettings(),
             clientContext);
+    this.createRagDataSchemaCallable =
+        callableFactory.createUnaryCallable(
+            createRagDataSchemaTransportSettings,
+            settings.createRagDataSchemaSettings(),
+            clientContext);
+    this.batchCreateRagDataSchemasCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateRagDataSchemasTransportSettings,
+            settings.batchCreateRagDataSchemasSettings(),
+            clientContext);
+    this.batchCreateRagDataSchemasOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateRagDataSchemasTransportSettings,
+            settings.batchCreateRagDataSchemasOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRagDataSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getRagDataSchemaTransportSettings, settings.getRagDataSchemaSettings(), clientContext);
+    this.listRagDataSchemasCallable =
+        callableFactory.createUnaryCallable(
+            listRagDataSchemasTransportSettings,
+            settings.listRagDataSchemasSettings(),
+            clientContext);
+    this.listRagDataSchemasPagedCallable =
+        callableFactory.createPagedCallable(
+            listRagDataSchemasTransportSettings,
+            settings.listRagDataSchemasSettings(),
+            clientContext);
+    this.deleteRagDataSchemaCallable =
+        callableFactory.createUnaryCallable(
+            deleteRagDataSchemaTransportSettings,
+            settings.deleteRagDataSchemaSettings(),
+            clientContext);
+    this.batchDeleteRagDataSchemasCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteRagDataSchemasTransportSettings,
+            settings.batchDeleteRagDataSchemasSettings(),
+            clientContext);
+    this.batchDeleteRagDataSchemasOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteRagDataSchemasTransportSettings,
+            settings.batchDeleteRagDataSchemasOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            createRagMetadataTransportSettings,
+            settings.createRagMetadataSettings(),
+            clientContext);
+    this.batchCreateRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateRagMetadataTransportSettings,
+            settings.batchCreateRagMetadataSettings(),
+            clientContext);
+    this.batchCreateRagMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateRagMetadataTransportSettings,
+            settings.batchCreateRagMetadataOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            updateRagMetadataTransportSettings,
+            settings.updateRagMetadataSettings(),
+            clientContext);
+    this.getRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            getRagMetadataTransportSettings, settings.getRagMetadataSettings(), clientContext);
+    this.listRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            listRagMetadataTransportSettings, settings.listRagMetadataSettings(), clientContext);
+    this.listRagMetadataPagedCallable =
+        callableFactory.createPagedCallable(
+            listRagMetadataTransportSettings, settings.listRagMetadataSettings(), clientContext);
+    this.deleteRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            deleteRagMetadataTransportSettings,
+            settings.deleteRagMetadataSettings(),
+            clientContext);
+    this.batchDeleteRagMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteRagMetadataTransportSettings,
+            settings.batchDeleteRagMetadataSettings(),
+            clientContext);
+    this.batchDeleteRagMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteRagMetadataTransportSettings,
+            settings.batchDeleteRagMetadataOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -755,6 +1203,116 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   @Override
   public UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig> getRagEngineConfigCallable() {
     return getRagEngineConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRagDataSchemaRequest, RagDataSchema> createRagDataSchemaCallable() {
+    return createRagDataSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateRagDataSchemasRequest, Operation>
+      batchCreateRagDataSchemasCallable() {
+    return batchCreateRagDataSchemasCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCreateRagDataSchemasRequest,
+          BatchCreateRagDataSchemasResponse,
+          BatchCreateRagDataSchemasOperationMetadata>
+      batchCreateRagDataSchemasOperationCallable() {
+    return batchCreateRagDataSchemasOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaCallable() {
+    return getRagDataSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
+      listRagDataSchemasCallable() {
+    return listRagDataSchemasCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasPagedResponse>
+      listRagDataSchemasPagedCallable() {
+    return listRagDataSchemasPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaCallable() {
+    return deleteRagDataSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteRagDataSchemasRequest, Operation>
+      batchDeleteRagDataSchemasCallable() {
+    return batchDeleteRagDataSchemasCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteRagDataSchemasRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagDataSchemasOperationCallable() {
+    return batchDeleteRagDataSchemasOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRagMetadataRequest, RagMetadata> createRagMetadataCallable() {
+    return createRagMetadataCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateRagMetadataRequest, Operation> batchCreateRagMetadataCallable() {
+    return batchCreateRagMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCreateRagMetadataRequest,
+          BatchCreateRagMetadataResponse,
+          BatchCreateRagMetadataOperationMetadata>
+      batchCreateRagMetadataOperationCallable() {
+    return batchCreateRagMetadataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataCallable() {
+    return updateRagMetadataCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRagMetadataRequest, RagMetadata> getRagMetadataCallable() {
+    return getRagMetadataCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRagMetadataRequest, ListRagMetadataResponse> listRagMetadataCallable() {
+    return listRagMetadataCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRagMetadataRequest, ListRagMetadataPagedResponse>
+      listRagMetadataPagedCallable() {
+    return listRagMetadataPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRagMetadataRequest, Empty> deleteRagMetadataCallable() {
+    return deleteRagMetadataCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteRagMetadataRequest, Operation> batchDeleteRagMetadataCallable() {
+    return batchDeleteRagMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteRagMetadataRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagMetadataOperationCallable() {
+    return batchDeleteRagMetadataOperationCallable;
   }
 
   @Override

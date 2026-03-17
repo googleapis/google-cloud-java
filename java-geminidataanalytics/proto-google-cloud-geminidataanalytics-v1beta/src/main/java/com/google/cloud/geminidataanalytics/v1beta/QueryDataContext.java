@@ -130,6 +130,70 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
         : datasourceReferences_;
   }
 
+  public static final int PARAMETERIZED_SECURE_VIEW_PARAMETERS_FIELD_NUMBER = 2;
+  private com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+      parameterizedSecureViewParameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parameterizedSecureViewParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasParameterizedSecureViewParameters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parameterizedSecureViewParameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+      getParameterizedSecureViewParameters() {
+    return parameterizedSecureViewParameters_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .getDefaultInstance()
+        : parameterizedSecureViewParameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParametersOrBuilder
+      getParameterizedSecureViewParametersOrBuilder() {
+    return parameterizedSecureViewParameters_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .getDefaultInstance()
+        : parameterizedSecureViewParameters_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -147,6 +211,9 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDatasourceReferences());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getParameterizedSecureViewParameters());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +226,11 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDatasourceReferences());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, getParameterizedSecureViewParameters());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -180,6 +252,12 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
     if (hasDatasourceReferences()) {
       if (!getDatasourceReferences().equals(other.getDatasourceReferences())) return false;
     }
+    if (hasParameterizedSecureViewParameters() != other.hasParameterizedSecureViewParameters())
+      return false;
+    if (hasParameterizedSecureViewParameters()) {
+      if (!getParameterizedSecureViewParameters()
+          .equals(other.getParameterizedSecureViewParameters())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -194,6 +272,10 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
     if (hasDatasourceReferences()) {
       hash = (37 * hash) + DATASOURCE_REFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getDatasourceReferences().hashCode();
+    }
+    if (hasParameterizedSecureViewParameters()) {
+      hash = (37 * hash) + PARAMETERIZED_SECURE_VIEW_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParameterizedSecureViewParameters().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -338,6 +420,7 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetDatasourceReferencesFieldBuilder();
+        internalGetParameterizedSecureViewParametersFieldBuilder();
       }
     }
 
@@ -349,6 +432,11 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
       if (datasourceReferencesBuilder_ != null) {
         datasourceReferencesBuilder_.dispose();
         datasourceReferencesBuilder_ = null;
+      }
+      parameterizedSecureViewParameters_ = null;
+      if (parameterizedSecureViewParametersBuilder_ != null) {
+        parameterizedSecureViewParametersBuilder_.dispose();
+        parameterizedSecureViewParametersBuilder_ = null;
       }
       return this;
     }
@@ -396,6 +484,13 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
                 : datasourceReferencesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parameterizedSecureViewParameters_ =
+            parameterizedSecureViewParametersBuilder_ == null
+                ? parameterizedSecureViewParameters_
+                : parameterizedSecureViewParametersBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -415,6 +510,9 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
         return this;
       if (other.hasDatasourceReferences()) {
         mergeDatasourceReferences(other.getDatasourceReferences());
+      }
+      if (other.hasParameterizedSecureViewParameters()) {
+        mergeParameterizedSecureViewParameters(other.getParameterizedSecureViewParameters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -449,6 +547,14 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetParameterizedSecureViewParametersFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -686,6 +792,232 @@ public final class QueryDataContext extends com.google.protobuf.GeneratedMessage
         datasourceReferences_ = null;
       }
       return datasourceReferencesBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+        parameterizedSecureViewParameters_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParametersOrBuilder>
+        parameterizedSecureViewParametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the parameterizedSecureViewParameters field is set.
+     */
+    public boolean hasParameterizedSecureViewParameters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The parameterizedSecureViewParameters.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+        getParameterizedSecureViewParameters() {
+      if (parameterizedSecureViewParametersBuilder_ == null) {
+        return parameterizedSecureViewParameters_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                .getDefaultInstance()
+            : parameterizedSecureViewParameters_;
+      } else {
+        return parameterizedSecureViewParametersBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParameterizedSecureViewParameters(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters value) {
+      if (parameterizedSecureViewParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parameterizedSecureViewParameters_ = value;
+      } else {
+        parameterizedSecureViewParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParameterizedSecureViewParameters(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Builder
+            builderForValue) {
+      if (parameterizedSecureViewParametersBuilder_ == null) {
+        parameterizedSecureViewParameters_ = builderForValue.build();
+      } else {
+        parameterizedSecureViewParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeParameterizedSecureViewParameters(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters value) {
+      if (parameterizedSecureViewParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && parameterizedSecureViewParameters_ != null
+            && parameterizedSecureViewParameters_
+                != com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .getDefaultInstance()) {
+          getParameterizedSecureViewParametersBuilder().mergeFrom(value);
+        } else {
+          parameterizedSecureViewParameters_ = value;
+        }
+      } else {
+        parameterizedSecureViewParametersBuilder_.mergeFrom(value);
+      }
+      if (parameterizedSecureViewParameters_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearParameterizedSecureViewParameters() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      parameterizedSecureViewParameters_ = null;
+      if (parameterizedSecureViewParametersBuilder_ != null) {
+        parameterizedSecureViewParametersBuilder_.dispose();
+        parameterizedSecureViewParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Builder
+        getParameterizedSecureViewParametersBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetParameterizedSecureViewParametersFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParametersOrBuilder
+        getParameterizedSecureViewParametersOrBuilder() {
+      if (parameterizedSecureViewParametersBuilder_ != null) {
+        return parameterizedSecureViewParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return parameterizedSecureViewParameters_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                .getDefaultInstance()
+            : parameterizedSecureViewParameters_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters parameterized_secure_view_parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParametersOrBuilder>
+        internalGetParameterizedSecureViewParametersFieldBuilder() {
+      if (parameterizedSecureViewParametersBuilder_ == null) {
+        parameterizedSecureViewParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters,
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Builder,
+                com.google.cloud.geminidataanalytics.v1beta
+                    .ParameterizedSecureViewParametersOrBuilder>(
+                getParameterizedSecureViewParameters(), getParentForChildren(), isClean());
+        parameterizedSecureViewParameters_ = null;
+      }
+      return parameterizedSecureViewParametersBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.QueryDataContext)

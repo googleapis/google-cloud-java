@@ -74,6 +74,82 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>
+      getAppliedAcceleratorTopologiesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology
+      getAppliedAcceleratorTopologies(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  int getAppliedAcceleratorTopologiesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder>
+      getAppliedAcceleratorTopologiesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder
+      getAppliedAcceleratorTopologiesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
@@ -111,6 +187,51 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return The bytes for autoscaler.
    */
   com.google.protobuf.ByteString getAutoscalerBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of bulk instance operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+   * </code>
+   *
+   * @return Whether the bulkInstanceOperation field is set.
+   */
+  boolean hasBulkInstanceOperation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of bulk instance operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+   * </code>
+   *
+   * @return The bulkInstanceOperation.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+      getBulkInstanceOperation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of bulk instance operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
+      getBulkInstanceOperationOrBuilder();
 
   /**
    *

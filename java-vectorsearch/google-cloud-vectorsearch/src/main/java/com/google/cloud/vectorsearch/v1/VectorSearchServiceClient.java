@@ -269,6 +269,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportDataObjects</td>
+ *      <td><p> Initiates a Long-Running Operation to export DataObjects from a Collection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportDataObjectsAsync(ExportDataObjectsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportDataObjectsOperationCallable()
+ *           <li><p> exportDataObjectsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
  * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
@@ -1850,6 +1865,94 @@ public class VectorSearchServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportDataObjectsRequest, Operation> importDataObjectsCallable() {
     return stub.importDataObjectsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates a Long-Running Operation to export DataObjects from a Collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   ExportDataObjectsRequest request =
+   *       ExportDataObjectsRequest.newBuilder()
+   *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .build();
+   *   ExportDataObjectsResponse response =
+   *       vectorSearchServiceClient.exportDataObjectsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsAsync(ExportDataObjectsRequest request) {
+    return exportDataObjectsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates a Long-Running Operation to export DataObjects from a Collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   ExportDataObjectsRequest request =
+   *       ExportDataObjectsRequest.newBuilder()
+   *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .build();
+   *   OperationFuture<ExportDataObjectsResponse, ExportDataObjectsMetadata> future =
+   *       vectorSearchServiceClient.exportDataObjectsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportDataObjectsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable() {
+    return stub.exportDataObjectsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates a Long-Running Operation to export DataObjects from a Collection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   ExportDataObjectsRequest request =
+   *       ExportDataObjectsRequest.newBuilder()
+   *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vectorSearchServiceClient.exportDataObjectsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable() {
+    return stub.exportDataObjectsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

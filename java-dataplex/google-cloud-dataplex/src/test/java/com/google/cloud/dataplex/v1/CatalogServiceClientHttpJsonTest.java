@@ -21,7 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -39,8 +41,17 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -2699,6 +2710,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setEntryLinkType("entryLinkType129827046")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
             .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -2753,6 +2765,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setEntryLinkType("entryLinkType129827046")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
             .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -2798,6 +2811,77 @@ public class CatalogServiceClientHttpJsonTest {
   }
 
   @Test
+  public void updateEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EntryLink entryLink =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+
+    EntryLink actualResponse = client.updateEntryLink(entryLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEntryLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EntryLink entryLink =
+          EntryLink.newBuilder()
+              .setName(
+                  EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                      .toString())
+              .setEntryLinkType("entryLinkType129827046")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllAspects(new HashMap<String, Aspect>())
+              .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+              .build();
+      client.updateEntryLink(entryLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteEntryLinkTest() throws Exception {
     EntryLink expectedResponse =
         EntryLink.newBuilder()
@@ -2807,6 +2891,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setEntryLinkType("entryLinkType129827046")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
             .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -2859,6 +2944,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setEntryLinkType("entryLinkType129827046")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
             .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -2902,6 +2988,124 @@ public class CatalogServiceClientHttpJsonTest {
   }
 
   @Test
+  public void lookupEntryLinksTest() throws Exception {
+    EntryLink responsesElement = EntryLink.newBuilder().build();
+    LookupEntryLinksResponse expectedResponse =
+        LookupEntryLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntryLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LookupEntryLinksRequest request =
+        LookupEntryLinksRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .setEntry(
+                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .addAllEntryLinkTypes(new ArrayList<String>())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    LookupEntryLinksPagedResponse pagedListResponse = client.lookupEntryLinks(request);
+
+    List<EntryLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntryLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void lookupEntryLinksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LookupEntryLinksRequest request =
+          LookupEntryLinksRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .setEntry(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .addAllEntryLinkTypes(new ArrayList<String>())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.lookupEntryLinks(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupContextTest() throws Exception {
+    LookupContextResponse expectedResponse =
+        LookupContextResponse.newBuilder().setContext("context951530927").build();
+    mockService.addResponse(expectedResponse);
+
+    LookupContextRequest request =
+        LookupContextRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .addAllResources(new ArrayList<String>())
+            .putAllOptions(new HashMap<String, String>())
+            .build();
+
+    LookupContextResponse actualResponse = client.lookupContext(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void lookupContextExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LookupContextRequest request =
+          LookupContextRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .addAllResources(new ArrayList<String>())
+              .putAllOptions(new HashMap<String, String>())
+              .build();
+      client.lookupContext(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getEntryLinkTest() throws Exception {
     EntryLink expectedResponse =
         EntryLink.newBuilder()
@@ -2911,6 +3115,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setEntryLinkType("entryLinkType129827046")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
             .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -2963,6 +3168,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setEntryLinkType("entryLinkType129827046")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
             .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3002,6 +3208,491 @@ public class CatalogServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMetadataFeedTest() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+    String metadataFeedId = "metadataFeedId1633421160";
+
+    MetadataFeed actualResponse =
+        client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMetadataFeedExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+      String metadataFeedId = "metadataFeedId1633421160";
+      client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createMetadataFeedTest2() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+    String metadataFeedId = "metadataFeedId1633421160";
+
+    MetadataFeed actualResponse =
+        client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMetadataFeedExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      MetadataFeed metadataFeed = MetadataFeed.newBuilder().build();
+      String metadataFeedId = "metadataFeedId1633421160";
+      client.createMetadataFeedAsync(parent, metadataFeed, metadataFeedId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getMetadataFeedTest() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+
+    MetadataFeed actualResponse = client.getMetadataFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMetadataFeedExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+      client.getMetadataFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataFeedTest2() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7068/locations/location-7068/metadataFeeds/metadataFeed-7068";
+
+    MetadataFeed actualResponse = client.getMetadataFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMetadataFeedExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7068/locations/location-7068/metadataFeeds/metadataFeed-7068";
+      client.getMetadataFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMetadataFeedsTest() throws Exception {
+    MetadataFeed responsesElement = MetadataFeed.newBuilder().build();
+    ListMetadataFeedsResponse expectedResponse =
+        ListMetadataFeedsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMetadataFeeds(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMetadataFeedsPagedResponse pagedListResponse = client.listMetadataFeeds(parent);
+
+    List<MetadataFeed> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMetadataFeedsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMetadataFeedsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMetadataFeeds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMetadataFeedsTest2() throws Exception {
+    MetadataFeed responsesElement = MetadataFeed.newBuilder().build();
+    ListMetadataFeedsResponse expectedResponse =
+        ListMetadataFeedsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMetadataFeeds(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListMetadataFeedsPagedResponse pagedListResponse = client.listMetadataFeeds(parent);
+
+    List<MetadataFeed> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMetadataFeedsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMetadataFeedsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listMetadataFeeds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMetadataFeedTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+
+    client.deleteMetadataFeedAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteMetadataFeedExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MetadataFeedName name = MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]");
+      client.deleteMetadataFeedAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteMetadataFeedTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-7068/locations/location-7068/metadataFeeds/metadataFeed-7068";
+
+    client.deleteMetadataFeedAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteMetadataFeedExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7068/locations/location-7068/metadataFeeds/metadataFeed-7068";
+      client.deleteMetadataFeedAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateMetadataFeedTest() throws Exception {
+    MetadataFeed expectedResponse =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMetadataFeedTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    MetadataFeed metadataFeed =
+        MetadataFeed.newBuilder()
+            .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+            .setUid("uid115792")
+            .setScope(MetadataFeed.Scope.newBuilder().build())
+            .setFilters(MetadataFeed.Filters.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MetadataFeed actualResponse = client.updateMetadataFeedAsync(metadataFeed, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateMetadataFeedExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MetadataFeed metadataFeed =
+          MetadataFeed.newBuilder()
+              .setName(MetadataFeedName.of("[PROJECT]", "[LOCATION]", "[METADATA_FEED]").toString())
+              .setUid("uid115792")
+              .setScope(MetadataFeed.Scope.newBuilder().build())
+              .setFilters(MetadataFeed.Filters.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMetadataFeedAsync(metadataFeed, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
@@ -3115,6 +3806,168 @@ public class CatalogServiceClientHttpJsonTest {
               .setName("projects/project-9062/locations/location-9062")
               .build();
       client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

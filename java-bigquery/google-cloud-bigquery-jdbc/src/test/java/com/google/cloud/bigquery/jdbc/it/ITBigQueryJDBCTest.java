@@ -17,12 +17,12 @@
 package com.google.cloud.bigquery.jdbc.it;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
@@ -78,11 +78,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.BiFunction;
 import javax.sql.PooledConnection;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class ITBigQueryJDBCTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -127,8 +127,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
+        System.getenv(varName),
+        "Environment variable " + varName + " is required to perform these tests.");
     return value;
   }
 
@@ -167,7 +167,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     connection.close();
   }
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() throws SQLException {
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
@@ -179,7 +179,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws SQLException {
     bigQueryStatement.close();
     bigQueryConnection.close();
@@ -216,7 +216,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     try {
       DriverManager.getConnection(connection_uri);
-      Assert.fail();
+      Assertions.fail();
     } catch (BigQueryJdbcRuntimeException ex) {
       assertTrue(ex.getMessage().contains("No valid credentials provided."));
     }
@@ -279,7 +279,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   // TODO(kirl): Enable this test when pipeline has p12 secret available.
   @Test
-  @Ignore
+  @Disabled
   public void testValidServiceAccountAuthenticationP12() throws SQLException, IOException {
     final JsonObject authJson = getAuthJson();
     final String p12_file = requireEnvVar("SA_SECRET_P12");
@@ -293,7 +293,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Ignore
+  @Disabled
   public void testValidGoogleUserAccountAuthentication() throws SQLException {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -317,7 +317,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Ignore
+  @Disabled
   public void testValidExternalAccountAuthentication() throws SQLException {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -344,7 +344,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Ignore
+  @Disabled
   public void testValidExternalAccountAuthenticationFromFile() throws SQLException {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -369,7 +369,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Ignore
+  @Disabled
   public void testValidExternalAccountAuthenticationRawJson() throws SQLException {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -405,7 +405,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   // TODO(farhan): figure out how to programmatically generate an access token and test
   @Test
-  @Ignore
+  @Disabled
   public void testValidPreGeneratedAccessTokenAuthentication() throws SQLException {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -430,7 +430,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   // TODO(obada): figure out how to programmatically generate a refresh token and test
   @Test
-  @Ignore
+  @Disabled
   public void testValidRefreshTokenAuthentication() throws SQLException {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -550,7 +550,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     try {
       bigQueryStatement.executeQuery(query);
-      Assert.fail();
+      Assertions.fail();
     } catch (BigQueryJdbcException e) {
       assertTrue(e.getMessage().contains("SELECT * must have a FROM clause"));
     }
@@ -1901,16 +1901,16 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testDatabaseMetadataGetCatalogs() throws SQLException {
     DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
     try (ResultSet rs = databaseMetaData.getCatalogs()) {
-      assertNotNull("ResultSet from getCatalogs() should not be null", rs);
+      assertNotNull(rs, "ResultSet from getCatalogs() should not be null");
 
       ResultSetMetaData rsmd = rs.getMetaData();
-      assertNotNull("ResultSetMetaData should not be null", rsmd);
-      assertEquals("Should have one column", 1, rsmd.getColumnCount());
-      assertEquals("Column name should be TABLE_CAT", "TABLE_CAT", rsmd.getColumnName(1));
+      assertNotNull(rsmd, "ResultSetMetaData should not be null");
+      assertEquals(1, rsmd.getColumnCount(), "Should have one column");
+      assertEquals("TABLE_CAT", rsmd.getColumnName(1), "Column name should be TABLE_CAT");
 
-      assertTrue("ResultSet should have one row", rs.next());
-      assertEquals("Catalog name should match Project ID", PROJECT_ID, rs.getString("TABLE_CAT"));
-      assertFalse("ResultSet should have no more rows", rs.next());
+      assertTrue(rs.next(), "ResultSet should have one row");
+      assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"), "Catalog name should match Project ID");
+      assertFalse(rs.next(), "ResultSet should have no more rows");
     }
   }
 
@@ -1956,9 +1956,9 @@ public class ITBigQueryJDBCTest extends ITBase {
         assertEquals(2, resultSet.getInt("ORDINAL_POSITION"));
       }
     }
-    assertEquals("Should find 2 parameters for " + specificProcedure, 2, specificProcRows);
-    assertTrue("Parameter 'name' should be found", foundNameParam);
-    assertTrue("Parameter 'id' should be found", foundIdParam);
+    assertEquals(2, specificProcRows, "Should find 2 parameters for " + specificProcedure);
+    assertTrue(foundNameParam, "Parameter 'name' should be found");
+    assertTrue(foundIdParam, "Parameter 'id' should be found");
     resultSet.close();
 
     // --- Test Case 2: Specific schema, procedure, and column name pattern ---
@@ -1966,7 +1966,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     resultSet =
         databaseMetaData.getProcedureColumns(
             PROJECT_ID, specificSchema, specificProcedure, specificColumn);
-    assertTrue("Should find the specific column 'name'", resultSet.next());
+    assertTrue(resultSet.next(), "Should find the specific column 'name'");
     assertEquals(PROJECT_ID, resultSet.getString("PROCEDURE_CAT"));
     assertEquals(specificSchema, resultSet.getString("PROCEDURE_SCHEM"));
     assertEquals(specificProcedure, resultSet.getString("PROCEDURE_NAME"));
@@ -1976,14 +1976,14 @@ public class ITBigQueryJDBCTest extends ITBase {
         (short) DatabaseMetaData.procedureColumnUnknown, resultSet.getShort("COLUMN_TYPE"));
     assertEquals(java.sql.Types.NVARCHAR, resultSet.getInt("DATA_TYPE"));
     assertEquals("NVARCHAR", resultSet.getString("TYPE_NAME"));
-    assertFalse("Should only find one row for exact column match", resultSet.next());
+    assertFalse(resultSet.next(), "Should only find one row for exact column match");
     resultSet.close();
 
     // --- Test Case 3: Non-existent procedure ---
     resultSet =
         databaseMetaData.getProcedureColumns(
             PROJECT_ID, specificSchema, "non_existent_procedure_xyz", null);
-    assertFalse("Should not find columns for a non-existent procedure", resultSet.next());
+    assertFalse(resultSet.next(), "Should not find columns for a non-existent procedure");
     resultSet.close();
   }
 
@@ -2311,21 +2311,21 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testDatabaseMetadataGetSchemasNoArgs() throws SQLException {
     DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
     String expectedCatalog = bigQueryConnection.getCatalog();
-    assertNotNull("Project ID (catalog) from connection should not be null", expectedCatalog);
+    assertNotNull(expectedCatalog, "Project ID (catalog) from connection should not be null");
 
     // Test case: Get all schemas (datasets) for the current project
     try (ResultSet rsAll = databaseMetaData.getSchemas()) {
-      assertNotNull("ResultSet from getSchemas() should not be null", rsAll);
+      assertNotNull(rsAll, "ResultSet from getSchemas() should not be null");
       boolean foundTestDataset = false;
       int rowCount = 0;
       while (rsAll.next()) {
         rowCount++;
         assertEquals(
-            "TABLE_CATALOG should match the connection's project ID",
             expectedCatalog,
-            rsAll.getString("TABLE_CATALOG"));
+            rsAll.getString("TABLE_CATALOG"),
+            "TABLE_CATALOG should match the connection's project ID");
         String schemaName = rsAll.getString("TABLE_SCHEM");
-        assertNotNull("TABLE_SCHEM should not be null", schemaName);
+        assertNotNull(schemaName, "TABLE_SCHEM should not be null");
         if (DATASET.equals(schemaName)
             || DATASET2.equals(schemaName)
             || CONSTRAINTS_DATASET.equals(schemaName)
@@ -2334,8 +2334,8 @@ public class ITBigQueryJDBCTest extends ITBase {
           foundTestDataset = true;
         }
       }
-      assertTrue("At least one of the known test datasets should be found", foundTestDataset);
-      assertTrue("Should retrieve at least one schema/dataset", rowCount > 0);
+      assertTrue(foundTestDataset, "At least one of the known test datasets should be found");
+      assertTrue(rowCount > 0, "Should retrieve at least one schema/dataset");
     }
   }
 
@@ -2368,9 +2368,9 @@ public class ITBigQueryJDBCTest extends ITBase {
       assertEquals(funcName, rsAll.getString("SPECIFIC_NAME"));
     }
     assertEquals(
-        "Should find all " + expectedFunctionNames.size() + " functions in " + testSchema,
         expectedFunctionNames.size(),
-        countAll);
+        countAll,
+        "Should find all " + expectedFunctionNames.size() + " functions in " + testSchema);
     assertEquals(expectedFunctionNames, foundFunctionNames);
     rsAll.close();
 
@@ -2378,65 +2378,65 @@ public class ITBigQueryJDBCTest extends ITBase {
     String specificFunctionName = "scalar_sql_udf";
     ResultSet rsSpecific =
         databaseMetaData.getFunctions(testCatalog, testSchema, specificFunctionName);
-    assertTrue("Should find the specific function " + specificFunctionName, rsSpecific.next());
+    assertTrue(rsSpecific.next(), "Should find the specific function " + specificFunctionName);
     assertEquals(testCatalog, rsSpecific.getString("FUNCTION_CAT"));
     assertEquals(testSchema, rsSpecific.getString("FUNCTION_SCHEM"));
     assertEquals(specificFunctionName, rsSpecific.getString("FUNCTION_NAME"));
     assertNull(rsSpecific.getString("REMARKS"));
     assertEquals(DatabaseMetaData.functionResultUnknown, rsSpecific.getShort("FUNCTION_TYPE"));
     assertEquals(specificFunctionName, rsSpecific.getString("SPECIFIC_NAME"));
-    assertFalse("Should only find one row for exact function match", rsSpecific.next());
+    assertFalse(rsSpecific.next(), "Should only find one row for exact function match");
     rsSpecific.close();
 
     // Test 3: Get functions using a wildcard functionNamePattern "scalar%"
     // Expected order due to sorting: scalar_js_udf, scalar_sql_udf
     ResultSet rsWildcard = databaseMetaData.getFunctions(testCatalog, testSchema, "scalar%");
-    assertTrue("Should find functions matching 'scalar%'", rsWildcard.next());
+    assertTrue(rsWildcard.next(), "Should find functions matching 'scalar%'");
     assertEquals("scalar_js_udf", rsWildcard.getString("FUNCTION_NAME"));
     assertEquals(DatabaseMetaData.functionResultUnknown, rsWildcard.getShort("FUNCTION_TYPE"));
 
-    assertTrue("Should find the second function matching 'scalar%'", rsWildcard.next());
+    assertTrue(rsWildcard.next(), "Should find the second function matching 'scalar%'");
     assertEquals("scalar_sql_udf", rsWildcard.getString("FUNCTION_NAME"));
     assertEquals(DatabaseMetaData.functionResultUnknown, rsWildcard.getShort("FUNCTION_TYPE"));
-    assertFalse("Should be no more functions matching 'scalar%'", rsWildcard.next());
+    assertFalse(rsWildcard.next(), "Should be no more functions matching 'scalar%'");
     rsWildcard.close();
 
     // Test 4: Schema pattern with wildcard
     ResultSet rsSchemaWildcard =
         databaseMetaData.getFunctions(testCatalog, "JDBC_TABLE_TYPES_T%", "complex_scalar_sql_udf");
-    assertTrue("Should find function with schema wildcard", rsSchemaWildcard.next());
+    assertTrue(rsSchemaWildcard.next(), "Should find function with schema wildcard");
     assertEquals(testSchema, rsSchemaWildcard.getString("FUNCTION_SCHEM"));
     assertEquals("complex_scalar_sql_udf", rsSchemaWildcard.getString("FUNCTION_NAME"));
     assertFalse(
-        "Should only find one row for this schema wildcard and specific function",
-        rsSchemaWildcard.next());
+        rsSchemaWildcard.next(),
+        "Should only find one row for this schema wildcard and specific function");
     rsSchemaWildcard.close();
 
     // Test 5: Non-existent function
     ResultSet rsNonExistentFunc =
         databaseMetaData.getFunctions(testCatalog, testSchema, "non_existent_function_xyz123");
-    assertFalse("Should not find a non-existent function", rsNonExistentFunc.next());
+    assertFalse(rsNonExistentFunc.next(), "Should not find a non-existent function");
     rsNonExistentFunc.close();
 
     // Test 6: Non-existent schema
     ResultSet rsNonExistentSchema =
         databaseMetaData.getFunctions(testCatalog, "NON_EXISTENT_SCHEMA_XYZ123", null);
-    assertFalse("Should not find functions in a non-existent schema", rsNonExistentSchema.next());
+    assertFalse(rsNonExistentSchema.next(), "Should not find functions in a non-existent schema");
     rsNonExistentSchema.close();
 
     // Test 7: Empty schema pattern
     ResultSet rsEmptySchema = databaseMetaData.getFunctions(testCatalog, "", null);
-    assertFalse("Empty schema pattern should return no results", rsEmptySchema.next());
+    assertFalse(rsEmptySchema.next(), "Empty schema pattern should return no results");
     rsEmptySchema.close();
 
     // Test 8: Empty function name pattern
     ResultSet rsEmptyFunction = databaseMetaData.getFunctions(testCatalog, testSchema, "");
-    assertFalse("Empty function name pattern should return no results", rsEmptyFunction.next());
+    assertFalse(rsEmptyFunction.next(), "Empty function name pattern should return no results");
     rsEmptyFunction.close();
 
     // Test 9: Null catalog
     ResultSet rsNullCatalog = databaseMetaData.getFunctions(null, testSchema, null);
-    assertFalse("Null catalog should return no results", rsNullCatalog.next());
+    assertFalse(rsNullCatalog.next(), "Null catalog should return no results");
     rsNullCatalog.close();
   }
 
@@ -2453,7 +2453,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         databaseMetaData.getFunctionColumns(
             testCatalog, testSchema, specificFunction1, specificColumn1);
 
-    assertTrue("Should find column 'x' for function 'scalar_sql_udf'", rs.next());
+    assertTrue(rs.next(), "Should find column 'x' for function 'scalar_sql_udf'");
     assertEquals(testCatalog, rs.getString("FUNCTION_CAT"));
     assertEquals(testSchema, rs.getString("FUNCTION_SCHEM"));
     assertEquals(specificFunction1, rs.getString("FUNCTION_NAME"));
@@ -2473,7 +2473,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(1, rs.getInt("ORDINAL_POSITION"));
     assertEquals("", rs.getString("IS_NULLABLE"));
     assertEquals(specificFunction1, rs.getString("SPECIFIC_NAME"));
-    assertFalse("Should only find one row for exact column match", rs.next());
+    assertFalse(rs.next(), "Should only find one row for exact column match");
     rs.close();
 
     // Test Case 2: Specific function 'complex_scalar_sql_udf', specific column 'arr'
@@ -2482,7 +2482,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     rs =
         databaseMetaData.getFunctionColumns(
             testCatalog, testSchema, specificFunction2, specificColumn2);
-    assertTrue("Should find column 'arr' for function 'complex_scalar_sql_udf'", rs.next());
+    assertTrue(rs.next(), "Should find column 'arr' for function 'complex_scalar_sql_udf'");
     assertEquals(testCatalog, rs.getString("FUNCTION_CAT"));
     assertEquals(testSchema, rs.getString("FUNCTION_SCHEM"));
     assertEquals(specificFunction2, rs.getString("FUNCTION_NAME"));
@@ -2505,13 +2505,13 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(1, rs.getInt("ORDINAL_POSITION"));
     assertEquals("", rs.getString("IS_NULLABLE"));
     assertEquals(specificFunction2, rs.getString("SPECIFIC_NAME"));
-    assertFalse("Should only find one row for exact column match", rs.next());
+    assertFalse(rs.next(), "Should only find one row for exact column match");
     rs.close();
 
     // Test Case 3: All columns for 'persistent_sql_udf_named_params' (sorted by ordinal position)
     String specificFunction3 = "persistent_sql_udf_named_params";
     rs = databaseMetaData.getFunctionColumns(testCatalog, testSchema, specificFunction3, null);
-    assertTrue("Should find columns for " + specificFunction3, rs.next());
+    assertTrue(rs.next(), "Should find columns for " + specificFunction3);
     assertEquals(specificFunction3, rs.getString("FUNCTION_NAME"));
     assertEquals("value1", rs.getString("COLUMN_NAME")); // Ordinal Position 1
     assertEquals(DatabaseMetaData.functionColumnUnknown, rs.getShort("COLUMN_TYPE"));
@@ -2519,45 +2519,45 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals("BIGINT", rs.getString("TYPE_NAME"));
     assertEquals(1, rs.getInt("ORDINAL_POSITION"));
 
-    assertTrue("Should find second column for " + specificFunction3, rs.next());
+    assertTrue(rs.next(), "Should find second column for " + specificFunction3);
     assertEquals(specificFunction3, rs.getString("FUNCTION_NAME"));
     assertEquals("value-two", rs.getString("COLUMN_NAME")); // Ordinal Position 2
     assertEquals(DatabaseMetaData.functionColumnUnknown, rs.getShort("COLUMN_TYPE"));
     assertEquals(Types.NVARCHAR, rs.getInt("DATA_TYPE"));
     assertEquals("NVARCHAR", rs.getString("TYPE_NAME"));
     assertEquals(2, rs.getInt("ORDINAL_POSITION"));
-    assertFalse("Should be no more columns for " + specificFunction3, rs.next());
+    assertFalse(rs.next(), "Should be no more columns for " + specificFunction3);
     rs.close();
 
     // Test Case 4: Wildcard for function name "scalar%", specific column name "x"
     rs = databaseMetaData.getFunctionColumns(testCatalog, testSchema, "scalar%", "x");
-    assertTrue("Should find column 'x' for functions matching 'scalar%'", rs.next());
+    assertTrue(rs.next(), "Should find column 'x' for functions matching 'scalar%'");
     assertEquals("scalar_sql_udf", rs.getString("FUNCTION_NAME"));
     assertEquals("x", rs.getString("COLUMN_NAME"));
     assertEquals(1, rs.getInt("ORDINAL_POSITION"));
-    assertFalse("Should be no more columns named 'x' for functions matching 'scalar%'", rs.next());
+    assertFalse(rs.next(), "Should be no more columns named 'x' for functions matching 'scalar%'");
     rs.close();
 
     // Test Case 5: Wildcard for column name "%" for 'scalar_js_udf'
     String specificFunction4 = "scalar_js_udf";
     rs = databaseMetaData.getFunctionColumns(testCatalog, testSchema, specificFunction4, "%");
-    assertTrue("Should find columns for " + specificFunction4 + " with wildcard", rs.next());
+    assertTrue(rs.next(), "Should find columns for " + specificFunction4 + " with wildcard");
     assertEquals(specificFunction4, rs.getString("FUNCTION_NAME"));
     assertEquals("name", rs.getString("COLUMN_NAME")); // Ordinal Position 1
     assertEquals(1, rs.getInt("ORDINAL_POSITION"));
 
-    assertTrue("Should find second column for " + specificFunction4 + " with wildcard", rs.next());
+    assertTrue(rs.next(), "Should find second column for " + specificFunction4 + " with wildcard");
     assertEquals(specificFunction4, rs.getString("FUNCTION_NAME"));
     assertEquals("age", rs.getString("COLUMN_NAME")); // Ordinal Position 2
     assertEquals(2, rs.getInt("ORDINAL_POSITION"));
-    assertFalse("Should be no more columns for " + specificFunction4 + " with wildcard", rs.next());
+    assertFalse(rs.next(), "Should be no more columns for " + specificFunction4 + " with wildcard");
     rs.close();
 
     // Test Case 6: Non-existent function
     rs =
         databaseMetaData.getFunctionColumns(
             testCatalog, testSchema, "non_existent_function_xyz", null);
-    assertFalse("Should not find columns for a non-existent function", rs.next());
+    assertFalse(rs.next(), "Should not find columns for a non-existent function");
     rs.close();
   }
 
@@ -3355,11 +3355,11 @@ public class ITBigQueryJDBCTest extends ITBase {
         }
       }
       assertTrue(
-          "getCatalogs() should contain the primary project ID",
-          foundCatalogs.contains(PROJECT_ID));
+          foundCatalogs.contains(PROJECT_ID),
+          "getCatalogs() should contain the primary project ID");
       assertTrue(
-          "getCatalogs() should contain the additional project ID",
-          foundCatalogs.contains(additionalProjectsValue));
+          foundCatalogs.contains(additionalProjectsValue),
+          "getCatalogs() should contain the additional project ID");
 
       // 2. Test getSchemas()
       Set<String> catalogsForSchemasFromAll = new HashSet<>();
@@ -3376,14 +3376,14 @@ public class ITBigQueryJDBCTest extends ITBase {
         }
       }
       assertTrue(
-          "getSchemas() should list datasets from the primary project",
-          catalogsForSchemasFromAll.contains(PROJECT_ID));
+          catalogsForSchemasFromAll.contains(PROJECT_ID),
+          "getSchemas() should list datasets from the primary project");
       assertTrue(
-          "getSchemas() should list datasets from the additional project",
-          catalogsForSchemasFromAll.contains(additionalProjectsValue));
+          catalogsForSchemasFromAll.contains(additionalProjectsValue),
+          "getSchemas() should list datasets from the additional project");
       assertTrue(
-          "Known dataset from additional project not found in getSchemas()",
-          foundAdditionalDataset);
+          foundAdditionalDataset,
+          "Known dataset from additional project not found in getSchemas()");
 
     } catch (SQLException e) {
       System.err.println("SQL Error during AdditionalProjects test: " + e.getMessage());
@@ -4136,15 +4136,15 @@ public class ITBigQueryJDBCTest extends ITBase {
         if (expectedResult.containsKey(columnName)) {
           Object expectedValue = expectedResult.get(columnName);
 
-          assertEquals(regularApiLabel, expectedValue, getter.apply(resultSetRegular, i));
-          assertEquals(htapiApiLabel, expectedValue, getter.apply(resultSetArrow, i));
+          assertEquals(expectedValue, getter.apply(resultSetRegular, i), regularApiLabel);
+          assertEquals(expectedValue, getter.apply(resultSetArrow, i), htapiApiLabel);
 
         } else {
           String regularMsg = "Expected exception but got a value. " + regularApiLabel;
-          assertEquals(regularMsg, EXCEPTION_REPLACEMENT, getter.apply(resultSetRegular, i));
+          assertEquals(EXCEPTION_REPLACEMENT, getter.apply(resultSetRegular, i), regularMsg);
 
           String htapiMsg = "Expected exception but got a value. " + htapiApiLabel;
-          assertEquals(htapiMsg, EXCEPTION_REPLACEMENT, getter.apply(resultSetArrow, i));
+          assertEquals(EXCEPTION_REPLACEMENT, getter.apply(resultSetArrow, i), htapiMsg);
         }
       }
     }

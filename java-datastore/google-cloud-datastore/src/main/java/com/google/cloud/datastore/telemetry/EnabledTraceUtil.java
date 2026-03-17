@@ -208,10 +208,13 @@ public class EnabledTraceUtil implements TraceUtil {
     }
 
     @Override
+    @SuppressWarnings("MustBeClosedChecker")
     public Scope makeCurrent() {
-      try (io.opentelemetry.context.Scope scope = span.makeCurrent()) {
-        return new Scope(scope);
-      }
+      // span.makeCurrent() opens a ThreadLocal scope that binds this span to the current thread.
+      // We explicitly leave this unclosed and suppress MustBeClosedChecker so that the returned
+      // TraceUtil.Scope can manage the lifecycle instead, allowing the caller's try-with-resources
+      // to control when the ThreadLocal context is restored.
+      return new Scope(span.makeCurrent());
     }
   }
 
@@ -238,10 +241,14 @@ public class EnabledTraceUtil implements TraceUtil {
     }
 
     @Override
+    @SuppressWarnings("MustBeClosedChecker")
     public Scope makeCurrent() {
-      try (io.opentelemetry.context.Scope scope = context.makeCurrent()) {
-        return new Scope(scope);
-      }
+      // context.makeCurrent() opens a ThreadLocal scope that binds this context to the current
+      // thread.
+      // We explicitly leave this unclosed and suppress MustBeClosedChecker so that the returned
+      // TraceUtil.Scope can manage the lifecycle instead, allowing the caller's try-with-resources
+      // to control when the ThreadLocal context is restored.
+      return new Scope(context.makeCurrent());
     }
   }
 

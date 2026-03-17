@@ -54,13 +54,13 @@ import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class BigQueryJsonResultSetTest {
 
-  @Rule public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private static final FieldList fieldList =
       FieldList.of(
@@ -151,7 +151,7 @@ public class BigQueryJsonResultSetTest {
   private BlockingQueue<BigQueryFieldValueListWrapper> buffer;
   private BlockingQueue<BigQueryFieldValueListWrapper> bufferWithTwoRows;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     // Buffer with one row
     buffer = new LinkedBlockingDeque<>(2);

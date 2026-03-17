@@ -529,7 +529,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=710
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=712
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -551,7 +551,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=710
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=712
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -605,7 +605,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=719
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=721
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -632,7 +632,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=719
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=721
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -814,7 +814,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=738
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=740
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -835,7 +835,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=738
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=740
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -1000,14 +1000,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_metadata_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=753
    * @return Whether the ragFileMetadataConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRagFileMetadataConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -1018,14 +1023,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_metadata_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=753
    * @return The ragFileMetadataConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig() {
     return ragFileMetadataConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()
@@ -1038,12 +1048,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
       getRagFileMetadataConfigOrBuilder() {
     return ragFileMetadataConfig_ == null
@@ -3218,7 +3231,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=710
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=712
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -3240,7 +3253,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=710
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=712
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -3487,7 +3500,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=719
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=721
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -3515,7 +3528,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=719
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=721
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -4293,7 +4306,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=738
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=740
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
@@ -4313,7 +4326,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=738
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=740
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated
@@ -4965,13 +4978,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_metadata_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=753
      * @return Whether the ragFileMetadataConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRagFileMetadataConfig() {
       return ((bitField0_ & 0x00001000) != 0);
     }
@@ -4982,13 +5000,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_metadata_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=753
      * @return The ragFileMetadataConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig() {
       if (ragFileMetadataConfigBuilder_ == null) {
         return ragFileMetadataConfig_ == null
@@ -5005,11 +5028,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileMetadataConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig value) {
       if (ragFileMetadataConfigBuilder_ == null) {
@@ -5031,11 +5057,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileMetadataConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder builderForValue) {
       if (ragFileMetadataConfigBuilder_ == null) {
@@ -5054,11 +5083,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRagFileMetadataConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig value) {
       if (ragFileMetadataConfigBuilder_ == null) {
@@ -5086,11 +5118,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRagFileMetadataConfig() {
       bitField0_ = (bitField0_ & ~0x00001000);
       ragFileMetadataConfig_ = null;
@@ -5108,11 +5143,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder
         getRagFileMetadataConfigBuilder() {
       bitField0_ |= 0x00001000;
@@ -5126,11 +5164,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
         getRagFileMetadataConfigOrBuilder() {
       if (ragFileMetadataConfigBuilder_ != null) {
@@ -5148,9 +5189,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 17 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

@@ -18,34 +18,57 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagCorporaPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagDataSchemasPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagFilesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagMetadataPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteRagFileRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagFileRequest;
+import com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListRagCorporaRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagCorporaResponse;
+import com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest;
+import com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse;
+import com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest;
+import com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse;
 import com.google.cloud.aiplatform.v1beta1.RagCorpus;
+import com.google.cloud.aiplatform.v1beta1.RagDataSchema;
 import com.google.cloud.aiplatform.v1beta1.RagEngineConfig;
 import com.google.cloud.aiplatform.v1beta1.RagFile;
+import com.google.cloud.aiplatform.v1beta1.RagMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -164,6 +187,101 @@ public abstract class VertexRagDataServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig> getRagEngineConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getRagEngineConfigCallable()");
+  }
+
+  public UnaryCallable<CreateRagDataSchemaRequest, RagDataSchema> createRagDataSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRagDataSchemaCallable()");
+  }
+
+  public OperationCallable<
+          BatchCreateRagDataSchemasRequest,
+          BatchCreateRagDataSchemasResponse,
+          BatchCreateRagDataSchemasOperationMetadata>
+      batchCreateRagDataSchemasOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateRagDataSchemasOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCreateRagDataSchemasRequest, Operation>
+      batchCreateRagDataSchemasCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateRagDataSchemasCallable()");
+  }
+
+  public UnaryCallable<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRagDataSchemaCallable()");
+  }
+
+  public UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasPagedResponse>
+      listRagDataSchemasPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRagDataSchemasPagedCallable()");
+  }
+
+  public UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
+      listRagDataSchemasCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRagDataSchemasCallable()");
+  }
+
+  public UnaryCallable<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteRagDataSchemaCallable()");
+  }
+
+  public OperationCallable<BatchDeleteRagDataSchemasRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagDataSchemasOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteRagDataSchemasOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteRagDataSchemasRequest, Operation>
+      batchDeleteRagDataSchemasCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteRagDataSchemasCallable()");
+  }
+
+  public UnaryCallable<CreateRagMetadataRequest, RagMetadata> createRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRagMetadataCallable()");
+  }
+
+  public OperationCallable<
+          BatchCreateRagMetadataRequest,
+          BatchCreateRagMetadataResponse,
+          BatchCreateRagMetadataOperationMetadata>
+      batchCreateRagMetadataOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateRagMetadataOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCreateRagMetadataRequest, Operation> batchCreateRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateRagMetadataCallable()");
+  }
+
+  public UnaryCallable<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRagMetadataCallable()");
+  }
+
+  public UnaryCallable<GetRagMetadataRequest, RagMetadata> getRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRagMetadataCallable()");
+  }
+
+  public UnaryCallable<ListRagMetadataRequest, ListRagMetadataPagedResponse>
+      listRagMetadataPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRagMetadataPagedCallable()");
+  }
+
+  public UnaryCallable<ListRagMetadataRequest, ListRagMetadataResponse> listRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRagMetadataCallable()");
+  }
+
+  public UnaryCallable<DeleteRagMetadataRequest, Empty> deleteRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteRagMetadataCallable()");
+  }
+
+  public OperationCallable<BatchDeleteRagMetadataRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagMetadataOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteRagMetadataOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteRagMetadataRequest, Operation> batchDeleteRagMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteRagMetadataCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

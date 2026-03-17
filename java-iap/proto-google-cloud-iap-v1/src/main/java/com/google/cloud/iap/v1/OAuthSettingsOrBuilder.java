@@ -79,6 +79,141 @@ public interface OAuthSettingsOrBuilder
    *
    *
    * <pre>
+   * Optional. OAuth 2.0 client ID used in the OAuth flow.
+   * This allows for client sharing. The risks of client sharing
+   * are outlined here:
+   * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+   * </pre>
+   *
+   * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientId field is set.
+   */
+  boolean hasClientId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OAuth 2.0 client ID used in the OAuth flow.
+   * This allows for client sharing. The risks of client sharing
+   * are outlined here:
+   * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+   * </pre>
+   *
+   * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientId.
+   */
+  com.google.protobuf.StringValue getClientId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OAuth 2.0 client ID used in the OAuth flow.
+   * This allows for client sharing. The risks of client sharing
+   * are outlined here:
+   * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
+   * </pre>
+   *
+   * <code>.google.protobuf.StringValue client_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StringValueOrBuilder getClientIdOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. OAuth secret paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientSecret field is set.
+   */
+  boolean hasClientSecret();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. OAuth secret paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientSecret.
+   */
+  com.google.protobuf.StringValue getClientSecret();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. OAuth secret paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StringValueOrBuilder getClientSecretOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. OAuth secret SHA256 paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the clientSecretSha256 field is set.
+   */
+  boolean hasClientSecretSha256();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. OAuth secret SHA256 paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The clientSecretSha256.
+   */
+  com.google.protobuf.StringValue getClientSecretSha256();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. OAuth secret SHA256 paired with client ID.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.StringValue client_secret_sha256 = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.StringValueOrBuilder getClientSecretSha256OrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *

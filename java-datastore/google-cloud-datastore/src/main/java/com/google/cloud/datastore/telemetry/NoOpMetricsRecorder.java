@@ -16,13 +16,19 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.core.InternalApi;
 import java.util.Map;
 
 /**
  * Metrics recorder implementation, used to stub out metrics instrumentation when metrics are
  * disabled.
+ *
+ * <p>WARNING: This class is intended for internal use only. It was made public to be used across
+ * packages as a default. It should not be used by external customers and its API may change without
+ * notice.
  */
-class NoOpMetricsRecorder implements MetricsRecorder {
+@InternalApi
+public class NoOpMetricsRecorder implements MetricsRecorder {
 
   @Override
   public void recordTransactionLatency(double latencyMs, Map<String, String> attributes) {
@@ -31,6 +37,26 @@ class NoOpMetricsRecorder implements MetricsRecorder {
 
   @Override
   public void recordTransactionAttemptCount(long count, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordAttemptLatency(double latencyMs, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordAttemptCount(long count, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordOperationLatency(double latencyMs, Map<String, String> attributes) {
+    /* No-Op OTel Operation */
+  }
+
+  @Override
+  public void recordOperationCount(long count, Map<String, String> attributes) {
     /* No-Op OTel Operation */
   }
 }
