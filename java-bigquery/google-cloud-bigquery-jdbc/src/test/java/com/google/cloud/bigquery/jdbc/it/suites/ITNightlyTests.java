@@ -16,17 +16,12 @@
 
 package com.google.cloud.bigquery.jdbc.it.suites;
 
-import org.junit.platform.suite.api.SelectClasses;
-import org.junit.platform.suite.api.Suite;
-
 import com.google.cloud.bigquery.jdbc.it.ITAuthTests;
 import com.google.cloud.bigquery.jdbc.it.ITBigQueryJDBCTest;
 import com.google.cloud.bigquery.jdbc.it.ITNightlyBigQueryTest;
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectClasses({
-  ITAuthTests.class,
-  ITBigQueryJDBCTest.class,
-  ITNightlyBigQueryTest.class
-})
+@SelectClasses({ITAuthTests.class, ITBigQueryJDBCTest.class, ITNightlyBigQueryTest.class})
 public class ITNightlyTests {}

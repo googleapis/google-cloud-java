@@ -18,10 +18,9 @@ package com.google.cloud.bigquery.jdbc.it;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
 
 public class ITBase extends BigQueryJdbcBaseTest {
 
@@ -32,7 +31,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
         "Environment variable " + varName + " is required to perform these tests.");
     return value;
   }
-
 
   protected int resultSetRowCount(ResultSet resultSet) throws SQLException {
     int rowCount = 0;

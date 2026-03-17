@@ -21,6 +21,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.cloud.ServiceOptions;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,14 +35,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import com.google.cloud.ServiceOptions;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 public class ITAuthTests extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -73,7 +71,7 @@ public class ITAuthTests extends ITBase {
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     int totalRows = 0;
-    while (jsonResultSet.next()){
+    while (jsonResultSet.next()) {
       totalRows += 1;
     }
     assertEquals(totalRows, 850);

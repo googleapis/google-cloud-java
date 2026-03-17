@@ -16,13 +16,10 @@
 
 package com.google.cloud.bigquery.jdbc.it.suites;
 
+import com.google.cloud.bigquery.jdbc.it.ITAuthTests;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
-import com.google.cloud.bigquery.jdbc.it.ITAuthTests;
-
 @Suite
-@SelectClasses({
-  ITAuthTests.class
-})
+@SelectClasses({ITAuthTests.class})
 public class ITDriverAgnosticTests {}
