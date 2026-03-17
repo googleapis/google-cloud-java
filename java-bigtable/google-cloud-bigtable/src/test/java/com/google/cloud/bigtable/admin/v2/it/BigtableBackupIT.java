@@ -80,6 +80,7 @@ public class BigtableBackupIT {
   private static String targetClusterHot;
   private static Table testTable;
   private static Table testTableHot;
+  private static Instance testInstance;
 
   @BeforeClass
   public static void setUpClass() throws InterruptedException, IOException {
@@ -98,9 +99,12 @@ public class BigtableBackupIT {
     String newInstanceId = PrefixGenerator.newPrefix("backupIT");
     targetClusterHot = newInstanceId + "-c1";
 
-    instanceAdmin.createInstance(
-        CreateInstanceRequest.of(newInstanceId)
-            .addCluster(targetClusterHot, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD));
+    testInstance =
+        instanceAdmin.createInstance(
+            CreateInstanceRequest.of(newInstanceId)
+                .setDisplayName("BigtableBackupIT")
+                .addCluster(
+                    targetClusterHot, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD));
 
     tableAdminHot =
         BigtableTableAdminClient.create(
@@ -120,6 +124,13 @@ public class BigtableBackupIT {
         tableAdmin.deleteTable(testTable.getId());
       } catch (Exception e) {
         // Ignore.
+      }
+    }
+    if (testInstance != null) {
+      try {
+        instanceAdmin.deleteInstance(testInstance.getId());
+      } catch (Exception e) {
+        LOGGER.log(Level.WARNING, "Failed to clean up instance ", e);
       }
     }
   }

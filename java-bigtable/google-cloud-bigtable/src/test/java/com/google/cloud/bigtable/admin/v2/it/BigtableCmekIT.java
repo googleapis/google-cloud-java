@@ -115,6 +115,7 @@ public class BigtableCmekIT {
     LOGGER.info("Creating cluster in zone: " + zones.get(0));
     instanceAdmin.createInstance(
         CreateInstanceRequest.of(instanceId)
+            .setDisplayName("BigtableCmekIT")
             .addCmekCluster(clusterId1, zones.get(0), 1, StorageType.SSD, kmsKeyName));
     // Create a table. Key is inherited from the cluster configuration
     tableAdmin.createTable(CreateTableRequest.of(TEST_TABLE_ID).addFamily("cf"));
