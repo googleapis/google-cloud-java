@@ -190,12 +190,100 @@ public interface EntryLinkOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAspectsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAspects(java.lang.String key);
+
+  /** Use {@link #getAspectsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspects();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspectsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.dataplex.v1.Aspect getAspectsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.dataplex.v1.Aspect defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.Aspect getAspectsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.EntryLink.EntryReference> getEntryReferencesList();
@@ -204,12 +292,12 @@ public interface EntryLinkOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.dataplex.v1.EntryLink.EntryReference getEntryReferences(int index);
@@ -218,12 +306,12 @@ public interface EntryLinkOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   int getEntryReferencesCount();
@@ -232,12 +320,12 @@ public interface EntryLinkOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EntryLink.EntryReferenceOrBuilder>
@@ -247,12 +335,12 @@ public interface EntryLinkOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.dataplex.v1.EntryLink.EntryReferenceOrBuilder getEntryReferencesOrBuilder(

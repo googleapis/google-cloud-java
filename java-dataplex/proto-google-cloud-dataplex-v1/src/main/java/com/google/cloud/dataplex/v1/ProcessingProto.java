@@ -53,6 +53,10 @@ public final class ProcessingProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_Trigger_Schedule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_Trigger_OneTime_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_Trigger_OneTime_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataSource_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataSource_fieldAccessorTable;
@@ -76,13 +80,18 @@ public final class ProcessingProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + ")google/cloud/dataplex/v1/processing.pr"
           + "oto\022\030google.cloud.dataplex.v1\032\037google/ap"
-          + "i/field_behavior.proto\032\031google/api/resource.proto\"\275\001\n"
+          + "i/field_behavior.proto\032\031google/api/resou"
+          + "rce.proto\032\036google/protobuf/duration.proto\"\312\002\n"
           + "\007Trigger\022?\n"
           + "\ton_demand\030d \001(\0132*.google.cloud.dataplex.v1.Trigger.OnDemandH\000\022>\n"
-          + "\010schedule\030e \001(\0132*.google.cloud.dataplex.v1.Trigger.ScheduleH\000\032\n\n"
+          + "\010schedule\030e \001(\0132*.google.cloud.dataplex.v1.Trigger.ScheduleH\000\022=\n"
+          + "\010one_time\030f \001(\0132).google.cloud.dataplex.v1.Trigger.OneTimeH\000\032\n\n"
           + "\010OnDemand\032\035\n"
           + "\010Schedule\022\021\n"
-          + "\004cron\030\001 \001(\tB\003\340A\002B\006\n"
+          + "\004cron\030\001 \001(\tB\003\340A\002\032L\n"
+          + "\007OneTime\022A\n"
+          + "\031ttl_after_scan_completion\030\001"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001B\006\n"
           + "\004mode\"i\n\n"
           + "DataSource\0228\n"
           + "\006entity\030d \001(\tB&\340A\005\372A \n"
@@ -90,15 +99,15 @@ public final class ProcessingProto extends com.google.protobuf.GeneratedFile {
           + "\010resource\030e \001(\tB\003\340A\005H\000B\010\n"
           + "\006source\"\276\001\n"
           + "\013ScannedData\022S\n"
-          + "\021incremental_field\030\001 \001(\01326.google"
-          + ".cloud.dataplex.v1.ScannedData.IncrementalFieldH\000\032L\n"
+          + "\021incremental_field\030\001"
+          + " \001(\01326.google.cloud.dataplex.v1.ScannedData.IncrementalFieldH\000\032L\n"
           + "\020IncrementalField\022\022\n"
           + "\005field\030\001 \001(\tB\003\340A\003\022\022\n"
           + "\005start\030\002 \001(\tB\003\340A\003\022\020\n"
           + "\003end\030\003 \001(\tB\003\340A\003B\014\n\n"
           + "data_rangeBk\n"
-          + "\034com.google.cloud.dataplex.v1B\017ProcessingProtoP\001Z8cloud."
-          + "google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "\034com.google.cloud.dataplex.v1B\017ProcessingPr"
+          + "otoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,13 +115,14 @@ public final class ProcessingProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
             });
     internal_static_google_cloud_dataplex_v1_Trigger_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_cloud_dataplex_v1_Trigger_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_Trigger_descriptor,
             new java.lang.String[] {
-              "OnDemand", "Schedule", "Mode",
+              "OnDemand", "Schedule", "OneTime", "Mode",
             });
     internal_static_google_cloud_dataplex_v1_Trigger_OnDemand_descriptor =
         internal_static_google_cloud_dataplex_v1_Trigger_descriptor.getNestedType(0);
@@ -127,6 +137,14 @@ public final class ProcessingProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_dataplex_v1_Trigger_Schedule_descriptor,
             new java.lang.String[] {
               "Cron",
+            });
+    internal_static_google_cloud_dataplex_v1_Trigger_OneTime_descriptor =
+        internal_static_google_cloud_dataplex_v1_Trigger_descriptor.getNestedType(2);
+    internal_static_google_cloud_dataplex_v1_Trigger_OneTime_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_Trigger_OneTime_descriptor,
+            new java.lang.String[] {
+              "TtlAfterScanCompletion",
             });
     internal_static_google_cloud_dataplex_v1_DataSource_descriptor =
         getDescriptor().getMessageType(1);
@@ -155,6 +173,7 @@ public final class ProcessingProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

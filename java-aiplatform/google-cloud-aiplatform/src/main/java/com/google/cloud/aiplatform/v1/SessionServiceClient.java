@@ -89,6 +89,8 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> createSessionAsync(ReasoningEngineName parent, Session session)
  *           <li><p> createSessionAsync(String parent, Session session)
+ *           <li><p> createSessionAsync(ReasoningEngineName parent, Session session, String sessionId)
+ *           <li><p> createSessionAsync(String parent, Session session, String sessionId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -468,12 +470,97 @@ public class SessionServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   ReasoningEngineName parent =
+   *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+   *   Session session = Session.newBuilder().build();
+   *   String sessionId = "sessionId607796817";
+   *   Session response = sessionServiceClient.createSessionAsync(parent, session, sessionId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to create the session in. Format:
+   *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
+   * @param session Required. The session to create.
+   * @param sessionId Optional. The user defined ID to use for session, which will become the final
+   *     component of the session resource name. If not provided, Vertex AI will generate a value
+   *     for this ID.
+   *     <p>This value may be up to 63 characters, and valid characters are `[a-z0-9-]`. The first
+   *     character must be a letter, and the last character must be a letter or number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Session, CreateSessionOperationMetadata> createSessionAsync(
+      ReasoningEngineName parent, Session session, String sessionId) {
+    CreateSessionRequest request =
+        CreateSessionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSession(session)
+            .setSessionId(sessionId)
+            .build();
+    return createSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new [Session][google.cloud.aiplatform.v1.Session].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   String parent =
+   *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
+   *   Session session = Session.newBuilder().build();
+   *   String sessionId = "sessionId607796817";
+   *   Session response = sessionServiceClient.createSessionAsync(parent, session, sessionId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to create the session in. Format:
+   *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
+   * @param session Required. The session to create.
+   * @param sessionId Optional. The user defined ID to use for session, which will become the final
+   *     component of the session resource name. If not provided, Vertex AI will generate a value
+   *     for this ID.
+   *     <p>This value may be up to 63 characters, and valid characters are `[a-z0-9-]`. The first
+   *     character must be a letter, and the last character must be a letter or number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Session, CreateSessionOperationMetadata> createSessionAsync(
+      String parent, Session session, String sessionId) {
+    CreateSessionRequest request =
+        CreateSessionRequest.newBuilder()
+            .setParent(parent)
+            .setSession(session)
+            .setSessionId(sessionId)
+            .build();
+    return createSessionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new [Session][google.cloud.aiplatform.v1.Session].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   CreateSessionRequest request =
    *       CreateSessionRequest.newBuilder()
    *           .setParent(
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   Session response = sessionServiceClient.createSessionAsync(request).get();
    * }
@@ -506,6 +593,7 @@ public class SessionServiceClient implements BackgroundResource {
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   OperationFuture<Session, CreateSessionOperationMetadata> future =
    *       sessionServiceClient.createSessionOperationCallable().futureCall(request);
@@ -538,6 +626,7 @@ public class SessionServiceClient implements BackgroundResource {
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   ApiFuture<Operation> future =
    *       sessionServiceClient.createSessionCallable().futureCall(request);

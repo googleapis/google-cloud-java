@@ -548,6 +548,16 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessage
      * <code>SCHEDULE = 2;</code>
      */
     SCHEDULE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Data scan is run one time on creation.
+     * </pre>
+     *
+     * <code>ONE_TIME = 3;</code>
+     */
+    ONE_TIME(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -594,6 +604,17 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessage
      */
     public static final int SCHEDULE_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Data scan is run one time on creation.
+     * </pre>
+     *
+     * <code>ONE_TIME = 3;</code>
+     */
+    public static final int ONE_TIME_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -624,6 +645,8 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessage
           return ON_DEMAND;
         case 2:
           return SCHEDULE;
+        case 3:
+          return ONE_TIME;
         default:
           return null;
       }

@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetReservationSlotRequest;
+import com.google.cloud.compute.v1.GetVersionReservationSlotRequest;
 import com.google.cloud.compute.v1.ListReservationSlotsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
@@ -94,6 +95,65 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                       .setDefaultInstance(ReservationSlotsGetResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetVersionReservationSlotRequest, Operation>
+      getVersionMethodDescriptor =
+          ApiMethodDescriptor.<GetVersionReservationSlotRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSlots/GetVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetVersionReservationSlotRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservationSlot}/getVersion",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetVersionReservationSlotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservationSlot", request.getReservationSlot());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetVersionReservationSlotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "reservationSlotsGetVersionRequestResource",
+                                      request.getReservationSlotsGetVersionRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (GetVersionReservationSlotRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -213,6 +273,9 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
               .build();
 
   private final UnaryCallable<GetReservationSlotRequest, ReservationSlotsGetResponse> getCallable;
+  private final UnaryCallable<GetVersionReservationSlotRequest, Operation> getVersionCallable;
+  private final OperationCallable<GetVersionReservationSlotRequest, Operation, Operation>
+      getVersionOperationCallable;
   private final UnaryCallable<ListReservationSlotsRequest, ReservationSlotsListResponse>
       listCallable;
   private final UnaryCallable<ListReservationSlotsRequest, ListPagedResponse> listPagedCallable;
@@ -280,6 +343,20 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetVersionReservationSlotRequest, Operation> getVersionTransportSettings =
+        HttpJsonCallSettings.<GetVersionReservationSlotRequest, Operation>newBuilder()
+            .setMethodDescriptor(getVersionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent_name", String.valueOf(request.getParentName()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("reservation_slot", String.valueOf(request.getReservationSlot()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListReservationSlotsRequest, ReservationSlotsListResponse>
         listTransportSettings =
             HttpJsonCallSettings
@@ -313,6 +390,15 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getVersionCallable =
+        callableFactory.createUnaryCallable(
+            getVersionTransportSettings, settings.getVersionSettings(), clientContext);
+    this.getVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            getVersionTransportSettings,
+            settings.getVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -337,6 +423,7 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getVersionMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
@@ -345,6 +432,17 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
   @Override
   public UnaryCallable<GetReservationSlotRequest, ReservationSlotsGetResponse> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetVersionReservationSlotRequest, Operation> getVersionCallable() {
+    return getVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<GetVersionReservationSlotRequest, Operation, Operation>
+      getVersionOperationCallable() {
+    return getVersionOperationCallable;
   }
 
   @Override

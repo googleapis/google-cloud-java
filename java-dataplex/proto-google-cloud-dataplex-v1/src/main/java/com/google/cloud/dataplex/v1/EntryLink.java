@@ -62,6 +62,18 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_dataplex_v1_EntryLink_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 6:
+        return internalGetAspects();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -1566,6 +1578,139 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int ASPECTS_FIELD_NUMBER = 6;
+
+  private static final class AspectsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.dataplex.v1.Aspect>newDefaultInstance(
+                    com.google.cloud.dataplex.v1.CatalogProto
+                        .internal_static_google_cloud_dataplex_v1_EntryLink_AspectsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.dataplex.v1.Aspect.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+      aspects_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+      internalGetAspects() {
+    if (aspects_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AspectsDefaultEntryHolder.defaultEntry);
+    }
+    return aspects_;
+  }
+
+  public int getAspectsCount() {
+    return internalGetAspects().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAspects(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAspects().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getAspectsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspects() {
+    return getAspectsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspectsMap() {
+    return internalGetAspects().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.dataplex.v1.Aspect getAspectsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.dataplex.v1.Aspect defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> map =
+        internalGetAspects().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The aspects that are attached to the entry link.
+   * The format of the aspect key has to be the following:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Aspect getAspectsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> map =
+        internalGetAspects().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int ENTRY_REFERENCES_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -1575,12 +1720,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1593,12 +1738,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1611,12 +1756,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1628,12 +1773,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1645,12 +1790,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Specifies the Entries referenced in the Entry Link. There should
-   * be exactly two entry references.
+   * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+   * There should be exactly two entry references.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1685,6 +1830,8 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getUpdateTime());
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetAspects(), AspectsDefaultEntryHolder.defaultEntry, 6);
     for (int i = 0; i < entryReferences_.size(); i++) {
       output.writeMessage(10, entryReferences_.get(i));
     }
@@ -1708,6 +1855,17 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.dataplex.v1.Aspect> entry :
+        internalGetAspects().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+          aspects__ =
+              AspectsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, aspects__);
     }
     for (int i = 0; i < entryReferences_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, entryReferences_.get(i));
@@ -1737,6 +1895,7 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!internalGetAspects().equals(other.internalGetAspects())) return false;
     if (!getEntryReferencesList().equals(other.getEntryReferencesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1760,6 +1919,10 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (!internalGetAspects().getMap().isEmpty()) {
+      hash = (37 * hash) + ASPECTS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAspects().hashCode();
     }
     if (getEntryReferencesCount() > 0) {
       hash = (37 * hash) + ENTRY_REFERENCES_FIELD_NUMBER;
@@ -1884,6 +2047,28 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_dataplex_v1_EntryLink_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetAspects();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableAspects();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1928,13 +2113,14 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      internalGetMutableAspects().clear();
       if (entryReferencesBuilder_ == null) {
         entryReferences_ = java.util.Collections.emptyList();
       } else {
         entryReferences_ = null;
         entryReferencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1972,9 +2158,9 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.EntryLink result) {
       if (entryReferencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           entryReferences_ = java.util.Collections.unmodifiableList(entryReferences_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.entryReferences_ = entryReferences_;
       } else {
@@ -1998,6 +2184,9 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.aspects_ = internalGetAspects().build(AspectsDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2030,11 +2219,13 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      internalGetMutableAspects().mergeFrom(other.internalGetAspects());
+      bitField0_ |= 0x00000010;
       if (entryReferencesBuilder_ == null) {
         if (!other.entryReferences_.isEmpty()) {
           if (entryReferences_.isEmpty()) {
             entryReferences_ = other.entryReferences_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureEntryReferencesIsMutable();
             entryReferences_.addAll(other.entryReferences_);
@@ -2047,7 +2238,7 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
             entryReferencesBuilder_.dispose();
             entryReferencesBuilder_ = null;
             entryReferences_ = other.entryReferences_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             entryReferencesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetEntryReferencesFieldBuilder()
@@ -2109,6 +2300,19 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+                    aspects__ =
+                        input.readMessage(
+                            AspectsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAspects()
+                    .ensureBuilderMap()
+                    .put(aspects__.getKey(), aspects__.getValue());
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             case 82:
               {
                 com.google.cloud.dataplex.v1.EntryLink.EntryReference m =
@@ -2858,15 +3062,297 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
       return updateTimeBuilder_;
     }
 
+    private static final class AspectsConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.AspectOrBuilder,
+            com.google.cloud.dataplex.v1.Aspect> {
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Aspect build(
+          com.google.cloud.dataplex.v1.AspectOrBuilder val) {
+        if (val instanceof com.google.cloud.dataplex.v1.Aspect) {
+          return (com.google.cloud.dataplex.v1.Aspect) val;
+        }
+        return ((com.google.cloud.dataplex.v1.Aspect.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+          defaultEntry() {
+        return AspectsDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final AspectsConverter aspectsConverter = new AspectsConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.AspectOrBuilder,
+            com.google.cloud.dataplex.v1.Aspect,
+            com.google.cloud.dataplex.v1.Aspect.Builder>
+        aspects_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.AspectOrBuilder,
+            com.google.cloud.dataplex.v1.Aspect,
+            com.google.cloud.dataplex.v1.Aspect.Builder>
+        internalGetAspects() {
+      if (aspects_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(aspectsConverter);
+      }
+      return aspects_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.AspectOrBuilder,
+            com.google.cloud.dataplex.v1.Aspect,
+            com.google.cloud.dataplex.v1.Aspect.Builder>
+        internalGetMutableAspects() {
+      if (aspects_ == null) {
+        aspects_ = new com.google.protobuf.MapFieldBuilder<>(aspectsConverter);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return aspects_;
+    }
+
+    public int getAspectsCount() {
+      return internalGetAspects().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAspects(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAspects().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getAspectsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspects() {
+      return getAspectsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> getAspectsMap() {
+      return internalGetAspects().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.dataplex.v1.Aspect getAspectsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.dataplex.v1.Aspect defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.AspectOrBuilder> map =
+          internalGetMutableAspects().ensureBuilderMap();
+      return map.containsKey(key) ? aspectsConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Aspect getAspectsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.AspectOrBuilder> map =
+          internalGetMutableAspects().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return aspectsConverter.build(map.get(key));
+    }
+
+    public Builder clearAspects() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      internalGetMutableAspects().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAspects(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAspects().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect>
+        getMutableAspects() {
+      bitField0_ |= 0x00000010;
+      return internalGetMutableAspects().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAspects(java.lang.String key, com.google.cloud.dataplex.v1.Aspect value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAspects().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAspects(
+        java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.Aspect> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.dataplex.v1.Aspect> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableAspects().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The aspects that are attached to the entry link.
+     * The format of the aspect key has to be the following:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.Aspect&gt; aspects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.Aspect.Builder putAspectsBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.dataplex.v1.AspectOrBuilder> builderMap =
+          internalGetMutableAspects().ensureBuilderMap();
+      com.google.cloud.dataplex.v1.AspectOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.dataplex.v1.Aspect.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.dataplex.v1.Aspect) {
+        entry = ((com.google.cloud.dataplex.v1.Aspect) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.dataplex.v1.Aspect.Builder) entry;
+    }
+
     private java.util.List<com.google.cloud.dataplex.v1.EntryLink.EntryReference> entryReferences_ =
         java.util.Collections.emptyList();
 
     private void ensureEntryReferencesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         entryReferences_ =
             new java.util.ArrayList<com.google.cloud.dataplex.v1.EntryLink.EntryReference>(
                 entryReferences_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2880,12 +3366,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public java.util.List<com.google.cloud.dataplex.v1.EntryLink.EntryReference>
@@ -2901,12 +3387,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public int getEntryReferencesCount() {
@@ -2921,12 +3407,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.dataplex.v1.EntryLink.EntryReference getEntryReferences(int index) {
@@ -2941,12 +3427,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setEntryReferences(
@@ -2968,12 +3454,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setEntryReferences(
@@ -2992,12 +3478,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addEntryReferences(com.google.cloud.dataplex.v1.EntryLink.EntryReference value) {
@@ -3018,12 +3504,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addEntryReferences(
@@ -3045,12 +3531,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addEntryReferences(
@@ -3069,12 +3555,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addEntryReferences(
@@ -3093,12 +3579,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addAllEntryReferences(
@@ -3118,18 +3604,18 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearEntryReferences() {
       if (entryReferencesBuilder_ == null) {
         entryReferences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         entryReferencesBuilder_.clear();
@@ -3141,12 +3627,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder removeEntryReferences(int index) {
@@ -3164,12 +3650,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.dataplex.v1.EntryLink.EntryReference.Builder getEntryReferencesBuilder(
@@ -3181,12 +3667,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.dataplex.v1.EntryLink.EntryReferenceOrBuilder
@@ -3202,12 +3688,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.dataplex.v1.EntryLink.EntryReferenceOrBuilder>
@@ -3223,12 +3709,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.dataplex.v1.EntryLink.EntryReference.Builder
@@ -3241,12 +3727,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.dataplex.v1.EntryLink.EntryReference.Builder addEntryReferencesBuilder(
@@ -3260,12 +3746,12 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Specifies the Entries referenced in the Entry Link. There should
-     * be exactly two entry references.
+     * Required. Immutable. Specifies the Entries referenced in the Entry Link.
+     * There should be exactly two entry references.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.dataplex.v1.EntryLink.EntryReference entry_references = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public java.util.List<com.google.cloud.dataplex.v1.EntryLink.EntryReference.Builder>
@@ -3285,7 +3771,7 @@ public final class EntryLink extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dataplex.v1.EntryLink.EntryReference.Builder,
                 com.google.cloud.dataplex.v1.EntryLink.EntryReferenceOrBuilder>(
                 entryReferences_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         entryReferences_ = null;

@@ -86,7 +86,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
-     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1450
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1549
      * @return Whether the dataplexEntry field is set.
      */
     @java.lang.Deprecated
@@ -102,7 +102,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
-     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1450
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1549
      * @return The dataplexEntry.
      */
     @java.lang.Deprecated
@@ -184,7 +184,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
-     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1450
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1549
      * @return Whether the dataplexEntry field is set.
      */
     @java.lang.Override
@@ -203,7 +203,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
-     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1450
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1549
      * @return The dataplexEntry.
      */
     @java.lang.Override
@@ -581,7 +581,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
-       *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1450
+       *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1549
        * @return Whether the dataplexEntry field is set.
        */
       @java.lang.Deprecated
@@ -599,7 +599,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
-       *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1450
+       *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1549
        * @return The dataplexEntry.
        */
       @java.lang.Deprecated
@@ -838,7 +838,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * <code>string linked_resource = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1454
+   *     google/cloud/dataplex/v1/catalog.proto;l=1553
    * @return The linkedResource.
    */
   @java.lang.Override
@@ -865,7 +865,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * <code>string linked_resource = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1454
+   *     google/cloud/dataplex/v1/catalog.proto;l=1553
    * @return The bytes for linkedResource.
    */
   @java.lang.Override
@@ -929,7 +929,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1459
+   *     google/cloud/dataplex/v1/catalog.proto;l=1558
    * @return Whether the snippets field is set.
    */
   @java.lang.Override
@@ -949,7 +949,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1459
+   *     google/cloud/dataplex/v1/catalog.proto;l=1558
    * @return The snippets.
    */
   @java.lang.Override
@@ -1379,7 +1379,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>string linked_resource = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1454
+     *     google/cloud/dataplex/v1/catalog.proto;l=1553
      * @return The linkedResource.
      */
     @java.lang.Deprecated
@@ -1405,7 +1405,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>string linked_resource = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1454
+     *     google/cloud/dataplex/v1/catalog.proto;l=1553
      * @return The bytes for linkedResource.
      */
     @java.lang.Deprecated
@@ -1431,7 +1431,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>string linked_resource = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1454
+     *     google/cloud/dataplex/v1/catalog.proto;l=1553
      * @param value The linkedResource to set.
      * @return This builder for chaining.
      */
@@ -1456,7 +1456,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>string linked_resource = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1454
+     *     google/cloud/dataplex/v1/catalog.proto;l=1553
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1477,7 +1477,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>string linked_resource = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1454
+     *     google/cloud/dataplex/v1/catalog.proto;l=1553
      * @param value The bytes for linkedResource to set.
      * @return This builder for chaining.
      */
@@ -1638,7 +1638,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1459
+     *     google/cloud/dataplex/v1/catalog.proto;l=1558
      * @return Whether the snippets field is set.
      */
     @java.lang.Deprecated
@@ -1658,7 +1658,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1459
+     *     google/cloud/dataplex/v1/catalog.proto;l=1558
      * @return The snippets.
      */
     @java.lang.Deprecated

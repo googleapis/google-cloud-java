@@ -106,6 +106,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetVersion</td>
+ *      <td><p> Allows customers to get SBOM versions of a reservation subBlock.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVersionAsync(GetVersionReservationSubBlockRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> getVersionAsync(String project, String zone, String parentName, String reservationSubBlock, ReservationSubBlocksGetVersionRequest reservationSubBlocksGetVersionRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVersionOperationCallable()
+ *           <li><p> getVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> List</td>
  *      <td><p> Retrieves a list of reservation subBlocks under a single reservation.</td>
  *      <td>
@@ -510,6 +529,172 @@ public class ReservationSubBlocksClient implements BackgroundResource {
   public final UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy>
       getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to get SBOM versions of a reservation subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String parentName = "parentName-244870571";
+   *   String reservationSubBlock = "reservationSubBlock-1816847847";
+   *   ReservationSubBlocksGetVersionRequest reservationSubBlocksGetVersionRequestResource =
+   *       ReservationSubBlocksGetVersionRequest.newBuilder().build();
+   *   Operation response =
+   *       reservationSubBlocksClient
+   *           .getVersionAsync(
+   *               project,
+   *               zone,
+   *               parentName,
+   *               reservationSubBlock,
+   *               reservationSubBlocksGetVersionRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone Name of the zone for this request. Zone name should conform to RFC1035.
+   * @param parentName The name of the parent reservation and parent block. In the format of
+   *     reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
+   * @param reservationSubBlock The name of the reservation subBlock. Name should conform to RFC1035
+   *     or be a resource ID.
+   * @param reservationSubBlocksGetVersionRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> getVersionAsync(
+      String project,
+      String zone,
+      String parentName,
+      String reservationSubBlock,
+      ReservationSubBlocksGetVersionRequest reservationSubBlocksGetVersionRequestResource) {
+    GetVersionReservationSubBlockRequest request =
+        GetVersionReservationSubBlockRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setParentName(parentName)
+            .setReservationSubBlock(reservationSubBlock)
+            .setReservationSubBlocksGetVersionRequestResource(
+                reservationSubBlocksGetVersionRequestResource)
+            .build();
+    return getVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to get SBOM versions of a reservation subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   GetVersionReservationSubBlockRequest request =
+   *       GetVersionReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setReservationSubBlocksGetVersionRequestResource(
+   *               ReservationSubBlocksGetVersionRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = reservationSubBlocksClient.getVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> getVersionAsync(
+      GetVersionReservationSubBlockRequest request) {
+    return getVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to get SBOM versions of a reservation subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   GetVersionReservationSubBlockRequest request =
+   *       GetVersionReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setReservationSubBlocksGetVersionRequestResource(
+   *               ReservationSubBlocksGetVersionRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationSubBlocksClient.getVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<GetVersionReservationSubBlockRequest, Operation, Operation>
+      getVersionOperationCallable() {
+    return stub.getVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to get SBOM versions of a reservation subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   GetVersionReservationSubBlockRequest request =
+   *       GetVersionReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setReservationSubBlocksGetVersionRequestResource(
+   *               ReservationSubBlocksGetVersionRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       reservationSubBlocksClient.getVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetVersionReservationSubBlockRequest, Operation> getVersionCallable() {
+    return stub.getVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

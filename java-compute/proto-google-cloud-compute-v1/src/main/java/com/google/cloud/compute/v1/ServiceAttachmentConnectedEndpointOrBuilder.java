@@ -108,6 +108,45 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
+   * The url of a connected endpoint with resource id.
+   * </pre>
+   *
+   * <code>optional string endpoint_with_id = 444867210;</code>
+   *
+   * @return Whether the endpointWithId field is set.
+   */
+  boolean hasEndpointWithId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The url of a connected endpoint with resource id.
+   * </pre>
+   *
+   * <code>optional string endpoint_with_id = 444867210;</code>
+   *
+   * @return The endpointWithId.
+   */
+  java.lang.String getEndpointWithId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The url of a connected endpoint with resource id.
+   * </pre>
+   *
+   * <code>optional string endpoint_with_id = 444867210;</code>
+   *
+   * @return The bytes for endpointWithId.
+   */
+  com.google.protobuf.ByteString getEndpointWithIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * NAT IPs of the connected PSC endpoint and those of other endpoints
    * propagated from it.
    * </pre>

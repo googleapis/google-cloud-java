@@ -205,17 +205,22 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the metadata config for RagFiles.
+   * Optional. Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
    * Alteratively, inline metadata schema and metadata can be provided.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
    * @return Whether the ragFileMetadataConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRagFileMetadataConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
@@ -224,17 +229,22 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the metadata config for RagFiles.
+   * Optional. Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
    * Alteratively, inline metadata schema and metadata can be provided.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
    * @return The ragFileMetadataConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig() {
     return ragFileMetadataConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.getDefaultInstance()
@@ -245,15 +255,18 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the metadata config for RagFiles.
+   * Optional. Specifies the metadata config for RagFiles.
    * Including paths for metadata schema and metadata.
    * Alteratively, inline metadata schema and metadata can be provided.
+   * Deprecated: Not in use.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
       getRagFileMetadataConfigOrBuilder() {
     return ragFileMetadataConfig_ == null
@@ -1238,16 +1251,21 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
      * @return Whether the ragFileMetadataConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRagFileMetadataConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1256,16 +1274,21 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
      * @return The ragFileMetadataConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig getRagFileMetadataConfig() {
       if (ragFileMetadataConfigBuilder_ == null) {
         return ragFileMetadataConfig_ == null
@@ -1280,14 +1303,17 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileMetadataConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig value) {
       if (ragFileMetadataConfigBuilder_ == null) {
@@ -1307,14 +1333,17 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileMetadataConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder builderForValue) {
       if (ragFileMetadataConfigBuilder_ == null) {
@@ -1331,14 +1360,17 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRagFileMetadataConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig value) {
       if (ragFileMetadataConfigBuilder_ == null) {
@@ -1364,14 +1396,17 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRagFileMetadataConfig() {
       bitField0_ = (bitField0_ & ~0x00000004);
       ragFileMetadataConfig_ = null;
@@ -1387,14 +1422,17 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig.Builder
         getRagFileMetadataConfigBuilder() {
       bitField0_ |= 0x00000004;
@@ -1406,14 +1444,17 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileMetadataConfigOrBuilder
         getRagFileMetadataConfigOrBuilder() {
       if (ragFileMetadataConfigBuilder_ != null) {
@@ -1429,12 +1470,14 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the metadata config for RagFiles.
+     * Optional. Specifies the metadata config for RagFiles.
      * Including paths for metadata schema and metadata.
      * Alteratively, inline metadata schema and metadata can be provided.
+     * Deprecated: Not in use.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileMetadataConfig rag_file_metadata_config = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

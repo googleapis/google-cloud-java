@@ -55,18 +55,18 @@ public final class GroupMembershipProto extends com.google.protobuf.GeneratedFil
     java.lang.String[] descriptorData = {
       "\n5google/cloud/securitycenter/v1/group_m"
           + "embership.proto\022\036google.cloud.securityce"
-          + "nter.v1\"\275\001\n\017GroupMembership\022M\n\ngroup_typ"
+          + "nter.v1\"\330\001\n\017GroupMembership\022M\n\ngroup_typ"
           + "e\030\001 \001(\01629.google.cloud.securitycenter.v1"
           + ".GroupMembership.GroupType\022\020\n\010group_id\030\002"
-          + " \001(\t\"I\n\tGroupType\022\032\n\026GROUP_TYPE_UNSPECIF"
-          + "IED\020\000\022 \n\034GROUP_TYPE_TOXIC_COMBINATION\020\001B"
-          + "\356\001\n\"com.google.cloud.securitycenter.v1B\024"
-          + "GroupMembershipProtoP\001ZJcloud.google.com"
-          + "/go/securitycenter/apiv1/securitycenterp"
-          + "b;securitycenterpb\252\002\036Google.Cloud.Securi"
-          + "tyCenter.V1\312\002\036Google\\Cloud\\SecurityCente"
-          + "r\\V1\352\002!Google::Cloud::SecurityCenter::V1"
-          + "b\006proto3"
+          + " \001(\t\"d\n\tGroupType\022\032\n\026GROUP_TYPE_UNSPECIF"
+          + "IED\020\000\022 \n\034GROUP_TYPE_TOXIC_COMBINATION\020\001\022"
+          + "\031\n\025GROUP_TYPE_CHOKEPOINT\020\003B\356\001\n\"com.googl"
+          + "e.cloud.securitycenter.v1B\024GroupMembersh"
+          + "ipProtoP\001ZJcloud.google.com/go/securityc"
+          + "enter/apiv1/securitycenterpb;securitycen"
+          + "terpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002"
+          + "\036Google\\Cloud\\SecurityCenter\\V1\352\002!Google"
+          + "::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

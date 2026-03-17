@@ -100,5 +100,45 @@ public interface TriggerOrBuilder
    */
   com.google.cloud.dataplex.v1.Trigger.ScheduleOrBuilder getScheduleOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once, and does not create an associated ScanJob child
+   * resource.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+   *
+   * @return Whether the oneTime field is set.
+   */
+  boolean hasOneTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once, and does not create an associated ScanJob child
+   * resource.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+   *
+   * @return The oneTime.
+   */
+  com.google.cloud.dataplex.v1.Trigger.OneTime getOneTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once, and does not create an associated ScanJob child
+   * resource.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+   */
+  com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder getOneTimeOrBuilder();
+
   com.google.cloud.dataplex.v1.Trigger.ModeCase getModeCase();
 }

@@ -104,7 +104,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "!aiplatform.googleapis.com/Session\022^projects/{project}/location"
           + "s/{location}/reasoningEngines/{reasoning"
           + "_engine}/sessions/{session}*\010sessions2\007sessionB\014\n\n"
-          + "expiration\"\271\004\n"
+          + "expiration\"\352\004\n"
           + "\014SessionEvent\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\006author\030\003 \001(\tB\003\340A\002\0229\n"
@@ -118,13 +118,16 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "error_message\030\n"
           + " \001(\tB\003\340A\001\022F\n"
           + "\016event_metadata\030\013 \001(\0132)."
-          + "google.cloud.aiplatform.v1.EventMetadataB\003\340A\001:\270\001\352A\264\001\n"
-          + "&aiplatform.googleapis.com/SessionEvent\022mprojects/{project}/locatio"
-          + "ns/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}*\r"
+          + "google.cloud.aiplatform.v1.EventMetadataB\003\340A\001\022/\n"
+          + "\traw_event\030\014"
+          + " \001(\0132\027.google.protobuf.StructB\003\340A\001:\270\001\352A\264\001\n"
+          + "&aiplatform.googleapis.com/SessionEvent\022mprojects/{project"
+          + "}/locations/{location}/reasoningEngines/"
+          + "{reasoning_engine}/sessions/{session}/events/{event}*\r"
           + "sessionEvents2\014sessionEvent\"\261\003\n\r"
           + "EventMetadata\022N\n"
-          + "\022grounding_metadata\030\001 \001(\0132-"
-          + ".google.cloud.aiplatform.v1.GroundingMetadataB\003\340A\001\022\024\n"
+          + "\022grounding_metadata\030\001"
+          + " \001(\0132-.google.cloud.aiplatform.v1.GroundingMetadataB\003\340A\001\022\024\n"
           + "\007partial\030\002 \001(\010B\003\340A\001\022\032\n\r"
           + "turn_complete\030\003 \001(\010B\003\340A\001\022\030\n"
           + "\013interrupted\030\004 \001(\010B\003\340A\001\022\"\n"
@@ -133,13 +136,13 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\017custom_metadata\030\007 \001(\0132\027.google.protobuf.Struct\022K\n"
           + "\023input_transcription\030\n"
           + " \001(\0132).google.cloud.aiplatform.v1.TranscriptionB\003\340A\001\022L\n"
-          + "\024output_transcription\030\013"
-          + " \001(\0132).google.cloud.aiplatform.v1.TranscriptionB\003\340A\001\"\344\002\n"
+          + "\024output_transcription\030\013 \001(\0132).google.c"
+          + "loud.aiplatform.v1.TranscriptionB\003\340A\001\"\344\002\n"
           + "\014EventActions\022\037\n"
           + "\022skip_summarization\030\001 \001(\010B\003\340A\001\0221\n"
           + "\013state_delta\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\022X\n"
-          + "\016artifact_delta\030\003 \003(\0132;.goog"
-          + "le.cloud.aiplatform.v1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\025\n"
+          + "\016artifact_delta\030\003 \003"
+          + "(\0132;.google.cloud.aiplatform.v1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\025\n"
           + "\010escalate\030\006 \001(\010B\003\340A\001\022<\n"
           + "\026requested_auth_configs\030\007"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022\033\n"
@@ -150,10 +153,11 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "Transcription\022\021\n"
           + "\004text\030\001 \001(\tB\003\340A\001\022\025\n"
           + "\010finished\030\002 \001(\010B\003\340A\001B\312\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\014SessionProtoP\001Z>cloud.google.com/go/a"
-          + "iplatform/apiv1/aiplatformpb;aiplatformp"
-          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
-          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\014SessionProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -206,6 +210,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "ErrorCode",
               "ErrorMessage",
               "EventMetadata",
+              "RawEvent",
             });
     internal_static_google_cloud_aiplatform_v1_EventMetadata_descriptor =
         getDescriptor().getMessageType(2);

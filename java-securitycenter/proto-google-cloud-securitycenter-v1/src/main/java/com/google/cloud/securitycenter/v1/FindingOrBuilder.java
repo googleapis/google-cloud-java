@@ -2269,4 +2269,87 @@ public interface FindingOrBuilder
    */
   com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder getGroupMembershipsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a chokepoint, which is a resource or resource group
+   * where high-risk attack paths converge, based on [attack path simulations]
+   * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+   *
+   * @return Whether the chokepoint field is set.
+   */
+  boolean hasChokepoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a chokepoint, which is a resource or resource group
+   * where high-risk attack paths converge, based on [attack path simulations]
+   * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+   *
+   * @return The chokepoint.
+   */
+  com.google.cloud.securitycenter.v1.Chokepoint getChokepoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a chokepoint, which is a resource or resource group
+   * where high-risk attack paths converge, based on [attack path simulations]
+   * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+   */
+  com.google.cloud.securitycenter.v1.ChokepointOrBuilder getChokepointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * External exposure associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+   *
+   * @return Whether the externalExposure field is set.
+   */
+  boolean hasExternalExposure();
+
+  /**
+   *
+   *
+   * <pre>
+   * External exposure associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+   *
+   * @return The externalExposure.
+   */
+  com.google.cloud.securitycenter.v1.ExternalExposure getExternalExposure();
+
+  /**
+   *
+   *
+   * <pre>
+   * External exposure associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+   */
+  com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder getExternalExposureOrBuilder();
 }

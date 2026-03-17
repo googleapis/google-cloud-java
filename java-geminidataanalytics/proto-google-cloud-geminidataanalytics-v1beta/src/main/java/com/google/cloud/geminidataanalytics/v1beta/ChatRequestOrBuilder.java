@@ -235,7 +235,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
    * @return The project.
    */
   @java.lang.Deprecated
@@ -253,7 +253,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=316
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
    * @return The bytes for project.
    */
   @java.lang.Deprecated
@@ -352,6 +352,38 @@ public interface ChatRequestOrBuilder
    * </code>
    */
   com.google.cloud.geminidataanalytics.v1beta.MessageOrBuilder getMessagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking mode to use for the agent loop.
+   * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for thinkingMode.
+   */
+  int getThinkingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking mode to use for the agent loop.
+   * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode thinking_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thinkingMode.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode getThinkingMode();
 
   com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ContextProviderCase
       getContextProviderCase();

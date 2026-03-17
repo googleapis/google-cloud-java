@@ -18,12 +18,12 @@ package com.google.cloud.bigquery.jdbc.it;
 
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.Arrays.asList;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQueryException;
@@ -41,7 +41,7 @@ import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Properties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ITPSCBigQueryTest {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -50,8 +50,8 @@ public class ITPSCBigQueryTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
+        System.getenv(varName),
+        "Environment variable " + varName + " is required to perform these tests.");
     return value;
   }
 

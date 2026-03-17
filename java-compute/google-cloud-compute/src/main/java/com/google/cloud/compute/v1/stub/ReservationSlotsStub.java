@@ -22,6 +22,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetReservationSlotRequest;
+import com.google.cloud.compute.v1.GetVersionReservationSlotRequest;
 import com.google.cloud.compute.v1.ListReservationSlotsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ReservationSlotsGetResponse;
@@ -40,6 +41,15 @@ public abstract class ReservationSlotsStub implements BackgroundResource {
 
   public UnaryCallable<GetReservationSlotRequest, ReservationSlotsGetResponse> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<GetVersionReservationSlotRequest, Operation, Operation>
+      getVersionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getVersionOperationCallable()");
+  }
+
+  public UnaryCallable<GetVersionReservationSlotRequest, Operation> getVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getVersionCallable()");
   }
 
   public UnaryCallable<ListReservationSlotsRequest, ListPagedResponse> listPagedCallable() {

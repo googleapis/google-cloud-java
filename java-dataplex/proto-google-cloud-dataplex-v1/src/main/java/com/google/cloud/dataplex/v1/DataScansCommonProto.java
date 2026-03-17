@@ -55,15 +55,15 @@ public final class DataScansCommonProto extends com.google.protobuf.GeneratedFil
     java.lang.String[] descriptorData = {
       "\n/google/cloud/dataplex/v1/datascans_com"
           + "mon.proto\022\030google.cloud.dataplex.v1\032\037goo"
-          + "gle/api/field_behavior.proto\"\261\001\n\037DataSca"
+          + "gle/api/field_behavior.proto\"\276\001\n\037DataSca"
           + "nCatalogPublishingStatus\022S\n\005state\030\001 \001(\0162"
           + "?.google.cloud.dataplex.v1.DataScanCatal"
-          + "ogPublishingStatus.StateB\003\340A\003\"9\n\005State\022\025"
+          + "ogPublishingStatus.StateB\003\340A\003\"F\n\005State\022\025"
           + "\n\021STATE_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006"
-          + "FAILED\020\002Bp\n\034com.google.cloud.dataplex.v1"
-          + "B\024DataScansCommonProtoP\001Z8cloud.google.c"
-          + "om/go/dataplex/apiv1/dataplexpb;dataplex"
-          + "pbb\006proto3"
+          + "FAILED\020\002\022\013\n\007SKIPPED\020\003Bp\n\034com.google.clou"
+          + "d.dataplex.v1B\024DataScansCommonProtoP\001Z8c"
+          + "loud.google.com/go/dataplex/apiv1/datapl"
+          + "expb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
