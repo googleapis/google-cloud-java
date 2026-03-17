@@ -22,21 +22,44 @@ import static com.google.cloud.firestore.AggregateField.sum;
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.RunAggregationQueryRequest;
+import com.google.firestore.v1.StructuredQuery;
 import java.util.List;
 import java.util.Objects;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AggregateQueryTest {
 
-  @Mock private Query mockQuery;
-  @Mock private Query mockQuery2;
+  private final FirestoreRpc firestoreRpc = Mockito.mock(FirestoreRpc.class);
+
+  @Spy
+  private final FirestoreImpl firestoreMock =
+      new FirestoreImpl(
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
+
+  @Captor private ArgumentCaptor<RunAggregationQueryRequest> runQuery;
+
+  private Query mockQuery;
+  private Query mockQuery2;
+
+  @org.junit.Before
+  public void before() {
+    mockQuery = firestoreMock.collection("coll");
+    mockQuery2 = firestoreMock.collection("coll2");
+  }
 
   @Test
   public void getQueryShouldReturnTheQuerySpecifiedToTheConstructor() {
@@ -129,5 +152,46 @@ public class AggregateQueryTest {
     assertThat(countQuery1).isEqualTo(countQuery1Recreated);
     assertThat(countQuery2).isEqualTo(countQuery2Recreated);
     assertThat(countQuery1).isNotEqualTo(countQuery2);
+  }
+
+  @Test
+  public void withAlwaysUseImplicitOrderBy() throws Exception {
+    doAnswer(
+            invocation -> {
+              com.google.api.gax.rpc.ResponseObserver<
+                      com.google.firestore.v1.RunAggregationQueryResponse>
+                  observer = invocation.getArgument(1);
+              observer.onResponse(
+                  com.google.firestore.v1.RunAggregationQueryResponse.newBuilder()
+                      .setResult(
+                          com.google.firestore.v1.AggregationResult.newBuilder()
+                              .putAggregateFields(
+                                  "aggregate_0",
+                                  com.google.firestore.v1.Value.newBuilder()
+                                      .setIntegerValue(1)
+                                      .build()))
+                      .build());
+              observer.onComplete();
+              return null;
+            })
+        .when(firestoreMock)
+        .streamRequest(runQuery.capture(), any(), any());
+
+    doReturn(
+            FirestoreOptions.newBuilder()
+                .setProjectId("test-project")
+                .setAlwaysUseImplicitOrderBy(true)
+                .build())
+        .when(firestoreMock)
+        .getOptions();
+
+    mockQuery.whereGreaterThan("a", "b").count().get().get();
+
+    RunAggregationQueryRequest queryRequest = runQuery.getValue();
+    StructuredQuery query = queryRequest.getStructuredAggregationQuery().getStructuredQuery();
+
+    assertThat(query.getOrderByCount()).isEqualTo(2);
+    assertThat(query.getOrderBy(0).getField().getFieldPath()).isEqualTo("a");
+    assertThat(query.getOrderBy(1).getField().getFieldPath()).isEqualTo("__name__");
   }
 }

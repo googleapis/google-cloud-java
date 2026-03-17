@@ -1392,15 +1392,31 @@ public class Query extends StreamableQuery<QuerySnapshot> {
 
   /** Build the final Firestore query. */
   StructuredQuery.Builder buildQuery() {
-    StructuredQuery.Builder structuredQuery = buildWithoutClientTranslation();
+    return buildQuery(/* forceImplicitOrderBy= */ false);
+  }
+
+  /**
+   * Generates the StructuredQuery for this Query, with an option to force implicit order bys.
+   *
+   * @param forceImplicitOrderBy Whether to force the inclusion of implicit order by clauses.
+   * @return The StructuredQuery model object.
+   */
+  StructuredQuery.Builder buildQuery(boolean forceImplicitOrderBy) {
+    StructuredQuery.Builder structuredQuery = buildWithoutClientTranslation(forceImplicitOrderBy);
     if (options.getLimitType().equals(LimitType.Last)) {
       structuredQuery.clearOrderBy();
       structuredQuery.clearStartAt();
       structuredQuery.clearEndAt();
 
       // Apply client translation for limitToLast.
-      if (!options.getFieldOrders().isEmpty()) {
-        for (FieldOrder order : options.getFieldOrders()) {
+      List<FieldOrder> ordersToFlip = options.getFieldOrders();
+      if (forceImplicitOrderBy
+          || rpcContext.getFirestore().getOptions().isAlwaysUseImplicitOrderBy()) {
+        ordersToFlip = createImplicitOrderBy();
+      }
+
+      if (!ordersToFlip.isEmpty()) {
+        for (FieldOrder order : ordersToFlip) {
           // Flip the orderBy directions since we want the last results
           order =
               new FieldOrder(
@@ -1441,7 +1457,8 @@ public class Query extends StreamableQuery<QuerySnapshot> {
    * representation via {@link BundledQuery.LimitType}.
    */
   BundledQuery toBundledQuery() {
-    StructuredQuery.Builder structuredQuery = buildWithoutClientTranslation();
+    StructuredQuery.Builder structuredQuery =
+        buildWithoutClientTranslation(/* forceImplicitOrderBy= */ false);
 
     return BundledQuery.newBuilder()
         .setStructuredQuery(structuredQuery)
@@ -1453,7 +1470,7 @@ public class Query extends StreamableQuery<QuerySnapshot> {
         .build();
   }
 
-  private StructuredQuery.Builder buildWithoutClientTranslation() {
+  private StructuredQuery.Builder buildWithoutClientTranslation(boolean forceImplicitOrderBy) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     CollectionSelector.Builder collectionSelector = CollectionSelector.newBuilder();
 
@@ -1472,8 +1489,14 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       structuredQuery.setWhere(filter.toProto());
     }
 
-    if (!options.getFieldOrders().isEmpty()) {
-      for (FieldOrder order : options.getFieldOrders()) {
+    List<FieldOrder> ordersToSerialize = options.getFieldOrders();
+    if (forceImplicitOrderBy
+        || rpcContext.getFirestore().getOptions().isAlwaysUseImplicitOrderBy()) {
+      ordersToSerialize = createImplicitOrderBy();
+    }
+
+    if (!ordersToSerialize.isEmpty()) {
+      for (FieldOrder order : ordersToSerialize) {
         structuredQuery.addOrderBy(order.toProto());
       }
     } else if (LimitType.Last.equals(options.getLimitType())) {

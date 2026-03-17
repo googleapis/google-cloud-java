@@ -162,7 +162,7 @@ final class Watch implements BidiStreamObserver<ListenRequest, ListenResponse> {
     Target.Builder target = Target.newBuilder();
     target.setQuery(
         QueryTarget.newBuilder()
-            .setStructuredQuery(query.buildQuery())
+            .setStructuredQuery(query.buildQuery(/* forceImplicitOrderBy= */ true))
             .setParent(query.options.getParentPath().getName())
             .build());
     target.setTargetId(WATCH_TARGET_ID);

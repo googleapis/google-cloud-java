@@ -1235,4 +1235,54 @@ public class ITQueryTest extends ITBaseTest {
         break;
     }
   }
+
+  @Test
+  public void alwaysUseImplicitOrderByReturnsSameResults() throws Exception {
+    CollectionReference collection =
+        testCollectionWithDocs(
+            map(
+                "doc01", map("sort", 1),
+                "doc02", map("sort", 2),
+                "doc03", map("sort", 3),
+                "doc04", map("sort", 4),
+                "doc05", map("sort", 5),
+                "doc06", map("sort", 6),
+                "doc07", map("sort", 7),
+                "doc08", map("sort", 8),
+                "doc09", map("sort", 9),
+                "doc10", map("sort", 10)));
+
+    List<String> expectedOrder =
+        Arrays.asList(
+            "doc02", "doc03", "doc04", "doc05", "doc06", "doc07", "doc08", "doc09", "doc10");
+
+    Query originalQuery = firestore.collection(collection.getId()).whereGreaterThan("sort", 1);
+    QuerySnapshot originalSnapshot = originalQuery.get().get();
+    List<String> originalResult =
+        originalSnapshot.getDocuments().stream()
+            .map(queryDocumentSnapshot -> queryDocumentSnapshot.getReference().getId())
+            .collect(Collectors.toList());
+
+    if (getFirestoreEdition() == FirestoreEdition.ENTERPRISE) {
+      assertThat(originalResult).containsExactlyElementsIn(expectedOrder);
+      assertThat(originalResult).isNotEqualTo(expectedOrder);
+    } else {
+      assertThat(originalResult).isEqualTo(expectedOrder);
+    }
+
+    FirestoreOptions modifiedOptions =
+        firestore.getOptions().toBuilder().setAlwaysUseImplicitOrderBy(true).build();
+    try (Firestore modifiedFirestore = modifiedOptions.getService()) {
+      Query query = modifiedFirestore.collection(collection.getId()).whereGreaterThan("sort", 1);
+
+      QuerySnapshot snapshot = query.get().get();
+      List<String> result =
+          snapshot.getDocuments().stream()
+              .map(queryDocumentSnapshot -> queryDocumentSnapshot.getReference().getId())
+              .collect(Collectors.toList());
+
+      // since alwaysUseImplicitOrderBy is true, we expect strict ordering even for ENTERPRISE
+      assertThat(result).isEqualTo(expectedOrder);
+    }
+  }
 }

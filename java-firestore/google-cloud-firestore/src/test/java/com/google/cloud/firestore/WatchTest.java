@@ -452,6 +452,27 @@ public class WatchTest {
   }
 
   @Test
+  public void queryWatchWithImplicitOrderBy() throws InterruptedException {
+    listenerRegistration =
+        firestoreMock
+            .collection("coll")
+            .whereGreaterThan("foo", "bar")
+            .addSnapshotListener((value, error) -> querySnapshots.add(value));
+
+    ListenRequest listenRequest = requests.take();
+    assertEquals(DATABASE_NAME, listenRequest.getDatabase());
+    assertEquals(TARGET_ID, listenRequest.getAddTarget().getTargetId());
+
+    // Verify the query includes the implicit order bys
+    com.google.firestore.v1.StructuredQuery query =
+        listenRequest.getAddTarget().getQuery().getStructuredQuery();
+
+    assertEquals(2, query.getOrderByCount());
+    assertEquals("foo", query.getOrderBy(0).getField().getFieldPath());
+    assertEquals("__name__", query.getOrderBy(1).getField().getFieldPath());
+  }
+
+  @Test
   public void queryWatchReconnectsWithResumeToken() throws InterruptedException {
     addQueryListener();
 

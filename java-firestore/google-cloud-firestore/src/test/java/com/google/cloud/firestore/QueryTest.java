@@ -600,6 +600,59 @@ public class QueryTest {
   }
 
   @Test
+  public void withAlwaysUseImplicitOrderBy() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(runQuery.capture(), streamObserverCapture.capture(), any());
+
+    doReturn(
+            FirestoreOptions.newBuilder()
+                .setProjectId("test-project")
+                .setAlwaysUseImplicitOrderBy(true)
+                .build())
+        .when(firestoreMock)
+        .getOptions();
+
+    query.whereEqualTo("a", "b").whereGreaterThanOrEqualTo("foo", "bar").get().get();
+
+    RunQueryRequest queryRequest =
+        query(
+            filter(Operator.EQUAL, "a", "b"),
+            filter(Operator.GREATER_THAN_OR_EQUAL, "foo", "bar"),
+            order("foo", Direction.ASCENDING),
+            order("__name__", StructuredQuery.Direction.ASCENDING));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withAlwaysUseImplicitOrderByAndLimitToLast() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(runQuery.capture(), streamObserverCapture.capture(), any());
+
+    doReturn(
+            FirestoreOptions.newBuilder()
+                .setProjectId("test-project")
+                .setAlwaysUseImplicitOrderBy(true)
+                .build())
+        .when(firestoreMock)
+        .getOptions();
+
+    query.whereEqualTo("a", "b").whereGreaterThanOrEqualTo("foo", "bar").limitToLast(1).get().get();
+
+    RunQueryRequest queryRequest =
+        query(
+            filter(Operator.EQUAL, "a", "b"),
+            filter(Operator.GREATER_THAN_OR_EQUAL, "foo", "bar"),
+            order("foo", Direction.DESCENDING),
+            order("__name__", Direction.DESCENDING),
+            limit(1));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
   public void withDocumentReferenceCursor() {
     doAnswer(queryResponse())
         .when(firestoreMock)
