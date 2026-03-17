@@ -133,6 +133,8 @@
             <ignoredUnusedDeclaredDependency>com.google.api:gax</ignoredUnusedDeclaredDependency>
             <!-- maven-dependency-plugin cannot detect the runtime usage of junit-jupiter-engine for executing JUnit 5+ tests. -->
             <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
+            <!-- maven-dependency-plugin cannot detect the runtime usage of junit-platform-suite-engine for executing JUnit 5+ test suites. -->
+            <ignoredUnusedDeclaredDependency>org.junit.platform:junit-platform-suite-engine</ignoredUnusedDeclaredDependency>
             <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
