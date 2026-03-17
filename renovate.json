@@ -2,29 +2,57 @@
   "extends": [
     "config:recommended"
   ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "enabled": false,
       "matchPackageNames": [
         "*"
-      ]
+      ],
+      "enabled": false
     },
     {
-      "semanticCommitType": "fix",
-      "semanticCommitScope": null,
-      "matchPackageNames": [
-        "/^com.google.cloud:sdk-platform-java-config/"
-      ]
+      "matchFileNames": [
+        "dependencies.txt",
+        "**/dependencies.txt"
+      ],
+      "enabled": true,
+      "groupName": "upper-bound dependencies"
     },
     {
-      "groupName": "First-party storage dependencies",
+      "matchPackagePrefixes": [
+        "org.junit",
+        "junit:",
+        "org.mockito",
+        "org.assertj"
+      ],
       "matchPackageNames": [
-        "/^com.google.cloud:google-cloud-storage/",
-        "/^com.google.apis:google-api-services-storage/"
-      ]
+        "com.google.truth:truth"
+      ],
+      "enabled": true
+    },
+    {
+      "matchPackagePrefixes": [
+        "org.apache.maven.plugins:",
+        "org.codehaus.mojo:"
+      ],
+      "enabled": true
+    },
+    {
+      "matchManagers": [
+        "github-actions",
+        "cloudbuild"
+      ],
+      "matchFileNames": [
+        ".github/workflows/**",
+        ".kokoro/**",
+        "**/.kokoro/**",
+        "cloudbuild.yaml",
+        "**/cloudbuild.yaml"
+      ],
+      "enabled": true,
+      "groupName": "CI/CD upgrades"
     }
   ],
   "includePaths": [
@@ -42,7 +70,8 @@
     "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
     ".github/workflows/ci.yaml",
     ".github/workflows/generated_files_sync.yaml",
-    ".github/workflows/unmanaged_dependency_check.yaml"
+    ".github/workflows/unmanaged_dependency_check.yaml",
+    "**/cloudbuild*.yaml"
   ],
   "customManagers": [
     {
