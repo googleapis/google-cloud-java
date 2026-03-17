@@ -72,14 +72,13 @@ MIGRATION_HEAD_BRANCH="${MIGRATION_HEAD_BRANCH:-main}"
 echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 
 # 1. Clone the source repository
-if [ ! -d "$SOURCE_DIR" ]; then
-    echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
-    git clone "$SOURCE_REPO_URL" "$SOURCE_DIR"
-fi
-
 if [ "$SKIP_SOURCE_UPDATE" == "true" ]; then
     echo "Skipping source update"
 else
+    rm -rf "${SOURCE_DIR}"
+    echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
+    git clone "$SOURCE_REPO_URL" "$SOURCE_DIR"
+
     pushd "$SOURCE_DIR"
     git fetch origin
     git checkout -f "main"
@@ -89,7 +88,7 @@ else
     # 1.1 Modify history of the split repo to move files to the destination target directory
     echo "Moving files to destination path: ${SOURCE_REPO_NAME}"
     git filter-repo \
-      --to-subdirectory-filter  "${SOURCE_REPO_NAME}" --force
+        --to-subdirectory-filter  "${SOURCE_REPO_NAME}" --force
     popd
 fi
 
