@@ -115,9 +115,11 @@ public final class TelemetryUtils {
     }
     return () -> {
       Stopwatch stopwatch = Stopwatch.createStarted();
-      String status = StatusCode.Code.OK.toString();
+      String status = StatusCode.Code.UNKNOWN.toString();
       try {
-        return callable.call();
+        T result = callable.call();
+        status = StatusCode.Code.OK.toString();
+        return result;
       } catch (Exception e) {
         status = DatastoreException.extractStatusCode(e);
         throw e;
