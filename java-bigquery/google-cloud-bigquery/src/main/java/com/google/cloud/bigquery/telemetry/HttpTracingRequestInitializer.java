@@ -16,14 +16,18 @@
 
 package com.google.cloud.bigquery.telemetry;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.http.*;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * HttpRequestInitializer that wraps a delegate initializer, intercepts all HTTP requests, adds
@@ -62,13 +66,17 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
   @Override
   public void initialize(HttpRequest request) throws IOException {
+
     if (delegate != null) {
+
       delegate.initialize(request);
     }
+
     if (tracer == null) {
       return;
     }
-    // Get the current active span (created by HttpBigQueryRpc) and add HTTP attributes to it
+    // Get the current active span (created by HttpBigQueryRpc) and add HTTP
+    // attributes to it
     Span span = Span.current();
     if (!span.getSpanContext().isValid()) {
       // No active span to exists, skip instrumentation
@@ -77,6 +85,39 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     String host = request.getUrl().getHost();
     int port = request.getUrl().getPort();
     addInitialHttpAttributesToSpan(span, host, port);
+
+    HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();
+    request.setResponseInterceptor(
+        response -> {
+          addCommonResponseAttributesToSpan(
+              span, request.getRequestMethod(), response.getStatusCode());
+          try {
+            if (originalInterceptor != null) {
+              originalInterceptor.interceptResponse(response);
+            }
+            span.setStatus(StatusCode.OK);
+          } catch (IOException e) {
+            addExceptionToSpan(e, span);
+            throw e;
+          }
+        });
+
+    HttpUnsuccessfulResponseHandler originalHandler = request.getUnsuccessfulResponseHandler();
+    request.setUnsuccessfulResponseHandler(
+        (request1, response, supportsRetry) -> {
+          int statusCode = response.getStatusCode();
+          addCommonResponseAttributesToSpan(span, request1.getRequestMethod(), statusCode);
+          addErrorResponseToSpan(response, span, statusCode);
+          try {
+            if (originalHandler != null) {
+              return originalHandler.handleResponse(request1, response, supportsRetry);
+            }
+            return false;
+          } catch (IOException e) {
+            addExceptionToSpan(e, span);
+            throw e;
+          }
+        });
   }
 
   /** Add initial HTTP attributes to the existing active span */
@@ -87,6 +128,97 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     if (port != null && port > 0) {
       span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, port.longValue());
     }
-    // TODO add full sanitized url, url domain, request method
+  }
+
+  private static void addCommonResponseAttributesToSpan(
+      Span span, String httpMethod, int statusCode) {
+    span.setAttribute(HTTP_REQUEST_METHOD, httpMethod);
+    span.setAttribute(HTTP_RESPONSE_STATUS_CODE, (long) statusCode);
+  }
+
+  public static void addExceptionToSpan(Exception e, Span span) {
+    span.recordException(e);
+    String message = e.getMessage();
+    String simpleName = e.getClass().getSimpleName();
+    if (simpleName.isEmpty()) {
+      simpleName = e.getClass().getName();
+    }
+    String statusMessage = simpleName + (message != null ? ": " + message : "");
+    span.setAttribute(BigQueryTelemetryTracer.EXCEPTION_TYPE, e.getClass().getName());
+    span.setAttribute(BigQueryTelemetryTracer.ERROR_TYPE, getErrorType(e));
+    span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, statusMessage);
+    span.setStatus(StatusCode.ERROR, statusMessage);
+  }
+
+  // TODO: this logic should get migrated to gax when ready
+  private static String getErrorType(Exception e) {
+    if (ExceptionTypeUtil.isClientTimeout(e)) {
+      return "CLIENT_TIMEOUT";
+    } else if (ExceptionTypeUtil.isClientConnectionError(e)) {
+      return "CLIENT_CONNECTION_ERROR";
+    } else if (ExceptionTypeUtil.isHttpResponseException(e)) {
+      int statusCode = ((com.google.api.client.http.HttpResponseException) e).getStatusCode();
+      return Integer.toString(statusCode);
+    } else if (ExceptionTypeUtil.isClientResponseDecodeError(e)) {
+      return "CLIENT_RESPONSE_DECODE_ERROR";
+    } else if (ExceptionTypeUtil.isClientRedirectError(e)) {
+      return "CLIENT_REDIRECT_ERROR";
+    } else if (ExceptionTypeUtil.isClientAuthenticationError(e)) {
+      return "CLIENT_AUTHENTICATION_ERROR";
+    } else if (ExceptionTypeUtil.isClientRequestError(e)) {
+      return "CLIENT_REQUEST_ERROR";
+    }
+    return "CLIENT_UNKNOWN_ERROR";
+  }
+
+  // first set defaults from HttpResponse then try to parse additional error
+  // details from response
+  private static void addErrorResponseToSpan(HttpResponse response, Span span, int statusCode) {
+    try {
+      String statusMessage = response.getStatusMessage();
+      if (statusMessage != null && !statusMessage.isEmpty()) {
+        span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, statusMessage);
+      }
+    } catch (Exception ex) {
+      // Ignore
+    }
+    span.setAttribute(BigQueryTelemetryTracer.ERROR_TYPE, Integer.toString(statusCode));
+    try {
+      retrieveErrorDetailsFromResponseObject(response, span, statusCode);
+    } catch (IOException e) {
+      // Ignore, will use defaults above
+    }
+  }
+
+  private static void retrieveErrorDetailsFromResponseObject(
+      HttpResponse response, Span span, int statusCode) throws IOException {
+    InputStream content = response.getContent();
+    if (content != null) {
+      if (!content.markSupported()) {
+        content = new BufferedInputStream(content);
+      }
+      content.mark(1024 * 1024); // Mark up to 1MB
+      try {
+        com.google.api.client.json.JsonParser parser =
+            com.google.api.client.json.gson.GsonFactory.getDefaultInstance()
+                .createJsonParser(content);
+        ErrorResponse errorResponse = parser.parse(ErrorResponse.class);
+        if (errorResponse != null
+            && errorResponse.getError() != null
+            && errorResponse.getError().getErrors() != null) {
+          GoogleJsonError.ErrorInfo errorInfo = errorResponse.getError().getErrors().get(0);
+          String message = errorInfo.getMessage();
+          if (message != null) {
+            span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, message);
+          }
+          String reason = errorInfo.getReason();
+          if (reason != null) {
+            span.setAttribute(BigQueryTelemetryTracer.ERROR_TYPE, reason);
+          }
+        }
+      } finally {
+        content.reset();
+      }
+    }
   }
 }

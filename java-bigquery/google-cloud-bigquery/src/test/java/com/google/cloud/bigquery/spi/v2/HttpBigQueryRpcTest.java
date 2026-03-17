@@ -994,6 +994,40 @@ public class HttpBigQueryRpcTest {
         System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       }
     }
+
+    @Test
+    public void testExecuteWithSpan_CatchesException() throws Exception {
+      mockResponse.setContent(
+          (String) null); // Triggers IOException("Simulated network error") inside execute()
+
+      try {
+        rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+        org.junit.jupiter.api.Assertions.fail("Expected IOException was not thrown");
+      } catch (IOException e) {
+        assertEquals("Simulated network error", e.getMessage());
+      }
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+
+      assertEquals(
+          "CLIENT_UNKNOWN_ERROR",
+          rpcSpan
+              .getAttributes()
+              .get(com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer.ERROR_TYPE));
+      assertEquals(
+          "java.io.IOException",
+          rpcSpan
+              .getAttributes()
+              .get(com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer.EXCEPTION_TYPE));
+    }
   }
 
   @Nested

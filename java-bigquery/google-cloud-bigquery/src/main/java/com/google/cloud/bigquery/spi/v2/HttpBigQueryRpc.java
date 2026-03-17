@@ -1769,6 +1769,12 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     }
     try (Scope scope = span.makeCurrent()) {
       return operation.execute(span);
+    } catch (Exception e) {
+      if (!(e instanceof com.google.api.client.http.HttpResponseException)) {
+        com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer.addExceptionToSpan(
+            e, span);
+      }
+      throw e;
     } finally {
       span.end();
     }
