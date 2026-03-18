@@ -43,7 +43,6 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -283,10 +282,7 @@ public class HttpTracingRequestInitializerTest {
   }
 
   private void closeAndVerifySpanData(
-      long responseCode,
-      String method,
-      long requestBodySize,
-      long responseBodySize) {
+      long responseCode, String method, long requestBodySize, long responseBodySize) {
     // close span so it is available for verification
     spanScope.close();
     parentSpan.end();
