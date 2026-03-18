@@ -47,6 +47,7 @@ public class AsyncEmbedContent {
               .setTitle("title110371416")
               .setOutputDimensionality(-495931909)
               .setAutoTruncate(true)
+              .setEmbedContentConfig(EmbedContentRequest.EmbedContentConfig.newBuilder().build())
               .build();
       ApiFuture<EmbedContentResponse> future =
           predictionServiceClient.embedContentCallable().futureCall(request);

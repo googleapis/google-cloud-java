@@ -75,7 +75,7 @@ public interface EmbedContentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input content to be embedded. Required.
+   * Required. Input content to be embedded.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1beta1.Content content = 2;</code>
@@ -88,7 +88,7 @@ public interface EmbedContentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input content to be embedded. Required.
+   * Required. Input content to be embedded.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1beta1.Content content = 2;</code>
@@ -101,7 +101,7 @@ public interface EmbedContentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input content to be embedded. Required.
+   * Required. Input content to be embedded.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1beta1.Content content = 2;</code>
@@ -112,141 +112,235 @@ public interface EmbedContentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional title for the text.
+   * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+   * The title for the text.
    * </pre>
    *
-   * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.title is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1040
    * @return Whether the title field is set.
    */
+  @java.lang.Deprecated
   boolean hasTitle();
 
   /**
    *
    *
    * <pre>
-   * Optional. An optional title for the text.
+   * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+   * The title for the text.
    * </pre>
    *
-   * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.title is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1040
    * @return The title.
    */
+  @java.lang.Deprecated
   java.lang.String getTitle();
 
   /**
    *
    *
    * <pre>
-   * Optional. An optional title for the text.
+   * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+   * The title for the text.
    * </pre>
    *
-   * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.title is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1040
    * @return The bytes for title.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTitleBytes();
 
   /**
    *
    *
    * <pre>
-   * Optional. The task type of the embedding.
+   * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+   * The task type of the embedding.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.task_type is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1045
    * @return Whether the taskType field is set.
    */
+  @java.lang.Deprecated
   boolean hasTaskType();
 
   /**
    *
    *
    * <pre>
-   * Optional. The task type of the embedding.
+   * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+   * The task type of the embedding.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.task_type is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1045
    * @return The enum numeric value on the wire for taskType.
    */
+  @java.lang.Deprecated
   int getTaskTypeValue();
 
   /**
    *
    *
    * <pre>
-   * Optional. The task type of the embedding.
+   * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+   * The task type of the embedding.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.task_type is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1045
    * @return The taskType.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbeddingTaskType getTaskType();
 
   /**
    *
    *
    * <pre>
-   * Optional. Optional reduced dimension for the output embedding. If set,
-   * excessive values in the output embedding are truncated from the end.
+   * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+   * instead. Reduced dimension for the output embedding. If set, excessive
+   * values in the output embedding are truncated from the end.
    * </pre>
    *
-   * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.output_dimensionality is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1051
    * @return Whether the outputDimensionality field is set.
    */
+  @java.lang.Deprecated
   boolean hasOutputDimensionality();
 
   /**
    *
    *
    * <pre>
-   * Optional. Optional reduced dimension for the output embedding. If set,
-   * excessive values in the output embedding are truncated from the end.
+   * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+   * instead. Reduced dimension for the output embedding. If set, excessive
+   * values in the output embedding are truncated from the end.
    * </pre>
    *
-   * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.output_dimensionality is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1051
    * @return The outputDimensionality.
    */
+  @java.lang.Deprecated
   int getOutputDimensionality();
 
   /**
    *
    *
    * <pre>
-   * Optional. Whether to silently truncate the input content if it's longer
+   * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+   * Whether to silently truncate the input content if it's longer
    * than the maximum sequence length.
    * </pre>
    *
-   * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.auto_truncate is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1057
    * @return Whether the autoTruncate field is set.
    */
+  @java.lang.Deprecated
   boolean hasAutoTruncate();
 
   /**
    *
    *
    * <pre>
-   * Optional. Whether to silently truncate the input content if it's longer
+   * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+   * Whether to silently truncate the input content if it's longer
    * than the maximum sequence length.
    * </pre>
    *
-   * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EmbedContentRequest.auto_truncate is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/prediction_service.proto;l=1057
    * @return The autoTruncate.
    */
+  @java.lang.Deprecated
   boolean getAutoTruncate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the EmbedContent request.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the embedContentConfig field is set.
+   */
+  boolean hasEmbedContentConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the EmbedContent request.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The embedContentConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbedContentConfig
+      getEmbedContentConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the EmbedContent request.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EmbedContentRequest.EmbedContentConfigOrBuilder
+      getEmbedContentConfigOrBuilder();
 }

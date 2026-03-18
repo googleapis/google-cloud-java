@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.BatchedRequestIssuer;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -126,6 +127,7 @@ import javax.annotation.Generated;
  * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2StubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -522,6 +524,14 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
         settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
     listLogsSettings = settingsBuilder.listLogsSettings().build();
     tailLogEntriesSettings = settingsBuilder.tailLogEntriesSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-logging")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for LoggingServiceV2StubSettings. */

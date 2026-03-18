@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
@@ -98,6 +99,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -236,6 +238,14 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
         settingsBuilder.batchCreateReadSessionStreamsSettings().build();
     finalizeStreamSettings = settingsBuilder.finalizeStreamSettings().build();
     splitReadStreamSettings = settingsBuilder.splitReadStreamSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-bigquerystorage")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for BigQueryStorageStubSettings. */

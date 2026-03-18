@@ -34,6 +34,7 @@ import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
@@ -133,6 +134,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class TextToSpeechLongAudioSynthesizeStubSettings
     extends StubSettings<TextToSpeechLongAudioSynthesizeStubSettings> {
   /** The default scopes of the service. */
@@ -274,6 +276,14 @@ public class TextToSpeechLongAudioSynthesizeStubSettings
     synthesizeLongAudioSettings = settingsBuilder.synthesizeLongAudioSettings().build();
     synthesizeLongAudioOperationSettings =
         settingsBuilder.synthesizeLongAudioOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-texttospeech")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for TextToSpeechLongAudioSynthesizeStubSettings. */

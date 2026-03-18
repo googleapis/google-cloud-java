@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -102,6 +103,7 @@ import javax.annotation.Generated;
  * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class GroundedGenerationServiceStubSettings
     extends StubSettings<GroundedGenerationServiceStubSettings> {
   /** The default scopes of the service. */
@@ -248,6 +250,14 @@ public class GroundedGenerationServiceStubSettings
         settingsBuilder.streamGenerateGroundedContentSettings().build();
     generateGroundedContentSettings = settingsBuilder.generateGroundedContentSettings().build();
     checkGroundingSettings = settingsBuilder.checkGroundingSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for GroundedGenerationServiceStubSettings. */

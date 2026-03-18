@@ -35,6 +35,7 @@ import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
@@ -139,6 +140,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class UserEventServiceStubSettings extends StubSettings<UserEventServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -322,6 +324,14 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     importUserEventsOperationSettings = settingsBuilder.importUserEventsOperationSettings().build();
     rejoinUserEventsSettings = settingsBuilder.rejoinUserEventsSettings().build();
     rejoinUserEventsOperationSettings = settingsBuilder.rejoinUserEventsOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-retail")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for UserEventServiceStubSettings. */
