@@ -1,5 +1,5 @@
 FROM gcr.io/cloud-devrel-public-resources/java11
-
+ARG BRANCH=main
 ENV JDBC_DOCKER_ENV=true
 
 # Changes to `pom.xml` will trigger re-sync
@@ -11,7 +11,7 @@ COPY pom.xml /src/pom.xml
 RUN bash -c " \
     mkdir /git \
     && cd /git \ 
-    && git clone https://github.com/googleapis/google-cloud-java.git \
+    && git clone -b ${BRANCH} --depth 1 --single-branch https://github.com/googleapis/google-cloud-java.git \
     && cd /git/google-cloud-java \
     && source .kokoro/common.sh \
     && install_modules java-bigquery \

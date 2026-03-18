@@ -1,4 +1,5 @@
 SHELL := /bin/bash # Default 'sh' doesn't support 'source'
+BUILD_BRANCH=main
 CONTAINER_NAME=jdbc
 PACKAGE_DESTINATION=$(PWD)/drivers
 SRC="$(PWD)"
@@ -80,7 +81,7 @@ generate-dependency-list:
 		$(CONTAINER_NAME) $(args)
 
 docker-build:
-	docker build -t $(CONTAINER_NAME) -f Dockerfile $(SRC)
+	docker build -t $(CONTAINER_NAME) -f Dockerfile --build-arg BRANCH=${BUILD_BRANCH} $(SRC)
 
 docker-session:
 	$(MAKE) .docker-run args="bash"
