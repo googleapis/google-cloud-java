@@ -121,10 +121,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
   static void addRequestBodySizeToSpan(HttpRequest request, Span span) {
     try {
-      long contentLength = request.getContent().getLength();
-      if (contentLength > 0) {
-        span.setAttribute(HTTP_REQUEST_BODY_SIZE, contentLength);
-      }
+      span.setAttribute(HTTP_REQUEST_BODY_SIZE, request.getContent().getLength());
     } catch (Exception e) {
       // Ignore - body size not available
     }
@@ -135,5 +132,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     if (contentLength != null && contentLength > 0) {
       span.setAttribute(HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
+    // TODO handle chunked responses
   }
 }
