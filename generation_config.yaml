@@ -1788,6 +1788,7 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/networkconnectivity/v1
   - proto_path: google/cloud/networkconnectivity/v1alpha1
+  - proto_path: google/cloud/networkconnectivity/v1beta
 - api_shortname: networkservices
   name_pretty: Network Services API
   product_documentation: https://cloud.google.com/products/networking
