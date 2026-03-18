@@ -219,6 +219,22 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
+  public void testAddRequestBodySizeToSpan_NullBody() throws IOException {
+    HttpTransport transport = createTransport();
+    HttpRequest request = buildPostRequest(transport, null, BASE_URL, null);
+
+    HttpTracingRequestInitializer.addRequestBodySizeToSpan(request, parentSpan);
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+  }
+
+  @Test
   public void testAddResponseBodySizeToSpan_NullLength() throws IOException {
     HttpTransport transport =
         createTransport(200, null); // Null response content means null Content-Length header
