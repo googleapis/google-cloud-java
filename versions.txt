@@ -978,3 +978,5 @@ google-cloud-bigquery:2.61.0:2.62.0-SNAPSHOT
 google-cloud-bigquery-jdbc:0.5.0:0.6.0-SNAPSHOT
 proto-google-cloud-networkconnectivity-v1beta:1.86.0:1.87.0-SNAPSHOT
 grpc-google-cloud-networkconnectivity-v1beta:1.86.0:1.87.0-SNAPSHOT
+proto-google-cloud-hypercomputecluster-v1:0.7.0:0.8.0-SNAPSHOT
+grpc-google-cloud-hypercomputecluster-v1:0.7.0:0.8.0-SNAPSHOT

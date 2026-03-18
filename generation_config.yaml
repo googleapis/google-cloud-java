@@ -1250,6 +1250,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/hypercomputecluster/v1beta
+  - proto_path: google/cloud/hypercomputecluster/v1
   requires_billing: true
 - api_shortname: iam
   name_pretty: IAM
