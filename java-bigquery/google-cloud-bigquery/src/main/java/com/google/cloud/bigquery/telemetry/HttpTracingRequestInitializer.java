@@ -83,11 +83,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     request.setResponseInterceptor(
         response -> {
           addCommonResponseAttributesToSpan(request, response, span);
-          if (response.getStatusCode() >= 400) {
-            span.setStatus(StatusCode.ERROR);
-          } else {
-            span.setStatus(StatusCode.OK);
-          }
           if (originalInterceptor != null) {
             originalInterceptor.interceptResponse(response);
           }
@@ -97,7 +92,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     request.setUnsuccessfulResponseHandler(
         (request1, response, supportsRetry) -> {
           addCommonResponseAttributesToSpan(request1, response, span);
-          span.setStatus(StatusCode.ERROR);
           if (originalHandler != null) {
             return originalHandler.handleResponse(request1, response, supportsRetry);
           }

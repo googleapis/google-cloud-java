@@ -85,7 +85,7 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
-  public void testSuccessAttributesAreSetOnSuccessfulCall() throws IOException {
+  public void testAllAttributesAreSetOnSuccessfulCall() throws IOException {
     HttpResponseInterceptor originalInterceptor = mock(HttpResponseInterceptor.class);
     HttpRequestInitializer delegateInitializer =
         request -> request.setResponseInterceptor(originalInterceptor);
@@ -101,7 +101,7 @@ public class HttpTracingRequestInitializerTest {
     response.disconnect();
 
     verify(originalInterceptor, times(1)).interceptResponse(any(HttpResponse.class));
-    closeAndVerifySpanData(StatusCode.OK, 200, "POST", 16, requestContent.getLength());
+    closeAndVerifySpanData(200, "POST", 16, requestContent.getLength());
   }
 
   @Test
@@ -182,7 +182,7 @@ public class HttpTracingRequestInitializerTest {
 
     verify(originalHandler, times(1))
         .handleResponse(any(HttpRequest.class), any(HttpResponse.class), anyBoolean());
-    closeAndVerifySpanData(StatusCode.ERROR, 404, "POST", 16, responseContent.length());
+    closeAndVerifySpanData(404, "POST", 16, responseContent.length());
   }
 
   @Test
@@ -198,7 +198,7 @@ public class HttpTracingRequestInitializerTest {
       // Expected
     }
 
-    closeAndVerifySpanData(StatusCode.ERROR, 401, "GET", -1, -1);
+    closeAndVerifySpanData(401, "GET", -1, -1);
   }
 
   @Test
@@ -283,7 +283,6 @@ public class HttpTracingRequestInitializerTest {
   }
 
   private void closeAndVerifySpanData(
-      StatusCode statusCode,
       long responseCode,
       String method,
       long requestBodySize,
@@ -332,6 +331,5 @@ public class HttpTracingRequestInitializerTest {
     } else {
       assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
     }
-    assertEquals(statusCode, span.getStatus().getStatusCode());
   }
 }
