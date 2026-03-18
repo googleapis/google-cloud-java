@@ -1,6 +1,7 @@
+SHELL := /bin/bash # Default 'sh' doesn't support 'source'
 CONTAINER_NAME=jdbc
 PACKAGE_DESTINATION=$(PWD)/drivers
-SRC="$(PWD)/.."
+SRC="$(PWD)"
 skipSurefire ?= true
 
 # no indendation for ifndef\endif due to their evaluation before execution
@@ -10,7 +11,9 @@ ifndef GOOGLE_APPLICATION_CREDENTIALS
 endif
 
 install:
-	mvn clean install
+	cd "$(PWD)/../.." && \
+	source ".kokoro/common.sh" && \
+	install_modules java-bigquery
 
 clean:
 	mvn clean
@@ -77,7 +80,7 @@ generate-dependency-list:
 		$(CONTAINER_NAME) $(args)
 
 docker-build:
-	docker build -t $(CONTAINER_NAME) -f Dockerfile ..
+	docker build -t $(CONTAINER_NAME) -f Dockerfile $(SRC)
 
 docker-session:
 	$(MAKE) .docker-run args="bash"

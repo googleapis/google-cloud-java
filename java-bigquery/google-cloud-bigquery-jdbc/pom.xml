@@ -341,6 +341,10 @@
         <!-- Ensure it doesn't conflict with local build directories -->
         <directory>/mvn/test-target</directory>
       </build>
+      <properties>
+        <!-- Disable to avoid bringing license-checks to docker env -->
+        <checkstyle.skip>true</checkstyle.skip>
+      </properties>
     </profile>
   </profiles>
 </project>
