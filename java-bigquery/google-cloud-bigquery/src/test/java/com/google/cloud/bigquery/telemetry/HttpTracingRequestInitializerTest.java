@@ -19,16 +19,23 @@ package com.google.cloud.bigquery.telemetry;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpResponseException;
+import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
@@ -36,6 +43,7 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -77,22 +85,23 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
-  public void testRequestAttributesAreSetIfSpanExists() throws IOException {
-    HttpTransport transport = createTransport();
-    HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
+  public void testSuccessAttributesAreSetOnSuccessfulCall() throws IOException {
+    HttpResponseInterceptor originalInterceptor = mock(HttpResponseInterceptor.class);
+    HttpRequestInitializer delegateInitializer =
+        request -> request.setResponseInterceptor(originalInterceptor);
+    HttpTracingRequestInitializer tracingInitializer =
+        new HttpTracingRequestInitializer(delegateInitializer, tracer);
+    String responseContent = "{\"status\": \"ok\"}";
+    HttpTransport transport = createTransport(200, responseContent);
+    HttpContent requestContent =
+        ByteArrayContent.fromString("application/json", "{\"test\": \"data\"}");
+    HttpRequest request = buildPostRequest(transport, tracingInitializer, BASE_URL, requestContent);
 
     HttpResponse response = request.execute();
     response.disconnect();
 
-    // End the span before verifying exported spans, so it appears in the exporter
-    spanScope.close();
-    parentSpan.end();
-
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertEquals(1, spans.size());
-
-    SpanData span = spans.get(0);
-    verifyGeneralSpanData(span);
+    verify(originalInterceptor, times(1)).interceptResponse(any(HttpResponse.class));
+    closeAndVerifySpanData(StatusCode.OK, 200, "POST", 16, requestContent.getLength());
   }
 
   @Test
@@ -103,14 +112,11 @@ public class HttpTracingRequestInitializerTest {
 
     HttpResponse response = request.execute();
     response.disconnect();
-
-    // End the span before verifying exported spans, so it appears in the exporter
     spanScope.close();
     parentSpan.end();
 
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertEquals(1, spans.size());
-
     SpanData span = spans.get(0);
     assertEquals("value", span.getAttributes().get(AttributeKey.stringKey("parent_attribute")));
   }
@@ -152,14 +158,107 @@ public class HttpTracingRequestInitializerTest {
     verify(delegateInitializer, times(1)).initialize(any(HttpRequest.class));
   }
 
+  @Test
+  public void testUnsuccessfulResponseHandlerSetsAttributesAndCallsOriginal() throws IOException {
+    HttpUnsuccessfulResponseHandler originalHandler = mock(HttpUnsuccessfulResponseHandler.class);
+    when(originalHandler.handleResponse(
+            any(HttpRequest.class), any(HttpResponse.class), anyBoolean()))
+        .thenReturn(false);
+    HttpRequestInitializer delegateInitializer =
+        request -> request.setUnsuccessfulResponseHandler(originalHandler);
+    HttpTracingRequestInitializer tracingInitializer =
+        new HttpTracingRequestInitializer(delegateInitializer, tracer);
+    String responseContent = "{\"error\": \"not found\"}";
+    HttpTransport transport = createTransport(404, responseContent);
+    HttpContent requestContent =
+        ByteArrayContent.fromString("application/json", "{\"test\": \"data\"}");
+    HttpRequest request = buildPostRequest(transport, tracingInitializer, BASE_URL, requestContent);
+
+    try {
+      request.execute();
+    } catch (HttpResponseException e) {
+      // Expected
+    }
+
+    verify(originalHandler, times(1))
+        .handleResponse(any(HttpRequest.class), any(HttpResponse.class), anyBoolean());
+    closeAndVerifySpanData(StatusCode.ERROR, 404, "POST", 16, responseContent.length());
+  }
+
+  @Test
+  public void testUnsuccessfulResponseHandlerSetsErrorIfNoOriginal() throws IOException {
+    HttpTracingRequestInitializer tracingInitializer =
+        new HttpTracingRequestInitializer(null, tracer);
+    HttpTransport transport = createTransport(401);
+    HttpRequest request = buildGetRequest(transport, tracingInitializer, BASE_URL);
+
+    try {
+      request.execute();
+    } catch (HttpResponseException e) {
+      // Expected
+    }
+
+    closeAndVerifySpanData(StatusCode.ERROR, 401, "GET", -1, -1);
+  }
+
+  @Test
+  public void testAddRequestBodySizeToSpan_ExceptionHandled() throws IOException {
+    HttpContent content = mock(HttpContent.class);
+    when(content.getLength()).thenThrow(new IOException("test"));
+    HttpTransport transport = createTransport();
+    HttpRequest request = buildPostRequest(transport, null, BASE_URL, content);
+
+    HttpTracingRequestInitializer.addRequestBodySizeToSpan(request, parentSpan);
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+  }
+
+  @Test
+  public void testAddResponseBodySizeToSpan_NullLength() throws IOException {
+    HttpTransport transport =
+        createTransport(200, null); // Null response content means null Content-Length header
+    HttpRequest request = buildGetRequest(transport, null, BASE_URL);
+    HttpResponse response = request.execute();
+
+    HttpTracingRequestInitializer.addResponseBodySizeToSpan(response, parentSpan);
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
+  }
+
   private static HttpTransport createTransport() {
+    return createTransport(200, null);
+  }
+
+  private static HttpTransport createTransport(int statusCode) {
+    return createTransport(statusCode, null);
+  }
+
+  private static HttpTransport createTransport(int statusCode, String responseContent) {
     return new MockHttpTransport() {
       @Override
       public LowLevelHttpRequest buildRequest(String method, String url) {
         return new MockLowLevelHttpRequest() {
           @Override
           public LowLevelHttpResponse execute() {
-            return new MockLowLevelHttpResponse();
+            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+            response.setStatusCode(statusCode);
+            if (responseContent != null) {
+              response.setContent(responseContent);
+              response.addHeader("Content-Length", String.valueOf(responseContent.length()));
+            }
+            return response;
           }
         };
       }
@@ -173,7 +272,29 @@ public class HttpTracingRequestInitializerTest {
     return requestFactory.buildGetRequest(new GenericUrl(url));
   }
 
-  private void verifyGeneralSpanData(SpanData span) {
+  private static HttpRequest buildPostRequest(
+      HttpTransport transport,
+      HttpRequestInitializer requestInitializer,
+      String url,
+      HttpContent content)
+      throws IOException {
+    HttpRequestFactory requestFactory = transport.createRequestFactory(requestInitializer);
+    return requestFactory.buildPostRequest(new GenericUrl(url), content);
+  }
+
+  private void closeAndVerifySpanData(
+      StatusCode statusCode,
+      long responseCode,
+      String method,
+      long requestBodySize,
+      long responseBodySize) {
+    // close span so it is available for verification
+    spanScope.close();
+    parentSpan.end();
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
     assertEquals(SPAN_NAME, span.getName());
     assertEquals(BIGQUERY_DOMAIN, span.getAttributes().get(BigQueryTelemetryTracer.SERVER_ADDRESS));
     assertEquals(443, span.getAttributes().get(BigQueryTelemetryTracer.SERVER_PORT));
@@ -192,5 +313,25 @@ public class HttpTracingRequestInitializerTest {
     assertEquals(
         HttpTracingRequestInitializer.HTTP_RPC_SYSTEM_NAME,
         span.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
+    assertEquals(
+        responseCode,
+        span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_STATUS_CODE));
+    assertEquals(
+        method, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
+    if (requestBodySize >= 0) {
+      assertEquals(
+          requestBodySize,
+          span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+    } else {
+      assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+    }
+    if (responseBodySize >= 0) {
+      assertEquals(
+          responseBodySize,
+          span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
+    } else {
+      assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
+    }
+    assertEquals(statusCode, span.getStatus().getStatusCode());
   }
 }
