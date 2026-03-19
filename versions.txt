@@ -980,3 +980,6 @@ proto-google-cloud-networkconnectivity-v1beta:1.86.0:1.87.0-SNAPSHOT
 grpc-google-cloud-networkconnectivity-v1beta:1.86.0:1.87.0-SNAPSHOT
 proto-google-cloud-hypercomputecluster-v1:0.7.0:0.8.0-SNAPSHOT
 grpc-google-cloud-hypercomputecluster-v1:0.7.0:0.8.0-SNAPSHOT
+google-maps-navigationconnect:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-navigationconnect-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-navigationconnect-v1:0.0.0:0.0.1-SNAPSHOT
