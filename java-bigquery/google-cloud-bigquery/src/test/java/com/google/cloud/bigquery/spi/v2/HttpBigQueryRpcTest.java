@@ -62,7 +62,10 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
+@Execution(ExecutionMode.SAME_THREAD)
 public class HttpBigQueryRpcTest {
 
   private static final String PROJECT_ID = "test-project";
@@ -72,6 +75,8 @@ public class HttpBigQueryRpcTest {
   private static final String ROUTINE_ID = "test-routine";
   private static final String JOB_ID = "test-job";
   private static final String LOCATION = "test-location";
+
+  private static final Object TEST_LOCK = new Object();
 
   private InMemorySpanExporter spanExporter;
   private MockLowLevelHttpResponse mockResponse;
@@ -196,6 +201,8 @@ public class HttpBigQueryRpcTest {
     @BeforeEach
     public void setUp() {
       setUpServer();
+      spanExporter.reset(); // Clear spans from previous tests
+      System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
       rpc = createRpc(true);
     }
 
@@ -911,10 +918,7 @@ public class HttpBigQueryRpcTest {
 
     @Test
     public void testHttpTracingEnabledAddsAdditionalAttributes() throws Exception {
-      try {
-        System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
-        HttpBigQueryRpc customRpc = createRpc(true);
-
+      synchronized (TEST_LOCK) {
         setMockResponse(
             "{\"kind\":\"bigquery#dataset\",\"id\":\""
                 + PROJECT_ID
@@ -926,7 +930,7 @@ public class HttpBigQueryRpcTest {
                 + DATASET_ID
                 + "\"}}");
 
-        customRpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+        rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
         verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
         verifySpan(
@@ -936,6 +940,7 @@ public class HttpBigQueryRpcTest {
             Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
 
         List<SpanData> spans = spanExporter.getFinishedSpanItems();
+        System.out.println("total number of spans " + spans.size());
         assertThat(spans).isNotEmpty();
         SpanData rpcSpan =
             spans.stream()
@@ -947,17 +952,89 @@ public class HttpBigQueryRpcTest {
         assertNotNull(rpcSpan);
         assertEquals("http", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
         assertNotNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
-      } finally {
-        System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       }
     }
 
     @Test
-    public void testHttpTracingDisabledDoesNotAddAdditionalAttributes() throws Exception {
-      try {
-        System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "false");
-        HttpBigQueryRpc customRpc = createRpc(true);
+    public void testHttpTracingEnabled_GenericException_SetsAttributes() throws Exception {
+      synchronized (TEST_LOCK) {
+        assertThrows(
+            IOException.class,
+            () -> {
+              rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+            });
 
+        List<SpanData> spans = spanExporter.getFinishedSpanItems();
+        assertThat(spans).isNotEmpty();
+        SpanData rpcSpan =
+            spans.stream()
+                .filter(
+                    span ->
+                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                .findFirst()
+                .orElse(null);
+        assertNotNull(rpcSpan);
+        assertEquals(
+            "java.io.IOException",
+            rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+        assertEquals(
+            "CLIENT_UNKNOWN_ERROR",
+            rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+      }
+    }
+
+    @Test
+    public void testHttpTracingEnabled_JsonResponseException_SetsAttributes() throws Exception {
+      synchronized (TEST_LOCK) {
+        mockResponse.setStatusCode(400);
+        mockResponse.setContentType(Json.MEDIA_TYPE);
+        mockResponse.setContent(
+            "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
+
+        assertThrows(
+            IOException.class,
+            () -> {
+              rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+            });
+
+        List<SpanData> spans = spanExporter.getFinishedSpanItems();
+        assertThat(spans).isNotEmpty();
+        SpanData rpcSpan =
+            spans.stream()
+                .filter(
+                    span ->
+                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                .findFirst()
+                .orElse(null);
+        assertNotNull(rpcSpan);
+        assertEquals("invalid", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+        assertEquals(
+            "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+      }
+    }
+  }
+
+  @Nested
+  class TelemetryEnabledDevDisabled {
+    private HttpBigQueryRpc rpc;
+
+    @BeforeEach
+    public void setUp() {
+      setUpServer();
+      spanExporter.reset(); // Clear spans from previous tests
+      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
+      rpc = createRpc(true);
+    }
+
+    @org.junit.jupiter.api.AfterEach
+    public void tearDown() {
+      // Ensure property is cleared for this test class
+      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
+    }
+
+    @Test
+    public void testHttpTracingDisabledDoesNotAddAdditionalAttributes() throws Exception {
+      synchronized (TEST_LOCK) {
         setMockResponse(
             "{\"kind\":\"bigquery#dataset\",\"id\":\""
                 + PROJECT_ID
@@ -969,7 +1046,7 @@ public class HttpBigQueryRpcTest {
                 + DATASET_ID
                 + "\"}}");
 
-        customRpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+        rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
         verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
         verifySpan(
@@ -990,8 +1067,33 @@ public class HttpBigQueryRpcTest {
         assertNotNull(rpcSpan);
         assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
         assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
-      } finally {
-        System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
+      }
+    }
+
+    @Test
+    public void testHttpTracingDisabled_GenericException_DoesNotSetAttributes() throws Exception {
+      synchronized (TEST_LOCK) {
+        spanExporter.reset(); // Clear any accumulated spans
+
+        assertThrows(
+            IOException.class,
+            () -> {
+              rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+            });
+
+        List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+        assertThat(spans).isNotEmpty();
+        io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+            spans.stream()
+                .filter(
+                    span ->
+                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                .findFirst()
+                .orElse(null);
+        assertNotNull(rpcSpan);
+        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
       }
     }
   }
@@ -1003,7 +1105,15 @@ public class HttpBigQueryRpcTest {
     @BeforeEach
     public void setUp() {
       setUpServer();
+      spanExporter.reset(); // Clear spans from previous tests
+      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       rpc = createRpc(false);
+    }
+
+    @org.junit.jupiter.api.AfterEach
+    public void tearDown() {
+      // Ensure property is cleared for this test class
+      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
     }
 
     @Test
@@ -1542,6 +1652,21 @@ public class HttpBigQueryRpcTest {
               + "/tables/"
               + TABLE_ID
               + ":testIamPermissions");
+      verifyNoSpans();
+    }
+
+    @Test
+    public void testExecuteWithSpan_IgnoresHttpResponseException() throws Exception {
+      setMockResponse("");
+      mockResponse.setStatusCode(404);
+
+      try {
+        rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+        org.junit.jupiter.api.Assertions.fail("Expected HttpResponseException was not thrown");
+      } catch (com.google.api.client.http.HttpResponseException e) {
+        assertEquals(404, e.getStatusCode());
+      }
+
       verifyNoSpans();
     }
   }
