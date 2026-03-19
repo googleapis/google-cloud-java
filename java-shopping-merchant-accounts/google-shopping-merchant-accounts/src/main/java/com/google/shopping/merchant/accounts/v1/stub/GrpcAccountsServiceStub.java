@@ -30,6 +30,7 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.Account;
 import com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest;
+import com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteAccountRequest;
 import com.google.shopping.merchant.accounts.v1.GetAccountRequest;
 import com.google.shopping.merchant.accounts.v1.ListAccountsRequest;
@@ -68,6 +69,18 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   "google.shopping.merchant.accounts.v1.AccountsService/CreateAndConfigureAccount")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAndConfigureAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateTestAccountRequest, Account>
+      createTestAccountMethodDescriptor =
+          MethodDescriptor.<CreateTestAccountRequest, Account>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.AccountsService/CreateTestAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTestAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -121,6 +134,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable;
+  private final UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable;
   private final UnaryCallable<DeleteAccountRequest, Empty> deleteAccountCallable;
   private final UnaryCallable<UpdateAccountRequest, Account> updateAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
@@ -190,6 +204,16 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
             GrpcCallSettings.<CreateAndConfigureAccountRequest, Account>newBuilder()
                 .setMethodDescriptor(createAndConfigureAccountMethodDescriptor)
                 .build();
+    GrpcCallSettings<CreateTestAccountRequest, Account> createTestAccountTransportSettings =
+        GrpcCallSettings.<CreateTestAccountRequest, Account>newBuilder()
+            .setMethodDescriptor(createTestAccountMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteAccountRequest, Empty> deleteAccountTransportSettings =
         GrpcCallSettings.<DeleteAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAccountMethodDescriptor)
@@ -234,6 +258,11 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
             createAndConfigureAccountTransportSettings,
             settings.createAndConfigureAccountSettings(),
             clientContext);
+    this.createTestAccountCallable =
+        callableFactory.createUnaryCallable(
+            createTestAccountTransportSettings,
+            settings.createTestAccountSettings(),
+            clientContext);
     this.deleteAccountCallable =
         callableFactory.createUnaryCallable(
             deleteAccountTransportSettings, settings.deleteAccountSettings(), clientContext);
@@ -270,6 +299,11 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
   public UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable() {
     return createAndConfigureAccountCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable() {
+    return createTestAccountCallable;
   }
 
   @Override

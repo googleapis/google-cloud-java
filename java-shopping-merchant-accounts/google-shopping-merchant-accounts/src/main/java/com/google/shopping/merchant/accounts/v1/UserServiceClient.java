@@ -103,7 +103,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteUser</td>
- *      <td><p> Deletes a Merchant Center account user. Executing this method requires admin access. The user to be deleted can't be the last admin user of that account. Also a user is protected from deletion if it is managed by Business Manager"</td>
+ *      <td><p> Deletes a Merchant Center account user. Executing this method requires admin access. The user to be deleted can't be the last admin user of that account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -526,8 +526,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -558,8 +557,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -589,8 +587,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -619,8 +616,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *

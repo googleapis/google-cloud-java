@@ -551,4 +551,19 @@ public interface AutocompletePlacesRequestOrBuilder
    * @return The includePureServiceAreaBusinesses.
    */
   boolean getIncludePureServiceAreaBusinesses();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, include businesses that are not yet open but will open
+   * in the future.
+   * </pre>
+   *
+   * <code>bool include_future_opening_businesses = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeFutureOpeningBusinesses.
+   */
+  boolean getIncludeFutureOpeningBusinesses();
 }

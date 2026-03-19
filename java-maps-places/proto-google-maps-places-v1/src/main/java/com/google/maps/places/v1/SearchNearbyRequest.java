@@ -1927,6 +1927,27 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         : routingParameters_;
   }
 
+  public static final int INCLUDE_FUTURE_OPENING_BUSINESSES_FIELD_NUMBER = 15;
+  private boolean includeFutureOpeningBusinesses_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, include businesses that are not yet open but will open
+   * in the future.
+   * </pre>
+   *
+   * <code>bool include_future_opening_businesses = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeFutureOpeningBusinesses.
+   */
+  @java.lang.Override
+  public boolean getIncludeFutureOpeningBusinesses() {
+    return includeFutureOpeningBusinesses_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1972,6 +1993,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getRoutingParameters());
+    }
+    if (includeFutureOpeningBusinesses_ != false) {
+      output.writeBool(15, includeFutureOpeningBusinesses_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2034,6 +2058,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRoutingParameters());
     }
+    if (includeFutureOpeningBusinesses_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              15, includeFutureOpeningBusinesses_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2066,6 +2095,8 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     if (hasRoutingParameters()) {
       if (!getRoutingParameters().equals(other.getRoutingParameters())) return false;
     }
+    if (getIncludeFutureOpeningBusinesses() != other.getIncludeFutureOpeningBusinesses())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2109,6 +2140,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + ROUTING_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingParameters().hashCode();
     }
+    hash = (37 * hash) + INCLUDE_FUTURE_OPENING_BUSINESSES_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeFutureOpeningBusinesses());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2277,6 +2311,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         routingParametersBuilder_.dispose();
         routingParametersBuilder_ = null;
       }
+      includeFutureOpeningBusinesses_ = false;
       return this;
     }
 
@@ -2356,6 +2391,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
                 : routingParametersBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.includeFutureOpeningBusinesses_ = includeFutureOpeningBusinesses_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2432,6 +2470,9 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasRoutingParameters()) {
         mergeRoutingParameters(other.getRoutingParameters());
+      }
+      if (other.getIncludeFutureOpeningBusinesses() != false) {
+        setIncludeFutureOpeningBusinesses(other.getIncludeFutureOpeningBusinesses());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2525,6 +2566,12 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 120:
+              {
+                includeFutureOpeningBusinesses_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4762,6 +4809,68 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         routingParameters_ = null;
       }
       return routingParametersBuilder_;
+    }
+
+    private boolean includeFutureOpeningBusinesses_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, include businesses that are not yet open but will open
+     * in the future.
+     * </pre>
+     *
+     * <code>bool include_future_opening_businesses = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includeFutureOpeningBusinesses.
+     */
+    @java.lang.Override
+    public boolean getIncludeFutureOpeningBusinesses() {
+      return includeFutureOpeningBusinesses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, include businesses that are not yet open but will open
+     * in the future.
+     * </pre>
+     *
+     * <code>bool include_future_opening_businesses = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeFutureOpeningBusinesses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeFutureOpeningBusinesses(boolean value) {
+
+      includeFutureOpeningBusinesses_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, include businesses that are not yet open but will open
+     * in the future.
+     * </pre>
+     *
+     * <code>bool include_future_opening_businesses = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeFutureOpeningBusinesses() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      includeFutureOpeningBusinesses_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.maps.places.v1.SearchNearbyRequest)

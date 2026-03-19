@@ -2907,7 +2907,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=616
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=622
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Override
@@ -4097,7 +4097,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=616
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=622
      * @return The useAdvancedPdfParsing.
      */
     @java.lang.Override
@@ -4116,7 +4116,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=616
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=622
      * @param value The useAdvancedPdfParsing to set.
      * @return This builder for chaining.
      */
@@ -4139,7 +4139,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=616
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=622
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

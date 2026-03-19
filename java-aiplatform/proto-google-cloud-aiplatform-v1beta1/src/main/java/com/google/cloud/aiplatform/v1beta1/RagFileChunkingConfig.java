@@ -834,7 +834,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
    * <code>int32 chunk_size = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=528
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=534
    * @return The chunkSize.
    */
   @java.lang.Override
@@ -856,7 +856,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
    * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=531
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
    * @return The chunkOverlap.
    */
   @java.lang.Override
@@ -1541,7 +1541,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_size = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=528
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=534
      * @return The chunkSize.
      */
     @java.lang.Override
@@ -1560,7 +1560,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_size = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=528
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=534
      * @param value The chunkSize to set.
      * @return This builder for chaining.
      */
@@ -1583,7 +1583,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_size = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=528
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=534
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1606,7 +1606,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=531
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
      * @return The chunkOverlap.
      */
     @java.lang.Override
@@ -1625,7 +1625,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=531
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
      * @param value The chunkOverlap to set.
      * @return This builder for chaining.
      */
@@ -1648,7 +1648,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=531
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -6731,7 +6731,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4399
+   *     See google/privacy/dlp/v2/dlp.proto;l=4543
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   @java.lang.Override
@@ -6754,7 +6754,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4399
+   *     See google/privacy/dlp/v2/dlp.proto;l=4543
    * @return The publishFindingsToCloudDataCatalog.
    */
   @java.lang.Override
@@ -8291,7 +8291,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is
-     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4399
+     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4543
      * @return Whether the publishFindingsToCloudDataCatalog field is set.
      */
     @java.lang.Override
@@ -8314,7 +8314,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is
-     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4399
+     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4543
      * @return The publishFindingsToCloudDataCatalog.
      */
     @java.lang.Override

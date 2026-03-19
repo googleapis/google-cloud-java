@@ -101,6 +101,11 @@ public class AccountsServiceSettings extends ClientSettings<AccountsServiceSetti
     return ((AccountsServiceStubSettings) getStubSettings()).createAndConfigureAccountSettings();
   }
 
+  /** Returns the object with the settings used for calls to createTestAccount. */
+  public UnaryCallSettings<CreateTestAccountRequest, Account> createTestAccountSettings() {
+    return ((AccountsServiceStubSettings) getStubSettings()).createTestAccountSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteAccount. */
   public UnaryCallSettings<DeleteAccountRequest, Empty> deleteAccountSettings() {
     return ((AccountsServiceStubSettings) getStubSettings()).deleteAccountSettings();
@@ -245,6 +250,12 @@ public class AccountsServiceSettings extends ClientSettings<AccountsServiceSetti
     public UnaryCallSettings.Builder<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountSettings() {
       return getStubSettingsBuilder().createAndConfigureAccountSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTestAccount. */
+    public UnaryCallSettings.Builder<CreateTestAccountRequest, Account>
+        createTestAccountSettings() {
+      return getStubSettingsBuilder().createTestAccountSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAccount. */

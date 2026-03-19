@@ -25,16 +25,18 @@ for library in s.get_staging_dirs():
     s.replace(f'owl-bot-staging/v1/proto-google-cloud-{service}-{version}-java/src/**/*.java', protobuf_header, f'{license_header}{protobuf_header}')
     s.move(library)
 s.remove_staging_dirs()
-java.common_templates(monorepo=True, excludes=[
-    ".github/*",
-    ".kokoro/*",
-    "samples/*",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
-    "SECURITY.md",
-    "java.header",
-    "license-checks.xml",
-    "renovate.json",
-    ".gitignore"
+java.common_templates(
+    monorepo=True,
+    excludes=[
+        ".github/*",
+        ".kokoro/*",
+        "samples/*",
+        "CODE_OF_CONDUCT.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "SECURITY.md",
+        "java.header",
+        "license-checks.xml",
+        "renovate.json",
+        ".gitignore"
 ])

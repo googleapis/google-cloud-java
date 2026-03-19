@@ -151,7 +151,7 @@ public interface ActionOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4399
+   *     See google/privacy/dlp/v2/dlp.proto;l=4543
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   @java.lang.Deprecated
@@ -171,7 +171,7 @@ public interface ActionOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4399
+   *     See google/privacy/dlp/v2/dlp.proto;l=4543
    * @return The publishFindingsToCloudDataCatalog.
    */
   @java.lang.Deprecated

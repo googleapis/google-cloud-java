@@ -43,6 +43,9 @@
             "CreateAndConfigureAccount": {
               "methods": ["createAndConfigureAccount", "createAndConfigureAccountCallable"]
             },
+            "CreateTestAccount": {
+              "methods": ["createTestAccount", "createTestAccount", "createTestAccount", "createTestAccountCallable"]
+            },
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
             },

@@ -38,7 +38,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=665
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=671
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=665
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=671
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Deprecated
@@ -136,7 +136,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=680
    * @return Whether the ragFileMetadataConfig field is set.
    */
   @java.lang.Deprecated
@@ -157,7 +157,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_metadata_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=674
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=680
    * @return The ragFileMetadataConfig.
    */
   @java.lang.Deprecated

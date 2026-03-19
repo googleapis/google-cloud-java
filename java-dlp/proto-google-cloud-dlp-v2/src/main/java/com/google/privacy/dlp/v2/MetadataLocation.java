@@ -80,6 +80,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STORAGE_LABEL(3),
+    KEY_VALUE_METADATA_LABEL(4),
     LABEL_NOT_SET(0);
     private final int value;
 
@@ -101,6 +102,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 3:
           return STORAGE_LABEL;
+        case 4:
+          return KEY_VALUE_METADATA_LABEL;
         case 0:
           return LABEL_NOT_SET;
         default:
@@ -208,6 +211,61 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.StorageMetadataLabel.getDefaultInstance();
   }
 
+  public static final int KEY_VALUE_METADATA_LABEL_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata key that contains the finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+   *
+   * @return Whether the keyValueMetadataLabel field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyValueMetadataLabel() {
+    return labelCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata key that contains the finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+   *
+   * @return The keyValueMetadataLabel.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.KeyValueMetadataLabel getKeyValueMetadataLabel() {
+    if (labelCase_ == 4) {
+      return (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_;
+    }
+    return com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata key that contains the finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.KeyValueMetadataLabelOrBuilder
+      getKeyValueMetadataLabelOrBuilder() {
+    if (labelCase_ == 4) {
+      return (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_;
+    }
+    return com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -228,6 +286,9 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
     if (labelCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.StorageMetadataLabel) label_);
     }
+    if (labelCase_ == 4) {
+      output.writeMessage(4, (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -244,6 +305,11 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.privacy.dlp.v2.StorageMetadataLabel) label_);
+    }
+    if (labelCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -267,6 +333,9 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       case 3:
         if (!getStorageLabel().equals(other.getStorageLabel())) return false;
         break;
+      case 4:
+        if (!getKeyValueMetadataLabel().equals(other.getKeyValueMetadataLabel())) return false;
+        break;
       case 0:
       default:
     }
@@ -287,6 +356,10 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       case 3:
         hash = (37 * hash) + STORAGE_LABEL_FIELD_NUMBER;
         hash = (53 * hash) + getStorageLabel().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + KEY_VALUE_METADATA_LABEL_FIELD_NUMBER;
+        hash = (53 * hash) + getKeyValueMetadataLabel().hashCode();
         break;
       case 0:
       default:
@@ -435,6 +508,9 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       if (storageLabelBuilder_ != null) {
         storageLabelBuilder_.clear();
       }
+      if (keyValueMetadataLabelBuilder_ != null) {
+        keyValueMetadataLabelBuilder_.clear();
+      }
       labelCase_ = 0;
       label_ = null;
       return this;
@@ -485,6 +561,9 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       if (labelCase_ == 3 && storageLabelBuilder_ != null) {
         result.label_ = storageLabelBuilder_.build();
       }
+      if (labelCase_ == 4 && keyValueMetadataLabelBuilder_ != null) {
+        result.label_ = keyValueMetadataLabelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -506,6 +585,11 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
         case STORAGE_LABEL:
           {
             mergeStorageLabel(other.getStorageLabel());
+            break;
+          }
+        case KEY_VALUE_METADATA_LABEL:
+          {
+            mergeKeyValueMetadataLabel(other.getKeyValueMetadataLabel());
             break;
           }
         case LABEL_NOT_SET:
@@ -552,6 +636,13 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
                 labelCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetKeyValueMetadataLabelFieldBuilder().getBuilder(), extensionRegistry);
+                labelCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -896,6 +987,227 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       labelCase_ = 3;
       onChanged();
       return storageLabelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.KeyValueMetadataLabel,
+            com.google.privacy.dlp.v2.KeyValueMetadataLabel.Builder,
+            com.google.privacy.dlp.v2.KeyValueMetadataLabelOrBuilder>
+        keyValueMetadataLabelBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     *
+     * @return Whether the keyValueMetadataLabel field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeyValueMetadataLabel() {
+      return labelCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     *
+     * @return The keyValueMetadataLabel.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.KeyValueMetadataLabel getKeyValueMetadataLabel() {
+      if (keyValueMetadataLabelBuilder_ == null) {
+        if (labelCase_ == 4) {
+          return (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_;
+        }
+        return com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance();
+      } else {
+        if (labelCase_ == 4) {
+          return keyValueMetadataLabelBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    public Builder setKeyValueMetadataLabel(com.google.privacy.dlp.v2.KeyValueMetadataLabel value) {
+      if (keyValueMetadataLabelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        label_ = value;
+        onChanged();
+      } else {
+        keyValueMetadataLabelBuilder_.setMessage(value);
+      }
+      labelCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    public Builder setKeyValueMetadataLabel(
+        com.google.privacy.dlp.v2.KeyValueMetadataLabel.Builder builderForValue) {
+      if (keyValueMetadataLabelBuilder_ == null) {
+        label_ = builderForValue.build();
+        onChanged();
+      } else {
+        keyValueMetadataLabelBuilder_.setMessage(builderForValue.build());
+      }
+      labelCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    public Builder mergeKeyValueMetadataLabel(
+        com.google.privacy.dlp.v2.KeyValueMetadataLabel value) {
+      if (keyValueMetadataLabelBuilder_ == null) {
+        if (labelCase_ == 4
+            && label_ != com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance()) {
+          label_ =
+              com.google.privacy.dlp.v2.KeyValueMetadataLabel.newBuilder(
+                      (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          label_ = value;
+        }
+        onChanged();
+      } else {
+        if (labelCase_ == 4) {
+          keyValueMetadataLabelBuilder_.mergeFrom(value);
+        } else {
+          keyValueMetadataLabelBuilder_.setMessage(value);
+        }
+      }
+      labelCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    public Builder clearKeyValueMetadataLabel() {
+      if (keyValueMetadataLabelBuilder_ == null) {
+        if (labelCase_ == 4) {
+          labelCase_ = 0;
+          label_ = null;
+          onChanged();
+        }
+      } else {
+        if (labelCase_ == 4) {
+          labelCase_ = 0;
+          label_ = null;
+        }
+        keyValueMetadataLabelBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.KeyValueMetadataLabel.Builder
+        getKeyValueMetadataLabelBuilder() {
+      return internalGetKeyValueMetadataLabelFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.KeyValueMetadataLabelOrBuilder
+        getKeyValueMetadataLabelOrBuilder() {
+      if ((labelCase_ == 4) && (keyValueMetadataLabelBuilder_ != null)) {
+        return keyValueMetadataLabelBuilder_.getMessageOrBuilder();
+      } else {
+        if (labelCase_ == 4) {
+          return (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_;
+        }
+        return com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata key that contains the finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.KeyValueMetadataLabel,
+            com.google.privacy.dlp.v2.KeyValueMetadataLabel.Builder,
+            com.google.privacy.dlp.v2.KeyValueMetadataLabelOrBuilder>
+        internalGetKeyValueMetadataLabelFieldBuilder() {
+      if (keyValueMetadataLabelBuilder_ == null) {
+        if (!(labelCase_ == 4)) {
+          label_ = com.google.privacy.dlp.v2.KeyValueMetadataLabel.getDefaultInstance();
+        }
+        keyValueMetadataLabelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.KeyValueMetadataLabel,
+                com.google.privacy.dlp.v2.KeyValueMetadataLabel.Builder,
+                com.google.privacy.dlp.v2.KeyValueMetadataLabelOrBuilder>(
+                (com.google.privacy.dlp.v2.KeyValueMetadataLabel) label_,
+                getParentForChildren(),
+                isClean());
+        label_ = null;
+      }
+      labelCase_ = 4;
+      onChanged();
+      return keyValueMetadataLabelBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.MetadataLocation)
